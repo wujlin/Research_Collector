@@ -1,0 +1,467 @@
+# ── 主题分类法 ──
+# 结构不是几个并列孤岛，而是一条可递归展开的研究链。
+
+stochastic_analysis:
+  display_name: "随机分析"
+  description: "数学骨架层：从随机路径、Ito calculus 到连续随机动力学。"
+  subtopics:
+    path_foundations:
+      display_name: "路径基础"
+      description: "Brownian motion、Wiener 过程与随机积分的起点。"
+      keywords:
+        - "stochastic process"
+        - "random path"
+        - "wiener process"
+        - "ito calculus"
+      subtopics:
+        brownian_motion:
+          display_name: "布朗运动与Wiener过程"
+          keywords:
+            - "brownian motion"
+            - "wiener process"
+            - "random walk"
+            - "diffusion process"
+        ito_calculus:
+          display_name: "Ito积分与随机积分"
+          keywords:
+            - "ito calculus"
+            - "ito integral"
+            - "stochastic integral"
+            - "ito formula"
+            - "stochastic calculus"
+            - "semimartingale"
+    stochastic_dynamics:
+      display_name: "随机动力学"
+      description: "SDE 建模、数值离散化与路径模拟。"
+      keywords:
+        - "stochastic differential equation"
+        - "langevin equation"
+        - "path simulation"
+        - "stochastic numerics"
+      subtopics:
+        sde_theory:
+          display_name: "SDE理论与解"
+          keywords:
+            - "stochastic differential equation"
+            - "langevin equation"
+            - "ornstein-uhlenbeck"
+            - "geometric brownian"
+            - "existence and uniqueness"
+            - "strong solution"
+            - "weak solution"
+            - "mckean-vlasov"
+            - "mean field dynamics"
+            - "mean-field limit"
+        sde_numerics:
+          display_name: "SDE数值方法"
+          keywords:
+            - "euler-maruyama"
+            - "milstein"
+            - "stochastic numerics"
+            - "numerical sde"
+            - "monte carlo simulation"
+            - "path simulation"
+    asymptotics_and_variation:
+      display_name: "渐近与变分工具"
+      description: "大偏差、稀有事件与 Malliavin 工具。"
+      keywords:
+        - "large deviation"
+        - "rare event"
+        - "malliavin"
+        - "importance sampling"
+      subtopics:
+        large_deviations:
+          display_name: "大偏差与稀有事件"
+          keywords:
+            - "large deviation"
+            - "rare event"
+            - "cramer"
+            - "sanov"
+            - "varadhan"
+            - "importance sampling"
+        malliavin_calculus:
+          display_name: "Malliavin微积分"
+          keywords:
+            - "malliavin"
+            - "stochastic calculus of variations"
+            - "clark-ocone"
+
+statistical_physics:
+  display_name: "统计物理"
+  description: "物理语义层：熵、自由能、涨落定理、稳态与不可逆性。"
+  subtopics:
+    equilibrium_structures:
+      display_name: "平衡结构"
+      description: "配分函数、系综与热力学势。"
+      keywords:
+        - "equilibrium statistical mechanics"
+        - "partition function"
+        - "ensemble"
+        - "free energy"
+      subtopics:
+        equilibrium:
+          display_name: "平衡统计力学"
+          keywords:
+            - "partition function"
+            - "canonical ensemble"
+            - "microcanonical"
+            - "grand canonical"
+            - "boltzmann distribution"
+            - "maximum entropy"
+            - "free energy"
+            - "equipartition"
+    non_equilibrium_dynamics:
+      display_name: "非平衡动力学"
+      description: "熵产生、稳态、耗散与涨落定理。"
+      keywords:
+        - "nonequilibrium"
+        - "non-equilibrium"
+        - "entropy production"
+        - "irreversibility"
+        - "stochastic thermodynamics"
+      subtopics:
+        nonequilibrium:
+          display_name: "非平衡统计力学"
+          keywords:
+            - "nonequilibrium"
+            - "non-equilibrium"
+            - "steady state"
+            - "NESS"
+            - "detailed balance"
+            - "entropy production"
+            - "dissipation"
+            - "irreversibility"
+            - "stochastic thermodynamics"
+            - "thermalization"
+            - "ergodicity"
+            - "chaos"
+            - "active matter"
+            - "boundary driven"
+            - "non-markovian"
+            - "keldysh"
+        fluctuation_theorems:
+          display_name: "涨落定理"
+          keywords:
+            - "fluctuation theorem"
+            - "jarzynski"
+            - "crooks"
+            - "fluctuation-dissipation"
+            - "linear response"
+            - "green-kubo"
+            - "onsager"
+    collective_structure:
+      display_name: "集体结构与临界性"
+      description: "相变、临界现象与普适结构。"
+      keywords:
+        - "phase transition"
+        - "critical phenomena"
+        - "universality"
+        - "percolation"
+      subtopics:
+        phase_transitions:
+          display_name: "相变与临界现象"
+          keywords:
+            - "phase transition"
+            - "critical phenomena"
+            - "critical exponent"
+            - "universality"
+            - "scaling"
+            - "renormalization group"
+            - "ising model"
+            - "order parameter"
+            - "mean field"
+            - "finite size scaling"
+            - "percolation"
+
+ai_for_physics:
+  display_name: "AI for Physics"
+  description: "计算层：把动力学、热力学与物理先验转成可训练的生成和建模机制。"
+  subtopics:
+    generative_dynamics:
+      display_name: "生成动力学"
+      description: "用 score、diffusion、reverse-time SDE 与 flow 描写生成过程。"
+      keywords:
+        - "generative modeling"
+        - "score-based"
+        - "diffusion model"
+        - "reverse-time sde"
+        - "flow matching"
+      subtopics:
+        score_matching:
+          display_name: "分数匹配与估计"
+          keywords:
+            - "score matching"
+            - "score function"
+            - "score estimation"
+            - "sliced score"
+            - "denoising score"
+            - "stein discrepancy"
+        ddpm:
+          display_name: "扩散概率模型"
+          keywords:
+            - "denoising diffusion"
+            - "DDPM"
+            - "DDIM"
+            - "diffusion probabilistic"
+            - "noise schedule"
+            - "reverse process"
+        sde_generative:
+          display_name: "SDE生成模型"
+          keywords:
+            - "score-based generative"
+            - "generative sde"
+            - "reverse-time sde"
+            - "probability flow ode"
+            - "anderson"
+        flow_matching:
+          display_name: "Flow Matching"
+          keywords:
+            - "flow matching"
+            - "continuous normalizing flow"
+            - "rectified flow"
+            - "optimal transport"
+            - "interpolant"
+            - "stochastic interpolant"
+        conditional_generation:
+          display_name: "条件生成"
+          keywords:
+            - "conditional generation"
+            - "classifier-free guidance"
+            - "guided diffusion"
+            - "inpainting"
+            - "super-resolution"
+    physics_informed_modeling:
+      display_name: "物理约束建模"
+      description: "把物理先验、变分自由能与科学逆问题嵌入模型训练。"
+      keywords:
+        - "physics-informed"
+        - "variational inference"
+        - "ELBO"
+        - "inverse problem"
+        - "scientific machine learning"
+      subtopics:
+        physics_informed_generative:
+          display_name: "Physics-Informed Generative Modelling"
+          keywords:
+            - "physics-informed generative"
+            - "variational inference"
+            - "ELBO"
+            - "amortized inference"
+            - "physics-constrained"
+            - "surrogate posterior"
+            - "physics-guided inference"
+            - "physics-guided"
+        scientific_ml_applications:
+          display_name: "Scientific ML Applications"
+          keywords:
+            - "molecular generation"
+            - "protein design"
+            - "weather prediction"
+            - "materials design"
+            - "scientific discovery"
+            - "scientific machine learning"
+            - "inverse problem"
+            - "bayesian inverse problem"
+            - "surrogate model"
+            - "gaussian process"
+            - "experimental design"
+            - "measure-valued neural network"
+            - "high-dimensional pinn"
+            - "conservation law"
+            - "integral conservation"
+            - "pde solver"
+
+urban_complex_systems:
+  display_name: "城市复杂系统"
+  description: "应用场景层：在城市流动、网络、标度和空间动力学中检验这些理论。"
+  subtopics:
+    mobility_and_interaction:
+      display_name: "流动与相互作用"
+      description: "空间交互、交通网络与出行流。"
+      keywords:
+        - "mobility"
+        - "spatial interaction"
+        - "origin-destination"
+        - "transport network"
+      subtopics:
+        spatial_interaction:
+          display_name: "空间交互模型"
+          keywords:
+            - "spatial interaction"
+            - "gravity model"
+            - "radiation model"
+            - "origin-destination"
+            - "trip distribution"
+            - "commuting"
+            - "mobility"
+            - "discrete choice"
+            - "logit model"
+        transport_networks:
+          display_name: "交通网络"
+          keywords:
+            - "transport network"
+            - "traffic flow"
+            - "congestion"
+            - "network flow"
+            - "routing"
+            - "accessibility"
+            - "betweenness"
+    scaling_and_evolution:
+      display_name: "标度与演化"
+      description: "城市标度律、增长与长期动力学。"
+      keywords:
+        - "urban scaling"
+        - "city size distribution"
+        - "urban dynamics"
+        - "urban growth"
+      subtopics:
+        urban_scaling:
+          display_name: "城市标度律"
+          keywords:
+            - "urban scaling"
+            - "allometric"
+            - "zipf"
+            - "rank-size"
+            - "power law"
+            - "city size distribution"
+            - "superlinear"
+            - "sublinear"
+        urban_dynamics:
+          display_name: "城市动力学"
+          keywords:
+            - "urban growth"
+            - "urban dynamics"
+            - "gentrification"
+            - "segregation"
+            - "land use"
+            - "urban sprawl"
+            - "agent-based"
+            - "cellular automata"
+    urban_data_and_generation:
+      display_name: "城市数据与生成"
+      description: "城市观测、地理数据与空间生成。"
+      keywords:
+        - "urban computing"
+        - "geospatial"
+        - "remote sensing"
+        - "urban generation"
+      subtopics:
+        urban_data_science:
+          display_name: "城市数据科学"
+          keywords:
+            - "urban computing"
+            - "geospatial"
+            - "remote sensing"
+            - "point of interest"
+            - "street view"
+            - "urban analytics"
+            - "air pollution"
+            - "air quality"
+
+bridges:
+  display_name: "桥接主题"
+  description: "翻译层与桥接机制：把数学骨架、物理语义、生成建模和城市应用接起来。"
+  subtopics:
+    translation_layers:
+      display_name: "翻译层"
+      description: "把路径动力学翻成密度演化，再接到热力学与生成建模。"
+      keywords:
+        - "fokker-planck"
+        - "master equation"
+        - "kolmogorov forward"
+        - "probability density evolution"
+        - "continuity equation"
+      subtopics:
+        fokker_planck_master:
+          display_name: "Fokker-Planck / Master 方程"
+          keywords:
+            - "fokker-planck"
+            - "fokker planck"
+            - "master equation"
+            - "kolmogorov forward"
+            - "kolmogorov backward"
+            - "probability density evolution"
+            - "smoluchowski"
+            - "continuity equation"
+            - "diffusion approximation"
+            - "multiscale stochastic"
+            - "kinetic model"
+            - "collision operator"
+            - "plasma"
+    thermodynamic_inference:
+      display_name: "热力学与推断"
+      description: "自由能、信息几何与变分推断的交汇。"
+      keywords:
+        - "free energy"
+        - "variational free energy"
+        - "information geometry"
+        - "bayesian mechanics"
+        - "free energy principle"
+      subtopics:
+        info_geometry:
+          display_name: "信息几何"
+          keywords:
+            - "information geometry"
+            - "fisher information"
+            - "natural gradient"
+            - "statistical manifold"
+            - "amari"
+        variational_free_energy:
+          display_name: "Variational / Free Energy"
+          keywords:
+            - "variational free energy"
+            - "ELBO"
+            - "free energy principle"
+            - "bayesian mechanics"
+            - "active inference"
+            - "variational inference"
+    transport_and_spatial_generation:
+      display_name: "传输与空间生成"
+      description: "最优传输、扩散生成与空间数据。"
+      keywords:
+        - "optimal transport"
+        - "wasserstein"
+        - "geospatial diffusion"
+        - "spatial generation"
+      subtopics:
+        optimal_transport_urban:
+          display_name: "最优传输与城市"
+          keywords:
+            - "optimal transport"
+            - "wasserstein"
+            - "earth mover"
+            - "monge"
+            - "kantorovich"
+            - "sinkhorn"
+        diffusion_spatial_data:
+          display_name: "扩散模型与空间数据"
+          keywords:
+            - "spatial generation"
+            - "urban generation"
+            - "map generation"
+            - "layout generation"
+            - "geospatial diffusion"
+    urban_nonequilibrium:
+      display_name: "城市非平衡桥接"
+      description: "把临界性、耗散结构与城市系统联系起来。"
+      keywords:
+        - "urban entropy"
+        - "urban thermodynamics"
+        - "urban phase transition"
+      subtopics:
+        urban_phase_transitions:
+          display_name: "城市相变"
+          keywords:
+            - "urban phase transition"
+            - "congestion transition"
+            - "percolation urban"
+            - "critical urban"
+            - "tipping point"
+        neq_thermo_cities:
+          display_name: "非平衡城市热力学"
+          keywords:
+            - "urban entropy"
+            - "urban thermodynamics"
+            - "city metabolism"
+            - "dissipative structure"
+            - "urban energy"

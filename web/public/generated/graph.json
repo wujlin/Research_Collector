@@ -1,0 +1,1432 @@
+{
+  "nodes": [
+    {
+      "id": "stochastic_analysis",
+      "label": "随机分析",
+      "type": "topic",
+      "parent_key": null,
+      "depth": 0,
+      "is_leaf": false
+    },
+    {
+      "id": "stochastic_analysis/path_foundations",
+      "label": "路径基础",
+      "type": "topic",
+      "parent_key": "stochastic_analysis",
+      "depth": 1,
+      "is_leaf": false
+    },
+    {
+      "id": "stochastic_analysis/path_foundations/brownian_motion",
+      "label": "布朗运动与Wiener过程",
+      "type": "topic",
+      "parent_key": "stochastic_analysis/path_foundations",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "stochastic_analysis/path_foundations/ito_calculus",
+      "label": "Ito积分与随机积分",
+      "type": "topic",
+      "parent_key": "stochastic_analysis/path_foundations",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "stochastic_analysis/stochastic_dynamics",
+      "label": "随机动力学",
+      "type": "topic",
+      "parent_key": "stochastic_analysis",
+      "depth": 1,
+      "is_leaf": false
+    },
+    {
+      "id": "stochastic_analysis/stochastic_dynamics/sde_theory",
+      "label": "SDE理论与解",
+      "type": "topic",
+      "parent_key": "stochastic_analysis/stochastic_dynamics",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "stochastic_analysis/stochastic_dynamics/sde_numerics",
+      "label": "SDE数值方法",
+      "type": "topic",
+      "parent_key": "stochastic_analysis/stochastic_dynamics",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "stochastic_analysis/asymptotics_and_variation",
+      "label": "渐近与变分工具",
+      "type": "topic",
+      "parent_key": "stochastic_analysis",
+      "depth": 1,
+      "is_leaf": false
+    },
+    {
+      "id": "stochastic_analysis/asymptotics_and_variation/large_deviations",
+      "label": "大偏差与稀有事件",
+      "type": "topic",
+      "parent_key": "stochastic_analysis/asymptotics_and_variation",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "stochastic_analysis/asymptotics_and_variation/malliavin_calculus",
+      "label": "Malliavin微积分",
+      "type": "topic",
+      "parent_key": "stochastic_analysis/asymptotics_and_variation",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "statistical_physics",
+      "label": "统计物理",
+      "type": "topic",
+      "parent_key": null,
+      "depth": 0,
+      "is_leaf": false
+    },
+    {
+      "id": "statistical_physics/equilibrium_structures",
+      "label": "平衡结构",
+      "type": "topic",
+      "parent_key": "statistical_physics",
+      "depth": 1,
+      "is_leaf": false
+    },
+    {
+      "id": "statistical_physics/equilibrium_structures/equilibrium",
+      "label": "平衡统计力学",
+      "type": "topic",
+      "parent_key": "statistical_physics/equilibrium_structures",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "statistical_physics/non_equilibrium_dynamics",
+      "label": "非平衡动力学",
+      "type": "topic",
+      "parent_key": "statistical_physics",
+      "depth": 1,
+      "is_leaf": false
+    },
+    {
+      "id": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "label": "非平衡统计力学",
+      "type": "topic",
+      "parent_key": "statistical_physics/non_equilibrium_dynamics",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems",
+      "label": "涨落定理",
+      "type": "topic",
+      "parent_key": "statistical_physics/non_equilibrium_dynamics",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "statistical_physics/collective_structure",
+      "label": "集体结构与临界性",
+      "type": "topic",
+      "parent_key": "statistical_physics",
+      "depth": 1,
+      "is_leaf": false
+    },
+    {
+      "id": "statistical_physics/collective_structure/phase_transitions",
+      "label": "相变与临界现象",
+      "type": "topic",
+      "parent_key": "statistical_physics/collective_structure",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "ai_for_physics",
+      "label": "AI for Physics",
+      "type": "topic",
+      "parent_key": null,
+      "depth": 0,
+      "is_leaf": false
+    },
+    {
+      "id": "ai_for_physics/generative_dynamics",
+      "label": "生成动力学",
+      "type": "topic",
+      "parent_key": "ai_for_physics",
+      "depth": 1,
+      "is_leaf": false
+    },
+    {
+      "id": "ai_for_physics/generative_dynamics/score_matching",
+      "label": "分数匹配与估计",
+      "type": "topic",
+      "parent_key": "ai_for_physics/generative_dynamics",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "ai_for_physics/generative_dynamics/ddpm",
+      "label": "扩散概率模型",
+      "type": "topic",
+      "parent_key": "ai_for_physics/generative_dynamics",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "ai_for_physics/generative_dynamics/sde_generative",
+      "label": "SDE生成模型",
+      "type": "topic",
+      "parent_key": "ai_for_physics/generative_dynamics",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "ai_for_physics/generative_dynamics/flow_matching",
+      "label": "Flow Matching",
+      "type": "topic",
+      "parent_key": "ai_for_physics/generative_dynamics",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "ai_for_physics/generative_dynamics/conditional_generation",
+      "label": "条件生成",
+      "type": "topic",
+      "parent_key": "ai_for_physics/generative_dynamics",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "ai_for_physics/physics_informed_modeling",
+      "label": "物理约束建模",
+      "type": "topic",
+      "parent_key": "ai_for_physics",
+      "depth": 1,
+      "is_leaf": false
+    },
+    {
+      "id": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
+      "label": "Physics-Informed Generative Modelling",
+      "type": "topic",
+      "parent_key": "ai_for_physics/physics_informed_modeling",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
+      "label": "Scientific ML Applications",
+      "type": "topic",
+      "parent_key": "ai_for_physics/physics_informed_modeling",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "urban_complex_systems",
+      "label": "城市复杂系统",
+      "type": "topic",
+      "parent_key": null,
+      "depth": 0,
+      "is_leaf": false
+    },
+    {
+      "id": "urban_complex_systems/mobility_and_interaction",
+      "label": "流动与相互作用",
+      "type": "topic",
+      "parent_key": "urban_complex_systems",
+      "depth": 1,
+      "is_leaf": false
+    },
+    {
+      "id": "urban_complex_systems/mobility_and_interaction/spatial_interaction",
+      "label": "空间交互模型",
+      "type": "topic",
+      "parent_key": "urban_complex_systems/mobility_and_interaction",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "urban_complex_systems/mobility_and_interaction/transport_networks",
+      "label": "交通网络",
+      "type": "topic",
+      "parent_key": "urban_complex_systems/mobility_and_interaction",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "urban_complex_systems/scaling_and_evolution",
+      "label": "标度与演化",
+      "type": "topic",
+      "parent_key": "urban_complex_systems",
+      "depth": 1,
+      "is_leaf": false
+    },
+    {
+      "id": "urban_complex_systems/scaling_and_evolution/urban_scaling",
+      "label": "城市标度律",
+      "type": "topic",
+      "parent_key": "urban_complex_systems/scaling_and_evolution",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "urban_complex_systems/scaling_and_evolution/urban_dynamics",
+      "label": "城市动力学",
+      "type": "topic",
+      "parent_key": "urban_complex_systems/scaling_and_evolution",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "urban_complex_systems/urban_data_and_generation",
+      "label": "城市数据与生成",
+      "type": "topic",
+      "parent_key": "urban_complex_systems",
+      "depth": 1,
+      "is_leaf": false
+    },
+    {
+      "id": "urban_complex_systems/urban_data_and_generation/urban_data_science",
+      "label": "城市数据科学",
+      "type": "topic",
+      "parent_key": "urban_complex_systems/urban_data_and_generation",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "bridges",
+      "label": "桥接主题",
+      "type": "topic",
+      "parent_key": null,
+      "depth": 0,
+      "is_leaf": false
+    },
+    {
+      "id": "bridges/translation_layers",
+      "label": "翻译层",
+      "type": "topic",
+      "parent_key": "bridges",
+      "depth": 1,
+      "is_leaf": false
+    },
+    {
+      "id": "bridges/translation_layers/fokker_planck_master",
+      "label": "Fokker-Planck / Master 方程",
+      "type": "topic",
+      "parent_key": "bridges/translation_layers",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "bridges/thermodynamic_inference",
+      "label": "热力学与推断",
+      "type": "topic",
+      "parent_key": "bridges",
+      "depth": 1,
+      "is_leaf": false
+    },
+    {
+      "id": "bridges/thermodynamic_inference/info_geometry",
+      "label": "信息几何",
+      "type": "topic",
+      "parent_key": "bridges/thermodynamic_inference",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "bridges/thermodynamic_inference/variational_free_energy",
+      "label": "Variational / Free Energy",
+      "type": "topic",
+      "parent_key": "bridges/thermodynamic_inference",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "bridges/transport_and_spatial_generation",
+      "label": "传输与空间生成",
+      "type": "topic",
+      "parent_key": "bridges",
+      "depth": 1,
+      "is_leaf": false
+    },
+    {
+      "id": "bridges/transport_and_spatial_generation/optimal_transport_urban",
+      "label": "最优传输与城市",
+      "type": "topic",
+      "parent_key": "bridges/transport_and_spatial_generation",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "bridges/transport_and_spatial_generation/diffusion_spatial_data",
+      "label": "扩散模型与空间数据",
+      "type": "topic",
+      "parent_key": "bridges/transport_and_spatial_generation",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "bridges/urban_nonequilibrium",
+      "label": "城市非平衡桥接",
+      "type": "topic",
+      "parent_key": "bridges",
+      "depth": 1,
+      "is_leaf": false
+    },
+    {
+      "id": "bridges/urban_nonequilibrium/urban_phase_transitions",
+      "label": "城市相变",
+      "type": "topic",
+      "parent_key": "bridges/urban_nonequilibrium",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "bridges/urban_nonequilibrium/neq_thermo_cities",
+      "label": "非平衡城市热力学",
+      "type": "topic",
+      "parent_key": "bridges/urban_nonequilibrium",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "paper:85",
+      "label": "Efficient quantum thermal simulation",
+      "type": "paper",
+      "relevance_score": 71.17,
+      "citation_count": 4
+    },
+    {
+      "id": "paper:27",
+      "label": "The Tracy-Widom Distribution at Large Dyson Index",
+      "type": "paper",
+      "relevance_score": 64.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:9",
+      "label": "Flow Matching for Generative Modeling",
+      "type": "paper",
+      "relevance_score": 60.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:83",
+      "label": "Chaos and Parrondo’s paradox: an overview",
+      "type": "paper",
+      "relevance_score": 58.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:56",
+      "label": "A Physics-Constrained Deep-Learning Framework based on Long-Term Remote-Sensing Data for Retrieving Vertical Distribution of PM <sub>2.5</sub> Chemical Components",
+      "type": "paper",
+      "relevance_score": 58.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:49",
+      "label": "A hybrid bio-inspired model for predicting urban air pollution using deep learning",
+      "type": "paper",
+      "relevance_score": 58.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:42",
+      "label": "Ergodicity and regime recoverability in finite Markov-modulated random walks",
+      "type": "paper",
+      "relevance_score": 58.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:86",
+      "label": "Boundary layers, transport and universal distribution in boundary driven active systems",
+      "type": "paper",
+      "relevance_score": 56.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:8",
+      "label": "Score-Based Generative Modeling through Stochastic Differential Equations",
+      "type": "paper",
+      "relevance_score": 56.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:80",
+      "label": "Intelligent performance prediction of nanoparticle-enhanced automotive radiator cooling using CFD and machine learning",
+      "type": "paper",
+      "relevance_score": 55.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:84",
+      "label": "Non-Markovian Entropy Dynamics in Living Systems from the Keldysh Formalism",
+      "type": "paper",
+      "relevance_score": 54.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:67",
+      "label": "Predictor-Driven Diffusion for Spatiotemporal Generation",
+      "type": "paper",
+      "relevance_score": 54.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:12",
+      "label": "Learning Stochastic Thermodynamics Directly from Correlation and Trajectory-Fluctuation Currents",
+      "type": "paper",
+      "relevance_score": 54.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:11",
+      "label": "A framework for the use of generative modelling in non-equilibrium statistical mechanics",
+      "type": "paper",
+      "relevance_score": 52.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:10",
+      "label": "A Primer on Variational Inference for Physics-Informed Deep Generative Modelling",
+      "type": "paper",
+      "relevance_score": 52.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:66",
+      "label": "Diffusion models with physics-guided inference for solving partial differential equations",
+      "type": "paper",
+      "relevance_score": 51.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:65",
+      "label": "MVNN: A Measure-Valued Neural Network for Learning McKean-Vlasov Dynamics from Particle Data",
+      "type": "paper",
+      "relevance_score": 51.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:62",
+      "label": "Uniform-in-time diffusion approximations for multiscale stochastic systems",
+      "type": "paper",
+      "relevance_score": 51.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:48",
+      "label": "Disentangled Deep Priors for Bayesian Inverse Problems",
+      "type": "paper",
+      "relevance_score": 51.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:32",
+      "label": "Thermalization in high-dimensional systems: the (weak) role of chaos",
+      "type": "paper",
+      "relevance_score": 51.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:7",
+      "label": "Denoising Diffusion Probabilistic Models",
+      "type": "paper",
+      "relevance_score": 51.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:58",
+      "label": "Nonequilibrium Chimeric Switching (NEX) Stabilizes Binding Free Energy Calculations Across Chemical Space",
+      "type": "paper",
+      "relevance_score": 50.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:33",
+      "label": "PINNs for Stochastic Dynamics: Modeling Brownian Motion via Verlet Integration",
+      "type": "paper",
+      "relevance_score": 50.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:21",
+      "label": "DNS-Calibrated Physics-Informed Neural Networks with Learnable Constants for Reynolds Number Extrapolation in Turbulent Channel Flows",
+      "type": "paper",
+      "relevance_score": 50.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:14",
+      "label": "The size, scale, and shape of cities",
+      "type": "paper",
+      "relevance_score": 48.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:3",
+      "label": "Nonequilibrium Equality for Free Energy Differences",
+      "type": "paper",
+      "relevance_score": 48.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:28",
+      "label": "BITS for GAPS: Bayesian Information-Theoretic Sampling for hierarchical GAussian Process Surrogates",
+      "type": "paper",
+      "relevance_score": 47.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:17",
+      "label": "Characterizing the Detailed Balance Property by Means of Measurements",
+      "type": "paper",
+      "relevance_score": 47.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:13",
+      "label": "Growth, innovation, scaling, and the pace of life in cities",
+      "type": "paper",
+      "relevance_score": 45.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:15",
+      "label": "The cost of knowing: natural gradient as variational inference",
+      "type": "paper",
+      "relevance_score": 44.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:6",
+      "label": "Deep Unsupervised Learning using Nonequilibrium Thermodynamics",
+      "type": "paper",
+      "relevance_score": 44.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:4",
+      "label": "Entropy production fluctuation theorem and the nonequilibrium work relation for free energy differences",
+      "type": "paper",
+      "relevance_score": 42.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:69",
+      "label": "From molecular dynamics to kinetic models: data-driven generalized collision operators in 1D3V plasmas",
+      "type": "paper",
+      "relevance_score": 36.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:68",
+      "label": "Stochastic Dimension Implicit Functional Projections for Exact Integral Conservation in High-Dimensional PINNs",
+      "type": "paper",
+      "relevance_score": 36.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:5",
+      "label": "Stochastic thermodynamics, fluctuation theorems and molecular machines",
+      "type": "paper",
+      "relevance_score": 28.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:2",
+      "label": "Asymptotic Laws of Wiener Integrals",
+      "type": "paper",
+      "relevance_score": 25.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:1",
+      "label": "On the movement of small particles suspended in stationary liquids required by the molecular-kinetic theory of heat",
+      "type": "paper",
+      "relevance_score": 25.0,
+      "citation_count": 0
+    }
+  ],
+  "edges": [
+    {
+      "source": "stochastic_analysis",
+      "target": "stochastic_analysis/path_foundations",
+      "type": "taxonomy"
+    },
+    {
+      "source": "stochastic_analysis/path_foundations",
+      "target": "stochastic_analysis/path_foundations/brownian_motion",
+      "type": "taxonomy"
+    },
+    {
+      "source": "stochastic_analysis/path_foundations",
+      "target": "stochastic_analysis/path_foundations/ito_calculus",
+      "type": "taxonomy"
+    },
+    {
+      "source": "stochastic_analysis",
+      "target": "stochastic_analysis/stochastic_dynamics",
+      "type": "taxonomy"
+    },
+    {
+      "source": "stochastic_analysis/stochastic_dynamics",
+      "target": "stochastic_analysis/stochastic_dynamics/sde_theory",
+      "type": "taxonomy"
+    },
+    {
+      "source": "stochastic_analysis/stochastic_dynamics",
+      "target": "stochastic_analysis/stochastic_dynamics/sde_numerics",
+      "type": "taxonomy"
+    },
+    {
+      "source": "stochastic_analysis",
+      "target": "stochastic_analysis/asymptotics_and_variation",
+      "type": "taxonomy"
+    },
+    {
+      "source": "stochastic_analysis/asymptotics_and_variation",
+      "target": "stochastic_analysis/asymptotics_and_variation/large_deviations",
+      "type": "taxonomy"
+    },
+    {
+      "source": "stochastic_analysis/asymptotics_and_variation",
+      "target": "stochastic_analysis/asymptotics_and_variation/malliavin_calculus",
+      "type": "taxonomy"
+    },
+    {
+      "source": "statistical_physics",
+      "target": "statistical_physics/equilibrium_structures",
+      "type": "taxonomy"
+    },
+    {
+      "source": "statistical_physics/equilibrium_structures",
+      "target": "statistical_physics/equilibrium_structures/equilibrium",
+      "type": "taxonomy"
+    },
+    {
+      "source": "statistical_physics",
+      "target": "statistical_physics/non_equilibrium_dynamics",
+      "type": "taxonomy"
+    },
+    {
+      "source": "statistical_physics/non_equilibrium_dynamics",
+      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "type": "taxonomy"
+    },
+    {
+      "source": "statistical_physics/non_equilibrium_dynamics",
+      "target": "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems",
+      "type": "taxonomy"
+    },
+    {
+      "source": "statistical_physics",
+      "target": "statistical_physics/collective_structure",
+      "type": "taxonomy"
+    },
+    {
+      "source": "statistical_physics/collective_structure",
+      "target": "statistical_physics/collective_structure/phase_transitions",
+      "type": "taxonomy"
+    },
+    {
+      "source": "ai_for_physics",
+      "target": "ai_for_physics/generative_dynamics",
+      "type": "taxonomy"
+    },
+    {
+      "source": "ai_for_physics/generative_dynamics",
+      "target": "ai_for_physics/generative_dynamics/score_matching",
+      "type": "taxonomy"
+    },
+    {
+      "source": "ai_for_physics/generative_dynamics",
+      "target": "ai_for_physics/generative_dynamics/ddpm",
+      "type": "taxonomy"
+    },
+    {
+      "source": "ai_for_physics/generative_dynamics",
+      "target": "ai_for_physics/generative_dynamics/sde_generative",
+      "type": "taxonomy"
+    },
+    {
+      "source": "ai_for_physics/generative_dynamics",
+      "target": "ai_for_physics/generative_dynamics/flow_matching",
+      "type": "taxonomy"
+    },
+    {
+      "source": "ai_for_physics/generative_dynamics",
+      "target": "ai_for_physics/generative_dynamics/conditional_generation",
+      "type": "taxonomy"
+    },
+    {
+      "source": "ai_for_physics",
+      "target": "ai_for_physics/physics_informed_modeling",
+      "type": "taxonomy"
+    },
+    {
+      "source": "ai_for_physics/physics_informed_modeling",
+      "target": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
+      "type": "taxonomy"
+    },
+    {
+      "source": "ai_for_physics/physics_informed_modeling",
+      "target": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
+      "type": "taxonomy"
+    },
+    {
+      "source": "urban_complex_systems",
+      "target": "urban_complex_systems/mobility_and_interaction",
+      "type": "taxonomy"
+    },
+    {
+      "source": "urban_complex_systems/mobility_and_interaction",
+      "target": "urban_complex_systems/mobility_and_interaction/spatial_interaction",
+      "type": "taxonomy"
+    },
+    {
+      "source": "urban_complex_systems/mobility_and_interaction",
+      "target": "urban_complex_systems/mobility_and_interaction/transport_networks",
+      "type": "taxonomy"
+    },
+    {
+      "source": "urban_complex_systems",
+      "target": "urban_complex_systems/scaling_and_evolution",
+      "type": "taxonomy"
+    },
+    {
+      "source": "urban_complex_systems/scaling_and_evolution",
+      "target": "urban_complex_systems/scaling_and_evolution/urban_scaling",
+      "type": "taxonomy"
+    },
+    {
+      "source": "urban_complex_systems/scaling_and_evolution",
+      "target": "urban_complex_systems/scaling_and_evolution/urban_dynamics",
+      "type": "taxonomy"
+    },
+    {
+      "source": "urban_complex_systems",
+      "target": "urban_complex_systems/urban_data_and_generation",
+      "type": "taxonomy"
+    },
+    {
+      "source": "urban_complex_systems/urban_data_and_generation",
+      "target": "urban_complex_systems/urban_data_and_generation/urban_data_science",
+      "type": "taxonomy"
+    },
+    {
+      "source": "bridges",
+      "target": "bridges/translation_layers",
+      "type": "taxonomy"
+    },
+    {
+      "source": "bridges/translation_layers",
+      "target": "bridges/translation_layers/fokker_planck_master",
+      "type": "taxonomy"
+    },
+    {
+      "source": "bridges",
+      "target": "bridges/thermodynamic_inference",
+      "type": "taxonomy"
+    },
+    {
+      "source": "bridges/thermodynamic_inference",
+      "target": "bridges/thermodynamic_inference/info_geometry",
+      "type": "taxonomy"
+    },
+    {
+      "source": "bridges/thermodynamic_inference",
+      "target": "bridges/thermodynamic_inference/variational_free_energy",
+      "type": "taxonomy"
+    },
+    {
+      "source": "bridges",
+      "target": "bridges/transport_and_spatial_generation",
+      "type": "taxonomy"
+    },
+    {
+      "source": "bridges/transport_and_spatial_generation",
+      "target": "bridges/transport_and_spatial_generation/optimal_transport_urban",
+      "type": "taxonomy"
+    },
+    {
+      "source": "bridges/transport_and_spatial_generation",
+      "target": "bridges/transport_and_spatial_generation/diffusion_spatial_data",
+      "type": "taxonomy"
+    },
+    {
+      "source": "bridges",
+      "target": "bridges/urban_nonequilibrium",
+      "type": "taxonomy"
+    },
+    {
+      "source": "bridges/urban_nonequilibrium",
+      "target": "bridges/urban_nonequilibrium/urban_phase_transitions",
+      "type": "taxonomy"
+    },
+    {
+      "source": "bridges/urban_nonequilibrium",
+      "target": "bridges/urban_nonequilibrium/neq_thermo_cities",
+      "type": "taxonomy"
+    },
+    {
+      "source": "paper:85",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:85",
+      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:85",
+      "target": "statistical_physics/non_equilibrium_dynamics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:27",
+      "target": "stochastic_analysis",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:27",
+      "target": "stochastic_analysis/asymptotics_and_variation/large_deviations",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:27",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:9",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:9",
+      "target": "ai_for_physics/generative_dynamics/flow_matching",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:9",
+      "target": "bridges",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:83",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:83",
+      "target": "statistical_physics/collective_structure/phase_transitions",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:83",
+      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:56",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:56",
+      "target": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:56",
+      "target": "urban_complex_systems",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:49",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:49",
+      "target": "urban_complex_systems",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:49",
+      "target": "urban_complex_systems/urban_data_and_generation/urban_data_science",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:42",
+      "target": "stochastic_analysis",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:42",
+      "target": "stochastic_analysis/path_foundations/brownian_motion",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:42",
+      "target": "stochastic_analysis/stochastic_dynamics/sde_theory",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:86",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:86",
+      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:86",
+      "target": "statistical_physics/non_equilibrium_dynamics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:8",
+      "target": "stochastic_analysis",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:8",
+      "target": "bridges/translation_layers/fokker_planck_master",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:8",
+      "target": "stochastic_analysis/stochastic_dynamics/sde_theory",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:80",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:80",
+      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:80",
+      "target": "statistical_physics/non_equilibrium_dynamics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:84",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:84",
+      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:84",
+      "target": "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:67",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:67",
+      "target": "statistical_physics/collective_structure/phase_transitions",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:67",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:12",
+      "target": "bridges/translation_layers/fokker_planck_master",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:12",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:12",
+      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:11",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:11",
+      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:11",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:10",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:10",
+      "target": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:10",
+      "target": "bridges",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:66",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:66",
+      "target": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:66",
+      "target": "ai_for_physics/generative_dynamics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:65",
+      "target": "stochastic_analysis",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:65",
+      "target": "stochastic_analysis/stochastic_dynamics/sde_theory",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:65",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:62",
+      "target": "bridges/translation_layers/fokker_planck_master",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:62",
+      "target": "bridges",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:62",
+      "target": "bridges/translation_layers",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:48",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:48",
+      "target": "ai_for_physics/physics_informed_modeling",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:48",
+      "target": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:32",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:32",
+      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:32",
+      "target": "statistical_physics/non_equilibrium_dynamics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:7",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:7",
+      "target": "ai_for_physics/generative_dynamics/ddpm",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:7",
+      "target": "ai_for_physics/generative_dynamics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:58",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:58",
+      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:58",
+      "target": "statistical_physics/equilibrium_structures",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:33",
+      "target": "stochastic_analysis",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:33",
+      "target": "stochastic_analysis/path_foundations/brownian_motion",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:33",
+      "target": "bridges/translation_layers/fokker_planck_master",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:21",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:21",
+      "target": "statistical_physics/collective_structure/phase_transitions",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:21",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:14",
+      "target": "urban_complex_systems",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:14",
+      "target": "urban_complex_systems/scaling_and_evolution/urban_scaling",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:14",
+      "target": "urban_complex_systems/scaling_and_evolution/urban_dynamics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:3",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:3",
+      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:3",
+      "target": "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:28",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:28",
+      "target": "ai_for_physics/physics_informed_modeling",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:28",
+      "target": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:17",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:17",
+      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:17",
+      "target": "statistical_physics/non_equilibrium_dynamics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:13",
+      "target": "urban_complex_systems",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:13",
+      "target": "urban_complex_systems/scaling_and_evolution/urban_scaling",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:13",
+      "target": "urban_complex_systems/scaling_and_evolution",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:15",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:15",
+      "target": "ai_for_physics/generative_dynamics/score_matching",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:15",
+      "target": "bridges",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:6",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:6",
+      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:6",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:4",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:4",
+      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:4",
+      "target": "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:69",
+      "target": "bridges/translation_layers/fokker_planck_master",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:69",
+      "target": "bridges",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:69",
+      "target": "bridges/translation_layers",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:68",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:68",
+      "target": "ai_for_physics/physics_informed_modeling",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:68",
+      "target": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:5",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:5",
+      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:5",
+      "target": "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:2",
+      "target": "stochastic_analysis",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:2",
+      "target": "stochastic_analysis/path_foundations/ito_calculus",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:2",
+      "target": "stochastic_analysis/path_foundations",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:1",
+      "target": "stochastic_analysis",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:1",
+      "target": "stochastic_analysis/path_foundations/brownian_motion",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:1",
+      "target": "stochastic_analysis/path_foundations",
+      "type": "belongs_to"
+    }
+  ]
+}

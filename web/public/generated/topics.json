@@ -1,0 +1,663 @@
+[
+  {
+    "key": "ai_for_physics",
+    "display_name": "AI for Physics",
+    "parent_key": null,
+    "description": "计算层：把动力学、热力学与物理先验转成可训练的生成和建模机制。",
+    "paper_count": 18,
+    "depth": 0,
+    "is_leaf": false,
+    "lineage": [
+      "AI for Physics"
+    ]
+  },
+  {
+    "key": "ai_for_physics/generative_dynamics",
+    "display_name": "生成动力学",
+    "parent_key": "ai_for_physics",
+    "description": "用 score、diffusion、reverse-time SDE 与 flow 描写生成过程。",
+    "paper_count": 8,
+    "depth": 1,
+    "is_leaf": false,
+    "lineage": [
+      "AI for Physics",
+      "生成动力学"
+    ]
+  },
+  {
+    "key": "ai_for_physics/generative_dynamics/conditional_generation",
+    "display_name": "条件生成",
+    "parent_key": "ai_for_physics/generative_dynamics",
+    "description": "",
+    "paper_count": 1,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "AI for Physics",
+      "生成动力学",
+      "条件生成"
+    ]
+  },
+  {
+    "key": "ai_for_physics/generative_dynamics/ddpm",
+    "display_name": "扩散概率模型",
+    "parent_key": "ai_for_physics/generative_dynamics",
+    "description": "",
+    "paper_count": 2,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "AI for Physics",
+      "生成动力学",
+      "扩散概率模型"
+    ]
+  },
+  {
+    "key": "ai_for_physics/generative_dynamics/flow_matching",
+    "display_name": "Flow Matching",
+    "parent_key": "ai_for_physics/generative_dynamics",
+    "description": "",
+    "paper_count": 1,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "AI for Physics",
+      "生成动力学",
+      "Flow Matching"
+    ]
+  },
+  {
+    "key": "ai_for_physics/generative_dynamics/score_matching",
+    "display_name": "分数匹配与估计",
+    "parent_key": "ai_for_physics/generative_dynamics",
+    "description": "",
+    "paper_count": 2,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "AI for Physics",
+      "生成动力学",
+      "分数匹配与估计"
+    ]
+  },
+  {
+    "key": "ai_for_physics/generative_dynamics/sde_generative",
+    "display_name": "SDE生成模型",
+    "parent_key": "ai_for_physics/generative_dynamics",
+    "description": "",
+    "paper_count": 2,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "AI for Physics",
+      "生成动力学",
+      "SDE生成模型"
+    ]
+  },
+  {
+    "key": "ai_for_physics/physics_informed_modeling",
+    "display_name": "物理约束建模",
+    "parent_key": "ai_for_physics",
+    "description": "把物理先验、变分自由能与科学逆问题嵌入模型训练。",
+    "paper_count": 11,
+    "depth": 1,
+    "is_leaf": false,
+    "lineage": [
+      "AI for Physics",
+      "物理约束建模"
+    ]
+  },
+  {
+    "key": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
+    "display_name": "Physics-Informed Generative Modelling",
+    "parent_key": "ai_for_physics/physics_informed_modeling",
+    "description": "",
+    "paper_count": 4,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "AI for Physics",
+      "物理约束建模",
+      "Physics-Informed Generative Modelling"
+    ]
+  },
+  {
+    "key": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
+    "display_name": "Scientific ML Applications",
+    "parent_key": "ai_for_physics/physics_informed_modeling",
+    "description": "",
+    "paper_count": 4,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "AI for Physics",
+      "物理约束建模",
+      "Scientific ML Applications"
+    ]
+  },
+  {
+    "key": "bridges",
+    "display_name": "桥接主题",
+    "parent_key": null,
+    "description": "翻译层与桥接机制：把数学骨架、物理语义、生成建模和城市应用接起来。",
+    "paper_count": 9,
+    "depth": 0,
+    "is_leaf": false,
+    "lineage": [
+      "桥接主题"
+    ]
+  },
+  {
+    "key": "bridges/thermodynamic_inference",
+    "display_name": "热力学与推断",
+    "parent_key": "bridges",
+    "description": "自由能、信息几何与变分推断的交汇。",
+    "paper_count": 4,
+    "depth": 1,
+    "is_leaf": false,
+    "lineage": [
+      "桥接主题",
+      "热力学与推断"
+    ]
+  },
+  {
+    "key": "bridges/thermodynamic_inference/info_geometry",
+    "display_name": "信息几何",
+    "parent_key": "bridges/thermodynamic_inference",
+    "description": "",
+    "paper_count": 4,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "桥接主题",
+      "热力学与推断",
+      "信息几何"
+    ]
+  },
+  {
+    "key": "bridges/thermodynamic_inference/variational_free_energy",
+    "display_name": "Variational / Free Energy",
+    "parent_key": "bridges/thermodynamic_inference",
+    "description": "",
+    "paper_count": 3,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "桥接主题",
+      "热力学与推断",
+      "Variational / Free Energy"
+    ]
+  },
+  {
+    "key": "bridges/translation_layers",
+    "display_name": "翻译层",
+    "parent_key": "bridges",
+    "description": "把路径动力学翻成密度演化，再接到热力学与生成建模。",
+    "paper_count": 5,
+    "depth": 1,
+    "is_leaf": false,
+    "lineage": [
+      "桥接主题",
+      "翻译层"
+    ]
+  },
+  {
+    "key": "bridges/translation_layers/fokker_planck_master",
+    "display_name": "Fokker-Planck / Master 方程",
+    "parent_key": "bridges/translation_layers",
+    "description": "",
+    "paper_count": 5,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "桥接主题",
+      "翻译层",
+      "Fokker-Planck / Master 方程"
+    ]
+  },
+  {
+    "key": "bridges/transport_and_spatial_generation",
+    "display_name": "传输与空间生成",
+    "parent_key": "bridges",
+    "description": "最优传输、扩散生成与空间数据。",
+    "paper_count": 1,
+    "depth": 1,
+    "is_leaf": false,
+    "lineage": [
+      "桥接主题",
+      "传输与空间生成"
+    ]
+  },
+  {
+    "key": "bridges/transport_and_spatial_generation/diffusion_spatial_data",
+    "display_name": "扩散模型与空间数据",
+    "parent_key": "bridges/transport_and_spatial_generation",
+    "description": "",
+    "paper_count": 0,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "桥接主题",
+      "传输与空间生成",
+      "扩散模型与空间数据"
+    ]
+  },
+  {
+    "key": "bridges/transport_and_spatial_generation/optimal_transport_urban",
+    "display_name": "最优传输与城市",
+    "parent_key": "bridges/transport_and_spatial_generation",
+    "description": "",
+    "paper_count": 1,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "桥接主题",
+      "传输与空间生成",
+      "最优传输与城市"
+    ]
+  },
+  {
+    "key": "bridges/urban_nonequilibrium",
+    "display_name": "城市非平衡桥接",
+    "parent_key": "bridges",
+    "description": "把临界性、耗散结构与城市系统联系起来。",
+    "paper_count": 0,
+    "depth": 1,
+    "is_leaf": false,
+    "lineage": [
+      "桥接主题",
+      "城市非平衡桥接"
+    ]
+  },
+  {
+    "key": "bridges/urban_nonequilibrium/neq_thermo_cities",
+    "display_name": "非平衡城市热力学",
+    "parent_key": "bridges/urban_nonequilibrium",
+    "description": "",
+    "paper_count": 0,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "桥接主题",
+      "城市非平衡桥接",
+      "非平衡城市热力学"
+    ]
+  },
+  {
+    "key": "bridges/urban_nonequilibrium/urban_phase_transitions",
+    "display_name": "城市相变",
+    "parent_key": "bridges/urban_nonequilibrium",
+    "description": "",
+    "paper_count": 0,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "桥接主题",
+      "城市非平衡桥接",
+      "城市相变"
+    ]
+  },
+  {
+    "key": "statistical_physics",
+    "display_name": "统计物理",
+    "parent_key": null,
+    "description": "物理语义层：熵、自由能、涨落定理、稳态与不可逆性。",
+    "paper_count": 19,
+    "depth": 0,
+    "is_leaf": false,
+    "lineage": [
+      "统计物理"
+    ]
+  },
+  {
+    "key": "statistical_physics/collective_structure",
+    "display_name": "集体结构与临界性",
+    "parent_key": "statistical_physics",
+    "description": "相变、临界现象与普适结构。",
+    "paper_count": 4,
+    "depth": 1,
+    "is_leaf": false,
+    "lineage": [
+      "统计物理",
+      "集体结构与临界性"
+    ]
+  },
+  {
+    "key": "statistical_physics/collective_structure/phase_transitions",
+    "display_name": "相变与临界现象",
+    "parent_key": "statistical_physics/collective_structure",
+    "description": "",
+    "paper_count": 3,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "统计物理",
+      "集体结构与临界性",
+      "相变与临界现象"
+    ]
+  },
+  {
+    "key": "statistical_physics/equilibrium_structures",
+    "display_name": "平衡结构",
+    "parent_key": "statistical_physics",
+    "description": "配分函数、系综与热力学势。",
+    "paper_count": 2,
+    "depth": 1,
+    "is_leaf": false,
+    "lineage": [
+      "统计物理",
+      "平衡结构"
+    ]
+  },
+  {
+    "key": "statistical_physics/equilibrium_structures/equilibrium",
+    "display_name": "平衡统计力学",
+    "parent_key": "statistical_physics/equilibrium_structures",
+    "description": "",
+    "paper_count": 0,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "统计物理",
+      "平衡结构",
+      "平衡统计力学"
+    ]
+  },
+  {
+    "key": "statistical_physics/non_equilibrium_dynamics",
+    "display_name": "非平衡动力学",
+    "parent_key": "statistical_physics",
+    "description": "熵产生、稳态、耗散与涨落定理。",
+    "paper_count": 16,
+    "depth": 1,
+    "is_leaf": false,
+    "lineage": [
+      "统计物理",
+      "非平衡动力学"
+    ]
+  },
+  {
+    "key": "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems",
+    "display_name": "涨落定理",
+    "parent_key": "statistical_physics/non_equilibrium_dynamics",
+    "description": "",
+    "paper_count": 4,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "统计物理",
+      "非平衡动力学",
+      "涨落定理"
+    ]
+  },
+  {
+    "key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+    "display_name": "非平衡统计力学",
+    "parent_key": "statistical_physics/non_equilibrium_dynamics",
+    "description": "",
+    "paper_count": 16,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "统计物理",
+      "非平衡动力学",
+      "非平衡统计力学"
+    ]
+  },
+  {
+    "key": "stochastic_analysis",
+    "display_name": "随机分析",
+    "parent_key": null,
+    "description": "数学骨架层：从随机路径、Ito calculus 到连续随机动力学。",
+    "paper_count": 7,
+    "depth": 0,
+    "is_leaf": false,
+    "lineage": [
+      "随机分析"
+    ]
+  },
+  {
+    "key": "stochastic_analysis/asymptotics_and_variation",
+    "display_name": "渐近与变分工具",
+    "parent_key": "stochastic_analysis",
+    "description": "大偏差、稀有事件与 Malliavin 工具。",
+    "paper_count": 1,
+    "depth": 1,
+    "is_leaf": false,
+    "lineage": [
+      "随机分析",
+      "渐近与变分工具"
+    ]
+  },
+  {
+    "key": "stochastic_analysis/asymptotics_and_variation/large_deviations",
+    "display_name": "大偏差与稀有事件",
+    "parent_key": "stochastic_analysis/asymptotics_and_variation",
+    "description": "",
+    "paper_count": 1,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "随机分析",
+      "渐近与变分工具",
+      "大偏差与稀有事件"
+    ]
+  },
+  {
+    "key": "stochastic_analysis/asymptotics_and_variation/malliavin_calculus",
+    "display_name": "Malliavin微积分",
+    "parent_key": "stochastic_analysis/asymptotics_and_variation",
+    "description": "",
+    "paper_count": 0,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "随机分析",
+      "渐近与变分工具",
+      "Malliavin微积分"
+    ]
+  },
+  {
+    "key": "stochastic_analysis/path_foundations",
+    "display_name": "路径基础",
+    "parent_key": "stochastic_analysis",
+    "description": "Brownian motion、Wiener 过程与随机积分的起点。",
+    "paper_count": 4,
+    "depth": 1,
+    "is_leaf": false,
+    "lineage": [
+      "随机分析",
+      "路径基础"
+    ]
+  },
+  {
+    "key": "stochastic_analysis/path_foundations/brownian_motion",
+    "display_name": "布朗运动与Wiener过程",
+    "parent_key": "stochastic_analysis/path_foundations",
+    "description": "",
+    "paper_count": 3,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "随机分析",
+      "路径基础",
+      "布朗运动与Wiener过程"
+    ]
+  },
+  {
+    "key": "stochastic_analysis/path_foundations/ito_calculus",
+    "display_name": "Ito积分与随机积分",
+    "parent_key": "stochastic_analysis/path_foundations",
+    "description": "",
+    "paper_count": 1,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "随机分析",
+      "路径基础",
+      "Ito积分与随机积分"
+    ]
+  },
+  {
+    "key": "stochastic_analysis/stochastic_dynamics",
+    "display_name": "随机动力学",
+    "parent_key": "stochastic_analysis",
+    "description": "SDE 建模、数值离散化与路径模拟。",
+    "paper_count": 3,
+    "depth": 1,
+    "is_leaf": false,
+    "lineage": [
+      "随机分析",
+      "随机动力学"
+    ]
+  },
+  {
+    "key": "stochastic_analysis/stochastic_dynamics/sde_numerics",
+    "display_name": "SDE数值方法",
+    "parent_key": "stochastic_analysis/stochastic_dynamics",
+    "description": "",
+    "paper_count": 0,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "随机分析",
+      "随机动力学",
+      "SDE数值方法"
+    ]
+  },
+  {
+    "key": "stochastic_analysis/stochastic_dynamics/sde_theory",
+    "display_name": "SDE理论与解",
+    "parent_key": "stochastic_analysis/stochastic_dynamics",
+    "description": "",
+    "paper_count": 3,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "随机分析",
+      "随机动力学",
+      "SDE理论与解"
+    ]
+  },
+  {
+    "key": "urban_complex_systems",
+    "display_name": "城市复杂系统",
+    "parent_key": null,
+    "description": "应用场景层：在城市流动、网络、标度和空间动力学中检验这些理论。",
+    "paper_count": 4,
+    "depth": 0,
+    "is_leaf": false,
+    "lineage": [
+      "城市复杂系统"
+    ]
+  },
+  {
+    "key": "urban_complex_systems/mobility_and_interaction",
+    "display_name": "流动与相互作用",
+    "parent_key": "urban_complex_systems",
+    "description": "空间交互、交通网络与出行流。",
+    "paper_count": 0,
+    "depth": 1,
+    "is_leaf": false,
+    "lineage": [
+      "城市复杂系统",
+      "流动与相互作用"
+    ]
+  },
+  {
+    "key": "urban_complex_systems/mobility_and_interaction/spatial_interaction",
+    "display_name": "空间交互模型",
+    "parent_key": "urban_complex_systems/mobility_and_interaction",
+    "description": "",
+    "paper_count": 0,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "城市复杂系统",
+      "流动与相互作用",
+      "空间交互模型"
+    ]
+  },
+  {
+    "key": "urban_complex_systems/mobility_and_interaction/transport_networks",
+    "display_name": "交通网络",
+    "parent_key": "urban_complex_systems/mobility_and_interaction",
+    "description": "",
+    "paper_count": 0,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "城市复杂系统",
+      "流动与相互作用",
+      "交通网络"
+    ]
+  },
+  {
+    "key": "urban_complex_systems/scaling_and_evolution",
+    "display_name": "标度与演化",
+    "parent_key": "urban_complex_systems",
+    "description": "城市标度律、增长与长期动力学。",
+    "paper_count": 2,
+    "depth": 1,
+    "is_leaf": false,
+    "lineage": [
+      "城市复杂系统",
+      "标度与演化"
+    ]
+  },
+  {
+    "key": "urban_complex_systems/scaling_and_evolution/urban_dynamics",
+    "display_name": "城市动力学",
+    "parent_key": "urban_complex_systems/scaling_and_evolution",
+    "description": "",
+    "paper_count": 1,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "城市复杂系统",
+      "标度与演化",
+      "城市动力学"
+    ]
+  },
+  {
+    "key": "urban_complex_systems/scaling_and_evolution/urban_scaling",
+    "display_name": "城市标度律",
+    "parent_key": "urban_complex_systems/scaling_and_evolution",
+    "description": "",
+    "paper_count": 2,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "城市复杂系统",
+      "标度与演化",
+      "城市标度律"
+    ]
+  },
+  {
+    "key": "urban_complex_systems/urban_data_and_generation",
+    "display_name": "城市数据与生成",
+    "parent_key": "urban_complex_systems",
+    "description": "城市观测、地理数据与空间生成。",
+    "paper_count": 2,
+    "depth": 1,
+    "is_leaf": false,
+    "lineage": [
+      "城市复杂系统",
+      "城市数据与生成"
+    ]
+  },
+  {
+    "key": "urban_complex_systems/urban_data_and_generation/urban_data_science",
+    "display_name": "城市数据科学",
+    "parent_key": "urban_complex_systems/urban_data_and_generation",
+    "description": "",
+    "paper_count": 2,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "城市复杂系统",
+      "城市数据与生成",
+      "城市数据科学"
+    ]
+  }
+]

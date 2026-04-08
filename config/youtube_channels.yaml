@@ -1,0 +1,128 @@
+# ── YouTube 学习资源频道与播放列表 ──
+
+channels:
+  # ── 随机分析 ──
+  stochastic_analysis:
+    - name: "MIT OpenCourseWare"
+      channel_id: "UCEBb1b_L6zDS3xTUrIALZOw"
+      relevant_playlists:
+        - "18.S096 Topics in Mathematics with Applications in Finance"
+      topics: ["stochastic_analysis/stochastic_dynamics/sde_numerics", "stochastic_analysis/stochastic_dynamics", "stochastic_analysis"]
+
+    - name: "The Bright Side of Mathematics"
+      channel_id: "UCdwo4k1RQHTcq_yZbMz4Sdw"
+      relevant_playlists:
+        - "Stochastic processes"
+        - "Measure theory"
+      topics: ["stochastic_analysis/path_foundations/ito_calculus", "stochastic_analysis/path_foundations", "stochastic_analysis"]
+
+    - name: "Quantpie"
+      channel_id: "UCG8JlK6dMkhHxMNBx2DwSzA"
+      relevant_playlists:
+        - "Stochastic Calculus"
+      topics: ["stochastic_analysis/path_foundations/ito_calculus", "stochastic_analysis/path_foundations", "stochastic_analysis"]
+
+  # ── 统计物理 ──
+  statistical_physics:
+    - name: "Stanford - Leonard Susskind"
+      channel_id: "UCM63o5gbeCAk4RruZ3R6POA"
+      relevant_playlists:
+        - "Statistical Mechanics"
+      topics: ["statistical_physics/equilibrium_structures/equilibrium", "statistical_physics/equilibrium_structures", "statistical_physics"]
+
+    - name: "Perimeter Institute"
+      channel_id: "UCpHvHZq5OCD2leaKOFhMhGQ"
+      relevant_playlists:
+        - "Statistical Physics"
+        - "Condensed Matter"
+      topics: ["statistical_physics/collective_structure/phase_transitions", "statistical_physics/collective_structure", "statistical_physics"]
+
+    - name: "ICTS"
+      channel_id: "UCwr-pVFmZOHhVHo7SOlwbhA"
+      relevant_playlists:
+        - "Non-equilibrium Statistical Physics"
+        - "Statistical Physics"
+      topics: ["statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics"]
+
+    - name: "Complexity Explorer (SFI)"
+      channel_id: "UC6s_MOprBi3ND0arRSaUb8A"
+      relevant_playlists:
+        - "Introduction to Complexity"
+        - "Computation in Complex Systems"
+      topics: ["urban_complex_systems/scaling_and_evolution/urban_scaling", "urban_complex_systems/scaling_and_evolution", "urban_complex_systems"]
+
+  # ── AI for Physics / Generative Dynamics ──
+  ai_for_physics:
+    - name: "Max Welling Talks"
+      search_terms:
+        - "Max Welling generative model"
+        - "Max Welling variational inference"
+      topics: ["bridges/thermodynamic_inference/variational_free_energy", "ai_for_physics/physics_informed_modeling/physics_informed_generative", "ai_for_physics"]
+
+    - name: "Steve Brunton"
+      search_terms:
+        - "Steve Brunton machine learning physics"
+        - "Steve Brunton dynamical systems machine learning"
+      topics: ["ai_for_physics/physics_informed_modeling/scientific_ml_applications", "stochastic_analysis/stochastic_dynamics/sde_numerics", "ai_for_physics"]
+
+    - name: "Yannic Kilcher"
+      channel_id: "UCZHmQk67mSJgfCCTn7xBfew"
+      relevant_playlists:
+        - "Paper explanations"
+      topics: ["ai_for_physics/generative_dynamics/ddpm", "ai_for_physics/generative_dynamics/flow_matching", "ai_for_physics/generative_dynamics", "ai_for_physics"]
+
+    - name: "AI Coffee Break with Letitia"
+      channel_id: "UCobqgqE4i5Kf7wrxRxhToQA"
+      relevant_playlists:
+        - "Diffusion Models"
+      topics: ["ai_for_physics/generative_dynamics/ddpm", "ai_for_physics/generative_dynamics", "ai_for_physics"]
+
+    - name: "Machine Learning Street Talk"
+      channel_id: "UCMLtBahI5DMrt0NPvDSoIRQ"
+      relevant_playlists:
+        - "Deep Learning Theory"
+      topics: ["ai_for_physics/generative_dynamics/sde_generative", "ai_for_physics/generative_dynamics/score_matching", "ai_for_physics/generative_dynamics", "ai_for_physics"]
+
+    - name: "Outlier"
+      channel_id: "UCrbMnHkibNmTMjJxC9jgxkA"
+      relevant_playlists:
+        - "Diffusion Models"
+      topics: ["ai_for_physics/generative_dynamics", "ai_for_physics"]
+
+    - name: "Generative Physics Search"
+      search_terms:
+        - "generative models physics lecture"
+        - "thermodynamics machine learning lecture"
+      topics: ["ai_for_physics/physics_informed_modeling/physics_informed_generative", "bridges/thermodynamic_inference/variational_free_energy", "ai_for_physics"]
+
+  frontier_bridges:
+    - name: "Stochastic Thermodynamics Search"
+      search_terms:
+        - "stochastic thermodynamics lecture"
+        - "non equilibrium statistical physics lecture"
+      topics: ["statistical_physics/non_equilibrium_dynamics/nonequilibrium", "bridges/translation_layers/fokker_planck_master", "statistical_physics"]
+
+    - name: "Diffusion and Free Energy Search"
+      search_terms:
+        - "score diffusion lecture"
+        - "free energy principle generative model"
+      topics: ["bridges/thermodynamic_inference/variational_free_energy", "ai_for_physics/generative_dynamics/sde_generative", "bridges"]
+
+  # ── 城市科学 / 复杂系统 ──
+  urban_science:
+    - name: "Santa Fe Institute"
+      channel_id: "UCX84Ge9O4yPIWYez_bBBJYQ"
+      relevant_playlists:
+        - "Complexity and Cities"
+        - "Scaling"
+      topics: ["urban_complex_systems/scaling_and_evolution/urban_scaling", "urban_complex_systems/scaling_and_evolution", "urban_complex_systems"]
+
+    - name: "Geoffrey West Talks"
+      search_terms: ["Geoffrey West scaling cities"]
+      topics: ["urban_complex_systems/scaling_and_evolution/urban_scaling", "urban_complex_systems/scaling_and_evolution", "urban_complex_systems"]
+
+    - name: "Numberphile"
+      channel_id: "UCoxcjq-8xIDTYp3uz647V5A"
+      relevant_playlists:
+        - "Mathematics"
+      topics: ["stochastic_analysis/path_foundations/brownian_motion", "stochastic_analysis/path_foundations", "stochastic_analysis"]

@@ -1,0 +1,142 @@
+# ── 初始 seminal papers ──
+
+papers:
+  - title: "On the movement of small particles suspended in stationary liquids required by the molecular-kinetic theory of heat"
+    authors: ["Albert Einstein"]
+    year: 1905
+    journal: "Annalen der Physik"
+    url: "https://onlinelibrary.wiley.com/doi/10.1002/andp.19053220806"
+    topic_keys: ["stochastic_analysis/path_foundations/brownian_motion", "stochastic_analysis/path_foundations", "stochastic_analysis"]
+    is_seminal: true
+    notes: "布朗运动理论起点。"
+
+  - title: "Asymptotic Laws of Wiener Integrals"
+    authors: ["Kiyoshi Ito"]
+    year: 1951
+    journal: "Journal of the Mathematical Society of Japan"
+    url: "https://projecteuclid.org/journals/journal-of-the-mathematical-society-of-japan/volume-3/issue-1/Asymptotic-Laws-of-Wiener-Integrals/jmsj/0095861652.full"
+    topic_keys: ["stochastic_analysis/path_foundations/ito_calculus", "stochastic_analysis/path_foundations", "stochastic_analysis"]
+    is_seminal: true
+    notes: "Ito calculus 的历史源头之一。"
+
+  - title: "Nonequilibrium Equality for Free Energy Differences"
+    authors: ["Christopher Jarzynski"]
+    year: 1997
+    journal: "Physical Review Letters"
+    doi: "10.1103/PhysRevLett.78.2690"
+    url: "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.78.2690"
+    topic_keys: ["statistical_physics/non_equilibrium_dynamics/fluctuation_theorems", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics"]
+    is_seminal: true
+    notes: "非平衡自由能关系的核心论文。"
+
+  - title: "Entropy production fluctuation theorem and the nonequilibrium work relation for free energy differences"
+    authors: ["Gavin E. Crooks"]
+    year: 1999
+    journal: "Physical Review E"
+    doi: "10.1103/PhysRevE.60.2721"
+    url: "https://journals.aps.org/pre/abstract/10.1103/PhysRevE.60.2721"
+    topic_keys: ["statistical_physics/non_equilibrium_dynamics/fluctuation_theorems", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics"]
+    is_seminal: true
+    notes: "Crooks fluctuation theorem。"
+
+  - title: "Stochastic thermodynamics, fluctuation theorems and molecular machines"
+    authors: ["Udo Seifert"]
+    year: 2012
+    journal: "Reports on Progress in Physics"
+    doi: "10.1088/0034-4885/75/12/126001"
+    url: "https://iopscience.iop.org/article/10.1088/0034-4885/75/12/126001"
+    topic_keys: ["statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems", "statistical_physics/non_equilibrium_dynamics", "statistical_physics"]
+    is_seminal: true
+    notes: "随机热力学综述。"
+
+  - title: "Deep Unsupervised Learning using Nonequilibrium Thermodynamics"
+    authors: ["Jascha Sohl-Dickstein", "Eric Weiss", "Niru Maheswaranathan", "Surya Ganguli"]
+    year: 2015
+    journal: "ICML"
+    url: "https://proceedings.mlr.press/v37/sohl-dickstein15.html"
+    topic_keys: ["ai_for_physics/generative_dynamics/ddpm", "ai_for_physics/generative_dynamics", "ai_for_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics"]
+    is_seminal: true
+    notes: "扩散模型前史，直接把 nonequilibrium thermodynamics 接入生成建模。"
+
+  - title: "Denoising Diffusion Probabilistic Models"
+    authors: ["Jonathan Ho", "Ajay Jain", "Pieter Abbeel"]
+    year: 2020
+    journal: "NeurIPS"
+    url: "https://arxiv.org/abs/2006.11239"
+    topic_keys: ["ai_for_physics/generative_dynamics/ddpm", "ai_for_physics/generative_dynamics", "ai_for_physics"]
+    is_seminal: true
+    notes: "DDPM 代表作。"
+
+  - title: "Score-Based Generative Modeling through Stochastic Differential Equations"
+    authors: ["Yang Song", "Jascha Sohl-Dickstein", "Diederik P. Kingma", "Abhishek Kumar", "Stefano Ermon", "Ben Poole"]
+    year: 2021
+    journal: "ICLR"
+    url: "https://arxiv.org/abs/2011.13456"
+    topic_keys: ["ai_for_physics/generative_dynamics/sde_generative", "ai_for_physics/generative_dynamics/score_matching", "ai_for_physics/generative_dynamics", "ai_for_physics", "stochastic_analysis/stochastic_dynamics/sde_theory", "stochastic_analysis/stochastic_dynamics", "stochastic_analysis", "bridges/translation_layers/fokker_planck_master", "bridges/translation_layers", "bridges"]
+    is_seminal: true
+    notes: "前向/逆向 SDE 统一了 score-based generative modeling。"
+
+  - title: "Flow Matching for Generative Modeling"
+    authors: ["Yaron Lipman", "Ricky T. Q. Chen", "Heli Ben-Hamu", "Maximilian Nickel", "Matt Le"]
+    year: 2023
+    journal: "ICLR"
+    url: "https://arxiv.org/abs/2210.02747"
+    topic_keys: ["ai_for_physics/generative_dynamics/flow_matching", "ai_for_physics/generative_dynamics", "ai_for_physics", "bridges/transport_and_spatial_generation/optimal_transport_urban", "bridges/transport_and_spatial_generation", "bridges"]
+    is_seminal: true
+    notes: "Flow matching 主线论文。"
+
+  - title: "A Primer on Variational Inference for Physics-Informed Deep Generative Modelling"
+    authors: ["Emilia Molinari", "Michele Nervi", "Luca Biggio", "François Fleuret", "Olga Fink"]
+    year: 2024
+    journal: "arXiv"
+    url: "https://arxiv.org/abs/2409.06560"
+    topic_keys: ["bridges/thermodynamic_inference/info_geometry", "bridges/thermodynamic_inference/variational_free_energy", "bridges/thermodynamic_inference", "bridges", "ai_for_physics/physics_informed_modeling/physics_informed_generative", "ai_for_physics/physics_informed_modeling", "ai_for_physics"]
+    is_seminal: true
+    notes: "physics-informed generative modelling 与 variational free energy / ELBO 之间的连接。"
+
+  - title: "A framework for the use of generative modelling in non-equilibrium statistical mechanics"
+    authors: ["Karl Friston", "Rosalyn Moran", "Lancelot Da Costa", "Chris Fields"]
+    year: 2024
+    journal: "arXiv"
+    url: "https://arxiv.org/abs/2406.11630"
+    topic_keys: ["statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics", "ai_for_physics/physics_informed_modeling/physics_informed_generative", "ai_for_physics/physics_informed_modeling", "ai_for_physics", "bridges/thermodynamic_inference/info_geometry", "bridges/thermodynamic_inference/variational_free_energy", "bridges/thermodynamic_inference", "bridges"]
+    is_seminal: true
+    notes: "非平衡统计物理 + 生成模型 + free energy principle 的桥接论文。"
+
+  - title: "Learning Stochastic Thermodynamics Directly from Correlation and Trajectory-Fluctuation Currents"
+    authors: ["Justin Sirignano", "Andrea Dechant", "others"]
+    year: 2025
+    journal: "arXiv"
+    url: "https://arxiv.org/abs/2504.19007"
+    topic_keys: ["statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics", "ai_for_physics/generative_dynamics/sde_generative", "ai_for_physics/generative_dynamics", "ai_for_physics", "bridges/thermodynamic_inference/variational_free_energy", "bridges/translation_layers/fokker_planck_master", "bridges/translation_layers", "bridges"]
+    is_seminal: true
+    notes: "轨迹涨落学习与随机热力学。"
+
+  - title: "Growth, innovation, scaling, and the pace of life in cities"
+    authors: ["Luís M. A. Bettencourt", "José Lobo", "Dirk Helbing", "Christian Kühnert", "Geoffrey B. West"]
+    year: 2007
+    journal: "PNAS"
+    doi: "10.1073/pnas.0610172104"
+    url: "https://www.pnas.org/doi/10.1073/pnas.0610172104"
+    topic_keys: ["urban_complex_systems/scaling_and_evolution/urban_scaling", "urban_complex_systems/scaling_and_evolution", "urban_complex_systems"]
+    is_seminal: true
+    notes: "城市标度律代表论文。"
+
+  - title: "The size, scale, and shape of cities"
+    authors: ["Michael Batty"]
+    year: 2008
+    journal: "Science"
+    doi: "10.1126/science.1151419"
+    url: "https://www.science.org/doi/10.1126/science.1151419"
+    topic_keys: ["urban_complex_systems/scaling_and_evolution/urban_scaling", "urban_complex_systems/scaling_and_evolution/urban_dynamics", "urban_complex_systems/scaling_and_evolution", "urban_complex_systems"]
+    is_seminal: true
+    notes: "城市复杂系统与尺度问题的经典综述。"
+
+  - title: "The cost of knowing: natural gradient as variational inference"
+    authors: ["Martin Jankowiak", "Theofanis Karaletsos", "others"]
+    year: 2020
+    journal: "arXiv"
+    url: "https://arxiv.org/abs/2002.08676"
+    topic_keys: ["bridges/thermodynamic_inference/info_geometry", "bridges/thermodynamic_inference", "bridges", "ai_for_physics/generative_dynamics/score_matching", "ai_for_physics/generative_dynamics", "ai_for_physics"]
+    is_seminal: true
+    notes: "信息几何 / 变分推断桥接。"

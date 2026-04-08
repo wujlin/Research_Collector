@@ -1,0 +1,114 @@
+# ── 文献源与期刊层级定义 ──
+
+arxiv_categories:
+  - "cond-mat.stat-mech"
+  - "cond-mat.soft"
+  - "cs.LG"
+  - "math.PR"
+  - "physics.soc-ph"
+  - "physics.data-an"
+  - "stat.ML"
+  - "nlin.AO"
+
+journal_tiers:
+  tier_1:
+    weight: 10
+    journals:
+      - name: "Nature"
+        openalex_id: "S137773608"
+        issn: "0028-0836"
+      - name: "Science"
+        openalex_id: "S3880285"
+        issn: "0036-8075"
+      - name: "Nature Physics"
+        openalex_id: "S85544763"
+        issn: "1745-2473"
+      - name: "Nature Computational Science"
+        openalex_id: "S4210174998"
+        issn: "2662-8457"
+      - name: "Nature Machine Intelligence"
+        issn: "2522-5839"
+      - name: "Nature Cities"
+        issn: "2731-9997"
+      - name: "Physical Review Letters"
+        openalex_id: "S24807848"
+        issn: "0031-9007"
+      - name: "Communications in Mathematical Physics"
+        issn: "0010-3616"
+      - name: "Annals of Applied Probability"
+        issn: "1050-5164"
+      - name: "Probability Theory and Related Fields"
+        issn: "0178-8051"
+      - name: "Journal of Machine Learning Research"
+        issn: "1532-4435"
+        aliases: ["JMLR"]
+      - name: "Review of Modern Physics"
+        issn: "0034-6861"
+      - name: "PNAS"
+        openalex_id: "S125754415"
+        issn: "0027-8424"
+
+  tier_2:
+    weight: 7
+    journals:
+      - name: "Physical Review X"
+        issn: "2160-3308"
+      - name: "Physical Review E"
+        issn: "2470-0045"
+      - name: "SIAM Journal on Applied Mathematics"
+        issn: "0036-1399"
+      - name: "SIAM/ASA Journal on Uncertainty Quantification"
+        issn: "2166-2525"
+      - name: "Inverse Problems"
+        issn: "0266-5611"
+      - name: "Journal of Computational Physics"
+        issn: "0021-9991"
+      - name: "Journal of Statistical Mechanics"
+        issn: "1742-5468"
+      - name: "Journal of Statistical Physics"
+        issn: "0022-4715"
+      - name: "NeurIPS"
+        aliases: ["Neural Information Processing Systems", "NeurIPS"]
+      - name: "ICML"
+        aliases: ["International Conference on Machine Learning"]
+      - name: "ICLR"
+        aliases: ["International Conference on Learning Representations"]
+      - name: "AISTATS"
+        aliases: ["International Conference on Artificial Intelligence and Statistics"]
+      - name: "UAI"
+        aliases: ["Conference on Uncertainty in Artificial Intelligence"]
+      - name: "New Journal of Physics"
+        issn: "1367-2630"
+
+  tier_3:
+    weight: 4
+    journals:
+      - name: "Computers Environment and Urban Systems"
+        issn: "0198-9715"
+      - name: "Environment and Planning B"
+        issn: "2399-8083"
+      - name: "Journal of the Royal Society Interface"
+        issn: "1742-5689"
+      - name: "EPJ Data Science"
+        issn: "2193-1127"
+      - name: "Scientific Reports"
+        issn: "2045-2322"
+      - name: "Chaos"
+        issn: "1054-1500"
+      - name: "Chaos, Solitons & Fractals"
+        issn: "0960-0779"
+      - name: "Physical Review Research"
+        issn: "2643-1564"
+      - name: "Machine Learning: Science and Technology"
+        issn: "2632-2153"
+      - name: "EPJ B"
+        aliases: ["The European Physical Journal B"]
+      - name: "SciPost Physics"
+      - name: "The European Physical Journal Special Topics"
+      - name: "Atmospheric Measurement Techniques"
+
+  preprint:
+    weight: 2
+    journals:
+      - name: "arXiv"
+        aliases: ["ArXiv.org", "arXiv (Cornell University)"]

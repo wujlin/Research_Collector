@@ -1,0 +1,279 @@
+:root {
+  color-scheme: light;
+  --bg: #f5f1e8;
+  --panel: #fffdf8;
+  --ink: #1f2a37;
+  --muted: #5b6470;
+  --line: #d6d0c4;
+  --accent: #1d3557;
+  --accent-soft: #a8dadc;
+  --accent-warm: #d67a5c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at top, #fffdf8 0%, var(--bg) 50%, #ece4d5 100%);
+  color: var(--ink);
+  font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.siteHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 24px;
+}
+
+.siteHeader h1 {
+  margin: 4px 0 0;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  line-height: 0.95;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  color: var(--accent-warm);
+  margin: 0;
+}
+
+.siteNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.siteNav a {
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.page {
+  display: grid;
+  gap: 24px;
+}
+
+.hero {
+  padding: 28px;
+}
+
+.hero h2 {
+  font-size: clamp(1.8rem, 3.2vw, 3rem);
+  line-height: 1.05;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.statsGrid div {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(168, 218, 220, 0.15);
+}
+
+.statsGrid strong {
+  display: block;
+  font-size: 1.5rem;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+.filterBar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: rgba(255, 253, 248, 0.88);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 12px 34px rgba(31, 42, 55, 0.05);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.searchBar {
+  display: grid;
+  gap: 6px;
+  min-width: 240px;
+}
+
+.searchBar input,
+.searchBar select {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #fff;
+  font: inherit;
+}
+
+.paperMeta,
+.topicList,
+.paperLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.paperCard h3 {
+  margin-top: 12px;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.pill {
+  display: inline-flex;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(29, 53, 87, 0.12);
+  background: rgba(168, 218, 220, 0.14);
+  font-size: 0.82rem;
+}
+
+.topicPill {
+  background: rgba(214, 122, 92, 0.1);
+}
+
+.topicTree {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.topicTreeList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.topicTreeList li {
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+}
+
+.topicTreeNode {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.topicTreeNode p {
+  margin: 8px 0 0;
+}
+
+.topicTreeMeta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  min-width: 132px;
+}
+
+.topicTreeNested {
+  margin-top: 12px;
+  padding-left: 18px;
+  border-left: 1px solid rgba(29, 53, 87, 0.1);
+}
+
+.topicKey {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.graphShell {
+  overflow: auto;
+}
+
+.graph {
+  width: 100%;
+  min-width: 860px;
+  height: auto;
+}
+
+.graphLabel {
+  fill: var(--ink);
+  font-size: 11px;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+@media (max-width: 900px) {
+  .siteHeader {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .sectionHeader {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filterBar {
+    width: 100%;
+  }
+
+  .searchBar {
+    min-width: 100%;
+  }
+
+  .topicTreeNode {
+    flex-direction: column;
+  }
+
+  .topicTreeMeta {
+    min-width: auto;
+    justify-content: flex-start;
+  }
+}

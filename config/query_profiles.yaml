@@ -1,0 +1,31 @@
+arxiv:
+  - "stochastic thermodynamics entropy production fluctuation theorem"
+  - "fokker planck langevin stochastic differential equations"
+  - "score-based generative modeling stochastic differential equations"
+  - "flow matching diffusion models probability flow ode"
+  - "bayesian inverse problems deep generative prior"
+  - "physics-informed neural networks stochastic dynamics"
+  - "non-equilibrium statistical mechanics generative modelling"
+  - "urban scaling mobility network diffusion cities"
+
+semantic_scholar:
+  - "variational free energy physics-informed generative modeling"
+  - "entropy production diffusion model stochastic thermodynamics"
+  - "bayesian inverse problems generative prior scientific machine learning"
+  - "fokker planck score matching reverse time diffusion"
+  - "markov-modulated random walk ergodicity master equation"
+
+openalex:
+  - "non-equilibrium statistical mechanics generative modelling"
+  - "stochastic thermodynamics entropy production diffusion models"
+  - "fokker planck stochastic differential equations physics-informed learning"
+  - "score matching reverse time dynamics diffusion models"
+  - "bayesian inverse problems deep generative prior"
+  - "scientific machine learning inverse problems physics-informed"
+  - "markov-modulated random walk ergodicity master equation"
+  - "urban complex systems scaling mobility network diffusion"
+
+youtube:
+  - "stochastic differential equations"
+  - "non-equilibrium statistical physics"
+  - "diffusion models"

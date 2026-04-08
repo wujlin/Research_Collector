@@ -1,0 +1,222 @@
+# ── Research Collector 全局配置 ──
+
+collection:
+  # 每日 arXiv 扫描时间 (24h format)
+  daily_arxiv_hour: 8
+  daily_arxiv_minute: 0
+
+  # 每周全面更新 (0=Monday, 6=Sunday)
+  weekly_full_day: 0
+  weekly_full_hour: 9
+
+  # 每月 YouTube + 摘要 (day of month)
+  monthly_youtube_day: 1
+  monthly_youtube_hour: 10
+
+  source_policies:
+    semantic_scholar:
+      enabled: false
+      # 默认全源采集时，没有 API key 就跳过，避免撞共享限流池
+      use_in_all_runs_without_api_key: false
+      # 显式触发该源时，429 后的最大重试次数
+      max_retries_on_429: 2
+      # 429 后的基础退避秒数，会按 2^attempt 递增
+      base_backoff_seconds: 4
+      # 没有 API key 时，将单次请求结果数压低
+      limit_without_api_key: 10
+
+  per_query_limits:
+    arxiv: 10
+    semantic_scholar: 8
+    openalex: 10
+    youtube: 4
+
+filtering:
+  # 相关性评分阈值 (0-100)，低于此值的论文不入库
+  relevance_threshold: 30
+
+  # 最大采集论文数 / 每次
+  max_papers_per_run: 320
+
+  # 引用数下限 (对于非预印本)
+  min_citations: 0
+
+  # 发表年份下限
+  min_year: 2015
+
+  # 明显偏离当前研究方向的噪音主题词
+  negative_keywords:
+    - "mutagenesis"
+    - "molecular recognition"
+    - "syntaxin"
+    - "protein-ligand"
+    - "aqueous solution"
+    - "enzyme kinetics"
+
+  youtube:
+    min_query_token_hits: 2
+    min_positive_keyword_hits: 1
+    positive_keywords:
+      - "stochastic thermodynamics"
+      - "non equilibrium"
+      - "nonequilibrium"
+      - "statistical physics"
+      - "thermodynamics"
+      - "fokker-planck"
+      - "master equation"
+      - "stochastic differential equation"
+      - "sde"
+      - "brownian motion"
+      - "langevin"
+      - "markov chain"
+      - "random walk"
+      - "ergodicity"
+      - "diffusion model"
+      - "score-based"
+      - "score matching"
+      - "flow matching"
+      - "generative model"
+      - "variational inference"
+      - "free energy"
+      - "bayesian inverse"
+      - "inverse problem"
+      - "physics-informed"
+      - "scientific machine learning"
+      - "dynamical systems"
+      - "urban scaling"
+      - "complexity and cities"
+    negative_keywords:
+      - "biomedical portfolios"
+      - "rare diseases"
+      - "fusion energy development"
+      - "protein-ligand"
+      - "drug discovery"
+      - "molecular recognition"
+      - "mutagenesis"
+      - "clinical"
+      - "glioma"
+      - "orthopedic"
+      - "dental implants"
+      - "portfolio"
+
+storage:
+  database_path: "data/papers.db"
+  cache_dir: "data/cache"
+  library_dir: "library"
+  youtube_dir: "youtube"
+  digest_dir: "digests"
+
+export:
+  # 阅读列表最大论文数
+  reading_list_size: 20
+
+  # 摘要中包含的论文数
+  digest_paper_count: 30
+
+git:
+  auto_commit: true
+  commit_message_prefix: "[auto-collect]"
+
+ranking:
+  paper:
+    no_leaf_topic_penalty: 18
+    no_topic_penalty: 8
+    openalex_zero_citation_penalty: 6
+    preprint_penalty: 4
+    unranked_venue_penalty: 8
+    keep_threshold: 60
+    review_threshold: 38
+    venue_tier_bonus:
+      "1": 18
+      "2": 12
+      "3": 6
+    priority_topics:
+      bridges/translation_layers/fokker_planck_master: 18
+      bridges/thermodynamic_inference/variational_free_energy: 16
+      statistical_physics/non_equilibrium_dynamics/nonequilibrium: 14
+      statistical_physics/non_equilibrium_dynamics/fluctuation_theorems: 12
+      ai_for_physics/generative_dynamics/sde_generative: 16
+      ai_for_physics/generative_dynamics/score_matching: 14
+      ai_for_physics/generative_dynamics/ddpm: 10
+      ai_for_physics/physics_informed_modeling/physics_informed_generative: 10
+      ai_for_physics/physics_informed_modeling/scientific_ml_applications: 8
+      stochastic_analysis/stochastic_dynamics/sde_theory: 12
+      stochastic_analysis/path_foundations/brownian_motion: 10
+      stochastic_analysis/asymptotics_and_variation/large_deviations: 10
+      urban_complex_systems/scaling_and_evolution/urban_scaling: 8
+      urban_complex_systems/urban_data_and_generation/urban_data_science: 6
+    priority_keywords:
+      "thermalization": 12
+      "ergodicity": 12
+      "markov": 10
+      "random walk": 10
+      "stochastic dynamics": 12
+      "brownian motion": 12
+      "inverse problem": 10
+      "bayesian inverse": 10
+      "score-based diffusion": 12
+      "physics-constrained": 10
+      "physics-informed": 10
+      "pinn": 8
+      "fokker-planck": 12
+      "free energy": 10
+      "urban air pollution": 6
+    suspicious_keywords:
+      "neuroscience": 18
+      "clinical": 14
+      "glioma": 22
+      "molecular docking": 24
+      "drug discovery": 22
+      "protein-peptide": 20
+      "protein kinase": 20
+      "ultrasound": 18
+      "orthopedic": 18
+      "dental implants": 18
+      "lithium-ion batteries": 16
+      "battery management systems": 16
+      "seizure detection": 18
+      "ecg": 14
+      "welding": 18
+      "manufacturing": 14
+      "cyber attacks": 18
+      "food-grade": 18
+      "emulsion gels": 18
+      "consciousness": 18
+      "audio": 16
+      "transitional water ecosystems": 14
+      "weather image restoration": 16
+      "shape correspondences": 16
+    weak_venues:
+      "international journal of information technology and computer science": 14
+      "international journal of computer science": 10
+      "international journal of information technology": 8
+    strong_venues:
+      "physical review letters": 8
+      "nature physics": 8
+      "scientific reports": 4
+      "communications in mathematical physics": 8
+      "journal of machine learning research": 8
+      "neurips": 8
+      "icml": 8
+      "iclr": 8
+  youtube:
+    priority_topics:
+      ai_for_physics/generative_dynamics/sde_generative: 16
+      ai_for_physics/generative_dynamics/ddpm: 14
+      ai_for_physics/generative_dynamics/flow_matching: 14
+      bridges/thermodynamic_inference/variational_free_energy: 16
+      bridges/translation_layers/fokker_planck_master: 16
+      statistical_physics/non_equilibrium_dynamics/nonequilibrium: 14
+      stochastic_analysis/stochastic_dynamics/sde_numerics: 10
+      stochastic_analysis/path_foundations/brownian_motion: 8
+      urban_complex_systems/scaling_and_evolution/urban_scaling: 10
+    priority_channels:
+      "MIT OpenCourseWare": 12
+      "Max Welling Talks": 12
+      "Steve Brunton": 12
+      "Yannic Kilcher": 10
+      "AI Coffee Break with Letitia": 10
+      "Machine Learning Street Talk": 8
+      "Perimeter Institute": 10
+      "ICTS": 10
+      "Santa Fe Institute": 10
