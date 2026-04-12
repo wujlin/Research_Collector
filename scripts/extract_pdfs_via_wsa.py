@@ -34,17 +34,14 @@ def get_project_root() -> Path:
 
 def build_expect_script() -> str:
     return """
-set timeout [lindex $argv 0]
-set password [lindex $argv 1]
-set cmd [lrange $argv 2 end]
-spawn {*}$cmd
+spawn __COMMAND__
 expect {
   -re "(?i)yes/no" {
     send "yes\\r"
     exp_continue
   }
   -re "(?i)password:" {
-    send "$password\\r"
+    send "__PASSWORD__\\r"
     exp_continue
   }
   eof
@@ -58,9 +55,21 @@ exit $exit_code
 """.strip()
 
 
+def tcl_literal(value: str) -> str:
+    escaped = value.replace("\\", "\\\\").replace("}", "\\}")
+    return "{" + escaped + "}"
+
+
 def run_expect(command: list[str], password: str, timeout: int) -> None:
+    command_literal = " ".join(tcl_literal(item) for item in command)
+    script = (
+        build_expect_script()
+        .replace("__COMMAND__", command_literal)
+        .replace("__PASSWORD__", password.replace("\\", "\\\\").replace('"', '\\"'))
+    )
+    script = f"set timeout {timeout}\n{script}"
     subprocess.run(
-        ["expect", "-c", build_expect_script(), str(timeout), password, *command],
+        ["expect", "-c", script],
         check=True,
     )
 
@@ -130,6 +139,11 @@ def build_parser() -> argparse.ArgumentParser:
         help="MinerU API port on WSA",
     )
     parser.add_argument(
+        "--remote-conda-bin",
+        default="/home/jinlin/miniconda3/bin/conda",
+        help="Absolute conda binary path on WSA",
+    )
+    parser.add_argument(
         "--password-env",
         default="WSA_SSH_PASSWORD",
         help="Environment variable containing the WSA SSH password",
@@ -178,7 +192,9 @@ def main() -> None:
 
     ensure_api_cmd = (
         f"cd {shlex.quote(args.remote_project_root)} && "
-        f"WSA_MINERU_API_PORT={args.api_port} bash scripts/wsa_ensure_mineru_api.sh"
+        f"WSA_MINERU_API_PORT={args.api_port} "
+        f"WSA_MINERU_CONDA_BIN={shlex.quote(args.remote_conda_bin)} "
+        f"bash scripts/wsa_ensure_mineru_api.sh"
     )
     run_remote_shell(ensure_api_cmd, password, args.remote_host, args.timeout)
 
@@ -207,7 +223,7 @@ def main() -> None:
             f"rm -rf {shlex.quote(remote_output_parent)} && "
             f"mkdir -p {shlex.quote(remote_output_parent)} && "
             f"cd {shlex.quote(args.remote_project_root)} && "
-            f"CONDA_NO_PLUGINS=true conda run -n dpl mineru "
+            f"CONDA_NO_PLUGINS=true {shlex.quote(args.remote_conda_bin)} run -n dpl mineru "
             f"--api-url http://127.0.0.1:{args.api_port} "
             f"-p {shlex.quote(remote_pdf)} "
             f"-o {shlex.quote(remote_output_parent)}"

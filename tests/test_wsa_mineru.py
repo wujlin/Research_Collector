@@ -1,6 +1,11 @@
 from pathlib import Path, PurePosixPath
 
-from src.utils.wsa_mineru import build_local_output_dir, discover_pdfs, plan_extraction_jobs
+from src.utils.wsa_mineru import (
+    build_local_output_dir,
+    discover_pdfs,
+    is_mineru_artifact,
+    plan_extraction_jobs,
+)
 
 
 def test_discover_pdfs_expands_directory_and_deduplicates(tmp_path: Path):
@@ -9,6 +14,9 @@ def test_discover_pdfs_expands_directory_and_deduplicates(tmp_path: Path):
     pdf_b = tmp_path / "nested" / "b.PDF"
     pdf_b.parent.mkdir()
     pdf_b.write_text("b", encoding="utf-8")
+    ignored = tmp_path / "paper.mineru" / "hybrid_auto" / "paper_layout.pdf"
+    ignored.parent.mkdir(parents=True)
+    ignored.write_text("ignored", encoding="utf-8")
 
     found = discover_pdfs([tmp_path, pdf_a])
 
@@ -38,3 +46,8 @@ def test_plan_extraction_jobs_preserves_project_relative_layout(tmp_path: Path):
     assert job.local_output_dir == pdf_path.parent / "paper.mineru"
     assert job.remote_pdf.as_posix().endswith("/in/pdfs/2026-04-11/paper.pdf")
     assert job.remote_result_dir.as_posix().endswith("/out/pdfs/2026-04-11/paper.mineru/paper")
+
+
+def test_is_mineru_artifact_detects_outputs():
+    assert is_mineru_artifact(Path("/tmp/pdfs/paper.mineru/hybrid_auto/paper_layout.pdf"))
+    assert not is_mineru_artifact(Path("/tmp/pdfs/paper.pdf"))

@@ -27,9 +27,11 @@ def discover_pdfs(inputs: Iterable[Path]) -> list[Path]:
             candidates = sorted(
                 candidate
                 for candidate in path.rglob("*")
-                if candidate.is_file() and candidate.suffix.lower() == ".pdf"
+                if candidate.is_file()
+                and candidate.suffix.lower() == ".pdf"
+                and not is_mineru_artifact(candidate)
             )
-        elif path.is_file() and path.suffix.lower() == ".pdf":
+        elif path.is_file() and path.suffix.lower() == ".pdf" and not is_mineru_artifact(path):
             candidates = [path]
         else:
             raise FileNotFoundError(f"PDF input not found or not a PDF: {path}")
@@ -38,6 +40,10 @@ def discover_pdfs(inputs: Iterable[Path]) -> list[Path]:
                 seen.add(candidate)
                 found.append(candidate)
     return found
+
+
+def is_mineru_artifact(path: Path) -> bool:
+    return any(parent.name.endswith(".mineru") for parent in path.parents)
 
 
 def make_project_relative_path(pdf_path: Path, project_root: Path) -> Path:
