@@ -1,0 +1,917 @@
+# An introduction to stochastic thermodynamics - Takahiro Sagawa / NEST
+
+- URL: https://www.youtube.com/watch?v=m023IrSLF-k
+- Model: `large-v3`
+- Requested language: `en`
+- Detected language: `en`
+- Refined at: `2026-04-08T17:22:31`
+
+## Transcript
+
+### [00:00 - 00:35]
+
+Good morning, everyone. I'm Takahiro Sagawa from the University of Tokyo. First of all, I'd like to thank the organizers for inviting me here. I think this is the second time in Santa Fe for me. Last time was nine years ago, and I'm happy to come back here. So I was asked to provide a tutorial talk to people from outside the community of stochastic thermodynamics.
+
+### [00:35 - 01:11]
+
+So it's actually challenging for me, but I will try my best. Okay, so this is an outline of my talk. So I will start from some general introduction. Then I will talk. about fluctuation theorems and thermodynamics of information. And finally, I will talk about some finite-time aspects of thermodynamics. Something like optimal transport. Maybe this part is most relevant to this workshop. I'm not sure, but yeah.
+
+### [01:11 - 01:43]
+
+I'm talking about some basic concepts in stochastic thermodynamics, like Jarzynski equality and fluctuation theorem. Okay, so let me start from a general introduction. So yes, in the 19th century, thermodynamics were developed for macroscopic heat engines like steam engine or something like that. And today we are interested in thermodynamics of small systems like molecular engines or even quantum systems.
+
+### [01:43 - 02:08]
+
+So this is a single molecular experiment for stochastic thermodynamics. Like we can stretch a single RNA molecule. And we can measure the free energy and the work for this. And that's a single molecular thermodynamic system. And also, this is a natural biological molecular motor that converts the chemical energy into the work. So these are very interesting platforms.
+
+### [02:08 - 02:41]
+
+So we can consider the role of fluctuations and entropy production in this kind of small systems. And also, very recently, I think generative AI, like diffusion models are very interesting and very closely related to thermodynamics. Okay, so this is a schematic of diffusion model for image generation. It is said that it was originally inspired by stochastic thermodynamics like the fluctuation theorem.
+
+### [02:41 - 03:17]
+
+I'm not sure if it is a real connection with stochastic thermodynamics or just analogy. But yeah, at least it is very interesting to consider the connection at the level of mathematics and some algorithms. Okay, so yeah, maybe this is a redundant slide. So yeah, this is just a randomly picked up argument from Twitter. So I don't know whether this is true or not. But it says that in eight years,
+
+### [03:17 - 03:53]
+
+that a single company like OpenAI will consume the energy comparable to the entire country of India. So that is very amazing. So it is very important to reduce the energetic cost for information processing like computing. At the same time, from the thermodynamics point of view, this is a fundamental point for the Landauer bound. I will talk about the details of this, some modification or generalization.
+
+### [03:53 - 04:28]
+
+But very roughly speaking, one bit of information corresponds to log two of work on heat generation. So yeah, this is a small amount of heat or work. I mean, it's about 10 to the minus 21st joule per bit. So this is very small. Now, there's a gap between the Landauer bound and the practical computational energy consumption. And the gap is about, I think it's almost a million or several million times.
+
+### [04:28 - 05:00]
+
+So that is a huge gap. And at the same time, this gap is exponentially decreasing. That is called Koomey's law. So this is, yeah, this is called the Moore's law, I think. Because most of the energy dissipation from the CMOS device is from the discharge process. So if we release one bit of information, for example, the entire charged energy is dissipated.
+
+### [05:00 - 05:32]
+
+So that is the main origin of the dissipation in real computers. So the discharge energy is proportional to the area of the capacitance. And the area of the capacitance is decreasing. I think because of the Moore's law. So now, the energy consumption per one bit is exponentially decreasing. And if we naively extrapolate this trend, then we can expect that the Landauer bound is achieved in 2070 or 60.
+
+### [05:32 - 06:01]
+
+I don't know about around there. So yeah, it is, I'm not sure if it is hopeful or not. But there should be some fundamental constraints. There should be some fundamental constraints to actually achieve the Landauer bound. So one important aspect is the speed or the time of information processing. So if we don't take the quasi-static limit, so the Landauer bound is not achievable.
+
+### [06:01 - 06:33]
+
+And also, there are some effects from thermal or quantum fluctuations. So I think that also prohibits the real computers from achieving the Landauer bound. So in this Koomey's law, it comes from engineering advancements in CMOS or from something else? This one? Yes. From CMOS. So essentially, it's just like making capacitors better, making CMOS better, like that kind of progress, right?
+
+### [06:33 - 07:05]
+
+I think this is the trend of CMOS. And yeah, but Landauer bound is independent of choice. Yeah, I'm not sure. But what I'm saying is this is an engineering, right? There is no like deep theory behind this. It's just like… Yes, this is just engineering. Can I say something? It's economics, actually. Exactly. I worked at Intel for 20 years, so this was a big deal for us.
+
+### [07:05 - 07:34]
+
+Essentially, this is keeping the energy fixed and doubling the number of transistors automatically puts you on this law. So if you put the frequency constant, your power is constant, then you double the number of transistors every two years and that follows the power law. So there is a lot of science and engineering behind doing it. Yeah. But there is no fundamental theory driving it. I think that was your question.
+
+### [07:34 - 08:09]
+
+Yeah, I think it is a result of the engineering way of it. It's not done that job. Let's ask a question. So this is completely naive in terms of the CMOS side, but you might know. The atomic size of silicon in the transistor, that plays into the limit, right? I mean, we're getting close to like, you know, angstrom sizes, right? Right. So I guess where does the atomic scale impact on that? I can tell you.
+
+### [08:09 - 08:44]
+
+I can answer. I can answer that. Feel free to jump in. If you were to reduce the atomic dimensions, you have about 14 generations beyond 10 nanometers. Then you cut into Van der Waals distance and you don't have the devices behaving like devices. They are behaving quantum. Right. Yeah. So this one assumes you have infinite scaling on dimensions. So it is independent of the atomic limitations.
+
+### [08:44 - 09:12]
+
+The atomic limit would probably be higher than the Landauer bound. Oh, yeah. I would say that would end in 2035, according to this graph. Okay. And this is an argument to… Sorry, it's your talk, but the question is… He's not the chip guy. Okay, I'm not an expert on this. Yeah, exactly. Yeah. I think this kind of behavior is from the atomic effect or something. Yeah. Yeah. Yeah.
+
+### [09:12 - 09:43]
+
+But the Landauer bound is also applicable to a single atomic device. So in that sense, this is very universal. Okay. In principle, you can achieve this by using a single atom. Okay. Yeah. But like on the theoretical front, is there any theory that would allow us to be not kind of like at the Landauer level, but slightly more relevant to, you know, CMOS technology or something like that?
+
+### [09:43 - 10:14]
+
+Or that theory has not been developed? Oh, yeah. Yeah. Well, I think one answer is this kind of finite speed or finite time effort. Yeah. Yeah. So CMOS device, the discharging process is not quasi-static. It's a kind of totally dissipating process. So, yeah, on the other hand, to achieve the Landauer bound, we need the quasi-static infinitely slow limit. So that is one important difference.
+
+### [10:14 - 10:51]
+
+And theoretically, we can address some fundamental bound other than the Landauer bound by taking the effect of finite time. A couple of points here. Ravel and Massimiliano and others as well have done some very, very deep work on CMOS down at the very, very, down the weeds in terms of my perception of the stochastic thermodynamics of these particular systems.
+
+### [10:51 - 11:17]
+
+Landauer bound is all of this interesting stuff that I'm technically going to be presenting over and above Landauer bound. And moreover, something that's very central to a lot of stochastic thermodynamics and depending on your granularity in time, it applies to your brain, is that in a non-equilibrium steady state, so if we're having a coarse graining in time so that we don't actually see the
+
+### [11:17 - 11:44]
+
+distributions changing, the drop in entropy is zero. Landauer bound is zero. Correct. Everything is these other terms. Yeah. So I think that's the key point is that Landauer bound assumes that the underlying dynamics is, we call it detailed balance, is that if you don't do anything, you go to equilibrium. Most real memories are not like that. You need to dissipate just to maintain information.
+
+### [11:44 - 12:09]
+
+And that creates a big discrepancy between the two. But if you do this theoretical treatment, would you get close to the actual dissipation that people see in practice or it is still way below? That's what Takerhito will be talking about. Some of these bounds in certain systems are tight. In other systems, they're very, very loose. These bounds are being improved all the time. Very, very much ongoing work.
+
+### [12:09 - 12:32]
+
+But here also for the Landauer bound, you only consider the entropy of the memory, the degrees of freedom, coarse grained degree of freedom for the memory. If it's initial distribution was uniform. Yeah. And. And also in a real physical memory, there is entropy for holding one bit itself. Yeah. So there is physical entropy associated with it.
+
+### [12:32 - 12:41]
+
+So you need to also consider that difference in entropy, which also contribute. Well, that is everything that stochastic thermodynamics pays attention to. Can we continue? Yes, please continue.
+
+### [12:43 - 13:14]
+
+Next slide. So yeah, we need to put it from David's paper. So yeah, we need several requirements other than energetic force, right? Like speed and memory. Okay. So yeah. Then the focus of stochastic thermodynamics is something like the role of fluctuations far from equilibrium. So this is the so-called Gernot-Zensky equality of the fraction. And also fundamental energy cost for computation.
+
+### [13:14 - 13:48]
+
+And the finite time aspect. That is like a cost . This is a universal inequality. Inequality applicable for finite time process. And the right hand side is given by, of course, the Wasserstein distance from optimal transport. Okay. So I was planning to start from here. But I think most people are interested in maybe around here. So I think we skip this part. No, no, no. No, no, no. We don't also. But I think.
+
+### [13:48 - 14:16]
+
+No, no, no. No, no, no. This is not. Okay. I think here . Okay. Okay. So let me start from the fluctuations. But I. If I go very slowly. I think then the time is up around here. So I will very rapidly go through this part. Okay. So the fluctuations. So this is the ordinary second law of thermodynamics. So the work is. The system of the free energy difference is always smaller than the work. So we can say that.
+
+### [14:16 - 14:45]
+
+So the work is. So the work is. So this is a simple. Yeah. smaller than the work input on the other hand in the stochastic system so the work is a kind of stochastic variable that is probabilistic so we have some distributions of work for example if we stretch this single RNA molecule the work depends on each trial so yeah we have different values
+
+### [14:45 - 15:00]
+
+of work and if we repeat the same process many times and then this is the probability distribution and here's the average work and there are some small probabilities that the fluctuation
+
+### [15:03 - 15:18]
+
+small probability that the second law of sound dynamics is violated but at the level of ensemble average the second law is still valid and so the average work is already greater than the free energy difference
+
+### [15:20 - 15:32]
+
+and okay so this is a very fundamental sorry just to be clear that that expectation is just over thermal fluctuations right right thanks not over quantum fluctuations
+
+### [15:36 - 15:54]
+
+okay so this is a famous result from 1997 called the Jarzynski equality or a specific type of the fluctuation theorem okay so this is a famous result from 1997 called the Jarzynski equality or a specific type of the fluctuation theorem interesting this work this is the stochastic quantity and it can take exponential of the work and then mounted robot Laura takes exponential of the work and then
+
+### [15:54 - 16:11]
+
+takes ensemble Alrighty then it always produces exponential of the free energy so this is always true even when we drive the system far from it too far from 호 it could be and also the dynamics face variable size than in real distance too far from but also the dynamics is very non-equilibrium so yeah this is contrastive far from but also the dynamics is very non-equilibrium so yeah this is contrastive
+
+### [16:11 - 16:25]
+
+to find the way to use this your solar output whatever the Wirbel that near ion wire are That are the poles of a person were swinging the heat slower than the動辄 That are the poles of a person were swinging the heat slower than the Hybrid state LEGO or Duck Mat contrastive to the second rule that is always given by a form of inequality like this but
+
+### [16:25 - 16:33]
+
+now we have a very universal equality and yeah which is applicable any non-equal dynamics
+
+### [16:35 - 16:59]
+
+and also we can derive the second rule from this by using some convex inequality that yeah we can say that this Jarzynski equality is kind of more universal than the ordinary second law of summaries and this has a much more information than the second
+
+### [17:01 - 17:28]
+
+a naive question is this only true for boltzmann statistics or is it true for any statistics it should assume that initial distribution is a Boltzmann i mean distribution yeah but after driving the distribution can be powerful right but it is still isothermal right temperature is constant isn't it oh yes in typical setup the thermal bath
+
+### [17:28 - 17:39]
+
+is there and it's temperature of course but there are okay so yeah there are many escapes
+
+### [17:42 - 17:52]
+
+oh sorry there are many setups for which the judges i think the most typical one is a classic around
+
+### [17:55 - 18:04]
+
+in this setup we have a large heat bus around the system and the bus has a constant temperature but there are other
+
+### [18:07 - 18:10]
+
+setups actually the original georgian scale set up
+
+### [18:12 - 18:41]
+
+that is a completely isolated dynamical system and that is even a kind of hamiltonian i mean the unitary system starting from the initial equilibrium distribution and we drive it then the 19 skateboard is still yes sorry so you said we required that the initial distribution is boltzmann yes wait sorry the initial distribution of what of the system okay okay
+
+### [18:41 - 19:04]
+
+okay okay like up the systematic okay this is a key point everything's physical physics and fantastic thermodynamics is about evolution of distributions which is not the same thing as the evolution of single trajectories but also to answer the question yes this is all been extended it's a paper by muscleiano i think it was in 2007 and then many other ones where fluctuation
+
+### [19:04 - 19:10]
+
+theorems are generalized to many many different reservoirs at different temperatures chemical reservoirs so non-isothermal cases yeah so Anna never quite understood though because when i was more interested in therm researching, youtube has my decades on thermodynamics and nature has been
+
+### [19:10 - 19:24]
+
+so sophisticated aspo, you gotta study microorganisms how to measure how to measure things without incidentknowledge, systemals and events, improving or balancing то there's even commonそ sweet in component protection and also as power of this process also it is interesting that the very original formulation is based on the Hamiltonian dynamics
+
+### [19:24 - 19:55]
+
+without stochastic dynamics and I think that is the reason why Jarzynski equality of the structure is so universal I mean essentially it is only the some properties of Hamiltonian dynamics like the Liouville theorem actually the I'm sorry this is very small but the original proof of the Jarzynski equality is very short like maybe one two three five six slides or something
+
+### [19:55 - 20:20]
+
+like that and only essential assumptions are so called the Liouville theorem actually this is from google's germany so its explanation is better than me so yeah yeah anyway so yeah what I wanted to say is that the proof of the Jarzynski equality in the original version is very simple and essentially only uses the Liouville theorem for the Hamiltonian
+
+### [20:26 - 20:29]
+
+okay so I'm going back to
+
+### [20:31 - 20:57]
+
+okay so this is Jarzynski equality and next I will I will show you Jarzynski's I will show you Jarzynski's practitioner's theorem so that is also called the Crooks fluctuation theorem so okay we consider the experiment that there is a single RNA molecule and we
+
+### [20:58 - 21:28]
+
+do some experiment on this so for example we imagine that in the forward process we push this molecule and in the other hand in the backward process we stretch this molecule that corresponds to upholding and unfolding so this pair of forward and backward processes is very important to get some universal property of entropy production
+
+### [21:30 - 22:02]
+
+so yeah so this is a Crooks fluctuation theorem so this means that this is a quard property and this double minor stereotype is a so-called entropy production that is a gap between the work and the frame so this is positive because entropy production should be important but sometimes we have some rare events in which entropy production is negative so then we can compare the probabilities
+
+### [22:03 - 22:38]
+
+getting positive entropy production and the negative entropy production and the ratio is given by exponential minus entropy production so let's say that the probability of the negative entropy production is exponentially small so this is a very universal behavior in non-equilibrium systems and yeah this constitutively determines the rate of the violation of the second law of
+
+### [22:38 - 23:09]
+
+thermodynamics and also important point is that to compare the probabilities we should we should introduce the backward process so this negative entropy production is for the backward process like the folding process and their ratio is only always given by this inverse factor I could financial minus entropy so this is a crux practice also so we need the
+
+### [23:09 - 23:49]
+
+backward process so I think this is a reason why the diffusion model for generative AI was inspired by this kind of argument because the diffusion models uses some backward process from noise to image no okay so this distribution is taken over the ensemble there is microscopic reversibility for this okay
+
+### [23:52 - 24:08]
+
+so it's still dynamic equilibrium with the microscopic level for the for the the crooks yes but also there you can generalize it to stochastic dynamics that do not satisfy detail balance all right I see I see
+
+### [24:11 - 24:45]
+
+you can actually answer to Hamiltonian Monte Carlo techniques for optimization oh yes I think so yeah yeah so this is also true for some Hamiltonian dynamics so yeah yeah that should be some Hamiltonian which is some algorithms for sampling so there is a difference it's an interesting question there might be is some kind of connection of some sort but I would say this is you know in one case we have reversal times
+
+### [24:45 - 24:56]
+
+inequality here should I here's any inequality whereas that process is reversible in Hamiltonian dynamics
+
+### [24:59 - 25:22]
+
+has to do with the the reversibility has to do with the coupling with the heat bath the actual dynamics of the system you see um is different it's like a partial trace i mean the hamiltonian version of this that is the classical limit of open quantum thermodynamics the crooks in his original thinking had an infinite heat bath you assume time reversal
+
+### [25:22 - 25:58]
+
+symmetry in your coupling to that heat bath but your actual system is not going in some kind of time reversible way it's very very far from thermal equilibrium so in other words it does not have to satisfy hamiltonian um because it is coupled to the bath it's like if you know the more general formulation you start with bath that are in their own equilibria okay and your system um is in a reference equilibrium
+
+### [25:58 - 26:25]
+
+with one of those baths at time zero you turn on the interaction between the system and all the bath and the full dynamics is hamiltonian full i mean in the in the full space of all the bath system so that's really pure hamiltonian dynamics you see now these kinds of results the original one you can think of them as special cases in the limit where you trace out the bath the paths are
+
+### [26:25 - 26:56]
+
+fast you can treat them as markovniks and then your system dynamics becomes a stochastic process for which you can derive that it's equilibrated at every instant yes but not even not even globally it's simply that it it the stochastic dynamics wants to make you equilibrate with each of the bath but as a result your system dynamics is not detailed balance because it's continuously driven by all these different paths
+
+### [26:58 - 27:23]
+
+nobody is at a boltzmann distribution don't think of these things as terms of boltzmann distributions or just at time zero to have a reference the fact that you need this initial distribution that the the path at a certain equilibria is to to introduce the intensive field temperature chemical potential that's where they enter it's in this initial distribution but after that you can drive
+
+### [27:23 - 27:52]
+
+arbitrarily for somebody so so is the bath changing i'm trying to understand it is so you are changing the bath is also evolving you're involving the full space with the hamiltonian dynamics okay yeah so yeah so the other must mention the i think the ultimate origin of this kind of behavior is from the hamiltonian property of the entire system including this
+
+### [27:54 - 27:56]
+
+yes i feel like this is a very dumb question
+
+### [27:58 - 28:05]
+
+so does this crook's fluctuation theorem is it is this just just by itself is this time reversible
+
+### [28:09 - 28:33]
+
+or like like basically like uh this distinguishes between initial and final conditions if anybody here is interested in law schmidt's paradox how you can have fine grain time reversal symmetry but still have all these asymmetric things like the strength in the second law it's because we don't know how to set up an experiment in its final state rather than its initial state and so this gets into deep stuff
+
+### [28:33 - 28:52]
+
+with philosophy which is part of the um the wheelhouse of this particular meeting so it's all because we initialize rather than finalize when you run an experiment okay that makes sense so so i guess the the asymmetry comes from like the delta itself the change from initial to final
+
+### [28:54 - 29:17]
+
+entropy production okay yeah these results are all different in the detail but what we're seeing is that when you run an experiment the initial condition of a positive variable pretries after a particularۂ
+
+### [29:25 - 29:43]
+
+patient or this expression also In that sense, there is a hierarchy, like the Crookes fluctuation theorem has the most detailed information about the dynamics, and then Georgian scalability, and then the Ogeron theorem, so yeah, each step can be mathematically derived.
+
+### [29:47 - 30:21]
+
+Okay, so Hamiltonian formation is very important. Also, let me just mention a slightly generalized formula. So far, we have used the work on the flow energy, but in slightly more general setup, we can instead use the Shannon information of the system and the heat. If we set the initial distribution as the Gibbs distribution, they are essentially equivalent,
+
+### [30:21 - 30:50]
+
+but in this setup, the initial distribution of the system can be out of equilibrium, and also the final distribution system can be out of equilibrium. Okay, the system has some spread space, and its Shannon entropy is given by this, and this delta S is a Shannon entropy change, and this Q is the heat absorption from the heat bus to the system, and delta S minus beta Q is the heat absorption.
+
+### [30:51 - 30:57]
+
+which calls the entropy production in the linear, slightly more linear form.
+
+### [30:59 - 31:30]
+
+And we can, oh, okay, oh, okay. So, and we can show that the average entropy production is always non-negative. That means that the delta S is always greater than the Sheep's distortion. Actually, this is a round-out type in a chord. So if this delta S is, for example, minus log two, then Q should be greater than log two. So that is a round-out principle. So in that sense, this form of entropy production,
+
+### [31:30 - 31:37]
+
+including the channel entropy, is a starting point to connect information and so on.
+
+### [31:40 - 32:11]
+
+Oh, yes, this is actually the round-out principle. So in the most standard, I mean, in the most basic setup, the round-out principle is something like this. So we start from the memory with equal probabilities for zero and one. I mean, this is a logical zero state, and this is a logical one state. And we assume that the property is one half and one half. And after the information measure,
+
+### [32:11 - 32:43]
+
+the memory is in a standard state that is called zero, and then its logical entropy is zero. So the total entropy decrease is given by log two. So by substituting that, the minus log two this time, then we find that the heat is, or some size, sorry, some size flips. Okay, so maybe we will minus here. But anyway, so the heat dissipation is always greater than log two.
+
+### [32:43 - 33:11]
+
+So that is the sequence I set up for the round-out principle. So you mentioned like the different types of energy, like logical entropy versus, like basically what are the different types of energy and entropy, sorry. And how do they relate to one another? Do we treat them as completely separate, or? I mean, the logical entropy and the... Yeah, exactly. Like logical entropy, what other type of entropy is there?
+
+### [33:11 - 33:44]
+
+Sorry. I mentioned that later, but so, yeah. In principle, we have some physical thermal entropy. Inside this each wave. So imagine that this is a brownian particle. There is some brownian motion inside each wave. So that is a thermal entropy. I see. For each wave. But here we have logical entropy just for left or right. So that is a part of the total thermal entropy, or the total physical.
+
+### [33:44 - 34:10]
+
+Okay, so answer to your question. Here, there are logical entropy, and thermodynamic entropy. He's using them equivalent when he put the relationship in the previous slide. Okay, got you. He just assumed for this case, they are equivalent. Well, for this simple case, the roach current will be changing its equivalent to the total physical entropy. Got you, thank you.
+
+### [34:10 - 34:20]
+
+And the uniform distribution you talked about earlier, David, was there's this assumption that 0 and 1 are equally probable. Yeah. It depends on your argument.
+
+### [34:23 - 34:24]
+
+Okay.
+
+### [34:27 - 34:35]
+
+Okay, so what kind of how, what kind of what did I do?
+
+### [34:39 - 35:04]
+
+But also that the conditional probability of the microscopic state in size that macro states are uniform. So is that true level . yeah in general whenever you do coarse graining to a system the value you will get for the entry production is never going to actually increase it will only decrease from what the true is which is down to very fine grain and that monotonicity is a very powerful thing it
+
+### [35:04 - 35:22]
+
+means if you get a bound that's a lower bound it's a lower bound even if you knew everything going on but i think it's time to directly go into this okay so i think i will do this part first okay
+
+### [35:24 - 35:30]
+
+yeah so yeah i i in this opportunity i will talk about random principles
+
+### [35:34 - 35:38]
+
+okay so if i have time so i will go back to this part
+
+### [35:39 - 35:46]
+
+is that fine i missed maxwell demon but i think yeah after this maybe i will go
+
+### [35:53 - 35:56]
+
+so this is yeah this is the same slide
+
+### [35:58 - 36:15]
+
+okay and i'd like to mention okay what is logical yeah reverse weight yeah what is thermodynamic or physical reverse so yes the logical reversibility means that the change in the
+
+### [36:18 - 36:42]
+
+vertical states like zero for one it's zero for example in this information erasure example the delta s is given by minus log two so that is logically irreversible in the other hand for example if we consider not great that's a flipping then it is called multiple reverse now it's going to be reversible important to know that
+
+### [36:42 - 36:55]
+
+that's necessary and not sufficient yeah i can have a system where there's no change in entropy but all hell is breaking loose in terms of logical reversibility at the trajectory level
+
+### [37:00 - 37:06]
+
+some river spytic implies that entropy production is 0 that is that means that is minus beta q equals that is that is some rhythmic through emotion that is throwing it in here it is taking a fresh direction into what's here maybe that means there's three levels but as my used to� violetp called middle current pancake is brush i have from theilar one level
+
+### [37:06 - 37:24]
+
+polar to negative bunun whom is known as ab це the A cell of the�ên question andness there are xeta musical over identify but lav carter very different signals q equals that is a reverse weight in the entire system including the bus and the system so so they are fundamentally different so so we can say that the information in Asia can be done
+
+### [37:26 - 37:35]
+
+thermodynamically reversibly I mean so if delta s equals minus log 2 and q is log 2 then
+
+### [37:37 - 38:05]
+
+we can say that the equality here is achieved inequality here is achieved and the total entropy production is zero so in that case the information in Asia is logically reversible but it is something sorry the information in Asia is logically irreversible but it's thermodynamically reverse so there are many arguments in the 20th century so they are sometimes mixed up but they are different
+
+### [38:07 - 38:46]
+
+this is what I wanted okay so also another remark is that this is true for some symmetric memories symmetric means that so if we consider this type of memory with logical state 0 and 1 it is called symmetric on the other hand we can also consider this kind of asymmetric memory with logical state 0 and 1 actually in real devices including CMOS so the memory is very asymmetric right so
+
+### [38:48 - 39:18]
+
+in this case in each well so there are some summer fluctuations with different entropies so because of that the random orphanace principal is not straightforwardly applicable to this asymmetry euch equivalent so that's another remark Apologies if you said this, and I'm just missing it. So it's the shape of that, what those wells, they're conceptual. Is it the probability of being in one or zero,
+
+### [39:18 - 39:46]
+
+or is it the fluctuations that are permitted within one versus the fluctuations permitted within zero? Because those seem different. Energy levels. Energy levels. So it is an energy plot. Correct. So it's one. Here's a gas energy barrier. So it has nothing to do with the probability of being in one or zero in a statistical way. That's external, right?
+
+### [39:46 - 40:12]
+
+Because you can engineer that based on what computation you're doing. So that has nothing to do with it. In the real CMOS, it's a completely dissipative system. The way S-RAMs are built, you have these kind of bimodal distribution there coming from a purely non-equilibrium system. So there, it's not... It's not a real potential in a G-well. It's conceptual. It's a conceptual. You call it like a quasi-potential.
+
+### [40:12 - 40:16]
+
+Now I will talk about it. I think it's actually static. Yeah. That's right. Right.
+
+### [40:18 - 41:00]
+
+You can't replace the ln2 with the binary entropy, given the non-1.5 probability. Yeah. So, yes. Yeah, sorry. Okay. So... So, this is a general setup. So, if the memory is asymmetric, then we can associate some free energies for each well. I mean, in this case, the free energy for only for 0 state is the same as that for 1 state. But in general, we have different free energies inside the well,
+
+### [41:00 - 41:24]
+
+like F0, F1, F2, and then... So, the free energy change before and after the information of the user or the measurement time in the copying process. So, we have some this data that comes from the difference of free energies in each well.
+
+### [41:27 - 41:57]
+
+And then... So, okay. So, this is the most general form of the Landau's principle for asymmetric well. So, this H is the... So, this H is the information that is erased from the memory. And this delta F is from the entropy change from each well. And if delta F is 0, then the original Landau's principle is recovered. But in general, we have this kind of term.
+
+### [41:57 - 42:08]
+
+And if delta F is not 0, then, yeah, we can erase the information. Let's... Okay, the energy cost can be less than the Landau's power. Can be less than, yeah.
+
+### [42:11 - 42:51]
+
+Okay, so, the mechanism of this is something like this. Okay, so... So... But if, I mean, if I look at your sort of conceptual picture of the fluctuations, right? So, it's only going one way is where you reduce the delta F, right? Yeah. But the other way, it'll increase it, right? Right, yeah. So, is it possible to have a system where you can change the shape without expending energy?
+
+### [42:53 - 43:13]
+
+At the end of the day, you can't violate the second law. Jarzynski's equality will hold. Right. Don't matter what you do, Jarzynski. Yeah, because otherwise you're, I mean, okay, I can do better. But I'm always going to the same place. So, in some sense, I know the answer already. So, I don't need to run my computation, right? If you know the initial state with probability one, it's a delta function.
+
+### [43:14 - 43:37]
+
+This isn't the upstate. For example, I can just appropriately put a coordinate system on the angle of a planet orbiting a sun. In an idealized case where the sun is infinite mass and we're in a vacuum. Okay. I can then do any computation I want with an appropriate coordinate system. Sure. Sure. So, you can go to those kinds of extremes. Degenerate essentially.
+
+### [43:37 - 44:13]
+
+Yeah. But the bounds that are being presented here always apply. You can't get around them. Okay. So, one comment is it should be delta H, change in entropy. Yeah. It cannot be H because. The other one is one, you assume it's a finite, okay. But do you see what I'm saying? It should be delta H. Yeah, yes, you do. It's a change in delta H, yeah. Sorry, this is a silly question.
+
+### [44:14 - 44:37]
+
+From my understanding, especially like neuromorphic computing, often we treat our state space as continuous. So, for example, it can be like voltage across a resistor. What is the most natural way to talk about entropy for such a state space? Do we just have to do this coarse graining? No. No. So, in terms of dynamics, you have the probability density functions,
+
+### [44:37 - 44:55]
+
+finite entropy is fine in continuous spaces, you can set additive constant. It doesn't matter when you subtract out one entropy from another. So, all of this goes for Langevin. What Takahiro is presenting now is the intuitive simplest case. Got you, thanks.
+
+### [44:59 - 45:33]
+
+Also related to your previous question. So, you have. You have this kind of phase space, and then the total entropy is like for this total distribution. But we can decompose it to the internal entropy part and the logical entropy part. So, yeah, we can say that the logical entropy is about the entropy between this 0 and 1, and the internal entropy is something like only inside this way. So, yeah.
+
+### [45:33 - 46:05]
+
+And there is a very general mathematical formula that the total entropy can be decomposed to the average of internal entropies and the logical entropy. So, this means that if we consider some asymmetric memory, so this internal entropy contributes, and even when we erase this logical entropy, that can be absorbed into the internal entropy. So, then in that case, the total entropy can be 0.
+
+### [46:05 - 46:45]
+
+So, that is a fundamental reason why we can erase information rather than the random part. Yeah, sometimes I like this kind of here. So, here is an energy gap. But this energy gap is not so fundamental. I mean, the phase space volume is like this width and this width. So, that is more fundamental. Even in the range of пош opin, it is not so much matter that you have any major difference of mass and energy, but oh no,
+
+### [46:45 - 47:35]
+
+then it or it may have to be a mass. But it means that 왜� so much energy, less energy power, more joined energy . Yes. Yes. So, actually, that is a… Okay. Yeah. Yeah. So, I think more… Yes. Yeah. Yeah. Sorry. Okay. So… Okay. So, this is an energy cost for measurement. Measurement means the copy of information or writing process. So, yeah. This is a little complicated, but we can see that.
+
+### [47:35 - 48:09]
+
+So, for the information erasure process, so we have this kth minus delta f. And the information… The measurement process, the copying process, we have exactly this. Inverse slide here. Minus h plus delta f. So… Yeah. This minus h means that the logical entropy change is exactly reversed because copying is a kind of the backward processing of the machine. Are you assuming a destructive measurement?
+
+### [48:09 - 48:32]
+
+So, again, when measurement is defined, like, what is the definition of measurement here? It's a kind of thing of the gate. So, I mean, it's a… Yeah. So… Can I write… Okay. Okay. Okay. Okay. I think I need a pen. Oh, right. There's a little economic… They have this fancy glass board which you can't write on. Oh, I see. I'm at Cornell. Oh. Given that we're at Cornell, there are these fancy boards that you can't use.
+
+### [48:32 - 49:01]
+
+Yeah, we had… Oh, there are pens over there. There's an age where we're building with… There is old technology. That's boring. That's a little… Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. That's very important. It's not that boring? Right. Do you know what's that for? To be better, you can use that board so that everybody can… Yeah. Yeah.
+
+### [49:01 - 49:43]
+
+So at beginning, don't be recording that. Okay. Here… You want to write on this? Oh, yes. So, everybody can see… Stop sharing so it can be recorded. Oh yeah yeah yeah. Please do. I helped him. Yeah I helped him. Wooo. The reason why the measurement is important is because that's where the memory access, at least from the hardware point of view, memory access and interconnect comes there because you
+
+### [49:43 - 49:55]
+
+can have a memory then you can do the state transition but if you can't measure it how much is the energy cost for that right right so yes yeah so we have okay we have a system
+
+### [50:12 - 50:40]
+
+and the memory is zero yeah and then after the measurement of the protein this becomes zero and zero and this is one and one so this is a measurement but on the other hand in the Eurasia process starting from here so we just go back to zero oh I see so that's why you're saying it's just the inverse yes yeah I understand what it is so the measurement is actually changing
+
+### [50:40 - 51:06]
+
+the state of the observer just like quantum systems yeah that's why it was like a CNOD gate but quantum systems change the state of the system also the measurement process and everyone changes that say the quantum state so this is not quantum not only quantum is doomed now no more mechanism so shantanu's question I think it is when he is saying measurement it is
+
+### [51:06 - 51:30]
+
+more like right or something yeah it's like I think it's going into the memory to write a bit yeah so in this case because it's unitary transform right so you can reverse it back so I Here you can recover the energy, but in practice, when we implement things, the measurement is dissipated, because there… And also read versus write, we have measured, energy is different.
+
+### [51:30 - 51:59]
+
+So there is even asymmetry between read and write. But this would be dissipated too. Yeah, right. So, I think measurement in your mind is writing to memory. But it's writing to your own, the measurer's memory is being written by reading what's in the system. And you're assuming… You know, just who's being written versus who's being read. And you're assuming that there's no back coupling, so the…
+
+### [51:59 - 52:25]
+
+Yeah, a coupling that's… The observer doesn't change the system. Yes, the system is unchanged, yeah. Yes, that's right. But you can also incorporate… Sure, just a different evolution, yeah. Yeah. It's actually a huge issue in what's called reversible computation, because at the end of the reversible computation, you try to… Uncompute the computer, yes. That's useless, unless you made an extra copy of your output.
+
+### [52:25 - 52:45]
+
+But in that case, you had an information battery you could have used to power your computation conventionally without any need for all this reversible stuff. Yeah, because as soon as you make the… I mean, you break it as soon as you make that copy, that's right. Because in many… Most neuromorphic systems, the readout consumes a lot of power. Because you have to make sure that it doesn't disturb the memory itself.
+
+### [52:45 - 53:01]
+
+So you have to make sure there's no back coupling. I mean, I.O. is… I mean, I.O. is terrible for the brain too, right? There's a lot of computation in here and not a lot going in and out, right? So it's the same for any system, I think. Okay. Yeah, sorry, Tom. Go ahead. Yeah.
+
+### [53:01 - 53:27]
+
+Actually, on that topic, I don't know if people have seen, there was an article in Neuron just about a year ago, which has gotten a lot of press, and it's not as laughable as it sounds. First, but these people use a lot of different approaches to make a strong claim that your cortex, doing all that computation, 11 bits a second. Yeah, no, I've seen that. Yeah. Yeah. I had the… I heard the author present it.
+
+### [53:27 - 53:50]
+
+So that computation… Because it's what we like to think. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. This is where responses медign. Of course. Of course. I don't even remember what you mean by the difference. Subconscious computing is not computing.
+
+### [53:53 - 54:27]
+
+What I wanted to say… Oh, you're sorry. How are we on what else is going on? I fully agree. ั้كر�łamاض smiles Just start. Yes. So what I want to say… The measurement is not… Right? because in the linear process there is no system just a memory but in the measurement process so we have the system on top of the memory so that that is reflected in this additional term that is
+
+### [54:32 - 55:05]
+
+so yeah these terms are opposite signs we have this additional term for the measurement process and because of that so we have this kind of trade-off ratio so okay in the measurement process we have this minus Shannon plus delta f plus the material in the erasure process we have the Shannon minus delta f and if you sum up them then the lower bound is only given by the material information from the measurement process
+
+### [55:05 - 55:42]
+
+and on the other hand the conventional random bound is about here the Shannon information term so okay so then we can say that if we come up the measurement energetic cost and the erasure energetic cost then the sum is always bounded by the new point so this is a fundamental trade-off for the energetic cost for computation and if I this material information term is fundamental for getting the information
+
+### [55:43 - 56:14]
+
+on the other hand the conventional random principles are about this so yeah these are random principle and this trade-off look similar but I think the physical origin of this term is different so this is from the material information term here so in that sense we can say that the random principle is applicable for the original symmetric memory case but if we
+
+### [56:14 - 56:34]
+
+consider a more general setup we have a trade-off relation with this but this is not exactly the same as just the definition of what is erasure or what is measurement but this happens from the measurement process because because of the difference between the erasure and measurement
+
+### [56:36 - 57:04]
+
+yeah so can you give us some intuitive understanding on why the terms cancel out for the measurement is it is it oh yes there should be some asymmetry there right yeah so the reason why they are cancelled out is okay so in the measurement process zero becomes zero and then the erasure process zero one becomes zero in that sense they are inverse
+
+### [57:05 - 57:21]
+
+so that means that the measurement process is not the same as the measurement process but only in the measurement process there is a system and the systems information is copied to the memory so that only in the measurement process that kind of interaction or appearance so
+
+### [57:24 - 57:41]
+
+and that is the origin of this but the energy to drive that measurement comes is it from the from the memory like I'm just curious like how what is driving much more energy than the measurement process abstract oh yeah this is because only for the memory
+
+### [57:44 - 58:13]
+
+i think that's way more abstract yeah i think there's an implicit assumption that the memory for erasure from from the memory and the energy that essentially comes from the information are the same in reality it's not same because we have actually measured read versus right it's not the same yeah so but for your uh your discussion i can understand if you assume
+
+### [58:13 - 58:35]
+
+they are saying yeah this is a very important point that in almost all of the thermodynamics of information processing and so on you just usually what you do is assume the energy levels are all the same because that's you wanted to see what's going on just the thermodynamics of the right and so here takahiro's result here um that ultimately is coming from just more of an inclusive fix
+
+### [58:35 - 58:58]
+
+term closer to the hamiltonian you're considering the systems together versus just considering the one system by itself and that's why you have a mutual information that's a joint entropy minus the two marginal entropies can i also interpret this sort of summation as saying that basically after erasure what you lose was your original mutual information effectively and that's what
+
+### [58:58 - 59:16]
+
+you're paying the price for oh um after erasure you you lost the original mutual information and in some sense and that's what you're paying the price for effectively if you do both is that a reasonable interpretation or is that just me making something up
+
+### [59:22 - 59:25]
+
+sorry what is the mutual information between here
+
+### [59:27 - 59:28]
+
+okay
+
+### [59:30 - 59:53]
+
+here you're also i can also interpret it to be entropy production right oh this is the i uh it's not necessarily the entropy production it's not the strict equality or just being entropy you're assuming that you start with the memory and the system independent so they just get their two marginal entropies and then you couple them so they're
+
+### [59:53 - 01:00:29]
+
+actually neutral and that's the mutual i see oh maybe i think it's also answer of your question so yeah okay so if that's only it's a measurement and erasure then this kpi is dissipated as an entropy production but but that is that information is not useful so maybe the memory can use that information for feedback for the system because that is actually the market and if this is also my study for the
+
+### [01:00:29 - 01:00:39]
+
+feedback process that's why it's great okay so maybe now it's time to go back to the max's demo
+
+### [01:00:51 - 01:01:32]
+
+okay so yeah i think i will briefly go back to the mark says okay so this is a very old schematic of of zero zero the table gets one bit of information then kt log two two of work is extracted from this cycle and in general we can show that the upper bound of the work extracted by the demon is delta f plus a kti and i is a major information used for the feedback process and in the case of the zero engine this is from
+
+### [01:01:32 - 01:02:01]
+
+the same table so this is the same data so this is the same data so this is the same data so the data is zero and double is going to so the equality is achieved here so yes and yeah so this means that the information can be used for the freedom of course so in this example so the demo can decide what to do after the measurement based on its measurement out for example if the data is
+
+### [01:02:01 - 01:02:31]
+
+for example if the particle is in the left side then we do nothing but if the particle is in the right side then we can move the box to the right side then the entropy of the of this box is decreased by log2 so and that log data resource for the work instruction in the final expansion process so yeah this is a process that the information is used used as a resource of the feedback
+
+### [01:02:31 - 01:03:07]
+
+and in this case this maxwell demo is a memory and this is a system so the measurement is performed and then the obtain information is used for the feedback and in this case the mutual information is not stated but it can be a resource for the work extraction this process in this case yeah so then by combining this to perspectives so okay we can say that
+
+### [01:03:09 - 01:03:29]
+
+yeah so this mutual information term is exactly cancelled with the work extracted so in total the second one sometimes some dynamics is restored so i think that's a model understanding of what why maxwell's demo is not contradicting to the second one
+
+### [01:03:31 - 01:03:45]
+
+yeah so there are many arguments in the 20th century so cannot quantitatively answer what is
+
+### [01:03:53 - 01:04:00]
+
+okay so yeah maybe i still have time so let me just show
+
+### [01:04:01 - 01:04:07]
+
+you a little bit more about the device like a representation at that
+
+### [01:04:11 - 01:04:55]
+
+yeah this is essentially the same as the original but as i will show later so the yeah this can be generalized to more general i mean the mutual information case okay so let me consider this two level system and the um even though the value also same uh
+
+### [01:04:57 - 01:05:32]
+
+very cell median measures to the original place and then we can extract kt of kt longitude work in this diagram so this is a discrete phase based representation of this theorem so can you explain what's why is the delta e infinity is it because you are doing instantaneous yes instantaneous yes so the frequency okay yeah this should be very rapid prohibit okay
+
+### [01:05:36 - 01:05:48]
+
+so that causes static change that's the adiabatic part that you have to do it slowly you know yes this is adiabatic yeah so this is a case for the perfect measurement which without
+
+### [01:05:50 - 01:06:20]
+
+but yeah if we consider the case that there is some error problem for example even when original state is true state is split but we find the particle in the right with some small probability error probability in that case we push up this right energy level to here but it's not infinite so this should be adjusted as an energy level
+
+### [01:06:22 - 01:06:28]
+
+for which is error rate is it's the gibbous distribution of this
+
+### [01:06:31 - 01:07:00]
+
+new energy it's a kind of little tricky but okay so we have some imbalanced distribution here and after this quench so this distribution becomes the gibbous state of this new energy sorry what changed between the previous one why is the instantaneous quench now has a Boltzmann distribution oh yes in the previous slide case this epsilon is zero yeah because so
+
+### [01:07:01 - 01:07:24]
+
+that means that delta is infinite there was no in the in the previous slide there was no probability of being in the right on the outcome on the top right so the energy associated with being in the right was infinitely high so in this case there's a small probability of being on the right to the error it's going to see what makes the delta infinity i still haven't quite
+
+### [01:07:24 - 01:07:47]
+
+the uncertainty in the by the person running the gillard engine in this case you don't have perfect measurement in the other case you do when you're doing the quench if you want to do it ideally oh so here there's still a probability okay yeah yeah okay exactly so the delta e is not is that being imposed by you the experimentalist act by gillard's demon so to speak afterwards
+
+### [01:07:55 - 01:08:07]
+
+actually we did this is already kenya's work but we did another experiment by using some single extra works and we yeah we confirmed that this kind of
+
+### [01:08:11 - 01:08:18]
+
+okay so yeah this is some additional remark okay so
+
+### [01:08:20 - 01:08:21]
+
+then
+
+### [01:08:23 - 01:08:25]
+
+like i'd like to see summarize
+
+### [01:08:27 - 01:08:47]
+
+oh we still have one part but i'd like to summarize this so yeah so we have the processes feedback a measurement feedback on the region and the middle process is given by this and realization is this and we have the trade operation and this is exactly canceled with the feedback
+
+### [01:08:49 - 01:08:50]
+
+so that is uh
+
+### [01:08:54 - 01:09:20]
+
+and also let me just mention that there are many experiments on this topic so yeah i think the first experimental realization of max's demo was this work in 2010 we used corridor particles to get more free energy by using information and after that there are many
+
+### [01:09:22 - 01:09:22]
+
+experiments
+
+### [01:09:24 - 01:09:56]
+
+we have to experiment this that i mentioned and this is also a recent very recent collaborating work with harvard university so this is uh something like uh inside this center that is a single quantum bit qubit uh we performed some direct measurement and feedback and we showed that some fluctuations are for random information to satisfy yeah i don't have time to mention
+
+### [01:10:05 - 01:10:18]
+
+but so what is the motivation for doing different express i mean more once you've shown that this works uh was it was the motivation for doing it on different systems and different physical systems are you expecting the theorem to break somehow
+
+### [01:10:21 - 01:10:32]
+
+yeah so i was sorry so yeah it's interesting to see that our service is can be implemented in various systems
+
+### [01:10:35 - 01:10:41]
+
+this quantum case so there are not so many good experimental platforms to actually
+
+### [01:10:43 - 01:11:08]
+
+this is one of the very good platforms that experiment was done in by looking for in harvard university so they have a very good siv center and therefore fui
+
+### [01:11:11 - 01:11:45]
+
+so i can make a the almost i't here experiment it's a strange quirk of physics referees that they insist on experiments that confirm that yes algebra works I was going to ask what the gap between the theory and the experimental observations are in all these experiments, if there was any difference, but I guess that's the answer. So I have a question. I mean this is probably verging on metaphysical. The
+
+### [01:11:45 - 01:12:15]
+
+Szilard derivation you showed, infinite and finite energy, did not have quantization. It was all classical and equilibrium. And then if the quantum implementation of that is showing this energy, I'm trying to see, you didn't have it in your expression because you can actually add a term for quantum energy in terms of quantum wells and I didn't see that. So I'm wondering
+
+### [01:12:15 - 01:12:39]
+
+how do you reconcile the fact that you didn't have a quantum but it seems the quantum implementation is getting to the limit. Okay. Well, in my understanding, the Landauer limit is applicable both for classical and quantum. Even in the quantum case, we can use the von Neumann entropy. That is a quantum version of the channel.
+
+### [01:12:39 - 01:12:50]
+
+Von Neumann entropy is still applicable to get the same kind of quantum. That's my understanding. And if we replace that entropy, then, yeah.
+
+### [01:12:52 - 01:13:28]
+
+Modification. So maybe this kind of gets to your question. Maybe one thought that makes this interesting from a physical point of view is, is there cases in biology with billions of years of evolution where something like DNA, you know, transcription or DNA, you know, transcription, copy, right, has been approaching these sort of limits? Because, I mean, Yes.
+
+### [01:13:28 - 01:13:53]
+
+I read a paper from 2017 with Chris Kempis. The ribosomes in you get within about an order of magnitude of Landauer bound. Order of magnitude is my estimate, too. Yeah. Right. But there's proofreading, you know, to fix that. It's still 10x. Yeah, it's still 10 hundred x. The amount of proofreading varies in different systems. Yeah. That's pretty cool. There's proofreading.
+
+### [01:13:53 - 01:14:14]
+
+Screen that natural selection cares at all doesn't prove it, but it certainly implies it. Quantum correction through . That should help you . The predictive . The atomic sensors . Yeah, exactly. Before they . So, I think we had a sort of question. So, in minutes, so, finally, briefly mention the finite time . Well, I think it kind of was, you know, the first question, but I think it's not the final question. Yeah.
+
+### [01:14:14 - 01:14:29]
+
+So, I think it's not the final question. Yeah. So, I think it's not the final question. Yeah. So, I think it's not the final question. Yeah. So, I think it's not the final question. So, I think it's the kind of most relevant to how to reduce . And, yeah. Okay. So. Again, this is the second . So, the entropy production is always . So, what's the is achievable only in the quasi-static very slow limit?
+
+### [01:14:29 - 01:14:57]
+
+So, the question is, what about the finite time refinement in the second ? I mean, if we . You know, we can think about infinite time refinement, right? We can look at tiny time refinement. But it's not, it's not the fact that . It's the logic. It's the fact of the time refinement , right? If we make a time-code plane, then the lower bound should be strictly greater than zero.
+
+### [01:14:57 - 01:15:03]
+
+So the question is, what is that lower bound for the finite time process?
+
+### [01:15:05 - 01:15:32]
+
+And in the stochastic thermodynamics community, so there are some approaches like thermodynamic uncertainty relation, it's called TUR, and also there's a several approaches, thermodynamics speed limit. So today I will focus on this thermodynamic speed limit based on so-called optimal transport theory. Okay, so optimal transport theory is a kind of a branch of
+
+### [01:15:32 - 01:15:58]
+
+mathematics originally. So it is a kind of an optimization problem, how to transport something to other place. It was originally developed in civil engineering in the mid-18th century. So we want to transport this sand to another place.
+
+### [01:16:01 - 01:16:08]
+
+So the problem is, what is the most cost-efficient way to transport this sand to another place?
+
+### [01:16:10 - 01:16:42]
+
+This is originally a very naive question, but nowadays we have many applications of this kind of problems. Including generative AI. So yeah, so because we can replace this problem as a problem in probability distributions. I mean, so instead of transporting some sand, we can transport probability distribution from here to here, and that is corresponding to some
+
+### [01:16:43 - 01:17:14]
+
+general image generation from image to image or something. or something there is an expectation that the castles will receive a certain distribution of the sand so because so is there a constraint on what the castles will receive for how much time in this example oh yes yeah it's so sorry so you want to take a distribution that you have originally to an ending distribution never specified the question is
+
+### [01:17:28 - 01:17:38]
+
+and mathematically there is a concept for the Wasserstein distance so that is exactly the minimum cost for the transportation and the train
+
+### [01:17:40 - 01:18:11]
+
+and what is interesting in the context of thermodynamics that the robot for the entropy production within finite time constraint is exactly given by the last time this given by the optimal transport so this is not very not trivial and there's a some mathematical results in my transport called enamel granular formula and by applying the thermodynamics
+
+### [01:18:11 - 01:18:20]
+
+setup especially for the fokker-plank equation in continuous space we find that the raw bound of the entropy production for finite time interval is given by the
+
+### [01:18:22 - 01:18:50]
+
+i think this is a very interesting connection between the stochastic thermodynamics and the thermal transport so and by applying this to the lander's band setup we have to take the limit of time interval and this is the modification term for the Landauer bound the original boundary is given by 50 but we have some additional term here and this tau is time
+
+### [01:18:50 - 01:19:18]
+
+interval and if it takes the limit how goes to infinity then this modification term vanishes but if we stick to some finite time interval then we have this modification term and this is the additional energy cost required for the high velocity or high speed uh information process can i just ask to clarify um so the Wasserstein distance is effectively saying is kind of related to the amount of information
+
+### [01:19:19 - 01:19:48]
+
+mutual information between the initial and the finite to the end distributions uh it's it's a kind of true information or care divergence but it's not not the same so yeah they capture different aspects so the distance between two vt distribution is typically measured by k but this is not the same as this is how you would morph one distribution into another so it is different than just straight mutual information
+
+### [01:19:48 - 01:20:26]
+
+then oh yeah so material information is usually uh between two subsystems and in this case we have a single system and we have the distribution one i think okay so these are the two subsections and there is Saint blog it says we have a perceive and encounters with other material called yoin so what you have is a studio by the sequence of a warfare junction that everything that improves on whether you
+
+### [01:20:26 - 01:21:04]
+
+are in or out and in agent with painful orfish mode is not important need to react in playing is uh You are essentially multiplying energy per meter square times energy. So, is there something I'm missing here? Well, this entropy production, I think it's dimensionless. So, this is... So, W, what is the unit of W? W is the Wasserstein distance. So, it's not work? Not work. Not work. Oh. It's dimensionless.
+
+### [01:21:04 - 01:21:32]
+
+I think it's square or... It's not square. It's not square, right? So, it is distance squared. Yeah. Only then it becomes dimensionless. Okay. And any structural constraints you will add to this distance, right? So, if there's a constraint on how you want to evolve this distribution, like there's a specific process, then you add to this Wasserstein distance. So, let's say I can only evolve using some graph structure.
+
+### [01:21:32 - 01:21:53]
+
+I have a network structure. I have a network structure through which I'm evolving this distribution to the end distribution. So, I will impose that constraint in that integral, that evolution has to happen through that chain or that process. And so, that's how I can refine these bounds to make it specific to an architecture. Oh, that's interesting.
+
+### [01:21:55 - 01:21:58]
+
+It's very, very complicated.
+
+### [01:22:02 - 01:22:26]
+
+It's a huge opening. It's a huge opening issue on if there are constraints on the allowed dynamics. Not if I can do the best possible thing subject to time constraints, which is this, but I've actually got physical process constraints. It might well be that our brains are at the limit if your physical process is spiked trains with ion channels and so on and so forth. It's a massively open issue.
+
+### [01:22:27 - 01:22:57]
+
+Little to nothing is known about it. I'm sorry, the probability of seeing that is not an issue. Well, yeah, I've seen it. What is it? So, the constraint is only the initial distribution kind of issue. And we can do anything. But we can format this in after graphs. So, the X minus Y is the initial versus final distribution. You are minimizing some Euclidean norm or something. Where is the password? Euclidean. Yeah.
+
+### [01:22:57 - 01:23:10]
+
+That's a choice. Yeah. We can replace this with some non-Euclidean, non-Euclidean. Yeah. We can replace this, too, with some actually positive non-power. Thank you.
+
+### [01:23:14 - 01:23:44]
+
+Yeah. Anyway, so, yeah, so N2P production is directly related to this partial time distance. And, yeah, this is a very recent work, probably three weeks ago. So, this is an experimental work, in my collaboration, to experimentally, actually, actually realize this optimal transport, some of the optimal transport by using a corridor particle and some optical . I think I don't have time, but I...
+
+### [01:23:44 - 01:24:10]
+
+So, in optimal transport theory, the optimal protocol is corresponding to the geodesic in the space of probability distribution. So, in the Gaussian case, so we have two parameters, like variance and the probability distribution. And, yeah, we can do that. Yeah. Yeah. In that space, the optimal transport is kind of a straight line, because it's a geodesic.
+
+### [01:24:10 - 01:24:46]
+
+So, we can experimentally realize that kind of geodesic structure of probability distribution. And we have also demonstrated the finite time Randall-Ewija process. So, yeah, we have implemented the Randall-Ewija protocol, which is optimal for finite time. Yeah. Yeah. And that is, yeah, for the optimal transport theory. And, yeah, we have actually experimentally confirmed that the minimum energy cost required
+
+### [01:24:46 - 01:25:18]
+
+for that process is consistent with the Wasserstein distance. That is mathematically defined. And, yeah, also, we have a kind of speed, cost, and accuracy . Yeah. Yeah. Yeah. So, accuracy means how – accuracy means the success rate of the information user. In the ideal case, the information user is – if the information user is perfect, the final state is always in the standard zero state.
+
+### [01:25:18 - 01:25:46]
+
+But there can be some error probability. And we can consider the speed and cost and the accuracy . Yes. Yes. Yeah. So, just to link it back to the first thing, you still have a zero and one state. Yes. And you have a double world potential. Yes. Right. But you're saying that you're going to sort of map this distribution zero-one to a different distribution of zero-one. And you're going to sort of measure this cost.
+
+### [01:25:46 - 01:26:18]
+
+This is a ratio in this case, yeah. Yeah. Yeah. Zero-zero. Yeah. Yeah. Something from zero – Oh, I see. I see. You're going to go to zero-zero. Yeah. Yeah. Yeah. So, in your – in the bound, if your final distribution, the accuracy is like 100 percent, does your bound show infinite energy? Like if you want to – like perfect, no error at all. Oh. Does it? Perfect. Yes, we have – is a perfect Wasserstein distance.
+
+### [01:26:18 - 01:26:38]
+
+So, yeah. But it's too finite. Is it – does it blow up? If you assume that – Yes, it blow up. Yeah. It goes up. It's not showing accuracy. But it's – But it's – It's not showing accuracy, but still finite. It'll blow up with time. So, why is it finite then? But it doesn't have time on it. It doesn't have time on this, right? It's – it'll blow up with time. Oh, is that – Oh, OK. Time is fixed. Yeah.
+
+### [01:26:38 - 01:27:04]
+
+This is on a fixed time interval, 50 milliseconds. And then at 100 milliseconds, you have a different situation. Yeah. If we make time very, very short, then – Yeah. OK. Exactly. But it should also be divergent with the distribution. If I have a – Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. So, if I have a delta function at the end, that bound would also be divergent with respect to that, right?
+
+### [01:27:04 - 01:27:30]
+
+Oh, yes. But then the w would blow up. Yeah. I think w is about bounded. You have to assume that there's, like, support everywhere for the metric to be well-defined. That's right. Do you have to assume that the probability distribution has support everywhere? The Lothar Stein distance is upper bounded, so it's finite. Yeah. It's always finite. Yeah. It's always finite. Yeah. Yeah.
+
+### [01:27:30 - 01:27:44]
+
+Now, you can't just assume that you can – Yeah. Yeah. Yeah, yeah. Yeah. There's no point in assuming that there's no point in assuming that you can explode if one of them has – If the final distribution is a delta function. It's still a finite bound. I don't need so much – I've got to move sand to get it from two bins to one. It's finite.
+
+### [01:27:44 - 01:27:58]
+
+But you would think that you would have to spend a lot of energy to achieve the worst state . You've been talking about, like, for example, the Landau's boundary. Do you think semi-steady is slowly? No. With protruding towers. That's going to be – Especially, you know, in the KT logic, it's going to be – That's going to, that's just in the KT log too. Yes, sir.
+
+### [01:27:58 - 01:28:13]
+
+It's just going to be bounded because of the metric space. It's going to be bounded by the metric and the time you're taking. Yeah. If your time goes to infinity, then you're going to recover land. No matter what, the metric space is going to bound the cost. Okay, but so just sort of a very basic.
+
+### [01:28:18 - 01:28:37]
+
+So a very basic question, but if you, I mean, so David said like all of these results apply to distributions, right? But when you do the experiment, you are sampling from a distribution. You have some particular zero-one state. Yeah. And then you try to copy it or something, right? So your experiments are for actual instances sampled from that distribution.
+
+### [01:28:38 - 01:29:01]
+
+That's fine, but the actual thermodynamics only looks at the distribution. Yeah. Specify the micro trajectory level dynamics with perfect precision, but the thermodynamics, modulo, what I call it, fluctuation terms, the trajectory level things. The thermodynamics is going to just care about the transformations of the distributions. That's the same. Yeah, but I'm just trying to understand how you operationalize this.
+
+### [01:29:01 - 01:29:23]
+
+So like when he does an experiment, these results you're showing us, you're averaging over several experiments to say, test whether you're at the right. Yeah, yeah, yeah. You need to. Make some distribution. Yeah, yeah. Okay, yeah. On top of it, yeah. Right, right, okay, yeah, yeah. I mean, in practice, you would not have a barrier, which is, I mean, the barrier height would be reasonably high. Okay. Okay. Okay.
+
+### [01:29:23 - 01:29:26]
+
+Okay. Okay. Okay. Okay. Okay. Okay. Okay. Okay. Okay. I think so. Yeah, yeah.
+
+### [01:29:28 - 01:29:58]
+
+Yeah, but then how do you hold the memory? He makes it and then it leak away, right? Maybe if you could finish up there? Yeah. Mm-hmm. This is very exciting, also, in addition to dynamics, this also gets diffusion processes in AI. And there's all this好吃 stability. diffusion. So stable diffusion is this process where you're going along the Wasserstein distance
+
+### [01:29:58 - 01:30:24]
+
+and distributions, right? Sorry. Yeah, but you do it, you do it, nobody does diffusion anymore in the image space. They do it in the latent space. And it's going to the latent space, that's why, that's, that's how then the things started working. It's stable in, quote-unquote, stable in the latent space. So somehow in the latent space, every point
+
+### [01:30:24 - 01:30:36]
+
+in the latent space is actually a beautiful picture. It's not noise, right? And they do the diffusion in the, in the latent space. So does this argument tell about that process?
+
+### [01:30:39 - 01:31:16]
+
+It's a different talk. Yeah, yeah. There is some protocol to combine diffusion models with general transport. I'm not so familiar with this stuff, but I think it, yeah, I heard that it works, yeah. But in the original naive diffusion model, the backward process is not optimized in this sense. So, Gert, I have always had this question, how is the diffusion model converging to a specific definitive pattern?
+
+### [01:31:17 - 01:32:09]
+
+Because diffusion always goes the other way. Because it's on a manifold. Then the manifold has only one image. Has one 또 Refri . Mange, mangg. diffusion within, the noising and denoising is much cheaper than the image to latent to image in practice. So just because, I mean, the image space is so much higher dimension than the latent space. That has to be. Yeah. It's still a process of what to find this ..
+
+### [01:32:09 - 01:32:13]
+
+And then that can be discussion. We're already going into the break. Thank you very much.
+
+### [01:32:16 - 01:32:17]
+
+Thank you.

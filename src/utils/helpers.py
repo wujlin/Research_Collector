@@ -12,6 +12,14 @@ from typing import Any
 import yaml
 from dotenv import load_dotenv
 
+CANONICAL_DAILY_DIGEST_FILES: dict[str, str] = {
+    "paper_queue": "paper-queue.md",
+    "study_guide": "study-guide.md",
+    "collection_review": "collection-review.md",
+    "weekly": "weekly.md",
+    "monthly": "monthly.md",
+}
+
 
 def get_project_root() -> Path:
     """获取项目根目录（通过向上查找 pyproject.toml）"""
@@ -42,9 +50,14 @@ def ensure_data_dirs() -> None:
         "data",
         "data/cache",
         "digests",
+        "digests/shared",
         "library",
+        "pdfs",
         "youtube",
         "youtube/playlists",
+        "youtube/notes",
+        "youtube/slides",
+        "youtube/transcripts",
         "knowledge_map",
         "web/public/generated",
     ]:
@@ -128,6 +141,30 @@ def dump_json(path: Path | str, payload: Any) -> None:
         json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=False),
         encoding="utf-8",
     )
+
+
+def dated_digest_dir(base_dir: Path | str, date_str: str) -> Path:
+    return Path(base_dir) / date_str
+
+
+def dated_digest_path(base_dir: Path | str, date_str: str, file_name: str) -> Path:
+    return dated_digest_dir(base_dir, date_str) / file_name
+
+
+def canonical_digest_path(base_dir: Path | str, date_str: str, digest_kind: str) -> Path:
+    file_name = CANONICAL_DAILY_DIGEST_FILES.get(digest_kind)
+    if not file_name:
+        raise ValueError(f"Unknown digest kind: {digest_kind}")
+    return dated_digest_path(base_dir, date_str, file_name)
+
+
+def extract_date_prefix(path: Path | str) -> str:
+    path_obj = Path(path)
+    for candidate in [path_obj.parent.name, path_obj.name]:
+        match = re.match(r"(?P<date>\d{4}-\d{2}-\d{2})", candidate)
+        if match:
+            return match.group("date")
+    return ""
 
 
 def flatten_topics(taxonomy: dict[str, Any]) -> list[dict[str, Any]]:

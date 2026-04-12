@@ -44,7 +44,7 @@
     "year": 2026,
     "journal": "Scientific Reports",
     "venue": "Scientific Reports",
-    "importance_score": 120.8,
+    "importance_score": 112.8,
     "importance_bucket": "keep",
     "venue_quality": "solid_domain",
     "relevance_score": 58.0,
@@ -427,10 +427,10 @@
     "year": 2026,
     "journal": "ArXiv.org",
     "venue": "ArXiv.org",
-    "importance_score": 68.6,
+    "importance_score": 70.4,
     "importance_bucket": "keep",
     "venue_quality": "preprint",
-    "relevance_score": 51.0,
+    "relevance_score": 54.0,
     "citation_count": 0,
     "topics": [
       "stochastic_analysis",
@@ -468,34 +468,6 @@
     ],
     "url": "https://openalex.org/W7149873794",
     "pdf_url": "https://arxiv.org/pdf/2604.02304"
-  },
-  {
-    "id": 49,
-    "title": "A hybrid bio-inspired model for predicting urban air pollution using deep learning",
-    "authors": [
-      "Deevesh Chaudhary",
-      "Prashant Vats",
-      "Shailender Vats",
-      "Saneh Lata Yadav",
-      "Avani Sharma"
-    ],
-    "year": 2026,
-    "journal": "Scientific Reports",
-    "venue": "Scientific Reports",
-    "importance_score": 60.8,
-    "importance_bucket": "keep",
-    "venue_quality": "solid_domain",
-    "relevance_score": 58.0,
-    "citation_count": 0,
-    "topics": [
-      "ai_for_physics",
-      "urban_complex_systems",
-      "urban_complex_systems/urban_data_and_generation/urban_data_science",
-      "ai_for_physics/physics_informed_modeling",
-      "urban_complex_systems/urban_data_and_generation"
-    ],
-    "url": "https://openalex.org/W7147237838",
-    "pdf_url": "https://www.nature.com/articles/s41598-026-40726-w_reference.pdf"
   },
   {
     "id": 84,
@@ -548,5 +520,31 @@
     ],
     "url": "https://openalex.org/W7148178393",
     "pdf_url": "https://arxiv.org/pdf/2603.29614"
+  },
+  {
+    "id": 27,
+    "title": "The Tracy-Widom Distribution at Large Dyson Index",
+    "authors": [
+      "Alain Comtet",
+      "Pierre Le Doussal",
+      "Naftali R. Smith"
+    ],
+    "year": 2026,
+    "journal": "Journal of Statistical Physics",
+    "venue": "Journal of Statistical Physics",
+    "importance_score": 54.4,
+    "importance_bucket": "review",
+    "venue_quality": "high_quality",
+    "relevance_score": 64.0,
+    "citation_count": 0,
+    "topics": [
+      "stochastic_analysis",
+      "stochastic_analysis/asymptotics_and_variation/large_deviations",
+      "statistical_physics",
+      "stochastic_analysis/asymptotics_and_variation",
+      "statistical_physics/equilibrium_structures"
+    ],
+    "url": "https://openalex.org/W7147170633",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s10955-026-03596-0.pdf"
   }
 ]

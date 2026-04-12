@@ -23,6 +23,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = ["pytest>=8.0", "pytest-asyncio>=0.23", "ruff>=0.4"]
 semantic = ["sentence-transformers>=2.7"]
+audio = ["yt-dlp>=2025.3.31", "faster-whisper>=1.1"]
 
 [tool.setuptools.packages.find]
 where = ["."]

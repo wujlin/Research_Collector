@@ -35,6 +35,8 @@ class ImportanceRanker:
         score += self._keyword_bonus(venue_text, self.paper_cfg.get("strong_venues", {}))
         score -= self._keyword_bonus(text, self.paper_cfg.get("suspicious_keywords", {}))
         score -= self._keyword_bonus(venue_text, self.paper_cfg.get("weak_venues", {}))
+        score -= self._keyword_bonus(venue_text, self.paper_cfg.get("cautious_venues", {}))
+        score -= self._keyword_bonus(venue_text, self.paper_cfg.get("cautious_publishers", {}))
 
         if payload.get("is_seminal"):
             score += 18.0

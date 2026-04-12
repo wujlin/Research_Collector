@@ -1,0 +1,157 @@
+global_replacements:
+  - pattern: '\bTakahiro Saga\b'
+    replacement: "Takahiro Sagawa"
+  - pattern: '\bstochastic ceramics\b'
+    replacement: "stochastic thermodynamics"
+  - pattern: '\bceramics with metal\b'
+    replacement: "thermodynamics of information"
+  - pattern: '\bfluctuation of ceramics\b'
+    replacement: "fluctuation theorems"
+  - pattern: '\bfluctuation of ceramic\b'
+    replacement: "fluctuation theorems"
+  - pattern: '\bfinal time aspects of ceramics\b'
+    replacement: "finite-time aspects of thermodynamics"
+  - pattern: '\bsingle molecular thermodynamics system\b'
+    replacement: "single-molecule thermodynamics system"
+  - pattern: '\bstatistical ceramics\b'
+    replacement: "stochastic thermodynamics"
+  - pattern: '\bthe free energy of the work\b'
+    replacement: "the free energy from the work"
+  - pattern: '\bmultiple transfers\b'
+    replacement: "optimal transport"
+  - pattern: '\bkey to engines\b'
+    replacement: "heat engines"
+  - pattern: '\bsome dynamics of small systems\b'
+    replacement: "thermodynamics of small systems"
+  - pattern: '\bclassic sound dynamics\b'
+    replacement: "stochastic thermodynamics"
+  - pattern: '\bstochastic ceramics\b'
+    replacement: "stochastic thermodynamics"
+  - pattern: '\bThe University of Tokyo\b'
+    replacement: "the University of Tokyo"
+  - pattern: '\bSanta Fee\b'
+    replacement: "Santa Fe"
+
+video_specific:
+  m023IrSLF-k:
+    title: "An introduction to stochastic thermodynamics - Takahiro Sagawa / NEST"
+    replacements:
+      - pattern: '\bthermodynamics of information\b'
+        replacement: "thermodynamics of information"
+      - pattern: '\bfinite time aspects of thermodynamics\b'
+        replacement: "finite-time aspects of thermodynamics"
+      - pattern: '\bfluctuation theorem\b'
+        replacement: "fluctuation theorem"
+      - pattern: '\bfluctuation theorems\b'
+        replacement: "fluctuation theorems"
+      - pattern: '\bJarzinski equality\b'
+        replacement: "Jarzynski equality"
+      - pattern: '\bCrooks relation\b'
+        replacement: "Crooks relation"
+      - pattern: '\bentropy production\b'
+        replacement: "entropy production"
+      - pattern: '\bheat bath\b'
+        replacement: "heat bath"
+      - pattern: '\bmolecular motor\b'
+        replacement: "molecular motor"
+      - pattern: '\bdiffusion models\b'
+        replacement: "diffusion models"
+      - pattern: '\bfrom University of Tokyo\b'
+        replacement: "from the University of Tokyo"
+      - pattern: '\bsecond time Santa Fe is for me\b'
+        replacement: "second time in Santa Fe for me"
+      - pattern: '\bLanders band\b'
+        replacement: "Landauer bound"
+      - pattern: '\bland hour bound\b'
+        replacement: "Landauer bound"
+      - pattern: '\bLand hours bound\b'
+        replacement: "Landauer bound"
+      - pattern: '\bland hour level\b'
+        replacement: "Landauer level"
+      - pattern: '\bLanders limit\b'
+        replacement: "Landauer limit"
+      - pattern: '\bland hour assumes\b'
+        replacement: "Landauer bound assumes"
+      - pattern: '\bLandauer''s bandwidth\b'
+        replacement: "Landauer bound"
+      - pattern: '\broundhouse band\b'
+        replacement: "Landauer bound"
+      - pattern: '\bKuhn-Meier''s law\b'
+        replacement: "Koomey's law"
+      - pattern: '\bCUMMI law\b'
+        replacement: "Koomey's law"
+      - pattern: '\bJarzynski''s quality\b'
+        replacement: "Jarzynski equality"
+      - pattern: '\bgeorgian scale quality\b'
+        replacement: "Jarzynski equality"
+      - pattern: '\bJarzynski''s practitioner''s theorem\b'
+        replacement: "Crooks fluctuation theorem"
+      - pattern: '\bKrug''s practitioner''s theorem\b'
+        replacement: "Crooks fluctuation theorem"
+      - pattern: '\bfluctuation cell\b'
+        replacement: "fluctuation theorem"
+      - pattern: '\bnew build theorem\b'
+        replacement: "Liouville theorem"
+      - pattern: '\bWashington distance\b'
+        replacement: "Wasserstein distance"
+      - pattern: '\bwasterstein distance\b'
+        replacement: "Wasserstein distance"
+      - pattern: '\bWarshaw''s sign distance\b'
+        replacement: "Wasserstein distance"
+      - pattern: '\blast sustained distance\b'
+        replacement: "Wasserstein distance"
+      - pattern: '\bfluid energy\b'
+        replacement: "free energy"
+      - pattern: '\bfrequency difference\b'
+        replacement: "free energy difference"
+      - pattern: '\bthermal bus\b'
+        replacement: "thermal bath"
+      - pattern: '\bportsmouth\b'
+        replacement: "Boltzmann"
+      - pattern: '\bnon-equilibri\b'
+        replacement: "non-equilibrium"
+      - pattern: '\bsecond row\b'
+        replacement: "second law"
+  1faKoBxBvQU:
+    title: "Bernard Derrida: Large deviations of non-equilibrium diffusive systems - Lecture I"
+    replacements:
+      - pattern: '\bBernard the reader\b'
+        replacement: "Bernard Derrida"
+      - pattern: '\bBernard derida\b'
+        replacement: "Bernard Derrida"
+      - pattern: '\blarge derivations\b'
+        replacement: "large deviations"
+      - pattern: '\blarge deviation principle\b'
+        replacement: "large deviation principle"
+      - pattern: '\bnon equilibrium\b'
+        replacement: "non-equilibrium"
+      - pattern: '\bdiffusive system\b'
+        replacement: "diffusive system"
+      - pattern: '\bdiffusive systems\b'
+        replacement: "diffusive systems"
+      - pattern: '\bsteady states\b'
+        replacement: "steady states"
+      - pattern: '\bnon-equilibrium steady states\b'
+        replacement: "non-equilibrium steady states"
+      - pattern: '\bcurrent fluctuations\b'
+        replacement: "current fluctuations"
+      - pattern: '\bmacroscopic fluctuation theory\b'
+        replacement: "macroscopic fluctuation theory"
+      - pattern: '\badditivity principle\b'
+        replacement: "additivity principle"
+      - pattern: '\basymmetric simple exclusion process\b'
+        replacement: "asymmetric simple exclusion process"
+      - pattern: '\bexclusion process\b'
+        replacement: "exclusion process"
+      - pattern: '\bquasi potential\b'
+        replacement: "quasi-potential"
+      - pattern: '\bsterling formulas\b'
+        replacement: "Stirling formula"
+      - pattern: '\bgartner ellis theorem\b'
+        replacement: "Gartner-Ellis theorem"
+      - pattern: '\btilton matrix\b'
+        replacement: "tilted matrix"
+      - pattern: '\bCEP with one site\b'
+        replacement: "SSEP with one site"
+      - pattern: '\bvery little quantum minutes\b'
+        replacement: "very little quantum in it"

@@ -195,6 +195,67 @@ def test_importance_ranker_prefers_stronger_venue_when_other_signals_match():
     assert strong_score > weak_score
 
 
+def test_importance_ranker_penalizes_cautionary_venues_more_than_broad_oa_background_venues():
+    ranker = ImportanceRanker()
+    scientific_reports_score, _ = ranker.score_paper(
+        {
+            "title": "Ergodicity in stochastic systems",
+            "abstract": "A study of ergodicity and stochastic dynamics.",
+            "topics": ["stochastic_analysis/stochastic_dynamics/sde_theory"],
+            "relevance_score": 52,
+            "citation_count": 0,
+            "influential_citation_count": 0,
+            "is_seminal": False,
+            "source": "openalex",
+            "tier": 3,
+            "journal": "Scientific Reports",
+            "venue": "Scientific Reports",
+        }
+    )
+    mdpi_score, _ = ranker.score_paper(
+        {
+            "title": "Ergodicity in stochastic systems",
+            "abstract": "A study of ergodicity and stochastic dynamics.",
+            "topics": ["stochastic_analysis/stochastic_dynamics/sde_theory"],
+            "relevance_score": 52,
+            "citation_count": 0,
+            "influential_citation_count": 0,
+            "is_seminal": False,
+            "source": "openalex",
+            "tier": 3,
+            "journal": "Applied Sciences",
+            "venue": "Applied Sciences",
+        }
+    )
+
+    assert scientific_reports_score > mdpi_score
+
+
+def test_importance_ranker_still_keeps_cautionary_venue_as_soft_penalty_not_hard_filter():
+    ranker = ImportanceRanker()
+    score, bucket = ranker.score_paper(
+        {
+            "title": "Physics-Informed Neural Networks for stochastic dynamics",
+            "abstract": "Fokker-Planck and Brownian motion with physics-informed constraints.",
+            "topics": [
+                "bridges/translation_layers/fokker_planck_master",
+                "stochastic_analysis/path_foundations/brownian_motion",
+            ],
+            "relevance_score": 70,
+            "citation_count": 0,
+            "influential_citation_count": 0,
+            "is_seminal": False,
+            "source": "openalex",
+            "tier": 3,
+            "journal": "Applied Sciences",
+            "venue": "Applied Sciences",
+        }
+    )
+
+    assert score > 0
+    assert bucket in {"keep", "review"}
+
+
 def test_youtube_filter_rejects_playlist_noise_without_topic_signal():
     youtube_filter = YouTubeFilter()
     verdict = youtube_filter.evaluate(

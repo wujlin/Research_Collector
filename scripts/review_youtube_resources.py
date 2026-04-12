@@ -15,6 +15,7 @@ if str(ROOT) not in sys.path:
 from src.pipeline import CollectionPipeline
 from src.processors.importance_ranker import ImportanceRanker
 from src.processors.youtube_filter import YouTubeFilter
+from src.utils.helpers import dated_digest_path
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -55,7 +56,7 @@ def main() -> None:
     for resources_in_bucket in buckets.values():
         resources_in_bucket.sort(key=lambda item: item[0], reverse=True)
 
-    report_path = ROOT / "digests" / f"{today}-youtube-review.md"
+    report_path = dated_digest_path(ROOT / "digests", today, f"{today}-youtube-review.md")
     lines = [
         f"# YouTube Review {today}",
         "",

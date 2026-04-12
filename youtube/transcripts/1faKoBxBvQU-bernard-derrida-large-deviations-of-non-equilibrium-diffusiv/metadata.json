@@ -1,0 +1,15 @@
+{
+  "title": "Bernard Derrida: \"Large deviations of non-equilibrium diffusive systems \" - Lecture I",
+  "url": "https://www.youtube.com/watch?v=1faKoBxBvQU",
+  "backend": "whisper",
+  "model": "large-v3",
+  "requested_language": "en",
+  "detected_language": "en",
+  "generated_at": "2026-04-08T23:59:10",
+  "language": "en",
+  "language_probability": null,
+  "duration": null,
+  "refined_at": "2026-04-09T00:01:05",
+  "cleanup_rules": 36,
+  "paragraph_count": 208
+}

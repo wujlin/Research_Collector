@@ -1,0 +1,6830 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 6.0,
+      "text": "Good morning, everyone. I'm Takahiro Sagawa from the University of Tokyo."
+    },
+    {
+      "start": 6.0,
+      "end": 13.0,
+      "text": "First of all, I'd like to thank the organizers for inviting me here."
+    },
+    {
+      "start": 13.0,
+      "end": 18.0,
+      "text": "I think this is the second time in Santa Fe for me."
+    },
+    {
+      "start": 18.0,
+      "end": 23.0,
+      "text": "Last time was nine years ago, and I'm happy to come back here."
+    },
+    {
+      "start": 23.0,
+      "end": 35.0,
+      "text": "So I was asked to provide a tutorial talk to people from outside the community of stochastic thermodynamics."
+    },
+    {
+      "start": 35.0,
+      "end": 42.0,
+      "text": "So it's actually challenging for me, but I will try my best."
+    },
+    {
+      "start": 42.0,
+      "end": 48.0,
+      "text": "Okay, so this is an outline of my talk."
+    },
+    {
+      "start": 48.0,
+      "end": 52.0,
+      "text": "So I will start from some general introduction."
+    },
+    {
+      "start": 52.0,
+      "end": 53.0,
+      "text": "Then I will talk."
+    },
+    {
+      "start": 53.0,
+      "end": 57.0,
+      "text": "about fluctuation theorems and thermodynamics of information."
+    },
+    {
+      "start": 57.0,
+      "end": 62.0,
+      "text": "And finally, I will talk about some finite-time aspects of thermodynamics."
+    },
+    {
+      "start": 62.0,
+      "end": 65.0,
+      "text": "Something like optimal transport."
+    },
+    {
+      "start": 65.0,
+      "end": 69.0,
+      "text": "Maybe this part is most relevant to this workshop."
+    },
+    {
+      "start": 69.0,
+      "end": 71.0,
+      "text": "I'm not sure, but yeah."
+    },
+    {
+      "start": 71.0,
+      "end": 79.0,
+      "text": "I'm talking about some basic concepts in stochastic thermodynamics, like Jarzynski equality and fluctuation theorem."
+    },
+    {
+      "start": 79.0,
+      "end": 82.0,
+      "text": "Okay, so let me start from a general introduction."
+    },
+    {
+      "start": 82.0,
+      "end": 94.0,
+      "text": "So yes, in the 19th century, thermodynamics were developed for macroscopic heat engines like steam engine or something like that."
+    },
+    {
+      "start": 94.0,
+      "end": 103.0,
+      "text": "And today we are interested in thermodynamics of small systems like molecular engines or even quantum systems."
+    },
+    {
+      "start": 103.0,
+      "end": 108.0,
+      "text": "So this is a single molecular experiment for stochastic thermodynamics."
+    },
+    {
+      "start": 108.0,
+      "end": 111.0,
+      "text": "Like we can stretch a single RNA molecule."
+    },
+    {
+      "start": 111.0,
+      "end": 114.0,
+      "text": "And we can measure the free energy and the work for this."
+    },
+    {
+      "start": 114.0,
+      "end": 118.0,
+      "text": "And that's a single molecular thermodynamic system."
+    },
+    {
+      "start": 118.0,
+      "end": 125.0,
+      "text": "And also, this is a natural biological molecular motor that converts the chemical energy into the work."
+    },
+    {
+      "start": 125.0,
+      "end": 128.0,
+      "text": "So these are very interesting platforms."
+    },
+    {
+      "start": 128.0,
+      "end": 135.0,
+      "text": "So we can consider the role of fluctuations and entropy production in this kind of small systems."
+    },
+    {
+      "start": 135.0,
+      "end": 140.0,
+      "text": "And also, very recently, I think generative AI,"
+    },
+    {
+      "start": 140.0,
+      "end": 149.0,
+      "text": "like diffusion models are very interesting and very closely related to thermodynamics."
+    },
+    {
+      "start": 149.0,
+      "end": 154.0,
+      "text": "Okay, so this is a schematic of diffusion model for image generation."
+    },
+    {
+      "start": 154.0,
+      "end": 161.0,
+      "text": "It is said that it was originally inspired by stochastic thermodynamics like the fluctuation theorem."
+    },
+    {
+      "start": 161.0,
+      "end": 169.0,
+      "text": "I'm not sure if it is a real connection with stochastic thermodynamics or just analogy."
+    },
+    {
+      "start": 169.0,
+      "end": 178.0,
+      "text": "But yeah, at least it is very interesting to consider the connection at the level of mathematics and some algorithms."
+    },
+    {
+      "start": 178.0,
+      "end": 183.0,
+      "text": "Okay, so yeah, maybe this is a redundant slide."
+    },
+    {
+      "start": 183.0,
+      "end": 191.0,
+      "text": "So yeah, this is just a randomly picked up argument from Twitter."
+    },
+    {
+      "start": 191.0,
+      "end": 194.0,
+      "text": "So I don't know whether this is true or not."
+    },
+    {
+      "start": 194.0,
+      "end": 197.0,
+      "text": "But it says that in eight years,"
+    },
+    {
+      "start": 197.0,
+      "end": 206.0,
+      "text": "that a single company like OpenAI will consume the energy comparable to the entire country of India."
+    },
+    {
+      "start": 206.0,
+      "end": 210.0,
+      "text": "So that is very amazing."
+    },
+    {
+      "start": 210.0,
+      "end": 220.0,
+      "text": "So it is very important to reduce the energetic cost for information processing like computing."
+    },
+    {
+      "start": 220.0,
+      "end": 224.0,
+      "text": "At the same time, from the thermodynamics point of view,"
+    },
+    {
+      "start": 224.0,
+      "end": 227.0,
+      "text": "this is a fundamental point for the Landauer bound."
+    },
+    {
+      "start": 227.0,
+      "end": 233.0,
+      "text": "I will talk about the details of this, some modification or generalization."
+    },
+    {
+      "start": 233.0,
+      "end": 240.0,
+      "text": "But very roughly speaking, one bit of information corresponds to log two of work on heat generation."
+    },
+    {
+      "start": 240.0,
+      "end": 245.0,
+      "text": "So yeah, this is a small amount of heat or work."
+    },
+    {
+      "start": 245.0,
+      "end": 251.0,
+      "text": "I mean, it's about 10 to the minus 21st joule per bit."
+    },
+    {
+      "start": 251.0,
+      "end": 253.0,
+      "text": "So this is very small."
+    },
+    {
+      "start": 253.0,
+      "end": 262.0,
+      "text": "Now, there's a gap between the Landauer bound and the practical computational energy consumption."
+    },
+    {
+      "start": 262.0,
+      "end": 268.0,
+      "text": "And the gap is about, I think it's almost a million or several million times."
+    },
+    {
+      "start": 268.0,
+      "end": 270.0,
+      "text": "So that is a huge gap."
+    },
+    {
+      "start": 270.0,
+      "end": 274.0,
+      "text": "And at the same time, this gap is exponentially decreasing."
+    },
+    {
+      "start": 274.0,
+      "end": 276.0,
+      "text": "That is called Koomey's law."
+    },
+    {
+      "start": 276.0,
+      "end": 283.0,
+      "text": "So this is, yeah, this is called the Moore's law, I think."
+    },
+    {
+      "start": 283.0,
+      "end": 292.0,
+      "text": "Because most of the energy dissipation from the CMOS device is from the discharge process."
+    },
+    {
+      "start": 292.0,
+      "end": 300.0,
+      "text": "So if we release one bit of information, for example, the entire charged energy is dissipated."
+    },
+    {
+      "start": 300.0,
+      "end": 305.0,
+      "text": "So that is the main origin of the dissipation in real computers."
+    },
+    {
+      "start": 305.0,
+      "end": 311.0,
+      "text": "So the discharge energy is proportional to the area of the capacitance."
+    },
+    {
+      "start": 311.0,
+      "end": 313.0,
+      "text": "And the area of the capacitance is decreasing."
+    },
+    {
+      "start": 313.0,
+      "end": 315.0,
+      "text": "I think because of the Moore's law."
+    },
+    {
+      "start": 315.0,
+      "end": 320.0,
+      "text": "So now, the energy consumption per one bit is exponentially decreasing."
+    },
+    {
+      "start": 320.0,
+      "end": 325.0,
+      "text": "And if we naively extrapolate this trend,"
+    },
+    {
+      "start": 325.0,
+      "end": 332.0,
+      "text": "then we can expect that the Landauer bound is achieved in 2070 or 60."
+    },
+    {
+      "start": 332.0,
+      "end": 334.0,
+      "text": "I don't know about around there."
+    },
+    {
+      "start": 334.0,
+      "end": 339.0,
+      "text": "So yeah, it is, I'm not sure if it is hopeful or not."
+    },
+    {
+      "start": 339.0,
+      "end": 341.0,
+      "text": "But there should be some fundamental constraints."
+    },
+    {
+      "start": 341.0,
+      "end": 346.0,
+      "text": "There should be some fundamental constraints to actually achieve the Landauer bound."
+    },
+    {
+      "start": 346.0,
+      "end": 353.0,
+      "text": "So one important aspect is the speed or the time of information processing."
+    },
+    {
+      "start": 353.0,
+      "end": 361.0,
+      "text": "So if we don't take the quasi-static limit, so the Landauer bound is not achievable."
+    },
+    {
+      "start": 361.0,
+      "end": 367.0,
+      "text": "And also, there are some effects from thermal or quantum fluctuations."
+    },
+    {
+      "start": 367.0,
+      "end": 373.0,
+      "text": "So I think that also prohibits the real computers from achieving the Landauer bound."
+    },
+    {
+      "start": 373.0,
+      "end": 381.0,
+      "text": "So in this Koomey's law, it comes from engineering advancements in CMOS or from something else?"
+    },
+    {
+      "start": 381.0,
+      "end": 382.0,
+      "text": "This one?"
+    },
+    {
+      "start": 382.0,
+      "end": 383.0,
+      "text": "Yes."
+    },
+    {
+      "start": 383.0,
+      "end": 384.0,
+      "text": "From CMOS."
+    },
+    {
+      "start": 384.0,
+      "end": 393.0,
+      "text": "So essentially, it's just like making capacitors better, making CMOS better, like that kind of progress, right?"
+    },
+    {
+      "start": 393.0,
+      "end": 396.0,
+      "text": "I think this is the trend of CMOS."
+    },
+    {
+      "start": 396.0,
+      "end": 402.0,
+      "text": "And yeah, but Landauer bound is independent of choice."
+    },
+    {
+      "start": 402.0,
+      "end": 404.0,
+      "text": "Yeah, I'm not sure."
+    },
+    {
+      "start": 404.0,
+      "end": 407.0,
+      "text": "But what I'm saying is this is an engineering, right?"
+    },
+    {
+      "start": 407.0,
+      "end": 410.0,
+      "text": "There is no like deep theory behind this."
+    },
+    {
+      "start": 410.0,
+      "end": 411.0,
+      "text": "It's just like…"
+    },
+    {
+      "start": 411.0,
+      "end": 413.0,
+      "text": "Yes, this is just engineering."
+    },
+    {
+      "start": 413.0,
+      "end": 417.0,
+      "text": "Can I say something?"
+    },
+    {
+      "start": 417.0,
+      "end": 419.0,
+      "text": "It's economics, actually."
+    },
+    {
+      "start": 419.0,
+      "end": 420.0,
+      "text": "Exactly."
+    },
+    {
+      "start": 420.0,
+      "end": 425.0,
+      "text": "I worked at Intel for 20 years, so this was a big deal for us."
+    },
+    {
+      "start": 425.0,
+      "end": 435.0,
+      "text": "Essentially, this is keeping the energy fixed and doubling the number of transistors automatically puts you on this law."
+    },
+    {
+      "start": 435.0,
+      "end": 444.0,
+      "text": "So if you put the frequency constant, your power is constant, then you double the number of transistors every two years and that follows the power law."
+    },
+    {
+      "start": 444.0,
+      "end": 448.0,
+      "text": "So there is a lot of science and engineering behind doing it."
+    },
+    {
+      "start": 448.0,
+      "end": 449.0,
+      "text": "Yeah."
+    },
+    {
+      "start": 449.0,
+      "end": 453.0,
+      "text": "But there is no fundamental theory driving it."
+    },
+    {
+      "start": 453.0,
+      "end": 454.0,
+      "text": "I think that was your question."
+    },
+    {
+      "start": 454.0,
+      "end": 457.0,
+      "text": "Yeah, I think it is a result of the engineering way of it."
+    },
+    {
+      "start": 457.0,
+      "end": 459.0,
+      "text": "It's not done that job."
+    },
+    {
+      "start": 459.0,
+      "end": 464.0,
+      "text": "Let's ask a question."
+    },
+    {
+      "start": 464.0,
+      "end": 469.0,
+      "text": "So this is completely naive in terms of the CMOS side, but you might know."
+    },
+    {
+      "start": 469.0,
+      "end": 478.0,
+      "text": "The atomic size of silicon in the transistor, that plays into the limit, right?"
+    },
+    {
+      "start": 478.0,
+      "end": 482.0,
+      "text": "I mean, we're getting close to like, you know, angstrom sizes, right?"
+    },
+    {
+      "start": 482.0,
+      "end": 483.0,
+      "text": "Right."
+    },
+    {
+      "start": 483.0,
+      "end": 488.0,
+      "text": "So I guess where does the atomic scale impact on that?"
+    },
+    {
+      "start": 488.0,
+      "end": 489.0,
+      "text": "I can tell you."
+    },
+    {
+      "start": 489.0,
+      "end": 490.0,
+      "text": "I can answer."
+    },
+    {
+      "start": 490.0,
+      "end": 492.0,
+      "text": "I can answer that."
+    },
+    {
+      "start": 492.0,
+      "end": 496.0,
+      "text": "Feel free to jump in."
+    },
+    {
+      "start": 496.0,
+      "end": 505.0,
+      "text": "If you were to reduce the atomic dimensions, you have about 14 generations beyond 10 nanometers."
+    },
+    {
+      "start": 505.0,
+      "end": 511.0,
+      "text": "Then you cut into Van der Waals distance and you don't have the devices behaving like devices."
+    },
+    {
+      "start": 511.0,
+      "end": 512.0,
+      "text": "They are behaving quantum."
+    },
+    {
+      "start": 512.0,
+      "end": 513.0,
+      "text": "Right."
+    },
+    {
+      "start": 513.0,
+      "end": 514.0,
+      "text": "Yeah."
+    },
+    {
+      "start": 514.0,
+      "end": 519.0,
+      "text": "So this one assumes you have infinite scaling on dimensions."
+    },
+    {
+      "start": 519.0,
+      "end": 524.0,
+      "text": "So it is independent of the atomic limitations."
+    },
+    {
+      "start": 524.0,
+      "end": 526.0,
+      "text": "The atomic limit would probably be higher than the Landauer bound."
+    },
+    {
+      "start": 526.0,
+      "end": 527.0,
+      "text": "Oh, yeah."
+    },
+    {
+      "start": 527.0,
+      "end": 531.0,
+      "text": "I would say that would end in 2035, according to this graph."
+    },
+    {
+      "start": 531.0,
+      "end": 532.0,
+      "text": "Okay."
+    },
+    {
+      "start": 532.0,
+      "end": 534.0,
+      "text": "And this is an argument to…"
+    },
+    {
+      "start": 534.0,
+      "end": 537.0,
+      "text": "Sorry, it's your talk, but the question is…"
+    },
+    {
+      "start": 537.0,
+      "end": 539.0,
+      "text": "He's not the chip guy."
+    },
+    {
+      "start": 539.0,
+      "end": 541.0,
+      "text": "Okay, I'm not an expert on this."
+    },
+    {
+      "start": 541.0,
+      "end": 542.0,
+      "text": "Yeah, exactly."
+    },
+    {
+      "start": 542.0,
+      "end": 543.0,
+      "text": "Yeah."
+    },
+    {
+      "start": 543.0,
+      "end": 549.0,
+      "text": "I think this kind of behavior is from the atomic effect or something."
+    },
+    {
+      "start": 549.0,
+      "end": 550.0,
+      "text": "Yeah."
+    },
+    {
+      "start": 550.0,
+      "end": 551.0,
+      "text": "Yeah."
+    },
+    {
+      "start": 551.0,
+      "end": 552.0,
+      "text": "Yeah."
+    },
+    {
+      "start": 552.0,
+      "end": 560.0,
+      "text": "But the Landauer bound is also applicable to a single atomic device."
+    },
+    {
+      "start": 560.0,
+      "end": 563.0,
+      "text": "So in that sense, this is very universal."
+    },
+    {
+      "start": 563.0,
+      "end": 564.0,
+      "text": "Okay."
+    },
+    {
+      "start": 564.0,
+      "end": 568.0,
+      "text": "In principle, you can achieve this by using a single atom."
+    },
+    {
+      "start": 568.0,
+      "end": 569.0,
+      "text": "Okay."
+    },
+    {
+      "start": 569.0,
+      "end": 570.0,
+      "text": "Yeah."
+    },
+    {
+      "start": 570.0,
+      "end": 576.0,
+      "text": "But like on the theoretical front, is there any theory that would allow us to be not kind"
+    },
+    {
+      "start": 576.0,
+      "end": 582.0,
+      "text": "of like at the Landauer level, but slightly more relevant to, you know, CMOS technology"
+    },
+    {
+      "start": 582.0,
+      "end": 583.0,
+      "text": "or something like that?"
+    },
+    {
+      "start": 583.0,
+      "end": 586.0,
+      "text": "Or that theory has not been developed?"
+    },
+    {
+      "start": 586.0,
+      "end": 587.0,
+      "text": "Oh, yeah."
+    },
+    {
+      "start": 587.0,
+      "end": 588.0,
+      "text": "Yeah."
+    },
+    {
+      "start": 588.0,
+      "end": 597.0,
+      "text": "Well, I think one answer is this kind of finite speed or finite time effort."
+    },
+    {
+      "start": 597.0,
+      "end": 598.0,
+      "text": "Yeah."
+    },
+    {
+      "start": 598.0,
+      "end": 599.0,
+      "text": "Yeah."
+    },
+    {
+      "start": 599.0,
+      "end": 603.0,
+      "text": "So CMOS device, the discharging process is not quasi-static."
+    },
+    {
+      "start": 603.0,
+      "end": 606.0,
+      "text": "It's a kind of totally dissipating process."
+    },
+    {
+      "start": 606.0,
+      "end": 612.0,
+      "text": "So, yeah, on the other hand, to achieve the Landauer bound, we need the quasi-static"
+    },
+    {
+      "start": 612.0,
+      "end": 613.0,
+      "text": "infinitely slow limit."
+    },
+    {
+      "start": 613.0,
+      "end": 614.0,
+      "text": "So that is one important difference."
+    },
+    {
+      "start": 614.0,
+      "end": 627.0,
+      "text": "And theoretically, we can address some fundamental bound other than the Landauer bound by taking"
+    },
+    {
+      "start": 627.0,
+      "end": 628.0,
+      "text": "the effect of finite time."
+    },
+    {
+      "start": 628.0,
+      "end": 630.0,
+      "text": "A couple of points here."
+    },
+    {
+      "start": 630.0,
+      "end": 641.0,
+      "text": "Ravel and Massimiliano and others as well have done some very, very deep work on CMOS"
+    },
+    {
+      "start": 641.0,
+      "end": 649.0,
+      "text": "down at the very, very, down the weeds in terms of my perception of the stochastic thermodynamics"
+    },
+    {
+      "start": 649.0,
+      "end": 651.0,
+      "text": "of these particular systems."
+    },
+    {
+      "start": 651.0,
+      "end": 657.0,
+      "text": "Landauer bound is all of this interesting stuff that I'm technically going to be presenting"
+    },
+    {
+      "start": 657.0,
+      "end": 659.0,
+      "text": "over and above Landauer bound."
+    },
+    {
+      "start": 659.0,
+      "end": 665.0,
+      "text": "And moreover, something that's very central to a lot of stochastic thermodynamics and depending"
+    },
+    {
+      "start": 665.0,
+      "end": 673.0,
+      "text": "on your granularity in time, it applies to your brain, is that in a non-equilibrium steady"
+    },
+    {
+      "start": 673.0,
+      "end": 677.0,
+      "text": "state, so if we're having a coarse graining in time so that we don't actually see the"
+    },
+    {
+      "start": 677.0,
+      "end": 682.0,
+      "text": "distributions changing, the drop in entropy is zero."
+    },
+    {
+      "start": 682.0,
+      "end": 684.0,
+      "text": "Landauer bound is zero."
+    },
+    {
+      "start": 684.0,
+      "end": 685.0,
+      "text": "Correct."
+    },
+    {
+      "start": 685.0,
+      "end": 686.0,
+      "text": "Everything is these other terms."
+    },
+    {
+      "start": 686.0,
+      "end": 687.0,
+      "text": "Yeah."
+    },
+    {
+      "start": 687.0,
+      "end": 694.0,
+      "text": "So I think that's the key point is that Landauer bound assumes that the underlying dynamics"
+    },
+    {
+      "start": 694.0,
+      "end": 699.0,
+      "text": "is, we call it detailed balance, is that if you don't do anything, you go to equilibrium."
+    },
+    {
+      "start": 699.0,
+      "end": 701.0,
+      "text": "Most real memories are not like that."
+    },
+    {
+      "start": 701.0,
+      "end": 704.0,
+      "text": "You need to dissipate just to maintain information."
+    },
+    {
+      "start": 704.0,
+      "end": 708.0,
+      "text": "And that creates a big discrepancy between the two."
+    },
+    {
+      "start": 708.0,
+      "end": 714.0,
+      "text": "But if you do this theoretical treatment, would you get close to the actual dissipation that"
+    },
+    {
+      "start": 714.0,
+      "end": 716.0,
+      "text": "people see in practice or it is still way below?"
+    },
+    {
+      "start": 716.0,
+      "end": 718.0,
+      "text": "That's what Takerhito will be talking about."
+    },
+    {
+      "start": 718.0,
+      "end": 721.0,
+      "text": "Some of these bounds in certain systems are tight."
+    },
+    {
+      "start": 721.0,
+      "end": 724.0,
+      "text": "In other systems, they're very, very loose."
+    },
+    {
+      "start": 724.0,
+      "end": 727.0,
+      "text": "These bounds are being improved all the time."
+    },
+    {
+      "start": 727.0,
+      "end": 729.0,
+      "text": "Very, very much ongoing work."
+    },
+    {
+      "start": 729.0,
+      "end": 734.0,
+      "text": "But here also for the Landauer bound, you only consider the entropy of the memory, the"
+    },
+    {
+      "start": 734.0,
+      "end": 738.0,
+      "text": "degrees of freedom, coarse grained degree of freedom for the memory."
+    },
+    {
+      "start": 738.0,
+      "end": 742.0,
+      "text": "If it's initial distribution was uniform."
+    },
+    {
+      "start": 742.0,
+      "end": 743.0,
+      "text": "Yeah."
+    },
+    {
+      "start": 743.0,
+      "end": 744.0,
+      "text": "And."
+    },
+    {
+      "start": 744.0,
+      "end": 749.0,
+      "text": "And also in a real physical memory, there is entropy for holding one bit itself."
+    },
+    {
+      "start": 749.0,
+      "end": 750.0,
+      "text": "Yeah."
+    },
+    {
+      "start": 750.0,
+      "end": 752.0,
+      "text": "So there is physical entropy associated with it."
+    },
+    {
+      "start": 752.0,
+      "end": 756.0,
+      "text": "So you need to also consider that difference in entropy, which also contribute."
+    },
+    {
+      "start": 756.0,
+      "end": 759.0,
+      "text": "Well, that is everything that stochastic thermodynamics pays attention to."
+    },
+    {
+      "start": 759.0,
+      "end": 760.0,
+      "text": "Can we continue?"
+    },
+    {
+      "start": 760.0,
+      "end": 761.0,
+      "text": "Yes, please continue."
+    },
+    {
+      "start": 763.0,
+      "end": 764.0,
+      "text": "Next slide."
+    },
+    {
+      "start": 765.0,
+      "end": 768.0,
+      "text": "So yeah, we need to put it from David's paper."
+    },
+    {
+      "start": 768.0,
+      "end": 773.0,
+      "text": "So yeah, we need several requirements other than energetic force, right?"
+    },
+    {
+      "start": 773.0,
+      "end": 777.0,
+      "text": "Like speed and memory."
+    },
+    {
+      "start": 777.0,
+      "end": 778.0,
+      "text": "Okay."
+    },
+    {
+      "start": 778.0,
+      "end": 779.0,
+      "text": "So yeah."
+    },
+    {
+      "start": 779.0,
+      "end": 786.0,
+      "text": "Then the focus of stochastic thermodynamics is something like the role of fluctuations"
+    },
+    {
+      "start": 786.0,
+      "end": 787.0,
+      "text": "far from equilibrium."
+    },
+    {
+      "start": 787.0,
+      "end": 790.0,
+      "text": "So this is the so-called Gernot-Zensky equality of the fraction."
+    },
+    {
+      "start": 790.0,
+      "end": 794.0,
+      "text": "And also fundamental energy cost for computation."
+    },
+    {
+      "start": 794.0,
+      "end": 796.0,
+      "text": "And the finite time aspect."
+    },
+    {
+      "start": 796.0,
+      "end": 799.0,
+      "text": "That is like a cost ."
+    },
+    {
+      "start": 799.0,
+      "end": 802.0,
+      "text": "This is a universal inequality."
+    },
+    {
+      "start": 802.0,
+      "end": 805.0,
+      "text": "Inequality applicable for finite time process."
+    },
+    {
+      "start": 805.0,
+      "end": 812.0,
+      "text": "And the right hand side is given by, of course, the Wasserstein distance from optimal transport."
+    },
+    {
+      "start": 812.0,
+      "end": 813.0,
+      "text": "Okay."
+    },
+    {
+      "start": 813.0,
+      "end": 817.0,
+      "text": "So I was planning to start from here."
+    },
+    {
+      "start": 817.0,
+      "end": 821.0,
+      "text": "But I think most people are interested in maybe around here."
+    },
+    {
+      "start": 821.0,
+      "end": 824.0,
+      "text": "So I think we skip this part."
+    },
+    {
+      "start": 824.0,
+      "end": 825.0,
+      "text": "No, no, no."
+    },
+    {
+      "start": 825.0,
+      "end": 826.0,
+      "text": "No, no, no."
+    },
+    {
+      "start": 826.0,
+      "end": 827.0,
+      "text": "We don't also."
+    },
+    {
+      "start": 827.0,
+      "end": 828.0,
+      "text": "But I think."
+    },
+    {
+      "start": 828.0,
+      "end": 829.0,
+      "text": "No, no, no."
+    },
+    {
+      "start": 829.0,
+      "end": 830.0,
+      "text": "No, no, no."
+    },
+    {
+      "start": 830.0,
+      "end": 831.0,
+      "text": "This is not."
+    },
+    {
+      "start": 831.0,
+      "end": 832.0,
+      "text": "Okay."
+    },
+    {
+      "start": 832.0,
+      "end": 833.0,
+      "text": "I think here ."
+    },
+    {
+      "start": 833.0,
+      "end": 834.0,
+      "text": "Okay."
+    },
+    {
+      "start": 834.0,
+      "end": 835.0,
+      "text": "Okay."
+    },
+    {
+      "start": 835.0,
+      "end": 836.0,
+      "text": "So let me start from the fluctuations."
+    },
+    {
+      "start": 836.0,
+      "end": 837.0,
+      "text": "But I."
+    },
+    {
+      "start": 837.0,
+      "end": 838.0,
+      "text": "If I go very slowly."
+    },
+    {
+      "start": 838.0,
+      "end": 843.0,
+      "text": "I think then the time is up around here."
+    },
+    {
+      "start": 843.0,
+      "end": 848.0,
+      "text": "So I will very rapidly go through this part."
+    },
+    {
+      "start": 848.0,
+      "end": 849.0,
+      "text": "Okay."
+    },
+    {
+      "start": 849.0,
+      "end": 850.0,
+      "text": "So the fluctuations."
+    },
+    {
+      "start": 850.0,
+      "end": 852.0,
+      "text": "So this is the ordinary second law of thermodynamics."
+    },
+    {
+      "start": 852.0,
+      "end": 853.0,
+      "text": "So the work is."
+    },
+    {
+      "start": 853.0,
+      "end": 855.0,
+      "text": "The system of the free energy difference is always smaller than the work."
+    },
+    {
+      "start": 855.0,
+      "end": 856.0,
+      "text": "So we can say that."
+    },
+    {
+      "start": 856.0,
+      "end": 857.0,
+      "text": "So the work is."
+    },
+    {
+      "start": 857.0,
+      "end": 858.0,
+      "text": "So the work is."
+    },
+    {
+      "start": 858.0,
+      "end": 859.0,
+      "text": "So this is a simple."
+    },
+    {
+      "start": 859.0,
+      "end": 860.0,
+      "text": "Yeah."
+    },
+    {
+      "start": 860.0,
+      "end": 869.36,
+      "text": "smaller than the work input on the other hand in the stochastic system so the work is a kind"
+    },
+    {
+      "start": 869.36,
+      "end": 877.36,
+      "text": "of stochastic variable that is probabilistic so we have some distributions of work for example if we"
+    },
+    {
+      "start": 877.36,
+      "end": 885.44,
+      "text": "stretch this single RNA molecule the work depends on each trial so yeah we have different values"
+    },
+    {
+      "start": 885.44,
+      "end": 893.84,
+      "text": "of work and if we repeat the same process many times and then this is the probability"
+    },
+    {
+      "start": 893.84,
+      "end": 900.32,
+      "text": "distribution and here's the average work and there are some small probabilities that the fluctuation"
+    },
+    {
+      "start": 902.8800000000001,
+      "end": 906.32,
+      "text": "small probability that the second law of sound dynamics is violated"
+    },
+    {
+      "start": 907.0400000000001,
+      "end": 915.12,
+      "text": "but at the level of ensemble average the second law is still valid and so the average work is"
+    },
+    {
+      "start": 915.12,
+      "end": 915.4200000000001,
+      "text": "already"
+    },
+    {
+      "start": 915.44,
+      "end": 917.5200000000001,
+      "text": "greater than the free energy difference"
+    },
+    {
+      "start": 920.24,
+      "end": 927.36,
+      "text": "and okay so this is a very fundamental sorry just to be clear that that expectation is just"
+    },
+    {
+      "start": 927.36,
+      "end": 932.08,
+      "text": "over thermal fluctuations right right thanks not over quantum fluctuations"
+    },
+    {
+      "start": 935.5200000000001,
+      "end": 942.8800000000001,
+      "text": "okay so this is a famous result from 1997 called the Jarzynski equality or"
+    },
+    {
+      "start": 942.8800000000001,
+      "end": 945.12,
+      "text": "a specific type of the fluctuation theorem"
+    },
+    {
+      "start": 945.12,
+      "end": 945.44,
+      "text": "okay so this is a famous result from 1997 called the Jarzynski equality or a specific type of the fluctuation theorem"
+    },
+    {
+      "start": 945.44,
+      "end": 946.7600000000001,
+      "text": "interesting"
+    },
+    {
+      "start": 946.7600000000001,
+      "end": 949.7600000000001,
+      "text": "this work this is the stochastic quantity and it can take exponential of the work and then"
+    },
+    {
+      "start": 949.7600000000001,
+      "end": 951.1800000000001,
+      "text": "mounted robot Laura"
+    },
+    {
+      "start": 951.1800000000001,
+      "end": 953.7600000000001,
+      "text": "takes exponential of the work and then"
+    },
+    {
+      "start": 953.7600000000001,
+      "end": 960.24,
+      "text": "takes ensemble Alrighty then it always produces exponential of the free energy"
+    },
+    {
+      "start": 960.24,
+      "end": 963.44,
+      "text": "so this is always true even when we drive the system far from"
+    },
+    {
+      "start": 963.44,
+      "end": 965.6,
+      "text": "it too far from 호 it could be and also the dynamics face variable size than in real distance"
+    },
+    {
+      "start": 965.6,
+      "end": 969.3800000000001,
+      "text": "too far from but also the dynamics is very non-equilibrium so yeah this is contrastive"
+    },
+    {
+      "start": 969.3800000000001,
+      "end": 971.34,
+      "text": "far from but also the dynamics is very non-equilibrium so yeah this is contrastive"
+    },
+    {
+      "start": 971.34,
+      "end": 972.1400000000001,
+      "text": "to find the way to use this your solar output whatever the Wirbel that near ion wire are"
+    },
+    {
+      "start": 972.1400000000001,
+      "end": 974.2800000000001,
+      "text": "That are the poles of a person were swinging the heat slower than the動辄"
+    },
+    {
+      "start": 974.2800000000001,
+      "end": 974.7600000000001,
+      "text": "That are the poles of a person were swinging the heat slower than the Hybrid state LEGO or Duck Mat"
+    },
+    {
+      "start": 974.76,
+      "end": 984.92,
+      "text": "contrastive to the second rule that is always given by a form of inequality like this but"
+    },
+    {
+      "start": 984.92,
+      "end": 993.16,
+      "text": "now we have a very universal equality and yeah which is applicable any non-equal dynamics"
+    },
+    {
+      "start": 995.4,
+      "end": 1001.48,
+      "text": "and also we can derive the second rule from this by using some convex inequality"
+    },
+    {
+      "start": 1001.48,
+      "end": 1012.12,
+      "text": "that yeah we can say that this Jarzynski equality is kind of more universal than the"
+    },
+    {
+      "start": 1012.84,
+      "end": 1018.76,
+      "text": "ordinary second law of summaries and this has a much more information than the second"
+    },
+    {
+      "start": 1020.6,
+      "end": 1025.48,
+      "text": "a naive question is this only true for boltzmann statistics or is it true for any"
+    },
+    {
+      "start": 1026.1200000000001,
+      "end": 1031.0,
+      "text": "statistics it should assume that initial distribution is a Boltzmann i mean"
+    },
+    {
+      "start": 1031.48,
+      "end": 1039.08,
+      "text": "distribution yeah but after driving the distribution can be powerful right but it"
+    },
+    {
+      "start": 1039.08,
+      "end": 1047.56,
+      "text": "is still isothermal right temperature is constant isn't it oh yes in typical setup the thermal bath"
+    },
+    {
+      "start": 1047.56,
+      "end": 1055.48,
+      "text": "is there and it's temperature of course but there are okay so yeah there are many"
+    },
+    {
+      "start": 1056.84,
+      "end": 1059.48,
+      "text": "escapes"
+    },
+    {
+      "start": 1061.72,
+      "end": 1067.0,
+      "text": "oh sorry there are many setups for which the judges"
+    },
+    {
+      "start": 1068.44,
+      "end": 1072.2,
+      "text": "i think the most typical one is a classic around"
+    },
+    {
+      "start": 1074.84,
+      "end": 1080.76,
+      "text": "in this setup we have a large heat bus around the system and the bus has a constant temperature"
+    },
+    {
+      "start": 1081.64,
+      "end": 1084.04,
+      "text": "but there are other"
+    },
+    {
+      "start": 1086.52,
+      "end": 1089.88,
+      "text": "setups actually the original georgian scale set up"
+    },
+    {
+      "start": 1092.3600000000001,
+      "end": 1099.24,
+      "text": "that is a completely isolated dynamical system and that is even a kind of hamiltonian i mean"
+    },
+    {
+      "start": 1099.24,
+      "end": 1105.64,
+      "text": "the unitary system starting from the initial equilibrium distribution and we drive it"
+    },
+    {
+      "start": 1106.2,
+      "end": 1113.88,
+      "text": "then the 19 skateboard is still yes sorry so you said we required that the initial distribution"
+    },
+    {
+      "start": 1113.88,
+      "end": 1120.68,
+      "text": "is boltzmann yes wait sorry the initial distribution of what of the system okay okay"
+    },
+    {
+      "start": 1121.48,
+      "end": 1126.3600000000001,
+      "text": "okay okay like up the systematic okay this is a key point everything's physical physics"
+    },
+    {
+      "start": 1126.3600000000001,
+      "end": 1132.1200000000001,
+      "text": "and fantastic thermodynamics is about evolution of distributions which is not the same thing as"
+    },
+    {
+      "start": 1132.1200000000001,
+      "end": 1137.64,
+      "text": "the evolution of single trajectories but also to answer the question yes this is all been extended"
+    },
+    {
+      "start": 1137.64,
+      "end": 1143.8,
+      "text": "it's a paper by muscleiano i think it was in 2007 and then many other ones where fluctuation"
+    },
+    {
+      "start": 1143.8,
+      "end": 1148.6,
+      "text": "theorems are generalized to many many different reservoirs at different temperatures chemical"
+    },
+    {
+      "start": 1148.6,
+      "end": 1149.44,
+      "text": "reservoirs so non-isothermal cases yeah so Anna never quite understood though because when i was"
+    },
+    {
+      "start": 1149.44,
+      "end": 1150.3600000000001,
+      "text": "more interested in therm researching, youtube has my decades on thermodynamics and nature has been"
+    },
+    {
+      "start": 1150.3600000000001,
+      "end": 1150.52,
+      "text": "so sophisticated aspo, you gotta study microorganisms how to measure how to measure things without incidentknowledge, systemals and events, improving or balancing то there's even commonそ sweet in component protection and also as power of this process"
+    },
+    {
+      "start": 1151.48,
+      "end": 1164.28,
+      "text": "also it is interesting that the very original formulation is based on the Hamiltonian dynamics"
+    },
+    {
+      "start": 1164.28,
+      "end": 1172.6,
+      "text": "without stochastic dynamics and I think that is the reason why Jarzynski equality of the"
+    },
+    {
+      "start": 1172.6,
+      "end": 1182.52,
+      "text": "structure is so universal I mean essentially it is only the some properties of Hamiltonian"
+    },
+    {
+      "start": 1182.52,
+      "end": 1189.8,
+      "text": "dynamics like the Liouville theorem actually the I'm sorry this is very small but the original proof"
+    },
+    {
+      "start": 1189.8,
+      "end": 1195.32,
+      "text": "of the Jarzynski equality is very short like maybe one two three five six slides or something"
+    },
+    {
+      "start": 1195.32,
+      "end": 1200.84,
+      "text": "like that and only essential assumptions are so called the Liouville theorem actually this is"
+    },
+    {
+      "start": 1201.48,
+      "end": 1202.36,
+      "text": "from google's"
+    },
+    {
+      "start": 1202.6,
+      "end": 1211.24,
+      "text": "germany so its explanation is better than me so yeah yeah anyway so yeah what I wanted to say is"
+    },
+    {
+      "start": 1211.24,
+      "end": 1217.24,
+      "text": "that the proof of the Jarzynski equality in the original version is very simple and essentially"
+    },
+    {
+      "start": 1217.24,
+      "end": 1220.28,
+      "text": "only uses the Liouville theorem for the Hamiltonian"
+    },
+    {
+      "start": 1225.56,
+      "end": 1228.6799999999998,
+      "text": "okay so I'm going back to"
+    },
+    {
+      "start": 1231.1599999999999,
+      "end": 1231.8,
+      "text": "okay so"
+    },
+    {
+      "start": 1232.6,
+      "end": 1236.04,
+      "text": "this is Jarzynski equality and next I will"
+    },
+    {
+      "start": 1236.04,
+      "end": 1238.6,
+      "text": "I will show you Jarzynski's"
+    },
+    {
+      "start": 1238.6,
+      "end": 1241.3999999999999,
+      "text": "I will show you Jarzynski's"
+    },
+    {
+      "start": 1241.3999999999999,
+      "end": 1245.48,
+      "text": "practitioner's theorem so that is also called the"
+    },
+    {
+      "start": 1245.48,
+      "end": 1247.48,
+      "text": "Crooks fluctuation theorem"
+    },
+    {
+      "start": 1247.48,
+      "end": 1256.6799999999998,
+      "text": "so okay we consider the experiment that there is a single RNA molecule and we"
+    },
+    {
+      "start": 1258.28,
+      "end": 1261.8,
+      "text": "do some experiment on this so for example we imagine that"
+    },
+    {
+      "start": 1263.08,
+      "end": 1270.9199999999998,
+      "text": "in the forward process we push this molecule and in the other hand in the backward process we"
+    },
+    {
+      "start": 1270.9199999999998,
+      "end": 1279.8,
+      "text": "stretch this molecule that corresponds to upholding and unfolding so this pair of"
+    },
+    {
+      "start": 1280.6799999999998,
+      "end": 1287.6399999999999,
+      "text": "forward and backward processes is very important to get some universal property of entropy production"
+    },
+    {
+      "start": 1289.6399999999999,
+      "end": 1292.12,
+      "text": "so yeah so this is a"
+    },
+    {
+      "start": 1292.84,
+      "end": 1299.1599999999999,
+      "text": "Crooks fluctuation theorem so this means that this is a quard property and this double"
+    },
+    {
+      "start": 1299.1599999999999,
+      "end": 1304.84,
+      "text": "minor stereotype is a so-called entropy production that is a gap between the work and the frame"
+    },
+    {
+      "start": 1305.56,
+      "end": 1313.0,
+      "text": "so this is positive because entropy production should be important but sometimes we have some"
+    },
+    {
+      "start": 1313.0,
+      "end": 1322.4399999999998,
+      "text": "rare events in which entropy production is negative so then we can compare the probabilities"
+    },
+    {
+      "start": 1322.6,
+      "end": 1329.8,
+      "text": "getting positive entropy production and the negative entropy production and the ratio is"
+    },
+    {
+      "start": 1329.8,
+      "end": 1341.6799999999998,
+      "text": "given by exponential minus entropy production so let's say that the probability of the negative"
+    },
+    {
+      "start": 1341.6799999999998,
+      "end": 1349.12,
+      "text": "entropy production is exponentially small so this is a very universal behavior in non-equilibrium"
+    },
+    {
+      "start": 1349.12,
+      "end": 1358.0,
+      "text": "systems and yeah this constitutively determines the rate of the violation of the second law of"
+    },
+    {
+      "start": 1358.0,
+      "end": 1365.5,
+      "text": "thermodynamics and also important point is that to compare the probabilities we should we should"
+    },
+    {
+      "start": 1365.5,
+      "end": 1372.1599999999999,
+      "text": "introduce the backward process so this negative entropy production is for the backward process"
+    },
+    {
+      "start": 1372.1599999999999,
+      "end": 1379.06,
+      "text": "like the folding process and their ratio is only always given by this inverse"
+    },
+    {
+      "start": 1379.12,
+      "end": 1388.8999999999999,
+      "text": "factor I could financial minus entropy so this is a crux practice also so we need the"
+    },
+    {
+      "start": 1388.8999999999999,
+      "end": 1395.1999999999998,
+      "text": "backward process so I think this is a reason why the diffusion model for generative AI was"
+    },
+    {
+      "start": 1395.1999999999998,
+      "end": 1401.08,
+      "text": "inspired by this kind of argument because the diffusion models uses some backward process"
+    },
+    {
+      "start": 1401.08,
+      "end": 1409.0,
+      "text": "from noise to image no okay so this distribution is taken over the ensemble"
+    },
+    {
+      "start": 1409.12,
+      "end": 1429.4599999999998,
+      "text": "there is microscopic reversibility for this okay"
+    },
+    {
+      "start": 1431.9799999999998,
+      "end": 1438.34,
+      "text": "so it's still dynamic equilibrium with the microscopic level for the for the"
+    },
+    {
+      "start": 1439.12,
+      "end": 1443.9799999999998,
+      "text": "the crooks yes but also there you can generalize it to stochastic dynamics that"
+    },
+    {
+      "start": 1443.9799999999998,
+      "end": 1448.2399999999998,
+      "text": "do not satisfy detail balance all right I see I see"
+    },
+    {
+      "start": 1451.2399999999998,
+      "end": 1455.5,
+      "text": "you can actually answer to Hamiltonian Monte Carlo techniques for optimization"
+    },
+    {
+      "start": 1456.34,
+      "end": 1467.1999999999998,
+      "text": "oh yes I think so yeah yeah so this is also true for some Hamiltonian dynamics so yeah yeah that"
+    },
+    {
+      "start": 1467.1999999999998,
+      "end": 1467.86,
+      "text": "should be some"
+    },
+    {
+      "start": 1469.12,
+      "end": 1475.78,
+      "text": "Hamiltonian which is some algorithms for sampling so there is a difference"
+    },
+    {
+      "start": 1475.78,
+      "end": 1480.82,
+      "text": "it's an interesting question there might be is some kind of connection of some sort"
+    },
+    {
+      "start": 1481.7199999999998,
+      "end": 1484.84,
+      "text": "but I would say this is you know in one case we have reversal times"
+    },
+    {
+      "start": 1484.84,
+      "end": 1495.9399999999998,
+      "text": "inequality here should I here's any inequality whereas that process is reversible in Hamiltonian"
+    },
+    {
+      "start": 1495.9399999999998,
+      "end": 1496.4799999999998,
+      "text": "dynamics"
+    },
+    {
+      "start": 1499.12,
+      "end": 1504.12,
+      "text": "has to do with the the reversibility has to do with the coupling with the heat bath"
+    },
+    {
+      "start": 1504.12,
+      "end": 1509.9399999999998,
+      "text": "the actual dynamics of the system you see um is different it's like a partial trace"
+    },
+    {
+      "start": 1509.9399999999998,
+      "end": 1515.82,
+      "text": "i mean the hamiltonian version of this that is the classical limit of open quantum thermodynamics"
+    },
+    {
+      "start": 1515.82,
+      "end": 1521.84,
+      "text": "the crooks in his original thinking had an infinite heat bath you assume time reversal"
+    },
+    {
+      "start": 1521.84,
+      "end": 1527.82,
+      "text": "symmetry in your coupling to that heat bath but your actual system is not going in some kind of"
+    },
+    {
+      "start": 1527.82,
+      "end": 1530.96,
+      "text": "time reversible way it's very very far from thermal equilibrium"
+    },
+    {
+      "start": 1530.96,
+      "end": 1539.6399999999999,
+      "text": "so in other words it does not have to satisfy hamiltonian"
+    },
+    {
+      "start": 1539.6399999999999,
+      "end": 1547.82,
+      "text": "um because it is coupled to the bath it's like if you know the more general formulation"
+    },
+    {
+      "start": 1547.82,
+      "end": 1553.84,
+      "text": "you start with bath that are in their own equilibria okay and your system"
+    },
+    {
+      "start": 1553.84,
+      "end": 1557.8,
+      "text": "um is in a reference equilibrium"
+    },
+    {
+      "start": 1557.8,
+      "end": 1564.1399999999999,
+      "text": "with one of those baths at time zero you turn on the interaction between the system and all the bath"
+    },
+    {
+      "start": 1564.94,
+      "end": 1572.18,
+      "text": "and the full dynamics is hamiltonian full i mean in the in the full space of all the bath system"
+    },
+    {
+      "start": 1572.18,
+      "end": 1579.62,
+      "text": "so that's really pure hamiltonian dynamics you see now these kinds of results the original one"
+    },
+    {
+      "start": 1579.62,
+      "end": 1585.22,
+      "text": "you can think of them as special cases in the limit where you trace out the bath the paths are"
+    },
+    {
+      "start": 1585.22,
+      "end": 1587.78,
+      "text": "fast you can treat them as markovniks"
+    },
+    {
+      "start": 1587.8,
+      "end": 1595.8,
+      "text": "and then your system dynamics becomes a stochastic process for which you can derive that it's"
+    },
+    {
+      "start": 1595.8,
+      "end": 1605.72,
+      "text": "equilibrated at every instant yes but not even not even globally it's simply that it it the"
+    },
+    {
+      "start": 1605.72,
+      "end": 1610.76,
+      "text": "stochastic dynamics wants to make you equilibrate with each of the bath but as a result your system"
+    },
+    {
+      "start": 1610.76,
+      "end": 1616.36,
+      "text": "dynamics is not detailed balance because it's continuously driven by all these different paths"
+    },
+    {
+      "start": 1617.8,
+      "end": 1623.32,
+      "text": "nobody is at a boltzmann distribution don't think of these things as terms of boltzmann distributions or"
+    },
+    {
+      "start": 1623.32,
+      "end": 1629.48,
+      "text": "just at time zero to have a reference the fact that you need this initial distribution that the"
+    },
+    {
+      "start": 1629.48,
+      "end": 1637.08,
+      "text": "the path at a certain equilibria is to to introduce the intensive field temperature chemical potential"
+    },
+    {
+      "start": 1637.8799999999999,
+      "end": 1642.68,
+      "text": "that's where they enter it's in this initial distribution but after that you can drive"
+    },
+    {
+      "start": 1642.68,
+      "end": 1647.48,
+      "text": "arbitrarily for somebody so so is the bath changing i'm trying to understand"
+    },
+    {
+      "start": 1647.8,
+      "end": 1653.6399999999999,
+      "text": "it is so you are changing the bath is also evolving you're involving the full space with the"
+    },
+    {
+      "start": 1653.6399999999999,
+      "end": 1665.1599999999999,
+      "text": "hamiltonian dynamics okay yeah so yeah so the other must mention the i think the ultimate origin of"
+    },
+    {
+      "start": 1665.1599999999999,
+      "end": 1672.12,
+      "text": "this kind of behavior is from the hamiltonian property of the entire system including this"
+    },
+    {
+      "start": 1673.72,
+      "end": 1676.28,
+      "text": "yes i feel like this is a very dumb question"
+    },
+    {
+      "start": 1677.8,
+      "end": 1685.0,
+      "text": "so does this crook's fluctuation theorem is it is this just just by itself is this time reversible"
+    },
+    {
+      "start": 1688.6,
+      "end": 1695.48,
+      "text": "or like like basically like uh this distinguishes between initial and final conditions"
+    },
+    {
+      "start": 1696.04,
+      "end": 1700.9199999999998,
+      "text": "if anybody here is interested in law schmidt's paradox how you can have fine grain time reversal"
+    },
+    {
+      "start": 1700.9199999999998,
+      "end": 1705.3999999999999,
+      "text": "symmetry but still have all these asymmetric things like the strength in the second law"
+    },
+    {
+      "start": 1705.3999999999999,
+      "end": 1707.48,
+      "text": "it's because we don't know how to set up an"
+    },
+    {
+      "start": 1707.8,
+      "end": 1713.32,
+      "text": "experiment in its final state rather than its initial state and so this gets into deep stuff"
+    },
+    {
+      "start": 1713.32,
+      "end": 1720.76,
+      "text": "with philosophy which is part of the um the wheelhouse of this particular meeting so it's"
+    },
+    {
+      "start": 1720.76,
+      "end": 1726.9199999999998,
+      "text": "all because we initialize rather than finalize when you run an experiment okay that makes sense"
+    },
+    {
+      "start": 1726.9199999999998,
+      "end": 1732.28,
+      "text": "so so i guess the the asymmetry comes from like the delta itself the change from initial to final"
+    },
+    {
+      "start": 1733.8799999999999,
+      "end": 1737.56,
+      "text": "entropy production okay yeah these results are all"
+    },
+    {
+      "start": 1738.44,
+      "end": 1743.8799999999999,
+      "text": "different in the detail but what we're seeing is that when you run an experiment"
+    },
+    {
+      "start": 1744.68,
+      "end": 1756.84,
+      "text": "the initial condition of a positive variable pretries after a particularۂ"
+    },
+    {
+      "start": 1765.24,
+      "end": 1767.0,
+      "text": "patient or this expression also"
+    },
+    {
+      "start": 1767.8,
+      "end": 1776.48,
+      "text": "In that sense, there is a hierarchy, like the Crookes fluctuation theorem has the most detailed information about the dynamics,"
+    },
+    {
+      "start": 1776.48,
+      "end": 1783.08,
+      "text": "and then Georgian scalability, and then the Ogeron theorem, so yeah, each step can be mathematically derived."
+    },
+    {
+      "start": 1787.08,
+      "end": 1791.3999999999999,
+      "text": "Okay, so Hamiltonian formation is very important."
+    },
+    {
+      "start": 1791.4,
+      "end": 1798.4,
+      "text": "Also, let me just mention a slightly generalized formula."
+    },
+    {
+      "start": 1798.4,
+      "end": 1808.4,
+      "text": "So far, we have used the work on the flow energy, but in slightly more general setup,"
+    },
+    {
+      "start": 1808.4,
+      "end": 1814.4,
+      "text": "we can instead use the Shannon information of the system and the heat."
+    },
+    {
+      "start": 1814.4,
+      "end": 1821.4,
+      "text": "If we set the initial distribution as the Gibbs distribution, they are essentially equivalent,"
+    },
+    {
+      "start": 1821.4,
+      "end": 1828.4,
+      "text": "but in this setup, the initial distribution of the system can be out of equilibrium,"
+    },
+    {
+      "start": 1828.4,
+      "end": 1834.4,
+      "text": "and also the final distribution system can be out of equilibrium."
+    },
+    {
+      "start": 1834.4,
+      "end": 1841.4,
+      "text": "Okay, the system has some spread space, and its Shannon entropy is given by this,"
+    },
+    {
+      "start": 1841.4,
+      "end": 1848.4,
+      "text": "and this delta S is a Shannon entropy change, and this Q is the heat absorption from the heat bus to the system,"
+    },
+    {
+      "start": 1848.4,
+      "end": 1850.4,
+      "text": "and delta S minus beta Q is the heat absorption."
+    },
+    {
+      "start": 1851.4,
+      "end": 1855.46,
+      "text": "which calls the entropy production in the linear,"
+    },
+    {
+      "start": 1855.46,
+      "end": 1857.1200000000001,
+      "text": "slightly more linear form."
+    },
+    {
+      "start": 1859.0400000000002,
+      "end": 1861.02,
+      "text": "And we can, oh, okay, oh, okay."
+    },
+    {
+      "start": 1861.02,
+      "end": 1864.96,
+      "text": "So, and we can show that the average entropy production"
+    },
+    {
+      "start": 1864.96,
+      "end": 1866.3200000000002,
+      "text": "is always non-negative."
+    },
+    {
+      "start": 1866.3200000000002,
+      "end": 1869.9,
+      "text": "That means that the delta S is always greater"
+    },
+    {
+      "start": 1869.9,
+      "end": 1872.38,
+      "text": "than the Sheep's distortion."
+    },
+    {
+      "start": 1872.38,
+      "end": 1875.24,
+      "text": "Actually, this is a round-out type in a chord."
+    },
+    {
+      "start": 1875.24,
+      "end": 1879.1200000000001,
+      "text": "So if this delta S is, for example, minus log two,"
+    },
+    {
+      "start": 1879.12,
+      "end": 1883.1999999999998,
+      "text": "then Q should be greater than log two."
+    },
+    {
+      "start": 1883.1999999999998,
+      "end": 1886.36,
+      "text": "So that is a round-out principle."
+    },
+    {
+      "start": 1886.36,
+      "end": 1889.8,
+      "text": "So in that sense, this form of entropy production,"
+    },
+    {
+      "start": 1889.8,
+      "end": 1892.04,
+      "text": "including the channel entropy,"
+    },
+    {
+      "start": 1892.04,
+      "end": 1897.04,
+      "text": "is a starting point to connect information and so on."
+    },
+    {
+      "start": 1899.84,
+      "end": 1902.8999999999999,
+      "text": "Oh, yes, this is actually the round-out principle."
+    },
+    {
+      "start": 1902.8999999999999,
+      "end": 1906.9799999999998,
+      "text": "So in the most standard, I mean,"
+    },
+    {
+      "start": 1906.9799999999998,
+      "end": 1909.12,
+      "text": "in the most basic setup,"
+    },
+    {
+      "start": 1909.12,
+      "end": 1911.58,
+      "text": "the round-out principle is something like this."
+    },
+    {
+      "start": 1911.58,
+      "end": 1916.58,
+      "text": "So we start from the memory with equal probabilities"
+    },
+    {
+      "start": 1917.6799999999998,
+      "end": 1919.36,
+      "text": "for zero and one."
+    },
+    {
+      "start": 1919.36,
+      "end": 1921.58,
+      "text": "I mean, this is a logical zero state,"
+    },
+    {
+      "start": 1921.58,
+      "end": 1923.4599999999998,
+      "text": "and this is a logical one state."
+    },
+    {
+      "start": 1923.4599999999998,
+      "end": 1928.4599999999998,
+      "text": "And we assume that the property is one half and one half."
+    },
+    {
+      "start": 1928.6399999999999,
+      "end": 1930.84,
+      "text": "And after the information measure,"
+    },
+    {
+      "start": 1930.84,
+      "end": 1935.84,
+      "text": "the memory is in a standard state that is called zero,"
+    },
+    {
+      "start": 1936.58,
+      "end": 1938.8799999999999,
+      "text": "and then its logical entropy is zero."
+    },
+    {
+      "start": 1939.12,
+      "end": 1943.0,
+      "text": "So the total entropy decrease is given by log two."
+    },
+    {
+      "start": 1943.0,
+      "end": 1948.0,
+      "text": "So by substituting that, the minus log two this time,"
+    },
+    {
+      "start": 1948.62,
+      "end": 1953.08,
+      "text": "then we find that the heat is,"
+    },
+    {
+      "start": 1953.08,
+      "end": 1956.3,
+      "text": "or some size, sorry, some size flips."
+    },
+    {
+      "start": 1956.3,
+      "end": 1959.1,
+      "text": "Okay, so maybe we will minus here."
+    },
+    {
+      "start": 1959.1,
+      "end": 1960.9399999999998,
+      "text": "But anyway, so the heat dissipation"
+    },
+    {
+      "start": 1960.9399999999998,
+      "end": 1963.08,
+      "text": "is always greater than log two."
+    },
+    {
+      "start": 1963.08,
+      "end": 1968.08,
+      "text": "So that is the sequence I set up for the round-out principle."
+    },
+    {
+      "start": 1969.12,
+      "end": 1972.54,
+      "text": "So you mentioned like the different types of energy,"
+    },
+    {
+      "start": 1972.54,
+      "end": 1974.6999999999998,
+      "text": "like logical entropy versus,"
+    },
+    {
+      "start": 1974.6999999999998,
+      "end": 1977.02,
+      "text": "like basically what are the different types of energy"
+    },
+    {
+      "start": 1977.02,
+      "end": 1979.6799999999998,
+      "text": "and entropy, sorry."
+    },
+    {
+      "start": 1979.6799999999998,
+      "end": 1981.3799999999999,
+      "text": "And how do they relate to one another?"
+    },
+    {
+      "start": 1981.3799999999999,
+      "end": 1983.76,
+      "text": "Do we treat them as completely separate, or?"
+    },
+    {
+      "start": 1983.76,
+      "end": 1986.6,
+      "text": "I mean, the logical entropy and the..."
+    },
+    {
+      "start": 1986.6,
+      "end": 1987.4399999999998,
+      "text": "Yeah, exactly."
+    },
+    {
+      "start": 1987.4399999999998,
+      "end": 1988.56,
+      "text": "Like logical entropy,"
+    },
+    {
+      "start": 1988.56,
+      "end": 1990.8999999999999,
+      "text": "what other type of entropy is there?"
+    },
+    {
+      "start": 1990.8999999999999,
+      "end": 1992.12,
+      "text": "Sorry."
+    },
+    {
+      "start": 1992.12,
+      "end": 1995.7399999999998,
+      "text": "I mentioned that later, but so, yeah."
+    },
+    {
+      "start": 1995.7399999999998,
+      "end": 1998.62,
+      "text": "In principle, we have some physical thermal entropy."
+    },
+    {
+      "start": 1998.62,
+      "end": 2000.8,
+      "text": "Inside this each wave."
+    },
+    {
+      "start": 2000.8,
+      "end": 2004.8799999999999,
+      "text": "So imagine that this is a brownian particle."
+    },
+    {
+      "start": 2004.8799999999999,
+      "end": 2008.9399999999998,
+      "text": "There is some brownian motion inside each wave."
+    },
+    {
+      "start": 2008.9399999999998,
+      "end": 2012.1999999999998,
+      "text": "So that is a thermal entropy."
+    },
+    {
+      "start": 2012.1999999999998,
+      "end": 2013.04,
+      "text": "I see."
+    },
+    {
+      "start": 2013.04,
+      "end": 2014.1799999999998,
+      "text": "For each wave."
+    },
+    {
+      "start": 2014.1799999999998,
+      "end": 2018.7399999999998,
+      "text": "But here we have logical entropy just for left or right."
+    },
+    {
+      "start": 2018.7399999999998,
+      "end": 2022.3799999999999,
+      "text": "So that is a part of the total thermal entropy,"
+    },
+    {
+      "start": 2022.3799999999999,
+      "end": 2024.1399999999999,
+      "text": "or the total physical."
+    },
+    {
+      "start": 2024.1399999999999,
+      "end": 2027.6599999999999,
+      "text": "Okay, so answer to your question."
+    },
+    {
+      "start": 2027.6599999999999,
+      "end": 2028.5,
+      "text": "Here, there are logical entropy,"
+    },
+    {
+      "start": 2028.5,
+      "end": 2031.5,
+      "text": "and thermodynamic entropy."
+    },
+    {
+      "start": 2031.5,
+      "end": 2036.1,
+      "text": "He's using them equivalent when he put the relationship"
+    },
+    {
+      "start": 2036.1,
+      "end": 2037.56,
+      "text": "in the previous slide."
+    },
+    {
+      "start": 2037.56,
+      "end": 2038.66,
+      "text": "Okay, got you."
+    },
+    {
+      "start": 2038.66,
+      "end": 2042.3,
+      "text": "He just assumed for this case, they are equivalent."
+    },
+    {
+      "start": 2042.3,
+      "end": 2043.66,
+      "text": "Well, for this simple case,"
+    },
+    {
+      "start": 2043.66,
+      "end": 2046.26,
+      "text": "the roach current will be changing its equivalent"
+    },
+    {
+      "start": 2046.26,
+      "end": 2048.94,
+      "text": "to the total physical entropy."
+    },
+    {
+      "start": 2048.94,
+      "end": 2050.48,
+      "text": "Got you, thank you."
+    },
+    {
+      "start": 2050.48,
+      "end": 2053.16,
+      "text": "And the uniform distribution you talked about earlier,"
+    },
+    {
+      "start": 2053.16,
+      "end": 2055.3,
+      "text": "David, was there's this assumption"
+    },
+    {
+      "start": 2055.3,
+      "end": 2056.92,
+      "text": "that 0 and 1 are equally probable."
+    },
+    {
+      "start": 2056.92,
+      "end": 2057.76,
+      "text": "Yeah."
+    },
+    {
+      "start": 2058.5,
+      "end": 2060.4,
+      "text": "It depends on your argument."
+    },
+    {
+      "start": 2063.14,
+      "end": 2064.04,
+      "text": "Okay."
+    },
+    {
+      "start": 2066.92,
+      "end": 2070.54,
+      "text": "Okay, so what kind of how,"
+    },
+    {
+      "start": 2070.58,
+      "end": 2075.18,
+      "text": "what kind of what did I do?"
+    },
+    {
+      "start": 2079.34,
+      "end": 2082.88,
+      "text": "But also that the conditional probability"
+    },
+    {
+      "start": 2082.88,
+      "end": 2083.9,
+      "text": "of the microscopic state"
+    },
+    {
+      "start": 2083.9,
+      "end": 2085.78,
+      "text": "in size that macro states are uniform."
+    },
+    {
+      "start": 2085.78,
+      "end": 2087.84,
+      "text": "So is that true level ."
+    },
+    {
+      "start": 2087.84,
+      "end": 2094.1600000000003,
+      "text": "yeah in general whenever you do coarse graining to a system the value you will get for the entry"
+    },
+    {
+      "start": 2094.1600000000003,
+      "end": 2098.88,
+      "text": "production is never going to actually increase it will only decrease from what the true is"
+    },
+    {
+      "start": 2099.6000000000004,
+      "end": 2103.76,
+      "text": "which is down to very fine grain and that monotonicity is a very powerful thing it"
+    },
+    {
+      "start": 2103.76,
+      "end": 2108.8,
+      "text": "means if you get a bound that's a lower bound it's a lower bound even if you knew everything going on"
+    },
+    {
+      "start": 2108.8,
+      "end": 2121.6000000000004,
+      "text": "but i think it's time to directly go into this okay so i think i will do this part first okay"
+    },
+    {
+      "start": 2124.2400000000002,
+      "end": 2129.76,
+      "text": "yeah so yeah i i in this opportunity i will talk about random principles"
+    },
+    {
+      "start": 2133.76,
+      "end": 2137.52,
+      "text": "okay so if i have time so i will go back to this part"
+    },
+    {
+      "start": 2139.2000000000003,
+      "end": 2146.0800000000004,
+      "text": "is that fine i missed maxwell demon but i think yeah after this maybe i will go"
+    },
+    {
+      "start": 2153.2000000000003,
+      "end": 2155.92,
+      "text": "so this is yeah this is the same slide"
+    },
+    {
+      "start": 2158.1600000000003,
+      "end": 2166.7200000000003,
+      "text": "okay and i'd like to mention okay what is logical yeah reverse weight yeah what is"
+    },
+    {
+      "start": 2166.7200000000003,
+      "end": 2168.6400000000003,
+      "text": "thermodynamic or physical reverse"
+    },
+    {
+      "start": 2169.76,
+      "end": 2175.36,
+      "text": "so yes the logical reversibility means that the change in the"
+    },
+    {
+      "start": 2178.0800000000004,
+      "end": 2184.7200000000003,
+      "text": "vertical states like zero for one it's zero for example in this information"
+    },
+    {
+      "start": 2184.7200000000003,
+      "end": 2191.52,
+      "text": "erasure example the delta s is given by minus log two so that is logically irreversible"
+    },
+    {
+      "start": 2191.52,
+      "end": 2198.4,
+      "text": "in the other hand for example if we consider not great that's a flipping then it is called"
+    },
+    {
+      "start": 2199.2000000000003,
+      "end": 2202.2400000000002,
+      "text": "multiple reverse now it's going to be reversible important to know that"
+    },
+    {
+      "start": 2202.2400000000002,
+      "end": 2206.2000000000003,
+      "text": "that's necessary and not sufficient yeah i can have a system where there's no change in entropy"
+    },
+    {
+      "start": 2206.2000000000003,
+      "end": 2215.44,
+      "text": "but all hell is breaking loose in terms of logical reversibility at the trajectory level"
+    },
+    {
+      "start": 2219.6800000000003,
+      "end": 2224.0,
+      "text": "some river spytic implies that entropy production is 0 that is that means that is minus beta q equals"
+    },
+    {
+      "start": 2224.0,
+      "end": 2225.2200000000003,
+      "text": "that is that is some rhythmic through emotion that is throwing it in"
+    },
+    {
+      "start": 2225.2200000000003,
+      "end": 2225.36,
+      "text": "here it is taking a fresh direction into what's here maybe that means there's three levels"
+    },
+    {
+      "start": 2225.36,
+      "end": 2226.2400000000002,
+      "text": "but as my used to� violetp called middle current pancake is brush i have from theilar one level"
+    },
+    {
+      "start": 2226.2400000000002,
+      "end": 2227.28,
+      "text": "polar to negative bunun whom is known as ab це the A cell of the�ên question andness there are xeta musical over identify but lav carter very different signals"
+    },
+    {
+      "start": 2227.28,
+      "end": 2235.84,
+      "text": "q equals that is a reverse weight in the entire system including the bus and the system so so"
+    },
+    {
+      "start": 2235.84,
+      "end": 2244.0800000000004,
+      "text": "they are fundamentally different so so we can say that the information in Asia can be done"
+    },
+    {
+      "start": 2246.48,
+      "end": 2255.44,
+      "text": "thermodynamically reversibly I mean so if delta s equals minus log 2 and q is log 2 then"
+    },
+    {
+      "start": 2257.28,
+      "end": 2262.32,
+      "text": "we can say that the equality here is achieved inequality here is achieved and the total"
+    },
+    {
+      "start": 2262.32,
+      "end": 2269.52,
+      "text": "entropy production is zero so in that case the information in Asia is logically reversible but"
+    },
+    {
+      "start": 2269.52,
+      "end": 2275.92,
+      "text": "it is something sorry the information in Asia is logically irreversible but it's thermodynamically"
+    },
+    {
+      "start": 2275.92,
+      "end": 2284.0,
+      "text": "reverse so there are many arguments in the 20th century so they are sometimes mixed up but"
+    },
+    {
+      "start": 2284.6400000000003,
+      "end": 2285.36,
+      "text": "they are different"
+    },
+    {
+      "start": 2286.96,
+      "end": 2287.2000000000003,
+      "text": "this"
+    },
+    {
+      "start": 2287.28,
+      "end": 2300.88,
+      "text": "is what I wanted okay so also another remark is that this is true for some symmetric memories"
+    },
+    {
+      "start": 2300.88,
+      "end": 2309.6800000000003,
+      "text": "symmetric means that so if we consider this type of memory with logical state 0 and 1 it is called"
+    },
+    {
+      "start": 2309.6800000000003,
+      "end": 2317.2000000000003,
+      "text": "symmetric on the other hand we can also consider this kind of asymmetric memory with logical state"
+    },
+    {
+      "start": 2317.28,
+      "end": 2326.32,
+      "text": "0 and 1 actually in real devices including CMOS so the memory is very asymmetric right so"
+    },
+    {
+      "start": 2328.0,
+      "end": 2336.5600000000004,
+      "text": "in this case in each well so there are some summer fluctuations with different entropies"
+    },
+    {
+      "start": 2337.1200000000003,
+      "end": 2343.36,
+      "text": "so because of that the random orphanace principal is not straightforwardly applicable to this"
+    },
+    {
+      "start": 2343.36,
+      "end": 2346.0,
+      "text": "asymmetry euch equivalent so that's another remark"
+    },
+    {
+      "start": 2347.28,
+      "end": 2350.88,
+      "text": "Apologies if you said this, and I'm just missing it."
+    },
+    {
+      "start": 2351.1600000000003,
+      "end": 2354.82,
+      "text": "So it's the shape of that, what those wells, they're conceptual."
+    },
+    {
+      "start": 2355.28,
+      "end": 2357.94,
+      "text": "Is it the probability of being in one or zero,"
+    },
+    {
+      "start": 2357.94,
+      "end": 2361.9,
+      "text": "or is it the fluctuations that are permitted within one"
+    },
+    {
+      "start": 2361.9,
+      "end": 2364.0400000000004,
+      "text": "versus the fluctuations permitted within zero?"
+    },
+    {
+      "start": 2364.6000000000004,
+      "end": 2365.38,
+      "text": "Because those seem different."
+    },
+    {
+      "start": 2366.0600000000004,
+      "end": 2366.98,
+      "text": "Energy levels."
+    },
+    {
+      "start": 2367.7000000000003,
+      "end": 2368.6400000000003,
+      "text": "Energy levels."
+    },
+    {
+      "start": 2369.1000000000004,
+      "end": 2370.8,
+      "text": "So it is an energy plot."
+    },
+    {
+      "start": 2371.1000000000004,
+      "end": 2371.2000000000003,
+      "text": "Correct."
+    },
+    {
+      "start": 2371.5600000000004,
+      "end": 2372.0,
+      "text": "So it's one."
+    },
+    {
+      "start": 2372.38,
+      "end": 2374.5600000000004,
+      "text": "Here's a gas energy barrier."
+    },
+    {
+      "start": 2374.56,
+      "end": 2383.38,
+      "text": "So it has nothing to do with the probability of being in one or zero"
+    },
+    {
+      "start": 2383.38,
+      "end": 2384.34,
+      "text": "in a statistical way."
+    },
+    {
+      "start": 2384.34,
+      "end": 2385.58,
+      "text": "That's external, right?"
+    },
+    {
+      "start": 2385.68,
+      "end": 2388.32,
+      "text": "Because you can engineer that based on what computation you're doing."
+    },
+    {
+      "start": 2388.5,
+      "end": 2389.66,
+      "text": "So that has nothing to do with it."
+    },
+    {
+      "start": 2390.04,
+      "end": 2394.6,
+      "text": "In the real CMOS, it's a completely dissipative system."
+    },
+    {
+      "start": 2395.16,
+      "end": 2399.58,
+      "text": "The way S-RAMs are built, you have these kind of bimodal distribution there"
+    },
+    {
+      "start": 2399.58,
+      "end": 2402.54,
+      "text": "coming from a purely non-equilibrium system."
+    },
+    {
+      "start": 2403.08,
+      "end": 2404.34,
+      "text": "So there, it's not..."
+    },
+    {
+      "start": 2404.56,
+      "end": 2408.22,
+      "text": "It's not a real potential in a G-well."
+    },
+    {
+      "start": 2408.2999999999997,
+      "end": 2408.86,
+      "text": "It's conceptual."
+    },
+    {
+      "start": 2409.2,
+      "end": 2409.86,
+      "text": "It's a conceptual."
+    },
+    {
+      "start": 2410.32,
+      "end": 2411.66,
+      "text": "You call it like a quasi-potential."
+    },
+    {
+      "start": 2411.88,
+      "end": 2412.44,
+      "text": "Now I will talk about it."
+    },
+    {
+      "start": 2412.44,
+      "end": 2413.52,
+      "text": "I think it's actually static."
+    },
+    {
+      "start": 2413.7799999999997,
+      "end": 2413.92,
+      "text": "Yeah."
+    },
+    {
+      "start": 2414.12,
+      "end": 2414.5,
+      "text": "That's right."
+    },
+    {
+      "start": 2415.6,
+      "end": 2415.82,
+      "text": "Right."
+    },
+    {
+      "start": 2417.72,
+      "end": 2423.2799999999997,
+      "text": "You can't replace the ln2 with the binary entropy,"
+    },
+    {
+      "start": 2423.92,
+      "end": 2428.62,
+      "text": "given the non-1.5 probability."
+    },
+    {
+      "start": 2429.62,
+      "end": 2430.1,
+      "text": "Yeah."
+    },
+    {
+      "start": 2430.52,
+      "end": 2431.04,
+      "text": "So, yes."
+    },
+    {
+      "start": 2431.04,
+      "end": 2432.7599999999998,
+      "text": "Yeah, sorry."
+    },
+    {
+      "start": 2433.64,
+      "end": 2433.84,
+      "text": "Okay."
+    },
+    {
+      "start": 2434.04,
+      "end": 2434.54,
+      "text": "So..."
+    },
+    {
+      "start": 2434.54,
+      "end": 2440.6,
+      "text": "So, this is a general setup."
+    },
+    {
+      "start": 2440.82,
+      "end": 2444.52,
+      "text": "So, if the memory is asymmetric,"
+    },
+    {
+      "start": 2444.9,
+      "end": 2448.3,
+      "text": "then we can associate some free energies for each well."
+    },
+    {
+      "start": 2448.58,
+      "end": 2453.2599999999998,
+      "text": "I mean, in this case, the free energy for only for 0 state"
+    },
+    {
+      "start": 2453.2599999999998,
+      "end": 2456.1,
+      "text": "is the same as that for 1 state."
+    },
+    {
+      "start": 2456.1,
+      "end": 2460.04,
+      "text": "But in general, we have different free energies inside the well,"
+    },
+    {
+      "start": 2460.34,
+      "end": 2464.1,
+      "text": "like F0, F1, F2, and then..."
+    },
+    {
+      "start": 2464.54,
+      "end": 2470.38,
+      "text": "So, the free energy change before and after the information of the user"
+    },
+    {
+      "start": 2470.38,
+      "end": 2474.12,
+      "text": "or the measurement time in the copying process."
+    },
+    {
+      "start": 2474.58,
+      "end": 2483.7799999999997,
+      "text": "So, we have some this data that comes from the difference of free energies in each well."
+    },
+    {
+      "start": 2487.48,
+      "end": 2488.16,
+      "text": "And then..."
+    },
+    {
+      "start": 2488.16,
+      "end": 2488.74,
+      "text": "So, okay."
+    },
+    {
+      "start": 2488.74,
+      "end": 2493.0,
+      "text": "So, this is the most general form of the Landau's principle for asymmetric well."
+    },
+    {
+      "start": 2493.34,
+      "end": 2494.5,
+      "text": "So, this H is the..."
+    },
+    {
+      "start": 2494.54,
+      "end": 2497.92,
+      "text": "So, this H is the information that is erased from the memory."
+    },
+    {
+      "start": 2497.92,
+      "end": 2503.92,
+      "text": "And this delta F is from the entropy change from each well."
+    },
+    {
+      "start": 2504.92,
+      "end": 2510.46,
+      "text": "And if delta F is 0, then the original Landau's principle is recovered."
+    },
+    {
+      "start": 2510.46,
+      "end": 2516.98,
+      "text": "But in general, we have this kind of term."
+    },
+    {
+      "start": 2516.98,
+      "end": 2523.06,
+      "text": "And if delta F is not 0, then, yeah, we can erase the information."
+    },
+    {
+      "start": 2523.06,
+      "end": 2523.62,
+      "text": "Let's..."
+    },
+    {
+      "start": 2523.62,
+      "end": 2527.0,
+      "text": "Okay, the energy cost can be less than the Landau's power."
+    },
+    {
+      "start": 2527.0,
+      "end": 2528.04,
+      "text": "Can be less than, yeah."
+    },
+    {
+      "start": 2531.2599999999998,
+      "end": 2535.0,
+      "text": "Okay, so, the mechanism of this is something like this."
+    },
+    {
+      "start": 2535.0,
+      "end": 2536.0,
+      "text": "Okay, so..."
+    },
+    {
+      "start": 2536.8199999999997,
+      "end": 2541.0,
+      "text": "So..."
+    },
+    {
+      "start": 2542.38,
+      "end": 2547.02,
+      "text": "But if, I mean, if I look at your sort of conceptual picture of the fluctuations, right?"
+    },
+    {
+      "start": 2547.64,
+      "end": 2552.98,
+      "text": "So, it's only going one way is where you reduce the delta F, right?"
+    },
+    {
+      "start": 2552.98,
+      "end": 2553.08,
+      "text": "Yeah."
+    },
+    {
+      "start": 2553.62,
+      "end": 2555.24,
+      "text": "But the other way, it'll increase it, right?"
+    },
+    {
+      "start": 2555.24,
+      "end": 2555.7799999999997,
+      "text": "Right, yeah."
+    },
+    {
+      "start": 2555.7799999999997,
+      "end": 2570.7999999999997,
+      "text": "So, is it possible to have a system where you can change the shape without expending energy?"
+    },
+    {
+      "start": 2572.64,
+      "end": 2575.14,
+      "text": "At the end of the day, you can't violate the second law."
+    },
+    {
+      "start": 2575.14,
+      "end": 2576.7999999999997,
+      "text": "Jarzynski's equality will hold."
+    },
+    {
+      "start": 2576.7999999999997,
+      "end": 2577.44,
+      "text": "Right."
+    },
+    {
+      "start": 2577.44,
+      "end": 2579.3199999999997,
+      "text": "Don't matter what you do, Jarzynski."
+    },
+    {
+      "start": 2579.3199999999997,
+      "end": 2582.98,
+      "text": "Yeah, because otherwise you're, I mean, okay, I can do better."
+    },
+    {
+      "start": 2582.98,
+      "end": 2584.56,
+      "text": "But I'm always going to the same place."
+    },
+    {
+      "start": 2584.64,
+      "end": 2586.2,
+      "text": "So, in some sense, I know the answer already."
+    },
+    {
+      "start": 2586.44,
+      "end": 2588.78,
+      "text": "So, I don't need to run my computation, right?"
+    },
+    {
+      "start": 2588.86,
+      "end": 2593.4,
+      "text": "If you know the initial state with probability one, it's a delta function."
+    },
+    {
+      "start": 2593.58,
+      "end": 2594.52,
+      "text": "This isn't the upstate."
+    },
+    {
+      "start": 2595.52,
+      "end": 2603.62,
+      "text": "For example, I can just appropriately put a coordinate system on the angle of a planet orbiting a sun."
+    },
+    {
+      "start": 2604.18,
+      "end": 2607.18,
+      "text": "In an idealized case where the sun is infinite mass and we're in a vacuum."
+    },
+    {
+      "start": 2607.54,
+      "end": 2607.76,
+      "text": "Okay."
+    },
+    {
+      "start": 2607.76,
+      "end": 2611.56,
+      "text": "I can then do any computation I want with an appropriate coordinate system."
+    },
+    {
+      "start": 2612.1,
+      "end": 2612.14,
+      "text": "Sure."
+    },
+    {
+      "start": 2612.14,
+      "end": 2612.2,
+      "text": "Sure."
+    },
+    {
+      "start": 2612.98,
+      "end": 2615.44,
+      "text": "So, you can go to those kinds of extremes."
+    },
+    {
+      "start": 2615.44,
+      "end": 2616.72,
+      "text": "Degenerate essentially."
+    },
+    {
+      "start": 2616.72,
+      "end": 2620.22,
+      "text": "Yeah. But the bounds that are being presented here always apply."
+    },
+    {
+      "start": 2620.48,
+      "end": 2621.28,
+      "text": "You can't get around them."
+    },
+    {
+      "start": 2621.52,
+      "end": 2621.76,
+      "text": "Okay."
+    },
+    {
+      "start": 2622.68,
+      "end": 2631.54,
+      "text": "So, one comment is it should be delta H, change in entropy."
+    },
+    {
+      "start": 2631.54,
+      "end": 2631.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 2631.64,
+      "end": 2634.72,
+      "text": "It cannot be H because."
+    },
+    {
+      "start": 2634.72,
+      "end": 2642.92,
+      "text": "The other one is one, you assume it's a finite, okay."
+    },
+    {
+      "start": 2642.98,
+      "end": 2646.18,
+      "text": "But do you see what I'm saying?"
+    },
+    {
+      "start": 2646.18,
+      "end": 2647.18,
+      "text": "It should be delta H."
+    },
+    {
+      "start": 2647.18,
+      "end": 2648.18,
+      "text": "Yeah, yes, you do."
+    },
+    {
+      "start": 2648.18,
+      "end": 2651.68,
+      "text": "It's a change in delta H, yeah."
+    },
+    {
+      "start": 2651.98,
+      "end": 2653.48,
+      "text": "Sorry, this is a silly question."
+    },
+    {
+      "start": 2653.78,
+      "end": 2659.4,
+      "text": "From my understanding, especially like neuromorphic computing, often we treat our state space as continuous."
+    },
+    {
+      "start": 2659.92,
+      "end": 2662.48,
+      "text": "So, for example, it can be like voltage across a resistor."
+    },
+    {
+      "start": 2662.48,
+      "end": 2668.66,
+      "text": "What is the most natural way to talk about entropy for such a state space?"
+    },
+    {
+      "start": 2668.7400000000002,
+      "end": 2670.12,
+      "text": "Do we just have to do this coarse graining?"
+    },
+    {
+      "start": 2671.02,
+      "end": 2671.1,
+      "text": "No."
+    },
+    {
+      "start": 2672.1,
+      "end": 2672.62,
+      "text": "No."
+    },
+    {
+      "start": 2672.98,
+      "end": 2676.98,
+      "text": "So, in terms of dynamics, you have the probability density functions,"
+    },
+    {
+      "start": 2676.98,
+      "end": 2680.98,
+      "text": "finite entropy is fine in continuous spaces, you can set additive constant."
+    },
+    {
+      "start": 2680.98,
+      "end": 2685.22,
+      "text": "It doesn't matter when you subtract out one entropy from another."
+    },
+    {
+      "start": 2685.22,
+      "end": 2686.7400000000002,
+      "text": "So, all of this goes for Langevin."
+    },
+    {
+      "start": 2687.48,
+      "end": 2692.26,
+      "text": "What Takahiro is presenting now is the intuitive simplest case."
+    },
+    {
+      "start": 2693.06,
+      "end": 2694.58,
+      "text": "Got you, thanks."
+    },
+    {
+      "start": 2698.86,
+      "end": 2701.3,
+      "text": "Also related to your previous question."
+    },
+    {
+      "start": 2701.3,
+      "end": 2702.26,
+      "text": "So, you have."
+    },
+    {
+      "start": 2702.98,
+      "end": 2712.98,
+      "text": "You have this kind of phase space, and then the total entropy is like for this total distribution."
+    },
+    {
+      "start": 2712.98,
+      "end": 2720.22,
+      "text": "But we can decompose it to the internal entropy part and the logical entropy part."
+    },
+    {
+      "start": 2720.22,
+      "end": 2728.1,
+      "text": "So, yeah, we can say that the logical entropy is about the entropy between this 0 and 1,"
+    },
+    {
+      "start": 2728.1,
+      "end": 2731.98,
+      "text": "and the internal entropy is something like only inside this way."
+    },
+    {
+      "start": 2731.98,
+      "end": 2732.98,
+      "text": "So, yeah."
+    },
+    {
+      "start": 2732.98,
+      "end": 2737.98,
+      "text": "And there is a very general mathematical formula that the total entropy can be decomposed"
+    },
+    {
+      "start": 2737.98,
+      "end": 2742.98,
+      "text": "to the average of internal entropies and the logical entropy."
+    },
+    {
+      "start": 2742.98,
+      "end": 2748.98,
+      "text": "So, this means that if we consider some asymmetric memory,"
+    },
+    {
+      "start": 2748.98,
+      "end": 2751.98,
+      "text": "so this internal entropy contributes,"
+    },
+    {
+      "start": 2751.98,
+      "end": 2756.98,
+      "text": "and even when we erase this logical entropy,"
+    },
+    {
+      "start": 2756.98,
+      "end": 2759.98,
+      "text": "that can be absorbed into the internal entropy."
+    },
+    {
+      "start": 2760.98,
+      "end": 2762.98,
+      "text": "So, then in that case,"
+    },
+    {
+      "start": 2762.98,
+      "end": 2764.98,
+      "text": "the total entropy can be 0."
+    },
+    {
+      "start": 2764.98,
+      "end": 2770.98,
+      "text": "So, that is a fundamental reason why we can erase information"
+    },
+    {
+      "start": 2770.98,
+      "end": 2772.98,
+      "text": "rather than the random part."
+    },
+    {
+      "start": 2772.98,
+      "end": 2777.98,
+      "text": "Yeah, sometimes I like this kind of here."
+    },
+    {
+      "start": 2777.98,
+      "end": 2779.98,
+      "text": "So, here is an energy gap."
+    },
+    {
+      "start": 2779.98,
+      "end": 2782.98,
+      "text": "But this energy gap is not so fundamental."
+    },
+    {
+      "start": 2782.98,
+      "end": 2787.98,
+      "text": "I mean, the phase space volume is like this width and this width."
+    },
+    {
+      "start": 2787.98,
+      "end": 2790.98,
+      "text": "So, that is more fundamental."
+    },
+    {
+      "start": 2790.98,
+      "end": 2793.98,
+      "text": "Even in the range of пош opin,"
+    },
+    {
+      "start": 2793.98,
+      "end": 2798.98,
+      "text": "it is not so much matter that you have any major difference of mass and energy,"
+    },
+    {
+      "start": 2798.98,
+      "end": 2804.98,
+      "text": "but oh no,"
+    },
+    {
+      "start": 2804.98,
+      "end": 2806.72,
+      "text": "then it"
+    },
+    {
+      "start": 2806.98,
+      "end": 2807.98,
+      "text": "or it may have to be a mass."
+    },
+    {
+      "start": 2808.98,
+      "end": 2811.02,
+      "text": "But it means that 왜�"
+    },
+    {
+      "start": 2811.02,
+      "end": 2814.98,
+      "text": "so much energy,"
+    },
+    {
+      "start": 2814.98,
+      "end": 2817.98,
+      "text": "less energy power,"
+    },
+    {
+      "start": 2817.98,
+      "end": 2818.46,
+      "text": "more joined"
+    },
+    {
+      "start": 2818.46,
+      "end": 2818.98,
+      "text": "energy ."
+    },
+    {
+      "start": 2818.98,
+      "end": 2819.98,
+      "text": "Yes."
+    },
+    {
+      "start": 2819.98,
+      "end": 2820.98,
+      "text": "Yes."
+    },
+    {
+      "start": 2820.98,
+      "end": 2825.98,
+      "text": "So, actually, that is a…"
+    },
+    {
+      "start": 2825.98,
+      "end": 2826.98,
+      "text": "Okay."
+    },
+    {
+      "start": 2826.98,
+      "end": 2827.98,
+      "text": "Yeah."
+    },
+    {
+      "start": 2827.98,
+      "end": 2828.98,
+      "text": "Yeah."
+    },
+    {
+      "start": 2828.98,
+      "end": 2829.98,
+      "text": "So, I think more…"
+    },
+    {
+      "start": 2829.98,
+      "end": 2830.98,
+      "text": "Yes."
+    },
+    {
+      "start": 2830.98,
+      "end": 2831.98,
+      "text": "Yeah."
+    },
+    {
+      "start": 2831.98,
+      "end": 2832.98,
+      "text": "Yeah."
+    },
+    {
+      "start": 2832.98,
+      "end": 2833.98,
+      "text": "Sorry."
+    },
+    {
+      "start": 2833.98,
+      "end": 2834.98,
+      "text": "Okay."
+    },
+    {
+      "start": 2834.98,
+      "end": 2835.98,
+      "text": "So…"
+    },
+    {
+      "start": 2835.98,
+      "end": 2836.98,
+      "text": "Okay."
+    },
+    {
+      "start": 2836.98,
+      "end": 2843.98,
+      "text": "So, this is an energy cost for measurement."
+    },
+    {
+      "start": 2843.98,
+      "end": 2848.98,
+      "text": "Measurement means the copy of information or writing process."
+    },
+    {
+      "start": 2848.98,
+      "end": 2849.98,
+      "text": "So, yeah."
+    },
+    {
+      "start": 2849.98,
+      "end": 2854.98,
+      "text": "This is a little complicated, but we can see that."
+    },
+    {
+      "start": 2854.98,
+      "end": 2860.98,
+      "text": "So, for the information erasure process, so we have this kth minus delta f."
+    },
+    {
+      "start": 2860.98,
+      "end": 2862.98,
+      "text": "And the information…"
+    },
+    {
+      "start": 2862.98,
+      "end": 2868.98,
+      "text": "The measurement process, the copying process, we have exactly this."
+    },
+    {
+      "start": 2868.98,
+      "end": 2870.98,
+      "text": "Inverse slide here."
+    },
+    {
+      "start": 2870.98,
+      "end": 2872.98,
+      "text": "Minus h plus delta f."
+    },
+    {
+      "start": 2872.98,
+      "end": 2873.98,
+      "text": "So…"
+    },
+    {
+      "start": 2873.98,
+      "end": 2874.98,
+      "text": "Yeah."
+    },
+    {
+      "start": 2874.98,
+      "end": 2882.22,
+      "text": "This minus h means that the logical entropy change is exactly reversed because copying"
+    },
+    {
+      "start": 2882.22,
+      "end": 2886.98,
+      "text": "is a kind of the backward processing of the machine."
+    },
+    {
+      "start": 2886.98,
+      "end": 2888.98,
+      "text": "Are you assuming a destructive measurement?"
+    },
+    {
+      "start": 2888.98,
+      "end": 2892.98,
+      "text": "So, again, when measurement is defined, like, what is the definition of measurement here?"
+    },
+    {
+      "start": 2892.98,
+      "end": 2894.98,
+      "text": "It's a kind of thing of the gate."
+    },
+    {
+      "start": 2894.98,
+      "end": 2896.98,
+      "text": "So, I mean, it's a…"
+    },
+    {
+      "start": 2896.98,
+      "end": 2897.98,
+      "text": "Yeah."
+    },
+    {
+      "start": 2897.98,
+      "end": 2898.98,
+      "text": "So…"
+    },
+    {
+      "start": 2898.98,
+      "end": 2899.98,
+      "text": "Can I write…"
+    },
+    {
+      "start": 2899.98,
+      "end": 2900.98,
+      "text": "Okay."
+    },
+    {
+      "start": 2900.98,
+      "end": 2901.98,
+      "text": "Okay."
+    },
+    {
+      "start": 2901.98,
+      "end": 2902.98,
+      "text": "Okay."
+    },
+    {
+      "start": 2902.98,
+      "end": 2903.98,
+      "text": "Okay."
+    },
+    {
+      "start": 2903.98,
+      "end": 2904.98,
+      "text": "I think I need a pen."
+    },
+    {
+      "start": 2904.98,
+      "end": 2905.98,
+      "text": "Oh, right."
+    },
+    {
+      "start": 2905.98,
+      "end": 2906.98,
+      "text": "There's a little economic…"
+    },
+    {
+      "start": 2906.98,
+      "end": 2907.98,
+      "text": "They have this fancy glass board which you can't write on."
+    },
+    {
+      "start": 2907.98,
+      "end": 2908.98,
+      "text": "Oh, I see."
+    },
+    {
+      "start": 2908.98,
+      "end": 2909.98,
+      "text": "I'm at Cornell."
+    },
+    {
+      "start": 2909.98,
+      "end": 2910.98,
+      "text": "Oh."
+    },
+    {
+      "start": 2910.98,
+      "end": 2911.98,
+      "text": "Given that we're at Cornell, there are these fancy boards that you can't use."
+    },
+    {
+      "start": 2911.98,
+      "end": 2912.98,
+      "text": "Yeah, we had…"
+    },
+    {
+      "start": 2912.98,
+      "end": 2913.98,
+      "text": "Oh, there are pens over there."
+    },
+    {
+      "start": 2913.98,
+      "end": 2914.98,
+      "text": "There's an age where we're building with…"
+    },
+    {
+      "start": 2914.98,
+      "end": 2915.98,
+      "text": "There is old technology."
+    },
+    {
+      "start": 2915.98,
+      "end": 2916.98,
+      "text": "That's boring."
+    },
+    {
+      "start": 2916.98,
+      "end": 2917.98,
+      "text": "That's a little…"
+    },
+    {
+      "start": 2917.98,
+      "end": 2918.98,
+      "text": "Yeah."
+    },
+    {
+      "start": 2918.98,
+      "end": 2919.98,
+      "text": "Yeah."
+    },
+    {
+      "start": 2919.98,
+      "end": 2920.98,
+      "text": "Yeah."
+    },
+    {
+      "start": 2920.98,
+      "end": 2921.98,
+      "text": "Yeah."
+    },
+    {
+      "start": 2921.98,
+      "end": 2922.98,
+      "text": "Yeah."
+    },
+    {
+      "start": 2922.98,
+      "end": 2923.98,
+      "text": "Yeah."
+    },
+    {
+      "start": 2923.98,
+      "end": 2924.98,
+      "text": "Yeah."
+    },
+    {
+      "start": 2924.98,
+      "end": 2925.98,
+      "text": "Yeah."
+    },
+    {
+      "start": 2925.98,
+      "end": 2926.98,
+      "text": "Yeah."
+    },
+    {
+      "start": 2926.98,
+      "end": 2927.98,
+      "text": "Yeah."
+    },
+    {
+      "start": 2927.98,
+      "end": 2928.98,
+      "text": "Yeah."
+    },
+    {
+      "start": 2928.98,
+      "end": 2929.98,
+      "text": "Yeah."
+    },
+    {
+      "start": 2929.98,
+      "end": 2930.98,
+      "text": "Yeah."
+    },
+    {
+      "start": 2930.98,
+      "end": 2931.98,
+      "text": "Yeah."
+    },
+    {
+      "start": 2931.98,
+      "end": 2932.98,
+      "text": "Yeah."
+    },
+    {
+      "start": 2932.98,
+      "end": 2934.68,
+      "text": "That's very important."
+    },
+    {
+      "start": 2934.68,
+      "end": 2935.68,
+      "text": "It's not that boring?"
+    },
+    {
+      "start": 2935.68,
+      "end": 2936.68,
+      "text": "Right."
+    },
+    {
+      "start": 2936.68,
+      "end": 2937.68,
+      "text": "Do you know what's that for?"
+    },
+    {
+      "start": 2937.68,
+      "end": 2939.2400000000002,
+      "text": "To be better, you can use that board so that everybody can…"
+    },
+    {
+      "start": 2939.2400000000002,
+      "end": 2940.2400000000002,
+      "text": "Yeah."
+    },
+    {
+      "start": 2940.2400000000002,
+      "end": 2941.2400000000002,
+      "text": "Yeah."
+    },
+    {
+      "start": 2941.2400000000002,
+      "end": 2943.62,
+      "text": "So at beginning, don't be recording that."
+    },
+    {
+      "start": 2944.62,
+      "end": 2945.62,
+      "text": "Okay."
+    },
+    {
+      "start": 2945.62,
+      "end": 2946.62,
+      "text": "Here…"
+    },
+    {
+      "start": 2946.62,
+      "end": 2947.62,
+      "text": "You want to write on this?"
+    },
+    {
+      "start": 2947.62,
+      "end": 2948.62,
+      "text": "Oh, yes."
+    },
+    {
+      "start": 2948.62,
+      "end": 2949.62,
+      "text": "So, everybody can see…"
+    },
+    {
+      "start": 2949.62,
+      "end": 2954.62,
+      "text": "Stop sharing so it can be recorded."
+    },
+    {
+      "start": 2954.62,
+      "end": 2956.46,
+      "text": "Oh yeah yeah yeah."
+    },
+    {
+      "start": 2957.46,
+      "end": 2958.46,
+      "text": "Please do."
+    },
+    {
+      "start": 2958.46,
+      "end": 2959.46,
+      "text": "I helped him."
+    },
+    {
+      "start": 2959.46,
+      "end": 2960.46,
+      "text": "Yeah I helped him."
+    },
+    {
+      "start": 2961.46,
+      "end": 2962.46,
+      "text": "Wooo."
+    },
+    {
+      "start": 2962.46,
+      "end": 2977.9,
+      "text": "The reason why the measurement is important is because that's where the memory access,"
+    },
+    {
+      "start": 2977.9,
+      "end": 2982.94,
+      "text": "at least from the hardware point of view, memory access and interconnect comes there because you"
+    },
+    {
+      "start": 2982.94,
+      "end": 2987.42,
+      "text": "can have a memory then you can do the state transition but if you can't measure it how much"
+    },
+    {
+      "start": 2987.42,
+      "end": 2994.78,
+      "text": "is the energy cost for that right right so yes yeah so we have okay we have a system"
+    },
+    {
+      "start": 3011.9,
+      "end": 3017.26,
+      "text": "and the memory is zero yeah and then after the measurement of the protein"
+    },
+    {
+      "start": 3018.38,
+      "end": 3027.7400000000002,
+      "text": "this becomes zero and zero and this is one and one so this is a measurement but on the other hand"
+    },
+    {
+      "start": 3027.7400000000002,
+      "end": 3035.02,
+      "text": "in the Eurasia process starting from here so we just go back to zero oh I see so that's why you're"
+    },
+    {
+      "start": 3035.02,
+      "end": 3039.7400000000002,
+      "text": "saying it's just the inverse yes yeah I understand what it is so the measurement is actually changing"
+    },
+    {
+      "start": 3039.7400000000002,
+      "end": 3046.14,
+      "text": "the state of the observer just like quantum systems yeah that's why it was like a CNOD gate"
+    },
+    {
+      "start": 3047.42,
+      "end": 3051.66,
+      "text": "but quantum systems change the state of the system also the measurement process"
+    },
+    {
+      "start": 3051.66,
+      "end": 3056.94,
+      "text": "and everyone changes that say the quantum state so this is not quantum not only quantum is doomed"
+    },
+    {
+      "start": 3056.94,
+      "end": 3065.82,
+      "text": "now no more mechanism so shantanu's question I think it is when he is saying measurement it is"
+    },
+    {
+      "start": 3065.82,
+      "end": 3070.38,
+      "text": "more like right or something yeah it's like I think it's going into the memory to write"
+    },
+    {
+      "start": 3070.94,
+      "end": 3076.78,
+      "text": "a bit yeah so in this case because it's unitary transform right so you can reverse it back so I"
+    },
+    {
+      "start": 3077.42,
+      "end": 3085.02,
+      "text": "Here you can recover the energy, but in practice, when we implement things, the measurement is dissipated, because there…"
+    },
+    {
+      "start": 3085.02,
+      "end": 3089.62,
+      "text": "And also read versus write, we have measured, energy is different."
+    },
+    {
+      "start": 3089.62,
+      "end": 3092.2200000000003,
+      "text": "So there is even asymmetry between read and write."
+    },
+    {
+      "start": 3092.2200000000003,
+      "end": 3093.7200000000003,
+      "text": "But this would be dissipated too."
+    },
+    {
+      "start": 3093.7200000000003,
+      "end": 3096.82,
+      "text": "Yeah, right."
+    },
+    {
+      "start": 3096.82,
+      "end": 3101.82,
+      "text": "So, I think measurement in your mind is writing to memory."
+    },
+    {
+      "start": 3101.82,
+      "end": 3110.42,
+      "text": "But it's writing to your own, the measurer's memory is being written by reading what's in the system."
+    },
+    {
+      "start": 3110.42,
+      "end": 3111.6200000000003,
+      "text": "And you're assuming…"
+    },
+    {
+      "start": 3111.6200000000003,
+      "end": 3116.02,
+      "text": "You know, just who's being written versus who's being read."
+    },
+    {
+      "start": 3116.02,
+      "end": 3119.2200000000003,
+      "text": "And you're assuming that there's no back coupling, so the…"
+    },
+    {
+      "start": 3119.2200000000003,
+      "end": 3121.6200000000003,
+      "text": "Yeah, a coupling that's…"
+    },
+    {
+      "start": 3121.6200000000003,
+      "end": 3123.7200000000003,
+      "text": "The observer doesn't change the system."
+    },
+    {
+      "start": 3123.7200000000003,
+      "end": 3125.52,
+      "text": "Yes, the system is unchanged, yeah."
+    },
+    {
+      "start": 3125.52,
+      "end": 3126.6200000000003,
+      "text": "Yes, that's right."
+    },
+    {
+      "start": 3126.6200000000003,
+      "end": 3128.32,
+      "text": "But you can also incorporate…"
+    },
+    {
+      "start": 3128.32,
+      "end": 3131.7200000000003,
+      "text": "Sure, just a different evolution, yeah."
+    },
+    {
+      "start": 3131.7200000000003,
+      "end": 3131.82,
+      "text": "Yeah."
+    },
+    {
+      "start": 3131.82,
+      "end": 3139.82,
+      "text": "It's actually a huge issue in what's called reversible computation, because at the end of the reversible computation, you try to…"
+    },
+    {
+      "start": 3139.82,
+      "end": 3141.6200000000003,
+      "text": "Uncompute the computer, yes."
+    },
+    {
+      "start": 3141.6200000000003,
+      "end": 3144.6200000000003,
+      "text": "That's useless, unless you made an extra copy of your output."
+    },
+    {
+      "start": 3144.6200000000003,
+      "end": 3154.6200000000003,
+      "text": "But in that case, you had an information battery you could have used to power your computation conventionally without any need for all this reversible stuff."
+    },
+    {
+      "start": 3154.6200000000003,
+      "end": 3155.7200000000003,
+      "text": "Yeah, because as soon as you make the…"
+    },
+    {
+      "start": 3155.7200000000003,
+      "end": 3158.1200000000003,
+      "text": "I mean, you break it as soon as you make that copy, that's right."
+    },
+    {
+      "start": 3158.1200000000003,
+      "end": 3158.82,
+      "text": "Because in many…"
+    },
+    {
+      "start": 3158.82,
+      "end": 3161.7200000000003,
+      "text": "Most neuromorphic systems, the readout consumes a lot of power."
+    },
+    {
+      "start": 3161.72,
+      "end": 3165.3199999999997,
+      "text": "Because you have to make sure that it doesn't disturb the memory itself."
+    },
+    {
+      "start": 3165.3199999999997,
+      "end": 3167.52,
+      "text": "So you have to make sure there's no back coupling."
+    },
+    {
+      "start": 3167.52,
+      "end": 3168.9199999999996,
+      "text": "I mean, I.O. is…"
+    },
+    {
+      "start": 3168.9199999999996,
+      "end": 3171.12,
+      "text": "I mean, I.O. is terrible for the brain too, right?"
+    },
+    {
+      "start": 3171.12,
+      "end": 3173.9199999999996,
+      "text": "There's a lot of computation in here and not a lot going in and out, right?"
+    },
+    {
+      "start": 3173.9199999999996,
+      "end": 3177.12,
+      "text": "So it's the same for any system, I think."
+    },
+    {
+      "start": 3177.12,
+      "end": 3178.9199999999996,
+      "text": "Okay."
+    },
+    {
+      "start": 3178.9199999999996,
+      "end": 3179.52,
+      "text": "Yeah, sorry, Tom."
+    },
+    {
+      "start": 3179.52,
+      "end": 3180.3199999999997,
+      "text": "Go ahead."
+    },
+    {
+      "start": 3180.3199999999997,
+      "end": 3181.12,
+      "text": "Yeah."
+    },
+    {
+      "start": 3181.12,
+      "end": 3191.62,
+      "text": "Actually, on that topic, I don't know if people have seen, there was an article in Neuron just about a year ago, which has gotten a lot of press, and it's not as laughable as it sounds."
+    },
+    {
+      "start": 3191.72,
+      "end": 3202.3199999999997,
+      "text": "First, but these people use a lot of different approaches to make a strong claim that your cortex, doing all that computation, 11 bits a second."
+    },
+    {
+      "start": 3202.3199999999997,
+      "end": 3203.22,
+      "text": "Yeah, no, I've seen that."
+    },
+    {
+      "start": 3203.22,
+      "end": 3203.72,
+      "text": "Yeah."
+    },
+    {
+      "start": 3203.72,
+      "end": 3205.12,
+      "text": "Yeah."
+    },
+    {
+      "start": 3205.12,
+      "end": 3205.72,
+      "text": "I had the…"
+    },
+    {
+      "start": 3205.72,
+      "end": 3207.12,
+      "text": "I heard the author present it."
+    },
+    {
+      "start": 3207.12,
+      "end": 3208.3199999999997,
+      "text": "So that computation…"
+    },
+    {
+      "start": 3208.3199999999997,
+      "end": 3209.3199999999997,
+      "text": "Because it's what we like to think."
+    },
+    {
+      "start": 3209.3199999999997,
+      "end": 3210.3199999999997,
+      "text": "Yeah."
+    },
+    {
+      "start": 3210.3199999999997,
+      "end": 3211.3199999999997,
+      "text": "Yeah."
+    },
+    {
+      "start": 3211.3199999999997,
+      "end": 3212.3199999999997,
+      "text": "Yeah."
+    },
+    {
+      "start": 3212.3199999999997,
+      "end": 3213.3199999999997,
+      "text": "Yeah."
+    },
+    {
+      "start": 3213.3199999999997,
+      "end": 3214.3199999999997,
+      "text": "Yeah."
+    },
+    {
+      "start": 3214.3199999999997,
+      "end": 3215.3199999999997,
+      "text": "Yeah."
+    },
+    {
+      "start": 3215.3199999999997,
+      "end": 3216.3199999999997,
+      "text": "Yeah."
+    },
+    {
+      "start": 3216.3199999999997,
+      "end": 3217.3199999999997,
+      "text": "Yeah."
+    },
+    {
+      "start": 3217.3199999999997,
+      "end": 3218.3199999999997,
+      "text": "Yeah."
+    },
+    {
+      "start": 3218.3199999999997,
+      "end": 3219.3199999999997,
+      "text": "Yeah."
+    },
+    {
+      "start": 3219.3199999999997,
+      "end": 3220.3199999999997,
+      "text": "Yeah."
+    },
+    {
+      "start": 3220.3199999999997,
+      "end": 3221.3199999999997,
+      "text": "Yeah."
+    },
+    {
+      "start": 3221.72,
+      "end": 3223.22,
+      "text": "This is where responses медign."
+    },
+    {
+      "start": 3223.22,
+      "end": 3223.8199999999997,
+      "text": "Of course."
+    },
+    {
+      "start": 3223.8199999999997,
+      "end": 3224.52,
+      "text": "Of course."
+    },
+    {
+      "start": 3224.52,
+      "end": 3227.52,
+      "text": "I don't even remember what you mean by the difference."
+    },
+    {
+      "start": 3227.52,
+      "end": 3229.72,
+      "text": "Subconscious computing is not computing."
+    },
+    {
+      "start": 3232.52,
+      "end": 3241.12,
+      "text": "What I wanted to say…"
+    },
+    {
+      "start": 3241.12,
+      "end": 3242.12,
+      "text": "Oh, you're sorry."
+    },
+    {
+      "start": 3242.12,
+      "end": 3243.52,
+      "text": "How are we on what else is going on?"
+    },
+    {
+      "start": 3243.52,
+      "end": 3244.62,
+      "text": "I fully agree."
+    },
+    {
+      "start": 3244.62,
+      "end": 3245.22,
+      "text": "ั้كر�łamاض smiles"
+    },
+    {
+      "start": 3245.22,
+      "end": 3245.62,
+      "text": "Just start."
+    },
+    {
+      "start": 3245.62,
+      "end": 3245.9199999999996,
+      "text": "Yes."
+    },
+    {
+      "start": 3246.72,
+      "end": 3248.12,
+      "text": "So what I want to say…"
+    },
+    {
+      "start": 3248.12,
+      "end": 3251.02,
+      "text": "The measurement is not…"
+    },
+    {
+      "start": 3251.02,
+      "end": 3251.12,
+      "text": "Right?"
+    },
+    {
+      "start": 3251.12,
+      "end": 3259.2799999999997,
+      "text": "because in the linear process there is no system just a memory but in the measurement process so"
+    },
+    {
+      "start": 3259.2799999999997,
+      "end": 3267.44,
+      "text": "we have the system on top of the memory so that that is reflected in this additional term that is"
+    },
+    {
+      "start": 3272.16,
+      "end": 3275.44,
+      "text": "so yeah these terms are opposite signs"
+    },
+    {
+      "start": 3275.44,
+      "end": 3283.52,
+      "text": "we have this additional term for the measurement process and because of that"
+    },
+    {
+      "start": 3283.52,
+      "end": 3291.2000000000003,
+      "text": "so we have this kind of trade-off ratio so okay in the measurement process we have this"
+    },
+    {
+      "start": 3291.2000000000003,
+      "end": 3298.64,
+      "text": "minus Shannon plus delta f plus the material in the erasure process we have the Shannon minus delta f"
+    },
+    {
+      "start": 3298.64,
+      "end": 3304.88,
+      "text": "and if you sum up them then the lower bound is only given by the material information from"
+    },
+    {
+      "start": 3304.88,
+      "end": 3305.44,
+      "text": "the measurement process"
+    },
+    {
+      "start": 3305.44,
+      "end": 3311.44,
+      "text": "and on the other hand the conventional random bound is"
+    },
+    {
+      "start": 3312.08,
+      "end": 3319.6,
+      "text": "about here the Shannon information term so okay so then we can say that if we"
+    },
+    {
+      "start": 3319.6,
+      "end": 3327.12,
+      "text": "come up the measurement energetic cost and the erasure energetic cost then the sum is always"
+    },
+    {
+      "start": 3327.12,
+      "end": 3334.64,
+      "text": "bounded by the new point so this is a fundamental trade-off for the energetic cost for computation"
+    },
+    {
+      "start": 3336.0,
+      "end": 3342.2400000000002,
+      "text": "and if I this material information term is fundamental for getting the information"
+    },
+    {
+      "start": 3343.36,
+      "end": 3351.04,
+      "text": "on the other hand the conventional random principles are about this so yeah these are"
+    },
+    {
+      "start": 3351.76,
+      "end": 3358.16,
+      "text": "random principle and this trade-off look similar but I think the physical origin of"
+    },
+    {
+      "start": 3358.16,
+      "end": 3365.12,
+      "text": "this term is different so this is from the material information term here so in that sense"
+    },
+    {
+      "start": 3365.44,
+      "end": 3373.52,
+      "text": "we can say that the random principle is applicable for the original symmetric memory case but if we"
+    },
+    {
+      "start": 3373.52,
+      "end": 3380.64,
+      "text": "consider a more general setup we have a trade-off relation with this but this is not exactly the"
+    },
+    {
+      "start": 3380.64,
+      "end": 3388.8,
+      "text": "same as just the definition of what is erasure or what is measurement but this happens from"
+    },
+    {
+      "start": 3388.8,
+      "end": 3394.4,
+      "text": "the measurement process because because of the difference between the erasure and measurement"
+    },
+    {
+      "start": 3396.32,
+      "end": 3403.84,
+      "text": "yeah so can you give us some intuitive understanding on why the terms cancel out"
+    },
+    {
+      "start": 3403.84,
+      "end": 3408.4,
+      "text": "for the measurement is it is it oh yes there should be some asymmetry there right"
+    },
+    {
+      "start": 3409.2000000000003,
+      "end": 3416.7200000000003,
+      "text": "yeah so the reason why they are cancelled out is okay so in the measurement process"
+    },
+    {
+      "start": 3417.84,
+      "end": 3424.4,
+      "text": "zero becomes zero and then the erasure process zero one becomes zero in that sense they are inverse"
+    },
+    {
+      "start": 3425.44,
+      "end": 3428.48,
+      "text": "so that means that the measurement process is not the same as the measurement process"
+    },
+    {
+      "start": 3428.48,
+      "end": 3434.7200000000003,
+      "text": "but only in the measurement process there is a system and the systems information is copied to"
+    },
+    {
+      "start": 3434.7200000000003,
+      "end": 3441.36,
+      "text": "the memory so that only in the measurement process that kind of interaction or appearance so"
+    },
+    {
+      "start": 3443.84,
+      "end": 3449.76,
+      "text": "and that is the origin of this but the energy to drive that measurement comes is it from the"
+    },
+    {
+      "start": 3450.96,
+      "end": 3454.88,
+      "text": "from the memory like I'm just curious like how what is driving much more energy than the measurement process"
+    },
+    {
+      "start": 3455.44,
+      "end": 3461.2000000000003,
+      "text": "abstract oh yeah this is because only for the memory"
+    },
+    {
+      "start": 3464.2400000000002,
+      "end": 3468.96,
+      "text": "i think that's way more abstract yeah i think there's an implicit assumption"
+    },
+    {
+      "start": 3469.6,
+      "end": 3477.6,
+      "text": "that the memory for erasure from from the memory and the energy that essentially comes from"
+    },
+    {
+      "start": 3477.6,
+      "end": 3485.12,
+      "text": "the information are the same in reality it's not same because we have actually measured read versus"
+    },
+    {
+      "start": 3485.12,
+      "end": 3492.72,
+      "text": "right it's not the same yeah so but for your uh your discussion i can understand if you assume"
+    },
+    {
+      "start": 3492.72,
+      "end": 3497.68,
+      "text": "they are saying yeah this is a very important point that in almost all of the thermodynamics"
+    },
+    {
+      "start": 3497.68,
+      "end": 3502.7999999999997,
+      "text": "of information processing and so on you just usually what you do is assume the energy levels"
+    },
+    {
+      "start": 3502.7999999999997,
+      "end": 3507.8399999999997,
+      "text": "are all the same because that's you wanted to see what's going on just the thermodynamics of the"
+    },
+    {
+      "start": 3507.8399999999997,
+      "end": 3514.88,
+      "text": "right and so here takahiro's result here um that ultimately is coming from just more of an inclusive"
+    },
+    {
+      "start": 3514.88,
+      "end": 3515.12,
+      "text": "fix"
+    },
+    {
+      "start": 3515.12,
+      "end": 3520.08,
+      "text": "term closer to the hamiltonian you're considering the systems together versus just considering the"
+    },
+    {
+      "start": 3520.08,
+      "end": 3525.7599999999998,
+      "text": "one system by itself and that's why you have a mutual information that's a joint entropy minus"
+    },
+    {
+      "start": 3525.7599999999998,
+      "end": 3534.08,
+      "text": "the two marginal entropies can i also interpret this sort of summation as saying that basically"
+    },
+    {
+      "start": 3534.08,
+      "end": 3538.4,
+      "text": "after erasure what you lose was your original mutual information effectively and that's what"
+    },
+    {
+      "start": 3538.4,
+      "end": 3544.88,
+      "text": "you're paying the price for oh um after erasure you you lost the original mutual information and"
+    },
+    {
+      "start": 3544.88,
+      "end": 3548.0,
+      "text": "in some sense and that's what you're paying the price for effectively if you do both"
+    },
+    {
+      "start": 3548.7200000000003,
+      "end": 3555.76,
+      "text": "is that a reasonable interpretation or is that just me making something up"
+    },
+    {
+      "start": 3562.2400000000002,
+      "end": 3564.6400000000003,
+      "text": "sorry what is the mutual information between here"
+    },
+    {
+      "start": 3567.36,
+      "end": 3567.86,
+      "text": "okay"
+    },
+    {
+      "start": 3570.48,
+      "end": 3574.48,
+      "text": "here you're also i can also interpret it to be entropy production"
+    },
+    {
+      "start": 3575.12,
+      "end": 3582.08,
+      "text": "right oh this is the i uh it's not necessarily the entropy production it's not the strict"
+    },
+    {
+      "start": 3582.08,
+      "end": 3587.2000000000003,
+      "text": "equality or just being entropy you're assuming that you start with the memory and the system"
+    },
+    {
+      "start": 3587.2000000000003,
+      "end": 3592.6400000000003,
+      "text": "independent so they just get their two marginal entropies and then you couple them so they're"
+    },
+    {
+      "start": 3592.6400000000003,
+      "end": 3601.76,
+      "text": "actually neutral and that's the mutual i see oh maybe i think it's also answer of your question so"
+    },
+    {
+      "start": 3601.76,
+      "end": 3603.6,
+      "text": "yeah okay so if"
+    },
+    {
+      "start": 3604.56,
+      "end": 3612.56,
+      "text": "that's only it's a measurement and erasure then this kpi is dissipated as an entropy production"
+    },
+    {
+      "start": 3612.56,
+      "end": 3621.8399999999997,
+      "text": "but but that is that information is not useful so maybe the memory can use that information for"
+    },
+    {
+      "start": 3621.8399999999997,
+      "end": 3628.72,
+      "text": "feedback for the system because that is actually the market and if this is also my study for the"
+    },
+    {
+      "start": 3628.72,
+      "end": 3633.2,
+      "text": "feedback process that's why it's great"
+    },
+    {
+      "start": 3634.56,
+      "end": 3639.36,
+      "text": "okay so maybe now it's time to go back to the max's demo"
+    },
+    {
+      "start": 3650.72,
+      "end": 3662.24,
+      "text": "okay so yeah i think i will briefly go back to the mark says okay so this is a very old schematic of"
+    },
+    {
+      "start": 3662.24,
+      "end": 3664.24,
+      "text": "of"
+    },
+    {
+      "start": 3664.24,
+      "end": 3666.24,
+      "text": "zero zero"
+    },
+    {
+      "start": 3666.24,
+      "end": 3668.72,
+      "text": "the table gets one bit of information then"
+    },
+    {
+      "start": 3669.6,
+      "end": 3677.12,
+      "text": "kt log two two of work is extracted from this cycle and in general we can"
+    },
+    {
+      "start": 3677.7599999999998,
+      "end": 3686.08,
+      "text": "show that the upper bound of the work extracted by the demon is delta f plus a kti and i is a"
+    },
+    {
+      "start": 3686.08,
+      "end": 3692.16,
+      "text": "major information used for the feedback process and in the case of the zero engine this is from"
+    },
+    {
+      "start": 3692.24,
+      "end": 3696.0,
+      "text": "the same table so this is the same data so this is the same data so this is the same data"
+    },
+    {
+      "start": 3696.0,
+      "end": 3705.2799999999997,
+      "text": "so the data is zero and double is going to so the equality is achieved here so yes and yeah so this"
+    },
+    {
+      "start": 3705.2799999999997,
+      "end": 3717.3599999999997,
+      "text": "means that the information can be used for the freedom of course so in this example so the demo"
+    },
+    {
+      "start": 3717.3599999999997,
+      "end": 3721.3599999999997,
+      "text": "can decide what to do after the measurement based on its measurement out for example if the data is"
+    },
+    {
+      "start": 3721.36,
+      "end": 3727.1200000000003,
+      "text": "for example if the particle is in the left side then we do nothing but if the particle is in the"
+    },
+    {
+      "start": 3727.1200000000003,
+      "end": 3733.84,
+      "text": "right side then we can move the box to the right side then the entropy of the of this box is"
+    },
+    {
+      "start": 3733.84,
+      "end": 3740.4,
+      "text": "decreased by log2 so and that log data resource for the work instruction in the final expansion"
+    },
+    {
+      "start": 3740.4,
+      "end": 3750.1600000000003,
+      "text": "process so yeah this is a process that the information is used used as a resource of the"
+    },
+    {
+      "start": 3750.1600000000003,
+      "end": 3750.8,
+      "text": "feedback"
+    },
+    {
+      "start": 3751.36,
+      "end": 3758.6400000000003,
+      "text": "and in this case this maxwell demo is a memory and this is a system so the measurement is"
+    },
+    {
+      "start": 3758.6400000000003,
+      "end": 3765.6800000000003,
+      "text": "performed and then the obtain information is used for the feedback and in this case the"
+    },
+    {
+      "start": 3766.32,
+      "end": 3773.28,
+      "text": "mutual information is not stated but it can be a resource for the work extraction this process"
+    },
+    {
+      "start": 3773.28,
+      "end": 3780.88,
+      "text": "in this case yeah so then by combining this to"
+    },
+    {
+      "start": 3781.52,
+      "end": 3786.7200000000003,
+      "text": "perspectives so okay we can say that"
+    },
+    {
+      "start": 3789.44,
+      "end": 3795.84,
+      "text": "yeah so this mutual information term is exactly cancelled with the work extracted"
+    },
+    {
+      "start": 3796.7200000000003,
+      "end": 3802.96,
+      "text": "so in total the second one sometimes some dynamics is restored so i think that's a"
+    },
+    {
+      "start": 3802.96,
+      "end": 3808.96,
+      "text": "model understanding of what why maxwell's demo is not contradicting to the second one"
+    },
+    {
+      "start": 3811.36,
+      "end": 3825.36,
+      "text": "yeah so there are many arguments in the 20th century so cannot quantitatively answer what is"
+    },
+    {
+      "start": 3832.6400000000003,
+      "end": 3839.76,
+      "text": "okay so yeah maybe i still have time so let me just show"
+    },
+    {
+      "start": 3841.36,
+      "end": 3843.36,
+      "text": "you a little bit more about the"
+    },
+    {
+      "start": 3843.36,
+      "end": 3847.36,
+      "text": "device like a representation at that"
+    },
+    {
+      "start": 3850.88,
+      "end": 3853.52,
+      "text": "yeah this is essentially the same as the original"
+    },
+    {
+      "start": 3854.96,
+      "end": 3861.92,
+      "text": "but as i will show later so the yeah this can be generalized to more general"
+    },
+    {
+      "start": 3862.7200000000003,
+      "end": 3871.04,
+      "text": "i mean the mutual information case okay so let me consider this two level system and the"
+    },
+    {
+      "start": 3872.1600000000003,
+      "end": 3883.04,
+      "text": "um"
+    },
+    {
+      "start": 3883.04,
+      "end": 3889.52,
+      "text": "even though the"
+    },
+    {
+      "start": 3889.52,
+      "end": 3893.92,
+      "text": "value also"
+    },
+    {
+      "start": 3893.92,
+      "end": 3894.88,
+      "text": "same uh"
+    },
+    {
+      "start": 3896.8,
+      "end": 3897.52,
+      "text": "very"
+    },
+    {
+      "start": 3897.52,
+      "end": 3898.88,
+      "text": "cell"
+    },
+    {
+      "start": 3898.88,
+      "end": 3899.28,
+      "text": "median"
+    },
+    {
+      "start": 3899.28,
+      "end": 3901.28,
+      "text": "measures"
+    },
+    {
+      "start": 3901.28,
+      "end": 3910.1600000000003,
+      "text": "to the original place and then we can extract kt of kt longitude work in this diagram so this is a"
+    },
+    {
+      "start": 3910.1600000000003,
+      "end": 3917.28,
+      "text": "discrete phase based representation of this theorem so can you explain what's why is the"
+    },
+    {
+      "start": 3917.28,
+      "end": 3924.48,
+      "text": "delta e infinity is it because you are doing instantaneous yes instantaneous yes so the"
+    },
+    {
+      "start": 3924.48,
+      "end": 3932.0,
+      "text": "frequency okay yeah this should be very rapid prohibit okay"
+    },
+    {
+      "start": 3935.6,
+      "end": 3940.16,
+      "text": "so that causes static change that's the adiabatic part that you have to do it slowly you know"
+    },
+    {
+      "start": 3940.16,
+      "end": 3948.0,
+      "text": "yes this is adiabatic yeah so this is a case for the perfect measurement which without"
+    },
+    {
+      "start": 3949.52,
+      "end": 3954.4,
+      "text": "but yeah if we consider the case that there is some error"
+    },
+    {
+      "start": 3954.48,
+      "end": 3962.72,
+      "text": "problem for example even when original state is true state is split but we find the particle in"
+    },
+    {
+      "start": 3962.72,
+      "end": 3970.88,
+      "text": "the right with some small probability error probability in that case we push up this right"
+    },
+    {
+      "start": 3970.88,
+      "end": 3979.68,
+      "text": "energy level to here but it's not infinite so this should be adjusted as an energy level"
+    },
+    {
+      "start": 3981.6,
+      "end": 3983.84,
+      "text": "for which is error rate"
+    },
+    {
+      "start": 3984.72,
+      "end": 3987.92,
+      "text": "is it's the gibbous distribution of this"
+    },
+    {
+      "start": 3990.64,
+      "end": 3999.44,
+      "text": "new energy it's a kind of little tricky but okay so we have some imbalanced distribution here"
+    },
+    {
+      "start": 3999.44,
+      "end": 4006.64,
+      "text": "and after this quench so this distribution becomes the gibbous state of this new energy"
+    },
+    {
+      "start": 4007.44,
+      "end": 4014.2400000000002,
+      "text": "sorry what changed between the previous one why is the instantaneous quench now has a Boltzmann"
+    },
+    {
+      "start": 4014.48,
+      "end": 4019.52,
+      "text": "distribution oh yes in the previous slide case this epsilon is zero yeah because so"
+    },
+    {
+      "start": 4021.44,
+      "end": 4028.16,
+      "text": "that means that delta is infinite there was no in the in the previous slide there was no"
+    },
+    {
+      "start": 4028.16,
+      "end": 4034.0,
+      "text": "probability of being in the right on the outcome on the top right so the energy associated with"
+    },
+    {
+      "start": 4034.0,
+      "end": 4038.72,
+      "text": "being in the right was infinitely high so in this case there's a small probability of being"
+    },
+    {
+      "start": 4038.72,
+      "end": 4043.76,
+      "text": "on the right to the error it's going to see what makes the delta infinity i still haven't quite"
+    },
+    {
+      "start": 4044.48,
+      "end": 4050.48,
+      "text": "the uncertainty in the by the person running the gillard engine in this case you don't have perfect"
+    },
+    {
+      "start": 4050.48,
+      "end": 4055.76,
+      "text": "measurement in the other case you do when you're doing the quench if you want to do it ideally oh"
+    },
+    {
+      "start": 4055.76,
+      "end": 4060.88,
+      "text": "so here there's still a probability okay yeah yeah okay exactly so the delta e is not is that"
+    },
+    {
+      "start": 4060.88,
+      "end": 4067.28,
+      "text": "being imposed by you the experimentalist act by gillard's demon so to speak afterwards"
+    },
+    {
+      "start": 4075.28,
+      "end": 4079.76,
+      "text": "actually we did this is already kenya's work but we did"
+    },
+    {
+      "start": 4080.4,
+      "end": 4086.72,
+      "text": "another experiment by using some single extra works and we yeah we confirmed that this kind of"
+    },
+    {
+      "start": 4091.28,
+      "end": 4098.0,
+      "text": "okay so yeah this is some additional remark okay so"
+    },
+    {
+      "start": 4100.24,
+      "end": 4100.74,
+      "text": "then"
+    },
+    {
+      "start": 4102.96,
+      "end": 4104.48,
+      "text": "like i'd like to see"
+    },
+    {
+      "start": 4104.639999999999,
+      "end": 4105.2,
+      "text": "summarize"
+    },
+    {
+      "start": 4107.28,
+      "end": 4114.0,
+      "text": "oh we still have one part but i'd like to summarize this so yeah so we have the processes"
+    },
+    {
+      "start": 4115.04,
+      "end": 4120.4,
+      "text": "feedback a measurement feedback on the region and the middle process is given by this and"
+    },
+    {
+      "start": 4120.4,
+      "end": 4126.799999999999,
+      "text": "realization is this and we have the trade operation and this is exactly canceled with the feedback"
+    },
+    {
+      "start": 4128.5599999999995,
+      "end": 4129.679999999999,
+      "text": "so that is uh"
+    },
+    {
+      "start": 4134.48,
+      "end": 4142.799999999999,
+      "text": "and also let me just mention that there are many experiments on this topic so yeah"
+    },
+    {
+      "start": 4144.24,
+      "end": 4151.12,
+      "text": "i think the first experimental realization of max's demo was this work in 2010"
+    },
+    {
+      "start": 4151.839999999999,
+      "end": 4159.839999999999,
+      "text": "we used corridor particles to get more free energy by using information and after that there are many"
+    },
+    {
+      "start": 4161.599999999999,
+      "end": 4162.4,
+      "text": "experiments"
+    },
+    {
+      "start": 4164.48,
+      "end": 4172.24,
+      "text": "we have to experiment this that i mentioned and this is also a recent very recent collaborating"
+    },
+    {
+      "start": 4172.24,
+      "end": 4178.959999999999,
+      "text": "work with harvard university so this is uh something like uh inside this center that is a"
+    },
+    {
+      "start": 4178.959999999999,
+      "end": 4187.44,
+      "text": "single quantum bit qubit uh we performed some direct measurement and feedback and we showed"
+    },
+    {
+      "start": 4187.44,
+      "end": 4193.759999999999,
+      "text": "that some fluctuations are for random information to satisfy yeah"
+    },
+    {
+      "start": 4194.48,
+      "end": 4196.24,
+      "text": "i don't have time to mention"
+    },
+    {
+      "start": 4204.639999999999,
+      "end": 4210.719999999999,
+      "text": "but so what is the motivation for doing different express i mean more once you've shown that this"
+    },
+    {
+      "start": 4210.719999999999,
+      "end": 4216.4,
+      "text": "works uh was it was the motivation for doing it on different systems and different physical systems"
+    },
+    {
+      "start": 4216.4,
+      "end": 4218.48,
+      "text": "are you expecting the theorem to break somehow"
+    },
+    {
+      "start": 4220.719999999999,
+      "end": 4224.32,
+      "text": "yeah so i was sorry so yeah it's interesting"
+    },
+    {
+      "start": 4224.879999999999,
+      "end": 4232.24,
+      "text": "to see that our service is can be implemented in various systems"
+    },
+    {
+      "start": 4234.639999999999,
+      "end": 4240.799999999999,
+      "text": "this quantum case so there are not so many good experimental platforms to actually"
+    },
+    {
+      "start": 4243.28,
+      "end": 4249.839999999999,
+      "text": "this is one of the very good platforms that experiment was done in by looking for in"
+    },
+    {
+      "start": 4249.839999999999,
+      "end": 4253.599999999999,
+      "text": "harvard university so they have a very good siv center"
+    },
+    {
+      "start": 4255.04,
+      "end": 4268.32,
+      "text": "and therefore fui"
+    },
+    {
+      "start": 4270.719999999999,
+      "end": 4280.639999999999,
+      "text": "so i can make a the almost i't here experiment it's a strange quirk of physics referees that they"
+    },
+    {
+      "start": 4280.639999999999,
+      "end": 4282.959999999999,
+      "text": "insist on experiments that confirm that yes algebra works"
+    },
+    {
+      "start": 4282.96,
+      "end": 4292.34,
+      "text": "I was going to ask what the gap between the theory and the experimental observations are"
+    },
+    {
+      "start": 4292.34,
+      "end": 4296.12,
+      "text": "in all these experiments, if there was any difference, but I guess that's the answer."
+    },
+    {
+      "start": 4296.12,
+      "end": 4304.8,
+      "text": "So I have a question. I mean this is probably verging on metaphysical. The"
+    },
+    {
+      "start": 4304.8,
+      "end": 4311.56,
+      "text": "Szilard derivation you showed, infinite and finite energy, did not have quantization."
+    },
+    {
+      "start": 4311.56,
+      "end": 4321.52,
+      "text": "It was all classical and equilibrium. And then if the quantum implementation of that is showing"
+    },
+    {
+      "start": 4321.52,
+      "end": 4329.34,
+      "text": "this energy, I'm trying to see, you didn't have it in your expression because you can actually add"
+    },
+    {
+      "start": 4329.34,
+      "end": 4335.34,
+      "text": "a term for quantum energy in terms of quantum wells and I didn't see that. So I'm wondering"
+    },
+    {
+      "start": 4335.34,
+      "end": 4341.54,
+      "text": "how do you reconcile the fact that you didn't have a quantum but it seems the quantum implementation"
+    },
+    {
+      "start": 4341.54,
+      "end": 4343.54,
+      "text": "is getting to the limit."
+    },
+    {
+      "start": 4343.54,
+      "end": 4351.54,
+      "text": "Okay. Well, in my understanding, the Landauer limit is applicable both for classical and quantum."
+    },
+    {
+      "start": 4351.54,
+      "end": 4358.54,
+      "text": "Even in the quantum case, we can use the von Neumann entropy. That is a quantum version of the channel."
+    },
+    {
+      "start": 4358.54,
+      "end": 4365.54,
+      "text": "Von Neumann entropy is still applicable to get the same kind of quantum. That's my understanding."
+    },
+    {
+      "start": 4365.54,
+      "end": 4369.54,
+      "text": "And if we replace that entropy, then, yeah."
+    },
+    {
+      "start": 4371.54,
+      "end": 4381.54,
+      "text": "Modification."
+    },
+    {
+      "start": 4381.54,
+      "end": 4388.54,
+      "text": "So maybe this kind of gets to your question. Maybe one thought that makes this interesting"
+    },
+    {
+      "start": 4388.54,
+      "end": 4394.92,
+      "text": "from a physical point of view is, is there cases in biology with billions of years of"
+    },
+    {
+      "start": 4394.92,
+      "end": 4401.54,
+      "text": "evolution where something like DNA, you know, transcription or DNA, you know, transcription,"
+    },
+    {
+      "start": 4401.54,
+      "end": 4406.54,
+      "text": "copy, right, has been approaching these sort of limits? Because, I mean,"
+    },
+    {
+      "start": 4406.54,
+      "end": 4407.54,
+      "text": "Yes."
+    },
+    {
+      "start": 4407.54,
+      "end": 4414.54,
+      "text": "I read a paper from 2017 with Chris Kempis. The ribosomes in you get within about an order"
+    },
+    {
+      "start": 4414.54,
+      "end": 4416.54,
+      "text": "of magnitude of Landauer bound."
+    },
+    {
+      "start": 4416.54,
+      "end": 4418.54,
+      "text": "Order of magnitude is my estimate, too."
+    },
+    {
+      "start": 4418.54,
+      "end": 4419.54,
+      "text": "Yeah."
+    },
+    {
+      "start": 4419.54,
+      "end": 4420.54,
+      "text": "Right."
+    },
+    {
+      "start": 4420.54,
+      "end": 4423.54,
+      "text": "But there's proofreading, you know, to fix that."
+    },
+    {
+      "start": 4423.54,
+      "end": 4425.54,
+      "text": "It's still 10x. Yeah, it's still 10 hundred x."
+    },
+    {
+      "start": 4425.54,
+      "end": 4429.54,
+      "text": "The amount of proofreading varies in different systems."
+    },
+    {
+      "start": 4429.54,
+      "end": 4430.54,
+      "text": "Yeah."
+    },
+    {
+      "start": 4430.54,
+      "end": 4431.54,
+      "text": "That's pretty cool."
+    },
+    {
+      "start": 4431.54,
+      "end": 4432.54,
+      "text": "There's proofreading."
+    },
+    {
+      "start": 4432.54,
+      "end": 4438.54,
+      "text": "Screen that natural selection cares at all doesn't prove it, but it certainly implies"
+    },
+    {
+      "start": 4438.54,
+      "end": 4439.54,
+      "text": "it."
+    },
+    {
+      "start": 4439.54,
+      "end": 4440.54,
+      "text": "Quantum correction through ."
+    },
+    {
+      "start": 4440.54,
+      "end": 4442.54,
+      "text": "That should help you ."
+    },
+    {
+      "start": 4442.54,
+      "end": 4443.54,
+      "text": "The predictive ."
+    },
+    {
+      "start": 4443.54,
+      "end": 4444.54,
+      "text": "The atomic sensors ."
+    },
+    {
+      "start": 4444.54,
+      "end": 4445.54,
+      "text": "Yeah, exactly."
+    },
+    {
+      "start": 4445.54,
+      "end": 4446.54,
+      "text": "Before they ."
+    },
+    {
+      "start": 4446.54,
+      "end": 4447.54,
+      "text": "So, I think we had a sort of question."
+    },
+    {
+      "start": 4447.54,
+      "end": 4448.54,
+      "text": "So, in minutes, so, finally, briefly mention the finite time ."
+    },
+    {
+      "start": 4448.54,
+      "end": 4451.54,
+      "text": "Well, I think it kind of was, you know, the first question, but I think it's not the"
+    },
+    {
+      "start": 4451.54,
+      "end": 4452.54,
+      "text": "final question."
+    },
+    {
+      "start": 4452.54,
+      "end": 4453.54,
+      "text": "Yeah."
+    },
+    {
+      "start": 4453.54,
+      "end": 4454.54,
+      "text": "So, I think it's not the final question."
+    },
+    {
+      "start": 4454.54,
+      "end": 4455.54,
+      "text": "Yeah."
+    },
+    {
+      "start": 4455.54,
+      "end": 4456.54,
+      "text": "So, I think it's not the final question."
+    },
+    {
+      "start": 4456.54,
+      "end": 4457.54,
+      "text": "Yeah."
+    },
+    {
+      "start": 4457.54,
+      "end": 4458.54,
+      "text": "So, I think it's not the final question."
+    },
+    {
+      "start": 4458.54,
+      "end": 4459.54,
+      "text": "Yeah."
+    },
+    {
+      "start": 4459.54,
+      "end": 4460.54,
+      "text": "So, I think it's not the final question."
+    },
+    {
+      "start": 4460.54,
+      "end": 4462.54,
+      "text": "So, I think it's the kind of most relevant to how to reduce ."
+    },
+    {
+      "start": 4462.54,
+      "end": 4463.54,
+      "text": "And, yeah."
+    },
+    {
+      "start": 4463.54,
+      "end": 4464.54,
+      "text": "Okay."
+    },
+    {
+      "start": 4464.54,
+      "end": 4465.54,
+      "text": "So."
+    },
+    {
+      "start": 4465.54,
+      "end": 4466.54,
+      "text": "Again, this is the second ."
+    },
+    {
+      "start": 4466.54,
+      "end": 4467.54,
+      "text": "So, the entropy production is always ."
+    },
+    {
+      "start": 4467.54,
+      "end": 4468.54,
+      "text": "So, what's the is achievable only in the quasi-static very slow limit?"
+    },
+    {
+      "start": 4468.54,
+      "end": 4475.54,
+      "text": "So, the question is, what about the finite time refinement in the second ?"
+    },
+    {
+      "start": 4475.54,
+      "end": 4477.54,
+      "text": "I mean, if we ."
+    },
+    {
+      "start": 4477.54,
+      "end": 4480.54,
+      "text": "You know, we can think about infinite time refinement, right?"
+    },
+    {
+      "start": 4480.54,
+      "end": 4483.54,
+      "text": "We can look at tiny time refinement."
+    },
+    {
+      "start": 4483.54,
+      "end": 4486.54,
+      "text": "But it's not, it's not the fact that ."
+    },
+    {
+      "start": 4486.54,
+      "end": 4487.54,
+      "text": "It's the logic."
+    },
+    {
+      "start": 4487.54,
+      "end": 4489.54,
+      "text": "It's the fact of the time refinement , right?"
+    },
+    {
+      "start": 4489.54,
+      "end": 4497.22,
+      "text": "If we make a time-code plane, then the lower bound should be strictly greater than zero."
+    },
+    {
+      "start": 4497.22,
+      "end": 4502.82,
+      "text": "So the question is, what is that lower bound for the finite time process?"
+    },
+    {
+      "start": 4504.82,
+      "end": 4511.86,
+      "text": "And in the stochastic thermodynamics community, so there are some approaches like thermodynamic"
+    },
+    {
+      "start": 4511.86,
+      "end": 4518.98,
+      "text": "uncertainty relation, it's called TUR, and also there's a several approaches, thermodynamics"
+    },
+    {
+      "start": 4518.98,
+      "end": 4525.78,
+      "text": "speed limit. So today I will focus on this thermodynamic speed limit based on so-called"
+    },
+    {
+      "start": 4525.78,
+      "end": 4532.179999999999,
+      "text": "optimal transport theory. Okay, so optimal transport theory is a kind of a branch of"
+    },
+    {
+      "start": 4532.179999999999,
+      "end": 4542.58,
+      "text": "mathematics originally. So it is a kind of an optimization problem, how to transport"
+    },
+    {
+      "start": 4543.78,
+      "end": 4548.339999999999,
+      "text": "something to other place. It was originally developed in"
+    },
+    {
+      "start": 4548.98,
+      "end": 4558.5,
+      "text": "civil engineering in the mid-18th century. So we want to transport this sand to another place."
+    },
+    {
+      "start": 4561.0599999999995,
+      "end": 4568.0199999999995,
+      "text": "So the problem is, what is the most cost-efficient way to transport this sand to another place?"
+    },
+    {
+      "start": 4570.179999999999,
+      "end": 4578.82,
+      "text": "This is originally a very naive question, but nowadays we have many applications of this kind of"
+    },
+    {
+      "start": 4579.54,
+      "end": 4587.86,
+      "text": "problems. Including generative AI. So yeah, so because we can replace this problem"
+    },
+    {
+      "start": 4589.219999999999,
+      "end": 4596.0199999999995,
+      "text": "as a problem in probability distributions. I mean, so instead of transporting some sand,"
+    },
+    {
+      "start": 4596.0199999999995,
+      "end": 4602.179999999999,
+      "text": "we can transport probability distribution from here to here, and that is corresponding to some"
+    },
+    {
+      "start": 4602.98,
+      "end": 4605.62,
+      "text": "general image generation from image to image or something."
+    },
+    {
+      "start": 4605.62,
+      "end": 4610.26,
+      "text": "or something there is an expectation that the castles will receive a certain distribution of"
+    },
+    {
+      "start": 4610.26,
+      "end": 4618.5,
+      "text": "the sand so because so is there a constraint on what the castles will receive for how much"
+    },
+    {
+      "start": 4618.5,
+      "end": 4626.66,
+      "text": "time in this example oh yes yeah it's so sorry so you want to take a distribution that you have"
+    },
+    {
+      "start": 4626.66,
+      "end": 4634.34,
+      "text": "originally to an ending distribution never specified the question is"
+    },
+    {
+      "start": 4648.26,
+      "end": 4654.099999999999,
+      "text": "and mathematically there is a concept for the Wasserstein distance so that is exactly the"
+    },
+    {
+      "start": 4654.099999999999,
+      "end": 4656.42,
+      "text": "minimum cost for the transportation and the"
+    },
+    {
+      "start": 4657.0599999999995,
+      "end": 4657.5599999999995,
+      "text": "train"
+    },
+    {
+      "start": 4660.34,
+      "end": 4667.54,
+      "text": "and what is interesting in the context of thermodynamics that the robot for the entropy"
+    },
+    {
+      "start": 4667.54,
+      "end": 4673.86,
+      "text": "production within finite time constraint is exactly given by the last time this"
+    },
+    {
+      "start": 4674.66,
+      "end": 4681.46,
+      "text": "given by the optimal transport so this is not very not trivial and there's a"
+    },
+    {
+      "start": 4682.099999999999,
+      "end": 4685.38,
+      "text": "some mathematical results in my transport called"
+    },
+    {
+      "start": 4685.94,
+      "end": 4686.5,
+      "text": "enamel"
+    },
+    {
+      "start": 4686.66,
+      "end": 4690.74,
+      "text": "granular formula and by applying the thermodynamics"
+    },
+    {
+      "start": 4690.74,
+      "end": 4696.58,
+      "text": "setup especially for the fokker-plank equation in continuous space we find that the raw bound"
+    },
+    {
+      "start": 4696.58,
+      "end": 4700.18,
+      "text": "of the entropy production for finite time interval is given by the"
+    },
+    {
+      "start": 4702.34,
+      "end": 4707.46,
+      "text": "i think this is a very interesting connection between the stochastic thermodynamics and"
+    },
+    {
+      "start": 4707.46,
+      "end": 4715.38,
+      "text": "the thermal transport so and by applying this to the lander's band setup we have to"
+    },
+    {
+      "start": 4716.66,
+      "end": 4723.7,
+      "text": "take the limit of time interval and this is the modification term for the Landauer bound"
+    },
+    {
+      "start": 4723.7,
+      "end": 4729.62,
+      "text": "the original boundary is given by 50 but we have some additional term here and this tau is time"
+    },
+    {
+      "start": 4729.62,
+      "end": 4736.42,
+      "text": "interval and if it takes the limit how goes to infinity then this modification term vanishes"
+    },
+    {
+      "start": 4736.42,
+      "end": 4745.54,
+      "text": "but if we stick to some finite time interval then we have this modification term and this is the additional energy cost required for the"
+    },
+    {
+      "start": 4746.5,
+      "end": 4752.98,
+      "text": "high velocity or high speed uh information process can i just ask to clarify um so the"
+    },
+    {
+      "start": 4752.98,
+      "end": 4758.5,
+      "text": "Wasserstein distance is effectively saying is kind of related to the amount of information"
+    },
+    {
+      "start": 4759.06,
+      "end": 4763.06,
+      "text": "mutual information between the initial and the finite to the end distributions"
+    },
+    {
+      "start": 4763.62,
+      "end": 4770.34,
+      "text": "uh it's it's a kind of true information or care divergence but it's not not the same so yeah"
+    },
+    {
+      "start": 4770.9,
+      "end": 4775.3,
+      "text": "they capture different aspects so the distance between two"
+    },
+    {
+      "start": 4775.54,
+      "end": 4783.94,
+      "text": "vt distribution is typically measured by k but this is not the same as this is how you would"
+    },
+    {
+      "start": 4783.94,
+      "end": 4788.34,
+      "text": "morph one distribution into another so it is different than just straight mutual information"
+    },
+    {
+      "start": 4788.34,
+      "end": 4799.3,
+      "text": "then oh yeah so material information is usually uh between two subsystems and in this case we"
+    },
+    {
+      "start": 4799.3,
+      "end": 4804.18,
+      "text": "have a single system and we have the distribution one i think okay"
+    },
+    {
+      "start": 4805.54,
+      "end": 4810.36,
+      "text": "so these are the two subsections and there is Saint blog it says we have a perceive"
+    },
+    {
+      "start": 4810.36,
+      "end": 4820.82,
+      "text": "and encounters with other material called yoin so what you have is a studio"
+    },
+    {
+      "start": 4821.3,
+      "end": 4826.5,
+      "text": "by the sequence of a warfare junction that everything that improves on whether you"
+    },
+    {
+      "start": 4826.5,
+      "end": 4832.5,
+      "text": "are in or out and in agent with painful orfish mode is not important need to react in playing"
+    },
+    {
+      "start": 4833.5,
+      "end": 4834.5,
+      "text": "is uh"
+    },
+    {
+      "start": 4835.54,
+      "end": 4840.7,
+      "text": "You are essentially multiplying energy per meter square times energy."
+    },
+    {
+      "start": 4841.7,
+      "end": 4844.66,
+      "text": "So, is there something I'm missing here?"
+    },
+    {
+      "start": 4845.16,
+      "end": 4848.86,
+      "text": "Well, this entropy production, I think it's dimensionless."
+    },
+    {
+      "start": 4850.0199999999995,
+      "end": 4851.3,
+      "text": "So, this is..."
+    },
+    {
+      "start": 4851.3,
+      "end": 4855.74,
+      "text": "So, W, what is the unit of W?"
+    },
+    {
+      "start": 4855.76,
+      "end": 4857.14,
+      "text": "W is the Wasserstein distance."
+    },
+    {
+      "start": 4857.82,
+      "end": 4859.12,
+      "text": "So, it's not work?"
+    },
+    {
+      "start": 4859.48,
+      "end": 4860.06,
+      "text": "Not work."
+    },
+    {
+      "start": 4860.2,
+      "end": 4860.58,
+      "text": "Not work."
+    },
+    {
+      "start": 4860.8,
+      "end": 4860.96,
+      "text": "Oh."
+    },
+    {
+      "start": 4862.42,
+      "end": 4863.68,
+      "text": "It's dimensionless."
+    },
+    {
+      "start": 4863.68,
+      "end": 4865.64,
+      "text": "I think it's square or..."
+    },
+    {
+      "start": 4865.64,
+      "end": 4866.320000000001,
+      "text": "It's not square."
+    },
+    {
+      "start": 4866.4400000000005,
+      "end": 4867.14,
+      "text": "It's not square, right?"
+    },
+    {
+      "start": 4867.240000000001,
+      "end": 4869.4800000000005,
+      "text": "So, it is distance squared."
+    },
+    {
+      "start": 4869.700000000001,
+      "end": 4869.900000000001,
+      "text": "Yeah."
+    },
+    {
+      "start": 4870.42,
+      "end": 4872.56,
+      "text": "Only then it becomes dimensionless."
+    },
+    {
+      "start": 4872.96,
+      "end": 4873.18,
+      "text": "Okay."
+    },
+    {
+      "start": 4874.14,
+      "end": 4878.360000000001,
+      "text": "And any structural constraints you will add to this distance, right?"
+    },
+    {
+      "start": 4878.42,
+      "end": 4881.96,
+      "text": "So, if there's a constraint on how you want to evolve this distribution,"
+    },
+    {
+      "start": 4882.68,
+      "end": 4884.08,
+      "text": "like there's a specific process,"
+    },
+    {
+      "start": 4884.400000000001,
+      "end": 4886.68,
+      "text": "then you add to this Wasserstein distance."
+    },
+    {
+      "start": 4888.14,
+      "end": 4892.3,
+      "text": "So, let's say I can only evolve using some graph structure."
+    },
+    {
+      "start": 4892.3,
+      "end": 4893.66,
+      "text": "I have a network structure."
+    },
+    {
+      "start": 4893.68,
+      "end": 4895.740000000001,
+      "text": "I have a network structure through which I'm evolving this distribution"
+    },
+    {
+      "start": 4895.740000000001,
+      "end": 4896.52,
+      "text": "to the end distribution."
+    },
+    {
+      "start": 4897.16,
+      "end": 4899.9800000000005,
+      "text": "So, I will impose that constraint in that integral,"
+    },
+    {
+      "start": 4900.5,
+      "end": 4906.92,
+      "text": "that evolution has to happen through that chain or that process."
+    },
+    {
+      "start": 4907.76,
+      "end": 4910.02,
+      "text": "And so, that's how I can refine these bounds"
+    },
+    {
+      "start": 4910.02,
+      "end": 4912.62,
+      "text": "to make it specific to an architecture."
+    },
+    {
+      "start": 4912.900000000001,
+      "end": 4913.4400000000005,
+      "text": "Oh, that's interesting."
+    },
+    {
+      "start": 4915.46,
+      "end": 4918.18,
+      "text": "It's very, very complicated."
+    },
+    {
+      "start": 4922.22,
+      "end": 4923.66,
+      "text": "It's a huge opening."
+    },
+    {
+      "start": 4923.68,
+      "end": 4929.12,
+      "text": "It's a huge opening issue on if there are constraints on the allowed dynamics."
+    },
+    {
+      "start": 4929.56,
+      "end": 4934.06,
+      "text": "Not if I can do the best possible thing subject to time constraints, which is this,"
+    },
+    {
+      "start": 4934.06,
+      "end": 4936.68,
+      "text": "but I've actually got physical process constraints."
+    },
+    {
+      "start": 4936.68,
+      "end": 4942.26,
+      "text": "It might well be that our brains are at the limit if your physical process is spiked trains"
+    },
+    {
+      "start": 4942.26,
+      "end": 4944.26,
+      "text": "with ion channels and so on and so forth."
+    },
+    {
+      "start": 4944.700000000001,
+      "end": 4946.360000000001,
+      "text": "It's a massively open issue."
+    },
+    {
+      "start": 4946.76,
+      "end": 4949.04,
+      "text": "Little to nothing is known about it."
+    },
+    {
+      "start": 4949.04,
+      "end": 4950.900000000001,
+      "text": "I'm sorry, the probability of seeing that is not an issue."
+    },
+    {
+      "start": 4950.900000000001,
+      "end": 4952.3,
+      "text": "Well, yeah, I've seen it."
+    },
+    {
+      "start": 4952.3,
+      "end": 4953.0,
+      "text": "What is it?"
+    },
+    {
+      "start": 4953.0,
+      "end": 4956.76,
+      "text": "So, the constraint is only the initial distribution kind of issue."
+    },
+    {
+      "start": 4956.76,
+      "end": 4958.0,
+      "text": "And we can do anything."
+    },
+    {
+      "start": 4958.0,
+      "end": 4962.32,
+      "text": "But we can format this in after graphs."
+    },
+    {
+      "start": 4962.32,
+      "end": 4970.12,
+      "text": "So, the X minus Y is the initial versus final distribution."
+    },
+    {
+      "start": 4970.12,
+      "end": 4973.6,
+      "text": "You are minimizing some Euclidean norm or something."
+    },
+    {
+      "start": 4973.6,
+      "end": 4974.56,
+      "text": "Where is the password?"
+    },
+    {
+      "start": 4975.22,
+      "end": 4976.06,
+      "text": "Euclidean."
+    },
+    {
+      "start": 4976.06,
+      "end": 4976.52,
+      "text": "Yeah."
+    },
+    {
+      "start": 4976.52,
+      "end": 4977.62,
+      "text": "That's a choice."
+    },
+    {
+      "start": 4977.62,
+      "end": 4977.92,
+      "text": "Yeah."
+    },
+    {
+      "start": 4977.92,
+      "end": 4982.88,
+      "text": "We can replace this with some non-Euclidean, non-Euclidean."
+    },
+    {
+      "start": 4982.88,
+      "end": 4982.98,
+      "text": "Yeah."
+    },
+    {
+      "start": 4983.0,
+      "end": 4988.76,
+      "text": "We can replace this, too, with some actually positive non-power."
+    },
+    {
+      "start": 4988.76,
+      "end": 4989.76,
+      "text": "Thank you."
+    },
+    {
+      "start": 4993.76,
+      "end": 4994.76,
+      "text": "Yeah."
+    },
+    {
+      "start": 4994.76,
+      "end": 5002.76,
+      "text": "Anyway, so, yeah, so N2P production is directly related to this partial time distance."
+    },
+    {
+      "start": 5002.76,
+      "end": 5007.24,
+      "text": "And, yeah, this is a very recent work, probably three weeks ago."
+    },
+    {
+      "start": 5007.24,
+      "end": 5012.88,
+      "text": "So, this is an experimental work, in my collaboration, to experimentally, actually, actually realize"
+    },
+    {
+      "start": 5012.88,
+      "end": 5019.64,
+      "text": "this optimal transport, some of the optimal transport by using a corridor particle and"
+    },
+    {
+      "start": 5019.64,
+      "end": 5020.64,
+      "text": "some optical ."
+    },
+    {
+      "start": 5020.64,
+      "end": 5023.64,
+      "text": "I think I don't have time, but I..."
+    },
+    {
+      "start": 5023.64,
+      "end": 5034.92,
+      "text": "So, in optimal transport theory, the optimal protocol is corresponding to the geodesic"
+    },
+    {
+      "start": 5034.92,
+      "end": 5036.96,
+      "text": "in the space of probability distribution."
+    },
+    {
+      "start": 5036.96,
+      "end": 5039.64,
+      "text": "So, in the Gaussian case, so we have two parameters, like variance and the probability distribution."
+    },
+    {
+      "start": 5039.64,
+      "end": 5040.64,
+      "text": "And, yeah, we can do that."
+    },
+    {
+      "start": 5040.64,
+      "end": 5041.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 5041.64,
+      "end": 5042.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 5042.88,
+      "end": 5049.64,
+      "text": "In that space, the optimal transport is kind of a straight line, because it's a geodesic."
+    },
+    {
+      "start": 5049.64,
+      "end": 5056.64,
+      "text": "So, we can experimentally realize that kind of geodesic structure of probability distribution."
+    },
+    {
+      "start": 5056.64,
+      "end": 5063.64,
+      "text": "And we have also demonstrated the finite time Randall-Ewija process."
+    },
+    {
+      "start": 5063.64,
+      "end": 5069.64,
+      "text": "So, yeah, we have implemented the Randall-Ewija protocol, which is optimal for finite time."
+    },
+    {
+      "start": 5069.64,
+      "end": 5070.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 5070.64,
+      "end": 5071.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 5071.64,
+      "end": 5077.400000000001,
+      "text": "And that is, yeah, for the optimal transport theory."
+    },
+    {
+      "start": 5077.400000000001,
+      "end": 5085.9800000000005,
+      "text": "And, yeah, we have actually experimentally confirmed that the minimum energy cost required"
+    },
+    {
+      "start": 5085.9800000000005,
+      "end": 5090.6,
+      "text": "for that process is consistent with the Wasserstein distance."
+    },
+    {
+      "start": 5090.6,
+      "end": 5092.6,
+      "text": "That is mathematically defined."
+    },
+    {
+      "start": 5092.6,
+      "end": 5098.64,
+      "text": "And, yeah, also, we have a kind of speed, cost, and accuracy ."
+    },
+    {
+      "start": 5098.64,
+      "end": 5099.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 5099.64,
+      "end": 5100.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 5100.64,
+      "end": 5101.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 5101.64,
+      "end": 5108.64,
+      "text": "So, accuracy means how – accuracy means the success rate of the information user."
+    },
+    {
+      "start": 5108.64,
+      "end": 5115.360000000001,
+      "text": "In the ideal case, the information user is – if the information user is perfect, the"
+    },
+    {
+      "start": 5115.360000000001,
+      "end": 5118.320000000001,
+      "text": "final state is always in the standard zero state."
+    },
+    {
+      "start": 5118.320000000001,
+      "end": 5121.160000000001,
+      "text": "But there can be some error probability."
+    },
+    {
+      "start": 5121.160000000001,
+      "end": 5128.64,
+      "text": "And we can consider the speed and cost and the accuracy ."
+    },
+    {
+      "start": 5128.64,
+      "end": 5129.64,
+      "text": "Yes."
+    },
+    {
+      "start": 5129.64,
+      "end": 5130.64,
+      "text": "Yes."
+    },
+    {
+      "start": 5130.64,
+      "end": 5131.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 5131.64,
+      "end": 5136.64,
+      "text": "So, just to link it back to the first thing, you still have a zero and one state."
+    },
+    {
+      "start": 5136.64,
+      "end": 5137.64,
+      "text": "Yes."
+    },
+    {
+      "start": 5137.64,
+      "end": 5138.64,
+      "text": "And you have a double world potential."
+    },
+    {
+      "start": 5138.64,
+      "end": 5139.64,
+      "text": "Yes."
+    },
+    {
+      "start": 5139.64,
+      "end": 5140.64,
+      "text": "Right."
+    },
+    {
+      "start": 5140.64,
+      "end": 5143.64,
+      "text": "But you're saying that you're going to sort of map this distribution zero-one to"
+    },
+    {
+      "start": 5143.64,
+      "end": 5144.64,
+      "text": "a different distribution of zero-one."
+    },
+    {
+      "start": 5144.64,
+      "end": 5145.64,
+      "text": "And you're going to sort of measure this cost."
+    },
+    {
+      "start": 5145.64,
+      "end": 5146.64,
+      "text": "This is a ratio in this case, yeah."
+    },
+    {
+      "start": 5146.64,
+      "end": 5147.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 5147.64,
+      "end": 5148.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 5148.64,
+      "end": 5149.64,
+      "text": "Zero-zero."
+    },
+    {
+      "start": 5149.64,
+      "end": 5150.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 5150.64,
+      "end": 5151.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 5151.64,
+      "end": 5152.64,
+      "text": "Something from zero –"
+    },
+    {
+      "start": 5152.64,
+      "end": 5153.64,
+      "text": "Oh, I see."
+    },
+    {
+      "start": 5153.64,
+      "end": 5154.64,
+      "text": "I see."
+    },
+    {
+      "start": 5154.64,
+      "end": 5155.64,
+      "text": "You're going to go to zero-zero."
+    },
+    {
+      "start": 5155.64,
+      "end": 5156.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 5156.64,
+      "end": 5157.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 5157.64,
+      "end": 5158.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 5158.64,
+      "end": 5166.64,
+      "text": "So, in your – in the bound, if your final distribution, the accuracy is like 100 percent,"
+    },
+    {
+      "start": 5166.64,
+      "end": 5168.64,
+      "text": "does your bound show infinite energy?"
+    },
+    {
+      "start": 5168.64,
+      "end": 5172.64,
+      "text": "Like if you want to – like perfect, no error at all."
+    },
+    {
+      "start": 5172.64,
+      "end": 5173.64,
+      "text": "Oh."
+    },
+    {
+      "start": 5173.64,
+      "end": 5174.64,
+      "text": "Does it?"
+    },
+    {
+      "start": 5174.64,
+      "end": 5175.64,
+      "text": "Perfect."
+    },
+    {
+      "start": 5175.64,
+      "end": 5177.64,
+      "text": "Yes, we have – is a perfect Wasserstein distance."
+    },
+    {
+      "start": 5177.64,
+      "end": 5178.64,
+      "text": "So, yeah."
+    },
+    {
+      "start": 5178.64,
+      "end": 5179.64,
+      "text": "But it's too finite."
+    },
+    {
+      "start": 5179.64,
+      "end": 5180.64,
+      "text": "Is it – does it blow up?"
+    },
+    {
+      "start": 5180.64,
+      "end": 5181.64,
+      "text": "If you assume that –"
+    },
+    {
+      "start": 5181.64,
+      "end": 5182.64,
+      "text": "Yes, it blow up."
+    },
+    {
+      "start": 5182.64,
+      "end": 5183.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 5183.64,
+      "end": 5184.64,
+      "text": "It goes up."
+    },
+    {
+      "start": 5184.64,
+      "end": 5185.64,
+      "text": "It's not showing accuracy."
+    },
+    {
+      "start": 5185.64,
+      "end": 5186.64,
+      "text": "But it's –"
+    },
+    {
+      "start": 5186.64,
+      "end": 5187.64,
+      "text": "But it's –"
+    },
+    {
+      "start": 5187.64,
+      "end": 5188.64,
+      "text": "It's not showing accuracy, but still finite."
+    },
+    {
+      "start": 5188.64,
+      "end": 5189.64,
+      "text": "It'll blow up with time."
+    },
+    {
+      "start": 5189.64,
+      "end": 5190.64,
+      "text": "So, why is it finite then?"
+    },
+    {
+      "start": 5190.64,
+      "end": 5191.64,
+      "text": "But it doesn't have time on it."
+    },
+    {
+      "start": 5191.64,
+      "end": 5192.64,
+      "text": "It doesn't have time on this, right?"
+    },
+    {
+      "start": 5192.64,
+      "end": 5193.64,
+      "text": "It's – it'll blow up with time."
+    },
+    {
+      "start": 5193.64,
+      "end": 5194.64,
+      "text": "Oh, is that –"
+    },
+    {
+      "start": 5194.64,
+      "end": 5195.64,
+      "text": "Oh, OK."
+    },
+    {
+      "start": 5195.64,
+      "end": 5196.64,
+      "text": "Time is fixed."
+    },
+    {
+      "start": 5196.64,
+      "end": 5197.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 5197.64,
+      "end": 5198.64,
+      "text": "This is on a fixed time interval, 50 milliseconds."
+    },
+    {
+      "start": 5198.64,
+      "end": 5199.64,
+      "text": "And then at 100 milliseconds, you have a different situation."
+    },
+    {
+      "start": 5199.64,
+      "end": 5200.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 5200.64,
+      "end": 5201.64,
+      "text": "If we make time very, very short, then –"
+    },
+    {
+      "start": 5201.64,
+      "end": 5202.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 5202.64,
+      "end": 5203.64,
+      "text": "OK."
+    },
+    {
+      "start": 5203.64,
+      "end": 5204.64,
+      "text": "Exactly."
+    },
+    {
+      "start": 5204.64,
+      "end": 5205.64,
+      "text": "But it should also be divergent with the distribution."
+    },
+    {
+      "start": 5205.64,
+      "end": 5206.64,
+      "text": "If I have a –"
+    },
+    {
+      "start": 5206.64,
+      "end": 5207.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 5207.64,
+      "end": 5208.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 5208.64,
+      "end": 5209.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 5209.64,
+      "end": 5210.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 5210.64,
+      "end": 5211.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 5211.64,
+      "end": 5212.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 5212.64,
+      "end": 5213.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 5213.64,
+      "end": 5214.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 5214.64,
+      "end": 5215.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 5215.64,
+      "end": 5216.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 5216.64,
+      "end": 5217.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 5217.64,
+      "end": 5223.240000000001,
+      "text": "So, if I have a delta function at the end, that bound would also be divergent with respect"
+    },
+    {
+      "start": 5223.240000000001,
+      "end": 5224.240000000001,
+      "text": "to that, right?"
+    },
+    {
+      "start": 5224.240000000001,
+      "end": 5225.240000000001,
+      "text": "Oh, yes."
+    },
+    {
+      "start": 5225.240000000001,
+      "end": 5228.240000000001,
+      "text": "But then the w would blow up."
+    },
+    {
+      "start": 5228.240000000001,
+      "end": 5229.240000000001,
+      "text": "Yeah."
+    },
+    {
+      "start": 5229.240000000001,
+      "end": 5231.240000000001,
+      "text": "I think w is about bounded."
+    },
+    {
+      "start": 5231.240000000001,
+      "end": 5236.240000000001,
+      "text": "You have to assume that there's, like, support everywhere for the metric to be well-defined."
+    },
+    {
+      "start": 5236.240000000001,
+      "end": 5237.240000000001,
+      "text": "That's right."
+    },
+    {
+      "start": 5237.240000000001,
+      "end": 5240.240000000001,
+      "text": "Do you have to assume that the probability distribution has support everywhere?"
+    },
+    {
+      "start": 5240.240000000001,
+      "end": 5244.240000000001,
+      "text": "The Lothar Stein distance is upper bounded, so it's finite."
+    },
+    {
+      "start": 5244.240000000001,
+      "end": 5245.240000000001,
+      "text": "Yeah."
+    },
+    {
+      "start": 5245.240000000001,
+      "end": 5246.240000000001,
+      "text": "It's always finite."
+    },
+    {
+      "start": 5246.240000000001,
+      "end": 5247.240000000001,
+      "text": "Yeah."
+    },
+    {
+      "start": 5247.24,
+      "end": 5248.24,
+      "text": "It's always finite."
+    },
+    {
+      "start": 5248.24,
+      "end": 5249.24,
+      "text": "Yeah."
+    },
+    {
+      "start": 5249.24,
+      "end": 5250.24,
+      "text": "Yeah."
+    },
+    {
+      "start": 5250.24,
+      "end": 5251.24,
+      "text": "Now, you can't just assume that you can –"
+    },
+    {
+      "start": 5251.24,
+      "end": 5252.24,
+      "text": "Yeah."
+    },
+    {
+      "start": 5252.24,
+      "end": 5253.24,
+      "text": "Yeah."
+    },
+    {
+      "start": 5253.24,
+      "end": 5254.24,
+      "text": "Yeah, yeah."
+    },
+    {
+      "start": 5254.24,
+      "end": 5255.24,
+      "text": "Yeah."
+    },
+    {
+      "start": 5255.24,
+      "end": 5256.24,
+      "text": "There's no point in assuming that there's no point in assuming that you can explode if"
+    },
+    {
+      "start": 5256.24,
+      "end": 5257.24,
+      "text": "one of them has –"
+    },
+    {
+      "start": 5257.24,
+      "end": 5258.24,
+      "text": "If the final distribution is a delta function."
+    },
+    {
+      "start": 5258.24,
+      "end": 5259.24,
+      "text": "It's still a finite bound."
+    },
+    {
+      "start": 5259.24,
+      "end": 5262.5199999999995,
+      "text": "I don't need so much – I've got to move sand to get it from two bins to one."
+    },
+    {
+      "start": 5262.5199999999995,
+      "end": 5263.5199999999995,
+      "text": "It's finite."
+    },
+    {
+      "start": 5263.5199999999995,
+      "end": 5268.84,
+      "text": "But you would think that you would have to spend a lot of energy to achieve the worst"
+    },
+    {
+      "start": 5268.84,
+      "end": 5269.84,
+      "text": "state ."
+    },
+    {
+      "start": 5269.84,
+      "end": 5270.84,
+      "text": "You've been talking about, like, for example, the Landau's boundary."
+    },
+    {
+      "start": 5270.84,
+      "end": 5271.84,
+      "text": "Do you think semi-steady is slowly?"
+    },
+    {
+      "start": 5271.84,
+      "end": 5272.84,
+      "text": "No."
+    },
+    {
+      "start": 5272.84,
+      "end": 5273.84,
+      "text": "With protruding towers."
+    },
+    {
+      "start": 5273.84,
+      "end": 5274.84,
+      "text": "That's going to be – Especially, you know, in the KT logic, it's going to be –"
+    },
+    {
+      "start": 5274.84,
+      "end": 5277.6,
+      "text": "That's going to, that's just in the KT log too."
+    },
+    {
+      "start": 5278.1,
+      "end": 5278.400000000001,
+      "text": "Yes, sir."
+    },
+    {
+      "start": 5278.42,
+      "end": 5280.26,
+      "text": "It's just going to be bounded because of the metric space."
+    },
+    {
+      "start": 5280.62,
+      "end": 5282.64,
+      "text": "It's going to be bounded by the metric and the time you're taking."
+    },
+    {
+      "start": 5282.9800000000005,
+      "end": 5283.2,
+      "text": "Yeah."
+    },
+    {
+      "start": 5283.34,
+      "end": 5286.58,
+      "text": "If your time goes to infinity, then you're going to recover land."
+    },
+    {
+      "start": 5286.58,
+      "end": 5288.860000000001,
+      "text": "No matter what, the metric space is going to bound the cost."
+    },
+    {
+      "start": 5289.92,
+      "end": 5293.22,
+      "text": "Okay, but so just sort of a very basic."
+    },
+    {
+      "start": 5297.52,
+      "end": 5300.52,
+      "text": "So a very basic question, but if you, I mean,"
+    },
+    {
+      "start": 5300.68,
+      "end": 5303.54,
+      "text": "so David said like all of these results apply to distributions, right?"
+    },
+    {
+      "start": 5303.54,
+      "end": 5306.56,
+      "text": "But when you do the experiment, you are sampling from a distribution."
+    },
+    {
+      "start": 5307.04,
+      "end": 5308.92,
+      "text": "You have some particular zero-one state."
+    },
+    {
+      "start": 5309.42,
+      "end": 5309.58,
+      "text": "Yeah."
+    },
+    {
+      "start": 5309.68,
+      "end": 5311.54,
+      "text": "And then you try to copy it or something, right?"
+    },
+    {
+      "start": 5311.62,
+      "end": 5316.94,
+      "text": "So your experiments are for actual instances sampled from that distribution."
+    },
+    {
+      "start": 5317.6,
+      "end": 5321.5199999999995,
+      "text": "That's fine, but the actual thermodynamics only looks at the distribution."
+    },
+    {
+      "start": 5322.04,
+      "end": 5322.18,
+      "text": "Yeah."
+    },
+    {
+      "start": 5322.5,
+      "end": 5326.5,
+      "text": "Specify the micro trajectory level dynamics with perfect precision,"
+    },
+    {
+      "start": 5327.1,
+      "end": 5330.72,
+      "text": "but the thermodynamics, modulo, what I call it, fluctuation terms,"
+    },
+    {
+      "start": 5331.4,
+      "end": 5333.0,
+      "text": "the trajectory level things."
+    },
+    {
+      "start": 5333.0,
+      "end": 5337.44,
+      "text": "The thermodynamics is going to just care about the transformations of the distributions."
+    },
+    {
+      "start": 5337.9,
+      "end": 5338.48,
+      "text": "That's the same."
+    },
+    {
+      "start": 5338.48,
+      "end": 5340.76,
+      "text": "Yeah, but I'm just trying to understand how you operationalize this."
+    },
+    {
+      "start": 5340.76,
+      "end": 5344.18,
+      "text": "So like when he does an experiment, these results you're showing us,"
+    },
+    {
+      "start": 5344.18,
+      "end": 5348.06,
+      "text": "you're averaging over several experiments to say, test whether you're at the right."
+    },
+    {
+      "start": 5348.06,
+      "end": 5348.6,
+      "text": "Yeah, yeah, yeah."
+    },
+    {
+      "start": 5348.6,
+      "end": 5349.3,
+      "text": "You need to."
+    },
+    {
+      "start": 5349.3,
+      "end": 5350.92,
+      "text": "Make some distribution."
+    },
+    {
+      "start": 5350.92,
+      "end": 5351.26,
+      "text": "Yeah, yeah."
+    },
+    {
+      "start": 5351.26,
+      "end": 5352.2,
+      "text": "Okay, yeah."
+    },
+    {
+      "start": 5352.2,
+      "end": 5353.1,
+      "text": "On top of it, yeah."
+    },
+    {
+      "start": 5353.1,
+      "end": 5356.44,
+      "text": "Right, right, okay, yeah, yeah."
+    },
+    {
+      "start": 5357.34,
+      "end": 5359.96,
+      "text": "I mean, in practice, you would not have a barrier, which is,"
+    },
+    {
+      "start": 5360.06,
+      "end": 5362.34,
+      "text": "I mean, the barrier height would be reasonably high."
+    },
+    {
+      "start": 5362.34,
+      "end": 5362.4,
+      "text": "Okay."
+    },
+    {
+      "start": 5362.4,
+      "end": 5362.5,
+      "text": "Okay."
+    },
+    {
+      "start": 5362.5,
+      "end": 5362.56,
+      "text": "Okay."
+    },
+    {
+      "start": 5362.56,
+      "end": 5362.62,
+      "text": "Okay."
+    },
+    {
+      "start": 5362.62,
+      "end": 5362.7,
+      "text": "Okay."
+    },
+    {
+      "start": 5362.7,
+      "end": 5362.76,
+      "text": "Okay."
+    },
+    {
+      "start": 5362.76,
+      "end": 5362.82,
+      "text": "Okay."
+    },
+    {
+      "start": 5362.82,
+      "end": 5362.86,
+      "text": "Okay."
+    },
+    {
+      "start": 5362.86,
+      "end": 5362.96,
+      "text": "Okay."
+    },
+    {
+      "start": 5362.96,
+      "end": 5362.98,
+      "text": "Okay."
+    },
+    {
+      "start": 5363.0,
+      "end": 5363.78,
+      "text": "Okay."
+    },
+    {
+      "start": 5363.78,
+      "end": 5364.08,
+      "text": "Okay."
+    },
+    {
+      "start": 5364.08,
+      "end": 5365.6,
+      "text": "I think so."
+    },
+    {
+      "start": 5365.6,
+      "end": 5366.48,
+      "text": "Yeah, yeah."
+    },
+    {
+      "start": 5368.48,
+      "end": 5371.16,
+      "text": "Yeah, but then how do you hold the memory?"
+    },
+    {
+      "start": 5371.16,
+      "end": 5374.62,
+      "text": "He makes it and then it leak away, right?"
+    },
+    {
+      "start": 5375.96,
+      "end": 5381.14,
+      "text": "Maybe if you could finish up there?"
+    },
+    {
+      "start": 5381.36,
+      "end": 5381.44,
+      "text": "Yeah."
+    },
+    {
+      "start": 5381.44,
+      "end": 5381.64,
+      "text": "Mm-hmm."
+    },
+    {
+      "start": 5382.04,
+      "end": 5386.04,
+      "text": "This is very exciting, also, in addition to dynamics,"
+    },
+    {
+      "start": 5386.04,
+      "end": 5390.64,
+      "text": "this also gets diffusion processes in AI."
+    },
+    {
+      "start": 5390.7,
+      "end": 5392.94,
+      "text": "And there's all this好吃 stability."
+    },
+    {
+      "start": 5392.94,
+      "end": 5398.46,
+      "text": "diffusion. So stable diffusion is this process where you're going along the Wasserstein distance"
+    },
+    {
+      "start": 5398.46,
+      "end": 5408.299999999999,
+      "text": "and distributions, right? Sorry. Yeah, but you do it, you do it, nobody does diffusion anymore in"
+    },
+    {
+      "start": 5408.299999999999,
+      "end": 5413.98,
+      "text": "the image space. They do it in the latent space. And it's going to the latent space, that's why,"
+    },
+    {
+      "start": 5413.98,
+      "end": 5417.58,
+      "text": "that's, that's how then the things started working. It's stable in,"
+    },
+    {
+      "start": 5417.58,
+      "end": 5423.82,
+      "text": "quote-unquote, stable in the latent space. So somehow in the latent space, every point"
+    },
+    {
+      "start": 5423.82,
+      "end": 5428.62,
+      "text": "in the latent space is actually a beautiful picture. It's not noise, right? And they do"
+    },
+    {
+      "start": 5428.62,
+      "end": 5435.66,
+      "text": "the diffusion in the, in the latent space. So does this argument tell about that process?"
+    },
+    {
+      "start": 5439.18,
+      "end": 5439.98,
+      "text": "It's a different talk."
+    },
+    {
+      "start": 5441.1,
+      "end": 5445.18,
+      "text": "Yeah, yeah. There is some protocol"
+    },
+    {
+      "start": 5446.54,
+      "end": 5447.18,
+      "text": "to combine"
+    },
+    {
+      "start": 5447.58,
+      "end": 5453.9,
+      "text": "diffusion models with general transport. I'm not so familiar with this stuff, but I think it,"
+    },
+    {
+      "start": 5454.7,
+      "end": 5462.54,
+      "text": "yeah, I heard that it works, yeah. But in the original naive diffusion model,"
+    },
+    {
+      "start": 5462.54,
+      "end": 5466.78,
+      "text": "the backward process is not optimized in this sense."
+    },
+    {
+      "start": 5466.78,
+      "end": 5470.3,
+      "text": "So, Gert, I have always had this question,"
+    },
+    {
+      "start": 5470.3,
+      "end": 5475.9,
+      "text": "how is the diffusion model converging to a specific definitive pattern?"
+    },
+    {
+      "start": 5476.94,
+      "end": 5477.58,
+      "text": "Because diffusion"
+    },
+    {
+      "start": 5477.58,
+      "end": 5479.18,
+      "text": "always goes the other way."
+    },
+    {
+      "start": 5479.18,
+      "end": 5479.58,
+      "text": "Because it's"
+    },
+    {
+      "start": 5479.58,
+      "end": 5482.62,
+      "text": "on a manifold. Then the manifold has only one image."
+    },
+    {
+      "start": 5482.62,
+      "end": 5505.0599999999995,
+      "text": "Has one 또"
+    },
+    {
+      "start": 5505.0599999999995,
+      "end": 5505.54,
+      "text": "Refri ."
+    },
+    {
+      "start": 5505.54,
+      "end": 5505.66,
+      "text": "Mange, mangg."
+    },
+    {
+      "start": 5505.66,
+      "end": 5509.22,
+      "text": "diffusion within, the noising and denoising"
+    },
+    {
+      "start": 5509.22,
+      "end": 5517.16,
+      "text": "is much cheaper than the image to latent to image in practice."
+    },
+    {
+      "start": 5517.16,
+      "end": 5519.88,
+      "text": "So just because, I mean, the image space"
+    },
+    {
+      "start": 5519.88,
+      "end": 5523.5599999999995,
+      "text": "is so much higher dimension than the latent space."
+    },
+    {
+      "start": 5523.5599999999995,
+      "end": 5524.78,
+      "text": "That has to be."
+    },
+    {
+      "start": 5524.78,
+      "end": 5525.8,
+      "text": "Yeah."
+    },
+    {
+      "start": 5525.8,
+      "end": 5528.599999999999,
+      "text": "It's still a process of what to find this .."
+    },
+    {
+      "start": 5528.599999999999,
+      "end": 5530.76,
+      "text": "And then that can be discussion."
+    },
+    {
+      "start": 5530.76,
+      "end": 5532.34,
+      "text": "We're already going into the break."
+    },
+    {
+      "start": 5532.34,
+      "end": 5533.34,
+      "text": "Thank you very much."
+    },
+    {
+      "start": 5535.66,
+      "end": 5537.16,
+      "text": "Thank you."
+    }
+  ],
+  "segment_count": 1365
+}

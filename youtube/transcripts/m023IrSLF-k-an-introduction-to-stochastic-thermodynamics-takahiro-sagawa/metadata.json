@@ -1,0 +1,15 @@
+{
+  "title": "An introduction to stochastic thermodynamics - Takahiro Sagawa / NEST",
+  "url": "https://www.youtube.com/watch?v=m023IrSLF-k",
+  "backend": "whisper",
+  "model": "large-v3",
+  "requested_language": "en",
+  "detected_language": "en",
+  "generated_at": "2026-04-08T17:18:28",
+  "language": "en",
+  "language_probability": null,
+  "duration": null,
+  "refined_at": "2026-04-08T17:22:31",
+  "cleanup_rules": 54,
+  "paragraph_count": 227
+}

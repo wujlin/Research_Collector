@@ -1,0 +1,73 @@
+checked_on: "2026-04-10"
+default_status: "unreviewed"
+
+venues:
+  "physical review letters":
+    status: "trusted"
+    note: "APS flagship journal with consistently strong field reputation."
+  "physical review e":
+    status: "trusted"
+    note: "Strong domain journal for statistical physics, nonlinear dynamics, and stochastic systems."
+  "journal of statistical mechanics theory and experiment":
+    status: "trusted"
+    note: "Core field journal for statistical mechanics."
+  "communications in mathematical physics":
+    status: "trusted"
+    note: "Top mathematical physics journal."
+  "reports on progress in physics":
+    status: "trusted"
+    note: "High-prestige review venue in physics."
+  "nature":
+    status: "trusted"
+    note: "Top general-science venue."
+  "nature physics":
+    status: "trusted"
+    note: "Top-tier physics venue."
+  "science":
+    status: "trusted"
+    note: "Top general-science venue."
+  "pnas":
+    status: "trusted"
+    note: "Strong broad-science venue, though field fit still matters."
+  "journal of machine learning research":
+    status: "trusted"
+    note: "Core machine learning journal."
+  "neurips":
+    status: "trusted"
+    note: "Top machine learning conference."
+  "icml":
+    status: "trusted"
+    note: "Top machine learning conference."
+  "iclr":
+    status: "trusted"
+    note: "Top machine learning conference."
+  "scientific reports":
+    status: "cautious"
+    note: "Formal and visible broad OA venue, but not a strong quality signal for Must Read by itself."
+  "entropy":
+    status: "cautious"
+    note: "Topical overlap exists, but venue quality is uneven and needs article-level scrutiny."
+  "applied sciences":
+    status: "weak"
+    note: "Broad applied venue with weak signal for frontier recommendations."
+  "sensors":
+    status: "weak"
+    note: "Broad applied venue with uneven article quality."
+  "mathematics":
+    status: "weak"
+    note: "Broad venue; not a strong default signal for this project."
+  "symmetry":
+    status: "weak"
+    note: "Broad venue; not a strong default signal for this project."
+  "algorithms":
+    status: "weak"
+    note: "Broad venue; not a strong default signal for this project."
+  "axioms":
+    status: "weak"
+    note: "Broad venue; not a strong default signal for this project."
+  "energies":
+    status: "weak"
+    note: "Broad venue; not a strong default signal for this project."
+  "international journal of information technology and computer science":
+    status: "weak"
+    note: "Venue signal is weak; suitable at most for toy-method practice."

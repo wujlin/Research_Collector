@@ -30,7 +30,7 @@
     "view_count": 25,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 76.3,
+    "importance_score": 76.28,
     "importance_bucket": "keep"
   },
   {
@@ -64,7 +64,7 @@
     "view_count": 1,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 73.05,
+    "importance_score": 73.03,
     "importance_bucket": "keep"
   },
   {
@@ -81,7 +81,7 @@
     "view_count": 1495,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 71.61,
+    "importance_score": 71.59,
     "importance_bucket": "keep"
   },
   {
@@ -183,7 +183,7 @@
     "view_count": 89,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 66.86,
+    "importance_score": 66.84,
     "importance_bucket": "keep"
   },
   {
@@ -285,7 +285,7 @@
     "view_count": 66,
     "topic_key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
     "resource_type": "video",
-    "importance_score": 58.84,
+    "importance_score": 58.82,
     "importance_bucket": "keep"
   },
   {
@@ -302,7 +302,7 @@
     "view_count": 122926,
     "topic_key": "ai_for_physics",
     "resource_type": "video",
-    "importance_score": 58.75,
+    "importance_score": 58.73,
     "importance_bucket": "keep"
   },
   {
@@ -353,7 +353,7 @@
     "view_count": 45,
     "topic_key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
     "resource_type": "video",
-    "importance_score": 58.24,
+    "importance_score": 58.22,
     "importance_bucket": "keep"
   },
   {
@@ -370,7 +370,7 @@
     "view_count": 581,
     "topic_key": "urban_complex_systems/scaling_and_evolution/urban_scaling",
     "resource_type": "video",
-    "importance_score": 58.15,
+    "importance_score": 58.13,
     "importance_bucket": "keep"
   },
   {
@@ -387,7 +387,7 @@
     "view_count": 673,
     "topic_key": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
     "resource_type": "video",
-    "importance_score": 58.05,
+    "importance_score": 58.03,
     "importance_bucket": "keep"
   },
   {
@@ -421,7 +421,7 @@
     "view_count": 4508,
     "topic_key": "ai_for_physics",
     "resource_type": "video",
-    "importance_score": 57.92,
+    "importance_score": 57.9,
     "importance_bucket": "keep"
   },
   {
@@ -438,7 +438,7 @@
     "view_count": 35311,
     "topic_key": "ai_for_physics",
     "resource_type": "video",
-    "importance_score": 57.75,
+    "importance_score": 57.73,
     "importance_bucket": "keep"
   },
   {
@@ -455,7 +455,7 @@
     "view_count": 16155,
     "topic_key": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
     "resource_type": "video",
-    "importance_score": 56.5,
+    "importance_score": 56.48,
     "importance_bucket": "keep"
   },
   {
@@ -489,7 +489,7 @@
     "view_count": 15303,
     "topic_key": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
     "resource_type": "video",
-    "importance_score": 53.55,
+    "importance_score": 53.52,
     "importance_bucket": "review"
   },
   {
@@ -557,7 +557,7 @@
     "view_count": 33,
     "topic_key": "urban_scaling",
     "resource_type": "video",
-    "importance_score": 43.96,
+    "importance_score": 43.94,
     "importance_bucket": "review"
   }
 ]

@@ -1,0 +1,415 @@
+So let me start and I want to thank Filippo and Andrea for inviting me to give this series of lectures and I am expected to give five lectures so today it will be some introduction to large deviations and to the fluctuation theorem and also Einstein relations so the first lecture will be just introduction to large deviations and fluctuation theorem
+
+and Einstein relation or fluctuation dissipation relation okay so maybe maybe some people already know you see do not hesitate to interrupt me and also at the end of the first lecture at the break you could tell me whether it's too slow or too fast and then I try to adapt to that the second lecture will be on exact solutions
+
+the third lecture will be about diffusive system and about also the macroscopic fluctuation theory
+
+okay the fourth lecture will be again the relation between microscopic and microscopic fluctuation theory and about also the macroscopic fluctuation theory and microscopic relation between micro
+
+and micro and also on current fluctuations
+
+and the fifth lecture it will depend how fast I can go but it will be again about current fluctuations because there are a number of things I would like to discuss and maybe I'll talk also if I have time about ballistic systems
+
+and then there are many aspects of it including for example the problem of directed polymers or the problem the kpc equation or things like that so so okay so let's go slowly and the main kind of systems I have in mind are non-equilibrium systems also if I write okay I could adapt make right to make larger writing so the kind of system
+
+non-equilibrium what I have in mind is a system which is in contact with say two heat baths or two reservoirs
+
+two heat baths or two reservoirs of particles and with different temperature
+
+and when the two temperatures are the same the system is at equilibrium and we know that the probability of finding any microscopic see the microscopic configuration of the stem is given by say the gibbs ensemble so okay here it's a classical system but anyway it would be to so when you are at equilibrium when t1 is equal to t2 then this is the starting point of equilibrium
+
+statistical physics now when t1 is different from t2 the main problem is usually there is no expression for it so the starting point of statistical physics even if you are in a steady state that is you wait for very long the system reaches a steady state but you don't know what is this distribution we will see some cases for which we can still write them but usually you don't
+
+know and this is a problem and there is no surprise it's not that nobody has discovered the formula because what happens is that this steady state distribution so the system you with very long then it might depend on the contact here and the contact there so for example if the contact is very weak on the right then the system will
+
+sample an equilibrium system at temperature t1 and beta is 1 over t and if uh okay the reverse is true so so that is expression but the reason is that if you try to get it you need to take into account the contacts with the heat baths or the reservoirs okay you can ask exactly the same system if instead of talking about system in contact between two heat baths you have a
+
+system in contact with two reservoirs of particles here and the system will reach the non-equilibrium steady state now let me say something about large deviations now large deviations usually you are talking about a system which well there is a number which is very large so for example a large number of particles
+
+a large number a long time
+
+so it could be this or you could have a very small parameter for example you you might look at a system as a semontic system so with a mountains of water and on the fantasy roundly now large deviations r acute which is small which is obviously larger so sometimes a non-equilibious reactors situation and we will see that these situations occur where there is a very
+
+weak noise since you have a system where the effect of the noise is very small so for example you may have a gas okay no gravity or so you have n particles in the volume V and there is okay at equilibrium there would be a constant density and then this volume is very large number of particle is very large and one question of large deviations would be to say okay what is the
+
+probability that if I cut my system into two parts in on this side I will see a density row one and here I would see a different density row two okay so that that I don't see the system system as homogeneous but for example I would see a higher density in part of the system so usually this will be something like the volume times a function of Rho 1 and Rho 2 okay and maybe of the geometry you see which
+
+which part of the system I want to have density Rho 1 and Rho 2 so this is a large deviation function this is a very unlikely situation and you want to know a what is the probability of this thing this very unlikely situation now we would see maybe in a few minutes that in fact this quantity has a very clear and simple interpretation and it is not just to care about events which essentially
+
+never occur okay so for people who have never heard about large deviations let me just say a few words about large deviations of sum of large deviations of sums of IID variables random variables so this is the simplest case and imagine that you have a textures so underestimate and know that you can apply same way you can use a znwerk value one andonderex당 the distribution average factor smart
+
+you can I use the imperial when t of the potential range is lost of like ... constant l.
+
+because this is the percentage of the지도 on the danced bliver butterflies a has a decrease is fast enough when you go to infinity then you have the large T you have the law of large number that is that X X T over T goes to the average of X but the law of large number
+
+and that fluctuation of s so the variance of s divided by T is equal to the variance of the variables because they are not correlated okay I am not going to repeat that but I'm going to repeat these things if anybody wants we can look at these are supposed to be rather elementary now I can ask what is the probability that the sum st over T takes a value which is s which is not with s difference this
+
+small s here is different from X average what is the probability that I observe where the this this says this is the final cost some takes a rare event and this will be T times I of s so this is the large deviation function of the sum of random variables now usually if I take a distribution of this X I more or less arbitrary there is not a simple
+
+expression for that but still one can write a lot of things so I the first thing I want to do is to to show an elementary case or two elementary cases to my knowledge these are one of the very few cases where you can get explicit expressions so the first example is what's called Bernoulli distribution so X I is 1 with probability P and 0 with probability 1 minus P okay then you can compute the average of st will be p
+
+T you can can compute two variants
+
+and you see probably everybody has done this calculation before if you ask what is the probability that the sum st is equal to is equal to small s times T then it's just you have this formula here T total number of ways that you can have zeros and 1 times P to the times 1 minus P to the T minus st okay and then you use what's called Stirling formula which is rather elementary and then you
+
+get okay just let you finish the calculation you just replace st by this formula and you get that II of s is equal to S log look of s over P plus 1 minus s log of 1 minus s over 1 minus P okay so this is one of very few cases for which you have an explicit expression now what can I say about this expression so let me just draw in this example what I of s look like okay so this is a probability yes I of s is the
+
+probability that ST equal T times or ST over T is equal to s exponential minus T I of s so what does it look like s okay s can only take values between 0 and 1 okay so it has a shape like that here it vanishes when s equal P sorry maybe I okay it's so it's positive so it's sometimes I depends whoever I put a sign there okay so it's something like that for s equal P it vanishes now the
+
+function near the origin here it looks like a parabola near near P equal for s close to P it's like a parabola and you see that this parabola if you put it in an exponential this is just a Gaussian distribution so so if you this neighborhood here tells you that essentially the distribution will become gaussian if you don't look too far two
+
+four deviations which are too large now take this formula you can expand it and you get that I of s equal s minus P squared so this is that value okay so the the del T this mina two standard and demonstrator and the171 what is T goodbye if you set it you just have 24 holes for each another 핫 pack because some of the number is not identical of course you мет when we start to arrive in this
+
+next level so the formula you going to you can expand it and you get that s equal n I of s equal a squared you get then you get that I of s equals as an expression like slightly we take integral here the next language since I splittingigt using the squared over two p one minus p plus okay i continue to p minus one s minus p cube over
+
+six six one minus p squared and so this is just you expand this formula now so what you see is that if as long as s minus p is of order one over square root t essentially this will be one over t to the three halves multiplied by t so this does not count so you get the gaussian the what's called the central limit theorem the distribution is gaussian but as soon as you take s minus p
+
+even of order one third see and of course larger or equal to one third this term will start to contribute and many other terms will contribute and so the central limit theorem is only that you have a gaussian distribution is only valid if you are looking at deviations of order one over square root t for this s here otherwise the formula is different okay now there are
+
+there is another case that you can solve but i am not going to spend much time on it so this over case would be just
+
+that rho of x so second example rho of x would be exponential minus x for x positive and and zero for x equals zero so so you have a distribution this is again a case for which you can calculate the explicitly the distribution and you find that i of s
+
+okay it's a calculation which takes uh okay i hope i in fact i am not sure you wrote it here
+
+okay it's given by s minus one minus log s now in general you have not an explicit expression but you can write it in the parametric form and we will see in over cases especially in the fourth lecture that often the results when you look at current fluctuations appear as a parametric form so let me talk about the general case still in this situation simple situation of some of independent random
+
+variables of course this is just in the introduction because what is interesting is the case where the variables are correlated so
+
+so now let me suppose that s t is x 1 plus plus x t and all these variables are independent distributed according to the same distribution rho of x and now i would like to know what is the i of s the probability distribution that as i said before probability that s t over t equals s exponential minus i of s
+
+okay something which is simple is to compute the generating function lambda of st and lambda of st because the variables are independent is just lambda x lambda x1 times x2 times a so it's lambda uh lambda of x1 to the power t because they are all independent so this let me call this let me call exponential lambda x so the average this integral of rho of x dx let me call it exponential mu of lambda
+
+now in in the general i of s
+
+will be given by in a parametric form that is i of s okay let me see where is my note
+
+that okay
+
+okay let me first say something
+
+okay so so essentially exponential lambda s of t will be integral of small ds exponential minus i of s plus lambda s to everybody times t so this is the probability of st and this is the value of s t and so this is the probability of capital st and this is the value of a c and you expect that this okay when tv is very large then this will be
+
+of the form mu of lambda where mu of lambda is here because we can compute that directly and
+
+if you think that you can use a saddle point here because t is very large because it's fluid and t is very large this will be caddy's tuber RNA THAT w i sow in is tuber RNA THE賞 C Attorneyologique K. . b Ta didi es mu fok tsorgé en forti,價 c rabéinbruk plus- allenex permé sinks is mu f Labour and in revisiting faster q and if said yes flow énormément pi hataa . and computers can compute that directly and if you think that you can
+
+when on genuine n Eddy deffensen job that you can use saddle point here because this is very important noi in in this big Howardimoto denotated by Erw innerloc sharper utterly high value. large you use a saddle point that this will tell you that mu of lambda will be equal to lambda s minus i of s and the value of s which is here okay so this sorry if you use a saddle point method
+
+you will get that mu of lambda is the maximum over s of this expression so so essentially if you knew i of s you would know mu of lambda just because you have this integral and for large time for large t this is dominated by the thing this is a saddle point or saddle point calculation these people are familiar with saddle points or
+
+yes okay okay so this is if you know i of s you get mu of lambda if you want to do the reverse there is uh what's okay then if you want to do the reverse the mu of lambda needs to have some properties that is differentiable and so on and i'm not going to discuss that in big detail but you see this is a kind of launch this is a legend transform and in fact under some
+
+math conditions that i don't want to discuss here but which is called the Gartner-Ellis theorem
+
+so in order to do the convergence you can you can do the comic den Oi and then you can use an all function you can derive the designers as long재 then you can invert this and then you get that i of s
+
+i of s is given by lambda mu prime of lambda minus mu of lambda and s is equal to mu prime of lambda so the thing to remember in this simple промa uh general example the thing to remember in this simple selected word that is ncg, for example example the first one will be nc highlighted ha ha ha ha ha, then the second is feeding is contained, you can Count Taylor.
+
+if I give you the distribution of the variable X, then you have just a single integral to compute mu of lambda. Now, if you know mu of lambda, you want I of S, then you have this formula here, which, okay, this is just, you invert this Legendre transform, and it appears in parametric form. So if I want to draw I of S as a function of S, then you vary lambda. As lambda varies, S varies. As lambda
+
+varies, I of S varies, and so you can draw I of S as a function of S. So if people are interested, I encourage them to just take the two examples I mentioned before, and then just to compute the mu of lambda, that's difficult, and then to see that you recover the I of S directly. using this formula. Okay, so this is for independent random variables, but of
+
+course, what is interesting is when variables are correlated, and free energies. There's clearly a big 차inger in terms of relationships and literature and activities, but when can we now create Youtuber...... Here, you see, the first thing I want to say is that if you think of asking about large deviations of correlated random variables, it's a huge
+
+field essentially many, many problems in physics, in statistical physics can be formulated, as in terms of computing properties, analysis, implementation
+
+applications, and the other art areas. So you have developers making cultural jobs, countries building algorithms independent, laborers, but also you have a knockout, heroin investors making global sends, neighbors making involves. And I perform, it will give an entire IBIRE token for my bạn beharen pouvoir qui vous GDP art et la possiamo venir vous augmenter en Part- purchase et vouloir faire des opérypinuses pour cette speechless situation ci-dessus. So I, will, try
+
+of computing properties of sums of correlated variables. So let me just give you an example, which is related to, so you see many, many problems can be formulated that way. Now, the thing I am going to ask about is if you have sums of random variables, which are correlated, as before, I could ask, what is the probability that this sum of correlated variables decays like this? And what is this i?
+
+Questions I can ask is, is i of s convex? Which it is. For iid, it is convex. But. OK. What is the difference between correlated variables on the system at equilibrium or out of equilibrium? Difference between equilibrium and non-equilibrium. And we will see that there are major differences. Can . Is it interesting? And so on. OK. So one thing I want now to show you is that this object i of s, which looks something
+
+like talking about rare events that will happen, in fact, it's very related to the free energy. And so it has some clear meaning. And so let me take again. The example I had before, that I have a box, and I have n particles. But this n particles in volume v. OK. And so there is a density rho equals n over v. And I want to ask, OK.
+
+What is the probability that all these particles collide and interact and all the kind of things? And I would like to know what is the probability that all the particles are on the left in this volume v1, which is alpha v? OK. So I want all of them. So this will be a very, very rare event. Now, what is the probability that all particles are on the left in this volume v1, which is alpha v?
+
+So alpha v is the number of particles that are in v1. OK. So it's the sum over all the configurations of these interacting particles of the Boltzmann weights of the configurations where all particles are in v1. So alpha v is the number of particles that are in v1. And it's divided by sum over all configurations where all particles are in v. OK.
+
+Because the probability, this is just, I count only configurations where particles are on this side. Now, this is the partition function of having n particles in v1 divided by the partition function of having n particles in v1 divided by the partition function of having n particles in v1. And this is... And z of v and n, or n and v, I don't remember. OK.
+
+It's just exponential minus the free energy of the system divided by the free energy of the system. And this is just exponential minus the free energy of the system divided by the temperature. Here I just put the Boltzmann constant to be one. So essentially, if you know the free energy of the system, it's related to the large deviation
+
+function, because the probability of this rare event is just exponential, the difference of free energy between these two situations. Yes. So... The probability of this rare event is just exponential. The difference of free energy between these two situations. Yes. So... The probability of p is just exponential. OK. So it's... So it's exponential minus f of v plus f of v over t divided by t minus f n minus f of
+
+v1 n over t. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. Yes. that we all know about and now if you imagine that the system is extensive, which means that f of v and n I want to write it as v times a
+
+function of v over n, that is v a function of rho, then this would really take the form of exponentials, I hope I made the, minus v over t times alpha f of rho over alpha minus f of rho where v1 equals alpha v. Okay so essentially if you, when the system is very large, you have this very large parameter in front, the volume of the system and this is the free energy as a function of density per unit volume,
+
+this small life. Okay so this is just to tell you that the large deviations is very related to the free energy, now in some lectures to come I am going to talk about the functional of the free energy, yes, maybe before I, I want to say that, you see you know that the free energy is a convex function, now I don't know how to reveal how convex, it's just an example that I've been talking about later.
+
+now I don't know are people surprised if I say that free energies is convex or I can yes or no
+
+the word convex context okay a convex function is a function which is like that it has its curvature so you just count which the same as saying that the function the second derivative is positive okay so the free energy is convex and knowing that f of rho is convex you can show that this is convex also this large deviation function is convex and I want to say that in non-equilibrium systems
+
+we are we can discuss similar things and we will see oh I don't know whether I have time to go there there but sometimes this large deviation function is not convex but anyway now let me call talk about a quantity that I am going to discuss a few times and discuss it now at equilibrium is functional of the density
+
+so I discuss it in one dimension but you can do it in arbitrary dimension so let me just imagine that I am at a temperature once and I don't want to care about the temperature and also kb is one more or less all the time and now I have a very large system
+
+so I have a very large system and the system is itself consists of large step systems so imagine I have l equal k small l and now I would like to know what is the probability that the density in the first box is rho 1 and the density in the last box is rho 2. k so this means that in this box I have n1 particles l times rho 1 and so on and so
+
+the probability of rho 1 rho k
+
+will be essentially okay I
+
+essentially exponential okay it will be okay so it will be essentially minus minus l a functional of rho 1 and okay okay it would be a large deviation function now which will depend on all these things and
+
+now I want to know what is this functional I want to write it so if I have a very large system and I want to think of a large system and I want to think also that this system has short
+
+range interactions it's very important
+
+then what I want to show you is that this functional okay this functional
+
+will be given by 1 over k sum of f of rho i minus f of rho bar minus chemical potential mu of rho 1 minus rho bar okay so let me try to show this formula
+
+okay so I have k boxes and I want to show this formula and here there is a chemical potential so I want to think of this system in equilibrium and I want to to see
+
+I want to to to show this formula and after that we will talk about the functional
+
+okay so so what is the partition function of everything of all possible configurations of the system without specifying what are the rules there okay it will be just the denominator I will have z of n and v or v of n never I don't remember volume and n and then I have exponential mu n over t but t is one I don't know not but if you want to put it so this is all the possible configuration of the system
+
+and here I have a weight which is the chemical potential because the chemical potential is
+
+you see there to to equilibrate the system with a reservoir of particles and now in the numerator I will have okay so here I want to add this finding putting the Haitian in equilibrium and then there is n over p which is equal to 0 that is 1 over 6 love the�e and their properties for the other class there is 0 even if I prove that one use n and u will not happen
+
+so here I want to write something I want to look at all the boxes and in the first box okay here it's LC because I am in one dimension Z small L of n1 times product of Z of L minus NK and this probability is given by that in fact it's not exactly given by that because the particles which are inside the first box they might interact with particles on silver in the next box but now I have
+
+supposed that these boxes are very large and these interactions are just surface effects so essentially this is not equal but it's very close to being equal given by that and what we have forgotten here of course is the effect of the chemical potential so it's exponential mu times n1 plus nk
+
+yeah so so this is with a chemical potential the partition function with exactly n1 particle and this is with n1 and okay and each of this sum here is is dominated by a certain value of
+
+a certain value of n so in the numerator you have exponential minus sum of f of rho i minus l some this is this term plus mu some of y and in the denominator you have
+
+minus so this is i equal one to k i equal one to k and in the denominator
+
+it's l and here you have l
+
+zero bar of the the density in the whole system and here you have plus l f of rho bar okay and if you look at this you you get uh you you get this as this one so so the problem the probability of observing this is given by four here where you have only the free energies of the system plus the chemical potential and for those who remember a little bit of thermodynamics
+
+then
+
+i i want just to write that just in terms
+
+what is the what
+
+so sorry where where is the typo
+
+oh i see okay so i do this maybe no no yes yes no no no you are right yes yes so i have i removed that yes sorry okay fine so
+
+can i use the why i have a go to some answer interesting what is that actually show the upper thread you see which dominates is equal to L times rho bar.
+
+OK. Yes. So it's a.
+
+OK. You don't need to do that because here I have a system with a chemical potential. So it can exchange particles with reservoirs. But you could also discuss different situations that is you fix the total number of particles. You have no exchange. And you would end up with the same formula, in fact.
+
+By here. So, sorry. OK. So this thing and what else? OK. One nice thing. I say this thing is because, you see, if you look at this, this is as if all these boxes did not interact.
+
+But in fact, they do interact. And the interaction will produce something which is very small compared to the main result here.
+
+And this is a case of creating a constant, and we could actually getю 왜 ? OK. You can have prefactors. You could even have ‑‑ you see, here, I am talking above in one dimension. But if I was in dimension, arbitrary dimension, I would have L to the D here. And the thing which would be neglected are surface effects. So it would be with order of L to the D minus 1.
+
+Because IT.cs you do it in two dimensions or in higher dimension, you have L to the D minus 1, you are going to break your large system into sub boxes the interactions between boxes are surface effects and this would do this contribution but the main contribution is this is it okay
+
+okay should i stop now okay
+
+so
+
+you have this this expression okay i'm good i wanted to to finish that before the break but let me say this expression you can also think about the functional now now one thing
+
+that
+
+you have to remember okay from statistical physics is that the free energy as a function of v
+
+okay so the derivative of the free energy with respect to the number of particles is just the chemical potential okay so this means that here i am talking about the extensive part that's really elementary thermodynamics also and this means that the mu which is here is just f prime
+
+okay if people are not so familiar with that we can discuss it take a little more time during the questions or something okay the thing i want to to say is that you can think of a functional that is now instead of saying i have k boxes i take many boxes so i imagine that l is very large
+
+that the boxes themselves are very large
+
+in terms of theirịingitlinshe quadrat bathroom growing rally level prisoners and now that is life the discussing here is always at equilibrium will be a functional exponential times L times a functional of the density profile and this functional would be just to replace this sum by an integral so this functional of rho of X will be integral of f of rho of X minus f of rho bar minus okay so I replace mu by f prime
+
+f prime of rho bar times rho of X minus rho bar dx okay so this is a functional of the density profile for a system at equilibrium now I want to okay one thing is first is that here you see particles are interacting it's not that it's the density of the number of particles in a box is the sum of independent random variables because they are interacting but one thing which is very characteristic of systems at
+
+equilibrium with short-range interaction is that this is a linear differential of these two things in that here I see two sort of local functional. This is local. This means that there is no thing between rho of x, rho of y. There is not a double integral. And we will see that out of equilibrium, the large deviation function of the density becomes non-local. But this is just local. So now to discuss
+
+an aspect very much studied in the case of large deviations is the case of Markov processes. And many of the systems we will discuss are Markov processes.
+
+One example traces that the graph of two groups of different lights.
+
+So, you can read consider discrete or a continuous time Markov process.
+
+Yes, but this is also interacting particles. You see, muchísственно. you see what this formula tells you that for example you take the 3d ising model i don't know what i am not an explicit expression of the free energy but still this formula is true this is you don't need the thing to be non-interacting the thing you need is that the interactions are short
+
+trench but there could be a distance of 10 latissites or whatever
+
+sorry yes but subtle point doesn't mean that the system is not interacting
+
+what is used is that the system is very large
+
+and so when the main thing is that when the system is very large essentially you can consider that
+
+at leading the free energy of the whole system is essentially the sum of the free energy of each boxes because you have only surface contribution this is what you are using but the particles can interact as much as you like inside short range yes yes yes
+
+short range means for example you take ising model where particles were two neighboring sites interact okay so for example you have uh the the energy of a configuration would be or would be some of potential per potential
+
+but this v decreases fast enough with the distance that's short range okay
+
+other questions
+
+how fast okay i how fast i think if it decays fast enough like exponential if it decays exponentially but presumably if it decays power low that the power is is fast enough probably it's not true when you have a cool interaction for things like that yes and and there are okay maybe you see there are exercises maybe i can give where you you will see that this is not true
+
+when when the interactions are long range okay so there are no other questions
+
+yes yes
+
+yes yes and you see in in when people look at critical phenomena usually they add some gradient terms to that but but here i am talking about a system and i don't talk about really critical points so you see but but even when okay i don't want to enter the story of the critical points here okay so let me let me come to uh this the the let's look at the applied area for example
+
+the film the time frame for example now we are going to see parking particles as intercepting particles as themed particles nướcULU . P mutualization the watercolor introduction one say depends on xt so so you have to know what was the previous value and to tell what is
+
+okay so let me say for example you could say that xt plus one is one half with probability xt and is one with probability one minus xt so so okay so you start with xt equals zero and then the first thing is one then uh then the second one will be one half and the third one will be ever one half or one okay this is an example
+
+so the probability of one value depends only on what happened before and you have in fact many many systems that you can describe like that because here i am talking about numbers but this could be very high dimensional vectors and so on so so this this is what's called markov process and so the probability
+
+of time t of observing x is just integral of rho of x given y probability of having y at mt okay so this is a discrete time markov process
+
+now there is a continuous time version in fact the continuous time version is just limited in case of the discrete time
+
+okay so so you say that x at time t plus dt dt is very short time infinitesimal is xt or is y so this would be with probability one minus integral of rho of x given y
+
+sorry probability given xt so you know xt this is the probability that it does not change so this is and it becomes y with probability rho of y given xt dt and i have in mind that dt is very small compared to one okay so this would be a continuous time and in fact you see that this is just a particular case of this case because the change from time t to time t plus dt is very
+
+very small so this is a special case so this is a markov process and many of the models that we are going to discuss here are markov processes so one of them in fact will be what's called the symmetric screwing process
+
+okay ss so it's a symmetric simple exclusion
+
+process and okay it's a one-dimensional system which consists of l sites and then you have particles on this lattice and bring every time dt very small each particle can jump with probability 0. so this is a very simple one-dimensional system so you can see that it's very small so every time dt is very small each particle can jump with probability 0. probability dt to the left or to the right
+
+but so it's called symmetric because the rate at which you jump to the left or to the right is the same simple because you jump only to the nearest neighbor and exclusion because you cannot jump to a site which is already occupied so this is one example which can't be 윤 the again this goes between how many Systems do you already have on the level
+
+and this is the problem you see at the跟你 Dazu is on the level two that's comes up three that's the spacepción value four if you look at the suddenly you can see that судs which produced log theiono you covers thisado times a step work so let's let's see if it works signature Santoegen rate second point two one reaction throughout the system fair production both
+
+So if you take alpha equal 1, gamma equals 0, beta equal 1, delta equals 0, so you see particles can enter from the left. They cannot leave because gamma equals 0. They cannot leave on the left, and they leave on the right, and they cannot enter from the right. So there will be a flow of particles. The system can reach a steady state for this system. Okay.
+
+So now a configuration of the system will be given by 2, 1, 2, L, where 2, I is 0, 1, depending on whether the site is occupied or empty. And I am interested. In the probability of seeing the system in a configuration C, so this configuration C is just there are 2 to the L configurations. If L is large, it's a huge number. And so this will be what I am writing now is very general for Markov processes.
+
+There will be a matrix which tells me that.
+
+So this is the probability that at time C the system was in configuration C prime, and it jumped to configuration C. Because Markov process. The probability of being in C at time T plus DT depends only on where I was. So I will write this. So this is Колhapurнев nostro cy proceãoål At', this is coming from Southeast Asia, entries in the room floor 2E and it is I delete a mentioned m Then I discuss English.
+
+What would the graphic be like if the command were to be out like this? I would be blinked when we have theнихlight of Our guy became mono signal. times it is a probability of this jump or I was in C and I did not jump to any other configuration so this is the evolution and so if I becomes when it is very small which is assumed in all these things there is a master equation
+
+sum over C prime which tells me how the probability of seeing the system in a configuration C evolves let's call the master equation and in situations where the Markov process is irreducible irreducible means that somehow there is a way a path possible or possible to reduce the path of the system and so the way to go from any configuration to any other configuration so here it's
+
+very easy to see that I see the case for an example like that because I could start with everything empty and I start to fill the system by letting particles enter so I can go from any configuration to any other configuration and what happens is that if you are in this situation so irreducible
+
+and implies that PT of C go to stationary in the long time limit stationary distribution but it's not an equilibrium you see because as I said when alpha is one and beta is one for example and the over parameter is zero there will be a flow of particles when you have a flow of particles through your system it's not an equilibrium still is a steady state
+
+okay here I don't take it time dependent now there is the whole field that I am not going to discuss here of what is called stochastic thermodynamics where you make them time dependent for example if you want to describe a system on which you you change the launch potential or something for example when you when you put some kind of a
+
+potential or something for example when you when you put some kind of a potential or something for example when you when you put some force on the system and you change it its volume also you would have these things which are time dependent but here I don't take them okay now if I take this system the matrix M consists of three parts M 1 plus M bulk plus M 2 and
+
+another so-called one axis of position okay because to jump from one configuration to the other type what happens here okay so there is a probability that I jump from one configuration to another due to the interaction on the left M 2 will be the same on the right and m mucha would describe all the moves inside and we will sees that when the system is out of equilibrium essentially the
+
+base parameter in your circuit and then the other position and it is the force so we have I don't take them all but the conclave of the process to create these two levels where workflows make up a each term tries to equilibrate the system at a different density or at a different temperature now something rather important is in terms of this Markov processes okay let me keep this one what's called tilted matrices
+
+now if I take this example one quantiity might be interested in is to count how many particles have gone through the system so you think to see what is the current of the system and I want to know what is the average current what is the fluctuation of this current or what is a large deviation function of this current so i observe the system during time t and i might be interested
+
+in qt says the number the number of particles entering the system
+
+during time t
+
+okay and i want to think of this time to be very large so i would large deviation would be to say what is the probability that qt over t takes a certain value i of q and exponential i of q i want to know for example the large deviation function of this
+
+this current now you see here at the moment t is large but the system here has a size l it has a size l here but i don't need l to be large it could be a very small system and i want to to to know how the current through the system fluctuates and what is this large deviation now to do that i am going to introduce what's called tilted matrices so instead of talking about this specific example
+
+i want to consider a quantity which i write like this
+
+qt is sum over so let me take a discrete time um but actually this is the number we use for thermal and i want to say okay two equals zero to t minus one of q of c2 plus one okay so okay so i have a quantity okay so i have a quantity i have a function here okay so so for example here if i am interested in the number of particles
+
+which enter this system okay q this is sorry this is two q of c two plus one c two is each time a particle enters so i am in a configuration says that this was empty the new configuration is that particle enters then this q becomes one if say i am in situation where i allow also particles to to leave the system this q would be minus one and if there is an internal move
+
+this q would go be to zero because here i am counting what is entering the system but you could decide that you want to count something else and this this is the quantity okay so i'm interested in the quantity like this so it's essentially general for markov process and now i want to write
+
+i want to write the evolution of the probability that the system is in configuration c at time t and that i have observed q of t so now i am with yes
+
+yes so i don't see okay maybe i i did not think the number of particles and during the system at time t and this is a more general thing but the number of particles entering the system during time t is a special case of this quantity
+
+up to time t yes
+
+is it okay
+
+okay this is the this is the integrated current so so you count during time t how long how much this Caymino refers to and it's the number of particles there right so this is 1 drove 1 9 10 12 and that's the limit of the information here and 1 times 8 is a population of one oke so let me just write what happens for this thing and very much like
+
+i had this formula here i have probability of being in configuration c at time t plus one Primping movements of the arbitrary configuration I jumped from from CT to CT plus one and here I had the probability of being in CT and observing QT minus Q of CT plus one and CT okay so how is it possible that I observe Q at time QT plus one at time T plus one okay I was somewhere before okay I have jumped from CT to CT plus
+
+one and when I did this jump QT increases increased by this amount okay and this is looks difficult so this maybe this at time T and this is at time T plus one and this look difficult thing because a priori because okay here for an example like that I have two to the L configuration so I have a finite number of configurations so the probability PT is just a vector okay with many components
+
+but it's a finite vector but now QT can become very large it is unbounded so so it could become the total this acts it's still a Markov process but it's a Markov process in an infinite dimensional space so it looks very difficult but there is a very simple way to simplify the problem is to to introduce generating functions so let me call P tilde or P hat of CT PT this
+
+would be just exponential lambda QT times the probability of CT and QT and I sum over all possible QT now I just can take this formula multiply by exponential lambda QT on both side of lambda QT plus one and T plus one and what I end up with is that P C plus one please had of C 10T plus one is sum over CT or customs theta alpha lambda Lisa lambda of c times q plus one of cง theta and really we want to construct a
+
+ulators we we we want to make something stukies look together okay but the question is it of m of ct plus one ct times exponential lambda qct plus one ct times p hat of ct.
+
+Okay so you just multiply both sides by this exponential and you just sum over qt and you get this thing and you see what I have gained doing that is that as I said ct takes two to the l possible value qt takes an infinite number of possible values so this in principle is something in an operator with infinitely many possible values but this here this matrix
+
+is a finite dimensional matrix for the step for example is the two to the l by two to the l which is still a big thing but this is a finite matrix and now I have this recursion and and the consequence of that is that if I am interested in the long time behavior of this
+
+uh yes sorry so there is some of uh sorry
+
+no
+
+okay I Q q c plus one minus q t is Q of city plus one and city okay so you can do whatever okay you can make it imaginary you see my okay maybe I am assuming that this number is bounded or something like that but you don't need in fact to be imaginary usually okay whether you take it imaginary or real or whatever doesn't matter okay but the main point okay so again you had this evolution there now okay here I am
+
+talking about this time but there is the same thing with continuous time but what happens in now you have a matrix which is a finite matrix maybe 2 to the L by 2 to the L as long as I look at finite systems and what happens is that you know in advance what will happen for large T what happens for large T you have a vector matrix times a vector so for large T PT hat of C will grow like T exponential mu
+
+of lambda where mu of lambda is in this case exponential is the largest eigenvalue of the matrix of the following T of the matrix of the following T of the matrix of the following T of the matrix of the following T so you have a tilted matrix so you have a tilted matrix and the matrix you can read it here is M lambda of C prime C which is just M of C
+
+prime C exponential lambda Q of C prime C okay so you see because after all this is just M lambda of C prime C a matrix multiplied by a matrix and if you multiply matrix many many times then what comes out is what you get is the largest eigenvalue of this matrix is a finite problem so this is called the tilted matrix so this is called the tilted matrix so this is called the tilted matrix
+
+So, if I just try to summarize this story, the following, I'm sorry, I am slower than I expected. So, if I am interested in exponential qt, which will be the sum over qt, maybe the sum over all configurations of pt, of c, qt, exponential lambda qt, and this, we say that, okay, let's say that sum over c, sum over qt. And we say that this, we called it p hat of c. Now, all the p hat of c will grow like
+
+the largest eigenvalue of this matrix. So, this will grow like exponential mu of lambda times t. And mu of lambda is the largest eigenvalue of this tilted matrix. Okay. Yes. No, it's not, no, it's not known. Okay. It's not, no, qt is a random variable. So, for example, when I had the exclusion process, qt will depend on the realization of the Markov process, sometimes
+
+the particle enter, sometimes it, so I have many events, and qt will fluctuate. And so, I am just looking at the generating function of qt. I hope I am, yes, you have a question? . What, you could have a potential if you like also, but there is a steady state in the system. We'll discuss the steady state in more detail. But essentially, you see, you will see a density
+
+profile linear, which, but, okay. So, let me consider a simple example, and you can call, write a Kalman finalmente, In order to think about this thing, let me consider the following simple example, which is a SSEP with one site. Now,. One site. Sometimes people call it a quantum dot, but anyway, there is very little quantum minutes. but anyway so this is just an example where you have one side so it can be
+
+ever occupied or empty so the system has two states ever occupied or empty and particles can enter with rate alpha leave here with rate gamma if it's occupied they could leave on the right with rate beta and enter with rate Delta okay this is system so what is and now I am talking about the continuous time so I have two configurations there is configurations a which is occupied
+
+and B which is empty and the probability of being occupied depends on time also probability of being empty so there is a particular configuration which is occupied and B which is empty so what's the matrix m the matrix m is minus alpha here i have okay let me see it's minus sorry so the first thing will be occupied so minus beta plus delta and here i will have alpha alpha plus no sorry let's do it okay minus beta
+
+minus gamma here here i have alpha plus delta okay here i have beta plus gamma and here i have minus alpha minus delta okay so this is the matrix i have two possible states yeah in an occupied i can leave the system at red gamma on the left and beta on the right this is this term and if i i leave the system i enter this empty state with this rate so this is
+
+the markov matrix the m of cc prime what is the tilted matrix the tilted matrix if
+
+i am interested in the number of particles entering so okay so if i am interested in qt here
+
+what will be the tilted matrix then each time a new particle enters i get an exponential lambda in the system so this becomes exponential lambda and each time a particle leaves the system i get an exponential minus uh sorry yes okay so i was in state one i get an exponential minus lambda so this is the tilted matrix i i recommend that you just try to think about this very simple example
+
+and now you can try to get the largest eigenvalue of this matrix okay it's a 2x2 matrix you can do the computation by hand if you like but there are a number of come um uh admit that number of facts that I am going to mention about the problem okay there are a number of very interesting facts because they are very general so this is the tilted matrix and mu of lambda so you know that exponential lambda QT will
+
+be given by exponential T mu of lambda where mu of lambda is the largest eigenvalue of the matrix eigenvalue of M lambda okay so now you see before I had exponential mu of lambda as a largest eigenvalue because I was in discrete time here I am in continuous time so mu of lambda is the largest eigenvalue of this matrix
+
+so why I don't
+
+because I am interested in the number of particles which enter the system from the left okay so to enter your question I could do the what you said I could say I am not interested in this cutie but I am interested in the thing which is here I want to compute how many particles leave the system yeah I let me call QT T it would be a different current of Priori okay so what would be a matrix it would
+
+be minus beta minus gamma here I would have alpha plus delta exponential lambda beta exponential lambda plus gamma and minus alpha minus them so this would be a different tilted matrix now you can imagine hometown algebra is very similar to that for example so Alpha plus Delta ÷ wannaér you can imagine that if i am looking at very long time
+
+the number of particles which enter will be the same as the number of particles so i let you check that this matrix and this one have the same mu of lambda and it's very easy to do because these two matrices have the same trace and they have the same determinant okay one thing i want to mention but i i think i have to to stop soon
+
+okay but so i am slower than i expected but anyway it doesn't matter okay so so this mu of lambda here is the same as this one here because but in fact you see if i had the step not with one side but many many sides it would be still the same if i count the number of particles entering on the left or leaving on the right because the particles cannot accumulate now something
+
+you can notice about this matrix here is that it has an additional symmetry which is very important and this additional symmetry that
+
+is the same as the one in the right hand corner so if so there is this matrix m of lambda and now i am interested in f with a different values of lambda where lambda prime is equal to gamma delta over alpha beta exponential minus lambda so so let me just consider these two matrices just i have made this replacement now you will you can check easily that mu of lambda is mu of lambda prime
+
+just just you replace in the matrix and this is a special case of the fluctuation theorem which is much more general
+
+and okay i'm gonna use the fils to explain this 얘�命 attending algorithm generally very much more general and okay so venus and mu of lambda you have reminisce in the matrix And this is the parent here and as you see you show us isimportat essentially one소 log tan delta mu omega Pacific but there's accidents these also thief diagram or elemento along acrylic area and a capital series function the tod is excuse me so that they may be.
+
+was planning to explain what it is today but I will postpone that later so so okay so this relation okay you can do it by hand it's the first you have to convince you yourself that this is the right tilted matrix that's what I say that the largest eigenvalue of this matrix will tell you what happens in a very long time that's just just the fact of about linear algebra you just multiply a
+
+matrix many many times and you get the largest eigenvalue it dominates everything and the point is that there is a symmetry and this symmetry has to do with time reversal symmetry also but this is a particular case of the fluctuation theorem okay so maybe I should stop here now if you like but okay I had in mind that I would be faster
+
+okay yes okay I yes presumably okay I don't know what will happen but presumably I am slower than I expected

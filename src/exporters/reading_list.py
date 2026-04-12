@@ -12,7 +12,7 @@ from src.utils.helpers import dump_json, utc_now
 class ReadingListExporter:
     def __init__(
         self,
-        output_path: str = "digests/reading_list.md",
+        output_path: str = "digests/shared/reading_list.md",
         json_path: str = "web/public/generated/reading_list.json",
     ):
         self.output_path = Path(output_path)

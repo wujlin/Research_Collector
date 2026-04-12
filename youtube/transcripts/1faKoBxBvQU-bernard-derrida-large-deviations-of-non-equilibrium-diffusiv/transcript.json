@@ -1,0 +1,4250 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 30.0,
+      "text": "So let me start and I want to thank Filippo and Andrea for inviting me to give this series of lectures and I am expected to give five lectures so today it will be some introduction to large deviations and to the fluctuation theorem and also Einstein relations"
+    },
+    {
+      "start": 30.0,
+      "end": 45.68,
+      "text": "so the first lecture will be just introduction to large deviations and fluctuation theorem"
+    },
+    {
+      "start": 50.96,
+      "end": 58.72,
+      "text": "and Einstein relation or fluctuation dissipation relation okay so maybe"
+    },
+    {
+      "start": 60.0,
+      "end": 67.04,
+      "text": "maybe some people already know you see do not hesitate to interrupt me and also at the end of"
+    },
+    {
+      "start": 67.04,
+      "end": 74.08,
+      "text": "the first lecture at the break you could tell me whether it's too slow or too fast and then I try to"
+    },
+    {
+      "start": 74.08,
+      "end": 78.88,
+      "text": "adapt to that the second lecture will be on exact solutions"
+    },
+    {
+      "start": 84.08,
+      "end": 88.96000000000001,
+      "text": "the third lecture will be about diffusive system"
+    },
+    {
+      "start": 90.0,
+      "end": 104.0,
+      "text": "and about also the macroscopic fluctuation theory"
+    },
+    {
+      "start": 112.0,
+      "end": 118.0,
+      "text": "okay the fourth lecture will be again the relation between microscopic and microscopic fluctuation theory"
+    },
+    {
+      "start": 118.0,
+      "end": 119.12,
+      "text": "and about also the macroscopic fluctuation theory"
+    },
+    {
+      "start": 119.12,
+      "end": 123.68,
+      "text": "and microscopic relation between micro"
+    },
+    {
+      "start": 125.92,
+      "end": 130.56,
+      "text": "and micro and also on current fluctuations"
+    },
+    {
+      "start": 136.48000000000002,
+      "end": 144.16,
+      "text": "and the fifth lecture it will depend how fast I can go but it will be again"
+    },
+    {
+      "start": 144.16,
+      "end": 148.96,
+      "text": "about current fluctuations because there are a number of things I would like to discuss"
+    },
+    {
+      "start": 149.28,
+      "end": 153.92000000000002,
+      "text": "and maybe I'll talk also if I have time about ballistic systems"
+    },
+    {
+      "start": 158.56,
+      "end": 162.08,
+      "text": "and then there are many aspects of it including for example"
+    },
+    {
+      "start": 162.72,
+      "end": 168.16,
+      "text": "the problem of directed polymers or the problem the kpc equation or things like that so"
+    },
+    {
+      "start": 168.16,
+      "end": 178.48000000000002,
+      "text": "so okay so let's go slowly and the main kind of systems I have in mind are non-equilibrium systems"
+    },
+    {
+      "start": 179.12,
+      "end": 196.24,
+      "text": "also if I write okay I could adapt make right to make larger writing so the kind of system"
+    },
+    {
+      "start": 196.24,
+      "end": 205.28,
+      "text": "non-equilibrium what I have in mind is a system which is in contact with say two heat baths or two"
+    },
+    {
+      "start": 205.28,
+      "end": 206.08,
+      "text": "reservoirs"
+    },
+    {
+      "start": 209.76,
+      "end": 216.24,
+      "text": "two heat baths or two reservoirs of particles and with different temperature"
+    },
+    {
+      "start": 217.92000000000002,
+      "end": 223.36,
+      "text": "and when the two temperatures are the same the system is at equilibrium and we know that the"
+    },
+    {
+      "start": 223.36,
+      "end": 231.12,
+      "text": "probability of finding any microscopic see the microscopic configuration of the stem"
+    },
+    {
+      "start": 231.12,
+      "end": 239.12,
+      "text": "is given by say the gibbs ensemble so okay here it's a classical system but anyway it would be to"
+    },
+    {
+      "start": 239.44,
+      "end": 248.8,
+      "text": "so when you are at equilibrium when t1 is equal to t2 then this is the starting point of equilibrium"
+    },
+    {
+      "start": 248.8,
+      "end": 257.52,
+      "text": "statistical physics now when t1 is different from t2 the main problem is usually there is no"
+    },
+    {
+      "start": 257.52,
+      "end": 263.04,
+      "text": "expression for it so the starting point of statistical physics even if you are in a steady"
+    },
+    {
+      "start": 263.04,
+      "end": 268.8,
+      "text": "state that is you wait for very long the system reaches a steady state but you don't know what is"
+    },
+    {
+      "start": 269.12,
+      "end": 275.12,
+      "text": "this distribution we will see some cases for which we can still write them but usually you don't"
+    },
+    {
+      "start": 275.12,
+      "end": 282.72,
+      "text": "know and this is a problem and there is no surprise it's not that nobody has discovered the formula"
+    },
+    {
+      "start": 282.72,
+      "end": 288.88,
+      "text": "because what happens is that this steady state distribution so the system you with"
+    },
+    {
+      "start": 288.88,
+      "end": 294.16,
+      "text": "very long then it might depend on the contact here and the contact there so for example"
+    },
+    {
+      "start": 294.16,
+      "end": 298.96,
+      "text": "if the contact is very weak on the right then the system will"
+    },
+    {
+      "start": 299.12,
+      "end": 308.08,
+      "text": "sample an equilibrium system at temperature t1 and beta is 1 over t and if uh okay the reverse"
+    },
+    {
+      "start": 308.08,
+      "end": 316.24,
+      "text": "is true so so that is expression but the reason is that if you try to get it you need to take"
+    },
+    {
+      "start": 316.24,
+      "end": 325.28000000000003,
+      "text": "into account the contacts with the heat baths or the reservoirs okay you can ask exactly the"
+    },
+    {
+      "start": 325.28,
+      "end": 333.35999999999996,
+      "text": "same system if instead of talking about system in contact between two heat baths you have a"
+    },
+    {
+      "start": 333.35999999999996,
+      "end": 339.44,
+      "text": "system in contact with two reservoirs of particles here and the system will reach"
+    },
+    {
+      "start": 339.44,
+      "end": 354.71999999999997,
+      "text": "the non-equilibrium steady state now let me say something about large deviations"
+    },
+    {
+      "start": 356.0,
+      "end": 362.47999999999996,
+      "text": "now large deviations usually you are talking about a system which"
+    },
+    {
+      "start": 362.47999999999996,
+      "end": 371.76,
+      "text": "well there is a number which is very large so for example a large number of particles"
+    },
+    {
+      "start": 373.52,
+      "end": 375.35999999999996,
+      "text": "a large number a long time"
+    },
+    {
+      "start": 377.67999999999995,
+      "end": 384.88,
+      "text": "so it could be this or you could have a very small parameter for example you you might look"
+    },
+    {
+      "start": 384.88,
+      "end": 385.17999999999995,
+      "text": "at a system as a semontic system so with a mountains of water and on the fantasy roundly"
+    },
+    {
+      "start": 385.17999999999995,
+      "end": 385.23999999999995,
+      "text": "now large deviations r acute which is small which is obviously larger so sometimes a non-equilibious reactors"
+    },
+    {
+      "start": 385.24,
+      "end": 391.3,
+      "text": "situation and we will see that these situations occur where there is a very"
+    },
+    {
+      "start": 391.3,
+      "end": 402.54,
+      "text": "weak noise since you have a system where the effect of the noise is very small so"
+    },
+    {
+      "start": 402.54,
+      "end": 411.1,
+      "text": "for example you may have a gas okay no gravity or so you have n particles in"
+    },
+    {
+      "start": 411.1,
+      "end": 416.26000000000005,
+      "text": "the volume V and there is okay at equilibrium there would be a constant"
+    },
+    {
+      "start": 416.26000000000005,
+      "end": 421.42,
+      "text": "density and then this volume is very large number of particle is very large"
+    },
+    {
+      "start": 421.42,
+      "end": 425.92,
+      "text": "and one question of large deviations would be to say okay what is the"
+    },
+    {
+      "start": 425.92,
+      "end": 433.58000000000004,
+      "text": "probability that if I cut my system into two parts in on this side I will see a"
+    },
+    {
+      "start": 433.58000000000004,
+      "end": 438.70000000000005,
+      "text": "density row one and here I would see a different density row two okay so that"
+    },
+    {
+      "start": 438.70000000000005,
+      "end": 441.1,
+      "text": "that I don't see the system"
+    },
+    {
+      "start": 441.1,
+      "end": 445.72,
+      "text": "system as homogeneous but for example I would see a higher density in part of"
+    },
+    {
+      "start": 445.72,
+      "end": 452.84000000000003,
+      "text": "the system so usually this will be something like the volume times a"
+    },
+    {
+      "start": 452.84000000000003,
+      "end": 457.90000000000003,
+      "text": "function of Rho 1 and Rho 2 okay and maybe of the geometry you see which"
+    },
+    {
+      "start": 457.90000000000003,
+      "end": 463.66,
+      "text": "which part of the system I want to have density Rho 1 and Rho 2 so this is a"
+    },
+    {
+      "start": 463.66,
+      "end": 470.88,
+      "text": "large deviation function this is a very unlikely situation and you want to know"
+    },
+    {
+      "start": 470.88,
+      "end": 471.08000000000004,
+      "text": "a"
+    },
+    {
+      "start": 471.08,
+      "end": 478.7,
+      "text": "what is the probability of this thing this very unlikely situation now we"
+    },
+    {
+      "start": 478.7,
+      "end": 485.15999999999997,
+      "text": "would see maybe in a few minutes that in fact this quantity has a very clear and"
+    },
+    {
+      "start": 485.15999999999997,
+      "end": 491.53999999999996,
+      "text": "simple interpretation and it is not just to care about events which essentially"
+    },
+    {
+      "start": 491.53999999999996,
+      "end": 498.4,
+      "text": "never occur okay so for people who have never heard about large deviations let"
+    },
+    {
+      "start": 498.4,
+      "end": 500.86,
+      "text": "me just say a few"
+    },
+    {
+      "start": 500.86,
+      "end": 516.44,
+      "text": "words about large deviations of sum of large deviations of sums of IID variables"
+    },
+    {
+      "start": 516.44,
+      "end": 530.64,
+      "text": "random variables so this is the simplest case and imagine that you have a"
+    },
+    {
+      "start": 530.64,
+      "end": 533.26,
+      "text": "textures so underestimate and know that you can apply same way you can use a"
+    },
+    {
+      "start": 533.26,
+      "end": 537.34,
+      "text": "znwerk value one andonderex당 the distribution average factor smart"
+    },
+    {
+      "start": 537.34,
+      "end": 544.4,
+      "text": "you can I use the imperial"
+    },
+    {
+      "start": 544.4,
+      "end": 547.64,
+      "text": "when t of the potential range is lost of like ..."
+    },
+    {
+      "start": 547.64,
+      "end": 553.14,
+      "text": "constant l."
+    },
+    {
+      "start": 555.14,
+      "end": 559.64,
+      "text": "because this is the percentage of the지도 on the danced bliver butterflies"
+    },
+    {
+      "start": 559.64,
+      "end": 560.4399999999999,
+      "text": "a"
+    },
+    {
+      "start": 560.44,
+      "end": 566.62,
+      "text": "has a decrease is fast enough when you go to infinity then you have the large"
+    },
+    {
+      "start": 566.62,
+      "end": 574.9000000000001,
+      "text": "T you have the law of large number that is that X X T over T goes to the"
+    },
+    {
+      "start": 574.9,
+      "end": 579.9599999999999,
+      "text": "average of X but the law of large number"
+    },
+    {
+      "start": 584.9,
+      "end": 597.8,
+      "text": "and that fluctuation of s so the variance of s divided by T is equal to"
+    },
+    {
+      "start": 597.8,
+      "end": 603.5,
+      "text": "the variance of the variables because they are not correlated okay I am not"
+    },
+    {
+      "start": 603.5,
+      "end": 604.86,
+      "text": "going to repeat that"
+    },
+    {
+      "start": 604.9,
+      "end": 610.14,
+      "text": "but I'm going to repeat these things if anybody wants we can look at these are"
+    },
+    {
+      "start": 610.14,
+      "end": 616.84,
+      "text": "supposed to be rather elementary now I can ask what is the probability that the"
+    },
+    {
+      "start": 616.84,
+      "end": 627.72,
+      "text": "sum st over T takes a value which is s which is not with s difference this"
+    },
+    {
+      "start": 627.72,
+      "end": 633.42,
+      "text": "small s here is different from X average what is the probability that I observe"
+    },
+    {
+      "start": 633.42,
+      "end": 634.74,
+      "text": "where the"
+    },
+    {
+      "start": 634.74,
+      "end": 634.88,
+      "text": "this"
+    },
+    {
+      "start": 634.88,
+      "end": 634.9,
+      "text": "this says this is the final cost"
+    },
+    {
+      "start": 634.9,
+      "end": 646.36,
+      "text": "some takes a rare event and this will be T times I of s so this is the large"
+    },
+    {
+      "start": 646.36,
+      "end": 653.1999999999999,
+      "text": "deviation function of the sum of random variables now usually if I take a"
+    },
+    {
+      "start": 653.1999999999999,
+      "end": 660.76,
+      "text": "distribution of this X I more or less arbitrary there is not a simple"
+    },
+    {
+      "start": 660.76,
+      "end": 664.9,
+      "text": "expression for that but still one can write a lot of things so I the first"
+    },
+    {
+      "start": 664.9,
+      "end": 671.5,
+      "text": "thing I want to do is to to show an elementary case or two elementary cases"
+    },
+    {
+      "start": 671.5,
+      "end": 676.0,
+      "text": "to my knowledge these are one of the very few cases where you can get"
+    },
+    {
+      "start": 676.0,
+      "end": 690.16,
+      "text": "explicit expressions so the first example is what's called Bernoulli"
+    },
+    {
+      "start": 690.16,
+      "end": 690.76,
+      "text": "distribution"
+    },
+    {
+      "start": 690.76,
+      "end": 717.16,
+      "text": "so X I is 1 with probability P and 0 with probability 1 minus P okay then you"
+    },
+    {
+      "start": 717.16,
+      "end": 720.74,
+      "text": "can compute the average of st will be p"
+    },
+    {
+      "start": 720.76,
+      "end": 726.72,
+      "text": "T you can can compute two variants"
+    },
+    {
+      "start": 733.02,
+      "end": 740.08,
+      "text": "and you see probably everybody has done this calculation before if you ask what"
+    },
+    {
+      "start": 740.08,
+      "end": 750.52,
+      "text": "is the probability that the sum st is equal to is equal to small s times T then"
+    },
+    {
+      "start": 750.52,
+      "end": 766.0799999999999,
+      "text": "it's just you have this formula here T total number of ways that you can have"
+    },
+    {
+      "start": 766.0799999999999,
+      "end": 775.8,
+      "text": "zeros and 1 times P to the times 1 minus P to the T minus st okay and then you"
+    },
+    {
+      "start": 775.8,
+      "end": 780.8399999999999,
+      "text": "use what's called Stirling formula which is rather elementary and then you"
+    },
+    {
+      "start": 780.8399999999999,
+      "end": 786.42,
+      "text": "get okay just let you finish the calculation you just replace st by this"
+    },
+    {
+      "start": 786.42,
+      "end": 795.56,
+      "text": "formula and you get that II of s is equal to S log"
+    },
+    {
+      "start": 796.0799999999999,
+      "end": 805.78,
+      "text": "look of s over P plus 1 minus s log of 1 minus s over 1"
+    },
+    {
+      "start": 805.78,
+      "end": 813.52,
+      "text": "minus P okay so this is one of very few cases for which you have an explicit"
+    },
+    {
+      "start": 813.52,
+      "end": 821.92,
+      "text": "expression now what can I say about this expression so let me just draw in this"
+    },
+    {
+      "start": 821.92,
+      "end": 833.62,
+      "text": "example what I of s look like okay so this is a probability yes I of s is the"
+    },
+    {
+      "start": 833.62,
+      "end": 842.5,
+      "text": "probability that ST equal T times or ST over T is equal to s exponential minus"
+    },
+    {
+      "start": 842.5,
+      "end": 852.76,
+      "text": "T I of s so what does it look like s okay s can only take values between 0"
+    },
+    {
+      "start": 852.76,
+      "end": 862.9,
+      "text": "and 1 okay so it has a shape like that here it vanishes when s equal P sorry"
+    },
+    {
+      "start": 862.9,
+      "end": 863.6,
+      "text": "maybe I"
+    },
+    {
+      "start": 863.6,
+      "end": 870.62,
+      "text": "okay it's so it's positive so it's sometimes I depends whoever I put a sign"
+    },
+    {
+      "start": 870.62,
+      "end": 881.9200000000001,
+      "text": "there okay so it's something like that for s equal P it vanishes now the"
+    },
+    {
+      "start": 881.9200000000001,
+      "end": 889.46,
+      "text": "function near the origin here it looks like a parabola near near P equal for s"
+    },
+    {
+      "start": 889.46,
+      "end": 893.6,
+      "text": "close to P it's like a parabola and"
+    },
+    {
+      "start": 893.6,
+      "end": 898.94,
+      "text": "you see that this parabola if you put it in an exponential this is just a"
+    },
+    {
+      "start": 898.98,
+      "end": 904.94,
+      "text": "Gaussian distribution so so if you this neighborhood here tells you that"
+    },
+    {
+      "start": 904.94,
+      "end": 911.14,
+      "text": "essentially the distribution will become gaussian if you don't look too far two"
+    },
+    {
+      "start": 911.14,
+      "end": 916.48,
+      "text": "four deviations which are too large now take this formula you can expand it and"
+    },
+    {
+      "start": 916.48,
+      "end": 917.6,
+      "text": "you get that I of s equal s minus P squared so this is that value okay so the"
+    },
+    {
+      "start": 917.6,
+      "end": 918.44,
+      "text": "the del T this mina two standard and demonstrator and the171 what is T goodbye"
+    },
+    {
+      "start": 918.44,
+      "end": 919.0400000000001,
+      "text": "if you set it you just have 24 holes for each another 핫 pack because some of the"
+    },
+    {
+      "start": 919.0400000000001,
+      "end": 919.4200000000001,
+      "text": "number is not identical of course you мет when we start to arrive in this"
+    },
+    {
+      "start": 919.4200000000001,
+      "end": 921.46,
+      "text": "next level so the formula you going to you can expand it and you get that s equal n"
+    },
+    {
+      "start": 921.46,
+      "end": 922.44,
+      "text": "I of s equal a squared you get then you get that I of s equals as an expression like"
+    },
+    {
+      "start": 922.44,
+      "end": 923.44,
+      "text": "slightly we take integral here the next language since I splittingigt using the"
+    },
+    {
+      "start": 923.44,
+      "end": 936.0,
+      "text": "squared over two p one minus p plus okay i continue to p minus one s minus p cube over"
+    },
+    {
+      "start": 937.2800000000001,
+      "end": 945.44,
+      "text": "six six one minus p squared and so this is just you expand this formula now so what you see is"
+    },
+    {
+      "start": 945.44,
+      "end": 958.8000000000001,
+      "text": "that if as long as s minus p is of order one over square root t essentially this will be one over t"
+    },
+    {
+      "start": 958.8000000000001,
+      "end": 968.1600000000001,
+      "text": "to the three halves multiplied by t so this does not count so you get the gaussian the what's"
+    },
+    {
+      "start": 968.1600000000001,
+      "end": 975.2,
+      "text": "called the central limit theorem the distribution is gaussian but as soon as you take s minus p"
+    },
+    {
+      "start": 975.7600000000001,
+      "end": 986.24,
+      "text": "even of order one third see and of course larger or equal to one third this term will start to"
+    },
+    {
+      "start": 986.24,
+      "end": 992.96,
+      "text": "contribute and many other terms will contribute and so the central limit theorem is only"
+    },
+    {
+      "start": 994.1600000000001,
+      "end": 1000.08,
+      "text": "that you have a gaussian distribution is only valid if you are looking at deviations of order"
+    },
+    {
+      "start": 1000.08,
+      "end": 1005.36,
+      "text": "one over square root t for this s here otherwise the formula is different"
+    },
+    {
+      "start": 1005.44,
+      "end": 1010.72,
+      "text": "okay now there are"
+    },
+    {
+      "start": 1012.5600000000001,
+      "end": 1016.96,
+      "text": "there is another case that you can solve but i am not going to spend much time on it"
+    },
+    {
+      "start": 1016.96,
+      "end": 1019.6800000000001,
+      "text": "so this over case would be just"
+    },
+    {
+      "start": 1023.84,
+      "end": 1034.24,
+      "text": "that rho of x so second example rho of x would be exponential minus x for x positive"
+    },
+    {
+      "start": 1035.44,
+      "end": 1042.8,
+      "text": "and and zero for x equals zero so so you have a distribution this is again a case for which"
+    },
+    {
+      "start": 1042.8,
+      "end": 1047.76,
+      "text": "you can calculate the explicitly the distribution and you find that i of s"
+    },
+    {
+      "start": 1049.52,
+      "end": 1057.52,
+      "text": "okay it's a calculation which takes uh okay i hope i in fact i am not sure you wrote it here"
+    },
+    {
+      "start": 1059.6000000000001,
+      "end": 1064.4,
+      "text": "okay it's given by s minus one minus log s"
+    },
+    {
+      "start": 1065.8400000000001,
+      "end": 1072.64,
+      "text": "now in general you have not an explicit expression but you can write it"
+    },
+    {
+      "start": 1073.3600000000001,
+      "end": 1079.52,
+      "text": "in the parametric form and we will see in over cases especially in the fourth lecture"
+    },
+    {
+      "start": 1079.52,
+      "end": 1087.8400000000001,
+      "text": "that often the results when you look at current fluctuations appear as a parametric form so let me"
+    },
+    {
+      "start": 1087.8400000000001,
+      "end": 1095.28,
+      "text": "talk about the general case still in this situation simple situation of some of independent random"
+    },
+    {
+      "start": 1095.44,
+      "end": 1101.76,
+      "text": "variables of course this is just in the introduction because what is interesting is the case where"
+    },
+    {
+      "start": 1101.76,
+      "end": 1106.88,
+      "text": "the variables are correlated so"
+    },
+    {
+      "start": 1111.44,
+      "end": 1122.96,
+      "text": "so now let me suppose that s t is x 1 plus plus x t and all these variables are independent"
+    },
+    {
+      "start": 1123.68,
+      "end": 1125.3600000000001,
+      "text": "distributed according to the"
+    },
+    {
+      "start": 1125.36,
+      "end": 1134.6399999999999,
+      "text": "same distribution rho of x and now i would like to know what is the i of s the probability"
+    },
+    {
+      "start": 1134.6399999999999,
+      "end": 1144.6399999999999,
+      "text": "distribution that as i said before probability that s t over t equals s exponential minus i of s"
+    },
+    {
+      "start": 1146.6399999999999,
+      "end": 1153.9199999999998,
+      "text": "okay something which is simple is to compute the generating function lambda of st"
+    },
+    {
+      "start": 1155.36,
+      "end": 1164.9599999999998,
+      "text": "and lambda of st because the variables are independent is just lambda x lambda x1 times x2"
+    },
+    {
+      "start": 1164.9599999999998,
+      "end": 1174.0,
+      "text": "times a so it's lambda uh lambda of x1 to the power t because they are all independent"
+    },
+    {
+      "start": 1174.0,
+      "end": 1183.84,
+      "text": "so this let me call this let me call exponential lambda x so the average this integral"
+    },
+    {
+      "start": 1184.48,
+      "end": 1189.9199999999998,
+      "text": "of rho of x dx let me call it exponential mu of lambda"
+    },
+    {
+      "start": 1192.8799999999999,
+      "end": 1197.52,
+      "text": "now in in the general i of s"
+    },
+    {
+      "start": 1199.76,
+      "end": 1208.6399999999999,
+      "text": "will be given by in a parametric form that is i of s okay let me see where is my note"
+    },
+    {
+      "start": 1212.24,
+      "end": 1213.1999999999998,
+      "text": "that okay"
+    },
+    {
+      "start": 1214.8,
+      "end": 1217.6,
+      "text": "okay let me first say something"
+    },
+    {
+      "start": 1219.84,
+      "end": 1231.9199999999998,
+      "text": "okay so so essentially exponential lambda s of t will be integral of small ds exponential minus"
+    },
+    {
+      "start": 1232.72,
+      "end": 1243.04,
+      "text": "i of s plus lambda s to everybody times t so this is the probability of st and this is"
+    },
+    {
+      "start": 1243.9199999999998,
+      "end": 1252.8,
+      "text": "the value of s t and so this is the probability of capital st and this is"
+    },
+    {
+      "start": 1253.4399999999998,
+      "end": 1262.6399999999999,
+      "text": "the value of a c and you expect that this okay when tv is very large then this will be"
+    },
+    {
+      "start": 1262.6399999999999,
+      "end": 1269.9199999999998,
+      "text": "of the form mu of lambda where mu of lambda is here because we can compute that directly and"
+    },
+    {
+      "start": 1269.9199999999998,
+      "end": 1270.72,
+      "text": "if you think that you can use a saddle point here because t is very large because it's fluid and t is very large this will be caddy's tuber RNA THAT w i sow in is tuber RNA THE賞 C Attorneyologique K. . b Ta didi es mu fok tsorgé en forti,價 c rabéinbruk plus- allenex permé sinks is mu f Labour and in revisiting faster q and if said yes flow énormément pi hataa . and computers can compute that directly and if you think that you can"
+    },
+    {
+      "start": 1270.72,
+      "end": 1272.8799999999999,
+      "text": "when on genuine n Eddy deffensen job that you can use saddle point here because this is very important noi in in this big Howardimoto denotated by Erw innerloc sharper utterly high value."
+    },
+    {
+      "start": 1273.84,
+      "end": 1281.6,
+      "text": "large you use a saddle point that this will tell you that mu of lambda will be equal to lambda s"
+    },
+    {
+      "start": 1281.6,
+      "end": 1291.84,
+      "text": "minus i of s and the value of s which is here okay so this sorry if you use a saddle point method"
+    },
+    {
+      "start": 1291.84,
+      "end": 1299.12,
+      "text": "you will get that mu of lambda is the maximum over s of this expression so so essentially"
+    },
+    {
+      "start": 1299.12,
+      "end": 1308.56,
+      "text": "if you knew i of s you would know mu of lambda just because you have this integral and for large"
+    },
+    {
+      "start": 1308.56,
+      "end": 1315.52,
+      "text": "time for large t this is dominated by the thing this is a saddle point or"
+    },
+    {
+      "start": 1316.8799999999999,
+      "end": 1320.8,
+      "text": "saddle point calculation these people are familiar with saddle points or"
+    },
+    {
+      "start": 1321.9199999999998,
+      "end": 1328.7199999999998,
+      "text": "yes okay okay so this is if you know i of s you get mu of lambda if you want to do the reverse"
+    },
+    {
+      "start": 1329.28,
+      "end": 1336.8799999999999,
+      "text": "there is uh what's okay then if you want to do the reverse the mu of lambda needs to have some"
+    },
+    {
+      "start": 1336.8799999999999,
+      "end": 1342.56,
+      "text": "properties that is differentiable and so on and i'm not going to discuss that in big detail but"
+    },
+    {
+      "start": 1343.1999999999998,
+      "end": 1349.9199999999998,
+      "text": "you see this is a kind of launch this is a legend transform and in fact under some"
+    },
+    {
+      "start": 1349.9199999999998,
+      "end": 1357.12,
+      "text": "math conditions that i don't want to discuss here but which is called the Gartner-Ellis theorem"
+    },
+    {
+      "start": 1359.28,
+      "end": 1366.12,
+      "text": "so in order to do the convergence you can you can do the comic den Oi and then you can use an"
+    },
+    {
+      "start": 1366.12,
+      "end": 1380.6799999999998,
+      "text": "all function you can derive the"
+    },
+    {
+      "start": 1380.6799999999998,
+      "end": 1385.12,
+      "text": "designers as long재"
+    },
+    {
+      "start": 1385.12,
+      "end": 1387.4399999999998,
+      "text": "then you can invert this and then you get that i of s"
+    },
+    {
+      "start": 1387.4399999999998,
+      "end": 1388.08,
+      "text": "i of s is given by lambda mu prime of lambda minus mu of lambda and s is equal to mu prime of lambda so the thing to remember in this simple промa uh general example the thing to remember in this simple selected word that is ncg, for example"
+    },
+    {
+      "start": 1388.08,
+      "end": 1388.8799999999999,
+      "text": "example the first one will be nc highlighted ha ha ha ha ha, then the second is feeding is contained, you can Count Taylor."
+    },
+    {
+      "start": 1389.12,
+      "end": 1394.56,
+      "text": "if I give you the distribution of the variable X, then you have just a single"
+    },
+    {
+      "start": 1394.56,
+      "end": 1401.3,
+      "text": "integral to compute mu of lambda. Now, if you know mu of lambda, you want I of S,"
+    },
+    {
+      "start": 1401.3,
+      "end": 1408.1999999999998,
+      "text": "then you have this formula here, which, okay, this is just, you invert this"
+    },
+    {
+      "start": 1408.1999999999998,
+      "end": 1415.58,
+      "text": "Legendre transform, and it appears in parametric form. So if I want to draw I"
+    },
+    {
+      "start": 1415.58,
+      "end": 1423.34,
+      "text": "of S as a function of S, then you vary lambda. As lambda varies, S varies. As lambda"
+    },
+    {
+      "start": 1423.34,
+      "end": 1430.46,
+      "text": "varies, I of S varies, and so you can draw I of S as a function of S. So if people"
+    },
+    {
+      "start": 1430.46,
+      "end": 1435.6399999999999,
+      "text": "are interested, I encourage them to just take the two examples I mentioned"
+    },
+    {
+      "start": 1435.6399999999999,
+      "end": 1441.74,
+      "text": "before, and then just to compute the mu of lambda, that's difficult, and then to"
+    },
+    {
+      "start": 1441.74,
+      "end": 1444.9199999999998,
+      "text": "see that you recover the I of S"
+    },
+    {
+      "start": 1444.9199999999998,
+      "end": 1445.4199999999998,
+      "text": "directly."
+    },
+    {
+      "start": 1445.58,
+      "end": 1454.52,
+      "text": "using this formula. Okay, so this is for independent random variables, but of"
+    },
+    {
+      "start": 1454.52,
+      "end": 1474.1,
+      "text": "course, what is interesting is when variables are correlated, and free"
+    },
+    {
+      "start": 1474.1,
+      "end": 1475.58,
+      "text": "energies."
+    },
+    {
+      "start": 1475.58,
+      "end": 1480.3799999999999,
+      "text": "There's clearly a big 차inger in terms of relationships and literature and"
+    },
+    {
+      "start": 1480.3799999999999,
+      "end": 1484.0,
+      "text": "activities, but when can we now create Youtuber......"
+    },
+    {
+      "start": 1484.0,
+      "end": 1492.06,
+      "text": "Here, you see, the first thing I want to say is that if you"
+    },
+    {
+      "start": 1492.06,
+      "end": 1499.48,
+      "text": "think of asking about large deviations of correlated random variables, it's a huge"
+    },
+    {
+      "start": 1499.48,
+      "end": 1500.08,
+      "text": "field essentially many, many problems in physics, in statistical physics can be formulated, as in terms of computing properties, analysis,"
+    },
+    {
+      "start": 1500.08,
+      "end": 1502.46,
+      "text": "implementation"
+    },
+    {
+      "start": 1502.46,
+      "end": 1503.8,
+      "text": "applications, and the other art areas. So you have developers making cultural jobs, countries building algorithms independent, laborers, but also you have a knockout, heroin investors making global sends, neighbors making involves. And I perform, it will give an entire IBIRE token for my bạn beharen pouvoir qui vous GDP art et la possiamo venir vous augmenter en Part- purchase et vouloir faire des opérypinuses pour cette speechless situation ci-dessus. So I, will, try"
+    },
+    {
+      "start": 1503.8,
+      "end": 1510.52,
+      "text": "of computing properties of sums of correlated variables."
+    },
+    {
+      "start": 1510.52,
+      "end": 1520.48,
+      "text": "So let me just give you an example, which is related to,"
+    },
+    {
+      "start": 1520.48,
+      "end": 1525.76,
+      "text": "so you see many, many problems can be formulated that way."
+    },
+    {
+      "start": 1525.76,
+      "end": 1529.54,
+      "text": "Now, the thing I am going to ask about"
+    },
+    {
+      "start": 1529.54,
+      "end": 1533.8,
+      "text": "is if you have sums of random variables,"
+    },
+    {
+      "start": 1533.8,
+      "end": 1537.04,
+      "text": "which are correlated, as before, I"
+    },
+    {
+      "start": 1537.04,
+      "end": 1539.86,
+      "text": "could ask, what is the probability"
+    },
+    {
+      "start": 1539.86,
+      "end": 1546.68,
+      "text": "that this sum of correlated variables decays like this?"
+    },
+    {
+      "start": 1546.68,
+      "end": 1549.52,
+      "text": "And what is this i?"
+    },
+    {
+      "start": 1549.52,
+      "end": 1557.62,
+      "text": "Questions I can ask is, is i of s convex?"
+    },
+    {
+      "start": 1557.62,
+      "end": 1558.68,
+      "text": "Which it is."
+    },
+    {
+      "start": 1558.68,
+      "end": 1563.02,
+      "text": "For iid, it is convex."
+    },
+    {
+      "start": 1563.02,
+      "end": 1563.52,
+      "text": "But."
+    },
+    {
+      "start": 1563.8,
+      "end": 1567.02,
+      "text": "OK."
+    },
+    {
+      "start": 1567.02,
+      "end": 1573.08,
+      "text": "What is the difference between correlated variables"
+    },
+    {
+      "start": 1573.08,
+      "end": 1577.04,
+      "text": "on the system at equilibrium or out of equilibrium?"
+    },
+    {
+      "start": 1577.04,
+      "end": 1585.46,
+      "text": "Difference between equilibrium and non-equilibrium."
+    },
+    {
+      "start": 1585.46,
+      "end": 1590.8,
+      "text": "And we will see that there are major differences."
+    },
+    {
+      "start": 1590.8,
+      "end": 1592.48,
+      "text": "Can ."
+    },
+    {
+      "start": 1592.48,
+      "end": 1593.58,
+      "text": "Is it interesting?"
+    },
+    {
+      "start": 1593.8,
+      "end": 1596.52,
+      "text": "And so on."
+    },
+    {
+      "start": 1596.52,
+      "end": 1597.02,
+      "text": "OK."
+    },
+    {
+      "start": 1597.02,
+      "end": 1601.3999999999999,
+      "text": "So one thing I want now to show you"
+    },
+    {
+      "start": 1601.3999999999999,
+      "end": 1607.5,
+      "text": "is that this object i of s, which looks something"
+    },
+    {
+      "start": 1607.5,
+      "end": 1612.72,
+      "text": "like talking about rare events that will happen,"
+    },
+    {
+      "start": 1612.72,
+      "end": 1617.04,
+      "text": "in fact, it's very related to the free energy."
+    },
+    {
+      "start": 1617.04,
+      "end": 1622.1399999999999,
+      "text": "And so it has some clear meaning."
+    },
+    {
+      "start": 1622.1399999999999,
+      "end": 1623.58,
+      "text": "And so let me take again."
+    },
+    {
+      "start": 1623.58,
+      "end": 1634.3,
+      "text": "The example I had before, that I have a box, and I have n particles."
+    },
+    {
+      "start": 1634.3,
+      "end": 1644.3,
+      "text": "But this n particles in volume v."
+    },
+    {
+      "start": 1644.3,
+      "end": 1645.76,
+      "text": "OK."
+    },
+    {
+      "start": 1645.76,
+      "end": 1650.82,
+      "text": "And so there is a density rho equals n over v."
+    },
+    {
+      "start": 1650.82,
+      "end": 1653.34,
+      "text": "And I want to ask, OK."
+    },
+    {
+      "start": 1653.34,
+      "end": 1656.06,
+      "text": "What is the probability that all these particles collide and interact and all the kind of things?"
+    },
+    {
+      "start": 1656.06,
+      "end": 1665.06,
+      "text": "And I would like to know what is the probability that all the particles are on the left in"
+    },
+    {
+      "start": 1665.06,
+      "end": 1668.06,
+      "text": "this volume v1, which is alpha v?"
+    },
+    {
+      "start": 1668.06,
+      "end": 1669.06,
+      "text": "OK."
+    },
+    {
+      "start": 1669.06,
+      "end": 1670.06,
+      "text": "So I want all of them."
+    },
+    {
+      "start": 1670.06,
+      "end": 1674.06,
+      "text": "So this will be a very, very rare event."
+    },
+    {
+      "start": 1674.06,
+      "end": 1681.06,
+      "text": "Now, what is the probability that all particles are on the left in this volume v1, which is"
+    },
+    {
+      "start": 1681.06,
+      "end": 1682.06,
+      "text": "alpha v?"
+    },
+    {
+      "start": 1682.06,
+      "end": 1692.78,
+      "text": "So alpha v is the number of particles that are in v1."
+    },
+    {
+      "start": 1692.78,
+      "end": 1693.78,
+      "text": "OK."
+    },
+    {
+      "start": 1693.78,
+      "end": 1700.78,
+      "text": "So it's the sum over all the configurations of these interacting particles of the Boltzmann"
+    },
+    {
+      "start": 1700.78,
+      "end": 1705.78,
+      "text": "weights of the configurations where all particles are in v1."
+    },
+    {
+      "start": 1705.78,
+      "end": 1710.78,
+      "text": "So alpha v is the number of particles that are in v1."
+    },
+    {
+      "start": 1710.78,
+      "end": 1720.5,
+      "text": "And it's divided by sum over all configurations where all particles are in v."
+    },
+    {
+      "start": 1720.5,
+      "end": 1721.5,
+      "text": "OK."
+    },
+    {
+      "start": 1721.5,
+      "end": 1726.5,
+      "text": "Because the probability, this is just, I count only configurations where particles are on"
+    },
+    {
+      "start": 1726.5,
+      "end": 1727.5,
+      "text": "this side."
+    },
+    {
+      "start": 1727.5,
+      "end": 1733.5,
+      "text": "Now, this is the partition function of having n particles in v1 divided by the partition"
+    },
+    {
+      "start": 1733.5,
+      "end": 1738.5,
+      "text": "function of having n particles in v1 divided by the partition function of having n particles"
+    },
+    {
+      "start": 1738.5,
+      "end": 1739.5,
+      "text": "in v1."
+    },
+    {
+      "start": 1739.5,
+      "end": 1750.22,
+      "text": "And this is..."
+    },
+    {
+      "start": 1750.22,
+      "end": 1760.94,
+      "text": "And z of v and n, or n and v, I don't remember."
+    },
+    {
+      "start": 1760.94,
+      "end": 1761.94,
+      "text": "OK."
+    },
+    {
+      "start": 1761.94,
+      "end": 1778.94,
+      "text": "It's just exponential minus the free energy of the system divided by the free energy of"
+    },
+    {
+      "start": 1778.94,
+      "end": 1779.94,
+      "text": "the system."
+    },
+    {
+      "start": 1779.94,
+      "end": 1780.66,
+      "text": "And this is just exponential minus the free energy of the system divided by the temperature."
+    },
+    {
+      "start": 1780.66,
+      "end": 1785.66,
+      "text": "Here I just put the Boltzmann constant to be one."
+    },
+    {
+      "start": 1785.66,
+      "end": 1793.8600000000001,
+      "text": "So essentially, if you know the free energy of the system, it's related to the large deviation"
+    },
+    {
+      "start": 1793.8600000000001,
+      "end": 1799.9,
+      "text": "function, because the probability of this rare event is just exponential, the difference"
+    },
+    {
+      "start": 1799.9,
+      "end": 1802.66,
+      "text": "of free energy between these two situations."
+    },
+    {
+      "start": 1802.66,
+      "end": 1803.66,
+      "text": "Yes."
+    },
+    {
+      "start": 1803.66,
+      "end": 1804.66,
+      "text": "So..."
+    },
+    {
+      "start": 1804.66,
+      "end": 1805.66,
+      "text": "The probability of this rare event is just exponential."
+    },
+    {
+      "start": 1805.66,
+      "end": 1806.66,
+      "text": "The difference of free energy between these two situations."
+    },
+    {
+      "start": 1806.66,
+      "end": 1807.66,
+      "text": "Yes."
+    },
+    {
+      "start": 1807.66,
+      "end": 1808.66,
+      "text": "So..."
+    },
+    {
+      "start": 1808.66,
+      "end": 1810.38,
+      "text": "The probability of p is just exponential."
+    },
+    {
+      "start": 1810.38,
+      "end": 1811.38,
+      "text": "OK."
+    },
+    {
+      "start": 1811.38,
+      "end": 1812.38,
+      "text": "So it's..."
+    },
+    {
+      "start": 1812.38,
+      "end": 1819.38,
+      "text": "So it's exponential minus f of v plus f of v over t divided by t minus f n minus f of"
+    },
+    {
+      "start": 1819.38,
+      "end": 1820.38,
+      "text": "v1 n over t."
+    },
+    {
+      "start": 1820.38,
+      "end": 1821.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1821.38,
+      "end": 1822.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1822.38,
+      "end": 1823.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1823.38,
+      "end": 1824.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1824.38,
+      "end": 1825.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1825.38,
+      "end": 1826.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1826.38,
+      "end": 1827.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1827.38,
+      "end": 1828.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1828.38,
+      "end": 1829.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1829.38,
+      "end": 1830.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1830.38,
+      "end": 1831.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1831.38,
+      "end": 1832.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1832.38,
+      "end": 1833.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1833.38,
+      "end": 1834.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1834.38,
+      "end": 1835.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1835.38,
+      "end": 1836.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1836.38,
+      "end": 1837.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1837.38,
+      "end": 1838.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1838.66,
+      "end": 1839.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1839.38,
+      "end": 1840.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1840.38,
+      "end": 1841.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1841.38,
+      "end": 1842.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1842.38,
+      "end": 1843.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1843.38,
+      "end": 1844.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1844.38,
+      "end": 1845.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1845.38,
+      "end": 1846.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1846.38,
+      "end": 1847.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1847.38,
+      "end": 1848.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1848.38,
+      "end": 1849.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1849.38,
+      "end": 1850.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1850.38,
+      "end": 1851.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1851.38,
+      "end": 1852.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1852.38,
+      "end": 1853.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1854.38,
+      "end": 1855.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1855.38,
+      "end": 1856.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1856.38,
+      "end": 1857.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1857.38,
+      "end": 1858.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1858.38,
+      "end": 1859.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1859.38,
+      "end": 1860.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1860.38,
+      "end": 1861.38,
+      "text": "Yes."
+    },
+    {
+      "start": 1861.38,
+      "end": 1862.5800000000002,
+      "text": "Yes."
+    },
+    {
+      "start": 1862.5800000000002,
+      "end": 1863.5800000000002,
+      "text": "Yes."
+    },
+    {
+      "start": 1863.5800000000002,
+      "end": 1864.5800000000002,
+      "text": "Yes."
+    },
+    {
+      "start": 1864.5800000000002,
+      "end": 1865.5800000000002,
+      "text": "Yes."
+    },
+    {
+      "start": 1865.5800000000002,
+      "end": 1866.5800000000002,
+      "text": "Yes."
+    },
+    {
+      "start": 1866.5800000000002,
+      "end": 1867.5800000000002,
+      "text": "Yes."
+    },
+    {
+      "start": 1867.58,
+      "end": 1875.26,
+      "text": "that we all know about and now if you imagine that the system is"
+    },
+    {
+      "start": 1875.26,
+      "end": 1887.56,
+      "text": "extensive, which means that f of v and n I want to write it as v times a"
+    },
+    {
+      "start": 1887.56,
+      "end": 1899.26,
+      "text": "function of v over n, that is v a function of rho, then this would really"
+    },
+    {
+      "start": 1899.26,
+      "end": 1915.1599999999999,
+      "text": "take the form of exponentials, I hope I made the, minus v over t times alpha f of rho over"
+    },
+    {
+      "start": 1915.1599999999999,
+      "end": 1917.2,
+      "text": "alpha minus f of rho"
+    },
+    {
+      "start": 1917.56,
+      "end": 1926.56,
+      "text": "where v1 equals alpha v. Okay so essentially if you, when the system is"
+    },
+    {
+      "start": 1926.56,
+      "end": 1931.36,
+      "text": "very large, you have this very large parameter in front, the volume of the"
+    },
+    {
+      "start": 1931.36,
+      "end": 1938.02,
+      "text": "system and this is the free energy as a function of density per unit volume,"
+    },
+    {
+      "start": 1938.02,
+      "end": 1945.7,
+      "text": "this small life. Okay so this is just to tell you that the large deviations is"
+    },
+    {
+      "start": 1945.7,
+      "end": 1947.54,
+      "text": "very related to"
+    },
+    {
+      "start": 1947.54,
+      "end": 1955.42,
+      "text": "the free energy, now in some lectures to come I am going to talk about"
+    },
+    {
+      "start": 1955.42,
+      "end": 1965.06,
+      "text": "the functional of the free energy, yes, maybe before I, I want to say"
+    },
+    {
+      "start": 1965.06,
+      "end": 1973.3,
+      "text": "that, you see you know that the free energy is a convex function,"
+    },
+    {
+      "start": 1973.3,
+      "end": 1974.42,
+      "text": "now I don't know how to reveal how convex, it's just an example that I've been talking about later."
+    },
+    {
+      "start": 1974.42,
+      "end": 1982.3400000000001,
+      "text": "now I don't know are people surprised if I say that free energies is convex or I"
+    },
+    {
+      "start": 1982.3400000000001,
+      "end": 1987.7,
+      "text": "can yes or no"
+    },
+    {
+      "start": 1991.7,
+      "end": 2000.98,
+      "text": "the word convex context okay a convex function is a function which is"
+    },
+    {
+      "start": 2000.98,
+      "end": 2008.9,
+      "text": "like that it has its curvature so you just count which the same as saying that the function"
+    },
+    {
+      "start": 2008.9,
+      "end": 2017.38,
+      "text": "the second derivative is positive okay so the free energy is convex and knowing that f of rho"
+    },
+    {
+      "start": 2018.02,
+      "end": 2025.94,
+      "text": "is convex you can show that this is convex also this large deviation function is convex"
+    },
+    {
+      "start": 2025.94,
+      "end": 2030.18,
+      "text": "and I want to say that in non-equilibrium systems"
+    },
+    {
+      "start": 2031.14,
+      "end": 2036.82,
+      "text": "we are we can discuss similar things and we will see oh I don't know whether I have time to go"
+    },
+    {
+      "start": 2036.82,
+      "end": 2045.3,
+      "text": "there there but sometimes this large deviation function is not convex but anyway now let me call"
+    },
+    {
+      "start": 2045.3,
+      "end": 2054.02,
+      "text": "talk about a quantity that I am going to discuss a few times and discuss it now at equilibrium"
+    },
+    {
+      "start": 2054.7400000000002,
+      "end": 2056.7400000000002,
+      "text": "is functional of the density"
+    },
+    {
+      "start": 2060.98,
+      "end": 2073.3,
+      "text": "so I discuss it in one dimension but you can do it in arbitrary dimension so let me just imagine"
+    },
+    {
+      "start": 2073.3,
+      "end": 2080.98,
+      "text": "that I am at a temperature once and I don't want to care about the temperature and also kb is one"
+    },
+    {
+      "start": 2080.98,
+      "end": 2085.7,
+      "text": "more or less all the time and now I have a very large system"
+    },
+    {
+      "start": 2089.3,
+      "end": 2089.8,
+      "text": "so"
+    },
+    {
+      "start": 2090.98,
+      "end": 2096.26,
+      "text": "I have a very large system and the system is itself"
+    },
+    {
+      "start": 2096.26,
+      "end": 2113.22,
+      "text": "consists of large step systems so imagine I have l equal k small l and now I would like to know"
+    },
+    {
+      "start": 2113.22,
+      "end": 2119.3,
+      "text": "what is the probability that the density in the first box is rho 1 and the density in the last box"
+    },
+    {
+      "start": 2119.3,
+      "end": 2120.5,
+      "text": "is rho 2."
+    },
+    {
+      "start": 2120.98,
+      "end": 2132.26,
+      "text": "k so this means that in this box I have n1 particles l times rho 1 and so on and so"
+    },
+    {
+      "start": 2135.38,
+      "end": 2138.34,
+      "text": "the probability of rho 1 rho k"
+    },
+    {
+      "start": 2141.7,
+      "end": 2144.66,
+      "text": "will be essentially okay I"
+    },
+    {
+      "start": 2146.98,
+      "end": 2150.5,
+      "text": "essentially exponential"
+    },
+    {
+      "start": 2151.94,
+      "end": 2163.46,
+      "text": "okay it will be okay so it will be essentially minus minus l a functional of rho 1 and okay"
+    },
+    {
+      "start": 2164.58,
+      "end": 2171.78,
+      "text": "okay it would be a large deviation function now which will depend on all these things and"
+    },
+    {
+      "start": 2176.1,
+      "end": 2179.46,
+      "text": "now I want to know what is"
+    },
+    {
+      "start": 2180.42,
+      "end": 2185.14,
+      "text": "this functional I want to write it so if I have a very large system"
+    },
+    {
+      "start": 2185.14,
+      "end": 2192.02,
+      "text": "and I want to think of a large system and I want to think also that this system has short"
+    },
+    {
+      "start": 2193.62,
+      "end": 2197.62,
+      "text": "range interactions it's very important"
+    },
+    {
+      "start": 2202.34,
+      "end": 2208.7400000000002,
+      "text": "then what I want to show you is that this functional okay this functional"
+    },
+    {
+      "start": 2210.42,
+      "end": 2228.82,
+      "text": "will be given by 1 over k sum of f of rho i minus f of rho bar minus chemical potential mu of rho 1"
+    },
+    {
+      "start": 2228.82,
+      "end": 2232.18,
+      "text": "minus rho bar okay so let me try to show this formula"
+    },
+    {
+      "start": 2236.7400000000002,
+      "end": 2238.98,
+      "text": "okay so I have k boxes"
+    },
+    {
+      "start": 2239.78,
+      "end": 2244.5,
+      "text": "and I want to show this formula and here there is a chemical potential so"
+    },
+    {
+      "start": 2244.5,
+      "end": 2251.06,
+      "text": "I want to think of this system in equilibrium and I want to to see"
+    },
+    {
+      "start": 2256.7400000000002,
+      "end": 2261.3,
+      "text": "I want to to to show this formula and after that we will talk about the functional"
+    },
+    {
+      "start": 2264.66,
+      "end": 2269.14,
+      "text": "okay so so"
+    },
+    {
+      "start": 2270.42,
+      "end": 2278.82,
+      "text": "what is the partition function of everything of all possible configurations of the system without"
+    },
+    {
+      "start": 2278.82,
+      "end": 2287.2200000000003,
+      "text": "specifying what are the rules there okay it will be just the denominator I will have z of n"
+    },
+    {
+      "start": 2288.18,
+      "end": 2299.38,
+      "text": "and v or v of n never I don't remember volume and n and then I have exponential mu n over t but t is"
+    },
+    {
+      "start": 2300.18,
+      "end": 2302.58,
+      "text": "one I don't know not but if you want to put it so"
+    },
+    {
+      "start": 2303.3,
+      "end": 2307.38,
+      "text": "this is all the possible configuration of the system"
+    },
+    {
+      "start": 2309.46,
+      "end": 2315.94,
+      "text": "and here I have a weight which is the chemical potential because the chemical potential is"
+    },
+    {
+      "start": 2319.14,
+      "end": 2327.2200000000003,
+      "text": "you see there to to equilibrate the system with a reservoir of particles and now in the numerator"
+    },
+    {
+      "start": 2327.2200000000003,
+      "end": 2328.44,
+      "text": "I will have okay so here I want to add this finding putting the Haitian in equilibrium and then there is n over p which is equal to 0 that is 1 over 6 love the�e and their properties for the other class there is 0 even if I prove that one use n and u will not happen"
+    },
+    {
+      "start": 2328.44,
+      "end": 2337.14,
+      "text": "so here I want to write something I want to look at all the boxes and in the"
+    },
+    {
+      "start": 2337.14,
+      "end": 2346.82,
+      "text": "first box okay here it's LC because I am in one dimension Z small L of n1 times"
+    },
+    {
+      "start": 2346.82,
+      "end": 2357.9,
+      "text": "product of Z of L minus NK and this probability is given by that in fact"
+    },
+    {
+      "start": 2357.9,
+      "end": 2365.14,
+      "text": "it's not exactly given by that because the particles which are inside the first"
+    },
+    {
+      "start": 2365.14,
+      "end": 2371.9,
+      "text": "box they might interact with particles on silver in the next box but now I have"
+    },
+    {
+      "start": 2371.9,
+      "end": 2377.76,
+      "text": "supposed that these boxes are very large and these interactions are just surface"
+    },
+    {
+      "start": 2377.76,
+      "end": 2387.08,
+      "text": "effects so essentially this is not equal but it's very close to being equal given"
+    },
+    {
+      "start": 2387.08,
+      "end": 2387.6,
+      "text": "by that"
+    },
+    {
+      "start": 2387.6,
+      "end": 2387.88,
+      "text": "and"
+    },
+    {
+      "start": 2387.88,
+      "end": 2392.52,
+      "text": "what we have forgotten here of course is the effect of the chemical potential"
+    },
+    {
+      "start": 2393.4,
+      "end": 2401.08,
+      "text": "so it's exponential mu times n1 plus nk"
+    },
+    {
+      "start": 2402.84,
+      "end": 2411.48,
+      "text": "yeah so so this is with a chemical potential the partition function with exactly n1 particle"
+    },
+    {
+      "start": 2411.48,
+      "end": 2425.4,
+      "text": "and this is with n1 and okay and each of this sum here is is dominated by a certain value of"
+    },
+    {
+      "start": 2427.64,
+      "end": 2435.72,
+      "text": "a certain value of n so in the numerator you have exponential minus sum of f of rho i"
+    },
+    {
+      "start": 2437.16,
+      "end": 2441.4,
+      "text": "minus l some this is this term plus mu"
+    },
+    {
+      "start": 2441.48,
+      "end": 2449.08,
+      "text": "some of y and in the denominator you have"
+    },
+    {
+      "start": 2451.08,
+      "end": 2460.04,
+      "text": "minus so this is i equal one to k i equal one to k and in the denominator"
+    },
+    {
+      "start": 2464.92,
+      "end": 2466.68,
+      "text": "it's l and here you have l"
+    },
+    {
+      "start": 2469.32,
+      "end": 2470.52,
+      "text": "zero bar of the"
+    },
+    {
+      "start": 2471.48,
+      "end": 2483.48,
+      "text": "the density in the whole system and here you have plus l f of rho bar okay and if you look at this"
+    },
+    {
+      "start": 2484.76,
+      "end": 2493.2400000000002,
+      "text": "you you get uh you you get this as this one so so the problem the probability of observing this"
+    },
+    {
+      "start": 2493.2400000000002,
+      "end": 2500.12,
+      "text": "is given by four here where you have only the free energies of the system plus the chemical potential"
+    },
+    {
+      "start": 2500.12,
+      "end": 2501.32,
+      "text": "and for those"
+    },
+    {
+      "start": 2501.32,
+      "end": 2504.2000000000003,
+      "text": "who remember a little bit of thermodynamics"
+    },
+    {
+      "start": 2508.04,
+      "end": 2508.54,
+      "text": "then"
+    },
+    {
+      "start": 2515.2400000000002,
+      "end": 2517.96,
+      "text": "i i want just to write that just in terms"
+    },
+    {
+      "start": 2525.2400000000002,
+      "end": 2527.32,
+      "text": "what is the what"
+    },
+    {
+      "start": 2532.04,
+      "end": 2544.2000000000003,
+      "text": "so sorry where where is the typo"
+    },
+    {
+      "start": 2548.6000000000004,
+      "end": 2556.36,
+      "text": "oh i see okay so i do this maybe no no yes yes no no no you are right yes yes so i have i removed"
+    },
+    {
+      "start": 2556.36,
+      "end": 2558.92,
+      "text": "that yes sorry okay fine so"
+    },
+    {
+      "start": 2561.32,
+      "end": 2562.82,
+      "text": "can i use the"
+    },
+    {
+      "start": 2562.82,
+      "end": 2563.96,
+      "text": "why"
+    },
+    {
+      "start": 2563.96,
+      "end": 2565.32,
+      "text": "i have a go to some answer"
+    },
+    {
+      "start": 2565.32,
+      "end": 2565.82,
+      "text": "interesting"
+    },
+    {
+      "start": 2565.82,
+      "end": 2566.44,
+      "text": "what is"
+    },
+    {
+      "start": 2566.44,
+      "end": 2567.88,
+      "text": "that"
+    },
+    {
+      "start": 2567.88,
+      "end": 2568.92,
+      "text": "actually"
+    },
+    {
+      "start": 2568.92,
+      "end": 2589.4,
+      "text": "show the"
+    },
+    {
+      "start": 2589.4,
+      "end": 2590.32,
+      "text": "upper thread"
+    },
+    {
+      "start": 2590.32,
+      "end": 2590.56,
+      "text": "you see"
+    },
+    {
+      "start": 2590.56,
+      "end": 2596.18,
+      "text": "which dominates is equal to L times rho bar."
+    },
+    {
+      "start": 2598.68,
+      "end": 2601.48,
+      "text": "OK. Yes. So it's a."
+    },
+    {
+      "start": 2608.56,
+      "end": 2614.7999999999997,
+      "text": "OK. You don't need to do that because here I have a system"
+    },
+    {
+      "start": 2614.7999999999997,
+      "end": 2616.12,
+      "text": "with a chemical potential."
+    },
+    {
+      "start": 2616.12,
+      "end": 2619.74,
+      "text": "So it can exchange particles with reservoirs."
+    },
+    {
+      "start": 2620.56,
+      "end": 2624.84,
+      "text": "But you could also discuss different situations"
+    },
+    {
+      "start": 2624.84,
+      "end": 2627.82,
+      "text": "that is you fix the total number of particles."
+    },
+    {
+      "start": 2627.82,
+      "end": 2629.12,
+      "text": "You have no exchange."
+    },
+    {
+      "start": 2629.12,
+      "end": 2631.82,
+      "text": "And you would end up with the same formula, in fact."
+    },
+    {
+      "start": 2635.72,
+      "end": 2642.98,
+      "text": "By here. So, sorry."
+    },
+    {
+      "start": 2642.98,
+      "end": 2647.74,
+      "text": "OK. So this thing and what else?"
+    },
+    {
+      "start": 2649.12,
+      "end": 2650.54,
+      "text": "OK. One nice thing."
+    },
+    {
+      "start": 2650.54,
+      "end": 2654.5,
+      "text": "I say this thing is because, you see, if you look at this,"
+    },
+    {
+      "start": 2654.88,
+      "end": 2658.84,
+      "text": "this is as if all these boxes did not interact."
+    },
+    {
+      "start": 2660.6,
+      "end": 2663.48,
+      "text": "But in fact, they do interact."
+    },
+    {
+      "start": 2664.38,
+      "end": 2669.8,
+      "text": "And the interaction will produce something which is very small"
+    },
+    {
+      "start": 2669.8,
+      "end": 2673.0,
+      "text": "compared to the main result here."
+    },
+    {
+      "start": 2680.54,
+      "end": 2685.2,
+      "text": "And this is a case of creating a constant,"
+    },
+    {
+      "start": 2685.2,
+      "end": 2689.02,
+      "text": "and we could actually getю 왜 ?"
+    },
+    {
+      "start": 2689.02,
+      "end": 2691.34,
+      "text": "OK. You can have prefactors."
+    },
+    {
+      "start": 2691.34,
+      "end": 2697.1,
+      "text": "You could even have ‑‑ you see, here, I am talking above in one dimension."
+    },
+    {
+      "start": 2697.1,
+      "end": 2704.16,
+      "text": "But if I was in dimension, arbitrary dimension, I would have L to the D here."
+    },
+    {
+      "start": 2704.16,
+      "end": 2706.64,
+      "text": "And the thing which would be neglected are surface effects."
+    },
+    {
+      "start": 2706.64,
+      "end": 2709.18,
+      "text": "So it would be with order of L to the D minus 1."
+    },
+    {
+      "start": 2709.18,
+      "end": 2710.48,
+      "text": "Because IT.cs you do it in two dimensions or in higher dimension, you have L to the D minus 1,"
+    },
+    {
+      "start": 2710.48,
+      "end": 2719.04,
+      "text": "you are going to break your large system into sub boxes the interactions between boxes are surface"
+    },
+    {
+      "start": 2719.04,
+      "end": 2726.8,
+      "text": "effects and this would do this contribution but the main contribution is this is it okay"
+    },
+    {
+      "start": 2730.72,
+      "end": 2733.28,
+      "text": "okay should i stop now okay"
+    },
+    {
+      "start": 2740.48,
+      "end": 2757.12,
+      "text": "so"
+    },
+    {
+      "start": 2761.84,
+      "end": 2767.44,
+      "text": "you have this this expression okay i'm good i wanted to to finish that"
+    },
+    {
+      "start": 2768.4,
+      "end": 2769.44,
+      "text": "before the break but"
+    },
+    {
+      "start": 2770.48,
+      "end": 2776.8,
+      "text": "let me say this expression you can also think about the functional now now one thing"
+    },
+    {
+      "start": 2779.44,
+      "end": 2779.68,
+      "text": "that"
+    },
+    {
+      "start": 2783.2,
+      "end": 2790.72,
+      "text": "you have to remember okay from statistical physics is that the free energy as a function of v"
+    },
+    {
+      "start": 2793.04,
+      "end": 2799.68,
+      "text": "okay so the derivative of the free energy with respect to the number of particles is just"
+    },
+    {
+      "start": 2800.88,
+      "end": 2808.56,
+      "text": "the chemical potential okay so this means that here i am talking about the extensive part"
+    },
+    {
+      "start": 2808.56,
+      "end": 2819.12,
+      "text": "that's really elementary thermodynamics also and this means that the mu which is here is just f prime"
+    },
+    {
+      "start": 2823.28,
+      "end": 2830.32,
+      "text": "okay if people are not so familiar with that we can discuss it take a little more time"
+    },
+    {
+      "start": 2830.64,
+      "end": 2836.16,
+      "text": "during the questions or something okay the thing i want to to say is that"
+    },
+    {
+      "start": 2837.12,
+      "end": 2845.76,
+      "text": "you can think of a functional that is now instead of saying i have k boxes i take many boxes"
+    },
+    {
+      "start": 2846.4,
+      "end": 2849.84,
+      "text": "so i imagine that l is very large"
+    },
+    {
+      "start": 2853.84,
+      "end": 2858.48,
+      "text": "that the boxes themselves are very large"
+    },
+    {
+      "start": 2860.48,
+      "end": 2884.4,
+      "text": "in terms of theirịingitlinshe"
+    },
+    {
+      "start": 2884.64,
+      "end": 2885.04,
+      "text": "quadrat bathroom"
+    },
+    {
+      "start": 2885.04,
+      "end": 2885.44,
+      "text": "growing"
+    },
+    {
+      "start": 2885.44,
+      "end": 2886.0,
+      "text": "rally"
+    },
+    {
+      "start": 2886.0,
+      "end": 2888.08,
+      "text": "level"
+    },
+    {
+      "start": 2888.08,
+      "end": 2888.16,
+      "text": "prisoners"
+    },
+    {
+      "start": 2888.16,
+      "end": 2888.62,
+      "text": "and now that is life"
+    },
+    {
+      "start": 2888.62,
+      "end": 2890.16,
+      "text": "the"
+    },
+    {
+      "start": 2890.16,
+      "end": 2897.2999999999997,
+      "text": "discussing here is always at equilibrium will be a functional exponential times"
+    },
+    {
+      "start": 2897.2999999999997,
+      "end": 2905.1,
+      "text": "L times a functional of the density profile and this functional would be"
+    },
+    {
+      "start": 2905.1,
+      "end": 2914.52,
+      "text": "just to replace this sum by an integral so this functional of rho of X will be"
+    },
+    {
+      "start": 2914.52,
+      "end": 2927.7599999999998,
+      "text": "integral of f of rho of X minus f of rho bar minus okay so I replace mu by f prime"
+    },
+    {
+      "start": 2927.7599999999998,
+      "end": 2937.08,
+      "text": "f prime of rho bar times rho of X minus rho bar dx okay so this is a functional"
+    },
+    {
+      "start": 2937.08,
+      "end": 2944.52,
+      "text": "of the density profile for a system at equilibrium"
+    },
+    {
+      "start": 2944.52,
+      "end": 2953.52,
+      "text": "now I want to okay one thing is first is that here you see particles are"
+    },
+    {
+      "start": 2953.52,
+      "end": 2959.1,
+      "text": "interacting it's not that it's the density of the number of particles in a"
+    },
+    {
+      "start": 2959.1,
+      "end": 2963.7,
+      "text": "box is the sum of independent random variables because they are interacting"
+    },
+    {
+      "start": 2963.7,
+      "end": 2969.7,
+      "text": "but one thing which is very characteristic of systems at"
+    },
+    {
+      "start": 2969.7,
+      "end": 2973.94,
+      "text": "equilibrium with short-range interaction is that this"
+    },
+    {
+      "start": 2973.94,
+      "end": 2974.5,
+      "text": "is a linear differential of these two things in that here I see two sort of"
+    },
+    {
+      "start": 2974.5,
+      "end": 2988.5,
+      "text": "local functional. This is local. This means that there is no thing between rho of x, rho of y."
+    },
+    {
+      "start": 2988.5,
+      "end": 2995.06,
+      "text": "There is not a double integral. And we will see that out of equilibrium, the large deviation"
+    },
+    {
+      "start": 2995.06,
+      "end": 3003.62,
+      "text": "function of the density becomes non-local. But this is just local. So now to discuss"
+    },
+    {
+      "start": 3004.9,
+      "end": 3012.02,
+      "text": "an aspect very much studied in the case of large deviations is"
+    },
+    {
+      "start": 3012.02,
+      "end": 3017.62,
+      "text": "the case of Markov processes. And many of the systems we will discuss are Markov processes."
+    },
+    {
+      "start": 3034.5,
+      "end": 3036.5,
+      "text": "One example traces that the graph of two groups of different lights."
+    },
+    {
+      "start": 3044.02,
+      "end": 3052.74,
+      "text": "So, you can read consider discrete or a continuous time Markov process."
+    },
+    {
+      "start": 3057.78,
+      "end": 3062.98,
+      "text": "Yes, but this is also interacting particles."
+    },
+    {
+      "start": 3062.98,
+      "end": 3064.02,
+      "text": "You see, muchísственно."
+    },
+    {
+      "start": 3064.02,
+      "end": 3068.58,
+      "text": "you see what this formula tells you that for example you take the 3d ising model"
+    },
+    {
+      "start": 3068.58,
+      "end": 3071.54,
+      "text": "i don't know what i am not an explicit expression"
+    },
+    {
+      "start": 3072.2599999999998,
+      "end": 3079.22,
+      "text": "of the free energy but still this formula is true this is you don't need the thing to be"
+    },
+    {
+      "start": 3079.78,
+      "end": 3083.3,
+      "text": "non-interacting the thing you need is that the interactions are short"
+    },
+    {
+      "start": 3083.3,
+      "end": 3087.7,
+      "text": "trench but there could be a distance of 10 latissites or whatever"
+    },
+    {
+      "start": 3091.54,
+      "end": 3093.72,
+      "text": "sorry"
+    },
+    {
+      "start": 3094.02,
+      "end": 3099.54,
+      "text": "yes but subtle point doesn't mean that the system is not interacting"
+    },
+    {
+      "start": 3102.42,
+      "end": 3104.9,
+      "text": "what is used is that the system is very large"
+    },
+    {
+      "start": 3106.98,
+      "end": 3115.3,
+      "text": "and so when the main thing is that when the system is very large essentially you can consider that"
+    },
+    {
+      "start": 3117.06,
+      "end": 3123.54,
+      "text": "at leading the free energy of the whole system is essentially the sum of the free energy of each"
+    },
+    {
+      "start": 3123.54,
+      "end": 3124.02,
+      "text": "boxes"
+    },
+    {
+      "start": 3124.58,
+      "end": 3130.18,
+      "text": "because you have only surface contribution this is what you are using but the particles"
+    },
+    {
+      "start": 3130.18,
+      "end": 3137.78,
+      "text": "can interact as much as you like inside short range yes yes yes"
+    },
+    {
+      "start": 3143.38,
+      "end": 3149.7,
+      "text": "short range means for example you take ising model where particles were two neighboring sites"
+    },
+    {
+      "start": 3149.7,
+      "end": 3153.86,
+      "text": "interact okay so for example you have"
+    },
+    {
+      "start": 3154.34,
+      "end": 3164.2599999999998,
+      "text": "uh the the energy of a configuration would be or would be some of potential per potential"
+    },
+    {
+      "start": 3166.1,
+      "end": 3174.1,
+      "text": "but this v decreases fast enough with the distance that's short range okay"
+    },
+    {
+      "start": 3178.58,
+      "end": 3179.38,
+      "text": "other questions"
+    },
+    {
+      "start": 3184.02,
+      "end": 3197.54,
+      "text": "how fast okay i how fast i think if it decays fast enough like exponential if it decays"
+    },
+    {
+      "start": 3197.54,
+      "end": 3204.5,
+      "text": "exponentially but presumably if it decays power low that the power is is fast enough probably"
+    },
+    {
+      "start": 3204.5,
+      "end": 3213.38,
+      "text": "it's not true when you have a cool interaction for things like that yes and and there are okay maybe"
+    },
+    {
+      "start": 3213.38,
+      "end": 3219.62,
+      "text": "you see there are exercises maybe i can give where you you will see that this is not true"
+    },
+    {
+      "start": 3220.5,
+      "end": 3226.58,
+      "text": "when when the interactions are long range okay so there are no other questions"
+    },
+    {
+      "start": 3238.02,
+      "end": 3240.26,
+      "text": "yes yes"
+    },
+    {
+      "start": 3243.38,
+      "end": 3248.9,
+      "text": "yes yes and you see in in when people look at"
+    },
+    {
+      "start": 3250.1800000000003,
+      "end": 3257.54,
+      "text": "critical phenomena usually they add some gradient terms to that but but here i am talking about"
+    },
+    {
+      "start": 3257.54,
+      "end": 3267.86,
+      "text": "a system and i don't talk about really critical points so you see but but even when okay i don't"
+    },
+    {
+      "start": 3267.86,
+      "end": 3272.98,
+      "text": "want to enter the story of the critical points here okay so let me let me come to"
+    },
+    {
+      "start": 3273.46,
+      "end": 3297.42,
+      "text": "uh this the the let's look at the applied"
+    },
+    {
+      "start": 3297.42,
+      "end": 3298.26,
+      "text": "area for example"
+    },
+    {
+      "start": 3298.26,
+      "end": 3301.1400000000003,
+      "text": "the film the time frame for example now we are going to see parking particles as intercepting particles as themed particles"
+    },
+    {
+      "start": 3301.1400000000003,
+      "end": 3302.1,
+      "text": "nướcULU"
+    },
+    {
+      "start": 3302.1,
+      "end": 3302.5,
+      "text": "."
+    },
+    {
+      "start": 3302.5,
+      "end": 3302.58,
+      "text": "P mutualization"
+    },
+    {
+      "start": 3302.58,
+      "end": 3303.06,
+      "text": "the watercolor"
+    },
+    {
+      "start": 3303.06,
+      "end": 3303.38,
+      "text": "introduction"
+    },
+    {
+      "start": 3303.38,
+      "end": 3314.34,
+      "text": "one say depends on xt so so you have to know what was the previous value and to tell what is"
+    },
+    {
+      "start": 3316.5,
+      "end": 3322.26,
+      "text": "okay so let me say for example you could say that"
+    },
+    {
+      "start": 3322.26,
+      "end": 3336.26,
+      "text": "xt plus one is one half with probability xt and is one with probability one minus xt so so okay so"
+    },
+    {
+      "start": 3336.26,
+      "end": 3347.1400000000003,
+      "text": "you start with xt equals zero and then the first thing is one then uh then the second one will be"
+    },
+    {
+      "start": 3347.1400000000003,
+      "end": 3352.1800000000003,
+      "text": "one half and the third one will be ever one half or one okay this is an example"
+    },
+    {
+      "start": 3352.26,
+      "end": 3360.5,
+      "text": "so the probability of one value depends only on what happened before and you have in fact many"
+    },
+    {
+      "start": 3360.5,
+      "end": 3366.7400000000002,
+      "text": "many systems that you can describe like that because here i am talking about numbers but"
+    },
+    {
+      "start": 3366.7400000000002,
+      "end": 3372.9,
+      "text": "this could be very high dimensional vectors and so on so so this this is what's called"
+    },
+    {
+      "start": 3373.5400000000004,
+      "end": 3376.98,
+      "text": "markov process and so the probability"
+    },
+    {
+      "start": 3379.38,
+      "end": 3382.1800000000003,
+      "text": "of time t of observing"
+    },
+    {
+      "start": 3382.26,
+      "end": 3393.46,
+      "text": "x is just integral of rho of x given y probability of having y at mt okay so this is"
+    },
+    {
+      "start": 3394.1000000000004,
+      "end": 3396.5800000000004,
+      "text": "a discrete time markov process"
+    },
+    {
+      "start": 3404.42,
+      "end": 3410.6600000000003,
+      "text": "now there is a continuous time version in fact the continuous time version is just"
+    },
+    {
+      "start": 3411.78,
+      "end": 3412.26,
+      "text": "limited"
+    },
+    {
+      "start": 3412.26,
+      "end": 3415.3,
+      "text": "in case of the discrete time"
+    },
+    {
+      "start": 3425.46,
+      "end": 3438.34,
+      "text": "okay so so you say that x at time t plus dt dt is very short time infinitesimal is xt or is y"
+    },
+    {
+      "start": 3439.2200000000003,
+      "end": 3441.6200000000003,
+      "text": "so this would be with probability"
+    },
+    {
+      "start": 3442.7400000000002,
+      "end": 3446.5800000000004,
+      "text": "one minus integral of rho of x given y"
+    },
+    {
+      "start": 3450.82,
+      "end": 3460.34,
+      "text": "sorry probability given xt so you know xt this is the probability that it does not change so this"
+    },
+    {
+      "start": 3460.34,
+      "end": 3470.0200000000004,
+      "text": "is and it becomes y with probability rho of y given xt dt and i have in mind that dt is very"
+    },
+    {
+      "start": 3470.82,
+      "end": 3472.0200000000004,
+      "text": "small compared to one"
+    },
+    {
+      "start": 3472.26,
+      "end": 3480.5,
+      "text": "okay so this would be a continuous time and in fact you see that this is just a particular case"
+    },
+    {
+      "start": 3480.5,
+      "end": 3487.0600000000004,
+      "text": "of this case because the change from time t to time t plus dt is very"
+    },
+    {
+      "start": 3487.86,
+      "end": 3495.0600000000004,
+      "text": "very small so this is a special case so this is a markov process and many of the models that we"
+    },
+    {
+      "start": 3495.0600000000004,
+      "end": 3501.78,
+      "text": "are going to discuss here are markov processes so one of them in fact will be what's called the"
+    },
+    {
+      "start": 3501.78,
+      "end": 3503.78,
+      "text": "symmetric screwing process"
+    },
+    {
+      "start": 3526.9,
+      "end": 3530.1000000000004,
+      "text": "okay ss so it's a symmetric simple"
+    },
+    {
+      "start": 3530.74,
+      "end": 3532.2599999999998,
+      "text": "exclusion"
+    },
+    {
+      "start": 3535.38,
+      "end": 3544.18,
+      "text": "process and okay it's a one-dimensional system which consists of l sites and then"
+    },
+    {
+      "start": 3544.18,
+      "end": 3554.66,
+      "text": "you have particles on this lattice and bring every time dt very small each particle can jump"
+    },
+    {
+      "start": 3554.66,
+      "end": 3555.7,
+      "text": "with probability 0."
+    },
+    {
+      "start": 3555.7,
+      "end": 3558.58,
+      "text": "so this is a very simple one-dimensional system"
+    },
+    {
+      "start": 3558.58,
+      "end": 3559.62,
+      "text": "so you can see that it's very small so every time dt is very small each particle can jump with probability 0."
+    },
+    {
+      "start": 3559.62,
+      "end": 3563.06,
+      "text": "probability dt to the left or to the right"
+    },
+    {
+      "start": 3565.2999999999997,
+      "end": 3572.74,
+      "text": "but so it's called symmetric because the rate at which you jump to the left or to the right"
+    },
+    {
+      "start": 3572.74,
+      "end": 3579.2999999999997,
+      "text": "is the same simple because you jump only to the nearest neighbor"
+    },
+    {
+      "start": 3580.2599999999998,
+      "end": 3589.14,
+      "text": "and exclusion because you cannot jump to a site which is already occupied so this is one example"
+    },
+    {
+      "start": 3589.62,
+      "end": 3596.8199999999997,
+      "text": "which can't be 윤 the again this goes between how many Systems do you already have on the level"
+    },
+    {
+      "start": 3596.8199999999997,
+      "end": 3603.54,
+      "text": "and this is the problem you see at the跟你 Dazu is on the level two that's comes up three that's"
+    },
+    {
+      "start": 3603.54,
+      "end": 3608.74,
+      "text": "the spacepción value four if you look at the suddenly you can see that судs which produced"
+    },
+    {
+      "start": 3608.74,
+      "end": 3615.06,
+      "text": "log theiono you covers thisado times a step work so let's let's see if it works signature"
+    },
+    {
+      "start": 3615.06,
+      "end": 3618.74,
+      "text": "Santoegen rate second point two one reaction throughout the system fair production both"
+    },
+    {
+      "start": 3618.74,
+      "end": 3630.2999999999997,
+      "text": "So if you take alpha equal 1, gamma equals 0, beta equal 1, delta equals 0, so you see particles can enter from the left."
+    },
+    {
+      "start": 3631.58,
+      "end": 3634.0,
+      "text": "They cannot leave because gamma equals 0."
+    },
+    {
+      "start": 3634.1,
+      "end": 3638.52,
+      "text": "They cannot leave on the left, and they leave on the right, and they cannot enter from the right."
+    },
+    {
+      "start": 3638.7799999999997,
+      "end": 3640.6,
+      "text": "So there will be a flow of particles."
+    },
+    {
+      "start": 3640.6,
+      "end": 3647.16,
+      "text": "The system can reach a steady state for this system."
+    },
+    {
+      "start": 3648.06,
+      "end": 3648.18,
+      "text": "Okay."
+    },
+    {
+      "start": 3648.74,
+      "end": 3668.3399999999997,
+      "text": "So now a configuration of the system will be given by 2, 1, 2, L, where 2, I is 0, 1,"
+    },
+    {
+      "start": 3669.3399999999997,
+      "end": 3674.54,
+      "text": "depending on whether the site is occupied or empty."
+    },
+    {
+      "start": 3675.62,
+      "end": 3678.4599999999996,
+      "text": "And I am interested."
+    },
+    {
+      "start": 3679.06,
+      "end": 3694.04,
+      "text": "In the probability of seeing the system in a configuration C, so this configuration C is just there are 2 to the L configurations."
+    },
+    {
+      "start": 3694.04,
+      "end": 3698.2599999999998,
+      "text": "If L is large, it's a huge number."
+    },
+    {
+      "start": 3699.04,
+      "end": 3708.22,
+      "text": "And so this will be what I am writing now is very general for Markov processes."
+    },
+    {
+      "start": 3708.74,
+      "end": 3715.2599999999998,
+      "text": "There will be a matrix which tells me that."
+    },
+    {
+      "start": 3719.2,
+      "end": 3730.18,
+      "text": "So this is the probability that at time C the system was in configuration C prime, and it jumped to configuration C."
+    },
+    {
+      "start": 3730.9199999999996,
+      "end": 3733.9599999999996,
+      "text": "Because Markov process."
+    },
+    {
+      "start": 3734.5,
+      "end": 3738.58,
+      "text": "The probability of being in C at time T plus DT depends only on where I was."
+    },
+    {
+      "start": 3738.58,
+      "end": 3738.74,
+      "text": "So I will write this."
+    },
+    {
+      "start": 3738.74,
+      "end": 3745.8399999999997,
+      "text": "So this is Колhapurнев nostro cy proceãoål"
+    },
+    {
+      "start": 3745.8399999999997,
+      "end": 3749.8199999999997,
+      "text": "At', this is coming from Southeast Asia,"
+    },
+    {
+      "start": 3749.9599999999996,
+      "end": 3756.64,
+      "text": "entries in the room floor 2E and it is I delete a mentioned m Then I discuss English."
+    },
+    {
+      "start": 3758.12,
+      "end": 3760.72,
+      "text": "What would the graphic be like if the command were to be out like this?"
+    },
+    {
+      "start": 3760.8399999999997,
+      "end": 3766.5,
+      "text": "I would be blinked when we have theнихlight of"
+    },
+    {
+      "start": 3766.5,
+      "end": 3768.16,
+      "text": "Our guy became mono signal."
+    },
+    {
+      "start": 3768.16,
+      "end": 3774.3999999999996,
+      "text": "times it is a probability of this jump or I was in C and I did not jump to any"
+    },
+    {
+      "start": 3774.3999999999996,
+      "end": 3784.42,
+      "text": "other configuration so this is the evolution and so if I becomes when it is"
+    },
+    {
+      "start": 3784.42,
+      "end": 3793.3199999999997,
+      "text": "very small which is assumed in all these things there is a master equation"
+    },
+    {
+      "start": 3798.16,
+      "end": 3810.22,
+      "text": "sum over C prime which tells me how the probability of seeing the system in a"
+    },
+    {
+      "start": 3810.22,
+      "end": 3819.04,
+      "text": "configuration C evolves let's call the master equation and in situations where"
+    },
+    {
+      "start": 3819.04,
+      "end": 3825.46,
+      "text": "the Markov process is irreducible irreducible means that somehow there is"
+    },
+    {
+      "start": 3825.46,
+      "end": 3828.14,
+      "text": "a way a path possible or possible to reduce the path of the system and so"
+    },
+    {
+      "start": 3828.14,
+      "end": 3833.46,
+      "text": "the way to go from any configuration to any other configuration so here it's"
+    },
+    {
+      "start": 3833.46,
+      "end": 3838.08,
+      "text": "very easy to see that I see the case for an example like that because I could"
+    },
+    {
+      "start": 3838.08,
+      "end": 3843.18,
+      "text": "start with everything empty and I start to fill the system by letting particles"
+    },
+    {
+      "start": 3843.18,
+      "end": 3850.2599999999998,
+      "text": "enter so I can go from any configuration to any other configuration and what"
+    },
+    {
+      "start": 3850.2599999999998,
+      "end": 3856.16,
+      "text": "happens is that if you are in this situation so irreducible"
+    },
+    {
+      "start": 3858.14,
+      "end": 3869.7599999999998,
+      "text": "and implies that PT of C go to stationary in the long time limit stationary distribution"
+    },
+    {
+      "start": 3869.7599999999998,
+      "end": 3875.04,
+      "text": "but it's not an equilibrium you see because as I said when alpha is one and beta is one"
+    },
+    {
+      "start": 3875.04,
+      "end": 3880.52,
+      "text": "for example and the over parameter is zero there will be a flow of particles when you"
+    },
+    {
+      "start": 3880.52,
+      "end": 3885.18,
+      "text": "have a flow of particles through your system it's not an equilibrium still is a steady"
+    },
+    {
+      "start": 3885.18,
+      "end": 3886.18,
+      "text": "state"
+    },
+    {
+      "start": 3888.14,
+      "end": 3897.0,
+      "text": "okay here I don't take it time dependent now there is the whole field that I am"
+    },
+    {
+      "start": 3897.0,
+      "end": 3901.8399999999997,
+      "text": "not going to discuss here of what is called stochastic thermodynamics where"
+    },
+    {
+      "start": 3901.8399999999997,
+      "end": 3909.92,
+      "text": "you make them time dependent for example if you want to describe a system on which"
+    },
+    {
+      "start": 3909.92,
+      "end": 3914.8199999999997,
+      "text": "you you change the launch potential or something for example when you when you put some kind of a"
+    },
+    {
+      "start": 3914.8199999999997,
+      "end": 3918.12,
+      "text": "potential or something for example when you when you put some kind of a potential or something for example when you when you put some"
+    },
+    {
+      "start": 3918.14,
+      "end": 3922.8799999999997,
+      "text": "force on the system and you change it its volume also you would have these"
+    },
+    {
+      "start": 3922.8799999999997,
+      "end": 3933.18,
+      "text": "things which are time dependent but here I don't take them okay now if I take"
+    },
+    {
+      "start": 3933.18,
+      "end": 3947.8799999999997,
+      "text": "this system the matrix M consists of three parts M 1 plus M bulk plus M 2 and"
+    },
+    {
+      "start": 3948.14,
+      "end": 3957.3799999999997,
+      "text": "another so-called one axis of position okay because to jump from one"
+    },
+    {
+      "start": 3957.3799999999997,
+      "end": 3961.18,
+      "text": "configuration to the other type what happens here"
+    },
+    {
+      "start": 3961.18,
+      "end": 3965.18,
+      "text": "okay so there is a probability that I jump"
+    },
+    {
+      "start": 3965.18,
+      "end": 3970.1,
+      "text": "from one configuration to another due to the"
+    },
+    {
+      "start": 3970.1,
+      "end": 3975.14,
+      "text": "interaction on the left M 2 will be the same on the right and m mucha would describe all the moves inside and we will sees that when the system is out of equilibrium essentially the"
+    },
+    {
+      "start": 3975.14,
+      "end": 3976.96,
+      "text": "base parameter in your circuit and then the other position and it is the force so we have I don't take them"
+    },
+    {
+      "start": 3976.96,
+      "end": 3977.96,
+      "text": "all but the conclave of the process to create these two levels where workflows make up a"
+    },
+    {
+      "start": 3978.14,
+      "end": 3984.2599999999998,
+      "text": "each term tries to equilibrate the system at a different density or at a"
+    },
+    {
+      "start": 3984.26,
+      "end": 4011.46,
+      "text": "different temperature now something rather important is in terms of this"
+    },
+    {
+      "start": 4011.46,
+      "end": 4014.1600000000003,
+      "text": "Markov processes okay let me keep this one"
+    },
+    {
+      "start": 4014.26,
+      "end": 4024.1400000000003,
+      "text": "what's called tilted matrices"
+    },
+    {
+      "start": 4044.26,
+      "end": 4060.1200000000003,
+      "text": "now if I take this example one quantiity might be interested in is to count how many particles"
+    },
+    {
+      "start": 4060.1200000000003,
+      "end": 4067.0800000000004,
+      "text": "have gone through the system so you think to see what is the current of the system and I"
+    },
+    {
+      "start": 4067.0800000000004,
+      "end": 4074.0200000000004,
+      "text": "want to know what is the average current what is the fluctuation of this current or what is a large"
+    },
+    {
+      "start": 4074.02,
+      "end": 4081.86,
+      "text": "deviation function of this current so i observe the system during time t and i might be interested"
+    },
+    {
+      "start": 4081.86,
+      "end": 4092.9,
+      "text": "in qt says the number the number of particles entering the system"
+    },
+    {
+      "start": 4099.78,
+      "end": 4100.74,
+      "text": "during time t"
+    },
+    {
+      "start": 4104.02,
+      "end": 4114.42,
+      "text": "okay and i want to think of this time to be very large so i would large deviation would be to say"
+    },
+    {
+      "start": 4114.42,
+      "end": 4125.14,
+      "text": "what is the probability that qt over t takes a certain value i of q and exponential i of q"
+    },
+    {
+      "start": 4125.14,
+      "end": 4129.620000000001,
+      "text": "i want to know for example the large deviation function of this"
+    },
+    {
+      "start": 4132.26,
+      "end": 4133.9400000000005,
+      "text": "this current now you see"
+    },
+    {
+      "start": 4134.26,
+      "end": 4145.780000000001,
+      "text": "here at the moment t is large but the system here has a size l it has a size l here but i don't need"
+    },
+    {
+      "start": 4145.780000000001,
+      "end": 4152.42,
+      "text": "l to be large it could be a very small system and i want to to to know how the current through the"
+    },
+    {
+      "start": 4152.42,
+      "end": 4163.780000000001,
+      "text": "system fluctuates and what is this large deviation now to do that i am going to introduce what's called"
+    },
+    {
+      "start": 4164.02,
+      "end": 4171.700000000001,
+      "text": "tilted matrices so instead of talking about this specific example"
+    },
+    {
+      "start": 4172.5,
+      "end": 4178.34,
+      "text": "i want to consider a quantity which i write like this"
+    },
+    {
+      "start": 4182.9800000000005,
+      "end": 4191.3,
+      "text": "qt is sum over so let me take a discrete time"
+    },
+    {
+      "start": 4191.3,
+      "end": 4207.62,
+      "text": "um but actually this is the number we use for thermal"
+    },
+    {
+      "start": 4208.820000000001,
+      "end": 4218.02,
+      "text": "and i want to say okay two equals zero to t minus one of q of c2 plus one"
+    },
+    {
+      "start": 4218.58,
+      "end": 4219.3,
+      "text": "okay so"
+    },
+    {
+      "start": 4219.3,
+      "end": 4220.18,
+      "text": "okay so i have a quantity"
+    },
+    {
+      "start": 4220.18,
+      "end": 4220.66,
+      "text": "okay so i have a quantity"
+    },
+    {
+      "start": 4220.66,
+      "end": 4227.3,
+      "text": "i have a function here okay so so for example here if i am interested in the number of particles"
+    },
+    {
+      "start": 4227.86,
+      "end": 4239.7,
+      "text": "which enter this system okay q this is sorry this is two q of c two plus one c two is each time"
+    },
+    {
+      "start": 4240.82,
+      "end": 4246.9,
+      "text": "a particle enters so i am in a configuration says that this was empty the new configuration"
+    },
+    {
+      "start": 4246.9,
+      "end": 4255.62,
+      "text": "is that particle enters then this q becomes one if say i am in situation where i allow also"
+    },
+    {
+      "start": 4255.62,
+      "end": 4262.98,
+      "text": "particles to to leave the system this q would be minus one and if there is an internal move"
+    },
+    {
+      "start": 4262.98,
+      "end": 4268.82,
+      "text": "this q would go be to zero because here i am counting what is entering the system but you"
+    },
+    {
+      "start": 4268.82,
+      "end": 4276.099999999999,
+      "text": "could decide that you want to count something else and this this is the quantity okay so i'm"
+    },
+    {
+      "start": 4276.099999999999,
+      "end": 4276.82,
+      "text": "interested in the"
+    },
+    {
+      "start": 4276.9,
+      "end": 4287.219999999999,
+      "text": "quantity like this so it's essentially general for markov process and now i want to write"
+    },
+    {
+      "start": 4291.54,
+      "end": 4301.299999999999,
+      "text": "i want to write the evolution of the probability that the system is in configuration c"
+    },
+    {
+      "start": 4302.42,
+      "end": 4306.82,
+      "text": "at time t and that i have observed q of t so now"
+    },
+    {
+      "start": 4306.9,
+      "end": 4321.54,
+      "text": "i am with yes"
+    },
+    {
+      "start": 4326.339999999999,
+      "end": 4334.099999999999,
+      "text": "yes so i don't see okay maybe i i did not think the number of particles and during the system at"
+    },
+    {
+      "start": 4334.099999999999,
+      "end": 4336.259999999999,
+      "text": "time t and this is a more general thing but"
+    },
+    {
+      "start": 4337.139999999999,
+      "end": 4342.82,
+      "text": "the number of particles entering the system during time t is a special case of this quantity"
+    },
+    {
+      "start": 4346.179999999999,
+      "end": 4347.379999999999,
+      "text": "up to time t yes"
+    },
+    {
+      "start": 4350.66,
+      "end": 4351.54,
+      "text": "is it okay"
+    },
+    {
+      "start": 4357.54,
+      "end": 4366.099999999999,
+      "text": "okay this is the this is the integrated current so so you count during time t how long how much"
+    },
+    {
+      "start": 4366.9,
+      "end": 4374.179999999999,
+      "text": "this Caymino refers to and it's the number of particles there right so this is 1 drove"
+    },
+    {
+      "start": 4374.9,
+      "end": 4382.58,
+      "text": "1 9 10 12 and that's the limit of the information here and 1 times 8 is a population of one"
+    },
+    {
+      "start": 4383.379999999999,
+      "end": 4392.0199999999995,
+      "text": "oke so let me just write what happens for this thing and very much like"
+    },
+    {
+      "start": 4392.0199999999995,
+      "end": 4396.28,
+      "text": "i had this formula here i have probability of being in configuration c at time t plus one Primping movements of the"
+    },
+    {
+      "start": 4396.28,
+      "end": 4410.599999999999,
+      "text": "arbitrary configuration I jumped from from CT to CT plus one and here I had"
+    },
+    {
+      "start": 4410.599999999999,
+      "end": 4419.719999999999,
+      "text": "the probability of being in CT and observing QT minus Q of CT plus one and"
+    },
+    {
+      "start": 4419.72,
+      "end": 4428.34,
+      "text": "CT okay so how is it possible that I observe Q at time QT plus one at time T"
+    },
+    {
+      "start": 4428.34,
+      "end": 4435.68,
+      "text": "plus one okay I was somewhere before okay I have jumped from CT to CT plus"
+    },
+    {
+      "start": 4435.68,
+      "end": 4445.72,
+      "text": "one and when I did this jump QT increases increased by this amount okay"
+    },
+    {
+      "start": 4445.72,
+      "end": 4449.72,
+      "text": "and this is looks difficult"
+    },
+    {
+      "start": 4449.72,
+      "end": 4461.820000000001,
+      "text": "so this maybe this at time T and this is at time T plus one and this look difficult"
+    },
+    {
+      "start": 4461.820000000001,
+      "end": 4469.46,
+      "text": "thing because a priori because okay here for an example like that I have two to"
+    },
+    {
+      "start": 4469.46,
+      "end": 4474.860000000001,
+      "text": "the L configuration so I have a finite number of configurations so the"
+    },
+    {
+      "start": 4474.860000000001,
+      "end": 4479.0,
+      "text": "probability PT is just a vector okay with many"
+    },
+    {
+      "start": 4479.0,
+      "end": 4479.7,
+      "text": "components"
+    },
+    {
+      "start": 4479.7,
+      "end": 4487.5,
+      "text": "but it's a finite vector but now QT can become very large it is unbounded so so"
+    },
+    {
+      "start": 4487.5,
+      "end": 4496.2,
+      "text": "it could become the total this acts it's still a Markov process but it's a Markov"
+    },
+    {
+      "start": 4496.2,
+      "end": 4501.42,
+      "text": "process in an infinite dimensional space so it looks very difficult but there is"
+    },
+    {
+      "start": 4501.42,
+      "end": 4508.98,
+      "text": "a very simple way to simplify the problem is to to"
+    },
+    {
+      "start": 4508.98,
+      "end": 4525.9,
+      "text": "introduce generating functions so let me call P tilde or P hat of CT PT this"
+    },
+    {
+      "start": 4525.9,
+      "end": 4535.62,
+      "text": "would be just exponential lambda QT times the probability of CT and QT and"
+    },
+    {
+      "start": 4535.62,
+      "end": 4538.78,
+      "text": "I sum over all possible QT"
+    },
+    {
+      "start": 4538.98,
+      "end": 4549.66,
+      "text": "now I just can take this formula multiply by exponential lambda QT on"
+    },
+    {
+      "start": 4549.66,
+      "end": 4558.0599999999995,
+      "text": "both side of lambda QT plus one and T plus one and what I end up with is that"
+    },
+    {
+      "start": 4558.0599999999995,
+      "end": 4563.599999999999,
+      "text": "P C plus one please had of C 10T plus one is sum over CT or customs theta alpha"
+    },
+    {
+      "start": 4563.599999999999,
+      "end": 4567.86,
+      "text": "lambda Lisa lambda of c times q plus one of cง theta and really we want to construct a"
+    },
+    {
+      "start": 4567.86,
+      "end": 4568.78,
+      "text": "ulators we we we want to make something stukies look together okay but the question is it"
+    },
+    {
+      "start": 4568.78,
+      "end": 4586.3,
+      "text": "of m of ct plus one ct times exponential lambda qct plus one ct times p hat of ct."
+    },
+    {
+      "start": 4587.9,
+      "end": 4597.0199999999995,
+      "text": "Okay so you just multiply both sides by this exponential and you just sum over qt and you get"
+    },
+    {
+      "start": 4597.02,
+      "end": 4609.580000000001,
+      "text": "this thing and you see what I have gained doing that is that as I said ct takes two to the l"
+    },
+    {
+      "start": 4609.580000000001,
+      "end": 4617.580000000001,
+      "text": "possible value qt takes an infinite number of possible values so this in principle is something"
+    },
+    {
+      "start": 4617.580000000001,
+      "end": 4626.9400000000005,
+      "text": "in an operator with infinitely many possible values but this here this matrix"
+    },
+    {
+      "start": 4627.02,
+      "end": 4633.26,
+      "text": "is a finite dimensional matrix for the step for example is the two to the l by two to the l which"
+    },
+    {
+      "start": 4633.26,
+      "end": 4643.02,
+      "text": "is still a big thing but this is a finite matrix and now I have this recursion and and the"
+    },
+    {
+      "start": 4643.02,
+      "end": 4649.740000000001,
+      "text": "consequence of that is that if I am interested in the long time behavior of this"
+    },
+    {
+      "start": 4657.34,
+      "end": 4662.22,
+      "text": "uh yes sorry so there is some of uh sorry"
+    },
+    {
+      "start": 4671.660000000001,
+      "end": 4671.900000000001,
+      "text": "no"
+    },
+    {
+      "start": 4677.34,
+      "end": 4684.38,
+      "text": "okay I Q q c plus one minus q t"
+    },
+    {
+      "start": 4684.38,
+      "end": 4684.620000000001,
+      "text": "is"
+    },
+    {
+      "start": 4685.660000000001,
+      "end": 4686.780000000001,
+      "text": "Q of"
+    },
+    {
+      "start": 4687.02,
+      "end": 4712.280000000001,
+      "text": "city plus one and city okay so you can do whatever okay you can make it"
+    },
+    {
+      "start": 4712.28,
+      "end": 4719.179999999999,
+      "text": "imaginary you see my okay maybe I am assuming that this number is bounded or"
+    },
+    {
+      "start": 4719.179999999999,
+      "end": 4724.86,
+      "text": "something like that but you don't need in fact to be imaginary usually okay"
+    },
+    {
+      "start": 4724.86,
+      "end": 4731.04,
+      "text": "whether you take it imaginary or real or whatever doesn't matter okay but the"
+    },
+    {
+      "start": 4731.04,
+      "end": 4741.28,
+      "text": "main point okay so again you had this evolution there now okay here I am"
+    },
+    {
+      "start": 4741.28,
+      "end": 4742.219999999999,
+      "text": "talking about this"
+    },
+    {
+      "start": 4742.22,
+      "end": 4748.34,
+      "text": "time but there is the same thing with continuous time but what happens in now"
+    },
+    {
+      "start": 4748.34,
+      "end": 4754.46,
+      "text": "you have a matrix which is a finite matrix maybe 2 to the L by 2 to the L as"
+    },
+    {
+      "start": 4754.46,
+      "end": 4761.26,
+      "text": "long as I look at finite systems and what happens is that you know in advance"
+    },
+    {
+      "start": 4761.26,
+      "end": 4772.12,
+      "text": "what will happen for large T what happens for large T you have a vector"
+    },
+    {
+      "start": 4772.22,
+      "end": 4782.46,
+      "text": "matrix times a vector so for large T PT hat of C will grow like T exponential mu"
+    },
+    {
+      "start": 4782.46,
+      "end": 4796.22,
+      "text": "of lambda where mu of lambda is in this case exponential is the largest eigenvalue"
+    },
+    {
+      "start": 4796.22,
+      "end": 4799.22,
+      "text": "of the matrix of the following T"
+    },
+    {
+      "start": 4799.22,
+      "end": 4800.22,
+      "text": "of the matrix of the following T"
+    },
+    {
+      "start": 4800.22,
+      "end": 4801.22,
+      "text": "of the matrix of the following T"
+    },
+    {
+      "start": 4801.22,
+      "end": 4802.22,
+      "text": "of the matrix of the following T"
+    },
+    {
+      "start": 4802.22,
+      "end": 4804.22,
+      "text": "so you have a tilted matrix"
+    },
+    {
+      "start": 4804.22,
+      "end": 4811.22,
+      "text": "so you have a tilted matrix"
+    },
+    {
+      "start": 4811.22,
+      "end": 4820.22,
+      "text": "and the matrix you can read it here is M lambda of C prime C which is just M of C"
+    },
+    {
+      "start": 4820.22,
+      "end": 4831.22,
+      "text": "prime C exponential lambda Q of C prime C okay so you see because after all this is"
+    },
+    {
+      "start": 4831.22,
+      "end": 4840.22,
+      "text": "just M lambda of C prime C"
+    },
+    {
+      "start": 4840.22,
+      "end": 4844.22,
+      "text": "a matrix multiplied by a matrix and if you multiply matrix many many times then what"
+    },
+    {
+      "start": 4844.22,
+      "end": 4850.22,
+      "text": "comes out is what you get is the largest eigenvalue of this matrix is a finite"
+    },
+    {
+      "start": 4850.22,
+      "end": 4855.22,
+      "text": "problem so this is called the tilted matrix"
+    },
+    {
+      "start": 4855.22,
+      "end": 4859.22,
+      "text": "so this is called the tilted matrix"
+    },
+    {
+      "start": 4859.22,
+      "end": 4860.22,
+      "text": "so this is called the tilted matrix"
+    },
+    {
+      "start": 4860.22,
+      "end": 4886.1,
+      "text": "So, if I just try to summarize this story, the following, I'm sorry, I am slower than"
+    },
+    {
+      "start": 4886.1,
+      "end": 4898.700000000001,
+      "text": "I expected. So, if I am interested in exponential qt, which will be the sum over qt, maybe the"
+    },
+    {
+      "start": 4898.700000000001,
+      "end": 4911.22,
+      "text": "sum over all configurations of pt, of c, qt, exponential lambda qt, and this, we say that,"
+    },
+    {
+      "start": 4911.22,
+      "end": 4916.06,
+      "text": "okay, let's say that sum over c, sum over qt."
+    },
+    {
+      "start": 4916.06,
+      "end": 4929.38,
+      "text": "And we say that this, we called it p hat of c. Now, all the p hat of c will grow like"
+    },
+    {
+      "start": 4929.38,
+      "end": 4938.620000000001,
+      "text": "the largest eigenvalue of this matrix. So, this will grow like exponential mu of lambda"
+    },
+    {
+      "start": 4938.620000000001,
+      "end": 4946.02,
+      "text": "times t. And mu of lambda is the largest eigenvalue of this tilted matrix."
+    },
+    {
+      "start": 4946.06,
+      "end": 4947.06,
+      "text": "Okay."
+    },
+    {
+      "start": 4947.06,
+      "end": 4948.06,
+      "text": "Yes."
+    },
+    {
+      "start": 4948.06,
+      "end": 4953.06,
+      "text": "No, it's not, no, it's not known."
+    },
+    {
+      "start": 4953.06,
+      "end": 4976.04,
+      "text": "Okay. It's not, no, qt is a random variable. So, for example, when I had the"
+    },
+    {
+      "start": 4976.06,
+      "end": 4981.42,
+      "text": "exclusion process, qt will depend on the realization of the Markov process, sometimes"
+    },
+    {
+      "start": 4981.42,
+      "end": 4988.1,
+      "text": "the particle enter, sometimes it, so I have many events, and qt will fluctuate. And so,"
+    },
+    {
+      "start": 4988.1,
+      "end": 4998.06,
+      "text": "I am just looking at the generating function of qt. I hope I am, yes, you have a question?"
+    },
+    {
+      "start": 4998.06,
+      "end": 5004.06,
+      "text": "."
+    },
+    {
+      "start": 5004.06,
+      "end": 5012.820000000001,
+      "text": "What, you could have a potential if you like also, but there is a steady state in the system."
+    },
+    {
+      "start": 5012.820000000001,
+      "end": 5019.160000000001,
+      "text": "We'll discuss the steady state in more detail. But essentially, you see, you will see a density"
+    },
+    {
+      "start": 5019.160000000001,
+      "end": 5034.06,
+      "text": "profile linear, which, but, okay. So, let me consider a simple example, and you can"
+    },
+    {
+      "start": 5034.06,
+      "end": 5039.72,
+      "text": "call, write a Kalman finalmente, In order to think about this thing, let me consider"
+    },
+    {
+      "start": 5039.72,
+      "end": 5047.72,
+      "text": "the following simple example, which is a SSEP with one site."
+    },
+    {
+      "start": 5047.72,
+      "end": 5056.96,
+      "text": "Now,."
+    },
+    {
+      "start": 5056.96,
+      "end": 5063.26,
+      "text": "One site. Sometimes people call it a quantum dot, but anyway, there is very little quantum"
+    },
+    {
+      "start": 5063.26,
+      "end": 5064.06,
+      "text": "minutes."
+    },
+    {
+      "start": 5064.06,
+      "end": 5072.8,
+      "text": "but anyway so this is just an example where you have one side so it can be"
+    },
+    {
+      "start": 5072.8,
+      "end": 5079.38,
+      "text": "ever occupied or empty so the system has two states ever occupied or empty and"
+    },
+    {
+      "start": 5079.38,
+      "end": 5085.42,
+      "text": "particles can enter with rate alpha leave here with rate gamma if it's"
+    },
+    {
+      "start": 5085.42,
+      "end": 5092.38,
+      "text": "occupied they could leave on the right with rate beta and enter with rate"
+    },
+    {
+      "start": 5092.38,
+      "end": 5098.4400000000005,
+      "text": "Delta okay this is system so what is and now I am talking about the continuous"
+    },
+    {
+      "start": 5098.4400000000005,
+      "end": 5109.6,
+      "text": "time so I have two configurations there is configurations a which is occupied"
+    },
+    {
+      "start": 5109.6,
+      "end": 5120.4800000000005,
+      "text": "and B which is empty and the probability of being occupied depends on time also"
+    },
+    {
+      "start": 5120.4800000000005,
+      "end": 5122.26,
+      "text": "probability of being empty"
+    },
+    {
+      "start": 5122.26,
+      "end": 5122.38,
+      "text": "so there is a particular configuration which is occupied and B which is empty"
+    },
+    {
+      "start": 5122.38,
+      "end": 5137.82,
+      "text": "so what's the matrix m the matrix m is minus alpha here i have okay let me see it's minus"
+    },
+    {
+      "start": 5139.26,
+      "end": 5148.78,
+      "text": "sorry so the first thing will be occupied so minus beta plus delta and here i will have alpha"
+    },
+    {
+      "start": 5148.78,
+      "end": 5159.0199999999995,
+      "text": "alpha plus no sorry let's do it okay minus beta"
+    },
+    {
+      "start": 5161.34,
+      "end": 5171.74,
+      "text": "minus gamma here here i have alpha plus delta okay here i have beta plus gamma and here i have"
+    },
+    {
+      "start": 5173.0199999999995,
+      "end": 5178.62,
+      "text": "minus alpha minus delta okay so this is the matrix i have two possible states"
+    },
+    {
+      "start": 5178.78,
+      "end": 5186.139999999999,
+      "text": "yeah in an occupied i can leave the system at red gamma on the left and beta on the right"
+    },
+    {
+      "start": 5186.139999999999,
+      "end": 5194.94,
+      "text": "this is this term and if i i leave the system i enter this empty state with this rate so this is"
+    },
+    {
+      "start": 5194.94,
+      "end": 5204.54,
+      "text": "the markov matrix the m of cc prime what is the tilted matrix the tilted matrix if"
+    },
+    {
+      "start": 5207.66,
+      "end": 5208.7,
+      "text": "i am interested"
+    },
+    {
+      "start": 5208.78,
+      "end": 5214.7,
+      "text": "in the number of particles entering so okay so if i am interested in qt here"
+    },
+    {
+      "start": 5216.86,
+      "end": 5223.82,
+      "text": "what will be the tilted matrix then each time a new particle enters i get an exponential"
+    },
+    {
+      "start": 5223.82,
+      "end": 5233.099999999999,
+      "text": "lambda in the system so this becomes exponential lambda and each time a particle leaves the system"
+    },
+    {
+      "start": 5233.82,
+      "end": 5238.3,
+      "text": "i get an exponential minus uh sorry"
+    },
+    {
+      "start": 5239.66,
+      "end": 5245.98,
+      "text": "yes okay so i was in state one i get an exponential minus lambda"
+    },
+    {
+      "start": 5245.98,
+      "end": 5254.0599999999995,
+      "text": "so this is the tilted matrix i i recommend that you just try to think about this very simple example"
+    },
+    {
+      "start": 5255.66,
+      "end": 5264.86,
+      "text": "and now you can try to get the largest eigenvalue of this matrix okay it's a 2x2 matrix you can"
+    },
+    {
+      "start": 5264.86,
+      "end": 5268.139999999999,
+      "text": "do the computation by hand if you like but there are a number of come um uh admit that"
+    },
+    {
+      "start": 5268.78,
+      "end": 5278.24,
+      "text": "number of facts that I am going to mention about the problem okay there are"
+    },
+    {
+      "start": 5278.24,
+      "end": 5282.46,
+      "text": "a number of very interesting facts because they are very general so this is"
+    },
+    {
+      "start": 5282.46,
+      "end": 5289.5599999999995,
+      "text": "the tilted matrix and mu of lambda so you know that exponential lambda QT will"
+    },
+    {
+      "start": 5289.5599999999995,
+      "end": 5296.54,
+      "text": "be given by exponential T mu of lambda where mu of lambda is the largest"
+    },
+    {
+      "start": 5296.54,
+      "end": 5306.3,
+      "text": "eigenvalue of the matrix eigenvalue of M lambda okay so now you see before I had"
+    },
+    {
+      "start": 5306.3,
+      "end": 5310.98,
+      "text": "exponential mu of lambda as a largest eigenvalue because I was in discrete"
+    },
+    {
+      "start": 5310.98,
+      "end": 5316.2,
+      "text": "time here I am in continuous time so mu of lambda is the largest eigenvalue of"
+    },
+    {
+      "start": 5316.2,
+      "end": 5318.88,
+      "text": "this matrix"
+    },
+    {
+      "start": 5320.98,
+      "end": 5324.68,
+      "text": "so why I don't"
+    },
+    {
+      "start": 5326.54,
+      "end": 5335.0,
+      "text": "because I am interested in the number of particles which enter the system from"
+    },
+    {
+      "start": 5335.0,
+      "end": 5342.38,
+      "text": "the left okay so to enter your question I could do the what you said I could say"
+    },
+    {
+      "start": 5342.38,
+      "end": 5348.5,
+      "text": "I am not interested in this cutie but I am interested in the thing which is here"
+    },
+    {
+      "start": 5348.5,
+      "end": 5356.18,
+      "text": "I want to compute how many particles leave the system yeah I let me call QT"
+    },
+    {
+      "start": 5356.18,
+      "end": 5356.5,
+      "text": "T"
+    },
+    {
+      "start": 5357.44,
+      "end": 5363.42,
+      "text": "it would be a different current of Priori okay so what would be a matrix it would"
+    },
+    {
+      "start": 5363.42,
+      "end": 5373.5199999999995,
+      "text": "be minus beta minus gamma here I would have alpha plus delta exponential lambda"
+    },
+    {
+      "start": 5373.5199999999995,
+      "end": 5381.96,
+      "text": "beta exponential lambda plus gamma and minus alpha minus them so this would be a"
+    },
+    {
+      "start": 5381.96,
+      "end": 5385.96,
+      "text": "different tilted matrix now you can imagine hometown algebra is very similar to that for example so Alpha plus Delta ÷ wannaér"
+    },
+    {
+      "start": 5385.96,
+      "end": 5389.96,
+      "text": "you can imagine that if i am looking at very long time"
+    },
+    {
+      "start": 5389.96,
+      "end": 5394.36,
+      "text": "the number of particles which enter will be the same as the number of particles"
+    },
+    {
+      "start": 5394.36,
+      "end": 5401.8,
+      "text": "so i let you check that this matrix and this one have the same mu of lambda"
+    },
+    {
+      "start": 5401.8,
+      "end": 5406.28,
+      "text": "and it's very easy to do because these two matrices have the same trace"
+    },
+    {
+      "start": 5406.28,
+      "end": 5412.44,
+      "text": "and they have the same determinant okay one thing i want to mention but"
+    },
+    {
+      "start": 5412.44,
+      "end": 5417.48,
+      "text": "i i think i have to to stop soon"
+    },
+    {
+      "start": 5419.48,
+      "end": 5423.24,
+      "text": "okay but so i am slower than i expected but"
+    },
+    {
+      "start": 5423.24,
+      "end": 5431.32,
+      "text": "anyway it doesn't matter okay so so this mu of lambda here"
+    },
+    {
+      "start": 5431.32,
+      "end": 5437.799999999999,
+      "text": "is the same as this one here because but in fact you see"
+    },
+    {
+      "start": 5437.799999999999,
+      "end": 5442.36,
+      "text": "if i had the step not with one side but many many sides"
+    },
+    {
+      "start": 5442.759999999999,
+      "end": 5447.0,
+      "text": "it would be still the same if i count the number of particles entering on the"
+    },
+    {
+      "start": 5447.0,
+      "end": 5450.2,
+      "text": "left or leaving on the right because the"
+    },
+    {
+      "start": 5450.2,
+      "end": 5456.28,
+      "text": "particles cannot accumulate now something"
+    },
+    {
+      "start": 5456.28,
+      "end": 5462.679999999999,
+      "text": "you can notice about this matrix here is that it has an additional symmetry"
+    },
+    {
+      "start": 5462.679999999999,
+      "end": 5467.799999999999,
+      "text": "which is very important and this additional symmetry"
+    },
+    {
+      "start": 5467.799999999999,
+      "end": 5470.04,
+      "text": "that"
+    },
+    {
+      "start": 5472.44,
+      "end": 5476.04,
+      "text": "is the same as the one in the right hand corner"
+    },
+    {
+      "start": 5476.04,
+      "end": 5478.44,
+      "text": "so if"
+    },
+    {
+      "start": 5478.919999999999,
+      "end": 5482.599999999999,
+      "text": "so there is this matrix m of lambda"
+    },
+    {
+      "start": 5482.599999999999,
+      "end": 5488.04,
+      "text": "and now i am interested in f with a different values of lambda"
+    },
+    {
+      "start": 5488.04,
+      "end": 5494.44,
+      "text": "where lambda prime is equal to"
+    },
+    {
+      "start": 5494.44,
+      "end": 5502.2,
+      "text": "gamma delta over alpha beta exponential minus lambda so so"
+    },
+    {
+      "start": 5502.2,
+      "end": 5506.12,
+      "text": "let me just consider these two matrices"
+    },
+    {
+      "start": 5506.12,
+      "end": 5513.8,
+      "text": "just i have made this replacement now you will you can check easily that mu"
+    },
+    {
+      "start": 5513.8,
+      "end": 5517.5599999999995,
+      "text": "of lambda is mu of lambda prime"
+    },
+    {
+      "start": 5518.2,
+      "end": 5522.76,
+      "text": "just just you replace in the matrix and this is a special case"
+    },
+    {
+      "start": 5522.76,
+      "end": 5529.08,
+      "text": "of the fluctuation theorem which is much more general"
+    },
+    {
+      "start": 5529.08,
+      "end": 5529.48,
+      "text": "and okay i'm gonna use the fils to explain this 얘�命 attending algorithm generally very much more general and okay so venus and mu of lambda you have reminisce in the matrix And this is the parent here and as you see you show us isimportat essentially one소 log tan delta mu omega Pacific but there's accidents these also thief diagram or elemento along acrylic area and a capital series function the tod is excuse me so that they may be."
+    },
+    {
+      "start": 5532.2,
+      "end": 5539.94,
+      "text": "was planning to explain what it is today but I will postpone that later so so okay"
+    },
+    {
+      "start": 5539.94,
+      "end": 5549.84,
+      "text": "so this relation okay you can do it by hand it's the first you have to convince"
+    },
+    {
+      "start": 5549.84,
+      "end": 5556.9,
+      "text": "you yourself that this is the right tilted matrix that's what I say that the"
+    },
+    {
+      "start": 5556.9,
+      "end": 5561.72,
+      "text": "largest eigenvalue of this matrix will tell you what happens in a very long"
+    },
+    {
+      "start": 5561.72,
+      "end": 5567.54,
+      "text": "time that's just just the fact of about linear algebra you just multiply a"
+    },
+    {
+      "start": 5567.54,
+      "end": 5572.9400000000005,
+      "text": "matrix many many times and you get the largest eigenvalue it dominates"
+    },
+    {
+      "start": 5572.9400000000005,
+      "end": 5579.7,
+      "text": "everything and the point is that there is a symmetry and this symmetry has to"
+    },
+    {
+      "start": 5579.7,
+      "end": 5584.88,
+      "text": "do with time reversal symmetry also but this is a particular case of the"
+    },
+    {
+      "start": 5584.88,
+      "end": 5591.02,
+      "text": "fluctuation theorem okay so maybe I should stop here now if you like but"
+    },
+    {
+      "start": 5591.02,
+      "end": 5591.68,
+      "text": "okay"
+    },
+    {
+      "start": 5591.72,
+      "end": 5597.4800000000005,
+      "text": "I had in mind that I would be faster"
+    },
+    {
+      "start": 5602.76,
+      "end": 5612.42,
+      "text": "okay yes okay I yes presumably okay I don't know what will happen but"
+    },
+    {
+      "start": 5612.42,
+      "end": 5617.0,
+      "text": "presumably I am slower than I expected"
+    }
+  ],
+  "segment_count": 849
+}

@@ -126,6 +126,9 @@ ranking:
     unranked_venue_penalty: 8
     keep_threshold: 60
     review_threshold: 38
+    must_read_allowed_reputation:
+      - trusted
+    must_read_preprint_min_score: 60
     venue_tier_bonus:
       "1": 18
       "2": 12
@@ -190,10 +193,23 @@ ranking:
       "international journal of information technology and computer science": 14
       "international journal of computer science": 10
       "international journal of information technology": 8
+    cautious_venues:
+      "applied sciences": 16
+      "sensors": 14
+      "mathematics": 10
+      "symmetry": 10
+      "axioms": 10
+      "algorithms": 10
+      "energies": 12
+      "entropy": 6
+      "scientific reports": 4
+    cautious_publishers:
+      "mdpi": 8
+      "frontiers": 4
+      "hindawi": 4
     strong_venues:
       "physical review letters": 8
       "nature physics": 8
-      "scientific reports": 4
       "communications in mathematical physics": 8
       "journal of machine learning research": 8
       "neurips": 8

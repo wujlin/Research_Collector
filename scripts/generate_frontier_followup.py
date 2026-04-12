@@ -15,6 +15,7 @@ if str(ROOT) not in sys.path:
 
 from src.pipeline import CollectionPipeline
 from src.processors.importance_ranker import ImportanceRanker
+from src.utils.helpers import canonical_digest_path, load_config, normalize_whitespace
 
 
 @dataclass
@@ -28,9 +29,36 @@ class Candidate:
     importance_score: float
     importance_bucket: str
     venue_quality: str
+    venue_reputation: str
     tier: int
     fit_reason: str
     reproduction_reason: str
+
+
+def load_venue_reputation_registry(config_name: str = "venue_reputation.yaml") -> tuple[dict[str, dict[str, str]], str]:
+    config = load_config(config_name)
+    venues = {normalize_venue_name(name): meta for name, meta in config.get("venues", {}).items()}
+    return venues, str(config.get("default_status", "unreviewed"))
+
+
+def normalize_venue_name(value: str) -> str:
+    return normalize_whitespace(value).lower()
+
+
+def venue_reputation_status(journal: str, venue: str, registry: dict[str, dict[str, str]], default_status: str) -> str:
+    for candidate in (journal, venue):
+        normalized = normalize_venue_name(candidate)
+        if normalized and normalized in registry:
+            return str(registry[normalized].get("status", default_status))
+    return default_status
+
+
+def is_must_read_eligible(candidate: Candidate, ranker: ImportanceRanker) -> bool:
+    allowed_reputation = set(ranker.paper_cfg.get("must_read_allowed_reputation", ["trusted"]))
+    preprint_min_score = float(ranker.paper_cfg.get("must_read_preprint_min_score", 60))
+    if candidate.venue_quality == "preprint":
+        return candidate.importance_bucket == "keep" and candidate.importance_score >= preprint_min_score
+    return candidate.venue_reputation in allowed_reputation
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -81,7 +109,7 @@ def build_reproduction_reason(title: str, topics: list[str]) -> str:
     return "可以作为第二梯队复现候选。"
 
 
-def candidate_from_paper(paper, ranker: ImportanceRanker) -> Candidate:
+def candidate_from_paper(paper, ranker: ImportanceRanker, registry: dict[str, dict[str, str]], default_status: str) -> Candidate:
     payload = {
         "title": paper.title,
         "abstract": paper.abstract,
@@ -107,6 +135,7 @@ def candidate_from_paper(paper, ranker: ImportanceRanker) -> Candidate:
         importance_score=importance_score,
         importance_bucket=importance_bucket,
         venue_quality=ranker.venue_quality_label(payload),
+        venue_reputation=venue_reputation_status(paper.journal or "", paper.venue or "", registry, default_status),
         tier=paper.tier or 0,
         fit_reason=build_fit_reason(paper.title, leaf_topics),
         reproduction_reason=build_reproduction_reason(paper.title, leaf_topics),
@@ -166,12 +195,13 @@ def main() -> None:
 
     pipeline = CollectionPipeline()
     ranker = ImportanceRanker()
+    venue_registry, default_venue_status = load_venue_reputation_registry()
     candidates: list[Candidate] = []
 
     for paper in pipeline.database.list_papers(limit=2000):
         if cutoff and (not paper.collected_at or paper.collected_at < cutoff):
             continue
-        candidate = candidate_from_paper(paper, ranker)
+        candidate = candidate_from_paper(paper, ranker, venue_registry, default_venue_status)
         if should_include_frontier(candidate):
             candidates.append(candidate)
 
@@ -180,8 +210,10 @@ def main() -> None:
     used_titles: set[str] = set()
     must_read: list[Candidate] = []
 
+    must_read_pool = [candidate for candidate in candidates if is_must_read_eligible(candidate, ranker)]
+
     theory_pick = pick_first(
-        candidates,
+        must_read_pool,
         lambda candidate: any(
             keyword in candidate.title.lower()
             for keyword in ["ergod", "markov", "random walk", "thermalization", "diffusion approximation"]
@@ -193,8 +225,8 @@ def main() -> None:
         used_titles.add(theory_pick.title)
 
     venue_pick = pick_first(
-        candidates,
-        lambda candidate: candidate.venue_quality in {"top_tier", "high_quality", "solid_domain"}
+        must_read_pool,
+        lambda candidate: candidate.venue_reputation == "trusted"
         and candidate.title != (theory_pick.title if theory_pick else ""),
         used_titles,
     )
@@ -203,7 +235,7 @@ def main() -> None:
         used_titles.add(venue_pick.title)
 
     ai_pick = pick_first(
-        candidates,
+        must_read_pool,
         lambda candidate: (
             "inverse problem" in candidate.title.lower()
             or "prior" in candidate.title.lower()
@@ -216,7 +248,7 @@ def main() -> None:
         must_read.append(ai_pick)
         used_titles.add(ai_pick.title)
 
-    for candidate in candidates:
+    for candidate in must_read_pool:
         if len(must_read) >= args.must_read:
             break
         if candidate.title in used_titles:
@@ -243,13 +275,20 @@ def main() -> None:
         if len(watchlist) >= args.watchlist:
             break
 
-    output_path = ROOT / "digests" / f"{digest_date}-frontier-followup-pack.md"
+    output_path = canonical_digest_path(ROOT / "digests", digest_date, "paper_queue")
     lines = [
-        f"# Frontier Follow-up Pack {digest_date}",
+        "---",
+        'title: "Paper Queue"',
+        'digest_type: "paper_queue"',
+        f'date: "{digest_date}"',
+        "---",
         "",
-        "这份文档的目标不是记录所有新论文，而是给你一个可以持续执行的前沿跟进入口。",
+        f"# Paper Queue {digest_date}",
         "",
-        "## Must Read 3",
+        "这份文档是当天论文队列的唯一入口，用来决定：先读什么、继续跟踪什么、以及哪些值得进入复现。",
+        "Must Read 默认只从已核验口碑的 venue 或高重要性 preprint 中选择；弱 venue 只进入复现候选或 watchlist。",
+        "",
+        "## Must Read",
         "",
     ]
 
@@ -260,6 +299,7 @@ def main() -> None:
                 "",
                 f"- Venue: `{candidate.journal}`",
                 f"- Venue quality: `{candidate.venue_quality}`",
+                f"- Venue reputation: `{candidate.venue_reputation}`",
                 f"- Importance: `{candidate.importance_score:.1f}`",
                 f"- Topics: {', '.join(candidate.topics) if candidate.topics else 'no_leaf_topic'}",
                 f"- Why now: {candidate.fit_reason}",
@@ -281,6 +321,7 @@ def main() -> None:
                 f"### {index}. {candidate.title}",
                 "",
                 f"- Venue: `{candidate.journal}`",
+                f"- Venue reputation: `{candidate.venue_reputation}`",
                 f"- Topics: {', '.join(candidate.topics) if candidate.topics else 'no_leaf_topic'}",
                 f"- Why reproduce: {candidate.reproduction_reason}",
                 f"- URL: {candidate.url or 'N/A'}",
@@ -297,7 +338,7 @@ def main() -> None:
 
     for candidate in watchlist:
         lines.append(
-            f"- `{candidate.title}` | {candidate.journal} | {candidate.venue_quality} | {candidate.importance_score:.1f}"
+            f"- `{candidate.title}` | {candidate.journal} | {candidate.venue_quality} | {candidate.venue_reputation} | {candidate.importance_score:.1f}"
         )
 
     lines.extend(
@@ -316,6 +357,7 @@ def main() -> None:
         ]
     )
 
+    output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text("\n".join(lines), encoding="utf-8")
     print(
         {

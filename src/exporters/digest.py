@@ -6,7 +6,7 @@ import re
 from pathlib import Path
 
 from src.storage.database import Database
-from src.utils.helpers import dump_json, utc_now
+from src.utils.helpers import canonical_digest_path, dump_json, extract_date_prefix, utc_now
 
 
 class DigestExporter:
@@ -28,7 +28,7 @@ class DigestExporter:
         papers = database.get_recent_papers(days=days, limit=paper_limit)
         stats = database.get_stats()
         today = utc_now().date().isoformat()
-        output_path = self.digest_dir / f"{today}-{period}.md"
+        output_path = canonical_digest_path(self.digest_dir, today, period)
 
         topic_counts: dict[str, int] = {}
         for paper in papers:
@@ -82,9 +82,12 @@ class DigestExporter:
     def _write_digest_index(self) -> None:
         payload = []
         pattern = re.compile(r'^title:\s*"(?P<title>.+)"$')
-        for digest_path in sorted(self.digest_dir.glob("*.md"), reverse=True):
+        for digest_path in sorted(self.digest_dir.rglob("*.md"), reverse=True):
             title = digest_path.stem
-            created = digest_path.name[:10]
+            relative_path = digest_path.relative_to(self.digest_dir)
+            created = extract_date_prefix(digest_path)
+            if not created:
+                created = "shared" if relative_path.parts and relative_path.parts[0] == "shared" else digest_path.name[:10]
             with digest_path.open("r", encoding="utf-8") as handle:
                 lines = handle.read().splitlines()
             for line in lines[:10]:
@@ -95,7 +98,7 @@ class DigestExporter:
             payload.append(
                 {
                     "title": title,
-                    "path": digest_path.name,
+                    "path": relative_path.as_posix(),
                     "created_at": created,
                 }
             )

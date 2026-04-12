@@ -477,6 +477,20 @@
       "citation_count": 0
     },
     {
+      "id": "paper:66",
+      "label": "Diffusion models with physics-guided inference for solving partial differential equations",
+      "type": "paper",
+      "relevance_score": 54.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:65",
+      "label": "MVNN: A Measure-Valued Neural Network for Learning McKean-Vlasov Dynamics from Particle Data",
+      "type": "paper",
+      "relevance_score": 54.0,
+      "citation_count": 0
+    },
+    {
       "id": "paper:12",
       "label": "Learning Stochastic Thermodynamics Directly from Correlation and Trajectory-Fluctuation Currents",
       "type": "paper",
@@ -498,15 +512,15 @@
       "citation_count": 0
     },
     {
-      "id": "paper:66",
-      "label": "Diffusion models with physics-guided inference for solving partial differential equations",
+      "id": "paper:69",
+      "label": "From molecular dynamics to kinetic models: data-driven generalized collision operators in 1D3V plasmas",
       "type": "paper",
       "relevance_score": 51.0,
       "citation_count": 0
     },
     {
-      "id": "paper:65",
-      "label": "MVNN: A Measure-Valued Neural Network for Learning McKean-Vlasov Dynamics from Particle Data",
+      "id": "paper:68",
+      "label": "Stochastic Dimension Implicit Functional Projections for Exact Integral Conservation in High-Dimensional PINNs",
       "type": "paper",
       "relevance_score": 51.0,
       "citation_count": 0
@@ -614,20 +628,6 @@
       "label": "Entropy production fluctuation theorem and the nonequilibrium work relation for free energy differences",
       "type": "paper",
       "relevance_score": 42.0,
-      "citation_count": 0
-    },
-    {
-      "id": "paper:69",
-      "label": "From molecular dynamics to kinetic models: data-driven generalized collision operators in 1D3V plasmas",
-      "type": "paper",
-      "relevance_score": 36.0,
-      "citation_count": 0
-    },
-    {
-      "id": "paper:68",
-      "label": "Stochastic Dimension Implicit Functional Projections for Exact Integral Conservation in High-Dimensional PINNs",
-      "type": "paper",
-      "relevance_score": 36.0,
       "citation_count": 0
     },
     {
@@ -1054,6 +1054,36 @@
       "type": "belongs_to"
     },
     {
+      "source": "paper:66",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:66",
+      "target": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:66",
+      "target": "ai_for_physics/generative_dynamics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:65",
+      "target": "stochastic_analysis",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:65",
+      "target": "stochastic_analysis/stochastic_dynamics/sde_theory",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:65",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
       "source": "paper:12",
       "target": "bridges/translation_layers/fokker_planck_master",
       "type": "belongs_to"
@@ -1099,33 +1129,33 @@
       "type": "belongs_to"
     },
     {
-      "source": "paper:66",
+      "source": "paper:69",
+      "target": "bridges/translation_layers/fokker_planck_master",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:69",
+      "target": "bridges",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:69",
+      "target": "bridges/translation_layers",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:68",
       "target": "ai_for_physics",
       "type": "belongs_to"
     },
     {
-      "source": "paper:66",
-      "target": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
+      "source": "paper:68",
+      "target": "ai_for_physics/physics_informed_modeling",
       "type": "belongs_to"
     },
     {
-      "source": "paper:66",
-      "target": "ai_for_physics/generative_dynamics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:65",
-      "target": "stochastic_analysis",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:65",
-      "target": "stochastic_analysis/stochastic_dynamics/sde_theory",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:65",
-      "target": "statistical_physics",
+      "source": "paper:68",
+      "target": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
       "type": "belongs_to"
     },
     {
@@ -1351,36 +1381,6 @@
     {
       "source": "paper:4",
       "target": "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:69",
-      "target": "bridges/translation_layers/fokker_planck_master",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:69",
-      "target": "bridges",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:69",
-      "target": "bridges/translation_layers",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:68",
-      "target": "ai_for_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:68",
-      "target": "ai_for_physics/physics_informed_modeling",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:68",
-      "target": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
       "type": "belongs_to"
     },
     {

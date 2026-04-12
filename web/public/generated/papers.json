@@ -78,7 +78,7 @@
       "statistical_physics/non_equilibrium_dynamics"
     ],
     "markdown_path": "stochastic_analysis/path_foundations/brownian_motion/ergodicity-and-regime-recoverability-in-finite-markov-modulated-random-walks.md",
-    "importance_score": 120.8,
+    "importance_score": 112.8,
     "importance_bucket": "keep",
     "venue_quality": "solid_domain"
   },
@@ -585,7 +585,7 @@
     "pdf_url": "https://arxiv.org/pdf/2604.00333",
     "citation_count": 0,
     "influential_citation_count": 0,
-    "relevance_score": 51.0,
+    "relevance_score": 54.0,
     "tier": 0,
     "status": "unread",
     "is_seminal": false,
@@ -602,7 +602,7 @@
       "ai_for_physics/physics_informed_modeling/scientific_ml_applications"
     ],
     "markdown_path": "stochastic_analysis/stochastic_dynamics/sde_theory/mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-pa.md",
-    "importance_score": 68.6,
+    "importance_score": 70.4,
     "importance_bucket": "keep",
     "venue_quality": "preprint"
   },
@@ -638,44 +638,6 @@
     "importance_score": 68.6,
     "importance_bucket": "keep",
     "venue_quality": "preprint"
-  },
-  {
-    "id": 49,
-    "title": "A hybrid bio-inspired model for predicting urban air pollution using deep learning",
-    "abstract": "Accurate prediction of urban air quality is vital for protecting public health and the environment. The current challenges in air quality prediction models include noisy data, missing data, interactions of pollutants, temporal and spatial variations, external variables, lack of generalization, and real-time prediction. To overcome these challenges, a hybrid bio-inspired model for predicting urban air pollution using deep learning (AQP-SAPINN-HMRFO) is proposed. The input data is obtained from the Global Urban Air Quality Index dataset. The data is preprocessed with Implicit Bulk Surface Filtering (IBSF) to normalize the data and treat missing values to provide high-quality input data. The Quadratic-Phase Wave Packet Transform (QPWPT) is used to extract relevant features such as concentrations of pollutants, interactions between pollutants, and past concentrations of pollutants. Air quality forecasting is carried out by using a Self-Adaptive Physics-Informed Neural Network (SAPINN) that predicts concentrations of five major air pollutants like Particulate Matter $$\\text {PM}_{2.5}$$, Carbon Monoxide (CO), Nitrogen Dioxide ($$\\text {NO}_2$$), Ozone ($$\\text {O}_3$$), and Sulfur Dioxi",
-    "authors": [
-      "Deevesh Chaudhary",
-      "Prashant Vats",
-      "Shailender Vats",
-      "Saneh Lata Yadav",
-      "Avani Sharma"
-    ],
-    "year": 2026,
-    "publication_date": "2026-04-02",
-    "journal": "Scientific Reports",
-    "venue": "Scientific Reports",
-    "doi": "10.1038/s41598-026-40726-w",
-    "arxiv_id": null,
-    "url": "https://openalex.org/W7147237838",
-    "pdf_url": "https://www.nature.com/articles/s41598-026-40726-w_reference.pdf",
-    "citation_count": 0,
-    "influential_citation_count": 0,
-    "relevance_score": 58.0,
-    "tier": 3,
-    "status": "unread",
-    "is_seminal": false,
-    "source": "openalex",
-    "topics": [
-      "ai_for_physics",
-      "urban_complex_systems",
-      "urban_complex_systems/urban_data_and_generation/urban_data_science",
-      "ai_for_physics/physics_informed_modeling",
-      "urban_complex_systems/urban_data_and_generation"
-    ],
-    "markdown_path": "urban_complex_systems/urban_data_and_generation/urban_data_science/a-hybrid-bio-inspired-model-for-predicting-urban-air-pollution-using-deep-learni.md",
-    "importance_score": 60.8,
-    "importance_bucket": "keep",
-    "venue_quality": "solid_domain"
   },
   {
     "id": 84,
@@ -823,6 +785,44 @@
     "venue_quality": "preprint"
   },
   {
+    "id": 49,
+    "title": "A hybrid bio-inspired model for predicting urban air pollution using deep learning",
+    "abstract": "Accurate prediction of urban air quality is vital for protecting public health and the environment. The current challenges in air quality prediction models include noisy data, missing data, interactions of pollutants, temporal and spatial variations, external variables, lack of generalization, and real-time prediction. To overcome these challenges, a hybrid bio-inspired model for predicting urban air pollution using deep learning (AQP-SAPINN-HMRFO) is proposed. The input data is obtained from the Global Urban Air Quality Index dataset. The data is preprocessed with Implicit Bulk Surface Filtering (IBSF) to normalize the data and treat missing values to provide high-quality input data. The Quadratic-Phase Wave Packet Transform (QPWPT) is used to extract relevant features such as concentrations of pollutants, interactions between pollutants, and past concentrations of pollutants. Air quality forecasting is carried out by using a Self-Adaptive Physics-Informed Neural Network (SAPINN) that predicts concentrations of five major air pollutants like Particulate Matter $$\\text {PM}_{2.5}$$, Carbon Monoxide (CO), Nitrogen Dioxide ($$\\text {NO}_2$$), Ozone ($$\\text {O}_3$$), and Sulfur Dioxi",
+    "authors": [
+      "Deevesh Chaudhary",
+      "Prashant Vats",
+      "Shailender Vats",
+      "Saneh Lata Yadav",
+      "Avani Sharma"
+    ],
+    "year": 2026,
+    "publication_date": "2026-04-02",
+    "journal": "Scientific Reports",
+    "venue": "Scientific Reports",
+    "doi": "10.1038/s41598-026-40726-w",
+    "arxiv_id": null,
+    "url": "https://openalex.org/W7147237838",
+    "pdf_url": "https://www.nature.com/articles/s41598-026-40726-w_reference.pdf",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "relevance_score": 58.0,
+    "tier": 3,
+    "status": "unread",
+    "is_seminal": false,
+    "source": "openalex",
+    "topics": [
+      "ai_for_physics",
+      "urban_complex_systems",
+      "urban_complex_systems/urban_data_and_generation/urban_data_science",
+      "ai_for_physics/physics_informed_modeling",
+      "urban_complex_systems/urban_data_and_generation"
+    ],
+    "markdown_path": "urban_complex_systems/urban_data_and_generation/urban_data_science/a-hybrid-bio-inspired-model-for-predicting-urban-air-pollution-using-deep-learni.md",
+    "importance_score": 52.8,
+    "importance_bucket": "review",
+    "venue_quality": "solid_domain"
+  },
+  {
     "id": 5,
     "title": "Stochastic thermodynamics, fluctuation theorems and molecular machines",
     "abstract": "",
@@ -854,44 +854,6 @@
     "importance_score": 52.8,
     "importance_bucket": "review",
     "venue_quality": "unranked"
-  },
-  {
-    "id": 80,
-    "title": "Intelligent performance prediction of nanoparticle-enhanced automotive radiator cooling using CFD and machine learning",
-    "abstract": "Active thermal control of automotive engines is vital for improving performance, robustness and conventional coolants like water and air frequently bring insufficient heat dissipation. To counterpart this ill effect, the propose study examines and investigate the performance enrichment of an automotive radiator using Al₂O₃–ethylene glycol (EG) nanofluids concluded by collective numerical, experimental, and data-driven approach. Initially, three-dimensional radiator model was developed using AUTOCAD software and computational study was performed in ANSYS-FLUENT, using a pressure-based model and a realizable k–ε turbulence model. The Grid-independence test was directed to ensure numerical accuracy, and CFD predictions were experimentally validated through experimental radiator test rig. The CFD result for pure EG predicted an outlet temperature of 70.11 °C that was closely agreed with the experimental value of 69.11 °C confirming the consistency of the numerical model. The blend of Al₂O₃ nanoparticles significantly enhanced heat transfer characteristics, whereas growing nanoparticle blend leads to progressive reductions in outlet temperature. At 2% concentration, the outlet temperatu",
-    "authors": [
-      "Jitendra Satpute",
-      "Dilip Kumar Jang Bahadur Saini",
-      "Pooja Sharma",
-      "Bankush Kumar",
-      "Pravin Thorat",
-      "Gautam Kumar",
-      "Kumar Dilip"
-    ],
-    "year": 2026,
-    "publication_date": "2026-04-06",
-    "journal": "Scientific Reports",
-    "venue": "Scientific Reports",
-    "doi": "10.1038/s41598-026-43497-6",
-    "arxiv_id": null,
-    "url": "https://openalex.org/W7150794511",
-    "pdf_url": "https://www.nature.com/articles/s41598-026-43497-6_reference.pdf",
-    "citation_count": 0,
-    "influential_citation_count": 0,
-    "relevance_score": 55.0,
-    "tier": 3,
-    "status": "unread",
-    "is_seminal": false,
-    "source": "openalex",
-    "topics": [
-      "statistical_physics",
-      "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "statistical_physics/non_equilibrium_dynamics"
-    ],
-    "markdown_path": "statistical_physics/non_equilibrium_dynamics/nonequilibrium/intelligent-performance-prediction-of-nanoparticle-enhanced-automotive-radiator.md",
-    "importance_score": 51.0,
-    "importance_bucket": "review",
-    "venue_quality": "solid_domain"
   },
   {
     "id": 62,
@@ -1030,6 +992,78 @@
     "venue_quality": "unranked"
   },
   {
+    "id": 69,
+    "title": "From molecular dynamics to kinetic models: data-driven generalized collision operators in 1D3V plasmas",
+    "abstract": "We present a data-driven approach for constructing generalized collisional kinetic models for inhomogeneous plasmas in one-dimensional physical space and three-dimensional velocity space (1D-3V). The collision operator is directly learned from micro-scale molecular dynamics (MD) and accurately accounts for the unresolved particle interactions over a broad range of plasma conditions. Unlike the standard Landau operator, the present operator takes an anisotropic, non-stationary form that captures the heterogeneous collisional energy transfer arising from the many-body interactions, which is crucial for plasma kinetics beyond the weakly coupled regime. Efficient numerical evaluation is achieved through a low-rank tensor representation with $O(N \\log N)$ computational complexity. The constructed kinetic equation strictly preserves conservation laws and physical constraints and therefore, enables us to develop an explicit second-order, energy-conserving scheme that ensures fully discrete conservation of mass and total energy. Numerical results demonstrate that the present model accurately predicts both transport coefficients and several 1D-3V kinetic processes compared with MD simulatio",
+    "authors": [
+      "Yue Zhao",
+      "Guosheng Fu",
+      "Huan Lei"
+    ],
+    "year": 2026,
+    "publication_date": "2026-03-29",
+    "journal": "arXiv (Cornell University)",
+    "venue": "arXiv (Cornell University)",
+    "doi": null,
+    "arxiv_id": null,
+    "url": "https://openalex.org/W7148177775",
+    "pdf_url": "https://arxiv.org/pdf/2603.27828",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "relevance_score": 51.0,
+    "tier": 0,
+    "status": "unread",
+    "is_seminal": false,
+    "source": "openalex",
+    "topics": [
+      "bridges/translation_layers/fokker_planck_master",
+      "bridges",
+      "bridges/translation_layers"
+    ],
+    "markdown_path": "bridges/translation_layers/fokker_planck_master/from-molecular-dynamics-to-kinetic-models-data-driven-generalized-collision-oper.md",
+    "importance_score": 46.6,
+    "importance_bucket": "review",
+    "venue_quality": "unranked"
+  },
+  {
+    "id": 80,
+    "title": "Intelligent performance prediction of nanoparticle-enhanced automotive radiator cooling using CFD and machine learning",
+    "abstract": "Active thermal control of automotive engines is vital for improving performance, robustness and conventional coolants like water and air frequently bring insufficient heat dissipation. To counterpart this ill effect, the propose study examines and investigate the performance enrichment of an automotive radiator using Al₂O₃–ethylene glycol (EG) nanofluids concluded by collective numerical, experimental, and data-driven approach. Initially, three-dimensional radiator model was developed using AUTOCAD software and computational study was performed in ANSYS-FLUENT, using a pressure-based model and a realizable k–ε turbulence model. The Grid-independence test was directed to ensure numerical accuracy, and CFD predictions were experimentally validated through experimental radiator test rig. The CFD result for pure EG predicted an outlet temperature of 70.11 °C that was closely agreed with the experimental value of 69.11 °C confirming the consistency of the numerical model. The blend of Al₂O₃ nanoparticles significantly enhanced heat transfer characteristics, whereas growing nanoparticle blend leads to progressive reductions in outlet temperature. At 2% concentration, the outlet temperatu",
+    "authors": [
+      "Jitendra Satpute",
+      "Dilip Kumar Jang Bahadur Saini",
+      "Pooja Sharma",
+      "Bankush Kumar",
+      "Pravin Thorat",
+      "Gautam Kumar",
+      "Kumar Dilip"
+    ],
+    "year": 2026,
+    "publication_date": "2026-04-06",
+    "journal": "Scientific Reports",
+    "venue": "Scientific Reports",
+    "doi": "10.1038/s41598-026-43497-6",
+    "arxiv_id": null,
+    "url": "https://openalex.org/W7150794511",
+    "pdf_url": "https://www.nature.com/articles/s41598-026-43497-6_reference.pdf",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "relevance_score": 55.0,
+    "tier": 3,
+    "status": "unread",
+    "is_seminal": false,
+    "source": "openalex",
+    "topics": [
+      "statistical_physics",
+      "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "statistical_physics/non_equilibrium_dynamics"
+    ],
+    "markdown_path": "statistical_physics/non_equilibrium_dynamics/nonequilibrium/intelligent-performance-prediction-of-nanoparticle-enhanced-automotive-radiator.md",
+    "importance_score": 43.0,
+    "importance_bucket": "review",
+    "venue_quality": "solid_domain"
+  },
+  {
     "id": 66,
     "title": "Diffusion models with physics-guided inference for solving partial differential equations",
     "abstract": "Diffusion models have recently emerged as powerful stochastic frameworks for high-dimensional inference and generation. However, existing applications to partial differential equations (PDEs) predominantly rely on physics-informed training strategies, which tightly couple learning with specific governing equations and limit generalization across problem settings. In this work, we propose a diffusion model with physics-guided inference for solving PDEs, in which the diffusion model is trained using standard data-driven procedures, while physical laws are incorporated exclusively during the reverse inference stage. The reverse diffusion dynamics is guided by a PDE residual energy function, combined with Gaussian smoothing and explicit boundary enforcement, yielding a physically consistent stochastic iteration that is independent of the training process. From a numerical standpoint, the proposed framework can be interpreted as a diffusion-inspired implicit solver that converges to the PDE solution even when initialized from random noise and perturbed by stochastic fluctuations. The method is validated on classical PDE equation such as Poisson, Diffusion, and Burgers equations with var",
@@ -1049,7 +1083,7 @@
     "pdf_url": "https://arxiv.org/pdf/2604.01242",
     "citation_count": 0,
     "influential_citation_count": 0,
-    "relevance_score": 51.0,
+    "relevance_score": 54.0,
     "tier": 0,
     "status": "unread",
     "is_seminal": false,
@@ -1061,76 +1095,39 @@
       "ai_for_physics/physics_informed_modeling"
     ],
     "markdown_path": "ai_for_physics/physics_informed_modeling/physics_informed_generative/diffusion-models-with-physics-guided-inference-for-solving-partial-differential.md",
-    "importance_score": 40.6,
+    "importance_score": 42.4,
     "importance_bucket": "review",
     "venue_quality": "preprint"
   },
   {
-    "id": 69,
-    "title": "From molecular dynamics to kinetic models: data-driven generalized collision operators in 1D3V plasmas",
-    "abstract": "We present a data-driven approach for constructing generalized collisional kinetic models for inhomogeneous plasmas in one-dimensional physical space and three-dimensional velocity space (1D-3V). The collision operator is directly learned from micro-scale molecular dynamics (MD) and accurately accounts for the unresolved particle interactions over a broad range of plasma conditions. Unlike the standard Landau operator, the present operator takes an anisotropic, non-stationary form that captures the heterogeneous collisional energy transfer arising from the many-body interactions, which is crucial for plasma kinetics beyond the weakly coupled regime. Efficient numerical evaluation is achieved through a low-rank tensor representation with $O(N \\log N)$ computational complexity. The constructed kinetic equation strictly preserves conservation laws and physical constraints and therefore, enables us to develop an explicit second-order, energy-conserving scheme that ensures fully discrete conservation of mass and total energy. Numerical results demonstrate that the present model accurately predicts both transport coefficients and several 1D-3V kinetic processes compared with MD simulatio",
+    "id": 68,
+    "title": "Stochastic Dimension Implicit Functional Projections for Exact Integral Conservation in High-Dimensional PINNs",
+    "abstract": "Enforcing exact macroscopic conservation laws, such as mass and energy, in neural partial differential equation (PDE) solvers is computationally challenging in high dimensions. Traditional discrete projections rely on deterministic quadrature that scales poorly and restricts mesh-free formulations like PINNs. Furthermore, high-order operators incur heavy memory overhead, and generic optimization often lacks convergence guarantees for non-convex conservation manifolds. To address this, we propose the Stochastic Dimension Implicit Functional Projection (SDIFP) framework. Instead of projecting discrete vectors, SDIFP applies a global affine transformation to the continuous network output. This yields closed-form solutions for integral constraints via detached Monte Carlo (MC) quadrature, bypassing spatial grid dependencies. For scalable training, we introduce a doubly-stochastic unbiased gradient estimator (DS-UGE). By decoupling spatial sampling from differential operator subsampling, the DS-UGE reduces memory complexity from $\\mathcal{O}(M \\times N_{\\mathcal{L}})$ to $\\mathcal{O}(N \\times |\\mathcal{I}|)$. SDIFP mitigates sampling variance, preserves solution regularity, and maintain",
     "authors": [
-      "Yue Zhao",
-      "Guosheng Fu",
-      "Huan Lei"
+      "Zhangyong Liang"
     ],
     "year": 2026,
-    "publication_date": "2026-03-29",
+    "publication_date": "2026-03-31",
     "journal": "arXiv (Cornell University)",
     "venue": "arXiv (Cornell University)",
     "doi": null,
     "arxiv_id": null,
-    "url": "https://openalex.org/W7148177775",
-    "pdf_url": "https://arxiv.org/pdf/2603.27828",
+    "url": "https://openalex.org/W7148178057",
+    "pdf_url": "https://arxiv.org/pdf/2603.29237",
     "citation_count": 0,
     "influential_citation_count": 0,
-    "relevance_score": 36.0,
+    "relevance_score": 51.0,
     "tier": 0,
     "status": "unread",
     "is_seminal": false,
     "source": "openalex",
     "topics": [
-      "bridges/translation_layers/fokker_planck_master",
-      "bridges",
-      "bridges/translation_layers"
-    ],
-    "markdown_path": "bridges/translation_layers/fokker_planck_master/from-molecular-dynamics-to-kinetic-models-data-driven-generalized-collision-oper.md",
-    "importance_score": 37.6,
-    "importance_bucket": "archive",
-    "venue_quality": "unranked"
-  },
-  {
-    "id": 21,
-    "title": "DNS-Calibrated Physics-Informed Neural Networks with Learnable Constants for Reynolds Number Extrapolation in Turbulent Channel Flows",
-    "abstract": "This paper employs Physics-Informed Neural Networks (PINNs) for the reconstruction and modelling of mean velocity profiles in fully developed turbulent channel flow over a high friction Reynolds number (Reτ). The network is trained with a high-fidelity Direct Numerical Simulation (DNS) dataset from channel flows, for Reτ=395–4186, and can extrapolate up to Reτ = 10,049. The model predicts the mean velocity in terms of the inner-law variables, u+, across Reynolds numbers using the inputs η=y+/Reτ and Reτ. A key novelty is the simultaneous optimisation of the network weights alongside two fundamental turbulence parameters, i.e., the von Kármán constant (κ) and the van Driest damping constant (A+), allowing the PINN to autonomously calibrate the near-wall damping and log-law scaling directly from the physics-augmented loss function. The model performance is evaluated using profile-based metrics (R2, mean square and absolute error) and integrated quantities (V¯+, Reb, and the skin-friction coefficient Cf), with comparisons against DNS-integrated friction values and classical theoretical values. The resulting hybrid framework offers a promising foundation for real-time digital twins and",
-    "authors": [
-      "Apostolos Palasis",
-      "Filippos Sofos"
-    ],
-    "year": 2026,
-    "publication_date": "2026-04-03",
-    "journal": "Applied Sciences",
-    "venue": "Applied Sciences",
-    "doi": "10.3390/app16073525",
-    "arxiv_id": null,
-    "url": "https://openalex.org/W7150923305",
-    "pdf_url": "https://www.mdpi.com/2076-3417/16/7/3525/pdf?version=1775225020",
-    "citation_count": 0,
-    "influential_citation_count": 0,
-    "relevance_score": 50.0,
-    "tier": 0,
-    "status": "unread",
-    "is_seminal": false,
-    "source": "openalex",
-    "topics": [
-      "statistical_physics",
-      "statistical_physics/collective_structure/phase_transitions",
       "ai_for_physics",
-      "statistical_physics/collective_structure",
-      "ai_for_physics/physics_informed_modeling"
+      "ai_for_physics/physics_informed_modeling",
+      "ai_for_physics/physics_informed_modeling/scientific_ml_applications"
     ],
-    "markdown_path": "statistical_physics/collective_structure/phase_transitions/dns-calibrated-physics-informed-neural-networks-with-learnable-constants-for-rey.md",
-    "importance_score": 34.0,
+    "markdown_path": "ai_for_physics/physics_informed_modeling/scientific_ml_applications/stochastic-dimension-implicit-functional-projections-for-exact-integral-conserva.md",
+    "importance_score": 34.6,
     "importance_bucket": "archive",
     "venue_quality": "unranked"
   },
@@ -1198,38 +1195,6 @@
     ],
     "markdown_path": "statistical_physics/non_equilibrium_dynamics/nonequilibrium/characterizing-the-detailed-balance-property-by-means-of-measurements.md",
     "importance_score": 28.2,
-    "importance_bucket": "archive",
-    "venue_quality": "unranked"
-  },
-  {
-    "id": 68,
-    "title": "Stochastic Dimension Implicit Functional Projections for Exact Integral Conservation in High-Dimensional PINNs",
-    "abstract": "Enforcing exact macroscopic conservation laws, such as mass and energy, in neural partial differential equation (PDE) solvers is computationally challenging in high dimensions. Traditional discrete projections rely on deterministic quadrature that scales poorly and restricts mesh-free formulations like PINNs. Furthermore, high-order operators incur heavy memory overhead, and generic optimization often lacks convergence guarantees for non-convex conservation manifolds. To address this, we propose the Stochastic Dimension Implicit Functional Projection (SDIFP) framework. Instead of projecting discrete vectors, SDIFP applies a global affine transformation to the continuous network output. This yields closed-form solutions for integral constraints via detached Monte Carlo (MC) quadrature, bypassing spatial grid dependencies. For scalable training, we introduce a doubly-stochastic unbiased gradient estimator (DS-UGE). By decoupling spatial sampling from differential operator subsampling, the DS-UGE reduces memory complexity from $\\mathcal{O}(M \\times N_{\\mathcal{L}})$ to $\\mathcal{O}(N \\times |\\mathcal{I}|)$. SDIFP mitigates sampling variance, preserves solution regularity, and maintain",
-    "authors": [
-      "Zhangyong Liang"
-    ],
-    "year": 2026,
-    "publication_date": "2026-03-31",
-    "journal": "arXiv (Cornell University)",
-    "venue": "arXiv (Cornell University)",
-    "doi": null,
-    "arxiv_id": null,
-    "url": "https://openalex.org/W7148178057",
-    "pdf_url": "https://arxiv.org/pdf/2603.29237",
-    "citation_count": 0,
-    "influential_citation_count": 0,
-    "relevance_score": 36.0,
-    "tier": 0,
-    "status": "unread",
-    "is_seminal": false,
-    "source": "openalex",
-    "topics": [
-      "ai_for_physics",
-      "ai_for_physics/physics_informed_modeling",
-      "ai_for_physics/physics_informed_modeling/scientific_ml_applications"
-    ],
-    "markdown_path": "ai_for_physics/physics_informed_modeling/scientific_ml_applications/stochastic-dimension-implicit-functional-projections-for-exact-integral-conserva.md",
-    "importance_score": 25.6,
     "importance_bucket": "archive",
     "venue_quality": "unranked"
   },
@@ -1333,6 +1298,41 @@
       "statistical_physics/non_equilibrium_dynamics"
     ],
     "markdown_path": "statistical_physics/non_equilibrium_dynamics/nonequilibrium/nonequilibrium-chimeric-switching-nex-stabilizes-binding-free-energy-calculation.md",
+    "importance_score": 18.0,
+    "importance_bucket": "archive",
+    "venue_quality": "unranked"
+  },
+  {
+    "id": 21,
+    "title": "DNS-Calibrated Physics-Informed Neural Networks with Learnable Constants for Reynolds Number Extrapolation in Turbulent Channel Flows",
+    "abstract": "This paper employs Physics-Informed Neural Networks (PINNs) for the reconstruction and modelling of mean velocity profiles in fully developed turbulent channel flow over a high friction Reynolds number (Reτ). The network is trained with a high-fidelity Direct Numerical Simulation (DNS) dataset from channel flows, for Reτ=395–4186, and can extrapolate up to Reτ = 10,049. The model predicts the mean velocity in terms of the inner-law variables, u+, across Reynolds numbers using the inputs η=y+/Reτ and Reτ. A key novelty is the simultaneous optimisation of the network weights alongside two fundamental turbulence parameters, i.e., the von Kármán constant (κ) and the van Driest damping constant (A+), allowing the PINN to autonomously calibrate the near-wall damping and log-law scaling directly from the physics-augmented loss function. The model performance is evaluated using profile-based metrics (R2, mean square and absolute error) and integrated quantities (V¯+, Reb, and the skin-friction coefficient Cf), with comparisons against DNS-integrated friction values and classical theoretical values. The resulting hybrid framework offers a promising foundation for real-time digital twins and",
+    "authors": [
+      "Apostolos Palasis",
+      "Filippos Sofos"
+    ],
+    "year": 2026,
+    "publication_date": "2026-04-03",
+    "journal": "Applied Sciences",
+    "venue": "Applied Sciences",
+    "doi": "10.3390/app16073525",
+    "arxiv_id": null,
+    "url": "https://openalex.org/W7150923305",
+    "pdf_url": "https://www.mdpi.com/2076-3417/16/7/3525/pdf?version=1775225020",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "relevance_score": 50.0,
+    "tier": 0,
+    "status": "unread",
+    "is_seminal": false,
+    "source": "openalex",
+    "topics": [
+      "statistical_physics",
+      "statistical_physics/collective_structure/phase_transitions",
+      "ai_for_physics",
+      "statistical_physics/collective_structure",
+      "ai_for_physics/physics_informed_modeling"
+    ],
+    "markdown_path": "statistical_physics/collective_structure/phase_transitions/dns-calibrated-physics-informed-neural-networks-with-learnable-constants-for-rey.md",
     "importance_score": 18.0,
     "importance_bucket": "archive",
     "venue_quality": "unranked"
