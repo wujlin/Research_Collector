@@ -28,8 +28,22 @@
    作为 `SJR / quartile / h-index` 的补充参考。
 4. 期刊或会议官方主页
    用于确认 publisher、indexing、scope、editorial information。
+5. 作者与机构背景
+   用于确认 lead / corresponding / last author 所在机构是否长期做这个方向，以及团队是否专业对口。
 
 如果以上几步都拿不到稳定信号，就把 venue 视为 `unreviewed`，不要直接进 `Must Read`。
+
+## 2.5 文章级补充核验
+
+venue 过关后，对具体文章还要补一次机构筛选：
+
+- 看 `last author / corresponding author` 是否来自长期做该主题的专业组，而不只是大而泛的机构名头。
+- 看作者单位是否与论文问题匹配，例如：
+  - 随机热力学 / 统计物理：物理、应用数学、复杂系统、非平衡统计团队
+  - AI for physics：机器学习、计算物理、科学计算、交叉信息学院
+  - 城市系统 / 遥感：城市科学、地理信息、环境遥感、测绘与大气团队
+- 若 venue 一般，但作者团队非常专业，文章仍可进入 `Watchlist` 或 `Reproduction Candidates`。
+- 若 venue 一般且作者团队也明显不专业，则默认降级处理，不进 `Must Read`。
 
 ## 3. 口碑分类
 

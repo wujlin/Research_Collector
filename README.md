@@ -97,8 +97,12 @@ cd web && npm install && npm run dev
 ## 目标期刊层级
 
 - **Tier 1**：Nature, Science, Nature Physics, Nature Computational Science, Nature Cities, PRL, PNAS
-- **Tier 2**：PRX, PRE, JSTAT, J. Stat. Phys., NeurIPS, ICML, ICLR, New J. Phys.
-- **Tier 3**：CEUS, EPB, J. R. Soc. Interface, EPJ Data Science, Sci. Rep., Chaos
+- **Tier 2**：PRX, PRE, JSTAT, J. Stat. Phys., PRResearch, SciPost Physics, NeurIPS, ICML, ICLR, New J. Phys.
+- **Tier 3**：CEUS, EPB, J. R. Soc. Interface, EPJ Data Science, Chaos, Chaos, Solitons & Fractals, MLST, EPJ B, Atmospheric Measurement Techniques
+
+默认不放进目标期刊层级、只做 article-level 审核的 venue：
+
+- **Article-level only**：Scientific Reports, The European Physical Journal Special Topics
 
 ## 项目状态
 

@@ -77,6 +77,9 @@ journal_tiers:
         aliases: ["International Conference on Artificial Intelligence and Statistics"]
       - name: "UAI"
         aliases: ["Conference on Uncertainty in Artificial Intelligence"]
+      - name: "Physical Review Research"
+        issn: "2643-1564"
+      - name: "SciPost Physics"
       - name: "New Journal of Physics"
         issn: "1367-2630"
 
@@ -91,20 +94,14 @@ journal_tiers:
         issn: "1742-5689"
       - name: "EPJ Data Science"
         issn: "2193-1127"
-      - name: "Scientific Reports"
-        issn: "2045-2322"
       - name: "Chaos"
         issn: "1054-1500"
       - name: "Chaos, Solitons & Fractals"
         issn: "0960-0779"
-      - name: "Physical Review Research"
-        issn: "2643-1564"
       - name: "Machine Learning: Science and Technology"
         issn: "2632-2153"
       - name: "EPJ B"
         aliases: ["The European Physical Journal B"]
-      - name: "SciPost Physics"
-      - name: "The European Physical Journal Special Topics"
       - name: "Atmospheric Measurement Techniques"
 
   preprint:

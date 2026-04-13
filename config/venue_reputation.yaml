@@ -1,4 +1,4 @@
-checked_on: "2026-04-10"
+checked_on: "2026-04-13"
 default_status: "unreviewed"
 
 venues:
@@ -41,9 +41,48 @@ venues:
   "iclr":
     status: "trusted"
     note: "Top machine learning conference."
+  "physical review research":
+    status: "trusted"
+    note: "APS open-access research journal with good field signal, though below PRX in selectivity."
+  "scipost physics":
+    status: "trusted"
+    note: "Well-regarded community-led open-access venue in theoretical and statistical physics."
+  "computers, environment and urban systems":
+    status: "trusted"
+    note: "Core urban analytics and computational urban systems journal."
+  "environment and planning b":
+    status: "trusted"
+    note: "Established urban analytics and city-science journal with strong field relevance."
+  "journal of the royal society interface":
+    status: "trusted"
+    note: "Respected interdisciplinary journal at the interface of quantitative science and complex systems."
+  "epj b":
+    status: "trusted"
+    note: "Established physics journal with good signal in statistical and condensed-matter topics."
+  "atmospheric measurement techniques":
+    status: "trusted"
+    note: "Strong methods venue for atmospheric measurement and remote-sensing workflows."
+  "nature cities":
+    status: "trusted"
+    note: "Nature Portfolio urban journal; strong signal, though still newer than the core Nature titles."
   "scientific reports":
     status: "cautious"
-    note: "Formal and visible broad OA venue, but not a strong quality signal for Must Read by itself."
+    note: "Large broad-scope OA venue with technical-soundness positioning; do not treat as a default target venue or Must Read signal by itself."
+  "epj data science":
+    status: "cautious"
+    note: "Legitimate niche venue for data-driven complex systems, but not a universal quality backstop."
+  "chaos":
+    status: "cautious"
+    note: "Established nonlinear-dynamics journal; use article-level fit and author quality as a second filter."
+  "chaos, solitons & fractals":
+    status: "cautious"
+    note: "Visible nonlinear-systems venue, but article quality is uneven enough to require extra screening."
+  "machine learning: science and technology":
+    status: "cautious"
+    note: "Serious younger journal with good topical fit, but still building long-run prestige."
+  "the european physical journal special topics":
+    status: "cautious"
+    note: "Special-issue-driven venue; treat as article-level only rather than a standalone venue signal."
   "entropy":
     status: "cautious"
     note: "Topical overlap exists, but venue quality is uneven and needs article-level scrutiny."

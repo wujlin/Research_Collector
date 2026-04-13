@@ -176,6 +176,8 @@ $$
 
 #### Loss Functions in Overdamped Dynamics: 总览
 
+![Fig. 1 learning framework](../../pdfs/2026-04-10/learning-stochastic-thermodynamics-directly-from-correlation-and-trajectory-fluctuation-currents.mineru/hybrid_auto/images/44953915ad02b10b94c1333ed4656925efe87f626b0e44ea8c5a434ef2f152ae.jpg)
+
 在 overdamped dynamics 里，paper 的统一起点是
 
 $$
@@ -228,6 +230,8 @@ $$
 - 对 `diffusion field`，可观测量是二阶增量 `(dx)^2` 或 `(\Delta x)^2`
 
 后面的四个小节就是把这张总图逐项展开。
+
+这张 framework 图其实把全文的方法骨架压得很清楚：输入不是标签化的热力学量，而是相邻两个或三个时间点组成的局部轨迹片段；一阶 loss 用两点，二阶 loss 用三点，目标都是把“短时间可观测统计”变成对局域热力学场的 self-supervised 估计。所以这篇的关键不是网络结构，而是如何把 `trajectory snippet -> loss -> local thermodynamic field` 这条线写成可训练的二次泛函。
 
 #### Force Loss: 从轨迹增量恢复 Drift
 
@@ -1173,6 +1177,12 @@ $$
 - 与已有理论公式或 benchmark 的一致性
 
 如果论文只有实验图，没有明确理论对照，那你就把它记成“方法提议型”，不要误判成理论闭环已经完成。
+
+![Fig. 2(b) trajectory-level entropy production inference](../../pdfs/2026-04-10/learning-stochastic-thermodynamics-directly-from-correlation-and-trajectory-fluctuation-currents.mineru/hybrid_auto/images/0ad01a47c9b721f27ac42e60a1caf317b2404e104010f007825f89d3b4181653.jpg)
+
+![Fig. 2(f) stochastic entropy production versus the $u$-integral contribution](../../pdfs/2026-04-10/learning-stochastic-thermodynamics-directly-from-correlation-and-trajectory-fluctuation-currents.mineru/hybrid_auto/images/a013a87dc01978871c5f88fdfa191940d22a7b678e9ed6910f70e2f67c590e3d.jpg)
+
+如果只挑两张最值得盯的图，我会选这里这两张。`Fig. 2(b)` 直接对应“单条轨迹上的 stochastic entropy production 能不能被学出来”这个最硬的问题；右图里二阶 loss 随路径数增加持续压低 $1-R^2$，说明它不仅能恢复平均熵产生，还能在 trajectory level 上更稳定地恢复涨落结构。`Fig. 2(f)` 则把本文为什么要单独学习 `temporal score` 这件事可视化了：红线是真正的 stochastic entropy production，蓝线只是 $\int D^{-1}u \circ dx$ 这一部分，两者之间的系统差异正是非稳态下 $\partial_t \log f$ 不能被忽略的证据。
 
 #### 10. 复现
 

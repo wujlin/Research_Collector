@@ -153,6 +153,10 @@ date: "2026-04-11"
 
 #### Figure 1
 
+![Fig. 1 energy landscape and coarse-grained states](../../pdfs/2026-04-11/fluctuating-entropy-production-on-the-coarse-grained-level-inference-and-localization-of-irreversibility.mineru/hybrid_auto/images/209f576534bf5edb8700493cb54e8b947f893989425f53de9e377b3ede9971ae.jpg)
+
+![Fig. 1 localized snippet in the time series](../../pdfs/2026-04-11/fluctuating-entropy-production-on-the-coarse-grained-level-inference-and-localization-of-irreversibility.mineru/hybrid_auto/images/2e61fb0331b7f1716bc25961d5a5d641b6011d09a1292de4c63b45112a5fe80d.jpg)
+
 `Figure 1` 不是结果图，而是问题设定图。它在说明：即使 coarse-grained 描述里出现了不能视为标准 Markov state 的可观测状态，作者仍然想在这些局部轨迹片段上定义有物理意义的 entropy production。
 
 图里的关键信息是：
@@ -248,6 +252,12 @@ $$
 
 #### Figure 2
 
+![Fig. 2(a) Markovian events, non-Markovian events, and snippets](../../pdfs/2026-04-11/fluctuating-entropy-production-on-the-coarse-grained-level-inference-and-localization-of-irreversibility.mineru/hybrid_auto/images/eeff80d2060960772bbc51835b4fd85b9ea4d2c51903a46574d470f1f3c6713f.jpg)
+
+![Fig. 2(b) six-state network with observable transitions](../../pdfs/2026-04-11/fluctuating-entropy-production-on-the-coarse-grained-level-inference-and-localization-of-irreversibility.mineru/hybrid_auto/images/fff04169c2caaea52dfba35c3f4afe0382495444869420729a8395f3091719db.jpg)
+
+![Fig. 2(c) event-level coarse-grained description](../../pdfs/2026-04-11/fluctuating-entropy-production-on-the-coarse-grained-level-inference-and-localization-of-irreversibility.mineru/hybrid_auto/images/a3c02a452e54f95754152d71ef26d35f44a69a6835d83b5661f837fd6008287a.jpg)
+
 `Figure 2` 的作用，是把这篇文章后面会用到的三类 coarse-graining 场景并排摆出来。它不是在定义新公式，而是在说明：同一套 `Markovian event + snippet` 框架，可以落在不同的观测层上。
 
 这里先固定两个对象：
@@ -271,11 +281,15 @@ $$
 \ln \frac{P(I)\,\psi_{I \to J}(t;O)}{P(J)\,\psi_{\tilde J \to \tilde I}(t;\tilde O)}.
 $$
 
-`Figure 2` 有四个 panel。
+`Figure 2` 实际上只有三个 panel，而且它们的角色分工很清楚。
 
-**(a) 6 态微观网络，只有四个跃迁可见**
+**(a) 连续空间里的 Markovian event、非马尔可夫附加信息和 snippet**
 
-这一幅给出完整的微观 Markov 网络。真实系统有 6 个状态和多条跃迁，但观察者只能看到四个 transition events：
+这一幅不是离散网络图，而是概念图。上半部分画了四条显微轨迹，颜色梯度编码时间；下半部分画的是其中一条轨迹对应的 coarse-grained 版本。图中绿色端点 $I,J$ 是两个 Markovian events，红色刻痕 $G$ 和蓝色区间 $H$ 表示夹在两次 Markovian events 之间的非马尔可夫附加信息和持续时间。作者用这幅图想说明：真正被赋予 entropy production 的基本对象，不是整个长轨迹，而是被两个 Markovian events 夹住的局部 snippet。
+
+**(b) 六态网络里，只能观测四个跃迁**
+
+这一幅才给出完整的微观 Markov 网络。真实系统有 6 个状态和多条跃迁，但观察者只能看到四个 transition events：
 
 $$
 K=(1 \to 2),\quad \tilde K=(2 \to 1),\quad L=(3 \to 4),\quad \tilde L=(4 \to 3).
@@ -283,9 +297,9 @@ $$
 
 这说明这里的粗粒化是按跃迁事件来定义的。观察者看不到完整状态图，只能在时间序列里识别出少数仪器真正能分辨的跃迁。
 
-**(b) `(a)` 的 coarse-grained description**
+**(c) `(b)` 的 coarse-grained 事件级描述**
 
-这一幅把 `(a)` 中所有不可见的微观状态和不可见跃迁折叠成一个 `hidden` 块。观察者真正看到的，只剩四类可观测事件
+这一幅把 `(b)` 中所有不可见的微观状态和不可见跃迁折叠成一个 `hidden` 块。观察者真正看到的，只剩四类可观测事件
 
 $$
 K,\ \tilde K,\ L,\ \tilde L
@@ -307,51 +321,11 @@ $$
 
 每两个相邻可观测事件之间就是一个 snippet。
 
-**(c) 9 态网络，观测的是两个单独状态和一个复合状态**
-
-这一幅说明 coarse-graining 不一定是观测某几个跃迁，也可以是观测某几个状态，或者把多个微观状态合并成一个可见状态。这里的 `lumped state` 指的就是这种“把几个底层状态压成一个状态标签”的对象。图里可见的是状态 `1`、状态 `4`，以及复合状态
-
-$$
-H=\{8,9\}.
-$$
-
-这表示观察者能够分辨“系统是否进入了由 8 和 9 组成的这片区域”，但不能分辨它此刻到底在 `8` 还是在 `9`。如果 `8` 和 `9` 的后续动力学不同，那么 `H` 本身就不再完全确定微观状态，因此它不是严格的 Markovian event，而更像 snippet 内部的附加观测 $O_k$。这个 panel 的作用，是把“状态级粗粒化”和“非马尔可夫附加信息”同时摆出来。
-
-**(d) 5 态网络，驱动循环完全藏在不可见部分**
-
-这一幅给出最强的 hidden-driving 场景。这里先把两个词讲清楚：
-
-- `hidden driving`：系统里确实存在持续把过程推离平衡的驱动力，但这个驱动力所在的循环或通道本身并不直接可见
-- `affinity 下界`：这里的 `affinity` 就是一个循环沿某个方向被持续偏置的强度，定量上可以写成该循环正向速率乘积与反向速率乘积之比的对数。它衡量的是“系统绕这条循环更愿意顺时针还是逆时针走”，若为零就对应 detailed balance，若不为零就对应非平衡驱动。由于观察者看不见隐藏循环里的全部速率，通常拿不到它的精确值；本文能保证的是，从可见 waiting-time 统计里仍可推出这个驱动力的下界。
-
-在这张图里，观察者只能看到状态 `1` 和 `2`，但不可见部分里存在一个被顺时针驱动的循环
-
-$$
-3 \to 4 \to 5 \to 3.
-$$
-
-这里的 driving 是“hidden”的，因为真正打破 detailed balance 的循环完全位于观察者看不到的子网络中。`hidden driving detection` 的意思，就是只凭可见层上的 waiting-time statistics 和 snippet asymmetry，去判断这种隐藏驱动是否存在。
-
-这幅图的重点不是让你立刻算 entropy production，而是说明：即使不可逆性完全藏在未观测到的循环里，coarse-grained statistics 仍然可能留下痕迹。后面给出的 `affinity 下界`，就是针对这种场景推出来的：
-
-$$
-\max_C |A_C|
-\ge
-a_{I \to J}
-=
-\sup_t \Delta S[I \xrightarrow{t} J]
--
-\inf_t \Delta S[I \xrightarrow{t} J].
-$$
-
-也就是说，如果同一类 snippet 在不同持续时间 $t$ 下给出不同的 coarse-grained entropy production，就说明 hidden 部分里存在被驱动的循环，而且这种时间依赖的振幅还能给出隐藏 affinity 的下界。
-
 所以 `Figure 2` 的线性逻辑是：
 
-- `(a)` 给出一个“只能观测少数跃迁事件”的微观例子
-- `(b)` 把它重写成观察者真正面对的事件序列描述
-- `(c)` 说明 coarse-graining 还可以包含复合状态这类更粗的可见信息
-- `(d)` 说明即使驱动循环完全藏在 hidden layer，仍然值得在 coarse-grained level 上定义 entropy production 和做 inference
+- `(a)` 先把 `Markovian event + snippet + additional observables` 的概念图像画出来
+- `(b)` 再给出一个具体的六态微观网络，说明哪些跃迁是可见的
+- `(c)` 最后把 `(b)` 重写成观察者真正面对的事件级 coarse-grained 描述
 
 #### Fluctuation Relation and Consistency
 
@@ -540,6 +514,12 @@ $$
 
 `coarse-grained entropy production 不只是平均量，它在单条轨迹、单类 snippet 和有限样本下都是会涨落的。`
 
+![Fig. 3(a) cumulative entropy production](../../pdfs/2026-04-11/fluctuating-entropy-production-on-the-coarse-grained-level-inference-and-localization-of-irreversibility.mineru/hybrid_auto/images/90807edf729c8ea50da2e3e79b4384b1eb8fded921e0171e7325fb645772698a.jpg)
+
+![Fig. 3(b) entropy-production rates along sample trajectories](../../pdfs/2026-04-11/fluctuating-entropy-production-on-the-coarse-grained-level-inference-and-localization-of-irreversibility.mineru/hybrid_auto/images/becf653a0ad7c830a0d39ab9a9668a9fc1cc0441f0e0cc263be0f1fbf4a05ee4.jpg)
+
+![Fig. 3(c) localized entropy production for $\tilde K \to \tilde K$ snippets](../../pdfs/2026-04-11/fluctuating-entropy-production-on-the-coarse-grained-level-inference-and-localization-of-irreversibility.mineru/hybrid_auto/images/ae71ae3c08f75d1253175de0cc3a685ac7f02079254f87da076412301e278473.jpg)
+
 这里先把图里的三个层次分清楚。作者先定义：
 
 $$
@@ -704,9 +684,11 @@ $$
 
 作者后面的 affinity bound 证明，依赖于构造一个与真实物理时间反演在给定 coarse graining 下不可区分的“部分时间反演”或“数学时间反演” $R$。因此，一旦加入额外 observable，新的 coarse-grained 描述仍然必须允许这样的 $R$ 存在。对本文的构造来说，这意味着额外 observables 必须在时间反演下是 even 的。于是，snippet 的总持续时间 $t$ 可以保留，但 snippet 内部更细的 waiting times 一般不能直接作为额外数据 $O$，因为它们会破坏时间反演的一致性。
 
-**第 8 步：`Figure 5` 就是在演示“合适的额外 observable 会怎样改善推断”。**
+![Fig. 4(c) affinity estimation for the $1 \to 6$ example](../../pdfs/2026-04-11/fluctuating-entropy-production-on-the-coarse-grained-level-inference-and-localization-of-irreversibility.mineru/hybrid_auto/images/d0d90016a49d27cdd658d9629c21265da60c6eb5048a9f1c0f643fd8c83d0312.jpg)
 
-`Figure 5(a)` 先给出一个最简单的可检测示意。那里画的是
+**第 8 步：`Figure 4(c)` 先给出一个最简单的可检测示意。**
+
+那里画的是
 
 $$
 a_{1\to 6}(t),
@@ -720,7 +702,11 @@ $$
 
 这一步只是用一个最直接的例子说明：只要 $a(t)$ 随时间变化，hidden driving 就已经在可见层上留下了痕迹。
 
-**第 9 步：`Figure 5(b)` 才真正展示“加入额外 observable 之后，localization 会增强”。**
+![Fig. 5(a,c) network with observable compound state $H$ and failure-case cycle](../../pdfs/2026-04-11/fluctuating-entropy-production-on-the-coarse-grained-level-inference-and-localization-of-irreversibility.mineru/hybrid_auto/images/bf4917a98591a581db8882f77fe5c8cfe9afd64091492951bc8901d6789692d9.jpg)
+
+![Fig. 5(b) affinity estimation with and without $H$ information](../../pdfs/2026-04-11/fluctuating-entropy-production-on-the-coarse-grained-level-inference-and-localization-of-irreversibility.mineru/hybrid_auto/images/8e8d9e43db96d0aaeac93d562a7a131938de5a9a03a0502538c7097ed0cf833f.jpg)
+
+**第 9 步：`Figure 5(a)(b)` 才真正展示“加入额外 observable 之后，localization 会增强”。**
 
 这里作者考虑一个网络，其中观察者能看到状态 $1$、状态 $4$，以及 compound state
 
@@ -738,7 +724,7 @@ $$
 
 **第 10 步：这三条曲线的物理结论是分工明确的。**
 
-蓝线对应“不经过 $H$”的 trajectories，几乎是常数
+黄色线对应“不经过 $H$”的 trajectories，几乎是常数
 
 $$
 a(t) \simeq -0.51,
@@ -750,7 +736,7 @@ $$
 \Delta a \simeq 3.4.
 $$
 
-这说明真正的 hidden driving 主要和 $H$ 及其相关回路绑定在一起。红线对应把是否经过 $H$ 的信息丢掉之后的整体统计，此时只得到
+这说明真正的 hidden driving 主要和 $H$ 及其相关回路绑定在一起。蓝线对应把是否经过 $H$ 的信息丢掉之后的整体统计，此时只得到
 
 $$
 \Delta a \simeq 0.9,
@@ -873,6 +859,93 @@ $$
 结论：
 
 `diffusion model 的 backward process 不是单一的 denoising 流，而是具有阶段结构的高维随机动力学。`
+
+#### Equation (4) And Speciation
+
+![Equation 4](../../pdfs/2026-04-11/dynamical-regimes-of-diffusion-models.mineru/hybrid_auto/images/page-01-equation-04.jpg)
+
+`Eq. (4)` 是这篇文章里第一个真正有物理味道的公式，因为它把 `speciation time` 直接和数据的谱结构连了起来。作者给出的定义是
+
+$$
+\Lambda e^{-2t_S}=1,
+$$
+
+也就是
+
+$$
+t_S = \frac{1}{2}\log \Lambda.
+$$
+
+这里的 $\Lambda$ 是数据协方差矩阵主特征值，表示最显著的类别结构强度。这个公式的直觉并不复杂：前向加噪之后，沿主方向的类间结构会被乘上
+
+$$
+e^{-2t},
+$$
+
+所以到时间 $t$ 时仍然保留下来的有效结构强度就是
+
+$$
+\Lambda e^{-2t}.
+$$
+
+当这个量远大于 $1$ 时，类结构仍然清晰，反向轨迹有能力区分不同类别；当它远小于 $1$ 时，噪声已经把这条结构淹没，轨迹还处在“没有选边”的状态。于是，作者就把
+
+$$
+\Lambda e^{-2t}
+\sim O(1)
+$$
+
+的时刻定义成 `speciation` 发生的时间尺度，也就是 $t_S$。因此，`Eq. (4)` 的本质是在说：
+
+`speciation time 就是数据最强类别信号被噪声衰减到临界量级的那一刻。`
+
+![Fig. 2 speciation in Gaussian mixtures](../../pdfs/2026-04-11/dynamical-regimes-of-diffusion-models.mineru/hybrid_auto/images/page-03-figure-01.jpg)
+
+这时就能理解作者为什么把 `speciation` 和 `symmetry breaking` 联系起来。在 `speciation` 之前，轨迹虽然最终会落到不同类，但在当前时间尺度上，它们还混在同一个 bundle 里，对不同类别没有明显偏向；在 `speciation` 之后，轨迹开始稳定地朝某一类数据分化。对两类情形来说，这就像系统原来还没有决定正负号，后来突然开始“选边”。因此，`speciation` 不是普通的去噪，而是从“类别对称尚未破裂”到“类别对称已被破裂”的转变。
+
+接着，作者说：
+
+`the speciation cross-over becomes a phase transition over time-scales of order t_S.`
+
+这句话需要小心理解。它不是说过渡宽度本身等于 $t_S$，而是说：随着维度增大，`speciation` 发生的位置被推到
+
+$$
+t \sim t_S,
+$$
+
+而真正发生分化的窗口宽度仍然只是 $O(1)$。如果典型地有
+
+$$
+\Lambda \propto d,
+$$
+
+那么
+
+$$
+t_S \sim \frac{1}{2}\log d.
+$$
+
+于是当 $d \to \infty$ 时，过渡位置越来越往后移，但过渡本身不会按同样比例变宽，所以相对宽度会越来越窄。结果就是：在有限维时它只是平滑 cross-over，在大维极限下却越来越像一步跳变，也就是统计物理里所谓的阈值现象或相变。
+
+![Fig. 4 speciation in realistic datasets](../../pdfs/2026-04-11/dynamical-regimes-of-diffusion-models.mineru/hybrid_auto/images/page-05-figure-01.jpg)
+
+`Figure 4` 正好把这个“相变图像”画出来了。横轴被 rescale 成
+
+$$
+t/t_S,
+$$
+
+之后，不同真实数据集上的曲线都在
+
+$$
+t/t_S \approx 1
+$$
+
+附近发生急剧变化。右侧蓝底区域是 “symmetry is preserved”，说明轨迹还没有分化出明确类别；左侧红底区域是 “symmetry is broken”，说明轨迹已经 committed 到某一类。这个 collapse 到同一个 rescaled 时间上的现象，就是作者说 `Eq. (4)` 不只是一个 toy-model 公式，而是真能抓住 speciation 的共同控制变量。
+
+所以，和 `Eq. (4)` 相关的整段逻辑可以压成一句话：
+
+speciation 之所以能被当作一个 phase-transition-like 现象来理解，是因为高维里类别结构信号的有效强度由 $\Lambda e^{-2t}$ 控制；当它降到 $O(1)$ 时，轨迹会在 $t_S = \frac{1}{2}\log\Lambda$ 附近迅速从“未分化”切换到“已分化”，而这个切换在大维极限下会越来越尖锐。
 
 ## Minimum Output
 
