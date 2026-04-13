@@ -36,6 +36,14 @@ date: "2026-04-10"
 6. 最有说服力的证据是什么？
 7. 能不能压成一个 toy reproduction？
 
+## Standalone Note
+
+为了避免这份 `study-guide` 继续把长推导和多篇文章混在一起，`Paper 1` 已经单独拆出一份独立笔记：
+
+- [learning-stochastic-thermodynamics-directly-from-correlation-and-trajectory-fluctuation-currents.md](/Users/jinlin/Desktop/Project/Research_Collector/digests/2026-04-10/learning-stochastic-thermodynamics-directly-from-correlation-and-trajectory-fluctuation-currents.md)
+
+这次我先保留原 `study-guide` 里的旧内容，不做删除，只新增独立入口，避免误删之前已经整理好的线性推导。后续如果你确认结构没问题，再把这份旧 guide 进一步收缩成索引页。
+
 ## Paper 1
 
 ### Learning Stochastic Thermodynamics Directly from Correlation and Trajectory-Fluctuation Currents

@@ -10,8 +10,8 @@ pdf_url: "https://arxiv.org/pdf/2604.00333"
 topics: ["stochastic_analysis", "stochastic_analysis/stochastic_dynamics/sde_theory", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "ai_for_physics", "stochastic_analysis/stochastic_dynamics", "statistical_physics/non_equilibrium_dynamics", "ai_for_physics/physics_informed_modeling", "ai_for_physics/physics_informed_modeling/scientific_ml_applications"]
 tier: 0
 citations: 0
-relevance_score: 51.0
-collected: "2026-04-08"
+relevance_score: 54.0
+collected: "2026-04-13"
 status: "unread"
 source: "openalex"
 ---

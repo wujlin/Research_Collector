@@ -2,9 +2,11 @@
 
 from __future__ import annotations
 
-from typing import Any
+import time
+from typing import Any, Callable
 
 import feedparser
+import httpx
 
 from src.utils.helpers import compact_abstract, load_config, parse_date
 
@@ -12,8 +14,24 @@ from .base import BaseCollector
 
 
 class ArxivCollector(BaseCollector):
-    def __init__(self, http_client=None):
+    def __init__(
+        self,
+        http_client=None,
+        settings: dict[str, Any] | None = None,
+        sleep_fn: Callable[[float], None] | None = None,
+        clock_fn: Callable[[], float] | None = None,
+    ):
         super().__init__("arxiv", base_url="https://export.arxiv.org/api/query", http_client=http_client)
+        source_policy = (settings or load_config("settings.yaml")).get("collection", {}).get(
+            "source_policies",
+            {},
+        ).get("arxiv", {})
+        self.min_interval_seconds = float(source_policy.get("min_interval_seconds", 3.5))
+        self.max_retries_on_429 = int(source_policy.get("max_retries_on_429", 2))
+        self.base_backoff_seconds = float(source_policy.get("base_backoff_seconds", 8))
+        self.sleep_fn = sleep_fn or time.sleep
+        self.clock_fn = clock_fn or time.monotonic
+        self._last_request_at: float | None = None
 
     def collect(
         self,
@@ -37,14 +55,56 @@ class ArxivCollector(BaseCollector):
         client = self._get_client()
         should_close = client is not self._client
         try:
-            response = client.get(self.base_url, params=params, headers={"User-Agent": "ResearchCollector/0.1"})
-            response.raise_for_status()
+            response = self._request_with_backoff(client, params=params)
         finally:
             if should_close:
                 client.close()
 
         feed = feedparser.parse(response.text)
         return [self._parse_entry(entry) for entry in feed.entries]
+
+    def _request_with_backoff(
+        self,
+        client: httpx.Client,
+        params: dict[str, Any],
+    ) -> httpx.Response:
+        last_error: httpx.HTTPStatusError | None = None
+        for attempt in range(self.max_retries_on_429 + 1):
+            self._respect_min_interval()
+            response = client.get(self.base_url, params=params, headers={"User-Agent": "ResearchCollector/0.1"})
+            self._last_request_at = self.clock_fn()
+            if response.status_code == 429:
+                last_error = httpx.HTTPStatusError(
+                    "arXiv API rate limited the request.",
+                    request=response.request,
+                    response=response,
+                )
+                if attempt == self.max_retries_on_429:
+                    break
+                self.sleep_fn(self._backoff_seconds(response, attempt))
+                continue
+
+            response.raise_for_status()
+            return response
+
+        assert last_error is not None
+        raise last_error
+
+    def _respect_min_interval(self) -> None:
+        if self._last_request_at is None or self.min_interval_seconds <= 0:
+            return
+        elapsed = self.clock_fn() - self._last_request_at
+        if elapsed < self.min_interval_seconds:
+            self.sleep_fn(self.min_interval_seconds - elapsed)
+
+    def _backoff_seconds(self, response: httpx.Response, attempt: int) -> float:
+        retry_after = response.headers.get("Retry-After")
+        if retry_after:
+            try:
+                return max(float(retry_after), 0.0)
+            except ValueError:
+                pass
+        return self.base_backoff_seconds * (2 ** attempt)
 
     @staticmethod
     def _build_search_query(query: str, categories: list[str]) -> str:

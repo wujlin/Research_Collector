@@ -8,9 +8,18 @@ venues:
   "physical review e":
     status: "trusted"
     note: "Strong domain journal for statistical physics, nonlinear dynamics, and stochastic systems."
+  "physical review x":
+    status: "trusted"
+    note: "Selective APS flagship open-access journal with very strong field reputation."
+  "physical review b":
+    status: "trusted"
+    note: "Core APS journal for condensed-matter and statistical-physics-adjacent work."
   "journal of statistical mechanics theory and experiment":
     status: "trusted"
     note: "Core field journal for statistical mechanics."
+  "journal of statistical physics":
+    status: "trusted"
+    note: "Established core journal for rigorous and theoretical statistical physics."
   "communications in mathematical physics":
     status: "trusted"
     note: "Top mathematical physics journal."
@@ -44,6 +53,9 @@ venues:
   "physical review research":
     status: "trusted"
     note: "APS open-access research journal with good field signal, though below PRX in selectivity."
+  "new journal of physics":
+    status: "trusted"
+    note: "Established broad physics journal with solid signal for statistical and theoretical physics topics."
   "scipost physics":
     status: "trusted"
     note: "Well-regarded community-led open-access venue in theoretical and statistical physics."

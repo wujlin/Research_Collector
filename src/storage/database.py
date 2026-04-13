@@ -11,7 +11,7 @@ import yaml
 from sqlalchemy import create_engine, func, or_, select
 from sqlalchemy.orm import Session, sessionmaker
 
-from src.utils.helpers import flatten_topics, normalize_title, parse_date, utc_now
+from src.utils.helpers import flatten_topics, normalize_title, normalize_whitespace, parse_date, utc_now
 
 from .models import Author, Base, CollectionLog, Paper, Topic, YouTubeResource
 
@@ -83,7 +83,7 @@ class Database:
         """
         添加论文。如果 DOI 或 arXiv ID 已存在则跳过。
         paper_data 应包含: title, abstract, year, journal, doi, arxiv_id,
-                           authors (list[str]), topic_keys (list[str]), ...
+                           authors (list[str | dict]), topic_keys (list[str]), ...
         """
         normalized_data = self._normalize_paper_identifiers(paper_data)
         with self.session() as session:
@@ -202,25 +202,87 @@ class Database:
             return current_value
         return min(current_value, incoming_value)
 
-    def _get_or_create_author(self, session: Session, name: str) -> Author:
-        author = session.execute(
-            select(Author).where(Author.name == name)
-        ).scalar_one_or_none()
-        if author is None:
-            author = Author(name=name)
-            session.add(author)
-            session.flush()
+    @staticmethod
+    def _normalize_author_payload(author_data: Any) -> dict[str, str]:
+        if isinstance(author_data, str):
+            return {"name": author_data.strip(), "affiliation": "", "openalex_id": "", "semantic_scholar_id": ""}
+        if isinstance(author_data, dict):
+            return {
+                "name": normalize_whitespace(str(author_data.get("name", ""))),
+                "affiliation": normalize_whitespace(str(author_data.get("affiliation", ""))),
+                "openalex_id": normalize_whitespace(str(author_data.get("openalex_id", ""))),
+                "semantic_scholar_id": normalize_whitespace(str(author_data.get("semantic_scholar_id", ""))),
+            }
+        return {"name": "", "affiliation": "", "openalex_id": "", "semantic_scholar_id": ""}
+
+    def _get_or_create_author(self, session: Session, author_data: Any) -> Author | None:
+        payload = self._normalize_author_payload(author_data)
+        name = payload["name"]
+        affiliation = payload["affiliation"]
+        openalex_id = payload["openalex_id"] or None
+        semantic_scholar_id = payload["semantic_scholar_id"] or None
+        if not name:
+            return None
+
+        candidates = session.execute(select(Author).where(Author.name == name)).scalars().all()
+
+        if affiliation:
+            normalized_affiliation = affiliation.lower()
+            for candidate in candidates:
+                if normalize_whitespace(candidate.affiliation).lower() == normalized_affiliation:
+                    candidate.openalex_id = candidate.openalex_id or openalex_id
+                    candidate.semantic_scholar_id = candidate.semantic_scholar_id or semantic_scholar_id
+                    return candidate
+
+        for candidate in candidates:
+            if openalex_id and candidate.openalex_id == openalex_id:
+                candidate.affiliation = candidate.affiliation or affiliation
+                candidate.semantic_scholar_id = candidate.semantic_scholar_id or semantic_scholar_id
+                return candidate
+            if semantic_scholar_id and candidate.semantic_scholar_id == semantic_scholar_id:
+                candidate.affiliation = candidate.affiliation or affiliation
+                candidate.openalex_id = candidate.openalex_id or openalex_id
+                return candidate
+
+        for candidate in candidates:
+            if not candidate.affiliation:
+                candidate.affiliation = affiliation
+                candidate.openalex_id = candidate.openalex_id or openalex_id
+                candidate.semantic_scholar_id = candidate.semantic_scholar_id or semantic_scholar_id
+                return candidate
+
+        author = Author(
+            name=name,
+            affiliation=affiliation,
+            openalex_id=openalex_id,
+            semantic_scholar_id=semantic_scholar_id,
+        )
+        session.add(author)
+        session.flush()
         return author
 
     # ── 查询 ──
 
-    def _attach_authors(self, session: Session, paper: Paper, author_names: list[str]) -> None:
-        existing = {author.name for author in paper.authors}
+    def _attach_authors(self, session: Session, paper: Paper, author_names: list[Any]) -> None:
+        existing = {author.name: author for author in paper.authors}
         for author_name in author_names:
-            if not author_name or author_name in existing:
+            payload = self._normalize_author_payload(author_name)
+            if not payload["name"]:
                 continue
-            paper.authors.append(self._get_or_create_author(session, author_name))
-            existing.add(author_name)
+            if payload["name"] in existing:
+                author = existing[payload["name"]]
+                if payload["affiliation"] and not author.affiliation:
+                    author.affiliation = payload["affiliation"]
+                if payload["openalex_id"] and not author.openalex_id:
+                    author.openalex_id = payload["openalex_id"]
+                if payload["semantic_scholar_id"] and not author.semantic_scholar_id:
+                    author.semantic_scholar_id = payload["semantic_scholar_id"]
+                continue
+            author = self._get_or_create_author(session, payload)
+            if author is None:
+                continue
+            paper.authors.append(author)
+            existing[payload["name"]] = author
 
     def _attach_topics(self, session: Session, paper: Paper, topic_keys: list[str]) -> None:
         existing = {topic.key for topic in paper.topics}

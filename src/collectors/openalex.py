@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from src.utils.helpers import compact_abstract, parse_date
+from src.utils.helpers import compact_abstract, get_env, parse_date
 
 from .base import BaseCollector
 
@@ -20,11 +20,14 @@ class OpenAlexCollector(BaseCollector):
         year_from: int | None = None,
         **_: Any,
     ) -> list[dict[str, Any]]:
+        api_key = get_env("OPENALEX_API_KEY")
         params = {
             "search": query or "score-based diffusion non-equilibrium statistical physics",
             "per-page": per_page,
             "sort": "publication_date:desc",
         }
+        if api_key:
+            params["api_key"] = api_key
         if year_from:
             params["filter"] = f"from_publication_date:{year_from}-01-01"
 
@@ -51,11 +54,7 @@ class OpenAlexCollector(BaseCollector):
         return {
             "title": item.get("display_name", ""),
             "abstract": compact_abstract(_abstract_from_inverted_index(item.get("abstract_inverted_index"))),
-            "authors": [
-                authorship.get("author", {}).get("display_name", "").strip()
-                for authorship in item.get("authorships", [])
-                if authorship.get("author", {}).get("display_name")
-            ],
+            "authors": _parse_authors(item.get("authorships", [])),
             "year": item.get("publication_year"),
             "publication_date": publication_date.isoformat() if publication_date else "",
             "journal": source.get("display_name", ""),
@@ -78,3 +77,44 @@ def _abstract_from_inverted_index(inverted_index: dict[str, list[int]] | None) -
         for index in positions:
             tokens[index] = word
     return " ".join(token for token in tokens if token)
+
+
+def _parse_authors(authorships: list[dict[str, Any]]) -> list[dict[str, str]]:
+    authors: list[dict[str, str]] = []
+    for authorship in authorships:
+        author = authorship.get("author", {}) or {}
+        name = (author.get("display_name") or "").strip()
+        if not name:
+            continue
+
+        institutions = authorship.get("institutions", []) or []
+        institution_names = [
+            (institution.get("display_name") or "").strip()
+            for institution in institutions
+            if (institution.get("display_name") or "").strip()
+        ]
+        raw_affiliations = [
+            value.strip()
+            for value in (authorship.get("raw_affiliation_strings") or [])
+            if isinstance(value, str) and value.strip()
+        ]
+        affiliation_values = institution_names or raw_affiliations
+        seen: set[str] = set()
+        affiliation_parts: list[str] = []
+        for value in affiliation_values:
+            lowered = value.lower()
+            if lowered in seen:
+                continue
+            seen.add(lowered)
+            affiliation_parts.append(value)
+        affiliation = "; ".join(affiliation_parts[:2])
+
+        openalex_id = (author.get("id") or "").rsplit("/", 1)[-1]
+        payload = {
+            "name": name,
+            "affiliation": affiliation,
+        }
+        if openalex_id:
+            payload["openalex_id"] = openalex_id
+        authors.append(payload)
+    return authors

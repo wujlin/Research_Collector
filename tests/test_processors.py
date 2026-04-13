@@ -4,6 +4,7 @@ from src.processors.deduplicator import Deduplicator
 from src.processors.importance_ranker import ImportanceRanker
 from src.processors.relevance_scorer import RelevanceScorer
 from src.processors.youtube_filter import YouTubeFilter
+import pytest
 
 
 def test_deduplicator_merges_cross_source_records():
@@ -35,6 +36,36 @@ def test_deduplicator_merges_cross_source_records():
     assert merged[0]["citation_count"] == 100
     assert "semantic_scholar" in merged[0]["source"]
     assert "Ben Poole" in merged[0]["authors"]
+
+
+def test_deduplicator_merges_author_dicts_with_affiliations():
+    deduplicator = Deduplicator()
+    records = [
+        {
+            "title": "OpenAlex style author record",
+            "abstract": "First abstract",
+            "authors": [
+                {"name": "Alice Smith", "affiliation": "Department of Physics, Princeton University", "openalex_id": "A1"}
+            ],
+            "source": "openalex",
+        },
+        {
+            "title": "OpenAlex style author record",
+            "abstract": "Second abstract",
+            "authors": [
+                {"name": "Alice Smith", "affiliation": "Department of Physics, Princeton University"},
+                {"name": "Bob Lee", "affiliation": "Department of Applied Mathematics, MIT"},
+            ],
+            "source": "semantic_scholar",
+        },
+    ]
+
+    merged = deduplicator.deduplicate(records)
+
+    assert len(merged) == 1
+    assert len(merged[0]["authors"]) == 2
+    assert merged[0]["authors"][0]["name"] == "Alice Smith"
+    assert merged[0]["authors"][0]["affiliation"] == "Department of Physics, Princeton University"
 
 
 def test_classifier_detects_sde_and_diffusion_topics():
@@ -116,6 +147,41 @@ def test_relevance_scorer_does_not_match_science_inside_computer_science():
 
     assert record["tier"] == 0
     assert record["venue_quality"] == "unranked"
+
+
+@pytest.mark.parametrize(
+    ("journal", "expected_tier"),
+    [
+        ("PRL", 1),
+        ("PRX", 2),
+        ("PRE", 2),
+        ("PRB", 2),
+        ("PR Research", 2),
+        ("PRResearch", 2),
+        ("Journal of Statistical Mechanics: Theory and Experiment", 2),
+        ("JSTAT", 2),
+        ("J. Stat. Phys.", 2),
+        ("New J. Phys.", 2),
+        ("NJP", 2),
+    ],
+)
+def test_relevance_scorer_matches_physics_journal_aliases(journal, expected_tier):
+    scorer = RelevanceScorer()
+    record = {
+        "title": "A statistical physics paper",
+        "abstract": "Brownian motion, stochastic dynamics, and nonequilibrium thermodynamics.",
+        "journal": journal,
+        "year": 2026,
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "topic_keys": ["stochastic_analysis/path_foundations/brownian_motion"],
+        "source": "openalex",
+    }
+
+    scorer.score_record(record)
+
+    assert record["tier"] == expected_tier
+    assert record["venue_quality"] in {"top_tier", "high_quality"}
 
 
 def test_importance_ranker_penalizes_suspicious_uncategorized_items():

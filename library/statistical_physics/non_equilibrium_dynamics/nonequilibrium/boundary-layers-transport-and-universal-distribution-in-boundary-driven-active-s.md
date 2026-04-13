@@ -8,10 +8,10 @@ arxiv: ""
 url: "https://openalex.org/W4414959762"
 pdf_url: "https://scipost.org/10.21468/SciPostPhys.19.4.088/pdf"
 topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics/collective_structure"]
-tier: 3
+tier: 2
 citations: 0
-relevance_score: 56.0
-collected: "2026-04-08"
+relevance_score: 62.0
+collected: "2026-04-13"
 status: "unread"
 source: "openalex"
 ---

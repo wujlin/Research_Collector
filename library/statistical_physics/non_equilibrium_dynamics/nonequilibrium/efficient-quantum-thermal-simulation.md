@@ -11,7 +11,7 @@ topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/no
 tier: 1
 citations: 4
 relevance_score: 71.17
-collected: "2026-04-08"
+collected: "2026-04-13"
 status: "unread"
 source: "openalex"
 ---
@@ -22,9 +22,7 @@ Quantum computers promise to tackle quantum simulation problems that are classic
 
 ## Key Contributions
 
-- Proposes a quantum thermal simulation algorithm that plays the role of `MCMC` for low-temperature quantum systems.
-- The construction is designed to satisfy `detailed balance` while respecting locality.
-- The paper frames thermal simulation as both an algorithmic task and a toy model for thermalization in open quantum systems.
+(待补充)
 
 ## Connections
 
@@ -34,59 +32,3 @@ Quantum computers promise to tackle quantum simulation problems that are classic
 
 ## Notes
 
-### Reading Frame
-
-这篇的核心不是一般意义上的“量子算法提速”，而是把 `classical MCMC -> detailed balance -> thermal sampling` 这条结构搬到量子热模拟里。
-
-### Problem
-
-目标是高效模拟低温量子热分布，也就是高效制备或采样 `Gibbs state / thermal distribution`。
-
-### Objects
-
-- `thermal distributions / Gibbs state`
-- open quantum system 中的热化过程
-- 与 classical `MCMC` 对应的量子转移结构
-
-### Evolution Structure
-
-优先确认四个结构是否同时成立：
-
-- `detailed balance`
-- `locality`
-- `thermalization`
-- 与 classical `Markov chain Monte Carlo` 的结构对应
-
-### Quantities
-
-这篇关心的核心量不是 entropy production，而是：
-
-- target thermal distribution
-- sampling efficiency
-- thermalization complexity
-
-### Method Role
-
-方法层要回答两个问题：
-
-1. 它怎样把 classical `MCMC` 的结构搬到 quantum setting。
-2. 它的新意是在具体算法步骤，还是在热化结构的统一表述。
-
-### Evidence
-
-证据主要来自：
-
-- 理论构造是否完整
-- 复杂度或效率保证
-- 与 classical `MCMC` 的结构对应是否清晰
-
-### Reproduction Path
-
-首次阅读不需要完整复现。更合适的做法是先写一个结构对照表：
-
-- `classical MCMC`
-- `detailed balance`
-- `thermal distribution`
-- quantum construction
-
-把这四项之间的对应关系写清，再决定是否进入算法细节。

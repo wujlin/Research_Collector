@@ -29,6 +29,86 @@ def test_arxiv_collector_parses_feed():
     assert records[0]["pdf_url"].endswith("2011.13456v2")
 
 
+def test_arxiv_collector_retries_after_429():
+    xml = """<?xml version="1.0" encoding="UTF-8"?>
+    <feed xmlns="http://www.w3.org/2005/Atom">
+      <entry>
+        <id>http://arxiv.org/abs/2501.00001v1</id>
+        <published>2025-01-01T00:00:00Z</published>
+        <title>Retry works for arXiv</title>
+        <summary>Abstract body</summary>
+        <author><name>Retry Tester</name></author>
+        <link title="pdf" href="http://arxiv.org/pdf/2501.00001v1" type="application/pdf" />
+      </entry>
+    </feed>"""
+    responses = iter(
+        [
+            httpx.Response(429, headers={"Retry-After": "0"}),
+            httpx.Response(200, text=xml),
+        ]
+    )
+    sleep_calls: list[float] = []
+    transport = httpx.MockTransport(lambda request: next(responses))
+    collector = ArxivCollector(
+        http_client=httpx.Client(transport=transport),
+        settings={
+            "collection": {
+                "source_policies": {
+                    "arxiv": {
+                        "min_interval_seconds": 0,
+                        "max_retries_on_429": 1,
+                        "base_backoff_seconds": 0,
+                    }
+                }
+            }
+        },
+        sleep_fn=sleep_calls.append,
+    )
+
+    records = collector.collect(query="retry", categories=["cs.LG"], max_results=1)
+
+    assert records[0]["arxiv_id"] == "2501.00001"
+    assert sleep_calls == [0.0]
+
+
+def test_arxiv_collector_respects_min_interval_between_requests():
+    xml = """<?xml version="1.0" encoding="UTF-8"?>
+    <feed xmlns="http://www.w3.org/2005/Atom">
+      <entry>
+        <id>http://arxiv.org/abs/2011.13456v2</id>
+        <published>2021-01-01T00:00:00Z</published>
+        <title>Score-Based Generative Modeling through Stochastic Differential Equations</title>
+        <summary>Abstract body</summary>
+        <author><name>Yang Song</name></author>
+        <link title="pdf" href="http://arxiv.org/pdf/2011.13456v2" type="application/pdf" />
+      </entry>
+    </feed>"""
+    sleep_calls: list[float] = []
+    clock_values = iter([0.0, 1.0, 4.0])
+    transport = httpx.MockTransport(lambda request: httpx.Response(200, text=xml))
+    collector = ArxivCollector(
+        http_client=httpx.Client(transport=transport),
+        settings={
+            "collection": {
+                "source_policies": {
+                    "arxiv": {
+                        "min_interval_seconds": 3.5,
+                        "max_retries_on_429": 0,
+                        "base_backoff_seconds": 0,
+                    }
+                }
+            }
+        },
+        sleep_fn=sleep_calls.append,
+        clock_fn=lambda: next(clock_values),
+    )
+
+    collector.collect(query="score", categories=["cs.LG"], max_results=1)
+    collector.collect(query="score", categories=["cs.LG"], max_results=1)
+
+    assert sleep_calls == [pytest.approx(2.5)]
+
+
 def test_semantic_scholar_collector_parses_json():
     payload = {
         "data": [
@@ -148,6 +228,21 @@ def test_openalex_collector_reconstructs_abstract():
     assert records[0]["openalex_id"] == "W123"
     assert records[0]["abstract"] == "Flow Matching works"
     assert records[0]["doi"] == "10.0000/example"
+
+
+def test_openalex_collector_passes_api_key(monkeypatch: pytest.MonkeyPatch):
+    seen_params: dict[str, str] = {}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        seen_params.update(dict(request.url.params))
+        return httpx.Response(200, json={"results": []})
+
+    monkeypatch.setenv("OPENALEX_API_KEY", "test-openalex-key")
+    transport = httpx.MockTransport(handler)
+    collector = OpenAlexCollector(http_client=httpx.Client(transport=transport))
+    collector.collect(query="flow", per_page=1)
+
+    assert seen_params.get("api_key") == "test-openalex-key"
 
 
 def test_youtube_collector_preserves_query_metadata():

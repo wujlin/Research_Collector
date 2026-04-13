@@ -31,6 +31,10 @@ class Candidate:
     venue_quality: str
     venue_reputation: str
     tier: int
+    authors: list[str]
+    author_signal: str
+    author_signal_reason: str
+    author_affiliations: list[str]
     fit_reason: str
     reproduction_reason: str
 
@@ -53,9 +57,71 @@ def venue_reputation_status(journal: str, venue: str, registry: dict[str, dict[s
     return default_status
 
 
+def load_author_affiliation_registry(config_name: str = "author_affiliation_reputation.yaml") -> dict[str, object]:
+    config = load_config(config_name)
+    return {
+        "default_status": str(config.get("default_status", "unknown")),
+        "strong_institutions": [normalize_venue_name(value) for value in config.get("strong_institutions", [])],
+        "academic_keywords": [normalize_venue_name(value) for value in config.get("academic_keywords", [])],
+        "off_topic_keywords": [normalize_venue_name(value) for value in config.get("off_topic_keywords", [])],
+        "topic_keywords": {
+            key: [normalize_venue_name(value) for value in values]
+            for key, values in (config.get("topic_keywords", {}) or {}).items()
+        },
+    }
+
+
+def infer_topic_families(topics: list[str]) -> list[str]:
+    return sorted({topic.split("/", 1)[0] for topic in topics if topic})
+
+
+def summarize_author_affiliation_signal(topics: list[str], affiliations: list[str], registry: dict[str, object]) -> tuple[str, str]:
+    normalized_affiliations = [normalize_venue_name(value) for value in affiliations if normalize_venue_name(value)]
+    if not normalized_affiliations:
+        return str(registry.get("default_status", "unknown")), "No affiliation metadata available."
+
+    strong_institutions = registry.get("strong_institutions", [])
+    academic_keywords = registry.get("academic_keywords", [])
+    off_topic_keywords = registry.get("off_topic_keywords", [])
+    topic_keywords = registry.get("topic_keywords", {})
+    families = infer_topic_families(topics)
+    expected_keywords: list[str] = []
+    for family in families:
+        expected_keywords.extend(topic_keywords.get(family, []))
+
+    strong_hit = any(any(token in affiliation for token in strong_institutions) for affiliation in normalized_affiliations)
+    topical_hit = any(any(token in affiliation for token in expected_keywords) for affiliation in normalized_affiliations)
+    academic_hit = any(any(token in affiliation for token in academic_keywords) for affiliation in normalized_affiliations)
+    off_topic_hit = any(any(token in affiliation for token in off_topic_keywords) for affiliation in normalized_affiliations)
+
+    if strong_hit and topical_hit:
+        return "strong_match", "Strong institution and topic-aligned affiliation signal."
+    if topical_hit:
+        return "aligned_match", "Affiliation text looks topic-aligned even without a flagship institution match."
+    if strong_hit:
+        return "brand_only", "Strong institution signal is present, but the department or group fit is not explicit."
+    if off_topic_hit:
+        return "weak_match", "Affiliation metadata points to an explicitly off-topic department or organization."
+    if academic_hit:
+        return "unknown", "Academic affiliation metadata is present, but the department or group fit is not explicit."
+    return "unknown", "Affiliation metadata is present, but the topical fit is still unclear."
+
+
+def author_signal_rank(value: str) -> int:
+    return {
+        "strong_match": 4,
+        "aligned_match": 3,
+        "brand_only": 2,
+        "unknown": 1,
+        "weak_match": 0,
+    }.get(value, 0)
+
+
 def is_must_read_eligible(candidate: Candidate, ranker: ImportanceRanker) -> bool:
     allowed_reputation = set(ranker.paper_cfg.get("must_read_allowed_reputation", ["trusted"]))
     preprint_min_score = float(ranker.paper_cfg.get("must_read_preprint_min_score", 60))
+    if candidate.author_signal == "weak_match":
+        return False
     if candidate.venue_quality == "preprint":
         return candidate.importance_bucket == "keep" and candidate.importance_score >= preprint_min_score
     return candidate.venue_reputation in allowed_reputation
@@ -109,7 +175,13 @@ def build_reproduction_reason(title: str, topics: list[str]) -> str:
     return "可以作为第二梯队复现候选。"
 
 
-def candidate_from_paper(paper, ranker: ImportanceRanker, registry: dict[str, dict[str, str]], default_status: str) -> Candidate:
+def candidate_from_paper(
+    paper,
+    ranker: ImportanceRanker,
+    registry: dict[str, dict[str, str]],
+    default_status: str,
+    author_registry: dict[str, object],
+) -> Candidate:
     payload = {
         "title": paper.title,
         "abstract": paper.abstract,
@@ -125,6 +197,23 @@ def candidate_from_paper(paper, ranker: ImportanceRanker, registry: dict[str, di
     }
     importance_score, importance_bucket = ranker.score_paper(payload)
     leaf_topics = [topic.key for topic in paper.topics if topic.key.count("/") == 2]
+    author_names = [author.name for author in paper.authors]
+    seen_affiliations: set[str] = set()
+    author_affiliations: list[str] = []
+    for author in paper.authors:
+        affiliation = normalize_whitespace(author.affiliation or "")
+        if not affiliation:
+            continue
+        lowered = affiliation.lower()
+        if lowered in seen_affiliations:
+            continue
+        seen_affiliations.add(lowered)
+        author_affiliations.append(affiliation)
+    author_signal, author_signal_reason = summarize_author_affiliation_signal(
+        leaf_topics,
+        author_affiliations,
+        author_registry,
+    )
     return Candidate(
         paper_id=paper.id,
         title=paper.title,
@@ -137,6 +226,10 @@ def candidate_from_paper(paper, ranker: ImportanceRanker, registry: dict[str, di
         venue_quality=ranker.venue_quality_label(payload),
         venue_reputation=venue_reputation_status(paper.journal or "", paper.venue or "", registry, default_status),
         tier=paper.tier or 0,
+        authors=author_names,
+        author_signal=author_signal,
+        author_signal_reason=author_signal_reason,
+        author_affiliations=author_affiliations[:3],
         fit_reason=build_fit_reason(paper.title, leaf_topics),
         reproduction_reason=build_reproduction_reason(paper.title, leaf_topics),
     )
@@ -172,7 +265,13 @@ def sort_key(candidate: Candidate) -> tuple[float, int, int, str]:
         "preprint": 1,
         "unranked": 0,
     }.get(candidate.venue_quality, 0)
-    return (candidate.importance_score, venue_rank, candidate.year or 0, candidate.title)
+    return (
+        candidate.importance_score,
+        venue_rank,
+        author_signal_rank(candidate.author_signal),
+        candidate.year or 0,
+        candidate.title,
+    )
 
 
 def pick_first(
@@ -196,12 +295,13 @@ def main() -> None:
     pipeline = CollectionPipeline()
     ranker = ImportanceRanker()
     venue_registry, default_venue_status = load_venue_reputation_registry()
+    author_registry = load_author_affiliation_registry()
     candidates: list[Candidate] = []
 
     for paper in pipeline.database.list_papers(limit=2000):
         if cutoff and (not paper.collected_at or paper.collected_at < cutoff):
             continue
-        candidate = candidate_from_paper(paper, ranker, venue_registry, default_venue_status)
+        candidate = candidate_from_paper(paper, ranker, venue_registry, default_venue_status, author_registry)
         if should_include_frontier(candidate):
             candidates.append(candidate)
 
@@ -300,9 +400,13 @@ def main() -> None:
                 f"- Venue: `{candidate.journal}`",
                 f"- Venue quality: `{candidate.venue_quality}`",
                 f"- Venue reputation: `{candidate.venue_reputation}`",
+                f"- Author signal: `{candidate.author_signal}`",
+                f"- Authors: {', '.join(candidate.authors[:4]) if candidate.authors else 'Unknown'}",
+                f"- Institutions: {', '.join(candidate.author_affiliations) if candidate.author_affiliations else 'No affiliation metadata'}",
                 f"- Importance: `{candidate.importance_score:.1f}`",
                 f"- Topics: {', '.join(candidate.topics) if candidate.topics else 'no_leaf_topic'}",
                 f"- Why now: {candidate.fit_reason}",
+                f"- Why team: {candidate.author_signal_reason}",
                 f"- URL: {candidate.url or 'N/A'}",
                 "",
             ]
@@ -322,6 +426,8 @@ def main() -> None:
                 "",
                 f"- Venue: `{candidate.journal}`",
                 f"- Venue reputation: `{candidate.venue_reputation}`",
+                f"- Author signal: `{candidate.author_signal}`",
+                f"- Institutions: {', '.join(candidate.author_affiliations) if candidate.author_affiliations else 'No affiliation metadata'}",
                 f"- Topics: {', '.join(candidate.topics) if candidate.topics else 'no_leaf_topic'}",
                 f"- Why reproduce: {candidate.reproduction_reason}",
                 f"- URL: {candidate.url or 'N/A'}",
@@ -338,7 +444,7 @@ def main() -> None:
 
     for candidate in watchlist:
         lines.append(
-            f"- `{candidate.title}` | {candidate.journal} | {candidate.venue_quality} | {candidate.venue_reputation} | {candidate.importance_score:.1f}"
+            f"- `{candidate.title}` | {candidate.journal} | {candidate.venue_quality} | {candidate.venue_reputation} | {candidate.author_signal} | {candidate.importance_score:.1f}"
         )
 
     lines.extend(

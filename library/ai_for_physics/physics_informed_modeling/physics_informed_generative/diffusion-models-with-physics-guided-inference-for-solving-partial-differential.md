@@ -10,8 +10,8 @@ pdf_url: "https://arxiv.org/pdf/2604.01242"
 topics: ["ai_for_physics", "ai_for_physics/physics_informed_modeling/physics_informed_generative", "ai_for_physics/generative_dynamics", "ai_for_physics/physics_informed_modeling"]
 tier: 0
 citations: 0
-relevance_score: 51.0
-collected: "2026-04-08"
+relevance_score: 54.0
+collected: "2026-04-13"
 status: "unread"
 source: "openalex"
 ---

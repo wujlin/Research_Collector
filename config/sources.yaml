@@ -33,6 +33,7 @@ journal_tiers:
       - name: "Physical Review Letters"
         openalex_id: "S24807848"
         issn: "0031-9007"
+        aliases: ["PRL"]
       - name: "Communications in Mathematical Physics"
         issn: "0010-3616"
       - name: "Annals of Applied Probability"
@@ -53,8 +54,13 @@ journal_tiers:
     journals:
       - name: "Physical Review X"
         issn: "2160-3308"
+        aliases: ["PRX"]
       - name: "Physical Review E"
         issn: "2470-0045"
+        aliases: ["PRE"]
+      - name: "Physical Review B"
+        issn: "2469-9969"
+        aliases: ["PRB"]
       - name: "SIAM Journal on Applied Mathematics"
         issn: "0036-1399"
       - name: "SIAM/ASA Journal on Uncertainty Quantification"
@@ -65,8 +71,15 @@ journal_tiers:
         issn: "0021-9991"
       - name: "Journal of Statistical Mechanics"
         issn: "1742-5468"
+        aliases:
+          [
+            "Journal of Statistical Mechanics: Theory and Experiment",
+            "JSTAT",
+            "J. Stat. Mech.",
+          ]
       - name: "Journal of Statistical Physics"
         issn: "0022-4715"
+        aliases: ["J. Stat. Phys.", "J Stat Phys"]
       - name: "NeurIPS"
         aliases: ["Neural Information Processing Systems", "NeurIPS"]
       - name: "ICML"
@@ -79,9 +92,11 @@ journal_tiers:
         aliases: ["Conference on Uncertainty in Artificial Intelligence"]
       - name: "Physical Review Research"
         issn: "2643-1564"
+        aliases: ["PR Research", "PRResearch"]
       - name: "SciPost Physics"
       - name: "New Journal of Physics"
         issn: "1367-2630"
+        aliases: ["New J. Phys.", "NJP"]
 
   tier_3:
     weight: 4

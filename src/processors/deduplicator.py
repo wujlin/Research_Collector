@@ -7,7 +7,7 @@ from typing import Any
 
 from rapidfuzz import fuzz
 
-from src.utils.helpers import normalize_title
+from src.utils.helpers import normalize_title, normalize_whitespace
 
 
 class Deduplicator:
@@ -68,7 +68,7 @@ class Deduplicator:
         merged["tier"] = max(int(merged.get("tier", 0) or 0), int(right.get("tier", 0) or 0))
         merged["is_seminal"] = bool(merged.get("is_seminal")) or bool(right.get("is_seminal"))
 
-        merged["authors"] = sorted(set(merged.get("authors", [])) | set(right.get("authors", [])))
+        merged["authors"] = self._merge_authors(merged.get("authors", []), right.get("authors", []))
         merged["topic_keys"] = sorted(
             set(merged.get("topic_keys", [])) | set(right.get("topic_keys", []))
         )
@@ -107,3 +107,38 @@ class Deduplicator:
         if not value:
             return []
         return [item.strip() for item in value.split(",") if item.strip()]
+
+    @staticmethod
+    def _normalize_author(author: Any) -> dict[str, str]:
+        if isinstance(author, str):
+            return {"name": normalize_whitespace(author), "affiliation": "", "openalex_id": "", "semantic_scholar_id": ""}
+        if isinstance(author, dict):
+            return {
+                "name": normalize_whitespace(str(author.get("name", ""))),
+                "affiliation": normalize_whitespace(str(author.get("affiliation", ""))),
+                "openalex_id": normalize_whitespace(str(author.get("openalex_id", ""))),
+                "semantic_scholar_id": normalize_whitespace(str(author.get("semantic_scholar_id", ""))),
+            }
+        return {"name": "", "affiliation": "", "openalex_id": "", "semantic_scholar_id": ""}
+
+    @classmethod
+    def _merge_authors(cls, left: list[Any], right: list[Any]) -> list[Any]:
+        merged: dict[tuple[str, str], dict[str, str]] = {}
+        for source in [left or [], right or []]:
+            for author in source:
+                payload = cls._normalize_author(author)
+                if not payload["name"]:
+                    continue
+                key = (payload["name"].lower(), payload["affiliation"].lower())
+                if key not in merged:
+                    merged[key] = payload
+                    continue
+                merged[key]["openalex_id"] = merged[key]["openalex_id"] or payload["openalex_id"]
+                merged[key]["semantic_scholar_id"] = (
+                    merged[key]["semantic_scholar_id"] or payload["semantic_scholar_id"]
+                )
+
+        results = sorted(merged.values(), key=lambda item: (item["name"].lower(), item["affiliation"].lower()))
+        if results and all(not item["affiliation"] and not item["openalex_id"] and not item["semantic_scholar_id"] for item in results):
+            return [item["name"] for item in results]
+        return results

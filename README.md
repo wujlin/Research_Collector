@@ -36,6 +36,8 @@ cp .env.example .env
 # 编辑 .env，填入所需的 API key
 ```
 
+建议至少配置 `OPENALEX_API_KEY` 和 `YOUTUBE_API_KEY`。`Semantic Scholar` 当前在默认工作流中已封存，不必填写。
+
 ### 3. 初始化 seminal papers
 
 ```bash
@@ -91,13 +93,13 @@ cd web && npm install && npm run dev
 |---|---|---|
 | arXiv API | 预印本实时采集 | 免费，无需 key |
 | Semantic Scholar | 引用网络、影响力指标 | 免费，可选 API key |
-| OpenAlex | 期刊筛选、开放获取 | 免费，无需 key |
+| OpenAlex | 期刊筛选、开放获取 | 免费，建议配置 API key |
 | YouTube Data API | 学习视频采集 | 需 Google API key |
 
 ## 目标期刊层级
 
 - **Tier 1**：Nature, Science, Nature Physics, Nature Computational Science, Nature Cities, PRL, PNAS
-- **Tier 2**：PRX, PRE, JSTAT, J. Stat. Phys., PRResearch, SciPost Physics, NeurIPS, ICML, ICLR, New J. Phys.
+- **Tier 2**：PRX, PRE, PRB, JSTAT, J. Stat. Phys., PR Research, SciPost Physics, NeurIPS, ICML, ICLR, New J. Phys.
 - **Tier 3**：CEUS, EPB, J. R. Soc. Interface, EPJ Data Science, Chaos, Chaos, Solitons & Fractals, MLST, EPJ B, Atmospheric Measurement Techniques
 
 默认不放进目标期刊层级、只做 article-level 审核的 venue：
