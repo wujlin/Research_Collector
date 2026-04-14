@@ -58,30 +58,13 @@ date: "2026-04-13"
 - URL:
   https://scipost.org/SciPostPhys.19.4.088
 
-### 3. Efficient quantum thermal simulation
-
-- Venue: `Nature`
-- Venue reputation: `top_tier`
-- Authors: `Chi-Fang Chen, Michael Kastoryano, Fernando G. S. L. Brandão, András Gilyén`
-- Institutions: `Caltech IQIM`, `AWS Center for Quantum Computing`, `University of Copenhagen`, `Rényi Institute`
-- Why now:
-  这篇不是你主线里最贴的那种随机热力学文章，但它是极好的“高质量样本”：把 `thermalization`、`detailed balance`、`locality` 和 algorithmic construction 真正放到一起。
-- Why team:
-  这几个作者和机构在 quantum information / quantum algorithms 这条线上都很硬，团队可信度很高。
-- Why venue:
-  `Nature` 本身不用多说；更关键的是这不是靠品牌撑着的泛应用文，而是明确在解一个长期的 thermal simulation 问题。
-- Read as:
-  `量子热化与经典 MCMC 结构之间，到底能建立怎样的严格对应`
-- URL:
-  https://www.nature.com/articles/s41586-025-09583-x
-
 ## Next Batch: Fast Review
 
-### 4. MVNN: A Measure-Valued Neural Network for Learning McKean-Vlasov Dynamics from Particle Data
+### 3. MVNN: A Measure-Valued Neural Network for Learning McKean-Vlasov Dynamics from Particle Data
 
 - Venue: `arXiv`
 - Venue reputation: `preprint`
-- Authors: `Liyao Lyu, Xinyue Yu, Hayden Schaeffer`
+- Authors: `Lingyi Lyu, Xinyue Yu, Hayden Schaeffer`
 - Institutions: `Michigan State University`, `UCLA`
 - Why review, not must read:
   这篇的 topic 很贴你后面可能会走的 `trajectory -> drift inference -> interacting particle systems` 线，而且 `Hayden Schaeffer` 这条 scientific ML / applied math 线是专业的；但它目前还是 preprint，应该先做快速筛读，不要直接给和 `PRResearch` / `SciPost` 同等级的信任。
@@ -90,15 +73,29 @@ date: "2026-04-13"
 - URL:
   https://arxiv.org/abs/2604.00333
 
+### 4. A framework for the use of generative modelling in non-equilibrium statistical mechanics
+
+- Venue: `Proceedings of the Royal Society A`
+- Venue reputation: `trusted`
+- Authors: `Karl Friston, Maxwell J. D. Ramstead, Dalton A. R. Sakthivadivel`
+- Institutions:
+  `University College London` author线最明确；这条线在 free-energy principle / active inference 方向是专业团队，但争议也比前几篇更大。
+- Why fast review, not must read:
+  这篇和你当前主线的关键词贴得最直接：`generative modelling + non-equilibrium statistical mechanics`。但它更像一个概念框架和语言桥，而不是像 `PRResearch` 那篇那样给出清晰可计算机制、也不像 `SciPost` 那篇那样给出扎实的 steady-state transport 结果。所以适合快速筛读，用来判断它是否真的能给你方法论增量。
+- Read as:
+  `它到底是在提供可操作的统计物理框架，还是主要在用 free-energy principle 重新包装非平衡系统语言`
+- URL:
+  https://doi.org/10.1098/rspa.2025.0538
+
 ## Reproduction Candidates Only
 
 ### Score-fPINN: Fractional Score-Based Physics-Informed Neural Networks for High-Dimensional Fokker-Planck-Lévy Equations
 
 - Venue: `Communications in Computational Physics`
-- Venue reputation: `mid_tier_specialized`
+- Venue reputation: `cautious`
 - Institutions: `Pacific Northwest National Laboratory`, `National University of Singapore`, `Worcester Polytechnic Institute`, `John Brown University`
 - Why not in next reading batch:
-  主题看起来很贴 `score + Fokker-Planck`，但这篇更适合当方法复现实验的灵感，不适合当你下一批重点阅读文献。原因是：venue 虽然正规，但不是这个问题上的强信号期刊；文章题目也更偏 numerical method / PINN 组合，而不是你当前最需要的理论桥接。
+  主题看起来很贴 `score + Fokker-Planck`，但这篇更适合当方法复现实验的灵感，不适合当你下一批重点阅读文献。原因是：venue 虽然正规，但在这条线上的独立信号明显弱于 `JCP`、`SciPost Physics` 或更强的 field venue；文章题目也更偏 numerical method / PINN 组合，而不是你当前最需要的理论桥接。
 - Use as:
   `如果你要做一个 1D/2D Fokker-Planck + score residual 的 toy，拿它当复现参考`
 - URL:
@@ -106,9 +103,9 @@ date: "2026-04-13"
 
 ## Hold
 
-- `A framework for the use of generative modelling in non-equilibrium statistical mechanics`
+- `Efficient quantum thermal simulation`
   Why hold:
-  题目很吸引人，作者名字也强，但目前更像概念性、框架性 preprint，容易把你带到过宽的讨论里。适合等你再补一两篇更硬的 nonequilibrium / generative bridge 文章后回来看。
+  文章质量很高，作者和机构都很强，但它要求一定的量子信息 / 量子热化基础。你已经决定先跳过它，等补完量子力学和相关背景后再回读更合适。
 
 - `Predictor-Driven Diffusion for Spatiotemporal Generation`
   Why hold:
@@ -128,14 +125,15 @@ date: "2026-04-13"
 
 1. `Non-Markovian rock-paper-scissors games`
 2. `Boundary layers, transport and universal distribution in boundary driven active systems`
-3. `Efficient quantum thermal simulation`
+3. `MVNN: A Measure-Valued Neural Network for Learning McKean-Vlasov Dynamics from Particle Data`
 
 如果还有余力，再加：
 
-4. `MVNN: A Measure-Valued Neural Network for Learning McKean-Vlasov Dynamics from Particle Data`
+4. `A framework for the use of generative modelling in non-equilibrium statistical mechanics`
+5. `Efficient quantum thermal simulation`（以后补量子基础后回读）
 
 ## One-Line Summary
 
 下一批最值得读的，不是 `CiCP + score/PINN` 那篇，而是：
 
-`PRResearch 的 non-Markov nonequilibrium model -> SciPost 的 active transport / steady-state structure -> Nature 的 thermal simulation 高质量样本 -> arXiv 的 measure-valued scientific ML bridge`
+`PRResearch 的 non-Markov nonequilibrium model -> SciPost 的 active transport / steady-state structure -> MVNN 的 particle-data bridge -> Proc. R. Soc. A 的 generative / non-equilibrium 概念桥`

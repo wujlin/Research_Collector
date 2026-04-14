@@ -65,6 +65,15 @@ venue 过关后，对具体文章还要补一次机构筛选：
   - `Reproduction Candidates`
   - `Watchlist`
 
+对当前这条研究线，可以先按下面的直觉处理一些常见 venue：
+
+- `Journal of Computational Physics`
+  视为 `trusted`。如果文章偏 `computational physics / numerical Fokker-Planck / algorithmic simulation / method + physical modeling bridge`，它是强专业刊信号。
+- `SciPost Physics`
+  视为 `trusted`。如果文章偏理论物理、统计物理、steady-state transport、active matter，这类文章通常值得认真看。
+- `Communications in Computational Physics`
+  视为 `cautious`。正规专业刊，但默认不作为主阅读优先级信号；更适合 `Reproduction Candidates` 或方法参考。
+
 ## 5. 文件落点
 
 - 手工核验结果记到 [venue_reputation.yaml](/Users/jinlin/Desktop/Project/Research_Collector/config/venue_reputation.yaml)

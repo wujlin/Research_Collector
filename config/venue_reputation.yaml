@@ -53,12 +53,18 @@ venues:
   "physical review research":
     status: "trusted"
     note: "APS open-access research journal with good field signal, though below PRX in selectivity."
+  "journal of computational physics":
+    status: "trusted"
+    note: "Strong long-running specialist journal for computational physics, numerical modeling, and algorithmic physical simulation."
   "new journal of physics":
     status: "trusted"
     note: "Established broad physics journal with solid signal for statistical and theoretical physics topics."
   "scipost physics":
     status: "trusted"
     note: "Well-regarded community-led open-access venue in theoretical and statistical physics."
+  "proceedings of the royal society a":
+    status: "trusted"
+    note: "Respected general physical and mathematical sciences journal; still apply article-level scrutiny for conceptual framework papers."
   "computers, environment and urban systems":
     status: "trusted"
     note: "Core urban analytics and computational urban systems journal."
@@ -95,6 +101,9 @@ venues:
   "the european physical journal special topics":
     status: "cautious"
     note: "Special-issue-driven venue; treat as article-level only rather than a standalone venue signal."
+  "communications in computational physics":
+    status: "cautious"
+    note: "Legitimate specialized computational-physics journal, but weaker as a standalone reading-priority signal than JCP or top field journals."
   "entropy":
     status: "cautious"
     note: "Topical overlap exists, but venue quality is uneven and needs article-level scrutiny."
