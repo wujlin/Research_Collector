@@ -2,7 +2,7 @@
 title: "桥接主题"
 description: "翻译层与桥接机制：把数学骨架、物理语义、生成建模和城市应用接起来。"
 paper_count: 0
-last_updated: "2026-04-13"
+last_updated: "2026-04-14"
 ---
 
 # 桥接主题

@@ -11,10 +11,15 @@ date: "2026-04-13"
 今天开始进入新的精读对象：
 
 - `Non-Markovian rock-paper-scissors games`
+- `MVNN: A Measure-Valued Neural Network for Learning McKean-Vlasov Dynamics from Particle Data`
 
 这一天继续沿着你已经建立起来的主线往前推：
 
 `Markov / non-Markov -> waiting-time structure -> memory -> nonequilibrium dynamics`
+
+同时开始补入一条方法侧分支：
+
+`from particle trajectories -> distribution-dependent dynamics -> measure-valued learning`
 
 ## Reading Principle
 
@@ -35,3 +40,12 @@ date: "2026-04-13"
   [non-markovian-rock-paper-scissors-games.md](/Users/jinlin/Desktop/Project/Research_Collector/digests/2026-04-13/non-markovian-rock-paper-scissors-games.md)
 - 当前切入点：
   `long waiting times 和 memory 怎样改变经典 zRPS 模型里 “law of the weakest” 的生存规则`
+
+### Paper 2
+
+- 题目：
+  `MVNN: A Measure-Valued Neural Network for Learning McKean-Vlasov Dynamics from Particle Data`
+- 独立笔记：
+  [mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-particle-data.md](/Users/jinlin/Desktop/Project/Research_Collector/digests/2026-04-13/mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-particle-data.md)
+- 当前切入点：
+  `如何把 probability measure 当作网络输入对象，从粒子轨迹中学习 distribution-dependent drift`
