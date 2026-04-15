@@ -160,17 +160,185 @@ video_specific:
     replacements:
       - pattern: '小骏'
         replacement: "小珺"
+      - pattern: '布鲁克林派空镜'
+        replacement: "布鲁克林拍空镜"
       - pattern: '杨立坤'
         replacement: "杨立昆"
       - pattern: '岛交大'
         replacement: "上交大"
       - pattern: 'AZM班'
         replacement: "ACM班"
+      - pattern: '哀人'
+        replacement: "I人"
+      - pattern: '私宅'
+        replacement: "死宅"
+      - pattern: 'recitation'
+        replacement: "Research"
+      - pattern: '亚园亚园院|亚亚园院|亚园院|亚演员|亚运院'
+        replacement: "亚研院"
+      - pattern: '人才积极'
+        replacement: "人才济济"
+      - pattern: '新加坡鼓励'
+        replacement: "新加坡国立大学"
+      - pattern: '托老师'
+        replacement: "涂老师"
+      - pattern: '\bdeeply supplies\b'
+        replacement: "Deeply-Supervised Nets"
+      - pattern: '\bdp surprise nets\b'
+        replacement: "deeply-supervised nets"
+      - pattern: '\bdb surprise nets\b'
+        replacement: "deeply-supervised nets"
+      - pattern: '\brestnet\b'
+        replacement: "ResNet"
+      - pattern: 'restnet'
+        replacement: "ResNet"
+      - pattern: '\bimage night\b'
+        replacement: "ImageNet"
+      - pattern: '\brest next\b'
+        replacement: "ResNeXt"
+      - pattern: '\bdemand\b'
+        replacement: "DeepMind"
+      - pattern: '\bdamis\b'
+        replacement: "Demis"
+      - pattern: '\bAfterfall\b'
+        replacement: "AlphaFold"
+      - pattern: '\bopen eye\b'
+        replacement: "OpenAI"
       - pattern: '\bMIU\b'
         replacement: "NYU"
+      - pattern: '\bYang Kun\b'
+        replacement: "Yann LeCun"
+      - pattern: '\bYoung\b'
+        replacement: "Yann"
+      - pattern: 'Young'
+        replacement: "Yann"
       - pattern: '\bLekun\b'
         replacement: "LeCun"
       - pattern: '\bYoung LeCun\b'
         replacement: "Yann LeCun"
+      - pattern: 'Scientific Data Science'
+        replacement: "Center for Data Science"
+      - pattern: '多莫泰'
+        replacement: "多模态"
+      - pattern: '\bword model\b'
+        replacement: "world model"
+      - pattern: 'word model'
+        replacement: "world model"
+      - pattern: '\blogic model\b'
+        replacement: "large model"
+      - pattern: 'logic model'
+        replacement: "large model"
       - pattern: '\bjapa\b'
         replacement: "JEPA"
+      - pattern: 'demand'
+        replacement: "DeepMind"
+      - pattern: 'damis'
+        replacement: "Demis"
+      - pattern: 'Afterfall'
+        replacement: "AlphaFold"
+      - pattern: 'open eye'
+        replacement: "OpenAI"
+      - pattern: 'rest next'
+        replacement: "ResNeXt"
+      - pattern: 'image night'
+        replacement: "ImageNet"
+      - pattern: 'dp surprise nets'
+        replacement: "deeply-supervised nets"
+      - pattern: 'db surprise nets'
+        replacement: "deeply-supervised nets"
+      - pattern: 'deeply supplies'
+        replacement: "Deeply-Supervised Nets"
+      - pattern: '多么态'
+        replacement: "多模态"
+      - pattern: 'Personal Interest'
+        replacement: "Person of Interest"
+      - pattern: '记忆币'
+        replacement: "GEB"
+      - pattern: '哥德尔巴赫埃舍尔'
+        replacement: "哥德尔、艾舍尔、巴赫"
+      - pattern: '集一臂之大城'
+        replacement: "集异璧之大成"
+      - pattern: '为负心词强说愁'
+        replacement: "为赋新词强说愁"
+      - pattern: '泛否'
+        replacement: "饭否"
+      - pattern: 'a三班'
+        replacement: "A3班"
+      - pattern: '交大一三班'
+        replacement: "交大A3班"
+      - pattern: '新加坡果立'
+        replacement: "新加坡国立"
+      - pattern: '摇班|摇板'
+        replacement: "姚班"
+      - pattern: '渔泳老师'
+        replacement: "俞勇老师"
+      - pattern: '余老师'
+        replacement: "俞老师"
+      - pattern: '丁颖大名'
+        replacement: "鼎鼎大名"
+      - pattern: 'bcmi'
+        replacement: "BCMI"
+      - pattern: 'vue的信息'
+        replacement: "视觉的信息"
+      - pattern: 'Microsoft呃 Research'
+        replacement: "Microsoft Research"
+      - pattern: 'bmvc的paper'
+        replacement: "BMVC的论文"
+      - pattern: 'pytor'
+        replacement: "PyTorch"
+      - pattern: 'PyTorch(?:ch)+'
+        replacement: "PyTorch"
+      - pattern: 'pixel labeling'
+        replacement: "pixel-level labeling"
+      - pattern: 'course 更加粗糙'
+        replacement: "coarse 更加粗糙"
+      - pattern: 'embody agent'
+        replacement: "embodied agent"
+      - pattern: 'multiple noble prices'
+        replacement: "multiple Nobel prizes"
+      - pattern: '结构化的鲜艳'
+        replacement: "结构化的先验"
+      - pattern: '表循环'
+        replacement: "表征循环"
+      - pattern: '何凯明'
+        replacement: "何恺明"
+      - pattern: 'PhD变生'
+        replacement: "PhD新生"
+      - pattern: 'Lekun'
+        replacement: "LeCun"
+      - pattern: '杨洛空|杨鲁空'
+        replacement: "杨立昆"
+      - pattern: 'soft surprise learning|soft-suppressed learning|softspice learning'
+        replacement: "self-supervised learning"
+      - pattern: 'super ice learning'
+        replacement: "supervised learning"
+      - pattern: 'softspice'
+        replacement: "self-supervised"
+      - pattern: 'unsuppressed learning'
+        replacement: "unsupervised learning"
+      - pattern: '韩武纪'
+        replacement: "寒武纪"
+      - pattern: 'TP Research Cloud'
+        replacement: "TPU Research Cloud"
+      - pattern: 'special cognition'
+        replacement: "spatial cognition"
+      - pattern: 'Maravik'
+        replacement: "Moravec"
+      - pattern: 'navier stock方程'
+        replacement: "Navier-Stokes方程"
+      - pattern: 'fundtuning'
+        replacement: "fine-tuning"
+      - pattern: 'Gaussian Spotting'
+        replacement: "Gaussian Splatting"
+      - pattern: '多摩泰'
+        replacement: "多模态"
+      - pattern: 'japajapa'
+        replacement: "JEPA，JEPA"
+      - pattern: 'Tractatus 什么Logico-Philosophicus'
+        replacement: "Tractatus Logico-Philosophicus"
+      - pattern: '维特根斯坎'
+        replacement: "维特根斯坦"
+      - pattern: 'tracktardis'
+        replacement: "Tractatus"
+      - pattern: 'logical philosophicus'
+        replacement: "Logico-Philosophicus"

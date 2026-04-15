@@ -103,7 +103,7 @@ def build_replacements(terms_config: dict[str, object], *, video_id: str | None)
 
     compiled: list[tuple[re.Pattern[str], str]] = []
     for pattern, replacement in rules:
-        compiled.append((re.compile(pattern, re.IGNORECASE), replacement))
+        compiled.append((re.compile(pattern, re.IGNORECASE | re.ASCII), replacement))
     return compiled
 
 
@@ -188,6 +188,15 @@ def main() -> None:
         max_gap_seconds=args.max_gap_seconds,
         max_chars=args.max_chars,
     )
+    merged_segments = [
+        TranscriptSegment(
+            start=segment.start,
+            end=segment.end,
+            text=clean_text(segment.text, replacements),
+        )
+        for segment in merged_segments
+        if clean_text(segment.text, replacements)
+    ]
 
     metadata["refined_at"] = datetime.now().isoformat(timespec="seconds")
     metadata["cleanup_rules"] = len(replacements)
