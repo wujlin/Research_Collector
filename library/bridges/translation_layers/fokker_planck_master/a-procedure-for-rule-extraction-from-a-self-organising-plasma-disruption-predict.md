@@ -7,11 +7,11 @@ doi: "10.1038/s41598-026-38318-9"
 arxiv: ""
 url: "https://openalex.org/W7153313027"
 pdf_url: "https://www.nature.com/articles/s41598-026-38318-9_reference.pdf"
-topics: ["bridges/translation_layers/fokker_planck_master", "bridges/translation_layers", "bridges"]
+topics: ["bridges/translation_layers/fokker_planck_master", "bridges", "bridges/translation_layers"]
 tier: 0
 citations: 0
 relevance_score: 47.0
-collected: "2026-04-13"
+collected: "2026-04-15"
 status: "unread"
 source: "openalex"
 ---
@@ -27,8 +27,8 @@ In a previous paper, a Self-Organizing Map had proven to be able to identify the
 ## Connections
 
 - [[fokker_planck_master]]
-- [[translation_layers]]
 - [[bridges]]
+- [[translation_layers]]
 
 ## Notes
 

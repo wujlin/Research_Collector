@@ -7,11 +7,11 @@ doi: "10.1038/s41598-026-47273-4"
 arxiv: ""
 url: "https://openalex.org/W7153063555"
 pdf_url: "https://www.nature.com/articles/s41598-026-47273-4_reference.pdf"
-topics: ["ai_for_physics/physics_informed_modeling", "ai_for_physics", "ai_for_physics/physics_informed_modeling/physics_informed_generative", "ai_for_physics/physics_informed_modeling/scientific_ml_applications"]
+topics: ["ai_for_physics", "ai_for_physics/physics_informed_modeling/physics_informed_generative", "ai_for_physics/physics_informed_modeling", "ai_for_physics/physics_informed_modeling/scientific_ml_applications"]
 tier: 0
 citations: 0
 relevance_score: 50.0
-collected: "2026-04-13"
+collected: "2026-04-15"
 status: "unread"
 source: "openalex"
 ---
@@ -26,9 +26,9 @@ It remains highly challenging to extract features from monitoring signals of win
 
 ## Connections
 
-- [[physics_informed_modeling]]
 - [[ai_for_physics]]
 - [[physics_informed_generative]]
+- [[physics_informed_modeling]]
 - [[scientific_ml_applications]]
 
 ## Notes

@@ -7,11 +7,11 @@ doi: "10.3390/quantum8020032"
 arxiv: ""
 url: "https://openalex.org/W7153243250"
 pdf_url: "https://www.mdpi.com/2624-960X/8/2/32/pdf?version=1775809807"
-topics: ["statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics"]
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics"]
 tier: 0
 citations: 0
 relevance_score: 47.0
-collected: "2026-04-13"
+collected: "2026-04-15"
 status: "unread"
 source: "openalex"
 ---
@@ -26,9 +26,9 @@ The emergence of classicality through quantum decoherence is commonly described 
 
 ## Connections
 
+- [[statistical_physics]]
 - [[nonequilibrium]]
 - [[non_equilibrium_dynamics]]
-- [[statistical_physics]]
 
 ## Notes
 

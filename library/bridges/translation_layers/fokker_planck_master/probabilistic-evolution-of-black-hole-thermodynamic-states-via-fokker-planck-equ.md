@@ -7,11 +7,11 @@ doi: ""
 arxiv: ""
 url: "https://openalex.org/W7152933980"
 pdf_url: "https://arxiv.org/pdf/2604.05785"
-topics: ["bridges/translation_layers/fokker_planck_master", "bridges/translation_layers", "bridges", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics"]
+topics: ["bridges/translation_layers/fokker_planck_master", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "bridges", "statistical_physics/non_equilibrium_dynamics", "bridges/translation_layers"]
 tier: 0
 citations: 0
 relevance_score: 52.39
-collected: "2026-04-13"
+collected: "2026-04-15"
 status: "unread"
 source: "openalex"
 ---
@@ -27,11 +27,11 @@ Employing the generalized free energy landscape and solving the associated Fokke
 ## Connections
 
 - [[fokker_planck_master]]
-- [[translation_layers]]
-- [[bridges]]
-- [[nonequilibrium]]
-- [[non_equilibrium_dynamics]]
 - [[statistical_physics]]
+- [[nonequilibrium]]
+- [[bridges]]
+- [[non_equilibrium_dynamics]]
+- [[translation_layers]]
 
 ## Notes
 

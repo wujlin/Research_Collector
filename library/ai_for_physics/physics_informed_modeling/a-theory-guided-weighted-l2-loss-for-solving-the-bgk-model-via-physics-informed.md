@@ -7,11 +7,11 @@ doi: ""
 arxiv: ""
 url: "https://openalex.org/W7152934029"
 pdf_url: "https://arxiv.org/pdf/2604.04971"
-topics: ["ai_for_physics/physics_informed_modeling", "ai_for_physics"]
+topics: ["ai_for_physics", "ai_for_physics/physics_informed_modeling"]
 tier: 0
 citations: 0
 relevance_score: 45.82
-collected: "2026-04-13"
+collected: "2026-04-15"
 status: "unread"
 source: "openalex"
 ---
@@ -26,8 +26,8 @@ While Physics-Informed Neural Networks offer a promising framework for solving p
 
 ## Connections
 
-- [[physics_informed_modeling]]
 - [[ai_for_physics]]
+- [[physics_informed_modeling]]
 
 ## Notes
 

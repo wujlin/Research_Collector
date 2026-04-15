@@ -7,11 +7,11 @@ doi: "10.21468/scipost.report.11668"
 arxiv: ""
 url: "https://openalex.org/W4414959489"
 pdf_url: "https://scipost.org/preprints/scipost_202506_00052v1/"
-topics: ["statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics", "statistical_physics/collective_structure"]
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics/collective_structure"]
 tier: 0
 citations: 0
 relevance_score: 48.0
-collected: "2026-04-13"
+collected: "2026-04-15"
 status: "unread"
 source: "openalex"
 ---
@@ -26,9 +26,9 @@ We discuss analytical results for a run-and-tumble particle (RTP) in one dimensi
 
 ## Connections
 
+- [[statistical_physics]]
 - [[nonequilibrium]]
 - [[non_equilibrium_dynamics]]
-- [[statistical_physics]]
 - [[collective_structure]]
 
 ## Notes

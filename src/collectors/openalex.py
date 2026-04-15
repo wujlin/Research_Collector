@@ -2,16 +2,37 @@
 
 from __future__ import annotations
 
+import time
 from typing import Any
 
-from src.utils.helpers import compact_abstract, get_env, parse_date
+import httpx
+
+from src.utils.helpers import compact_abstract, get_env, load_config, parse_date
 
 from .base import BaseCollector
 
 
 class OpenAlexCollector(BaseCollector):
-    def __init__(self, http_client=None):
-        super().__init__("openalex", base_url="https://api.openalex.org/works", http_client=http_client)
+    def __init__(
+        self,
+        http_client=None,
+        settings: dict[str, Any] | None = None,
+        sleep_fn=None,
+    ):
+        source_policy = (settings or load_config("settings.yaml")).get("collection", {}).get(
+            "source_policies",
+            {},
+        ).get("openalex", {})
+        timeout_seconds = float(source_policy.get("timeout_seconds", 120))
+        super().__init__(
+            "openalex",
+            base_url="https://api.openalex.org/works",
+            http_client=http_client,
+            timeout=timeout_seconds,
+        )
+        self.max_retries_on_timeout = int(source_policy.get("max_retries_on_timeout", 2))
+        self.base_backoff_seconds = float(source_policy.get("base_backoff_seconds", 6))
+        self.sleep_fn = sleep_fn or time.sleep
 
     def collect(
         self,
@@ -34,14 +55,45 @@ class OpenAlexCollector(BaseCollector):
         client = self._get_client()
         should_close = client is not self._client
         try:
-            response = client.get(self.base_url, params=params, headers={"User-Agent": "ResearchCollector/0.1"})
-            response.raise_for_status()
-            payload = response.json()
+            payload = self._request_with_retries(
+                client,
+                params=params,
+                headers={"User-Agent": "ResearchCollector/0.1"},
+            )
         finally:
             if should_close:
                 client.close()
 
         return [self._parse_item(item) for item in payload.get("results", [])]
+
+    def _request_with_retries(
+        self,
+        client: httpx.Client,
+        params: dict[str, Any],
+        headers: dict[str, str],
+    ) -> dict[str, Any]:
+        last_error: Exception | None = None
+        for attempt in range(self.max_retries_on_timeout + 1):
+            try:
+                response = client.get(self.base_url, params=params, headers=headers)
+                if response.status_code == 503:
+                    raise httpx.HTTPStatusError(
+                        "OpenAlex API returned 503 Service Unavailable.",
+                        request=response.request,
+                        response=response,
+                    )
+                response.raise_for_status()
+                return response.json()
+            except (httpx.ReadTimeout, httpx.TransportError, httpx.HTTPStatusError) as exc:
+                if isinstance(exc, httpx.HTTPStatusError) and exc.response.status_code != 503:
+                    raise
+                last_error = exc
+                if attempt == self.max_retries_on_timeout:
+                    break
+                self.sleep_fn(self.base_backoff_seconds * (attempt + 1))
+
+        assert last_error is not None
+        raise last_error
 
     @staticmethod
     def _parse_item(item: dict[str, Any]) -> dict[str, Any]:

@@ -1,6 +1,6 @@
 ---
 title: "Reading List"
-generated_at: "2026-04-13T08:21:20.369929"
+generated_at: "2026-04-15T11:28:48.306137"
 paper_count: 20
 ---
 
@@ -128,7 +128,19 @@ paper_count: 20
 - Topics: ai_for_physics, ai_for_physics/generative_dynamics/ddpm, ai_for_physics/generative_dynamics
 - URL: https://arxiv.org/abs/2006.11239
 
-## 11. PINNs for Stochastic Dynamics: Modeling Brownian Motion via Verlet Integration
+## 11. Score-fPINN: Fractional Score-Based Physics-Informed Neural Networks for High-Dimensional Fokker-Planck-Lévy Equations
+
+- Authors: George Em Karniadakis, Kenji Kawaguchi, Zheyuan Hu, Zhongqiang Zhang
+- Year: 2026
+- Journal/Venue: Communications in Computational Physics
+- Venue Quality: unranked
+- Importance: 78.00 (keep)
+- Relevance: 50.00
+- Citations: 0
+- Topics: bridges/translation_layers/fokker_planck_master, ai_for_physics, ai_for_physics/generative_dynamics/score_matching, bridges, ai_for_physics/generative_dynamics, ai_for_physics/physics_informed_modeling, bridges/translation_layers
+- URL: https://openalex.org/W4399795376
+
+## 12. PINNs for Stochastic Dynamics: Modeling Brownian Motion via Verlet Integration
 
 - Authors: Yulison Herry, Julian Evan, Jeremia Oktavian, Ferry Faizal
 - Year: 2026
@@ -140,7 +152,7 @@ paper_count: 20
 - Topics: stochastic_analysis, stochastic_analysis/path_foundations/brownian_motion, bridges/translation_layers/fokker_planck_master, ai_for_physics, bridges, stochastic_analysis/path_foundations, ai_for_physics/physics_informed_modeling, bridges/translation_layers
 - URL: https://openalex.org/W7143947385
 
-## 12. Flow Matching for Generative Modeling
+## 13. Flow Matching for Generative Modeling
 
 - Authors: Yaron Lipman, Ricky T. Q. Chen, Heli Ben-Hamu, Maximilian Nickel
 - Year: 2023
@@ -152,7 +164,7 @@ paper_count: 20
 - Topics: ai_for_physics, ai_for_physics/generative_dynamics/flow_matching, bridges, bridges/transport_and_spatial_generation/optimal_transport_urban, ai_for_physics/generative_dynamics, bridges/transport_and_spatial_generation
 - URL: https://arxiv.org/abs/2210.02747
 
-## 13. The size, scale, and shape of cities
+## 14. The size, scale, and shape of cities
 
 - Authors: Michael Batty
 - Year: 2008
@@ -164,7 +176,19 @@ paper_count: 20
 - Topics: urban_complex_systems, urban_complex_systems/scaling_and_evolution/urban_scaling, urban_complex_systems/scaling_and_evolution/urban_dynamics, urban_complex_systems/scaling_and_evolution
 - URL: https://www.science.org/doi/10.1126/science.1151419
 
-## 14. Growth, innovation, scaling, and the pace of life in cities
+## 15. Probabilistic Evolution of Black Hole Thermodynamic States via Fokker-Planck Equation
+
+- Authors: Chao Wang, Chen Ma, Meng-Ci He, Bin Wu
+- Year: 2026
+- Journal/Venue: arXiv (Cornell University)
+- Venue Quality: unranked
+- Importance: 71.43 (keep)
+- Relevance: 52.39
+- Citations: 0
+- Topics: bridges/translation_layers/fokker_planck_master, statistical_physics, statistical_physics/non_equilibrium_dynamics/nonequilibrium, bridges, statistical_physics/non_equilibrium_dynamics, bridges/translation_layers
+- URL: https://openalex.org/W7152933980
+
+## 16. Growth, innovation, scaling, and the pace of life in cities
 
 - Authors: Luís M. A. Bettencourt, José Lobo, Dirk Helbing, Christian Kühnert
 - Year: 2007
@@ -176,7 +200,7 @@ paper_count: 20
 - Topics: urban_complex_systems, urban_complex_systems/scaling_and_evolution/urban_scaling, urban_complex_systems/scaling_and_evolution
 - URL: https://www.pnas.org/doi/10.1073/pnas.0610172104
 
-## 15. A Physics-Constrained Deep-Learning Framework based on Long-Term Remote-Sensing Data for Retrieving Vertical Distribution of PM <sub>2.5</sub> Chemical Components
+## 17. A Physics-Constrained Deep-Learning Framework based on Long-Term Remote-Sensing Data for Retrieving Vertical Distribution of PM <sub>2.5</sub> Chemical Components
 
 - Authors: Hongyi Li, Tao Yang, Yele Sun, Zifa Wang
 - Year: 2026
@@ -188,7 +212,7 @@ paper_count: 20
 - Topics: ai_for_physics, ai_for_physics/physics_informed_modeling/physics_informed_generative, urban_complex_systems, urban_complex_systems/urban_data_and_generation/urban_data_science, ai_for_physics/physics_informed_modeling, urban_complex_systems/urban_data_and_generation
 - URL: https://openalex.org/W7146945880
 
-## 16. MVNN: A Measure-Valued Neural Network for Learning McKean-Vlasov Dynamics from Particle Data
+## 18. MVNN: A Measure-Valued Neural Network for Learning McKean-Vlasov Dynamics from Particle Data
 
 - Authors: Lingyi Lyu, Xinyue Yu, Hayden Schaeffer
 - Year: 2026
@@ -200,7 +224,7 @@ paper_count: 20
 - Topics: stochastic_analysis, stochastic_analysis/stochastic_dynamics/sde_theory, statistical_physics, statistical_physics/non_equilibrium_dynamics/nonequilibrium, ai_for_physics, stochastic_analysis/stochastic_dynamics, statistical_physics/non_equilibrium_dynamics, ai_for_physics/physics_informed_modeling, ai_for_physics/physics_informed_modeling/scientific_ml_applications
 - URL: https://openalex.org/W7149209803
 
-## 17. Disentangled Deep Priors for Bayesian Inverse Problems
+## 19. Disentangled Deep Priors for Bayesian Inverse Problems
 
 - Authors: Arkaprabha Ganguli, Emil M. Constantinescu
 - Year: 2026
@@ -212,38 +236,14 @@ paper_count: 20
 - Topics: ai_for_physics, ai_for_physics/physics_informed_modeling, ai_for_physics/physics_informed_modeling/scientific_ml_applications
 - URL: https://openalex.org/W7149873794
 
-## 18. Non-Markovian Entropy Dynamics in Living Systems from the Keldysh Formalism
+## 20. Non-equilibrium Dynamical Attractors and Thermalisation of Charm Quarks in Nuclear Collisions at the LHC Energy
 
-- Authors: Fang Liu, Min Guo, Hongwei Tan, Yang Wang
-- Year: 2026
-- Journal/Venue: ArXiv.org
-- Venue Quality: preprint
-- Importance: 60.40 (keep)
-- Relevance: 54.00
-- Citations: 0
-- Topics: statistical_physics, statistical_physics/non_equilibrium_dynamics/nonequilibrium, statistical_physics/non_equilibrium_dynamics/fluctuation_theorems, statistical_physics/non_equilibrium_dynamics
-- URL: https://openalex.org/W7135428729
-
-## 19. Thermalization in high-dimensional systems: the (weak) role of chaos
-
-- Authors: Marco Baldovin, Marco Cattaneo, Dario Lucente, Paolo Muratore-Ginanneschi
+- Authors: Shile Chen, Vincenzo Nugara, Maria Lucia Sambataro, Salvatore Plumari
 - Year: 2026
 - Journal/Venue: arXiv (Cornell University)
 - Venue Quality: unranked
-- Importance: 54.60 (review)
-- Relevance: 51.00
+- Importance: 62.40 (keep)
+- Relevance: 54.00
 - Citations: 0
-- Topics: statistical_physics, statistical_physics/non_equilibrium_dynamics/nonequilibrium, statistical_physics/non_equilibrium_dynamics
-- URL: https://openalex.org/W7148178393
-
-## 20. The Tracy-Widom Distribution at Large Dyson Index
-
-- Authors: Alain Comtet, Pierre Le Doussal, Naftali R. Smith
-- Year: 2026
-- Journal/Venue: Journal of Statistical Physics
-- Venue Quality: high_quality
-- Importance: 54.40 (review)
-- Relevance: 64.00
-- Citations: 0
-- Topics: stochastic_analysis, stochastic_analysis/asymptotics_and_variation/large_deviations, statistical_physics, stochastic_analysis/asymptotics_and_variation, statistical_physics/equilibrium_structures
-- URL: https://openalex.org/W7147170633
+- Topics: bridges/translation_layers/fokker_planck_master, statistical_physics, statistical_physics/non_equilibrium_dynamics/nonequilibrium, bridges, statistical_physics/non_equilibrium_dynamics, bridges/translation_layers
+- URL: https://openalex.org/W7151673468

@@ -7,11 +7,11 @@ doi: "10.48550/arxiv.2506.15640"
 arxiv: ""
 url: "https://openalex.org/W4415334305"
 pdf_url: "https://arxiv.org/pdf/2506.15640"
-topics: ["statistical_physics/collective_structure/phase_transitions", "statistical_physics/collective_structure", "statistical_physics"]
+topics: ["statistical_physics", "statistical_physics/collective_structure/phase_transitions", "statistical_physics/collective_structure"]
 tier: 0
 citations: 0
 relevance_score: 46.56
-collected: "2026-04-13"
+collected: "2026-04-15"
 status: "unread"
 source: "openalex"
 ---
@@ -26,9 +26,9 @@ In recent decades, it has been emphasized that the evolving structure of network
 
 ## Connections
 
+- [[statistical_physics]]
 - [[phase_transitions]]
 - [[collective_structure]]
-- [[statistical_physics]]
 
 ## Notes
 

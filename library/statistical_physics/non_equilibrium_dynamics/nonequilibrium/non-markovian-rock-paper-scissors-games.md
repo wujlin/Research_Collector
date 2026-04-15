@@ -7,11 +7,11 @@ doi: "10.1103/4mm1-943p"
 arxiv: ""
 url: "https://openalex.org/W4403780106"
 pdf_url: ""
-topics: ["statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics"]
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics"]
 tier: 2
 citations: 0
 relevance_score: 59.0
-collected: "2026-04-13"
+collected: "2026-04-15"
 status: "unread"
 source: "openalex"
 ---
@@ -26,9 +26,9 @@ Evidence is mounting that species interactions often involve long-term memory, w
 
 ## Connections
 
+- [[statistical_physics]]
 - [[nonequilibrium]]
 - [[non_equilibrium_dynamics]]
-- [[statistical_physics]]
 
 ## Notes
 

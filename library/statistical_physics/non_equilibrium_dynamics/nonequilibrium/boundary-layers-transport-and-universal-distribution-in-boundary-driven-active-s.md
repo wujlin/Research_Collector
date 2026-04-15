@@ -11,7 +11,7 @@ topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/no
 tier: 2
 citations: 0
 relevance_score: 62.0
-collected: "2026-04-13"
+collected: "2026-04-15"
 status: "unread"
 source: "openalex"
 ---

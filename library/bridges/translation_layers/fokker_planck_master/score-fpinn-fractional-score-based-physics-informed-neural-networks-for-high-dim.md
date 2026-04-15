@@ -7,11 +7,11 @@ doi: "10.4208/cicp.oa-2024-0201"
 arxiv: ""
 url: "https://openalex.org/W4399795376"
 pdf_url: "https://arxiv.org/pdf/2406.11676"
-topics: ["bridges/translation_layers/fokker_planck_master", "bridges/translation_layers", "bridges", "ai_for_physics/generative_dynamics/score_matching", "ai_for_physics/generative_dynamics", "ai_for_physics", "ai_for_physics/physics_informed_modeling"]
+topics: ["bridges/translation_layers/fokker_planck_master", "ai_for_physics", "ai_for_physics/generative_dynamics/score_matching", "bridges", "ai_for_physics/generative_dynamics", "ai_for_physics/physics_informed_modeling", "bridges/translation_layers"]
 tier: 0
 citations: 0
 relevance_score: 50.0
-collected: "2026-04-13"
+collected: "2026-04-15"
 status: "unread"
 source: "openalex"
 ---
@@ -27,12 +27,12 @@ We introduce an innovative approach for solving high-dimensional Fokker-Planck-L
 ## Connections
 
 - [[fokker_planck_master]]
-- [[translation_layers]]
-- [[bridges]]
-- [[score_matching]]
-- [[generative_dynamics]]
 - [[ai_for_physics]]
+- [[score_matching]]
+- [[bridges]]
+- [[generative_dynamics]]
 - [[physics_informed_modeling]]
+- [[translation_layers]]
 
 ## Notes
 

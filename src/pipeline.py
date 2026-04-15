@@ -177,6 +177,7 @@ class CollectionPipeline:
         )
         queries = [query] if query else query_profiles
         raw_records: list[dict[str, Any]] = []
+        query_errors: list[Exception] = []
 
         for item_query in queries:
             kwargs: dict[str, Any] = {}
@@ -189,7 +190,14 @@ class CollectionPipeline:
             elif source_name == "openalex":
                 kwargs["per_page"] = limit
                 kwargs["year_from"] = self.settings["filtering"]["min_year"]
-            raw_records.extend(collector.collect(query=item_query, **kwargs))
+            try:
+                raw_records.extend(collector.collect(query=item_query, **kwargs))
+            except Exception as exc:
+                query_errors.append(exc)
+                continue
+
+        if not raw_records and query_errors:
+            raise query_errors[-1]
 
         records = self.deduplicator.deduplicate(raw_records)
         processed: list[dict[str, Any]] = []

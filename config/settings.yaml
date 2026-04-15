@@ -20,6 +20,12 @@ collection:
       min_interval_seconds: 3.5
       max_retries_on_429: 2
       base_backoff_seconds: 8
+    openalex:
+      enabled: true
+      # OpenAlex 查询在复杂关键词组合下响应较慢；提高默认超时，并在读超时后重试
+      timeout_seconds: 120
+      max_retries_on_timeout: 2
+      base_backoff_seconds: 6
     semantic_scholar:
       enabled: false
       # API 申请暂未通过，当前先整体封存该源；恢复前不要纳入默认采集工作流

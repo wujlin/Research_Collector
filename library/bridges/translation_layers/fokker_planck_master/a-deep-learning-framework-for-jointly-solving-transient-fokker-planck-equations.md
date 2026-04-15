@@ -7,11 +7,11 @@ doi: ""
 arxiv: ""
 url: "https://openalex.org/W7152933521"
 pdf_url: "https://arxiv.org/pdf/2604.06001"
-topics: ["bridges/translation_layers/fokker_planck_master", "bridges/translation_layers", "bridges"]
+topics: ["bridges/translation_layers/fokker_planck_master", "bridges", "bridges/translation_layers"]
 tier: 0
 citations: 0
 relevance_score: 51.0
-collected: "2026-04-13"
+collected: "2026-04-15"
 status: "unread"
 source: "openalex"
 ---
@@ -27,8 +27,8 @@ Efficiently solving the Fokker-Planck equation (FPE) is central to analyzing com
 ## Connections
 
 - [[fokker_planck_master]]
-- [[translation_layers]]
 - [[bridges]]
+- [[translation_layers]]
 
 ## Notes
 

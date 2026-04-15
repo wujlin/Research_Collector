@@ -281,6 +281,35 @@
     "pdf_url": ""
   },
   {
+    "id": 102,
+    "title": "Score-fPINN: Fractional Score-Based Physics-Informed Neural Networks for High-Dimensional Fokker-Planck-Lévy Equations",
+    "authors": [
+      "George Em Karniadakis",
+      "Kenji Kawaguchi",
+      "Zheyuan Hu",
+      "Zhongqiang Zhang"
+    ],
+    "year": 2026,
+    "journal": "Communications in Computational Physics",
+    "venue": "Communications in Computational Physics",
+    "importance_score": 78.0,
+    "importance_bucket": "keep",
+    "venue_quality": "unranked",
+    "relevance_score": 50.0,
+    "citation_count": 0,
+    "topics": [
+      "bridges/translation_layers/fokker_planck_master",
+      "ai_for_physics",
+      "ai_for_physics/generative_dynamics/score_matching",
+      "bridges",
+      "ai_for_physics/generative_dynamics",
+      "ai_for_physics/physics_informed_modeling",
+      "bridges/translation_layers"
+    ],
+    "url": "https://openalex.org/W4399795376",
+    "pdf_url": "https://arxiv.org/pdf/2406.11676"
+  },
+  {
     "id": 33,
     "title": "PINNs for Stochastic Dynamics: Modeling Brownian Motion via Verlet Integration",
     "authors": [
@@ -361,6 +390,34 @@
     ],
     "url": "https://www.science.org/doi/10.1126/science.1151419",
     "pdf_url": ""
+  },
+  {
+    "id": 99,
+    "title": "Probabilistic Evolution of Black Hole Thermodynamic States via Fokker-Planck Equation",
+    "authors": [
+      "Chao Wang",
+      "Chen Ma",
+      "Meng-Ci He",
+      "Bin Wu"
+    ],
+    "year": 2026,
+    "journal": "arXiv (Cornell University)",
+    "venue": "arXiv (Cornell University)",
+    "importance_score": 71.43,
+    "importance_bucket": "keep",
+    "venue_quality": "unranked",
+    "relevance_score": 52.39,
+    "citation_count": 0,
+    "topics": [
+      "bridges/translation_layers/fokker_planck_master",
+      "statistical_physics",
+      "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "bridges",
+      "statistical_physics/non_equilibrium_dynamics",
+      "bridges/translation_layers"
+    ],
+    "url": "https://openalex.org/W7152933980",
+    "pdf_url": "https://arxiv.org/pdf/2604.05785"
   },
   {
     "id": 13,
@@ -470,81 +527,32 @@
     "pdf_url": "https://arxiv.org/pdf/2604.02304"
   },
   {
-    "id": 84,
-    "title": "Non-Markovian Entropy Dynamics in Living Systems from the Keldysh Formalism",
+    "id": 101,
+    "title": "Non-equilibrium Dynamical Attractors and Thermalisation of Charm Quarks in Nuclear Collisions at the LHC Energy",
     "authors": [
-      "Fang Liu",
-      "Min Guo",
-      "Hongwei Tan",
-      "Yang Wang"
-    ],
-    "year": 2026,
-    "journal": "ArXiv.org",
-    "venue": "ArXiv.org",
-    "importance_score": 60.4,
-    "importance_bucket": "keep",
-    "venue_quality": "preprint",
-    "relevance_score": 54.0,
-    "citation_count": 0,
-    "topics": [
-      "statistical_physics",
-      "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems",
-      "statistical_physics/non_equilibrium_dynamics"
-    ],
-    "url": "https://openalex.org/W7135428729",
-    "pdf_url": "https://arxiv.org/pdf/2603.12184"
-  },
-  {
-    "id": 32,
-    "title": "Thermalization in high-dimensional systems: the (weak) role of chaos",
-    "authors": [
-      "Marco Baldovin",
-      "Marco Cattaneo",
-      "Dario Lucente",
-      "Paolo Muratore-Ginanneschi",
-      "Angelo Vulpiani"
+      "Shile Chen",
+      "Vincenzo Nugara",
+      "Maria Lucia Sambataro",
+      "Salvatore Plumari",
+      "Vincenzo Greco"
     ],
     "year": 2026,
     "journal": "arXiv (Cornell University)",
     "venue": "arXiv (Cornell University)",
-    "importance_score": 54.6,
-    "importance_bucket": "review",
+    "importance_score": 62.4,
+    "importance_bucket": "keep",
     "venue_quality": "unranked",
-    "relevance_score": 51.0,
+    "relevance_score": 54.0,
     "citation_count": 0,
     "topics": [
+      "bridges/translation_layers/fokker_planck_master",
       "statistical_physics",
       "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "statistical_physics/non_equilibrium_dynamics"
+      "bridges",
+      "statistical_physics/non_equilibrium_dynamics",
+      "bridges/translation_layers"
     ],
-    "url": "https://openalex.org/W7148178393",
-    "pdf_url": "https://arxiv.org/pdf/2603.29614"
-  },
-  {
-    "id": 27,
-    "title": "The Tracy-Widom Distribution at Large Dyson Index",
-    "authors": [
-      "Alain Comtet",
-      "Pierre Le Doussal",
-      "Naftali R. Smith"
-    ],
-    "year": 2026,
-    "journal": "Journal of Statistical Physics",
-    "venue": "Journal of Statistical Physics",
-    "importance_score": 54.4,
-    "importance_bucket": "review",
-    "venue_quality": "high_quality",
-    "relevance_score": 64.0,
-    "citation_count": 0,
-    "topics": [
-      "stochastic_analysis",
-      "stochastic_analysis/asymptotics_and_variation/large_deviations",
-      "statistical_physics",
-      "stochastic_analysis/asymptotics_and_variation",
-      "statistical_physics/equilibrium_structures"
-    ],
-    "url": "https://openalex.org/W7147170633",
-    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s10955-026-03596-0.pdf"
+    "url": "https://openalex.org/W7151673468",
+    "pdf_url": "https://arxiv.org/pdf/2604.02944"
   }
 ]
