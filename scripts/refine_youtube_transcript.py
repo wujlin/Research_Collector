@@ -76,6 +76,21 @@ def load_metadata(transcript_dir: Path) -> dict[str, object]:
     return json.loads((transcript_dir / "metadata.json").read_text(encoding="utf-8"))
 
 
+def infer_video_id(transcript_dir: Path, metadata: dict[str, object]) -> str | None:
+    explicit = str(metadata.get("video_id", "")).strip()
+    if explicit:
+        return explicit
+
+    url = str(metadata.get("url", "")).strip()
+    if "v=" in url:
+        return url.split("v=", 1)[-1].split("&", 1)[0]
+
+    directory_name = transcript_dir.name
+    if "-" in directory_name:
+        return directory_name.split("-", 1)[0]
+    return directory_name or None
+
+
 def build_replacements(terms_config: dict[str, object], *, video_id: str | None) -> list[tuple[re.Pattern[str], str]]:
     rules: list[tuple[str, str]] = []
     for item in terms_config.get("global_replacements", []):
@@ -162,7 +177,7 @@ def main() -> None:
     segments = load_segments(transcript_dir)
     terms_config = load_config(args.terms_config)
 
-    replacements = build_replacements(terms_config, video_id=str(metadata.get("url", "")).split("v=")[-1] or None)
+    replacements = build_replacements(terms_config, video_id=infer_video_id(transcript_dir, metadata))
     cleaned_segments = [
         TranscriptSegment(start=segment.start, end=segment.end, text=clean_text(segment.text, replacements))
         for segment in segments

@@ -155,3 +155,22 @@ video_specific:
         replacement: "SSEP with one site"
       - pattern: '\bvery little quantum minutes\b'
         replacement: "very little quantum in it"
+  BV1tew5zVEDf:
+    title: "对谢赛宁的7小时马拉松访谈：世界模型、逃出硅谷、反OpenAI、AMI Labs、两次拒绝Ilya、杨立昆、李飞飞和42"
+    replacements:
+      - pattern: '小骏'
+        replacement: "小珺"
+      - pattern: '杨立坤'
+        replacement: "杨立昆"
+      - pattern: '岛交大'
+        replacement: "上交大"
+      - pattern: 'AZM班'
+        replacement: "ACM班"
+      - pattern: '\bMIU\b'
+        replacement: "NYU"
+      - pattern: '\bLekun\b'
+        replacement: "LeCun"
+      - pattern: '\bYoung LeCun\b'
+        replacement: "Yann LeCun"
+      - pattern: '\bjapa\b'
+        replacement: "JEPA"

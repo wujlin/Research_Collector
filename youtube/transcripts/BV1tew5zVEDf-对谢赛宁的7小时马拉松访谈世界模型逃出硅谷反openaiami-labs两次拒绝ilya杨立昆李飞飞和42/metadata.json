@@ -1,0 +1,15 @@
+{
+  "title": "对谢赛宁的7小时马拉松访谈：世界模型、逃出硅谷、反OpenAI、AMI Labs、两次拒绝Ilya、杨立昆、李飞飞和42",
+  "url": "https://www.bilibili.com/video/BV1tew5zVEDf/?spm_id_from=333.337.search-card.all.click&vd_source=b68c314396a28891e14ac0506f7beda3",
+  "backend": "whisper",
+  "model": "large-v3",
+  "requested_language": "zh",
+  "detected_language": "zh",
+  "generated_at": "2026-04-15T19:40:12",
+  "language": "zh",
+  "language_probability": null,
+  "duration": null,
+  "refined_at": "2026-04-15T19:51:13",
+  "cleanup_rules": 24,
+  "paragraph_count": 381
+}
