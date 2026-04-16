@@ -7,7 +7,7 @@ doi: "10.63959/chalmers.dt/5841"
 arxiv: ""
 url: "https://openalex.org/W7154057388"
 pdf_url: "https://research.chalmers.se/publication/550963/file/550963_Fulltext.pdf"
-topics: ["urban_complex_systems/mobility_and_interaction", "urban_complex_systems", "urban_complex_systems/mobility_and_interaction/spatial_interaction", "ai_for_physics/physics_informed_modeling/scientific_ml_applications", "ai_for_physics/physics_informed_modeling", "ai_for_physics"]
+topics: ["ai_for_physics", "urban_complex_systems", "urban_complex_systems/mobility_and_interaction/spatial_interaction", "ai_for_physics/physics_informed_modeling", "ai_for_physics/physics_informed_modeling/scientific_ml_applications", "urban_complex_systems/mobility_and_interaction"]
 tier: 0
 citations: 0
 relevance_score: 50.0
@@ -26,12 +26,12 @@ Electric Autonomous Mobility-on-Demand (E-AMoD) systems offer a path toward sust
 
 ## Connections
 
-- [[mobility_and_interaction]]
+- [[ai_for_physics]]
 - [[urban_complex_systems]]
 - [[spatial_interaction]]
-- [[scientific_ml_applications]]
 - [[physics_informed_modeling]]
-- [[ai_for_physics]]
+- [[scientific_ml_applications]]
+- [[mobility_and_interaction]]
 
 ## Notes
 

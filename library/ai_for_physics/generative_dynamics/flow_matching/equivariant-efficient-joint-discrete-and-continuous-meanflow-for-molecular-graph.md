@@ -7,7 +7,7 @@ doi: ""
 arxiv: ""
 url: "https://openalex.org/W7153671718"
 pdf_url: "https://arxiv.org/pdf/2604.08189"
-topics: ["ai_for_physics/generative_dynamics", "ai_for_physics", "ai_for_physics/generative_dynamics/flow_matching"]
+topics: ["ai_for_physics", "ai_for_physics/generative_dynamics/flow_matching", "ai_for_physics/generative_dynamics"]
 tier: 0
 citations: 0
 relevance_score: 51.0
@@ -26,9 +26,9 @@ Graph-structured data jointly contain discrete topology and continuous geometry,
 
 ## Connections
 
-- [[generative_dynamics]]
 - [[ai_for_physics]]
 - [[flow_matching]]
+- [[generative_dynamics]]
 
 ## Notes
 

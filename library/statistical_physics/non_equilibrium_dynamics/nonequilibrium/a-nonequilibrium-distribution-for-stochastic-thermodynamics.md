@@ -7,7 +7,7 @@ doi: ""
 arxiv: "2510.08315"
 url: "http://arxiv.org/abs/2510.08315v3"
 pdf_url: "https://arxiv.org/pdf/2510.08315v3"
-topics: ["statistical_physics/non_equilibrium_dynamics", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "stochastic_analysis/path_foundations", "stochastic_analysis"]
+topics: ["stochastic_analysis", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "stochastic_analysis/path_foundations", "statistical_physics/non_equilibrium_dynamics"]
 tier: 0
 citations: 0
 relevance_score: 55.63
@@ -26,11 +26,11 @@ We extend the canonical Gibbs distribution, originally formulated for systems at
 
 ## Connections
 
-- [[non_equilibrium_dynamics]]
+- [[stochastic_analysis]]
 - [[statistical_physics]]
 - [[nonequilibrium]]
 - [[path_foundations]]
-- [[stochastic_analysis]]
+- [[non_equilibrium_dynamics]]
 
 ## Notes
 

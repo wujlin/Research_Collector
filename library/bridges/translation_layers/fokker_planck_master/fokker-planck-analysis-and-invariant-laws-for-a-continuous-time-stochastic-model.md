@@ -7,7 +7,7 @@ doi: ""
 arxiv: ""
 url: "https://openalex.org/W7149210606"
 pdf_url: "https://arxiv.org/pdf/2604.00840"
-topics: ["bridges/translation_layers/fokker_planck_master", "bridges/translation_layers", "bridges", "stochastic_analysis/stochastic_dynamics/sde_theory", "stochastic_analysis/stochastic_dynamics", "stochastic_analysis"]
+topics: ["stochastic_analysis", "bridges/translation_layers/fokker_planck_master", "stochastic_analysis/stochastic_dynamics/sde_theory", "bridges", "stochastic_analysis/stochastic_dynamics", "bridges/translation_layers"]
 tier: 0
 citations: 0
 relevance_score: 54.0
@@ -26,12 +26,12 @@ We develop a continuous-time model for the long-term dynamics of adaptive stocha
 
 ## Connections
 
-- [[fokker_planck_master]]
-- [[translation_layers]]
-- [[bridges]]
-- [[sde_theory]]
-- [[stochastic_dynamics]]
 - [[stochastic_analysis]]
+- [[fokker_planck_master]]
+- [[sde_theory]]
+- [[bridges]]
+- [[stochastic_dynamics]]
+- [[translation_layers]]
 
 ## Notes
 

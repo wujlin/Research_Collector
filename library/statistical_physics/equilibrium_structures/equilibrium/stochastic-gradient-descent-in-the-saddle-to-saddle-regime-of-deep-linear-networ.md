@@ -7,7 +7,7 @@ doi: ""
 arxiv: ""
 url: "https://openalex.org/W7153671003"
 pdf_url: "https://arxiv.org/pdf/2604.06366"
-topics: ["statistical_physics/equilibrium_structures/equilibrium", "statistical_physics/equilibrium_structures", "statistical_physics"]
+topics: ["statistical_physics", "statistical_physics/equilibrium_structures/equilibrium", "statistical_physics/equilibrium_structures"]
 tier: 0
 citations: 0
 relevance_score: 51.0
@@ -26,9 +26,9 @@ Deep linear networks (DLNs) are used as an analytically tractable model of the t
 
 ## Connections
 
+- [[statistical_physics]]
 - [[equilibrium]]
 - [[equilibrium_structures]]
-- [[statistical_physics]]
 
 ## Notes
 

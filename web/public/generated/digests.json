@@ -2,106 +2,470 @@
   {
     "title": "Reading List",
     "path": "shared/reading_list.md",
-    "created_at": "shared"
+    "created_at": "shared",
+    "type": "shared",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 1042
   },
   {
     "title": "Weekly Digest",
-    "path": "2026-04-16/weekly.md",
-    "created_at": "2026-04-16"
+    "path": "2026-04-16/workflow/weekly.md",
+    "created_at": "2026-04-16",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 3322
+  },
+  {
+    "title": "Study Guide",
+    "path": "2026-04-16/workflow/study-guide.md",
+    "created_at": "2026-04-16",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 422
   },
   {
     "title": "Paper Queue",
-    "path": "2026-04-16/paper-queue.md",
-    "created_at": "2026-04-16"
+    "path": "2026-04-16/workflow/paper-queue.md",
+    "created_at": "2026-04-16",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 1513
   },
   {
     "title": "Collection Review",
-    "path": "2026-04-16/collection-review.md",
-    "created_at": "2026-04-16"
+    "path": "2026-04-16/workflow/collection-review.md",
+    "created_at": "2026-04-16",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 4712
+  },
+  {
+    "title": "Stochastic Thermodynamics for Autoregressive Generative Models",
+    "path": "2026-04-16/stochastic-thermodynamics-for-autoregressive-generative-models.md",
+    "created_at": "2026-04-16",
+    "type": "reading_note",
+    "authors": "Takahiro Sagawa",
+    "venue": "arXiv (2026)",
+    "topics": [
+      "随机热力学",
+      "自回归模型",
+      "非马尔可夫",
+      "熵产生",
+      "Transformer"
+    ],
+    "word_count": 1737
+  },
+  {
+    "title": "Real-World Robot Control by Deep Active Inference With a Temporally Hierarchical World Model",
+    "path": "2026-04-16/real-world-robot-control-by-deep-active-inference-with-a-temporally-hierarchical-world-model.md",
+    "created_at": "2026-04-16",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 728
+  },
+  {
+    "title": "Predictor-Driven Diffusion for Spatiotemporal Generation",
+    "path": "2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.md",
+    "created_at": "2026-04-16",
+    "type": "reading_note",
+    "authors": "Yuki Yasuda, Tobias Bischoff",
+    "venue": "arXiv (2026)",
+    "topics": [
+      "时空生成",
+      "条件扩散",
+      "天气预测",
+      "自回归"
+    ],
+    "word_count": 1268
+  },
+  {
+    "title": "Nonequilibrium Physics of Generative Diffusion Models",
+    "path": "2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.md",
+    "created_at": "2026-04-16",
+    "type": "reading_note",
+    "authors": "Zhendong Yu, Haiping Huang",
+    "venue": "Phys. Rev. E 111, 014111 (2025)",
+    "topics": [
+      "非平衡动力学",
+      "涨落定理",
+      "扩散生成模型",
+      "熵产生"
+    ],
+    "word_count": 1743
+  },
+  {
+    "title": "HJ-sampler: Bayesian Sampler via Hamilton-Jacobi PDEs and Score-Based Generative Models",
+    "path": "2026-04-16/hj-sampler.md",
+    "created_at": "2026-04-16",
+    "type": "reading_note",
+    "authors": "Tingwei Meng, Zongren Zou, Jérôme Darbon, George Em Karniadakis",
+    "venue": "arXiv (2024)",
+    "topics": [
+      "Hamilton-Jacobi",
+      "逆问题",
+      "score-based",
+      "贝叶斯采样"
+    ],
+    "word_count": 1057
+  },
+  {
+    "title": "Generative Optimal Transport via Forward-Backward HJB Matching",
+    "path": "2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.md",
+    "created_at": "2026-04-16",
+    "type": "reading_note",
+    "authors": "Haiqian Yang, Vishaal Krishnan, Sumit Sinha, L. Mahadevan",
+    "venue": "arXiv (2026)",
+    "topics": [
+      "最优传输",
+      "HJB方程",
+      "flow matching",
+      "生成模型"
+    ],
+    "word_count": 1473
+  },
+  {
+    "title": "Flow Matching for Generative Modeling",
+    "path": "2026-04-16/flow-matching-for-generative-modeling.md",
+    "created_at": "2026-04-16",
+    "type": "reading_note",
+    "authors": "Yaron Lipman, Ricky T. Q. Chen, Heli Ben-Hamu, Maximilian Nickel",
+    "venue": "ICLR 2023",
+    "topics": [
+      "flow matching",
+      "连续正则化流",
+      "最优传输",
+      "生成模型"
+    ],
+    "word_count": 1431
+  },
+  {
+    "title": "Diffusion Models: A Mathematical Introduction",
+    "path": "2026-04-16/diffusion-models-a-mathematical-introduction.md",
+    "created_at": "2026-04-16",
+    "type": "reading_note",
+    "authors": "Sepehr Maleki, Negar Pourmoazemi",
+    "venue": "arXiv (2025)",
+    "topics": [
+      "扩散模型",
+      "SDE",
+      "Fokker-Planck",
+      "score matching",
+      "DDPM"
+    ],
+    "word_count": 1681
+  },
+  {
+    "title": "Denoising Diffusion Probabilistic Models",
+    "path": "2026-04-16/denoising-diffusion-probabilistic-models.md",
+    "created_at": "2026-04-16",
+    "type": "reading_note",
+    "authors": "Jonathan Ho, Ajay Jain, Pieter Abbeel",
+    "venue": "NeurIPS 2020",
+    "topics": [
+      "DDPM",
+      "去噪扩散",
+      "变分下界",
+      "score matching"
+    ],
+    "word_count": 2061
+  },
+  {
+    "title": "Attaining Physics-Driven Convolutional Operators by Architecture Design",
+    "path": "2026-04-16/attaining-physics-driven-convolutional-operators-by-architecture-design.md",
+    "created_at": "2026-04-16",
+    "type": "reading_note",
+    "authors": "Zhenhua Xiong, Pengyang Zhao",
+    "venue": "Communications Physics (2026)",
+    "topics": [
+      "物理约束",
+      "卷积算子",
+      "Scientific ML",
+      "架构设计"
+    ],
+    "word_count": 902
+  },
+  {
+    "title": "A Primer on Variational Inference for Physics-Informed Deep Generative Modelling",
+    "path": "2026-04-16/a-primer-on-variational-inference-for-physics-informed-deep-generative-modelling.md",
+    "created_at": "2026-04-16",
+    "type": "reading_note",
+    "authors": "Alex Glyn-Davies, Arnaud Vadeboncoeur, O. Deniz Akyildiz, Ieva Kazlauskaite, Mark Girolami",
+    "venue": "arXiv (2024)",
+    "topics": [
+      "变分推断",
+      "ELBO",
+      "physics-informed",
+      "生成模型",
+      "逆问题"
+    ],
+    "word_count": 1357
+  },
+  {
+    "title": "A Framework for the Use of Generative Modelling in Non-Equilibrium Statistical Mechanics",
+    "path": "2026-04-16/a-framework-for-generative-modelling-in-non-equilibrium-statistical-mechanics.md",
+    "created_at": "2026-04-16",
+    "type": "reading_note",
+    "authors": "Karl Friston, Maxwell Ramstead, Dalton Sakthivadivel",
+    "venue": "Proc. R. Soc. A 482(2330), 2026",
+    "topics": [
+      "自由能原理",
+      "非平衡统计力学",
+      "生成模型",
+      "变分推断",
+      "Lyapunov函数"
+    ],
+    "word_count": 1327
   },
   {
     "title": "Weekly Digest",
-    "path": "2026-04-15/weekly.md",
-    "created_at": "2026-04-15"
+    "path": "2026-04-15/workflow/weekly.md",
+    "created_at": "2026-04-15",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 3353
   },
   {
     "title": "Study Guide",
-    "path": "2026-04-15/study-guide.md",
-    "created_at": "2026-04-15"
+    "path": "2026-04-15/workflow/study-guide.md",
+    "created_at": "2026-04-15",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 156
   },
   {
     "title": "Paper Queue",
-    "path": "2026-04-15/paper-queue.md",
-    "created_at": "2026-04-15"
+    "path": "2026-04-15/workflow/paper-queue.md",
+    "created_at": "2026-04-15",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 97
   },
   {
     "title": "Collection Review",
-    "path": "2026-04-15/collection-review.md",
-    "created_at": "2026-04-15"
+    "path": "2026-04-15/workflow/collection-review.md",
+    "created_at": "2026-04-15",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 2448
+  },
+  {
+    "title": "Boundary layers, transport and universal distribution in boundary driven active systems",
+    "path": "2026-04-15/boundary-layers-transport-and-universal-distribution-in-boundary-driven-active-systems.md",
+    "created_at": "2026-04-15",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 414
+  },
+  {
+    "title": "A framework for the use of generative modelling in non-equilibrium statistical mechanics",
+    "path": "2026-04-15/a-framework-for-the-use-of-generative-modelling-in-non-equilibrium-statistical-mechanics.md",
+    "created_at": "2026-04-15",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 902
   },
   {
     "title": "Weekly Digest",
-    "path": "2026-04-13/weekly.md",
-    "created_at": "2026-04-13"
+    "path": "2026-04-13/workflow/weekly.md",
+    "created_at": "2026-04-13",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 2767
   },
   {
     "title": "Study Guide",
-    "path": "2026-04-13/study-guide.md",
-    "created_at": "2026-04-13"
+    "path": "2026-04-13/workflow/study-guide.md",
+    "created_at": "2026-04-13",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 125
   },
   {
     "title": "Paper Queue",
-    "path": "2026-04-13/paper-queue.md",
-    "created_at": "2026-04-13"
+    "path": "2026-04-13/workflow/paper-queue.md",
+    "created_at": "2026-04-13",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 625
   },
   {
     "title": "Collection Review",
-    "path": "2026-04-13/collection-review.md",
-    "created_at": "2026-04-13"
+    "path": "2026-04-13/workflow/collection-review.md",
+    "created_at": "2026-04-13",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 2808
+  },
+  {
+    "title": "Non-Markovian rock-paper-scissors games",
+    "path": "2026-04-13/non-markovian-rock-paper-scissors-games.md",
+    "created_at": "2026-04-13",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 2435
+  },
+  {
+    "title": "MVNN: A Measure-Valued Neural Network for Learning McKean-Vlasov Dynamics from Particle Data",
+    "path": "2026-04-13/mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-particle-data.md",
+    "created_at": "2026-04-13",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 2735
   },
   {
     "title": "Study Guide",
-    "path": "2026-04-11/study-guide.md",
-    "created_at": "2026-04-11"
+    "path": "2026-04-11/workflow/study-guide.md",
+    "created_at": "2026-04-11",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 100
   },
   {
     "title": "Paper Queue",
-    "path": "2026-04-11/paper-queue.md",
-    "created_at": "2026-04-11"
+    "path": "2026-04-11/workflow/paper-queue.md",
+    "created_at": "2026-04-11",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 603
+  },
+  {
+    "title": "Fluctuating entropy production on the coarse-grained level",
+    "path": "2026-04-11/fluctuating-entropy-production-on-the-coarse-grained-level.md",
+    "created_at": "2026-04-11",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 747
+  },
+  {
+    "title": "Dynamical regimes of diffusion models",
+    "path": "2026-04-11/dynamical-regimes-of-diffusion-models.md",
+    "created_at": "2026-04-11",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 1226
   },
   {
     "title": "Study Guide",
-    "path": "2026-04-10/study-guide.md",
-    "created_at": "2026-04-10"
+    "path": "2026-04-10/workflow/study-guide.md",
+    "created_at": "2026-04-10",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 2638
   },
   {
     "title": "Paper Queue",
-    "path": "2026-04-10/paper-queue.md",
-    "created_at": "2026-04-10"
+    "path": "2026-04-10/workflow/paper-queue.md",
+    "created_at": "2026-04-10",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 347
+  },
+  {
+    "title": "Learning stochastic thermodynamics directly from correlation and trajectory-fluctuation currents",
+    "path": "2026-04-10/learning-stochastic-thermodynamics-directly-from-correlation-and-trajectory-fluctuation-currents.md",
+    "created_at": "2026-04-10",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 2240
   },
   {
     "title": "Weekly Digest",
-    "path": "2026-04-08/weekly.md",
-    "created_at": "2026-04-08"
+    "path": "2026-04-08/workflow/weekly.md",
+    "created_at": "2026-04-08",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 2767
   },
   {
     "title": "Study Guide",
-    "path": "2026-04-08/study-guide.md",
-    "created_at": "2026-04-08"
+    "path": "2026-04-08/workflow/study-guide.md",
+    "created_at": "2026-04-08",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 359
   },
   {
     "title": "Paper Queue",
-    "path": "2026-04-08/paper-queue.md",
-    "created_at": "2026-04-08"
+    "path": "2026-04-08/workflow/paper-queue.md",
+    "created_at": "2026-04-08",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 308
   },
   {
     "title": "Collection Review",
-    "path": "2026-04-08/collection-review.md",
-    "created_at": "2026-04-08"
+    "path": "2026-04-08/workflow/collection-review.md",
+    "created_at": "2026-04-08",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 1422
   },
   {
     "title": "Weekly Digest",
-    "path": "2026-04-07/weekly.md",
-    "created_at": "2026-04-07"
+    "path": "2026-04-07/workflow/weekly.md",
+    "created_at": "2026-04-07",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 776
   }
 ]

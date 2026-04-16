@@ -7,7 +7,7 @@ doi: ""
 arxiv: ""
 url: "https://openalex.org/W7153671532"
 pdf_url: "https://arxiv.org/pdf/2604.06916"
-topics: ["statistical_physics/collective_structure/phase_transitions", "statistical_physics/collective_structure", "statistical_physics"]
+topics: ["statistical_physics", "statistical_physics/collective_structure/phase_transitions", "statistical_physics/collective_structure"]
 tier: 0
 citations: 0
 relevance_score: 51.0
@@ -26,9 +26,9 @@ Reinforcement-Learning-based post-training has recently emerged as a promising p
 
 ## Connections
 
+- [[statistical_physics]]
 - [[phase_transitions]]
 - [[collective_structure]]
-- [[statistical_physics]]
 
 ## Notes
 

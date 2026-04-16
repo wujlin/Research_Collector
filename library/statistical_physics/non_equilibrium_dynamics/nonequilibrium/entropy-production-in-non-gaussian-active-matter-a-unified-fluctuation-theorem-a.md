@@ -7,7 +7,7 @@ doi: ""
 arxiv: "2504.06628"
 url: "http://arxiv.org/abs/2504.06628v3"
 pdf_url: "https://arxiv.org/pdf/2504.06628v3"
-topics: ["statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems"]
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems", "statistical_physics/non_equilibrium_dynamics"]
 tier: 0
 citations: 0
 relevance_score: 56.0
@@ -26,10 +26,10 @@ We present a general framework for deriving entropy production rates (EPRs) in a
 
 ## Connections
 
-- [[nonequilibrium]]
-- [[non_equilibrium_dynamics]]
 - [[statistical_physics]]
+- [[nonequilibrium]]
 - [[fluctuation_theorems]]
+- [[non_equilibrium_dynamics]]
 
 ## Notes
 

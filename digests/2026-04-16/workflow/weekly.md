@@ -1,27 +1,27 @@
 ---
 title: "Weekly Digest"
 period: "weekly"
-generated_at: "2026-04-16T14:15:23.976459"
+generated_at: "2026-04-16T15:53:51.474382"
 paper_count: 30
 ---
 
 # Weekly Digest
 
-- Total papers in library: 243
+- Total papers in library: 254
 - Newly highlighted papers: 30
 
 ## Topic Momentum
 
-- statistical_physics: 24
+- statistical_physics: 22
 - statistical_physics/non_equilibrium_dynamics/nonequilibrium: 19
 - statistical_physics/non_equilibrium_dynamics: 19
 - statistical_physics/non_equilibrium_dynamics/fluctuation_theorems: 9
 - bridges: 8
-- stochastic_analysis: 7
-- bridges/translation_layers: 7
-- statistical_physics/collective_structure/phase_transitions: 7
-- statistical_physics/collective_structure: 7
-- bridges/translation_layers/fokker_planck_master: 6
+- stochastic_analysis: 6
+- bridges/translation_layers: 6
+- ai_for_physics: 6
+- bridges/translation_layers/fokker_planck_master: 5
+- stochastic_analysis/stochastic_dynamics/sde_theory: 5
 
 ## Top Papers
 
@@ -132,6 +132,18 @@ We introduce a numerical method to sample the distributions of charge, heat, and
 - Link: http://arxiv.org/abs/2405.17791v3
 
 We have developed a thermodynamic theory in the non-equilibrium regime, which we describe as a thermodynamic system-bath model [S. Koyanagi and Y. Tanimura, J. Chem. Phys. \textbf{160}, 234112 (2024)]. Based on the dimensionless (DL) minimum work principle, non-equilibrium thermodynamic potentials are expressed in terms of non-equilibrium extensive and intensive variables in time derivative form. This is made possible by incorporating the entropy production rate into the definitions of non-equil...
+
+### Variational formulation of stochastic thermodynamics: Finite-dimensional systems
+
+- Authors: Héctor Vaquero del Pino, François Gay-Balmaz, Hiroaki Yoshimura, Lock Yue Chew
+- Venue: arXiv
+- Year: 2025
+- Relevance: 64.00
+- Citations: 0
+- Topics: statistical_physics, statistical_physics/non_equilibrium_dynamics/nonequilibrium, statistical_physics/non_equilibrium_dynamics/fluctuation_theorems, statistical_physics/non_equilibrium_dynamics
+- Link: http://arxiv.org/abs/2510.01787v2
+
+In this paper, we develop a variational foundation for stochastic thermodynamics of finite-dimensional, continuous-time systems. Requiring the second law (non-negative average total entropy production) systematically yields a consistent thermodynamic structure, from which novel generalized fluctuation-dissipation relations emerge naturally, ensuring local detailed balance. This principle extends key results of stochastic thermodynamics including an individual trajectory level description of both...
 
 ### Crossover dynamics and non-Gaussian fluctuations in inertial active chains
 
@@ -265,18 +277,6 @@ We present a concise, self-contained derivation of diffusion-based generative mo
 
 We present a general framework for deriving entropy production rates (EPRs) in active matter systems driven by non-Gaussian active fluctuations. Employing the probability-flow equivalence technique, we rigorously obtain an entropy production (EP) decomposition formula. We demonstrate that the EP, $Δs_\mathrm{tot}$, satisfies a detailed fluctuation theorem, $ρ_{\mathcal{R}}(Σ)/ρ_{\mathcal{R}}(-Σ)=e^Σ$, which holds for the distribution $ρ_{\mathcal{R}}(Σ)$ defined as the probability of observing a...
 
-### Variational formulation of stochastic thermodynamics: Finite-dimensional systems
-
-- Authors: Héctor Vaquero del Pino, François Gay-Balmaz, Hiroaki Yoshimura, Lock Yue Chew
-- Venue: arXiv
-- Year: 2025
-- Relevance: 56.00
-- Citations: 0
-- Topics: statistical_physics, statistical_physics/non_equilibrium_dynamics/nonequilibrium, statistical_physics/non_equilibrium_dynamics/fluctuation_theorems, statistical_physics/non_equilibrium_dynamics
-- Link: http://arxiv.org/abs/2510.01787v2
-
-In this paper, we develop a variational foundation for stochastic thermodynamics of finite-dimensional, continuous-time systems. Requiring the second law (non-negative average total entropy production) systematically yields a consistent thermodynamic structure, from which novel generalized fluctuation-dissipation relations emerge naturally, ensuring local detailed balance. This principle extends key results of stochastic thermodynamics including an individual trajectory level description of both...
-
 ### Stochastic Thermodynamics of Cooperative Biomolecular Machines: Fluctuation Relations and Hidden Detailed Balance Breaking
 
 - Authors: D. Evan Piephoff, Jianshu Cao
@@ -325,62 +325,62 @@ The covariant form of the multivariable diffusion-drift process is described by 
 
 We investigate a simple model exhibiting a prethermal phase, i.e. a metastable state that emerges before full thermalization, through the framework of quantum stochastic thermodynamics. We explore the effects of quantum coherence in the energy eigenbasis of the initial state of the system on the process of heat exchange with a bath, and their contribution to entropy production as quantified by a heat-exchange fluctuation theorem. Such relation is derived using the End-Point Measurement (EPM) sch...
 
-### Dephasing-induced relaxation in tight-binding chains with linear and nonlinear defects
+### Asymptotic-preserving deterministic particle methods for collisional plasma models
 
-- Authors: Debraj Das, Andrea Gambassi, Stefano Iubini, Stefano Lepri
+- Authors: Yan Huang, Li Wang
 - Venue: ArXiv.org
 - Year: 2026
 - Relevance: 54.00
 - Citations: 0
-- Topics: stochastic_analysis, stochastic_analysis/asymptotics_and_variation/large_deviations, statistical_physics, statistical_physics/collective_structure/phase_transitions, stochastic_analysis/asymptotics_and_variation, statistical_physics/collective_structure
-- Link: https://openalex.org/W7131910138
+- Topics: bridges/translation_layers/fokker_planck_master, statistical_physics, statistical_physics/collective_structure/phase_transitions, ai_for_physics, bridges, statistical_physics/collective_structure, ai_for_physics/generative_dynamics, bridges/translation_layers
+- Link: https://openalex.org/W7154427746
 
-We investigate thermalization in a tight-binding chain with an on-site defect subject to local dephasing noise implemented as random phase kicks. For a single linear defect of strength $ε$, we obtain an exact analytical description of the system spectrum and formulate the dephasing-induced dynamics in the eigenstate basis. We derive an approximate kinetic equation for mode populations that describes a continuous-time random walk in action space. The walk transition rates are defined by the overl...
+We develop novel asymptotic-preserving (AP) deterministic particle methods for collisional plasma models, including both Landau--Fokker--Planck and Dougherty collision operators, under hydrodynamic scaling. Our schemes treat the non-stiff transport part explicitly and the stiff collision operators fully implicitly through the energy-conserving Jordan--Kinderlehrer--Otto (JKO) schemes by exploiting their gradient flow structures. This approach extends our previous work on the space-homogeneous La...
 
-### Digital Twin AI for Hyper-Local Wildfire Spread Prediction Using 5G IoT Mesh Networks
+### Variational Quantum Physics-Informed Neural Networks for Hydrological PDE-Constrained Learning with Inherent Uncertainty Quantification
 
-- Authors: Sindhuja A
-- Venue: Preprints.org
+- Authors: Prasad Nimantha Madusanka Ukwatta Hewage, Midhun Chakkravarthy, Ruvan Kumara Abeysekara
+- Venue: arXiv (Cornell University)
 - Year: 2026
 - Relevance: 54.00
 - Citations: 0
-- Topics: ai_for_physics, urban_complex_systems, urban_complex_systems/mobility_and_interaction/transport_networks, urban_complex_systems/scaling_and_evolution/urban_dynamics, ai_for_physics/physics_informed_modeling, urban_complex_systems/mobility_and_interaction, urban_complex_systems/scaling_and_evolution
-- Link: https://openalex.org/W7153847332
+- Topics: ai_for_physics, urban_complex_systems, urban_complex_systems/urban_data_and_generation/urban_data_science, ai_for_physics/physics_informed_modeling, urban_complex_systems/urban_data_and_generation
+- Link: https://openalex.org/W7154427264
 
-Wildfire spread prediction demands hyper-local accuracy at scales unattainable by traditional physics-based models or coarse satellite observations. This paper introduces a novel Digital Twin AI framework leveraging 5G IoT mesh networks to deliver real-time, 10m×10m resolution fire propagation forecasts with 5-60-minute lead times. Deployed across 1,200 self-healing sensor nodes, the system fuses multi-modal environmental data thermal anomalies, 3D winds profiles, dynamic fuel moisture at 100Hz ...
+We propose a Hybrid Quantum-Classical Physics-Informed Neural Network (HQC-PINN) that integrates parameterized variational quantum circuits into the PINN framework for hydrological PDE-constrained learning. Our architecture encodes multi-source remote sensing features into quantum states via trainable angle encoding, processes them through a hardware-efficient variational ansatz with entangling layers, and constrains the output using the Saint-Venant shallow water equations and Manning's flow eq...
 
-### Resolving the Blow-Up: A Time-Dilated Numerical Framework for Multiple Firing Events in Mean-Field Neuronal Networks
+### Sampleability transport, nonlinear regularization, and the porous medium flow
 
-- Authors: Xu’an Dou, Louis Tao, Zhe Xue, Zhennan Zhou
+- Authors: Hy P. G. Lam
 - Venue: ArXiv.org
 - Year: 2026
 - Relevance: 54.00
 - Citations: 0
-- Topics: bridges/translation_layers/fokker_planck_master, statistical_physics, statistical_physics/collective_structure/phase_transitions, bridges, statistical_physics/collective_structure, bridges/translation_layers
-- Link: https://openalex.org/W7140001660
+- Topics: stochastic_analysis, stochastic_analysis/stochastic_dynamics/sde_theory, bridges, bridges/transport_and_spatial_generation/optimal_transport_urban, stochastic_analysis/stochastic_dynamics, bridges/transport_and_spatial_generation
+- Link: https://openalex.org/W7154427517
 
-In large-scale excitatory neuronal networks, rapid synchronization manifests as {multiple firing events (MFEs)}, mathematically characterized by a finite-time blow-up of the neuronal firing rate in the mean-field Fokker-Planck equation. Standard numerical methods struggle to resolve this singularity due to the divergent boundary flux and the instantaneous nature of the population voltage reset. In this work, we propose a robust {multiscale numerical framework based on time dilation}. By transfor...
+We study the Wasserstein projection of a compactly supported probability measure onto the class of measures whose density ratio is bounded, and we place this projection in a broader program connecting generative modeling, optimal transport, and nonlinear diffusion. The paper proves existence and uniqueness of the sampleability projection, uniqueness of the Brenier map at the minimizer, path independence of the quadratic Wasserstein generation loss, and the diffusion-threshold picture for the hea...
 
-### Mean field control with stopping
+### Truncated Rectified Flow Policy for Reinforcement Learning with One-Step Sampling
 
-- Authors: Pierre Cardaliaguet, Joe Jackson, Panagiotis E. Souganidis
-- Venue: arXiv (Cornell University)
+- Authors: Xubin Zhou, Yipeng Yang, Zhan Li
+- Venue: ArXiv.org
 - Year: 2026
 - Relevance: 54.00
 - Citations: 0
-- Topics: bridges/translation_layers/fokker_planck_master, statistical_physics, statistical_physics/collective_structure/phase_transitions, bridges, statistical_physics/collective_structure, bridges/translation_layers
-- Link: https://openalex.org/W7140347439
+- Topics: statistical_physics, statistical_physics/equilibrium_structures/equilibrium, ai_for_physics, ai_for_physics/generative_dynamics/flow_matching, statistical_physics/equilibrium_structures, ai_for_physics/generative_dynamics
+- Link: https://openalex.org/W7154426978
 
-We study a high-dimensional stochastic optimization problem which features both control and stopping. In particular, a central planner steers a large population of particles, and can also remove particles at any time by paying a penalty. In the limit, we obtain a mean field control problem with discontinuous dynamics, in the sense that the controlled Fokker-Planck equation can have jumps. The value of the N-particle problem is characterized by a hierarchy of non-linear obstacle problems. The val...
+Maximum entropy reinforcement learning (MaxEnt RL) has become a standard framework for sequential decision making, yet its standard Gaussian policy parameterization is inherently unimodal, limiting its ability to model complex multimodal action distributions. This limitation has motivated increasing interest in generative policies based on diffusion and flow matching as more expressive alternatives. However, incorporating such policies into MaxEnt RL is challenging for two main reasons: the like...
 
-### Distributed Equilibria for $N$-Player Differential Games with Interaction through Controls: Existence, Uniqueness and Large $N$ Limit
+### How Generative Models Approach Molecular Conformational Sampling
 
-- Authors: Hei Jie Lam, Alpár R. Mészáros
-- Venue: arXiv (Cornell University)
+- Authors: Nagesh B E, Jagannath Mondal
+- Venue: bioRxiv (Cold Spring Harbor Laboratory)
 - Year: 2026
 - Relevance: 54.00
 - Citations: 0
-- Topics: stochastic_analysis, stochastic_analysis/stochastic_dynamics/sde_theory, statistical_physics, statistical_physics/collective_structure/phase_transitions, stochastic_analysis/stochastic_dynamics, statistical_physics/collective_structure
-- Link: https://openalex.org/W7148176522
+- Topics: ai_for_physics, ai_for_physics/generative_dynamics/ddpm, ai_for_physics/generative_dynamics/flow_matching, ai_for_physics/generative_dynamics
+- Link: https://openalex.org/W7154301265
 
-We establish the existence and uniqueness of distributed equilibria to possibly nonsymmetric $N$ player differential games with interactions through controls under displacement semimonotonicity assumptions. Surprisingly, the nonseparable framework of the running cost combined with the character of distributed equilibria leads to a set of consistency relations different in nature from the ones for open and closed loop equilibria investigated in a recent work of Jackson and the second author. In t...
+Characterising equilibrium conformational ensembles with deep generative models requires assessing not only whether a model reproduces the target distribution, but also the mechanism of how it arrives here. Here we examine two distinct routes to generative conformational sampling---stochastic relaxation and deterministic transport---through a study of denoising diffusion probabilistic models (DDPM) and rectified-flow (RF) models across molecular systems of increasing complexity. Using systems of...

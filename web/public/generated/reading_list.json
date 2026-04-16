@@ -359,6 +359,30 @@
     "pdf_url": "https://arxiv.org/pdf/2310.17314v2"
   },
   {
+    "id": 297,
+    "title": "How Generative Models Approach Molecular Conformational Sampling",
+    "authors": [
+      "Nagesh B E",
+      "Jagannath Mondal"
+    ],
+    "year": 2026,
+    "journal": "bioRxiv (Cold Spring Harbor Laboratory)",
+    "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+    "importance_score": 89.4,
+    "importance_bucket": "keep",
+    "venue_quality": "preprint",
+    "relevance_score": 54.0,
+    "citation_count": 0,
+    "topics": [
+      "ai_for_physics",
+      "ai_for_physics/generative_dynamics/ddpm",
+      "ai_for_physics/generative_dynamics/flow_matching",
+      "ai_for_physics/generative_dynamics"
+    ],
+    "url": "https://openalex.org/W7154301265",
+    "pdf_url": "https://www.biorxiv.org/content/biorxiv/early/2026/04/14/2026.04.10.717851.full.pdf"
+  },
+  {
     "id": 6,
     "title": "Deep Unsupervised Learning using Nonequilibrium Thermodynamics",
     "authors": [
@@ -511,29 +535,5 @@
     ],
     "url": "https://openalex.org/W7146945880",
     "pdf_url": "https://amt.copernicus.org/articles/19/2225/2026/amt-19-2225-2026.pdf"
-  },
-  {
-    "id": 228,
-    "title": "Macroscopic Stochastic Thermodynamics",
-    "authors": [
-      "Gianmaria Falasco",
-      "Massimiliano Esposito"
-    ],
-    "year": 2023,
-    "journal": "Reviews of Modern Physics, 97(1), 015002 (2025)",
-    "venue": "arXiv",
-    "importance_score": 80.4,
-    "importance_bucket": "keep",
-    "venue_quality": "top_tier",
-    "relevance_score": 64.0,
-    "citation_count": 0,
-    "topics": [
-      "statistical_physics",
-      "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems",
-      "statistical_physics/non_equilibrium_dynamics"
-    ],
-    "url": "http://arxiv.org/abs/2307.12406v3",
-    "pdf_url": "https://arxiv.org/pdf/2307.12406v3"
   }
 ]

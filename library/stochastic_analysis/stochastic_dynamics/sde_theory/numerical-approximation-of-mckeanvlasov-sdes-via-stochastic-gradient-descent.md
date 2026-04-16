@@ -7,10 +7,10 @@ doi: "10.1017/apr.2026.10057"
 arxiv: ""
 url: "https://openalex.org/W7140082077"
 pdf_url: "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/0757C433C835756469A769B172ED3B98/S0001867826100573a.pdf/div-class-title-numerical-approximation-of-mckean-vlasov-sdes-via-stochastic-gradient-descent-div.pdf"
-topics: ["stochastic_analysis/stochastic_dynamics/sde_theory", "stochastic_analysis/stochastic_dynamics", "stochastic_analysis", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics"]
-tier: 0
+topics: ["stochastic_analysis", "stochastic_analysis/stochastic_dynamics/sde_theory", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "stochastic_analysis/stochastic_dynamics", "statistical_physics/non_equilibrium_dynamics"]
+tier: 2
 citations: 0
-relevance_score: 50.0
+relevance_score: 64.0
 collected: "2026-04-16"
 status: "unread"
 source: "openalex"
@@ -26,12 +26,12 @@ Abstract We propose a novel approach to numerically approximate McKean–Vlasov 
 
 ## Connections
 
-- [[sde_theory]]
-- [[stochastic_dynamics]]
 - [[stochastic_analysis]]
-- [[nonequilibrium]]
-- [[non_equilibrium_dynamics]]
+- [[sde_theory]]
 - [[statistical_physics]]
+- [[nonequilibrium]]
+- [[stochastic_dynamics]]
+- [[non_equilibrium_dynamics]]
 
 ## Notes
 

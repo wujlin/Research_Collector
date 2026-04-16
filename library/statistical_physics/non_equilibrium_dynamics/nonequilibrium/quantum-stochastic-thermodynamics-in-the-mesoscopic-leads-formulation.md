@@ -7,10 +7,10 @@ doi: "10.1103/3msj-9qgb"
 arxiv: "2404.06426"
 url: "http://arxiv.org/abs/2404.06426v2"
 pdf_url: "https://arxiv.org/pdf/2404.06426v2"
-topics: ["statistical_physics/non_equilibrium_dynamics", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "bridges/translation_layers", "bridges"]
-tier: 0
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "bridges", "statistical_physics/non_equilibrium_dynamics", "bridges/translation_layers"]
+tier: 2
 citations: 0
-relevance_score: 54.0
+relevance_score: 64.0
 collected: "2026-04-16"
 status: "unread"
 source: "arxiv"
@@ -26,11 +26,11 @@ We introduce a numerical method to sample the distributions of charge, heat, and
 
 ## Connections
 
-- [[non_equilibrium_dynamics]]
 - [[statistical_physics]]
 - [[nonequilibrium]]
-- [[translation_layers]]
 - [[bridges]]
+- [[non_equilibrium_dynamics]]
+- [[translation_layers]]
 
 ## Notes
 

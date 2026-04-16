@@ -7,7 +7,7 @@ doi: "10.1145/3774904.3792722"
 arxiv: ""
 url: "https://openalex.org/W4415318709"
 pdf_url: "https://arxiv.org/pdf/2510.07957"
-topics: ["ai_for_physics/generative_dynamics", "ai_for_physics", "ai_for_physics/generative_dynamics/flow_matching"]
+topics: ["ai_for_physics", "ai_for_physics/generative_dynamics/flow_matching", "ai_for_physics/generative_dynamics"]
 tier: 0
 citations: 0
 relevance_score: 47.0
@@ -26,9 +26,9 @@ Forecasting state evolution of network systems, such as the spread of informatio
 
 ## Connections
 
-- [[generative_dynamics]]
 - [[ai_for_physics]]
 - [[flow_matching]]
+- [[generative_dynamics]]
 
 ## Notes
 

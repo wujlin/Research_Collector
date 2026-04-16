@@ -7,7 +7,7 @@ doi: "10.48550/arxiv.2603.23303"
 arxiv: ""
 url: "https://openalex.org/W7140953740"
 pdf_url: "https://arxiv.org/pdf/2603.23303"
-topics: ["bridges/transport_and_spatial_generation", "bridges", "bridges/transport_and_spatial_generation/optimal_transport_urban"]
+topics: ["bridges", "bridges/transport_and_spatial_generation/optimal_transport_urban", "bridges/transport_and_spatial_generation"]
 tier: 0
 citations: 0
 relevance_score: 51.0
@@ -26,9 +26,9 @@ In this article, we establish exponential turnpike theorems for a class of nonli
 
 ## Connections
 
-- [[transport_and_spatial_generation]]
 - [[bridges]]
 - [[optimal_transport_urban]]
+- [[transport_and_spatial_generation]]
 
 ## Notes
 

@@ -7,7 +7,7 @@ doi: ""
 arxiv: ""
 url: "https://openalex.org/W7134860245"
 pdf_url: "https://arxiv.org/pdf/2603.08116"
-topics: ["statistical_physics/non_equilibrium_dynamics", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "stochastic_analysis/stochastic_dynamics", "stochastic_analysis"]
+topics: ["stochastic_analysis", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "stochastic_analysis/stochastic_dynamics", "statistical_physics/non_equilibrium_dynamics"]
 tier: 0
 citations: 0
 relevance_score: 52.28
@@ -26,11 +26,11 @@ Probing the spatially heterogeneous activity across scales is a major challenge 
 
 ## Connections
 
-- [[non_equilibrium_dynamics]]
+- [[stochastic_analysis]]
 - [[statistical_physics]]
 - [[nonequilibrium]]
 - [[stochastic_dynamics]]
-- [[stochastic_analysis]]
+- [[non_equilibrium_dynamics]]
 
 ## Notes
 

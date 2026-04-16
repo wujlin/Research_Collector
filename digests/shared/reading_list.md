@@ -1,6 +1,6 @@
 ---
 title: "Reading List"
-generated_at: "2026-04-16T14:15:23.955915"
+generated_at: "2026-04-16T15:53:51.451818"
 paper_count: 20
 ---
 
@@ -164,7 +164,19 @@ paper_count: 20
 - Topics: stochastic_analysis, bridges/translation_layers/fokker_planck_master, stochastic_analysis/stochastic_dynamics/sde_theory, bridges, stochastic_analysis/stochastic_dynamics, bridges/translation_layers
 - URL: http://arxiv.org/abs/2310.17314v2
 
-## 14. Deep Unsupervised Learning using Nonequilibrium Thermodynamics
+## 14. How Generative Models Approach Molecular Conformational Sampling
+
+- Authors: Nagesh B E, Jagannath Mondal
+- Year: 2026
+- Journal/Venue: bioRxiv (Cold Spring Harbor Laboratory)
+- Venue Quality: preprint
+- Importance: 89.40 (keep)
+- Relevance: 54.00
+- Citations: 0
+- Topics: ai_for_physics, ai_for_physics/generative_dynamics/ddpm, ai_for_physics/generative_dynamics/flow_matching, ai_for_physics/generative_dynamics
+- URL: https://openalex.org/W7154301265
+
+## 15. Deep Unsupervised Learning using Nonequilibrium Thermodynamics
 
 - Authors: Jascha Sohl-Dickstein, Eric Weiss, Niru Maheswaranathan, Surya Ganguli
 - Year: 2015
@@ -176,7 +188,7 @@ paper_count: 20
 - Topics: statistical_physics, statistical_physics/non_equilibrium_dynamics/nonequilibrium, ai_for_physics, ai_for_physics/generative_dynamics/ddpm, statistical_physics/non_equilibrium_dynamics, ai_for_physics/generative_dynamics
 - URL: https://proceedings.mlr.press/v37/sohl-dickstein15.html
 
-## 15. Noise in the reverse process improves the approximation capabilities of diffusion models
+## 16. Noise in the reverse process improves the approximation capabilities of diffusion models
 
 - Authors: Karthik Elamvazhuthi, Samet Oymak, Fabio Pasqualetti
 - Year: 2023
@@ -188,7 +200,7 @@ paper_count: 20
 - Topics: ai_for_physics, ai_for_physics/generative_dynamics/score_matching, ai_for_physics/generative_dynamics/ddpm, ai_for_physics/generative_dynamics
 - URL: http://arxiv.org/abs/2312.07851v2
 
-## 16. The cost of knowing: natural gradient as variational inference
+## 17. The cost of knowing: natural gradient as variational inference
 
 - Authors: others, Martin Jankowiak, Theofanis Karaletsos
 - Year: 2020
@@ -200,7 +212,7 @@ paper_count: 20
 - Topics: ai_for_physics, ai_for_physics/generative_dynamics/score_matching, bridges, bridges/thermodynamic_inference/info_geometry, ai_for_physics/generative_dynamics, bridges/thermodynamic_inference
 - URL: https://arxiv.org/abs/2002.08676
 
-## 17. Disentangled Deep Priors for Bayesian Inverse Problems
+## 18. Disentangled Deep Priors for Bayesian Inverse Problems
 
 - Authors: Arkaprabha Ganguli, Emil M. Constantinescu
 - Year: 2026
@@ -212,7 +224,7 @@ paper_count: 20
 - Topics: ai_for_physics, ai_for_physics/physics_informed_modeling, ai_for_physics/physics_informed_modeling/scientific_ml_applications
 - URL: https://openalex.org/W7149873794
 
-## 18. Entropy production fluctuation theorem and the nonequilibrium work relation for free energy differences
+## 19. Entropy production fluctuation theorem and the nonequilibrium work relation for free energy differences
 
 - Authors: Gavin E. Crooks
 - Year: 1999
@@ -224,7 +236,7 @@ paper_count: 20
 - Topics: statistical_physics, statistical_physics/non_equilibrium_dynamics/nonequilibrium, statistical_physics/non_equilibrium_dynamics/fluctuation_theorems, statistical_physics/non_equilibrium_dynamics
 - URL: https://journals.aps.org/pre/abstract/10.1103/PhysRevE.60.2721
 
-## 19. A Physics-Constrained Deep-Learning Framework based on Long-Term Remote-Sensing Data for Retrieving Vertical Distribution of PM <sub>2.5</sub> Chemical Components
+## 20. A Physics-Constrained Deep-Learning Framework based on Long-Term Remote-Sensing Data for Retrieving Vertical Distribution of PM <sub>2.5</sub> Chemical Components
 
 - Authors: Hongyi Li, Tao Yang, Yele Sun, Zifa Wang
 - Year: 2026
@@ -235,15 +247,3 @@ paper_count: 20
 - Citations: 0
 - Topics: ai_for_physics, ai_for_physics/physics_informed_modeling/physics_informed_generative, urban_complex_systems, urban_complex_systems/urban_data_and_generation/urban_data_science, ai_for_physics/physics_informed_modeling, urban_complex_systems/urban_data_and_generation
 - URL: https://openalex.org/W7146945880
-
-## 20. Macroscopic Stochastic Thermodynamics
-
-- Authors: Gianmaria Falasco, Massimiliano Esposito
-- Year: 2023
-- Journal/Venue: Reviews of Modern Physics, 97(1), 015002 (2025)
-- Venue Quality: top_tier
-- Importance: 80.40 (keep)
-- Relevance: 64.00
-- Citations: 0
-- Topics: statistical_physics, statistical_physics/non_equilibrium_dynamics/nonequilibrium, statistical_physics/non_equilibrium_dynamics/fluctuation_theorems, statistical_physics/non_equilibrium_dynamics
-- URL: http://arxiv.org/abs/2307.12406v3

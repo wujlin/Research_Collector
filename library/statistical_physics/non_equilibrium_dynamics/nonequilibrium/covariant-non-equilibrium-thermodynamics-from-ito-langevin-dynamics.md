@@ -7,7 +7,7 @@ doi: ""
 arxiv: "2105.14534"
 url: "http://arxiv.org/abs/2105.14534v3"
 pdf_url: "https://arxiv.org/pdf/2105.14534v3"
-topics: ["statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics", "statistical_physics/equilibrium_structures"]
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/equilibrium_structures", "statistical_physics/non_equilibrium_dynamics"]
 tier: 0
 citations: 0
 relevance_score: 44.0
@@ -26,10 +26,10 @@ Using the recently developed covariant Ito-Langevin dynamics, we develop a non-e
 
 ## Connections
 
-- [[nonequilibrium]]
-- [[non_equilibrium_dynamics]]
 - [[statistical_physics]]
+- [[nonequilibrium]]
 - [[equilibrium_structures]]
+- [[non_equilibrium_dynamics]]
 
 ## Notes
 

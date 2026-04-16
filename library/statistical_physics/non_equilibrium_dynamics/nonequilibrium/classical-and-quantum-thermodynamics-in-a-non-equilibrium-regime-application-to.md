@@ -7,10 +7,10 @@ doi: "10.1063/5.0220685"
 arxiv: "2405.17791"
 url: "http://arxiv.org/abs/2405.17791v3"
 pdf_url: "https://arxiv.org/pdf/2405.17791v3"
-topics: ["statistical_physics/non_equilibrium_dynamics", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems"]
-tier: 0
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems", "statistical_physics/non_equilibrium_dynamics"]
+tier: 2
 citations: 0
-relevance_score: 54.0
+relevance_score: 64.0
 collected: "2026-04-16"
 status: "unread"
 source: "arxiv"
@@ -26,10 +26,10 @@ We have developed a thermodynamic theory in the non-equilibrium regime, which we
 
 ## Connections
 
-- [[non_equilibrium_dynamics]]
 - [[statistical_physics]]
 - [[nonequilibrium]]
 - [[fluctuation_theorems]]
+- [[non_equilibrium_dynamics]]
 
 ## Notes
 

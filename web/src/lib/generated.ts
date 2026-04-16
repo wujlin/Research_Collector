@@ -58,6 +58,11 @@ export type DigestEntry = {
   title: string;
   path: string;
   created_at: string;
+  type?: "reading_note" | "workflow" | "shared";
+  authors?: string;
+  venue?: string;
+  topics?: string[];
+  word_count?: number;
 };
 
 export type Author = {

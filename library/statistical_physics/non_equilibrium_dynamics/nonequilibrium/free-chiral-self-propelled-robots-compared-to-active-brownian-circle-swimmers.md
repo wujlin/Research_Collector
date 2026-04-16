@@ -7,10 +7,10 @@ doi: "10.1103/274x-4vgn"
 arxiv: ""
 url: "https://openalex.org/W7133496683"
 pdf_url: ""
-topics: ["statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics", "urban_complex_systems/mobility_and_interaction/transport_networks", "urban_complex_systems/mobility_and_interaction", "urban_complex_systems"]
-tier: 0
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "urban_complex_systems", "urban_complex_systems/mobility_and_interaction/transport_networks", "statistical_physics/non_equilibrium_dynamics", "urban_complex_systems/mobility_and_interaction"]
+tier: 2
 citations: 0
-relevance_score: 50.0
+relevance_score: 64.0
 collected: "2026-04-16"
 status: "unread"
 source: "openalex"
@@ -26,12 +26,12 @@ Macroscopic active matter systems, such as bristle bots, provide a compelling pl
 
 ## Connections
 
-- [[nonequilibrium]]
-- [[non_equilibrium_dynamics]]
 - [[statistical_physics]]
-- [[transport_networks]]
-- [[mobility_and_interaction]]
+- [[nonequilibrium]]
 - [[urban_complex_systems]]
+- [[transport_networks]]
+- [[non_equilibrium_dynamics]]
+- [[mobility_and_interaction]]
 
 ## Notes
 

@@ -1,16 +1,16 @@
 ---
 title: "Stochastic Thermodynamics of Non-Linear Electronic Circuits: A Realistic Framework for Computing around kT"
-authors: ["Nahuel Freitas", "Jean-Charles Delvenne", "Massimiliano Esposito"]
+authors: ["Massimiliano Esposito", "Nahuel Freitas", "Jean-Charles Delvenne"]
 year: 2020
 journal: "Phys. Rev. X 11, 031064 (2021)"
 doi: "10.1103/PhysRevX.11.031064"
 arxiv: "2008.10578"
 url: "http://arxiv.org/abs/2008.10578v4"
 pdf_url: "https://arxiv.org/pdf/2008.10578v4"
-topics: ["statistical_physics/non_equilibrium_dynamics", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium"]
-tier: 0
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics"]
+tier: 2
 citations: 0
-relevance_score: 39.0
+relevance_score: 49.0
 collected: "2026-04-16"
 status: "unread"
 source: "arxiv"
@@ -26,9 +26,9 @@ We present a general formalism for the construction of thermodynamically consist
 
 ## Connections
 
-- [[non_equilibrium_dynamics]]
 - [[statistical_physics]]
 - [[nonequilibrium]]
+- [[non_equilibrium_dynamics]]
 
 ## Notes
 

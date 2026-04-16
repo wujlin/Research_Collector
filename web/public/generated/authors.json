@@ -502,6 +502,54 @@
     ]
   },
   {
+    "id": 945,
+    "name": "Héctor Vaquero del Pino",
+    "affiliation": "",
+    "openalex_id": "A5119845021",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "statistical_physics",
+      "statistical_physics/non_equilibrium_dynamics/nonequilibrium"
+    ]
+  },
+  {
+    "id": 946,
+    "name": "François Gay-Balmaz",
+    "affiliation": "",
+    "openalex_id": "",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "statistical_physics",
+      "statistical_physics/non_equilibrium_dynamics/nonequilibrium"
+    ]
+  },
+  {
+    "id": 947,
+    "name": "Hiroaki Yoshimura",
+    "affiliation": "",
+    "openalex_id": "",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "statistical_physics",
+      "statistical_physics/non_equilibrium_dynamics/nonequilibrium"
+    ]
+  },
+  {
+    "id": 948,
+    "name": "Lock Yue Chew",
+    "affiliation": "",
+    "openalex_id": "",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "statistical_physics",
+      "statistical_physics/non_equilibrium_dynamics/nonequilibrium"
+    ]
+  },
+  {
     "id": 933,
     "name": "Manish Patel",
     "affiliation": "Homi Bhabha National Institute; Institute of Physics",
@@ -922,6 +970,66 @@
     ]
   },
   {
+    "id": 300,
+    "name": "Fang Liu",
+    "affiliation": "",
+    "openalex_id": "A5100453076",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "statistical_physics",
+      "statistical_physics/non_equilibrium_dynamics/nonequilibrium"
+    ]
+  },
+  {
+    "id": 301,
+    "name": "Min Guo",
+    "affiliation": "Chuxiong Normal University",
+    "openalex_id": "A5005763661",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "statistical_physics",
+      "statistical_physics/non_equilibrium_dynamics/nonequilibrium"
+    ]
+  },
+  {
+    "id": 302,
+    "name": "Hongwei Tan",
+    "affiliation": "Hunan Institute of Technology",
+    "openalex_id": "A5128937347",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "statistical_physics",
+      "statistical_physics/non_equilibrium_dynamics/nonequilibrium"
+    ]
+  },
+  {
+    "id": 303,
+    "name": "Yang Wang",
+    "affiliation": "University of Petroleum",
+    "openalex_id": "A5129285876",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "statistical_physics",
+      "statistical_physics/non_equilibrium_dynamics/nonequilibrium"
+    ]
+  },
+  {
+    "id": 660,
+    "name": "Feiyi Liu",
+    "affiliation": "Chuxiong Normal University",
+    "openalex_id": "A5102508866",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "statistical_physics",
+      "statistical_physics/non_equilibrium_dynamics/nonequilibrium"
+    ]
+  },
+  {
     "id": 196,
     "name": "Hongyi Li",
     "affiliation": "",
@@ -1032,54 +1140,6 @@
   {
     "id": 955,
     "name": "Xiang Zhou",
-    "affiliation": "",
-    "openalex_id": "",
-    "h_index": 0,
-    "paper_count": 1,
-    "topic_keys": [
-      "statistical_physics",
-      "statistical_physics/non_equilibrium_dynamics/nonequilibrium"
-    ]
-  },
-  {
-    "id": 945,
-    "name": "Héctor Vaquero del Pino",
-    "affiliation": "",
-    "openalex_id": "",
-    "h_index": 0,
-    "paper_count": 1,
-    "topic_keys": [
-      "statistical_physics",
-      "statistical_physics/non_equilibrium_dynamics/nonequilibrium"
-    ]
-  },
-  {
-    "id": 946,
-    "name": "François Gay-Balmaz",
-    "affiliation": "",
-    "openalex_id": "",
-    "h_index": 0,
-    "paper_count": 1,
-    "topic_keys": [
-      "statistical_physics",
-      "statistical_physics/non_equilibrium_dynamics/nonequilibrium"
-    ]
-  },
-  {
-    "id": 947,
-    "name": "Hiroaki Yoshimura",
-    "affiliation": "",
-    "openalex_id": "",
-    "h_index": 0,
-    "paper_count": 1,
-    "topic_keys": [
-      "statistical_physics",
-      "statistical_physics/non_equilibrium_dynamics/nonequilibrium"
-    ]
-  },
-  {
-    "id": 948,
-    "name": "Lock Yue Chew",
     "affiliation": "",
     "openalex_id": "",
     "h_index": 0,
@@ -1212,6 +1272,150 @@
   {
     "id": 951,
     "name": "Salvatore Lorenzo",
+    "affiliation": "",
+    "openalex_id": "",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "statistical_physics",
+      "statistical_physics/non_equilibrium_dynamics/nonequilibrium"
+    ]
+  },
+  {
+    "id": 1157,
+    "name": "Yan Huang",
+    "affiliation": "",
+    "openalex_id": "A5133602089",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "bridges/translation_layers/fokker_planck_master",
+      "statistical_physics"
+    ]
+  },
+  {
+    "id": 1158,
+    "name": "Li Wang",
+    "affiliation": "",
+    "openalex_id": "A5133594689",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "bridges/translation_layers/fokker_planck_master",
+      "statistical_physics"
+    ]
+  },
+  {
+    "id": 1154,
+    "name": "Prasad Nimantha Madusanka Ukwatta Hewage",
+    "affiliation": "",
+    "openalex_id": "A5133492583",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "ai_for_physics",
+      "urban_complex_systems"
+    ]
+  },
+  {
+    "id": 1155,
+    "name": "Midhun Chakkravarthy",
+    "affiliation": "",
+    "openalex_id": "A5112649448",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "ai_for_physics",
+      "urban_complex_systems"
+    ]
+  },
+  {
+    "id": 1156,
+    "name": "Ruvan Kumara Abeysekara",
+    "affiliation": "",
+    "openalex_id": "A5062218157",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "ai_for_physics",
+      "urban_complex_systems"
+    ]
+  },
+  {
+    "id": 1153,
+    "name": "Hy P. G. Lam",
+    "affiliation": "",
+    "openalex_id": "A5133606822",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "stochastic_analysis",
+      "stochastic_analysis/stochastic_dynamics/sde_theory"
+    ]
+  },
+  {
+    "id": 1150,
+    "name": "Xubin Zhou",
+    "affiliation": "Harbin Institute of Technology",
+    "openalex_id": "A5121492962",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "statistical_physics",
+      "statistical_physics/equilibrium_structures/equilibrium"
+    ]
+  },
+  {
+    "id": 1151,
+    "name": "Yipeng Yang",
+    "affiliation": "Harbin Institute of Technology",
+    "openalex_id": "A5133546345",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "statistical_physics",
+      "statistical_physics/equilibrium_structures/equilibrium"
+    ]
+  },
+  {
+    "id": 1152,
+    "name": "Zhan Li",
+    "affiliation": "Harbin Institute of Technology",
+    "openalex_id": "A5133619480",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "statistical_physics",
+      "statistical_physics/equilibrium_structures/equilibrium"
+    ]
+  },
+  {
+    "id": 1148,
+    "name": "Nagesh B E",
+    "affiliation": "Tata Institute of Fundamental Research",
+    "openalex_id": "A5123670222",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "ai_for_physics",
+      "ai_for_physics/generative_dynamics/ddpm"
+    ]
+  },
+  {
+    "id": 1149,
+    "name": "Jagannath Mondal",
+    "affiliation": "Tata Institute of Fundamental Research",
+    "openalex_id": "A5091368395",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "ai_for_physics",
+      "ai_for_physics/generative_dynamics/ddpm"
+    ]
+  },
+  {
+    "id": 1140,
+    "name": "Yosef Akhtman",
     "affiliation": "",
     "openalex_id": "",
     "h_index": 0,
@@ -1903,66 +2107,6 @@
     "topic_keys": [
       "bridges/translation_layers/fokker_planck_master",
       "statistical_physics"
-    ]
-  },
-  {
-    "id": 300,
-    "name": "Fang Liu",
-    "affiliation": "",
-    "openalex_id": "A5100453076",
-    "h_index": 0,
-    "paper_count": 1,
-    "topic_keys": [
-      "statistical_physics",
-      "statistical_physics/non_equilibrium_dynamics/nonequilibrium"
-    ]
-  },
-  {
-    "id": 301,
-    "name": "Min Guo",
-    "affiliation": "Chuxiong Normal University",
-    "openalex_id": "A5005763661",
-    "h_index": 0,
-    "paper_count": 1,
-    "topic_keys": [
-      "statistical_physics",
-      "statistical_physics/non_equilibrium_dynamics/nonequilibrium"
-    ]
-  },
-  {
-    "id": 302,
-    "name": "Hongwei Tan",
-    "affiliation": "Hunan Institute of Technology",
-    "openalex_id": "A5128937347",
-    "h_index": 0,
-    "paper_count": 1,
-    "topic_keys": [
-      "statistical_physics",
-      "statistical_physics/non_equilibrium_dynamics/nonequilibrium"
-    ]
-  },
-  {
-    "id": 303,
-    "name": "Yang Wang",
-    "affiliation": "University of Petroleum",
-    "openalex_id": "A5129285876",
-    "h_index": 0,
-    "paper_count": 1,
-    "topic_keys": [
-      "statistical_physics",
-      "statistical_physics/non_equilibrium_dynamics/nonequilibrium"
-    ]
-  },
-  {
-    "id": 660,
-    "name": "Feiyi Liu",
-    "affiliation": "Chuxiong Normal University",
-    "openalex_id": "A5102508866",
-    "h_index": 0,
-    "paper_count": 1,
-    "topic_keys": [
-      "statistical_physics",
-      "statistical_physics/non_equilibrium_dynamics/nonequilibrium"
     ]
   },
   {
@@ -2728,6 +2872,126 @@
     "topic_keys": [
       "ai_for_physics",
       "ai_for_physics/physics_informed_modeling/physics_informed_generative"
+    ]
+  },
+  {
+    "id": 1159,
+    "name": "Carl R. Richardson",
+    "affiliation": "",
+    "openalex_id": "A5133543812",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "ai_for_physics",
+      "ai_for_physics/physics_informed_modeling"
+    ]
+  },
+  {
+    "id": 1160,
+    "name": "Jichen Zhang",
+    "affiliation": "",
+    "openalex_id": "A5133487807",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "ai_for_physics",
+      "ai_for_physics/physics_informed_modeling"
+    ]
+  },
+  {
+    "id": 1161,
+    "name": "Ethan King",
+    "affiliation": "",
+    "openalex_id": "A5133622286",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "ai_for_physics",
+      "ai_for_physics/physics_informed_modeling"
+    ]
+  },
+  {
+    "id": 1162,
+    "name": "Jan Drgona",
+    "affiliation": "",
+    "openalex_id": "A5121146895",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "ai_for_physics",
+      "ai_for_physics/physics_informed_modeling"
+    ]
+  },
+  {
+    "id": 1144,
+    "name": "Ljupco Todorovski",
+    "affiliation": "Institute of Mathematics, Physics, and Mechanics",
+    "openalex_id": "A5110589951",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "statistical_physics",
+      "statistical_physics/non_equilibrium_dynamics/nonequilibrium"
+    ]
+  },
+  {
+    "id": 1145,
+    "name": "Nina Omejc",
+    "affiliation": "Jožef Stefan Institute",
+    "openalex_id": "A5049006011",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "statistical_physics",
+      "statistical_physics/non_equilibrium_dynamics/nonequilibrium"
+    ]
+  },
+  {
+    "id": 1146,
+    "name": "Sabin Roman",
+    "affiliation": "Jožef Stefan Institute",
+    "openalex_id": "A5073010651",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "statistical_physics",
+      "statistical_physics/non_equilibrium_dynamics/nonequilibrium"
+    ]
+  },
+  {
+    "id": 1147,
+    "name": "Sašo Džeroski",
+    "affiliation": "Jožef Stefan Institute",
+    "openalex_id": "A5064609702",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "statistical_physics",
+      "statistical_physics/non_equilibrium_dynamics/nonequilibrium"
+    ]
+  },
+  {
+    "id": 1141,
+    "name": "Alberto Dinelli",
+    "affiliation": "",
+    "openalex_id": "A5133601160",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "statistical_physics",
+      "statistical_physics/non_equilibrium_dynamics/nonequilibrium"
+    ]
+  },
+  {
+    "id": 1142,
+    "name": "Pietro Luigi Muzzeddu",
+    "affiliation": "",
+    "openalex_id": "A5059652687",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "statistical_physics",
+      "statistical_physics/non_equilibrium_dynamics/nonequilibrium"
     ]
   },
   {
@@ -4063,6 +4327,18 @@
     ]
   },
   {
+    "id": 1143,
+    "name": "Caesar Edward",
+    "affiliation": "University of Juba",
+    "openalex_id": "A5017117351",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "stochastic_analysis",
+      "bridges/translation_layers/fokker_planck_master"
+    ]
+  },
+  {
     "id": 1097,
     "name": "Ayşe Tüzün Güner",
     "affiliation": "KTO Karatay University",
@@ -5116,6 +5392,54 @@
     "topic_keys": [
       "ai_for_physics",
       "ai_for_physics/generative_dynamics/sde_generative"
+    ]
+  },
+  {
+    "id": 1163,
+    "name": "Jayeeta Chattopadhyay",
+    "affiliation": "University of Copenhagen",
+    "openalex_id": "A5130377367",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "statistical_physics",
+      "statistical_physics/collective_structure/phase_transitions"
+    ]
+  },
+  {
+    "id": 1164,
+    "name": "Simon Guldager Andersen",
+    "affiliation": "University of Copenhagen",
+    "openalex_id": "A5009982367",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "statistical_physics",
+      "statistical_physics/collective_structure/phase_transitions"
+    ]
+  },
+  {
+    "id": 1165,
+    "name": "Kristian Thijssen",
+    "affiliation": "University of Copenhagen",
+    "openalex_id": "A5049837235",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "statistical_physics",
+      "statistical_physics/collective_structure/phase_transitions"
+    ]
+  },
+  {
+    "id": 1166,
+    "name": "Amin Doostmohammadi",
+    "affiliation": "University of Copenhagen",
+    "openalex_id": "A5130343083",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "statistical_physics",
+      "statistical_physics/collective_structure/phase_transitions"
     ]
   },
   {

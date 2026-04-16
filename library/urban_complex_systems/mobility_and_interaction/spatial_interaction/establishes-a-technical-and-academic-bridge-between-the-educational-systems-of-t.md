@@ -7,7 +7,7 @@ doi: "10.7490/f1000research.1120515.1"
 arxiv: ""
 url: "https://openalex.org/W7139014457"
 pdf_url: "https://f1000research.com/documents/15-425/pdf"
-topics: ["urban_complex_systems/mobility_and_interaction", "urban_complex_systems", "urban_complex_systems/mobility_and_interaction/spatial_interaction"]
+topics: ["urban_complex_systems", "urban_complex_systems/mobility_and_interaction/spatial_interaction", "urban_complex_systems/mobility_and_interaction"]
 tier: 0
 citations: 0
 relevance_score: 47.0
@@ -26,9 +26,9 @@ source: "openalex"
 
 ## Connections
 
-- [[mobility_and_interaction]]
 - [[urban_complex_systems]]
 - [[spatial_interaction]]
+- [[mobility_and_interaction]]
 
 ## Notes
 

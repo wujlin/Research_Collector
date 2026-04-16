@@ -7,7 +7,7 @@ doi: "10.3390/ijgi15040166"
 arxiv: ""
 url: "https://openalex.org/W7154024768"
 pdf_url: "https://www.mdpi.com/2220-9964/15/4/166/pdf?version=1775902540"
-topics: ["urban_complex_systems/mobility_and_interaction/transport_networks", "urban_complex_systems/mobility_and_interaction", "urban_complex_systems"]
+topics: ["urban_complex_systems", "urban_complex_systems/mobility_and_interaction/transport_networks", "urban_complex_systems/mobility_and_interaction"]
 tier: 0
 citations: 0
 relevance_score: 47.0
@@ -26,9 +26,9 @@ With the rapid development of Intelligent Transportation Systems (ITSs), traffic
 
 ## Connections
 
+- [[urban_complex_systems]]
 - [[transport_networks]]
 - [[mobility_and_interaction]]
-- [[urban_complex_systems]]
 
 ## Notes
 

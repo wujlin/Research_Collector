@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 
 const links = [
   { href: "/", label: "Overview" },
+  { href: "/notes", label: "Notes" },
   { href: "/library", label: "Library" },
   { href: "/topics", label: "Topics" },
   { href: "/graph", label: "Graph" },

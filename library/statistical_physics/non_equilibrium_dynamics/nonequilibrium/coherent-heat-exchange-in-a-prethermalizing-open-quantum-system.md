@@ -7,7 +7,7 @@ doi: ""
 arxiv: "2508.03193"
 url: "http://arxiv.org/abs/2508.03193v1"
 pdf_url: "https://arxiv.org/pdf/2508.03193v1"
-topics: ["statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems"]
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems", "statistical_physics/non_equilibrium_dynamics"]
 tier: 0
 citations: 0
 relevance_score: 54.69
@@ -26,10 +26,10 @@ We investigate a simple model exhibiting a prethermal phase, i.e. a metastable s
 
 ## Connections
 
-- [[nonequilibrium]]
-- [[non_equilibrium_dynamics]]
 - [[statistical_physics]]
+- [[nonequilibrium]]
 - [[fluctuation_theorems]]
+- [[non_equilibrium_dynamics]]
 
 ## Notes
 

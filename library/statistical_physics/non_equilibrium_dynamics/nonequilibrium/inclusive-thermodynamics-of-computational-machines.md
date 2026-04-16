@@ -7,7 +7,7 @@ doi: ""
 arxiv: "2206.01165"
 url: "http://arxiv.org/abs/2206.01165v2"
 pdf_url: "https://arxiv.org/pdf/2206.01165v2"
-topics: ["statistical_physics/non_equilibrium_dynamics", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium"]
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics"]
 tier: 0
 citations: 0
 relevance_score: 43.0
@@ -26,9 +26,9 @@ We introduce a framework designed to analyze the thermodynamics of an abstractly
 
 ## Connections
 
-- [[non_equilibrium_dynamics]]
 - [[statistical_physics]]
 - [[nonequilibrium]]
+- [[non_equilibrium_dynamics]]
 
 ## Notes
 

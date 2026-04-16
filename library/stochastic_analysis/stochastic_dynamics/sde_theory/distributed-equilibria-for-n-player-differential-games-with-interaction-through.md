@@ -7,7 +7,7 @@ doi: ""
 arxiv: ""
 url: "https://openalex.org/W7148176522"
 pdf_url: "https://arxiv.org/pdf/2603.29707"
-topics: ["stochastic_analysis/stochastic_dynamics/sde_theory", "stochastic_analysis/stochastic_dynamics", "stochastic_analysis", "statistical_physics/collective_structure/phase_transitions", "statistical_physics/collective_structure", "statistical_physics"]
+topics: ["stochastic_analysis", "stochastic_analysis/stochastic_dynamics/sde_theory", "statistical_physics", "statistical_physics/collective_structure/phase_transitions", "stochastic_analysis/stochastic_dynamics", "statistical_physics/collective_structure"]
 tier: 0
 citations: 0
 relevance_score: 54.0
@@ -26,12 +26,12 @@ We establish the existence and uniqueness of distributed equilibria to possibly 
 
 ## Connections
 
-- [[sde_theory]]
-- [[stochastic_dynamics]]
 - [[stochastic_analysis]]
-- [[phase_transitions]]
-- [[collective_structure]]
+- [[sde_theory]]
 - [[statistical_physics]]
+- [[phase_transitions]]
+- [[stochastic_dynamics]]
+- [[collective_structure]]
 
 ## Notes
 

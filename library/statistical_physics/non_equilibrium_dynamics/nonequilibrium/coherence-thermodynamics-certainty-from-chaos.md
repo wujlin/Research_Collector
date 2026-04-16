@@ -7,10 +7,10 @@ doi: "10.20944/preprints202507.1448.v5"
 arxiv: ""
 url: "https://openalex.org/W7143914281"
 pdf_url: "https://www.preprints.org/frontend/manuscript/8b525c0c3607129dbdadf04940be19e9/download_pub"
-topics: ["statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics"]
-tier: 2
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics"]
+tier: 0
 citations: 0
-relevance_score: 56.73
+relevance_score: 46.73
 collected: "2026-04-16"
 status: "unread"
 source: "openalex"
@@ -26,9 +26,9 @@ This paper assumes that a thermodynamic system can be composed purely of coheren
 
 ## Connections
 
+- [[statistical_physics]]
 - [[nonequilibrium]]
 - [[non_equilibrium_dynamics]]
-- [[statistical_physics]]
 
 ## Notes
 

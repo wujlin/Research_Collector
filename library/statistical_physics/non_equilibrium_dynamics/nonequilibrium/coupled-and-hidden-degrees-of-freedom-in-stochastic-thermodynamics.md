@@ -7,7 +7,7 @@ doi: ""
 arxiv: "2007.15223"
 url: "http://arxiv.org/abs/2007.15223v1"
 pdf_url: "https://arxiv.org/pdf/2007.15223v1"
-topics: ["statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics"]
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics"]
 tier: 0
 citations: 0
 relevance_score: 39.0
@@ -26,9 +26,9 @@ This thesis investigates the interactions of different degrees of freedom of one
 
 ## Connections
 
+- [[statistical_physics]]
 - [[nonequilibrium]]
 - [[non_equilibrium_dynamics]]
-- [[statistical_physics]]
 
 ## Notes
 

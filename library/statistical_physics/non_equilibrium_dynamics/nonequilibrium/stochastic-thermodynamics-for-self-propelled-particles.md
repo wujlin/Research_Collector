@@ -7,10 +7,10 @@ doi: "10.1103/PhysRevE.100.050603"
 arxiv: "1909.11684"
 url: "http://arxiv.org/abs/1909.11684v2"
 pdf_url: "https://arxiv.org/pdf/1909.11684v2"
-topics: ["statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems"]
-tier: 0
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems", "statistical_physics/non_equilibrium_dynamics"]
+tier: 2
 citations: 0
-relevance_score: 40.0
+relevance_score: 50.0
 collected: "2026-04-16"
 status: "unread"
 source: "arxiv"
@@ -26,10 +26,10 @@ We propose a generalization of stochastic thermodynamics to systems of active pa
 
 ## Connections
 
-- [[nonequilibrium]]
-- [[non_equilibrium_dynamics]]
 - [[statistical_physics]]
+- [[nonequilibrium]]
 - [[fluctuation_theorems]]
+- [[non_equilibrium_dynamics]]
 
 ## Notes
 

@@ -7,7 +7,7 @@ doi: "10.1126/sciadv.aec0783"
 arxiv: ""
 url: "https://openalex.org/W7135217196"
 pdf_url: ""
-topics: ["statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics"]
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics"]
 tier: 1
 citations: 0
 relevance_score: 67.0
@@ -26,9 +26,9 @@ Living microorganisms have evolved dedicated sensory machinery to detect environ
 
 ## Connections
 
+- [[statistical_physics]]
 - [[nonequilibrium]]
 - [[non_equilibrium_dynamics]]
-- [[statistical_physics]]
 
 ## Notes
 

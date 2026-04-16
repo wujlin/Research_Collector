@@ -7,7 +7,7 @@ doi: ""
 arxiv: ""
 url: "https://openalex.org/W7152331351"
 pdf_url: "https://arxiv.org/pdf/2604.04462"
-topics: ["statistical_physics/equilibrium_structures", "statistical_physics", "statistical_physics/equilibrium_structures/equilibrium", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics"]
+topics: ["statistical_physics", "statistical_physics/equilibrium_structures/equilibrium", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/equilibrium_structures", "statistical_physics/non_equilibrium_dynamics"]
 tier: 0
 citations: 0
 relevance_score: 54.0
@@ -26,10 +26,10 @@ This thesis develops a decision-theoretic framework for extracting thermodynamic
 
 ## Connections
 
-- [[equilibrium_structures]]
 - [[statistical_physics]]
 - [[equilibrium]]
 - [[nonequilibrium]]
+- [[equilibrium_structures]]
 - [[non_equilibrium_dynamics]]
 
 ## Notes

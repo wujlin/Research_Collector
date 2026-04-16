@@ -7,10 +7,10 @@ doi: "10.1007/s11005-026-02065-9"
 arxiv: ""
 url: "https://openalex.org/W4406841346"
 pdf_url: ""
-topics: ["stochastic_analysis/stochastic_dynamics/sde_theory", "stochastic_analysis/stochastic_dynamics", "stochastic_analysis", "statistical_physics/collective_structure/phase_transitions", "statistical_physics/collective_structure", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics"]
-tier: 0
+topics: ["stochastic_analysis", "stochastic_analysis/stochastic_dynamics/sde_theory", "statistical_physics", "statistical_physics/collective_structure/phase_transitions", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "stochastic_analysis/stochastic_dynamics", "statistical_physics/non_equilibrium_dynamics", "statistical_physics/collective_structure"]
+tier: 2
 citations: 0
-relevance_score: 47.02
+relevance_score: 61.02
 collected: "2026-04-16"
 status: "unread"
 source: "openalex"
@@ -26,14 +26,14 @@ Abstract In this work, we study the asymptotic behavior of mixture of experts (M
 
 ## Connections
 
-- [[sde_theory]]
-- [[stochastic_dynamics]]
 - [[stochastic_analysis]]
-- [[phase_transitions]]
-- [[collective_structure]]
+- [[sde_theory]]
 - [[statistical_physics]]
+- [[phase_transitions]]
 - [[nonequilibrium]]
+- [[stochastic_dynamics]]
 - [[non_equilibrium_dynamics]]
+- [[collective_structure]]
 
 ## Notes
 

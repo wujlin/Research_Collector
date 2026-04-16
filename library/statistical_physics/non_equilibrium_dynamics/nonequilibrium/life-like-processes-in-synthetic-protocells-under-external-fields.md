@@ -7,7 +7,7 @@ doi: "10.1016/j.newton.2026.100444"
 arxiv: ""
 url: "https://openalex.org/W7136249941"
 pdf_url: ""
-topics: ["statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics"]
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics"]
 tier: 0
 citations: 0
 relevance_score: 47.0
@@ -26,9 +26,9 @@ Synthetic protocells are self-assembled compartments designed to reproduce minim
 
 ## Connections
 
+- [[statistical_physics]]
 - [[nonequilibrium]]
 - [[non_equilibrium_dynamics]]
-- [[statistical_physics]]
 
 ## Notes
 

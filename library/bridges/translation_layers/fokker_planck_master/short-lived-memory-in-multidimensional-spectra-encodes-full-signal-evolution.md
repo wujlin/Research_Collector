@@ -7,7 +7,7 @@ doi: ""
 arxiv: ""
 url: "https://openalex.org/W7149210419"
 pdf_url: "https://arxiv.org/pdf/2603.29814"
-topics: ["bridges/translation_layers", "bridges", "bridges/translation_layers/fokker_planck_master"]
+topics: ["bridges/translation_layers/fokker_planck_master", "bridges", "bridges/translation_layers"]
 tier: 0
 citations: 0
 relevance_score: 51.0
@@ -26,9 +26,9 @@ Ultrafast multidimensional spectroscopies are powerful tools that can access cha
 
 ## Connections
 
-- [[translation_layers]]
-- [[bridges]]
 - [[fokker_planck_master]]
+- [[bridges]]
+- [[translation_layers]]
 
 ## Notes
 

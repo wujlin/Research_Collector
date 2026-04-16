@@ -1,13 +1,13 @@
 ---
 title: "Stochastic Thermodynamics of Micromagnetics"
-authors: ["Mingnan Ding", "Jun Wu", "Xiangjun Xing"]
+authors: ["Jun Wu", "Mingnan Ding", "Xiangjun Xing"]
 year: 2024
 journal: "arXiv"
 doi: ""
 arxiv: "2404.13612"
 url: "http://arxiv.org/abs/2404.13612v2"
 pdf_url: "https://arxiv.org/pdf/2404.13612v2"
-topics: ["statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics", "statistical_physics/equilibrium_structures"]
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/equilibrium_structures", "statistical_physics/non_equilibrium_dynamics"]
 tier: 0
 citations: 0
 relevance_score: 52.83
@@ -26,10 +26,10 @@ In this work, we study the stochastic thermodynamics of micro-magnetic systems. 
 
 ## Connections
 
-- [[nonequilibrium]]
-- [[non_equilibrium_dynamics]]
 - [[statistical_physics]]
+- [[nonequilibrium]]
 - [[equilibrium_structures]]
+- [[non_equilibrium_dynamics]]
 
 ## Notes
 

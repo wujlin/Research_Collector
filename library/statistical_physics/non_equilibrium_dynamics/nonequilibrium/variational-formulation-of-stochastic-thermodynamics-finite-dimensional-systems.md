@@ -7,13 +7,13 @@ doi: "10.1103/xrbh-7fhd"
 arxiv: "2510.01787"
 url: "http://arxiv.org/abs/2510.01787v2"
 pdf_url: "https://arxiv.org/pdf/2510.01787v2"
-topics: ["statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems"]
-tier: 0
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems", "statistical_physics/non_equilibrium_dynamics"]
+tier: 2
 citations: 0
-relevance_score: 56.0
+relevance_score: 64.0
 collected: "2026-04-16"
 status: "unread"
-source: "arxiv"
+source: "arxiv,openalex"
 ---
 
 ## Abstract
@@ -26,10 +26,10 @@ In this paper, we develop a variational foundation for stochastic thermodynamics
 
 ## Connections
 
-- [[nonequilibrium]]
-- [[non_equilibrium_dynamics]]
 - [[statistical_physics]]
+- [[nonequilibrium]]
 - [[fluctuation_theorems]]
+- [[non_equilibrium_dynamics]]
 
 ## Notes
 

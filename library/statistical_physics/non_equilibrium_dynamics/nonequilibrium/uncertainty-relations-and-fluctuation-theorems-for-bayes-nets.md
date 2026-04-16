@@ -7,10 +7,10 @@ doi: "10.1103/PhysRevLett.125.200602"
 arxiv: "1911.02700"
 url: "http://arxiv.org/abs/1911.02700v6"
 pdf_url: "https://arxiv.org/pdf/1911.02700v6"
-topics: ["statistical_physics/non_equilibrium_dynamics", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium"]
-tier: 0
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics"]
+tier: 1
 citations: 0
-relevance_score: 33.86
+relevance_score: 49.86
 collected: "2026-04-16"
 status: "unread"
 source: "arxiv"
@@ -26,9 +26,9 @@ Recent research has considered the stochastic thermodynamics of multiple interac
 
 ## Connections
 
-- [[non_equilibrium_dynamics]]
 - [[statistical_physics]]
 - [[nonequilibrium]]
+- [[non_equilibrium_dynamics]]
 
 ## Notes
 

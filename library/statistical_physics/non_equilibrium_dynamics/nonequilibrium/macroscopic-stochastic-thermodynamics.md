@@ -7,10 +7,10 @@ doi: "10.1103/RevModPhys.97.015002"
 arxiv: "2307.12406"
 url: "http://arxiv.org/abs/2307.12406v3"
 pdf_url: "https://arxiv.org/pdf/2307.12406v3"
-topics: ["statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems"]
-tier: 0
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems", "statistical_physics/non_equilibrium_dynamics"]
+tier: 1
 citations: 0
-relevance_score: 48.0
+relevance_score: 64.0
 collected: "2026-04-16"
 status: "unread"
 source: "arxiv"
@@ -26,10 +26,10 @@ Starting at the mesoscopic level with a general formulation of stochastic thermo
 
 ## Connections
 
-- [[nonequilibrium]]
-- [[non_equilibrium_dynamics]]
 - [[statistical_physics]]
+- [[nonequilibrium]]
 - [[fluctuation_theorems]]
+- [[non_equilibrium_dynamics]]
 
 ## Notes
 

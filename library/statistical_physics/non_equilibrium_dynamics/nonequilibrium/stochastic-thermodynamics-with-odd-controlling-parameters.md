@@ -7,10 +7,10 @@ doi: "10.1103/PhysRevE.100.012127"
 arxiv: "1903.05324"
 url: "http://arxiv.org/abs/1903.05324v5"
 pdf_url: "https://arxiv.org/pdf/1903.05324v5"
-topics: ["statistical_physics/non_equilibrium_dynamics", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems"]
-tier: 0
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems", "statistical_physics/non_equilibrium_dynamics"]
+tier: 2
 citations: 0
-relevance_score: 40.0
+relevance_score: 50.0
 collected: "2026-04-16"
 status: "unread"
 source: "arxiv"
@@ -26,10 +26,10 @@ Stochastic thermodynamics extends the notions and relations of classical thermod
 
 ## Connections
 
-- [[non_equilibrium_dynamics]]
 - [[statistical_physics]]
 - [[nonequilibrium]]
 - [[fluctuation_theorems]]
+- [[non_equilibrium_dynamics]]
 
 ## Notes
 

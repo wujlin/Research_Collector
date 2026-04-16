@@ -7,10 +7,10 @@ doi: "10.1103/PhysRevResearch.6.023007"
 arxiv: "2401.00046"
 url: "http://arxiv.org/abs/2401.00046v3"
 pdf_url: "https://arxiv.org/pdf/2401.00046v3"
-topics: ["statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems"]
-tier: 0
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems", "statistical_physics/non_equilibrium_dynamics"]
+tier: 2
 citations: 0
-relevance_score: 43.76
+relevance_score: 53.76
 collected: "2026-04-16"
 status: "unread"
 source: "arxiv"
@@ -26,10 +26,10 @@ Based on the covariant underdamped and overdamped Langevin equations with Strato
 
 ## Connections
 
-- [[nonequilibrium]]
-- [[non_equilibrium_dynamics]]
 - [[statistical_physics]]
+- [[nonequilibrium]]
 - [[fluctuation_theorems]]
+- [[non_equilibrium_dynamics]]
 
 ## Notes
 

@@ -7,12 +7,12 @@ doi: "10.1103/PhysRevE.111.014111"
 arxiv: "2405.11932"
 url: "http://arxiv.org/abs/2405.11932v3"
 pdf_url: "https://arxiv.org/pdf/2405.11932v3"
-topics: ["statistical_physics/non_equilibrium_dynamics", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems"]
-tier: 0
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems", "statistical_physics/non_equilibrium_dynamics"]
+tier: 2
 citations: 0
-relevance_score: 53.94
+relevance_score: 63.94
 collected: "2026-04-16"
-status: "unread"
+status: "read"
 source: "arxiv"
 ---
 
@@ -26,10 +26,10 @@ Generative diffusion models apply the concept of Langevin dynamics in physics to
 
 ## Connections
 
-- [[non_equilibrium_dynamics]]
 - [[statistical_physics]]
 - [[nonequilibrium]]
 - [[fluctuation_theorems]]
+- [[non_equilibrium_dynamics]]
 
 ## Notes
 

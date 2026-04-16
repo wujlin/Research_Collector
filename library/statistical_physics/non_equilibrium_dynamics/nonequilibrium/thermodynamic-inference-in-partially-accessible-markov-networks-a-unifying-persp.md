@@ -1,16 +1,16 @@
 ---
 title: "Thermodynamic inference in partially accessible Markov networks: A unifying perspective from transition-based waiting time distributions"
-authors: ["Jann van der Meer", "Benjamin Ertel", "Udo Seifert"]
+authors: ["Udo Seifert", "Jann van der Meer", "Benjamin Ertel"]
 year: 2022
 journal: "Phys. Rev. X 12, 031025, August 2022"
 doi: "10.1103/PhysRevX.12.031025"
 arxiv: "2203.12020"
 url: "http://arxiv.org/abs/2203.12020v2"
 pdf_url: "https://arxiv.org/pdf/2203.12020v2"
-topics: ["statistical_physics/non_equilibrium_dynamics", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium"]
-tier: 0
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics"]
+tier: 2
 citations: 0
-relevance_score: 43.0
+relevance_score: 53.0
 collected: "2026-04-16"
 status: "unread"
 source: "arxiv"
@@ -26,9 +26,9 @@ The inference of thermodynamic quantities from the description of an only partia
 
 ## Connections
 
-- [[non_equilibrium_dynamics]]
 - [[statistical_physics]]
 - [[nonequilibrium]]
+- [[non_equilibrium_dynamics]]
 
 ## Notes
 

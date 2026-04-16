@@ -7,7 +7,7 @@ doi: "10.1007/s10955-021-02798-y"
 arxiv: "1811.04529"
 url: "http://arxiv.org/abs/1811.04529v3"
 pdf_url: "https://arxiv.org/pdf/1811.04529v3"
-topics: ["statistical_physics/non_equilibrium_dynamics", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems"]
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems", "statistical_physics/non_equilibrium_dynamics"]
 tier: 0
 citations: 0
 relevance_score: 38.0
@@ -26,10 +26,10 @@ Novel hidden thermodynamic structures have recently been uncovered during the in
 
 ## Connections
 
-- [[non_equilibrium_dynamics]]
 - [[statistical_physics]]
 - [[nonequilibrium]]
 - [[fluctuation_theorems]]
+- [[non_equilibrium_dynamics]]
 
 ## Notes
 

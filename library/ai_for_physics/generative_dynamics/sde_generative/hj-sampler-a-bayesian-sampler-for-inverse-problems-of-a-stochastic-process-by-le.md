@@ -7,7 +7,7 @@ doi: ""
 arxiv: "2409.09614"
 url: "http://arxiv.org/abs/2409.09614v2"
 pdf_url: "https://arxiv.org/pdf/2409.09614v2"
-topics: ["stochastic_analysis/path_foundations", "stochastic_analysis", "ai_for_physics/generative_dynamics", "ai_for_physics", "ai_for_physics/generative_dynamics/sde_generative"]
+topics: ["stochastic_analysis", "ai_for_physics", "ai_for_physics/generative_dynamics/sde_generative", "stochastic_analysis/path_foundations", "ai_for_physics/generative_dynamics"]
 tier: 0
 citations: 0
 relevance_score: 54.0
@@ -26,11 +26,11 @@ The interplay between stochastic processes and optimal control has been extensiv
 
 ## Connections
 
-- [[path_foundations]]
 - [[stochastic_analysis]]
-- [[generative_dynamics]]
 - [[ai_for_physics]]
 - [[sde_generative]]
+- [[path_foundations]]
+- [[generative_dynamics]]
 
 ## Notes
 

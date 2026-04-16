@@ -7,7 +7,7 @@ doi: ""
 arxiv: ""
 url: "https://openalex.org/W7148178546"
 pdf_url: "https://arxiv.org/pdf/2603.27140"
-topics: ["stochastic_analysis/path_foundations/brownian_motion", "stochastic_analysis/path_foundations", "stochastic_analysis", "statistical_physics/collective_structure/phase_transitions", "statistical_physics/collective_structure", "statistical_physics"]
+topics: ["stochastic_analysis", "stochastic_analysis/path_foundations/brownian_motion", "statistical_physics", "statistical_physics/collective_structure/phase_transitions", "stochastic_analysis/path_foundations", "statistical_physics/collective_structure"]
 tier: 0
 citations: 0
 relevance_score: 54.0
@@ -26,12 +26,12 @@ We study a continuous-time nearest-neighbor branching random walk on the $d$-dim
 
 ## Connections
 
-- [[brownian_motion]]
-- [[path_foundations]]
 - [[stochastic_analysis]]
-- [[phase_transitions]]
-- [[collective_structure]]
+- [[brownian_motion]]
 - [[statistical_physics]]
+- [[phase_transitions]]
+- [[path_foundations]]
+- [[collective_structure]]
 
 ## Notes
 

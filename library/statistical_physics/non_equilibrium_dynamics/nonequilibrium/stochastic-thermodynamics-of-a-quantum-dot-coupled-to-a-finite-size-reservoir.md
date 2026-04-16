@@ -7,10 +7,10 @@ doi: "10.1103/PhysRevLett.131.220405"
 arxiv: "2307.06679"
 url: "http://arxiv.org/abs/2307.06679v3"
 pdf_url: "https://arxiv.org/pdf/2307.06679v3"
-topics: ["statistical_physics/non_equilibrium_dynamics", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems"]
-tier: 0
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems", "statistical_physics/non_equilibrium_dynamics"]
+tier: 1
 citations: 0
-relevance_score: 46.4
+relevance_score: 62.4
 collected: "2026-04-16"
 status: "unread"
 source: "arxiv"
@@ -26,10 +26,10 @@ In nano-scale systems coupled to finite-size reservoirs, the reservoir temperatu
 
 ## Connections
 
-- [[non_equilibrium_dynamics]]
 - [[statistical_physics]]
 - [[nonequilibrium]]
 - [[fluctuation_theorems]]
+- [[non_equilibrium_dynamics]]
 
 ## Notes
 

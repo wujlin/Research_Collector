@@ -7,7 +7,7 @@ doi: ""
 arxiv: ""
 url: "https://openalex.org/W7110545606"
 pdf_url: ""
-topics: ["stochastic_analysis/path_foundations/brownian_motion", "stochastic_analysis/path_foundations", "stochastic_analysis", "stochastic_analysis/stochastic_dynamics/sde_theory", "stochastic_analysis/stochastic_dynamics"]
+topics: ["stochastic_analysis", "stochastic_analysis/path_foundations/brownian_motion", "stochastic_analysis/stochastic_dynamics/sde_theory", "stochastic_analysis/path_foundations", "stochastic_analysis/stochastic_dynamics"]
 tier: 0
 citations: 0
 relevance_score: 45.69
@@ -26,10 +26,10 @@ The aim of this paper is to establish a certain equivalence between a Brownian m
 
 ## Connections
 
-- [[brownian_motion]]
-- [[path_foundations]]
 - [[stochastic_analysis]]
+- [[brownian_motion]]
 - [[sde_theory]]
+- [[path_foundations]]
 - [[stochastic_dynamics]]
 
 ## Notes

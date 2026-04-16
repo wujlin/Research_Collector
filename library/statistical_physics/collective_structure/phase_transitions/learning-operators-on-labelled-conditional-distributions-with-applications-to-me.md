@@ -7,7 +7,7 @@ doi: ""
 arxiv: ""
 url: "https://openalex.org/W7140347232"
 pdf_url: "https://arxiv.org/pdf/2603.21683"
-topics: ["statistical_physics/collective_structure/phase_transitions", "statistical_physics/collective_structure", "statistical_physics"]
+topics: ["statistical_physics", "statistical_physics/collective_structure/phase_transitions", "statistical_physics/collective_structure"]
 tier: 0
 citations: 0
 relevance_score: 51.0
@@ -26,9 +26,9 @@ We study the approximation of operators acting on probability measures on a prod
 
 ## Connections
 
+- [[statistical_physics]]
 - [[phase_transitions]]
 - [[collective_structure]]
-- [[statistical_physics]]
 
 ## Notes
 

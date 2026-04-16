@@ -1,7 +1,7 @@
 ---
 title: "条件生成"
 description: ""
-paper_count: 0
+paper_count: 3
 last_updated: "2026-04-16"
 ---
 
@@ -9,5 +9,11 @@ last_updated: "2026-04-16"
 
 
 
-## Papers (0)
+## Papers (3)
 
+
+- [Diffusion Models: A Mathematical Introduction](diffusion-models-a-mathematical-introduction.md) (2025, arXiv, 0 citations)
+
+- [Predictor-Driven Diffusion for Spatiotemporal Generation](predictor-driven-diffusion-for-spatiotemporal-generation.md) (2026, ArXiv.org, 0 citations)
+
+- [Steering generative models for protein design: Aligning and conditioning strategies](steering-generative-models-for-protein-design-aligning-and-conditioning-strategi.md) (2026, Current Opinion in Structural Biology, 0 citations)
