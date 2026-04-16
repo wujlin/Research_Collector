@@ -54,7 +54,39 @@ $$\min_{\mathbf{u}_t} \; \mathbb{E}_{\mathbb{P}_\mathbf{u}} \left[ \int_0^1 \nu(
 
 ### 2.1 Lemma 2.1 — Kantorovich 对偶
 
-通过引入 Lagrange 乘子 $U(t, \mathbf{x})$ 约束 Fokker-Planck 方程，对控制变量 $\mathbf{u}$ 做逐点极小化，可以得到：
+下面给出从最优控制问题到 HJB 方程的完整变分推导。
+
+**Step 1 — 写出 Lagrangian**。受控 SDE 对应的概率密度 $\rho(t,\mathbf{x})$ 满足 Fokker-Planck（FP）方程：
+
+$$\frac{\partial \rho}{\partial t} + \nabla \cdot (\mathbf{u}\,\rho) = D\Delta\rho$$
+
+引入 Lagrange 乘子 $U(t,\mathbf{x})$ 执行 FP 约束，将原始最小化问题写为鞍点问题：
+
+$$\mathcal{L}[\mathbf{u}, \rho, U] = \int_0^1 \!\!\int \left[\nu(\mathbf{x}) + \frac{\gamma}{2}\|\mathbf{u}\|^2 \right]\rho \, d\mathbf{x}\,dt + \int_0^1 \!\!\int U \left[\frac{\partial\rho}{\partial t} + \nabla\cdot(\mathbf{u}\,\rho) - D\Delta\rho\right] d\mathbf{x}\,dt$$
+
+对 $U$ 的部分做分部积分（将时间导数和空间导数转移到 $U$ 上），Lagrangian 化为：
+
+$$\mathcal{L} = \int U(0,\mathbf{x})\rho_0\,d\mathbf{x} - \int U(1,\mathbf{x})\rho_1\,d\mathbf{x} + \int_0^1\!\!\int \left[\nu + \frac{\gamma}{2}\|\mathbf{u}\|^2 - \frac{\partial U}{\partial t} - D\Delta U + \mathbf{u}\cdot\nabla U\right]\rho\,d\mathbf{x}\,dt$$
+
+其中边界项 $\int U(0,\cdot)\rho_0 - \int U(1,\cdot)\rho_1$ 正是对偶目标的雏形。
+
+**Step 2 — 对控制 $\mathbf{u}$ 逐点极小**。被积函数中关于 $\mathbf{u}$ 的部分为：
+
+$$f(\mathbf{u}) = \frac{\gamma}{2}\|\mathbf{u}\|^2 + \mathbf{u}\cdot\nabla U$$
+
+这是 $\mathbf{u}$ 的凸二次函数，令 $\nabla_{\mathbf{u}} f = \gamma\,\mathbf{u} + \nabla U = 0$，得到逐点最优控制：
+
+$$\boxed{\mathbf{u}^*(t,\mathbf{x}) = -\frac{1}{\gamma}\nabla U(t,\mathbf{x})}$$
+
+**Step 3 — 代回得到 HJB 方程**。将 $\mathbf{u}^*$ 代入 $f(\mathbf{u})$：
+
+$$f(\mathbf{u}^*) = \frac{\gamma}{2}\cdot\frac{1}{\gamma^2}\|\nabla U\|^2 - \frac{1}{\gamma}\|\nabla U\|^2 = -\frac{1}{2\gamma}\|\nabla U\|^2$$
+
+于是被积函数成为 $\nu - \frac{\partial U}{\partial t} - D\Delta U - \frac{1}{2\gamma}\|\nabla U\|^2$。为使对偶目标有界，该被积函数必须对所有 $(t,\mathbf{x})$ 非负且取等——这恰好给出 **Hamilton-Jacobi-Bellman 方程**：
+
+$$\boxed{\frac{\partial U}{\partial t} + D\Delta U - \frac{1}{2\gamma}\|\nabla U\|^2 + \nu(\mathbf{x}) = 0}$$
+
+**最终结果**汇总：
 
 - **最优控制**：$\mathbf{u}^*(t, \mathbf{x}) = -\frac{1}{\gamma} \nabla U(t, \mathbf{x})$
 - **HJB 约束**：$\frac{\partial U}{\partial t} + D\Delta U - \frac{1}{2\gamma}\|\nabla U\|^2 + \nu(\mathbf{x}) = 0$
@@ -84,7 +116,27 @@ $$\frac{\partial W}{\partial s} - D\Delta W - \frac{1}{2\gamma}\|\nabla W\|^2 + 
 
 $$d\mathbf{y}_s = \mathbf{v}^*(s, \mathbf{y}_s) \, ds + \sqrt{2D} \, d\mathbf{B}_s, \quad \mathbf{y}_0 \sim p_{\text{data}}$$
 
-其中 $\mathbf{v}^* = -\frac{1}{\gamma}\nabla W + 2D\nabla \log q$ 将 $p_{\text{data}}$ 传输到 $p_{\text{ref}}$。
+其中 $\mathbf{v}^*$ 的完整形式为 $\mathbf{v}^* = -\frac{1}{\gamma}\nabla W + 2D\nabla \log q$，它将 $p_{\text{data}}$ 传输到 $p_{\text{ref}}$。下面详细推导 $\mathbf{v}^*$ 中各项的来源。
+
+**Step 1 — 时间反转 SDE 的标准形式（Anderson, 1982）**。设正向过程 $d\mathbf{x}_t = \mathbf{b}(t,\mathbf{x}_t)\,dt + \sqrt{2D}\,d\mathbf{B}_t$，其边际密度为 $\rho(t,\cdot)$。Anderson 定理指出，定义逆向时间 $s = 1 - t$，则逆向过程满足：
+
+$$d\mathbf{x}_s = \left[-\mathbf{b}(1-s,\mathbf{x}_s) + 2D\nabla\log\rho(1-s,\mathbf{x}_s)\right]ds + \sqrt{2D}\,d\tilde{\mathbf{B}}_s$$
+
+其中 $\tilde{\mathbf{B}}_s$ 是逆向 Brownian motion。关键观察：时间反转除了翻转漂移 $\mathbf{b}$ 的符号外，还额外引入了一个 **score 修正项** $2D\nabla\log\rho$——这正是 $\nabla\log q$ 项的物理来源。
+
+**Step 2 — 定义正向势函数并代入**。原始逆向过程（生成过程）的最优漂移为 $\mathbf{u}^*(t,\mathbf{x}) = -\frac{1}{\gamma}\nabla U(t,\mathbf{x})$。对该受控 SDE 做 Anderson 时间反转（$s = 1-t$），正向漂移为：
+
+$$\mathbf{v}^*(s,\mathbf{x}) = -\mathbf{u}^*(1-s,\mathbf{x}) + 2D\nabla\log q(s,\mathbf{x})$$
+
+其中 $q(s,\mathbf{x})$ 是正向过程的边际密度。代入 $\mathbf{u}^* = -\frac{1}{\gamma}\nabla U$：
+
+$$\mathbf{v}^*(s,\mathbf{x}) = \frac{1}{\gamma}\nabla U(1-s,\mathbf{x}) + 2D\nabla\log q(s,\mathbf{x})$$
+
+**Step 3 — 利用 $W$ 的定义化简**。由 $W(s,\mathbf{x}) := -U(1-s,\mathbf{x})$，得 $\nabla U(1-s,\mathbf{x}) = -\nabla W(s,\mathbf{x})$，代入上式：
+
+$$\boxed{\mathbf{v}^*(s,\mathbf{x}) = -\frac{1}{\gamma}\nabla W(s,\mathbf{x}) + 2D\nabla\log q(s,\mathbf{x})}$$
+
+至此 $\mathbf{v}^*$ 的两项来源完全明确。
 
 **(3) 最优性**：$\mathbf{v}^*$ 最小化正向控制代价泛函。
 
@@ -92,8 +144,8 @@ $$d\mathbf{y}_s = \mathbf{v}^*(s, \mathbf{y}_s) \, ds + \sqrt{2D} \, d\mathbf{B}
 
 最优正向控制场分解为两个具有清晰物理角色的分量：
 
-- $-\frac{1}{\gamma}\nabla W$：**目标导向分量**（value function gradient），沿累积代价下降方向驱动传输
-- $2D\nabla \log q$：**密度感知修正**（score correction），确保与 Fokker-Planck 演化的一致性
+- $-\frac{1}{\gamma}\nabla W$：**目标导向分量**（value function gradient），沿累积代价下降方向驱动传输——直接继承自逆向最优控制 $\mathbf{u}^*$ 的时间翻转
+- $2D\nabla \log q$：**密度感知修正**（score correction），由 Anderson 时间反转公式自然产生，确保正向过程的漂移与 Fokker-Planck 演化的一致性
 
 关键优势：两个分量都编码在单一标量势 $W$ 中，无需独立估计 score。
 
@@ -114,11 +166,36 @@ $$d\mathbf{y}_s = \mathbf{v}^*(s, \mathbf{y}_s) \, ds + \sqrt{2D} \, d\mathbf{B}
 
 ### 4.1 非线性 → 线性：Cole-Hopf 变换
 
-HJB 方程是非线性的（包含 $\|\nabla W\|^2$ 项）。经典的 Cole-Hopf 变换 $W = \frac{1}{\beta} \log Z$（其中 $\beta = \frac{1}{2D\gamma}$）将其线性化为：
+HJB 方程是非线性的（包含 $\|\nabla W\|^2$ 项）。经典的 **Cole-Hopf 变换**可以将其线性化。下面给出完整的代数过程。
 
-$$\frac{\partial Z}{\partial t} = D\Delta Z - \beta\nu Z$$
+**Step 1 — 定义变换**。令 $W = \frac{1}{\beta}\log Z$，其中 $\beta = \frac{1}{2D\gamma}$。计算 $W$ 的各阶导数：
 
-这是一个带空间变化**吸收率** $\beta\nu(\mathbf{x})$ 的扩散方程。物理直觉：
+$$\frac{\partial W}{\partial t} = \frac{1}{\beta}\frac{1}{Z}\frac{\partial Z}{\partial t}$$
+
+$$\nabla W = \frac{1}{\beta}\frac{\nabla Z}{Z}$$
+
+$$|\nabla W|^2 = \frac{1}{\beta^2}\frac{|\nabla Z|^2}{Z^2}$$
+
+$$\Delta W = \frac{1}{\beta}\left(\frac{\Delta Z}{Z} - \frac{|\nabla Z|^2}{Z^2}\right)$$
+
+**Step 2 — 代入正向 HJB 方程**。正向 HJB 为 $\frac{\partial W}{\partial s} - D\Delta W - \frac{1}{2\gamma}|\nabla W|^2 + \nu = 0$。逐项代入：
+
+$$\frac{1}{\beta Z}\frac{\partial Z}{\partial s} - D\cdot\frac{1}{\beta}\left(\frac{\Delta Z}{Z} - \frac{|\nabla Z|^2}{Z^2}\right) - \frac{1}{2\gamma}\cdot\frac{1}{\beta^2}\frac{|\nabla Z|^2}{Z^2} + \nu = 0$$
+
+**Step 3 — 化简**。提取公因子 $\frac{1}{\beta Z}$。注意 $|\nabla Z|^2/Z^2$ 出现在两项中：
+
+- 来自 $-D\Delta W$ 的贡献：$+\frac{D}{\beta}\frac{|\nabla Z|^2}{Z^2}$
+- 来自 $-\frac{1}{2\gamma}|\nabla W|^2$ 的贡献：$-\frac{1}{2\gamma\beta^2}\frac{|\nabla Z|^2}{Z^2}$
+
+代入 $\beta = \frac{1}{2D\gamma}$，得 $\frac{D}{\beta} = D \cdot 2D\gamma = 2D^2\gamma$ 且 $\frac{1}{2\gamma\beta^2} = \frac{1}{2\gamma}\cdot 4D^2\gamma^2 = 2D^2\gamma$。两项系数恰好相等、符号相反，**非线性项完全对消**：
+
+$$\frac{1}{\beta Z}\left[\frac{\partial Z}{\partial s} - D\Delta Z + \beta\nu Z\right] = 0$$
+
+由 $Z > 0$，括号内必须为零，得到 $Z$ 满足的**线性反应-扩散方程**：
+
+$$\boxed{\frac{\partial Z}{\partial s} = D\Delta Z - \beta\nu Z}$$
+
+这是一个带空间变化**吸收率** $\beta\nu(\mathbf{x})$ 的扩散方程。Cole-Hopf 变换的精髓在于：$\beta = \frac{1}{2D\gamma}$ 的取值使得 HJB 中的非线性梯度平方项与 Laplacian 展开产生的梯度平方项精确抵消。物理直觉：
 
 - 吸收项 $\beta\nu Z$ 指数级抑制了经过高代价区域的路径贡献
 - 低代价走廊中的路径贡献被放大

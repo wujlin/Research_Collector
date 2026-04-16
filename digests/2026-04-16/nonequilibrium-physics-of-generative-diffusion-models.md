@@ -110,9 +110,31 @@ $$\frac{dS(t)}{dt} = \pi - \phi$$
 
 ### 3.1 反向 SDE 的推导
 
-从 Bayes 公式出发，将正向传播核 $P(\mathbf{X}_{t+dt}|\mathbf{X}_t)$ 和概率比 $p(\mathbf{X}_t)/p(\mathbf{X}_{t+dt})$ 结合，可推导出反向生成 SDE：
+这是本文的核心推导之一（经典结果源自 Anderson 1982），此处展开中间步骤。
 
-$$\dot{\mathbf{X}} = f(\mathbf{X}_t, t) - 2\nabla\ln p(\mathbf{X}_t, t) + \sqrt{2}\,\boldsymbol{\xi}$$
+**起点**：前向 SDE $d\mathbf{X}_t = f(\mathbf{X}_t,t)\,dt + \sqrt{2}\,d\mathbf{W}_t$ 对应的短时转移核（高斯近似）为：
+
+$$P(\mathbf{X}_{t+dt}|\mathbf{X}_t) \propto \exp\left(-\frac{|\mathbf{X}_{t+dt} - \mathbf{X}_t - f\,dt|^2}{4\,dt}\right)$$
+
+**第一步**：用 Bayes 公式反转时间方向。给定 $\mathbf{X}_{t+dt}$，$\mathbf{X}_t$ 的条件分布为：
+
+$$P(\mathbf{X}_t|\mathbf{X}_{t+dt}) = \frac{P(\mathbf{X}_{t+dt}|\mathbf{X}_t)\,p(\mathbf{X}_t,t)}{p(\mathbf{X}_{t+dt},t+dt)}$$
+
+取对数并对 $\mathbf{X}_t$ 求梯度（把 $\mathbf{X}_{t+dt}$ 视为常数）：
+
+$$\nabla_{\mathbf{X}_t} \ln P(\mathbf{X}_t|\mathbf{X}_{t+dt}) = \nabla_{\mathbf{X}_t} \ln P(\mathbf{X}_{t+dt}|\mathbf{X}_t) + \nabla_{\mathbf{X}_t} \ln p(\mathbf{X}_t,t)$$
+
+**第二步**：计算前向核的梯度。从高斯形式得到：
+
+$$\nabla_{\mathbf{X}_t} \ln P(\mathbf{X}_{t+dt}|\mathbf{X}_t) = \frac{\mathbf{X}_{t+dt} - \mathbf{X}_t - f\,dt}{2\,dt}$$
+
+**第三步**：反向漂移。从 $P(\mathbf{X}_t|\mathbf{X}_{t+dt})$ 出发，反向过程的"最可能下一步"（即条件期望的漂移方向）包含两个贡献：(i) 前向漂移 $f$ 的反转；(ii) 额外的 score 修正项 $\nabla \ln p$。在 $dt \to 0$ 极限下，精确结果为：
+
+$$d\mathbf{X}_t = \left[f(\mathbf{X}_t,t) - 2\nabla\ln p(\mathbf{X}_t,t)\right]dt + \sqrt{2}\,d\bar{\mathbf{W}}_t$$
+
+其中 $d\bar{\mathbf{W}}_t$ 是反向时间的 Wiener 增量。多出的 $-2\nabla\ln p$ 因子 2 来自扩散系数（本文 $\sigma^2 = 2$）；一般情况下系数为 $\sigma^2$。
+
+**物理直觉**：前向过程加噪导致概率密度平铺；反向过程要"逆流"，必须沿密度增大方向额外推一把——$\nabla\ln p$ 正是指向高密度区域的方向。
 
 关键驱动力是 $-2\nabla\ln p(\mathbf{X}_t, t)$，其中 $\nabla\ln p(\mathbf{X}_t, t)$ 即 score function。在高斯混合模型中，score function 有解析形式：
 

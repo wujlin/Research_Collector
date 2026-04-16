@@ -241,6 +241,42 @@ $$
 
 ### 5.3 解析熵产生
 
+下面推导 Kalman 滤波框架下熵产生的闭合表达式。
+
+**第一步：前向与后向的联合分布。**  
+在稳态 Kalman 滤波器的创新表示下，前向过程中所有创新 $e_t$ 是独立同分布的高斯变量，因此前向路径测度为：
+
+$$
+P_\rightarrow(\mathbf{e}) = \mathcal{N}(\mathbf{e};\, 0,\, I_T \otimes S)
+$$
+
+其中 $\mathbf{e} = (e_1^\top, \ldots, e_T^\top)^\top$ 是堆叠创新向量。后向过程将时间反转后的观测序列输入同一 Kalman 滤波器，产生后向创新 $\mathbf{e}^B = \mathcal{R}\,\mathbf{e}$（线性变换）。后向模型 **假设** 后向创新也服从 $\mathcal{N}(0, I_T \otimes S)$，但在前向测度 $P_\rightarrow$ 下，$\mathbf{e}^B$ 的真实分布为：
+
+$$
+\mathbf{e}^B \sim \mathcal{N}\!\left(0,\; \Sigma^B\right), \quad \Sigma^B \equiv \mathcal{R}\,(I_T \otimes S)\,\mathcal{R}^\top
+$$
+
+**第二步：多元高斯 KL 散度公式。**  
+对两个零均值高斯 $\mathcal{N}(0, \Sigma_1)$ 和 $\mathcal{N}(0, \Sigma_2)$，标准 KL 散度公式为：
+
+$$
+D_{\text{KL}}\!\left(\mathcal{N}(0,\Sigma_1) \;\big\|\; \mathcal{N}(0,\Sigma_2)\right) = \frac{1}{2}\!\left[\text{tr}(\Sigma_2^{-1}\Sigma_1) - d + \ln\frac{|\Sigma_2|}{|\Sigma_1|}\right]
+$$
+
+其中 $d$ 是向量维度。
+
+**第三步：行列式消去。**  
+此处 $\Sigma_1 = \Sigma^B = \mathcal{R}(I_T \otimes S)\mathcal{R}^\top$，$\Sigma_2 = I_T \otimes S$，$d = Tn_y$。由于 $\mathcal{R} = \mathcal{H}^{-1}J\mathcal{H}$，其中 $J$ 是块置换矩阵（$|\!\det J| = 1$），故 $|\!\det \mathcal{R}| = 1$，因此：
+
+$$
+|\Sigma^B| = |\mathcal{R}|^2 \cdot |I_T \otimes S| = |I_T \otimes S| = |\Sigma_2|
+$$
+
+对数行列式项 $\ln(|\Sigma_2|/|\Sigma_1|) = 0$。
+
+**第四步：代入得到 trace 公式。**  
+将上述结果代入 KL 公式：
+
 $$
 \boxed{\mathcal{S}_y = D_{\text{KL}}(P_\rightarrow \| P_\leftarrow) = \frac{1}{2}\left[\text{tr}\!\left((I_T \otimes S^{-1})\,\mathcal{R}\,(I_T \otimes S)\,\mathcal{R}^\top\right) - Tn_y\right]}
 $$
@@ -274,7 +310,42 @@ $$
 
 ### 6.1 逐步分解
 
-利用贝叶斯回顾推断（Bayesian retrodiction），熵产生可精确分解为 **非负逐步贡献**：
+利用贝叶斯回顾推断（Bayesian retrodiction），熵产生可精确分解为 **非负逐步贡献**。下面给出完整证明。
+
+**第一步：联合 KL 散度的链式法则。**  
+KL 散度满足如下链式法则：对联合分布 $p(x, z)$ 和 $q(x, z)$，
+
+$$
+D_{\text{KL}}(p(x,z) \| q(x,z)) = D_{\text{KL}}(p(z) \| q(z)) + \mathbb{E}_{p(z)}\!\left[D_{\text{KL}}(p(x|z) \| q(x|z))\right]
+$$
+
+**第二步：逐步剥离。**  
+将 $y_{1:T}$ 写为 $y_t$ 与"剩余未来" $y_{t+1:T}$ 的联合，从 $t = 1$ 开始迭代应用链式法则：
+
+$$
+\mathcal{S}_y = D_{\text{KL}}\!\left(P_\rightarrow(y_{1:T}) \;\big\|\; P_\leftarrow(y_{1:T})\right)
+$$
+
+$$
+= D_{\text{KL}}\!\left(P_\rightarrow(y_{2:T}) \;\big\|\; P_\leftarrow(y_{2:T})\right) + \mathbb{E}_{P_\rightarrow(y_{2:T})}\!\left[D_{\text{KL}}\!\left(P_\rightarrow(y_1|y_{2:T}) \;\big\|\; P_\leftarrow(y_1|y_{2:T})\right)\right]
+$$
+
+对第一项继续剥离 $y_2$，如此递推直到 $t = T$，得到：
+
+$$
+\mathcal{S}_y = \sum_{t=1}^{T} \mathbb{E}_{P_\rightarrow(y_{t+1:T})}\!\left[D_{\text{KL}}\!\left(P_\rightarrow(y_t | y_{t+1:T}) \;\big\|\; P_\leftarrow(y_t | y_{t+1:T})\right)\right]
+$$
+
+**第三步：后向模型条件分布的简化。**  
+在后向过程中，$y_t$ 由发射核 $p_t$ 在后向隐状态 $g_{t+1}^\leftarrow(y_{T:t+1})$ 条件下生成。由于 $g_{t+1}^\leftarrow$ 是 $y_{t+1:T}$ 的确定性函数，后向模型对 $y_t$ 的条件分布为：
+
+$$
+P_\leftarrow(y_t | y_{t+1:T}) = p_t\!\left(y_t \;\big|\; g_{t+1}^\leftarrow(y_{T:t+1})\right)
+$$
+
+而前向模型的条件分布 $P_\rightarrow(y_t | y_{t+1:T})$ 则是通过 Bayes 定理从联合分布获得的 **回顾分布**（retrodictive distribution），一般不等于简单的发射核。
+
+**结论：** 将第三步代入第二步，定义 $\mathcal{D}_t$ 为第 $t$ 步的贡献，由 KL 散度的非负性立即得到 $\mathcal{D}_t \geq 0$，从而：
 
 $$
 \boxed{\mathcal{S}_y = \sum_{t=1}^{T} \mathcal{D}_t, \quad \mathcal{D}_t \geq 0}
@@ -283,7 +354,7 @@ $$
 其中：
 
 $$
-\mathcal{D}_t = \mathbb{E}_{y_{t+1:T}}\!\left[D_{\text{KL}}\!\left(P_\rightarrow(y_t | y_{t+1:T}) \;\big\|\; p_t(y_t | g_{t+1}^\leftarrow(y_{T:t+1}))\right)\right]
+\mathcal{D}_t = \mathbb{E}_{P_\rightarrow(y_{t+1:T})}\!\left[D_{\text{KL}}\!\left(P_\rightarrow(y_t | y_{t+1:T}) \;\big\|\; p_t(y_t | g_{t+1}^\leftarrow(y_{T:t+1}))\right)\right]
 $$
 
 **含义**：$\mathcal{D}_t$ 衡量的是，在给定未来 $y_{t+1:T}$ 时，**贝叶斯回顾分布**（真正的后验 $P_\rightarrow(y_t | y_{t+1:T})$）与 **协议反转后向模型**（$p_t(y_t | g_{t+1}^\leftarrow)$）之间的差距。
@@ -296,11 +367,41 @@ $$
 
 ### 6.2 压缩损失 + 模型失配
 
-每个 $\mathcal{D}_t$ 可进一步精确分解为两个非负项：
+每个 $\mathcal{D}_t$ 可进一步精确分解为两个非负项。下面给出完整推导。
+
+**第一步：插入中间分布。**  
+在 $\mathcal{D}_t$ 的 KL 散度内，在"完整后验" $P_\rightarrow(y_t | y_{t+1:T})$ 与"后向发射核" $p_t(y_t | g_{t+1}^\leftarrow)$ 之间，插入一个自然的中间分布——**压缩后验** $P_\rightarrow(y_t | g_{t+1}^\leftarrow)$，即仅以后向隐状态（而非完整未来）为条件的回顾分布：
+
+$$
+\ln \frac{P_\rightarrow(y_t | y_{t+1:T})}{p_t(y_t | g_{t+1}^\leftarrow)} = \underbrace{\ln \frac{P_\rightarrow(y_t | y_{t+1:T})}{P_\rightarrow(y_t | g_{t+1}^\leftarrow)}}_{\text{（I）压缩导致的信息损失}} + \underbrace{\ln \frac{P_\rightarrow(y_t | g_{t+1}^\leftarrow)}{p_t(y_t | g_{t+1}^\leftarrow)}}_{\text{（II）同一条件下的模型失配}}
+$$
+
+**第二步：对两项分别取期望。**  
+对 $y_t \sim P_\rightarrow(y_t | y_{t+1:T})$ 取期望，第（I）项变为条件 KL 散度：
+
+$$
+\mathbb{E}_{y_t | y_{t+1:T}}\!\left[\text{（I）}\right] = D_{\text{KL}}\!\left(P_\rightarrow(y_t | y_{t+1:T}) \;\big\|\; P_\rightarrow(y_t | g_{t+1}^\leftarrow)\right)
+$$
+
+再对 $y_{t+1:T} \sim P_\rightarrow$ 取外层期望，利用条件互信息的恒等式 $I(X; Y | Z) = \mathbb{E}_Y[D_{\text{KL}}(P(X|Y,Z) \| P(X|Z))]$（注意 $g_{t+1}^\leftarrow$ 是 $y_{t+1:T}$ 的确定性函数，故条件于 $y_{t+1:T}$ 等价于同时条件于 $y_{t+1:T}$ 和 $g_{t+1}^\leftarrow$），得到：
+
+$$
+\mathcal{L}_t = \mathbb{E}_{P_\rightarrow(y_{t+1:T})}\!\left[D_{\text{KL}}\!\left(P_\rightarrow(y_t | y_{t+1:T}) \;\big\|\; P_\rightarrow(y_t | g_{t+1}^\leftarrow)\right)\right] = I_{P_\rightarrow}\!\left(y_t;\, y_{t+1:T} \;\big|\; g_{t+1}^\leftarrow\right) \geq 0
+$$
+
+对第（II）项：$\ln \frac{P_\rightarrow(y_t | g_{t+1}^\leftarrow)}{p_t(y_t | g_{t+1}^\leftarrow)}$ 仅依赖 $(y_t, g_{t+1}^\leftarrow)$。利用塔式期望（tower property），先对 $y_t | y_{t+1:T}$ 取期望，再对 $y_{t+1:T}$ 取期望，等价于对联合分布 $P_\rightarrow(y_t, y_{t+1:T})$ 取期望。由于对数比值仅通过 $g_{t+1}^\leftarrow$ 依赖 $y_{t+1:T}$，可进一步边缘化为对 $P_\rightarrow(y_t, g_{t+1}^\leftarrow)$ 取期望：
+
+$$
+\mathcal{M}_t = \mathbb{E}_{P_\rightarrow(g_{t+1}^\leftarrow)}\!\left[\mathbb{E}_{P_\rightarrow(y_t | g_{t+1}^\leftarrow)}\!\left[\ln \frac{P_\rightarrow(y_t | g_{t+1}^\leftarrow)}{p_t(y_t | g_{t+1}^\leftarrow)}\right]\right] = \mathbb{E}_{g_{t+1}^\leftarrow}\!\left[D_{\text{KL}}\!\left(P_\rightarrow(y_t | g_{t+1}^\leftarrow) \;\big\|\; p_t(y_t | g_{t+1}^\leftarrow)\right)\right] \geq 0
+$$
+
+**结论：**
 
 $$
 \boxed{\mathcal{D}_t = \underbrace{\mathcal{L}_t}_{\text{压缩损失}} + \underbrace{\mathcal{M}_t}_{\text{模型失配}}}
 $$
+
+两项的 **信息论含义** 如下：
 
 **压缩损失**（compression loss）：
 
@@ -308,7 +409,7 @@ $$
 \mathcal{L}_t = I_{P_\rightarrow}\!\left(y_t;\, y_{t+1:T} \;\big|\; g_{t+1}^\leftarrow\right) \geq 0
 $$
 
-即将完整未来 $y_{t+1:T}$ 压缩为有限维隐状态 $g_{t+1}^\leftarrow$ 时，关于 $y_t$ 的信息损失。这是后向模型有限记忆容量的代价。
+即将完整未来 $y_{t+1:T}$ 压缩为有限维隐状态 $g_{t+1}^\leftarrow$ 时，关于 $y_t$ 的 **残余互信息**——完整未来包含的关于 $y_t$ 的信息中、被有限容量隐状态丢弃的部分。这反映了后向模型有限记忆容量的代价：隐状态维度越低，压缩越激进，$\mathcal{L}_t$ 越大。
 
 **模型失配**（model mismatch）：
 
@@ -316,7 +417,7 @@ $$
 \mathcal{M}_t = \mathbb{E}_{g_{t+1}^\leftarrow}\!\left[D_{\text{KL}}\!\left(P_\rightarrow(y_t | g_{t+1}^\leftarrow) \;\big\|\; p_t(y_t | g_{t+1}^\leftarrow)\right)\right] \geq 0
 $$
 
-即在已知后向隐状态 $g_{t+1}^\leftarrow$ 时，**真正的回顾分布** $P_\rightarrow(y_t | g_{t+1}^\leftarrow)$ 与 **直接复用的前向发射核** $p_t(y_t | g_{t+1}^\leftarrow)$ 之间的差距。
+即在 **相同条件** $g_{t+1}^\leftarrow$ 下，**真正的回顾分布** $P_\rightarrow(y_t | g_{t+1}^\leftarrow)$（由 Bayes 定理从前向联合分布导出）与 **直接复用的前向发射核** $p_t(y_t | g_{t+1}^\leftarrow)$（协议反转的代价）之间的差距。即使隐状态容量无限大（$\mathcal{L}_t = 0$），只要前向发射核不是回顾分布的正确参数化，$\mathcal{M}_t$ 仍然非零。
 
 > **与变分推断的类比**：这一分解在形式上类似于 ELBO gap 分解（evidence lower bound），其中信息损失项和分布失配项分别出现。但起点完全不同：ELBO 分解来自似然下界，而本文的分解来自 **时间反演与熵产生**。
 

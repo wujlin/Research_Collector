@@ -58,9 +58,13 @@ FEP 的形式化依赖于对联合系统状态空间的一个关键分割：
   - **感觉状态（sensory states）**：向系统传递关于环境的信号
   - **主动状态（active states）**：系统对环境的干预
 
-关键条件是：在给定毯状态 $b$ 的情况下，内部状态 $\mu$ 与外部状态 $\eta$ **条件独立**。这种结构被称为 **Markov 毯**（源自 Judea Pearl 的图模型理论）。
+关键条件是：在给定毯状态 $b$ 的情况下，内部状态 $\mu$ 与外部状态 $\eta$ **条件独立**。用联合概率的因子化来写，就是：
 
-这意味着：系统不能直接"看到"环境，只能通过 Markov 毯间接获取信息——一切关于外部世界的推断都必须通过这层边界完成。
+$$p(\eta, b, \mu) = p(\eta \mid b) \cdot p(\mu \mid b) \cdot p(b)$$
+
+这意味着联合分布中，$\eta$ 和 $\mu$ 之间的一切统计依赖都被 $b$ 所中介——去掉 $b$，$\eta$ 和 $\mu$ 之间就没有直接的概率关联。这种结构被称为 **Markov 毯**（源自 Judea Pearl 的图模型理论）。
+
+它的物理含义是：系统不能直接"看到"环境，只能通过 Markov 毯间接获取信息——一切关于外部世界的推断都必须通过这层边界完成。
 
 ### 2.3 依赖关系的信息论含义
 
@@ -80,40 +84,92 @@ FEP 的形式化依赖于对联合系统状态空间的一个关键分割：
 
 $$\mathrm{d}X_t = f(X_t)\,\mathrm{d}t + D(X_t)\,\mathrm{d}W_t$$
 
-该 SDE 可以被分解为如下形式（Helmholtz 分解）：
+这个 SDE 对应的 Fokker-Planck 方程（描述概率密度 $p(x,t)$ 的演化）为：
 
-$$\mathrm{d}X_t = -(Q(X_t) - \Gamma(X_t))\nabla_x \log p^*(X_t)\,\mathrm{d}t + D(X_t)\,\mathrm{d}W_t$$
+$$\frac{\partial p}{\partial t} = -\nabla \cdot (f \, p) + \frac{1}{2}\nabla \cdot (\Gamma \nabla p)$$
 
-其中：
-- $\Gamma(x)$：正（半）定的耗散矩阵（dissipative），满足 $2\Gamma(x) = D(x)D^\top(x)$
-- $Q(x)$：反对称的螺线管矩阵（solenoidal），描述概率流的保守/旋转部分
-- $\nabla_x \log p^*(x)$：surprisal 的梯度
+其中 $\Gamma(x) = \frac{1}{2}D(x)D^\top(x)$ 是扩散张量。在稳态时 $\partial_t p^* = 0$，概率流为零或纯旋转。
 
-这一分解表明：**系统的动力学可以写成在 surprisal（即 $-\log p^*$）梯度上的下降流，只是被旋转场 $Q$ 和噪声所调制。**
+现在来做 **Helmholtz 分解**。其核心思路是：在稳态密度 $p^*$ 下，漂移项 $f(x)$ 可以唯一地分解为两部分——一个沿 $\nabla \log p^*$ 方向的"梯度"分量（耗散项），和一个正交于 $\nabla \log p^*$ 的"旋转"分量（螺线管项）。具体地，令：
+
+$$f(x) = -(Q(x) + \Gamma(x))\nabla_x \log p^*(x)$$
+
+这里取负号是因为 $\log p^*$ 在概率最高处取最大值，而 surprisal $\mathfrak{I} = -\log p^*$ 在那里取最小值。拆开来看：
+
+- $\Gamma(x)$：**耗散矩阵**（正半定、对称），满足 $2\Gamma(x) = D(x)D^\top(x)$。它驱动系统沿 surprisal 梯度"下坡"——这是趋向稳态的力
+- $Q(x)$：**螺线管矩阵**（反对称，$Q = -Q^\top$），描述概率流中不改变 $p^*$ 的旋转部分——这是非平衡系统特有的稳态概率流
+
+将上式代入 SDE：
+
+$$\mathrm{d}X_t = -(Q(X_t) + \Gamma(X_t))\nabla_x \log p^*(X_t)\,\mathrm{d}t + D(X_t)\,\mathrm{d}W_t$$
+
+可以验证这种分解是自洽的：将它代回 Fokker-Planck 方程，$\Gamma$ 项产生扩散和梯度漂移的精确平衡（详细平衡条件），而 $Q$ 项因为反对称性在散度算子下正好产生不改变 $p^*$ 的循环流（$\nabla \cdot (Q \, p^* \nabla \log p^*) = 0$ 当 $Q$ 反对称时）。
+
+**关键物理图像**：系统的动力学可以写成在 surprisal（即 $-\log p^*$）梯度上的下降流（$\Gamma$ 项），加上一个不改变稳态分布的旋转流（$Q$ 项），再加上噪声。耗散项把系统拉向"典型"状态，螺线管项驱动非平衡概率流。
 
 ### 3.2 引入变分自由能
 
-定义变分自由能（variational free energy）：
+变分自由能的定义看起来是"凭空出现"的，但实际上它来自贝叶斯推断中的标准 ELBO（Evidence Lower Bound）推导。让我们从头展开。
+
+**起点**：我们关心的是内部状态 $\mu$ 和毯状态 $b$ 的联合对数概率（即 surprisal 的负值）：
+
+$$\log p(\mu, b)$$
+
+我们希望推断给定 $b$ 下外部状态 $\eta$ 的后验 $p(\eta \mid b)$。但这个后验通常无法直接计算（因为需要对 $\eta$ 做积分），所以引入一个**变分密度** $q(\eta; \sigma(\mu))$ 来近似它——这里 $\sigma(\mu)$ 意味着变分分布的参数由内部状态 $\mu$ 决定。
+
+**推导**：对 $\log p(\mu, b)$ 做以下恒等变换（对任意 $q(\eta)$ 都成立）：
+
+$$\log p(\mu, b) = \log \frac{p(\mu, b, \eta)}{p(\eta \mid \mu, b)}$$
+
+两边对 $q(\eta)$ 取期望：
+
+$$\log p(\mu, b) = \int q(\eta) \log \frac{p(\mu, b, \eta)}{q(\eta)} \mathrm{d}\eta + \int q(\eta) \log \frac{q(\eta)}{p(\eta \mid \mu, b)} \mathrm{d}\eta$$
+
+第一项是 ELBO（记为 $-F$），第二项是 KL 散度 $D_{\mathrm{KL}}(q \| p(\eta \mid \mu, b))$。利用 Markov 毯的条件独立性 $p(\eta \mid \mu, b) = p(\eta \mid b)$，我们有：
+
+$$\log p(\mu, b) = -F(\mu, b) + D_{\mathrm{KL}}(q(\eta; \sigma(\mu)) \| p(\eta \mid b))$$
+
+移项得到**变分自由能**的定义：
 
 $$F(\mu, b) = D_{\mathrm{KL}}(q(\eta; \sigma(\mu)) \| p(\eta \mid b)) - \log p(\mu, b)$$
 
-关键不等式：
+因为 KL 散度 $\geq 0$，立刻得到关键不等式：
 
-$$F(\mu, b) \geq -\log p(\mu, b)$$
+$$F(\mu, b) \geq -\log p(\mu, b) = \mathfrak{I}(\mu, b)$$
 
-等号成立的条件是 KL 散度（KL divergence）为零，即变分密度 $q$ 精确等于后验分布 $p(\eta \mid b)$。
+其中 $\mathfrak{I}$ 是 surprisal。等号成立当且仅当 $q = p(\eta \mid b)$，即变分密度精确等于真实后验。
 
-这意味着：**变分自由能是 surprisal 的上界**，最小化自由能同时意味着最小化 surprisal 和最小化推断误差。
+**这意味着什么**：变分自由能是 surprisal 的**可处理上界**。最小化 $F$ 同时做了两件事——(1) 让系统待在 surprisal 低的典型状态（$\mathfrak{I}$ 项），(2) 让变分密度逼近真实后验（$D_{\mathrm{KL}}$ 项）。一石二鸟。
 
 ### 3.3 Lyapunov 函数的物理意义
 
-变分自由能满足 Lyapunov 函数的定义——它沿（确定性）动力系统的轨迹单调递减，从而保证稳定性。这给我们以下等价描述：
+现在来看最关键的一步：从 surprisal 梯度流到自由能梯度流的等价性。
 
-$$\mathrm{d}\mu_t = -(Q - \Gamma)\nabla_\mu F(\mu, b) + \mathrm{d}W_t$$
+**回顾 3.1 的结果**：内部状态的动力学可以写成（只看 $\mu$ 分量）：
 
-也就是说，**Markov 毯系统的内部状态动力学可以等价地写成在变分自由能梯度上的下降流**。这一梯度流就是我们所说的"推断过程"——系统的动力学在数学上等价于变分推断。
+$$\mathrm{d}\mu_t = -(Q_\mu + \Gamma_\mu)\nabla_\mu \mathfrak{I}(\mu, b)\,\mathrm{d}t + D_\mu\,\mathrm{d}W_t$$
 
-**要义**：最可能的状态就是最不令人惊讶的状态（the most probable state is the least surprising one）。Surprisal 之所以能担任 Lyapunov 函数，根源在于 Freidlin–Wentzell 大偏差理论——对数概率衡量了系统所有涨落与最可能状态之间的距离。
+其中 $\mathfrak{I}(\mu, b) = -\log p^*(\mu, b)$ 是 surprisal。这是原始动力学的精确表述。
+
+**桥接步骤**：从 3.2 我们知道 $F(\mu, b) = \mathfrak{I}(\mu, b) + D_{\mathrm{KL}}(q \| p(\eta \mid b))$。对 $\mu$ 取梯度：
+
+$$\nabla_\mu F = \nabla_\mu \mathfrak{I} + \nabla_\mu D_{\mathrm{KL}}(q(\eta; \sigma(\mu)) \| p(\eta \mid b))$$
+
+当变分密度 $q$ 足够好地近似后验时，$D_{\mathrm{KL}}$ 项很小，因此 $\nabla_\mu F \approx \nabla_\mu \mathfrak{I}$。更精确地说：$D_{\mathrm{KL}}$ 项对 $\mu$ 的梯度就是在**推断方向**上的额外推力——它把 $\mu$ 推向使变分密度更好地匹配后验的方向。
+
+因此，原始的 surprisal 梯度流可以被替换为自由能梯度流：
+
+$$\mathrm{d}\mu_t = -(Q_\mu + \Gamma_\mu)\nabla_\mu F(\mu, b)\,\mathrm{d}t + D_\mu\,\mathrm{d}W_t$$
+
+这个替换做了什么？它在原始的 surprisal 梯度上额外叠加了一个 KL 散度梯度——后者驱动系统的内部状态去"更好地推断"外部状态。也就是说：
+
+> 原始动力学 = surprisal 梯度下降 + 噪声 + 旋转
+> 
+> 自由能动力学 = 原始动力学 + "推断误差修正"
+
+**为什么自由能是 Lyapunov 函数**：因为 $F \geq \mathfrak{I} \geq 0$（有下界），且在确定性流下（忽略噪声），$\frac{dF}{dt} = -\nabla_\mu F^\top (\Gamma_\mu) \nabla_\mu F \leq 0$（$\Gamma$ 正半定保证了非正性）。$Q$ 项因为反对称性不改变 $F$ 的值（$\nabla_\mu F^\top Q_\mu \nabla_\mu F = 0$）。所以 $F$ 沿轨迹单调不增——这正是 Lyapunov 函数的定义。
+
+**深层根据**：Surprisal 之所以能担任 Lyapunov 函数，根源在于 **Freidlin–Wentzell 大偏差理论**——在小噪声极限下，$-\log p^*(x)$ 就是系统从最可能状态到 $x$ 的"准势"（quasi-potential），它衡量了涨落路径的代价。最可能的状态就是最不令人惊讶的状态（the most probable state is the least surprising one）。
 
 ---
 

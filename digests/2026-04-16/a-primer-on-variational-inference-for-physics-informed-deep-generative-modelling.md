@@ -114,31 +114,61 @@ $$p(\mathbf{z}|\mathbf{y}) = \frac{p(\mathbf{y}|\mathbf{z})p(\mathbf{z})}{p(\mat
 
 ### 4.1 Bayes VI：直接最小化后验 KL
 
-目标是让变分近似 $q_\phi(\mathbf{z})$ 尽可能逼近真实后验 $p(\mathbf{z}|\mathbf{y})$。展开 KL 散度并应用 Bayes 定理：
+目标是让变分近似 $q_\phi(\mathbf{z})$ 尽可能逼近真实后验 $p(\mathbf{z}|\mathbf{y})$。下面从 KL 散度定义出发，逐步推导 ELBO。
 
-![KL展开第一步](../../pdfs/2026-04-16/a-primer-on-variational-inference-for-physics-informed-deep-generative-modelling.mineru/hybrid_auto/images/page-06-equation-01.jpg)
+**第一步：展开 KL 散度定义。**
 
-![KL展开结果](../../pdfs/2026-04-16/a-primer-on-variational-inference-for-physics-informed-deep-generative-modelling.mineru/hybrid_auto/images/page-06-equation-02.jpg)
+$$D_\text{KL}(q_\phi(\mathbf{z}) \| p(\mathbf{z}|\mathbf{y})) = \mathbb{E}_{q_\phi(\mathbf{z})}\!\left[\log q_\phi(\mathbf{z}) - \log p(\mathbf{z}|\mathbf{y})\right]$$
 
-由于 $\log p(\mathbf{y})$ 不依赖于变分参数 $\phi$，最小化 KL 等价于最小化：
+**第二步：对后验应用 Bayes 定理。** 将 $p(\mathbf{z}|\mathbf{y}) = p(\mathbf{y},\mathbf{z})/p(\mathbf{y})$ 代入：
 
-![Bayes VI 目标函数](../../pdfs/2026-04-16/a-primer-on-variational-inference-for-physics-informed-deep-generative-modelling.mineru/hybrid_auto/images/page-06-equation-03.jpg)
+$$\log p(\mathbf{z}|\mathbf{y}) = \log p(\mathbf{y},\mathbf{z}) - \log p(\mathbf{y})$$
 
-$$J(\phi; \mathbf{y}) := \mathbb{E}_{q_\phi(\mathbf{z})}[-\log p(\mathbf{y}|\mathbf{z})] + D_\text{KL}(q_\phi(\mathbf{z}) \| p(\mathbf{z}))$$
+于是 KL 散度变为：
+
+$$D_\text{KL} = \mathbb{E}_{q_\phi}\!\left[\log q_\phi(\mathbf{z}) - \log p(\mathbf{y},\mathbf{z}) + \log p(\mathbf{y})\right]$$
+
+注意 $\log p(\mathbf{y})$ 不依赖 $\mathbf{z}$，可以提出期望：
+
+$$D_\text{KL} = -\underbrace{\mathbb{E}_{q_\phi}\!\left[\log p(\mathbf{y},\mathbf{z}) - \log q_\phi(\mathbf{z})\right]}_{=:\,\mathcal{L}(\phi)} + \log p(\mathbf{y})$$
+
+**第三步：定义 ELBO 并整理。** 令 $\mathcal{L}(\phi) := \mathbb{E}_{q_\phi}[\log p(\mathbf{y},\mathbf{z}) - \log q_\phi(\mathbf{z})]$，则：
+
+$$\log p(\mathbf{y}) = \mathcal{L}(\phi) + D_\text{KL}(q_\phi(\mathbf{z}) \| p(\mathbf{z}|\mathbf{y})) \geq \mathcal{L}(\phi)$$
+
+由于 $D_\text{KL} \geq 0$，$\mathcal{L}(\phi)$ 是对数证据的下界（ELBO）。又因为 $\log p(\mathbf{y})$ 不依赖变分参数 $\phi$，最大化 ELBO 等价于最小化 KL 散度。
+
+**第四步：将 ELBO 拆为两项。** 把联合分布 $p(\mathbf{y},\mathbf{z}) = p(\mathbf{y}|\mathbf{z})p(\mathbf{z})$ 代入 ELBO，得到等价的最小化目标：
+
+$$J(\phi; \mathbf{y}) := -\mathcal{L}(\phi) = \mathbb{E}_{q_\phi(\mathbf{z})}[-\log p(\mathbf{y}|\mathbf{z})] + D_\text{KL}(q_\phi(\mathbf{z}) \| p(\mathbf{z}))$$
 
 这个目标函数有两个直观成分：
 - **负对数似然期望**（数据拟合）：鼓励 $q_\phi$ 集中在能解释数据的参数区域
 - **KL 正则化**（先验约束）：防止 $q_\phi$ 偏离先验太远
 
-关键优势：**避开了不可计算的证据 $p(\mathbf{y})$**。
+关键优势：**整条推导自始至终不需要计算不可解的证据 $p(\mathbf{y})$**。
 
 ### 4.2 生成模型 VI：ELBO 作为对数证据的下界
 
-当生成模型本身的参数 $\theta$ 也需要学习时（如 VAE），目标是最大化对数边际似然 $\log p_\theta(\mathbf{y})$。通过 Jensen 不等式：
+当生成模型本身的参数 $\theta$ 也需要学习时（如 VAE），目标是最大化对数边际似然 $\log p_\theta(\mathbf{y})$。这里用 Jensen 不等式给出另一条推导路径。
 
-![ELBO 推导 via Jensen 不等式](../../pdfs/2026-04-16/a-primer-on-variational-inference-for-physics-informed-deep-generative-modelling.mineru/hybrid_auto/images/page-07-equation-01.jpg)
+**第一步：边际化潜变量并引入 $q_\phi$。** 对数边际似然可以写成对潜变量的积分：
+
+$$\log p_\theta(\mathbf{y}) = \log \int p_\theta(\mathbf{y},\mathbf{z})\,d\mathbf{z}$$
+
+引入任意分布 $q_\phi(\mathbf{z})$ 做重要性加权：
+
+$$= \log \int q_\phi(\mathbf{z}) \frac{p_\theta(\mathbf{y},\mathbf{z})}{q_\phi(\mathbf{z})}\,d\mathbf{z} = \log\,\mathbb{E}_{q_\phi(\mathbf{z})}\!\left[\frac{p_\theta(\mathbf{y},\mathbf{z})}{q_\phi(\mathbf{z})}\right]$$
+
+**第二步：应用 Jensen 不等式。** 由于 $\log$ 是凹函数，将其移入期望得到下界：
+
+$$\log\,\mathbb{E}_{q_\phi}\!\left[\frac{p_\theta(\mathbf{y},\mathbf{z})}{q_\phi(\mathbf{z})}\right] \geq \mathbb{E}_{q_\phi}\!\left[\log \frac{p_\theta(\mathbf{y},\mathbf{z})}{q_\phi(\mathbf{z})}\right] = \mathcal{L}(\mathbf{y};\phi,\theta)$$
+
+展开联合分布 $p_\theta(\mathbf{y},\mathbf{z}) = p_\theta(\mathbf{y}|\mathbf{z})p(\mathbf{z})$ 后，ELBO 可以等价地写为：
 
 $$\log p_\theta(\mathbf{y}) \geq \mathbb{E}_{q_\phi(\mathbf{z})}[\log p_\theta(\mathbf{y}|\mathbf{z})] - D_\text{KL}(q_\phi(\mathbf{z}) \| p(\mathbf{z})) =: \mathcal{L}(\mathbf{y}; \phi, \theta)$$
+
+与 4.1 节 Bayes VI 推导得到的 ELBO 形式完全一致，但推导路径不同：这里不需要知道后验 $p(\mathbf{z}|\mathbf{y})$ 的存在，直接从边际似然出发即可。
 
 ### 4.3 两种推导的本质区别
 
@@ -162,9 +192,7 @@ VAE 是 ELBO 框架的标准深度学习实现，由两个神经网络组成：
 - **编码器 (Encoder)** $q_\phi(\mathbf{z}|\mathbf{y}) = \mathcal{N}(\mathbf{z}; m_\phi(\mathbf{y}), C_\phi(\mathbf{y}))$：将数据映射为潜变量的分布
 - **解码器 (Decoder)** $p_\theta(\mathbf{y}|\mathbf{z}) = \mathcal{N}(\mathbf{y}; G_\theta(\mathbf{z}), C_\eta)$：从潜变量生成数据
 
-对 $N$ 个数据点的 ELBO 分解为：
-
-![VAE ELBO 分解](../../pdfs/2026-04-16/a-primer-on-variational-inference-for-physics-informed-deep-generative-modelling.mineru/hybrid_auto/images/page-07-equation-02.jpg)
+对 $N$ 个数据点，假设各数据点独立，ELBO 分解为逐样本的加和：
 
 $$\log p_\theta(\mathbf{y}^{(1:N)}) \geq \sum_{n=1}^{N} \underbrace{\mathbb{E}_{q_\phi(\mathbf{z}|\mathbf{y}^{(n)})}[\log p_\theta(\mathbf{y}^{(n)}|\mathbf{z})]}_{\text{重构误差}} - \underbrace{D_\text{KL}(q_\phi(\mathbf{z}|\mathbf{y}^{(n)}) \| p(\mathbf{z}))}_{\text{正则化}}$$
 
@@ -243,11 +271,25 @@ $$p_\beta(\mathbf{u}|\mathbf{z}) \propto \exp(-\beta \|\mathbf{r}(\pi_u(\mathbf{
 
 当 $u_h$ 精确满足 PDE 时残差为零，概率最大。$\beta$ 控制物理约束的"硬度"。
 
-[Vadeboncoeur et al.] 进一步引入**虚拟观测量 (virtual observable)** $\hat{\mathbf{r}} = \mathbf{r} + \epsilon_r$，构建同时学习正向映射和逆映射的双向框架：
+[Vadeboncoeur et al.] 进一步引入**虚拟观测量 (virtual observable)** $\hat{\mathbf{r}} = \mathbf{r} + \epsilon_r$，构建同时学习正向映射和逆映射的双向框架。下面展开其目标函数的推导。
 
-$$J(\phi, \theta) = \mathbb{E}_{q_\phi(\mathbf{u}|\mathbf{z})p(\mathbf{z})} \log \frac{p(\hat{\mathbf{r}}=0|\mathbf{u},\mathbf{z}) p_\theta(\mathbf{z}|\mathbf{u}) p(\mathbf{u})}{q_\phi(\mathbf{u}|\mathbf{z}) p(\mathbf{z})}$$
+**联合生成模型的构造。** 将 $(\mathbf{u}, \mathbf{z})$ 视为潜变量，虚拟观测 $\hat{\mathbf{r}} = 0$ 视为"数据"。联合先验和似然分别为：
 
-这个目标函数的精妙之处在于：$q_\phi(\mathbf{u}|\mathbf{z})$ 学正向映射的不确定性，$p_\theta(\mathbf{z}|\mathbf{u})$ 学逆映射，两者在同一个 ELBO 中联合优化。
+$$p(\mathbf{u}, \mathbf{z}) = p(\mathbf{u})p(\mathbf{z}), \quad p(\hat{\mathbf{r}}=0|\mathbf{u},\mathbf{z}) \propto \exp\!\left(-\frac{1}{2\sigma_r^2}\|\mathbf{r}(\mathbf{u},\mathbf{z})\|^2\right)$$
+
+**变分分布的分解。** 变分近似同时包含正向和逆向两个方向，其联合形式为：
+
+$$q_{\phi,\theta}(\mathbf{u},\mathbf{z}) = q_\phi(\mathbf{u}|\mathbf{z})\,p(\mathbf{z})$$
+
+其中 $q_\phi(\mathbf{u}|\mathbf{z})$ 是参数化的正向代理（给定参数 $\mathbf{z}$ 预测解 $\mathbf{u}$），用先验 $p(\mathbf{z})$ 作为边际以保持与生成过程一致。
+
+**ELBO 推导。** 对虚拟观测的对数边际似然 $\log p(\hat{\mathbf{r}}=0)$ 应用标准 ELBO 公式：
+
+$$\mathcal{L}(\phi,\theta) = \mathbb{E}_{q_\phi(\mathbf{u}|\mathbf{z})p(\mathbf{z})}\!\left[\log \frac{p(\hat{\mathbf{r}}=0|\mathbf{u},\mathbf{z})\,p_\theta(\mathbf{z}|\mathbf{u})\,p(\mathbf{u})}{q_\phi(\mathbf{u}|\mathbf{z})\,p(\mathbf{z})}\right]$$
+
+这里 $p_\theta(\mathbf{z}|\mathbf{u})$ 是参数化的逆向模型，它出现在分子中是因为将联合先验写成 $p(\mathbf{u})p_\theta(\mathbf{z}|\mathbf{u})$ 来替代 $p(\mathbf{u},\mathbf{z})$——这正是让逆向模型进入优化目标的关键技巧。
+
+这个目标函数的精妙之处在于：$q_\phi(\mathbf{u}|\mathbf{z})$ 学正向映射的不确定性，$p_\theta(\mathbf{z}|\mathbf{u})$ 学逆映射，两者在同一个 ELBO 中联合优化，而物理约束完全通过残差似然 $p(\hat{\mathbf{r}}=0|\mathbf{u},\mathbf{z})$ 注入。
 
 #### 6.2.2 少数据体制 (Small-Data Regime)
 
