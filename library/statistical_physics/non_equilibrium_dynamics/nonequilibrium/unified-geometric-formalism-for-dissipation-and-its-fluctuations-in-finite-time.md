@@ -7,7 +7,7 @@ doi: ""
 arxiv: ""
 url: "https://openalex.org/W7152331097"
 pdf_url: "https://arxiv.org/pdf/2604.04620"
-topics: ["statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems"]
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems", "statistical_physics/non_equilibrium_dynamics"]
 tier: 0
 citations: 0
 relevance_score: 54.0
@@ -26,10 +26,10 @@ Microscopic heat engines operate in regimes where thermodynamic quantities fluct
 
 ## Connections
 
-- [[nonequilibrium]]
-- [[non_equilibrium_dynamics]]
 - [[statistical_physics]]
+- [[nonequilibrium]]
 - [[fluctuation_theorems]]
+- [[non_equilibrium_dynamics]]
 
 ## Notes
 

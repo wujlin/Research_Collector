@@ -1,7 +1,7 @@
 ---
 title: "Ito积分与随机积分"
 description: ""
-paper_count: 1
+paper_count: 0
 last_updated: "2026-04-16"
 ---
 
@@ -9,7 +9,5 @@ last_updated: "2026-04-16"
 
 
 
-## Papers (1)
+## Papers (0)
 
-
-- [Asymptotic Laws of Wiener Integrals](asymptotic-laws-of-wiener-integrals.md) (1951, Journal of the Mathematical Society of Japan, 0 citations)

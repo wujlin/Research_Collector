@@ -109,10 +109,27 @@ class ArxivCollector(BaseCollector):
     @staticmethod
     def _build_search_query(query: str, categories: list[str]) -> str:
         category_query = " OR ".join(f"cat:{category}" for category in categories) if categories else ""
-        term_query = f'all:"{query}"' if query else ""
-        if category_query and term_query:
-            return f"({category_query}) AND {term_query}"
-        return category_query or term_query or 'all:"stochastic process"'
+        if not query:
+            return category_query or 'all:"stochastic process"'
+        # 将多词查询拆分为 AND 布尔组合，而非精确短语匹配；
+        # 对 2-3 词的子短语用引号保留语义关联
+        tokens = query.split()
+        if len(tokens) <= 3:
+            term_query = f'all:"{query}"'
+        else:
+            # 按 2-3 词一组拆分，用 AND 连接
+            chunks: list[str] = []
+            i = 0
+            while i < len(tokens):
+                remaining = len(tokens) - i
+                size = 2 if remaining >= 4 else min(remaining, 3)
+                chunk = " ".join(tokens[i : i + size])
+                chunks.append(f'all:"{chunk}"')
+                i += size
+            term_query = " AND ".join(chunks)
+        if category_query:
+            return f"({category_query}) AND ({term_query})"
+        return term_query
 
     @staticmethod
     def _parse_entry(entry: Any) -> dict[str, Any]:

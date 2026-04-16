@@ -39,25 +39,25 @@ collection:
       limit_without_api_key: 10
 
   per_query_limits:
-    arxiv: 10
+    arxiv: 30
     semantic_scholar: 8
-    openalex: 10
+    openalex: 25
     youtube: 4
 
 filtering:
   # 相关性评分阈值 (0-100)，低于此值的论文不入库
   relevance_threshold: 30
   source_relevance_thresholds:
-    openalex: 42
+    openalex: 35
 
   # 对高噪声来源只保留主线 topic 前缀，避免泛关键词把工程应用和边缘 ML 带进来
   source_allowed_topic_prefixes:
     openalex:
       - "stochastic_analysis/"
-      - "statistical_physics/non_equilibrium_dynamics"
-      - "statistical_physics/collective_structure/phase_transitions"
-      - "ai_for_physics/generative_dynamics"
-      - "bridges/translation_layers/fokker_planck_master"
+      - "statistical_physics/"
+      - "ai_for_physics/"
+      - "bridges/"
+      - "urban_complex_systems/"
 
   # 最大采集论文数 / 每次
   max_papers_per_run: 320
@@ -97,13 +97,26 @@ filtering:
     - "flavor compounds"
     - "immunotherapy"
     - "video generation"
-    - "molecular graph"
-    - "transformer"
-    - "transformers"
-    - "deep linear network"
-    - "smart transportation"
-    - "network dynamics"
-    - "multidimensional spectra"
+    - "dental implants"
+    - "orthopedic"
+    - "glioma"
+    - "food processing"
+    - "food industry"
+    - "crop yield"
+    - "soil moisture"
+    - "weed detection"
+    - "concrete structures"
+    - "power grid"
+    - "photovoltaic"
+    - "wind turbine"
+    - "speech recognition"
+    - "text-to-speech"
+    - "image segmentation"
+    - "object detection"
+    - "face recognition"
+    - "wastewater treatment"
+    - "membrane fouling"
+    - "desalination"
 
   youtube:
     min_query_token_hits: 2
@@ -171,50 +184,68 @@ git:
 
 ranking:
   paper:
-    no_leaf_topic_penalty: 18
-    no_topic_penalty: 8
-    openalex_zero_citation_penalty: 6
-    preprint_penalty: 4
-    unranked_venue_penalty: 8
-    keep_threshold: 60
-    review_threshold: 38
+    no_leaf_topic_penalty: 10
+    no_topic_penalty: 6
+    openalex_zero_citation_penalty: 3
+    preprint_penalty: 2
+    unranked_venue_penalty: 4
+    keep_threshold: 55
+    review_threshold: 35
     must_read_allowed_reputation:
       - trusted
-    must_read_preprint_min_score: 60
+    must_read_preprint_min_score: 50
     venue_tier_bonus:
       "1": 18
       "2": 12
       "3": 6
     priority_topics:
-      bridges/translation_layers/fokker_planck_master: 18
-      bridges/thermodynamic_inference/variational_free_energy: 16
-      statistical_physics/non_equilibrium_dynamics/nonequilibrium: 14
-      statistical_physics/non_equilibrium_dynamics/fluctuation_theorems: 12
-      ai_for_physics/generative_dynamics/sde_generative: 16
-      ai_for_physics/generative_dynamics/score_matching: 14
-      ai_for_physics/generative_dynamics/ddpm: 10
-      ai_for_physics/physics_informed_modeling/physics_informed_generative: 10
-      ai_for_physics/physics_informed_modeling/scientific_ml_applications: 8
+      # AI + 生成模型方向（最高优先级）
+      ai_for_physics/generative_dynamics/sde_generative: 22
+      ai_for_physics/generative_dynamics/score_matching: 20
+      ai_for_physics/generative_dynamics/flow_matching: 20
+      ai_for_physics/generative_dynamics/ddpm: 16
+      ai_for_physics/generative_dynamics/conditional_generation: 14
+      ai_for_physics/physics_informed_modeling/physics_informed_generative: 16
+      ai_for_physics/physics_informed_modeling/scientific_ml_applications: 12
+      # 桥接层（连接物理与 AI 的翻译机制）
+      bridges/translation_layers/fokker_planck_master: 16
+      bridges/thermodynamic_inference/variational_free_energy: 18
+      bridges/transport_and_spatial_generation/optimal_transport_urban: 14
+      bridges/transport_and_spatial_generation/diffusion_spatial_data: 14
+      # 随机分析（为生成模型提供数学骨架）
       stochastic_analysis/stochastic_dynamics/sde_theory: 12
-      stochastic_analysis/path_foundations/brownian_motion: 10
-      stochastic_analysis/asymptotics_and_variation/large_deviations: 10
+      stochastic_analysis/path_foundations/brownian_motion: 8
+      stochastic_analysis/asymptotics_and_variation/large_deviations: 8
+      # 统计物理（适度优先级，重点是与 AI 交叉的部分）
+      statistical_physics/non_equilibrium_dynamics/nonequilibrium: 8
+      statistical_physics/non_equilibrium_dynamics/fluctuation_theorems: 6
+      # 城市系统
       urban_complex_systems/scaling_and_evolution/urban_scaling: 8
       urban_complex_systems/urban_data_and_generation/urban_data_science: 6
     priority_keywords:
-      "thermalization": 12
-      "ergodicity": 12
-      "markov": 10
-      "random walk": 10
-      "stochastic dynamics": 12
-      "brownian motion": 12
-      "inverse problem": 10
-      "bayesian inverse": 10
-      "score-based diffusion": 12
-      "physics-constrained": 10
-      "physics-informed": 10
-      "pinn": 8
-      "fokker-planck": 12
+      "score-based diffusion": 16
+      "score matching": 14
+      "flow matching": 14
+      "diffusion model": 14
+      "generative model": 12
+      "reverse-time sde": 14
+      "probability flow": 12
+      "denoising diffusion": 12
+      "neural ode": 10
+      "normalizing flow": 10
+      "physics-constrained": 12
+      "physics-informed": 12
+      "pinn": 10
+      "inverse problem": 12
+      "bayesian inverse": 12
+      "fokker-planck": 10
       "free energy": 10
+      "variational inference": 10
+      "active inference": 10
+      "stochastic dynamics": 8
+      "brownian motion": 6
+      "thermalization": 6
+      "ergodicity": 6
       "urban air pollution": 6
     suspicious_keywords:
       "neuroscience": 18
@@ -224,6 +255,14 @@ ranking:
       "drug discovery": 22
       "protein-peptide": 20
       "protein kinase": 20
+      "biomolecular machines": 10
+      "molecular motors": 8
+      "bacterial motion": 8
+      "quark-gluon plasma": 12
+      "nuclear collisions": 12
+      "black hole": 10
+      "quantum dot": 8
+      "heat engine": 6
       "ultrasound": 18
       "orthopedic": 18
       "dental implants": 18
@@ -262,11 +301,24 @@ ranking:
     strong_venues:
       "physical review letters": 8
       "nature physics": 8
+      "nature communications": 6
+      "science advances": 6
       "communications in mathematical physics": 8
       "journal of machine learning research": 8
       "neurips": 8
       "icml": 8
       "iclr": 8
+      "journal of physics a": 5
+      "the journal of chemical physics": 5
+      "communications physics": 5
+      "computer methods in applied mechanics and engineering": 5
+      "physical review x": 8
+      "physical review e": 6
+      "journal of statistical physics": 6
+      "journal of statistical mechanics": 6
+      "annals of probability": 6
+      "stochastic processes and their applications": 6
+      "siam journal on scientific computing": 5
   youtube:
     priority_topics:
       ai_for_physics/generative_dynamics/sde_generative: 16

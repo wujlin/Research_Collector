@@ -8,9 +8,9 @@ arxiv: ""
 url: "https://openalex.org/W7153243250"
 pdf_url: "https://www.mdpi.com/2624-960X/8/2/32/pdf?version=1775809807"
 topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics"]
-tier: 0
+tier: 2
 citations: 0
-relevance_score: 47.0
+relevance_score: 61.0
 collected: "2026-04-16"
 status: "unread"
 source: "openalex"

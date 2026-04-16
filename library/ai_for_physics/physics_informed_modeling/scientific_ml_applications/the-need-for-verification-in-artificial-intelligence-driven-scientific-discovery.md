@@ -7,11 +7,11 @@ doi: "10.1098/rsta.2024.0591"
 arxiv: ""
 url: "https://openalex.org/W7152457584"
 pdf_url: "https://royalsocietypublishing.org/rsta/article-pdf/doi/10.1098/rsta.2024.0591/6131801/rsta.2024.0591.pdf"
-topics: ["ai_for_physics/physics_informed_modeling/scientific_ml_applications", "ai_for_physics/physics_informed_modeling", "ai_for_physics"]
+topics: ["ai_for_physics", "ai_for_physics/physics_informed_modeling", "ai_for_physics/physics_informed_modeling/scientific_ml_applications"]
 tier: 0
 citations: 0
 relevance_score: 47.0
-collected: "2026-04-13"
+collected: "2026-04-16"
 status: "unread"
 source: "openalex"
 ---
@@ -26,9 +26,9 @@ Artificial intelligence (AI) is transforming the practice of science. Machine le
 
 ## Connections
 
-- [[scientific_ml_applications]]
-- [[physics_informed_modeling]]
 - [[ai_for_physics]]
+- [[physics_informed_modeling]]
+- [[scientific_ml_applications]]
 
 ## Notes
 

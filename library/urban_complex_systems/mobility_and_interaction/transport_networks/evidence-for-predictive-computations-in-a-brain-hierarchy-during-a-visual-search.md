@@ -7,11 +7,11 @@ doi: "10.64898/2026.04.09.717389"
 arxiv: ""
 url: "https://openalex.org/W7152401326"
 pdf_url: "https://www.biorxiv.org/content/biorxiv/early/2026/04/09/2026.04.09.717389.full.pdf"
-topics: ["urban_complex_systems/mobility_and_interaction/transport_networks", "urban_complex_systems/mobility_and_interaction", "urban_complex_systems"]
+topics: ["urban_complex_systems", "urban_complex_systems/mobility_and_interaction/transport_networks", "urban_complex_systems/mobility_and_interaction"]
 tier: 0
 citations: 0
 relevance_score: 47.0
-collected: "2026-04-13"
+collected: "2026-04-16"
 status: "unread"
 source: "openalex"
 ---
@@ -26,9 +26,9 @@ Abstract Many lines of evidence suggest that the cortex functions fundamentally 
 
 ## Connections
 
+- [[urban_complex_systems]]
 - [[transport_networks]]
 - [[mobility_and_interaction]]
-- [[urban_complex_systems]]
 
 ## Notes
 

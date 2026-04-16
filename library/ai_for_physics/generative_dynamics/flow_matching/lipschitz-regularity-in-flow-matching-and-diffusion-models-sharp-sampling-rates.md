@@ -7,7 +7,7 @@ doi: ""
 arxiv: ""
 url: "https://openalex.org/W7152933707"
 pdf_url: "https://arxiv.org/pdf/2604.06065"
-topics: ["ai_for_physics/generative_dynamics", "ai_for_physics", "ai_for_physics/generative_dynamics/flow_matching", "bridges/transport_and_spatial_generation", "bridges"]
+topics: ["ai_for_physics", "ai_for_physics/generative_dynamics/flow_matching", "bridges", "ai_for_physics/generative_dynamics", "bridges/transport_and_spatial_generation"]
 tier: 0
 citations: 0
 relevance_score: 52.27
@@ -26,11 +26,11 @@ Under general assumptions on the target distribution $p^\star$, we establish a s
 
 ## Connections
 
-- [[generative_dynamics]]
 - [[ai_for_physics]]
 - [[flow_matching]]
-- [[transport_and_spatial_generation]]
 - [[bridges]]
+- [[generative_dynamics]]
+- [[transport_and_spatial_generation]]
 
 ## Notes
 

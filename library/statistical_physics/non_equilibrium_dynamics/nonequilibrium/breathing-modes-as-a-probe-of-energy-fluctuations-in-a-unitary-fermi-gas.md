@@ -7,7 +7,7 @@ doi: ""
 arxiv: ""
 url: "https://openalex.org/W7153669980"
 pdf_url: "https://arxiv.org/pdf/2604.06594"
-topics: ["statistical_physics/non_equilibrium_dynamics", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium"]
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics"]
 tier: 0
 citations: 0
 relevance_score: 51.0
@@ -26,9 +26,9 @@ Directly accessing energy fluctuations in interacting quantum many-body systems 
 
 ## Connections
 
-- [[non_equilibrium_dynamics]]
 - [[statistical_physics]]
 - [[nonequilibrium]]
+- [[non_equilibrium_dynamics]]
 
 ## Notes
 

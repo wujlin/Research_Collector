@@ -8,9 +8,9 @@ arxiv: ""
 url: "https://openalex.org/W7135428729"
 pdf_url: "https://arxiv.org/pdf/2603.12184"
 topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems", "statistical_physics/non_equilibrium_dynamics"]
-tier: 0
+tier: 3
 citations: 0
-relevance_score: 54.0
+relevance_score: 58.0
 collected: "2026-04-16"
 status: "unread"
 source: "openalex"

@@ -10,6 +10,11 @@
     "created_at": "2026-04-16"
   },
   {
+    "title": "Paper Queue",
+    "path": "2026-04-16/paper-queue.md",
+    "created_at": "2026-04-16"
+  },
+  {
     "title": "Collection Review",
     "path": "2026-04-16/collection-review.md",
     "created_at": "2026-04-16"
@@ -35,16 +40,6 @@
     "created_at": "2026-04-15"
   },
   {
-    "title": "Boundary layers, transport and universal distribution in boundary driven active systems",
-    "path": "2026-04-15/boundary-layers-transport-and-universal-distribution-in-boundary-driven-active-systems.md",
-    "created_at": "2026-04-15"
-  },
-  {
-    "title": "A framework for the use of generative modelling in non-equilibrium statistical mechanics",
-    "path": "2026-04-15/a-framework-for-the-use-of-generative-modelling-in-non-equilibrium-statistical-mechanics.md",
-    "created_at": "2026-04-15"
-  },
-  {
     "title": "Weekly Digest",
     "path": "2026-04-13/weekly.md",
     "created_at": "2026-04-13"
@@ -57,16 +52,6 @@
   {
     "title": "Paper Queue",
     "path": "2026-04-13/paper-queue.md",
-    "created_at": "2026-04-13"
-  },
-  {
-    "title": "Non-Markovian rock-paper-scissors games",
-    "path": "2026-04-13/non-markovian-rock-paper-scissors-games.md",
-    "created_at": "2026-04-13"
-  },
-  {
-    "title": "MVNN: A Measure-Valued Neural Network for Learning McKean-Vlasov Dynamics from Particle Data",
-    "path": "2026-04-13/mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-particle-data.md",
     "created_at": "2026-04-13"
   },
   {
@@ -85,16 +70,6 @@
     "created_at": "2026-04-11"
   },
   {
-    "title": "Fluctuating entropy production on the coarse-grained level",
-    "path": "2026-04-11/fluctuating-entropy-production-on-the-coarse-grained-level.md",
-    "created_at": "2026-04-11"
-  },
-  {
-    "title": "Dynamical regimes of diffusion models",
-    "path": "2026-04-11/dynamical-regimes-of-diffusion-models.md",
-    "created_at": "2026-04-11"
-  },
-  {
     "title": "Study Guide",
     "path": "2026-04-10/study-guide.md",
     "created_at": "2026-04-10"
@@ -102,11 +77,6 @@
   {
     "title": "Paper Queue",
     "path": "2026-04-10/paper-queue.md",
-    "created_at": "2026-04-10"
-  },
-  {
-    "title": "Learning stochastic thermodynamics directly from correlation and trajectory-fluctuation currents",
-    "path": "2026-04-10/learning-stochastic-thermodynamics-directly-from-correlation-and-trajectory-fluctuation-currents.md",
     "created_at": "2026-04-10"
   },
   {

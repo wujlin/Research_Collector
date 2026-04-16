@@ -1,6 +1,6 @@
 ---
 title: "Reading List"
-generated_at: "2026-04-16T08:58:18.390421"
+generated_at: "2026-04-16T14:15:23.955915"
 paper_count: 20
 ---
 
@@ -14,97 +14,157 @@ paper_count: 20
 - Year: 2021
 - Journal/Venue: ICLR
 - Venue Quality: high_quality
-- Importance: 129.60 (keep)
+- Importance: 145.60 (keep)
 - Relevance: 56.00
 - Citations: 0
 - Topics: stochastic_analysis, bridges/translation_layers/fokker_planck_master, stochastic_analysis/stochastic_dynamics/sde_theory, ai_for_physics, ai_for_physics/generative_dynamics/score_matching, ai_for_physics/generative_dynamics/sde_generative, bridges, stochastic_analysis/stochastic_dynamics, ai_for_physics/generative_dynamics, bridges/translation_layers
 - URL: https://arxiv.org/abs/2011.13456
 
-## 2. Ergodicity and regime recoverability in finite Markov-modulated random walks
+## 2. The NTK-Quadratic Form Equivalence of Macroscopic Probability Flow ODEs in Conditional Flow Matching
 
-- Authors: Arina Pambukyan, Abdul Khader Jilani Saudagar, Sachin Kumar
+- Authors: Zhinan Xiong
 - Year: 2026
-- Journal/Venue: Scientific Reports
-- Venue Quality: solid_domain
-- Importance: 112.80 (keep)
-- Relevance: 58.00
-- Citations: 0
-- Topics: stochastic_analysis, stochastic_analysis/path_foundations/brownian_motion, stochastic_analysis/stochastic_dynamics/sde_theory, statistical_physics, statistical_physics/non_equilibrium_dynamics/nonequilibrium, stochastic_analysis/path_foundations, stochastic_analysis/stochastic_dynamics, statistical_physics/non_equilibrium_dynamics
-- URL: https://openalex.org/W7150102012
-
-## 3. Nonequilibrium Equality for Free Energy Differences
-
-- Authors: Christopher Jarzynski
-- Year: 1997
-- Journal/Venue: Physical Review Letters
-- Venue Quality: top_tier
-- Importance: 108.80 (keep)
-- Relevance: 48.00
-- Citations: 0
-- Topics: statistical_physics, statistical_physics/non_equilibrium_dynamics/nonequilibrium, statistical_physics/non_equilibrium_dynamics/fluctuation_theorems, statistical_physics/non_equilibrium_dynamics
-- URL: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.78.2690
-
-## 4. Learning Stochastic Thermodynamics Directly from Correlation and Trajectory-Fluctuation Currents
-
-- Authors: Justin Sirignano, Andrea Dechant, others
-- Year: 2025
-- Journal/Venue: arXiv
+- Journal/Venue: Zenodo (CERN European Organization for Nuclear Research)
 - Venue Quality: preprint
-- Importance: 102.40 (keep)
-- Relevance: 54.00
+- Importance: 125.00 (keep)
+- Relevance: 50.00
 - Citations: 0
-- Topics: bridges/translation_layers/fokker_planck_master, statistical_physics, statistical_physics/non_equilibrium_dynamics/nonequilibrium, ai_for_physics, ai_for_physics/generative_dynamics/sde_generative, bridges, bridges/thermodynamic_inference/info_geometry, statistical_physics/non_equilibrium_dynamics, ai_for_physics/generative_dynamics, bridges/translation_layers, bridges/thermodynamic_inference, bridges/thermodynamic_inference/variational_free_energy
-- URL: https://arxiv.org/abs/2504.19007
+- Topics: ai_for_physics, ai_for_physics/generative_dynamics/sde_generative, ai_for_physics/generative_dynamics/flow_matching, ai_for_physics/generative_dynamics
+- URL: https://openalex.org/W7152250469
 
-## 5. Efficient quantum thermal simulation
+## 3. Flow Matching for Generative Modeling
 
-- Authors: Chi-Fang Chen, Michael J. Kastoryano, Fernando G. S. L. Brandão, András Gilyén
-- Year: 2025
-- Journal/Venue: Nature
-- Venue Quality: top_tier
-- Importance: 100.20 (keep)
-- Relevance: 71.17
-- Citations: 4
-- Topics: statistical_physics, statistical_physics/non_equilibrium_dynamics/nonequilibrium, statistical_physics/non_equilibrium_dynamics
-- URL: https://openalex.org/W4415196111
-
-## 6. A framework for the use of generative modelling in non-equilibrium statistical mechanics
-
-- Authors: Karl Friston, Rosalyn Moran, Lancelot Da Costa, Chris Fields
-- Year: 2024
-- Journal/Venue: arXiv
-- Venue Quality: preprint
-- Importance: 95.20 (keep)
-- Relevance: 52.00
+- Authors: Yaron Lipman, Ricky T. Q. Chen, Heli Ben-Hamu, Maximilian Nickel
+- Year: 2023
+- Journal/Venue: ICLR
+- Venue Quality: high_quality
+- Importance: 122.00 (keep)
+- Relevance: 60.00
 - Citations: 0
-- Topics: statistical_physics, statistical_physics/non_equilibrium_dynamics/nonequilibrium, ai_for_physics, ai_for_physics/physics_informed_modeling/physics_informed_generative, bridges, bridges/thermodynamic_inference/info_geometry, statistical_physics/non_equilibrium_dynamics, ai_for_physics/physics_informed_modeling, bridges/thermodynamic_inference, bridges/thermodynamic_inference/variational_free_energy
-- URL: https://arxiv.org/abs/2406.11630
+- Topics: ai_for_physics, ai_for_physics/generative_dynamics/flow_matching, bridges, bridges/transport_and_spatial_generation/optimal_transport_urban, ai_for_physics/generative_dynamics, bridges/transport_and_spatial_generation
+- URL: https://arxiv.org/abs/2210.02747
 
-## 7. A Primer on Variational Inference for Physics-Informed Deep Generative Modelling
+## 4. A Primer on Variational Inference for Physics-Informed Deep Generative Modelling
 
 - Authors: Emilia Molinari, Michele Nervi, Luca Biggio, François Fleuret
 - Year: 2024
 - Journal/Venue: arXiv
 - Venue Quality: preprint
-- Importance: 91.20 (keep)
+- Importance: 113.20 (keep)
 - Relevance: 52.00
 - Citations: 0
 - Topics: ai_for_physics, ai_for_physics/physics_informed_modeling/physics_informed_generative, bridges, bridges/thermodynamic_inference/info_geometry, ai_for_physics/physics_informed_modeling, bridges/thermodynamic_inference, bridges/thermodynamic_inference/variational_free_energy
 - URL: https://arxiv.org/abs/2409.06560
 
-## 8. Entropy production fluctuation theorem and the nonequilibrium work relation for free energy differences
+## 5. Diffusion Models: A Mathematical Introduction
 
-- Authors: Gavin E. Crooks
-- Year: 1999
-- Journal/Venue: Physical Review E
+- Authors: Sepehr Maleki, Negar Pourmoazemi
+- Year: 2025
+- Journal/Venue: arXiv
+- Venue Quality: preprint
+- Importance: 111.60 (keep)
+- Relevance: 56.00
+- Citations: 0
+- Topics: bridges/translation_layers/fokker_planck_master, ai_for_physics, ai_for_physics/generative_dynamics/ddpm, ai_for_physics/generative_dynamics/conditional_generation, bridges, ai_for_physics/generative_dynamics, bridges/translation_layers
+- URL: http://arxiv.org/abs/2511.11746v1
+
+## 6. Learning Stochastic Thermodynamics Directly from Correlation and Trajectory-Fluctuation Currents
+
+- Authors: Justin Sirignano, Andrea Dechant, others
+- Year: 2025
+- Journal/Venue: arXiv
+- Venue Quality: preprint
+- Importance: 108.40 (keep)
+- Relevance: 54.00
+- Citations: 0
+- Topics: bridges/translation_layers/fokker_planck_master, statistical_physics, statistical_physics/non_equilibrium_dynamics/nonequilibrium, ai_for_physics, ai_for_physics/generative_dynamics/sde_generative, bridges, bridges/thermodynamic_inference/info_geometry, statistical_physics/non_equilibrium_dynamics, ai_for_physics/generative_dynamics, bridges/translation_layers, bridges/thermodynamic_inference, bridges/thermodynamic_inference/variational_free_energy
+- URL: https://arxiv.org/abs/2504.19007
+
+## 7. Error Bounds for Flow Matching Methods
+
+- Authors: Joe Benton, George Deligiannidis, Arnaud Doucet
+- Year: 2023
+- Journal/Venue: arXiv
+- Venue Quality: preprint
+- Importance: 106.49 (keep)
+- Relevance: 47.48
+- Citations: 0
+- Topics: ai_for_physics, ai_for_physics/generative_dynamics/sde_generative, ai_for_physics/generative_dynamics/flow_matching, ai_for_physics/generative_dynamics
+- URL: http://arxiv.org/abs/2305.16860v2
+
+## 8. Score-fPINN: Fractional Score-Based Physics-Informed Neural Networks for High-Dimensional Fokker-Planck-Lévy Equations
+
+- Authors: George Em Karniadakis, Kenji Kawaguchi, Zheyuan Hu, Zhongqiang Zhang
+- Year: 2026
+- Journal/Venue: Communications in Computational Physics
+- Venue Quality: unranked
+- Importance: 105.00 (keep)
+- Relevance: 50.00
+- Citations: 0
+- Topics: bridges/translation_layers/fokker_planck_master, ai_for_physics, ai_for_physics/generative_dynamics/score_matching, bridges, ai_for_physics/generative_dynamics, ai_for_physics/physics_informed_modeling, bridges/translation_layers
+- URL: https://openalex.org/W4399795376
+
+## 9. A framework for the use of generative modelling in non-equilibrium statistical mechanics
+
+- Authors: Karl Friston, Rosalyn Moran, Lancelot Da Costa, Chris Fields
+- Year: 2024
+- Journal/Venue: arXiv
+- Venue Quality: preprint
+- Importance: 103.20 (keep)
+- Relevance: 52.00
+- Citations: 0
+- Topics: statistical_physics, statistical_physics/non_equilibrium_dynamics/nonequilibrium, ai_for_physics, ai_for_physics/physics_informed_modeling/physics_informed_generative, bridges, bridges/thermodynamic_inference/info_geometry, statistical_physics/non_equilibrium_dynamics, ai_for_physics/physics_informed_modeling, bridges/thermodynamic_inference, bridges/thermodynamic_inference/variational_free_energy
+- URL: https://arxiv.org/abs/2406.11630
+
+## 10. Journey from the Wilson exact RG towards the Wegner-Morris Fokker-Planck RG and the Carosso field-coarsening via Langevin stochastic processes
+
+- Authors: Cecile Monthus
+- Year: 2025
+- Journal/Venue: J. Stat. Mech. (2025) 053210
 - Venue Quality: high_quality
-- Importance: 91.20 (keep)
-- Relevance: 42.00
+- Importance: 97.60 (keep)
+- Relevance: 66.00
+- Citations: 0
+- Topics: stochastic_analysis, bridges/translation_layers/fokker_planck_master, stochastic_analysis/stochastic_dynamics/sde_theory, bridges, stochastic_analysis/stochastic_dynamics, bridges/translation_layers
+- URL: http://arxiv.org/abs/2502.09506v3
+
+## 11. Nonequilibrium Equality for Free Energy Differences
+
+- Authors: Christopher Jarzynski
+- Year: 1997
+- Journal/Venue: Physical Review Letters
+- Venue Quality: top_tier
+- Importance: 96.80 (keep)
+- Relevance: 48.00
 - Citations: 0
 - Topics: statistical_physics, statistical_physics/non_equilibrium_dynamics/nonequilibrium, statistical_physics/non_equilibrium_dynamics/fluctuation_theorems, statistical_physics/non_equilibrium_dynamics
-- URL: https://journals.aps.org/pre/abstract/10.1103/PhysRevE.60.2721
+- URL: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.78.2690
 
-## 9. Deep Unsupervised Learning using Nonequilibrium Thermodynamics
+## 12. Denoising Diffusion Probabilistic Models
+
+- Authors: Jonathan Ho, Ajay Jain, Pieter Abbeel
+- Year: 2020
+- Journal/Venue: NeurIPS
+- Venue Quality: high_quality
+- Importance: 96.60 (keep)
+- Relevance: 51.00
+- Citations: 0
+- Topics: ai_for_physics, ai_for_physics/generative_dynamics/ddpm, ai_for_physics/generative_dynamics
+- URL: https://arxiv.org/abs/2006.11239
+
+## 13. The covariant Langevin equation of diffusion on Riemannian manifolds
+
+- Authors: Lajos Diósi
+- Year: 2023
+- Journal/Venue: Rep.Math.Phys. 94, 143 (2024)
+- Venue Quality: high_quality
+- Importance: 90.94 (keep)
+- Relevance: 54.90
+- Citations: 0
+- Topics: stochastic_analysis, bridges/translation_layers/fokker_planck_master, stochastic_analysis/stochastic_dynamics/sde_theory, bridges, stochastic_analysis/stochastic_dynamics, bridges/translation_layers
+- URL: http://arxiv.org/abs/2310.17314v2
+
+## 14. Deep Unsupervised Learning using Nonequilibrium Thermodynamics
 
 - Authors: Jascha Sohl-Dickstein, Eric Weiss, Niru Maheswaranathan, Surya Ganguli
 - Year: 2015
@@ -116,134 +176,74 @@ paper_count: 20
 - Topics: statistical_physics, statistical_physics/non_equilibrium_dynamics/nonequilibrium, ai_for_physics, ai_for_physics/generative_dynamics/ddpm, statistical_physics/non_equilibrium_dynamics, ai_for_physics/generative_dynamics
 - URL: https://proceedings.mlr.press/v37/sohl-dickstein15.html
 
-## 10. Denoising Diffusion Probabilistic Models
+## 15. Noise in the reverse process improves the approximation capabilities of diffusion models
 
-- Authors: Jonathan Ho, Ajay Jain, Pieter Abbeel
-- Year: 2020
-- Journal/Venue: NeurIPS
-- Venue Quality: high_quality
-- Importance: 78.60 (keep)
-- Relevance: 51.00
-- Citations: 0
-- Topics: ai_for_physics, ai_for_physics/generative_dynamics/ddpm, ai_for_physics/generative_dynamics
-- URL: https://arxiv.org/abs/2006.11239
-
-## 11. Score-fPINN: Fractional Score-Based Physics-Informed Neural Networks for High-Dimensional Fokker-Planck-Lévy Equations
-
-- Authors: George Em Karniadakis, Kenji Kawaguchi, Zheyuan Hu, Zhongqiang Zhang
-- Year: 2026
-- Journal/Venue: Communications in Computational Physics
-- Venue Quality: unranked
-- Importance: 78.00 (keep)
-- Relevance: 50.00
-- Citations: 0
-- Topics: bridges/translation_layers/fokker_planck_master, ai_for_physics, ai_for_physics/generative_dynamics/score_matching, bridges, ai_for_physics/generative_dynamics, ai_for_physics/physics_informed_modeling, bridges/translation_layers
-- URL: https://openalex.org/W4399795376
-
-## 12. PINNs for Stochastic Dynamics: Modeling Brownian Motion via Verlet Integration
-
-- Authors: Yulison Herry, Julian Evan, Jeremia Oktavian, Ferry Faizal
-- Year: 2026
-- Journal/Venue: International Journal of Information Technology and Computer Science
-- Venue Quality: unranked
-- Importance: 76.00 (keep)
-- Relevance: 50.00
-- Citations: 0
-- Topics: stochastic_analysis, stochastic_analysis/path_foundations/brownian_motion, bridges/translation_layers/fokker_planck_master, ai_for_physics, bridges, stochastic_analysis/path_foundations, ai_for_physics/physics_informed_modeling, bridges/translation_layers
-- URL: https://openalex.org/W7143947385
-
-## 13. Flow Matching for Generative Modeling
-
-- Authors: Yaron Lipman, Ricky T. Q. Chen, Heli Ben-Hamu, Maximilian Nickel
+- Authors: Karthik Elamvazhuthi, Samet Oymak, Fabio Pasqualetti
 - Year: 2023
-- Journal/Venue: ICLR
-- Venue Quality: high_quality
-- Importance: 74.00 (keep)
-- Relevance: 60.00
-- Citations: 0
-- Topics: ai_for_physics, ai_for_physics/generative_dynamics/flow_matching, bridges, bridges/transport_and_spatial_generation/optimal_transport_urban, ai_for_physics/generative_dynamics, bridges/transport_and_spatial_generation
-- URL: https://arxiv.org/abs/2210.02747
-
-## 14. The size, scale, and shape of cities
-
-- Authors: Michael Batty
-- Year: 2008
-- Journal/Venue: Science
-- Venue Quality: top_tier
-- Importance: 72.80 (keep)
+- Journal/Venue: arXiv
+- Venue Quality: preprint
+- Importance: 86.80 (keep)
 - Relevance: 48.00
 - Citations: 0
-- Topics: urban_complex_systems, urban_complex_systems/scaling_and_evolution/urban_scaling, urban_complex_systems/scaling_and_evolution/urban_dynamics, urban_complex_systems/scaling_and_evolution
-- URL: https://www.science.org/doi/10.1126/science.1151419
+- Topics: ai_for_physics, ai_for_physics/generative_dynamics/score_matching, ai_for_physics/generative_dynamics/ddpm, ai_for_physics/generative_dynamics
+- URL: http://arxiv.org/abs/2312.07851v2
 
-## 15. Probabilistic Evolution of Black Hole Thermodynamic States via Fokker-Planck Equation
+## 16. The cost of knowing: natural gradient as variational inference
 
-- Authors: Chao Wang, Chen Ma, Meng-Ci He, Bin Wu
-- Year: 2026
-- Journal/Venue: arXiv (Cornell University)
-- Venue Quality: unranked
-- Importance: 71.43 (keep)
-- Relevance: 52.39
-- Citations: 0
-- Topics: bridges/translation_layers/fokker_planck_master, statistical_physics, statistical_physics/non_equilibrium_dynamics/nonequilibrium, bridges, statistical_physics/non_equilibrium_dynamics, bridges/translation_layers
-- URL: https://openalex.org/W7152933980
-
-## 16. Growth, innovation, scaling, and the pace of life in cities
-
-- Authors: Luís M. A. Bettencourt, José Lobo, Dirk Helbing, Christian Kühnert
-- Year: 2007
-- Journal/Venue: PNAS
-- Venue Quality: top_tier
-- Importance: 71.00 (keep)
-- Relevance: 45.00
-- Citations: 0
-- Topics: urban_complex_systems, urban_complex_systems/scaling_and_evolution/urban_scaling, urban_complex_systems/scaling_and_evolution
-- URL: https://www.pnas.org/doi/10.1073/pnas.0610172104
-
-## 17. A Physics-Constrained Deep-Learning Framework based on Long-Term Remote-Sensing Data for Retrieving Vertical Distribution of PM <sub>2.5</sub> Chemical Components
-
-- Authors: Hongyi Li, Tao Yang, Yele Sun, Zifa Wang
-- Year: 2026
-- Journal/Venue: Atmospheric measurement techniques
-- Venue Quality: solid_domain
-- Importance: 70.80 (keep)
-- Relevance: 58.00
-- Citations: 0
-- Topics: ai_for_physics, ai_for_physics/physics_informed_modeling/physics_informed_generative, urban_complex_systems, urban_complex_systems/urban_data_and_generation/urban_data_science, ai_for_physics/physics_informed_modeling, urban_complex_systems/urban_data_and_generation
-- URL: https://openalex.org/W7146945880
-
-## 18. MVNN: A Measure-Valued Neural Network for Learning McKean-Vlasov Dynamics from Particle Data
-
-- Authors: Lingyi Lyu, Xinyue Yu, Hayden Schaeffer
-- Year: 2026
-- Journal/Venue: ArXiv.org
+- Authors: others, Martin Jankowiak, Theofanis Karaletsos
+- Year: 2020
+- Journal/Venue: arXiv
 - Venue Quality: preprint
-- Importance: 70.40 (keep)
-- Relevance: 54.00
+- Importance: 86.40 (keep)
+- Relevance: 44.00
 - Citations: 0
-- Topics: stochastic_analysis, stochastic_analysis/stochastic_dynamics/sde_theory, statistical_physics, statistical_physics/non_equilibrium_dynamics/nonequilibrium, ai_for_physics, stochastic_analysis/stochastic_dynamics, statistical_physics/non_equilibrium_dynamics, ai_for_physics/physics_informed_modeling, ai_for_physics/physics_informed_modeling/scientific_ml_applications
-- URL: https://openalex.org/W7149209803
+- Topics: ai_for_physics, ai_for_physics/generative_dynamics/score_matching, bridges, bridges/thermodynamic_inference/info_geometry, ai_for_physics/generative_dynamics, bridges/thermodynamic_inference
+- URL: https://arxiv.org/abs/2002.08676
 
-## 19. Disentangled Deep Priors for Bayesian Inverse Problems
+## 17. Disentangled Deep Priors for Bayesian Inverse Problems
 
 - Authors: Arkaprabha Ganguli, Emil M. Constantinescu
 - Year: 2026
 - Journal/Venue: ArXiv.org
 - Venue Quality: preprint
-- Importance: 68.60 (keep)
+- Importance: 85.60 (keep)
 - Relevance: 51.00
 - Citations: 0
 - Topics: ai_for_physics, ai_for_physics/physics_informed_modeling, ai_for_physics/physics_informed_modeling/scientific_ml_applications
 - URL: https://openalex.org/W7149873794
 
-## 20. Non-equilibrium Dynamical Attractors and Thermalisation of Charm Quarks in Nuclear Collisions at the LHC Energy
+## 18. Entropy production fluctuation theorem and the nonequilibrium work relation for free energy differences
 
-- Authors: Shile Chen, Vincenzo Nugara, Maria Lucia Sambataro, Salvatore Plumari
-- Year: 2026
-- Journal/Venue: arXiv (Cornell University)
-- Venue Quality: unranked
-- Importance: 62.40 (keep)
-- Relevance: 54.00
+- Authors: Gavin E. Crooks
+- Year: 1999
+- Journal/Venue: Physical Review E
+- Venue Quality: high_quality
+- Importance: 85.20 (keep)
+- Relevance: 42.00
 - Citations: 0
-- Topics: bridges/translation_layers/fokker_planck_master, statistical_physics, statistical_physics/non_equilibrium_dynamics/nonequilibrium, bridges, statistical_physics/non_equilibrium_dynamics, bridges/translation_layers
-- URL: https://openalex.org/W7151673468
+- Topics: statistical_physics, statistical_physics/non_equilibrium_dynamics/nonequilibrium, statistical_physics/non_equilibrium_dynamics/fluctuation_theorems, statistical_physics/non_equilibrium_dynamics
+- URL: https://journals.aps.org/pre/abstract/10.1103/PhysRevE.60.2721
+
+## 19. A Physics-Constrained Deep-Learning Framework based on Long-Term Remote-Sensing Data for Retrieving Vertical Distribution of PM <sub>2.5</sub> Chemical Components
+
+- Authors: Hongyi Li, Tao Yang, Yele Sun, Zifa Wang
+- Year: 2026
+- Journal/Venue: Atmospheric measurement techniques
+- Venue Quality: solid_domain
+- Importance: 83.80 (keep)
+- Relevance: 58.00
+- Citations: 0
+- Topics: ai_for_physics, ai_for_physics/physics_informed_modeling/physics_informed_generative, urban_complex_systems, urban_complex_systems/urban_data_and_generation/urban_data_science, ai_for_physics/physics_informed_modeling, urban_complex_systems/urban_data_and_generation
+- URL: https://openalex.org/W7146945880
+
+## 20. Macroscopic Stochastic Thermodynamics
+
+- Authors: Gianmaria Falasco, Massimiliano Esposito
+- Year: 2023
+- Journal/Venue: Reviews of Modern Physics, 97(1), 015002 (2025)
+- Venue Quality: top_tier
+- Importance: 80.40 (keep)
+- Relevance: 64.00
+- Citations: 0
+- Topics: statistical_physics, statistical_physics/non_equilibrium_dynamics/nonequilibrium, statistical_physics/non_equilibrium_dynamics/fluctuation_theorems, statistical_physics/non_equilibrium_dynamics
+- URL: http://arxiv.org/abs/2307.12406v3

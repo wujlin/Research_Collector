@@ -54,13 +54,31 @@ class ImportanceRanker:
         score = max(0.0, round(score, 2))
         return score, self._paper_bucket(score)
 
+    _PREPRINT_NAMES = frozenset([
+        "arxiv", "arxiv org", "arxiv cornell university", "biorxiv",
+        "biorxiv cold spring harbor laboratory", "chemrxiv", "medrxiv",
+        "ssrn", "preprints org", "zenodo",
+        "zenodo cern european organization for nuclear research",
+    ])
+
     @staticmethod
     def venue_quality_label(payload: dict[str, Any]) -> str:
         tier = int(payload.get("tier", 0) or 0)
         journal = ImportanceRanker._normalize_text(payload.get("journal", ""))
         venue = ImportanceRanker._normalize_text(payload.get("venue", ""))
         source = ImportanceRanker._normalize_text(payload.get("source", ""))
-        if source == "arxiv" or journal in {"arxiv", "arxiv org"} or venue == "arxiv":
+        is_preprint = (
+            source == "arxiv"
+            or journal in ImportanceRanker._PREPRINT_NAMES
+            or venue in ImportanceRanker._PREPRINT_NAMES
+        )
+        if is_preprint:
+            if tier >= 1:
+                if tier == 1:
+                    return "top_tier"
+                if tier == 2:
+                    return "high_quality"
+                return "solid_domain"
             return "preprint"
         if tier == 1:
             return "top_tier"

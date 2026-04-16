@@ -7,7 +7,7 @@ doi: ""
 arxiv: ""
 url: "https://openalex.org/W7149873883"
 pdf_url: "https://arxiv.org/pdf/2604.02121"
-topics: ["ai_for_physics/generative_dynamics/score_matching", "ai_for_physics/generative_dynamics", "ai_for_physics"]
+topics: ["ai_for_physics", "ai_for_physics/generative_dynamics/score_matching", "ai_for_physics/generative_dynamics"]
 tier: 0
 citations: 0
 relevance_score: 51.0
@@ -26,9 +26,9 @@ Stochastic kinetic models are ubiquitous in physics, yet inferring their paramet
 
 ## Connections
 
+- [[ai_for_physics]]
 - [[score_matching]]
 - [[generative_dynamics]]
-- [[ai_for_physics]]
 
 ## Notes
 

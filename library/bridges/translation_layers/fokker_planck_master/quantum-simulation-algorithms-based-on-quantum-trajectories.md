@@ -7,10 +7,10 @@ doi: "10.22331/q-2026-04-13-2063"
 arxiv: ""
 url: "https://openalex.org/W7154153160"
 pdf_url: "https://quantum-journal.org/papers/q-2026-04-13-2063/pdf/"
-topics: ["bridges/translation_layers", "bridges", "bridges/translation_layers/fokker_planck_master"]
-tier: 0
+topics: ["bridges/translation_layers/fokker_planck_master", "bridges", "bridges/translation_layers"]
+tier: 2
 citations: 0
-relevance_score: 47.0
+relevance_score: 61.0
 collected: "2026-04-16"
 status: "unread"
 source: "openalex"
@@ -26,9 +26,9 @@ Quantum simulation has emerged as a key application of quantum computing, with s
 
 ## Connections
 
-- [[translation_layers]]
-- [[bridges]]
 - [[fokker_planck_master]]
+- [[bridges]]
+- [[translation_layers]]
 
 ## Notes
 

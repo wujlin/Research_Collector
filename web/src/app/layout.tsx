@@ -5,6 +5,7 @@ const links = [
   { href: "/", label: "Overview" },
   { href: "/library", label: "Library" },
   { href: "/topics", label: "Topics" },
+  { href: "/graph", label: "Graph" },
   { href: "/youtube", label: "YouTube" },
   { href: "/digests", label: "Digests" },
   { href: "/search", label: "Search" },

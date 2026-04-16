@@ -3,9 +3,31 @@
 from __future__ import annotations
 
 import math
+import re
 from typing import Any
 
 from src.utils.helpers import load_config, normalize_whitespace, utc_now
+
+_STRIP_PUNCT_RE = re.compile(r"[^a-z0-9\s]")
+_VOLUME_SUFFIX_RE = re.compile(
+    r"[,\s]+\d{1,4}\s*[\(,].*$"    # "Physical Review E, 101, 022129 (2020)" → strip from ",101..."
+    r"|[,\s]+\d{1,4}\s*$"           # trailing volume number
+    r"|\s*\([\d\-]+\)\s*\d*\s*$"    # trailing "(2025)" or "(2025) 053210"
+)
+_PREPRINT_HOSTS = frozenset([
+    "arxiv", "arxiv.org", "arxiv (cornell university)",
+    "biorxiv", "biorxiv (cold spring harbor laboratory)",
+    "chemrxiv", "medrxiv", "ssrn", "preprints.org",
+    "zenodo", "zenodo (cern european organization for nuclear research)",
+    "hal", "spire - sciences po institutional repository",
+])
+
+
+def _normalize_venue(name: str) -> str:
+    """统一 venue 名称：去标点、压空白、小写。"""
+    name = normalize_whitespace(name).lower()
+    name = _STRIP_PUNCT_RE.sub(" ", name)
+    return normalize_whitespace(name)
 
 
 class RelevanceScorer:
@@ -55,7 +77,16 @@ class RelevanceScorer:
         journal = normalize_whitespace(record.get("journal", "")).lower()
         venue = normalize_whitespace(record.get("venue", "")).lower()
         source = normalize_whitespace(record.get("source", "")).lower()
-        if source == "arxiv" or journal in {"arxiv", "arxiv.org"} or venue == "arxiv":
+        norm_journal = _normalize_venue(journal)
+        norm_venue = _normalize_venue(venue)
+        if source == "arxiv" or norm_journal in _PREPRINT_HOSTS or norm_venue in _PREPRINT_HOSTS:
+            if tier_level >= 1:
+                # arXiv 论文已正式发表在已知期刊，按期刊 tier 判定
+                if tier_level == 1:
+                    return "top_tier"
+                if tier_level == 2:
+                    return "high_quality"
+                return "solid_domain"
             return "preprint"
         if tier_level == 1:
             return "top_tier"
@@ -66,25 +97,50 @@ class RelevanceScorer:
         return "unranked"
 
     def _match_tier(self, record: dict[str, Any]) -> tuple[int, int]:
-        venue_candidates = [
-            normalize_whitespace(record.get("journal", "")).lower(),
-            normalize_whitespace(record.get("venue", "")).lower(),
-        ]
-        doi = normalize_whitespace(record.get("doi", "")).lower()
+        raw_journal = normalize_whitespace(record.get("journal", "")).lower()
+        raw_venue = normalize_whitespace(record.get("venue", "")).lower()
+        norm_journal = _normalize_venue(raw_journal)
+        norm_venue = _normalize_venue(raw_venue)
 
-        for candidate in venue_candidates:
-            if not candidate:
+        # 优先对 journal 做全策略匹配（精确→归一化→剥离卷号），
+        # 这样 arXiv 论文的 journal_ref 能正确识别出已发表期刊 tier，
+        # 而不会被 venue="arXiv" 的预印本 tier 抢先命中。
+        best: tuple[int, int] | None = None
+        for raw, norm in ((raw_journal, norm_journal), (raw_venue, norm_venue)):
+            # 精确匹配
+            if raw and raw in self._journal_index:
+                hit = self._journal_index[raw]
+                if best is None or hit[0] > best[0]:
+                    best = hit
                 continue
-            if candidate in self._journal_index:
-                return self._journal_index[candidate]
+            # 去标点归一化匹配
+            if norm and norm in self._journal_index:
+                hit = self._journal_index[norm]
+                if best is None or hit[0] > best[0]:
+                    best = hit
+                continue
+            # 剥离卷号/年份后缀（arXiv journal_ref 如 "Phys. Rev. E 101, 022129 (2020)"）
+            stripped = _VOLUME_SUFFIX_RE.sub("", raw).strip()
+            if stripped and stripped != raw:
+                stripped_norm = _normalize_venue(stripped)
+                if stripped_norm in self._journal_index:
+                    hit = self._journal_index[stripped_norm]
+                    if best is None or hit[0] > best[0]:
+                        best = hit
 
-        for key, value in self._journal_index.items():
-            normalized_key = normalize_whitespace(key).lower()
-            if not normalized_key:
-                continue
-            if doi and normalized_key and normalized_key in doi:
-                return value
-        return (1 if record.get("source") == "arxiv" else 0, 2 if record.get("source") == "arxiv" else 0)
+        if best is not None:
+            return best
+
+        # 检查是否为已知预印本平台
+        for candidate in (norm_journal, norm_venue):
+            if candidate in _PREPRINT_HOSTS:
+                return (0, 2)
+
+        # arXiv 来源默认预印本 tier
+        if record.get("source") == "arxiv":
+            return (0, 2)
+
+        return (0, 0)
 
     @staticmethod
     def _build_journal_index(journal_tiers: dict[str, Any]) -> dict[str, tuple[int, int]]:
@@ -95,5 +151,10 @@ class RelevanceScorer:
             for journal in tier_data.get("journals", []):
                 names = [journal["name"], *journal.get("aliases", [])]
                 for name in names:
-                    index[normalize_whitespace(name).lower()] = (tier_level, tier_weight)
+                    # 存两份：原始小写 + 去标点归一化
+                    key_original = normalize_whitespace(name).lower()
+                    key_normalized = _normalize_venue(name)
+                    index[key_original] = (tier_level, tier_weight)
+                    if key_normalized != key_original:
+                        index[key_normalized] = (tier_level, tier_weight)
         return index

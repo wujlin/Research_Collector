@@ -127,7 +127,28 @@ class WebSnapshotExporter:
             reverse=True,
         )
 
+        # 作者快照（含机构、合作论文数）
+        author_set: dict[int, dict] = {}
+        for paper in papers:
+            for author in paper.authors:
+                if author.id not in author_set:
+                    author_set[author.id] = {
+                        "id": author.id,
+                        "name": author.name,
+                        "affiliation": author.affiliation or "",
+                        "openalex_id": author.openalex_id or "",
+                        "h_index": author.h_index,
+                        "paper_count": 0,
+                        "topic_keys": [],
+                    }
+                author_set[author.id]["paper_count"] += 1
+                for topic in paper.topics[:2]:
+                    if topic.key not in author_set[author.id]["topic_keys"]:
+                        author_set[author.id]["topic_keys"].append(topic.key)
+        author_payload = sorted(author_set.values(), key=lambda a: a["paper_count"], reverse=True)
+
         dump_json(self.output_dir / "papers.json", paper_payload)
         dump_json(self.output_dir / "topics.json", topic_payload)
         dump_json(self.output_dir / "youtube.json", youtube_payload)
+        dump_json(self.output_dir / "authors.json", author_payload)
         dump_json(self.output_dir / "stats.json", database.get_stats())

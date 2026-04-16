@@ -60,26 +60,46 @@ export type DigestEntry = {
   created_at: string;
 };
 
+export type Author = {
+  id: number;
+  name: string;
+  affiliation: string;
+  openalex_id: string;
+  h_index: number;
+  paper_count: number;
+  topic_keys: string[];
+};
+
 export type GraphNode = {
   id: string;
   label: string;
-  type: "topic" | "paper";
+  type: "topic" | "paper" | "author" | "venue";
   parent_key?: string | null;
   depth?: number;
   is_leaf?: boolean;
   relevance_score?: number;
   citation_count?: number;
+  year?: number;
+  tier?: number;
+  affiliation?: string;
+  h_index?: number;
+  paper_count?: number;
+  reputation?: string;
+  venue?: string;
+  weight?: number;
 };
 
 export type GraphEdge = {
   source: string;
   target: string;
   type: string;
+  weight?: number;
 };
 
 export type GraphPayload = {
   nodes: GraphNode[];
   edges: GraphEdge[];
+  stats?: Record<string, number>;
 };
 
 export type Stats = {

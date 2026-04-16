@@ -1,0 +1,265 @@
+{
+  "nodes": [
+    {
+      "id": "venue:1",
+      "label": "Nature",
+      "tier": 1,
+      "reputation": "trusted",
+      "paper_count": 1
+    },
+    {
+      "id": "venue:2",
+      "label": "Science",
+      "tier": 1,
+      "reputation": "trusted",
+      "paper_count": 1
+    },
+    {
+      "id": "venue:7",
+      "label": "Physical Review Letters",
+      "tier": 1,
+      "reputation": "trusted",
+      "paper_count": 1
+    },
+    {
+      "id": "venue:19",
+      "label": "PNAS",
+      "tier": 1,
+      "reputation": "trusted",
+      "paper_count": 1
+    },
+    {
+      "id": "venue:20",
+      "label": "Nature Communications",
+      "tier": 1,
+      "reputation": "trusted",
+      "paper_count": 1
+    },
+    {
+      "id": "venue:21",
+      "label": "Science Advances",
+      "tier": 1,
+      "reputation": "trusted",
+      "paper_count": 1
+    },
+    {
+      "id": "venue:25",
+      "label": "Physical Review E",
+      "tier": 2,
+      "reputation": "trusted",
+      "paper_count": 1
+    },
+    {
+      "id": "venue:28",
+      "label": "Physical Review E",
+      "tier": 2,
+      "reputation": "trusted",
+      "paper_count": 2
+    },
+    {
+      "id": "venue:40",
+      "label": "Journal of Statistical Physics",
+      "tier": 2,
+      "reputation": "trusted",
+      "paper_count": 1
+    },
+    {
+      "id": "venue:43",
+      "label": "NeurIPS",
+      "tier": 2,
+      "reputation": "trusted",
+      "paper_count": 1
+    },
+    {
+      "id": "venue:45",
+      "label": "ICML",
+      "tier": 2,
+      "reputation": "trusted",
+      "paper_count": 1
+    },
+    {
+      "id": "venue:47",
+      "label": "ICLR",
+      "tier": 2,
+      "reputation": "trusted",
+      "paper_count": 2
+    },
+    {
+      "id": "venue:53",
+      "label": "Physical Review Research",
+      "tier": 2,
+      "reputation": "trusted",
+      "paper_count": 1
+    },
+    {
+      "id": "venue:58",
+      "label": "SciPost Physics",
+      "tier": 2,
+      "reputation": "trusted",
+      "paper_count": 1
+    },
+    {
+      "id": "venue:62",
+      "label": "Journal of Physics A Mathematical and Theoretical",
+      "tier": 2,
+      "reputation": "trusted",
+      "paper_count": 1
+    },
+    {
+      "id": "venue:65",
+      "label": "The Journal of Chemical Physics",
+      "tier": 2,
+      "reputation": "trusted",
+      "paper_count": 1
+    },
+    {
+      "id": "venue:69",
+      "label": "Communications Physics",
+      "tier": 2,
+      "reputation": "trusted",
+      "paper_count": 1
+    },
+    {
+      "id": "venue:70",
+      "label": "Computer Methods in Applied Mechanics and Engineering",
+      "tier": 2,
+      "reputation": "trusted",
+      "paper_count": 1
+    },
+    {
+      "id": "venue:72",
+      "label": "SIAM Journal on Scientific Computing",
+      "tier": 2,
+      "reputation": "trusted",
+      "paper_count": 2
+    },
+    {
+      "id": "venue:75",
+      "label": "Journal of Applied Probability",
+      "tier": 2,
+      "reputation": "trusted",
+      "paper_count": 1
+    },
+    {
+      "id": "venue:81",
+      "label": "Quantum",
+      "tier": 2,
+      "reputation": "trusted",
+      "paper_count": 1
+    },
+    {
+      "id": "venue:82",
+      "label": "Reports on Progress in Physics",
+      "tier": 2,
+      "reputation": "trusted",
+      "paper_count": 1
+    },
+    {
+      "id": "venue:85",
+      "label": "Letters in Mathematical Physics",
+      "tier": 2,
+      "reputation": "unreviewed",
+      "paper_count": 1
+    },
+    {
+      "id": "venue:87",
+      "label": "Annalen der Physik",
+      "tier": 2,
+      "reputation": "unreviewed",
+      "paper_count": 1
+    },
+    {
+      "id": "venue:89",
+      "label": "Journal of Differential Equations",
+      "tier": 2,
+      "reputation": "unreviewed",
+      "paper_count": 1
+    },
+    {
+      "id": "venue:91",
+      "label": "Archive for Rational Mechanics and Analysis",
+      "tier": 2,
+      "reputation": "unreviewed",
+      "paper_count": 1
+    },
+    {
+      "id": "venue:92",
+      "label": "Advances in Applied Probability",
+      "tier": 2,
+      "reputation": "unreviewed",
+      "paper_count": 1
+    },
+    {
+      "id": "venue:116",
+      "label": "Atmospheric Measurement Techniques",
+      "tier": 3,
+      "reputation": "trusted",
+      "paper_count": 1
+    },
+    {
+      "id": "venue:118",
+      "label": "Physica A Statistical Mechanics and its Applications",
+      "tier": 3,
+      "reputation": "cautious",
+      "paper_count": 1
+    },
+    {
+      "id": "venue:125",
+      "label": "arXiv",
+      "tier": 0,
+      "reputation": "unreviewed",
+      "paper_count": 40
+    },
+    {
+      "id": "venue:126",
+      "label": "arXiv",
+      "tier": 0,
+      "reputation": "unreviewed",
+      "paper_count": 24
+    },
+    {
+      "id": "venue:127",
+      "label": "arXiv",
+      "tier": 0,
+      "reputation": "unreviewed",
+      "paper_count": 36
+    },
+    {
+      "id": "venue:129",
+      "label": "bioRxiv",
+      "tier": 0,
+      "reputation": "unreviewed",
+      "paper_count": 3
+    },
+    {
+      "id": "venue:130",
+      "label": "ChemRxiv",
+      "tier": 0,
+      "reputation": "unreviewed",
+      "paper_count": 1
+    },
+    {
+      "id": "venue:132",
+      "label": "Preprints.org",
+      "tier": 0,
+      "reputation": "unreviewed",
+      "paper_count": 6
+    }
+  ],
+  "edges": [
+    {
+      "source": "venue:45",
+      "target": "venue:47",
+      "weight": 1
+    },
+    {
+      "source": "venue:82",
+      "target": "venue:125",
+      "weight": 1
+    }
+  ],
+  "stats": {
+    "venues": 35,
+    "venue_edges": 2
+  }
+}

@@ -7,10 +7,10 @@ doi: "10.1088/1751-8121/ae5c48"
 arxiv: ""
 url: "https://openalex.org/W4416339396"
 pdf_url: ""
-topics: ["statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics", "bridges/transport_and_spatial_generation", "bridges"]
-tier: 0
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "bridges", "statistical_physics/non_equilibrium_dynamics", "bridges/transport_and_spatial_generation"]
+tier: 2
 citations: 0
-relevance_score: 50.0
+relevance_score: 64.0
 collected: "2026-04-16"
 status: "unread"
 source: "openalex"
@@ -26,11 +26,11 @@ Abstract In this work, we present a geometrical formulation of quantum thermodyn
 
 ## Connections
 
-- [[nonequilibrium]]
-- [[non_equilibrium_dynamics]]
 - [[statistical_physics]]
-- [[transport_and_spatial_generation]]
+- [[nonequilibrium]]
 - [[bridges]]
+- [[non_equilibrium_dynamics]]
+- [[transport_and_spatial_generation]]
 
 ## Notes
 

@@ -7,7 +7,7 @@ doi: "10.22323/1.518.0040"
 arxiv: ""
 url: "https://openalex.org/W7154227824"
 pdf_url: "https://pos.sissa.it/518/040/pdf"
-topics: ["statistical_physics/equilibrium_structures", "statistical_physics", "ai_for_physics/generative_dynamics", "ai_for_physics", "ai_for_physics/generative_dynamics/score_matching"]
+topics: ["statistical_physics", "ai_for_physics", "ai_for_physics/generative_dynamics/score_matching", "statistical_physics/equilibrium_structures", "ai_for_physics/generative_dynamics"]
 tier: 0
 citations: 0
 relevance_score: 47.6
@@ -26,11 +26,11 @@ Although ensemble generation remains a central challenge in lattice field theory
 
 ## Connections
 
-- [[equilibrium_structures]]
 - [[statistical_physics]]
-- [[generative_dynamics]]
 - [[ai_for_physics]]
 - [[score_matching]]
+- [[equilibrium_structures]]
+- [[generative_dynamics]]
 
 ## Notes
 

@@ -7,7 +7,7 @@ doi: ""
 arxiv: ""
 url: "https://openalex.org/W7153670804"
 pdf_url: "https://arxiv.org/pdf/2604.07678"
-topics: ["statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics", "urban_complex_systems/scaling_and_evolution/urban_scaling", "urban_complex_systems/scaling_and_evolution", "urban_complex_systems"]
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "urban_complex_systems", "urban_complex_systems/scaling_and_evolution/urban_scaling", "statistical_physics/non_equilibrium_dynamics", "urban_complex_systems/scaling_and_evolution"]
 tier: 0
 citations: 0
 relevance_score: 53.09
@@ -26,12 +26,12 @@ We study the asymptotic behavior of the continuum Kuramoto model with a fraction
 
 ## Connections
 
-- [[nonequilibrium]]
-- [[non_equilibrium_dynamics]]
 - [[statistical_physics]]
-- [[urban_scaling]]
-- [[scaling_and_evolution]]
+- [[nonequilibrium]]
 - [[urban_complex_systems]]
+- [[urban_scaling]]
+- [[non_equilibrium_dynamics]]
+- [[scaling_and_evolution]]
 
 ## Notes
 

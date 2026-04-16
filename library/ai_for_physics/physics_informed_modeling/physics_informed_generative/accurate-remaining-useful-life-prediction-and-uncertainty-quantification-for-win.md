@@ -11,7 +11,7 @@ topics: ["ai_for_physics", "ai_for_physics/physics_informed_modeling/physics_inf
 tier: 0
 citations: 0
 relevance_score: 50.0
-collected: "2026-04-15"
+collected: "2026-04-16"
 status: "unread"
 source: "openalex"
 ---

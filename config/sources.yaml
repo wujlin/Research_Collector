@@ -3,10 +3,14 @@
 arxiv_categories:
   - "cond-mat.stat-mech"
   - "cond-mat.soft"
+  - "cond-mat.dis-nn"
   - "cs.LG"
   - "math.PR"
+  - "math-ph"
   - "physics.soc-ph"
   - "physics.data-an"
+  - "physics.comp-ph"
+  - "quant-ph"
   - "stat.ML"
   - "nlin.AO"
 
@@ -33,7 +37,7 @@ journal_tiers:
       - name: "Physical Review Letters"
         openalex_id: "S24807848"
         issn: "0031-9007"
-        aliases: ["PRL"]
+        aliases: ["PRL", "Phys. Rev. Lett.", "Phys. Rev. Letters"]
       - name: "Communications in Mathematical Physics"
         issn: "0010-3616"
       - name: "Annals of Applied Probability"
@@ -45,22 +49,27 @@ journal_tiers:
         aliases: ["JMLR"]
       - name: "Review of Modern Physics"
         issn: "0034-6861"
+        aliases: ["Rev. Mod. Phys.", "Reviews of Modern Physics"]
       - name: "PNAS"
         openalex_id: "S125754415"
         issn: "0027-8424"
+      - name: "Nature Communications"
+        issn: "2041-1723"
+      - name: "Science Advances"
+        issn: "2375-2548"
 
   tier_2:
     weight: 7
     journals:
       - name: "Physical Review X"
         issn: "2160-3308"
-        aliases: ["PRX"]
+        aliases: ["PRX", "Phys. Rev. X"]
       - name: "Physical Review E"
         issn: "2470-0045"
-        aliases: ["PRE"]
+        aliases: ["PRE", "Phys. Rev. E", "Physical review. E"]
       - name: "Physical Review B"
         issn: "2469-9969"
-        aliases: ["PRB"]
+        aliases: ["PRB", "Phys. Rev. B"]
       - name: "SIAM Journal on Applied Mathematics"
         issn: "0036-1399"
       - name: "SIAM/ASA Journal on Uncertainty Quantification"
@@ -92,11 +101,71 @@ journal_tiers:
         aliases: ["Conference on Uncertainty in Artificial Intelligence"]
       - name: "Physical Review Research"
         issn: "2643-1564"
-        aliases: ["PR Research", "PRResearch"]
+        aliases: ["PR Research", "PRResearch", "Phys. Rev. Research", "Phys. Rev. Res."]
       - name: "SciPost Physics"
       - name: "New Journal of Physics"
         issn: "1367-2630"
         aliases: ["New J. Phys.", "NJP"]
+      - name: "Journal of Physics A Mathematical and Theoretical"
+        issn: "1751-8113"
+        aliases: ["J. Phys. A", "Journal of Physics A"]
+      - name: "The Journal of Chemical Physics"
+        issn: "0021-9606"
+        aliases: ["J. Chem. Phys.", "Journal of Chemical Physics", "Journal of chemical physics"]
+      - name: "Communications Physics"
+        issn: "2399-3650"
+      - name: "Computer Methods in Applied Mechanics and Engineering"
+        issn: "0045-7825"
+        aliases: ["CMAME"]
+      - name: "SIAM Journal on Scientific Computing"
+        issn: "1064-8275"
+        aliases: ["SIAM J. Sci. Comput."]
+      - name: "Annals of Physics"
+        issn: "0003-4916"
+      - name: "Journal of Applied Probability"
+        issn: "0021-9002"
+      - name: "Stochastic Processes and their Applications"
+        issn: "0304-4149"
+      - name: "Annals of Probability"
+        issn: "0091-1798"
+      - name: "Physical Review Applied"
+        issn: "2331-7019"
+        aliases: ["PR Applied", "Phys. Rev. Applied"]
+      - name: "Quantum"
+        issn: "2521-327X"
+      - name: "Reports on Progress in Physics"
+        issn: "0034-4885"
+        aliases: ["Rep. Prog. Phys.", "Rep.Math.Phys."]
+      - name: "Letters in Mathematical Physics"
+        issn: "0377-9017"
+        aliases: ["Lett. Math. Phys."]
+      - name: "Annalen der Physik"
+        issn: "0003-3804"
+        aliases: ["Ann. Phys."]
+      - name: "Journal of Differential Equations"
+        issn: "0022-0396"
+        aliases: ["J. Differ. Equ."]
+      - name: "Archive for Rational Mechanics and Analysis"
+        issn: "0003-9527"
+      - name: "Advances in Applied Probability"
+        issn: "0001-8678"
+      - name: "Foundations of Computational Mathematics"
+        issn: "1615-3375"
+        aliases: ["Found. Comput. Math."]
+      - name: "SIAM Review"
+        issn: "0036-1445"
+      - name: "Journal of Nonlinear Science"
+        issn: "0938-8974"
+        aliases: ["J. Nonlinear Sci."]
+      - name: "Multiscale Modeling and Simulation"
+        issn: "1540-3459"
+        aliases: ["SIAM Multiscale Model. Simul."]
+      - name: "npj Computational Materials"
+        issn: "2057-3960"
+      - name: "Nature Computational Science"
+        issn: "2662-8457"
+      - name: "Proceedings of the National Academy of Sciences"
+        aliases: ["Proc. Natl. Acad. Sci."]
 
   tier_3:
     weight: 4
@@ -117,10 +186,32 @@ journal_tiers:
         issn: "2632-2153"
       - name: "EPJ B"
         aliases: ["The European Physical Journal B"]
+      - name: "Philosophical Transactions of the Royal Society A"
+        issn: "1364-503X"
+        aliases: ["Phil. Trans. R. Soc. A", "Proceedings of the Royal Society A"]
+      - name: "Entropy"
+        issn: "1099-4300"
       - name: "Atmospheric Measurement Techniques"
+      - name: "Computational Urban Science"
+        issn: "2730-6852"
+      - name: "Physica A Statistical Mechanics and its Applications"
+        issn: "0378-4371"
+        aliases: ["Physica A", "Physica A: Statistical Mechanics and its Applications"]
+      - name: "Journal of Physics: Complexity"
+        issn: "2632-072X"
+      - name: "Machine Learning for Computational Science and Engineering"
+        aliases: ["ML4CSE"]
+      - name: "npj Climate and Atmospheric Science"
+        issn: "2397-3722"
 
   preprint:
     weight: 2
     journals:
       - name: "arXiv"
         aliases: ["ArXiv.org", "arXiv (Cornell University)"]
+      - name: "bioRxiv"
+        aliases: ["bioRxiv (Cold Spring Harbor Laboratory)"]
+      - name: "ChemRxiv"
+      - name: "medRxiv"
+      - name: "Preprints.org"
+      - name: "SSRN"

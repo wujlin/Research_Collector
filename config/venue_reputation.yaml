@@ -83,6 +83,78 @@ venues:
   "nature cities":
     status: "trusted"
     note: "Nature Portfolio urban journal; strong signal, though still newer than the core Nature titles."
+  "nature communications":
+    status: "trusted"
+    note: "High-impact broad-scope open-access journal from Nature Portfolio."
+  "science advances":
+    status: "trusted"
+    note: "AAAS open-access counterpart to Science; strong signal."
+  "journal of physics a mathematical and theoretical":
+    status: "trusted"
+    note: "Core mathematical/theoretical physics journal from IOP."
+  "the journal of chemical physics":
+    status: "trusted"
+    note: "Established core journal for chemical physics and statistical mechanics."
+  "communications physics":
+    status: "trusted"
+    note: "Nature Portfolio physics communications journal; solid field signal."
+  "computer methods in applied mechanics and engineering":
+    status: "trusted"
+    note: "Top computational methods journal; strong for PINN and numerical PDE work."
+  "siam journal on scientific computing":
+    status: "trusted"
+    note: "Strong SIAM venue for scientific computing and numerical algorithms."
+  "annals of physics":
+    status: "trusted"
+    note: "Established theoretical physics journal with strong topical signal."
+  "journal of applied probability":
+    status: "trusted"
+    note: "Established Applied Probability Trust journal for probability and stochastic processes."
+  "stochastic processes and their applications":
+    status: "trusted"
+    note: "Core journal for stochastic processes, strong field signal."
+  "annals of probability":
+    status: "trusted"
+    note: "Top-tier probability journal from IMS."
+  "physical review applied":
+    status: "trusted"
+    note: "APS journal for applied physics; trusted for physics-informed applications."
+  "quantum":
+    status: "trusted"
+    note: "Well-regarded open-access quantum physics journal."
+  "reports on progress in physics":
+    status: "trusted"
+    note: "High-prestige review venue in physics."
+  "philosophical transactions of the royal society a":
+    status: "trusted"
+    note: "Respected long-running journal for mathematical, physical and engineering sciences."
+  "foundations of computational mathematics":
+    status: "trusted"
+    note: "Top-tier journal at the intersection of mathematics and computation; Q1 in mathematics."
+  "siam review":
+    status: "trusted"
+    note: "Premier SIAM review journal with highest visibility in applied math and computational science."
+  "journal of nonlinear science":
+    status: "trusted"
+    note: "Strong specialist journal for nonlinear dynamics, pattern formation, and stochastic systems."
+  "multiscale modeling and simulation":
+    status: "trusted"
+    note: "SIAM journal for multiscale methods; relevant for PDE/SDE scale-bridging problems."
+  "npj computational materials":
+    status: "trusted"
+    note: "Nature Partner Journal for computational materials; strong ML + physics signal."
+  "computational urban science":
+    status: "cautious"
+    note: "Newer Springer Nature OA journal for computational urban science; IF 3.2, growing but not yet established enough for standalone Must Read signal."
+  "physica a statistical mechanics and its applications":
+    status: "cautious"
+    note: "Broad-scope statistical mechanics venue; legitimate but needs article-level screening."
+  "journal of physics: complexity":
+    status: "cautious"
+    note: "IOP complexity journal, newer but topically relevant; use article-level screening."
+  "npj climate and atmospheric science":
+    status: "trusted"
+    note: "Nature Partner Journal for climate and atmospheric science; solid signal for physics-constrained ML applications."
   "scientific reports":
     status: "cautious"
     note: "Large broad-scope OA venue with technical-soundness positioning; do not treat as a default target venue or Must Read signal by itself."

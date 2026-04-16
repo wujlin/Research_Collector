@@ -1,7 +1,7 @@
 ---
 title: "布朗运动与Wiener过程"
 description: ""
-paper_count: 3
+paper_count: 0
 last_updated: "2026-04-16"
 ---
 
@@ -9,11 +9,5 @@ last_updated: "2026-04-16"
 
 
 
-## Papers (3)
+## Papers (0)
 
-
-- [Ergodicity and regime recoverability in finite Markov-modulated random walks](ergodicity-and-regime-recoverability-in-finite-markov-modulated-random-walks.md) (2026, Scientific Reports, 0 citations)
-
-- [PINNs for Stochastic Dynamics: Modeling Brownian Motion via Verlet Integration](pinns-for-stochastic-dynamics-modeling-brownian-motion-via-verlet-integration.md) (2026, International Journal of Information Technology and Computer Science, 0 citations)
-
-- [On the movement of small particles suspended in stationary liquids required by the molecular-kinetic theory of heat](on-the-movement-of-small-particles-suspended-in-stationary-liquids-required-by-t.md) (1905, Annalen der Physik, 0 citations)

@@ -7,7 +7,7 @@ doi: "10.48550/arxiv.2604.05598"
 arxiv: ""
 url: "https://openalex.org/W7152933504"
 pdf_url: "https://arxiv.org/pdf/2604.05598"
-topics: ["stochastic_analysis/stochastic_dynamics/sde_theory", "stochastic_analysis/stochastic_dynamics", "stochastic_analysis"]
+topics: ["stochastic_analysis", "stochastic_analysis/stochastic_dynamics/sde_theory", "stochastic_analysis/stochastic_dynamics"]
 tier: 0
 citations: 0
 relevance_score: 51.0
@@ -26,9 +26,9 @@ We investigate several fundamental properties of kinetic Langevin processes in $
 
 ## Connections
 
+- [[stochastic_analysis]]
 - [[sde_theory]]
 - [[stochastic_dynamics]]
-- [[stochastic_analysis]]
 
 ## Notes
 

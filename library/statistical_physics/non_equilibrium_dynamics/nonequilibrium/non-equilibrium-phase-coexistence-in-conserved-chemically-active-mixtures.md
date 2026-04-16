@@ -7,7 +7,7 @@ doi: ""
 arxiv: ""
 url: "https://openalex.org/W7139147102"
 pdf_url: "https://arxiv.org/pdf/2603.17690"
-topics: ["statistical_physics/non_equilibrium_dynamics", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/equilibrium_structures"]
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/equilibrium_structures", "statistical_physics/non_equilibrium_dynamics"]
 tier: 0
 citations: 0
 relevance_score: 54.0
@@ -26,10 +26,10 @@ Chemical activity is known to affect phase coexistence and coarsening in liquid 
 
 ## Connections
 
-- [[non_equilibrium_dynamics]]
 - [[statistical_physics]]
 - [[nonequilibrium]]
 - [[equilibrium_structures]]
+- [[non_equilibrium_dynamics]]
 
 ## Notes
 

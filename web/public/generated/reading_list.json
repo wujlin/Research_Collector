@@ -13,7 +13,7 @@
     "year": 2021,
     "journal": "ICLR",
     "venue": "",
-    "importance_score": 129.6,
+    "importance_score": 145.6,
     "importance_bucket": "keep",
     "venue_quality": "high_quality",
     "relevance_score": 56.0,
@@ -34,56 +34,113 @@
     "pdf_url": ""
   },
   {
-    "id": 42,
-    "title": "Ergodicity and regime recoverability in finite Markov-modulated random walks",
+    "id": 278,
+    "title": "The NTK-Quadratic Form Equivalence of Macroscopic Probability Flow ODEs in Conditional Flow Matching",
     "authors": [
-      "Arina Pambukyan",
-      "Abdul Khader Jilani Saudagar",
-      "Sachin Kumar"
+      "Zhinan Xiong"
     ],
     "year": 2026,
-    "journal": "Scientific Reports",
-    "venue": "Scientific Reports",
-    "importance_score": 112.8,
+    "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+    "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+    "importance_score": 125.0,
     "importance_bucket": "keep",
-    "venue_quality": "solid_domain",
-    "relevance_score": 58.0,
+    "venue_quality": "preprint",
+    "relevance_score": 50.0,
     "citation_count": 0,
     "topics": [
-      "stochastic_analysis",
-      "stochastic_analysis/path_foundations/brownian_motion",
-      "stochastic_analysis/stochastic_dynamics/sde_theory",
-      "statistical_physics",
-      "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "stochastic_analysis/path_foundations",
-      "stochastic_analysis/stochastic_dynamics",
-      "statistical_physics/non_equilibrium_dynamics"
+      "ai_for_physics",
+      "ai_for_physics/generative_dynamics/sde_generative",
+      "ai_for_physics/generative_dynamics/flow_matching",
+      "ai_for_physics/generative_dynamics"
     ],
-    "url": "https://openalex.org/W7150102012",
-    "pdf_url": "https://www.nature.com/articles/s41598-026-45019-w_reference.pdf"
+    "url": "https://openalex.org/W7152250469",
+    "pdf_url": ""
   },
   {
-    "id": 3,
-    "title": "Nonequilibrium Equality for Free Energy Differences",
+    "id": 9,
+    "title": "Flow Matching for Generative Modeling",
     "authors": [
-      "Christopher Jarzynski"
+      "Yaron Lipman",
+      "Ricky T. Q. Chen",
+      "Heli Ben-Hamu",
+      "Maximilian Nickel",
+      "Matt Le"
     ],
-    "year": 1997,
-    "journal": "Physical Review Letters",
+    "year": 2023,
+    "journal": "ICLR",
     "venue": "",
-    "importance_score": 108.8,
+    "importance_score": 122.0,
     "importance_bucket": "keep",
-    "venue_quality": "top_tier",
-    "relevance_score": 48.0,
+    "venue_quality": "high_quality",
+    "relevance_score": 60.0,
     "citation_count": 0,
     "topics": [
-      "statistical_physics",
-      "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems",
-      "statistical_physics/non_equilibrium_dynamics"
+      "ai_for_physics",
+      "ai_for_physics/generative_dynamics/flow_matching",
+      "bridges",
+      "bridges/transport_and_spatial_generation/optimal_transport_urban",
+      "ai_for_physics/generative_dynamics",
+      "bridges/transport_and_spatial_generation"
     ],
-    "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.78.2690",
+    "url": "https://arxiv.org/abs/2210.02747",
     "pdf_url": ""
+  },
+  {
+    "id": 10,
+    "title": "A Primer on Variational Inference for Physics-Informed Deep Generative Modelling",
+    "authors": [
+      "Emilia Molinari",
+      "Michele Nervi",
+      "Luca Biggio",
+      "François Fleuret",
+      "Olga Fink"
+    ],
+    "year": 2024,
+    "journal": "arXiv",
+    "venue": "",
+    "importance_score": 113.2,
+    "importance_bucket": "keep",
+    "venue_quality": "preprint",
+    "relevance_score": 52.0,
+    "citation_count": 0,
+    "topics": [
+      "ai_for_physics",
+      "ai_for_physics/physics_informed_modeling/physics_informed_generative",
+      "bridges",
+      "bridges/thermodynamic_inference/info_geometry",
+      "ai_for_physics/physics_informed_modeling",
+      "bridges/thermodynamic_inference",
+      "bridges/thermodynamic_inference/variational_free_energy"
+    ],
+    "url": "https://arxiv.org/abs/2409.06560",
+    "pdf_url": ""
+  },
+  {
+    "id": 248,
+    "title": "Diffusion Models: A Mathematical Introduction",
+    "authors": [
+      "Sepehr Maleki",
+      "Negar Pourmoazemi"
+    ],
+    "year": 2025,
+    "journal": "arXiv",
+    "venue": "arXiv",
+    "importance_score": 111.6,
+    "importance_bucket": "keep",
+    "venue_quality": "preprint",
+    "relevance_score": 56.0,
+    "citation_count": 0,
+    "topics": [
+      "bridges/translation_layers/fokker_planck_master",
+      "ai_for_physics",
+      "ai_for_physics/generative_dynamics/ddpm",
+      "ai_for_physics/generative_dynamics/conditional_generation",
+      "bridges",
+      "ai_for_physics/generative_dynamics",
+      "bridges/translation_layers"
+    ],
+    "url": "http://arxiv.org/abs/2511.11746v1",
+    "pdf_url": "https://arxiv.org/pdf/2511.11746v1"
   },
   {
     "id": 12,
@@ -96,7 +153,7 @@
     "year": 2025,
     "journal": "arXiv",
     "venue": "",
-    "importance_score": 102.4,
+    "importance_score": 108.4,
     "importance_bucket": "keep",
     "venue_quality": "preprint",
     "relevance_score": 54.0,
@@ -119,29 +176,58 @@
     "pdf_url": ""
   },
   {
-    "id": 85,
-    "title": "Efficient quantum thermal simulation",
+    "id": 249,
+    "title": "Error Bounds for Flow Matching Methods",
     "authors": [
-      "Chi-Fang Chen",
-      "Michael J. Kastoryano",
-      "Fernando G. S. L. Brandão",
-      "András Gilyén"
+      "Joe Benton",
+      "George Deligiannidis",
+      "Arnaud Doucet"
     ],
-    "year": 2025,
-    "journal": "Nature",
-    "venue": "Nature",
-    "importance_score": 100.2,
+    "year": 2023,
+    "journal": "arXiv",
+    "venue": "arXiv",
+    "importance_score": 106.49,
     "importance_bucket": "keep",
-    "venue_quality": "top_tier",
-    "relevance_score": 71.17,
-    "citation_count": 4,
+    "venue_quality": "preprint",
+    "relevance_score": 47.48,
+    "citation_count": 0,
     "topics": [
-      "statistical_physics",
-      "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "statistical_physics/non_equilibrium_dynamics"
+      "ai_for_physics",
+      "ai_for_physics/generative_dynamics/sde_generative",
+      "ai_for_physics/generative_dynamics/flow_matching",
+      "ai_for_physics/generative_dynamics"
     ],
-    "url": "https://openalex.org/W4415196111",
-    "pdf_url": "https://www.nature.com/articles/s41586-025-09583-x.pdf"
+    "url": "http://arxiv.org/abs/2305.16860v2",
+    "pdf_url": "https://arxiv.org/pdf/2305.16860v2"
+  },
+  {
+    "id": 102,
+    "title": "Score-fPINN: Fractional Score-Based Physics-Informed Neural Networks for High-Dimensional Fokker-Planck-Lévy Equations",
+    "authors": [
+      "George Em Karniadakis",
+      "Kenji Kawaguchi",
+      "Zheyuan Hu",
+      "Zhongqiang Zhang"
+    ],
+    "year": 2026,
+    "journal": "Communications in Computational Physics",
+    "venue": "Communications in Computational Physics",
+    "importance_score": 105.0,
+    "importance_bucket": "keep",
+    "venue_quality": "unranked",
+    "relevance_score": 50.0,
+    "citation_count": 0,
+    "topics": [
+      "bridges/translation_layers/fokker_planck_master",
+      "ai_for_physics",
+      "ai_for_physics/generative_dynamics/score_matching",
+      "bridges",
+      "ai_for_physics/generative_dynamics",
+      "ai_for_physics/physics_informed_modeling",
+      "bridges/translation_layers"
+    ],
+    "url": "https://openalex.org/W4399795376",
+    "pdf_url": "https://arxiv.org/pdf/2406.11676"
   },
   {
     "id": 11,
@@ -155,7 +241,7 @@
     "year": 2024,
     "journal": "arXiv",
     "venue": "",
-    "importance_score": 95.2,
+    "importance_score": 103.2,
     "importance_bucket": "keep",
     "venue_quality": "preprint",
     "relevance_score": 52.0,
@@ -176,48 +262,43 @@
     "pdf_url": ""
   },
   {
-    "id": 10,
-    "title": "A Primer on Variational Inference for Physics-Informed Deep Generative Modelling",
+    "id": 244,
+    "title": "Journey from the Wilson exact RG towards the Wegner-Morris Fokker-Planck RG and the Carosso field-coarsening via Langevin stochastic processes",
     "authors": [
-      "Emilia Molinari",
-      "Michele Nervi",
-      "Luca Biggio",
-      "François Fleuret",
-      "Olga Fink"
+      "Cecile Monthus"
     ],
-    "year": 2024,
-    "journal": "arXiv",
-    "venue": "",
-    "importance_score": 91.2,
-    "importance_bucket": "keep",
-    "venue_quality": "preprint",
-    "relevance_score": 52.0,
-    "citation_count": 0,
-    "topics": [
-      "ai_for_physics",
-      "ai_for_physics/physics_informed_modeling/physics_informed_generative",
-      "bridges",
-      "bridges/thermodynamic_inference/info_geometry",
-      "ai_for_physics/physics_informed_modeling",
-      "bridges/thermodynamic_inference",
-      "bridges/thermodynamic_inference/variational_free_energy"
-    ],
-    "url": "https://arxiv.org/abs/2409.06560",
-    "pdf_url": ""
-  },
-  {
-    "id": 4,
-    "title": "Entropy production fluctuation theorem and the nonequilibrium work relation for free energy differences",
-    "authors": [
-      "Gavin E. Crooks"
-    ],
-    "year": 1999,
-    "journal": "Physical Review E",
-    "venue": "",
-    "importance_score": 91.2,
+    "year": 2025,
+    "journal": "J. Stat. Mech. (2025) 053210",
+    "venue": "arXiv",
+    "importance_score": 97.6,
     "importance_bucket": "keep",
     "venue_quality": "high_quality",
-    "relevance_score": 42.0,
+    "relevance_score": 66.0,
+    "citation_count": 0,
+    "topics": [
+      "stochastic_analysis",
+      "bridges/translation_layers/fokker_planck_master",
+      "stochastic_analysis/stochastic_dynamics/sde_theory",
+      "bridges",
+      "stochastic_analysis/stochastic_dynamics",
+      "bridges/translation_layers"
+    ],
+    "url": "http://arxiv.org/abs/2502.09506v3",
+    "pdf_url": "https://arxiv.org/pdf/2502.09506v3"
+  },
+  {
+    "id": 3,
+    "title": "Nonequilibrium Equality for Free Energy Differences",
+    "authors": [
+      "Christopher Jarzynski"
+    ],
+    "year": 1997,
+    "journal": "Physical Review Letters",
+    "venue": "",
+    "importance_score": 96.8,
+    "importance_bucket": "keep",
+    "venue_quality": "top_tier",
+    "relevance_score": 48.0,
     "citation_count": 0,
     "topics": [
       "statistical_physics",
@@ -225,8 +306,57 @@
       "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems",
       "statistical_physics/non_equilibrium_dynamics"
     ],
-    "url": "https://journals.aps.org/pre/abstract/10.1103/PhysRevE.60.2721",
+    "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.78.2690",
     "pdf_url": ""
+  },
+  {
+    "id": 7,
+    "title": "Denoising Diffusion Probabilistic Models",
+    "authors": [
+      "Jonathan Ho",
+      "Ajay Jain",
+      "Pieter Abbeel"
+    ],
+    "year": 2020,
+    "journal": "NeurIPS",
+    "venue": "",
+    "importance_score": 96.6,
+    "importance_bucket": "keep",
+    "venue_quality": "high_quality",
+    "relevance_score": 51.0,
+    "citation_count": 0,
+    "topics": [
+      "ai_for_physics",
+      "ai_for_physics/generative_dynamics/ddpm",
+      "ai_for_physics/generative_dynamics"
+    ],
+    "url": "https://arxiv.org/abs/2006.11239",
+    "pdf_url": ""
+  },
+  {
+    "id": 245,
+    "title": "The covariant Langevin equation of diffusion on Riemannian manifolds",
+    "authors": [
+      "Lajos Diósi"
+    ],
+    "year": 2023,
+    "journal": "Rep.Math.Phys. 94, 143 (2024)",
+    "venue": "arXiv",
+    "importance_score": 90.94,
+    "importance_bucket": "keep",
+    "venue_quality": "high_quality",
+    "relevance_score": 54.9,
+    "citation_count": 0,
+    "topics": [
+      "stochastic_analysis",
+      "bridges/translation_layers/fokker_planck_master",
+      "stochastic_analysis/stochastic_dynamics/sde_theory",
+      "bridges",
+      "stochastic_analysis/stochastic_dynamics",
+      "bridges/translation_layers"
+    ],
+    "url": "http://arxiv.org/abs/2310.17314v2",
+    "pdf_url": "https://arxiv.org/pdf/2310.17314v2"
   },
   {
     "id": 6,
@@ -257,192 +387,101 @@
     "pdf_url": ""
   },
   {
-    "id": 7,
-    "title": "Denoising Diffusion Probabilistic Models",
+    "id": 247,
+    "title": "Noise in the reverse process improves the approximation capabilities of diffusion models",
     "authors": [
-      "Jonathan Ho",
-      "Ajay Jain",
-      "Pieter Abbeel"
+      "Karthik Elamvazhuthi",
+      "Samet Oymak",
+      "Fabio Pasqualetti"
+    ],
+    "year": 2023,
+    "journal": "arXiv",
+    "venue": "arXiv",
+    "importance_score": 86.8,
+    "importance_bucket": "keep",
+    "venue_quality": "preprint",
+    "relevance_score": 48.0,
+    "citation_count": 0,
+    "topics": [
+      "ai_for_physics",
+      "ai_for_physics/generative_dynamics/score_matching",
+      "ai_for_physics/generative_dynamics/ddpm",
+      "ai_for_physics/generative_dynamics"
+    ],
+    "url": "http://arxiv.org/abs/2312.07851v2",
+    "pdf_url": "https://arxiv.org/pdf/2312.07851v2"
+  },
+  {
+    "id": 15,
+    "title": "The cost of knowing: natural gradient as variational inference",
+    "authors": [
+      "others",
+      "Martin Jankowiak",
+      "Theofanis Karaletsos"
     ],
     "year": 2020,
-    "journal": "NeurIPS",
+    "journal": "arXiv",
     "venue": "",
-    "importance_score": 78.6,
+    "importance_score": 86.4,
     "importance_bucket": "keep",
-    "venue_quality": "high_quality",
+    "venue_quality": "preprint",
+    "relevance_score": 44.0,
+    "citation_count": 0,
+    "topics": [
+      "ai_for_physics",
+      "ai_for_physics/generative_dynamics/score_matching",
+      "bridges",
+      "bridges/thermodynamic_inference/info_geometry",
+      "ai_for_physics/generative_dynamics",
+      "bridges/thermodynamic_inference"
+    ],
+    "url": "https://arxiv.org/abs/2002.08676",
+    "pdf_url": ""
+  },
+  {
+    "id": 48,
+    "title": "Disentangled Deep Priors for Bayesian Inverse Problems",
+    "authors": [
+      "Arkaprabha Ganguli",
+      "Emil M. Constantinescu"
+    ],
+    "year": 2026,
+    "journal": "ArXiv.org",
+    "venue": "ArXiv.org",
+    "importance_score": 85.6,
+    "importance_bucket": "keep",
+    "venue_quality": "preprint",
     "relevance_score": 51.0,
     "citation_count": 0,
     "topics": [
       "ai_for_physics",
-      "ai_for_physics/generative_dynamics/ddpm",
-      "ai_for_physics/generative_dynamics"
-    ],
-    "url": "https://arxiv.org/abs/2006.11239",
-    "pdf_url": ""
-  },
-  {
-    "id": 102,
-    "title": "Score-fPINN: Fractional Score-Based Physics-Informed Neural Networks for High-Dimensional Fokker-Planck-Lévy Equations",
-    "authors": [
-      "George Em Karniadakis",
-      "Kenji Kawaguchi",
-      "Zheyuan Hu",
-      "Zhongqiang Zhang"
-    ],
-    "year": 2026,
-    "journal": "Communications in Computational Physics",
-    "venue": "Communications in Computational Physics",
-    "importance_score": 78.0,
-    "importance_bucket": "keep",
-    "venue_quality": "unranked",
-    "relevance_score": 50.0,
-    "citation_count": 0,
-    "topics": [
-      "bridges/translation_layers/fokker_planck_master",
-      "ai_for_physics",
-      "ai_for_physics/generative_dynamics/score_matching",
-      "bridges",
-      "ai_for_physics/generative_dynamics",
       "ai_for_physics/physics_informed_modeling",
-      "bridges/translation_layers"
+      "ai_for_physics/physics_informed_modeling/scientific_ml_applications"
     ],
-    "url": "https://openalex.org/W4399795376",
-    "pdf_url": "https://arxiv.org/pdf/2406.11676"
+    "url": "https://openalex.org/W7149873794",
+    "pdf_url": "https://arxiv.org/pdf/2604.02304"
   },
   {
-    "id": 33,
-    "title": "PINNs for Stochastic Dynamics: Modeling Brownian Motion via Verlet Integration",
+    "id": 4,
+    "title": "Entropy production fluctuation theorem and the nonequilibrium work relation for free energy differences",
     "authors": [
-      "Yulison Herry",
-      "Julian Evan",
-      "Jeremia Oktavian",
-      "Ferry Faizal"
+      "Gavin E. Crooks"
     ],
-    "year": 2026,
-    "journal": "International Journal of Information Technology and Computer Science",
-    "venue": "International Journal of Information Technology and Computer Science",
-    "importance_score": 76.0,
-    "importance_bucket": "keep",
-    "venue_quality": "unranked",
-    "relevance_score": 50.0,
-    "citation_count": 0,
-    "topics": [
-      "stochastic_analysis",
-      "stochastic_analysis/path_foundations/brownian_motion",
-      "bridges/translation_layers/fokker_planck_master",
-      "ai_for_physics",
-      "bridges",
-      "stochastic_analysis/path_foundations",
-      "ai_for_physics/physics_informed_modeling",
-      "bridges/translation_layers"
-    ],
-    "url": "https://openalex.org/W7143947385",
-    "pdf_url": "https://www.mecs-press.org/ijitcs/ijitcs-v18-n2/IJITCS-V18-N2-8.pdf"
-  },
-  {
-    "id": 9,
-    "title": "Flow Matching for Generative Modeling",
-    "authors": [
-      "Yaron Lipman",
-      "Ricky T. Q. Chen",
-      "Heli Ben-Hamu",
-      "Maximilian Nickel",
-      "Matt Le"
-    ],
-    "year": 2023,
-    "journal": "ICLR",
+    "year": 1999,
+    "journal": "Physical Review E",
     "venue": "",
-    "importance_score": 74.0,
+    "importance_score": 85.2,
     "importance_bucket": "keep",
     "venue_quality": "high_quality",
-    "relevance_score": 60.0,
+    "relevance_score": 42.0,
     "citation_count": 0,
     "topics": [
-      "ai_for_physics",
-      "ai_for_physics/generative_dynamics/flow_matching",
-      "bridges",
-      "bridges/transport_and_spatial_generation/optimal_transport_urban",
-      "ai_for_physics/generative_dynamics",
-      "bridges/transport_and_spatial_generation"
-    ],
-    "url": "https://arxiv.org/abs/2210.02747",
-    "pdf_url": ""
-  },
-  {
-    "id": 14,
-    "title": "The size, scale, and shape of cities",
-    "authors": [
-      "Michael Batty"
-    ],
-    "year": 2008,
-    "journal": "Science",
-    "venue": "",
-    "importance_score": 72.8,
-    "importance_bucket": "keep",
-    "venue_quality": "top_tier",
-    "relevance_score": 48.0,
-    "citation_count": 0,
-    "topics": [
-      "urban_complex_systems",
-      "urban_complex_systems/scaling_and_evolution/urban_scaling",
-      "urban_complex_systems/scaling_and_evolution/urban_dynamics",
-      "urban_complex_systems/scaling_and_evolution"
-    ],
-    "url": "https://www.science.org/doi/10.1126/science.1151419",
-    "pdf_url": ""
-  },
-  {
-    "id": 99,
-    "title": "Probabilistic Evolution of Black Hole Thermodynamic States via Fokker-Planck Equation",
-    "authors": [
-      "Chao Wang",
-      "Chen Ma",
-      "Meng-Ci He",
-      "Bin Wu"
-    ],
-    "year": 2026,
-    "journal": "arXiv (Cornell University)",
-    "venue": "arXiv (Cornell University)",
-    "importance_score": 71.43,
-    "importance_bucket": "keep",
-    "venue_quality": "unranked",
-    "relevance_score": 52.39,
-    "citation_count": 0,
-    "topics": [
-      "bridges/translation_layers/fokker_planck_master",
       "statistical_physics",
       "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "bridges",
-      "statistical_physics/non_equilibrium_dynamics",
-      "bridges/translation_layers"
+      "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems",
+      "statistical_physics/non_equilibrium_dynamics"
     ],
-    "url": "https://openalex.org/W7152933980",
-    "pdf_url": "https://arxiv.org/pdf/2604.05785"
-  },
-  {
-    "id": 13,
-    "title": "Growth, innovation, scaling, and the pace of life in cities",
-    "authors": [
-      "Luís M. A. Bettencourt",
-      "José Lobo",
-      "Dirk Helbing",
-      "Christian Kühnert",
-      "Geoffrey B. West"
-    ],
-    "year": 2007,
-    "journal": "PNAS",
-    "venue": "",
-    "importance_score": 71.0,
-    "importance_bucket": "keep",
-    "venue_quality": "top_tier",
-    "relevance_score": 45.0,
-    "citation_count": 0,
-    "topics": [
-      "urban_complex_systems",
-      "urban_complex_systems/scaling_and_evolution/urban_scaling",
-      "urban_complex_systems/scaling_and_evolution"
-    ],
-    "url": "https://www.pnas.org/doi/10.1073/pnas.0610172104",
+    "url": "https://journals.aps.org/pre/abstract/10.1103/PhysRevE.60.2721",
     "pdf_url": ""
   },
   {
@@ -457,7 +496,7 @@
     "year": 2026,
     "journal": "Atmospheric measurement techniques",
     "venue": "Atmospheric measurement techniques",
-    "importance_score": 70.8,
+    "importance_score": 83.8,
     "importance_bucket": "keep",
     "venue_quality": "solid_domain",
     "relevance_score": 58.0,
@@ -474,85 +513,27 @@
     "pdf_url": "https://amt.copernicus.org/articles/19/2225/2026/amt-19-2225-2026.pdf"
   },
   {
-    "id": 65,
-    "title": "MVNN: A Measure-Valued Neural Network for Learning McKean-Vlasov Dynamics from Particle Data",
+    "id": 228,
+    "title": "Macroscopic Stochastic Thermodynamics",
     "authors": [
-      "Lingyi Lyu",
-      "Xinyue Yu",
-      "Hayden Schaeffer"
+      "Gianmaria Falasco",
+      "Massimiliano Esposito"
     ],
-    "year": 2026,
-    "journal": "ArXiv.org",
-    "venue": "ArXiv.org",
-    "importance_score": 70.4,
+    "year": 2023,
+    "journal": "Reviews of Modern Physics, 97(1), 015002 (2025)",
+    "venue": "arXiv",
+    "importance_score": 80.4,
     "importance_bucket": "keep",
-    "venue_quality": "preprint",
-    "relevance_score": 54.0,
+    "venue_quality": "top_tier",
+    "relevance_score": 64.0,
     "citation_count": 0,
     "topics": [
-      "stochastic_analysis",
-      "stochastic_analysis/stochastic_dynamics/sde_theory",
       "statistical_physics",
       "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "ai_for_physics",
-      "stochastic_analysis/stochastic_dynamics",
-      "statistical_physics/non_equilibrium_dynamics",
-      "ai_for_physics/physics_informed_modeling",
-      "ai_for_physics/physics_informed_modeling/scientific_ml_applications"
+      "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems",
+      "statistical_physics/non_equilibrium_dynamics"
     ],
-    "url": "https://openalex.org/W7149209803",
-    "pdf_url": "https://arxiv.org/pdf/2604.00333"
-  },
-  {
-    "id": 48,
-    "title": "Disentangled Deep Priors for Bayesian Inverse Problems",
-    "authors": [
-      "Arkaprabha Ganguli",
-      "Emil M. Constantinescu"
-    ],
-    "year": 2026,
-    "journal": "ArXiv.org",
-    "venue": "ArXiv.org",
-    "importance_score": 68.6,
-    "importance_bucket": "keep",
-    "venue_quality": "preprint",
-    "relevance_score": 51.0,
-    "citation_count": 0,
-    "topics": [
-      "ai_for_physics",
-      "ai_for_physics/physics_informed_modeling",
-      "ai_for_physics/physics_informed_modeling/scientific_ml_applications"
-    ],
-    "url": "https://openalex.org/W7149873794",
-    "pdf_url": "https://arxiv.org/pdf/2604.02304"
-  },
-  {
-    "id": 101,
-    "title": "Non-equilibrium Dynamical Attractors and Thermalisation of Charm Quarks in Nuclear Collisions at the LHC Energy",
-    "authors": [
-      "Shile Chen",
-      "Vincenzo Nugara",
-      "Maria Lucia Sambataro",
-      "Salvatore Plumari",
-      "Vincenzo Greco"
-    ],
-    "year": 2026,
-    "journal": "arXiv (Cornell University)",
-    "venue": "arXiv (Cornell University)",
-    "importance_score": 62.4,
-    "importance_bucket": "keep",
-    "venue_quality": "unranked",
-    "relevance_score": 54.0,
-    "citation_count": 0,
-    "topics": [
-      "bridges/translation_layers/fokker_planck_master",
-      "statistical_physics",
-      "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "bridges",
-      "statistical_physics/non_equilibrium_dynamics",
-      "bridges/translation_layers"
-    ],
-    "url": "https://openalex.org/W7151673468",
-    "pdf_url": "https://arxiv.org/pdf/2604.02944"
+    "url": "http://arxiv.org/abs/2307.12406v3",
+    "pdf_url": "https://arxiv.org/pdf/2307.12406v3"
   }
 ]

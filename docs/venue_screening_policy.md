@@ -78,6 +78,6 @@ venue 过关后，对具体文章还要补一次机构筛选：
 
 - 手工核验结果记到 [venue_reputation.yaml](/Users/jinlin/Desktop/Project/Research_Collector/config/venue_reputation.yaml)
 - 机构与团队信号短名单记到 [author_affiliation_reputation.yaml](/Users/jinlin/Desktop/Project/Research_Collector/config/author_affiliation_reputation.yaml)
-- 当天推荐队列输出到 [paper-queue.md](/Users/jinlin/Desktop/Project/Research_Collector/digests/2026-04-08/paper-queue.md)
+- 当天推荐队列输出到 `digests/YYYY-MM-DD/paper-queue.md`（当天日期目录）
 
 不要把临时的口碑判断散落在多个 digest 里。

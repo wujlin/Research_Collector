@@ -7,10 +7,10 @@ doi: "10.1017/jpr.2026.10091"
 arxiv: ""
 url: "https://openalex.org/W4385327642"
 pdf_url: "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/2188FB3EF25763E130074658D4E173D1/S0021900226100916a.pdf/div-class-title-mean-field-stochastic-volterra-equations-div.pdf"
-topics: ["statistical_physics/collective_structure/phase_transitions", "statistical_physics/collective_structure", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics"]
-tier: 0
+topics: ["statistical_physics", "statistical_physics/collective_structure/phase_transitions", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics/collective_structure"]
+tier: 2
 citations: 0
-relevance_score: 46.0
+relevance_score: 60.0
 collected: "2026-04-16"
 status: "unread"
 source: "openalex"
@@ -26,11 +26,11 @@ Abstract Well-posedness is established for multi-dimensional mean-field stochast
 
 ## Connections
 
-- [[phase_transitions]]
-- [[collective_structure]]
 - [[statistical_physics]]
+- [[phase_transitions]]
 - [[nonequilibrium]]
 - [[non_equilibrium_dynamics]]
+- [[collective_structure]]
 
 ## Notes
 
