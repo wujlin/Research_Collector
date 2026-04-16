@@ -14,7 +14,7 @@ if str(ROOT) not in sys.path:
 
 from src.pipeline import CollectionPipeline
 from src.processors.importance_ranker import ImportanceRanker
-from src.utils.helpers import dated_digest_path
+from src.utils.helpers import canonical_digest_path
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -62,7 +62,7 @@ def main() -> None:
     for papers in buckets.values():
         papers.sort(key=lambda item: item[0], reverse=True)
 
-    report_path = dated_digest_path(ROOT / "digests", args.collected_after, f"{args.collected_after}-batch-review.md")
+    report_path = canonical_digest_path(ROOT / "digests", args.collected_after, "collection_review")
     report_lines = [
         f"# Batch Review {args.collected_after}",
         "",

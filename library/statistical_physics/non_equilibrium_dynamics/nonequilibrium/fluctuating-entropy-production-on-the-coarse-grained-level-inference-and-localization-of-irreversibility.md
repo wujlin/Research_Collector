@@ -92,6 +92,6 @@ source: "manual"
 
 当天的精读展开统一放在：
 
-- [study-guide.md](/Users/jinlin/Desktop/Project/Research_Collector/digests/2026-04-11/study-guide.md)
+- [study-guide.md](/Users/jinlin/Desktop/Project/Research_Collector/digests/2026-04-11/workflow/study-guide.md)
 
 这份 `library` 条目只保留归档型信息与最小阅读框架，避免和当天 digest 出现两套并行笔记。

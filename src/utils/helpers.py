@@ -159,9 +159,10 @@ def canonical_digest_path(base_dir: Path | str, date_str: str, digest_kind: str)
 
 
 def extract_date_prefix(path: Path | str) -> str:
+    """从路径中提取 YYYY-MM-DD 日期前缀，向上遍历父目录直到找到。"""
     path_obj = Path(path)
-    for candidate in [path_obj.parent.name, path_obj.name]:
-        match = re.match(r"(?P<date>\d{4}-\d{2}-\d{2})", candidate)
+    for part in [path_obj.parent.name, path_obj.name, *[p.name for p in path_obj.parents]]:
+        match = re.match(r"(?P<date>\d{4}-\d{2}-\d{2})", part)
         if match:
             return match.group("date")
     return ""

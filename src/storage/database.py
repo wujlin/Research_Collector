@@ -13,7 +13,7 @@ from sqlalchemy.orm import Session, sessionmaker
 
 from src.utils.helpers import flatten_topics, normalize_title, normalize_whitespace, parse_date, utc_now
 
-from .models import Author, Base, CollectionLog, Paper, Topic, YouTubeResource
+from .models import Author, Base, CollectionLog, Paper, Topic, Venue, YouTubeResource, author_coauthors
 
 
 class Database:
@@ -116,6 +116,8 @@ class Database:
             session.flush()
             self._attach_authors(session, paper, normalized_data.get("authors", []))
             self._attach_topics(session, paper, normalized_data.get("topic_keys", []))
+            self._attach_venue(session, paper)
+            self._update_coauthors(session, paper)
             return paper
 
     def _find_existing_paper(self, session: Session, data: dict[str, Any]) -> Paper | None:
@@ -178,6 +180,8 @@ class Database:
             paper.notes = self._pick_longer_text(paper.notes, data["notes"])
         self._attach_authors(session, paper, data.get("authors", []))
         self._attach_topics(session, paper, data.get("topic_keys", []))
+        self._attach_venue(session, paper)
+        self._update_coauthors(session, paper)
         paper.updated_at = utc_now()
         return paper
 
@@ -293,6 +297,52 @@ class Database:
             if topic:
                 paper.topics.append(topic)
                 existing.add(topic_key)
+
+    @staticmethod
+    def _attach_venue(session: Session, paper: Paper) -> None:
+        """将 paper.journal / paper.venue 匹配到 venues 表，写入 venue_id。"""
+        if paper.venue_id:
+            return
+        for candidate_name in [paper.journal, paper.venue]:
+            if not candidate_name:
+                continue
+            venue = session.execute(
+                select(Venue).where(func.lower(Venue.name) == candidate_name.lower())
+            ).scalar_one_or_none()
+            if venue:
+                paper.venue_id = venue.id
+                venue.paper_count = (venue.paper_count or 0) + 1
+                return
+
+    @staticmethod
+    def _update_coauthors(session: Session, paper: Paper) -> None:
+        """从论文的作者列表增量更新 author_coauthors 表。"""
+        author_ids = sorted({a.id for a in paper.authors})
+        if len(author_ids) < 2:
+            return
+        from itertools import combinations
+        for a_id, b_id in combinations(author_ids, 2):
+            existing = session.execute(
+                select(author_coauthors).where(
+                    author_coauthors.c.author_a_id == a_id,
+                    author_coauthors.c.author_b_id == b_id,
+                )
+            ).first()
+            if existing:
+                session.execute(
+                    author_coauthors.update()
+                    .where(
+                        author_coauthors.c.author_a_id == a_id,
+                        author_coauthors.c.author_b_id == b_id,
+                    )
+                    .values(shared_papers=existing.shared_papers + 1)
+                )
+            else:
+                session.execute(
+                    author_coauthors.insert().values(
+                        author_a_id=a_id, author_b_id=b_id, shared_papers=1
+                    )
+                )
 
     def replace_paper_topics(self, paper_id: int, topic_keys: list[str]) -> None:
         with self.session() as session:
