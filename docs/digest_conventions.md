@@ -2,53 +2,47 @@
 
 这份约定只处理一件事：`digests/` 目录到底应该放什么，不应该放什么。
 
-目标是让每天的产物数量稳定、职责清楚、后续可持续维护，而不是不断长出新的"包装页"。
+## 1. 日期目录结构
 
-## 1. Daily Digest 保留 5 类
+每天的日期目录 `digests/YYYY-MM-DD/` 分为两层：
 
-每天的日期目录 `digests/YYYY-MM-DD/` 默认保留下面五类文件：
+```
+digests/2026-04-16/
+├── workflow/                    ← 流程产物（自动脚本 + 手工整理）
+│   ├── paper-queue.md
+│   ├── study-guide.md
+│   ├── collection-review.md
+│   └── weekly.md
+├── nonequilibrium-physics-of-generative-diffusion-models.md   ← 精读笔记
+├── generative-optimal-transport-via-forward-backward-hjb-matching.md
+└── ...
+```
 
-- `paper-queue.md`
-  用来排当天的论文队列。内容包含：
-  - `Must Read`
-  - `Reproduction Candidates`
-  - `Watchlist`
-  - `Must Read` 默认应经过 venue 口碑核验
-- `study-guide.md`
-  用来组织当天正在精读的工作包。内容包含：
-  - 阅读顺序
-  - 每篇要盯的问题
-  - 配套视频
-  - 复现起点
-- `collection-review.md`
-  用来记录当天采集后的审查结果。内容包含：
-  - 论文 keep/review/archive
-  - YouTube keep/review/archive
-- `weekly.md` 或 `monthly.md`
-  用来放自动周期摘要。
-- `<paper-slug>.md`（精读笔记）
-  用来存放当天精读的论文笔记，每篇一个文件。
-  命名规则：论文标题的 slug 化（小写、连字符分隔）。
-  笔记归属到**精读完成的日期**，而不是论文的发表日期。
+### workflow/ 子目录（4 类流程文件）
 
-除非有明确新增的独立任务类型，否则不要再往日期目录里加其他种类的文件。
+- `paper-queue.md` — 当天的论文队列（Must Read / Watchlist）
+- `study-guide.md` — 当天的精读工作包（阅读顺序、要盯的问题）
+- `collection-review.md` — 采集审查结果（keep / review / archive）
+- `weekly.md` / `monthly.md` — 自动周期摘要
+
+### 日期目录根（精读笔记）
+
+- `<paper-slug>.md` — 逐篇论文的精读记录
+- 命名规则：论文标题的 slug 化（小写、连字符分隔）
+- 归属到**精读完成的日期**，而不是论文的发表日期
 
 ## 2. 不再保留的类型
 
 以下类型默认不再单独存在：
 
-- `start-here.md`
-  这是包装页，不产生独立信息。
-- 单独的 `youtube-study-companion.md`
-  伴读内容应并入 `study-guide.md`。
-- 单独的 `recent-high-quality-shortlist.md`
-  shortlist 应并入 `paper-queue.md`。
-- 分裂的 `batch-review.md` 和 `youtube-review.md`
-  两者应并入 `collection-review.md`。
+- `start-here.md` — 包装页，不产生独立信息
+- `youtube-study-companion.md` — 并入 `workflow/study-guide.md`
+- `recent-high-quality-shortlist.md` — 并入 `workflow/paper-queue.md`
+- 分裂的 `batch-review.md` / `youtube-review.md` — 并入 `workflow/collection-review.md`
 
 ## 3. 长期专题笔记与精读笔记的区分
 
-精读笔记（逐篇论文的阅读记录）放在 `digests/YYYY-MM-DD/` 下，按精读完成日期归档。
+精读笔记（逐篇论文的阅读记录）放在 `digests/YYYY-MM-DD/` 根目录下。
 
 以下内容不是精读笔记，应移到更稳定的位置：
 
@@ -58,43 +52,27 @@
 
 ## 4. 命名规则
 
-命名优先级如下：
-
-1. 先用日期文件夹表达"是哪一天"
+1. 日期文件夹表达"是哪一天"
 2. 文件名只表达"这份文件的职责"
 3. 不在文件名里重复日期
-4. 不用纯数字做文件名
 
 推荐：
 
-- `digests/2026-04-08/paper-queue.md`
-- `digests/2026-04-08/study-guide.md`
-- `digests/2026-04-08/collection-review.md`
-- `digests/2026-04-08/weekly.md`
-- `digests/2026-04-08/nonequilibrium-physics-of-generative-diffusion-models.md`
+- `digests/2026-04-16/workflow/paper-queue.md`
+- `digests/2026-04-16/workflow/study-guide.md`
+- `digests/2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.md`
 
 不推荐：
 
-- `digests/2026-04-08/2026-04-08-frontier-followup-pack.md`
-- `digests/2026-04-08/00-start-here.md`
+- `digests/2026-04-16/2026-04-16-frontier-followup-pack.md`
+- `digests/2026-04-16/00-start-here.md`
 
 ## 5. 生成规则
 
-自动脚本和手工整理都要遵守同一套最终布局：
+自动脚本和手工整理都遵守同一套布局：
 
-- 论文队列脚本输出到 `paper-queue.md`
-- 采集审查脚本输出到 `collection-review.md`
-- 周报/月报导出到 `weekly.md` / `monthly.md`
-- 手工学习整理统一收进 `study-guide.md`
-- 精读笔记按 `<paper-slug>.md` 命名，归入精读完成日期
-
-如果中间过程需要临时文件，可以存在生成过程中，但交付前必须合并或移走，不应留在最终日期目录里。
-
-## 6. 判断是否应该新建文件
-
-只有在下面两个条件同时满足时，才允许新建新的 digest 类型：
-
-1. 这份文件承载的是独立任务，而不是已有文件的子章节。
-2. 它在后续多天都会重复出现，而不是一次性包装页。
-
-精读笔记天然满足这两个条件（独立任务 + 每天都会有），因此属于允许的文件类型。
+- 论文队列脚本 → `workflow/paper-queue.md`
+- 采集审查脚本 → `workflow/collection-review.md`
+- 周报/月报 → `workflow/weekly.md` / `workflow/monthly.md`
+- 手工学习整理 → `workflow/study-guide.md`
+- 精读笔记 → 日期目录根下 `<paper-slug>.md`

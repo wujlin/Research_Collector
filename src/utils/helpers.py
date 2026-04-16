@@ -13,11 +13,11 @@ import yaml
 from dotenv import load_dotenv
 
 CANONICAL_DAILY_DIGEST_FILES: dict[str, str] = {
-    "paper_queue": "paper-queue.md",
-    "study_guide": "study-guide.md",
-    "collection_review": "collection-review.md",
-    "weekly": "weekly.md",
-    "monthly": "monthly.md",
+    "paper_queue": "workflow/paper-queue.md",
+    "study_guide": "workflow/study-guide.md",
+    "collection_review": "workflow/collection-review.md",
+    "weekly": "workflow/weekly.md",
+    "monthly": "workflow/monthly.md",
 }
 
 
