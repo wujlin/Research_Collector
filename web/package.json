@@ -3,8 +3,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "prepare:public": "node scripts/prepare-public.mjs copy",
+    "build": "npm run prepare:public && next build",
+    "start": "next start",
+    "export:static": "npm run prepare:public && next build"
   },
   "dependencies": {
     "katex": "^0.16.45",

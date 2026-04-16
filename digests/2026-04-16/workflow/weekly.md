@@ -1,7 +1,7 @@
 ---
 title: "Weekly Digest"
 period: "weekly"
-generated_at: "2026-04-16T15:53:51.474382"
+generated_at: "2026-04-16T16:04:40.247272"
 paper_count: 30
 ---
 

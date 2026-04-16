@@ -8,6 +8,7 @@ from src.collectors.arxiv_collector import ArxivCollector
 from src.collectors.openalex import OpenAlexCollector
 from src.collectors.semantic_scholar import SemanticScholarCollector
 from src.collectors.youtube_collector import YouTubeCollector
+from src.exporters.concepts import ConceptsExporter
 from src.exporters.digest import DigestExporter
 from src.exporters.knowledge_graph import KnowledgeGraphExporter
 from src.exporters.reading_list import ReadingListExporter
@@ -46,6 +47,7 @@ class CollectionPipeline:
         self.digest_exporter = DigestExporter(storage_cfg["digest_dir"])
         self.knowledge_graph_exporter = KnowledgeGraphExporter()
         self.web_snapshot_exporter = WebSnapshotExporter()
+        self.concepts_exporter = ConceptsExporter(storage_cfg["digest_dir"])
 
         self.collectors = {
             "arxiv": ArxivCollector(),
@@ -161,6 +163,7 @@ class CollectionPipeline:
         )
         self.knowledge_graph_exporter.export(self.database)
         self.web_snapshot_exporter.export_all(self.database)
+        self.concepts_exporter.export()
 
     def _collect_papers(
         self,
