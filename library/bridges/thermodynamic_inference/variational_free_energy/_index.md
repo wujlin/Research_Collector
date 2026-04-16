@@ -2,7 +2,7 @@
 title: "Variational / Free Energy"
 description: ""
 paper_count: 3
-last_updated: "2026-04-15"
+last_updated: "2026-04-16"
 ---
 
 # Variational / Free Energy

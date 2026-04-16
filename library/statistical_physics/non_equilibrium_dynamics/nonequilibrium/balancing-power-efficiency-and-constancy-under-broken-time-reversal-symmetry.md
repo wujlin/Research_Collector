@@ -7,11 +7,11 @@ doi: ""
 arxiv: ""
 url: "https://openalex.org/W7153669969"
 pdf_url: "https://arxiv.org/pdf/2604.07099"
-topics: ["statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems"]
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems", "statistical_physics/non_equilibrium_dynamics"]
 tier: 0
 citations: 0
 relevance_score: 53.1
-collected: "2026-04-15"
+collected: "2026-04-16"
 status: "unread"
 source: "openalex"
 ---
@@ -26,10 +26,10 @@ We derive general trade-off relations among the power, efficiency, and constancy
 
 ## Connections
 
-- [[nonequilibrium]]
-- [[non_equilibrium_dynamics]]
 - [[statistical_physics]]
+- [[nonequilibrium]]
 - [[fluctuation_theorems]]
+- [[non_equilibrium_dynamics]]
 
 ## Notes
 

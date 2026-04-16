@@ -7,11 +7,11 @@ doi: "10.3389/feart.2026.1740374"
 arxiv: ""
 url: "https://openalex.org/W7154190461"
 pdf_url: "https://public-pages-files-2025.frontiersin.org/journals/earth-science/articles/10.3389/feart.2026.1740374/pdf"
-topics: ["statistical_physics/equilibrium_structures", "statistical_physics", "urban_complex_systems/urban_data_and_generation", "urban_complex_systems", "urban_complex_systems/urban_data_and_generation/urban_data_science"]
+topics: ["statistical_physics", "urban_complex_systems", "urban_complex_systems/urban_data_and_generation/urban_data_science", "statistical_physics/equilibrium_structures", "urban_complex_systems/urban_data_and_generation"]
 tier: 0
 citations: 0
 relevance_score: 50.0
-collected: "2026-04-15"
+collected: "2026-04-16"
 status: "unread"
 source: "openalex"
 ---
@@ -26,11 +26,11 @@ The accelerating retreat of glaciers and expansion of glacial lakes in the Trans
 
 ## Connections
 
-- [[equilibrium_structures]]
 - [[statistical_physics]]
-- [[urban_data_and_generation]]
 - [[urban_complex_systems]]
 - [[urban_data_science]]
+- [[equilibrium_structures]]
+- [[urban_data_and_generation]]
 
 ## Notes
 

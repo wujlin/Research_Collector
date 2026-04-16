@@ -2,7 +2,7 @@
 title: "热力学与推断"
 description: "自由能、信息几何与变分推断的交汇。"
 paper_count: 4
-last_updated: "2026-04-15"
+last_updated: "2026-04-16"
 ---
 
 # 热力学与推断

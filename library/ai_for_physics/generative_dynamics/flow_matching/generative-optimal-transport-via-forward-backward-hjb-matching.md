@@ -7,11 +7,11 @@ doi: ""
 arxiv: ""
 url: "https://openalex.org/W7153669851"
 pdf_url: "https://arxiv.org/pdf/2604.07762"
-topics: ["statistical_physics/equilibrium_structures", "statistical_physics", "ai_for_physics/generative_dynamics/flow_matching", "ai_for_physics/generative_dynamics", "ai_for_physics", "bridges/transport_and_spatial_generation", "bridges"]
+topics: ["statistical_physics", "ai_for_physics", "ai_for_physics/generative_dynamics/flow_matching", "bridges", "statistical_physics/equilibrium_structures", "ai_for_physics/generative_dynamics", "bridges/transport_and_spatial_generation"]
 tier: 0
 citations: 0
 relevance_score: 54.0
-collected: "2026-04-15"
+collected: "2026-04-16"
 status: "unread"
 source: "openalex"
 ---
@@ -26,13 +26,13 @@ Controlling the evolution of a many-body stochastic system from a disordered ref
 
 ## Connections
 
-- [[equilibrium_structures]]
 - [[statistical_physics]]
-- [[flow_matching]]
-- [[generative_dynamics]]
 - [[ai_for_physics]]
-- [[transport_and_spatial_generation]]
+- [[flow_matching]]
 - [[bridges]]
+- [[equilibrium_structures]]
+- [[generative_dynamics]]
+- [[transport_and_spatial_generation]]
 
 ## Notes
 

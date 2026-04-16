@@ -7,11 +7,11 @@ doi: "10.22323/1.518.0020"
 arxiv: ""
 url: "https://openalex.org/W7153983726"
 pdf_url: "https://pos.sissa.it/518/020/pdf"
-topics: ["statistical_physics/collective_structure/phase_transitions", "statistical_physics/collective_structure", "statistical_physics"]
+topics: ["statistical_physics", "statistical_physics/collective_structure/phase_transitions", "statistical_physics/collective_structure"]
 tier: 0
 citations: 0
 relevance_score: 47.0
-collected: "2026-04-15"
+collected: "2026-04-16"
 status: "unread"
 source: "openalex"
 ---
@@ -26,9 +26,9 @@ In this review I summarize how machine learning can be used in lattice gauge the
 
 ## Connections
 
+- [[statistical_physics]]
 - [[phase_transitions]]
 - [[collective_structure]]
-- [[statistical_physics]]
 
 ## Notes
 

@@ -477,6 +477,27 @@
       "citation_count": 0
     },
     {
+      "id": "paper:213",
+      "label": "Non-equilibrium phase coexistence in conserved chemically active mixtures",
+      "type": "paper",
+      "relevance_score": 54.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:206",
+      "label": "Homogenized Transformers",
+      "type": "paper",
+      "relevance_score": 54.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:196",
+      "label": "Unified geometric formalism for dissipation and its fluctuations in finite-time microscopic heat engines",
+      "type": "paper",
+      "relevance_score": 54.0,
+      "citation_count": 0
+    },
+    {
       "id": "paper:149",
       "label": "Generative optimal transport via forward-backward HJB matching",
       "type": "paper",
@@ -540,10 +561,24 @@
       "citation_count": 0
     },
     {
+      "id": "paper:204",
+      "label": "Relaxation dynamics of the continuum Kuramoto model with non-integrable kernels",
+      "type": "paper",
+      "relevance_score": 53.09,
+      "citation_count": 0
+    },
+    {
       "id": "paper:99",
       "label": "Probabilistic Evolution of Black Hole Thermodynamic States via Fokker-Planck Equation",
       "type": "paper",
       "relevance_score": 52.39,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:199",
+      "label": "Lipschitz regularity in Flow Matching and Diffusion Models: sharp sampling rates and functional inequalities",
+      "type": "paper",
+      "relevance_score": 52.27,
       "citation_count": 0
     },
     {
@@ -561,115 +596,80 @@
       "citation_count": 0
     },
     {
+      "id": "paper:212",
+      "label": "Run, Tumble and Paint",
+      "type": "paper",
+      "relevance_score": 51.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:210",
+      "label": "Phantom: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics",
+      "type": "paper",
+      "relevance_score": 51.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:209",
+      "label": "Equivariant Efficient Joint Discrete and Continuous MeanFlow for Molecular Graph Generation",
+      "type": "paper",
+      "relevance_score": 51.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:203",
+      "label": "Short-lived memory in multidimensional spectra encodes full signal evolution",
+      "type": "paper",
+      "relevance_score": 51.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:202",
+      "label": "Gradient estimators for parameter inference in discrete stochastic kinetic models",
+      "type": "paper",
+      "relevance_score": 51.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:200",
+      "label": "Stochastic Gradient Descent in the Saddle-to-Saddle Regime of Deep Linear Networks",
+      "type": "paper",
+      "relevance_score": 51.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:198",
+      "label": "On some topological and spectral properties of kinetic Langevin processes driven by L{é}vy noises",
+      "type": "paper",
+      "relevance_score": 51.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:197",
+      "label": "One-to-one correspondence between Hierarchical Equations of Motion and Pseudomodes for Open Quantum System Dynamics",
+      "type": "paper",
+      "relevance_score": 51.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:195",
+      "label": "Cyclic Heat Engine with the Ising model: role of interactions and criticality",
+      "type": "paper",
+      "relevance_score": 51.0,
+      "citation_count": 0
+    },
+    {
+      "id": "paper:193",
+      "label": "Breathing Modes as a Probe of Energy Fluctuations in a Unitary Fermi Gas",
+      "type": "paper",
+      "relevance_score": 51.0,
+      "citation_count": 0
+    },
+    {
       "id": "paper:148",
       "label": "Quantum Computing for Financial Transformation: A Review of Optimisation, Pricing, Risk, Machine Learning, and Post-Quantum Security",
       "type": "paper",
       "relevance_score": 51.0,
-      "citation_count": 0
-    },
-    {
-      "id": "paper:143",
-      "label": "Stochastic Thermodynamics for Autoregressive Generative Models: A Non-Markovian Perspective",
-      "type": "paper",
-      "relevance_score": 51.0,
-      "citation_count": 0
-    },
-    {
-      "id": "paper:103",
-      "label": "A deep learning framework for jointly solving transient Fokker-Planck equations with arbitrary parameters and initial distributions",
-      "type": "paper",
-      "relevance_score": 51.0,
-      "citation_count": 0
-    },
-    {
-      "id": "paper:69",
-      "label": "From molecular dynamics to kinetic models: data-driven generalized collision operators in 1D3V plasmas",
-      "type": "paper",
-      "relevance_score": 51.0,
-      "citation_count": 0
-    },
-    {
-      "id": "paper:68",
-      "label": "Stochastic Dimension Implicit Functional Projections for Exact Integral Conservation in High-Dimensional PINNs",
-      "type": "paper",
-      "relevance_score": 51.0,
-      "citation_count": 0
-    },
-    {
-      "id": "paper:62",
-      "label": "Uniform-in-time diffusion approximations for multiscale stochastic systems",
-      "type": "paper",
-      "relevance_score": 51.0,
-      "citation_count": 0
-    },
-    {
-      "id": "paper:48",
-      "label": "Disentangled Deep Priors for Bayesian Inverse Problems",
-      "type": "paper",
-      "relevance_score": 51.0,
-      "citation_count": 0
-    },
-    {
-      "id": "paper:32",
-      "label": "Thermalization in high-dimensional systems: the (weak) role of chaos",
-      "type": "paper",
-      "relevance_score": 51.0,
-      "citation_count": 0
-    },
-    {
-      "id": "paper:7",
-      "label": "Denoising Diffusion Probabilistic Models",
-      "type": "paper",
-      "relevance_score": 51.0,
-      "citation_count": 0
-    },
-    {
-      "id": "paper:107",
-      "label": "Quantitative propagation of chaos and universality for asymmetric Langevin spin glass dynamics",
-      "type": "paper",
-      "relevance_score": 50.97,
-      "citation_count": 0
-    },
-    {
-      "id": "paper:160",
-      "label": "Stochastic Universal Differential Equations for Epidemiological Modeling: Uncertainty Quantification in Disease Transmission Dynamics",
-      "type": "paper",
-      "relevance_score": 50.0,
-      "citation_count": 0
-    },
-    {
-      "id": "paper:157",
-      "label": "Moonshine.jl: a Julia package for genome-scale model-based ancestral recombination graph inference",
-      "type": "paper",
-      "relevance_score": 50.0,
-      "citation_count": 0
-    },
-    {
-      "id": "paper:142",
-      "label": "Glacier dynamics, proglacial lake expansion, and GLOF risk assessment in the lato basin, Trans-Himalayan Ladakh",
-      "type": "paper",
-      "relevance_score": 50.0,
-      "citation_count": 0
-    },
-    {
-      "id": "paper:120",
-      "label": "Accurate remaining useful life prediction and uncertainty quantification for wind turbines using temporal convolutional variational deep Gaussian processes",
-      "type": "paper",
-      "relevance_score": 50.0,
-      "citation_count": 0
-    },
-    {
-      "id": "paper:102",
-      "label": "Score-fPINN: Fractional Score-Based Physics-Informed Neural Networks for High-Dimensional Fokker-Planck-Lévy Equations",
-      "type": "paper",
-      "relevance_score": 50.0,
-      "citation_count": 0
-    },
-    {
-      "id": "paper:100",
-      "label": "Scaling flow-based approaches for topology sampling in SU(3) gauge theory",
-      "type": "paper",
-      "relevance_score": 50.0,
       "citation_count": 0
     }
   ],
@@ -1070,6 +1070,51 @@
       "type": "belongs_to"
     },
     {
+      "source": "paper:213",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:213",
+      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:213",
+      "target": "statistical_physics/equilibrium_structures",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:206",
+      "target": "bridges/translation_layers/fokker_planck_master",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:206",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:206",
+      "target": "statistical_physics/collective_structure/phase_transitions",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:196",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:196",
+      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:196",
+      "target": "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems",
+      "type": "belongs_to"
+    },
+    {
       "source": "paper:149",
       "target": "statistical_physics",
       "type": "belongs_to"
@@ -1205,6 +1250,21 @@
       "type": "belongs_to"
     },
     {
+      "source": "paper:204",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:204",
+      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:204",
+      "target": "urban_complex_systems",
+      "type": "belongs_to"
+    },
+    {
       "source": "paper:99",
       "target": "bridges/translation_layers/fokker_planck_master",
       "type": "belongs_to"
@@ -1217,6 +1277,21 @@
     {
       "source": "paper:99",
       "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:199",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:199",
+      "target": "ai_for_physics/generative_dynamics/flow_matching",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:199",
+      "target": "bridges",
       "type": "belongs_to"
     },
     {
@@ -1247,6 +1322,156 @@
     {
       "source": "paper:10",
       "target": "bridges",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:212",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:212",
+      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:212",
+      "target": "statistical_physics/non_equilibrium_dynamics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:210",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:210",
+      "target": "statistical_physics/collective_structure/phase_transitions",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:210",
+      "target": "statistical_physics/collective_structure",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:209",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:209",
+      "target": "ai_for_physics/generative_dynamics/flow_matching",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:209",
+      "target": "ai_for_physics/generative_dynamics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:203",
+      "target": "bridges/translation_layers/fokker_planck_master",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:203",
+      "target": "bridges",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:203",
+      "target": "bridges/translation_layers",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:202",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:202",
+      "target": "ai_for_physics/generative_dynamics/score_matching",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:202",
+      "target": "ai_for_physics/generative_dynamics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:200",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:200",
+      "target": "statistical_physics/equilibrium_structures/equilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:200",
+      "target": "statistical_physics/equilibrium_structures",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:198",
+      "target": "stochastic_analysis",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:198",
+      "target": "stochastic_analysis/stochastic_dynamics/sde_theory",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:198",
+      "target": "stochastic_analysis/stochastic_dynamics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:197",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:197",
+      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:197",
+      "target": "statistical_physics/non_equilibrium_dynamics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:195",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:195",
+      "target": "statistical_physics/collective_structure/phase_transitions",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:195",
+      "target": "statistical_physics/collective_structure",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:193",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:193",
+      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:193",
+      "target": "statistical_physics/non_equilibrium_dynamics",
       "type": "belongs_to"
     },
     {
@@ -1262,231 +1487,6 @@
     {
       "source": "paper:148",
       "target": "stochastic_analysis/asymptotics_and_variation",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:143",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:143",
-      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:143",
-      "target": "statistical_physics/non_equilibrium_dynamics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:103",
-      "target": "bridges/translation_layers/fokker_planck_master",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:103",
-      "target": "bridges",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:103",
-      "target": "bridges/translation_layers",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:69",
-      "target": "bridges/translation_layers/fokker_planck_master",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:69",
-      "target": "bridges",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:69",
-      "target": "bridges/translation_layers",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:68",
-      "target": "ai_for_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:68",
-      "target": "ai_for_physics/physics_informed_modeling",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:68",
-      "target": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:62",
-      "target": "bridges/translation_layers/fokker_planck_master",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:62",
-      "target": "bridges",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:62",
-      "target": "bridges/translation_layers",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:48",
-      "target": "ai_for_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:48",
-      "target": "ai_for_physics/physics_informed_modeling",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:48",
-      "target": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:32",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:32",
-      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:32",
-      "target": "statistical_physics/non_equilibrium_dynamics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:7",
-      "target": "ai_for_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:7",
-      "target": "ai_for_physics/generative_dynamics/ddpm",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:7",
-      "target": "ai_for_physics/generative_dynamics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:107",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:107",
-      "target": "statistical_physics/collective_structure/phase_transitions",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:107",
-      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:160",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:160",
-      "target": "urban_complex_systems",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:160",
-      "target": "urban_complex_systems/scaling_and_evolution/urban_dynamics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:157",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:157",
-      "target": "statistical_physics/collective_structure/phase_transitions",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:157",
-      "target": "ai_for_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:142",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:142",
-      "target": "urban_complex_systems",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:142",
-      "target": "urban_complex_systems/urban_data_and_generation/urban_data_science",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:120",
-      "target": "ai_for_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:120",
-      "target": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:120",
-      "target": "ai_for_physics/physics_informed_modeling",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:102",
-      "target": "bridges/translation_layers/fokker_planck_master",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:102",
-      "target": "ai_for_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:102",
-      "target": "ai_for_physics/generative_dynamics/score_matching",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:100",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:100",
-      "target": "statistical_physics/collective_structure/phase_transitions",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:100",
-      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
       "type": "belongs_to"
     }
   ]

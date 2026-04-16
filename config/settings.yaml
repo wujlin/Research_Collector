@@ -47,12 +47,29 @@ collection:
 filtering:
   # 相关性评分阈值 (0-100)，低于此值的论文不入库
   relevance_threshold: 30
+  source_relevance_thresholds:
+    openalex: 42
+
+  # 对高噪声来源只保留主线 topic 前缀，避免泛关键词把工程应用和边缘 ML 带进来
+  source_allowed_topic_prefixes:
+    openalex:
+      - "stochastic_analysis/"
+      - "statistical_physics/non_equilibrium_dynamics"
+      - "statistical_physics/collective_structure/phase_transitions"
+      - "ai_for_physics/generative_dynamics"
+      - "bridges/translation_layers/fokker_planck_master"
 
   # 最大采集论文数 / 每次
   max_papers_per_run: 320
 
   # 引用数下限 (对于非预印本)
   min_citations: 0
+  source_min_citations:
+    openalex: 0
+
+  # 对高噪声来源要求至少命中一个 leaf topic，避免泛关键词把边缘应用带进来
+  require_leaf_topics_for_sources:
+    - "openalex"
 
   # 发表年份下限
   min_year: 2015
@@ -63,8 +80,30 @@ filtering:
     - "molecular recognition"
     - "syntaxin"
     - "protein-ligand"
+    - "protein design"
+    - "pharmaceutical development"
     - "aqueous solution"
     - "enzyme kinetics"
+    - "managed pressure drilling"
+    - "bottomhole pressure"
+    - "biomedical image"
+    - "diagnostic framework"
+    - "battery prognostics"
+    - "electric vehicle batteries"
+    - "road safety"
+    - "hazard detection"
+    - "healthcare"
+    - "sociolinguistics"
+    - "flavor compounds"
+    - "immunotherapy"
+    - "video generation"
+    - "molecular graph"
+    - "transformer"
+    - "transformers"
+    - "deep linear network"
+    - "smart transportation"
+    - "network dynamics"
+    - "multidimensional spectra"
 
   youtube:
     min_query_token_hits: 2

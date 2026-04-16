@@ -11,7 +11,7 @@ topics: ["bridges/translation_layers/fokker_planck_master", "ai_for_physics", "a
 tier: 0
 citations: 0
 relevance_score: 50.0
-collected: "2026-04-15"
+collected: "2026-04-16"
 status: "unread"
 source: "openalex"
 ---

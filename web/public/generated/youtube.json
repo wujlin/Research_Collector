@@ -10,10 +10,10 @@
     "description": "In this episode recorded at NeurIPS 2025, Max Welling traces the intellectual thread connecting quantum gravity, equivariant neural networks, diffusion models, and climate-focused materials discovery.\n\nWe begin with a provocative framing: experiments as computation. Welling describes the idea of a “physics processing unit”—a world in which digital models and physical experiments work together, with nature itself acting as a kind of processor. It’s a grounded but ambitious vision of AI for science: not replacing chemists, but accelerating them.\n\nAlong the way, we discuss:\n- Why symmetry and equivariance matter in deep learning\n- The tradeoff between scale and inductive bias\n- The deep mathematical links between diffusion models and stochastic thermodynamics\n- Why materials—not software—may be the real bottleneck for AI and the energy transition\n- What it actually takes to build an AI-driven materials platform\n\nWelling reflects on moving from curiosity-driven theoretical physics (including work with Gerard 't Hooft) toward impact-driven research in climate and energy. The result is a conversation about convergence: physics and machine learning, digital models and laboratory experiments, long-term ambition and incremental progress.\n\nTimestamps\n00:00 Introduction to Max Welling and the concept of Physics Processing Units (PPUs)\n01:34 Max’s career evolution: From quantum gravity to climate-focused AI\n03:39 Physics as the \"thread\": Symmetries, gauge theory, and stochastic thermodynamics\n07:05 The explosion of \"AI for Science\" and the emerging investment bubble\n07:53 Successes in protein folding and machine learning inter-atomic potentials\n11:05 Why materials matter: The physical foundation of the AI software layer\n13:47 Transforming material discovery into a search engine problem\n14:47 The origin and mission of CuspAI: Solving carbon capture\n17:49 CuspAI’s platform architecture: Generative models, digital twins, and agents\n20:47 The role of humans in the loop: Moving from manual workflows to automation\n24:39 Strategy for breakthroughs: Lighthouse moonshots vs. incremental partnerships\n28:40 Technical Deep Dive: Explaining Equivariance and symmetry in neural networks\n31:07 The \"Bitter Lesson\" in the context of scientific inductive biases\n31:47 Preview of \"Generative AI and Stochastic Thermodynamics\" (Upcoming Book)",
     "published_at": "2026-02-25T17:19:37",
     "duration": "PT34M14S",
-    "view_count": 2231,
+    "view_count": 2234,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 83.52,
+    "importance_score": 83.5,
     "importance_bucket": "keep"
   },
   {
@@ -47,7 +47,7 @@
     "view_count": 26,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 76.16,
+    "importance_score": 76.13,
     "importance_bucket": "keep"
   },
   {
@@ -61,10 +61,10 @@
     "description": "What if everything we think we know about the brain is just a really good metaphor that we forgot was a metaphor?\n\nThis episode takes you on a journey through the history of scientific simplification, from a young Karl Friston watching wood lice in his garden to the bold claims that your mind is literally software running on biological hardware.\n\nWe bring together some of the most brilliant minds we've interviewed — Professor Mazviita Chirimuuta, Francois Chollet, Joscha Bach, Professor Luciano Floridi, Professor Noam Chomsky, Nobel laureate John Jumper, and more — to wrestle with a deceptively simple question: *When scientists simplify reality to study it, what gets captured and what gets lost?*\n\n*Key ideas explored:*\n\n*The Spherical Cow Problem* — Science requires simplification. We're limited creatures trying to understand systems far more complex than our working memory can hold. But when does a useful model become a dangerous illusion?\n\n*The Kaleidoscope Hypothesis* — Francois Chollet's beautiful idea that beneath all the apparent chaos of reality lies simple, repeating patterns — like bits of colored glass in a kaleidoscope creating infinite complexity. Is this profound truth or Platonic wishful thinking?\n\n*Is Software Really Spirit?* — Joscha Bach makes the provocative claim that software is literally spirit, not metaphorically. We push back hard on this, asking whether the \"sameness\" we see across different computers running the same program exists in nature or only in our descriptions.\n\n*The Cultural Illusion of AGI* — Why does artificial general intelligence seem so inevitable to people in Silicon Valley? Professor Chirimuuta suggests we might be caught in a \"cultural historical illusion\" — our mechanistic assumptions about minds making AI seem like destiny when it might just be a bet.\n\n*Prediction vs. Understanding* — Nobel Prize winner John Jumper: AI can predict and control, but understanding requires a human in the loop. \n\nThroughout history, we've described the brain as hydraulic pumps, telegraph networks, telephone switchboards, and now computers. Each metaphor felt obviously true at the time. This episode asks: what will we think was naive about our current assumptions in fifty years?\n\nFeaturing insights from *The Brain Abstracted* by Mazviita Chirimuuta — possibly the most influential book on how we think about thinking in 2025.\n\n---\nTIMESTAMPS:\n00:00:00 The Wood Louse & The Spherical Cow\n00:02:04 The Necessity of Abstraction\n00:04:42 Simplicius vs. Ignorantio: The Boxing Match\n00:06:39 The Kaleidoscope Hypothesis\n00:08:40 Is the Mind Software?\n00:13:15 Critique of Causal Patterns\n00:14:40 Temperature is Not a Thing\n00:18:24 The Ship of Theseus & Ontology\n00:23:45 Metaphors Hardening into Reality\n00:25:41 The Illusion of AGI Inevitability\n00:27:45 Prediction vs. Understanding\n00:32:00 Climbing the Mountain vs. The Helicopter\n00:34:53 Haptic Realism & The Limits of Knowledge\n\n---\nREFERENCES:\nPerson:\n[00:00:00] Karl Friston (UCL)\nhttps://profiles.ucl.ac.uk/1236-karl-friston\n[00:06:30] Francois Chollet\nhttps://fchollet.com/\n[00:14:41] Cesar Hidalgo, MLST interview.\nhttps://www.youtube.com/watch?v=vzpFOJRteeI\n[00:30:30] Terence Tao's Blog\nhttps://terrytao.wordpress.com/\nBook:\n[00:02:25] The Brain Abstracted\nhttps://mitpress.mit.edu/9780262548045/the-brain-abstracted/\n[00:06:00] On Learned Ignorance\nhttps://www.amazon.com/Nicholas-Cusa-learned-ignorance-translation/dp/0938060236\n[00:24:15] Science and the Modern World\nhttps://amazon.com/dp/0684836394\nInterview.:\n[00:02:43] The Brain Abstracted Patreon interview\nhttps://www.patreon.com/posts/brain-abstracted-124479979\nInterview:\n[00:04:18] David Krakauer's presentation on intelligence.\nhttps://www.youtube.com/watch?v=dY46YsGWMIc\n[00:06:45] Machine Learning Street Talk interview with Francois Chollet.\nhttps://www.youtube.com/watch?v=JTU8Ha4Jyfc\n[00:09:32] Joscha Bach Patreon interview.\nhttps://www.patreon.com/posts/joscha-bach-deep-141884561\n[00:18:24] Luciano Floridi, MLST interview.\nhttps://www.youtube.com/watch?v=YLNGvvgq3eg\n[00:25:02] Jeff Beck, MLST interview.\nhttps://www.youtube.com/watch?v=9suqiofCiwM\n[00:28:00] John Jumper\nhttps://www.patreon.com/posts/john-jumper-on-144557652\n[00:30:48] Noam Chomsky, MLST interview.\nhttps://www.youtube.com/watch?v=axuGfh4UR9Q\n[00:31:59] Anna Ciaunica\nhttps://www.patreon.com/posts/dr-anna-ciaunica-144509970\n[00:33:12] Mike Israetel debate on functionalism.\nhttps://www.youtube.com/watch?v=4yYcN_mFi18\nCompany/Org:\n[00:09:25] Neuralink\nhttps://neuralink.com/\nPaper:\n[00:23:45] A Logical Calculus of Ideas Immanent in Nervous Activity\nhttps://link.springer.com/article/10.1007/BF02478259\n[00:28:00] Highly Accurate Protein Structure Prediction with AlphaFold\nhttps://www.nature.com/articles/s41586-021-03819-2\n\n Thank you to Dr. Maxwell Ramstead for early script work on this show (Ph.D student of Friston) and the woodlice story came from him!",
     "published_at": "2026-01-18T04:38:00",
     "duration": "PT42M5S",
-    "view_count": 18351,
+    "view_count": 18363,
     "topic_key": "ai_for_physics/generative_dynamics/sde_generative",
     "resource_type": "video",
-    "importance_score": 73.83,
+    "importance_score": 73.8,
     "importance_bucket": "keep"
   },
   {
@@ -78,10 +78,10 @@
     "description": "Learn more details about this course: https://online.stanford.edu/courses/cme296-diffusion-and-large-vision-models\n\nTo follow along with the course schedule and syllabus, visit: https://cme296.stanford.edu/syllabus/\n\nChapters:\n00:00:00 Introduction\n00:04:33 Motivation behind score matching\n00:14:30 Lanvegin sampling\n00:18:43 Score estimation\n00:19:50 Implicit score matching, sliced score matching\n00:20:56 Score of a Gaussian distribution\n00:29:58 Denoising score matching\n00:40:44 Limitations of DSM\n00:49:49 Noise conditional score networks\n00:52:49 Annealed Langevin dynamics\n00:58:09 Parallel between DDPM and score\n01:04:37 Continuous derivation\n01:14:31 SDE formulation\n01:22:54 Training\n01:24:29 Reverse SDE\n01:28:46 Inference with Euler-Maruyama\n01:30:32 PF-ODE\n01:41:24 DPM-Solver\n\nFor more information about Stanford’s graduate programs, visit: https://online.stanford.edu/graduate-education\n\nAfshine Amidi is an Adjunct Lecturer at Stanford University.\n\nShervine Amidi is an Adjunct Lecturer at Stanford University.\n\nView the course playlist: https://www.youtube.com/playlist?list=PLoROMvodv4rNdy8rt2rZ4T2xM0OjADnfu",
     "published_at": "2026-04-14T16:41:58",
     "duration": "PT1H48M48S",
-    "view_count": 2460,
+    "view_count": 4215,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 72.87,
+    "importance_score": 72.97,
     "importance_bucket": "keep"
   },
   {
@@ -98,7 +98,7 @@
     "view_count": 1,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 72.85,
+    "importance_score": 72.83,
     "importance_bucket": "keep"
   },
   {
@@ -129,10 +129,10 @@
     "description": "Lecture notes: https://diffusion.csail.mit.edu/2026/docs/lecture_notes.pdf\nSlides: https://diffusion.csail.mit.edu/2026/docs/20260123_Lecture_03.pdf\nCourse website: https://diffusion.csail.mit.edu/2026/index.html\nCode exercises: https://diffusion.csail.mit.edu/2026/index.html\n\nNext video: https://youtu.be/8oWZ1bHwyRI?si=sTM4VKpuHIyzkeOR\nPlaylist: https://youtube.com/playlist?list=PL57nT7tSGAAXwjhDYcxEycx5W7YoSrZyt&si=kW3eXAUiCZCJuhXH\n\nClass: MIT 6.S184: Generative AI with Stochastic Differential Equations\nLecture 01: Flow and Diffusion Models\nInstructors: Peter Holderrieth (https://www.peterholderrieth.com/), Ron Shprints (https://ronsh9.github.io/)\n\nDiffusion and flow-based models have become the state of the art algorithms for generative AI across a wide range of data modalities, including images, videos, shapes, molecules, music, and more! This MIT computer science course aims to build up the mathematical framework underlying these models from first principles. At the end of the class, students will have built a toy image diffusion model from scratch, and along the way, will have gained hands-on experience with the mathematical toolbox of stochastic differential equations that is useful in many other fields. This course is ideal for students who want to develop a principled understanding of the theory and practice of generative AI.\n\nWe thank MIT SOUL for video editing. You can find more courses at: https://mitsoul.org/.",
     "published_at": "2026-03-18T11:52:56",
     "duration": "PT45M44S",
-    "view_count": 1936,
+    "view_count": 1989,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 71.83,
+    "importance_score": 71.85,
     "importance_bucket": "keep"
   },
   {
@@ -149,7 +149,7 @@
     "view_count": 256,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 68.33,
+    "importance_score": 68.31,
     "importance_bucket": "keep"
   },
   {
@@ -166,7 +166,7 @@
     "view_count": 333,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 68.06,
+    "importance_score": 68.03,
     "importance_bucket": "keep"
   },
   {
@@ -183,7 +183,7 @@
     "view_count": 204,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 67.84,
+    "importance_score": 67.82,
     "importance_bucket": "keep"
   },
   {
@@ -200,7 +200,7 @@
     "view_count": 143,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 67.48,
+    "importance_score": 67.45,
     "importance_bucket": "keep"
   },
   {
@@ -234,7 +234,7 @@
     "view_count": 1,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 66.88,
+    "importance_score": 66.85,
     "importance_bucket": "keep"
   },
   {
@@ -248,10 +248,10 @@
     "description": "",
     "published_at": "2026-02-27T13:47:04",
     "duration": "PT1H1M40S",
-    "view_count": 92,
+    "view_count": 94,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 66.74,
+    "importance_score": 66.75,
     "importance_bucket": "keep"
   },
   {
@@ -265,27 +265,10 @@
     "description": "MIT 18.642 Topics in Mathematics with Applications in Finance, Fall 2024\nInstructor: Peter Kempthorne\nView the complete course: https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP601Q2jo-J_3raNCMMs6Jves\n\nThe lecture provides an in-depth introduction to stochastic calculus, focusing on Brownian motion with drift and the construction of Itô integrals, which extend ordinary calculus to stochastic processes. Key concepts include the definition of Itô integrals for random and deterministic functions, the Itô isometry connecting variance and integrand norms, and Itô’s formula, which generalizes Taylor expansions to stochastic settings, enabling applications such as solving partial differential equations and martingale problems in quantitative finance.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
     "published_at": "2025-12-03T15:44:43",
     "duration": "PT1H22M50S",
-    "view_count": 9415,
+    "view_count": 9475,
     "topic_key": "stochastic_analysis",
     "resource_type": "video",
-    "importance_score": 66.7,
-    "importance_bucket": "keep"
-  },
-  {
-    "id": 72,
-    "title": "Maximum Likelihood Estimation (MLE) with Examples",
-    "channel_name": "Steve Brunton",
-    "channel_id": "UCm5mt-A4w61lknZ9lCsZtBw",
-    "video_id": "rCdxlN6Ph14",
-    "playlist_id": null,
-    "url": "https://www.youtube.com/watch?v=rCdxlN6Ph14",
-    "description": "This video introduces Maximum Likelihood Estimation (MLE), one of the most important methods in statistical parameter estimation.  MLE is the basis of the Bayesian extension, maximum a posteriori (MAP) estimation.  \n\nThis video was produced at the University of Washington, and we acknowledge funding support from the Boeing Company\n\n%%% CHAPTERS %%%\n00:00 Intro\n01:05 Problem Statement of MLE\n05:58 Deriving the Estimator\n12:20 Example: MLE of a Poisson\n19:00 Recap\n21:45 Note on Prior Knowledge & Outro",
-    "published_at": "2025-11-13T12:31:15",
-    "duration": "PT23M46S",
-    "view_count": 32461,
-    "topic_key": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
-    "resource_type": "video",
-    "importance_score": 65.2,
+    "importance_score": 66.67,
     "importance_bucket": "keep"
   },
   {
@@ -299,10 +282,27 @@
     "description": "Outline\n00:00 - Intro\n01:15 - Origin story: early path and the road to science \n04:20 - On graphical visualization and aphantasia \n08:08 - The interest in fluid dynamics \n12:00 - Caltech, Jerry Marsden, and the move to the Pacific time zone \n19:43 - Dynamic Mode Decomposition (DMD) and the Koopman operator \n27:15 - On teaching and the Eigensteve channel \n39:22 - SINDy: Sparse Identification of Nonlinear Dynamics \n45:45 - Automatic knowledge creation and Explainable AI \n54:31 - HydroGym: RL benchmarks for fluid flow control \n1:01:37 - Optimization boot camp \n1:05:31 - Collimator \n1:13:18 - Outro\n\nLinks\nSteve's website: https://www.eigensteve.com/\nEigensteve channel: https://www.youtube.com/c/eigensteve\nJerrold E. Marsden: https://en.wikipedia.org/wiki/Jerrold_E._Marsden\nAphantasia: https://en.wikipedia.org/wiki/Aphantasia\nJ. Nathan Kutz: https://amath.washington.edu/people/j-nathan-kutz\nClarence W. Rowley: https://cwrowley.princeton.edu/\nDMD: https://en.wikipedia.org/wiki/Dynamic_mode_decomposition\nKoopman operator: https://en.wikipedia.org/wiki/Koopman_operator\nDynamic Mode Decomposition book: https://epubs.siam.org/doi/book/10.1137/1.9781611974508\nOn Dynamic Mode Decomposition paper: https://doi.org/10.3934/jcd.2014.1.391\nDMD with control: https://arxiv.org/abs/1409.6358\nCompressed sensing and DMD: https://doi.org/10.3934/jcd.2015002\nModern Koopman Theory for Dynamical Systems: https://arxiv.org/abs/2102.12086\nDeep learning for universal linear embeddings of nonlinear dynamics: https://doi.org/10.1038/s41467-018-07210-0\nData-driven discovery of Koopman eigenfunctions for control: https://doi.org/10.1088/2632-2153/abf0f5\nPyDMD: https://github.com/PyDMD\nDiscovering governing equations from data by sparse identification of nonlinear dynamical systems: https://doi.org/10.1073/pnas.1517384113\nData-driven discovery of partial differential equations:\nhttps://doi.org/10.1126/sciadv.1602614\nSINDy for model predictive control in the low-data limit:\nhttps://doi.org/10.1098/rspa.2018.0335\nPySINDy: https://github.com/dynamicslab/pysindy\nSINDy with control: https://arxiv.org/abs/2108.13404\nSINDy review: https://doi.org/10.1146/annurev-control-030123-015238\nData-Driven Science and Engineering: Machine Learning, Dynamical Systems, and Control: http://www.databookuw.com\nExplainable AI: Learning from the Learners: https://arxiv.org/abs/2601.05525\nHydroGym: https://github.com/dynamicslab/hydrogym",
     "published_at": "2026-04-15T06:15:01",
     "duration": "PT1H14M23S",
-    "view_count": 43,
+    "view_count": 229,
     "topic_key": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
     "resource_type": "video",
-    "importance_score": 62.75,
+    "importance_score": 65.24,
+    "importance_bucket": "keep"
+  },
+  {
+    "id": 72,
+    "title": "Maximum Likelihood Estimation (MLE) with Examples",
+    "channel_name": "Steve Brunton",
+    "channel_id": "UCm5mt-A4w61lknZ9lCsZtBw",
+    "video_id": "rCdxlN6Ph14",
+    "playlist_id": null,
+    "url": "https://www.youtube.com/watch?v=rCdxlN6Ph14",
+    "description": "This video introduces Maximum Likelihood Estimation (MLE), one of the most important methods in statistical parameter estimation.  MLE is the basis of the Bayesian extension, maximum a posteriori (MAP) estimation.  \n\nThis video was produced at the University of Washington, and we acknowledge funding support from the Boeing Company\n\n%%% CHAPTERS %%%\n00:00 Intro\n01:05 Problem Statement of MLE\n05:58 Deriving the Estimator\n12:20 Example: MLE of a Poisson\n19:00 Recap\n21:45 Note on Prior Knowledge & Outro",
+    "published_at": "2025-11-13T12:31:15",
+    "duration": "PT23M46S",
+    "view_count": 32641,
+    "topic_key": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
+    "resource_type": "video",
+    "importance_score": 65.17,
     "importance_bucket": "keep"
   },
   {
@@ -319,7 +319,7 @@
     "view_count": 656,
     "topic_key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
     "resource_type": "video",
-    "importance_score": 61.46,
+    "importance_score": 61.44,
     "importance_bucket": "keep"
   },
   {
@@ -333,10 +333,10 @@
     "description": "Speaker: Sergio Ciliberto (ENS Lyon, France)\nSpring College in the Physics of Complex Systems",
     "published_at": "2026-04-07T15:19:38",
     "duration": "PT1H23M29S",
-    "view_count": 97,
+    "view_count": 98,
     "topic_key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
     "resource_type": "video",
-    "importance_score": 60.79,
+    "importance_score": 60.78,
     "importance_bucket": "keep"
   },
   {
@@ -350,10 +350,10 @@
     "description": "",
     "published_at": "2026-02-25T22:23:25",
     "duration": "PT1H36M14S",
-    "view_count": 188,
+    "view_count": 189,
     "topic_key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
     "resource_type": "video",
-    "importance_score": 60.77,
+    "importance_score": 60.75,
     "importance_bucket": "keep"
   },
   {
@@ -370,7 +370,7 @@
     "view_count": 170,
     "topic_key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
     "resource_type": "video",
-    "importance_score": 60.67,
+    "importance_score": 60.64,
     "importance_bucket": "keep"
   },
   {
@@ -384,10 +384,10 @@
     "description": "Speaker: Sergio Ciliberto (ENS Lyon, France)\nSpring College in the Physics of Complex Systems",
     "published_at": "2026-04-08T09:27:05",
     "duration": "PT1H23M30S",
-    "view_count": 76,
+    "view_count": 81,
     "topic_key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
     "resource_type": "video",
-    "importance_score": 60.43,
+    "importance_score": 60.52,
     "importance_bucket": "keep"
   },
   {
@@ -404,24 +404,7 @@
     "view_count": 74,
     "topic_key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
     "resource_type": "video",
-    "importance_score": 60.39,
-    "importance_bucket": "keep"
-  },
-  {
-    "id": 56,
-    "title": "Machine Learning - Brunton & LeCun & Noe - September 2019",
-    "channel_name": "Steve Brunton",
-    "channel_id": "UCGzuiiLdQZu9wxDNJHO_JnA",
-    "video_id": "eKycyZWu6Ks",
-    "playlist_id": null,
-    "url": "https://www.youtube.com/watch?v=eKycyZWu6Ks",
-    "description": "Physicists worked with machine learning leaders at IPAM in September 2019. The 12-week program featured talks by Steve Brunton of U. Washington, Yann LeCun of Meta, and Frank Noe of Freie Universität Berlin. This highly-rated series inspired participants to propose new workshops at IPAM at UCLA, to explore how natural organization can inform machine learning algorithms. \nCheck out our upcoming workshops online at: www.IPAM.UCLA.edu",
-    "published_at": "2025-08-15T18:40:29",
-    "duration": "PT28S",
-    "view_count": 359,
-    "topic_key": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
-    "resource_type": "video",
-    "importance_score": 59.9,
+    "importance_score": 60.36,
     "importance_bucket": "keep"
   },
   {
@@ -469,7 +452,7 @@
     "description": "This video was produced at the University of Washington, and we acknowledge funding support from the Boeing Company\n\n%%% CHAPTERS %%%\n00:00 Intro\n02:14 Background: The Lagrangian Perspective\n05:14 Background: Lagrangian Dynamics\n06:46 Variational Integrators\n10:40 The Parallel to Machine Learning/ Why LNNs\n13:22 LNNs: Underlying Concept\n16:02 LNNs are ODEs/ LNNs: Implementation\n18:21 Outro",
     "published_at": "2024-07-08T12:00:14",
     "duration": "PT19M49S",
-    "view_count": 38589,
+    "view_count": 38601,
     "topic_key": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
     "resource_type": "video",
     "importance_score": 59.88,
@@ -486,10 +469,27 @@
     "description": "This video was produced at the University of Washington, and we acknowledge funding support from the Boeing Company\n\n%%% CHAPTERS %%%\n00:00 Intro\n01:17 Background: Hamiltonian Dynamics\n// 03:51 Introduction to Mechanics and Symmetry Recommendation\n04:46 NonChaotic vs Chaotic Hamiltonian Systems\n06:03 Impact of Chaos on Naiive Integrators\n09:01 Symplectic Integrators and HNNs\n// 09:43 HNNs\n11:25 Hamilton's Equations and Loss\n15:07 Neural ODE Refresher\n16:25 HNN Performance\n// 17:39 Left to the Viewer/Homework\n18:36 Outro",
     "published_at": "2024-07-15T16:30:02",
     "duration": "PT19M24S",
-    "view_count": 33416,
+    "view_count": 33433,
     "topic_key": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
     "resource_type": "video",
     "importance_score": 59.88,
+    "importance_bucket": "keep"
+  },
+  {
+    "id": 56,
+    "title": "Machine Learning - Brunton & LeCun & Noe - September 2019",
+    "channel_name": "Steve Brunton",
+    "channel_id": "UCGzuiiLdQZu9wxDNJHO_JnA",
+    "video_id": "eKycyZWu6Ks",
+    "playlist_id": null,
+    "url": "https://www.youtube.com/watch?v=eKycyZWu6Ks",
+    "description": "Physicists worked with machine learning leaders at IPAM in September 2019. The 12-week program featured talks by Steve Brunton of U. Washington, Yann LeCun of Meta, and Frank Noe of Freie Universität Berlin. This highly-rated series inspired participants to propose new workshops at IPAM at UCLA, to explore how natural organization can inform machine learning algorithms. \nCheck out our upcoming workshops online at: www.IPAM.UCLA.edu",
+    "published_at": "2025-08-15T18:40:29",
+    "duration": "PT28S",
+    "view_count": 359,
+    "topic_key": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
+    "resource_type": "video",
+    "importance_score": 59.87,
     "importance_bucket": "keep"
   },
   {
@@ -523,7 +523,7 @@
     "view_count": 976,
     "topic_key": "urban_complex_systems/scaling_and_evolution/urban_scaling",
     "resource_type": "video",
-    "importance_score": 58.74,
+    "importance_score": 58.71,
     "importance_bucket": "keep"
   },
   {
@@ -554,10 +554,10 @@
     "description": "Blaise Agüera y Arcas presenting at ALife 2025 — the most technically detailed public walkthrough of the ideas in his *What is Life?* and *What is Intelligence?* books that we've come across.\n\nHe covers the BFF experiments (self-replicating programs emerging spontaneously from random noise), the mathematical framework connecting Lotka-Volterra population dynamics with Smoluchowski coagulation, eigenvalue analysis of cooperation matrices, and his central claim that symbiogenesis — not mutation — is the primary engine of evolutionary novelty.\n\nThe experimental results are genuinely striking: complex self-replicating code arising from random byte strings with zero mutation, a sharp phase transition that looks like gelation, and a proof that blocking deep symbiogenetic ancestry trees prevents the transition entirely.\n\nA few things worth flagging for critical viewers:\n\n— The substrate is more carefully engineered than the framing sometimes suggests. The choice of language, tape length, interaction protocol, and step limits all shape what emerges. Their own SUBLEQ counterexample (where self-replicators *don't* arise despite being theoretically possible) highlights that these design choices matter substantially — and a general theory of which substrates support this transition is still missing.\n\n— The leap from \"self-replicating programs on fixed-length tapes\" to \"life was computational and intelligent from the start\" involves significant philosophical extrapolation beyond what the experiments directly demonstrate.\n\n— The Bedau et al. (2000) open problems paper he references at the start actually sets a higher bar for Challenge 3.2 than BFF currently meets: it asks that \"the internal organization of these 'organisms' and the boundaries separating them from their environment arise and be sustained through the activities of lower-level primitives\" — whereas BFF's tape boundaries are fixed by design, not emergent.\n\n---\nTIMESTAMPS:\n00:00:00 Introduction: From Noise to Programs & ALife History\n00:03:15 Defining Life: Function as the \"Spirit\"\n00:05:45 Von Neumann's Insight: Life is Embodied Computation\n00:09:15 Physics of Computation: Irreversibility & Fallacies\n00:15:00 The BFF Experiment: Spontaneous Generation of Code\n00:23:45 The Mystery: Complexity Growth Without Mutation\n00:27:00 Symbiogenesis: The Engine of Novelty\n00:33:15 Mathematical Proof: Blocking Symbiosis Stops Life\n00:40:15 Evolutionary Implications: It's Symbiogenesis All The Way Down\n00:44:30 Intelligence as Modeling Others\n00:46:49 Q&A: Levels of Abstraction & Definitions\n\n---\nREFERENCES:\nPaper:\n[00:01:16] Open Problems in Artificial Life\nhttps://direct.mit.edu/artl/article/6/4/363/2354/Open-Problems-in-Artificial-Life\n[00:09:30] When does a physical system compute?\nhttps://arxiv.org/abs/1309.7979\n[00:15:00] Computational Life\nhttps://arxiv.org/abs/2406.19108\n[00:27:30] On the Origin of Mitosing Cells\nhttps://pubmed.ncbi.nlm.nih.gov/11541392/\n[00:42:00] The Major Evolutionary Transitions\nhttps://www.nature.com/articles/374227a0\n[00:44:00] The ARC gene\nhttps://www.nih.gov/news-events/news-releases/memory-gene-goes-viral\nPerson:\n[00:05:45] Alan Turing\nhttps://plato.stanford.edu/entries/turing/\n[00:07:30] John von Neumann\nhttps://en.wikipedia.org/wiki/John_von_Neumann\n[00:11:15] Hector Zenil\nhttps://hectorzenil.net/\n[00:12:00] Robert Sapolsky\nhttps://profiles.stanford.edu/robert-sapolsky\n[00:29:30] Marian Smoluchowski\nhttps://en.wikipedia.org/wiki/Marian_Smoluchowski\nBook:\n[00:06:15] What is Life?\nhttps://mitpress.mit.edu/9780262554091/what-is-life/\n[00:19:45] What is Life? How Chemistry Becomes Biology\nhttps://amazon.com/dp/0199641013\nTechnical Concept:\n[00:15:45] Brainfuck\nhttps://esolangs.org/wiki/Brainfuck\n\n---\nLINKS:\nRESCRIPT: https://app.rescript.info/public/share/ff7gb6HpezOR3DF-gr9-rCoMFzzEgUjLQK6voV5XVWY",
     "published_at": "2026-02-16T07:51:14",
     "duration": "PT55M49S",
-    "view_count": 123627,
+    "view_count": 123727,
     "topic_key": "ai_for_physics",
     "resource_type": "video",
-    "importance_score": 58.55,
+    "importance_score": 58.52,
     "importance_bucket": "keep"
   },
   {
@@ -574,24 +574,7 @@
     "view_count": 38,
     "topic_key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
     "resource_type": "video",
-    "importance_score": 58.42,
-    "importance_bucket": "keep"
-  },
-  {
-    "id": 45,
-    "title": "André Vieira: Results on phase transitions in nonequilibrium systems in contact with two...",
-    "channel_name": "Stochastic Thermodynamics Search",
-    "channel_id": "UCHZD5-4GF1lLLUklsxyt3fw",
-    "video_id": "pEljhppcYCM",
-    "playlist_id": null,
-    "url": "https://www.youtube.com/watch?v=pEljhppcYCM",
-    "description": "ICTP-SAIFR\nWorkshop on Non-equilibrium Statistical Physics: From glasses and active matter to stochastic thermodynamics and complex networks\nFebruary 23-27, 2026\n\nSpeakers:\nAndré Vieira (USP): Results on phase transitions in nonequilibrium systems in contact with two thermal reservoirs\n\nMore Information:\nhttps://www.ictp-saifr.org/wnesp2026/",
-    "published_at": "2026-03-04T16:11:14",
-    "duration": "PT34M37S",
-    "view_count": 30,
-    "topic_key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-    "resource_type": "video",
-    "importance_score": 58.19,
+    "importance_score": 58.39,
     "importance_bucket": "keep"
   },
   {
@@ -612,6 +595,23 @@
     "importance_bucket": "keep"
   },
   {
+    "id": 45,
+    "title": "André Vieira: Results on phase transitions in nonequilibrium systems in contact with two...",
+    "channel_name": "Stochastic Thermodynamics Search",
+    "channel_id": "UCHZD5-4GF1lLLUklsxyt3fw",
+    "video_id": "pEljhppcYCM",
+    "playlist_id": null,
+    "url": "https://www.youtube.com/watch?v=pEljhppcYCM",
+    "description": "ICTP-SAIFR\nWorkshop on Non-equilibrium Statistical Physics: From glasses and active matter to stochastic thermodynamics and complex networks\nFebruary 23-27, 2026\n\nSpeakers:\nAndré Vieira (USP): Results on phase transitions in nonequilibrium systems in contact with two thermal reservoirs\n\nMore Information:\nhttps://www.ictp-saifr.org/wnesp2026/",
+    "published_at": "2026-03-04T16:11:14",
+    "duration": "PT34M37S",
+    "view_count": 30,
+    "topic_key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+    "resource_type": "video",
+    "importance_score": 58.17,
+    "importance_bucket": "keep"
+  },
+  {
     "id": 21,
     "title": "Why Civilization Keeps Speeding Toward Crisis - Dr. Geoffrey West",
     "channel_name": "If I'm Really Honest",
@@ -625,7 +625,7 @@
     "view_count": 582,
     "topic_key": "urban_complex_systems/scaling_and_evolution/urban_scaling",
     "resource_type": "video",
-    "importance_score": 57.98,
+    "importance_score": 57.95,
     "importance_bucket": "keep"
   },
   {
@@ -673,10 +673,10 @@
     "description": "Full video: https://youtu.be/firXjwZ_6KI\n\nAI Coffee Break Merch! 🛍️ https://aicoffeebreak.creator-spring.com/\n\nWe explain diffusion models and flow-matching models side by side to highlight the key differences between them. Flow-Matching Models are the new generation of AI image generators that are quickly replacing diffusion models — they take everything diffusion did well, but make it faster, smoother, and deterministic.\n\nThanks to our Patrons who support us in Tier 2, 3, 4: 🙏 \nVignesh Valliappan, Ivan Janov, Sunny Dhiana, Andy Ma\n\n▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\n🔥 Optionally, pay us a coffee to help with our Coffee Bean production!  ☕\nPatreon: https://www.patreon.com/AICoffeeBreak\nKo-fi: https://ko-fi.com/aicoffeebreak\nJoin this channel as a Bean Member to get access to perks:\nhttps://www.youtube.com/channel/UCobqgqE4i5Kf7wrxRxhToQA/join\n▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\n\n🔗 Links:\nAICoffeeBreakQuiz: https://www.youtube.com/c/AICoffeeBreak/community\nTwitter / X: https://twitter.com/AICoffeeBreak\nLinkedIn: https://www.linkedin.com/in/letitia-parcalabescu/\nThreads: https://www.threads.net/@ai.coffee.break\nBluesky: https://bsky.app/profile/aicoffeebreak.bsky.social\nReddit: https://www.reddit.com/r/AICoffeeBreak/\nYouTube: https://www.youtube.com/AICoffeeBreak\nSubstack: https://aicoffeebreakwl.substack.com/\nWeb:      https://explanationmark.de/letitia\n               https://aicoffeebreak.com\n\n#AICoffeeBreak #MsCoffeeBean #MachineLearning #AI #research​\n\nVideo editing: Nils Trost",
     "published_at": "2025-10-26T13:18:45",
     "duration": "PT1M",
-    "view_count": 4560,
+    "view_count": 4562,
     "topic_key": "ai_for_physics",
     "resource_type": "video",
-    "importance_score": 57.75,
+    "importance_score": 57.73,
     "importance_bucket": "keep"
   },
   {
@@ -707,10 +707,10 @@
     "description": "We explain diffusion models and flow-matching models side by side to highlight the key differences between them. Flow-Matching Models are the new generation of AI image generators that are quickly replacing diffusion models — they take everything diffusion did well, but make it faster, smoother, and deterministic.\n\nAI Coffee Break Merch! 🛍️ https://aicoffeebreak.creator-spring.com/\n\nText to image diffusion models: https://youtu.be/J87hffSMB60\n\nUseful deeper reading:\n• 🌊 Lipman et al., “Flow Matching for Generative Modeling” (2023) — https://arxiv.org/abs/2210.02747\n• 🧮 Kingma and Gao, \"Understanding Diffusion Objectives as the ELBO with Simple Data Augmentation\" (2022) — https://arxiv.org/abs/2210.02747\n• ⚡ Esser et al, \"Scaling Rectified Flow Transformers for High-Resolution Image Synthesis\" (2024) — https://arxiv.org/abs/2403.03206\n\nThanks to our Patrons who support us in Tier 2, 3, 4: 🙏 \nVignesh Valliappan, Ivan Janov, Sunny Dhiana, Andy Ma\n\nOutline:\n00:00 Difference between Flow-matching and Diffusion\n01:07 Training Diffusion Models\n05:45 Inference for Diffusion Models\n09:03 Training Flow-Matching\n11:55 Inference with Flow-Matching\n14:02 Side-by-Side Comparison\n\n\n▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\n🔥 Optionally, pay us a coffee to help with our Coffee Bean production!  ☕\nPatreon: https://www.patreon.com/AICoffeeBreak\nKo-fi: https://ko-fi.com/aicoffeebreak\nJoin this channel as a Bean Member to get access to perks:\nhttps://www.youtube.com/channel/UCobqgqE4i5Kf7wrxRxhToQA/join\n▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\n\n🔗 Links:\nAICoffeeBreakQuiz: https://www.youtube.com/c/AICoffeeBreak/community\nTwitter / X: https://twitter.com/AICoffeeBreak\nLinkedIn: https://www.linkedin.com/in/letitia-parcalabescu/\nThreads: https://www.threads.net/@ai.coffee.break\nBluesky: https://bsky.app/profile/aicoffeebreak.bsky.social\nReddit: https://www.reddit.com/r/AICoffeeBreak/\nYouTube: https://www.youtube.com/AICoffeeBreak\nSubstack: https://aicoffeebreakwl.substack.com/\nWeb:      https://explanationmark.de/letitia\n               https://aicoffeebreak.com\n\n#AICoffeeBreak #MsCoffeeBean #MachineLearning #AI #research​\n\nVideo editing: Nils Trost",
     "published_at": "2025-10-19T12:13:37",
     "duration": "PT16M8S",
-    "view_count": 36065,
+    "view_count": 36149,
     "topic_key": "ai_for_physics",
     "resource_type": "video",
-    "importance_score": 57.58,
+    "importance_score": 57.55,
     "importance_bucket": "keep"
   },
   {
@@ -724,10 +724,10 @@
     "description": "Lecture notes: https://diffusion.csail.mit.edu/2026/docs/lecture_notes.pdf\nSlides: https://diffusion.csail.mit.edu/2026/docs/20260120_Lecture_01.pdf\nCourse website: https://diffusion.csail.mit.edu/2026/index.html\nCode exercises: https://diffusion.csail.mit.edu/2026/index.html\n\nNext video: https://youtu.be/PNkMKWW8Khw?si=uf2imFEkOyl4Zbes\nPlaylist: https://youtube.com/playlist?list=PL57nT7tSGAAXwjhDYcxEycx5W7YoSrZyt&si=kW3eXAUiCZCJuhXH\n\nClass: MIT 6.S184: Generative AI with Stochastic Differential Equations\nLecture 01: Flow and Diffusion Models\nInstructors: Peter Holderrieth (https://www.peterholderrieth.com/), Ron Shprints (https://ronsh9.github.io/)\n\nDiffusion and flow-based models have become the state of the art algorithms for generative AI across a wide range of data modalities, including images, videos, shapes, molecules, music, and more! This MIT computer science course aims to build up the mathematical framework underlying these models from first principles. At the end of the class, students will have built a toy image diffusion model from scratch, and along the way, will have gained hands-on experience with the mathematical toolbox of stochastic differential equations that is useful in many other fields. This course is ideal for students who want to develop a principled understanding of the theory and practice of generative AI.\n\nWe thank MIT SOUL for video editing. You can find more courses at: https://mitsoul.org/.",
     "published_at": "2026-03-18T12:00:14",
     "duration": "PT1H18M3S",
-    "view_count": 18110,
+    "view_count": 18331,
     "topic_key": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
     "resource_type": "video",
-    "importance_score": 56.33,
+    "importance_score": 56.3,
     "importance_bucket": "keep"
   },
   {
@@ -741,10 +741,10 @@
     "description": "Get 1 Month Free of ConsensusAi: https://get.consensus.app/we00d2cmjpqe\nGet Professional High Quality Talk Therapy at BetterHelp. 10% off your first month of therapy with this link - https://betterhelp.com/giantsshoulder (Paid Partnership by BetterHelp)\n\nKarl Friston is one of the most influential neuroscientists alive and the creator of the Free Energy Principle, a unifying theory that aims to explain how brains perceive, act, learn, and remain alive in an uncertain world.\n\nThe brain is not a passive receiver of information. It is an active prediction machine, constantly generating expectations about the world and the body, updating those beliefs when they fail, and acting to make its predictions come true. Under this framework, perception is inference, action is prediction fulfilment, emotion is bodily forecasting, and the self is a model the brain uses to explain its own persistence.\n\nExpect to learn what the Free Energy Principle actually is, why living systems must minimise surprise, how predictive coding and active inference work, why perception is a controlled hallucination, how attention and precision shape experience, what interoceptive inference reveals about emotion and the self, how psychedelics relax beliefs, where consciousness might fit in a predictive hierarchy, and why this theory may be one of the deepest explanations of mind we currently have.\n\nTimestamps: \n00:00 Introduction to the Free Energy Principle\n02:54 Deflationary Nature of the Free Energy Principle\n05:48 Explaining the Free Energy Principle: High Road vs. Low Road\n09:02 Predictive Processing and Perception\n11:49 Active Inference and Its Implications\n15:07 Interoception and Emotional Inference\n18:02 Generative Models and Selfhood\n20:54 The Role of Emotions in Predictive Coding\n23:55 Transformative Experiences and Learning\n26:44 Conclusion: The Practical Applications of the Free Energy Principle\n48:58 Understanding the Role of Psychedelics in Therapy\n52:48 Mechanisms of False Inference and Precision in the Brain\n57:24 Relaxing Priors: The Impact of Psychedelics on Sense-Making\n01:01:03 Generative Models: Individual Differences and Shared Structures\n01:06:49 Cognitively Impenetrable Illusions and Prior Beliefs\n01:15:15 Sensory Attenuation and the Role of Attention\n01:19:03 The Free Energy Principle: Implications for Psychiatry\n01:25:48 The Future of Neuroscience Education and Research\n...\n\n❤️ Subscribe to our main channel - https://www.youtube.com/@thegiantsshoulder?sub_confirmation=1\n💚 Follow on Spotify - https://open.spotify.com/show/5m3Gta5MtIYdk59pb2GJ7M?si=Ka2rAQv7TyqiC9wvGwERpA\n💜 Follow on Apple Podcasts - https://podcasts.apple.com/ie/podcast/the-giants-shoulder/id1752486249\n\nDownload my FREE EBook 26 Neuroscience Books for 2026 HERE: https://thegiantsshoulder.com/",
     "published_at": "2026-01-22T17:00:42",
     "duration": "PT1H41M10S",
-    "view_count": 2167,
+    "view_count": 2180,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 56.23,
+    "importance_score": 56.21,
     "importance_bucket": "keep"
   },
   {
@@ -758,10 +758,10 @@
     "description": "Title: Physics-Grounded World Models\nSpeaker: Hong-Xing (Koven) Yu (Stanford)\nDate: Monday, March 9, 2026\n\nAbstract: World models that recreate and simulate the physical world hold transformative potential across robotics, entertainment, and engineering analysis. Achieving this vision requires both generating 3D environments from limited observations and predicting how they evolve under physical actions. Pure physical modeling provides guaranteed consistency and action control but demands complete state specification rarely available in practice; pure generative learning handles incomplete information to produce realistic content but lacks the structured representations needed for physical interaction and reasoning. This talk presents physics-grounded world models, integrating these approaches to leverage their complementary strengths: physical representations provide the structured interface for actions and guaranteed consistency, while generative models supply visual realism and compensate for incomplete observations. I will demonstrate this framework across two core capabilities---generating 3D worlds from single images and simulating dynamics under physical actions---and show how it extends to real engineering problems in fluid and thermal analysis.\n\nBio: Hong-Xing (Koven) Yu (https://kovenyu.com/) is a PhD candidate at the Computer Science Department of Stanford University, advised by Prof. Jiajun Wu. His research focuses on physics-grounded world models. He is a recipient of the SIGGRAPH Asia Best Paper Award, the Stanford SoE Fellowship, the Qualcomm Fellowship, and the Meshy Fellowship, and a finalist of the NVIDIA Fellowship, the Meta Fellowship, the Jane Street Fellowship, and the Roblox Fellowship.\n\nThis video is closed captioned.",
     "published_at": "2026-03-11T17:26:38",
     "duration": "PT58M55S",
-    "view_count": 1679,
+    "view_count": 1686,
     "topic_key": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
     "resource_type": "video",
-    "importance_score": 55.44,
+    "importance_score": 55.42,
     "importance_bucket": "keep"
   },
   {
@@ -778,7 +778,7 @@
     "view_count": 115,
     "topic_key": "urban_complex_systems/scaling_and_evolution/urban_scaling",
     "resource_type": "video",
-    "importance_score": 54.45,
+    "importance_score": 54.43,
     "importance_bucket": "review"
   },
   {
@@ -792,10 +792,10 @@
     "description": "March 31, 2026\n\nInstructor: Dr. Christian Hubicki\nApplied Optimal Control\nEML 4930/5930-0001",
     "published_at": "2026-04-01T06:03:26",
     "duration": "PT1H12M12S",
-    "view_count": 401,
+    "view_count": 404,
     "topic_key": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
     "resource_type": "video",
-    "importance_score": 53.76,
+    "importance_score": 53.75,
     "importance_bucket": "review"
   },
   {
@@ -809,27 +809,10 @@
     "description": "SSC JE 2025 | #4 Applied Thermodynamics | Mechanical Complete Revision in 1 Class | 10 Days Revision\n📘 SSC JE 2025 Mechanical – 10 Days Revision Series (Day 01)\nIn this powerful session, we cover the complete Applied Thermodynamics revision in a single class.\nPerfect for aspirants targeting SSC JE 2025 Mechanical with high accuracy & maximum efficiency.\n\n🔥 What You Will Learn in This Class:\n✔ Full Mechanics Revision\n✔ Important Applied Thermodynamics Concepts & Formulas\n✔ PYQ-based shortcuts\n✔ High-scoring concepts for SSC JE\n✔ Last 10 days must-revise topics\n✔ Smart tricks to boost speed & accuracy\n\n🎯 Target: SSC JE 2025 Mechanical\n🎓 Mode: Complete Theory + Tricks + PYQs\n📅 Part of 10 Days Rapid Revision Series\n📲 For all Courses Download Our App: https://play.google.com/store/apps/details?id=com.makeit.easy\n🌐 Website: https://www.makeiteasyhub.com/\n📞📞For more detail call us on 9410949683, 8126398828\n\n-------🎁Our Courses:------------\n🎁 MAHAPACK: https://www.makeiteasyhub.com/course/mechanical-mahapack-for-all-je-exam\n🎁 RRB JE VIP ENTRY Batch: https://www.makeiteasyhub.com/course/rrb-je-2025-vip-entry-course-tech-non-tech-top-100-students-only-make-it-easy\n🎁RRB JE Live Batch: https://www.makeiteasyhub.com/course/rrb-je-2025-live-online-course-for-mechanical-engineers\n🎁NHPC JE 2025 (Tech+Non-Tech)https://makeiteasy.classx.co.in/new-courses/44-nhpc-je-2025-technon-tech-new-courses-2025\n🎁IOCL JE 2025 (Tech+Non-Tech)https://makeiteasy.classx.co.in/new-courses/47-iocl-je-2025-technon-tech-new-courses-2025\n🎁Complete Production By Jamal Sirhttps://makeiteasy.classx.co.in/new-courses/46-complete-production-by-jamal-sir-new-courses-2025\n🎁RRB JE Non Tech LIVE (CBT 1 + CBT 2): https://makeiteasyhub.com/rrb-je-nontech-live-cbt-1-cbt-2/\n🎁 RRB JE/ALP CBT 1:-https://www.makeiteasyhub.com/course/rrb-cbt-1-combo-alpje-2025\n🎁 RRB JE Recorded Batch:- https://www.makeiteasyhub.com/course/rrb-je-2024-live-recorded-batch-technical\n🎁 RRB JE Short Revision batch: https://makeiteasy.classx.co.in/courses/80-rrb-je-short-revision-batch\n🎁 BPSC ITI Vice principal Batch: https://makeiteasyhub.com/bpsc-iti-vice-principal-mcq-practice/ \n🎁 SSC JE 2025 : - https://www.makeiteasyhub.com/course/ssc-je-2025-mechanical-course-technical-non-technical-recorded-batch\n🎁 All State JE & PSU Live Batch:- https://makeiteasyhub.com/all-state-je-psu-live-batch/\n🎁 PSU Express Batch:-https://www.makeiteasyhub.com/course/psu-express-45-day-course-recorded-fast-track-your-success-in-psu-exams\n🎁 Mega MCQ Live Batch: https://www.makeiteasyhub.com/course/mega-live-mcq-batch-je-level\n🎁 SSC Junior Engineer Complete Recorded Batch: https://makeiteasyhub.com/ssc-je-complete-recorded-batch/\n\n\n🎁 Special Combo (CNC+ METROLOGY+ INDUSTRIAL+ CAD/CAM): https://makeiteasyhub.com/special-combo/\n🎁 Design Combo: https://makeiteasyhub.com/design-combo/\n🎁 Thermal Combo: https://makeiteasyhub.com/thermal-combo/\n🎁 Production Combo: https://makeiteasyhub.com/production-combo/\n🎁 Fluid Combo: https://makeiteasyhub.com/fluid-combo/\n\n🎁 Numerical Series:- https://makeiteasyhub.com/complete-numerical-series/\n\n=======Non- Technical Batches=======\n\n🎁 General Science Science for All Exams:https://makeiteasyhub.com/science-for-all-exams/\n🎁 General Studies for All Exams: https://makeiteasyhub.com/general-studies-for-all-exams/\n🎁 Reasoning for all exams: https://makeiteasyhub.com/reasoning-for-all-exams/\n🎁 Non- Technical Combo for all exams: https://makeiteasyhub.com/complete-non-technical/\n------------------------------------------------------------\n\n📁 YouTube Free Class Playlists: -\n          \n👉) https://www.youtube.com/playlist?list=PLjQMEOXj4i1_egexiA59nwt3xehsbLsOY\n👉) https://www.youtube.com/playlist?list=PLjQMEOXj4i18lRR9sktMLNcaXRRhXFa_u \n👉) https://www.youtube.com/playlist?list=PLjQMEOXj4i19equbvBNSUc-P46BlfiQZQ\n👉) https://www.youtube.com/playlist?list=PLjQMEOXj4i19eGPe65psMRiwNfEQe9rnt \n👉) https://www.youtube.com/playlist?list=PLjQMEOXj4i19Xa40CdRN1djanHBHD6IpX\n👉) https://www.youtube.com/playlist?list=PLjQMEOXj4i1-hBXQGDalXWU3wSdXYz9N9 \n👉) https://www.youtube.com/playlist?list=PLjQMEOXj4i1_vPc8fLQwHld76jzg1mDH2\n👉) https://www.youtube.com/playlist?list=PLjQMEOXj4i18gqRFUXJom5D4EY_ll6uQ_ \n👉) https://www.youtube.com/playlist?list=PLjQMEOXj4i18ojJVfbzDETnBpchTQjIA7\n------------------------------------------------------------\n📲 Connect Us on \n🎯Instagram  https://www.instagram.com/invites/contact/i=dpy9kno6ijqz&utm_content=horpqf3\n🎯Facebook :-https://cutt.ly/rY2jxla\n🎯Telegram For Pdfs :-https://t.me/MAKEITEASYWITHMECHANICAL\n🎯 Telegram For ITI:- https://t.me/makeiteasyiti\n🎁 Website : - https://makeiteasyhub.com/\n\n------------------------------------------------------------\nFor More Details Contact Us:-\n📞 +91-8126398828\n📞 +91-9410949683\n\n#MechanicalEngineering #MakeItEasy",
     "published_at": "2025-11-20T05:55:21",
     "duration": "PT3H2M53S",
-    "view_count": 15449,
+    "view_count": 15473,
     "topic_key": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
     "resource_type": "video",
-    "importance_score": 53.35,
-    "importance_bucket": "review"
-  },
-  {
-    "id": 7,
-    "title": "The Dangerous Illusion of AI Coding? - Jeremy Howard",
-    "channel_name": "Machine Learning Street Talk",
-    "channel_id": "UCMLtBahI5DMrt0NPvDSoIRQ",
-    "video_id": "dHBEQ-Ryo24",
-    "playlist_id": null,
-    "url": "https://www.youtube.com/watch?v=dHBEQ-Ryo24",
-    "description": "Dive into the realities of AI-assisted coding, the origins of modern fine-tuning, and the cognitive science behind machine learning with fast.ai founder Jeremy Howard. In this episode, we unpack why AI might be turning software engineering into a slot machine and how to maintain true technical intuition in the age of large language models.\n\nGTC is coming, the premier AI conference, great opportunity to learn about AI. NVIDIA and partners will showcase breakthroughs in physical AI, AI factories, agentic AI, and inference, exploring the next wave of AI innovation for developers and researchers. Register for virtual GTC for free, using my link and win NVIDIA DGX Spark (https://nvda.ws/4qQ0LMg)\n\nJeremy Howard is a renowned data scientist, researcher, entrepreneur, and educator. As the co-founder of fast.ai, former President of Kaggle, and the creator of ULMFiT, Jeremy has spent decades democratizing deep learning. His pioneering work laid the foundation for modern transfer learning and the pre-training and fine-tuning paradigm that powers today's language models.\n\nKey Topics and Main Insights Discussed:\n\n- The Origins of ULMFiT and Fine-Tuning\n- The Vibe Coding Illusion and Software Engineering\n- Cognitive Science, Friction, and Learning\n- The Future of Developers\n\nRESCRIPT: https://app.rescript.info/public/share/BhX5zP3b0m63srLOQDKBTFTooSzEMh_ARwmDG_h_izk\nhttps://app.rescript.info/api/public/sessions/62d06c0336c567d6/pdf\n\nJeremy Howard:\nhttps://x.com/jeremyphoward\nhttps://www.answer.ai/\n\n---\nTIMESTAMPS (fixed):\n00:00:00 Introduction & GTC Sponsor\n00:04:30 ULMFiT & The Birth of Fine-Tuning\n00:12:00 Intuition & The Mechanics of Learning\n00:18:30 Abstraction Hierarchies & AI Creativity\n00:23:00 Claude Code & The Interpolation Illusion\n00:27:30 Coding vs. Software Engineering\n00:30:00 Cosplaying Intelligence: Dennett vs. Searle\n00:36:30 Automation, Radiology & Desirable Difficulty\n00:42:30 Organizational Knowledge & The Slope\n00:48:00 Vibe Coding as a Slot Machine\n00:54:00 The Erosion of Control in Software\n01:01:00 Interactive Programming & REPL Environments\n01:05:00 The Notebook Debate & Exploratory Science\n01:17:30 AI Existential Risk & Power Centralization\n01:24:20 Current Risks, Privacy & Enfeeblement\n\n---\nREFERENCES:\nBlog Post:\n[00:03:00] fast.ai Blog: Self-Supervised Learning\nhttps://www.fast.ai/posts/2020-01-13-self_supervised.html\n[00:13:30] DeepMind Blog: Gemini Deep Think\nhttps://deepmind.google/blog/accelerating-mathematical-and-scientific-discovery-with-gemini-deep-think/\n[00:19:30] Modular Blog: Claude C Compiler analysis\nhttps://www.modular.com/blog/the-claude-c-compiler-what-it-reveals-about-the-future-of-software\n[00:19:45] Anthropic Engineering Blog: Building C Compiler\nhttps://www.anthropic.com/engineering/building-c-compiler\n[00:48:00] Cursor Blog: Scaling Agents\nhttps://cursor.com/blog/scaling-agents\n[01:05:15] fast.ai Blog: NB Dev Merged Driver\nhttps://www.fast.ai/posts/2022-08-25-jupyter-git.html\n[01:17:30] Jeremy Howard: Response to AI Risk Letter\nhttps://www.normaltech.ai/p/is-avoiding-extinction-from-ai-really\nBook:\n[00:08:30] M. Chirimuuta: The Brain Abstracted\nhttps://mitpress.mit.edu/9780262548045/the-brain-abstracted/\n[00:30:00] Daniel Dennett: Consciousness Explained\nhttps://www.amazon.com/Consciousness-Explained-Daniel-C-Dennett/dp/0316180661\n[00:42:30] Cesar Hidalgo: Infinite Alphabet / Laws of Knowledge\nhttps://www.amazon.com/Infinite-Alphabet-Laws-Knowledge/dp/0241655676\nArchive Article:\n[00:13:45] MLST Archive: Why Creativity Cannot Be Interpolated\nhttps://archive.mlst.ai/read/why-creativity-cannot-be-interpolated\nResearch Study:\n[00:24:30] METR Study: AI OS Development\nhttps://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/\nPaper:\n[00:24:45] Fred Brooks: No Silver Bullet\nhttps://www.cs.unc.edu/techreports/86-020.pdf\n[00:30:15] John Searle: Minds, Brains, and Programs\nhttps://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/minds-brains-and-programs/DC644B47A4299C637C89772FACC2706A\nResearch Paper:\n[00:13:50] Mathilde Caron et al.: Emerging Properties in Self-Supervised Vision Transformers (DINO)\nhttps://arxiv.org/abs/2104.14294\n[00:25:00] Oxford VGG: Sculptor Identification Paper\nhttps://www.robots.ox.ac.uk/~vgg/publications/2012/Arandjelovic12a/arandjelovic12a.pdf\n[00:36:30] Anthropic Paper: AI Skill Formation\nhttps://arxiv.org/pdf/2601.20245\nHistorical Reference:\n[00:36:45] Ebbinghaus: Memory / Spaced Repetition\nhttps://www.loc.gov/item/e11000616/\nTechnical Note:\n[00:42:45] John Ousterhout: Slope vs Intercept\nhttps://gist.github.com/gtallen1187/e83ed02eac6cc8d7e185\nVideo:\n[00:59:00] Bret Victor: Inventing on Principle\nhttps://vimeo.com/906418692\n[01:05:00] Joel Grus: I Don't Like Notebooks\nhttps://www.youtube.com/watch?v=7jiPeIFXb6U",
-    "published_at": "2026-03-03T14:50:11",
-    "duration": "PT1H26M40S",
-    "view_count": 144344,
-    "topic_key": "ai_for_physics",
-    "resource_type": "video",
-    "importance_score": 51.75,
+    "importance_score": 53.33,
     "importance_bucket": "review"
   },
   {
@@ -843,10 +826,44 @@
     "description": "Description:\nCities follow laws — not legal ones, but physical and mathematical ones. This video explores the physics of cities: how scaling laws, network theory, and complexity science reveal the hidden order behind urban growth, density, and infrastructure. Inspired by the work of Geoffrey West and Michael Batty, we examine how physics-based models are reshaping urban planning and city science.\n📚 Referenced research: West (2017) Scale, Batty (2013) The New Science of Cities.\n🔔 Subscribe for more Urban Science & City Research content.\n#PhysicsOfCities #UrbanScaling #CityScience #ComplexSystems #UrbanGrowth #NetworkTheory #SmartCities #Smartmind #TCP #Urbansimulationlab #UIP #UOM",
     "published_at": "2026-04-08T09:28:51",
     "duration": "PT7M19S",
+    "view_count": 3,
+    "topic_key": "urban_complex_systems/scaling_and_evolution/urban_scaling",
+    "resource_type": "video",
+    "importance_score": 51.93,
+    "importance_bucket": "review"
+  },
+  {
+    "id": 7,
+    "title": "The Dangerous Illusion of AI Coding? - Jeremy Howard",
+    "channel_name": "Machine Learning Street Talk",
+    "channel_id": "UCMLtBahI5DMrt0NPvDSoIRQ",
+    "video_id": "dHBEQ-Ryo24",
+    "playlist_id": null,
+    "url": "https://www.youtube.com/watch?v=dHBEQ-Ryo24",
+    "description": "Dive into the realities of AI-assisted coding, the origins of modern fine-tuning, and the cognitive science behind machine learning with fast.ai founder Jeremy Howard. In this episode, we unpack why AI might be turning software engineering into a slot machine and how to maintain true technical intuition in the age of large language models.\n\nGTC is coming, the premier AI conference, great opportunity to learn about AI. NVIDIA and partners will showcase breakthroughs in physical AI, AI factories, agentic AI, and inference, exploring the next wave of AI innovation for developers and researchers. Register for virtual GTC for free, using my link and win NVIDIA DGX Spark (https://nvda.ws/4qQ0LMg)\n\nJeremy Howard is a renowned data scientist, researcher, entrepreneur, and educator. As the co-founder of fast.ai, former President of Kaggle, and the creator of ULMFiT, Jeremy has spent decades democratizing deep learning. His pioneering work laid the foundation for modern transfer learning and the pre-training and fine-tuning paradigm that powers today's language models.\n\nKey Topics and Main Insights Discussed:\n\n- The Origins of ULMFiT and Fine-Tuning\n- The Vibe Coding Illusion and Software Engineering\n- Cognitive Science, Friction, and Learning\n- The Future of Developers\n\nRESCRIPT: https://app.rescript.info/public/share/BhX5zP3b0m63srLOQDKBTFTooSzEMh_ARwmDG_h_izk\nhttps://app.rescript.info/api/public/sessions/62d06c0336c567d6/pdf\n\nJeremy Howard:\nhttps://x.com/jeremyphoward\nhttps://www.answer.ai/\n\n---\nTIMESTAMPS (fixed):\n00:00:00 Introduction & GTC Sponsor\n00:04:30 ULMFiT & The Birth of Fine-Tuning\n00:12:00 Intuition & The Mechanics of Learning\n00:18:30 Abstraction Hierarchies & AI Creativity\n00:23:00 Claude Code & The Interpolation Illusion\n00:27:30 Coding vs. Software Engineering\n00:30:00 Cosplaying Intelligence: Dennett vs. Searle\n00:36:30 Automation, Radiology & Desirable Difficulty\n00:42:30 Organizational Knowledge & The Slope\n00:48:00 Vibe Coding as a Slot Machine\n00:54:00 The Erosion of Control in Software\n01:01:00 Interactive Programming & REPL Environments\n01:05:00 The Notebook Debate & Exploratory Science\n01:17:30 AI Existential Risk & Power Centralization\n01:24:20 Current Risks, Privacy & Enfeeblement\n\n---\nREFERENCES:\nBlog Post:\n[00:03:00] fast.ai Blog: Self-Supervised Learning\nhttps://www.fast.ai/posts/2020-01-13-self_supervised.html\n[00:13:30] DeepMind Blog: Gemini Deep Think\nhttps://deepmind.google/blog/accelerating-mathematical-and-scientific-discovery-with-gemini-deep-think/\n[00:19:30] Modular Blog: Claude C Compiler analysis\nhttps://www.modular.com/blog/the-claude-c-compiler-what-it-reveals-about-the-future-of-software\n[00:19:45] Anthropic Engineering Blog: Building C Compiler\nhttps://www.anthropic.com/engineering/building-c-compiler\n[00:48:00] Cursor Blog: Scaling Agents\nhttps://cursor.com/blog/scaling-agents\n[01:05:15] fast.ai Blog: NB Dev Merged Driver\nhttps://www.fast.ai/posts/2022-08-25-jupyter-git.html\n[01:17:30] Jeremy Howard: Response to AI Risk Letter\nhttps://www.normaltech.ai/p/is-avoiding-extinction-from-ai-really\nBook:\n[00:08:30] M. Chirimuuta: The Brain Abstracted\nhttps://mitpress.mit.edu/9780262548045/the-brain-abstracted/\n[00:30:00] Daniel Dennett: Consciousness Explained\nhttps://www.amazon.com/Consciousness-Explained-Daniel-C-Dennett/dp/0316180661\n[00:42:30] Cesar Hidalgo: Infinite Alphabet / Laws of Knowledge\nhttps://www.amazon.com/Infinite-Alphabet-Laws-Knowledge/dp/0241655676\nArchive Article:\n[00:13:45] MLST Archive: Why Creativity Cannot Be Interpolated\nhttps://archive.mlst.ai/read/why-creativity-cannot-be-interpolated\nResearch Study:\n[00:24:30] METR Study: AI OS Development\nhttps://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/\nPaper:\n[00:24:45] Fred Brooks: No Silver Bullet\nhttps://www.cs.unc.edu/techreports/86-020.pdf\n[00:30:15] John Searle: Minds, Brains, and Programs\nhttps://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/minds-brains-and-programs/DC644B47A4299C637C89772FACC2706A\nResearch Paper:\n[00:13:50] Mathilde Caron et al.: Emerging Properties in Self-Supervised Vision Transformers (DINO)\nhttps://arxiv.org/abs/2104.14294\n[00:25:00] Oxford VGG: Sculptor Identification Paper\nhttps://www.robots.ox.ac.uk/~vgg/publications/2012/Arandjelovic12a/arandjelovic12a.pdf\n[00:36:30] Anthropic Paper: AI Skill Formation\nhttps://arxiv.org/pdf/2601.20245\nHistorical Reference:\n[00:36:45] Ebbinghaus: Memory / Spaced Repetition\nhttps://www.loc.gov/item/e11000616/\nTechnical Note:\n[00:42:45] John Ousterhout: Slope vs Intercept\nhttps://gist.github.com/gtallen1187/e83ed02eac6cc8d7e185\nVideo:\n[00:59:00] Bret Victor: Inventing on Principle\nhttps://vimeo.com/906418692\n[01:05:00] Joel Grus: I Don't Like Notebooks\nhttps://www.youtube.com/watch?v=7jiPeIFXb6U",
+    "published_at": "2026-03-03T14:50:11",
+    "duration": "PT1H26M40S",
+    "view_count": 144820,
+    "topic_key": "ai_for_physics",
+    "resource_type": "video",
+    "importance_score": 51.72,
+    "importance_bucket": "review"
+  },
+  {
+    "id": 70,
+    "title": "🌆 SOCIAL METABOLIC RATE — HOW FAST A CITY “LIVES” ! #city #books #didyouknow #growth #funfacts #upsc",
+    "channel_name": "Geoffrey West Talks",
+    "channel_id": "UCJlNGgC-_iemr96kWzWHkvA",
+    "video_id": "g6lcbJqPjG8",
+    "playlist_id": null,
+    "url": "https://www.youtube.com/watch?v=g6lcbJqPjG8",
+    "description": "In Scale, physicist Geoffrey West introduces a powerful idea:\n\n🧠 What is “social metabolic rate”?\n\nIt’s how fast a city or society uses energy, produces ideas, and generates activity—like a metabolism, but for human systems.\n\n👉 Think of a city as a giant organism.\n\nRoads are like blood vessels\nElectricity is like energy supply\nPeople are like cells\n⚡ The surprising insight\n\nUnlike animals, cities don’t slow down as they grow—they speed up.\n\nAs population increases:\n\nInnovation rises 🚀\nEconomic activity increases 💰\nInteractions multiply 🤝\n\nThis is called superlinear scaling.\n\n🔥 Why does this happen?\n\nMore people means more connections.\nMore connections means more ideas, creativity, and productivity.\n\nIt’s like adding nodes to a network—the number of possible interactions explodes.\n\n⚠️ The catch\n\nFaster “social metabolism” also means:\n\nMore stress\nFaster burnout\nHigher crime and inequality\n💡 Big takeaway\n\n👉 Bigger animals become more efficient and slower.\n👉 Bigger cities become more intense and faster.\n\nCities don’t just grow in size—\nthey accelerate in life.",
+    "published_at": "2026-04-04T16:51:19",
+    "duration": "PT1M18S",
     "view_count": 2,
     "topic_key": "urban_complex_systems/scaling_and_evolution/urban_scaling",
     "resource_type": "video",
-    "importance_score": 51.49,
+    "importance_score": 51.39,
     "importance_bucket": "review"
   },
   {
@@ -863,24 +880,7 @@
     "view_count": 83,
     "topic_key": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
     "resource_type": "video",
-    "importance_score": 51.26,
-    "importance_bucket": "review"
-  },
-  {
-    "id": 70,
-    "title": "🌆 SOCIAL METABOLIC RATE — HOW FAST A CITY “LIVES” ! #city #books #didyouknow #growth #funfacts #upsc",
-    "channel_name": "Geoffrey West Talks",
-    "channel_id": "UCJlNGgC-_iemr96kWzWHkvA",
-    "video_id": "g6lcbJqPjG8",
-    "playlist_id": null,
-    "url": "https://www.youtube.com/watch?v=g6lcbJqPjG8",
-    "description": "In Scale, physicist Geoffrey West introduces a powerful idea:\n\n🧠 What is “social metabolic rate”?\n\nIt’s how fast a city or society uses energy, produces ideas, and generates activity—like a metabolism, but for human systems.\n\n👉 Think of a city as a giant organism.\n\nRoads are like blood vessels\nElectricity is like energy supply\nPeople are like cells\n⚡ The surprising insight\n\nUnlike animals, cities don’t slow down as they grow—they speed up.\n\nAs population increases:\n\nInnovation rises 🚀\nEconomic activity increases 💰\nInteractions multiply 🤝\n\nThis is called superlinear scaling.\n\n🔥 Why does this happen?\n\nMore people means more connections.\nMore connections means more ideas, creativity, and productivity.\n\nIt’s like adding nodes to a network—the number of possible interactions explodes.\n\n⚠️ The catch\n\nFaster “social metabolism” also means:\n\nMore stress\nFaster burnout\nHigher crime and inequality\n💡 Big takeaway\n\n👉 Bigger animals become more efficient and slower.\n👉 Bigger cities become more intense and faster.\n\nCities don’t just grow in size—\nthey accelerate in life.",
-    "published_at": "2026-04-04T16:51:19",
-    "duration": "PT1M18S",
-    "view_count": 1,
-    "topic_key": "urban_complex_systems/scaling_and_evolution/urban_scaling",
-    "resource_type": "video",
-    "importance_score": 50.8,
+    "importance_score": 51.23,
     "importance_bucket": "review"
   },
   {
@@ -894,10 +894,10 @@
     "description": "Jupyter-notebook at https://github.com/CompPhysics/AdvancedMachineLearning/blob/main/doc/pub/week11/ipynb/week11.ipynb. Today's lecture ends with Metropolis sampling. The remaining material will be discussed April 16. April 16 we will also start discussing VAEs",
     "published_at": "2026-04-09T12:31:47",
     "duration": "PT1H38M4S",
-    "view_count": 37,
+    "view_count": 38,
     "topic_key": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
     "resource_type": "video",
-    "importance_score": 50.4,
+    "importance_score": 50.42,
     "importance_bucket": "review"
   },
   {
@@ -914,7 +914,7 @@
     "view_count": 4,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 48.8,
+    "importance_score": 48.77,
     "importance_bucket": "review"
   },
   {
@@ -928,7 +928,7 @@
     "description": "For Blogs, MCQ Practice and Government Jobs Update\nVisit Our Website\nwww.gearinstitutes.com #sscje #mechanical #gearinstitute \nClick here to download our app\nhttps://edumartin.page.link/jLFr\nJoin telegram channel\nhttps://t.me/gearinstitute\n\nJE की तयारी के लिए  App Download करें \nhttps://edumartin.page.link/jLFr\n\n\nJoin our whats app channel\nhttps://whatsapp.com/channel/0029VaCPbFbE50Uee2zw6944\n\nALL IN 1 AE/JE EXAM  LIVE CLASSES (TECHNICAL +NON TECHNICAL) \nhttps://bit.ly/452qVRR\n\nALL IN 1 AE/JE EXAM LIVE CLASSES (TECHNICAL ONLY) \nhttps://bit.ly/3Rp4ykf\n\nSSC JE  RECORDED COURSE (2YEAR VALIDITY).\nhttp://bit.ly/3CSOuzH\nSSC JE  RECORDED COURSE (1YEAR VALDITY)\nhttp://bit.ly/3W9LVjv\n\nMechanical MCQ Book written by Er.Harvinder Singh\nOrder your copy click here\nhttps://bit.ly/MCQBOOK\n\nStrength of material Full Syllabus\nhttps://bit.ly/38jyEBX\n\nFluid Mechanics Full Syllabus\nhttps://bit.ly/3uNsG3z\n\nWhat are the three main systems of thermodynamics\nThere are three types of systems in thermodynamics: open, closed, and isolated. An open system can exchange both energy and matter with its surroundings.\n\nWhat are the 4 thermodynamic processes?\nThere are several types of thermodynamic processes, including (a) isothermal, where the system's temperature is constant; (b) adiabatic, where no heat is exchanged by the system; (c) isobaric, where the system's pressure is constant; and (d) isochoric, where the system's volume is constant.\n\nWhat is thermodynamic system and equilibrium?\nthermodynamic equilibrium, condition or state of a thermodynamic system, the properties of which do not change with time and that can be changed to another condition only at the expense of effects on other systems\n\n\n\nThermodynamic system examples\nwhat is thermodynamic system in physics\nthermodynamic system pdf\n5 types of system in thermodynamics\nisolated system in thermodynamics\nclosed system in thermodynamics\nopen system in thermodynamics\nthermodynamic system simple definition\n\nTheory of machine Full Syllabus\nhttps://bit.ly/3xRPQJk\n\nThermodynamics Full Syllabus\nhttps://bit.ly/3k7lXws\n\nMaterial Science full syllabus\nhttps://bit.ly/38pU5Bf\n\nMachine Design Full Syllabus\nhttps://bit.ly/3k7lr1u\n\nAutomobile Engineering Full Syllabus\nhttps://bit.ly/3wMMm8S\n\nRefrigeration and air conditioning Full Syllabus\nhttps://bit.ly/3Q2tHyy\n\nPower plant engineering\nhttp://bit.ly/3kGoj9v\n\nWorkshop Technology\nhttps://bit.ly/3QGsNIo\nIndustrial Engineering\nhttps://bit.ly/3vvyyjq\n\n\n\nWhat is meant by thermodynamics system?\nThermodynamic System - an overview | ScienceDirect Topics\nA thermodynamic system is defined as a quantity of matter or a region in space that is of interest. The mass or region outside the system is called the surroundings, and the surface that separates the system and the surroundings is called the boundary.\n\n\n\nWhat are the 3 types of systems in thermodynamics?\nThere are three types of systems in thermodynamics: open, closed, and isolated. An open system can exchange both energy and matter with its surroundings. The stovetop example would be an open system, because heat and water vapor can be lost to the air.\n\n\n\nWhat is a thermodynamic system example?\nThermodynamic System - Definition, Examples and Types\nSome examples of thermodynamic systems are washing machines, refrigerators and air-conditioners. Air-conditioner is a closed system that circulates refrigerant inside the system, altering the pressure of the refrigerant at different points to promote the transfer of heat.\n\n\n\nWhat is the formula for thermodynamics?\nThe first law of thermodynamics is given as ΔU = Q − W, where ΔU is the change in internal energy of a system, Q is the net heat transfer (the sum of all heat transfer into and out of the system), and W is the net work done (the sum of all work done on or by the system).\n\n\n\nWhat is the Zeroth Law of thermodynamics?\nThe zeroth law states that if two thermodynamic systems are both in thermal equilibrium with a third system, then the two systems are in thermal equilibrium with each other.\n\n\n\nWhat is the first law of thermodynamics?\nThe First Law of Thermodynamics states that energy cannot be created or destroyed; it can only be converted from one form to another. The First Law is used to categorise 'the performance of cyclic conversion systems like fossil-fired, steam power cycles or geothermal cycles.\n\n\n\nWhat is the triple point of water?\n0.01 °C\nWater / Triple point temperature\nImage of What is the triple point of water?\nWrite a short note on the triple point of water.\nThe triple point of water is used to define the Kelvin(K), the base unit of thermodynamic temperature in the International System of Units (SI). The triple point of water is 273.16 K, 0.01∘ C, or 32.018∘ F.\n\n\n\nisolated system in thermodynamics\nwhat is thermodynamic system in physics\nthermodynamic system examples\nopen system in thermodynamics\n5 types of system in thermodynamics\nwhat do you mean by thermodynamics system class 11\nthermodynamic system pdf\nsurrounding in thermodynamics",
     "published_at": "2024-03-15T13:45:05",
     "duration": "PT12M44S",
-    "view_count": 32565,
+    "view_count": 32576,
     "topic_key": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
     "resource_type": "video",
     "importance_score": 47.88,
@@ -962,7 +962,7 @@
     "description": "The Joule experiment was a 19th century experiment that demonstrated the conversion of mechanical energy into heat energy. The experiment was conducted by James Prescott Joule (1818-1889) and involved the following steps:\nAttach weights to strings and pulleys\nConnect the weights to a paddle wheel inside an insulated container of water\nRaise the weights to a height and slowly drop them\nObserve the increase in water temperature due to the friction generated by the paddle wheel.Joule's mechanical equivalent of heat is the amount of work required to produce 1 calorie of heat. According to the first law of thermodynamics, the change in internal energy associated with a system is equal to the sum of work done by the system and heat added to the system.",
     "published_at": "2024-11-22T07:08:28",
     "duration": "PT23S",
-    "view_count": 2066,
+    "view_count": 2071,
     "topic_key": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
     "resource_type": "video",
     "importance_score": 47.48,
@@ -982,7 +982,7 @@
     "view_count": 39,
     "topic_key": "urban_scaling",
     "resource_type": "video",
-    "importance_score": 44.03,
+    "importance_score": 44.01,
     "importance_bucket": "review"
   }
 ]

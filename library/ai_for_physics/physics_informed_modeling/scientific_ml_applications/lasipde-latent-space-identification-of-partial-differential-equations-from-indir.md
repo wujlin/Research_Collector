@@ -7,11 +7,11 @@ doi: "10.3389/fams.2026.1807939"
 arxiv: ""
 url: "https://openalex.org/W7154365636"
 pdf_url: "https://public-pages-files-2025.frontiersin.org/journals/applied-mathematics-and-statistics/articles/10.3389/fams.2026.1807939/pdf"
-topics: ["ai_for_physics/physics_informed_modeling", "ai_for_physics", "ai_for_physics/physics_informed_modeling/scientific_ml_applications"]
+topics: ["ai_for_physics", "ai_for_physics/physics_informed_modeling", "ai_for_physics/physics_informed_modeling/scientific_ml_applications"]
 tier: 0
 citations: 0
 relevance_score: 47.0
-collected: "2026-04-15"
+collected: "2026-04-16"
 status: "unread"
 source: "openalex"
 ---
@@ -26,8 +26,8 @@ Discovering governing equations from data is a central challenge in scientific m
 
 ## Connections
 
-- [[physics_informed_modeling]]
 - [[ai_for_physics]]
+- [[physics_informed_modeling]]
 - [[scientific_ml_applications]]
 
 ## Notes

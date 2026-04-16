@@ -7,11 +7,11 @@ doi: ""
 arxiv: ""
 url: "https://openalex.org/W7153693166"
 pdf_url: "https://dc.etsu.edu/cgi/viewcontent.cgi?article=6214&context=etd"
-topics: ["urban_complex_systems/scaling_and_evolution/urban_dynamics", "urban_complex_systems/scaling_and_evolution", "urban_complex_systems", "statistical_physics/equilibrium_structures", "statistical_physics"]
+topics: ["statistical_physics", "urban_complex_systems", "urban_complex_systems/scaling_and_evolution/urban_dynamics", "statistical_physics/equilibrium_structures", "urban_complex_systems/scaling_and_evolution"]
 tier: 0
 citations: 0
 relevance_score: 50.0
-collected: "2026-04-15"
+collected: "2026-04-16"
 status: "unread"
 source: "openalex"
 ---
@@ -26,11 +26,11 @@ Epidemic forecasting requires not only predictions of expected case counts, but 
 
 ## Connections
 
-- [[urban_dynamics]]
-- [[scaling_and_evolution]]
-- [[urban_complex_systems]]
-- [[equilibrium_structures]]
 - [[statistical_physics]]
+- [[urban_complex_systems]]
+- [[urban_dynamics]]
+- [[equilibrium_structures]]
+- [[scaling_and_evolution]]
 
 ## Notes
 

@@ -7,11 +7,11 @@ doi: ""
 arxiv: ""
 url: "https://openalex.org/W7153671403"
 pdf_url: "https://arxiv.org/pdf/2604.08180"
-topics: ["stochastic_analysis/asymptotics_and_variation", "stochastic_analysis", "stochastic_analysis/asymptotics_and_variation/large_deviations"]
+topics: ["stochastic_analysis", "stochastic_analysis/asymptotics_and_variation/large_deviations", "stochastic_analysis/asymptotics_and_variation"]
 tier: 0
 citations: 0
 relevance_score: 51.0
-collected: "2026-04-15"
+collected: "2026-04-16"
 status: "unread"
 source: "openalex"
 ---
@@ -26,9 +26,9 @@ Quantum computing is becoming strategically relevant to finance because several 
 
 ## Connections
 
-- [[asymptotics_and_variation]]
 - [[stochastic_analysis]]
 - [[large_deviations]]
+- [[asymptotics_and_variation]]
 
 ## Notes
 

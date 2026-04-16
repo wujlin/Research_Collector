@@ -4,7 +4,7 @@
     "display_name": "AI for Physics",
     "parent_key": null,
     "description": "计算层：把动力学、热力学与物理先验转成可训练的生成和建模机制。",
-    "paper_count": 29,
+    "paper_count": 39,
     "depth": 0,
     "is_leaf": false,
     "lineage": [
@@ -16,7 +16,7 @@
     "display_name": "生成动力学",
     "parent_key": "ai_for_physics",
     "description": "用 score、diffusion、reverse-time SDE 与 flow 描写生成过程。",
-    "paper_count": 10,
+    "paper_count": 16,
     "depth": 1,
     "is_leaf": false,
     "lineage": [
@@ -29,7 +29,7 @@
     "display_name": "条件生成",
     "parent_key": "ai_for_physics/generative_dynamics",
     "description": "",
-    "paper_count": 1,
+    "paper_count": 2,
     "depth": 2,
     "is_leaf": true,
     "lineage": [
@@ -57,7 +57,7 @@
     "display_name": "Flow Matching",
     "parent_key": "ai_for_physics/generative_dynamics",
     "description": "",
-    "paper_count": 2,
+    "paper_count": 5,
     "depth": 2,
     "is_leaf": true,
     "lineage": [
@@ -71,7 +71,7 @@
     "display_name": "分数匹配与估计",
     "parent_key": "ai_for_physics/generative_dynamics",
     "description": "",
-    "paper_count": 3,
+    "paper_count": 5,
     "depth": 2,
     "is_leaf": true,
     "lineage": [
@@ -99,7 +99,7 @@
     "display_name": "物理约束建模",
     "parent_key": "ai_for_physics",
     "description": "把物理先验、变分自由能与科学逆问题嵌入模型训练。",
-    "paper_count": 21,
+    "paper_count": 26,
     "depth": 1,
     "is_leaf": false,
     "lineage": [
@@ -112,7 +112,7 @@
     "display_name": "Physics-Informed Generative Modelling",
     "parent_key": "ai_for_physics/physics_informed_modeling",
     "description": "",
-    "paper_count": 5,
+    "paper_count": 6,
     "depth": 2,
     "is_leaf": true,
     "lineage": [
@@ -126,7 +126,7 @@
     "display_name": "Scientific ML Applications",
     "parent_key": "ai_for_physics/physics_informed_modeling",
     "description": "",
-    "paper_count": 9,
+    "paper_count": 12,
     "depth": 2,
     "is_leaf": true,
     "lineage": [
@@ -140,7 +140,7 @@
     "display_name": "桥接主题",
     "parent_key": null,
     "description": "翻译层与桥接机制：把数学骨架、物理语义、生成建模和城市应用接起来。",
-    "paper_count": 16,
+    "paper_count": 21,
     "depth": 0,
     "is_leaf": false,
     "lineage": [
@@ -193,7 +193,7 @@
     "display_name": "翻译层",
     "parent_key": "bridges",
     "description": "把路径动力学翻成密度演化，再接到热力学与生成建模。",
-    "paper_count": 10,
+    "paper_count": 13,
     "depth": 1,
     "is_leaf": false,
     "lineage": [
@@ -206,7 +206,7 @@
     "display_name": "Fokker-Planck / Master 方程",
     "parent_key": "bridges/translation_layers",
     "description": "",
-    "paper_count": 10,
+    "paper_count": 13,
     "depth": 2,
     "is_leaf": true,
     "lineage": [
@@ -220,7 +220,7 @@
     "display_name": "传输与空间生成",
     "parent_key": "bridges",
     "description": "最优传输、扩散生成与空间数据。",
-    "paper_count": 3,
+    "paper_count": 5,
     "depth": 1,
     "is_leaf": false,
     "lineage": [
@@ -302,7 +302,7 @@
     "display_name": "统计物理",
     "parent_key": null,
     "description": "物理语义层：熵、自由能、涨落定理、稳态与不可逆性。",
-    "paper_count": 38,
+    "paper_count": 53,
     "depth": 0,
     "is_leaf": false,
     "lineage": [
@@ -314,7 +314,7 @@
     "display_name": "集体结构与临界性",
     "parent_key": "statistical_physics",
     "description": "相变、临界现象与普适结构。",
-    "paper_count": 13,
+    "paper_count": 18,
     "depth": 1,
     "is_leaf": false,
     "lineage": [
@@ -327,7 +327,7 @@
     "display_name": "相变与临界现象",
     "parent_key": "statistical_physics/collective_structure",
     "description": "",
-    "paper_count": 10,
+    "paper_count": 15,
     "depth": 2,
     "is_leaf": true,
     "lineage": [
@@ -341,7 +341,7 @@
     "display_name": "平衡结构",
     "parent_key": "statistical_physics",
     "description": "配分函数、系综与热力学势。",
-    "paper_count": 5,
+    "paper_count": 9,
     "depth": 1,
     "is_leaf": false,
     "lineage": [
@@ -354,7 +354,7 @@
     "display_name": "平衡统计力学",
     "parent_key": "statistical_physics/equilibrium_structures",
     "description": "",
-    "paper_count": 0,
+    "paper_count": 1,
     "depth": 2,
     "is_leaf": true,
     "lineage": [
@@ -368,7 +368,7 @@
     "display_name": "非平衡动力学",
     "parent_key": "statistical_physics",
     "description": "熵产生、稳态、耗散与涨落定理。",
-    "paper_count": 27,
+    "paper_count": 36,
     "depth": 1,
     "is_leaf": false,
     "lineage": [
@@ -381,7 +381,7 @@
     "display_name": "涨落定理",
     "parent_key": "statistical_physics/non_equilibrium_dynamics",
     "description": "",
-    "paper_count": 5,
+    "paper_count": 6,
     "depth": 2,
     "is_leaf": true,
     "lineage": [
@@ -395,7 +395,7 @@
     "display_name": "非平衡统计力学",
     "parent_key": "statistical_physics/non_equilibrium_dynamics",
     "description": "",
-    "paper_count": 27,
+    "paper_count": 36,
     "depth": 2,
     "is_leaf": true,
     "lineage": [
@@ -409,7 +409,7 @@
     "display_name": "随机分析",
     "parent_key": null,
     "description": "数学骨架层：从随机路径、Ito calculus 到连续随机动力学。",
-    "paper_count": 9,
+    "paper_count": 10,
     "depth": 0,
     "is_leaf": false,
     "lineage": [
@@ -503,7 +503,7 @@
     "display_name": "随机动力学",
     "parent_key": "stochastic_analysis",
     "description": "SDE 建模、数值离散化与路径模拟。",
-    "paper_count": 4,
+    "paper_count": 5,
     "depth": 1,
     "is_leaf": false,
     "lineage": [
@@ -530,7 +530,7 @@
     "display_name": "SDE理论与解",
     "parent_key": "stochastic_analysis/stochastic_dynamics",
     "description": "",
-    "paper_count": 3,
+    "paper_count": 4,
     "depth": 2,
     "is_leaf": true,
     "lineage": [
@@ -544,7 +544,7 @@
     "display_name": "城市复杂系统",
     "parent_key": null,
     "description": "应用场景层：在城市流动、网络、标度和空间动力学中检验这些理论。",
-    "paper_count": 7,
+    "paper_count": 10,
     "depth": 0,
     "is_leaf": false,
     "lineage": [
@@ -556,7 +556,7 @@
     "display_name": "流动与相互作用",
     "parent_key": "urban_complex_systems",
     "description": "空间交互、交通网络与出行流。",
-    "paper_count": 1,
+    "paper_count": 2,
     "depth": 1,
     "is_leaf": false,
     "lineage": [
@@ -569,7 +569,7 @@
     "display_name": "空间交互模型",
     "parent_key": "urban_complex_systems/mobility_and_interaction",
     "description": "",
-    "paper_count": 0,
+    "paper_count": 1,
     "depth": 2,
     "is_leaf": true,
     "lineage": [
@@ -597,7 +597,7 @@
     "display_name": "标度与演化",
     "parent_key": "urban_complex_systems",
     "description": "城市标度律、增长与长期动力学。",
-    "paper_count": 3,
+    "paper_count": 5,
     "depth": 1,
     "is_leaf": false,
     "lineage": [
@@ -610,7 +610,7 @@
     "display_name": "城市动力学",
     "parent_key": "urban_complex_systems/scaling_and_evolution",
     "description": "",
-    "paper_count": 2,
+    "paper_count": 3,
     "depth": 2,
     "is_leaf": true,
     "lineage": [
@@ -624,7 +624,7 @@
     "display_name": "城市标度律",
     "parent_key": "urban_complex_systems/scaling_and_evolution",
     "description": "",
-    "paper_count": 2,
+    "paper_count": 3,
     "depth": 2,
     "is_leaf": true,
     "lineage": [

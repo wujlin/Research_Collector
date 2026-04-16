@@ -1,15 +1,15 @@
 ---
 title: "Physics-Informed Generative Modelling"
 description: ""
-paper_count: 5
-last_updated: "2026-04-15"
+paper_count: 6
+last_updated: "2026-04-16"
 ---
 
 # Physics-Informed Generative Modelling
 
 
 
-## Papers (5)
+## Papers (6)
 
 
 - [A Physics-Constrained Deep-Learning Framework based on Long-Term Remote-Sensing Data for Retrieving Vertical Distribution of PM <sub>2.5</sub> Chemical Components](a-physics-constrained-deep-learning-framework-based-on-long-term-remote-sensing.md) (2026, Atmospheric measurement techniques, 0 citations)
@@ -21,3 +21,5 @@ last_updated: "2026-04-15"
 - [A Primer on Variational Inference for Physics-Informed Deep Generative Modelling](a-primer-on-variational-inference-for-physics-informed-deep-generative-modelling.md) (2024, arXiv, 0 citations)
 
 - [Accurate remaining useful life prediction and uncertainty quantification for wind turbines using temporal convolutional variational deep Gaussian processes](accurate-remaining-useful-life-prediction-and-uncertainty-quantification-for-win.md) (2026, Scientific Reports, 0 citations)
+
+- [Physics-Guided Deep Learning for Interpretable Biomedical Image Reconstruction and Pattern Recognition in Diagnostic Frameworks](physics-guided-deep-learning-for-interpretable-biomedical-image-reconstruction-a.md) (2026, Bioengineering, 0 citations)

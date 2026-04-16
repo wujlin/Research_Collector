@@ -2,7 +2,7 @@
 title: "路径基础"
 description: "Brownian motion、Wiener 过程与随机积分的起点。"
 paper_count: 4
-last_updated: "2026-04-15"
+last_updated: "2026-04-16"
 ---
 
 # 路径基础

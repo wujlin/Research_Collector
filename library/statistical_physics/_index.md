@@ -1,15 +1,15 @@
 ---
 title: "统计物理"
 description: "物理语义层：熵、自由能、涨落定理、稳态与不可逆性。"
-paper_count: 38
-last_updated: "2026-04-15"
+paper_count: 53
+last_updated: "2026-04-16"
 ---
 
 # 统计物理
 
 物理语义层：熵、自由能、涨落定理、稳态与不可逆性。
 
-## Papers (38)
+## Papers (53)
 
 
 - [Efficient quantum thermal simulation](efficient-quantum-thermal-simulation.md) (2025, Nature, 4 citations)
@@ -25,6 +25,12 @@ last_updated: "2026-04-15"
 - [Ergodicity and regime recoverability in finite Markov-modulated random walks](ergodicity-and-regime-recoverability-in-finite-markov-modulated-random-walks.md) (2026, Scientific Reports, 0 citations)
 
 - [Intelligent performance prediction of nanoparticle-enhanced automotive radiator cooling using CFD and machine learning](intelligent-performance-prediction-of-nanoparticle-enhanced-automotive-radiator.md) (2026, Scientific Reports, 0 citations)
+
+- [Non-equilibrium phase coexistence in conserved chemically active mixtures](non-equilibrium-phase-coexistence-in-conserved-chemically-active-mixtures.md) (2026, ArXiv.org, 0 citations)
+
+- [Homogenized Transformers](homogenized-transformers.md) (2026, SPIRE - Sciences Po Institutional REpository, 0 citations)
+
+- [Unified geometric formalism for dissipation and its fluctuations in finite-time microscopic heat engines](unified-geometric-formalism-for-dissipation-and-its-fluctuations-in-finite-time.md) (2026, arXiv (Cornell University), 0 citations)
 
 - [Generative optimal transport via forward-backward HJB matching](generative-optimal-transport-via-forward-backward-hjb-matching.md) (2026, arXiv (Cornell University), 0 citations)
 
@@ -42,15 +48,35 @@ last_updated: "2026-04-15"
 
 - [Balancing Power, Efficiency, and Constancy under Broken Time-Reversal Symmetry](balancing-power-efficiency-and-constancy-under-broken-time-reversal-symmetry.md) (2026, arXiv (Cornell University), 0 citations)
 
+- [Relaxation dynamics of the continuum Kuramoto model with non-integrable kernels](relaxation-dynamics-of-the-continuum-kuramoto-model-with-non-integrable-kernels.md) (2026, arXiv (Cornell University), 0 citations)
+
 - [Probabilistic Evolution of Black Hole Thermodynamic States via Fokker-Planck Equation](probabilistic-evolution-of-black-hole-thermodynamic-states-via-fokker-planck-equ.md) (2026, arXiv (Cornell University), 0 citations)
 
 - [A framework for the use of generative modelling in non-equilibrium statistical mechanics](a-framework-for-the-use-of-generative-modelling-in-non-equilibrium-statistical-m.md) (2024, arXiv, 0 citations)
+
+- [Run, Tumble and Paint](run-tumble-and-paint.md) (2026, ArXiv.org, 0 citations)
+
+- [Phantom: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics](phantom-physics-infused-video-generation-via-joint-modeling-of-visual-and-latent.md) (2026, arXiv (Cornell University), 0 citations)
+
+- [Stochastic Gradient Descent in the Saddle-to-Saddle Regime of Deep Linear Networks](stochastic-gradient-descent-in-the-saddle-to-saddle-regime-of-deep-linear-networ.md) (2026, arXiv (Cornell University), 0 citations)
+
+- [One-to-one correspondence between Hierarchical Equations of Motion and Pseudomodes for Open Quantum System Dynamics](one-to-one-correspondence-between-hierarchical-equations-of-motion-and-pseudomod.md) (2026, arXiv (Cornell University), 0 citations)
+
+- [Cyclic Heat Engine with the Ising model: role of interactions and criticality](cyclic-heat-engine-with-the-ising-model-role-of-interactions-and-criticality.md) (2026, arXiv (Cornell University), 0 citations)
+
+- [Breathing Modes as a Probe of Energy Fluctuations in a Unitary Fermi Gas](breathing-modes-as-a-probe-of-energy-fluctuations-in-a-unitary-fermi-gas.md) (2026, arXiv (Cornell University), 0 citations)
 
 - [Stochastic Thermodynamics for Autoregressive Generative Models: A Non-Markovian Perspective](stochastic-thermodynamics-for-autoregressive-generative-models-a-non-markovian-p.md) (2026, arXiv (Cornell University), 0 citations)
 
 - [Thermalization in high-dimensional systems: the (weak) role of chaos](thermalization-in-high-dimensional-systems-the-weak-role-of-chaos.md) (2026, arXiv (Cornell University), 0 citations)
 
 - [Quantitative propagation of chaos and universality for asymmetric Langevin spin glass dynamics](quantitative-propagation-of-chaos-and-universality-for-asymmetric-langevin-spin.md) (2026, ArXiv.org, 0 citations)
+
+- [Crossover dynamics and non-Gaussian fluctuations in inertial active chains](crossover-dynamics-and-non-gaussian-fluctuations-in-inertial-active-chains.md) (2026, The Journal of Chemical Physics, 0 citations)
+
+- [Geometric foundations of thermodynamics in the quantum regime](geometric-foundations-of-thermodynamics-in-the-quantum-regime.md) (2026, Journal of Physics A Mathematical and Theoretical, 0 citations)
+
+- [Edge based distributed framework for real time hazard detection and road safety in smart transportation](edge-based-distributed-framework-for-real-time-hazard-detection-and-road-safety.md) (2026, Scientific Reports, 0 citations)
 
 - [Stochastic Universal Differential Equations for Epidemiological Modeling: Uncertainty Quantification in Disease Transmission Dynamics](stochastic-universal-differential-equations-for-epidemiological-modeling-uncerta.md) (2026, Digital Commons - East Tennessee State University (East Tennessee State University), 0 citations)
 
@@ -70,6 +96,8 @@ last_updated: "2026-04-15"
 
 - [Nonequilibrium Equality for Free Energy Differences](nonequilibrium-equality-for-free-energy-differences.md) (1997, Physical Review Letters, 0 citations)
 
+- [Spectral Diffusion for Sampling on ${\rm SU}(N)$](spectral-diffusion-for-sampling-on-rm-sun.md) (2026, preprint, 0 citations)
+
 - [Machine learning for four-dimensional SU(3) lattice gauge theories](machine-learning-for-four-dimensional-su3-lattice-gauge-theories.md) (2026, preprint, 0 citations)
 
 - [COLLABORATIVE AI SYSTEMS SUPPORTING DESIGN TEAMS IN PRODUCING LARGE-SCALE VISUAL ART PROJECTS](collaborative-ai-systems-supporting-design-teams-in-producing-large-scale-visual.md) (2026, ShodhKosh Journal of Visual and Performing Arts, 0 citations)
@@ -79,6 +107,8 @@ last_updated: "2026-04-15"
 - [Characterizing the Detailed Balance Property by Means of Measurements](characterizing-the-detailed-balance-property-by-means-of-measurements.md) (2026, Archive for Rational Mechanics and Analysis, 0 citations)
 
 - [Duplication-divergence growing graph models](duplication-divergence-growing-graph-models.md) (2025, ArXiv.org, 0 citations)
+
+- [Mean-field stochastic Volterra equations](mean-field-stochastic-volterra-equations.md) (2026, Journal of Applied Probability, 0 citations)
 
 - [Exploration and aging of non-Markovian stochastic processes](exploration-and-aging-of-non-markovian-stochastic-processes.md) (2025, theses.fr (ABES), 0 citations)
 

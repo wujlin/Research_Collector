@@ -1,15 +1,15 @@
 ---
 title: "随机分析"
 description: "数学骨架层：从随机路径、Ito calculus 到连续随机动力学。"
-paper_count: 9
-last_updated: "2026-04-15"
+paper_count: 10
+last_updated: "2026-04-16"
 ---
 
 # 随机分析
 
 数学骨架层：从随机路径、Ito calculus 到连续随机动力学。
 
-## Papers (9)
+## Papers (10)
 
 
 - [The Tracy-Widom Distribution at Large Dyson Index](the-tracy-widom-distribution-at-large-dyson-index.md) (2026, Journal of Statistical Physics, 0 citations)
@@ -21,6 +21,8 @@ last_updated: "2026-04-15"
 - [SMC-AI: Scaling Monte Carlo Simulation to Four Trillion Atoms with AI Accelerators](smc-ai-scaling-monte-carlo-simulation-to-four-trillion-atoms-with-ai-accelerator.md) (2026, arXiv (Cornell University), 0 citations)
 
 - [MVNN: A Measure-Valued Neural Network for Learning McKean-Vlasov Dynamics from Particle Data](mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-pa.md) (2026, ArXiv.org, 0 citations)
+
+- [On some topological and spectral properties of kinetic Langevin processes driven by L{é}vy noises](on-some-topological-and-spectral-properties-of-kinetic-langevin-processes-driven.md) (2026, arXiv (Cornell University), 0 citations)
 
 - [Quantum Computing for Financial Transformation: A Review of Optimisation, Pricing, Risk, Machine Learning, and Post-Quantum Security](quantum-computing-for-financial-transformation-a-review-of-optimisation-pricing.md) (2026, arXiv (Cornell University), 0 citations)
 

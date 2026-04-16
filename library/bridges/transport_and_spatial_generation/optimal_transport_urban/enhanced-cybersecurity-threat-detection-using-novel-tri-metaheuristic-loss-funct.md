@@ -7,11 +7,11 @@ doi: "10.1038/s41598-026-46375-3"
 arxiv: ""
 url: "https://openalex.org/W7153735136"
 pdf_url: "https://www.nature.com/articles/s41598-026-46375-3_reference.pdf"
-topics: ["bridges/transport_and_spatial_generation", "bridges", "bridges/transport_and_spatial_generation/optimal_transport_urban"]
+topics: ["bridges", "bridges/transport_and_spatial_generation/optimal_transport_urban", "bridges/transport_and_spatial_generation"]
 tier: 0
 citations: 0
 relevance_score: 47.0
-collected: "2026-04-15"
+collected: "2026-04-16"
 status: "unread"
 source: "openalex"
 ---
@@ -26,9 +26,9 @@ This paper proposes a tri-component loss function framework integrated within Ge
 
 ## Connections
 
-- [[transport_and_spatial_generation]]
 - [[bridges]]
 - [[optimal_transport_urban]]
+- [[transport_and_spatial_generation]]
 
 ## Notes
 

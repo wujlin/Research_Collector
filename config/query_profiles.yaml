@@ -16,14 +16,14 @@ semantic_scholar:
   - "markov-modulated random walk ergodicity master equation"
 
 openalex:
-  - "non-equilibrium statistical mechanics generative modelling"
-  - "stochastic thermodynamics entropy production diffusion models"
-  - "fokker planck stochastic differential equations physics-informed learning"
-  - "score matching reverse time dynamics diffusion models"
+  - "stochastic thermodynamics entropy production fluctuation theorem"
+  - "fokker planck langevin stochastic differential equations"
+  - "markov non-markov master equation waiting time distribution"
+  - "mckean vlasov mean field interacting particle systems"
+  - "score-based generative modeling stochastic differential equations"
+  - "flow matching probability flow ode stochastic dynamics"
   - "bayesian inverse problems deep generative prior"
-  - "scientific machine learning inverse problems physics-informed"
-  - "markov-modulated random walk ergodicity master equation"
-  - "urban complex systems scaling mobility network diffusion"
+  - "boundary driven active systems run-and-tumble transport"
 
 youtube:
   - "stochastic differential equations"

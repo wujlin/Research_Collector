@@ -1,15 +1,15 @@
 ---
 title: "物理约束建模"
 description: "把物理先验、变分自由能与科学逆问题嵌入模型训练。"
-paper_count: 21
-last_updated: "2026-04-15"
+paper_count: 26
+last_updated: "2026-04-16"
 ---
 
 # 物理约束建模
 
 把物理先验、变分自由能与科学逆问题嵌入模型训练。
 
-## Papers (21)
+## Papers (26)
 
 
 - [A Physics-Constrained Deep-Learning Framework based on Long-Term Remote-Sensing Data for Retrieving Vertical Distribution of PM <sub>2.5</sub> Chemical Components](a-physics-constrained-deep-learning-framework-based-on-long-term-remote-sensing.md) (2026, Atmospheric measurement techniques, 0 citations)
@@ -30,6 +30,8 @@ last_updated: "2026-04-15"
 
 - [Disentangled Deep Priors for Bayesian Inverse Problems](disentangled-deep-priors-for-bayesian-inverse-problems.md) (2026, ArXiv.org, 0 citations)
 
+- [Steering generative models for protein design: Aligning and conditioning strategies](steering-generative-models-for-protein-design-aligning-and-conditioning-strategi.md) (2026, Current Opinion in Structural Biology, 0 citations)
+
 - [Moonshine.jl: a Julia package for genome-scale model-based ancestral recombination graph inference](moonshinejl-a-julia-package-for-genome-scale-model-based-ancestral-recombination.md) (2026, Frontiers in Genetics, 0 citations)
 
 - [Accurate remaining useful life prediction and uncertainty quantification for wind turbines using temporal convolutional variational deep Gaussian processes](accurate-remaining-useful-life-prediction-and-uncertainty-quantification-for-win.md) (2026, Scientific Reports, 0 citations)
@@ -40,6 +42,12 @@ last_updated: "2026-04-15"
 
 - [DNS-Calibrated Physics-Informed Neural Networks with Learnable Constants for Reynolds Number Extrapolation in Turbulent Channel Flows](dns-calibrated-physics-informed-neural-networks-with-learnable-constants-for-rey.md) (2026, Applied Sciences, 0 citations)
 
+- [Physics-Guided Deep Learning for Interpretable Biomedical Image Reconstruction and Pattern Recognition in Diagnostic Frameworks](physics-guided-deep-learning-for-interpretable-biomedical-image-reconstruction-a.md) (2026, Bioengineering, 0 citations)
+
+- [Physics-Informed Fusion Neural Network for Real-Time Bottomhole Pressure Control in Managed Pressure Drilling](physics-informed-fusion-neural-network-for-real-time-bottomhole-pressure-control.md) (2026, Processes, 0 citations)
+
+- [Attaining physics-driven convolutional operators by architecture design](attaining-physics-driven-convolutional-operators-by-architecture-design.md) (2026, Communications Physics, 0 citations)
+
 - [LaSIPDE: Latent-Space Identification of Partial Differential Equations from indirect, high-dimensional measurements](lasipde-latent-space-identification-of-partial-differential-equations-from-indir.md) (2026, Frontiers in Applied Mathematics and Statistics, 0 citations)
 
 - [The need for verification in artificial intelligence-driven scientific discovery](the-need-for-verification-in-artificial-intelligence-driven-scientific-discovery.md) (2026, Philosophical Transactions of the Royal Society A Mathematical Physical and Engineering Sciences, 0 citations)
@@ -49,6 +57,8 @@ last_updated: "2026-04-15"
 - [A Theory-guided Weighted $L^2$ Loss for solving the BGK model via Physics-informed neural networks](a-theory-guided-weighted-l2-loss-for-solving-the-bgk-model-via-physics-informed.md) (2026, arXiv (Cornell University), 0 citations)
 
 - [Geoscientific Machine Learning](geoscientific-machine-learning.md) (2026, Zenodo (CERN European Organization for Nuclear Research), 0 citations)
+
+- [Interpretable Grey-Box Residual Learning Framework for State-of-Health Prognostics in Electric Vehicle Batteries Using Real-World Data](interpretable-grey-box-residual-learning-framework-for-state-of-health-prognosti.md) (2026, World Electric Vehicle Journal, 0 citations)
 
 - [Fast Inverse Identification of the Coefficient of Friction in Cold Strip Rolling Using a Physics-Informed Neural Network](fast-inverse-identification-of-the-coefficient-of-friction-in-cold-strip-rolling.md) (2026, Materials science forum, 0 citations)
 

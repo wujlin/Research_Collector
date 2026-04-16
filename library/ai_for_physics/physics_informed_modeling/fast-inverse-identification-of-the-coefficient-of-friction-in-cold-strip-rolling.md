@@ -7,11 +7,11 @@ doi: "10.4028/p-y3mapp"
 arxiv: ""
 url: "https://openalex.org/W7154110333"
 pdf_url: "https://www.scientific.net/MSF.1183.55.pdf"
-topics: ["ai_for_physics/physics_informed_modeling", "ai_for_physics"]
+topics: ["ai_for_physics", "ai_for_physics/physics_informed_modeling"]
 tier: 0
 citations: 0
 relevance_score: 42.0
-collected: "2026-04-15"
+collected: "2026-04-16"
 status: "unread"
 source: "openalex"
 ---
@@ -26,8 +26,8 @@ Friction plays an important role in flat rolling processes for the force and pow
 
 ## Connections
 
-- [[physics_informed_modeling]]
 - [[ai_for_physics]]
+- [[physics_informed_modeling]]
 
 ## Notes
 

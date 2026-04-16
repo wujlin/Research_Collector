@@ -2,6 +2,9 @@
 
 - Source video: https://www.bilibili.com/video/BV1tew5zVEDf/
 - Cleaned transcript: [transcript.md](../transcripts/BV1tew5zVEDf-对谢赛宁的7小时马拉松访谈世界模型逃出硅谷反openaiami-labs两次拒绝ilya杨立昆李飞飞和42/transcript.md)
+- Extended notes:
+  - [研究备忘录：World Model 作为可学习的非平衡动力学](./world-model-as-learned-nonequilibrium-dynamics.md)
+  - [谢赛宁的表征学习主线：怎么理解，以及怎么比较不同模型的表征](./xie-saining-representation-learning-roadmap.md)
 
 这份笔记不是逐字复述，而是把 6 小时 44 分钟的访谈按逻辑主线重排。最值得看的不是八卦，而是谢赛宁如何把自己的研究路线，从 `CV -> representation learning -> multimodal -> world model -> robotics / embodied intelligence` 一路串起来。
 

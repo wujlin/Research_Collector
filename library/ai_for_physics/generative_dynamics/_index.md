@@ -1,15 +1,15 @@
 ---
 title: "生成动力学"
 description: "用 score、diffusion、reverse-time SDE 与 flow 描写生成过程。"
-paper_count: 10
-last_updated: "2026-04-15"
+paper_count: 16
+last_updated: "2026-04-16"
 ---
 
 # 生成动力学
 
 用 score、diffusion、reverse-time SDE 与 flow 描写生成过程。
 
-## Papers (10)
+## Papers (16)
 
 
 - [Flow Matching for Generative Modeling](flow-matching-for-generative-modeling.md) (2023, ICLR, 0 citations)
@@ -24,9 +24,21 @@ last_updated: "2026-04-15"
 
 - [Learning Stochastic Thermodynamics Directly from Correlation and Trajectory-Fluctuation Currents](learning-stochastic-thermodynamics-directly-from-correlation-and-trajectory-fluc.md) (2025, arXiv, 0 citations)
 
+- [Lipschitz regularity in Flow Matching and Diffusion Models: sharp sampling rates and functional inequalities](lipschitz-regularity-in-flow-matching-and-diffusion-models-sharp-sampling-rates.md) (2026, arXiv (Cornell University), 0 citations)
+
+- [Equivariant Efficient Joint Discrete and Continuous MeanFlow for Molecular Graph Generation](equivariant-efficient-joint-discrete-and-continuous-meanflow-for-molecular-graph.md) (2026, arXiv (Cornell University), 0 citations)
+
+- [Gradient estimators for parameter inference in discrete stochastic kinetic models](gradient-estimators-for-parameter-inference-in-discrete-stochastic-kinetic-model.md) (2026, ArXiv.org, 0 citations)
+
 - [Denoising Diffusion Probabilistic Models](denoising-diffusion-probabilistic-models.md) (2020, NeurIPS, 0 citations)
 
+- [Steering generative models for protein design: Aligning and conditioning strategies](steering-generative-models-for-protein-design-aligning-and-conditioning-strategi.md) (2026, Current Opinion in Structural Biology, 0 citations)
+
 - [Score-fPINN: Fractional Score-Based Physics-Informed Neural Networks for High-Dimensional Fokker-Planck-Lévy Equations](score-fpinn-fractional-score-based-physics-informed-neural-networks-for-high-dim.md) (2026, Communications in Computational Physics, 0 citations)
+
+- [Spectral Diffusion for Sampling on ${\rm SU}(N)$](spectral-diffusion-for-sampling-on-rm-sun.md) (2026, preprint, 0 citations)
+
+- [Zero-Shot Forecasting of Network Dynamics through Weight Flow Matching](zero-shot-forecasting-of-network-dynamics-through-weight-flow-matching.md) (2026, preprint, 0 citations)
 
 - [The cost of knowing: natural gradient as variational inference](the-cost-of-knowing-natural-gradient-as-variational-inference.md) (2020, arXiv, 0 citations)
 

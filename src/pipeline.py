@@ -239,6 +239,7 @@ class CollectionPipeline:
 
     def _passes_filters(self, record: dict[str, Any]) -> bool:
         filtering = self.settings["filtering"]
+        source_name = str(record.get("source", "") or "")
         if record.get("is_irrelevant"):
             return False
 
@@ -246,10 +247,28 @@ class CollectionPipeline:
         if record.get("year") and int(record["year"]) < min_year:
             return False
 
-        if float(record.get("relevance_score", 0.0) or 0.0) < filtering["relevance_threshold"]:
+        source_thresholds = filtering.get("source_relevance_thresholds", {}) or {}
+        min_relevance = float(source_thresholds.get(source_name, filtering["relevance_threshold"]))
+        if float(record.get("relevance_score", 0.0) or 0.0) < min_relevance:
             return False
 
-        if record.get("source") != "arxiv" and int(record.get("citation_count", 0) or 0) < filtering["min_citations"]:
+        required_leaf_sources = set(filtering.get("require_leaf_topics_for_sources", []) or [])
+        topic_keys = record.get("topic_keys", []) or record.get("topics", []) or []
+        if source_name in required_leaf_sources and not any(
+            isinstance(topic_key, str) and topic_key.count("/") == 2 for topic_key in topic_keys
+        ):
+            return False
+
+        allowed_topic_prefixes = (filtering.get("source_allowed_topic_prefixes", {}) or {}).get(source_name, []) or []
+        if allowed_topic_prefixes and not any(
+            isinstance(topic_key, str) and any(topic_key.startswith(prefix) for prefix in allowed_topic_prefixes)
+            for topic_key in topic_keys
+        ):
+            return False
+
+        source_min_citations = filtering.get("source_min_citations", {}) or {}
+        min_citations = int(source_min_citations.get(source_name, filtering["min_citations"]))
+        if source_name != "arxiv" and int(record.get("citation_count", 0) or 0) < min_citations:
             return False
         return True
 

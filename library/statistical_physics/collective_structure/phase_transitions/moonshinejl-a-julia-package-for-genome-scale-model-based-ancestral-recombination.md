@@ -7,11 +7,11 @@ doi: "10.3389/fgene.2026.1753780"
 arxiv: ""
 url: "https://openalex.org/W4416785312"
 pdf_url: "https://public-pages-files-2025.frontiersin.org/journals/genetics/articles/10.3389/fgene.2026.1753780/pdf"
-topics: ["statistical_physics/collective_structure/phase_transitions", "statistical_physics/collective_structure", "statistical_physics", "ai_for_physics/physics_informed_modeling", "ai_for_physics", "ai_for_physics/physics_informed_modeling/scientific_ml_applications"]
+topics: ["statistical_physics", "statistical_physics/collective_structure/phase_transitions", "ai_for_physics", "statistical_physics/collective_structure", "ai_for_physics/physics_informed_modeling", "ai_for_physics/physics_informed_modeling/scientific_ml_applications"]
 tier: 0
 citations: 0
 relevance_score: 50.0
-collected: "2026-04-15"
+collected: "2026-04-16"
 status: "unread"
 source: "openalex"
 ---
@@ -26,11 +26,11 @@ The ancestral recombination graph (ARG) is the model of choice in statistical ge
 
 ## Connections
 
-- [[phase_transitions]]
-- [[collective_structure]]
 - [[statistical_physics]]
-- [[physics_informed_modeling]]
+- [[phase_transitions]]
 - [[ai_for_physics]]
+- [[collective_structure]]
+- [[physics_informed_modeling]]
 - [[scientific_ml_applications]]
 
 ## Notes
