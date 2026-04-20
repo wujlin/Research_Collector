@@ -20,152 +20,512 @@ topics: ["随机热力学", "自回归模型", "非马尔可夫", "熵产生", "
 
 ---
 
-## 1 问题定义：为什么需要非马尔可夫视角
+## 1 问题设定：为什么这篇文章要从非马尔可夫过程出发
 
-### 1.1 随机热力学的经典局限
+### 1.1 经典随机热力学最顺手的对象是马尔可夫过程
 
-随机热力学（stochastic thermodynamics）以 **熵产生** $\mathcal{S}$ 作为量化不可逆性（irreversibility）的核心诊断量，其理论最完善的场景是 **马尔可夫过程**（Markovian processes）。经典的 Crooks 型时间反演（Crooks-type time reversal）为马尔可夫系统提供了清晰的前向/后向路径概率比：
+随机热力学最常见的对象是马尔可夫过程。原因很简单：一旦动力学只依赖当前状态，前向和后向路径概率都可以逐步写成局部转移核的乘积，于是熵产生就能被写成一串局部对数比。最熟悉的形式是 Crooks 型时间反演：
 
 $$
-\sigma(y_{1:T}) = \sum_t \ln \frac{p_t(y_{t+1}|y_t)}{p_t(y_t|y_{t+1})}
+\sigma(y_{1:T}) = \sum_t \ln \frac{p_t(y_{t+1}\mid y_t)}{p_t(y_t\mid y_{t+1})}.
 $$
 
-但当观测过程 $y_t$ 本身是 **非马尔可夫** 的——即当前状态的分布依赖于整段历史而非仅前一步——上述框架便不再直接适用。
+这条式子默认了一个强条件：当前一步的统计规律只由前一步决定。可现代生成模型里的观测序列往往不是这样。Transformer 生成第 $t+1$ 个 token 时，条件的是整段历史；RNN、Kalman、SSM 和 Mamba 虽然有递归状态，但观测边缘过程 $y_t$ 仍然一般是非马尔可夫的。于是问题就变成：
 
-### 1.2 自回归生成模型的统一结构
+**如果观测序列本身是非马尔可夫的，随机热力学里的熵产生还能不能定义，而且能不能算？**
 
-作者的关键洞察是：**所有主流自回归架构** 共享同一个抽象结构——**从确定性隐状态进行随机发射（stochastic emission from deterministic latent state）**：
+### 1.2 这篇文章抓住的共同骨架是“确定性记忆 + 随机发射”
 
-1. **确定性记忆更新**：$h_t = \Phi_t(y_1, y_2, \ldots, y_t)$  
-2. **随机发射**：$y_{t+1} \sim p_t(y_{t+1} | h_t)$
+作者的第一步不是直接谈 Transformer，而是先抽出所有自回归模型共享的最小结构。这个结构只有两层：
 
-其中 $h_t$ 是对过去观测 $y_{1:t}$ 的有界大小压缩（bounded-size compression），而 $p_t$ 是发射核（emission kernel）。
+1. 过去观测先被压缩成一个确定性的内部状态
+   $$
+   h_t = \Phi_t(y_1,\dots,y_t).
+   $$
+2. 再由这个内部状态随机地产生下一步观测
+   $$
+   y_{t+1} \sim p_t(y_{t+1}\mid h_t).
+   $$
 
-> **核心约束**：$h_t$ 的维度/状态空间大小不随 $t$ 增长——它必须将不断增长的历史压缩到固定大小的表示中。
+论文随后把第一步记成
+
+$$
+h_t = f_t^\rightarrow(y_{1:t}), \tag{1}
+$$
+
+其中
+
+$$
+f_t^\rightarrow(y_{1:t}) \equiv \Phi_t(y_1,\dots,y_t). \tag{2}
+$$
+
+于是前向整条序列的路径概率就能写成
+
+$$
+P_\rightarrow(y_{1:T}) = \prod_{t=0}^{T-1} p_t\!\left(y_{t+1}\mid f_t^\rightarrow(y_{1:t})\right). \tag{3}
+$$
+
+这一步是全文的根。因为后面所有 forward / backward path probability、熵产生、计算复杂度，都是围着这条乘积结构展开的。
+
+这套写法里最重要的约束不是“有隐状态”本身，而是：**隐状态的大小不能随时间增长。**  
+如果 $h_t$ 只是把完整历史原样存起来，那当然任何非马尔可夫过程都能塞进来，但这不再是作者想分析的“有界记忆自回归模型”。他们真正研究的是：
+
+- 历史长度可以不断增长；
+- 但模型只能把它压缩成一个固定大小的内部表示；
+- 发射核只看这个压缩表示。
+
+这也是这篇文章和“任意高阶历史模型”之间的边界。
 
 ![Figure 1(a): 前向过程的因果结构——一般（非递归）情形](../../pdfs/2026-04-16/stochastic-thermodynamics-for-autoregressive-generative-models-a-non-markovian-perspective.mineru/hybrid_auto/images/page-03-figure-01.jpg)
 
-**图 1(a)**：前向过程的因果结构图。蓝色箭头 $f_t^\rightarrow$ 表示确定性映射（将所有过去观测映射为隐状态），绿色箭头 $p_t$ 表示随机发射。注意每个 $h_t$ 依赖于 **全部** 过去的 $y_1, \ldots, y_t$，这正是非马尔可夫性的来源。
+图 1(a) 画出的就是这条因果结构。蓝色箭头对应确定性映射 $f_t^\rightarrow$，绿色箭头对应随机发射核 $p_t$。这里的非马尔可夫性不是额外加上的，而是直接来自这样一个事实：每个 $h_t$ 都在吸收全部过去 $y_{1:t}$ 的信息。
 
-### 1.3 五种架构的统一对照
+### 1.3 递归与非递归：为什么 Transformer 和 RNN 都落在同一个框架里
+
+接下来论文再把这套一般框架分成两个子类。
+
+第一类是**一般情形**。这里 $h_t=\Phi_t(y_1,\dots,y_t)$ 不要求能写成 $(h_{t-1},y_t)$ 的函数。Transformer 就属于这一类。它当然可以把完整历史映到一个上下文表示，但这个映射一般不能化简成简单的两变量递推。
+
+第二类是**递归情形**。这时作者要求
+
+$$
+h_t = \phi_t(h_{t-1}, y_t), \tag{4}
+$$
+
+也就是
+
+$$
+\Phi_t(y_1,\dots,y_t)
+=
+\phi_t\!\big(\Phi_{t-1}(y_1,\dots,y_{t-1}),\, y_t\big). \tag{5}
+$$
+
+一旦写成这个形式，联合过程 $(h_t,y_t)$ 就成了马尔可夫的。RNN、Kalman、SSM 和 Mamba 都属于这一类。
+
+这里要把两个层面分清：
+
+- **观测过程 $y_t$** 一般仍然是非马尔可夫的；
+- **联合过程 $(h_t,y_t)$** 在递归情形下是马尔可夫的。
+
+这也是为什么作者一直强调：这篇文章研究的是**观测序列的随机热力学**，而不是某个额外引入的随机 latent dynamics。
+
+这里要把“$h_t$ 是递归的”和“$y_t$ 仍然是非马尔可夫的”之间的关系说清楚。  
+对模型内部来说，$h_t$ 当然是可见的：给定过去序列，模型会先更新内部记忆
+
+$$
+h_t=\phi_t(h_{t-1},y_t),
+$$
+
+再由这个记忆状态发射下一步输出
+
+$$
+y_{t+1}\sim p_t(y_{t+1}\mid h_t).
+$$
+
+如果把状态变量写成联合状态 $(h_t,y_t)$，那么递归模型在这层通常就是 Markov 的。  
+但这篇文章后面研究的对象不是联合状态，而是**外部真正看到的输出序列** $y_1,y_2,\dots$ 。这时，$h_t$ 并没有从模型里消失，而是**没有被保留为分析对象的一部分**。于是对外部观察者来说，真正 relevant 的条件分布是
+
+$$
+P(y_{t+1}\mid y_{1:t}) = p_t(y_{t+1}\mid h_t),
+\qquad
+h_t=\Phi_t(y_{1:t}),
+$$
+
+它一般不能再简化成
+
+$$
+P(y_{t+1}\mid y_t).
+$$
+
+所以，递归 $\phi_t$ 说明的是**内部记忆的更新是 Markov 风格的**；而论文说 $y_t$ 是 non-Markov，指的是**只看外部输出序列时，下一步分布仍然依赖更长的历史，而不只依赖当前一步**。
 
 ![Table 1: 各架构与通用框架的对应关系](../../pdfs/2026-04-16/stochastic-thermodynamics-for-autoregressive-generative-models-a-non-markovian-perspective.mineru/hybrid_auto/images/page-05-table-01.jpg)
 
-| 模型 | 隐状态 $h_t$ | 确定性映射 | 发射核 | 递归？ |
-|:---|:---|:---|:---|:---:|
-| **Transformer** | 注意力上下文向量 | $\Phi(y_1, \ldots, y_t)$（全序列） | $\text{softmax}(W_{\text{out}} h_t)$ | ✗ |
-| **RNN** | RNN 隐状态 | $\phi(h, y) = \tanh(W_h h + W_y y + b)$ | $\text{softmax}(W_{\text{out}} h_t + b_{\text{out}})$ | ✓ |
-| **Kalman** | 一步预测 $\hat{x}_{t+1|t}$ | $\phi_t(h, y) = A_t[(I - K_t C_t)h + K_t y]$ | $\mathcal{N}(C_{t+1} h_t, S_{t+1})$ | ✓ |
-| **SSM** | SSM 状态 | $\phi_t(h, y) = A_t h + B_t y$ | $\text{softmax}(W_{\text{out}} C_t h_t)$ | ✓ |
-| **Mamba** | $(h_t, y_t)$ | $\phi'(h', y) = (A(y)h + B(y)y, \; y)$ | $\text{softmax}(W_{\text{out}} C(y_t) h_t)$ | ✓ |
+表 1 的作用就是把五类模型都投影到这一个骨架上。真正需要抓的不是各个公式细节，而是它们都满足同一件事：
 
-**关键区别**：
-- **Transformer** 是 **非递归** 的——$\Phi$ 访问完整历史，不能化简为 $(h_{t-1}, y_t)$ 的函数，联合过程 $(h_t, y_t)$ **也不是马尔可夫** 的。
-- **RNN / Kalman / SSM / Mamba** 是 **递归** 的——$h_t = \phi_t(h_{t-1}, y_t)$，联合过程 $(h_t, y_t)$ 是马尔可夫的，但 $y_t$ 的边缘过程仍然是非马尔可夫的。
+- 有一个确定性记忆状态；
+- 下一步观测从这个状态随机发射出来。
+
+把图里的五个例子直接改写成正文，会更清楚：
+
+1. Transformer：隐状态是上下文向量，写成
+   $$
+   h_t=\Phi(y_1,\dots,y_t),
+   $$
+   发射核是
+   $$
+   p_t(y_{t+1}\mid h_t)=\operatorname{softmax}(W_{\mathrm{out}}h_t).
+   $$
+
+2. RNN：隐状态递归更新为
+   $$
+   h_t=\phi(h_{t-1},y_t)=\tanh(W_h h_{t-1}+W_y y_t+b),
+   $$
+   发射核是
+   $$
+   p_t(y_{t+1}\mid h_t)=\operatorname{softmax}(W_{\mathrm{out}}h_t+b_{\mathrm{out}}).
+   $$
+
+3. Kalman：隐状态是一步预测
+   $$
+   h_t=\hat x_{t+1\mid t},
+   $$
+   递归更新写成
+   $$
+   \phi_t(h,y)=A_t\big[(I-K_tC_t)h+K_t y\big],
+   $$
+   发射核是
+   $$
+   p_t(y_{t+1}\mid h_t)=\mathcal N(C_{t+1}h_t,\,S_{t+1}).
+   $$
+
+4. SSM：递归更新是
+   $$
+   \phi_t(h,y)=A_t h+B_t y,
+   $$
+   发射核是
+   $$
+   p_t(y_{t+1}\mid h_t)=\operatorname{softmax}(W_{\mathrm{out}}C_t h_t).
+   $$
+
+5. Mamba：把状态扩成 $(h_t,y_t)$ 之后，更新写成
+   $$
+   \phi_t'(h',y)=\big(A(y)h+B(y)y,\; y\big),
+   $$
+   发射核是
+   $$
+   p_t(y_{t+1}\mid h_t)=\operatorname{softmax}(W_{\mathrm{out}}C(y_t)h_t).
+   $$
+
+这里还有一个细节很值得记住。Transformer 如果把完整 KV-cache 都算进状态，形式上也可以写成递归更新；但 KV-cache 的大小会随序列长度线性增长，这违反了作者这里“固定大小记忆”的基本要求。所以论文把标准 Transformer 视为**非递归但有界状态表示**的代表，而不是把 KV-cache 递归化当作主定义。
 
 ---
 
-## 2 构建后向过程与定义熵产生
+## 2 backward process 和熵产生：这篇文章真正的新定义在哪里
 
-### 2.1 后向过程：同一机器反向运行
+### 2.1 backward process 不是重新训练一个反向模型，而是把同一台机器反着跑
 
-后向过程的构造遵循随机热力学中 Crooks 型协议反转（protocol reversal）的精神：**复用同一套发射核 $p_t$ 和确定性映射 $\Phi_t$，但以反转的时间顺序调用它们**。
+全文真正的新对象从这里开始出现。作者不是去训练一个新的 backward model，而是把前向模型里的两套组件原样拿来，只把调用顺序反过来：
 
-具体地，给定前向序列 $y_{1:T}$，后向过程生成 $\tilde{y}_s = y_{T-s+1}$（即时间反转的序列），后向路径概率为：
+- 发射核还是原来的 $p_t$；
+- 确定性映射还是原来的 $\Phi_t$；
+- 只是时间顺序从前向的 $0,1,\dots,T-1$ 变成反向调用。
+
+反向过程中，作者先定义
 
 $$
-P_\leftarrow(y_{T:1}) = \prod_{t=1}^{T} p_t\!\left(y_t \;\big|\; g_{t+1}^\leftarrow(y_{T:t+1})\right)
+\tilde y_s = y_{T-s+1}, \tag{7}
 $$
 
-其中 $g_{t+1}^\leftarrow(y_{T:t+1}) \equiv \Phi_{t+1}(y_T, y_{T-1}, \ldots, y_{t+1})$ 是将 **未来序列** 反向输入同一确定性映射得到的隐状态。
+也就是把前向序列反过来看。然后把后向使用的参数索引写成
+
+$$
+\tilde p_s = p_{T-s}, \qquad \tilde \Phi_s = \Phi_{T-s+1}. \tag{8}
+$$
+
+再定义后向隐状态
+
+$$
+g_{t+1}^\leftarrow(y_{T:t+1})
+\equiv
+\Phi_{t+1}(y_T,y_{T-1},\dots,y_{t+1}), \tag{12}
+$$
+
+于是后向路径概率变成
+
+$$
+P_\leftarrow(y_{T:1})
+=
+\prod_{t=1}^{T}
+p_t\!\left(y_t \mid g_{t+1}^\leftarrow(y_{T:t+1})\right). \tag{13}
+$$
+
+这一步的意思很具体：  
+对于前向过程，$y_{t+1}$ 是在“过去压缩表示” $f_t^\rightarrow(y_{1:t})$ 条件下发射出来的。  
+对于后向过程，$y_t$ 则是在“未来压缩表示” $g_{t+1}^\leftarrow(y_{T:t+1})$ 条件下，用同一个发射核 $p_t$ 来生成。
+
+这就是论文所谓的 “run the same machinery in reverse”。
 
 ![Figure 1(b): 后向过程的因果结构](../../pdfs/2026-04-16/stochastic-thermodynamics-for-autoregressive-generative-models-a-non-markovian-perspective.mineru/hybrid_auto/images/page-03-figure-02.jpg)
 
-**图 1(b)**：后向过程的因果结构。$g_t^\leftarrow$ 将未来观测映射为后向隐状态 $\tilde{h}_s$。即使对于 $\tilde{y}_s = y_{T-s+1}$ 这一特定实现，一般也 **不成立** $\tilde{h}_s = h_{T-s+1}$——因为同一函数 $\Phi_t$ 作用于反转序列会产生不同的隐状态。
+图 1(b) 画出的正是这个 backward process。这里一个容易误会的点是：即使某条后向样本恰好满足 $\tilde y_s = y_{T-s+1}$，一般也**不能**推出 $\tilde h_s = h_{T-s+1}$。原因很直接：同一个确定性映射作用在正向前缀和反向前缀上，得到的内部状态一般不同。
 
-### 2.2 递归情形的图示
+### 2.2 熵产生的定义：前向和后向路径测度之间的 KL 散度
 
-![Figure 2(a): 递归前向过程](../../pdfs/2026-04-16/stochastic-thermodynamics-for-autoregressive-generative-models-a-non-markovian-perspective.mineru/hybrid_auto/images/page-04-figure-01.jpg)
-
-![Figure 2(b): 递归后向过程](../../pdfs/2026-04-16/stochastic-thermodynamics-for-autoregressive-generative-models-a-non-markovian-perspective.mineru/hybrid_auto/images/page-04-figure-02.jpg)
-
-**图 2**：递归情形下的前向/后向因果结构。蓝色箭头 $\phi_t$ 表示递归更新 $h_t = \phi_t(h_{t-1}, y_t)$，每个隐状态仅依赖前一步隐状态和当前观测——这使联合过程 $(h_t, y_t)$ 成为马尔可夫的。
-
-### 2.3 熵产生的定义
-
-**熵产生**（entropy production）定义为前向和后向路径测度之间的 KL 散度：
+有了前向路径概率 $P_\rightarrow$ 和后向路径概率 $P_\leftarrow$，作者就把观测序列的熵产生定义成两者之间的 KL 散度：
 
 $$
-\boxed{\mathcal{S}_y = D_{\text{KL}}\!\left(P_\rightarrow(y_{1:T}) \;\|\; P_\leftarrow(y_{T:1})\right) = \mathbb{E}_{P_\rightarrow}\!\left[\ln \frac{P_\rightarrow(y_{1:T})}{P_\leftarrow(y_{T:1})}\right] \geq 0}
+\mathcal S_y
+=
+D_{\mathrm{KL}}\!\left(P_\rightarrow(y_{1:T}) \,\|\, P_\leftarrow(y_{T:1})\right)
+=
+\mathbb E_{P_\rightarrow}\!\left[
+\ln \frac{P_\rightarrow(y_{1:T})}{P_\leftarrow(y_{T:1})}
+\right]
+\ge 0. \tag{14}
 $$
 
-其中 **随机熵产生**（stochastic entropy production）为：
+相应的随机熵产生是单条轨迹上的对数比：
 
 $$
-\sigma(y_{1:T}) = \ln \frac{P_\rightarrow(y_{1:T})}{P_\leftarrow(y_{T:1})} = \sum_{t=0}^{T-1} \ln p_t(y_{t+1} | f_t^\rightarrow(y_{1:t})) - \sum_{t=1}^{T} \ln p_t(y_t | g_{t+1}^\leftarrow(y_{T:t+1}))
+\sigma(y_{1:T})
+\equiv
+\ln \frac{P_\rightarrow(y_{1:T})}{P_\leftarrow(y_{T:1})}. \tag{18}
 $$
 
-**积分涨落定理**（integral fluctuation theorem）自动成立：$\mathbb{E}_{P_\rightarrow}[e^{-\sigma}] = 1$。
-
-> **物理含义**：$\mathcal{S}_y$ 量化了观测序列 $y_{1:T}$ 在给定自回归模型下的 **时间不可逆性**（temporal irreversibility）。$\mathcal{S}_y = 0$ 当且仅当前向和后向路径概率处处相等。
-
-### 2.4 马尔可夫极限的一致性
-
-当 $y_t$ 本身是马尔可夫过程时（取 $h_t = y_t$），熵产生退化为经典 Crooks 公式：
+再把前向和后向路径概率的乘积结构代进去，就得到
 
 $$
-\mathcal{S}_y = \sum_{t=1}^{T-1} \mathbb{E}\left[\ln \frac{p_t(y_{t+1}|y_t)}{p_t(y_t|y_{t+1})}\right] + \text{边界项}
+\mathcal S_y
+=
+\mathbb E_{P_\rightarrow}\!\left[
+\ln \frac{\prod_{t=0}^{T-1} p_t\!\left(y_{t+1}\mid f_t^\rightarrow(y_{1:t})\right)}
+{\prod_{t=1}^{T} p_t\!\left(y_t\mid g_{t+1}^\leftarrow(y_{T:t+1})\right)}
+\right], \tag{15}
 $$
 
-若进一步假设局部细致平衡（local detailed balance），该项可解释为 $-\beta Q$（逆温度 × 吸收热量）。
+进一步拆开是
+
+$$
+\mathcal S_y
+=
+\mathbb E_{P_\rightarrow}\!\left[-\ln \tilde p(y_T) + \ln p(y_1)\right]
+\;+\;
+\sum_{t=1}^{T-1}
+\mathbb E_{P_\rightarrow}\!\left[
+\ln
+\frac{p_t\!\left(y_{t+1}\mid f_t^\rightarrow(y_{1:t})\right)}
+{p_t\!\left(y_t\mid g_{t+1}^\leftarrow(y_{T:t+1})\right)}
+\right]. \tag{16}
+$$
+
+这条式子最好分成两部分读：
+
+- 第一项是边界项，比较的是前向初始分布和后向初始分布；
+- 第二项是时间内部每一步的对数比，比较的是“用过去预测下一步”和“用未来反推当前步”。
+
+如果进一步采用论文里讨论的特殊选择
+
+$$
+\tilde p(\tilde y_1)=p(y_T), \tag{10}
+$$
+
+那么第一项就会变成单时间边缘分布的 Shannon 熵变化：
+
+$$
+\mathbb E_{P_\rightarrow}[-\ln p(y_T)+\ln p(y_1)]. \tag{17}
+$$
+
+作者的主定义并不依赖这一步，因为在一般自回归模型里，精确计算 $p(y_T)$ 并不现实。
+
+### 2.3 为什么这一定满足涨落定理
+
+有了随机熵产生
+
+$$
+\sigma(y_{1:T})
+=
+\ln \frac{P_\rightarrow(y_{1:T})}{P_\leftarrow(y_{T:1})},
+$$
+
+就立刻有
+
+$$
+\mathcal S_y = \mathbb E_{P_\rightarrow}[\sigma(y_{1:T})], \tag{19}
+$$
+
+以及积分涨落定理
+
+$$
+\mathbb E_{P_\rightarrow}\!\left[e^{-\sigma(y_{1:T})}\right] = 1. \tag{20}
+$$
+
+这里没有更多神秘结构。它成立的原因就是：
+
+$$
+e^{-\sigma(y_{1:T})}
+=
+\frac{P_\leftarrow(y_{T:1})}{P_\rightarrow(y_{1:T})},
+$$
+
+所以对前向分布平均之后，正好把比值还原成后向路径概率的总和。  
+这一步和前面 PRE 那篇里看到的积分涨落定理是同一逻辑，只不过这里的路径对象不再是马尔可夫 SDE，而是由自回归模型定义的非马尔可夫观测序列。
+
+### 2.4 递归情形和马尔可夫极限：这套定义为什么和经典结果兼容
+
+在递归情形下，后向隐状态还可以写成
+
+$$
+\tilde h_s = \tilde \phi_s(\tilde h_{s-1}, \tilde y_s), \tag{21}
+$$
+
+其中 $\tilde \phi_s = \phi_{T-s+1}$。这说明 backward process 在递归架构里同样能保持递推结构。
+
+但作者紧接着强调了一个很关键的点：即使联合过程 $(h_t,y_t)$ 在前向是马尔可夫的，直接把它拿来做 forward / backward KL 并不总是好主意。因为前向和后向在 latent 层上的支撑集可能根本不重合，导致更高层的熵产生发散。于是这篇文章刻意把定义固定在**观测序列 $y_{1:T}$** 上。
+
+如果进一步退到真正的马尔可夫极限，也就是直接取
+
+$$
+h_t = y_t,
+$$
+
+那么
+
+$$
+g_{t+1}^\leftarrow(y_{T:t+1}) = y_{t+1},
+$$
+
+式 `(16)` 的内部项就退化成
+
+$$
+\sum_{t=1}^{T-1}
+\mathbb E_{P_\rightarrow}\!\left[
+\ln \frac{p_t(y_{t+1}\mid y_t)}{p_t(y_t\mid y_{t+1})}
+\right], \tag{22}
+$$
+
+这就回到了标准 Crooks 公式。所以这篇文章不是另起炉灶，而是在更一般的非马尔可夫 setting 里，把经典随机热力学的 forward/backward 比值定义延伸了出去。
 
 ---
 
-## 3 计算可行性：为什么没有指数代价
+## 3 为什么这套定义是可计算的：自回归结构如何绕开指数复杂度
 
-### 3.1 一般非马尔可夫过程的困难
+### 3.1 一般非马尔可夫过程为什么难
 
-对于来自未知源的非马尔可夫过程，估计条件概率 $P_\rightarrow(y_{t+1} | y_{1:t})$ 需要观察大量共享相同前缀 $y_{1:t}$ 的轨迹——所需样本量随条件历史长度 **组合爆炸**。
-
-### 3.2 自回归框架的结构优势
-
-本框架绕过了这一困难，依赖三个结构性特征：
-
-1. **确定性隐状态**：给定单条轨迹 $y_{1:T}$，所有隐状态 $h_0, h_1, \ldots, h_T$ **唯一确定**，无需随机边缘化。
-2. **显式发射核**：$p_t(y_{t+1} | h_t)$ 是模型直接提供的可求值函数（如 Transformer 的 softmax 输出）。
-3. **显式边界分布**：前向和后向的初始分布均为已知函数。
-
-因此，每条轨迹的随机熵产生 $\sigma(y_{1:T})$ 只需 **两次前向传播**（一次正向、一次反向输入同一模型）：
+如果你只拿到一个未知来源的非马尔可夫过程，真正困难的地方在于条件概率本身。  
+例如要估计
 
 $$
-C_1 = 2 C_{\text{LL}}
+P_\rightarrow(y_{t+1}\mid y_{1:t}),
 $$
 
-其中 $C_{\text{LL}}$ 是单次对数似然（log-likelihood）评估的代价。对 Transformer 为 $O(T^2)$，对 RNN/SSM/Mamba 为 $O(T)$。
+你需要很多条拥有相同历史前缀 $y_{1:t}$ 的轨迹。历史越长，这样的重复样本越难遇到；在连续空间里，几乎根本不会重复。这就是一般非马尔可夫熵产生估计会碰到的组合爆炸。
 
-Monte Carlo 估计器：
+### 3.2 自回归模型为什么刚好规避了这个问题
 
-$$
-\mathcal{S}_y \approx \frac{1}{N}\sum_{n=1}^{N} \sigma\!\left(y_{1:T}^{(n)}\right), \quad N = O\!\left(\text{Var}(\sigma) / \epsilon^2\right)
-$$
+这篇文章的核心计算洞察就在这里：  
+在 autoregressive model 里，前向和后向路径概率不是未知的统计对象，而是模型直接给出的可求值函数。
 
-### 3.3 时间粗粒化（temporal coarse-graining）
+它依赖三条结构条件。
 
-对语言模型，逐 token 反转（如 "book a is This"）因语法破坏而产生极大的熵产生，掩盖了语义层面的不可逆信号。
-
-**块级反转**（block reversal）提供了更有解释力的替代方案：将序列按句子分块，反转块的顺序但保持块内 token 顺序不变：
+第一，隐状态是确定性的。  
+给定一条具体轨迹 $y_{1:T}$，前向隐状态
 
 $$
-\text{token 反转}: (f, e, d, c, b, a); \quad \text{块反转}: (\underbrace{d,e,f}_{B_2}, \underbrace{a,b,c}_{B_1})
+h_t = \Phi_t(y_{1:t})
 $$
 
-对时间齐次模型（time-homogeneous，如 GPT-2），粗粒化随机熵产生定义为：
+和后向隐状态
 
 $$
-\sigma'(y_{1:T}) = \ln P(y_{1:T}) - \ln P(\tilde{y}_{1:\tilde{T}}')
+g_{t+1}^\leftarrow(y_{T:t+1})
 $$
 
-即原始文本与块反转文本在 **同一模型** 下的对数似然之差。这仍满足涨落定理 $\mathbb{E}[e^{-\sigma'}] = 1$，且计算代价与 token 级相同。
+都可以直接算出来，不需要对 latent state 做随机边缘化。
+
+第二，发射核是显式的。  
+模型直接提供
+
+$$
+p_t(y_{t+1}\mid h_t).
+$$
+
+对 Transformer，这就是 softmax 输出；对 Kalman，这就是高斯发射核；对 SSM 和 Mamba，也是显式的条件分布。
+
+第三，边界项也是显式给定的。  
+前向初始分布 $p(y_1)$ 和后向初始分布 $\tilde p(\tilde y_1)$ 都是已知函数，而不是需要从数据中额外估计的量。
+
+于是单条轨迹上的随机熵产生
+
+$$
+\sigma(y_{1:T})
+$$
+
+根本不需要枚举大量历史，只需要做两次标准对数似然评估：
+
+1. 正向输入原序列，累计前向 log-prob；
+2. 反向输入逆序列，累计后向 log-prob。
+
+论文把单条轨迹的计算代价写成
+
+$$
+C_1 = 2 C_{\mathrm{LL}}, \tag{27}
+$$
+
+其中 $C_{\mathrm{LL}}$ 是一次 log-likelihood evaluation 的代价。  
+于是 Monte Carlo 估计就是
+
+$$
+\mathcal S_y
+\approx
+\frac{1}{N}\sum_{n=1}^{N}\sigma\!\left(y_{1:T}^{(n)}\right), \tag{25}
+$$
+
+总成本
+
+$$
+C_{\mathrm{total}} = N C_1. \tag{26}
+$$
+
+对 Transformer，单次 log-likelihood 大致是 $O(T^2)$；对 RNN、SSM、Mamba 这类递归架构，大致是 $O(T)$。这里没有额外的“非马尔可夫惩罚项”，因为复杂历史已经被模型自己的确定性记忆结构吸收了。
+
+### 3.3 时间粗粒化：为什么 token 级反转不够好，block 级反转更有解释力
+
+把这套定义直接用在语言模型上，会马上遇到一个问题。  
+如果你把 token 序列完全倒过来，像
+
+$$
+(\mathrm{This},\mathrm{is},\mathrm{a},\mathrm{book})
+\longrightarrow
+(\mathrm{book},\mathrm{a},\mathrm{is},\mathrm{This}),
+$$
+
+那么得到的巨大熵产生主要反映的是**语法彻底被打坏了**，而不是更深层的语义或因果不可逆性。
+
+所以作者接着做了时间粗粒化。  
+在时间齐次模型里，也就是
+
+$$
+p_t = p,\qquad \Phi_t = \Phi \quad \text{for all } t, \tag{28}
+$$
+
+可以先把 token 序列切成 block：
+
+$$
+y_{t'}' = (y_{(t'-1)l+1},\dots,y_{t'l}), \tag{30}
+$$
+
+然后只反转 block 的顺序，而保持 block 内 token 的顺序不变。例如
+
+$$
+(a,b,c,d,e,f)
+\longrightarrow
+(\underbrace{d,e,f}_{B_2},\underbrace{a,b,c}_{B_1}). \tag{32}
+$$
+
+这时粗粒化后的随机熵产生定义成
+
+$$
+\sigma'(y_{1:T})
+=
+\ln P(y_{1:T}) - \ln P(\tilde y_{1:\tilde T}'), \tag{34}
+$$
+
+也就是用同一个模型分别计算原始序列和 block-reversed 序列的对数似然差。
+
+这一步为什么有意义？因为它把“不可逆性”从 token 级语法顺序上抬到了 block 级结构顺序上。  
+如果 block 取成句子，那么反转的就是句子顺序而不是词序。这样得到的量更有机会反映：
+
+- 跨句子的叙事方向；
+- 事件的时间顺序；
+- 因果结构的正反差异。
+
+而且它的计算代价并没有变高。因为你仍然只是在做两次普通的 log-likelihood evaluation：
+
+- 一次喂原始序列；
+- 一次喂 block-reversed 序列。
+
+所以这一步既保持了涨落定理形式，也给后面的 GPT-2 实验提供了更有解释力的观测对象。
 
 ---
 
