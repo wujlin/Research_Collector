@@ -12,103 +12,561 @@ topics: ["最优传输", "HJB方程", "flow matching", "生成模型"]
 
 ---
 
-## 1. 问题定义：最小做功的概率质量逆转
+## 1. INTRODUCTION
 
-### 1.1 物理直觉
+### 1.1 这篇文章到底在问什么
 
-考虑一个多体随机系统：它有一个"结构化"的目标状态（如图像分布 $p_{\text{data}}$）和一个"无序"的参考状态（如高斯噪声 $p_{\text{ref}}$）。系统的**自然弛豫**（natural relaxation）方向是从结构走向无序——这正是扩散过程（diffusion）所做的事。核心问题是：
+原文开头先把问题放在一个很物理的框架里来看。它关心的不是“怎样从噪声采样到数据”这么一句常见的生成模型表述，而是一个更强的问题：
 
-> **能否找到一个最小做功的随机过程，将这一弛豫过程逆转？**
+**如果一个随机系统会自然地从结构化状态弛豫到无序参考态，那么反过来把它从无序态推回结构化目标态时，最小做功的随机过程是什么？**
 
-这个问题同时出现在非平衡统计力学（non-equilibrium statistical mechanics）和随机控制（stochastic control）中。
+这里有三个关键词需要先钉住。
 
-### 1.2 数学形式化
+第一，作者把生成过程看成一个**受控随机动力学问题**。系统本身带扩散和涨落，所以轨迹不是确定的；但我们可以通过控制漂移，把概率质量从参考分布推向目标分布。
 
-设 $\mathbf{x}_t \in \mathbb{R}^d$ 遵循受控 Itô SDE：
+第二，作者强调的不是只有端点分布，而是**整条轨迹**。他们关心的不是“起点和终点对不对”，而是：在中间每一步，系统有没有走进高代价区域，控制做功是不是尽量小，整条路径是不是物理上合理。
 
-$$d\mathbf{x}_t = \mathbf{u}_t \, dt + \sqrt{2D} \, d\mathbf{B}_t$$
+第三，作者把这个问题同时放在两条传统里：
 
-其中 $\mathbf{u}_t$ 是控制输入，$D > 0$ 是扩散系数。边界条件为 $\mathbf{x}_0 \sim p_{\text{ref}}$，$\mathbf{x}_1 \sim p_{\text{data}}$。最优控制问题表述为：
+- 非平衡统计力学：系统自然弛豫到无序，逆转这个弛豫需要做功；
+- 随机最优控制：在带噪动力学里，怎样以最小总代价把分布从起点运到终点。
 
-$$\min_{\mathbf{u}_t} \; \mathbb{E}_{\mathbb{P}_\mathbf{u}} \left[ \int_0^1 \nu(\mathbf{x}_t) \, dt + \frac{\gamma}{2} \int_0^1 \|\mathbf{u}_t\|^2 \, dt \right]$$
+所以这篇文章的起点，不是“再做一个生成模型”，而是：
 
-其中：
-- $\nu(\mathbf{x}) \geq 0$：**空间代价函数**（spatial cost function），惩罚物理上不合法或不安全的状态
-- $\gamma > 0$：控制代价权重
-- 目标函数同时包含**轨迹级的空间惩罚**和**控制能耗**
+**生成本身就是一个受控的概率输运问题，而最自然的问题是寻找最优输运路径。**
 
-这一形式化的关键洞察在于：它不仅关心端点分布的匹配（如 flow matching、score-based diffusion），更关心**整条轨迹的最优性**——每一步的做功和路径的空间可行性都被显式考虑。
+### 1.2 为什么作者觉得现有生成方法还不够
 
-### 1.3 与现有方法的本质区别
+原文接着做的事情，不是简单回顾文献，而是把现有方法按“它们到底优化了什么”重新摆了一遍。
 
-| 方法 | 优化对象 | 轨迹最优性 | 空间约束 |
-|------|----------|------------|----------|
-| Score matching | 逆向漂移场 | 无 | 无 |
-| Flow matching | 边际分布匹配 | 无 | 无 |
-| Schrödinger bridge | KL-正则化端点传输 | 弱（熵正则化） | 无 |
-| **本文 (HJB matching)** | **路径空间代价泛函** | **是（变分最优）** | **是（ν(x) 几何先验）** |
+第一类是 score-based / score-matching 路线。它们擅长做的是：学习一个逆向漂移场，让系统能够从噪声逐步回到数据分布。但作者这里的批评不是说这条路不行，而是说：它主要是在学习**局部逆向向量场**，并没有把“整条轨迹的全局代价最小”直接写进目标。
+
+第二类是 flow matching。它做的是：先指定一条随时间变化的中间分布路径，然后学习一个速度场，使得系统在每一个时间切片上都能把样本推到对应的那一层分布。它主要检查的是：
+
+- 在时间 $t$，样本分布是不是到了应该到的位置；
+- 在时间 $t+\Delta t$，分布是不是又被推到了下一层目标边际。
+
+所以它的监督对象首先是**每个时间切片上的边际分布**，而不是整条随机轨迹的总代价。这也是为什么它在分布层面看起来很干净：你不需要先处理整条路径的全局 action，也不需要显式追踪某条路径累计付出了多少代价；只要让每个时间片上的样本流向正确的目标边际，训练就能成立。
+
+也正因为这样，它通常比直接解完整的随机最优控制问题更容易训练。你学的是“这一时刻局部应该往哪里流”，而不是“一整条连续时间轨迹怎样同时兼顾做功最小、空间约束最小和终点匹配”。所以在作者看来，flow matching 虽然在分布演化层面很自然，但它优化的仍然是“各个时刻的局部输运方向”，而不是“整条随机路径的动作代价和空间代价如何同时最优”。
+
+第三类是 Schrödinger bridge。它已经比前两类更接近作者想要的东西，因为它确实在做带噪的分布输运，也和随机控制、最优传输、路径测度联系很深。原文这里进一步区分的是问题的起点。
+
+Schrödinger bridge 的标准起点通常是：给定起点分布和终点分布，在所有能把前者送到后者的随机路径测度里，寻找那个**相对于某个参考扩散过程最不意外、也就是 KL 代价最小**的过程。这样一来，问题的主角首先是：
+
+- 起点和终点这两个边界分布；
+- 以及在这两个端点约束下，整条路径测度相对参考过程的熵正则化代价。
+
+所以从这个视角看，Schrödinger bridge 关心的是：**在满足端点约束的前提下，哪条随机输运路径最接近一个给定的自然参考过程。**
+
+而这篇文章想把问题写得更原始一些。它不是先从“相对某个参考过程的 KL 最小”出发，再把这个量解释成一种路径代价；它是从第一行就直接写下连续时间轨迹上的 running cost：
+
+- 经过高代价区域要付出多少空间代价；
+- 施加控制要付出多少做功代价；
+- 这两类代价沿整条轨迹如何累积。
+
+在这篇文章里，主角首先不是“相对参考过程的熵正则化偏离”，而是：
+
+**整条连续时间轨迹本身到底花了多少代价。**
+
+所以两者的差别不是谁更高级，而是问题起点不同：
+
+- Schrödinger bridge 更自然地从**端点约束 + 相对熵正则化**出发；
+- 这篇文章更自然地从**连续时间随机最优控制的路径代价泛函**出发。
+
+作者想强调的是：如果你的核心关切是“最小做功”和“路径几何可行性”，那么把连续时间 running cost 直接放在原始问题里，会比事后再从熵正则化角度去解释更直接。
+
+作者觉得“不够”的地方，不是这些方法不能生成样本，而是：
+
+- 它们不一定显式优化一条连续时间路径上的总代价；
+- 它们不一定显式纳入空间约束或几何代价；
+- 它们不一定把“最小做功”当成问题本身的中心。
+
+**现有方法大多在学“如何把分布搬过去”，而作者想问的是“如何以最小轨迹代价把分布搬过去”。**
+
+### 1.3 作者把这个问题写成了什么数学对象
+
+在这个目标下，原文引入的不是离散时间生成链，而是一个受控 Itô 随机微分方程：
+
+$$
+d\mathbf{x}_t = \mathbf{u}_t\,dt + \sqrt{2D}\,d\mathbf{B}_t.
+$$
+
+这里：
+
+- $\mathbf{x}_t$ 是系统状态；
+- $\mathbf{u}_t$ 是控制输入；
+- $D$ 是扩散系数；
+- $\mathbf{B}_t$ 是 Brownian motion。
+
+边界条件是：
+
+- 初始分布来自无序参考态 $p_{\mathrm{ref}}$；
+- 终点分布要到达结构化目标态 $p_{\mathrm{data}}$。
+
+然后作者给这个受控过程配上了一个路径代价泛函：
+
+$$
+\min_{\mathbf{u}_t}\;
+\mathbb E_{\mathbb P_{\mathbf u}}
+\left[
+\int_0^1 \nu(\mathbf{x}_t)\,dt
++
+\frac{\gamma}{2}\int_0^1 \|\mathbf{u}_t\|^2\,dt
+\right].
+$$
+
+这两项必须分开理解。
+
+第一项 $\int_0^1 \nu(\mathbf{x}_t)\,dt$ 是**空间代价**。它说的是：某些区域物理上不合理、工程上不安全、或者几何上不希望经过，那么轨迹经过那里就要付出代价。
+
+第二项 $\frac{\gamma}{2}\int_0^1 \|\mathbf{u}_t\|^2\,dt$ 是**控制做功代价**。它说的是：想把系统从自然弛豫方向硬拉回目标态，需要施加控制；控制越大，代价越高。
+
+这个数学问题的含义是：
+
+**在满足起点和终点分布约束的前提下，找到一条随机控制策略，使系统既少做功，又尽量避开高代价区域。**
+
+这也是这篇文章和普通“把噪声变成样本”的生成表述最不一样的地方。这里从第一行开始，主角就是**路径最优性**，不是只看最终样本。
+
+### 1.4 这篇文章的核心想法是什么
+
+到这里，原文开始引入本文的新意。它没有直接去学习一个高维向量场，也没有直接在 backward process 上做 hard control，而是先把原始控制问题改写成它的对偶形式。线索分成三步。
+
+为避免混用两套时间坐标，下面先固定一个说法：把目标数据分布所在的一端统一叫作**数据端**，把参考分布所在的一端统一叫作**参考端**。在 backward 时钟 $t\in[0,1]$ 里，系统从参考端走到数据端；在 forward 时钟 $s=1-t$ 里，系统从数据端走回参考端。
+
+第一步，原始问题表面上是在所有可能的控制策略 $\mathbf{u}_t$ 里做最优化。也就是说，你直接操纵的对象看起来是一个随时间和空间变化的向量场：在每个时刻、每个位置，到底要把系统往哪个方向推。
+
+第二步，这里说的“对偶形式”，不是另一个无关的新问题，而是**把同一个最优控制问题换一种变量来写**。原始写法里，你要同时处理两样东西：
+
+- 控制场 $\mathbf{u}_t$；
+- 在这个控制下随时间演化的概率密度 $\rho(t,\mathbf{x})$。
+
+而且这两样东西还不能随便选，它们必须一起满足 Fokker-Planck 方程，也就是“控制怎么推着整团概率质量往前走”的动力学约束。直接在这两个对象上同时做优化，会很笨重。
+
+对偶化做的事情是：引入一个标量函数 $U(t,\mathbf{x})$ 作为 Lagrange 乘子，把 Fokker-Planck 约束先乘上这个函数，再和原始路径代价一起写进同一个积分里。这样一来，动力学约束就不再是“额外写在旁边、必须另外满足的一条方程”，而是直接变成优化目标的一部分。于是原来那个“同时优化控制场和概率密度、并且还要单独检查它们是否满足动力学约束”的问题，就可以改写成一个更统一的变分问题。再往下对控制场做极小化之后，主角就从“任意向量控制场”变成了一个标量 value function。这个标量函数记录的是：**如果系统此刻位于 $(t,\mathbf{x})$，那么从现在到数据端，完成整个输运任务所需的最小剩余代价是多少。**
+
+第三步，一旦把问题写成这种对偶形式，控制场就不再需要被单独学习了。这里的 HJB 是 **Hamilton-Jacobi-Bellman** 的缩写，它描述的是：如果系统现在位于某个状态，那么从现在到数据端的最小剩余代价满足什么偏微分方程。这个理论里最核心的对象就是 value function，也就是上面说的“最小剩余代价函数”。
+
+原始代价里，控制 $\mathbf{u}_t$ 一方面要付出二次做功代价，另一方面又会通过 $\mathbf{u}\cdot \nabla U$ 这一项影响 value function 的变化。于是，对控制变量做极小化时，你实际上是在每个时空点上最小化一个标准的凸二次函数：
+
+$$
+\frac{\gamma}{2}\|\mathbf{u}\|^2+\mathbf{u}\cdot \nabla U.
+$$
+
+对这个二次函数求极小值，一阶条件是
+$$
+\gamma\,\mathbf{u}+\nabla U=0,
+$$
+于是最优控制自然写成
+
+$$
+\mathbf{u}^*(t,\mathbf{x})=-\frac{1}{\gamma}\nabla U(t,\mathbf{x}).
+$$
+
+需要学习的不是一个任意的向量函数，而是一个标量势 $W(t,\mathbf{x})$，再由它的梯度来定义最优控制方向。
+
+这样做有两个立刻的好处。
+
+第一，表示更紧。高维向量场学习被压成了标量势学习，结构更清楚，也更接近最优控制和 Hamilton-Jacobi-Bellman 理论的经典形式。
+
+第二，物理意义更强。因为一旦最优控制是某个势函数的梯度，整个生成过程就不再只是“一个学出来的 drift”，而更像“沿着 value landscape 做最优输运”。
+
+但这里马上会出现作者自己强调的难点。下面分成三步。
+
+第一步，backward problem 对应的正是我们真正想要的生成过程：从参考分布出发，在控制下逐步走到目标分布。表面上看，这正是应该直接求解的方向。
+
+第二步，一旦你真的沿这个方向往下写，很多关键量都会开始依赖“在最优控制下，系统实际会经过哪些轨迹”。例如，你想计算某个值函数的期望、想评估某个路径代价，或者想知道某个控制是否真的把概率质量送到了目标分布附近，这些问题最后都会要求你已经能够从那个 backward controlled process 里采样。
+
+第三步，问题恰好卡在这里：这个 backward controlled process 本身正是你还没有求出来的对象。你想评估它，需要先能运行它；但你想运行它，又得先知道它。这就形成了一个闭环：
+
+- 为了算最优 backward control，你需要知道最优轨迹长什么样；
+- 为了知道最优轨迹长什么样，你又需要先有最优 backward control。
+
+这就是这里说的“循环依赖”。后面要解决的，不是一个普通数值难题，而是这个结构性的闭环。
+
+### 1.5 作者如何打破这个循环依赖
+
+这正是原文 introduction 最后要引出的核心机制：
+
+**把难解的 backward optimal control 问题，通过时间反转对偶，改写成一个 forward-in-time 的 HJB 问题。**
+
+下面按四步展开。
+
+第一步，真正的生成任务发生在 backward 方向。系统从参考分布出发，在控制作用下逐步走向目标数据分布；这正是我们最终想运行的过程。
+
+第二步，困难也恰好出在这个方向上。因为 backward controlled process 还没有被构造出来，所以你既不知道它的典型轨迹长什么样，也不能直接从它采样。这样一来，凡是依赖“沿最优生成轨迹求期望”的量，都会立刻卡住。
+
+第三步，forward 方向则不同。作者把时间反过来看：如果系统从数据分布出发，往参考分布弛豫，那么这就是一个自然扩散过程。这个过程不需要额外猜测最优控制，也不需要先知道目标轨迹；它本身就是可模拟、可采样、可在路径上做 Monte Carlo 平均的对象。
+
+第四步，时间反转对偶的作用，不只是“把 forward 解拿回 backward 用”，而是把**同一个控制问题放到两个不同时间坐标下重读**。下面分三层。
+
+第一层，backward value function $U(t,\mathbf{x})$ 记录的是：如果系统在反向生成时刻位于 $(t,\mathbf{x})$，那么从现在到数据端还要付出多少最小剩余代价。它天然是一个“朝数据端看”的量。
+
+第二层，如果把时间改写成 $s=1-t$，再定义一个新的标量函数 $W(s,\mathbf{x})=-U(1-s,\mathbf{x})$，那么你并没有换掉问题本身，只是把同一族时空点改用 forward 时钟来标记。这样一来，原来那个“从参考分布往数据分布推”的 backward control 问题，就被重新表述成一个 forward HJB 问题。
+
+这里不是又发明了一个新目标，而是把同一个“最小剩余代价”函数，改写成了 forward 时间下满足的偏微分方程。第一，先固定当前 forward 时刻 $s$ 和当前位置 $\mathbf{x}$。第二，从这一刻开始，系统会继续沿着 forward 弛豫往前走，直到到达 $s=1$，也就是参考端。第三，在这段剩余时间里，轨迹会继续累积空间代价和控制代价；不同的后续走法，会对应不同的总代价。第四，$W(s,\mathbf{x})$ 记录的就是：在所有允许的后续演化里，从当前这点出发、一直走到参考端为止，最少还需要付出多少总代价。因为这个 forward 方向本身对应自然扩散，所以这个 forward HJB 约束的是一个可以沿真实前向轨迹去估计的 value function，而不是一个必须先知道生成过程才能评估的对象。
+
+第三层，这样做之所以有用，是因为 forward 方向本身是可采样的。你可以真的从数据分布出发，沿着弛豫过程模拟轨迹，并在这些轨迹上估计 forward value function $W$。而一旦 $W$ 学到了，backward control 又只依赖它的梯度；于是再通过时间反转关系和后面的 Anderson-type reverse formula，就能把 $W$ 重新翻译回生成时需要的 backward drift。
+
+所以作者的策略不是“直接学逆过程”，而是：
+
+1. 先构造从数据到参考的 forward relaxation；
+2. 在这个 forward 过程中学习标量 value function；
+3. 再通过时间反转对偶，把这个 value function 变回生成时需要的 backward control。
+
+原文接着才会用到：
+
+- HJB 方程；
+- Cole-Hopf 变换；
+- Feynman-Kac 表示；
+- path-space free energy。
+
+但 introduction 在这里已经把整篇文章的主线交代清楚了：
+
+**训练时走正向、生成时走反向；正向之所以可学，是因为它是自然弛豫；反向之所以可得，是因为前后两个 HJB 通过时间反转对偶联系起来。**
+
+### 1.6 原文在引言里想 claim 的贡献
+
+如果把 introduction 收成作者自己的 claim，大致就是四点。
+
+第一，他们不是从 score 或 drift 回归出发，而是从**随机最优控制 + 动态最优传输**出发，给生成问题一个更物理、更变分的起点。
+
+第二，他们提出了一个**前向-后向 HJB 对偶**。这让 backward control 的学习可以转移到 tractable 的 forward trajectories 上完成。
+
+第三，他们引入了显式的**空间代价函数** $\nu(\mathbf{x})$。这意味着生成路径不只受端点约束，还会被中间路径的几何和可行性塑形；原文甚至用类似 Fermat 原理的语言去解释这种“折射式”输运几何。
+
+第四，他们把整个框架解释成一种**path-space free energy** 视角下的生成建模。这篇文章不是单纯想做更好的 sampler，而是想把：
+
+- stochastic control
+- optimal transport
+- Schrödinger bridge
+- non-equilibrium statistical mechanics
+
+放进同一个解释框架里。
 
 ---
 
-## 2. 对偶变分原理：从控制到标量势
+## 2. FORWARD-BACKWARD HJB MATCHING
 
-### 2.1 Lemma 2.1 — Kantorovich 对偶
+### 2.1 原文这一节的线性顺序
 
-下面给出从最优控制问题到 HJB 方程的完整变分推导。
+原文 `Section 2` 的顺序很清楚，下面按这条线展开：
 
-**Step 1 — 写出 Lagrangian**。受控 SDE 对应的概率密度 $\rho(t,\mathbf{x})$ 满足 Fokker-Planck（FP）方程：
+1. 先重新写出受控 SDE 和随机控制目标，也就是 `Eq. (1)` 和 `Eq. (2)`；  
+2. 再给出 `Lemma 2.1`，把问题从“控制场优化”改写成“标量势函数满足的 HJB 对偶问题”；  
+3. 然后指出：如果直接从这个 backward generative formulation 往下做，会遇到循环依赖；  
+4. 再给出 `Theorem 2.2`，把 backward problem 改写成 forward-time 的 HJB matching；  
+5. 最后才进入 `b. Feynman-Kac estimation of the forward potential`，解释为什么 forward value function 可以沿可采样的正向轨迹估计。
 
-$$\frac{\partial \rho}{\partial t} + \nabla \cdot (\mathbf{u}\,\rho) = D\Delta\rho$$
+下面的整理就严格按这个顺序走，不再把 `Lemma 2.1`、`Theorem 2.2`、`Feynman-Kac` 拆到几个互相断开的大节里。
 
-引入 Lagrange 乘子 $U(t,\mathbf{x})$ 执行 FP 约束，将原始最小化问题写为鞍点问题：
+### 2.2 a. 从受控 SDE 到随机控制问题
 
-$$\mathcal{L}[\mathbf{u}, \rho, U] = \int_0^1 \!\!\int \left[\nu(\mathbf{x}) + \frac{\gamma}{2}\|\mathbf{u}\|^2 \right]\rho \, d\mathbf{x}\,dt + \int_0^1 \!\!\int U \left[\frac{\partial\rho}{\partial t} + \nabla\cdot(\mathbf{u}\,\rho) - D\Delta\rho\right] d\mathbf{x}\,dt$$
+原文这一节开头先把生成问题重新写回受控 SDE：
 
-对 $U$ 的部分做分部积分（将时间导数和空间导数转移到 $U$ 上），Lagrangian 化为：
+原文 Eq. (1)：
 
-$$\mathcal{L} = \int U(0,\mathbf{x})\rho_0\,d\mathbf{x} - \int U(1,\mathbf{x})\rho_1\,d\mathbf{x} + \int_0^1\!\!\int \left[\nu + \frac{\gamma}{2}\|\mathbf{u}\|^2 - \frac{\partial U}{\partial t} - D\Delta U + \mathbf{u}\cdot\nabla U\right]\rho\,d\mathbf{x}\,dt$$
+$$
+d\mathbf{x}_t = \mathbf{u}_t\,dt + \sqrt{2D}\,d\mathbf{B}_t.
+$$
 
-其中边界项 $\int U(0,\cdot)\rho_0 - \int U(1,\cdot)\rho_1$ 正是对偶目标的雏形。
+边界条件是：
 
-**Step 2 — 对控制 $\mathbf{u}$ 逐点极小**。被积函数中关于 $\mathbf{u}$ 的部分为：
+- 起点在参考端，$\mathbf{x}_0 \sim p_{\mathrm{ref}}$；
+- 终点在数据端，$\mathbf{x}_1 \sim p_{\mathrm{data}}$。
 
-$$f(\mathbf{u}) = \frac{\gamma}{2}\|\mathbf{u}\|^2 + \mathbf{u}\cdot\nabla U$$
+然后作者把真正要解的随机控制问题写成
 
-这是 $\mathbf{u}$ 的凸二次函数，令 $\nabla_{\mathbf{u}} f = \gamma\,\mathbf{u} + \nabla U = 0$，得到逐点最优控制：
+原文 Eq. (2)：
 
-$$\boxed{\mathbf{u}^*(t,\mathbf{x}) = -\frac{1}{\gamma}\nabla U(t,\mathbf{x})}$$
+$$
+\min_{\mathbf{u}_t}\;
+\mathbb E_{\mathbb P_{\mathbf u}}
+\left[
+\int_0^1 \nu(\mathbf{x}_t)\,dt
++
+\frac{\gamma}{2}\int_0^1 \|\mathbf{u}_t\|^2\,dt
+\right].
+$$
 
-**Step 3 — 代回得到 HJB 方程**。将 $\mathbf{u}^*$ 代入 $f(\mathbf{u})$：
+原文先把问题重新钉死为“在固定端点分布约束下，最小化整条随机轨迹上的空间代价和控制做功代价”。
 
-$$f(\mathbf{u}^*) = \frac{\gamma}{2}\cdot\frac{1}{\gamma^2}\|\nabla U\|^2 - \frac{1}{\gamma}\|\nabla U\|^2 = -\frac{1}{2\gamma}\|\nabla U\|^2$$
+为什么要这么做？因为直接学习控制场有两个困难。
 
-于是被积函数成为 $\nu - \frac{\partial U}{\partial t} - D\Delta U - \frac{1}{2\gamma}\|\nabla U\|^2$。为使对偶目标有界，该被积函数必须对所有 $(t,\mathbf{x})$ 非负且取等——这恰好给出 **Hamilton-Jacobi-Bellman 方程**：
+1. 控制场 $\mathbf{u}(t,\mathbf{x})$ 本身是定义在“时间 $\times$ 状态空间”上的高维向量函数。  
+   这意味着：对每一个时刻、每一个位置，你都要决定一个完整的推动方向。  
+   所以如果直接把它当成主角去学习，模型表面上要拟合的是一整张随时间变化的向量场，而不是一个更紧凑的标量对象。  
+   这就是“重”的意思：参数化对象本身维度高、结构复杂。  
+   这也是“不透明”的意思：即使学到了一个控制场，你也很难直接读出“为什么这里要往这个方向推、它对应的剩余任务代价是什么”。  
+2. 控制场和概率密度 $\rho(t,\mathbf{x})$ 不是分开选的；它们必须一起满足动力学约束。
 
-$$\boxed{\frac{\partial U}{\partial t} + D\Delta U - \frac{1}{2\gamma}\|\nabla U\|^2 + \nu(\mathbf{x}) = 0}$$
+这里的动力学约束就是 Fokker-Planck 方程：
 
-**最终结果**汇总：
+$$
+\frac{\partial \rho}{\partial t} + \nabla \cdot (\mathbf{u}\rho) = D\Delta\rho.
+$$
 
-- **最优控制**：$\mathbf{u}^*(t, \mathbf{x}) = -\frac{1}{\gamma} \nabla U(t, \mathbf{x})$
-- **HJB 约束**：$\frac{\partial U}{\partial t} + D\Delta U - \frac{1}{2\gamma}\|\nabla U\|^2 + \nu(\mathbf{x}) = 0$
-- **对偶目标**：$\max_{U_0, U_1} \left\{ \int U(0,\mathbf{x}) p_{\text{ref}}(\mathbf{x}) d\mathbf{x} - \int U(1,\mathbf{x}) p_{\text{data}}(\mathbf{x}) d\mathbf{x} \right\}$
+这条方程的意思是：如果你给系统施加某个控制场 $\mathbf{u}$，那么整团概率质量 $\rho(t,\mathbf{x})$ 会按这条连续性方程演化。原始最优控制问题不是“只优化控制”，而是：
 
-物理含义：**最优控制是一个标量势函数的梯度**。这将高维向量场学习降维为标量场学习，极大提高了可解释性和参数效率。
+- 一边优化路径代价；
+- 一边要求密度演化始终 obey 这条 Fokker-Planck 约束。
 
-### 2.2 循环依赖困境
+作者这一节要做的，就是把这个“控制场 + 概率密度 + 动力学约束”的问题，改写成一个以标量势函数为主角的对偶问题。
 
-然而直接求解上述对偶问题存在本质困难：对偶目标中的积分需要在 $p_{\text{data}}$ 上求期望，但从 $p_{\text{ref}}$ 出发采样得到 $p_{\text{data}}$ 恰恰需要事先知道生成过程——这形成了**循环依赖**（circular dependency）。
+### 2.3 Lemma 2.1 的主线：为什么会冒出一个标量函数
 
----
+这里的关键动作只有一个：引入一个标量函数 $U(t,\mathbf{x})$ 作为 Lagrange 乘子，把 Fokker-Planck 约束写进同一个优化泛函里。
 
-## 3. 时间反转对偶：正向训练 ↔ 逆向生成
+这里的直觉是：
 
-### 3.1 Theorem 2.2 — 前向-后向 HJB 对偶
+- 原来 Fokker-Planck 是一个必须额外满足的条件；
+- 现在用 $U(t,\mathbf{x})$ 去乘这条约束；
+- 再把它和原始路径代价放进同一个积分；
+- 于是“代价最小”和“动力学必须成立”就被放进了同一个变分问题里。
+
+对应的 Lagrangian 写成：
+
+$$
+\mathcal{L}[\mathbf{u}, \rho, U]
+=
+\int_0^1\!\!\int
+\left[
+\nu(\mathbf{x})+\frac{\gamma}{2}\|\mathbf{u}\|^2
+\right]\rho\,d\mathbf{x}\,dt
+\;+\;
+\int_0^1\!\!\int
+U
+\left[
+\frac{\partial \rho}{\partial t}
++\nabla\cdot(\mathbf{u}\rho)
+-D\Delta \rho
+\right]
+d\mathbf{x}\,dt.
+$$
+
+到这里为止，$U$ 还只是一个乘子函数。它的作用只是：把“密度必须满足 Fokker-Planck”这件事显式写进优化目标。
+
+#### 2.3.1 变分三步：从 Lagrangian 到最优控制
+
+下面按原文的三步展开 Lemma 2.1。
+
+第一步，先处理乘子项里那三类带导数的部分：时间导数项、散度项和 Laplace 项。原文一句话说“做分部积分，把导数从 $\rho$ 转到 $U$ 上”，中间具体是下面三步。
+
+1. 对时间导数项
+   $$
+   \int_0^1\!\!\int U\,\frac{\partial \rho}{\partial t}\,d\mathbf{x}\,dt
+   $$
+   做时间方向的分部积分。这样会留下两个边界项，同时把时间导数从 $\rho$ 挪到 $U$ 上：
+   $$
+   \int U(1,\mathbf{x})\rho_1(\mathbf{x})\,d\mathbf{x}
+   -
+   \int U(0,\mathbf{x})\rho_0(\mathbf{x})\,d\mathbf{x}
+   -
+   \int_0^1\!\!\int \rho\,\frac{\partial U}{\partial t}\,d\mathbf{x}\,dt.
+   $$
+
+2. 对散度项
+   $$
+   \int_0^1\!\!\int U\,\nabla\cdot(\mathbf{u}\rho)\,d\mathbf{x}\,dt
+   $$
+   做空间分部积分。忽略无穷远处的边界通量以后，散度从 $\mathbf{u}\rho$ 挪到 $U$ 上，于是得到
+   $$
+   -\int_0^1\!\!\int \rho\,\mathbf{u}\cdot \nabla U\,d\mathbf{x}\,dt.
+   $$
+
+3. 对扩散项
+   $$
+   -D\int_0^1\!\!\int U\,\Delta \rho\,d\mathbf{x}\,dt
+   $$
+   做两次空间分部积分。结果等价于把 Laplacian 从 $\rho$ 挪到 $U$ 上，所以得到
+   $$
+   -D\int_0^1\!\!\int \rho\,\Delta U\,d\mathbf{x}\,dt.
+   $$
+
+把这三部分和原来的代价项重新合并，就得到：
+
+$$
+\mathcal{L}
+=
+\int U(0,\mathbf{x})\rho_0\,d\mathbf{x}
+-\int U(1,\mathbf{x})\rho_1\,d\mathbf{x}
++\int_0^1\!\!\int
+\left[
+\nu
++\frac{\gamma}{2}\|\mathbf{u}\|^2
+-\frac{\partial U}{\partial t}
+-D\Delta U
++\mathbf{u}\cdot \nabla U
+\right]\rho\,d\mathbf{x}\,dt.
+$$
+
+这里发生的结构变化是：
+
+- 边界项里出现了 $U(0,\mathbf{x})$ 和 $U(1,\mathbf{x})$；
+- 积分内部关于控制 $\mathbf{u}$ 的部分，已经只剩一个标准的凸二次函数。
+
+第二步，对控制变量 $\mathbf{u}$ 做逐点极小化。固定某个时空点 $(t,\mathbf{x})$ 以后，需要最小化的是
+
+$$
+\frac{\gamma}{2}\|\mathbf{u}\|^2 + \mathbf{u}\cdot \nabla U.
+$$
+
+这就是一个非常标准的凸二次函数。对 $\mathbf{u}$ 求一阶条件：
+
+$$
+\gamma\,\mathbf{u}+\nabla U=0,
+$$
+
+于是得到逐点最优控制：
+
+$$
+\mathbf{u}^*(t,\mathbf{x})=-\frac{1}{\gamma}\nabla U(t,\mathbf{x}).
+$$
+
+这里给出整节最重要的结论之一：**最优控制不是一个需要单独学习的任意向量场，而是某个标量函数的空间梯度。**
+
+第三步，把这个最优控制代回去。代回以后，二次项会化简成
+
+$$
+\frac{\gamma}{2}\|\mathbf{u}^*\|^2+\mathbf{u}^*\cdot\nabla U
+=
+-\frac{1}{2\gamma}\|\nabla U\|^2.
+$$
+
+于是被积函数内部只剩下
+
+$$
+\nu
+-\frac{\partial U}{\partial t}
+-D\Delta U
+-\frac{1}{2\gamma}\|\nabla U\|^2.
+$$
+
+代回之后，Lagrangian 内部的时空积分变成
+
+$$
+\int_0^1\!\!\int
+\left[
+\nu
+-\frac{\partial U}{\partial t}
+-D\Delta U
+-\frac{1}{2\gamma}\|\nabla U\|^2
+\right]\rho\,d\mathbf{x}\,dt.
+$$
+
+现在关键点是：$\rho(t,\mathbf{x})$ 还不是一个已经固定好的函数；在对偶问题里，它仍然是一个非负密度。更准确地说，改变 $\rho$，就等于改变“哪些时空区域分到更多概率权重、哪些区域分到更少概率权重”。
+
+于是就会出现下面这个判断：
+
+1. 如果方括号里的系数在某些地方为负，那么优化会倾向于把更多概率质量堆到那些地方，从而继续压低目标值；  
+2. 如果它在某些地方为正，那么那些地方会抬高代价；  
+3. 真正稳定的最优点，不能依赖“把概率质量偷偷搬去某些局部区域”来继续改进目标。  
+
+所以在最优解上，这个乘在 $\rho$ 前面的局部系数不能留下可被继续利用的空间方向；它必须在每个时空点都被钉死。也就是要求
+
+$$
+\nu
+-\frac{\partial U}{\partial t}
+-D\Delta U
+-\frac{1}{2\gamma}\|\nabla U\|^2
+=
+0.
+$$
+
+这里的“整理”其实只做了一步移项：把时间导数项、扩散项和梯度平方项都移到左边，把即时空间代价 $\nu(\mathbf{x})$ 也并到同一边，于是局部系数为零这件事就被改写成标准的 HJB 形式：
+
+$$
+\frac{\partial U}{\partial t}
++D\Delta U
+-\frac{1}{2\gamma}\|\nabla U\|^2
++\nu(\mathbf{x})
+=0.
+$$
+
+这条方程之所以叫 HJB，不是因为它“看起来像某种标准公式”，而是因为这里的 $U(t,\mathbf{x})$ 本身就是一个 value function：它记录的是，如果系统现在位于 $(t,\mathbf{x})$，那么从现在到数据端还剩多少最小总代价。
+
+一旦主角是“最小剩余代价函数”，问题就自动带上了 Bellman 的动态规划结构：从现在到终点的最优总代价，应该等于“先走一个极短时间步所付出的即时成本”加上“后面那段路径的最优剩余代价”。把这个连续时间极限写成偏微分方程，得到的正是 Hamilton-Jacobi-Bellman equation。
+
+所以这条式子里的各项都不是随便拼起来的：
+
+- $\partial_t U$ 描述 value function 随时间推进的变化；
+- $D\Delta U$ 来自扩散噪声；
+- $-\frac{1}{2\gamma}\|\nabla U\|^2$ 来自对控制做极小化后得到的 Hamiltonian 项；
+- $\nu(\mathbf{x})$ 是当前位置的即时运行代价。
+
+这条方程表达的是：**最优控制下的最小剩余代价函数必须满足的局部平衡关系。**
+
+#### 2.3.2 Lemma 2.1 得到了什么
+
+到这里，这一节得到三件事。
+
+第一，最优控制可以写成
+
+$$
+\mathbf{u}^*(t,\mathbf{x})=-\frac{1}{\gamma}\nabla U(t,\mathbf{x}).
+$$
+
+第二，控制问题不再只看成“在所有向量场里找一个最优 $\mathbf{u}$”，而是改写成“寻找一个满足 HJB 方程的标量函数 $U$”。
+
+第三，对偶目标里留下的是边界项：
+
+原文 Eq. (3) 的目标部分：
+
+$$
+\max_{U_0,U_1}
+\left\{
+\int U(0,\mathbf{x})\,p_{\text{ref}}(\mathbf{x})\,d\mathbf{x}
+-\int U(1,\mathbf{x})\,p_{\text{data}}(\mathbf{x})\,d\mathbf{x}
+\right\}.
+$$
+
+这一步按顺序读。
+
+1. 原来的时空积分部分，在最优解上已经被 HJB 方程逐点消掉了；  
+2. 所以整个对偶目标里最后留下的，不再是“沿整条路径累计的代价”，而是两个端点上的边界项；  
+3. 第一项
+   $$
+   \int U(0,\mathbf{x})\,p_{\text{ref}}(\mathbf{x})\,d\mathbf{x}
+   $$
+   表示：在参考端的初始分布上，对 value function 的起点值做平均；  
+4. 第二项
+   $$
+   \int U(1,\mathbf{x})\,p_{\text{data}}(\mathbf{x})\,d\mathbf{x}
+   $$
+   表示：在数据端的终点分布上，对 value function 的终点值做平均；  
+5. 两者相减的含义是：在所有满足 HJB 约束的候选标量函数里，找一个最能区分“参考端”和“数据端”代价差异的势函数。
+
+所以这里的对偶目标不是又加了一个新的训练损失，而是在说：**一旦内部时空代价已经通过 HJB 被编码进 $U$，最终优化只需要比较这个势函数在两端分布上的平均值。**
+
+而同一个原文 Eq. (3) 还要求 $U$ 同时满足上面那条 HJB 约束。
+
+所以“对偶变分原理：从控制到标量势”这句话，现在可以读成更具体的版本：
+
+- 原问题的主角本来是控制场 $\mathbf{u}$；
+- 做完对偶化以后，主角变成了标量 value function $U$；
+- 而控制场只是它的梯度结果。
+
+### 2.4 为什么 direct generative formulation 还不可算
+
+到这里虽然已经把问题从“控制场学习”改写成了“标量势学习”，但困难还没有消失。
+
+原因是：这个对偶目标最终仍然要在数据端和参考端的分布上取期望。尤其是涉及数据端的那些量，本质上仍然和“最优 backward 生成过程到底会经过哪些轨迹”绑在一起。
+
+这就带来下一步的核心困难：如果你直接从 backward problem 出发，很多你想算的量都会依赖一个你还没构造出来的最优生成过程。问题结构本身带着循环依赖。
+
+这正是下一节要解决的事。
+
+### 2.5 Theorem 2.2 — 前向-后向 HJB 对偶
 
 这是本文的核心定理。定义正向势函数 $W(s, \mathbf{x}) := -U(1-s, \mathbf{x})$，即对逆向势函数做时间反转和取负。则：
 
 **(1) 正向 HJB 方程**：
 
-$$\frac{\partial W}{\partial s} - D\Delta W - \frac{1}{2\gamma}\|\nabla W\|^2 + \nu(\mathbf{x}) = 0$$
+原文 Eq. (4)：
+
+$$
+\frac{\partial W}{\partial s} - D\Delta W - \frac{1}{2\gamma}\|\nabla W\|^2 + \nu(\mathbf{x}) = 0
+$$
 
 注意与逆向 HJB 的区别：扩散项 $D\Delta W$ 的符号反转了——从"逆向抛物"变为"正向抛物"。
 
@@ -138,96 +596,368 @@ $$\boxed{\mathbf{v}^*(s,\mathbf{x}) = -\frac{1}{\gamma}\nabla W(s,\mathbf{x}) + 
 
 至此 $\mathbf{v}^*$ 的两项来源完全明确。
 
-**(3) 最优性**：$\mathbf{v}^*$ 最小化正向控制代价泛函。
+**(3) 最优性**：$\mathbf{v}^*$ 不是一个随手写出来的 forward 漂移场，而是正向问题里的最优控制。
 
-### 3.2 物理解读：控制场的双重分解
+这里的意思需要按三步读：
+
+1. 现在我们已经把原来的 backward generative problem 改写成了一个 forward-in-time 的控制问题；  
+2. 在这个 forward 问题里，系统从数据端出发，沿着可采样的弛豫方向走向参考端，同时也要支付同一类空间代价和控制做功代价；  
+3. Theorem 2.2 说的“最优性”就是：在所有可能的 forward 控制场里，$\mathbf{v}^*$ 恰好是那个让这条正向控制代价泛函达到最小的解。
+
+所以这里不是又额外定义了一个和 backward 无关的新优化问题，而是在说：
+
+- backward 一侧决定我们想要的生成过程；
+- 但由于时间反转对偶，同一个最优传输任务也可以在 forward 一侧被等价地重写；
+- 而 $\mathbf{v}^*$ 正是这个等价 forward 问题里的最优控制。
+
+一旦你能在 forward 方向上求出这个最优控制，就等于间接求到了原来难以直接处理的 backward 生成控制。
+
+#### 2.5.1 控制场的双重分解
 
 最优正向控制场分解为两个具有清晰物理角色的分量：
 
 - $-\frac{1}{\gamma}\nabla W$：**目标导向分量**（value function gradient），沿累积代价下降方向驱动传输——直接继承自逆向最优控制 $\mathbf{u}^*$ 的时间翻转
 - $2D\nabla \log q$：**密度感知修正**（score correction），由 Anderson 时间反转公式自然产生，确保正向过程的漂移与 Fokker-Planck 演化的一致性
 
-关键优势：两个分量都编码在单一标量势 $W$ 中，无需独立估计 score。
+这句话分三层。
 
-### 3.3 方法论突破
+1. 第一项 $-\frac{1}{\gamma}\nabla W$ 当然直接来自 $W$ 的梯度，这一点是显式的。  
+2. 第二项 $2D\nabla \log q$ 表面上看像是另一个独立对象，因为它依赖正向边际密度 $q(s,\mathbf{x})$。  
+3. 但在这篇框架里，$q$ 不是额外假设的一份外部密度，也不是再单独训练一个 score network 去拟合出来的；它就是由同一个 forward 最优控制问题所诱导出来的边际密度。换句话说，一旦 $W$ 确定，正向 HJB、对应的 forward 过程以及它的边际演化就一起被钉死了，$\nabla \log q$ 只是这个同一最优传输结构里随之出现的密度梯度项。
 
-时间反转对偶打破了循环依赖：
+所以这里“无需独立估计 score”的意思不是说 score 项消失了，而是说：
 
-- **训练阶段**：从 $p_{\text{data}}$（已有数据）出发，沿正向扩散 $p_{\text{data}} \to p_{\text{ref}}$ 采样轨迹——这是容易模拟的
-- **生成阶段**：利用学到的 $W$，从 $p_{\text{ref}}$ 出发逆转，沿 $\nabla W$ 驱动生成
+- 你不需要像 score-based diffusion 那样，再额外训练一个专门输出 $\nabla \log q$ 的模型；  
+- 在这篇方法里，需要学习的主角只有标量势 $W$；  
+- score correction 是从同一个 forward controlled process 里伴随出现的，而不是一套独立参数化对象。
+
+#### 2.5.2 Figure 1：为什么这一步能把训练和生成接起来
+
+Figure 1 按图里的箭头顺序来读。
+
+第一步，看图的上半部分。这里画的是我们想要的 **controlled generative process**：从右边的参考端 $p_{\text{ref}}$ 出发，在控制作用下走到左边的数据端 $p_{\text{data}}$。这对应的就是原来的 backward generation 目标，也是文章一开始写下的随机最优控制问题。
+
+第二步，看图右上角的黑框。作者先把这个最优传输问题写成一个对偶变分问题，并由 KKT 条件得到逆向 HJB。原来直接写成“控制场优化”的问题，先被改写成“标量势函数 $U$ 满足的方程”。
+
+第三步，看图中间的红色和粉色框。这里发生的是时间反转：
+
+- 红色框是 reverse HJB，主角是 $U$；
+- 粉色框是 forward HJB，主角是 $W(s,\mathbf{x}) := -U(1-s,\mathbf{x})$。
+
+这一变换的作用不是换记号，而是把原来那个难以直接采样的 backward 问题，改写成一个可以沿正向时间求解的 value-function 问题。
+
+第四步，看图下半部分。这里作者故意把 **训练阶段** 放在 forward 方向上来做：
+
+- 起点放在左边的数据端 $p_{\text{data}}$；
+- 让系统沿正向弛豫走向右边的参考端 $p_{\text{ref}}$；
+- 底部那条粗弧线表示非受控的正向扩散轨迹；
+- 右下角黑框说明：在这些正向、可采样的轨迹上，可以用 Feynman-Kac 路径平均去估计 forward potential，也就是 $W$。
+
+所以训练阶段做的不是“直接学逆过程”，而是：
+
+1. 从已有数据分布出发；
+2. 沿容易模拟的正向弛豫采样轨迹；
+3. 在这些轨迹上估计标量势 $W$。
+
+第五步，再回到生成阶段。图中从右下黑框往上，再往左的箭头表示：
+
+- 一旦 $W$ 学到了；
+- 就可以通过时间反转关系把它转回逆向势函数 $U$；
+- 再由梯度给出用于生成的 backward control；
+- 最后从参考端 $p_{\text{ref}}$ 出发，受控地走到数据端 $p_{\text{data}}$。
+
+所以这张图说明的是：**训练和生成之所以能接起来，不是因为作者直接学到了 backward drift，而是因为他先在可采样的 forward 方向学到了 $W$，再通过时间反转把这个结果带回生成方向。**
 
 ![方法总览示意图](../../pdfs/2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.mineru/hybrid_auto/images/page-03-figure-01.jpg)
 
-**Figure 1 在论文逻辑中的角色**：这是全文的方法架构图。图中清晰展示了前向-后向 HJB 对偶的完整闭环：右上角为最优传输的对偶变分形式，其 KKT 条件给出逆向 HJB（红色方框）；通过时间反转 $W(s,\mathbf{x}) := -U(1-s,\mathbf{x})$ 得到正向 HJB（粉色区域）；正向 HJB 的解可通过 Feynman-Kac 路径积分（右下方框）在非受控正向轨迹上估计；学到的 $W$ 再通过时间反转还原 $U$，驱动上方的受控生成过程。图的底部弧线是非受控的正向扩散，箭头方向标注了训练（$p_{\text{data}} \to p_{\text{ref}}$）和生成（$p_{\text{ref}} \to p_{\text{data}}$）的流向。
+Figure 1 画出的是一个闭环：
 
----
+- **上半圈**：参考端 $\to$ 数据端，是我们想要的生成；
+- **右半圈**：backward optimal control 先被改写成 reverse HJB，再通过时间反转变成 forward HJB；
+- **下半圈**：数据端 $\to$ 参考端，是可采样、可训练的正向弛豫；
+- **左半圈**：学到的 $W$ 再被送回上方，变成生成时需要的 backward control。
 
-## 4. Cole-Hopf 变换与 Feynman-Kac 表示
+原文说时间反转对偶“打破循环依赖”，图 1 画出来的就是这个意思：**原来你想直接求的 backward generative control 太难；现在先在 forward 方向把 value function 学出来，再把它带回 backward 方向。**
 
-### 4.1 非线性 → 线性：Cole-Hopf 变换
+### 2.6 b. Feynman-Kac estimation of the forward potential
 
-HJB 方程是非线性的（包含 $\|\nabla W\|^2$ 项）。经典的 **Cole-Hopf 变换**可以将其线性化。下面给出完整的代数过程。
+这一小节依次完成四件事：
 
-**Step 1 — 定义变换**。令 $W = \frac{1}{\beta}\log Z$，其中 $\beta = \frac{1}{2D\gamma}$。计算 $W$ 的各阶导数：
+1. 用 Cole-Hopf 变换把非线性的 forward HJB 改写成线性的 PDE；  
+2. 用 Feynman-Kac 公式把这个线性 PDE 改写成正向轨迹上的条件路径平均；  
+3. 说明实践里为什么不用纯 Brownian 轨迹，而改用带漂移的 Langevin / OU 参考过程；  
+4. 说明一旦训练时改用了这类参考过程，生成时就必须把对应的漂移修正补回 backward drift。  
 
-$$\frac{\partial W}{\partial t} = \frac{1}{\beta}\frac{1}{Z}\frac{\partial Z}{\partial t}$$
+#### 2.6.1 Eq. (5)：先把 forward HJB 线性化
 
-$$\nabla W = \frac{1}{\beta}\frac{\nabla Z}{Z}$$
+前面已经得到 forward HJB，它的难点在于含有非线性的梯度平方项 $\|\nabla W\|^2$。  
+作者这里做的第一步不是直接求解，而是先做一个变量替换：
 
-$$|\nabla W|^2 = \frac{1}{\beta^2}\frac{|\nabla Z|^2}{Z^2}$$
+$$
+W=\frac{1}{\beta}\log Z,
+\qquad
+\beta=\frac{1}{2D\gamma}.
+$$
 
-$$\Delta W = \frac{1}{\beta}\left(\frac{\Delta Z}{Z} - \frac{|\nabla Z|^2}{Z^2}\right)$$
+这就是 Cole-Hopf 变换。它的作用不是换一个更好看的记号，而是把“梯度平方的非线性方程”变成“线性的扩散-吸收方程”。
 
-**Step 2 — 代入正向 HJB 方程**。正向 HJB 为 $\frac{\partial W}{\partial s} - D\Delta W - \frac{1}{2\gamma}|\nabla W|^2 + \nu = 0$。逐项代入：
+这里最好把代入过程显式写出来。forward HJB 是
 
-$$\frac{1}{\beta Z}\frac{\partial Z}{\partial s} - D\cdot\frac{1}{\beta}\left(\frac{\Delta Z}{Z} - \frac{|\nabla Z|^2}{Z^2}\right) - \frac{1}{2\gamma}\cdot\frac{1}{\beta^2}\frac{|\nabla Z|^2}{Z^2} + \nu = 0$$
+$$
+\frac{\partial W}{\partial s}
+-D\Delta W
+-\frac{1}{2\gamma}\|\nabla W\|^2
++\nu(\mathbf{x})
+=0.
+$$
 
-**Step 3 — 化简**。提取公因子 $\frac{1}{\beta Z}$。注意 $|\nabla Z|^2/Z^2$ 出现在两项中：
+现在把
 
-- 来自 $-D\Delta W$ 的贡献：$+\frac{D}{\beta}\frac{|\nabla Z|^2}{Z^2}$
-- 来自 $-\frac{1}{2\gamma}|\nabla W|^2$ 的贡献：$-\frac{1}{2\gamma\beta^2}\frac{|\nabla Z|^2}{Z^2}$
+$$
+W=\frac{1}{\beta}\log Z
+$$
 
-代入 $\beta = \frac{1}{2D\gamma}$，得 $\frac{D}{\beta} = D \cdot 2D\gamma = 2D^2\gamma$ 且 $\frac{1}{2\gamma\beta^2} = \frac{1}{2\gamma}\cdot 4D^2\gamma^2 = 2D^2\gamma$。两项系数恰好相等、符号相反，**非线性项完全对消**：
+逐项代进去。
 
-$$\frac{1}{\beta Z}\left[\frac{\partial Z}{\partial s} - D\Delta Z + \beta\nu Z\right] = 0$$
+第一，时间导数变成
 
-由 $Z > 0$，括号内必须为零，得到 $Z$ 满足的**线性反应-扩散方程**：
+$$
+\frac{\partial W}{\partial s}
+=
+\frac{1}{\beta}\frac{1}{Z}\frac{\partial Z}{\partial s}.
+$$
 
-$$\boxed{\frac{\partial Z}{\partial s} = D\Delta Z - \beta\nu Z}$$
+第二，梯度平方项变成
 
-这是一个带空间变化**吸收率** $\beta\nu(\mathbf{x})$ 的扩散方程。Cole-Hopf 变换的精髓在于：$\beta = \frac{1}{2D\gamma}$ 的取值使得 HJB 中的非线性梯度平方项与 Laplacian 展开产生的梯度平方项精确抵消。物理直觉：
+$$
+\|\nabla W\|^2
+=
+\frac{1}{\beta^2}\frac{\|\nabla Z\|^2}{Z^2}.
+$$
 
-- 吸收项 $\beta\nu Z$ 指数级抑制了经过高代价区域的路径贡献
-- 低代价走廊中的路径贡献被放大
-- 这正是路径空间上的**自由能**（free energy）结构
+第三，Laplacian 项会展开成两部分：
 
-### 4.2 Feynman-Kac 路径积分
+$$
+\Delta W
+=
+\frac{1}{\beta}
+\left(
+\frac{\Delta Z}{Z}
+-\frac{\|\nabla Z\|^2}{Z^2}
+\right).
+$$
 
-线性 PDE 的解有闭合的路径积分表示：
+关键点就在这里：$\Delta W$ 里本来就已经带着一个
 
-$$Z(t, \mathbf{x}) = \mathbb{E}_{\mathbb{P}_0}\left[Z(0, \mathbf{x}_0) \exp\left(-\beta \int_0^t \nu(\mathbf{x}_s) \, ds\right) \;\middle|\; \mathbf{x}_t = \mathbf{x}\right]$$
+$$
+-\frac{\|\nabla Z\|^2}{Z^2}
+$$
 
-这意味着 $Z$（进而 $W$）可以通过在正向轨迹上的蒙特卡洛平均来估计——不需要逆向模拟。
+项。再乘上前面的 $-D$ 之后，它会贡献一个正的梯度平方项；而原方程里的
 
-### 4.3 实用参考过程：Ornstein-Uhlenbeck
+$$
+-\frac{1}{2\gamma}\|\nabla W\|^2
+$$
 
-纯布朗运动采样效率低。实践中用 OU 过程作为参考：
+则会贡献一个负的梯度平方项。由于
 
-$$d\mathbf{x}_s = -\theta \mathbf{x}_s \, ds + \sqrt{2D} \, d\mathbf{B}_s, \quad \mathbf{x}_0 \sim p_{\text{data}}$$
+$$
+\beta=\frac{1}{2D\gamma},
+$$
 
-OU 过程具有解析转移核，允许在任意时间点条件采样，无需存储完整轨迹。
+这一步最好把系数真正写出来。来自 $-D\Delta W$ 的那一部分，梯度平方项前面的系数是
 
-### 4.4 风险敏感控制与方差控制
+$$
+\frac{D}{\beta},
+$$
 
-对值函数做 Taylor 展开揭示：
+而来自
 
-$$U(t, \mathbf{x}) = \mathbb{E}[C | \mathbf{x}_t = \mathbf{x}] - \frac{\beta}{2}\text{Var}[C | \mathbf{x}_t = \mathbf{x}] + \mathcal{O}(\beta^2)$$
+$$
+-\frac{1}{2\gamma}\|\nabla W\|^2
+$$
 
-其中 $C$ 是轨迹总代价。参数 $\gamma$ 通过 $\beta = 1/(2D\gamma)$ 调控这一权衡：
-- 大 $\gamma$：风险中性（risk-neutral），容忍高方差轨迹
-- 小 $\gamma$：风险规避（risk-averse），集中于低方差、确定性更强的路径
+的那一部分，梯度平方项前面的系数是
 
-方差控制从随机最优控制的结构中自然涌现，无需额外正则化。
+$$
+\frac{1}{2\gamma\beta^2}.
+$$
+
+现在把
+
+$$
+\beta=\frac{1}{2D\gamma}
+$$
+
+代进去，第一项变成
+
+$$
+\frac{D}{\beta}=D\cdot 2D\gamma = 2D^2\gamma,
+$$
+
+第二项变成
+
+$$
+\frac{1}{2\gamma\beta^2}
+=
+\frac{1}{2\gamma}\cdot (2D\gamma)^2
+=
+\frac{1}{2\gamma}\cdot 4D^2\gamma^2
+=
+2D^2\gamma.
+$$
+
+所以这两项大小完全一样，只是符号相反，于是梯度平方项被彻底消掉。
+
+消掉之后，原方程里剩下的就只剩三类项：
+
+- 时间导数项 $\partial_s Z$；
+- 线性扩散项 $D\Delta Z$；
+- 线性吸收项 $-\beta \nu Z$。
+
+所以方程里不再含有任何关于 $\|\nabla Z\|^2$ 的非线性项，而是变成原文 `Eq. (5)`：
+
+$$
+\frac{\partial Z}{\partial s}=D\Delta Z-\beta \nu Z.
+$$
+
+这条方程现在更容易读：
+
+- $D\Delta Z$ 是普通扩散；
+- $-\beta \nu Z$ 是吸收项；
+- 吸收率由空间代价 $\nu(\mathbf{x})$ 决定。
+
+所以 `Eq. (5)` 的物理意思是：  
+**如果一条 forward 路径经常穿过高代价区域，它对 $Z$ 的贡献就会被指数压低；如果它主要待在低代价区域，它的贡献就会被保留下来。**
+
+#### 2.6.2 Eq. (6)：线性 PDE 于是可以写成路径平均
+
+一旦变成 `Eq. (5)` 这种线性扩散-吸收方程，作者就可以调用 Feynman-Kac 公式，把 PDE 的解重写成路径平均。原文 `Eq. (6)` 是：
+
+$$
+Z(t,\mathbf{x})=\mathbb{E}_{\mathbb{P}_0}\left[
+Z(0,\mathbf{x}_0)
+\exp\left(-\beta\int_0^t \nu(\mathbf{x}_s)\,ds\right)
+\;\middle|\;
+\mathbf{x}_t=\mathbf{x}
+\right].
+$$
+
+这条式子分成三层看：
+
+1. 在参考测度 $\mathbb{P}_0$ 下，先采一条正向轨迹；  
+2. 对这条轨迹，把沿路累计的空间代价
+   $$
+   \int_0^t \nu(\mathbf{x}_s)\,ds
+   $$
+   指数加权；  
+3. 然后对所有满足终点条件 $\mathbf{x}_t=\mathbf{x}$ 的轨迹做条件平均。
+
+所以 `Eq. (6)` 带来的突破是：
+
+**你不必先显式解出 PDE，再去得到 $W$；你可以直接通过正向轨迹上的 Monte Carlo 平均来估计 $Z$，再由 $W=\frac{1}{\beta}\log Z$ 还原出 value function。**
+
+#### 2.6.3 Eq. (7)：为什么实践中不直接用纯 Brownian 轨迹
+
+到这里，一个自然问题就出现了：  
+既然 `Eq. (6)` 里参考测度 $\mathbb{P}_0$ 对应的是纯 Brownian motion，为什么不直接按它采样？
+
+作者的回答是：**当数据分布离参考分布很远时，纯 Brownian 轨迹太低效。**
+
+原因很直接：
+
+- 纯 Brownian motion 只会盲目扩散；
+- 而训练时有用的，是那些能把数据端逐渐带向参考端的 forward 轨迹；
+- 如果大量采到的轨迹都在无关区域乱飘，Feynman-Kac 估计的方差会很大。
+
+所以原文 `Eq. (7)` 改用一个带漂移的参考过程：
+
+$$
+d\mathbf{x}_s=-\nabla V(\mathbf{x}_s)\,ds+\sqrt{2D}\,d\mathbf{B}_s,
+\qquad
+\mathbf{x}_0\sim p_{\text{data}}.
+$$
+
+这就是一个 Langevin 参考过程。论文实验里进一步把它具体化成 OU 过程。  
+这样做的实际好处是：
+
+- forward 轨迹更容易从数据端自然弛豫到参考端；
+- 路径采样更稳定；
+- 条件采样和数值实现也更方便。
+
+所以 `Eq. (7)` 不是在改原问题，而是在改**训练时使用的参考轨迹生成方式**。
+
+#### 2.6.4 Eq. (8)：为什么换了 forward 参考过程，生成时就必须补回一项漂移
+
+这里是原文这一小节最容易折叠的一步。
+
+如果训练时 forward 轨迹用的不是纯 Brownian，而是带漂移的 Langevin 过程，那么你学到的 $W$ 对应的，其实已经不是“纯 Brownian 参考下的值函数估计”，而是“在这个 drifted reference process 上做出来的估计”。
+
+这意味着：  
+**到了 backward 生成阶段，你不能只保留最优控制梯度，还必须把 forward 参考过程里原本那份漂移反转回来。**
+
+原文 `Eq. (8)` 正是这一点：
+
+$$
+d\mathbf{x}_t=
+\left(
+\nabla V(\mathbf{x}_t)-\frac{1}{\gamma}\nabla U(t,\mathbf{x}_t)
+\right)dt
++\sqrt{2D}\,d\mathbf{B}_t.
+$$
+
+这条式子里的两项要分开读：
+
+- $\nabla V(\mathbf{x}_t)$：补回并反转 training-time reference drift；  
+- $-\frac{1}{\gamma}\nabla U(t,\mathbf{x}_t)$：来自最优控制的生成驱动。
+
+所以 `Eq. (8)` 的逻辑不是“又多出来一项漂移”，而是：
+
+1. 训练时为了让 forward 路径更好采样，作者改用了 drifted reference process；  
+2. 一旦这么做，forward 与 backward 的对应关系就不再是纯 Brownian 版本；  
+3. 因此生成时必须显式把那份参考漂移反转回来，才能和训练时的 Feynman-Kac 估计保持一致。
+
+#### 2.6.5 这一小节最后完成了什么
+
+按原文顺序读完 `Eq. (5)–(8)`，这一小节完成的是一整条闭环：
+
+1. 先把非线性的 forward HJB 变成线性的 PDE；  
+2. 再把线性 PDE 变成 forward 轨迹上的路径平均；  
+3. 再把训练时可采样的 forward 参考过程换成 Langevin / OU；  
+4. 最后把这个训练选择在 backward 生成方程里补回来。
+
+这里不是单独讲四条公式，而是在回答一个具体问题：
+
+**为什么 $W$ 不只是一个理论上的标量势，而是一个可以沿正向轨迹训练出来、最后又能正确带回生成过程的对象。**
+
+#### 2.6.6 风险敏感控制与方差控制
+
+原文最后再补了一层物理解释：对 value function 做 Taylor 展开，可得到
+
+$$
+U(t,\mathbf{x})
+=
+\mathbb{E}[C\mid \mathbf{x}_t=\mathbf{x}]
+-\frac{\beta}{2}\operatorname{Var}[C\mid \mathbf{x}_t=\mathbf{x}]
++\mathcal{O}(\beta^2),
+$$
+
+其中 $C$ 是轨迹总代价。  
+这说明 $U$ 不只编码“期望代价”，还编码“代价波动”。
+
+于是参数 $\gamma$ 通过
+
+$$
+\beta=\frac{1}{2D\gamma}
+$$
+
+控制了一个 trade-off：
+
+- 大 $\gamma$：更接近风险中性，只看平均代价；  
+- 小 $\gamma$：更偏风险规避，更压制高方差路径。
+
+所以这篇文章最后顺手指出：  
+**方差控制不是额外加的技巧，而是已经被写进这套随机最优控制结构里了。**
 
 ---
 
