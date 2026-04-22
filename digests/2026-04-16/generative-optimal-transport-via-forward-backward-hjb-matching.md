@@ -145,6 +145,8 @@ $$
 
 对偶化做的事情是：引入一个标量函数 $U(t,\mathbf{x})$ 作为 Lagrange 乘子，把 Fokker-Planck 约束先乘上这个函数，再和原始路径代价一起写进同一个积分里。这样一来，动力学约束就不再是“额外写在旁边、必须另外满足的一条方程”，而是直接变成优化目标的一部分。于是原来那个“同时优化控制场和概率密度、并且还要单独检查它们是否满足动力学约束”的问题，就可以改写成一个更统一的变分问题。再往下对控制场做极小化之后，主角就从“任意向量控制场”变成了一个标量 value function。这个标量函数记录的是：**如果系统此刻位于 $(t,\mathbf{x})$，那么从现在到数据端，完成整个输运任务所需的最小剩余代价是多少。**
 
+这里要特别分清 past 和 future 在这个函数里的角色。原始路径代价当然是沿整条轨迹累计的，但一旦走到当前时刻 $t$，更早那段路径上已经付出的代价就变成了既定常数，不会再被当前控制改变；真正还会被当前决策影响的，只剩从现在到数据端这段 future cost。也就是说，当前控制不是回头去重算过去，而是在利用 $U(t,\mathbf{x})$ 这种 `cost-to-go` 对象，把“从这一点往后最少还要付出多少代价”压缩进当前决策里。
+
 第三步，一旦把问题写成这种对偶形式，控制场就不再需要被单独学习了。这里的 HJB 是 **Hamilton-Jacobi-Bellman** 的缩写，它描述的是：如果系统现在位于某个状态，那么从现在到数据端的最小剩余代价满足什么偏微分方程。这个理论里最核心的对象就是 value function，也就是上面说的“最小剩余代价函数”。
 
 原始代价里，控制 $\mathbf{u}_t$ 一方面要付出二次做功代价，另一方面又会通过 $\mathbf{u}\cdot \nabla U$ 这一项影响 value function 的变化。于是，对控制变量做极小化时，你实际上是在每个时空点上最小化一个标准的凸二次函数：
@@ -827,8 +829,25 @@ $$
 - $-\beta \nu Z$ 是吸收项；
 - 吸收率由空间代价 $\nu(\mathbf{x})$ 决定。
 
-所以 `Eq. (5)` 的物理意思是：  
-**如果一条 forward 路径经常穿过高代价区域，它对 $Z$ 的贡献就会被指数压低；如果它主要待在低代价区域，它的贡献就会被保留下来。**
+所以 `Eq. (5)` 的物理意思可以再拆成两步。
+
+第一，后面在 Feynman-Kac 表示里，每一条 forward 路径都会带一个权重因子
+
+$$
+\exp\left(-\beta\int_0^t \nu(\mathbf{x}_s)\,ds\right).
+$$
+
+这说明路径真正被计入 $Z$ 时，不是简单地“一条路径算一次”，而是要先看它沿路累计了多少空间代价。
+
+第二，如果一条路径经常穿过高代价区域，那么
+
+$$
+\int_0^t \nu(\mathbf{x}_s)\,ds
+$$
+
+就会更大，于是前面的指数权重就会更小；相反，如果一条路径大部分时间都待在低代价区域，这个累计代价就较小，它的指数权重也就不会被明显压低。
+
+所以这里真正发生的是：**高代价路径在路径平均里会被自动降权，低代价路径会保留更大的权重。**
 
 #### 2.6.2 Eq. (6)：线性 PDE 于是可以写成路径平均
 
@@ -868,7 +887,12 @@ $$
 
 - 纯 Brownian motion 只会盲目扩散；
 - 而训练时有用的，是那些能把数据端逐渐带向参考端的 forward 轨迹；
-- 如果大量采到的轨迹都在无关区域乱飘，Feynman-Kac 估计的方差会很大。
+- Feynman-Kac 估计本质上是在做一类带权路径平均：每条轨迹先按
+  $e^{-\beta\int_0^t \nu(\mathbf{x}_s)\,ds}$ 赋权，再把这些权重做平均；
+- 如果大量采到的轨迹都在无关区域乱飘，它们通常只会贡献非常小的权重；
+- 这样一来，真正有用的贡献就只来自少数恰好走到低代价区域的轨迹；
+- 样本之间的贡献会变得极不均匀，于是 Monte Carlo 平均就会强烈依赖“有没有碰巧采到那几条高权重路径”；
+- 这就是为什么纯 Brownian 参考过程下，Feynman-Kac 估计的方差会很大。
 
 所以原文 `Eq. (7)` 改用一个带漂移的参考过程：
 
@@ -878,7 +902,10 @@ d\mathbf{x}_s=-\nabla V(\mathbf{x}_s)\,ds+\sqrt{2D}\,d\mathbf{B}_s,
 \mathbf{x}_0\sim p_{\text{data}}.
 $$
 
-这就是一个 Langevin 参考过程。论文实验里进一步把它具体化成 OU 过程。  
+这一步先把参考过程从“无漂移的纯 Brownian motion”换成了“带回复漂移的扩散过程”。  
+只要漂移项能写成某个势函数的负梯度 $-\nabla V(\mathbf{x})$，这种过程就属于 Langevin 过程。  
+论文实验里又进一步选了一个最简单、最标准的特例：令势函数 $V(\mathbf{x})$ 是二次函数。  
+这时回复漂移就会变成线性的 $-\lambda \mathbf{x}$，对应的参考过程正是 Ornstein-Uhlenbeck（OU）过程。  
 这样做的实际好处是：
 
 - forward 轨迹更容易从数据端自然弛豫到参考端；
@@ -926,13 +953,77 @@ $$
 3. 再把训练时可采样的 forward 参考过程换成 Langevin / OU；  
 4. 最后把这个训练选择在 backward 生成方程里补回来。
 
-这里不是单独讲四条公式，而是在回答一个具体问题：
+这四步连起来，$W$ 的角色才真正闭合起来：
 
-**为什么 $W$ 不只是一个理论上的标量势，而是一个可以沿正向轨迹训练出来、最后又能正确带回生成过程的对象。**
+1. 在 $Eq.\,(4)$ 里，$W$ 先被定义成 forward 问题的 value function，也就是“从当前位置走到参考端还剩多少最小代价”的标量势。  
+2. 在 $Eq.\,(5)$ 里，Cole-Hopf 变换把关于 $W$ 的非线性 HJB 方程改写成关于 $Z$ 的线性 PDE，所以 $W$ 不再只是抽象定义，而是可以通过 $W=\frac{1}{\beta}\log Z$ 从一个可解对象恢复出来。  
+3. 在 $Eq.\,(6)$ 和 $Eq.\,(7)$ 里，$Z$ 又被写成 forward 参考轨迹上的 Feynman-Kac 路径平均；这一步说明 $W$ 可以直接靠正向采样轨迹来训练，而不需要先显式求出 backward generative process。  
+4. 在 $Eq.\,(8)$ 里，学到的 $W$ 再通过时间反转关系回到 backward 生成方程中，变成生成时真正需要的控制项梯度。  
+
+所以这里真正完成的是：先把 $W$ 定义成最优控制里的 value function，再把它改写成可沿正向轨迹估计的对象，最后再把同一个 $W$ 无缝送回逆向生成过程。
 
 #### 2.6.6 风险敏感控制与方差控制
 
-原文最后再补了一层物理解释：对 value function 做 Taylor 展开，可得到
+这一小节要说明的是：为什么这套方法学到的 value function 不只关心“平均代价”，还会自动对“代价波动”敏感。
+
+第一步，先回到前面的 Feynman-Kac 权重。  
+在这套框架里，一条轨迹不是只按总代价 $C$ 线性计分，而是按指数权重进入平均：
+
+$$
+\exp(-\beta C).
+$$
+
+这意味着高代价轨迹会被指数压低，低代价轨迹会被保留更大的权重。  
+所以这里的 value function 从一开始就不是“总代价的普通平均”，而更接近“总代价的指数加权统计量”。
+
+第二步，对这种指数统计量做小 $\beta$ 展开。  
+这里真正用到的不是普通 Taylor 展开，而是对数矩母函数的累积量展开。  
+先把 forward 侧的量写清楚：
+
+$$
+Z(s,\mathbf{x})
+=
+\mathbb{E}\!\left[e^{-\beta C}\mid \mathbf{x}_s=\mathbf{x}\right],
+\qquad
+W(s,\mathbf{x})=\frac{1}{\beta}\log Z(s,\mathbf{x}).
+$$
+
+于是
+
+$$
+W(s,\mathbf{x})
+=
+\frac{1}{\beta}\log \mathbb{E}\!\left[e^{-\beta C}\mid \mathbf{x}_s=\mathbf{x}\right].
+$$
+
+当 $\beta$ 很小时，可以把它看成随机变量 $C$ 的对数矩母函数在 $\lambda=-\beta$ 处的展开：
+
+$$
+\log \mathbb{E}[e^{-\beta C}]
+=
+-\beta\,\mathbb{E}[C]
++\frac{\beta^2}{2}\operatorname{Var}(C)
++\mathcal{O}(\beta^3).
+$$
+
+两边再除以 $\beta$，就得到
+
+$$
+W(s,\mathbf{x})
+=
+-\mathbb{E}[C\mid \mathbf{x}_s=\mathbf{x}]
++\frac{\beta}{2}\operatorname{Var}[C\mid \mathbf{x}_s=\mathbf{x}]
++\mathcal{O}(\beta^2).
+$$
+
+第三步，把它翻回 backward value function。  
+前面已经有时间反转关系
+
+$$
+W(s,\mathbf{x})=-U(1-s,\mathbf{x}).
+$$
+
+所以同一条展开式如果改写成 backward 侧的 value function $U$，符号就会整体反过来，得到
 
 $$
 U(t,\mathbf{x})
@@ -943,63 +1034,343 @@ U(t,\mathbf{x})
 $$
 
 其中 $C$ 是轨迹总代价。  
-这说明 $U$ 不只编码“期望代价”，还编码“代价波动”。
+所以这里之所以能写成“期望项减去方差修正项”，本质上是因为 $U$ 来自 $\log \mathbb{E}[e^{-\beta C}]$ 的小 $\beta$ 累积量展开，而不是普通的线性平均。
 
-于是参数 $\gamma$ 通过
+这条式子可以直接读成：
+
+- 第一项 $\mathbb{E}[C\mid \mathbf{x}_t=\mathbf{x}]$ 是条件平均总代价；
+- 第二项 $-\frac{\beta}{2}\operatorname{Var}[C\mid \mathbf{x}_t=\mathbf{x}]$ 是对代价波动的修正；
+- 更高阶项 $\mathcal{O}(\beta^2)$ 则包含更细的高阶累积量。
+
+所以 $U$ 不是只在问“平均上哪条路径最省”，还在问“这条路径的总代价是否稳定”。
+
+第三步，为什么方差项会带负号。  
+因为这里的指数权重是 $\exp(-\beta C)$：  
+总代价越大，权重下降越快；  
+而总代价波动越大，说明偶尔会出现很差的高代价轨迹，这些轨迹会被指数权重额外惩罚。  
+因此在小 $\beta$ 展开里，方差会作为一个额外扣分项出现。
+
+第四步，这就是“风险敏感控制”的含义。  
+如果一个控制策略虽然平均代价不高，但偶尔会产生非常大的代价波动，那么它在这里不会被当成和稳定策略同样好。  
+也就是说，这套 value function 天然会偏好：
+
+- 平均代价较低的路径；
+- 在此基础上，代价波动也较小的路径。
+
+第五步，参数 $\gamma$ 通过
 
 $$
 \beta=\frac{1}{2D\gamma}
 $$
 
-控制了一个 trade-off：
+和前面的指数加权强度连在一起，因此它控制的就是“平均代价”和“代价波动”之间的 trade-off：
 
 - 大 $\gamma$：更接近风险中性，只看平均代价；  
 - 小 $\gamma$：更偏风险规避，更压制高方差路径。
 
-所以这篇文章最后顺手指出：  
-**方差控制不是额外加的技巧，而是已经被写进这套随机最优控制结构里了。**
+因此：
+
+- 大 $\gamma$ 对应小 $\beta$，指数加权更弱，模型更接近只看平均代价的风险中性控制；
+- 小 $\gamma$ 对应大 $\beta$，指数加权更强，模型会更明显地压制高波动路径。
+
+所以这里的“方差控制”不是训练时额外叠加的启发式技巧，而是已经被写进这套随机最优控制和 Feynman-Kac 加权结构里了。
 
 ---
 
-## 5. 算法设计
+## 3. LEARNING GENERATIVE SCALAR POTENTIAL
 
-### 5.1 损失函数的三个分量
+这一节回答的问题很具体：前面已经证明了存在一个 forward value function $W(s,\mathbf{x})$，而且它通过时间反转决定 backward 生成控制；现在要解决的是，**怎样把这个标量势真正训练出来，并把它变成一个可执行的生成算法。**
 
-训练目标是学习标量势 $W_\theta(s, \mathbf{x})$（通过神经网络参数化），总损失：
+原文的顺序是：
 
-$$\mathcal{L}_{\text{total}}(\theta) = \lambda_{\text{FK}} \mathcal{L}_{\text{FK}} + \lambda_{\text{FK-local}} \mathcal{L}_{\text{FK-local}} + \lambda_{\text{dual}} \mathcal{L}_{\text{dual}}$$
+1. 先选一条训练时真正会采样的 forward OU 轨迹；  
+2. 再把 Feynman-Kac 表示改写成沿这些轨迹的监督目标；  
+3. 再把监督目标拆成全局、一阶局部和边界三类损失；  
+4. 最后说明训练完的 $W_\theta$ 怎样回到 backward controlled diffusion 中生成样本。
 
-| 损失分量 | 物理意义 | 数学形式 |
-|----------|----------|----------|
-| $\mathcal{L}_{\text{FK}}$ | 全局 Feynman-Kac 一致性：学到的 $\exp(\beta W_\theta)$ 与轨迹积分目标的偏差 | 沿整条轨迹的累积代价回归 |
-| $\mathcal{L}_{\text{FK-local}}$ | 局部时间一致性：相邻时间步的离散半群约束 | 单步传播的 $Z$ 值匹配 |
-| $\mathcal{L}_{\text{dual}}$ | Kantorovich 对偶边界条件：势在数据端高、参考端低 | $W$ 在 $s=0$（数据端）和 $s=1$（噪声端）的期望差 |
+### 3.1 Eq. (9)：先把训练用的 forward 轨迹具体化成 OU 过程
 
-三个分量各司其职：$\mathcal{L}_{\text{FK}}$ 保证全局路径积分正确性，$\mathcal{L}_{\text{FK-local}}$ 稳定逐步梯度传播，$\mathcal{L}_{\text{dual}}$ 确保概率流方向正确。
+`Section 2` 里已经说明：训练阶段真正能稳定采样的，是从数据端朝参考端弛豫的 forward reference process。  
+到这一节，作者把这个参考过程固定成一个最简单的特例：Ornstein-Uhlenbeck（OU）过程。
 
-### 5.2 训练流程 (Algorithm 1)
+原文写成离散时间就是
 
-1. 从数据集采样 $\mathbf{x}_0$
-2. 用 OU 过程生成正向轨迹 $\{\mathbf{x}_k\}_{k=0}^K$
-3. 在轨迹上计算 $W_\theta(s_k, \mathbf{x}_k)$
-4. 由 Feynman-Kac 公式构造监督目标 $Z_{\text{FK}}$
-5. 最小化 $\mathcal{L}_{\text{total}}$，更新 $\theta$
+$$
+\mathbf{x}_{k+1} = (1-\theta \Delta s)\mathbf{x}_k + \sqrt{2D\Delta s}\,\xi_k,
+\qquad
+\xi_k \sim \mathcal{N}(0,I).
+\tag{9}
+$$
 
-### 5.3 生成流程 (Algorithm 2)
+这条式子可以分成两部分读：
 
-从 $\mathbf{x}_0 \sim p_{\text{ref}}$ 出发，按 Euler-Maruyama 格式迭代：
+- $(1-\theta \Delta s)\mathbf{x}_k$ 是线性回复项，表示状态会被逐步拉回参考端；
+- $\sqrt{2D\Delta s}\,\xi_k$ 是扩散噪声，表示这条 forward 轨迹仍然带随机波动。
 
-$$\mathbf{x}_{k+1} = \mathbf{x}_k + \Delta s \left(\theta \mathbf{x}_k + \frac{1}{\gamma}\nabla W_\theta(1-s_k, \mathbf{x}_k)\right) + \sqrt{2D\Delta s} \, \xi_k$$
+它对应的连续时间形式是
 
-其中第一项 $\theta\mathbf{x}_k$ 反转 OU 漂移，第二项 $\nabla W_\theta$ 提供最优控制驱动。
+$$
+d\mathbf{x}_s = -\theta \mathbf{x}_s\,ds + \sqrt{2D}\,d\mathbf{B}_s,
+\qquad
+\mathbf{x}_0 \sim p_{\mathrm{data}}.
+$$
+
+所以这一步的作用不是再发明一个新模型，而是把训练时真正要采样的 forward reference process 具体钉死成一个 tractable 的 OU 过程。
+
+### 3.2 a. 轨迹监督：怎样把 Feynman-Kac 表示变成训练目标
+
+接下来作者要做的是：把 `Section 2` 里的
+
+$$
+Z(s,\mathbf{x}) = \mathbb{E}\!\left[e^{-\beta C}\mid \mathbf{x}_s=\mathbf{x}\right]
+$$
+
+变成一个神经网络可以直接拟合的监督信号。
+
+神经网络的主角是标量势 $W_\theta(s,\mathbf{x})$，而不是控制向量场。  
+按照 Cole-Hopf 变换，
+
+$$
+Z_\theta(s,\mathbf{x}) = \exp(\beta W_\theta(s,\mathbf{x})).
+$$
+
+所以训练的真正目标，不是直接回归 drift，而是让网络输出的 $W_\theta$ 与 Feynman-Kac 给出的 $Z$ 一致。
+
+### 3.3 Eq. (10)–(12)：三类损失分别在约束什么
+
+#### 3.3.1 Eq. (10)：单条 forward 轨迹给出的 Feynman-Kac 贡献
+
+对第 $i$ 条 forward OU 轨迹
+
+$$
+\left\{\mathbf{x}^{(i)}_k\right\}_{k=0}^K,
+\qquad
+s_k = k\Delta s,
+$$
+
+原文先定义单条轨迹在中间点 $(s_k,\mathbf{x}^{(i)}_k)$ 上给出的 Feynman-Kac 贡献：
+
+$$
+Z_{\mathrm{FK}}^{(i)}(s_k,\mathbf{x}^{(i)}_k)
+:=
+\exp\!\left(
+-\beta \sum_{j=0}^{k-1}\nu_\phi(\mathbf{x}^{(i)}_j)\Delta s
+\right)
+\exp\!\left(\beta W_\theta(0,\mathbf{x}^{(i)}_0)\right).
+\tag{10}
+$$
+
+这条式子的逻辑是：
+
+1. 先从当前时刻 $s_k$ 沿轨迹往回看，累计这一路上已经走过的空间代价；  
+2. 再把这些累计代价放进指数权重里；  
+3. 最后乘上起点处的边界项 $\exp(\beta W_\theta(0,\mathbf{x}^{(i)}_0))$。
+
+所以 $Z_{\mathrm{FK}}^{(i)}$ 不是“模型预测值”，而是：**给定一条 forward 样本路径后，这条路径为 Feynman-Kac 表示贡献的单轨迹估计量。**
+
+#### 3.3.2 Eq. (11)：全局 Feynman-Kac 回归损失
+
+有了单条路径贡献之后，第一类损失就是让网络给出的
+
+$$
+\exp(\beta W_\theta(s_k,\mathbf{x}^{(i)}_k))
+$$
+
+去拟合这些轨迹监督量：
+
+$$
+\mathcal{L}_{\mathrm{FK}}
+:=
+\frac{1}{NK}\sum_{i,k}
+\left(
+\exp\!\left(\beta W_\theta(s_k,\mathbf{x}^{(i)}_k)\right)
+-Z_{\mathrm{FK}}^{(i)}(s_k,\mathbf{x}^{(i)}_k)
+\right)^2.
+\tag{11}
+$$
+
+这一项的作用最直接：  
+它强迫网络学到的 $W_\theta$ 在整条 forward 轨迹尺度上，与 Feynman-Kac 路径积分的全局 cost-to-go 保持一致。
+
+#### 3.3.3 Eq. (12)：局部一步一致性损失
+
+原文接着又加了一个局部一阶损失：
+
+$$
+\mathcal{L}_{\mathrm{FK-local}}
+:=
+\frac{1}{NK}\sum_{i,k}
+\left(
+\exp\!\left(\beta W_\theta(s_{k+1},\mathbf{x}^{(i)}_{k+1})\right)
+-e^{-\beta \nu_\phi(\mathbf{x}^{(i)}_k)\Delta s}
+\exp\!\left(\beta W_\theta(s_k,\mathbf{x}^{(i)}_k)\right)
+\right)^2.
+\tag{12}
+$$
+
+这一步在做的事情是：
+
+- 不再看整段从起点累积到当前时刻的全局一致性；
+- 而是只检查相邻两个时间点之间，$Z=\exp(\beta W_\theta)$ 的传播是否符合一个离散的一步半群关系。
+
+这里的“半群”说的是：对线性 PDE 的解，先推进一步、再推进一步，应该等价于直接推进两步。  
+缩到一个离散时间步 $\Delta s$ 上，它最基本的局部版本就是：
+
+$$
+Z(s_{k+1},\mathbf{x}_{k+1})
+\approx
+e^{-\beta \nu_\phi(\mathbf{x}^{(i)}_k)\Delta s}\,
+Z(s_k,\mathbf{x}^{(i)}_k).
+$$
+
+这条关系可以按三步读：
+
+1. 从 $s_k$ 到 $s_{k+1}$ 只走一个小时间步；  
+2. 这一步里先付出局部空间代价 $\nu_\phi(\mathbf{x}^{(i)}_k)\Delta s$，所以会带来一个权重因子 $e^{-\beta \nu_\phi(\mathbf{x}^{(i)}_k)\Delta s}$；  
+3. 走完这一步之后，新的 $Z$ 应该等于“旧的 $Z$ 乘上这一步的局部传播因子”。
+
+所以这一项的作用不是重复全局 Feynman-Kac，而是补上一条更局部的时间一致性约束，让网络在相邻时间层之间也能学得稳定。
+
+### 3.4 Eq. (13)–(14)：为什么还需要一个 dual boundary loss
+
+如果只有前面两项，网络确实会被轨迹积分监督；但它还没有被明确要求去满足 Lemma 2.1 的边界方向性。  
+所以原文又加入了第三类损失：
+
+$$
+\mathcal{L}_{\mathrm{dual}}
+:=
+\frac{1}{N}\sum_{i=1}^{N}W_\theta(\mathbf{x}^{(i)}_K)
+-\frac{1}{N}\sum_{i=1}^{N}W_\theta(\mathbf{x}^{(i)}_0).
+\tag{13}
+$$
+
+这里两端分别对应：
+
+- $\mathbf{x}^{(i)}_0$：forward 过程的起点，也就是数据端；
+- $\mathbf{x}^{(i)}_K$：forward 过程的终点，也就是参考端。
+
+这一项监督的是势函数在两端的相对高低关系，也就是 Kantorovich 对偶在边界上的方向性要求。  
+这句话可以分成三步理解：
+
+1. 在 forward 训练里，轨迹是从数据端出发，最后走到参考端；  
+2. 对偶问题要求这个标量势在两端不能任意平移或翻转，而必须保留“数据端较高、参考端较低”的相对方向；  
+3. 只有这样，后面把 $W_\theta$ 带回 backward 生成方程时，它的梯度才会给出正确的生成方向，而不会把概率流推反。
+
+所以这里的 boundary loss，不是在学习新的局部动力学；它是在把整条 transport 的方向性钉死在两个端点上。
+
+把三项合起来，就得到总损失：
+
+$$
+\mathcal{L}_{\mathrm{total}}(\theta)
+:=
+\lambda_{\mathrm{FK}}\mathcal{L}_{\mathrm{FK}}
++\lambda_{\mathrm{FK-local}}\mathcal{L}_{\mathrm{FK-local}}
++\lambda_{\mathrm{dual}}\mathcal{L}_{\mathrm{dual}}.
+\tag{14}
+$$
+
+这三项不是平行罗列，而是三层约束：
+
+- $\mathcal{L}_{\mathrm{FK}}$：保证全局路径积分一致性；
+- $\mathcal{L}_{\mathrm{FK-local}}$：保证局部一步传播一致性；
+- $\mathcal{L}_{\mathrm{dual}}$：保证两端边界方向性正确。
+
+### 3.5 Algorithm 1：训练循环到底在做什么
+
+这套训练循环可以按下面的顺序理解：
+
+1. 先从数据集中取一批样本，作为 forward 过程的起点 $\mathbf{x}_0$。  
+   这一步确定的是：这一轮训练要从哪些数据端状态出发。
+
+2. 再从每个起点出发，用 $Eq.\,(9)$ 的 OU 过程采样一条 forward 轨迹。  
+   这一步得到的是一串带时间标签的状态点
+   $\{(s_k,\mathbf{x}_k)\}_{k=0}^K$，
+   它们描述了样本如何从数据端逐步弛豫向参考端。
+
+3. 然后把这些轨迹点送进网络，计算每个时间点上的标量势
+   $W_\theta(s_k,\mathbf{x}_k)$。  
+   到这一步为止，网络只是对每个时空点输出一个数，还没有直接学任何 drift。
+
+4. 接着用 $Eq.\,(10)$，从每条 forward 轨迹构造单轨迹的 Feynman-Kac 监督量
+   $Z_{\mathrm{FK}}^{(i)}(s_k,\mathbf{x}^{(i)}_k)$。  
+   这一步把“沿轨迹累计的空间代价”和“起点边界值”合成一个监督目标。
+
+5. 有了网络输出和轨迹监督量之后，再分别计算三类损失：
+   - $Eq.\,(11)$ 的 $\mathcal{L}_{\mathrm{FK}}$，检查全局路径积分一致性；  
+   - $Eq.\,(12)$ 的 $\mathcal{L}_{\mathrm{FK-local}}$，检查相邻时间步之间的一步传播一致性；  
+   - $Eq.\,(13)$ 的 $\mathcal{L}_{\mathrm{dual}}$，检查数据端和参考端的边界方向性。
+
+6. 最后按 $Eq.\,(14)$ 把三类损失加权求和，得到
+   $\mathcal{L}_{\mathrm{total}}(\theta)$，再对参数 $\theta$ 做一次梯度更新。
+
+所以这套训练循环真正学的不是 backward SDE 本身，而是：  
+**一个在 forward 轨迹上被全局路径监督、局部时间一致性和边界方向性三重约束共同钉住的标量势 $W_\theta$。**
+
+### 3.6 b. Eq. (15)：训练好的 $W_\theta$ 怎样回到生成过程
+
+训练完成后，真正生成样本时就不再从数据端出发，而是回到 reference end，从那里启动 backward controlled diffusion。
+
+原文把采样过程写成 Euler-Maruyama 离散化：
+
+$$
+\mathbf{x}_{k+1}
+=
+\mathbf{x}_k
++\Delta s\left(
+\theta \mathbf{x}_k
++\frac{1}{\gamma}\nabla W_\theta(1-s_k,\mathbf{x}_k)
+\right)
++\sqrt{2D\Delta s}\,\xi_k,
+\qquad
+\xi_k\sim \mathcal{N}(0,I).
+\tag{15}
+$$
+
+这条式子也要分开读：
+
+- $\theta \mathbf{x}_k$：反转 OU reference drift；
+- $\frac{1}{\gamma}\nabla W_\theta(1-s_k,\mathbf{x}_k)$：训练得到的最优控制梯度；
+- $\sqrt{2D\Delta s}\,\xi_k$：扩散噪声。
+
+所以 `Section 3` 真正完成的是一整条可执行链：
+
+1. 先用 forward OU 轨迹把 HJB 标量势训练出来；  
+2. 再用这个学到的 $W_\theta$ 作为 backward drift 的核心控制项；  
+3. 最后从 reference end 出发，把样本真正生成到数据端。  
+
+也正因为这样，这篇文章的方法主角始终不是一个单独训练的 score network，而是这一个通过 trajectory supervision 学出来、最后又回到生成方程里的 scalar potential $W_\theta$。
 
 ---
 
-## 6. 实验验证
+## 4. RESULTS
 
-### 6.1 2D 基准数据集上的值函数学习
+这一节原文是按三条线来展示结果的：
 
-在三个标准 2D 基准（4 Gaussians、2 Moons、Swiss Roll）上验证。网络为 10 层 MLP（64 hidden units, GeLU, sinusoidal time embeddings），OU 过程 $D=0.05$, $\beta=0.1$, $T=128$ 步。
+1. 先看 HJB 标量势能否在 forward Feynman-Kac 轨迹监督下被稳定学出来；  
+2. 再看学到的势函数能否真正把参考端样本送到数据端，也就是生成性能本身；  
+3. 最后再看空间代价 $\nu(\mathbf{x})$ 能否像几何介质一样塑造最优路径。
+
+所以 `Section 4` 不是一组杂散 demo，而是在依次验证：
+- 势函数是否学得出来；
+- 学到的势函数是否真的能驱动生成；
+- 空间代价是否真的进入了路径几何。
+
+### 4.1 a. Feynman-Kac 轨迹监督下的 HJB 势函数学习
+
+第一组结果用三个标准 2D 基准数据集来验证：
+- 4 Gaussians
+- 2 Moons
+- Swiss Roll
+
+实验设置保持一致：
+- 参考分布是各向同性高斯 $p_{\mathrm{ref}}\sim\mathcal{N}(0,I)$；
+- 空间代价先固定为均匀场 $\nu(\mathbf{x})=1$；
+- 势函数 $W(t,\mathbf{x})$ 用 10 层 MLP 参数化；
+- forward 轨迹来自 OU 过程，参数 $D=0.05$、$\beta=0.1$、$T=128$；
+- 训练目标使用 $Eq.\,(14)$ 的总损失。
+
+这一组实验先回答最基础的问题：  
+**只靠正向 OU 轨迹上的 Feynman-Kac 监督，能不能把一个有几何结构的 HJB 势函数学出来。**
 
 ![4 Gaussians 值函数与生成过程](../../pdfs/2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.mineru/hybrid_auto/images/page-07-figure-01.jpg)
 
@@ -1007,13 +1378,15 @@ $$\mathbf{x}_{k+1} = \mathbf{x}_k + \Delta s \left(\theta \mathbf{x}_k + \frac{1
 
 ![Swiss Roll 值函数与生成过程](../../pdfs/2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.mineru/hybrid_auto/images/page-07-figure-03.jpg)
 
-**Figure 2（上三图）在论文逻辑中的角色**：这组图是方法正确性的核心视觉证据。每个数据集显示两行：上行是学到的值函数 $W(t, \mathbf{x})$ 在 $t=0, 0.3, 0.7, 1.0$ 的热力图快照，下行是逆向受控扩散过程中粒子位置的演化。关键观察：
+Figure 2 的上半部分给出的就是这个问题的正面证据。  
+随着训练推进，$W(t,\mathbf{x})$ 逐渐长出和目标数据几何相匹配的 basin 结构：
 
-- **4 Gaussians**：$t=1$ 时值函数发展出四个对称势阱，精确对应四个高斯簇
-- **2 Moons**：势函数形成两条弧形谷，追踪半月形弧
-- **Swiss Roll**：势函数发展出螺旋通道，与流形对齐
+- 在 4 Gaussians 上，后期势函数形成四个对称势阱，对应四个簇；
+- 在 2 Moons 上，势函数形成两条弧形谷，追踪半月结构；
+- 在 Swiss Roll 上，势函数形成螺旋通道，和流形几何对齐。
 
-这些结构**纯粹从正向轨迹监督中涌现**——没有逆向 SDE 模拟或 score 估计。
+所以这里最重要的观察不是“图像好看”，而是：
+**这些几何结构并不是从逆向 SDE 或 score network 里直接喂出来的，而是纯粹从正向轨迹监督中涌现出来的。**
 
 ![4 Gaussians 损失曲线](../../pdfs/2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.mineru/hybrid_auto/images/page-07-figure-04.jpg)
 
@@ -1021,80 +1394,257 @@ $$\mathbf{x}_{k+1} = \mathbf{x}_k + \Delta s \left(\theta \mathbf{x}_k + \frac{1
 
 ![Swiss Roll 损失曲线](../../pdfs/2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.mineru/hybrid_auto/images/page-07-figure-06.jpg)
 
-**Figure 2（下三图）**：三个数据集上 $\mathcal{L}_{\text{total}}$ 的训练损失曲线，均呈单调下降，验证了 Feynman-Kac 轨迹监督在不同拓扑几何下的鲁棒性。
+Figure 2 的下半部分再补上训练稳定性这一层：  
+三个数据集上的 $\mathcal{L}_{\mathrm{total}}$ 都单调下降，说明这套 trajectory supervision 不只是概念上成立，而且在不同拓扑几何下都能稳定训练。
 
-### 6.2 空间代价几何：随机 Fermat 原理
+### 4.2 b. Action-minimizing ground states：Figure 2 真正证明了什么
 
-这是本文最具创新性的实验。通过设计不同的空间代价场 $\nu(\mathbf{x})$，展示其如何像**折射率**一样塑造最优传输路径。
+原文在同一组 2D 结果之后，紧接着强调了第二层含义：  
+Figure 2 不只是“把值函数学出来了”，它还说明**学到的势函数确实在驱动一条最小代价的生成路径。**
+
+这层含义可以按下面的顺序来读。
+
+第一步，先看 Figure 2 上半部分学出来的 basin 结构。  
+这些 basin 不是孤立的热力图纹理，而是在定义一张真正的 cost-to-go 地形：  
+对 backward controlled diffusion 来说，哪些区域更容易继续朝目标数据流形推进，哪些区域代价更高，都会体现在这张势函数地形里。
+
+第二步，再看 Figure 2 中间那排从参考端出发的粒子演化。  
+如果学到的 $W$ 只是一个“看起来像目标分布”的静态函数，而没有真正进入动力学，那么这些粒子不会稳定地沿着 basin 被引导到目标结构上。  
+原文给出的结果正相反：粒子确实会沿着势函数地形被逐步吸向目标流形，最后聚集到 4 Gaussians、2 Moons、Swiss Roll 各自的目标几何上。
+
+第三步，把这两层合起来，才得到更强的结论：  
+Figure 2 说明学到的 value function 并不只是“能拟合一张势能图”，而是真的在 backward 生成过程中承担了控制角色。  
+也就是说，$W$ 提供的不是装饰性的几何信息，而是实际驱动 transport 的最优控制结构。
+
+第四步，再看为什么这点重要。  
+这三组数据的几何差别很大：
+
+- 4 Gaussians 是离散多簇结构；
+- 2 Moons 是非凸弧形结构；
+- Swiss Roll 是卷曲流形结构。
+
+如果方法依赖某种只适合特定拓扑的手工机制，它不太可能在这三种目标上都保持同样的输运效果。  
+而 Figure 2 展示的是：同一套 forward-backward HJB 对偶、同一种 learned value function 机制，可以在这三类完全不同的目标几何上都把参考端样本稳定送到数据端。
+
+所以这一部分真正验证的是两件事：
+
+1. 势函数 $W$ 确实能从正向轨迹监督里学出来；  
+2. 学出来的 $W$ 不是静态描述量，而是真正能承担 generative transport 的控制对象。
+
+### 4.3 c. Geometry of refraction and Fermat’s principle for stochastics
+
+前两组结果已经说明两件事：
+- 标量势函数 $W$ 可以学出来；
+- 学到的 $W$ 确实能驱动从参考端到数据端的生成输运。
+
+Figure 3 继续往前追问一个更具体的问题：  
+**如果只改空间代价 $\nu(\mathbf{x})$，而把起点分布、终点分布、网络结构、训练算法和参考动力学都保持不变，那么最优路径的几何会不会跟着系统性改变。**
+
+所以这一组实验的关键不在“又做了一个 2D demo”，而在于它把变量控制得很干净：
+- 左侧源分布固定为一个高斯团；
+- 右侧目标分布固定为另一个高斯团；
+- 学习框架仍然是同一套 forward-backward HJB matching；
+- 唯一被主动改动的，就是中间区域的空间代价场 $\nu(\mathbf{x})$。
+
+这样一来，后面看到的路径弯折、聚焦或绕开，就不能再归因于数据几何本身，而只能归因于 $\nu(\mathbf{x})$ 对最优代价地形的改变。
 
 ![非受控扩散（无学习控制）](../../pdfs/2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.mineru/hybrid_auto/images/page-08-figure-01.jpg)
 
-**Figure 3(a)** — 非受控正向扩散：粒子从源（红点）到参考（蓝点）的无结构扩散，没有方向偏好，轨迹（绿线）弥散于整个空间。这是对照基线。
+Figure 3(a) 先给出最外层的对照基线：  
+如果根本没有学到的控制，粒子只按非受控扩散自然弥散。它们会向四周散开，但不会自发形成一条有方向的集中通道，更不会稳定地从左侧源团输运到右侧目标团。
+
+这一张图先钉死了一件事：  
+后面 Figure 3(b)(c)(d) 里看到的“路径像光线那样被引导”，不是扩散噪声自己长出来的，而必须来自学到的控制与空间代价的共同作用。
 
 ![平坦代价场的受控传输](../../pdfs/2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.mineru/hybrid_auto/images/page-08-figure-02.jpg)
 
-**Figure 3(b)** — 平坦 $\nu = \text{const}$：恢复直线传输几何，是均匀介质中的"直线传播"。
+Figure 3(b) 再给出受控情形下的基线：  
+现在控制已经学出来了，但把空间代价场设成平坦常数，也就是任意位置经过的代价都差不多。
+
+这时最优路径几何退回到最普通的直线型输运。原因很简单：
+- 目标仍然是把粒子从左侧送到右侧；
+- 但空间上没有任何区域被额外奖励，也没有任何区域被额外惩罚；
+- 因而最省总代价的路线就是最直接的路线。
+
+所以 Figure 3(b) 可以理解成“均匀介质”下的基线传播图像。后面所有弯折，都是相对于这张平坦基线发生的。
 
 ![凹面代价：会聚透镜效应](../../pdfs/2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.mineru/hybrid_auto/images/page-08-figure-04.jpg)
 
-**Figure 3(c)** — 凹面代价（中点低 $\nu$）：低代价区域形成势阱，将轨迹向中心汇聚——类比经典光学中的**会聚透镜**。
+Figure 3(c) 开始只改 $\nu(\mathbf{x})$。  
+这里把中间区域变成一个低代价凹槽，也就是说：和周围相比，穿过中心附近更“便宜”。
+
+这会带来三步连锁反应：
+1. 经过中心的累计空间代价变小；  
+2. 因而在总体目标里，穿过中心的路径比绕远路的路径更划算；  
+3. backward controlled diffusion 于是会把更多粒子拉向中轴区域。
+
+宏观上看，就会出现一种会聚透镜效应：  
+原本在平坦代价场里大致直线前进的路径，现在被进一步吸向中心，形成更窄、更集中的输运束。
 
 ![凸面代价：发散透镜效应](../../pdfs/2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.mineru/hybrid_auto/images/page-08-figure-05.jpg)
 
-**Figure 3(d)** — 凸面代价（中点高 $\nu$）：高代价区域形成能量壁垒，迫使轨迹向外绕行——类比**发散透镜**。
+Figure 3(d) 则把中间区域改成高代价凸峰，也就是：中心附近反而更“贵”。
+
+于是同样的逻辑会反过来工作：
+1. 直接穿过中心会积累更多空间代价；  
+2. 即使直线距离更短，这条路线在总代价上也不再占优；  
+3. 最优控制就会主动把粒子从中心两侧分流出去。
+
+宏观上看，这对应一种发散透镜效应：  
+路径不再向中轴聚拢，而是被中间的高代价区域推开，绕着中心障碍走。
+
+到这里，Figure 3(a) 到 3(d) 其实形成了一条很清楚的因果链：
+- 没有控制时，只会无结构弥散；
+- 有控制但代价场平坦时，得到直线型基线输运；
+- 中间区域更便宜时，路径会向中心会聚；
+- 中间区域更昂贵时，路径会绕开中心发散。
 
 ![三种代价场的损失曲线对比](../../pdfs/2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.mineru/hybrid_auto/images/page-08-figure-03.jpg)
 
-**Figure 3(e)** — 三种配置的损失收敛曲线，验证了在不同空间代价场下训练的鲁棒性。
+Figure 3(e) 最后给出三种配置下的训练损失曲线。  
+它补的是稳定性这一层：前面看到的聚焦和发散，不是少数随机轨迹的偶然偏折，而是在不同空间代价场下都能稳定学出来的整体几何行为。
 
-**核心物理类比**：在经典光学中，Fermat 原理（最小光程原理）决定光线在折射率 $n(\mathbf{x})$ 空间变化的介质中沿测地线传播。本文中 $\nu(\mathbf{x})$ 完全类比 $n(\mathbf{x})$：
-- 高 $\nu$ 区域 → 高折射率 → 光线（轨迹）向外偏折
-- 低 $\nu$ 区域 → 低折射率势阱 → 光线（轨迹）向内汇聚
+原文把这一组结果和 Fermat 原理联系起来，真正想说的是：
+- 在经典光学里，介质的折射率分布会改变光线选择哪条路；
+- 在这里，空间代价 $\nu(\mathbf{x})$ 改变的是随机输运路径的总代价地形；
+- 一旦总代价地形变了，最优路径的几何也会随之改变。
 
-HJB 值函数 $W$ 编码了这些最小代价路径的自由能几何。
+所以 Figure 3 验证的不是简单的“模型还能生成”，而是更强的一层：
 
-### 6.3 高维扩展：MNIST (784 维)
+**空间代价函数 $\nu(\mathbf{x})$ 不是目标函数里的装饰项。它会先进入 HJB 势函数，再通过学到的控制场进入实际生成路径，从而系统性地改变输运几何。**
 
-将框架扩展到 MNIST 手写数字数据集（$28 \times 28 = 784$ 维），值函数用卷积 U-Net 参数化（encoder channels [32, 64, 128, 256]，GroupNorm，skip connections，Gaussian Fourier time embeddings）。
+## 5. Appendix D：高维扩展（MNIST）
+
+前面的 `Section 4 Results` 都停留在 2D 几何上。  
+这些结果已经说明：
+- HJB 标量势函数可以学出来；
+- 学到的势函数可以驱动生成输运；
+- 空间代价 $\nu(\mathbf{x})$ 会系统性改变路径几何。
+
+但一个自然追问马上会出现：  
+**如果状态空间不再是 2D 平面，而是高维图像空间，这套“学势函数而不是直接学向量场”的方法还会不会维持基本结构。**
+
+附录 D 的角色就在这里。它不是另起一个全新的主结果，而是在更难的高维 setting 里检查一件更基础的事：  
+**学到的势函数在高维数据上，是否仍然表现出连贯的 cost-to-go 结构，而不是在训练样本附近做局部插值。**
+
+作者把测试对象换成 MNIST 手写数字数据集。这里的状态空间不再是平面点，而是 $28\times 28=784$ 维的像素向量。参考端仍然取高斯噪声 $p_{\mathrm{ref}}=\mathcal N(0,I)$，空间代价场则固定成最简单的均匀形式 $\nu(\mathbf{x})=1$。这意味着附录 D 不再去研究复杂几何先验，而是把注意力集中在“高维可训练性”本身。
+
+这一节还有一个和 2D 实验不同的技术点：  
+作者没有显式存整条 forward OU 轨迹，而是利用 OU 过程的闭式条件分布，直接在任意时间采样扰动状态 $\mathbf{x}_t$。这样做的目的不是改理论，而是节省高维训练中的内存和轨迹存储成本。
+
+在参数化上，2D 里的 MLP 也被换成了更适合图像的卷积 U-Net：
+- encoder channels 为 `[32, 64, 128, 256]`；
+- 归一化使用 GroupNorm；
+- 保留 skip connections；
+- 时间嵌入使用 Gaussian Fourier features。
+
+所以附录 D 的问题可以压成一句：
+
+**在高维图像空间里，沿着 forward OU 扰动轨迹去学习 $W_\theta(t,\mathbf{x})$，这个势函数还会不会长出和 2D 情形相同的“沿生成方向传播的 cost-to-go 结构”。**
 
 ![MNIST 初始化势函数](../../pdfs/2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.mineru/hybrid_auto/images/page-15-figure-01.jpg)
 
-**Figure 4(a)** — 初始化阶段：$W(t, \mathbf{x}(s))$ 沿测试轨迹（不同颜色对应不同时间步 $s$）的分布无结构、无方向性。
+Figure 4(a) 先看初始化阶段。  
+这时把尚未训练好的势函数 $W(t,\mathbf{x}(s))$ 画在一组测试轨迹上，几乎看不到任何有组织的结构。换句话说，在训练开始时，网络还没有学会把“当前状态在输运过程中处于什么位置”编码成一个连贯的剩余代价值。
 
 ![MNIST 训练后势函数](../../pdfs/2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.mineru/hybrid_auto/images/page-15-figure-02.jpg)
 
-**Figure 4(b)** — 训练 200 epochs 后：每条轨迹上出现清晰的**传播脉冲**（propagating bump）——$W$ 沿生成路径形成移动的势峰，与 2D 实验中观察到的代价结构一致。这一结构出现在**未参与训练的测试轨迹上**，证明 Feynman-Kac 框架学到的是全局一致的值函数，而非训练样本的局部插值。
+Figure 4(b) 再看训练 $200$ 个 epochs 之后。  
+这时沿着 held-out 测试轨迹，会出现一个很明显的传播脉冲：随着轨迹向生成方向推进，$W$ 沿轨迹呈现出有组织的移动峰值。
+
+这张图真正重要的地方有两层：
+1. 这说明高维情形下学到的 $W$ 仍然不是静态噪声图，而是在沿轨迹编码一种 cost-to-go 结构；  
+2. 这些轨迹是测试轨迹，不是训练时直接见过的样本，因此这个结构更像是全局一致的势函数行为，而不是对训练点的局部记忆。
+
+也就是说，附录 D 想保住的不是“高维生成质量已经很好”，而是更基础的一点：  
+**即使到了 784 维，Feynman-Kac 框架学到的仍然是一个沿输运方向有组织传播的值函数。**
 
 ![MNIST 损失曲线](../../pdfs/2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.mineru/hybrid_auto/images/page-15-figure-03.jpg)
 
-**Figure 4(c)** — 高维设置下的损失收敛，确认了 HJB 势函数的热力学可解释性在维度扩展后得以保持。
+Figure 4(c) 最后给出训练损失的收敛曲线。  
+它补的是优化稳定性这一层：前面看到的传播脉冲不是偶然出现的视觉 artifact，而是伴随着整体训练目标的稳定下降一起长出来的。
+
+所以附录 D 最稳妥的结论不是：
+- “方法已经在高维 image generation 上达到最优结果”，
+- 也不是“MNIST 上已经完整验证了生成质量指标”。
+
+它真正说明的是：
+
+**即使状态空间上升到 784 维像素空间，这套 HJB 标量势学习仍然保持了三件事：可训练、结构一致、并且能在测试轨迹上呈现出连贯的 cost-to-go 传播形态。**
+
+换句话说，附录 D 在整篇文章里的作用，是把前面 2D 结果里的核心主张往高维再推一步：
+- 学到的对象仍然是势函数，而不是无结构的黑箱回归；
+- 这个势函数在高维上仍保留了值函数应有的方向性结构；
+- 但文章在这里还没有进一步证明它已经在高维图像生成质量上超越现有方法。
 
 ---
 
-## 7. 核心结论与贡献
+## 6. 核心结论与贡献
 
-### 7.1 理论贡献
+### 6.1 理论贡献
 
-1. **前向-后向 HJB 对偶定理**（Theorem 2.2）：建立了逆向生成控制与正向扩散之间的严格数学等价，将不可解的逆向问题转化为可沿正向轨迹估计的问题
-2. **路径空间自由能解释**：通过 Cole-Hopf + Feynman-Kac，值函数获得了路径空间自由能（path-space free energy）的明确物理含义
-3. **统一框架**：将随机最优控制、Schrödinger bridge 理论、非平衡统计力学以及 Kantorovich 对偶统一于同一变分结构中
+这篇文章的理论贡献，最好不要只看成“又提出了一个生成算法”，而要看成它把三个原本分散的问题接成了一条线。
 
-### 7.2 方法论贡献
+第一步，它先处理的是最核心的结构难点：  
+真正想求的是从参考端到数据端的 backward optimal control，但这个方向天然带有循环依赖，因为很多量都需要在“已经知道最优生成轨迹”的前提下才能写出来。`Theorem 2.2` 的前向-后向 HJB 对偶，真正完成的就是把这个难题改写成一个可以沿 forward 弛豫轨迹求解的等价问题。也就是说，文章不是把 backward 问题近似掉了，而是把它等价地搬到了一个 tractable 的方向上。
 
-1. **标量势学习**：将高维向量场估计降维为标量势学习，$\mathbf{u}^* = -\frac{1}{\gamma}\nabla U$ 天然保证了向量场的旋度为零（curl-free），提高了参数效率和可解释性
-2. **无需 score estimation 或逆向 SDE**：所有训练信号来自正向扩散轨迹上的 Feynman-Kac 估计
-3. **空间代价函数 $\nu(\mathbf{x})$ 作为几何先验**：为受约束生成（constrained generation）提供了自然接口——通过设计 $\nu$ 的空间分布即可引导轨迹避开或聚焦于特定状态空间区域
+第二步，它给值函数补上了明确的物理含义。通过 Cole-Hopf 变换和 Feynman-Kac 表示，原本抽象的 HJB 势函数不再只是“一个满足 PDE 的数学对象”，而可以读成路径加权平均所定义的路径空间自由能。这样一来，$W$ 既是最优控制里的 value function，又是对整条 forward 路径代价分布的压缩表达。
 
-### 7.3 局限与展望
+第三步，这篇文章把几条常见但通常分开讲的理论语言放到了同一个变分骨架里：
+- 随机最优控制给出原始问题；
+- Kantorovich 对偶给出变分重写；
+- HJB 给出值函数 PDE；
+- Cole-Hopf 和 Feynman-Kac 把 PDE 变成可采样对象；
+- Schrödinger bridge 和非平衡统计物理则给出更大的背景语境。
 
-- **PDE 残差与方差**：Cole-Hopf 线性化在有限采样下的系统偏差和方差的定量分析仍是开放问题
-- **高维可扩展性**：MNIST 实验仅为概念验证，尚未与 SOTA 生成模型在 FID/IS 等指标上对比
-- **交互粒子系统**：扩展到多粒子相互作用场景（如分子动力学、活性物质）是重要的物理应用方向
-- **预训练模型微调**：$\nu(\mathbf{x})$ 可用于对预训练生成模型进行空间约束微调，类似于物理先验引导的 fine-tuning
+所以这一节最稳妥的总结不是“证明了一个对偶定理”，而是：
+
+**它把生成输运问题从 backward control、value function、路径自由能到可采样训练信号，第一次写成了一条闭合的理论链。**
+
+### 6.2 方法论贡献
+
+如果说理论部分回答的是“为什么这件事可做”，那么方法部分回答的就是“作者到底把学习对象和训练信号换成了什么”。
+
+最关键的改变，是把原来直接学习高维控制向量场的问题，改写成学习一个标量势函数的问题。因为最优控制满足 $\mathbf{u}^*=-\frac{1}{\gamma}\nabla U$，所以真正需要拟合的主角不再是任意向量场，而是一个 value function。这样做带来两个直接后果：
+- 搜索空间从“所有可能的向量场”收紧到“由某个标量势生成的梯度场”；
+- 学到的对象也更容易解释，因为它本身表示的是剩余最小代价，而不是单纯的局部推动方向。
+
+第二个方法论变化，是训练信号的来源被彻底改写了。文章没有沿着 score-based diffusion 那条线去估计 `score`，也没有直接在 backward SDE 上做监督，而是把所有训练信号都放在了 forward 参考轨迹上。这样一来，训练阶段真正用到的是：
+- 全局 Feynman-Kac 轨迹监督；
+- 局部一步半群一致性；
+- 以及对偶边界条件。
+
+也就是说，模型学到的不是“如何直接模仿一个逆向漂移”，而是“哪个标量势函数同时满足 forward PDE、路径平均和边界结构”。
+
+第三个方法论亮点，是空间代价函数 $\nu(\mathbf{x})$ 被保留下来，作为一个可以直接设计的几何先验。Figure 3 已经说明，这个量不是装饰项：一旦改变 $\nu(\mathbf{x})$ 的空间分布，最优路径几何就会系统性改变。所以这篇方法天然给受约束生成留出了接口：
+- 想让路径避开某些区域，就把那些区域设成高代价；
+- 想让路径穿过某些区域，就把那些区域设成低代价。
+
+所以方法上的最强信息不是“又提出了一种训练损失”，而是：
+
+**作者把生成学习的主角，从直接拟合逆向向量场，改成了沿正向轨迹学习一个既可解释、又能回到生成控制的标量势函数。**
+
+### 6.3 局限与展望
+
+这篇文章的局限也很清楚，而且都和它最有特色的设计正相关。
+
+首先，Cole-Hopf 和 Feynman-Kac 虽然把非线性 HJB 变成了可估计对象，但代价是把训练变成了一种路径重加权问题。有限采样下，这里会同时出现两类误差：
+- 线性化和离散化带来的系统偏差；
+- 指数重加权带来的方差膨胀。
+
+这也是为什么文章虽然在理论上很干净，但在实践上仍然会面对 Monte Carlo 方差控制的问题。
+
+第二，高维可扩展性目前还只验证到了“值函数结构仍然能学出来”这一步。MNIST 附录已经说明这套方法在 784 维像素空间里仍然可训练、并能在测试轨迹上产生连贯的 cost-to-go 脉冲；但这还不是严格意义上的高维生成 benchmark。文章目前没有在 FID、IS 等标准指标上和主流 score-based 或 flow matching 方法做系统对比，所以关于大规模高维生成质量的结论仍然要保守。
+
+第三，这个框架天然还在往两个方向打开。一个方向是更物理的：把单粒子扩散推广到多粒子相互作用系统，例如分子动力学、活性物质或更一般的相互作用随机系统。另一个方向是更方法学的：把空间代价函数 $\nu(\mathbf{x})$ 当成外加几何先验，用来对预训练生成模型做受约束微调，让生成路径自动避开危险区域、或更偏好某些允许区域。
+
+所以这一节更合适的总结不是“这篇还有一些缺点”，而是：
+
+**它已经把理论结构搭得很完整，但真正决定这条路线能不能继续走远的，将是两个问题：高维下的方差控制，以及空间先验在更复杂生成模型中的可操作性。**
 
 ---
 
-## 8. 关键公式速查
+## 7. 关键公式速查
 
 | 编号 | 公式 | 意义 |
 |------|------|------|
@@ -1109,7 +1659,7 @@ HJB 值函数 $W$ 编码了这些最小代价路径的自由能几何。
 
 ---
 
-## 9. 个人评论
+## 8. 个人评论
 
 **优点**：
 - 理论上非常完整，从变分原理出发推到可训练的算法，每一步都有物理对应和数学保证
