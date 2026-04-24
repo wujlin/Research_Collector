@@ -18,6 +18,7 @@ class SemanticScholarCollector(BaseCollector):
         http_client=None,
         settings: dict[str, Any] | None = None,
         sleep_fn: Callable[[float], None] | None = None,
+        clock_fn: Callable[[], float] | None = None,
     ):
         super().__init__(
             "semantic_scholar",
@@ -31,10 +32,13 @@ class SemanticScholarCollector(BaseCollector):
         self.use_in_all_runs_without_api_key = bool(
             source_policy.get("use_in_all_runs_without_api_key", False)
         )
+        self.min_interval_seconds = float(source_policy.get("min_interval_seconds", 1.1))
         self.max_retries_on_429 = int(source_policy.get("max_retries_on_429", 2))
         self.base_backoff_seconds = float(source_policy.get("base_backoff_seconds", 4))
         self.limit_without_api_key = int(source_policy.get("limit_without_api_key", 10))
         self.sleep_fn = sleep_fn or time.sleep
+        self.clock_fn = clock_fn or time.monotonic
+        self._last_request_at: float | None = None
 
     def has_api_key(self) -> bool:
         return bool(get_env("SEMANTIC_SCHOLAR_API_KEY"))
@@ -85,7 +89,9 @@ class SemanticScholarCollector(BaseCollector):
     ) -> dict[str, Any]:
         last_error: httpx.HTTPStatusError | None = None
         for attempt in range(self.max_retries_on_429 + 1):
+            self._respect_min_interval()
             response = client.get(self.base_url, params=params, headers=headers)
+            self._last_request_at = self.clock_fn()
             if response.status_code == 429:
                 last_error = httpx.HTTPStatusError(
                     "Semantic Scholar API rate limited the request.",
@@ -102,6 +108,13 @@ class SemanticScholarCollector(BaseCollector):
 
         assert last_error is not None
         raise last_error
+
+    def _respect_min_interval(self) -> None:
+        if self._last_request_at is None or self.min_interval_seconds <= 0:
+            return
+        elapsed = self.clock_fn() - self._last_request_at
+        if elapsed < self.min_interval_seconds:
+            self.sleep_fn(self.min_interval_seconds - elapsed)
 
     def _backoff_seconds(self, response: httpx.Response, attempt: int) -> float:
         retry_after = response.headers.get("Retry-After")

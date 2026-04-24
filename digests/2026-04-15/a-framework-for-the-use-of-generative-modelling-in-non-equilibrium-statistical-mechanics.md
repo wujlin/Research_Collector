@@ -153,7 +153,7 @@ $$
 
 这就是全文真正的数学动作。它并不是从零推出“系统会推断”，而是依次做了四件事：先假设完整系统有非平衡稳态密度；再把完整动力学写成 surprisal 的加权梯度流；再用 `Markov blanket`、$\sigma$ 和 `Laplace approximation` 把内部状态变成外部状态分布的参数估计器；最后利用 `free energy = surprisal upper bound + inference gap` 这层关系，把内部动力学改写成 free-energy descent。
 
-读到这里最容易困惑的地方，其实正是这三处静默假设。第一，稳态密度 $p^*(x)$ 不是推出来的，而是先假设存在。第二，$\sigma(\mu)$ 如何足够好地参数化环境分布，不是自动成立的，而是依赖特定结构和近似。第三，从 surprisal flow 走到 free-energy flow，靠的是 `KL gap` 足够小乃至为零时的重合关系。因此，这一节最稳妥的结论不是“所有有边界的系统都在做 Bayesian inference”，而是：在这些结构和近似都成立时，内部动力学可以被重写成一种 `as-if variational inference` 的形式。
+这里真正依赖三处静默假设。第一，稳态密度 $p^*(x)$ 不是推出来的，而是先假设存在。第二，$\sigma(\mu)$ 如何足够好地参数化环境分布，不是自动成立的，而是依赖特定结构和近似。第三，从 surprisal flow 走到 free-energy flow，靠的是 `KL gap` 足够小乃至为零时的重合关系。因此，这一节最稳妥的结论不是“所有有边界的系统都在做 Bayesian inference”，而是：在这些结构和近似都成立时，内部动力学可以被重写成一种 `as-if variational inference` 的形式。
 
 ## 4. Why This Rewriting Is Useful
 
@@ -207,7 +207,7 @@ $$
 
 ## 9. What To Keep From This Paper
 
-如果把整篇文章压成最值得留下的几句话，可以保留下面这条线：
+整篇文章最值得保留的是下面这条线：
 
 1. 先用 generative model 写出内部、外部和 blanket states 之间的依赖关系。
 2. 再用非平衡稳态分布把系统动力学写成 surprisal gradient flow。

@@ -1,6 +1,6 @@
 ---
 title: "Variational formulation of stochastic thermodynamics: Finite-dimensional systems"
-authors: ["Héctor Vaquero del Pino", "François Gay-Balmaz", "Hiroaki Yoshimura", "Lock Yue Chew"]
+authors: ["Héctor Vaquero del Pino", "François Gay-Balmaz", "Hiroaki Yoshimura", "Lock Yue Chew", "Anonymous"]
 year: 2025
 journal: "arXiv"
 doi: "10.1103/xrbh-7fhd"
@@ -11,9 +11,9 @@ topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/no
 tier: 2
 citations: 0
 relevance_score: 64.0
-collected: "2026-04-16"
+collected: "2026-04-23"
 status: "unread"
-source: "arxiv,openalex"
+source: "arxiv,arxiv,openalex,openalex,openalex,openalex"
 ---
 
 ## Abstract

@@ -7,11 +7,11 @@ doi: "10.20944/preprints202505.1779.v3"
 arxiv: ""
 url: "https://openalex.org/W7154375092"
 pdf_url: "https://www.preprints.org/frontend/manuscript/5c704d79e0a8f356961a781207b8009c/download_pub"
-topics: ["statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics", "urban_complex_systems/scaling_and_evolution/urban_dynamics", "urban_complex_systems/scaling_and_evolution", "urban_complex_systems"]
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "urban_complex_systems", "urban_complex_systems/scaling_and_evolution/urban_dynamics", "statistical_physics/non_equilibrium_dynamics", "urban_complex_systems/scaling_and_evolution"]
 tier: 0
 citations: 0
 relevance_score: 54.0
-collected: "2026-04-16"
+collected: "2026-04-23"
 status: "unread"
 source: "openalex"
 ---
@@ -26,12 +26,12 @@ The article explores an epistemological framework for understanding existence, s
 
 ## Connections
 
-- [[nonequilibrium]]
-- [[non_equilibrium_dynamics]]
 - [[statistical_physics]]
-- [[urban_dynamics]]
-- [[scaling_and_evolution]]
+- [[nonequilibrium]]
 - [[urban_complex_systems]]
+- [[urban_dynamics]]
+- [[non_equilibrium_dynamics]]
+- [[scaling_and_evolution]]
 
 ## Notes
 

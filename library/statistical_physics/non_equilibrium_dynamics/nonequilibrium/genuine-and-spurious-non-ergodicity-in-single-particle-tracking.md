@@ -3,7 +3,7 @@ title: "Genuine and spurious (non-)ergodicity in single particle tracking"
 authors: ["Wei Wang", "Qing Wei", "Igor M. Sokolov", "Ralf Metzler", "Aleksei V. Chechkin"]
 year: 2026
 journal: "ArXiv.org"
-doi: ""
+doi: "10.48550/arxiv.2603.22989"
 arxiv: ""
 url: "https://openalex.org/W7140954277"
 pdf_url: "https://arxiv.org/pdf/2603.22989"
@@ -11,7 +11,7 @@ topics: ["stochastic_analysis", "statistical_physics", "statistical_physics/non_
 tier: 0
 citations: 0
 relevance_score: 54.0
-collected: "2026-04-16"
+collected: "2026-04-23"
 status: "unread"
 source: "openalex"
 ---

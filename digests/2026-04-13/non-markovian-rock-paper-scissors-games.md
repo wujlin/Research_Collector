@@ -51,7 +51,7 @@ $$
 
 这个 abstract 的逻辑不是在堆背景，而是沿着一条很清楚的线往前推。
 
-第一步，作者先指出现实动机。真实 species interaction 往往有 `long-term memory`，连续事件之间的 waiting time 差异很大，而且还存在长时间相关。这句话是在说：真实系统的时间结构并不像 Poisson process 那样干净。
+第一步，作者先指出现实动机。真实 species interaction 往往有 `long-term memory`，连续事件之间的 waiting time 差异很大，而且还存在长时间相关。这意味着：真实系统的时间结构并不像 Poisson process 那样干净。
 
 第二步，他们马上指出这会动摇什么。它动摇的是最常见的 `Markovian assumption`。因为一旦 waiting time 带有记忆、相关和重尾，系统未来就不能只由当前状态决定，而会和已经经历过多久、过去等待了多久有关。
 
@@ -67,7 +67,7 @@ $$
 
 ## 3. How To Read The Abstract In One Line
 
-如果把这个 abstract 压成一句最核心的话，它其实是在说：
+一句话总结这个 abstract：
 
 `经典 zRPS 模型里“谁能活到最后”这件事，本来由无记忆指数时钟控制；这篇文章证明，一旦相互作用时钟变成带记忆的非指数过程，最终的生存规则本身就会被 waiting-time distribution 及其波动强度改写。`
 
@@ -672,7 +672,7 @@ $$
 \Theta_{\mathrm{PL}}(a,b,c)\to 1,
 $$
 
-也就是恢复经典指数时钟下的 bare reaction term。有限的 $\alpha_A$ 则对应一个显式偏离，这句话最好也拆开来说。
+也就是恢复经典指数时钟下的 bare reaction term。有限的 $\alpha_A$ 则对应一个显式偏离。这里需要把含义拆开。
 
 第一，在 Markovian benchmark 里，第一条反应的 mean-field 通量就是
 
@@ -838,7 +838,7 @@ $$
 k=k^*(\alpha_A)<1.
 $$
 
-这句话最好再往前展开一步。经典 Markovian zRPS 里，只要
+这里需要再往前展开一步。经典 Markovian zRPS 里，只要
 
 $$
 k<1,

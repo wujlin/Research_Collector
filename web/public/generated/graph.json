@@ -393,6 +393,148 @@
       "is_leaf": true
     },
     {
+      "id": "paper:328",
+      "label": "FP-Diffusion: Improving Score-based Diffusion Models by Enforcing the Underlying Score Fokker-Planck Equation",
+      "type": "paper",
+      "year": 2022,
+      "relevance_score": 79.1,
+      "citation_count": 42,
+      "tier": 2,
+      "venue": "International Conference on Machine Learning"
+    },
+    {
+      "id": "author:16",
+      "label": "Stefano Ermon",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 4
+    },
+    {
+      "id": "author:1240",
+      "label": "Chieh-Hsin Lai",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 3
+    },
+    {
+      "id": "author:1241",
+      "label": "Yuhta Takida",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 3
+    },
+    {
+      "id": "author:1242",
+      "label": "N. Murata",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 3
+    },
+    {
+      "id": "author:1243",
+      "label": "Toshimitsu Uesaka",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 3
+    },
+    {
+      "id": "author:1244",
+      "label": "Yuki Mitsufuji",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 3
+    },
+    {
+      "id": "venue:46",
+      "label": "ICML",
+      "type": "venue",
+      "tier": 2,
+      "reputation": "trusted",
+      "paper_count": 1
+    },
+    {
+      "id": "paper:311",
+      "label": "Phase-Field DeepONet: Physics-informed deep operator neural network for fast simulations of pattern formation governed by gradient flows of free-energy functionals",
+      "type": "paper",
+      "year": 2023,
+      "relevance_score": 78.8,
+      "citation_count": 68,
+      "tier": 2,
+      "venue": "ArXiv"
+    },
+    {
+      "id": "author:1196",
+      "label": "Wei Li",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1197",
+      "label": "M. Bazant",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1198",
+      "label": "Juner Zhu",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "venue:125",
+      "label": "arXiv",
+      "type": "venue",
+      "tier": 0,
+      "reputation": "unreviewed",
+      "paper_count": 49
+    },
+    {
+      "id": "paper:314",
+      "label": "Non-equilibrium thermodynamics of diffusion in fluctuating potentials",
+      "type": "paper",
+      "year": 2022,
+      "relevance_score": 71.62,
+      "citation_count": 23,
+      "tier": 2,
+      "venue": "Journal of Physics A: Mathematical and Theoretical"
+    },
+    {
+      "id": "author:1204",
+      "label": "Henry Alston",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1205",
+      "label": "Luca Cocconi",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1206",
+      "label": "T. Bertrand",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
       "id": "paper:85",
       "label": "Efficient quantum thermal simulation",
       "type": "paper",
@@ -441,6 +583,200 @@
       "tier": 1,
       "reputation": "trusted",
       "paper_count": 1
+    },
+    {
+      "id": "paper:334",
+      "label": "Uncovering dissipation from coarse observables: A case study of a random walk with unobserved internal states.",
+      "type": "paper",
+      "year": 2025,
+      "relevance_score": 70.45,
+      "citation_count": 6,
+      "tier": 2,
+      "venue": "The Journal of chemical physics"
+    },
+    {
+      "id": "author:1257",
+      "label": "O. Igoshin",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1258",
+      "label": "A. Kolomeisky",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1259",
+      "label": "Dmitrii E. Makarov",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "venue:65",
+      "label": "The Journal of Chemical Physics",
+      "type": "venue",
+      "tier": 2,
+      "reputation": "trusted",
+      "paper_count": 2
+    },
+    {
+      "id": "paper:317",
+      "label": "Jensen bound for the entropy production rate in stochastic thermodynamics.",
+      "type": "paper",
+      "year": 2023,
+      "relevance_score": 68.82,
+      "citation_count": 7,
+      "tier": 2,
+      "venue": "Physical review. E"
+    },
+    {
+      "id": "author:1214",
+      "label": "Matthew P. Leighton",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1215",
+      "label": "David A. Sivak",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "venue:28",
+      "label": "Physical Review E",
+      "type": "venue",
+      "tier": 2,
+      "reputation": "trusted",
+      "paper_count": 4
+    },
+    {
+      "id": "paper:312",
+      "label": "Speed-accuracy trade-off for the diffusion models: Wisdom from nonequilibrium thermodynamics and optimal transport",
+      "type": "paper",
+      "year": 2024,
+      "relevance_score": 68.43,
+      "citation_count": 3,
+      "tier": 2,
+      "venue": "Physical Review X"
+    },
+    {
+      "id": "author:1199",
+      "label": "Kotaro Ikeda",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1200",
+      "label": "Tomoya Uda",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1201",
+      "label": "Daisuke Okanohara",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1202",
+      "label": "Sosuke Ito",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "venue:22",
+      "label": "Physical Review X",
+      "type": "venue",
+      "tier": 2,
+      "reputation": "trusted",
+      "paper_count": 1
+    },
+    {
+      "id": "paper:320",
+      "label": "Resolution-independent generative models based on operator learning for physics-constrained Bayesian inverse problems",
+      "type": "paper",
+      "year": 2023,
+      "relevance_score": 67.55,
+      "citation_count": 17,
+      "tier": 2,
+      "venue": "ArXiv"
+    },
+    {
+      "id": "author:1221",
+      "label": "Xinchao Jiang",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1222",
+      "label": "Xin Wang",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1223",
+      "label": "Ziming Wen",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1224",
+      "label": "Hu Wang",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "paper:347",
+      "label": "Hydrodynamic noise in one dimension: Projected Kubo formula and how it vanishes in integrable models",
+      "type": "paper",
+      "year": 2026,
+      "relevance_score": 67.01,
+      "citation_count": 1,
+      "tier": 2,
+      "venue": "SciPost Physics"
+    },
+    {
+      "id": "author:1294",
+      "label": "Benjamin Doyon",
+      "type": "author",
+      "affiliation": "King's College London",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "venue:58",
+      "label": "SciPost Physics",
+      "type": "venue",
+      "tier": 2,
+      "reputation": "trusted",
+      "paper_count": 2
     },
     {
       "id": "paper:285",
@@ -511,14 +847,6 @@
       "paper_count": 1
     },
     {
-      "id": "venue:125",
-      "label": "arXiv",
-      "type": "venue",
-      "tier": 0,
-      "reputation": "unreviewed",
-      "paper_count": 40
-    },
-    {
       "id": "paper:219",
       "label": "Thermodynamic inference in molecular motors: a Martingale approach",
       "type": "paper",
@@ -543,6 +871,56 @@
       "affiliation": "",
       "h_index": 0,
       "paper_count": 1
+    },
+    {
+      "id": "paper:350",
+      "label": "A general model for frictional contacts in colloidal systems",
+      "type": "paper",
+      "year": 2026,
+      "relevance_score": 64.0,
+      "citation_count": 0,
+      "tier": 2,
+      "venue": "Communications Physics"
+    },
+    {
+      "id": "author:1300",
+      "label": "K.R. Hofmann",
+      "type": "author",
+      "affiliation": "Johannes Gutenberg University Mainz",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1301",
+      "label": "Kay-Robert Dormann",
+      "type": "author",
+      "affiliation": "Technische Universität Darmstadt",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1302",
+      "label": "Benno Liebchen",
+      "type": "author",
+      "affiliation": "Technische Universität Darmstadt",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1303",
+      "label": "Friederike Schmid",
+      "type": "author",
+      "affiliation": "Johannes Gutenberg University Mainz",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "venue:69",
+      "label": "Communications Physics",
+      "type": "venue",
+      "tier": 2,
+      "reputation": "trusted",
+      "paper_count": 2
     },
     {
       "id": "paper:287",
@@ -593,14 +971,6 @@
       "affiliation": "Universität Innsbruck",
       "h_index": 0,
       "paper_count": 1
-    },
-    {
-      "id": "venue:28",
-      "label": "Physical Review E",
-      "type": "venue",
-      "tier": 2,
-      "reputation": "trusted",
-      "paper_count": 2
     },
     {
       "id": "paper:270",
@@ -668,7 +1038,7 @@
       "type": "author",
       "affiliation": "",
       "h_index": 0,
-      "paper_count": 1
+      "paper_count": 2
     },
     {
       "id": "paper:228",
@@ -694,7 +1064,7 @@
       "type": "author",
       "affiliation": "",
       "h_index": 0,
-      "paper_count": 2
+      "paper_count": 4
     },
     {
       "id": "paper:225",
@@ -849,14 +1219,6 @@
       "paper_count": 1
     },
     {
-      "id": "venue:65",
-      "label": "The Journal of Chemical Physics",
-      "type": "venue",
-      "tier": 2,
-      "reputation": "trusted",
-      "paper_count": 1
-    },
-    {
       "id": "paper:194",
       "label": "Geometric foundations of thermodynamics in the quantum regime",
       "type": "paper",
@@ -930,7 +1292,7 @@
       "type": "venue",
       "tier": 2,
       "reputation": "trusted",
-      "paper_count": 1
+      "paper_count": 2
     },
     {
       "id": "paper:222",
@@ -1019,14 +1381,6 @@
       "paper_count": 1
     },
     {
-      "id": "venue:58",
-      "label": "SciPost Physics",
-      "type": "venue",
-      "tier": 2,
-      "reputation": "trusted",
-      "paper_count": 1
-    },
-    {
       "id": "paper:267",
       "label": "Mean-field limit from general mixtures of experts to quantum neural networks",
       "type": "paper",
@@ -1067,6 +1421,48 @@
       "tier": 2,
       "reputation": "unreviewed",
       "paper_count": 1
+    },
+    {
+      "id": "paper:351",
+      "label": "A Fast and Accurate Solver for the Fractional Fokker–Planck Equation with Dirac-Delta Initial Conditions",
+      "type": "paper",
+      "year": 2026,
+      "relevance_score": 61.0,
+      "citation_count": 0,
+      "tier": 2,
+      "venue": "SIAM Journal on Scientific Computing"
+    },
+    {
+      "id": "author:1304",
+      "label": "Q. Ye",
+      "type": "author",
+      "affiliation": "University of California San Diego",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1305",
+      "label": "Xiaochuan Tian",
+      "type": "author",
+      "affiliation": "University of California San Diego",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1306",
+      "label": "Dong Wang",
+      "type": "author",
+      "affiliation": "Chinese University of Hong Kong, Shenzhen",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "venue:72",
+      "label": "SIAM Journal on Scientific Computing",
+      "type": "venue",
+      "tier": 2,
+      "reputation": "trusted",
+      "paper_count": 3
     },
     {
       "id": "paper:201",
@@ -1126,14 +1522,6 @@
       "type": "author",
       "affiliation": "Shanghai Jiao Tong University",
       "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "venue:69",
-      "label": "Communications Physics",
-      "type": "venue",
-      "tier": 2,
-      "reputation": "trusted",
       "paper_count": 1
     },
     {
@@ -1210,7 +1598,7 @@
       "type": "venue",
       "tier": 2,
       "reputation": "trusted",
-      "paper_count": 1
+      "paper_count": 2
     },
     {
       "id": "paper:9",
@@ -1313,6 +1701,58 @@
       "paper_count": 1
     },
     {
+      "id": "paper:313",
+      "label": "Decomposition of the entropy production rate and nonequilibrium thermodynamics of switching diffusion processes.",
+      "type": "paper",
+      "year": 2018,
+      "relevance_score": 58.19,
+      "citation_count": 5,
+      "tier": 2,
+      "venue": "Physical review. E"
+    },
+    {
+      "id": "author:1004",
+      "label": "Hao Ge",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 2
+    },
+    {
+      "id": "author:1203",
+      "label": "Shigeki Yang",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "paper:325",
+      "label": "Regularization, Bayesian Inference, and Machine Learning Methods for Inverse Problems",
+      "type": "paper",
+      "year": 2021,
+      "relevance_score": 58.09,
+      "citation_count": 36,
+      "tier": 3,
+      "venue": "Entropy"
+    },
+    {
+      "id": "author:1239",
+      "label": "A. Mohammad-Djafari",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "venue:115",
+      "label": "Entropy",
+      "type": "venue",
+      "tier": 3,
+      "reputation": "cautious",
+      "paper_count": 1
+    },
+    {
       "id": "paper:84",
       "label": "Non-Markovian Entropy Dynamics in Living Systems from the Keldysh Formalism",
       "type": "paper",
@@ -1368,7 +1808,7 @@
       "type": "venue",
       "tier": 0,
       "reputation": "unreviewed",
-      "paper_count": 29
+      "paper_count": 56
     },
     {
       "id": "paper:56",
@@ -1421,6 +1861,168 @@
       "paper_count": 1
     },
     {
+      "id": "paper:321",
+      "label": "A domain-decomposed VAE method for Bayesian inverse problems",
+      "type": "paper",
+      "year": 2023,
+      "relevance_score": 57.82,
+      "citation_count": 10,
+      "tier": 0,
+      "venue": "ArXiv"
+    },
+    {
+      "id": "author:1225",
+      "label": "Zhihang Xu",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1226",
+      "label": "Yingzhi Xia",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1227",
+      "label": "Qifeng Liao",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "paper:394",
+      "label": "Hydrodynamic Limit and Large Deviations for Run-And-Tumble Particles with Mean-Field Switching Rates",
+      "type": "paper",
+      "year": 2026,
+      "relevance_score": 57.27,
+      "citation_count": 0,
+      "tier": 2,
+      "venue": "Journal of Statistical Physics"
+    },
+    {
+      "id": "author:1465",
+      "label": "Elena Pulvirenti",
+      "type": "author",
+      "affiliation": "Delft University of Technology",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1466",
+      "label": "Frank Redig",
+      "type": "author",
+      "affiliation": "Delft University of Technology",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1467",
+      "label": "Hidde van Wiechen",
+      "type": "author",
+      "affiliation": "Delft University of Technology",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "paper:307",
+      "label": "Physics-Informed Graph Capsule Generative Autoencoder for Probabilistic AC Optimal Power Flow",
+      "type": "paper",
+      "year": 2024,
+      "relevance_score": 56.79,
+      "citation_count": 11,
+      "tier": 0,
+      "venue": "IEEE Transactions on Emerging Topics in Computational Intelligence"
+    },
+    {
+      "id": "author:1183",
+      "label": "M. Saffari",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1184",
+      "label": "Mahdi Khodayar",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1185",
+      "label": "M. Khodayar",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "paper:333",
+      "label": "Score Matching Diffusion Based Feedback Control and Planning of Nonlinear Systems",
+      "type": "paper",
+      "year": 2025,
+      "relevance_score": 56.77,
+      "citation_count": 2,
+      "tier": 0,
+      "venue": "ArXiv"
+    },
+    {
+      "id": "author:1013",
+      "label": "Karthik Elamvazhuthi",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 2
+    },
+    {
+      "id": "author:1015",
+      "label": "Fabio Pasqualetti",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 2
+    },
+    {
+      "id": "author:1255",
+      "label": "D. Gadginmath",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "paper:319",
+      "label": "Error Analysis of Bayesian Inverse Problems with Generative Priors",
+      "type": "paper",
+      "year": 2026,
+      "relevance_score": 56.02,
+      "citation_count": 1,
+      "tier": 0,
+      "venue": "ArXiv"
+    },
+    {
+      "id": "author:1219",
+      "label": "Bamdad Hosseini",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1220",
+      "label": "Ziqi Huang",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
       "id": "paper:248",
       "label": "Diffusion Models: A Mathematical Introduction",
       "type": "paper",
@@ -1462,7 +2064,7 @@
       "type": "author",
       "affiliation": "",
       "h_index": 0,
-      "paper_count": 1
+      "paper_count": 2
     },
     {
       "id": "author:953",
@@ -1470,7 +2072,7 @@
       "type": "author",
       "affiliation": "",
       "h_index": 0,
-      "paper_count": 1
+      "paper_count": 2
     },
     {
       "id": "author:954",
@@ -1557,14 +2159,6 @@
       "paper_count": 2
     },
     {
-      "id": "author:16",
-      "label": "Stefano Ermon",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
       "id": "author:17",
       "label": "Ben Poole",
       "type": "author",
@@ -1591,6 +2185,32 @@
       "paper_count": 1
     },
     {
+      "id": "paper:336",
+      "label": "A master equation for power laws",
+      "type": "paper",
+      "year": 2022,
+      "relevance_score": 55.62,
+      "citation_count": 22,
+      "tier": 0,
+      "venue": "Royal Society Open Science"
+    },
+    {
+      "id": "author:1264",
+      "label": "S. Roman",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1265",
+      "label": "Francesco Bertolotti",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
       "id": "paper:245",
       "label": "The covariant Langevin equation of diffusion on Riemannian manifolds",
       "type": "paper",
@@ -1603,6 +2223,24 @@
     {
       "id": "author:1008",
       "label": "Lajos Diósi",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "paper:331",
+      "label": "Lévy Score Function and Score-Based Particle Algorithm for Nonlinear Lévy-Fokker-Planck Equations",
+      "type": "paper",
+      "year": 2024,
+      "relevance_score": 54.77,
+      "citation_count": 2,
+      "tier": 0,
+      "venue": "ArXiv"
+    },
+    {
+      "id": "author:1254",
+      "label": "X. Zhou",
       "type": "author",
       "affiliation": "",
       "h_index": 0,
@@ -1637,6 +2275,546 @@
     {
       "id": "author:951",
       "label": "Salvatore Lorenzo",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "paper:389",
+      "label": "Uncertainty-quantified Pulse Signal Recovery from Facial Video using Regularized Stochastic Interpolants",
+      "type": "paper",
+      "year": 2026,
+      "relevance_score": 54.0,
+      "citation_count": 0,
+      "tier": 0,
+      "venue": "arXiv (Cornell University)"
+    },
+    {
+      "id": "author:1443",
+      "label": "Vineet Shenoy",
+      "type": "author",
+      "affiliation": "Johns Hopkins University; Johns Hopkins Medicine",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1444",
+      "label": "Cheng Peng",
+      "type": "author",
+      "affiliation": "Johns Hopkins University; Johns Hopkins Medicine",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1445",
+      "label": "Rama Chellappa",
+      "type": "author",
+      "affiliation": "Johns Hopkins University; Johns Hopkins Medicine",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1446",
+      "label": "Yu Sun",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "venue:127",
+      "label": "arXiv",
+      "type": "venue",
+      "tier": 0,
+      "reputation": "unreviewed",
+      "paper_count": 48
+    },
+    {
+      "id": "paper:386",
+      "label": "ScoRe-Flow: Complete Distributional Control via Score-Based Reinforcement Learning for Flow Matching",
+      "type": "paper",
+      "year": 2026,
+      "relevance_score": 54.0,
+      "citation_count": 0,
+      "tier": 0,
+      "venue": "ArXiv.org"
+    },
+    {
+      "id": "author:1430",
+      "label": "Xiaotian Qiu",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1431",
+      "label": "Lukai Chen",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1432",
+      "label": "Jinhao Li",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1433",
+      "label": "Qi Sun",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1434",
+      "label": "Cheng Zhuo",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1435",
+      "label": "Guohao Dai",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "paper:385",
+      "label": "LangFlow: Continuous Diffusion Rivals Discrete in Language Modeling",
+      "type": "paper",
+      "year": 2026,
+      "relevance_score": 54.0,
+      "citation_count": 0,
+      "tier": 0,
+      "venue": "ArXiv.org"
+    },
+    {
+      "id": "author:1423",
+      "label": "Yuxin Chen",
+      "type": "author",
+      "affiliation": "Upper Iowa University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1424",
+      "label": "Chumeng Liang",
+      "type": "author",
+      "affiliation": "Upper Iowa University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1425",
+      "label": "Hangke Sui",
+      "type": "author",
+      "affiliation": "Upper Iowa University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1426",
+      "label": "Ruihan Guo",
+      "type": "author",
+      "affiliation": "Upper Iowa University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1427",
+      "label": "Chaoran Cheng",
+      "type": "author",
+      "affiliation": "Upper Iowa University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1428",
+      "label": "Jiaxuan You",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1429",
+      "label": "Ge Liu",
+      "type": "author",
+      "affiliation": "Upper Iowa University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "paper:370",
+      "label": "Ion pickup and velocity space thermalization at outer planet moons",
+      "type": "paper",
+      "year": 2026,
+      "relevance_score": 54.0,
+      "citation_count": 0,
+      "tier": 0,
+      "venue": "ArXiv.org"
+    },
+    {
+      "id": "author:1356",
+      "label": "Xin An",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1357",
+      "label": "Miranda Chang",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1358",
+      "label": "Hao Cao",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1359",
+      "label": "Vassilis Angelopoulos",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1360",
+      "label": "Anton Artemyev",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "paper:368",
+      "label": "A free boundary problem for the mean-field limit of diffusing particles with nonlinear boundary reactivity",
+      "type": "paper",
+      "year": 2026,
+      "relevance_score": 54.0,
+      "citation_count": 0,
+      "tier": 0,
+      "venue": "ArXiv.org"
+    },
+    {
+      "id": "author:1353",
+      "label": "Eliana Fausti",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1354",
+      "label": "Andreas Søjmark",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "paper:362",
+      "label": "Photon counting statistics in the presence of spectral diffusion induced by nonequilibrium environmental fluctuations",
+      "type": "paper",
+      "year": 2026,
+      "relevance_score": 54.0,
+      "citation_count": 0,
+      "tier": 0,
+      "venue": "arXiv (Cornell University)"
+    },
+    {
+      "id": "author:1332",
+      "label": "Xiangji Cai",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1333",
+      "label": "Yonggang Peng",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1334",
+      "label": "Yujun Zheng",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "paper:361",
+      "label": "Rethinking the Diffusion Model from a Langevin Perspective",
+      "type": "paper",
+      "year": 2026,
+      "relevance_score": 54.0,
+      "citation_count": 0,
+      "tier": 0,
+      "venue": "arXiv (Cornell University)"
+    },
+    {
+      "id": "author:1330",
+      "label": "Candi Zheng",
+      "type": "author",
+      "affiliation": "Hong Kong University of Science and Technology; University of Hong Kong",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1331",
+      "label": "Yuan Lan",
+      "type": "author",
+      "affiliation": "Hong Kong University of Science and Technology; University of Hong Kong",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "paper:360",
+      "label": "Confined kinetics and heterogeneous diffusion driven by fractional Gaussian noise: A path integral approach",
+      "type": "paper",
+      "year": 2026,
+      "relevance_score": 54.0,
+      "citation_count": 0,
+      "tier": 0,
+      "venue": "ArXiv.org"
+    },
+    {
+      "id": "author:1327",
+      "label": "David Santiago Quevedo",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1328",
+      "label": "Felipe Segundo Abril-Bermúdez",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1329",
+      "label": "Cristinae Morais Smith",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "paper:359",
+      "label": "Continuous-time Online Learning via Mean-Field Neural Networks: Regret Analysis in Diffusion Environments",
+      "type": "paper",
+      "year": 2026,
+      "relevance_score": 54.0,
+      "citation_count": 0,
+      "tier": 0,
+      "venue": "ArXiv.org"
+    },
+    {
+      "id": "author:1324",
+      "label": "Bingyan Han",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1325",
+      "label": "Erhan Bayraktar",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1326",
+      "label": "Ziqing Zhang",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "paper:356",
+      "label": "Learning Discrete Diffusion of Graphs via Free-Energy Gradient Flows",
+      "type": "paper",
+      "year": 2026,
+      "relevance_score": 54.0,
+      "citation_count": 0,
+      "tier": 0,
+      "venue": "ArXiv.org"
+    },
+    {
+      "id": "author:1316",
+      "label": "Dario Rancati",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1317",
+      "label": "Jan Maas",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1318",
+      "label": "Francesco Locatello",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "paper:348",
+      "label": "Steady-State Equilibrium and Nonequilibrium Noisy Network Dynamics",
+      "type": "paper",
+      "year": 2026,
+      "relevance_score": 54.0,
+      "citation_count": 0,
+      "tier": 0,
+      "venue": "ArXiv.org"
+    },
+    {
+      "id": "author:1295",
+      "label": "Pik-Yin Lai",
+      "type": "author",
+      "affiliation": "National Central University; National Center for Theoretical Sciences",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "paper:343",
+      "label": "Emergence of Open Chemical Reaction Network Thermodynamics within Closed Systems",
+      "type": "paper",
+      "year": 2026,
+      "relevance_score": 54.0,
+      "citation_count": 0,
+      "tier": 0,
+      "venue": "ArXiv.org"
+    },
+    {
+      "id": "author:1284",
+      "label": "Benedikt Remlein",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1285",
+      "label": "Francesco Avanzini",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "paper:342",
+      "label": "Stretching and Lyapunov Exponents of Polymers in Ultra-Dilute Turbulent Solutions",
+      "type": "paper",
+      "year": 2026,
+      "relevance_score": 54.0,
+      "citation_count": 0,
+      "tier": 0,
+      "venue": "ArXiv.org"
+    },
+    {
+      "id": "author:1283",
+      "label": "Demosthenes Kivotides",
+      "type": "author",
+      "affiliation": "University of Strathclyde",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "paper:341",
+      "label": "Coarse Graining Reveals a Fluctuation-theorem-like Asymmetry in Financial Markets",
+      "type": "paper",
+      "year": 2026,
+      "relevance_score": 54.0,
+      "citation_count": 0,
+      "tier": 0,
+      "venue": "ArXiv.org"
+    },
+    {
+      "id": "author:1276",
+      "label": "Jian Gao",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1277",
+      "label": "Lufeng Zhang",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1278",
+      "label": "Ping Fang",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1279",
+      "label": "柯谱",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1280",
+      "label": "Jin Wu",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1281",
+      "label": "Yue Liu",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1282",
+      "label": "HaiJun ZHOU",
       "type": "author",
       "affiliation": "",
       "h_index": 0,
@@ -1701,14 +2879,6 @@
       "affiliation": "",
       "h_index": 0,
       "paper_count": 1
-    },
-    {
-      "id": "venue:127",
-      "label": "arXiv",
-      "type": "venue",
-      "tier": 0,
-      "reputation": "unreviewed",
-      "paper_count": 37
     },
     {
       "id": "paper:299",
@@ -1794,7 +2964,7 @@
       "type": "venue",
       "tier": 0,
       "reputation": "unreviewed",
-      "paper_count": 5
+      "paper_count": 6
     },
     {
       "id": "paper:293",
@@ -2077,1312 +3247,6 @@
       "affiliation": "",
       "h_index": 0,
       "paper_count": 1
-    },
-    {
-      "id": "paper:252",
-      "label": "Geometric Foundations of Stochastic and Quantum Dynamics",
-      "type": "paper",
-      "year": 2026,
-      "relevance_score": 54.0,
-      "citation_count": 0,
-      "tier": 0,
-      "venue": "arXiv (Cornell University)"
-    },
-    {
-      "id": "author:1024",
-      "label": "David V. Svintradze",
-      "type": "author",
-      "affiliation": "Free University of Tbilisi",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "paper:250",
-      "label": "A Demon that remembers: An agential approach towards quantum thermodynamics of temporal correlations",
-      "type": "paper",
-      "year": 2026,
-      "relevance_score": 54.0,
-      "citation_count": 0,
-      "tier": 0,
-      "venue": "arXiv (Cornell University)"
-    },
-    {
-      "id": "author:1021",
-      "label": "Ruo Cheng Huang",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "paper:246",
-      "label": "HJ-sampler: A Bayesian sampler for inverse problems of a stochastic process by leveraging Hamilton-Jacobi PDEs and score-based generative models",
-      "type": "paper",
-      "year": 2024,
-      "relevance_score": 54.0,
-      "citation_count": 0,
-      "tier": 0,
-      "venue": "arXiv"
-    },
-    {
-      "id": "author:1009",
-      "label": "Tingwei Meng",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:1010",
-      "label": "Zongren Zou",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:1011",
-      "label": "Jérôme Darbon",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:1012",
-      "label": "George Em Karniadakis",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "paper:220",
-      "label": "Fully quantum stochastic entropy production",
-      "type": "paper",
-      "year": 2024,
-      "relevance_score": 54.0,
-      "citation_count": 0,
-      "tier": 0,
-      "venue": "arXiv"
-    },
-    {
-      "id": "author:958",
-      "label": "Ge Bai",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:959",
-      "label": "Francesco Buscemi",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:960",
-      "label": "Valerio Scarani",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "paper:213",
-      "label": "Non-equilibrium phase coexistence in conserved chemically active mixtures",
-      "type": "paper",
-      "year": 2026,
-      "relevance_score": 54.0,
-      "citation_count": 0,
-      "tier": 0,
-      "venue": "ArXiv.org"
-    },
-    {
-      "id": "author:940",
-      "label": "Florian Raßhofer",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:941",
-      "label": "Erwin Frey",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "paper:196",
-      "label": "Unified geometric formalism for dissipation and its fluctuations in finite-time microscopic heat engines",
-      "type": "paper",
-      "year": 2026,
-      "relevance_score": 54.0,
-      "citation_count": 0,
-      "tier": 0,
-      "venue": "arXiv (Cornell University)"
-    },
-    {
-      "id": "author:878",
-      "label": "Gentaro Watanabe",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:879",
-      "label": "Guo-Hua Xu",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:880",
-      "label": "Yuki Minami",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "paper:149",
-      "label": "Generative optimal transport via forward-backward HJB matching",
-      "type": "paper",
-      "year": 2026,
-      "relevance_score": 54.0,
-      "citation_count": 0,
-      "tier": 0,
-      "venue": "arXiv (Cornell University)"
-    },
-    {
-      "id": "author:672",
-      "label": "Haiqian Yang",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:673",
-      "label": "Vishaal Krishnan",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:674",
-      "label": "Sumit Sinha",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:675",
-      "label": "L. Mahadevan",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "paper:144",
-      "label": "SMC-AI: Scaling Monte Carlo Simulation to Four Trillion Atoms with AI Accelerators",
-      "type": "paper",
-      "year": 2026,
-      "relevance_score": 54.0,
-      "citation_count": 0,
-      "tier": 0,
-      "venue": "arXiv (Cornell University)"
-    },
-    {
-      "id": "author:644",
-      "label": "Xianglin Liu",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:645",
-      "label": "Kai Yang",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:646",
-      "label": "Fanli Zhou",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:647",
-      "label": "Yongxiang Liu",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:648",
-      "label": "Hao Chen",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:649",
-      "label": "Yijia Zhang",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:650",
-      "label": "Dengdong Fan",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:651",
-      "label": "Wenbo Li",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:652",
-      "label": "Bingqiang Wang",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:653",
-      "label": "Shixun Zhang",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:654",
-      "label": "Pengxiang Xu",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:655",
-      "label": "Yonghong Tian",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "paper:101",
-      "label": "Non-equilibrium Dynamical Attractors and Thermalisation of Charm Quarks in Nuclear Collisions at the LHC Energy",
-      "type": "paper",
-      "year": 2026,
-      "relevance_score": 54.0,
-      "citation_count": 0,
-      "tier": 0,
-      "venue": "arXiv (Cornell University)"
-    },
-    {
-      "id": "author:468",
-      "label": "Shile Chen",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:469",
-      "label": "Vincenzo Nugara",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:470",
-      "label": "Maria Lucia Sambataro",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:471",
-      "label": "Salvatore Plumari",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:472",
-      "label": "Vincenzo Greco",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "paper:67",
-      "label": "Predictor-Driven Diffusion for Spatiotemporal Generation",
-      "type": "paper",
-      "year": 2026,
-      "relevance_score": 54.0,
-      "citation_count": 0,
-      "tier": 0,
-      "venue": "ArXiv.org"
-    },
-    {
-      "id": "author:234",
-      "label": "Yuki Yasuda",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:235",
-      "label": "Tobias Bischoff",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "paper:66",
-      "label": "Diffusion models with physics-guided inference for solving partial differential equations",
-      "type": "paper",
-      "year": 2026,
-      "relevance_score": 54.0,
-      "citation_count": 0,
-      "tier": 0,
-      "venue": "ArXiv.org"
-    },
-    {
-      "id": "author:230",
-      "label": "Yi Bing",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:231",
-      "label": "Liu Jia",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:232",
-      "label": "Fu Jinyang",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:233",
-      "label": "Peng Xiang",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "paper:65",
-      "label": "MVNN: A Measure-Valued Neural Network for Learning McKean-Vlasov Dynamics from Particle Data",
-      "type": "paper",
-      "year": 2026,
-      "relevance_score": 54.0,
-      "citation_count": 0,
-      "tier": 0,
-      "venue": "ArXiv.org"
-    },
-    {
-      "id": "author:227",
-      "label": "Lingyi Lyu",
-      "type": "author",
-      "affiliation": "University of California, Los Angeles",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:228",
-      "label": "Xinyue Yu",
-      "type": "author",
-      "affiliation": "University of California, Los Angeles",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:229",
-      "label": "Hayden Schaeffer",
-      "type": "author",
-      "affiliation": "University of California, Los Angeles",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "paper:58",
-      "label": "Nonequilibrium Chimeric Switching (NEX) Stabilizes Binding Free Energy Calculations Across Chemical Space",
-      "type": "paper",
-      "year": 2026,
-      "relevance_score": 54.0,
-      "citation_count": 0,
-      "tier": 0,
-      "venue": "ChemRxiv"
-    },
-    {
-      "id": "author:204",
-      "label": "Amogh Sood",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:205",
-      "label": "Dominic A. Rufa",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:206",
-      "label": "Lee Huntington",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:207",
-      "label": "Mary Pitman",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "venue:130",
-      "label": "ChemRxiv",
-      "type": "venue",
-      "tier": 0,
-      "reputation": "unreviewed",
-      "paper_count": 1
-    },
-    {
-      "id": "paper:12",
-      "label": "Learning Stochastic Thermodynamics Directly from Correlation and Trajectory-Fluctuation Currents",
-      "type": "paper",
-      "year": 2025,
-      "relevance_score": 54.0,
-      "citation_count": 0,
-      "tier": 0,
-      "venue": "arXiv"
-    },
-    {
-      "id": "author:32",
-      "label": "Justin Sirignano",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:33",
-      "label": "Andrea Dechant",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:34",
-      "label": "others",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 2
-    },
-    {
-      "id": "paper:226",
-      "label": "Fluctuation Theorem on a Riemannian Manifold",
-      "type": "paper",
-      "year": 2023,
-      "relevance_score": 53.76,
-      "citation_count": 0,
-      "tier": 2,
-      "venue": "Physical Review Research 6, 023007 (2024)"
-    },
-    {
-      "id": "author:973",
-      "label": "Yifan Cai",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:974",
-      "label": "Tao Wang",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:975",
-      "label": "Liu Zhao",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "paper:256",
-      "label": "Entropy Production Rate in Stochastically Time-evolving Asymmetric Networks",
-      "type": "paper",
-      "year": 2026,
-      "relevance_score": 53.67,
-      "citation_count": 0,
-      "tier": 0,
-      "venue": "arXiv (Cornell University)"
-    },
-    {
-      "id": "author:1031",
-      "label": "Tuan Pham",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:1032",
-      "label": "Deepak Gupta",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "paper:273",
-      "label": "Implicit Regularization of Large Neural Networks via Mean-Field Formulation",
-      "type": "paper",
-      "year": 2026,
-      "relevance_score": 53.25,
-      "citation_count": 0,
-      "tier": 0,
-      "venue": "arXiv (Cornell University)"
-    },
-    {
-      "id": "author:1071",
-      "label": "Beatrice Acciaio",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:1072",
-      "label": "Jakob Heiss",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:1073",
-      "label": "Gudmund Pammer",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:1074",
-      "label": "Qinxin Yan",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "paper:223",
-      "label": "Stochastic thermodynamics of Brownian motion in a flowing fluid",
-      "type": "paper",
-      "year": 2024,
-      "relevance_score": 53.24,
-      "citation_count": 0,
-      "tier": 0,
-      "venue": "arXiv"
-    },
-    {
-      "id": "author:965",
-      "label": "Jun Wu",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 3
-    },
-    {
-      "id": "author:966",
-      "label": "Mingnan Ding",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 4
-    },
-    {
-      "id": "author:967",
-      "label": "Xiangjun Xing",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 4
-    },
-    {
-      "id": "paper:147",
-      "label": "Balancing Power, Efficiency, and Constancy under Broken Time-Reversal Symmetry",
-      "type": "paper",
-      "year": 2026,
-      "relevance_score": 53.1,
-      "citation_count": 0,
-      "tier": 0,
-      "venue": "arXiv (Cornell University)"
-    },
-    {
-      "id": "author:662",
-      "label": "Ousi Pan",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:663",
-      "label": "Zhiqiang Fan",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:664",
-      "label": "Shunjie Zhang",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:665",
-      "label": "Liwei Chen",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:666",
-      "label": "Jincan Chen",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:667",
-      "label": "Shanhe Su",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "paper:204",
-      "label": "Relaxation dynamics of the continuum Kuramoto model with non-integrable kernels",
-      "type": "paper",
-      "year": 2026,
-      "relevance_score": 53.09,
-      "citation_count": 0,
-      "tier": 0,
-      "venue": "arXiv (Cornell University)"
-    },
-    {
-      "id": "author:910",
-      "label": "Li Chen",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:911",
-      "label": "Seung-Yeal Ha",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:912",
-      "label": "Xinyu Wang",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:913",
-      "label": "Valeriia Zhidkova",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "paper:272",
-      "label": "Well-posedness and propagation of chaos for multi-agent models with strategies and diffusive effects",
-      "type": "paper",
-      "year": 2026,
-      "relevance_score": 53.0,
-      "citation_count": 0,
-      "tier": 2,
-      "venue": "Journal of Differential Equations"
-    },
-    {
-      "id": "author:1069",
-      "label": "Alessandro Baldi",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:1070",
-      "label": "Marco Morandotti",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "venue:89",
-      "label": "Journal of Differential Equations",
-      "type": "venue",
-      "tier": 2,
-      "reputation": "unreviewed",
-      "paper_count": 1
-    },
-    {
-      "id": "paper:232",
-      "label": "Thermodynamic inference in partially accessible Markov networks: A unifying perspective from transition-based waiting time distributions",
-      "type": "paper",
-      "year": 2022,
-      "relevance_score": 53.0,
-      "citation_count": 0,
-      "tier": 2,
-      "venue": "Phys. Rev. X 12, 031025, August 2022"
-    },
-    {
-      "id": "author:5",
-      "label": "Udo Seifert",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 2
-    },
-    {
-      "id": "author:985",
-      "label": "Jann van der Meer",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:986",
-      "label": "Benjamin Ertel",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "paper:230",
-      "label": "Nonequilibrium thermodynamics of uncertain stochastic processes",
-      "type": "paper",
-      "year": 2022,
-      "relevance_score": 53.0,
-      "citation_count": 0,
-      "tier": 2,
-      "venue": "Phys. Rev. Research 6 (2024) 013021"
-    },
-    {
-      "id": "author:981",
-      "label": "Jan Korbel",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 2
-    },
-    {
-      "id": "author:982",
-      "label": "David H. Wolpert",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 3
-    },
-    {
-      "id": "paper:224",
-      "label": "Stochastic Thermodynamics of Micromagnetics",
-      "type": "paper",
-      "year": 2024,
-      "relevance_score": 52.83,
-      "citation_count": 0,
-      "tier": 0,
-      "venue": "arXiv"
-    },
-    {
-      "id": "paper:99",
-      "label": "Probabilistic Evolution of Black Hole Thermodynamic States via Fokker-Planck Equation",
-      "type": "paper",
-      "year": 2026,
-      "relevance_score": 52.39,
-      "citation_count": 0,
-      "tier": 0,
-      "venue": "arXiv (Cornell University)"
-    },
-    {
-      "id": "author:457",
-      "label": "Chao Wang",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:458",
-      "label": "Chen Ma",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:459",
-      "label": "Meng-Ci He",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:460",
-      "label": "Bin Wu",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "paper:286",
-      "label": "Probing scale-dependent liveliness with nonequilibrium thermospectroscopy",
-      "type": "paper",
-      "year": 2026,
-      "relevance_score": 52.28,
-      "citation_count": 0,
-      "tier": 0,
-      "venue": "ArXiv.org"
-    },
-    {
-      "id": "author:1115",
-      "label": "Joscha Mecke",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:1116",
-      "label": "Klaus Kroy",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "paper:199",
-      "label": "Lipschitz regularity in Flow Matching and Diffusion Models: sharp sampling rates and functional inequalities",
-      "type": "paper",
-      "year": 2026,
-      "relevance_score": 52.27,
-      "citation_count": 0,
-      "tier": 0,
-      "venue": "arXiv (Cornell University)"
-    },
-    {
-      "id": "author:887",
-      "label": "Arthur Stéphanovitch",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "paper:141",
-      "label": "Synthetic urine oversimplification results in misleading membrane fouling mechanisms in bipolar membrane electrodialysis",
-      "type": "paper",
-      "year": 2026,
-      "relevance_score": 52.0,
-      "citation_count": 0,
-      "tier": 1,
-      "venue": "Nature Communications"
-    },
-    {
-      "id": "author:620",
-      "label": "Hao-Ran Yang",
-      "type": "author",
-      "affiliation": "Chongqing Institute of Green and Intelligent Technology; University of Chinese Academy of Sciences",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:621",
-      "label": "Shu-Jie Hu",
-      "type": "author",
-      "affiliation": "Chongqing Institute of Green and Intelligent Technology; University of Chinese Academy of Sciences",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:622",
-      "label": "Mengya Zhang",
-      "type": "author",
-      "affiliation": "Chongqing Institute of Green and Intelligent Technology; University of Chinese Academy of Sciences",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:623",
-      "label": "Di Wu",
-      "type": "author",
-      "affiliation": "Chongqing Institute of Green and Intelligent Technology; University of Chinese Academy of Sciences",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:624",
-      "label": "Lei Zheng",
-      "type": "author",
-      "affiliation": "Chongqing Institute of Green and Intelligent Technology; University of Chinese Academy of Sciences",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:625",
-      "label": "Qianhong She",
-      "type": "author",
-      "affiliation": "Nanyang Technological University; Water Research Institute",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:626",
-      "label": "Zhi-Hua Yuan",
-      "type": "author",
-      "affiliation": "Chinese Academy of Sciences; Institute of Urban Environment",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:627",
-      "label": "L Zhong",
-      "type": "author",
-      "affiliation": "Chongqing Institute of Green and Intelligent Technology; University of Chinese Academy of Sciences",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:628",
-      "label": "Xuan Zhao",
-      "type": "author",
-      "affiliation": "Southwest Jiaotong University",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:629",
-      "label": "Ying Chen",
-      "type": "author",
-      "affiliation": "Southwest Jiaotong University",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:630",
-      "label": "Hong Liu",
-      "type": "author",
-      "affiliation": "Chongqing Institute of Green and Intelligent Technology; University of Chinese Academy of Sciences",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:631",
-      "label": "Linji Xu",
-      "type": "author",
-      "affiliation": "Chongqing University",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:632",
-      "label": "Yuan Liu",
-      "type": "author",
-      "affiliation": "Chongqing Institute of Green and Intelligent Technology",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "venue:20",
-      "label": "Nature Communications",
-      "type": "venue",
-      "tier": 1,
-      "reputation": "trusted",
-      "paper_count": 1
-    },
-    {
-      "id": "paper:11",
-      "label": "A framework for the use of generative modelling in non-equilibrium statistical mechanics",
-      "type": "paper",
-      "year": 2024,
-      "relevance_score": 52.0,
-      "citation_count": 0,
-      "tier": 0,
-      "venue": "arXiv"
-    },
-    {
-      "id": "author:28",
-      "label": "Karl Friston",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:29",
-      "label": "Rosalyn Moran",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:30",
-      "label": "Lancelot Da Costa",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:31",
-      "label": "Chris Fields",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "paper:10",
-      "label": "A Primer on Variational Inference for Physics-Informed Deep Generative Modelling",
-      "type": "paper",
-      "year": 2024,
-      "relevance_score": 52.0,
-      "citation_count": 0,
-      "tier": 0,
-      "venue": "arXiv"
-    },
-    {
-      "id": "author:23",
-      "label": "Emilia Molinari",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:24",
-      "label": "Michele Nervi",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:25",
-      "label": "Luca Biggio",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:26",
-      "label": "François Fleuret",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:27",
-      "label": "Olga Fink",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "paper:302",
-      "label": "Stability Enhanced Gaussian Process Variational Autoencoders",
-      "type": "paper",
-      "year": 2026,
-      "relevance_score": 51.0,
-      "citation_count": 0,
-      "tier": 0,
-      "venue": "ArXiv.org"
-    },
-    {
-      "id": "author:1159",
-      "label": "Carl R. Richardson",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:1160",
-      "label": "Jichen Zhang",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:1161",
-      "label": "Ethan King",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:1162",
-      "label": "Jan Drgona",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "paper:296",
-      "label": "Neural Population Models for EEG: From Canonical Models to Alternative Model Structures",
-      "type": "paper",
-      "year": 2026,
-      "relevance_score": 51.0,
-      "citation_count": 0,
-      "tier": 0,
-      "venue": "bioRxiv (Cold Spring Harbor Laboratory)"
-    },
-    {
-      "id": "author:1144",
-      "label": "Ljupco Todorovski",
-      "type": "author",
-      "affiliation": "Institute of Mathematics, Physics, and Mechanics",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:1145",
-      "label": "Nina Omejc",
-      "type": "author",
-      "affiliation": "Jožef Stefan Institute",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:1146",
-      "label": "Sabin Roman",
-      "type": "author",
-      "affiliation": "Jožef Stefan Institute",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:1147",
-      "label": "Sašo Džeroski",
-      "type": "author",
-      "affiliation": "Jožef Stefan Institute",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "paper:294",
-      "label": "Multiscale perturbative approach to active matter with motility regulation",
-      "type": "paper",
-      "year": 2026,
-      "relevance_score": 51.0,
-      "citation_count": 0,
-      "tier": 0,
-      "venue": "ArXiv.org"
-    },
-    {
-      "id": "author:1141",
-      "label": "Alberto Dinelli",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
-    },
-    {
-      "id": "author:1142",
-      "label": "Pietro Luigi Muzzeddu",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
     }
   ],
   "edges": [
@@ -3607,6 +3471,121 @@
       "type": "taxonomy"
     },
     {
+      "source": "paper:328",
+      "target": "bridges/translation_layers/fokker_planck_master",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:328",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:328",
+      "target": "bridges",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:16",
+      "target": "paper:328",
+      "type": "authored"
+    },
+    {
+      "source": "author:1240",
+      "target": "paper:328",
+      "type": "authored"
+    },
+    {
+      "source": "author:1241",
+      "target": "paper:328",
+      "type": "authored"
+    },
+    {
+      "source": "author:1242",
+      "target": "paper:328",
+      "type": "authored"
+    },
+    {
+      "source": "author:1243",
+      "target": "paper:328",
+      "type": "authored"
+    },
+    {
+      "source": "author:1244",
+      "target": "paper:328",
+      "type": "authored"
+    },
+    {
+      "source": "paper:328",
+      "target": "venue:46",
+      "type": "published_in"
+    },
+    {
+      "source": "paper:311",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:311",
+      "target": "statistical_physics/equilibrium_structures/equilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:311",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1196",
+      "target": "paper:311",
+      "type": "authored"
+    },
+    {
+      "source": "author:1197",
+      "target": "paper:311",
+      "type": "authored"
+    },
+    {
+      "source": "author:1198",
+      "target": "paper:311",
+      "type": "authored"
+    },
+    {
+      "source": "paper:311",
+      "target": "venue:125",
+      "type": "published_in"
+    },
+    {
+      "source": "paper:314",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:314",
+      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:314",
+      "target": "statistical_physics/non_equilibrium_dynamics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1204",
+      "target": "paper:314",
+      "type": "authored"
+    },
+    {
+      "source": "author:1205",
+      "target": "paper:314",
+      "type": "authored"
+    },
+    {
+      "source": "author:1206",
+      "target": "paper:314",
+      "type": "authored"
+    },
+    {
       "source": "paper:85",
       "target": "statistical_physics",
       "type": "belongs_to"
@@ -3644,6 +3623,176 @@
     {
       "source": "paper:85",
       "target": "venue:1",
+      "type": "published_in"
+    },
+    {
+      "source": "paper:334",
+      "target": "stochastic_analysis",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:334",
+      "target": "stochastic_analysis/path_foundations/brownian_motion",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:334",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1257",
+      "target": "paper:334",
+      "type": "authored"
+    },
+    {
+      "source": "author:1258",
+      "target": "paper:334",
+      "type": "authored"
+    },
+    {
+      "source": "author:1259",
+      "target": "paper:334",
+      "type": "authored"
+    },
+    {
+      "source": "paper:334",
+      "target": "venue:65",
+      "type": "published_in"
+    },
+    {
+      "source": "paper:317",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:317",
+      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:317",
+      "target": "statistical_physics/equilibrium_structures",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1214",
+      "target": "paper:317",
+      "type": "authored"
+    },
+    {
+      "source": "author:1215",
+      "target": "paper:317",
+      "type": "authored"
+    },
+    {
+      "source": "paper:317",
+      "target": "venue:28",
+      "type": "published_in"
+    },
+    {
+      "source": "paper:312",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:312",
+      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:312",
+      "target": "bridges",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1199",
+      "target": "paper:312",
+      "type": "authored"
+    },
+    {
+      "source": "author:1200",
+      "target": "paper:312",
+      "type": "authored"
+    },
+    {
+      "source": "author:1201",
+      "target": "paper:312",
+      "type": "authored"
+    },
+    {
+      "source": "author:1202",
+      "target": "paper:312",
+      "type": "authored"
+    },
+    {
+      "source": "paper:312",
+      "target": "venue:22",
+      "type": "published_in"
+    },
+    {
+      "source": "paper:320",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:320",
+      "target": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:320",
+      "target": "ai_for_physics/physics_informed_modeling",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1221",
+      "target": "paper:320",
+      "type": "authored"
+    },
+    {
+      "source": "author:1222",
+      "target": "paper:320",
+      "type": "authored"
+    },
+    {
+      "source": "author:1223",
+      "target": "paper:320",
+      "type": "authored"
+    },
+    {
+      "source": "author:1224",
+      "target": "paper:320",
+      "type": "authored"
+    },
+    {
+      "source": "paper:320",
+      "target": "venue:125",
+      "type": "published_in"
+    },
+    {
+      "source": "paper:347",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:347",
+      "target": "statistical_physics/collective_structure/phase_transitions",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:347",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1294",
+      "target": "paper:347",
+      "type": "authored"
+    },
+    {
+      "source": "paper:347",
+      "target": "venue:58",
       "type": "published_in"
     },
     {
@@ -3739,6 +3888,46 @@
     {
       "source": "paper:219",
       "target": "venue:125",
+      "type": "published_in"
+    },
+    {
+      "source": "paper:350",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:350",
+      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:350",
+      "target": "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1300",
+      "target": "paper:350",
+      "type": "authored"
+    },
+    {
+      "source": "author:1301",
+      "target": "paper:350",
+      "type": "authored"
+    },
+    {
+      "source": "author:1302",
+      "target": "paper:350",
+      "type": "authored"
+    },
+    {
+      "source": "author:1303",
+      "target": "paper:350",
+      "type": "authored"
+    },
+    {
+      "source": "paper:350",
+      "target": "venue:69",
       "type": "published_in"
     },
     {
@@ -3992,6 +4181,11 @@
       "type": "authored"
     },
     {
+      "source": "author:1033",
+      "target": "paper:216",
+      "type": "authored"
+    },
+    {
       "source": "paper:216",
       "target": "venue:125",
       "type": "published_in"
@@ -4227,6 +4421,41 @@
       "type": "published_in"
     },
     {
+      "source": "paper:351",
+      "target": "bridges/translation_layers/fokker_planck_master",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:351",
+      "target": "bridges",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:351",
+      "target": "bridges/translation_layers",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1304",
+      "target": "paper:351",
+      "type": "authored"
+    },
+    {
+      "source": "author:1305",
+      "target": "paper:351",
+      "type": "authored"
+    },
+    {
+      "source": "author:1306",
+      "target": "paper:351",
+      "type": "authored"
+    },
+    {
+      "source": "paper:351",
+      "target": "venue:72",
+      "type": "published_in"
+    },
+    {
       "source": "paper:201",
       "target": "bridges/translation_layers/fokker_planck_master",
       "type": "belongs_to"
@@ -4432,6 +4661,56 @@
       "type": "published_in"
     },
     {
+      "source": "paper:313",
+      "target": "stochastic_analysis",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:313",
+      "target": "stochastic_analysis/path_foundations/brownian_motion",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:313",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1004",
+      "target": "paper:313",
+      "type": "authored"
+    },
+    {
+      "source": "author:1203",
+      "target": "paper:313",
+      "type": "authored"
+    },
+    {
+      "source": "paper:313",
+      "target": "venue:28",
+      "type": "published_in"
+    },
+    {
+      "source": "paper:325",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:325",
+      "target": "ai_for_physics/physics_informed_modeling",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1239",
+      "target": "paper:325",
+      "type": "authored"
+    },
+    {
+      "source": "paper:325",
+      "target": "venue:115",
+      "type": "published_in"
+    },
+    {
       "source": "paper:84",
       "target": "statistical_physics",
       "type": "belongs_to"
@@ -4514,6 +4793,171 @@
     {
       "source": "paper:56",
       "target": "venue:116",
+      "type": "published_in"
+    },
+    {
+      "source": "paper:321",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:321",
+      "target": "ai_for_physics/physics_informed_modeling",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:321",
+      "target": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1225",
+      "target": "paper:321",
+      "type": "authored"
+    },
+    {
+      "source": "author:1226",
+      "target": "paper:321",
+      "type": "authored"
+    },
+    {
+      "source": "author:1227",
+      "target": "paper:321",
+      "type": "authored"
+    },
+    {
+      "source": "paper:321",
+      "target": "venue:125",
+      "type": "published_in"
+    },
+    {
+      "source": "paper:394",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:394",
+      "target": "statistical_physics/collective_structure/phase_transitions",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:394",
+      "target": "statistical_physics/collective_structure",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1465",
+      "target": "paper:394",
+      "type": "authored"
+    },
+    {
+      "source": "author:1466",
+      "target": "paper:394",
+      "type": "authored"
+    },
+    {
+      "source": "author:1467",
+      "target": "paper:394",
+      "type": "authored"
+    },
+    {
+      "source": "paper:394",
+      "target": "venue:40",
+      "type": "published_in"
+    },
+    {
+      "source": "paper:307",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:307",
+      "target": "urban_complex_systems",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:307",
+      "target": "urban_complex_systems/mobility_and_interaction/transport_networks",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1183",
+      "target": "paper:307",
+      "type": "authored"
+    },
+    {
+      "source": "author:1184",
+      "target": "paper:307",
+      "type": "authored"
+    },
+    {
+      "source": "author:1185",
+      "target": "paper:307",
+      "type": "authored"
+    },
+    {
+      "source": "paper:333",
+      "target": "stochastic_analysis",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:333",
+      "target": "stochastic_analysis/path_foundations/brownian_motion",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:333",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1013",
+      "target": "paper:333",
+      "type": "authored"
+    },
+    {
+      "source": "author:1015",
+      "target": "paper:333",
+      "type": "authored"
+    },
+    {
+      "source": "author:1255",
+      "target": "paper:333",
+      "type": "authored"
+    },
+    {
+      "source": "paper:333",
+      "target": "venue:125",
+      "type": "published_in"
+    },
+    {
+      "source": "paper:319",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:319",
+      "target": "bridges",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:319",
+      "target": "bridges/transport_and_spatial_generation/optimal_transport_urban",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1219",
+      "target": "paper:319",
+      "type": "authored"
+    },
+    {
+      "source": "author:1220",
+      "target": "paper:319",
+      "type": "authored"
+    },
+    {
+      "source": "paper:319",
+      "target": "venue:125",
       "type": "published_in"
     },
     {
@@ -4692,6 +5136,31 @@
       "type": "published_in"
     },
     {
+      "source": "paper:336",
+      "target": "bridges/translation_layers/fokker_planck_master",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:336",
+      "target": "urban_complex_systems",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:336",
+      "target": "urban_complex_systems/scaling_and_evolution/urban_scaling",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1264",
+      "target": "paper:336",
+      "type": "authored"
+    },
+    {
+      "source": "author:1265",
+      "target": "paper:336",
+      "type": "authored"
+    },
+    {
       "source": "paper:245",
       "target": "stochastic_analysis",
       "type": "belongs_to"
@@ -4713,6 +5182,41 @@
     },
     {
       "source": "paper:245",
+      "target": "venue:125",
+      "type": "published_in"
+    },
+    {
+      "source": "paper:331",
+      "target": "bridges/translation_layers/fokker_planck_master",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:331",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:331",
+      "target": "ai_for_physics/generative_dynamics/score_matching",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:952",
+      "target": "paper:331",
+      "type": "authored"
+    },
+    {
+      "source": "author:953",
+      "target": "paper:331",
+      "type": "authored"
+    },
+    {
+      "source": "author:1254",
+      "target": "paper:331",
+      "type": "authored"
+    },
+    {
+      "source": "paper:331",
       "target": "venue:125",
       "type": "published_in"
     },
@@ -4749,6 +5253,536 @@
     {
       "source": "paper:217",
       "target": "venue:125",
+      "type": "published_in"
+    },
+    {
+      "source": "paper:389",
+      "target": "stochastic_analysis",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:389",
+      "target": "stochastic_analysis/stochastic_dynamics/sde_theory",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:389",
+      "target": "stochastic_analysis/path_foundations",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1443",
+      "target": "paper:389",
+      "type": "authored"
+    },
+    {
+      "source": "author:1444",
+      "target": "paper:389",
+      "type": "authored"
+    },
+    {
+      "source": "author:1445",
+      "target": "paper:389",
+      "type": "authored"
+    },
+    {
+      "source": "author:1446",
+      "target": "paper:389",
+      "type": "authored"
+    },
+    {
+      "source": "paper:389",
+      "target": "venue:127",
+      "type": "published_in"
+    },
+    {
+      "source": "paper:386",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:386",
+      "target": "ai_for_physics/generative_dynamics/score_matching",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:386",
+      "target": "ai_for_physics/generative_dynamics/flow_matching",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1430",
+      "target": "paper:386",
+      "type": "authored"
+    },
+    {
+      "source": "author:1431",
+      "target": "paper:386",
+      "type": "authored"
+    },
+    {
+      "source": "author:1432",
+      "target": "paper:386",
+      "type": "authored"
+    },
+    {
+      "source": "author:1433",
+      "target": "paper:386",
+      "type": "authored"
+    },
+    {
+      "source": "author:1434",
+      "target": "paper:386",
+      "type": "authored"
+    },
+    {
+      "source": "author:1435",
+      "target": "paper:386",
+      "type": "authored"
+    },
+    {
+      "source": "paper:386",
+      "target": "venue:126",
+      "type": "published_in"
+    },
+    {
+      "source": "paper:385",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:385",
+      "target": "ai_for_physics/generative_dynamics/ddpm",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:385",
+      "target": "ai_for_physics/generative_dynamics/flow_matching",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1423",
+      "target": "paper:385",
+      "type": "authored"
+    },
+    {
+      "source": "author:1424",
+      "target": "paper:385",
+      "type": "authored"
+    },
+    {
+      "source": "author:1425",
+      "target": "paper:385",
+      "type": "authored"
+    },
+    {
+      "source": "author:1426",
+      "target": "paper:385",
+      "type": "authored"
+    },
+    {
+      "source": "author:1427",
+      "target": "paper:385",
+      "type": "authored"
+    },
+    {
+      "source": "author:1428",
+      "target": "paper:385",
+      "type": "authored"
+    },
+    {
+      "source": "author:1429",
+      "target": "paper:385",
+      "type": "authored"
+    },
+    {
+      "source": "paper:385",
+      "target": "venue:126",
+      "type": "published_in"
+    },
+    {
+      "source": "paper:370",
+      "target": "bridges/translation_layers/fokker_planck_master",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:370",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:370",
+      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1356",
+      "target": "paper:370",
+      "type": "authored"
+    },
+    {
+      "source": "author:1357",
+      "target": "paper:370",
+      "type": "authored"
+    },
+    {
+      "source": "author:1358",
+      "target": "paper:370",
+      "type": "authored"
+    },
+    {
+      "source": "author:1359",
+      "target": "paper:370",
+      "type": "authored"
+    },
+    {
+      "source": "author:1360",
+      "target": "paper:370",
+      "type": "authored"
+    },
+    {
+      "source": "paper:370",
+      "target": "venue:126",
+      "type": "published_in"
+    },
+    {
+      "source": "paper:368",
+      "target": "stochastic_analysis",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:368",
+      "target": "stochastic_analysis/stochastic_dynamics/sde_theory",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:368",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1353",
+      "target": "paper:368",
+      "type": "authored"
+    },
+    {
+      "source": "author:1354",
+      "target": "paper:368",
+      "type": "authored"
+    },
+    {
+      "source": "paper:368",
+      "target": "venue:126",
+      "type": "published_in"
+    },
+    {
+      "source": "paper:362",
+      "target": "stochastic_analysis",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:362",
+      "target": "stochastic_analysis/stochastic_dynamics/sde_theory",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:362",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1332",
+      "target": "paper:362",
+      "type": "authored"
+    },
+    {
+      "source": "author:1333",
+      "target": "paper:362",
+      "type": "authored"
+    },
+    {
+      "source": "author:1334",
+      "target": "paper:362",
+      "type": "authored"
+    },
+    {
+      "source": "paper:362",
+      "target": "venue:127",
+      "type": "published_in"
+    },
+    {
+      "source": "paper:361",
+      "target": "ai_for_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:361",
+      "target": "ai_for_physics/generative_dynamics/score_matching",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:361",
+      "target": "ai_for_physics/generative_dynamics/flow_matching",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1330",
+      "target": "paper:361",
+      "type": "authored"
+    },
+    {
+      "source": "author:1331",
+      "target": "paper:361",
+      "type": "authored"
+    },
+    {
+      "source": "paper:361",
+      "target": "venue:127",
+      "type": "published_in"
+    },
+    {
+      "source": "paper:360",
+      "target": "stochastic_analysis",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:360",
+      "target": "stochastic_analysis/path_foundations/brownian_motion",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:360",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1327",
+      "target": "paper:360",
+      "type": "authored"
+    },
+    {
+      "source": "author:1328",
+      "target": "paper:360",
+      "type": "authored"
+    },
+    {
+      "source": "author:1329",
+      "target": "paper:360",
+      "type": "authored"
+    },
+    {
+      "source": "paper:360",
+      "target": "venue:126",
+      "type": "published_in"
+    },
+    {
+      "source": "paper:359",
+      "target": "stochastic_analysis",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:359",
+      "target": "stochastic_analysis/path_foundations/brownian_motion",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:359",
+      "target": "stochastic_analysis/stochastic_dynamics/sde_theory",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1324",
+      "target": "paper:359",
+      "type": "authored"
+    },
+    {
+      "source": "author:1325",
+      "target": "paper:359",
+      "type": "authored"
+    },
+    {
+      "source": "author:1326",
+      "target": "paper:359",
+      "type": "authored"
+    },
+    {
+      "source": "paper:359",
+      "target": "venue:126",
+      "type": "published_in"
+    },
+    {
+      "source": "paper:356",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:356",
+      "target": "statistical_physics/equilibrium_structures/equilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:356",
+      "target": "bridges",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1316",
+      "target": "paper:356",
+      "type": "authored"
+    },
+    {
+      "source": "author:1317",
+      "target": "paper:356",
+      "type": "authored"
+    },
+    {
+      "source": "author:1318",
+      "target": "paper:356",
+      "type": "authored"
+    },
+    {
+      "source": "paper:356",
+      "target": "venue:126",
+      "type": "published_in"
+    },
+    {
+      "source": "paper:348",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:348",
+      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:348",
+      "target": "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1295",
+      "target": "paper:348",
+      "type": "authored"
+    },
+    {
+      "source": "paper:348",
+      "target": "venue:126",
+      "type": "published_in"
+    },
+    {
+      "source": "paper:343",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:343",
+      "target": "statistical_physics/equilibrium_structures/equilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:343",
+      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:977",
+      "target": "paper:343",
+      "type": "authored"
+    },
+    {
+      "source": "author:1284",
+      "target": "paper:343",
+      "type": "authored"
+    },
+    {
+      "source": "author:1285",
+      "target": "paper:343",
+      "type": "authored"
+    },
+    {
+      "source": "paper:343",
+      "target": "venue:126",
+      "type": "published_in"
+    },
+    {
+      "source": "paper:342",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:342",
+      "target": "statistical_physics/collective_structure/phase_transitions",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:342",
+      "target": "urban_complex_systems",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1283",
+      "target": "paper:342",
+      "type": "authored"
+    },
+    {
+      "source": "paper:342",
+      "target": "venue:126",
+      "type": "published_in"
+    },
+    {
+      "source": "paper:341",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:341",
+      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:341",
+      "target": "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1276",
+      "target": "paper:341",
+      "type": "authored"
+    },
+    {
+      "source": "author:1277",
+      "target": "paper:341",
+      "type": "authored"
+    },
+    {
+      "source": "author:1278",
+      "target": "paper:341",
+      "type": "authored"
+    },
+    {
+      "source": "author:1279",
+      "target": "paper:341",
+      "type": "authored"
+    },
+    {
+      "source": "author:1280",
+      "target": "paper:341",
+      "type": "authored"
+    },
+    {
+      "source": "author:1281",
+      "target": "paper:341",
+      "type": "authored"
+    },
+    {
+      "source": "author:1282",
+      "target": "paper:341",
+      "type": "authored"
+    },
+    {
+      "source": "paper:341",
+      "target": "venue:126",
       "type": "published_in"
     },
     {
@@ -5202,1261 +6236,6 @@
       "type": "published_in"
     },
     {
-      "source": "paper:252",
-      "target": "bridges/translation_layers/fokker_planck_master",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:252",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:252",
-      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:1024",
-      "target": "paper:252",
-      "type": "authored"
-    },
-    {
-      "source": "paper:252",
-      "target": "venue:127",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:250",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:250",
-      "target": "statistical_physics/equilibrium_structures/equilibrium",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:250",
-      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:1021",
-      "target": "paper:250",
-      "type": "authored"
-    },
-    {
-      "source": "paper:250",
-      "target": "venue:127",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:246",
-      "target": "stochastic_analysis",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:246",
-      "target": "ai_for_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:246",
-      "target": "ai_for_physics/generative_dynamics/sde_generative",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:1009",
-      "target": "paper:246",
-      "type": "authored"
-    },
-    {
-      "source": "author:1010",
-      "target": "paper:246",
-      "type": "authored"
-    },
-    {
-      "source": "author:1011",
-      "target": "paper:246",
-      "type": "authored"
-    },
-    {
-      "source": "author:1012",
-      "target": "paper:246",
-      "type": "authored"
-    },
-    {
-      "source": "paper:246",
-      "target": "venue:125",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:220",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:220",
-      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:220",
-      "target": "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:958",
-      "target": "paper:220",
-      "type": "authored"
-    },
-    {
-      "source": "author:959",
-      "target": "paper:220",
-      "type": "authored"
-    },
-    {
-      "source": "author:960",
-      "target": "paper:220",
-      "type": "authored"
-    },
-    {
-      "source": "paper:220",
-      "target": "venue:125",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:213",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:213",
-      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:213",
-      "target": "statistical_physics/equilibrium_structures",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:940",
-      "target": "paper:213",
-      "type": "authored"
-    },
-    {
-      "source": "author:941",
-      "target": "paper:213",
-      "type": "authored"
-    },
-    {
-      "source": "paper:213",
-      "target": "venue:126",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:196",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:196",
-      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:196",
-      "target": "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:878",
-      "target": "paper:196",
-      "type": "authored"
-    },
-    {
-      "source": "author:879",
-      "target": "paper:196",
-      "type": "authored"
-    },
-    {
-      "source": "author:880",
-      "target": "paper:196",
-      "type": "authored"
-    },
-    {
-      "source": "paper:196",
-      "target": "venue:127",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:149",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:149",
-      "target": "ai_for_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:149",
-      "target": "ai_for_physics/generative_dynamics/flow_matching",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:672",
-      "target": "paper:149",
-      "type": "authored"
-    },
-    {
-      "source": "author:673",
-      "target": "paper:149",
-      "type": "authored"
-    },
-    {
-      "source": "author:674",
-      "target": "paper:149",
-      "type": "authored"
-    },
-    {
-      "source": "author:675",
-      "target": "paper:149",
-      "type": "authored"
-    },
-    {
-      "source": "paper:149",
-      "target": "venue:127",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:144",
-      "target": "stochastic_analysis",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:144",
-      "target": "stochastic_analysis/stochastic_dynamics/sde_numerics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:144",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:644",
-      "target": "paper:144",
-      "type": "authored"
-    },
-    {
-      "source": "author:645",
-      "target": "paper:144",
-      "type": "authored"
-    },
-    {
-      "source": "author:646",
-      "target": "paper:144",
-      "type": "authored"
-    },
-    {
-      "source": "author:647",
-      "target": "paper:144",
-      "type": "authored"
-    },
-    {
-      "source": "author:648",
-      "target": "paper:144",
-      "type": "authored"
-    },
-    {
-      "source": "author:649",
-      "target": "paper:144",
-      "type": "authored"
-    },
-    {
-      "source": "author:650",
-      "target": "paper:144",
-      "type": "authored"
-    },
-    {
-      "source": "author:651",
-      "target": "paper:144",
-      "type": "authored"
-    },
-    {
-      "source": "author:652",
-      "target": "paper:144",
-      "type": "authored"
-    },
-    {
-      "source": "author:653",
-      "target": "paper:144",
-      "type": "authored"
-    },
-    {
-      "source": "author:654",
-      "target": "paper:144",
-      "type": "authored"
-    },
-    {
-      "source": "author:655",
-      "target": "paper:144",
-      "type": "authored"
-    },
-    {
-      "source": "paper:144",
-      "target": "venue:127",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:101",
-      "target": "bridges/translation_layers/fokker_planck_master",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:101",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:101",
-      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:468",
-      "target": "paper:101",
-      "type": "authored"
-    },
-    {
-      "source": "author:469",
-      "target": "paper:101",
-      "type": "authored"
-    },
-    {
-      "source": "author:470",
-      "target": "paper:101",
-      "type": "authored"
-    },
-    {
-      "source": "author:471",
-      "target": "paper:101",
-      "type": "authored"
-    },
-    {
-      "source": "author:472",
-      "target": "paper:101",
-      "type": "authored"
-    },
-    {
-      "source": "paper:101",
-      "target": "venue:127",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:67",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:67",
-      "target": "statistical_physics/collective_structure/phase_transitions",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:67",
-      "target": "ai_for_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:234",
-      "target": "paper:67",
-      "type": "authored"
-    },
-    {
-      "source": "author:235",
-      "target": "paper:67",
-      "type": "authored"
-    },
-    {
-      "source": "paper:67",
-      "target": "venue:126",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:66",
-      "target": "ai_for_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:66",
-      "target": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:66",
-      "target": "ai_for_physics/generative_dynamics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:230",
-      "target": "paper:66",
-      "type": "authored"
-    },
-    {
-      "source": "author:231",
-      "target": "paper:66",
-      "type": "authored"
-    },
-    {
-      "source": "author:232",
-      "target": "paper:66",
-      "type": "authored"
-    },
-    {
-      "source": "author:233",
-      "target": "paper:66",
-      "type": "authored"
-    },
-    {
-      "source": "paper:66",
-      "target": "venue:126",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:65",
-      "target": "stochastic_analysis",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:65",
-      "target": "stochastic_analysis/stochastic_dynamics/sde_theory",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:65",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:227",
-      "target": "paper:65",
-      "type": "authored"
-    },
-    {
-      "source": "author:228",
-      "target": "paper:65",
-      "type": "authored"
-    },
-    {
-      "source": "author:229",
-      "target": "paper:65",
-      "type": "authored"
-    },
-    {
-      "source": "paper:65",
-      "target": "venue:126",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:58",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:58",
-      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:58",
-      "target": "statistical_physics/equilibrium_structures",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:204",
-      "target": "paper:58",
-      "type": "authored"
-    },
-    {
-      "source": "author:205",
-      "target": "paper:58",
-      "type": "authored"
-    },
-    {
-      "source": "author:206",
-      "target": "paper:58",
-      "type": "authored"
-    },
-    {
-      "source": "author:207",
-      "target": "paper:58",
-      "type": "authored"
-    },
-    {
-      "source": "paper:58",
-      "target": "venue:130",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:12",
-      "target": "bridges/translation_layers/fokker_planck_master",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:12",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:12",
-      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:32",
-      "target": "paper:12",
-      "type": "authored"
-    },
-    {
-      "source": "author:33",
-      "target": "paper:12",
-      "type": "authored"
-    },
-    {
-      "source": "author:34",
-      "target": "paper:12",
-      "type": "authored"
-    },
-    {
-      "source": "paper:12",
-      "target": "venue:125",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:226",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:226",
-      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:226",
-      "target": "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:973",
-      "target": "paper:226",
-      "type": "authored"
-    },
-    {
-      "source": "author:974",
-      "target": "paper:226",
-      "type": "authored"
-    },
-    {
-      "source": "author:975",
-      "target": "paper:226",
-      "type": "authored"
-    },
-    {
-      "source": "paper:226",
-      "target": "venue:125",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:256",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:256",
-      "target": "statistical_physics/collective_structure/phase_transitions",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:256",
-      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:1031",
-      "target": "paper:256",
-      "type": "authored"
-    },
-    {
-      "source": "author:1032",
-      "target": "paper:256",
-      "type": "authored"
-    },
-    {
-      "source": "paper:256",
-      "target": "venue:127",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:273",
-      "target": "stochastic_analysis",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:273",
-      "target": "stochastic_analysis/stochastic_dynamics/sde_theory",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:273",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:1071",
-      "target": "paper:273",
-      "type": "authored"
-    },
-    {
-      "source": "author:1072",
-      "target": "paper:273",
-      "type": "authored"
-    },
-    {
-      "source": "author:1073",
-      "target": "paper:273",
-      "type": "authored"
-    },
-    {
-      "source": "author:1074",
-      "target": "paper:273",
-      "type": "authored"
-    },
-    {
-      "source": "paper:273",
-      "target": "venue:127",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:223",
-      "target": "stochastic_analysis",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:223",
-      "target": "stochastic_analysis/path_foundations/brownian_motion",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:223",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:965",
-      "target": "paper:223",
-      "type": "authored"
-    },
-    {
-      "source": "author:966",
-      "target": "paper:223",
-      "type": "authored"
-    },
-    {
-      "source": "author:967",
-      "target": "paper:223",
-      "type": "authored"
-    },
-    {
-      "source": "paper:223",
-      "target": "venue:125",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:147",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:147",
-      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:147",
-      "target": "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:662",
-      "target": "paper:147",
-      "type": "authored"
-    },
-    {
-      "source": "author:663",
-      "target": "paper:147",
-      "type": "authored"
-    },
-    {
-      "source": "author:664",
-      "target": "paper:147",
-      "type": "authored"
-    },
-    {
-      "source": "author:665",
-      "target": "paper:147",
-      "type": "authored"
-    },
-    {
-      "source": "author:666",
-      "target": "paper:147",
-      "type": "authored"
-    },
-    {
-      "source": "author:667",
-      "target": "paper:147",
-      "type": "authored"
-    },
-    {
-      "source": "paper:147",
-      "target": "venue:127",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:204",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:204",
-      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:204",
-      "target": "urban_complex_systems",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:910",
-      "target": "paper:204",
-      "type": "authored"
-    },
-    {
-      "source": "author:911",
-      "target": "paper:204",
-      "type": "authored"
-    },
-    {
-      "source": "author:912",
-      "target": "paper:204",
-      "type": "authored"
-    },
-    {
-      "source": "author:913",
-      "target": "paper:204",
-      "type": "authored"
-    },
-    {
-      "source": "paper:204",
-      "target": "venue:127",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:272",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:272",
-      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:272",
-      "target": "statistical_physics/non_equilibrium_dynamics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:1069",
-      "target": "paper:272",
-      "type": "authored"
-    },
-    {
-      "source": "author:1070",
-      "target": "paper:272",
-      "type": "authored"
-    },
-    {
-      "source": "paper:272",
-      "target": "venue:89",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:232",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:232",
-      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:232",
-      "target": "statistical_physics/non_equilibrium_dynamics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:5",
-      "target": "paper:232",
-      "type": "authored"
-    },
-    {
-      "source": "author:985",
-      "target": "paper:232",
-      "type": "authored"
-    },
-    {
-      "source": "author:986",
-      "target": "paper:232",
-      "type": "authored"
-    },
-    {
-      "source": "paper:232",
-      "target": "venue:125",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:230",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:230",
-      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:230",
-      "target": "statistical_physics/non_equilibrium_dynamics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:981",
-      "target": "paper:230",
-      "type": "authored"
-    },
-    {
-      "source": "author:982",
-      "target": "paper:230",
-      "type": "authored"
-    },
-    {
-      "source": "paper:230",
-      "target": "venue:125",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:224",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:224",
-      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:224",
-      "target": "statistical_physics/equilibrium_structures",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:965",
-      "target": "paper:224",
-      "type": "authored"
-    },
-    {
-      "source": "author:966",
-      "target": "paper:224",
-      "type": "authored"
-    },
-    {
-      "source": "author:967",
-      "target": "paper:224",
-      "type": "authored"
-    },
-    {
-      "source": "paper:224",
-      "target": "venue:125",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:99",
-      "target": "bridges/translation_layers/fokker_planck_master",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:99",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:99",
-      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:457",
-      "target": "paper:99",
-      "type": "authored"
-    },
-    {
-      "source": "author:458",
-      "target": "paper:99",
-      "type": "authored"
-    },
-    {
-      "source": "author:459",
-      "target": "paper:99",
-      "type": "authored"
-    },
-    {
-      "source": "author:460",
-      "target": "paper:99",
-      "type": "authored"
-    },
-    {
-      "source": "paper:99",
-      "target": "venue:127",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:286",
-      "target": "stochastic_analysis",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:286",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:286",
-      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:1115",
-      "target": "paper:286",
-      "type": "authored"
-    },
-    {
-      "source": "author:1116",
-      "target": "paper:286",
-      "type": "authored"
-    },
-    {
-      "source": "paper:286",
-      "target": "venue:126",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:199",
-      "target": "ai_for_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:199",
-      "target": "ai_for_physics/generative_dynamics/flow_matching",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:199",
-      "target": "bridges",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:887",
-      "target": "paper:199",
-      "type": "authored"
-    },
-    {
-      "source": "paper:199",
-      "target": "venue:127",
-      "type": "published_in"
-    },
-    {
-      "source": "author:620",
-      "target": "paper:141",
-      "type": "authored"
-    },
-    {
-      "source": "author:621",
-      "target": "paper:141",
-      "type": "authored"
-    },
-    {
-      "source": "author:622",
-      "target": "paper:141",
-      "type": "authored"
-    },
-    {
-      "source": "author:623",
-      "target": "paper:141",
-      "type": "authored"
-    },
-    {
-      "source": "author:624",
-      "target": "paper:141",
-      "type": "authored"
-    },
-    {
-      "source": "author:625",
-      "target": "paper:141",
-      "type": "authored"
-    },
-    {
-      "source": "author:626",
-      "target": "paper:141",
-      "type": "authored"
-    },
-    {
-      "source": "author:627",
-      "target": "paper:141",
-      "type": "authored"
-    },
-    {
-      "source": "author:628",
-      "target": "paper:141",
-      "type": "authored"
-    },
-    {
-      "source": "author:629",
-      "target": "paper:141",
-      "type": "authored"
-    },
-    {
-      "source": "author:630",
-      "target": "paper:141",
-      "type": "authored"
-    },
-    {
-      "source": "author:631",
-      "target": "paper:141",
-      "type": "authored"
-    },
-    {
-      "source": "author:632",
-      "target": "paper:141",
-      "type": "authored"
-    },
-    {
-      "source": "paper:141",
-      "target": "venue:20",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:11",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:11",
-      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:11",
-      "target": "ai_for_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:28",
-      "target": "paper:11",
-      "type": "authored"
-    },
-    {
-      "source": "author:29",
-      "target": "paper:11",
-      "type": "authored"
-    },
-    {
-      "source": "author:30",
-      "target": "paper:11",
-      "type": "authored"
-    },
-    {
-      "source": "author:31",
-      "target": "paper:11",
-      "type": "authored"
-    },
-    {
-      "source": "paper:11",
-      "target": "venue:125",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:10",
-      "target": "ai_for_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:10",
-      "target": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:10",
-      "target": "bridges",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:23",
-      "target": "paper:10",
-      "type": "authored"
-    },
-    {
-      "source": "author:24",
-      "target": "paper:10",
-      "type": "authored"
-    },
-    {
-      "source": "author:25",
-      "target": "paper:10",
-      "type": "authored"
-    },
-    {
-      "source": "author:26",
-      "target": "paper:10",
-      "type": "authored"
-    },
-    {
-      "source": "author:27",
-      "target": "paper:10",
-      "type": "authored"
-    },
-    {
-      "source": "paper:10",
-      "target": "venue:125",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:302",
-      "target": "ai_for_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:302",
-      "target": "ai_for_physics/physics_informed_modeling",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:302",
-      "target": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:1159",
-      "target": "paper:302",
-      "type": "authored"
-    },
-    {
-      "source": "author:1160",
-      "target": "paper:302",
-      "type": "authored"
-    },
-    {
-      "source": "author:1161",
-      "target": "paper:302",
-      "type": "authored"
-    },
-    {
-      "source": "author:1162",
-      "target": "paper:302",
-      "type": "authored"
-    },
-    {
-      "source": "paper:302",
-      "target": "venue:126",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:296",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:296",
-      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:296",
-      "target": "statistical_physics/non_equilibrium_dynamics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:1144",
-      "target": "paper:296",
-      "type": "authored"
-    },
-    {
-      "source": "author:1145",
-      "target": "paper:296",
-      "type": "authored"
-    },
-    {
-      "source": "author:1146",
-      "target": "paper:296",
-      "type": "authored"
-    },
-    {
-      "source": "author:1147",
-      "target": "paper:296",
-      "type": "authored"
-    },
-    {
-      "source": "paper:296",
-      "target": "venue:129",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:294",
-      "target": "statistical_physics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:294",
-      "target": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:294",
-      "target": "statistical_physics/non_equilibrium_dynamics",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:1141",
-      "target": "paper:294",
-      "type": "authored"
-    },
-    {
-      "source": "author:1142",
-      "target": "paper:294",
-      "type": "authored"
-    },
-    {
-      "source": "paper:294",
-      "target": "venue:126",
-      "type": "published_in"
-    },
-    {
       "source": "author:6",
       "target": "author:13",
       "type": "coauthor",
@@ -6607,120 +6386,6 @@
       "weight": 1
     },
     {
-      "source": "author:23",
-      "target": "author:24",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:23",
-      "target": "author:25",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:23",
-      "target": "author:26",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:23",
-      "target": "author:27",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:24",
-      "target": "author:25",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:24",
-      "target": "author:26",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:24",
-      "target": "author:27",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:25",
-      "target": "author:26",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:25",
-      "target": "author:27",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:26",
-      "target": "author:27",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:28",
-      "target": "author:29",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:28",
-      "target": "author:30",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:28",
-      "target": "author:31",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:29",
-      "target": "author:30",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:29",
-      "target": "author:31",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:30",
-      "target": "author:31",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:32",
-      "target": "author:33",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:32",
-      "target": "author:34",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:33",
-      "target": "author:34",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
       "source": "author:45",
       "target": "author:46",
       "type": "coauthor",
@@ -6793,160 +6458,64 @@
       "weight": 1
     },
     {
-      "source": "author:204",
-      "target": "author:205",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:204",
-      "target": "author:206",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:204",
-      "target": "author:207",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:205",
-      "target": "author:206",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:205",
-      "target": "author:207",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:206",
-      "target": "author:207",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:227",
-      "target": "author:228",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:227",
-      "target": "author:229",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:228",
-      "target": "author:229",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:230",
-      "target": "author:231",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:230",
-      "target": "author:232",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:230",
-      "target": "author:233",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:231",
-      "target": "author:232",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:231",
-      "target": "author:233",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:232",
-      "target": "author:233",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:234",
-      "target": "author:235",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
       "source": "author:300",
       "target": "author:301",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:300",
       "target": "author:302",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:300",
       "target": "author:303",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:300",
       "target": "author:660",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:301",
       "target": "author:302",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:301",
       "target": "author:303",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:301",
       "target": "author:660",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:302",
       "target": "author:303",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:302",
       "target": "author:660",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:303",
       "target": "author:660",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:304",
@@ -6991,102 +6560,6 @@
       "weight": 1
     },
     {
-      "source": "author:457",
-      "target": "author:458",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:457",
-      "target": "author:459",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:457",
-      "target": "author:460",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:458",
-      "target": "author:459",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:458",
-      "target": "author:460",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:459",
-      "target": "author:460",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:468",
-      "target": "author:469",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:468",
-      "target": "author:470",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:468",
-      "target": "author:471",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:468",
-      "target": "author:472",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:469",
-      "target": "author:470",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:469",
-      "target": "author:471",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:469",
-      "target": "author:472",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:470",
-      "target": "author:471",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:470",
-      "target": "author:472",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:471",
-      "target": "author:472",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
       "source": "author:596",
       "target": "author:597",
       "type": "coauthor",
@@ -7105,996 +6578,6 @@
       "weight": 1
     },
     {
-      "source": "author:620",
-      "target": "author:621",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:620",
-      "target": "author:622",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:620",
-      "target": "author:623",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:620",
-      "target": "author:624",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:620",
-      "target": "author:625",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:620",
-      "target": "author:626",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:620",
-      "target": "author:627",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:620",
-      "target": "author:628",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:620",
-      "target": "author:629",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:620",
-      "target": "author:630",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:620",
-      "target": "author:631",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:620",
-      "target": "author:632",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:621",
-      "target": "author:622",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:621",
-      "target": "author:623",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:621",
-      "target": "author:624",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:621",
-      "target": "author:625",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:621",
-      "target": "author:626",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:621",
-      "target": "author:627",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:621",
-      "target": "author:628",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:621",
-      "target": "author:629",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:621",
-      "target": "author:630",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:621",
-      "target": "author:631",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:621",
-      "target": "author:632",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:622",
-      "target": "author:623",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:622",
-      "target": "author:624",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:622",
-      "target": "author:625",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:622",
-      "target": "author:626",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:622",
-      "target": "author:627",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:622",
-      "target": "author:628",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:622",
-      "target": "author:629",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:622",
-      "target": "author:630",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:622",
-      "target": "author:631",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:622",
-      "target": "author:632",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:623",
-      "target": "author:624",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:623",
-      "target": "author:625",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:623",
-      "target": "author:626",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:623",
-      "target": "author:627",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:623",
-      "target": "author:628",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:623",
-      "target": "author:629",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:623",
-      "target": "author:630",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:623",
-      "target": "author:631",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:623",
-      "target": "author:632",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:624",
-      "target": "author:625",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:624",
-      "target": "author:626",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:624",
-      "target": "author:627",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:624",
-      "target": "author:628",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:624",
-      "target": "author:629",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:624",
-      "target": "author:630",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:624",
-      "target": "author:631",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:624",
-      "target": "author:632",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:625",
-      "target": "author:626",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:625",
-      "target": "author:627",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:625",
-      "target": "author:628",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:625",
-      "target": "author:629",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:625",
-      "target": "author:630",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:625",
-      "target": "author:631",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:625",
-      "target": "author:632",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:626",
-      "target": "author:627",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:626",
-      "target": "author:628",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:626",
-      "target": "author:629",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:626",
-      "target": "author:630",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:626",
-      "target": "author:631",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:626",
-      "target": "author:632",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:627",
-      "target": "author:628",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:627",
-      "target": "author:629",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:627",
-      "target": "author:630",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:627",
-      "target": "author:631",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:627",
-      "target": "author:632",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:628",
-      "target": "author:629",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:628",
-      "target": "author:630",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:628",
-      "target": "author:631",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:628",
-      "target": "author:632",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:629",
-      "target": "author:630",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:629",
-      "target": "author:631",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:629",
-      "target": "author:632",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:630",
-      "target": "author:631",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:630",
-      "target": "author:632",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:631",
-      "target": "author:632",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:644",
-      "target": "author:645",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:644",
-      "target": "author:646",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:644",
-      "target": "author:647",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:644",
-      "target": "author:648",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:644",
-      "target": "author:649",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:644",
-      "target": "author:650",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:644",
-      "target": "author:651",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:644",
-      "target": "author:652",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:644",
-      "target": "author:653",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:644",
-      "target": "author:654",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:644",
-      "target": "author:655",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:645",
-      "target": "author:646",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:645",
-      "target": "author:647",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:645",
-      "target": "author:648",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:645",
-      "target": "author:649",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:645",
-      "target": "author:650",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:645",
-      "target": "author:651",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:645",
-      "target": "author:652",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:645",
-      "target": "author:653",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:645",
-      "target": "author:654",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:645",
-      "target": "author:655",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:646",
-      "target": "author:647",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:646",
-      "target": "author:648",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:646",
-      "target": "author:649",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:646",
-      "target": "author:650",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:646",
-      "target": "author:651",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:646",
-      "target": "author:652",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:646",
-      "target": "author:653",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:646",
-      "target": "author:654",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:646",
-      "target": "author:655",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:647",
-      "target": "author:648",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:647",
-      "target": "author:649",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:647",
-      "target": "author:650",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:647",
-      "target": "author:651",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:647",
-      "target": "author:652",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:647",
-      "target": "author:653",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:647",
-      "target": "author:654",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:647",
-      "target": "author:655",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:648",
-      "target": "author:649",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:648",
-      "target": "author:650",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:648",
-      "target": "author:651",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:648",
-      "target": "author:652",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:648",
-      "target": "author:653",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:648",
-      "target": "author:654",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:648",
-      "target": "author:655",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:649",
-      "target": "author:650",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:649",
-      "target": "author:651",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:649",
-      "target": "author:652",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:649",
-      "target": "author:653",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:649",
-      "target": "author:654",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:649",
-      "target": "author:655",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:650",
-      "target": "author:651",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:650",
-      "target": "author:652",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:650",
-      "target": "author:653",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:650",
-      "target": "author:654",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:650",
-      "target": "author:655",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:651",
-      "target": "author:652",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:651",
-      "target": "author:653",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:651",
-      "target": "author:654",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:651",
-      "target": "author:655",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:652",
-      "target": "author:653",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:652",
-      "target": "author:654",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:652",
-      "target": "author:655",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:653",
-      "target": "author:654",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:653",
-      "target": "author:655",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:654",
-      "target": "author:655",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:662",
-      "target": "author:663",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:662",
-      "target": "author:664",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:662",
-      "target": "author:665",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:662",
-      "target": "author:666",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:662",
-      "target": "author:667",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:663",
-      "target": "author:664",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:663",
-      "target": "author:665",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:663",
-      "target": "author:666",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:663",
-      "target": "author:667",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:664",
-      "target": "author:665",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:664",
-      "target": "author:666",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:664",
-      "target": "author:667",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:665",
-      "target": "author:666",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:665",
-      "target": "author:667",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:666",
-      "target": "author:667",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:672",
-      "target": "author:673",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:672",
-      "target": "author:674",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:672",
-      "target": "author:675",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:673",
-      "target": "author:674",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:673",
-      "target": "author:675",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:674",
-      "target": "author:675",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
       "source": "author:834",
       "target": "author:835",
       "type": "coauthor",
@@ -8107,484 +6590,310 @@
       "weight": 2
     },
     {
-      "source": "author:878",
-      "target": "author:879",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:878",
-      "target": "author:880",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:879",
-      "target": "author:880",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
       "source": "author:892",
       "target": "author:893",
       "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:910",
-      "target": "author:911",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:910",
-      "target": "author:912",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:910",
-      "target": "author:913",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:911",
-      "target": "author:912",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:911",
-      "target": "author:913",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:912",
-      "target": "author:913",
-      "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:914",
       "target": "author:915",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:933",
       "target": "author:934",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:933",
       "target": "author:935",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:934",
       "target": "author:935",
       "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:940",
-      "target": "author:941",
-      "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:942",
       "target": "author:943",
       "type": "coauthor",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "author:945",
       "target": "author:946",
       "type": "coauthor",
-      "weight": 3
+      "weight": 7
     },
     {
       "source": "author:945",
       "target": "author:947",
       "type": "coauthor",
-      "weight": 3
+      "weight": 7
     },
     {
       "source": "author:945",
       "target": "author:948",
       "type": "coauthor",
-      "weight": 3
+      "weight": 7
     },
     {
       "source": "author:946",
       "target": "author:947",
       "type": "coauthor",
-      "weight": 3
+      "weight": 7
     },
     {
       "source": "author:946",
       "target": "author:948",
       "type": "coauthor",
-      "weight": 3
+      "weight": 7
     },
     {
       "source": "author:947",
       "target": "author:948",
       "type": "coauthor",
-      "weight": 3
+      "weight": 7
     },
     {
       "source": "author:949",
       "target": "author:950",
       "type": "coauthor",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "author:949",
       "target": "author:951",
       "type": "coauthor",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "author:950",
       "target": "author:951",
       "type": "coauthor",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "author:952",
       "target": "author:953",
       "type": "coauthor",
-      "weight": 2
+      "weight": 6
     },
     {
       "source": "author:952",
       "target": "author:954",
       "type": "coauthor",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "author:952",
       "target": "author:955",
       "type": "coauthor",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "author:953",
       "target": "author:954",
       "type": "coauthor",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "author:953",
       "target": "author:955",
       "type": "coauthor",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "author:954",
       "target": "author:955",
       "type": "coauthor",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "author:956",
       "target": "author:957",
       "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:958",
-      "target": "author:959",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:958",
-      "target": "author:960",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:959",
-      "target": "author:960",
-      "type": "coauthor",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "author:961",
       "target": "author:962",
       "type": "coauthor",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "author:963",
       "target": "author:964",
       "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:965",
-      "target": "author:966",
-      "type": "coauthor",
-      "weight": 6
-    },
-    {
-      "source": "author:965",
-      "target": "author:967",
-      "type": "coauthor",
-      "weight": 6
-    },
-    {
-      "source": "author:966",
-      "target": "author:967",
-      "type": "coauthor",
-      "weight": 8
+      "weight": 3
     },
     {
       "source": "author:968",
       "target": "author:969",
       "type": "coauthor",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "author:968",
       "target": "author:970",
       "type": "coauthor",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "author:968",
       "target": "author:971",
       "type": "coauthor",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "author:968",
       "target": "author:972",
       "type": "coauthor",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "author:969",
       "target": "author:970",
       "type": "coauthor",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "author:969",
       "target": "author:971",
       "type": "coauthor",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "author:969",
       "target": "author:972",
       "type": "coauthor",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "author:970",
       "target": "author:971",
       "type": "coauthor",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "author:970",
       "target": "author:972",
       "type": "coauthor",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "author:971",
       "target": "author:972",
       "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:973",
-      "target": "author:974",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:973",
-      "target": "author:975",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:974",
-      "target": "author:975",
-      "type": "coauthor",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "author:976",
       "target": "author:977",
       "type": "coauthor",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "author:978",
       "target": "author:979",
       "type": "coauthor",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "author:978",
       "target": "author:980",
       "type": "coauthor",
-      "weight": 2
+      "weight": 3
     },
     {
       "source": "author:979",
       "target": "author:980",
       "type": "coauthor",
-      "weight": 2
+      "weight": 3
     },
     {
-      "source": "author:981",
-      "target": "author:982",
+      "source": "author:1013",
+      "target": "author:1015",
       "type": "coauthor",
-      "weight": 4
-    },
-    {
-      "source": "author:5",
-      "target": "author:985",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:5",
-      "target": "author:986",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:985",
-      "target": "author:986",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:1009",
-      "target": "author:1010",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:1009",
-      "target": "author:1011",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:1009",
-      "target": "author:1012",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:1010",
-      "target": "author:1011",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:1010",
-      "target": "author:1012",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:1011",
-      "target": "author:1012",
-      "type": "coauthor",
-      "weight": 2
+      "weight": 7
     },
     {
       "source": "author:1016",
       "target": "author:1017",
       "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:1031",
-      "target": "author:1032",
-      "type": "coauthor",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1037",
       "target": "author:1038",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:1039",
       "target": "author:1040",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:1039",
       "target": "author:1041",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:1039",
       "target": "author:1042",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:1039",
       "target": "author:1043",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:1040",
       "target": "author:1041",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:1040",
       "target": "author:1042",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:1040",
       "target": "author:1043",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:1041",
       "target": "author:1042",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:1041",
       "target": "author:1043",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:1042",
       "target": "author:1043",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:1049",
@@ -8665,48 +6974,6 @@
       "weight": 2
     },
     {
-      "source": "author:1069",
-      "target": "author:1070",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:1071",
-      "target": "author:1072",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:1071",
-      "target": "author:1073",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:1071",
-      "target": "author:1074",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:1072",
-      "target": "author:1073",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:1072",
-      "target": "author:1074",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:1073",
-      "target": "author:1074",
-      "type": "coauthor",
-      "weight": 2
-    },
-    {
       "source": "author:1075",
       "target": "author:1076",
       "type": "coauthor",
@@ -8746,103 +7013,97 @@
       "source": "author:1111",
       "target": "author:1112",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:1111",
       "target": "author:1113",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:1111",
       "target": "author:1114",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:1112",
       "target": "author:1113",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:1112",
       "target": "author:1114",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:1113",
       "target": "author:1114",
       "type": "coauthor",
-      "weight": 2
-    },
-    {
-      "source": "author:1115",
-      "target": "author:1116",
-      "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:1117",
       "target": "author:1118",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:1117",
       "target": "author:1119",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:1117",
       "target": "author:1120",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:1117",
       "target": "author:1121",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:1118",
       "target": "author:1119",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:1118",
       "target": "author:1120",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:1118",
       "target": "author:1121",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:1119",
       "target": "author:1120",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:1119",
       "target": "author:1121",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:1120",
       "target": "author:1121",
       "type": "coauthor",
-      "weight": 2
+      "weight": 5
     },
     {
       "source": "author:1132",
@@ -8877,48 +7138,6 @@
     {
       "source": "author:1134",
       "target": "author:1135",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:1141",
-      "target": "author:1142",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:1144",
-      "target": "author:1145",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:1144",
-      "target": "author:1146",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:1144",
-      "target": "author:1147",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:1145",
-      "target": "author:1146",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:1145",
-      "target": "author:1147",
-      "type": "coauthor",
-      "weight": 1
-    },
-    {
-      "source": "author:1146",
-      "target": "author:1147",
       "type": "coauthor",
       "weight": 1
     },
@@ -8971,47 +7190,947 @@
       "weight": 1
     },
     {
-      "source": "author:1159",
-      "target": "author:1160",
+      "source": "author:1183",
+      "target": "author:1184",
       "type": "coauthor",
-      "weight": 1
+      "weight": 3
     },
     {
-      "source": "author:1159",
-      "target": "author:1161",
+      "source": "author:1183",
+      "target": "author:1185",
       "type": "coauthor",
-      "weight": 1
+      "weight": 3
     },
     {
-      "source": "author:1159",
-      "target": "author:1162",
+      "source": "author:1184",
+      "target": "author:1185",
       "type": "coauthor",
-      "weight": 1
+      "weight": 3
     },
     {
-      "source": "author:1160",
-      "target": "author:1161",
+      "source": "author:1196",
+      "target": "author:1197",
       "type": "coauthor",
-      "weight": 1
+      "weight": 3
     },
     {
-      "source": "author:1160",
-      "target": "author:1162",
+      "source": "author:1196",
+      "target": "author:1198",
       "type": "coauthor",
-      "weight": 1
+      "weight": 3
     },
     {
-      "source": "author:1161",
-      "target": "author:1162",
+      "source": "author:1197",
+      "target": "author:1198",
       "type": "coauthor",
-      "weight": 1
+      "weight": 3
+    },
+    {
+      "source": "author:1199",
+      "target": "author:1200",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1199",
+      "target": "author:1201",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1199",
+      "target": "author:1202",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1200",
+      "target": "author:1201",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1200",
+      "target": "author:1202",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1201",
+      "target": "author:1202",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1004",
+      "target": "author:1203",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1204",
+      "target": "author:1205",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1204",
+      "target": "author:1206",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1205",
+      "target": "author:1206",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1214",
+      "target": "author:1215",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1219",
+      "target": "author:1220",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1221",
+      "target": "author:1222",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1221",
+      "target": "author:1223",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1221",
+      "target": "author:1224",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1222",
+      "target": "author:1223",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1222",
+      "target": "author:1224",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1223",
+      "target": "author:1224",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1225",
+      "target": "author:1226",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1225",
+      "target": "author:1227",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1226",
+      "target": "author:1227",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:16",
+      "target": "author:1240",
+      "type": "coauthor",
+      "weight": 9
+    },
+    {
+      "source": "author:16",
+      "target": "author:1241",
+      "type": "coauthor",
+      "weight": 9
+    },
+    {
+      "source": "author:16",
+      "target": "author:1242",
+      "type": "coauthor",
+      "weight": 9
+    },
+    {
+      "source": "author:16",
+      "target": "author:1243",
+      "type": "coauthor",
+      "weight": 9
+    },
+    {
+      "source": "author:16",
+      "target": "author:1244",
+      "type": "coauthor",
+      "weight": 9
+    },
+    {
+      "source": "author:1240",
+      "target": "author:1241",
+      "type": "coauthor",
+      "weight": 9
+    },
+    {
+      "source": "author:1240",
+      "target": "author:1242",
+      "type": "coauthor",
+      "weight": 9
+    },
+    {
+      "source": "author:1240",
+      "target": "author:1243",
+      "type": "coauthor",
+      "weight": 9
+    },
+    {
+      "source": "author:1240",
+      "target": "author:1244",
+      "type": "coauthor",
+      "weight": 9
+    },
+    {
+      "source": "author:1241",
+      "target": "author:1242",
+      "type": "coauthor",
+      "weight": 9
+    },
+    {
+      "source": "author:1241",
+      "target": "author:1243",
+      "type": "coauthor",
+      "weight": 9
+    },
+    {
+      "source": "author:1241",
+      "target": "author:1244",
+      "type": "coauthor",
+      "weight": 9
+    },
+    {
+      "source": "author:1242",
+      "target": "author:1243",
+      "type": "coauthor",
+      "weight": 9
+    },
+    {
+      "source": "author:1242",
+      "target": "author:1244",
+      "type": "coauthor",
+      "weight": 9
+    },
+    {
+      "source": "author:1243",
+      "target": "author:1244",
+      "type": "coauthor",
+      "weight": 9
+    },
+    {
+      "source": "author:952",
+      "target": "author:1254",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:953",
+      "target": "author:1254",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1013",
+      "target": "author:1255",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1015",
+      "target": "author:1255",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1257",
+      "target": "author:1258",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1257",
+      "target": "author:1259",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1258",
+      "target": "author:1259",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1264",
+      "target": "author:1265",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1276",
+      "target": "author:1277",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1276",
+      "target": "author:1278",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1276",
+      "target": "author:1279",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1276",
+      "target": "author:1280",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1276",
+      "target": "author:1281",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1276",
+      "target": "author:1282",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1277",
+      "target": "author:1278",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1277",
+      "target": "author:1279",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1277",
+      "target": "author:1280",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1277",
+      "target": "author:1281",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1277",
+      "target": "author:1282",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1278",
+      "target": "author:1279",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1278",
+      "target": "author:1280",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1278",
+      "target": "author:1281",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1278",
+      "target": "author:1282",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1279",
+      "target": "author:1280",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1279",
+      "target": "author:1281",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1279",
+      "target": "author:1282",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1280",
+      "target": "author:1281",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1280",
+      "target": "author:1282",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1281",
+      "target": "author:1282",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:977",
+      "target": "author:1284",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:977",
+      "target": "author:1285",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1284",
+      "target": "author:1285",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:945",
+      "target": "author:1033",
+      "type": "coauthor",
+      "weight": 4
+    },
+    {
+      "source": "author:946",
+      "target": "author:1033",
+      "type": "coauthor",
+      "weight": 4
+    },
+    {
+      "source": "author:947",
+      "target": "author:1033",
+      "type": "coauthor",
+      "weight": 4
+    },
+    {
+      "source": "author:948",
+      "target": "author:1033",
+      "type": "coauthor",
+      "weight": 4
+    },
+    {
+      "source": "author:1300",
+      "target": "author:1301",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1300",
+      "target": "author:1302",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1300",
+      "target": "author:1303",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1301",
+      "target": "author:1302",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1301",
+      "target": "author:1303",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1302",
+      "target": "author:1303",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1304",
+      "target": "author:1305",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1304",
+      "target": "author:1306",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1305",
+      "target": "author:1306",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1316",
+      "target": "author:1317",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1316",
+      "target": "author:1318",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1317",
+      "target": "author:1318",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1324",
+      "target": "author:1325",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1324",
+      "target": "author:1326",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1325",
+      "target": "author:1326",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1327",
+      "target": "author:1328",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1327",
+      "target": "author:1329",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1328",
+      "target": "author:1329",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1330",
+      "target": "author:1331",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1332",
+      "target": "author:1333",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1332",
+      "target": "author:1334",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1333",
+      "target": "author:1334",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1353",
+      "target": "author:1354",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1356",
+      "target": "author:1357",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1356",
+      "target": "author:1358",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1356",
+      "target": "author:1359",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1356",
+      "target": "author:1360",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1357",
+      "target": "author:1358",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1357",
+      "target": "author:1359",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1357",
+      "target": "author:1360",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1358",
+      "target": "author:1359",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1358",
+      "target": "author:1360",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1359",
+      "target": "author:1360",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1423",
+      "target": "author:1424",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1423",
+      "target": "author:1425",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1423",
+      "target": "author:1426",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1423",
+      "target": "author:1427",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1423",
+      "target": "author:1428",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1423",
+      "target": "author:1429",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1424",
+      "target": "author:1425",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1424",
+      "target": "author:1426",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1424",
+      "target": "author:1427",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1424",
+      "target": "author:1428",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1424",
+      "target": "author:1429",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1425",
+      "target": "author:1426",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1425",
+      "target": "author:1427",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1425",
+      "target": "author:1428",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1425",
+      "target": "author:1429",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1426",
+      "target": "author:1427",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1426",
+      "target": "author:1428",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1426",
+      "target": "author:1429",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1427",
+      "target": "author:1428",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1427",
+      "target": "author:1429",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1428",
+      "target": "author:1429",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1430",
+      "target": "author:1431",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1430",
+      "target": "author:1432",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1430",
+      "target": "author:1433",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1430",
+      "target": "author:1434",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1430",
+      "target": "author:1435",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1431",
+      "target": "author:1432",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1431",
+      "target": "author:1433",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1431",
+      "target": "author:1434",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1431",
+      "target": "author:1435",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1432",
+      "target": "author:1433",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1432",
+      "target": "author:1434",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1432",
+      "target": "author:1435",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1433",
+      "target": "author:1434",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1433",
+      "target": "author:1435",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1434",
+      "target": "author:1435",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1443",
+      "target": "author:1444",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1443",
+      "target": "author:1445",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1443",
+      "target": "author:1446",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1444",
+      "target": "author:1445",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1444",
+      "target": "author:1446",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1445",
+      "target": "author:1446",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1465",
+      "target": "author:1466",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1465",
+      "target": "author:1467",
+      "type": "coauthor",
+      "weight": 3
+    },
+    {
+      "source": "author:1466",
+      "target": "author:1467",
+      "type": "coauthor",
+      "weight": 3
     }
   ],
   "stats": {
     "topics": 49,
     "papers": 80,
-    "authors": 250,
-    "venues": 24,
-    "coauthor_edges": 425
+    "authors": 232,
+    "venues": 25,
+    "coauthor_edges": 315
   }
 }

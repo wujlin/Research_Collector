@@ -11,7 +11,7 @@ topics: ["statistical_physics", "statistical_physics/collective_structure/phase_
 tier: 2
 citations: 0
 relevance_score: 60.0
-collected: "2026-04-16"
+collected: "2026-04-23"
 status: "unread"
 source: "openalex"
 ---

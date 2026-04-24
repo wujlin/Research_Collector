@@ -63,7 +63,7 @@ $$
 
 第一步，作者先给出问题背景。许多生物系统中的集体行为都来自个体之间的相互作用。这里的关键不是“单个个体怎么动”，而是“相互作用怎样在群体层面产生有效动力学”。所以他们真正想学的是 interacting forces，而不是普通的单粒子轨迹规律。
 
-第二步，他们把学习目标说清楚：从粒子轨迹观测中，直接学习 `measure-dependent interaction (drift) terms`。这句话很重要，因为它明确说明：要恢复的对象是依赖整体分布的 drift，而不是一个固定的 pairwise kernel 或一个静态势函数。
+第二步，他们把学习目标说清楚：从粒子轨迹观测中，直接学习 `measure-dependent interaction (drift) terms`。这里明确说明：要恢复的对象是依赖整体分布的 drift，而不是一个固定的 pairwise kernel 或一个静态势函数。
 
 第三步，作者提出方法：`measure-valued neural network`。这一步的真正含义不是“再发明一个网络名字”，而是把神经网络的输入对象从欧氏向量推广到 probability measure。作者说他们通过学习 `cylindrical features`，再用一个 embedding network 把 distribution 编码成可扩展的 vector representation。换句话说，MVNN 的核心是：先把 measure 变成网络可处理的表示，再用这个表示去输出分布依赖的 drift。
 
@@ -101,7 +101,7 @@ $$
 
 ## 3. How To Read The Abstract In One Line
 
-如果把这个 abstract 压成一句最核心的话，它其实是在说：
+一句话总结这个 abstract：
 
 `作者提出了一个能直接处理概率分布输入的神经网络，用它从粒子轨迹中学习 McKean-Vlasov 型分布依赖动力学；同时他们证明这个架构在 mean-field 理论上是良定义、可逼近、可与 interacting-particle system 对接的。`
 
@@ -352,7 +352,7 @@ $$
 
 所以更清楚的读法，不是把它看成正式结果，而是把它看成从物理模型走向学习任务的过渡段。
 
-第一步，作者先声明：这里考虑一个标准的 interacting particle / agent system 作为 `motivating example`。这句话很重要，因为它在提醒你：他们不是说全文只处理这一种 pairwise 模型，而是先用一个你熟悉的脚手架，把后面真正要学习的对象钉出来。
+第一步，作者先声明：这里考虑一个标准的 interacting particle / agent system 作为 `motivating example`。这里的作用是提醒读者：他们不是说全文只处理这一种 pairwise 模型，而是先用一个你熟悉的脚手架，把后面真正要学习的对象钉出来。
 
 第二步，这个脚手架是一个标准 pairwise system：
 
@@ -729,7 +729,7 @@ $$
 
 `measure representation -> scalable architecture -> learned dynamics -> mean-field compatibility -> approximation theory`
 
-如果把这一节压成一句话，就是：
+一句话总结这一节：
 
 `作者用 cylindrical functional 的思想，把 measure 先编码成有限维全局特征，再与单粒子局部状态结合，从而构造出一个 permutation-invariant、线性复杂度、能直接定义 learned McKean-Vlasov dynamics 的神经网络架构，并进一步证明它是良定义、可逼近且和 mean-field 极限相容的。`
 
@@ -999,7 +999,7 @@ $$
 - `universal approximation` 保证 MVNN 这个函数类足够一般；
 - `quantitative rates under low-dimensional dependence` 保证这种一般性在有物理结构时不会完全失去计算可行性。
 
-如果把这部分压成一句话，就是：
+一句话总结这部分：
 
 `作者不是只证明“这个网络能拟合数据”，而是沿着“动力学存在 -> 微观到宏观相容 -> 表达能力 -> 逼近效率”这条线，把 MVNN 从一个经验模型推进成了一个有 mean-field 理论支撑的动力学学习框架。`
 

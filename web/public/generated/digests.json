@@ -7,7 +7,17 @@
     "authors": "",
     "venue": "",
     "topics": [],
-    "word_count": 1042
+    "word_count": 1063
+  },
+  {
+    "title": "Weekly Digest",
+    "path": "2026-04-23/workflow/weekly.md",
+    "created_at": "2026-04-23",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 3473
   },
   {
     "title": "Weekly Digest",
@@ -63,7 +73,7 @@
       "熵产生",
       "Transformer"
     ],
-    "word_count": 1737
+    "word_count": 4387
   },
   {
     "title": "Real-World Robot Control by Deep Active Inference With a Temporally Hierarchical World Model",
@@ -73,7 +83,7 @@
     "authors": "",
     "venue": "",
     "topics": [],
-    "word_count": 728
+    "word_count": 5001
   },
   {
     "title": "Predictor-Driven Diffusion for Spatiotemporal Generation",
@@ -103,7 +113,7 @@
       "扩散生成模型",
       "熵产生"
     ],
-    "word_count": 1743
+    "word_count": 4989
   },
   {
     "title": "HJ-sampler: Bayesian Sampler via Hamilton-Jacobi PDEs and Score-Based Generative Models",
@@ -118,7 +128,7 @@
       "score-based",
       "贝叶斯采样"
     ],
-    "word_count": 1057
+    "word_count": 4160
   },
   {
     "title": "Generative Optimal Transport via Forward-Backward HJB Matching",
@@ -133,7 +143,7 @@
       "flow matching",
       "生成模型"
     ],
-    "word_count": 1473
+    "word_count": 3533
   },
   {
     "title": "Flow Matching for Generative Modeling",
@@ -210,7 +220,7 @@
       "生成模型",
       "逆问题"
     ],
-    "word_count": 1357
+    "word_count": 3033
   },
   {
     "title": "A Framework for the Use of Generative Modelling in Non-Equilibrium Statistical Mechanics",
@@ -336,7 +346,7 @@
     "authors": "",
     "venue": "",
     "topics": [],
-    "word_count": 2435
+    "word_count": 2434
   },
   {
     "title": "MVNN: A Measure-Valued Neural Network for Learning McKean-Vlasov Dynamics from Particle Data",
@@ -346,7 +356,7 @@
     "authors": "",
     "venue": "",
     "topics": [],
-    "word_count": 2735
+    "word_count": 2734
   },
   {
     "title": "Study Guide",

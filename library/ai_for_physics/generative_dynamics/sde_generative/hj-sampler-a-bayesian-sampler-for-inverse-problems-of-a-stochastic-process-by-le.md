@@ -11,7 +11,7 @@ topics: ["stochastic_analysis", "ai_for_physics", "ai_for_physics/generative_dyn
 tier: 0
 citations: 0
 relevance_score: 54.0
-collected: "2026-04-16"
+collected: "2026-04-23"
 status: "unread"
 source: "arxiv"
 ---

@@ -44,7 +44,7 @@ cp .env.example .env
 # 编辑 .env，填入所需的 API key
 ```
 
-建议至少配置 `OPENALEX_API_KEY` 和 `YOUTUBE_API_KEY`。`Semantic Scholar` 当前在默认工作流中已封存（API 未通过申请），不必填写。
+建议至少配置 `OPENALEX_API_KEY` 和 `YOUTUBE_API_KEY`。如果启用 `Semantic Scholar`，也建议填写 `SEMANTIC_SCHOLAR_API_KEY`，默认会按 `1 RPS` 以下的节奏访问。
 
 ### 3. 初始化 seminal papers
 
@@ -102,7 +102,7 @@ cd web && npm install && npm run dev
 | arXiv API | 预印本实时采集 | **活跃** | 免费，无需 key |
 | OpenAlex | 期刊筛选、开放获取 | **活跃** | 免费，建议配置 API key |
 | YouTube Data API | 学习视频采集 | **活跃** | 需 Google API key |
-| Semantic Scholar | 引用网络、影响力指标 | **封存** | API 申请未通过，当前禁用 |
+| Semantic Scholar | 引用网络、影响力指标 | **活跃** | 建议配置 API key，默认按低于 `1 RPS` 的节奏访问 |
 
 ## 目标期刊层级
 

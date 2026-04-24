@@ -11,7 +11,7 @@ topics: ["ai_for_physics", "urban_complex_systems", "urban_complex_systems/mobil
 tier: 0
 citations: 0
 relevance_score: 50.0
-collected: "2026-04-16"
+collected: "2026-04-23"
 status: "unread"
 source: "openalex"
 ---

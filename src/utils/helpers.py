@@ -6,6 +6,7 @@ import json
 import os
 import re
 from datetime import UTC, date, datetime
+from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
@@ -37,9 +38,15 @@ def load_config(config_name: str) -> dict[str, Any]:
         return yaml.safe_load(handle)
 
 
+@lru_cache(maxsize=1)
+def load_project_env() -> None:
+    """Load the project .env once; explicit process env values still win."""
+    load_dotenv(get_project_root() / ".env", override=False)
+
+
 def get_env(key: str, default: str = "") -> str:
-    """获取环境变量，自动加载 .env。"""
-    load_dotenv(get_project_root() / ".env")
+    """获取环境变量，自动加载项目 .env。"""
+    load_project_env()
     return os.getenv(key, default)
 
 

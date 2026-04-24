@@ -1,6 +1,6 @@
 ---
 title: "Ergodicity and regime recoverability in finite Markov-modulated random walks"
-authors: ["Arina Pambukyan", "Abdul Khader Jilani Saudagar", "Sachin Kumar"]
+authors: ["Arina Pambukyan", "Abdul Khader Jilani Saudagar", "Sachin Kumar", "A. Saudagar"]
 year: 2026
 journal: "Scientific Reports"
 doi: "10.1038/s41598-026-45019-w"
@@ -8,12 +8,12 @@ arxiv: ""
 url: "https://openalex.org/W7150102012"
 pdf_url: "https://www.nature.com/articles/s41598-026-45019-w_reference.pdf"
 topics: ["stochastic_analysis", "stochastic_analysis/path_foundations/brownian_motion", "stochastic_analysis/stochastic_dynamics/sde_theory", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "stochastic_analysis/path_foundations", "stochastic_analysis/stochastic_dynamics", "statistical_physics/non_equilibrium_dynamics"]
-tier: 3
+tier: 0
 citations: 0
-relevance_score: 58.0
-collected: "2026-04-16"
+relevance_score: 50.0
+collected: "2026-04-23"
 status: "unread"
-source: "openalex"
+source: "openalex,semantic_scholar,semantic_scholar,semantic_scholar"
 ---
 
 ## Abstract

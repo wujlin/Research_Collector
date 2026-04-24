@@ -7,11 +7,11 @@ doi: "10.14293/pr2199.003330.v1"
 arxiv: ""
 url: "https://openalex.org/W7154295060"
 pdf_url: "https://www.scienceopen.com/document_file/3b890cd1-a21f-40dd-af2b-b8ac82bf1510/ScienceOpenPreprint/Turbulence_in_the_Geometry_of_Power_01_04_2026.pdf"
-topics: ["bridges/translation_layers/fokker_planck_master", "bridges/translation_layers", "bridges", "stochastic_analysis/stochastic_dynamics", "stochastic_analysis", "stochastic_analysis/stochastic_dynamics/sde_theory"]
+topics: ["stochastic_analysis", "bridges/translation_layers/fokker_planck_master", "stochastic_analysis/stochastic_dynamics/sde_theory", "bridges", "stochastic_analysis/stochastic_dynamics", "bridges/translation_layers"]
 tier: 0
 citations: 0
 relevance_score: 50.0
-collected: "2026-04-16"
+collected: "2026-04-23"
 status: "unread"
 source: "openalex"
 ---
@@ -26,12 +26,12 @@ This paper develops a statistical mechanics approach for studying turbulence in 
 
 ## Connections
 
+- [[stochastic_analysis]]
 - [[fokker_planck_master]]
-- [[translation_layers]]
+- [[sde_theory]]
 - [[bridges]]
 - [[stochastic_dynamics]]
-- [[stochastic_analysis]]
-- [[sde_theory]]
+- [[translation_layers]]
 
 ## Notes
 

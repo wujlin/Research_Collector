@@ -27,8 +27,9 @@ collection:
       max_retries_on_timeout: 2
       base_backoff_seconds: 6
     semantic_scholar:
-      enabled: false
-      # API 申请暂未通过，当前先整体封存该源；恢复前不要纳入默认采集工作流
+      enabled: true
+      # 单 key 配额为 1 RPS；主动留一点余量，避免多 query 连发撞限流
+      min_interval_seconds: 1.1
       # 默认全源采集时，没有 API key 就跳过，避免撞共享限流池
       use_in_all_runs_without_api_key: false
       # 显式触发该源时，429 后的最大重试次数

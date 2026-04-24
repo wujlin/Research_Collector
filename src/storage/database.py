@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from contextlib import contextmanager
+from dataclasses import dataclass
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any
@@ -14,6 +15,17 @@ from sqlalchemy.orm import Session, sessionmaker
 from src.utils.helpers import flatten_topics, normalize_title, normalize_whitespace, parse_date, utc_now
 
 from .models import Author, Base, CollectionLog, Paper, Topic, Venue, YouTubeResource, author_coauthors
+
+
+@dataclass(frozen=True)
+class UpsertResult:
+    record: Any
+    created: bool = False
+    updated: bool = False
+
+    @property
+    def unchanged(self) -> bool:
+        return not self.created and not self.updated
 
 
 class Database:
@@ -80,6 +92,9 @@ class Database:
     # ── Paper CRUD ──
 
     def add_paper(self, paper_data: dict[str, Any]) -> Paper:
+        return self.upsert_paper(paper_data).record
+
+    def upsert_paper(self, paper_data: dict[str, Any]) -> UpsertResult:
         """
         添加论文。如果 DOI 或 arXiv ID 已存在则跳过。
         paper_data 应包含: title, abstract, year, journal, doi, arxiv_id,
@@ -117,8 +132,8 @@ class Database:
             self._attach_authors(session, paper, normalized_data.get("authors", []))
             self._attach_topics(session, paper, normalized_data.get("topic_keys", []))
             self._attach_venue(session, paper)
-            self._update_coauthors(session, paper)
-            return paper
+            self._update_coauthors(session, paper, previous_author_ids=set())
+            return UpsertResult(record=paper, created=True)
 
     def _find_existing_paper(self, session: Session, data: dict[str, Any]) -> Paper | None:
         if data.get("doi"):
@@ -155,35 +170,122 @@ class Database:
         session: Session,
         paper: Paper,
         data: dict[str, Any],
-    ) -> Paper:
-        paper.abstract = self._pick_longer_text(paper.abstract, data.get("abstract", ""))
-        paper.year = paper.year or data.get("year")
-        paper.publication_date = paper.publication_date or parse_date(data.get("publication_date"))
-        paper.journal = paper.journal or data.get("journal", "")
-        paper.venue = paper.venue or data.get("venue", "")
-        paper.url = paper.url or data.get("url", "")
-        paper.pdf_url = paper.pdf_url or data.get("pdf_url", "")
-        paper.doi = paper.doi or data.get("doi")
-        paper.arxiv_id = paper.arxiv_id or data.get("arxiv_id")
-        paper.semantic_scholar_id = paper.semantic_scholar_id or data.get("semantic_scholar_id")
-        paper.openalex_id = paper.openalex_id or data.get("openalex_id")
-        paper.citation_count = max(paper.citation_count or 0, data.get("citation_count", 0) or 0)
-        paper.influential_citation_count = max(
+    ) -> UpsertResult:
+        changed = False
+
+        merged_abstract = self._pick_longer_text(paper.abstract, data.get("abstract", ""))
+        if merged_abstract != (paper.abstract or ""):
+            paper.abstract = merged_abstract
+            changed = True
+
+        merged_year = paper.year or data.get("year")
+        if merged_year != paper.year:
+            paper.year = merged_year
+            changed = True
+
+        merged_publication_date = paper.publication_date or parse_date(data.get("publication_date"))
+        if merged_publication_date != paper.publication_date:
+            paper.publication_date = merged_publication_date
+            changed = True
+
+        merged_journal = paper.journal or data.get("journal", "")
+        if merged_journal != (paper.journal or ""):
+            paper.journal = merged_journal
+            changed = True
+
+        merged_venue = paper.venue or data.get("venue", "")
+        if merged_venue != (paper.venue or ""):
+            paper.venue = merged_venue
+            changed = True
+
+        merged_url = paper.url or data.get("url", "")
+        if merged_url != (paper.url or ""):
+            paper.url = merged_url
+            changed = True
+
+        merged_pdf_url = paper.pdf_url or data.get("pdf_url", "")
+        if merged_pdf_url != (paper.pdf_url or ""):
+            paper.pdf_url = merged_pdf_url
+            changed = True
+
+        merged_doi = paper.doi or data.get("doi")
+        if merged_doi != paper.doi:
+            paper.doi = merged_doi
+            changed = True
+
+        merged_arxiv_id = paper.arxiv_id or data.get("arxiv_id")
+        if merged_arxiv_id != paper.arxiv_id:
+            paper.arxiv_id = merged_arxiv_id
+            changed = True
+
+        merged_semantic_scholar_id = paper.semantic_scholar_id or data.get("semantic_scholar_id")
+        if merged_semantic_scholar_id != paper.semantic_scholar_id:
+            paper.semantic_scholar_id = merged_semantic_scholar_id
+            changed = True
+
+        merged_openalex_id = paper.openalex_id or data.get("openalex_id")
+        if merged_openalex_id != paper.openalex_id:
+            paper.openalex_id = merged_openalex_id
+            changed = True
+
+        merged_citation_count = max(paper.citation_count or 0, data.get("citation_count", 0) or 0)
+        if merged_citation_count != (paper.citation_count or 0):
+            paper.citation_count = merged_citation_count
+            changed = True
+
+        merged_influential_citation_count = max(
             paper.influential_citation_count or 0,
             data.get("influential_citation_count", 0) or 0,
         )
-        paper.relevance_score = max(paper.relevance_score or 0.0, data.get("relevance_score", 0.0) or 0.0)
-        paper.tier = self._pick_better_tier(paper.tier, data.get("tier", 0))
-        paper.is_seminal = paper.is_seminal or bool(data.get("is_seminal"))
-        paper.source = self._merge_sources(paper.source, data.get("source", ""))
+        if merged_influential_citation_count != (paper.influential_citation_count or 0):
+            paper.influential_citation_count = merged_influential_citation_count
+            changed = True
+
+        merged_relevance_score = max(paper.relevance_score or 0.0, data.get("relevance_score", 0.0) or 0.0)
+        if merged_relevance_score != (paper.relevance_score or 0.0):
+            paper.relevance_score = merged_relevance_score
+            changed = True
+
+        merged_tier = self._pick_better_tier(paper.tier, data.get("tier", 0))
+        if merged_tier != (paper.tier or 0):
+            paper.tier = merged_tier
+            changed = True
+
+        merged_is_seminal = paper.is_seminal or bool(data.get("is_seminal"))
+        if merged_is_seminal != bool(paper.is_seminal):
+            paper.is_seminal = merged_is_seminal
+            changed = True
+
+        merged_source = self._merge_sources(paper.source, data.get("source", ""))
+        if merged_source != (paper.source or ""):
+            paper.source = merged_source
+            changed = True
+
         if data.get("notes"):
-            paper.notes = self._pick_longer_text(paper.notes, data["notes"])
+            merged_notes = self._pick_longer_text(paper.notes, data["notes"])
+            if merged_notes != (paper.notes or ""):
+                paper.notes = merged_notes
+                changed = True
+
+        previous_author_ids = {author.id for author in paper.authors}
         self._attach_authors(session, paper, data.get("authors", []))
+        if {author.id for author in paper.authors} != previous_author_ids:
+            changed = True
+
+        previous_topic_keys = {topic.key for topic in paper.topics}
         self._attach_topics(session, paper, data.get("topic_keys", []))
+        if {topic.key for topic in paper.topics} != previous_topic_keys:
+            changed = True
+
+        previous_venue_id = paper.venue_id
         self._attach_venue(session, paper)
-        self._update_coauthors(session, paper)
-        paper.updated_at = utc_now()
-        return paper
+        if paper.venue_id != previous_venue_id:
+            changed = True
+
+        self._update_coauthors(session, paper, previous_author_ids=previous_author_ids)
+        if changed:
+            paper.updated_at = utc_now()
+        return UpsertResult(record=paper, updated=changed)
 
     @staticmethod
     def _merge_sources(current: str, incoming: str) -> str:
@@ -315,13 +417,19 @@ class Database:
                 return
 
     @staticmethod
-    def _update_coauthors(session: Session, paper: Paper) -> None:
+    def _update_coauthors(session: Session, paper: Paper, previous_author_ids: set[int]) -> None:
         """从论文的作者列表增量更新 author_coauthors 表。"""
         author_ids = sorted({a.id for a in paper.authors})
         if len(author_ids) < 2:
             return
         from itertools import combinations
+        new_author_ids = set(author_ids) - previous_author_ids
+        if not new_author_ids:
+            return
+
         for a_id, b_id in combinations(author_ids, 2):
+            if a_id not in new_author_ids and b_id not in new_author_ids:
+                continue
             existing = session.execute(
                 select(author_coauthors).where(
                     author_coauthors.c.author_a_id == a_id,
@@ -624,6 +732,9 @@ class Database:
     # ── YouTube ──
 
     def add_youtube_resource(self, resource_data: dict[str, Any]) -> YouTubeResource:
+        return self.upsert_youtube_resource(resource_data).record
+
+    def upsert_youtube_resource(self, resource_data: dict[str, Any]) -> UpsertResult:
         with self.session() as session:
             if resource_data.get("video_id"):
                 existing = session.execute(
@@ -631,17 +742,62 @@ class Database:
                     .where(YouTubeResource.video_id == resource_data["video_id"])
                 ).scalar_one_or_none()
                 if existing:
-                    existing.view_count = max(existing.view_count or 0, resource_data.get("view_count", 0) or 0)
-                    existing.description = self._pick_longer_text(
+                    changed = False
+
+                    merged_view_count = max(existing.view_count or 0, resource_data.get("view_count", 0) or 0)
+                    if merged_view_count != (existing.view_count or 0):
+                        existing.view_count = merged_view_count
+                        changed = True
+
+                    merged_description = self._pick_longer_text(
                         existing.description,
                         resource_data.get("description", ""),
                     )
-                    return existing
+                    if merged_description != (existing.description or ""):
+                        existing.description = merged_description
+                        changed = True
+
+                    merged_topic_key = existing.topic_key or resource_data.get("topic_key", "")
+                    if merged_topic_key != (existing.topic_key or ""):
+                        existing.topic_key = merged_topic_key
+                        changed = True
+
+                    merged_channel_name = existing.channel_name or resource_data.get("channel_name", "")
+                    if merged_channel_name != (existing.channel_name or ""):
+                        existing.channel_name = merged_channel_name
+                        changed = True
+
+                    merged_channel_id = existing.channel_id or resource_data.get("channel_id", "")
+                    if merged_channel_id != (existing.channel_id or ""):
+                        existing.channel_id = merged_channel_id
+                        changed = True
+
+                    merged_url = existing.url or resource_data.get("url", "")
+                    if merged_url != (existing.url or ""):
+                        existing.url = merged_url
+                        changed = True
+
+                    merged_duration = existing.duration or resource_data.get("duration", "")
+                    if merged_duration != (existing.duration or ""):
+                        existing.duration = merged_duration
+                        changed = True
+
+                    merged_published_at = existing.published_at or resource_data.get("published_at")
+                    if merged_published_at != existing.published_at:
+                        existing.published_at = merged_published_at
+                        changed = True
+
+                    merged_resource_type = existing.resource_type or resource_data.get("resource_type", "video")
+                    if merged_resource_type != (existing.resource_type or ""):
+                        existing.resource_type = merged_resource_type
+                        changed = True
+
+                    return UpsertResult(record=existing, updated=changed)
 
             resource = YouTubeResource(**resource_data)
             session.add(resource)
             session.flush()
-            return resource
+            return UpsertResult(record=resource, created=True)
 
     # ── 采集日志 ──
 

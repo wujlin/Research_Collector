@@ -181,7 +181,7 @@ def test_semantic_scholar_collector_retries_after_429(monkeypatch: pytest.Monkey
         },
         sleep_fn=lambda _: None,
     )
-    monkeypatch.delenv("SEMANTIC_SCHOLAR_API_KEY", raising=False)
+    monkeypatch.setenv("SEMANTIC_SCHOLAR_API_KEY", "")
     records = collector.collect(query="retry", limit=1)
 
     assert records[0]["semantic_scholar_id"] == "retry123"
@@ -199,7 +199,7 @@ def test_semantic_scholar_default_run_is_skipped_without_api_key(monkeypatch: py
             }
         }
     )
-    monkeypatch.delenv("SEMANTIC_SCHOLAR_API_KEY", raising=False)
+    monkeypatch.setenv("SEMANTIC_SCHOLAR_API_KEY", "")
 
     assert collector.should_skip_default_run() is True
 

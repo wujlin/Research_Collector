@@ -11,7 +11,7 @@ topics: ["ai_for_physics", "ai_for_physics/generative_dynamics/sde_generative", 
 tier: 0
 citations: 0
 relevance_score: 47.48
-collected: "2026-04-16"
+collected: "2026-04-23"
 status: "unread"
 source: "arxiv"
 ---

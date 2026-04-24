@@ -1,6 +1,6 @@
 ---
 title: "MVNN: A Measure-Valued Neural Network for Learning McKean-Vlasov Dynamics from Particle Data"
-authors: ["Lingyi Lyu", "Xinyue Yu", "Hayden Schaeffer"]
+authors: ["Lingyi Lyu", "Xinyue Yu", "Hayden Schaeffer", "Lyu, Liyao"]
 year: 2026
 journal: "ArXiv.org"
 doi: ""
@@ -11,7 +11,7 @@ topics: ["stochastic_analysis", "stochastic_analysis/stochastic_dynamics/sde_the
 tier: 0
 citations: 0
 relevance_score: 54.0
-collected: "2026-04-16"
+collected: "2026-04-23"
 status: "read"
 source: "openalex"
 ---

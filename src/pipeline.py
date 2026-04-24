@@ -71,7 +71,11 @@ class CollectionPipeline:
         summary: dict[str, Any] = {
             "sources": {},
             "papers_processed": 0,
+            "papers_added": 0,
+            "papers_updated": 0,
             "youtube_processed": 0,
+            "youtube_added": 0,
+            "youtube_updated": 0,
             "errors": [],
         }
 
@@ -109,25 +113,45 @@ class CollectionPipeline:
             log_id = self.database.log_collection(source_name)
             try:
                 if source_name == "youtube":
-                    count = self._collect_youtube(query=query, max_results=max_results)
-                    summary["youtube_processed"] += count
-                    summary["sources"][source_name] = {"processed": count, "status": "success"}
+                    stats = self._collect_youtube(query=query, max_results=max_results)
+                    summary["youtube_processed"] += stats["processed"]
+                    summary["youtube_added"] += stats["added"]
+                    summary["youtube_updated"] += stats["updated"]
+                    summary["sources"][source_name] = {
+                        "found": stats["found"],
+                        "processed": stats["processed"],
+                        "added": stats["added"],
+                        "updated": stats["updated"],
+                        "unchanged": stats["unchanged"],
+                        "status": "success",
+                    }
                     self.database.update_collection_log(
                         log_id,
                         status="success",
-                        papers_found=count,
-                        papers_added=count,
+                        papers_found=stats["found"],
+                        papers_added=stats["added"],
+                        papers_updated=stats["updated"],
                     )
                     continue
 
-                processed = self._collect_papers(source_name, query=query, max_results=max_results)
-                summary["papers_processed"] += len(processed)
-                summary["sources"][source_name] = {"processed": len(processed), "status": "success"}
+                stats = self._collect_papers(source_name, query=query, max_results=max_results)
+                summary["papers_processed"] += stats["processed"]
+                summary["papers_added"] += stats["added"]
+                summary["papers_updated"] += stats["updated"]
+                summary["sources"][source_name] = {
+                    "found": stats["found"],
+                    "processed": stats["processed"],
+                    "added": stats["added"],
+                    "updated": stats["updated"],
+                    "unchanged": stats["unchanged"],
+                    "status": "success",
+                }
                 self.database.update_collection_log(
                     log_id,
                     status="success",
-                    papers_found=len(processed),
-                    papers_added=len(processed),
+                    papers_found=stats["found"],
+                    papers_added=stats["added"],
+                    papers_updated=stats["updated"],
                 )
             except Exception as exc:
                 self.database.update_collection_log(log_id, status="failed", error_message=str(exc))
@@ -170,7 +194,7 @@ class CollectionPipeline:
         source_name: str,
         query: str = "",
         max_results: int | None = None,
-    ) -> list[dict[str, Any]]:
+    ) -> dict[str, int]:
         collector = self.collectors[source_name]
         query_profiles = self.query_profiles.get(source_name, [])
         per_query_limits = self.settings.get("collection", {}).get("per_query_limits", {})
@@ -203,21 +227,37 @@ class CollectionPipeline:
             raise query_errors[-1]
 
         records = self.deduplicator.deduplicate(raw_records)
-        processed: list[dict[str, Any]] = []
+        found = len(records)
+        processed = 0
+        added = 0
+        updated = 0
+        unchanged = 0
         for record in records:
             self.classifier.classify_record(record)
             self.relevance_scorer.score_record(record)
             self.citation_analyzer.enrich_record(record)
             if not self._passes_filters(record):
                 continue
-            paper = self.database.add_paper(record)
-            markdown_path = self.markdown_store.save_paper(paper)
-            self.database.update_paper_markdown_path(paper.id, markdown_path)
-            processed.append(record)
+            result = self.database.upsert_paper(record)
+            markdown_path = self.markdown_store.save_paper(result.record)
+            self.database.update_paper_markdown_path(result.record.id, markdown_path)
+            processed += 1
+            if result.created:
+                added += 1
+            elif result.updated:
+                updated += 1
+            else:
+                unchanged += 1
 
-        return processed
+        return {
+            "found": found,
+            "processed": processed,
+            "added": added,
+            "updated": updated,
+            "unchanged": unchanged,
+        }
 
-    def _collect_youtube(self, query: str = "", max_results: int | None = None) -> int:
+    def _collect_youtube(self, query: str = "", max_results: int | None = None) -> dict[str, int]:
         collector = self.collectors["youtube"]
         limit = max_results or 4
         resources = collector.collect(
@@ -225,7 +265,11 @@ class CollectionPipeline:
             max_results=limit,
             channels=self.youtube_cfg.get("channels"),
         )
-        kept = 0
+        found = len(resources)
+        processed = 0
+        added = 0
+        updated = 0
+        unchanged = 0
         for resource in resources:
             verdict = self.youtube_filter.evaluate(resource)
             if not verdict["keep"]:
@@ -236,9 +280,21 @@ class CollectionPipeline:
             score, bucket = self.importance_ranker.score_youtube(resource)
             if bucket == "archive":
                 continue
-            self.database.add_youtube_resource(resource)
-            kept += 1
-        return kept
+            result = self.database.upsert_youtube_resource(resource)
+            processed += 1
+            if result.created:
+                added += 1
+            elif result.updated:
+                updated += 1
+            else:
+                unchanged += 1
+        return {
+            "found": found,
+            "processed": processed,
+            "added": added,
+            "updated": updated,
+            "unchanged": unchanged,
+        }
 
     def _passes_filters(self, record: dict[str, Any]) -> bool:
         filtering = self.settings["filtering"]
