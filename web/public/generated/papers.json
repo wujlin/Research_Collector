@@ -8039,6 +8039,38 @@
     "venue_quality": "preprint"
   },
   {
+    "id": 397,
+    "title": "Stochastic equations and cities",
+    "abstract": "Stochastic equations constitute a major ingredient in many branches of science, from physics to biology and engineering. Not surprisingly, they appear in many quantitative studies of complex systems. In particular, this type of equation is useful for understanding the dynamics of urban population. Empirically, the population of cities follows a seemingly universal law - called Zipf's law - which was discovered about a century ago and states that when sorted in decreasing order, the population of a city varies as the inverse of its rank. Recent data however showed that this law is only approximate and in some cases not even verified. In addition, the ranks of cities follow a turbulent dynamics: some cities rise while other fall and disappear. Both these aspects - Zipf's law (and deviations around it), and the turbulent dynamics of ranks - need to be explained by the same theoretical framework and it is natural to look for the equation that governs the evolution of urban populations. We will review here the main theoretical attempts based on stochastic equations to describe these empirical facts. We start with the simple Gibrat model that introduces random growth rates, and we will t",
+    "authors": [
+      "Marc Barthelemy"
+    ],
+    "year": 2023,
+    "publication_date": "2023-07-11",
+    "journal": "arXiv",
+    "venue": "arXiv",
+    "doi": "10.1088/1361-6633/ace45e",
+    "arxiv_id": "2307.05269",
+    "url": "http://arxiv.org/abs/2307.05269v1",
+    "pdf_url": "https://arxiv.org/pdf/2307.05269v1",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "relevance_score": 45.0,
+    "tier": 0,
+    "status": "unread",
+    "is_seminal": false,
+    "source": "arxiv",
+    "topics": [
+      "urban_complex_systems",
+      "urban_complex_systems/scaling_and_evolution/urban_scaling",
+      "urban_complex_systems/scaling_and_evolution"
+    ],
+    "markdown_path": "urban_complex_systems/scaling_and_evolution/urban_scaling/stochastic-equations-and-cities.md",
+    "importance_score": 33.0,
+    "importance_bucket": "archive",
+    "venue_quality": "preprint"
+  },
+  {
     "id": 349,
     "title": "Stochastic entropy production in scattering theory",
     "abstract": "We formulate a stochastic description of entropy production in scattering theory for coherent transport. We distinguish between the information entropy change due to partial knowledge of the leads' state and the thermodynamic entropy change due to the equilibration of each lead with its bath. By employing a two-point measurement scheme, we access the stochastic entropy production at these different stages of the process, as well as the statistics of generic transport quantities. When restricted to particle or energy transport, our approach reproduces the Landauer-Büttiker formulas. The possibility to consider more general quantities such as the entropy currents and their fluctuations, provides a systematic connection between stochastic thermodynamics and coherent transport.",
@@ -8612,6 +8644,39 @@
     "importance_score": 29.8,
     "importance_bucket": "archive",
     "venue_quality": "unranked"
+  },
+  {
+    "id": 398,
+    "title": "The growth equation of cities",
+    "abstract": "The science of cities seeks to understand and explain regularities observed in the world's major urban systems. Modelling the population evolution of cities is at the core of this science and of all urban studies. Quantitatively, the most fundamental problem is to understand the hierarchical organization of cities and the statistical occurrence of megacities, first thought to be described by a universal law due to Zipf, but whose validity has been challenged by recent empirical studies. A theoretical model must also be able to explain the relatively frequent rises and falls of cities and civilizations, and despite many attempts these fundamental questions have not been satisfactorily answered yet. Here we fill this gap by introducing a new kind of stochastic equation for modelling population growth in cities, which we construct from an empirical analysis of recent datasets (for Canada, France, UK and USA) that reveals how rare but large interurban migratory shocks dominate city growth. This equation predicts a complex shape for the city distribution and shows that Zipf's law does not hold in general due to finite-time effects, implying a more complex organization of cities. It also",
+    "authors": [
+      "Marc Barthelemy",
+      "Vincent Verbavatz"
+    ],
+    "year": 2020,
+    "publication_date": "2020-11-18",
+    "journal": "Nature, vol. 587, pages 397-401 (2020)",
+    "venue": "arXiv",
+    "doi": "10.1038/s41586-020-2900-x",
+    "arxiv_id": "2011.09403",
+    "url": "http://arxiv.org/abs/2011.09403v2",
+    "pdf_url": "https://arxiv.org/pdf/2011.09403v2",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "relevance_score": 39.0,
+    "tier": 0,
+    "status": "unread",
+    "is_seminal": false,
+    "source": "arxiv",
+    "topics": [
+      "urban_complex_systems",
+      "urban_complex_systems/scaling_and_evolution/urban_scaling",
+      "urban_complex_systems/scaling_and_evolution"
+    ],
+    "markdown_path": "urban_complex_systems/scaling_and_evolution/urban_scaling/the-growth-equation-of-cities.md",
+    "importance_score": 29.4,
+    "importance_bucket": "archive",
+    "venue_quality": "preprint"
   },
   {
     "id": 289,

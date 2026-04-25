@@ -30,7 +30,7 @@
     "view_count": 2354,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 85.9,
+    "importance_score": 85.88,
     "importance_bucket": "keep"
   },
   {
@@ -64,7 +64,7 @@
     "view_count": 551,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 81.67,
+    "importance_score": 81.65,
     "importance_bucket": "keep"
   },
   {
@@ -98,7 +98,7 @@
     "view_count": 27,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 81.02,
+    "importance_score": 80.99,
     "importance_bucket": "keep"
   },
   {
@@ -115,7 +115,7 @@
     "view_count": 204,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 80.64,
+    "importance_score": 80.62,
     "importance_bucket": "keep"
   },
   {
@@ -166,7 +166,7 @@
     "view_count": 18477,
     "topic_key": "ai_for_physics/generative_dynamics/sde_generative",
     "resource_type": "video",
-    "importance_score": 73.62,
+    "importance_score": 73.6,
     "importance_bucket": "keep"
   },
   {
@@ -217,7 +217,7 @@
     "view_count": 1,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 72.65,
+    "importance_score": 72.63,
     "importance_bucket": "keep"
   },
   {
@@ -268,7 +268,7 @@
     "view_count": 20125,
     "topic_key": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
     "resource_type": "video",
-    "importance_score": 71.1,
+    "importance_score": 71.08,
     "importance_bucket": "keep"
   },
   {
@@ -319,24 +319,7 @@
     "view_count": 5,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 67.45,
-    "importance_bucket": "keep"
-  },
-  {
-    "id": 67,
-    "title": "FLOW style Active Inference/FEP using new pymdp/Jax sandbox ",
-    "channel_name": "Diffusion and Free Energy Search",
-    "channel_id": "UCHmH-SDn4Ln9XoQTXNwiyYg",
-    "video_id": "uM9yS5nejrY",
-    "playlist_id": null,
-    "url": "https://www.youtube.com/watch?v=uM9yS5nejrY",
-    "description": "Computational experiments in Active Inference (AIF/FEP) with pymdp + JAX Focusing on modified Markov blankets, custom generative models, and emergent dynamics (USST / FLOW / FUSE)",
-    "published_at": "2026-04-07T12:42:34",
-    "duration": "PT56S",
-    "view_count": 2,
-    "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
-    "resource_type": "video",
-    "importance_score": 67.27,
+    "importance_score": 67.42,
     "importance_bucket": "keep"
   },
   {
@@ -353,7 +336,24 @@
     "view_count": 505,
     "topic_key": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
     "resource_type": "video",
-    "importance_score": 67.26,
+    "importance_score": 67.24,
+    "importance_bucket": "keep"
+  },
+  {
+    "id": 67,
+    "title": "FLOW style Active Inference/FEP using new pymdp/Jax sandbox ",
+    "channel_name": "Diffusion and Free Energy Search",
+    "channel_id": "UCHmH-SDn4Ln9XoQTXNwiyYg",
+    "video_id": "uM9yS5nejrY",
+    "playlist_id": null,
+    "url": "https://www.youtube.com/watch?v=uM9yS5nejrY",
+    "description": "Computational experiments in Active Inference (AIF/FEP) with pymdp + JAX Focusing on modified Markov blankets, custom generative models, and emergent dynamics (USST / FLOW / FUSE)",
+    "published_at": "2026-04-07T12:42:34",
+    "duration": "PT56S",
+    "view_count": 2,
+    "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
+    "resource_type": "video",
+    "importance_score": 67.24,
     "importance_bucket": "keep"
   },
   {
@@ -370,7 +370,7 @@
     "view_count": 32641,
     "topic_key": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
     "resource_type": "video",
-    "importance_score": 65.97,
+    "importance_score": 65.95,
     "importance_bucket": "keep"
   },
   {
@@ -404,7 +404,7 @@
     "view_count": 4606,
     "topic_key": "ai_for_physics",
     "resource_type": "video",
-    "importance_score": 64.53,
+    "importance_score": 64.5,
     "importance_bucket": "keep"
   },
   {
@@ -421,7 +421,7 @@
     "view_count": 36946,
     "topic_key": "ai_for_physics",
     "resource_type": "video",
-    "importance_score": 64.35,
+    "importance_score": 64.33,
     "importance_bucket": "keep"
   },
   {
@@ -438,7 +438,7 @@
     "view_count": 27,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 63.79,
+    "importance_score": 63.77,
     "importance_bucket": "keep"
   },
   {
@@ -608,7 +608,7 @@
     "view_count": 96,
     "topic_key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
     "resource_type": "video",
-    "importance_score": 60.58,
+    "importance_score": 60.55,
     "importance_bucket": "keep"
   },
   {
@@ -693,7 +693,7 @@
     "view_count": 26,
     "topic_key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
     "resource_type": "video",
-    "importance_score": 58.63,
+    "importance_score": 58.61,
     "importance_bucket": "keep"
   },
   {
@@ -710,7 +710,7 @@
     "view_count": 72,
     "topic_key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
     "resource_type": "video",
-    "importance_score": 58.57,
+    "importance_score": 58.55,
     "importance_bucket": "keep"
   },
   {
@@ -744,7 +744,7 @@
     "view_count": 124491,
     "topic_key": "ai_for_physics",
     "resource_type": "video",
-    "importance_score": 58.35,
+    "importance_score": 58.33,
     "importance_bucket": "keep"
   },
   {
@@ -795,7 +795,7 @@
     "view_count": 49,
     "topic_key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
     "resource_type": "video",
-    "importance_score": 57.97,
+    "importance_score": 57.95,
     "importance_bucket": "keep"
   },
   {
@@ -812,7 +812,7 @@
     "view_count": 15,
     "topic_key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
     "resource_type": "video",
-    "importance_score": 57.84,
+    "importance_score": 57.81,
     "importance_bucket": "keep"
   },
   {
@@ -863,7 +863,7 @@
     "view_count": 416,
     "topic_key": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
     "resource_type": "video",
-    "importance_score": 54.62,
+    "importance_score": 54.6,
     "importance_bucket": "review"
   },
   {
@@ -897,7 +897,7 @@
     "view_count": 15652,
     "topic_key": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
     "resource_type": "video",
-    "importance_score": 54.15,
+    "importance_score": 54.12,
     "importance_bucket": "review"
   },
   {
@@ -914,7 +914,7 @@
     "view_count": 4,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 53.6,
+    "importance_score": 53.57,
     "importance_bucket": "review"
   },
   {
@@ -948,7 +948,7 @@
     "view_count": 3,
     "topic_key": "urban_complex_systems/scaling_and_evolution/urban_scaling",
     "resource_type": "video",
-    "importance_score": 51.73,
+    "importance_score": 51.71,
     "importance_bucket": "review"
   },
   {
@@ -982,7 +982,7 @@
     "view_count": 43,
     "topic_key": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
     "resource_type": "video",
-    "importance_score": 51.4,
+    "importance_score": 51.38,
     "importance_bucket": "review"
   },
   {
@@ -1016,7 +1016,7 @@
     "view_count": 9,
     "topic_key": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
     "resource_type": "video",
-    "importance_score": 49.15,
+    "importance_score": 49.12,
     "importance_bucket": "review"
   },
   {
@@ -1084,7 +1084,7 @@
     "view_count": 39,
     "topic_key": "urban_scaling",
     "resource_type": "video",
-    "importance_score": 43.81,
+    "importance_score": 43.78,
     "importance_bucket": "review"
   }
 ]

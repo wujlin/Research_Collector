@@ -544,7 +544,7 @@
     "display_name": "城市复杂系统",
     "parent_key": null,
     "description": "应用场景层：在城市流动、网络、标度和空间动力学中检验这些理论。",
-    "paper_count": 25,
+    "paper_count": 27,
     "depth": 0,
     "is_leaf": false,
     "lineage": [
@@ -597,7 +597,7 @@
     "display_name": "标度与演化",
     "parent_key": "urban_complex_systems",
     "description": "城市标度律、增长与长期动力学。",
-    "paper_count": 11,
+    "paper_count": 13,
     "depth": 1,
     "is_leaf": false,
     "lineage": [
@@ -624,7 +624,7 @@
     "display_name": "城市标度律",
     "parent_key": "urban_complex_systems/scaling_and_evolution",
     "description": "",
-    "paper_count": 6,
+    "paper_count": 8,
     "depth": 2,
     "is_leaf": true,
     "lineage": [

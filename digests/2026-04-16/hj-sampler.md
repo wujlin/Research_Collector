@@ -1803,17 +1803,11 @@ $$
 
 ## 五、数值实验（原文 Section 4: Numerical examples）
 
-这一节不是简单地堆四个例子，而是按一条很清楚的验证顺序推进：
+数值实验回答的不是一个单一问题，而是一串递进问题。第一，HJ-sampler 在有解析答案的情形下是否真的采到正确后验。第二，把解析 HJ 解替换成神经网络近似以后，误差主要来自哪里。第三，当动力学模型本身带有不确定性或被误设时，这个框架能否把模型误差转成后验宽度。第四，在低维图像检查之外，SGM-HJ-sampler 是否还能推进到高维函数型状态。
 
-1. 先用有解析后验的布朗运动做 **sanity check**，确认算法本身确实能采到正确后验；
-2. 再把底层过程换成 OU，检查这套方法能否处理 **模型不确定性和模型误设**；
-3. 然后进一步进入非线性 ODE，检查方法在更复杂误设下是否还能稳定给出合理不确定性；
-4. 最后再上到 100 维，验证它的 **可扩展性**。
+原文按这个顺序安排实验。布朗运动部分承担校准作用，因为它有解析后验，可以把 analytic-HJ-sampler 当作近似无 `Step 1` 误差的参考。OU 和 ODE 部分承担建模解释作用，因为它们把 $\epsilon$ 从普通扩散强度推进成模型置信度参数。最后的 100 维例子承担可扩展性检查，因为它不再能依赖低维图像直觉。
 
-原文还特别强调两点背景：
-
-- 在布朗运动和一维 OU 的若干情形里，后验和粘性 HJ PDE 都有解析解，所以可以把 analytic-HJ-sampler 当成基线，用来分离 `Step 1` 和 `Step 2` 的误差来源。
-- 这一节也反复利用 `Remark 3.1` 的灵活性：同一个先验侧训练结果，可以在不同观测时刻 $s$、不同回溯时刻 $t$、不同观测值 $y_{\mathrm{obs}}$ 下重复使用。
+这里还有一个贯穿全节的设计点：`Step 1` 学的是先验侧的演化信息，不绑定某一个观测。因此同一个训练好的 SGM-HJ-sampler，可以在不同观测时间 $s$、不同回溯时间 $t$、不同观测值 $y_{\mathrm{obs}}$ 下重复使用。后面的 Figure 5、Figure 8 和 Figure 11 都是在检验这件事，而不是只是在展示更多样本图。
 
 ### 5.1 布朗运动：先做最干净的正确性验证
 
@@ -1822,367 +1816,398 @@ $$
 dY_t=\sqrt{\epsilon}\,dW_t
 $$
 作为底层过程，不是因为它最有应用价值，而是因为它最适合先做正确性验证。这里的逆问题是：给定某个终端观测
+
 $$
 Y_s=y_{\mathrm{obs}},\qquad 0\le t<s\le T,
 $$
+
 去采样
+
 $$
 P(Y_t\mid Y_s=y_{\mathrm{obs}}).
 $$
-这一类后验在布朗运动下有解析表达，所以可以直接把算法输出和精确后验对比。
 
-这一组实验其实在验证两件事。第一件事是：**HJ-sampler 作为后验采样器是否正确**。第二件事是：**当把 `Step 1` 从解析 HJ 解换成神经网络近似以后，误差到底增加多少**。所以原文同时报告 analytic-HJ-sampler 和 SGM-HJ-sampler。
+这一类条件分布在布朗运动下有解析表达，所以它可以把“方法是否正确”这个问题从“模型是否合理”中分离出来。原文同时报告 analytic-HJ-sampler 和 SGM-HJ-sampler：前者直接使用解析 HJ 解，主要暴露受控 SDE 的离散误差；后者使用 score-based 神经网络近似，还额外暴露 `Step 1` 的学习误差。这个对照贯穿 5.1 的三个实验。
 
 #### 5.1.1 1D Gaussian prior：先看最标准的量化基线
 
 最基本的设置是
+
 $$
 Y_0\sim \mathcal N(0,1^2),\qquad \epsilon=1,\qquad T=1.
 $$
-训练阶段，SGM-HJ-sampler 用 $\Delta t=0.01$ 沿 prior process 采样；推断阶段用 $\Delta \tau=0.01$ 解受控 SDE。然后把采到的后验样本和解析后验比较，误差指标用 Wasserstein-1 距离。
 
-原文先看不同具体观测值 $y_{\mathrm{obs}}$ 下的表现，再看 $y_{\mathrm{obs}}\sim P(Y_T)$ 的总体平均表现。最关键的定量结果是：
+在这个设置下，所有对象都比较干净：先验是单峰高斯，前向过程是纯扩散，后验也有解析式。SGM-HJ-sampler 的训练阶段用 $\Delta t=0.01$ 沿 prior process 采样；推断阶段用 $\Delta \tau=0.01$ 解受控 SDE。评估时，作者不只挑几个观测值画图，而是让 $y_{\mathrm{obs}}\sim P(Y_T)$ 随机变化，再统计 Wasserstein-1 距离。
+
+关键结果是：
 
 | 方法 | $W_1$（1000 个随机 $y_{\mathrm{obs}}$ 的均值 $\pm$ 标准差） |
 |---|---|
 | analytic-HJ-sampler | $0.0024 \pm 0.0006$ |
 | SGM-HJ-sampler | $0.0104 \pm 0.0051$ |
 
-这组结果要这样读：
+表中 analytic-HJ-sampler 的误差更小，因为它绕过了神经网络学习环节，主要剩下受控 SDE 采样的时间离散误差。SGM-HJ-sampler 的误差大约高一个量级，但仍然很小，说明神经网络近似没有破坏后验采样的主结构。换句话说，布朗运动的第一个实验先把基本事实钉住：框架本身是正确的，SGM 版本的代价主要来自第一阶段近似。
 
-- 两种方法都已经足够接近精确后验，说明采样器主框架本身是对的；
-- analytic-HJ-sampler 更好，是因为它只保留了 `Step 2` 的数值离散误差；
-- SGM-HJ-sampler 额外引入了 `Step 1` 的神经网络近似误差，所以整体误差更大。
-
-原文随后又专门比较不同 $\Delta\tau$ 下的误差和运行时间。这里的重点不是“步长越小越好”这么简单，而是：当 $\Delta\tau$ 从 $0.01$ 再减到 $0.001$ 时，analytic-HJ-sampler 还能继续明显改善，而 SGM-HJ-sampler 的改善开始变慢。这说明在后者里，瓶颈已经不再主要是受控 SDE 的离散误差，而是第一阶段学到的 score / 势函数梯度本身。
+原文随后改变推断阶段步长 $\Delta\tau$，比较误差和运行时间。这个对照的意义不是泛泛地说明“步长越小越准”，而是定位误差来源。当 $\Delta\tau$ 从 $0.01$ 减到 $0.001$ 时，analytic-HJ-sampler 仍能明显改善，说明它还受 `Step 2` 离散误差控制；SGM-HJ-sampler 的改善则开始变慢，说明瓶颈已经转移到 `Step 1` 学到的 score 或势函数梯度。这个现象解释了为什么后面实验即使继续调小采样步长，也不能无限弥补神经网络近似误差。
 
 #### 5.1.2 1D Gaussian mixture 和 uniform mixture：验证灵活性，而不只是正确性
 
-布朗运动这一节接下来不只是重复做更多基线，而是故意把先验换成更复杂的分布，去验证 `Remark 3.1` 里提到的灵活性。
+第二组布朗运动实验把先验换成更复杂的分布。这样做的目的不是重复证明采样器能工作，而是检查 `Remark 3.1` 的一个核心承诺：先验侧训练结果应当可以离线复用，观测只在推断阶段进入。
 
-第一种更复杂先验是三分量 Gaussian mixture。这里原文不是只固定一个观测，而是分三类情形展示：
+第一种先验是三分量 Gaussian mixture。原文故意不只固定一个观测，而是把条件化查询拆成三类：
 
 1. 固定 $t=0$，改变观测时间 $s$ 和观测值 $y_{\mathrm{obs}}$；
 2. 固定终端观测时间 $s=T$ 和某个观测值，改变回溯时间 $t$；
 3. 同时改变 $t,s,y_{\mathrm{obs}}$，直接采样更一般的
+
    $$
    P(Y_t\mid Y_s=y_{\mathrm{obs}}).
    $$
 
-Figure 5 就是在把这三类灵活性拆开画：
+这三类查询对应 Figure 5 的三个部分。Figure 5(a) 让观测本身变化，检查模型能否适应不同终端条件。Figure 5(b) 固定观测、改变回溯时刻，检查同一个条件过程在不同时间切片上的后验。Figure 5(c) 同时改变 $t,s,y_{\mathrm{obs}}$，检查最一般条件查询下的稳定性。
 
-- **Figure 5(a)** 对应第一类查询：固定 $t=0$，改变观测时间 $s$ 和观测值 $y_{\mathrm{obs}}$；
-- **Figure 5(b)** 对应第二类查询：固定 $s=T$ 和一个具体观测值，再改变回溯时间 $t$；
-- **Figure 5(c)** 对应第三类查询：同时改变 $t,s,y_{\mathrm{obs}}$，直接处理一般形式的
-  $$
-  P(Y_t\mid Y_s=y_{\mathrm{obs}}).
-  $$
+因此 Figure 5 的重点不是“又画了很多直方图”，而是展示同一个预训练网络如何服务多个 posterior query。黑色虚线给出精确后验，直方图给出采样器输出；关键比较是峰的位置、质量分配是否随条件变化正确移动，以及 SGM-HJ-sampler 是否系统性偏离 analytic-HJ-sampler。Table 3 对 Figure 5(c) 做定量补充，结论与图像一致：一般条件查询下，SGM-HJ-sampler 仍能保持稳定后验质量，但精度略低于解析版本。
 
-所以 Figure 5 的重点不是“又画了很多直方图”，而是：**同一个预训练神经网络，不需要在看到具体观测以后重新训练，就能处理很多不同的条件化查询。** 这正是 HJ-sampler 和很多“观测进训练”的方法不同的地方。
+**Figure 5. Gaussian mixture prior 下的多类 posterior query**
 
-原文还用 Table 3 给 Figure 5(c) 做定量补充。它比较的是更一般条件分布情形下 analytic-HJ-sampler 和 SGM-HJ-sampler 的 $W_1$ 误差，结果说明：即使同时改变 $t,s,y_{\mathrm{obs}}$，神经网络版本仍然能保持稳定的后验质量，只是整体精度仍略逊于解析版本。
+Figure 5(a)，固定 $t=0$，改变 $s$ 和 $y_{\mathrm{obs}}$：
 
-**Figure 5 原图（MinerU 将原始复合图拆成了多个 panels）**
+<p>
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-16-figure-01.jpg" width="32%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-16-figure-02.jpg" width="32%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-16-figure-03.jpg" width="32%" />
+</p>
+<p>
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-16-figure-04.jpg" width="32%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-16-figure-05.jpg" width="32%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-16-figure-06.jpg" width="32%" />
+</p>
 
-Figure 5(a):
-![Figure 5a-1](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-16-figure-01.jpg)
-![Figure 5a-2](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-16-figure-02.jpg)
-![Figure 5a-3](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-16-figure-03.jpg)
-![Figure 5a-4](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-16-figure-04.jpg)
-![Figure 5a-5](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-16-figure-05.jpg)
-![Figure 5a-6](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-16-figure-06.jpg)
+Figure 5(b)，固定 $s=T$ 和观测值，改变回溯时刻 $t$：
 
-Figure 5(b):
-![Figure 5b-1](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-16-figure-07.jpg)
-![Figure 5b-2](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-16-figure-08.jpg)
-![Figure 5b-3](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-16-figure-09.jpg)
-![Figure 5b-4](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-16-figure-10.jpg)
-![Figure 5b-5](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-16-figure-11.jpg)
+<p>
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-16-figure-07.jpg" width="32%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-16-figure-08.jpg" width="32%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-16-figure-09.jpg" width="32%" />
+</p>
+<p>
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-16-figure-10.jpg" width="32%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-16-figure-11.jpg" width="32%" />
+</p>
 
-Figure 5(c):
-![Figure 5c-1](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-16-figure-12.jpg)
-![Figure 5c-2](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-16-figure-13.jpg)
-![Figure 5c-3](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-16-figure-14.jpg)
-![Figure 5c-4](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-16-figure-15.jpg)
+Figure 5(c)，同时改变 $t,s,y_{\mathrm{obs}}$：
+
+<p>
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-16-figure-12.jpg" width="24%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-16-figure-13.jpg" width="24%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-16-figure-14.jpg" width="24%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-16-figure-15.jpg" width="24%" />
+</p>
 
 第二种更难的先验是 compactly supported 的 uniform mixture。这里作者想说明的是：即使先验不是高斯或高斯混合，SGM-HJ-sampler 仍然能给出和解析后验接近的结果。也就是说，神经网络版本并不依赖 “Riccati 可解” 这种特殊闭式结构。
 
-Figure 6 则是在这个更难先验下做直接对照：
+Figure 6 在这个更难先验下做直接对照。左图是 analytic-HJ-sampler，右图是 SGM-HJ-sampler，黑色虚线是精确后验密度。关键指标是后验支撑区间是否正确，以及直方图是否跟随精确密度的多峰结构。结果说明，哪怕先验是 compact support 的 uniform mixture，两种方法仍能给出可信样本；SGM-HJ-sampler 的偏差仍然主要来自第一阶段近似，而不是后验采样框架本身失效。
 
-- 左边是 analytic-HJ-sampler；
-- 右边是 SGM-HJ-sampler；
-- 黑色虚线是精确后验密度。
+**Figure 6. Uniform mixture prior 下 analytic 与 SGM 的后验对照**
 
-这张图的读法很直接：看两边直方图是否都和黑色虚线贴合。原文想说明的是，哪怕先验已经是 compact support 的 uniform mixture，两种方法仍都能给出可信的后验样本；只是 SGM-HJ-sampler 因为第一阶段的近似误差，会比 analytic-HJ-sampler 稍差一些。
-
-**Figure 6 原图**
-
-![Figure 6a](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-17-figure-01.jpg)
-![Figure 6b](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-17-figure-02.jpg)
+<p>
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-17-figure-01.jpg" width="100%" />
+</p>
+<p>
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-17-figure-02.jpg" width="100%" />
+</p>
 
 #### 5.1.3 2D Brownian motion：从一维正确性走向二维结构保持
 
-最后原文把布朗运动提升到二维 Gaussian mixture prior。这里验证的重点已经不只是“数值上对不对”，而是：**在二维条件后验的几何形状上，SGM-HJ-sampler 能否保持正确的结构。**
+布朗运动最后提升到二维 Gaussian mixture prior。这里的验证对象从一维密度曲线变成二维条件后验的几何结构。二维后验不只是均值位置，还包括质量集中区域的朝向、拉伸方式和多峰结构；如果 SGM-HJ-sampler 只在一维上工作良好，到了二维可能会先在这些几何特征上暴露偏差。
 
-Figure 7 的读法是：
+Figure 7 把精确后验密度热图和 SGM-HJ-sampler 样本直方图对应排列。每一列比较的是：上方精确后验在哪里集中，下方样本是否把同样的质量区域、峰形和方向恢复出来。原文再用 sliced Wasserstein-1 距离做定量补充，结论是 analytic-HJ-sampler 仍然更准，但 SGM-HJ-sampler 已经能稳定恢复二维后验结构。这一步把前面的一维正确性推进到了低维几何保持。
 
-- 上排给出精确后验密度热图；
-- 下排给出 SGM-HJ-sampler 采到的二维后验样本直方图；
-- 两者对应比较，检查后验质量集中区域和整体几何形状是否一致。
+**Figure 7. 二维 Gaussian mixture prior 的 exact posterior 与 SGM 样本**
 
-原文再用 sliced Wasserstein-1 距离做定量补充。结果表明，二维情形下 analytic-HJ-sampler 仍然更准，但 SGM-HJ-sampler 已经能稳定恢复正确的二维后验结构。这说明神经网络近似并没有破坏条件分布的几何骨架。
+Figure 7(a) exact posterior：
 
-这张图还有一层一维里看不出来的信息：二维后验不只是“均值放哪”，还包括质量集中区域的朝向、拉伸方式和多峰结构。Figure 7 之所以重要，就是因为它在直接检查：**SGM-HJ-sampler 有没有把这些二维几何特征一起保留下来。**
+<p>
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-18-figure-01.jpg" width="24%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-18-figure-02.jpg" width="24%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-18-figure-03.jpg" width="24%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-18-figure-04.jpg" width="24%" />
+</p>
 
-**Figure 7 原图**
+Figure 7(b) SGM-HJ-sampler：
 
-Figure 7(a) exact posterior:
-![Figure 7a-1](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-18-figure-01.jpg)
-![Figure 7a-2](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-18-figure-02.jpg)
-![Figure 7a-3](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-18-figure-03.jpg)
-![Figure 7a-4](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-18-figure-04.jpg)
-
-Figure 7(b) SGM-HJ-sampler:
-![Figure 7b-1](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-18-figure-05.jpg)
-![Figure 7b-2](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-18-figure-06.jpg)
-![Figure 7b-3](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-18-figure-07.jpg)
-![Figure 7b-4](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-18-figure-08.jpg)
+<p>
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-18-figure-05.jpg" width="24%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-18-figure-06.jpg" width="24%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-18-figure-07.jpg" width="24%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-18-figure-08.jpg" width="24%" />
+</p>
 
 ### 5.2 Ornstein-Uhlenbeck 过程：从正确性验证转向模型不确定性
 
 布朗运动之后，原文把底层过程换成 OU process：
+
 $$
 dY_t=-BY_t\,dt+\sqrt{\epsilon}\,dW_t.
 $$
-这一节的重点不再只是“采样器是否准确”，而是：**当底层动力学本身带有模型不确定性或模型误设时，HJ-sampler 能否把这种不确定性转成后验分布。**
 
-这一节分成三个层次。
+这一节的重点发生了变化。布朗运动实验主要问采样器是否准确；OU 实验开始问，当动力学本身带有不确定性或模型误设时，HJ-sampler 能不能把这种不确定性显式转成后验分布。这里 $\epsilon$ 因此不再只是数值扩散强度，也开始承担“我们有多相信当前动力学模型”的解释。
 
 #### 5.2.1 先做 1D OU sanity check
 
-在进入真正的不确定性案例之前，原文先做一个一维 OU 的 sanity check。原因是这里 analytic-HJ-sampler、Riccati-HJ-sampler、SGM-HJ-sampler 三种方法都可用，所以能先确认：
+进入真正的模型误设之前，原文先做一维 OU sanity check。这个小实验的功能是校准方法族内部的关系：analytic-HJ-sampler、Riccati-HJ-sampler 和 SGM-HJ-sampler 三种版本都可用，因此可以同时确认 Riccati 形式没有偏离解析结构，SGM 形式也能处理比布朗运动更一般的线性漂移。
 
-- Riccati 版本没有把解析结构搞错；
-- SGM 版本在 OU 这种比布朗运动更一般的线性漂移下也仍然有效。
-
-Table 5 给出的均值误差表明，这三种方法都能稳定采到正确后验，只是 SGM-HJ-sampler 仍然因为第一阶段近似而略差一些。原文这样安排，是为了把“方法本身正确”先钉死，再进入真正的 model uncertainty 讨论。
+Table 5 的均值误差表明，三种方法都能稳定采到正确后验；SGM-HJ-sampler 仍略差，原因仍是第一阶段近似。这个实验在叙事上的作用是把“OU 过程下方法本身可用”先确认下来，避免后面的模型误设实验把算法误差和建模不确定性混在一起。
 
 #### 5.2.2 第一种情形：一阶线性 ODE 系统中的模型不确定性
 
 接下来作者考虑线性 ODE 系统
+
 $$
 \frac{dy_1}{dt}=y_2,\qquad
 \frac{dy_2}{dt}=-y_1-y_2,
 $$
-然后往右端加入白噪声，把它改写成 OU 过程。这里噪声的作用不是表示真实系统一定随机，而是表示：**我们承认模型本身有不确定性，于是让这种不确定性显式进入动力学。**
 
-这组实验的重点是比较 Riccati-HJ-sampler 和 SGM-HJ-sampler。因为二维非对角矩阵情形下精确后验不好直接写出来，所以作者用 Riccati-HJ-sampler 作为参考基线。Figure 8 显示：在多个不同的 $y_{\mathrm{obs}}$ 和不同的 $(t,s)$ 组合下，SGM-HJ-sampler 采到的后验样本与 Riccati 版本高度一致。
+这本来是一个完全确定性的二阶阻尼系统。给定初始状态 $(y_1(0),y_2(0))$ 后，整条轨迹就被唯一决定；如果再给定终端状态反推过去，理论上也只是在一条确定性动力学上做逆向推断。问题在于，这一节要展示的不是“已知动力学下怎样反推状态”，而是“当动力学本身也不应被完全信任时，怎样把这层不确定性带进后验”。
 
-这里真正说明的是：**当底层随机过程仍属于线性-高斯可控范围时，神经网络版并没有偏离解析/半解析基线。**
+为此，作者先把系统写成矩阵形式。令 $Y_t=(Y_1(t),Y_2(t))^\top$，确定性漂移可以写成
 
-Figure 8 的 panel 也要这样读：
+$$
+\frac{dY_t}{dt}
+=
+\begin{bmatrix}
+0 & 1\\
+-1 & -1
+\end{bmatrix}
+Y_t.
+$$
 
-- **Figure 8(a)** 是 Riccati-HJ-sampler 采到的后验样本，可以把它看成这组实验里的参考结果；
-- **Figure 8(b)** 是 SGM-HJ-sampler 的对应结果。
+OU 过程使用的是等价写法 $dY_t=-BY_t\,dt+\sqrt{\epsilon}\,dW_t$。在这里
 
-逐个 panel 对照时，真正看的不是某一根柱子是否完全一样，而是：
-- 后验主要质量集中在哪些区域；
-- 多峰结构是否一致；
-- 对不同 $(t,s,y_{\mathrm{obs}})$ 条件的响应是否一致。
+$$
+B=
+\begin{bmatrix}
+0 & -1\\
+1 & 1
+\end{bmatrix},
+\qquad
+-B=
+\begin{bmatrix}
+0 & 1\\
+-1 & -1
+\end{bmatrix}.
+$$
 
-原文用这种并排方式，是为了把“SGM 版是否真的学到了与 Riccati 版相同的条件化几何”直接视觉化。
+所谓“往右端加入白噪声”，严格说就是把确定性 ODE 改成 SDE：
 
-**Figure 8 原图**
+$$
+dY_1(t)=Y_2(t)\,dt+\sqrt{\epsilon}\,dW_1(t),\qquad
+dY_2(t)=(-Y_1(t)-Y_2(t))\,dt+\sqrt{\epsilon}\,dW_2(t).
+$$
 
-Figure 8(a) Riccati-HJ-sampler:
-![Figure 8a-1](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-20-figure-01.jpg)
-![Figure 8a-2](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-20-figure-02.jpg)
-![Figure 8a-3](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-20-figure-03.jpg)
-![Figure 8a-4](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-20-figure-04.jpg)
+这里的白噪声不能理解成“真实物理系统一定被随机力驱动”。它更像一种建模声明：右端的线性方程只是我们愿意采用的 surrogate dynamics，但这个 surrogate 不是完全可信的；因此每一步演化都允许围绕确定性漂移发生随机偏移。$\epsilon$ 控制这层偏移的强弱：$\epsilon$ 越小，表示越相信原来的线性 ODE；$\epsilon$ 越大，表示越承认这个 ODE 只是粗略模型，后验就应该保留更宽的不确定性。
 
-Figure 8(b) SGM-HJ-sampler:
-![Figure 8b-1](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-20-figure-05.jpg)
-![Figure 8b-2](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-20-figure-06.jpg)
-![Figure 8b-3](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-20-figure-07.jpg)
-![Figure 8b-4](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-20-figure-08.jpg)
+这样做以后，问题仍然保持在线性-高斯可控范围内，所以 Riccati-HJ-sampler 可以作为参考；同时，由于观测条件和先验仍会诱导非平凡的二维后验结构，SGM-HJ-sampler 也能在同一设置下被检验。这个例子的角色因此很明确：它不是为了证明 OU 过程本身有多特殊，而是用一个可控的线性系统展示 HJ-sampler 如何把模型不确定性从“口头承认”变成“后验采样中的扩散宽度”。
+
+这组实验比较 Riccati-HJ-sampler 和 SGM-HJ-sampler。二维非对角矩阵情形下精确后验不方便直接写出，所以 Riccati-HJ-sampler 被用作半解析参考基线。Figure 8 在多个 $y_{\mathrm{obs}}$ 和多个 $(t,s)$ 组合下并排展示两种方法，问题是：SGM 版本是否学到了与 Riccati 版本相同的条件化几何。
+
+Figure 8 的判断标准不是某一根柱子是否完全一致，而是三件事：后验主要质量集中区域是否一致，多峰结构是否一致，以及条件 $(t,s,y_{\mathrm{obs}})$ 改变时响应方向是否一致。图中两行的对应关系较好，说明当底层随机过程仍属于线性-高斯可控范围时，神经网络版本没有偏离 Riccati 基线。
+
+**Figure 8. 线性 ODE 模型不确定性下 Riccati 与 SGM 的对照**
+
+Figure 8(a) Riccati-HJ-sampler：
+
+<p>
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-20-figure-01.jpg" width="24%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-20-figure-02.jpg" width="24%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-20-figure-03.jpg" width="24%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-20-figure-04.jpg" width="24%" />
+</p>
+
+Figure 8(b) SGM-HJ-sampler：
+
+<p>
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-20-figure-05.jpg" width="24%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-20-figure-06.jpg" width="24%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-20-figure-07.jpg" width="24%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-20-figure-08.jpg" width="24%" />
+</p>
 
 #### 5.2.3 第二种情形：把模型误设显式转成不确定性
 
 这一部分比前一组更进一步。`5.2.2` 讨论的是“模型里本来就承认有噪声”，而这里讨论的是：**底层方程本身写错了，怎样把这种模型误设显式转成后验不确定性。**
 
 原文先给出真实但未知的二阶非线性 ODE：
+
 $$
 u''(t)=-u(t)+u(t)^2-u'(t),
 $$
+
 再故意用一个更简单但错误的线性模型去近似它：
+
 $$
 \tilde u''(t)=-\tilde u(t)-\tilde u'(t).
 $$
-这一步的重点不是“随便换个近似模型”，而是明确制造一个受控的 misspecification 场景：你手里真正能用来反演的，只是错的模型。
 
-为了把这个差别写得更清楚，作者先把真实系统改写成一阶形式：
+这一步的重点不是随便换个近似模型，而是制造一个受控的 misspecification 场景：真实系统含有非线性项，但反演时可用的模型删掉了这项。为了把误设位置说清楚，作者先把真实系统改写成一阶形式：
+
 $$
 \frac{dy_1}{dt}=y_2,\qquad
 \frac{dy_2}{dt}=-y_1+y_1^2-y_2,
 $$
+
 再把误设模型也改写成一阶形式：
+
 $$
 \frac{d\tilde y_1}{dt}=\tilde y_2,\qquad
 \frac{d\tilde y_2}{dt}=-\tilde y_1-\tilde y_2.
 $$
+
 这样一比较就能看出来：真正写错的不是第一条方程，而是第二条里原本存在的非线性项 $y_1^2$ 被删掉了。
 
 这也是为什么作者接下来引入噪声时，只把噪声加在第二条方程上：
+
 $$
 dY_1(t)=Y_2(t)\,dt,\qquad
 dY_2(t)=(-Y_1(t)-Y_2(t))\,dt+\sqrt{\epsilon}\,dW_t.
 $$
-这里的思路不是“给整个系统都随便加一点随机性”，而是更具体地说：
 
-- 第一条方程本身没有被误设，所以继续保持确定性推进；
-- 第二条方程才是模型写错的来源，所以把不确定性集中放在这一层；
-- 因而这组 SDE 表达的是 **partial uncertainty**：只有系统里的部分方程被视为不确定。
+这里的思路不是给整个系统随便加噪声，而是把不确定性放在真正被误设的方程上。第一条方程仍保持确定性推进；第二条方程是模型写错的来源，所以用扩散项承载模型误差。这样得到的是 partial uncertainty：只有系统中的部分方程被视为不确定。
 
-接下来原文想回答的问题就很明确了：已知终端时刻 $T=5$ 的 $(Y_1(T),Y_2(T))$，能不能反推出更早时刻的 $(Y_1(t),Y_2(t))$，同时把“模型可能写错了”这层不确定性保留下来？
+接下来问题变成：已知终端时刻 $T=5$ 的 $(Y_1(T),Y_2(T))$，能不能反推出更早时刻的 $(Y_1(t),Y_2(t))$，并保留模型可能写错这层不确定性。如果完全忽略误设，只拿错误线性 ODE 反向积分，就会得到一条确定性的错误轨迹。Figure 9 最左边一幅先展示这个失败基线：实线来自真实非线性 ODE，虚线来自误设线性 ODE 的反向推断，两者之间的系统偏差就是模型误设造成的。
 
-如果你完全忽略这层误设，只拿错的线性 ODE 直接反向积分，那么得到的只会是一条确定性的错误轨迹。Figure 9 最左边那一幅专门展示的就是这件事：实线来自真实非线性 ODE，虚线来自误设线性 ODE 的反向推断；两者之间的系统偏差本身，就是模型误设造成的。
+作者的策略不是把偏差直接修正掉，而是承认模型是错的，并把这种错误转写成后验宽度。这里 $\epsilon$ 的解释因此变得重要：它不再只是普通扩散强度，而更接近模型置信度参数。
 
-作者的策略不是试图把这条偏差“修正掉”，而是承认：既然模型是错的，就应该把这种错误转写成后验宽度。这里的超参数 $\epsilon$ 因而不再只是普通扩散强度，而更接近一个**模型置信度参数**：
-
-- $\epsilon$ 小：说明你仍然比较相信这条误设线性模型，所以后验会更窄；
-- $\epsilon$ 大：说明你承认模型误设可能很严重，所以后验必须更宽，给真实轨迹留出更大不确定性带。
+当 $\epsilon$ 小时，方法仍较强地相信误设线性模型，后验会窄；当 $\epsilon$ 大时，方法承认误设可能更严重，后验必须变宽，给真实轨迹留出更大不确定性带。
 
 这也是为什么这一节只能用 SGM-HJ-sampler。这里的先验取成两个相互独立的对数正态分布，不再属于高斯或高斯混合情形，所以前面的 Riccati 闭式路线已经不能直接用；作者因此只保留 SGM 版本来处理这类非高斯先验、非线性误设的问题。
 
-Figure 9 的右边三幅图正是在读这个 $\epsilon$ 的作用。它们的读法不是“看三组不同参数结果”，而是：
-
-- 先固定同一组终端观测和同一个误设模型；
-- 再只改变 $\epsilon$；
-- 然后检查 posterior mean 和两倍标准差区间怎样随模型置信度变化。
-
-于是这三幅图共同说明的是：随着 $\epsilon$ 增大，后验均值周围的彩色不确定性带明显变宽。也就是说，HJ-sampler 在这里做的不只是“给出一个单点反演答案”，而是把“模型错了多少”这件事显式变成了 posterior uncertainty。
-
-所以 Figure 9 整体上要按两步读：
-
-- **最左边一幅**：先暴露如果忽略模型误设，会出现怎样的系统偏差；
-- **右边三幅**：再展示 HJ-sampler 怎样把这份偏差转写成一个可调、可量化的后验不确定性结构。
+Figure 9 的右边三幅图正是在读 $\epsilon$ 的作用。它们固定同一组终端观测和同一个误设模型，只改变 $\epsilon$，然后观察 posterior mean 和两倍标准差区间如何变化。随着 $\epsilon$ 增大，后验均值周围的彩色不确定性带明显变宽。这说明 HJ-sampler 在这里不是给出单点反演答案，而是把模型误设从隐藏偏差改写成显式 posterior uncertainty。
 
 这一节真正验证的不是“SGM 还能跑通一个新例子”，而是：**当模型本身写错时，HJ-sampler 可以把 misspecification 从“隐藏偏差”改写成“显式不确定性”。**
 
-**Figure 9 原图**
+**Figure 9. 二阶 ODE 误设下 $\epsilon$ 对后验不确定性的影响**
 
-![Figure 9-1](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-20-figure-09.jpg)
-![Figure 9-2](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-20-figure-10.jpg)
-![Figure 9-3](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-20-figure-11.jpg)
-![Figure 9-4](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-20-figure-12.jpg)
+<p>
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-20-figure-09.jpg" width="24%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-20-figure-10.jpg" width="24%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-20-figure-11.jpg" width="24%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-20-figure-12.jpg" width="24%" />
+</p>
 
 ### 5.3 非线性 ODE 的模型误设：从线性误设推进到非线性误设
 
 在前一节里，误设模型最后还是被改成了 OU 过程，所以结构上仍然比较规整。Section 4.3 更进一步，直接看一个非线性一阶 ODE：
+
 $$
 \frac{dy(t)}{dt}=f(t)+g(y(t)),
 $$
+
 再把其中的非线性项 $g(y)$ 错写成 $\tilde g(y)$。
 
 原文故意分成两种误设：
 
-1. **系数写错，但形式没错**  
-   真实模型是 $g(y)=3y^2$，误设模型是 $\tilde g(y)=y^2$。
+1. 系数写错，但形式没错：真实模型是 $g(y)=3y^2$，误设模型是 $\tilde g(y)=y^2$。
+2. 函数形式本身写错：真实模型是 $g(y)=1.5y(1-y)$，误设模型仍然硬写成 $\tilde g(y)=y^2$。
 
-2. **函数形式本身写错**  
-   真实模型是 $g(y)=1.5y(1-y)$，误设模型仍然硬写成 $\tilde g(y)=y^2$。
-
-这样安排的作用是区分：
-- 只是“参数不对”；
-- 还是“结构都不对”。
+这个安排把轻度误设和结构误设分开。第一种情形更像参数不准；第二种情形则是动力学函数族本身不对。
 
 作者仍然用带噪 SDE
+
 $$
 dY_t=\bigl(f(t)+\tilde g(Y_t)\bigr)\,dt+\sqrt{\epsilon}\,dW_t
 $$
-来承载误设带来的不确定性。然后和上一节一样，看不同 $\epsilon$ 下的后验均值和两倍标准差区间。
 
-Figure 10 的读法和 Figure 9 类似：
+来承载误设带来的不确定性。然后和上一节一样，固定观测与误设模型，改变 $\epsilon$，看后验均值和两倍标准差区间如何调整。Figure 10 延续 Figure 9 的结构：每组左图先展示只拿误设 ODE 做 backward inference 会偏成什么样，右侧图再展示把误设吸收到随机模型后，后验宽度如何随 $\epsilon$ 变化。
 
-- 左图先展示如果只拿误设 ODE 硬做 backward inference，会偏成什么样；
-- 右边几幅图再展示，当把误设显式吸收到随机模型里以后，后验均值和不确定性区间怎样随着 $\epsilon$ 调整。
+Figure 10 相比 Figure 9 多了一层对照：它把误设类型也拆开。Figure 10(a) 对应形式正确但系数错误。真实非线性项和误设非线性项都属于二次函数族，只是系数从 $3$ 被错写成 $1$。这种错误仍然保留了大体的动力学形状，所以它更像参数层面的 misspecification：模型方向没有完全错，但漂移强度被低估了。
 
-这组实验真正想说明的是：**HJ-sampler 对模型误设的处理不依赖于线性结构；即使在非线性系统里，只要你愿意把误设转成带噪动力学，它也能给出有意义的后验不确定性。**
+Figure 10(b) 则更严厉。真实非线性项是 $1.5y(1-y)$，误设模型却仍使用 $y^2$。这时错误不再只是“系数不准”，而是函数族本身不对：真实动力学包含 logistic 型的增长-抑制结构，误设动力学却把它压成单纯二次项。直接用这个错误 ODE 做 backward inference 时，偏差会来自错误的向量场形状，而不只是某个常数调错。
 
-Figure 10 还有一层对照是前一节没有的：它把“误设类型”也拆开了。
+两组实验仍被放进同一个带噪 surrogate dynamics：
 
-- **Figure 10(a)** 是“形式没错、系数错了”的情形；
-- **Figure 10(b)** 是“函数形式本身就错了”的情形。
+$$
+dY_t=\bigl(f(t)+\tilde g(Y_t)\bigr)\,dt+\sqrt{\epsilon}\,dW_t.
+$$
 
-原文这样安排，是为了说明这套方法不是只对轻微参数偏差有效。即使误设已经从“数值参数不准”升级成“模型结构都写错了”，只要还能把它嵌进一个带噪 surrogate dynamics，SGM-HJ-sampler 仍然能给出合理的后验均值和不确定性带。
+这里的关键不是让 SGM-HJ-sampler 找回真实的 $g(y)$，而是承认当前只能使用 $\tilde g(y)$，再用扩散项表示“这个 surrogate dynamics 可能错”。如果误设较轻，后验均值应当能接近参考轨迹，且不确定性带不必太宽；如果误设已经变成结构错误，后验带需要变宽，才能把由错误动力学造成的偏差显式暴露出来。因此 Figure 10 想说明的是：方法的适用性不只停在轻微参数偏差上；只要误设模型还能被写成一个可采样的带噪 SDE，SGM-HJ-sampler 就可以把“模型错在哪里”转化为 posterior mean 和 uncertainty band，而不是只给出一条确定性的错误反演轨迹。
 
-**Figure 10 原图**
+这组实验把上一节的结论从线性误设推进到非线性误设：HJ-sampler 对模型误设的处理不依赖于线性结构，它依赖的是能否把误设解释为随机动力学中的扩散不确定性。
 
-Figure 10(a):
-![Figure 10a-1](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-22-figure-01.jpg)
-![Figure 10a-2](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-22-figure-02.jpg)
-![Figure 10a-3](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-22-figure-03.jpg)
-![Figure 10a-4](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-22-figure-04.jpg)
-![Figure 10a-5](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-22-figure-05.jpg)
+**Figure 10. 非线性 ODE 误设类型的对照**
 
-Figure 10(b):
-![Figure 10b-1](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-22-figure-06.jpg)
-![Figure 10b-2](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-22-figure-07.jpg)
-![Figure 10b-3](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-22-figure-08.jpg)
+Figure 10(a)，形式正确但系数错误：
+
+<p>
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-22-figure-01.jpg" width="32%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-22-figure-02.jpg" width="32%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-22-figure-03.jpg" width="32%" />
+</p>
+<p>
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-22-figure-04.jpg" width="32%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-22-figure-05.jpg" width="32%" />
+</p>
+
+Figure 10(b)，函数形式本身错误：
+
+<p>
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-22-figure-06.jpg" width="32%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-22-figure-07.jpg" width="32%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-22-figure-08.jpg" width="32%" />
+</p>
 
 ### 5.4 高维例子：检查可扩展性，而不只是低维可视化效果
 
 最后一节才进入高维。这里作者考虑的是定义在区间 $[0,1]$ 上的函数 $f_t$，把它在 $n=100$ 个网格点上离散成向量
+
 $$
 Y_t\in\mathbb R^{100}.
 $$
+
 底层过程仍然取标度布朗运动，但先验不再是简单高斯，而是由 8 个正弦基函数随机线性组合生成：
+
 $$
 f_0(x\mid \xi_1,\dots,\xi_8)=\frac1{16}\sum_{j=1}^8 \xi_j \sin(j\pi x),\qquad \xi_j\sim \mathrm{Unif}[1,3).
 $$
 
-这一节主要验证两点：
+这一节主要验证两个问题。第一个问题是训练层面的：sliced score matching 在 100 维下是否能让 `Step 1` 可训练。第二个问题是推断层面的：训练好的 SGM-HJ-sampler 是否还能给出合理的后验均值和不确定性带。
 
-1. sliced score matching 在 100 维下是否真的能让 `Step 1` 可训练；
-2. 训练好的 SGM-HJ-sampler 是否还能给出合理的后验均值和不确定性带。
-
-Figure 11 的读法和前面的低维图不一样。这里每一幅图不是在画“随时间演化的轨迹”，而是在固定某个时刻 $t$ 后，画出函数在空间区间 $[0,1]$ 上的 100 维离散形状：
+Figure 11 不再采用低维直方图式比较。这里每一幅图不是画随时间演化的一条轨迹，而是在固定某个时刻 $t$ 后，画出函数在空间区间 $[0,1]$ 上的 100 维离散形状。图中的元素分别是：
 
 - 蓝色圆点：终端观测 $Y_T$；
 - 红色十字：后验均值；
 - 彩色区域：均值 $\pm 2$ 个标准差；
 - 最右侧黑线/黑叉：真实的 $f_0$ 参考值。
 
-原文强调的读图逻辑是：
+这张图要沿时间反向看不确定性如何展开。当 $t$ 接近 $T$ 时，后验被终端观测强约束，所以不确定性很小；当 $t$ 远离 $T$ 时，条件化效应逐渐减弱，后验会变宽，并逐步回到先验允许的函数族；到 $t=0$ 时，真实参考函数仍落在后验不确定性区间中，说明算法在 100 维下仍能给出可信的后验量化。
 
-- 当 $t$ 接近 $T$ 时，后验应当紧贴观测，所以不确定性很小；
-- 当 $t$ 远离 $T$ 时，条件化效应逐渐减弱，所以后验会变宽，并逐步回到先验允许的函数族；
-- 到 $t=0$ 时，真实参考函数仍然落在后验不确定性区间里，说明算法即使在 100 维也还能给出可信的后验量化。
+Figure 11 还分成两组观测：Figure 11(a) 使用测试集里的终端观测 $y_1$，Figure 11(b) 使用另一个终端观测 $y_2$。这不是重复展示，而是在检查同一个训练好的 SGM-HJ-sampler 是否能对不同高维观测做条件化。换句话说，高维例子仍在延续 Figure 5 的核心问题：先验侧训练结果能不能被不同观测复用。
 
-Figure 11 还特意分成了两组观测：
+所以这一节真正完成的是：把前面低维例子里建立起来的正确性、条件化灵活性和不确定性解释，推进到一个非平凡的高维函数空间场景。
 
-- **Figure 11(a)** 用一个测试集里的终端观测 $y_1$；
-- **Figure 11(b)** 用另一个终端观测 $y_2$。
+**Figure 11. 100 维函数空间中的后验均值与不确定性带**
 
-这不是重复展示，而是在说明：同一个训练好的 SGM-HJ-sampler，在高维下也仍然能像前面的低维例子那样，针对不同观测做条件化，而不是只对某一个特定样本有效。
+Figure 11(a)，终端观测 $y_1$：
 
-**Figure 11 原图**
+<p>
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-23-figure-01.jpg" width="32%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-23-figure-02.jpg" width="32%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-23-figure-03.jpg" width="32%" />
+</p>
+<p>
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-23-figure-04.jpg" width="32%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-23-figure-05.jpg" width="32%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-23-figure-06.jpg" width="32%" />
+</p>
 
-Figure 11(a):
-![Figure 11a-1](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-23-figure-01.jpg)
-![Figure 11a-2](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-23-figure-02.jpg)
-![Figure 11a-3](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-23-figure-03.jpg)
-![Figure 11a-4](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-23-figure-04.jpg)
-![Figure 11a-5](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-23-figure-05.jpg)
-![Figure 11a-6](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-23-figure-06.jpg)
+Figure 11(b)，终端观测 $y_2$：
 
-Figure 11(b):
-![Figure 11b-1](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-23-figure-07.jpg)
-![Figure 11b-2](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-23-figure-08.jpg)
-![Figure 11b-3](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-23-figure-09.jpg)
-![Figure 11b-4](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-23-figure-10.jpg)
-
-所以这一节真正完成的是：**把前面低维例子里建立起来的正确性和不确定性解释，推进到一个非平凡的高维函数空间场景。**
+<p>
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-23-figure-07.jpg" width="24%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-23-figure-08.jpg" width="24%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-23-figure-09.jpg" width="24%" />
+  <img src="../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-23-figure-10.jpg" width="24%" />
+</p>
 
 ---
 

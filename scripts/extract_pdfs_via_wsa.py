@@ -74,12 +74,30 @@ def run_expect(command: list[str], password: str, timeout: int) -> None:
     )
 
 
-def run_remote_shell(command: str, password: str, remote_host: str, timeout: int) -> None:
+def ssh_base_options(control_path: str = "") -> list[str]:
+    options = ["-o", "StrictHostKeyChecking=no"]
+    if control_path:
+        options.extend(["-S", control_path])
+    return options
+
+
+def ssh_transport_command(control_path: str = "") -> str:
+    parts = ["ssh", *ssh_base_options(control_path)]
+    return " ".join(shlex.quote(part) for part in parts)
+
+
+def rsync_remote_spec(remote_host: str, remote_path: PurePosixPath, trailing_slash: bool = False) -> str:
+    path = remote_path.as_posix()
+    if trailing_slash:
+        path = f"{path}/"
+    return f"{remote_host}:{shlex.quote(path)}"
+
+
+def run_remote_shell(command: str, password: str, remote_host: str, timeout: int, control_path: str = "") -> None:
     run_expect(
         [
             "ssh",
-            "-o",
-            "StrictHostKeyChecking=no",
+            *ssh_base_options(control_path),
             remote_host,
             f"bash -lc {shlex.quote(command)}",
         ],
@@ -88,30 +106,42 @@ def run_remote_shell(command: str, password: str, remote_host: str, timeout: int
     )
 
 
-def rsync_to_remote(local_path: Path, remote_path: PurePosixPath, password: str, remote_host: str) -> None:
+def rsync_to_remote(
+    local_path: Path,
+    remote_path: PurePosixPath,
+    password: str,
+    remote_host: str,
+    control_path: str = "",
+) -> None:
     run_expect(
         [
             "rsync",
             "-az",
             "-e",
-            "ssh -o StrictHostKeyChecking=no",
+            ssh_transport_command(control_path),
             str(local_path),
-            f"{remote_host}:{remote_path.as_posix()}",
+            rsync_remote_spec(remote_host, remote_path),
         ],
         password=password,
         timeout=1800,
     )
 
 
-def rsync_from_remote(remote_path: PurePosixPath, local_path: Path, password: str, remote_host: str) -> None:
+def rsync_from_remote(
+    remote_path: PurePosixPath,
+    local_path: Path,
+    password: str,
+    remote_host: str,
+    control_path: str = "",
+) -> None:
     local_path.parent.mkdir(parents=True, exist_ok=True)
     run_expect(
         [
             "rsync",
             "-az",
             "-e",
-            "ssh -o StrictHostKeyChecking=no",
-            f"{remote_host}:{remote_path.as_posix()}/",
+            ssh_transport_command(control_path),
+            rsync_remote_spec(remote_host, remote_path, trailing_slash=True),
             str(local_path),
         ],
         password=password,
@@ -142,6 +172,11 @@ def build_parser() -> argparse.ArgumentParser:
         "--remote-conda-bin",
         default="/home/jinlin/miniconda3/bin/conda",
         help="Absolute conda binary path on WSA",
+    )
+    parser.add_argument(
+        "--ssh-control-path",
+        default=os.getenv("WSA_SSH_CONTROL_PATH", ""),
+        help="Optional existing OpenSSH ControlPath socket to reuse.",
     )
     parser.add_argument(
         "--password-env",
@@ -196,7 +231,7 @@ def main() -> None:
         f"WSA_MINERU_CONDA_BIN={shlex.quote(args.remote_conda_bin)} "
         f"bash scripts/wsa_ensure_mineru_api.sh"
     )
-    run_remote_shell(ensure_api_cmd, password, args.remote_host, args.timeout)
+    run_remote_shell(ensure_api_cmd, password, args.remote_host, args.timeout, args.ssh_control_path)
 
     for job in jobs:
         if job.local_output_dir.exists():
@@ -216,8 +251,8 @@ def main() -> None:
         setup_remote_dirs_cmd = (
             f"mkdir -p {shlex.quote(remote_pdf_dir)} {shlex.quote(remote_output_parent)}"
         )
-        run_remote_shell(setup_remote_dirs_cmd, password, args.remote_host, args.timeout)
-        rsync_to_remote(job.local_pdf, job.remote_pdf, password, args.remote_host)
+        run_remote_shell(setup_remote_dirs_cmd, password, args.remote_host, args.timeout, args.ssh_control_path)
+        rsync_to_remote(job.local_pdf, job.remote_pdf, password, args.remote_host, args.ssh_control_path)
 
         extract_cmd = (
             f"rm -rf {shlex.quote(remote_output_parent)} && "
@@ -228,14 +263,20 @@ def main() -> None:
             f"-p {shlex.quote(remote_pdf)} "
             f"-o {shlex.quote(remote_output_parent)}"
         )
-        run_remote_shell(extract_cmd, password, args.remote_host, args.timeout)
-        rsync_from_remote(PurePosixPath(remote_result_dir), job.local_output_dir, password, args.remote_host)
+        run_remote_shell(extract_cmd, password, args.remote_host, args.timeout, args.ssh_control_path)
+        rsync_from_remote(
+            PurePosixPath(remote_result_dir),
+            job.local_output_dir,
+            password,
+            args.remote_host,
+            args.ssh_control_path,
+        )
 
         if not args.keep_remote_artifacts:
             cleanup_cmd = (
                 f"rm -rf {shlex.quote(remote_pdf)} {shlex.quote(remote_output_parent)}"
             )
-            run_remote_shell(cleanup_cmd, password, args.remote_host, args.timeout)
+            run_remote_shell(cleanup_cmd, password, args.remote_host, args.timeout, args.ssh_control_path)
 
         print(f"{job.local_pdf} -> {job.local_output_dir}")
 

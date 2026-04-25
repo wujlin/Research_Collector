@@ -326,6 +326,18 @@
     ]
   },
   {
+    "id": 1473,
+    "name": "Marc Barthelemy",
+    "affiliation": "",
+    "openalex_id": "",
+    "h_index": 0,
+    "paper_count": 2,
+    "topic_keys": [
+      "urban_complex_systems",
+      "urban_complex_systems/scaling_and_evolution/urban_scaling"
+    ]
+  },
+  {
     "id": 1196,
     "name": "Wei Li",
     "affiliation": "",
@@ -11648,6 +11660,18 @@
     "topic_keys": [
       "ai_for_physics",
       "ai_for_physics/physics_informed_modeling"
+    ]
+  },
+  {
+    "id": 1474,
+    "name": "Vincent Verbavatz",
+    "affiliation": "",
+    "openalex_id": "",
+    "h_index": 0,
+    "paper_count": 1,
+    "topic_keys": [
+      "urban_complex_systems",
+      "urban_complex_systems/scaling_and_evolution/urban_scaling"
     ]
   },
   {

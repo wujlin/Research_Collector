@@ -44,15 +44,17 @@ def load_middle_json(output_dir: Path) -> tuple[Path, list[dict[str, object]]]:
 def collect_image_records(payload: list[dict[str, object]]) -> list[tuple[str, int, str]]:
     records: list[tuple[str, int, str]] = []
     for page in payload:
-        page_idx = int(page.get("page_idx", 0))
-        if page_idx <= 0:
+        raw_page_idx = int(page.get("page_idx", -1))
+        if raw_page_idx < 0:
             continue
+        page_number = raw_page_idx + 1
+
         def walk(obj: object) -> None:
             if isinstance(obj, dict):
                 image_path = obj.get("image_path")
                 image_type = obj.get("type")
                 if isinstance(image_path, str) and isinstance(image_type, str):
-                    records.append((image_path, page_idx, image_type))
+                    records.append((image_path, page_number, image_type))
                 for value in obj.values():
                     walk(value)
             elif isinstance(obj, list):
@@ -93,15 +95,34 @@ def rename_image_files(output_dir: Path, rename_map: dict[str, str], dry_run: bo
     images_dir = output_dir / "images"
     if not images_dir.is_dir():
         raise RuntimeError(f"Missing images dir: {images_dir}")
+
+    operations: list[tuple[Path, Path]] = []
     for old_name, new_name in rename_map.items():
+        if old_name == new_name:
+            continue
         src = images_dir / old_name
         dst = images_dir / new_name
         if not src.exists():
             continue
-        if dry_run:
+        operations.append((src, dst))
+
+    if dry_run:
+        for src, dst in operations:
             print(f"{src.name} -> {dst.name}")
-        else:
-            src.rename(dst)
+        return
+
+    staged: list[tuple[Path, Path]] = []
+    for idx, (src, dst) in enumerate(operations):
+        tmp = images_dir / f".rename-tmp-{idx}-{src.name}"
+        if tmp.exists():
+            raise RuntimeError(f"Temporary rename path already exists: {tmp}")
+        src.rename(tmp)
+        staged.append((tmp, dst))
+
+    for tmp, dst in staged:
+        if dst.exists():
+            raise RuntimeError(f"Refusing to overwrite existing image: {dst}")
+        tmp.rename(dst)
 
 
 def main() -> None:

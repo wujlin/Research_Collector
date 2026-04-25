@@ -10,6 +10,26 @@
     "word_count": 1063
   },
   {
+    "title": "Confirmed Deep-Read Map",
+    "path": "shared/confirmed_deep_read_map.md",
+    "created_at": "shared",
+    "type": "shared",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 1262
+  },
+  {
+    "title": "Weekly Digest",
+    "path": "2026-04-24/workflow/weekly.md",
+    "created_at": "2026-04-24",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 3473
+  },
+  {
     "title": "Weekly Digest",
     "path": "2026-04-23/workflow/weekly.md",
     "created_at": "2026-04-23",
@@ -128,7 +148,7 @@
       "score-based",
       "贝叶斯采样"
     ],
-    "word_count": 4160
+    "word_count": 4312
   },
   {
     "title": "Generative Optimal Transport via Forward-Backward HJB Matching",
@@ -237,66 +257,6 @@
       "Lyapunov函数"
     ],
     "word_count": 1327
-  },
-  {
-    "title": "Weekly Digest",
-    "path": "2026-04-15/workflow/weekly.md",
-    "created_at": "2026-04-15",
-    "type": "workflow",
-    "authors": "",
-    "venue": "",
-    "topics": [],
-    "word_count": 3353
-  },
-  {
-    "title": "Study Guide",
-    "path": "2026-04-15/workflow/study-guide.md",
-    "created_at": "2026-04-15",
-    "type": "workflow",
-    "authors": "",
-    "venue": "",
-    "topics": [],
-    "word_count": 156
-  },
-  {
-    "title": "Paper Queue",
-    "path": "2026-04-15/workflow/paper-queue.md",
-    "created_at": "2026-04-15",
-    "type": "workflow",
-    "authors": "",
-    "venue": "",
-    "topics": [],
-    "word_count": 97
-  },
-  {
-    "title": "Collection Review",
-    "path": "2026-04-15/workflow/collection-review.md",
-    "created_at": "2026-04-15",
-    "type": "workflow",
-    "authors": "",
-    "venue": "",
-    "topics": [],
-    "word_count": 2448
-  },
-  {
-    "title": "Boundary layers, transport and universal distribution in boundary driven active systems",
-    "path": "2026-04-15/boundary-layers-transport-and-universal-distribution-in-boundary-driven-active-systems.md",
-    "created_at": "2026-04-15",
-    "type": "reading_note",
-    "authors": "",
-    "venue": "",
-    "topics": [],
-    "word_count": 414
-  },
-  {
-    "title": "A framework for the use of generative modelling in non-equilibrium statistical mechanics",
-    "path": "2026-04-15/a-framework-for-the-use-of-generative-modelling-in-non-equilibrium-statistical-mechanics.md",
-    "created_at": "2026-04-15",
-    "type": "reading_note",
-    "authors": "",
-    "venue": "",
-    "topics": [],
-    "word_count": 902
   },
   {
     "title": "Weekly Digest",
