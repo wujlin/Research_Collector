@@ -44,7 +44,29 @@ $$
 
 这一章的核心批判也很重要：很多增长模型不是从城市机制出发，而是为了复现 Zipf's law 而设计。可是 Chapter 3 已经说明 Zipf's law 并不普遍，因此“能生成 Zipf”不能再作为模型有效性的充分理由。
 
-### 1.1 书中图表在笔记里的位置
+### 1.1 本章符号口径
+
+这一章横跨 Yule-Simon、Gibrat、Champernowne、Gabaix 等模型，原书会在不同模型中复用希腊字母。为了读笔记时不混淆，可以先固定下面的口径。
+
+$S_i(t)$ 始终表示城市 $i$ 在时刻 $t$ 的 population size；没有下标的 $S(t)$ 表示代表性城市或单个城市过程。
+
+$\gamma_i(t)$ 表示离散时间的 multiplicative growth factor，不是 Chapter 9 的 neighbor-number exponent $\gamma$。
+
+$s(t)$、$w(t)$、$h$ 在不同小节里都表示 log-size，也就是 $\log S(t)$。它们不是三个不同物理量，只是不同模型沿用原文记号。读这几节时可以统一理解为：
+
+$$
+\text{log-size}
+=
+\log S.
+$$
+
+$\zeta$ 在 Yule-Simon 线里表示控制 power-law tail 的中间参数，例如 $\zeta=g/s$ 或 $\zeta=1/(1-\alpha)$。它不是 Chapter 9-10 里的 Levy noise $\zeta$。
+
+$\mu$ 在本章后半部分表示 Pareto tail exponent 或 local exponent，例如 $p(S)\sim S^{-1-\mu}$ 和 $p(S)\sim S^{-1-\mu(S)}$。它不是 Chapter 10 中 generic fractional equation 的 Levy index $\mu$。
+
+$\alpha$ 在 Simon 模型里通常表示新城市生成概率；$\beta$ 在 Fig. 6.3 附近表示增长率波动随规模下降的经验指数。二者都是本章局部符号，不要直接和 Chapter 8-10 的 $\alpha,\beta$ 对齐。
+
+### 1.2 书中图表在笔记里的位置
 
 这一章原书里真正承担解释功能的图表有四个，笔记里都已经处理：
 
@@ -55,7 +77,7 @@ $$
 
 所以，原书图表已经进入笔记；但它们目前是按原章节分散解释。为了帮助记忆 weak Gibrat 和 strong Gibrat 的分叉关系，适合再生成一张独立的 image2 概念图。
 
-### 1.2 Image2 可视化：weak Gibrat 与 strong Gibrat 的分叉
+### 1.3 Image2 可视化：weak Gibrat 与 strong Gibrat 的分叉
 
 这组内容适合画成一张左右分叉的机制图，而不是普通流程图。中心放同一个出发式：
 
@@ -1096,19 +1118,41 @@ $$
 
 作者随后把 Simon 模型改写成 Eq. 6.1 那样的 multiplicative form。
 
-如果城市 $i$ 在 $dt$ 内获得一个新 individual，则
+这里先引入单个城市的 size 变量：
+
+$$
+S_i(t)=\text{city }i\text{ 在时间 }t\text{ 的 population/size}.
+$$
+
+下标 $i$ 标记“哪一个城市”，不是 size class；$t$ 标记时间；$S_i(t)$ 是这个城市在该时刻拥有多少个 individual。在城市语境里，它就是城市 $i$ 的人口规模。在 Simon/Yule 语言里，它也可以理解为这个 container 里已经有多少个 element。
+
+它和前面的 $k$ 不一样。$k$ 是整个系统的总人口或总步数，而 $S_i(t)$ 只是单个城市的规模。两者关系是
+
+$$
+k(t)=\sum_i S_i(t).
+$$
+
+现在只看一个城市 $i$。如果它在短时间 $dt$ 内获得一个新 individual，那么这个城市的 population count 增加 1，所以
 
 $$
 S_i(t+dt)=S_i(t)+1.
 $$
 
-如果没有获得新 individual，则
+如果它在这段时间里没有获得新 individual，那么 population count 不变：
 
 $$
 S_i(t+dt)=S_i(t).
 $$
 
-可写成
+preferential attachment 进入的地方是“获得新 individual 的概率”。城市越大，拥有的 individual 越多，也就有越多机会吸引 newcomer。因此在短时间 $dt$ 内，城市 $i$ 获得新人这一事件的概率设为
+
+$$
+\alpha S_i(t)dt.
+$$
+
+这里 $\alpha$ 是单位 individual 的吸引速率，$S_i(t)$ 是该城市已有的 individual 数量，$dt$ 是时间长度。这个概率正比于 $S_i(t)$，就是 preferential attachment 的核心。
+
+于是单个城市的随机更新可以写成
 
 $$
 S_i(t+dt)=
@@ -1119,13 +1163,52 @@ S_i(t), & \text{with probability }1-\alpha S_i(t)dt.
 \tag{6.31}
 $$
 
-把它写成
+为了和 Gibrat-style multiplicative growth 比较，需要把“加 1 个人”的 additive 更新改写成“乘上一个增长因子”的形式。定义增长因子
 
 $$
-S_i(t+1)=\gamma_i(t)S_i(t)
+\gamma_i(t)
+=
+\frac{S_i(t+dt)}{S_i(t)}.
 $$
 
-时，增长因子为
+也就是说，$\gamma_i(t)$ 衡量的是城市 $i$ 在这一小段时间里的相对增长，而不是绝对新增人数。于是
+
+$$
+S_i(t+dt)=\gamma_i(t)S_i(t).
+$$
+
+现在分两种情况看 $\gamma_i(t)$。如果城市 $i$ 获得一个新 individual，那么
+
+$$
+\gamma_i(t)
+=
+\frac{S_i(t)+1}{S_i(t)}
+=
+1+\frac{1}{S_i(t)}.
+$$
+
+这里的 $1/S_i(t)$ 是相对增量。对一个人口为 10 的城市，新增 1 人是 $10\%$；对一个人口为 10000 的城市，新增 1 人只是 $0.01\%$。所以同样是“加 1”，相对增长幅度会随城市规模变小。
+
+如果城市 $i$ 没有获得新 individual，那么
+
+$$
+\gamma_i(t)
+=
+\frac{S_i(t)}{S_i(t)}
+=1.
+$$
+
+因此增长因子本身是一个两点随机变量。保留 $dt$ 时，它是
+
+$$
+\gamma_i(t)=
+\begin{cases}
+1+\frac{1}{S_i(t)}, & \text{with probability } \alpha S_i(t)dt,\\
+1, & \text{with probability }1-\alpha S_i(t)dt.
+\end{cases}
+$$
+
+如果取单位时间步 $dt=1$，就得到书中更压缩的写法：
 
 $$
 \gamma_i(t)=
@@ -1136,19 +1219,9 @@ $$
 \tag{6.32}
 $$
 
-这一步非常关键。Simon 模型确实可以写成 multiplicative growth，因为
+下面先保留 $dt$，因为这样更容易看清均值和方差的来源。
 
-$$
-S_i(t)+1
-=
-\left(1+\frac{1}{S_i(t)}\right)S_i(t).
-$$
-
-但是 $\gamma_i(t)$ 的随机性依赖于 $S_i(t)$。大城市获得一个人时，相对增长 $1/S_i(t)$ 很小；小城市获得一个人时，相对增长很大。
-
-所以 $\gamma_i(t)$ 的平均值可以不依赖 $S_i(t)$，但方差会随 $S_i(t)$ 减小。这个方差最好直接算一遍。
-
-令
+为了避免符号太重，令
 
 $$
 S=S_i(t),
@@ -1158,7 +1231,7 @@ S=S_i(t),
 \pi=\alpha S\,dt.
 $$
 
-则
+$S$ 是当前城市规模，$\delta$ 是新增 1 个 individual 带来的相对增量，$\pi$ 是这段时间内获得新 individual 的概率。用这三个符号，增长因子可以简写成
 
 $$
 \gamma_i(t)=
@@ -1172,30 +1245,86 @@ $$
 
 $$
 \mathbb{E}[\gamma_i]
-=(1+\delta)\pi+1(1-\pi)
+=
+(1+\delta)\pi+1(1-\pi).
+$$
+
+先展开：
+
+$$
+(1+\delta)\pi+1(1-\pi)
+=
+\pi+\pi\delta+1-\pi
+=1+\pi\delta
+$$
+
+再代回 $\pi=\alpha Sdt$ 和 $\delta=1/S$：
+
+$$
+\mathbb{E}[\gamma_i]
 =1+\pi\delta
 =1+\alpha\,dt.
 $$
 
-如果取单位时间步 $dt=1$，均值就是 $1+\alpha$。二阶矩是
+这说明平均相对增长不依赖当前规模 $S_i(t)$：$S$ 在 $\pi\delta=(\alpha Sdt)(1/S)$ 里被约掉了。大城市更容易获得 newcomer，但获得一个 newcomer 带来的相对增量更小；这两者正好抵消。
+
+接着算方差。先算二阶矩：
 
 $$
 \mathbb{E}[\gamma_i^2]
 =(1+\delta)^2\pi+1(1-\pi)
+$$
+
+展开 $(1+\delta)^2$：
+
+$$
+(1+\delta)^2\pi+1(1-\pi)
+=
+(1+2\delta+\delta^2)\pi+1-\pi
 =1+2\pi\delta+\pi\delta^2.
 $$
 
-于是
+再算均值平方：
+
+$$
+\mathbb{E}[\gamma_i]^2
+=
+(1+\pi\delta)^2
+=
+1+2\pi\delta+\pi^2\delta^2.
+$$
+
+因此方差是
 
 $$
 \operatorname{Var}(\gamma_i)
 =
 \mathbb{E}[\gamma_i^2]-\mathbb{E}[\gamma_i]^2
 =
-\pi\delta^2-(\pi\delta)^2.
+\left(1+2\pi\delta+\pi\delta^2\right)
+-
+\left(1+2\pi\delta+\pi^2\delta^2\right).
+$$
+
+前两项相消，只剩下
+
+$$
+\operatorname{Var}(\gamma_i)
+=
+\pi\delta^2-\pi^2\delta^2
+=
+\pi(1-\pi)\delta^2.
 $$
 
 代回 $\pi=\alpha S\,dt$ 和 $\delta=1/S$：
+
+$$
+\operatorname{Var}(\gamma_i)
+=
+\alpha Sdt(1-\alpha Sdt)\frac{1}{S^2}.
+$$
+
+继续整理：
 
 $$
 \operatorname{Var}(\gamma_i)
@@ -1210,7 +1339,7 @@ $$
 \operatorname{Var}(\gamma_i)\sim \frac{\alpha\,dt}{S_i(t)}.
 $$
 
-所以增长因子的方差随城市规模下降，可写为
+所以增长因子的方差随城市规模下降。回到书中单位时间步 $dt=1$ 的记法，均值写成 $1+\alpha$，方差的重点不是常数项，而是它随 $S_i(t)$ 增大而下降：
 
 $$
 \mathbb{E}(\gamma_i(t))=1+\alpha,
@@ -1356,6 +1485,40 @@ $$
 \zeta=\frac{1}{1-\alpha}. \tag{6.44}
 $$
 
+这里的 $\zeta$ 是控制尾部形状的参数。它不是一个新的机制变量，而是把 Simon 模型里的新城市出生概率 $\alpha$ 翻译成 power-law exponent 的中间参数。
+
+在 Yule 语言里，
+
+$$
+\zeta=\frac{g}{s},
+$$
+
+其中 $g$ 是新城市数量的增长率，$s$ 是既有城市内部人口的增长率。因此 $\zeta$ 衡量的是：系统中新城市出现得有多快，相对于既有城市变大有多快。
+
+在 Simon 语言里，每一步有概率 $\alpha$ 创造新城市，有概率 $1-\alpha$ 加入已有城市。由 Eq. 6.30 可知这等价于
+
+$$
+\zeta=\frac{1}{1-\alpha}.
+$$
+
+所以 $\alpha$ 越大，越多 newcomer 被分配到新城市，$\zeta$ 越大；$\alpha$ 越小，越多 newcomer 进入已有城市，$\zeta$ 越接近 1。
+
+$\zeta$ 的直接作用是控制尾部指数。前面已经得到 density 层面的分布：
+
+$$
+f(i)\propto i^{-1-\zeta}.
+$$
+
+因此 $\zeta$ 越大，density tail 衰减越快，大城市相对更少；$\zeta$ 越接近 1，尾部越厚，更接近 Zipf law。
+
+如果转成 rank-size 语言，对应的 Zipf exponent 是
+
+$$
+\frac{1}{\zeta}.
+$$
+
+所以“Zipf exponent 等于 1”对应的是 $\zeta=1$，不是 $\zeta$ 越大越 Zipf。
+
 如果要 $\zeta=1$，就必须有
 
 $$
@@ -1424,7 +1587,13 @@ Fig. 6.2 展示 Simon process 的 convergence time 如何随新城市概率 $\al
 
 ## 九、Simon 的变体：允许下降、diffusion 与 empirical tension
 
-Simon 模型只允许城市增长，不允许城市缩小。这显然不完全符合城市史，因为城市可以衰退甚至消失。Marsili 和 Zhang 因此引入一个允许增长和下降的 master equation。
+Simon 模型的核心限制是方向太单一：每一步只会增加一个 individual，城市只能从小变大，不能变小。这会带来两个问题。第一，城市史中确实存在衰退、迁出、产业更替和人口下降。第二，如果城市只能上升，模型里的随机性更像 cumulative advantage，而不是一个可以上下波动的 growth process。
+
+因此 1990s 之后的一条修正路线是：保留 Simon 的“城市系统仍在增长”思想，但允许单个城市在 size space 里上下移动。这里的 diffusion 不是先指物理空间中的热扩散，而是指城市规模 $n$ 这个状态变量上的随机游走：城市可以从 $n$ 到 $n+1$，也可以从 $n$ 到 $n-1$。如果只允许 $n\to n+1$，就是 Simon；如果同时允许 $n\to n+1$ 和 $n\to n-1$，就更像 birth-death / diffusion process。
+
+### 9.1 Marsili-Zhang：在 size space 里加入向上和向下跳转
+
+Marsili 和 Zhang 引入一个允许增长和下降的 master equation。
 
 设 $N(n,t)$ 是时刻 $t$ 人口为 $n$ 的城市数量。模型写成：
 
@@ -1440,7 +1609,19 @@ w_a(n-1)N(n-1,t)-w_a(n)N(n,t)
 \tag{6.47}
 $$
 
-每一项的含义是：
+这个方程的对象不是某一个城市，而是 size distribution 的 histogram。$N(n,t)$ 表示在时间 $t$，有多少城市正好处在 size class $n$。所以 Eq. 6.47 追踪的是每个 size class 的流入和流出。
+
+这里有两个 rate：
+
+$$
+w_a(n)=\text{size }n\text{ 城市向上增长到 }n+1\text{ 的 rate},
+$$
+
+$$
+w_d(n)=\text{size }n\text{ 城市向下减少到 }n-1\text{ 的 rate}.
+$$
+
+下标 $a$ 可以读作 addition/upward growth，$d$ 可以读作 decrease/downward movement。于是每一项的含义是：
 
 1. $w_d(n+1)N(n+1,t)$：size $n+1$ 的城市下降到 size $n$，流入 $n$。
 2. $-w_d(n)N(n,t)$：size $n$ 的城市下降到 $n-1$，流出 $n$。
@@ -1448,9 +1629,45 @@ $$
 4. $-w_a(n)N(n,t)$：size $n$ 的城市增长到 $n+1$，流出 $n$。
 5. $p\delta_{n,1}$：新城市以 size 1 出生。
 
-如果令 $w_d(n)=0$，就回到 Simon 模型的只增长版本。
+这五项可以按 conservation law 来读。前四项只是城市在相邻 size classes 之间移动，改变 histogram 的形状，但不创造新城市。最后一项 $p\delta_{n,1}$ 是 source term：以概率或速率 $p$ 在 $n=1$ 处注入新城市。$\delta_{n,1}$ 的作用是只在 $n=1$ 时等于 1，在其他 size class 为 0。
 
-Marsili-Zhang 假设 interaction rate 是 pair-wise，因此 $w\sim n^2$。在这个设定下，可以得到
+如果令
+
+$$
+w_d(n)=0,
+$$
+
+所有向下流动都消失，城市只能从 $n$ 走向 $n+1$，就回到 Simon 模型的只增长版本。允许 $w_d(n)>0$ 后，模型开始像 diffusion：一个城市的 size 不再是单调轨道，而是在 size axis 上随机上下移动。
+
+Marsili-Zhang 进一步假设 transition rate 来自 pair-wise interactions。这里的 $w(n)$ 是对 $w_a(n)$ 和 $w_d(n)$ 的规模依赖的简写，意思是：一个 size 为 $n$ 的城市发生一次 upward 或 downward transition 的强度大约怎样随 $n$ 改变。
+
+先看 pair-wise 为什么给出 $n^2$。如果一个城市里有 $n$ 个 individual，那么可形成的 unordered pairs 数量是
+
+$$
+\binom{n}{2}
+=
+\frac{n(n-1)}{2}.
+$$
+
+当 $n$ 很大时，
+
+$$
+\frac{n(n-1)}{2}
+\sim
+\frac{1}{2}n^2.
+$$
+
+在 scaling 讨论里，常数 $1/2$ 不影响指数，所以写成
+
+$$
+w(n)\sim n^2.
+$$
+
+这个假设的直觉是：如果城市增长或下降事件是由 pair-level contact、exchange、competition 或 migration interaction 触发的，那么城市越大，潜在 pair 越多，发生一次 size transition 的机会也越多。于是 size 为 $n$ 的城市不是以 $n$ 速度发生变化，而是以接近 $n^2$ 的速度发生变化。
+
+把它放回 master equation 里，$w(n)N(n,t)$ 表示从 size class $n$ 流出的总强度。若 $w(n)$ 很大，处在这个 size class 的城市会更快流出；在稳态或准稳态分布里，某个 size class 的占据量会受到这个 transition rate 的抑制。直观地说，$w(n)\sim n^2$ 会在 stationary size distribution 里留下一个 $1/n^2$ 级别的因子。
+
+在这个设定下，可以得到
 
 $$
 N(n)\propto
@@ -1461,31 +1678,132 @@ N(n)\propto
 n\ll \frac{1}{p}. \tag{6.48}
 $$
 
-Eq. 6.48 可以按两个因子读。$(1-p)^n$ 是一个 large-size cutoff：当 $n$ 接近 $1/p$ 时，分布会被指数压低。可是在
+Eq. 6.48 可以按三个因子读：
 
 $$
-n\ll \frac{1}{p}
+N(n)\propto
+\frac{p}{1-p}
+\cdot
+(1-p)^n
+\cdot
+n^{-2}.
 $$
 
-的范围内，
+第一，$\frac{p}{1-p}$ 是和新城市注入概率有关的整体比例因子。它不随 $n$ 改变，所以不会影响尾部斜率。它只改变整个 distribution 的高度：新城市注入越频繁，低 size class 的源项越强，整体城市数量水平也会随之改变。
 
-$$
-(1-p)^n\simeq e^{-pn}\simeq 1.
-$$
-
-于是主导项就是
+第二，$n^{-2}$ 是 power-law 主体。如果只看这一项，分布就是纯幂律：
 
 $$
 N(n)\propto n^{-2}.
 $$
 
-对 density 来说 $n^{-2}$ 对应 Pareto exponent 2；换成 rank-size 形式，就是 Zipf exponent 1。
+它决定中间尺度上的 log-log 斜率。也就是说，当其他因子变化不大时，size class 从 $n$ 放大到 $cn$，城市数量大约乘上 $c^{-2}$。
 
-这对应 Zipf exponent 1。
+第三，$(1-p)^n$ 是 large-size cutoff。它的作用不是改变中间区间的幂律斜率，而是在非常大的 $n$ 处把尾部截断。
 
-但作者马上指出这个假设有问题：Chapter 9 将说明城市间 migration interaction 不是 $n^2$，而更接近 $n^\beta$ 且 $\beta<1$。所以这个模型虽然数学上生成 Zipf，但机制假设并不符合后面要建立的 empirical migration picture。
+这项的物理含义可以这样理解。$p$ 是新城市注入概率；每当系统把一部分增长机会用于产生新城市时，增长流就不再全部喂给已有的大城市。于是，一个城市要到达很大的 size $n$，不能只靠一次跳跃，而要在很多步里持续留在既有城市增长通道中，连续积累到 $n$。每多跨过一个 size level，都要乘上一个“没有被新城市注入分流”的因子，大致就是 $1-p$。跨过 $n$ 个量级后，就积累成
 
-Zanette-Manrubia 模型则把增长写成一个 reaction-diffusion process。reaction step 是
+$$
+(1-p)^n.
+$$
+
+所以 $(1-p)^n$ 表达的是一种 survival / persistence penalty：城市越想长到很大的 $n$，越需要经历很多次连续增长；而每一步都有概率 $p$ 把系统增长机会分流到新城市，因此极大城市的概率会被逐步压低。
+
+这也解释了为什么它叫 cutoff，而不是 power-law 主体。$n^{-2}$ 来自 size-space diffusion 的稳态流量结构，决定中等 size 上的幂律斜率；$(1-p)^n$ 则来自新城市注入造成的持续分流，决定大到一定尺度以后，尾部不能无限保持纯幂律。
+
+为了看清这一点，把它写成指数形式。因为当 $p$ 较小时，
+
+$$
+\log(1-p)\simeq -p,
+$$
+
+所以
+
+$$
+(1-p)^n
+=
+\exp[n\log(1-p)]
+\simeq
+e^{-pn}.
+$$
+
+这说明 cutoff 的控制量不是单独的 $n$，而是乘积 $pn$。
+
+在
+
+$$
+n\ll \frac{1}{p}
+$$
+
+的范围内，$pn$ 很小。于是
+
+$$
+e^{-pn}\simeq 1-pn\simeq 1,
+$$
+
+从而
+
+$$
+(1-p)^n\simeq e^{-pn}\simeq 1.
+$$
+
+这时 cutoff 几乎不起作用，Eq. 6.48 就近似退化为
+
+$$
+N(n)
+\propto
+\frac{p}{1-p}
+n^{-2}.
+$$
+
+如果只关心随 $n$ 的尾部斜率，$\frac{p}{1-p}$ 又是常数，因此主导的 size dependence 就是
+
+$$
+N(n)\propto n^{-2}.
+$$
+
+当 $n$ 增长到 $1/p$ 的量级时，情况变了。此时 $pn=O(1)$，$(1-p)^n\simeq e^{-pn}$ 不再接近 1，而是开始显著小于 1。再继续增大 $n$，指数因子会比幂律因子衰减得更快，于是分布尾部被压低。这就是 large-size cutoff 的意思。
+
+因此 Eq. 6.48 描述的不是所有尺度上的纯 power-law，而是一个“中间尺度幂律 + 大尺度指数截断”的形式：
+
+$$
+N(n)
+\sim
+n^{-2}
+\quad
+\text{for } n\ll 1/p,
+$$
+
+$$
+N(n)
+\text{ is cut off by }(1-p)^n
+\quad
+\text{when } n=O(1/p).
+$$
+
+对 density 来说，中间尺度的 $n^{-2}$ 对应 Pareto exponent 2；换成 rank-size 形式，就是 Zipf exponent 1。
+
+这就是这个模型吸引人的地方：一旦允许城市上下跳转，并选择 $w(n)\sim n^2$ 这样的 interaction rate，它可以在中间尺度上生成 Zipf exponent 1。
+
+但作者马上指出 empirical tension：这个模型生成 Zipf 的关键是 $w(n)\sim n^2$，而 Chapter 9 将说明城市间 migration interaction 不是 $n^2$，而更接近 $n^\beta$ 且 $\beta<1$。所以 Marsili-Zhang 的模型在数学上能给出 Zipf，但它依赖的 pair-wise interaction 假设并不符合后面要建立的 empirical migration picture。
+
+这就是本小节的第一层张力：把城市增长写成 diffusion-like birth-death process 是合理的，因为城市可以涨也可以跌；但为了得到漂亮的 $n^{-2}$，模型又用了一个太强的 $n^2$ interaction scaling。
+
+### 9.2 Zanette-Manrubia：reaction-diffusion 语言
+
+Zanette-Manrubia 模型则把增长写成一个 reaction-diffusion process。这里的时间顺序是
+
+$$
+t
+\longrightarrow
+t'
+\longrightarrow
+t+1.
+$$
+
+其中 $t'$ 是一个中间时刻。先从 $t$ 到 $t'$ 做 reaction，再从 $t'$ 到 $t+1$ 做 diffusion。这样拆开的目的，是把“城市本地增长波动”和“城市之间迁移式再分配”分成两个机制。
+
+先看 reaction step：
 
 $$
 S_i(t')
@@ -1497,22 +1815,174 @@ q(1-p)^{-1}S_i(t), & \text{with probability }1-p,
 \tag{6.49}
 $$
 
+这里 $S_i(t)$ 是城市 $i$ 在时间 $t$ 的 population，$S_i(t')$ 是 reaction 之后、diffusion 之前的临时 population。Eq. 6.49 说明：reaction 不是加法更新，而是乘法更新。城市原来的规模 $S_i(t)$ 会被乘上一个随机 multiplier。
+
+为了看清这个随机 multiplier，记
+
+$$
+M_i(t)=\frac{S_i(t')}{S_i(t)}.
+$$
+
+那么 Eq. 6.49 等价于
+
+$$
+M_i(t)
+=
+\begin{cases}
+\frac{1-q}{p}, & \text{with probability }p,\\
+\frac{q}{1-p}, & \text{with probability }1-p.
+\end{cases}
+$$
+
+所以 reaction step 的两个结果是：
+
+第一种结果以概率 $p$ 发生，城市规模乘上
+
+$$
+\frac{1-q}{p}.
+$$
+
+第二种结果以概率 $1-p$ 发生，城市规模乘上
+
+$$
+\frac{q}{1-p}.
+$$
+
+这里 $p$ 控制第一种 reaction outcome 出现的概率，$q$ 控制质量在两种 outcome 之间怎样分配。两个 multiplier 看起来不直观，是因为它们不是随便写的，而是被设计成“平均上不改变城市规模”。
+
+这两个 multiplier 的一个重要性质是它们的概率加权平均为 1：
+
+$$
+p\frac{1-q}{p}
++
+(1-p)\frac{q}{1-p}
+=
+1-q+q
+=1.
+$$
+
+也就是说，
+
+$$
+\mathbb{E}[M_i(t)]=1.
+$$
+
+因此
+
+$$
+\mathbb{E}[S_i(t')\mid S_i(t)]
+=
+S_i(t).
+$$
+
+所以 reaction step 在平均意义上不改变城市规模。它真正做的是制造差异：有些城市在这一轮被乘上较大的 multiplier，有些城市被乘上较小的 multiplier。也就是说，它把 population 的局部波动先制造出来。
+
+这一步叫 reaction，是因为它描述的是每个城市局部内部的增长或收缩反应：城市先在自己的位置上改变规模，还没有和其他城市交换人口。它更像“本地反应项”，不是跨城市迁移项。
+
 随后 diffusion step 是
 
 $$
 S_i(t+1)=(1-\alpha)S_i(t'). \tag{6.50}
 $$
 
-这说明另一条修正 Simon 的路线是：增长不再只是单向 preferential attachment，而是加入扩散/迁移式的再分配。
+diffusion step 的含义是：reaction 之后，城市并不封闭地保留全部人口，而是有一部分通过迁移式机制离开或被重新分配。书中用 $(1-\alpha)$ 表示城市保留下来的比例；被抽走的部分可以理解为参与跨城市再分配的流量。
 
-### 9.1 Gabaix 对 Simon 的两点批评
+因此 reaction-diffusion 的逻辑是两步：
 
-Gabaix 后来总结 Simon 模型的两个主要问题：
+1. reaction：每个城市先经历本地 multiplicative shock，产生局部增长差异。
+2. diffusion：随后人口在城市之间发生迁移式再分配，削弱或传播这些局部差异。
 
-1. 要得到 Zipf exponent 1，需要 $g=s$，也就是新城市出现速度和既有城市增长速度一样快。这不符合经验，通常预期 $g<s$。
-2. Simon 模型中增长率方差随城市规模下降，意味着大城市增长率波动远小于小城市。Gabaix 认为这太偏离 Gibrat law。
+它和 Marsili-Zhang 的共同点是：都不再把城市增长看成单向 preferential attachment。差别是，Marsili-Zhang 把 diffusion 写在 size class 的 master equation 里，关注 $N(n,t)$ 如何在 $n$ 轴上流动；Zanette-Manrubia 用 reaction-diffusion 语言，把城市内部 multiplicative shock 和城市间 migration-like redistribution 分成两个步骤。
 
-但作者也指出，这两个批评后来都不完全成立。首先，Zipf exponent 未必必须等于 1。其次，增长率方差是否独立于规模，在经验上并不清楚。
+### 9.3 Gabaix 对 Simon 的两点批评
+
+Gabaix 后来总结 Simon 模型的两个主要问题。这两个问题都和 empirical tension 有关：模型能生成 power-law，不代表它的机制假设就符合城市增长数据。
+
+第一点针对的是 exponent。前面已经看到 Yule-Simon 的参数关系：
+
+$$
+\zeta=\frac{g}{s}.
+$$
+
+这里 $g$ 是新城市数量的增长率，$s$ 是既有城市内部人口增长率。$\zeta$ 越大，说明新城市出现得相对越快；$\zeta$ 越小，说明既有城市扩张相对更快。
+
+前面还得到：density tail 是
+
+$$
+f(n)\propto n^{-1-\zeta},
+$$
+
+对应的 rank-size Zipf exponent 是
+
+$$
+\frac{1}{\zeta}.
+$$
+
+因此，如果 rank-size Zipf exponent 要等于 1，就需要
+
+$$
+\frac{1}{\zeta}=1.
+$$
+
+也就是
+
+$$
+\zeta=1.
+$$
+
+再代回 $\zeta=g/s$，得到
+
+$$
+g=s.
+$$
+
+这就是 Gabaix 第一条批评的逻辑链：Simon/Yule 要得到 exact Zipf exponent 1，就要求新城市出现速度和既有城市增长速度一样快。
+
+为什么这不自然？因为 $g$ 描述的是城市数量的扩张，$s$ 描述的是已有城市人口的扩张。现实里，一个国家或城市系统中的城市总数通常不会像总人口或既有城市人口那样持续快速增长。更多时候，人口增长主要进入已有城市，只有一部分形成新城市。因此经验上更自然的预期是
+
+$$
+g<s.
+$$
+
+如果 $g<s$，则
+
+$$
+\zeta=\frac{g}{s}<1,
+$$
+
+rank-size exponent 就会变成
+
+$$
+\frac{1}{\zeta}>1.
+$$
+
+这会偏离 exact Zipf exponent 1。因此，Gabaix 认为 Simon/Yule 虽然能产生 power-law，但要精确得到 Zipf law，需要一个经验上很特殊的增长率平衡。
+
+第二点针对的是 growth-rate variance。Simon 模型里，城市获得 newcomer 的概率正比于城市规模 $S_i$，但一旦获得 newcomer，相对增长幅度是 $1/S_i$。这两个量在均值里互相抵消，所以平均增长率可以不依赖规模。但在方差里，抵消不完全。
+
+前面算过
+
+$$
+\operatorname{Var}(\gamma_i)\sim \frac{1}{S_i}.
+$$
+
+于是 growth-rate standard deviation 近似满足
+
+$$
+\operatorname{Std}(\gamma_i)\sim S_i^{-1/2}.
+$$
+
+这意味着大城市的增长率波动会比小城市小很多。例如，如果一个城市规模放大 100 倍，那么 Simon 模型预测它的增长率标准差大约缩小到原来的 $1/10$。
+
+而 strong Gibrat law 的要求不同。Gibrat law 说的是 proportionate growth：大城市和小城市面对同样的增长率分布。也就是说，增长率的均值和方差都不应该系统依赖城市规模。因此在 strong Gibrat 下，标准差应当近似为常数：
+
+$$
+\operatorname{Std}(\gamma_i)\sim S_i^0.
+$$
+
+这就是 Gabaix 第二条批评的逻辑链：Simon 生成 power-law 的机制同时带来了 size-dependent volatility；而 strong Gibrat 要求 size-independent volatility。因此 Simon 虽然解释了 Zipf-like tail，却牺牲了 Gibrat law 的关键经验假设。Gabaix 认为这个偏离太强。
+
+但作者也指出，这两个批评后来都不完全成立。首先，Zipf exponent 未必必须严格等于 1。其次，增长率方差是否独立于规模，在经验上并不清楚。数据有时不支持 strong Gibrat 的常数方差，也不支持 Simon 那么强的 $S^{-1/2}$ 下降。
 
 Fig. 6.3 给出法国城市 2014-2015 的例子：
 
@@ -1524,7 +1994,21 @@ $$
 \sigma(S)\propto S^{-\beta}. \tag{6.51}
 $$
 
-图注给出 $\beta\simeq 0.2<1$。这说明增长率波动确实随城市规模下降，但下降得不如 Simon 模型那样强。它既不完全支持 strong Gibrat，也不完全支持 Simon。
+图注给出 $\beta\simeq 0.2<1$。这说明增长率波动确实随城市规模下降，但下降得不如 Simon 模型那样强。可以把三种说法放在一起：
+
+$$
+\text{strong Gibrat:}\quad \sigma(S)\sim S^0,
+$$
+
+$$
+\text{Simon:}\quad \sigma(S)\sim S^{-1/2},
+$$
+
+$$
+\text{French data in Fig. 6.3:}\quad \sigma(S)\sim S^{-0.2}.
+$$
+
+所以 empirical picture 夹在两者之间：增长率波动不是完全 size-independent，但也没有像 Simon 模型预测得那样快速下降。这就是为什么本章后面会转向 strong-but-modified Gibrat：保留 multiplicative growth 的语言，同时允许 drift 或 volatility 对 size 有弱依赖。
 
 ---
 
@@ -1569,7 +2053,7 @@ $$
 则中心极限定理给出
 
 $$
-s(t)\sim \mathcal{N}(mt,\sigma^2 t). \tag{6.55}
+s(t)\sim \mathrm{Normal}(mt,\sigma^2 t). \tag{6.55}
 $$
 
 因此 $S=e^s$ 服从 lognormal distribution：
@@ -1653,6 +2137,52 @@ $$
 
 ## 十一、Friction：为什么需要 negative drift 和 bottom barrier
 
+先把问题说清楚。strong Gibrat 把城市规模写成 multiplicative random growth：
+
+$$
+S(t+1)=\gamma(t)S(t).
+$$
+
+取对数后，
+
+$$
+w(t)=\log S(t)
+$$
+
+满足 additive random walk：
+
+$$
+w(t+1)=w(t)+\log\gamma(t).
+$$
+
+所以城市规模问题在 log-space 里变成随机游走问题。没有额外机制时，随机游走不会自动形成 stationary distribution：它的方差会随时间扩散，分布越来越宽。这就是为什么单纯 Gibrat 模型给出 lognormal transient，而不是稳定的 Pareto tail。
+
+所谓 friction，就是给这个 log-space random walk 加上限制，使它不要无限扩散。这里最重要的两个限制是 negative drift 和 bottom barrier。
+
+drift 指的是随机游走每一步的平均方向。如果
+
+$$
+\mathbb{E}[\Delta w]<0,
+$$
+
+就叫 negative drift。它的含义是：在 log-size 空间里，城市规模平均受到一个向下拉的趋势。这个趋势会阻止变量一直往大城市方向扩散。
+
+但只有 negative drift 还不够。因为如果变量一直被往下拉，而下面没有边界，它最终会继续向 $w\to -\infty$ 漂移，也就是 $S=e^w\to0$。所以还需要 bottom barrier，也就是一个最低规模：
+
+$$
+S\ge S_{\min}.
+$$
+
+在 log-space 里对应
+
+$$
+w\ge \log S_{\min}.
+$$
+
+barrier 的作用是：当随机游走碰到这个底部时，不能继续往下走，而是被反射或重新留在允许区域内。城市语境里，它可以被理解成“城市定义的最小人口阈值”或“系统不允许城市规模跌破的下限”。数学上，它是一个 reflective lower boundary。
+
+这两个机制必须一起出现。negative drift 负责防止变量无限向上扩散；bottom barrier 负责防止变量被 negative drift 拉到 $-\infty$。两者合在一起，log-space random walk 才能在底部附近被反射、同时又被向下漂移约束，从而形成 stationary distribution。
+
 Champernowne 在收入分布问题中提出一个早期 friction 模型。收入区间按 log-scale 划分：
 
 $$
@@ -1683,9 +2213,17 @@ $$
 
 这条不等式表达的是 expected shift per unit time 为负。向上一级跳的概率不足以抵消向下多级跳带来的平均下移。
 
-这个负 drift 的作用是防止收入或城市 size 无限向上扩散。但只有负 drift 还不够。如果没有下边界，变量会一直向 $-\infty$ 走。
+这就是 discrete version 的 negative drift。它不是说每一步都向下，而是说把所有可能跳转按概率平均以后，平均位移小于 0。个体轨道仍然可以偶尔向上跳，但长期平均趋势是向下。
 
-所以还需要 minimal level $y_0$。它像 reflective barrier：收入不能低于某个底部。城市语境里对应 $S_{\min}$。
+Champernowne 同时设定 minimal level $y_0$。它就是 bottom barrier：收入不能低于某个底部。城市语境里对应 $S_{\min}$。所以这套模型的结构是：
+
+$$
+\text{random upward/downward jumps}
++
+\text{negative average drift}
++
+\text{reflective lower barrier}.
+$$
 
 作者用统计物理比喻解释这一点。令
 
@@ -2028,15 +2566,67 @@ $$
 为了解释经验中 Zipf exponent 围绕 1 波动，Gabaix 又允许 drift 和 volatility 随城市规模变化：
 
 $$
-dS_t
+S_{t+dt}
 =
 \max\left(
-m(S)dt+\sigma(S)S_t dB_t,
+S_t
++m(S_t)S_tdt
++\sigma(S_t)S_t dB_t,
 S_{\min}
-\right). \tag{6.72}
+\right). \tag{6.72, interpreted}
 $$
 
-模型仍然是带 lower barrier 的 size-dependent stochastic growth。和前面的常系数版本相比，这里只是把固定 drift 和固定 volatility 换成随规模变化的函数。若从增长率层面读，$m(S)$ 是 growth-rate drift，$\sigma(S)$ 是 growth-rate volatility；写到 $S$-space 的 Fokker-Planck equation 时，绝对 drift 会带上 $S$，绝对 diffusion 会带上 $S^2$。
+模型仍然是带 lower barrier 的 size-dependent stochastic growth。和前面的常系数版本相比，这里只是把固定 drift 和固定 volatility 换成随规模变化的函数。
+
+这里按和后面 Eq. 6.75 一致的方式来读：漂移项应该是 $m(S_t)S_tdt$，因为 $m(S)$ 是 growth-rate drift，不是 $S$-space 的绝对 drift。否则 $m(S)dt$ 和 $\sigma(S)S_tdB_t$ 的量纲也不一致。
+
+同时，lower barrier 应该作用在更新后的城市规模 $S_{t+dt}$ 上，而不是把增量 $dS_t$ 直接和 $S_{\min}$ 比较。也就是说，先按 GBM 做一次随机更新，再用 $\max(\cdot,S_{\min})$ 防止城市规模跌破下界。
+
+这里需要先区分两套系数。
+
+第一套是 **growth-rate 系数**。Gibrat 语言关心的是相对增长率，也就是
+
+$$
+\frac{dS}{S}.
+$$
+
+如果写成
+
+$$
+\frac{dS}{S}
+=
+m(S)dt+\sigma(S)dB_t,
+$$
+
+那么 $m(S)$ 是 growth-rate drift，$\sigma(S)$ 是 growth-rate volatility。它们描述的是“相对变化率”：城市规模按百分比平均增长多少、按百分比随机波动多少。
+
+第二套是 **$S$-space 的绝对系数**。Fokker-Planck equation 直接描述 density $p(S,t)$ 在 $S$ 轴上的流动，因此它需要的是 $S$ 本身的变化量：
+
+$$
+dS=a(S)dt+b(S)dB_t.
+$$
+
+这里 $a(S)$ 是 absolute drift，$b^2(S)$ 是 absolute diffusion coefficient。所谓“绝对”，意思是它们作用在原始规模 $S$ 上，单位是“人口规模每单位时间的变化”，而不是“百分比变化率”。
+
+两套写法通过乘上 $S$ 互相转换。因为
+
+$$
+dS
+=
+S\left[m(S)dt+\sigma(S)dB_t\right],
+$$
+
+所以
+
+$$
+a(S)=m(S)S,
+\qquad
+b(S)=\sigma(S)S,
+\qquad
+b^2(S)=\sigma^2(S)S^2.
+$$
+
+这就是为什么从 growth-rate 语言转到 $S$-space Fokker-Planck 时，drift 会带上 $S$，diffusion 会带上 $S^2$。
 
 对应 Fokker-Planck equation 是
 
@@ -2049,7 +2639,13 @@ $$
 \partial_S^2[\sigma_0^2(S)p(S,t)]. \tag{6.73}
 $$
 
-在 Eq. 6.73 里，$m(S)$ 和 $\sigma_0^2(S)$ 可以作为 $S$-space 的绝对 drift/diffusion 系数来读。后面推 Eq. 6.75 时，为了看清 local exponent，需要重新拆成“增长率 drift” $m(S)$ 和“增长率 variance” $\sigma^2(S)$，也就是绝对 drift $m(S)S$、绝对 diffusion $\sigma^2(S)S^2$。
+在 Eq. 6.73 里，$m(S)$ 和 $\sigma_0^2(S)$ 可以作为 $S$-space 的绝对 drift/diffusion 系数来读，也就是上面记号里的 $a(S)$ 和 $b^2(S)$。后面推 Eq. 6.75 时，为了看清 local exponent，需要重新回到 Gibrat 的 growth-rate 语言：growth-rate drift 是 $m(S)$，growth-rate variance 是 $\sigma^2(S)$，对应的 $S$-space 绝对系数是
+
+$$
+a(S)=m(S)S,
+\qquad
+b^2(S)=\sigma^2(S)S^2.
+$$
 
 稳态满足
 
@@ -2075,13 +2671,39 @@ $$
 p(S)\sim S^{-1-\mu(S)}.
 $$
 
-如果 $\mu(S)$ 随 $S$ 变化很慢，则在局部计算中可近似认为
+这里的 $\mu(S)$ 被称为 local exponent。意思不是全局上 $p(S)$ 一定是一条固定斜率的 Pareto，而是说：在某个有限的 $S$ 附近，可以用一个局部幂律斜率来近似 density。
+
+为了得到后面的导数关系，先对上式取对数：
+
+$$
+\log p(S)
+\simeq
+-[1+\mu(S)]\log S
++\text{constant}.
+$$
+
+如果严格对 $S$ 求导，会得到两项：
+
+$$
+\partial_S\log p(S)
+\simeq
+-[1+\mu(S)]\frac{1}{S}
+-\mu'(S)\log S.
+$$
+
+其中第一项来自 $\log S$ 的导数，第二项来自 local exponent $\mu(S)$ 自身随 $S$ 改变。
+
+“$\mu(S)$ 随 $S$ 变化很慢”的意思就是：在当前局部窗口里，$\mu(S)$ 可以近似看成常数，因此 $\mu'(S)\log S$ 这一项相对较小，可以忽略。于是
 
 $$
 \frac{\partial_S p}{p}
+=
+\partial_S\log p(S)
 \simeq
 -\frac{1+\mu(S)}{S}.
 $$
+
+这一步的作用是把 density 的局部 Pareto 斜率转成一个可代入 Fokker-Planck 零通量条件的导数近似。
 
 现在展开右边：
 
@@ -2096,12 +2718,68 @@ $$
 用上面的局部 Pareto 关系代入最后一项：
 
 $$
+\frac{\partial_S p}{p}
+\simeq
+-\frac{1+\mu(S)}{S}
+$$
+
+等价于
+
+$$
+\partial_Sp
+\simeq
+-\frac{1+\mu(S)}{S}p.
+$$
+
+因此
+
+$$
 \sigma^2(S)S^2\partial_Sp
 \simeq
+\sigma^2(S)S^2
+\left[
+-\frac{1+\mu(S)}{S}p
+\right]
+=
 -\sigma^2(S)S[1+\mu(S)]p.
 $$
 
-所以
+现在把三项重新放回 product rule：
+
+$$
+\partial_S[\sigma^2(S)S^2p(S)]
+\simeq
+[\partial_S\sigma^2(S)]S^2p
++2\sigma^2(S)S p
+-\sigma^2(S)S[1+\mu(S)]p.
+$$
+
+第一项保持不变：
+
+$$
+[\partial_S\sigma^2(S)]S^2p
+=
+S^2\partial_S\sigma^2(S)\,p.
+$$
+
+第二项和第三项可以合并，因为它们都含有 $\sigma^2(S)S p$：
+
+$$
+2\sigma^2(S)S p
+-\sigma^2(S)S[1+\mu(S)]p
+=
+\sigma^2(S)S[2-(1+\mu(S))]p.
+$$
+
+括号里
+
+$$
+2-(1+\mu(S))
+=
+1-\mu(S).
+$$
+
+所以最终得到
 
 $$
 \partial_S[\sigma^2(S)S^2p(S)]
