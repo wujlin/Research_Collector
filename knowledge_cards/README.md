@@ -12,3 +12,4 @@
 当前卡片：
 
 - [ELBO Derivation](./elbo-derivation.md)
+- [Flow Matching vs Score-Based Generative Modeling](./flow-matching-vs-score-based.md)

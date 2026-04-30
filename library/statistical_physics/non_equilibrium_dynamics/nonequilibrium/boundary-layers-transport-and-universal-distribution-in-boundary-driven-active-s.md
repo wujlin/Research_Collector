@@ -12,7 +12,8 @@ tier: 2
 citations: 0
 relevance_score: 62.0
 collected: "2026-04-16"
-status: "noted"
+status: "excluded_current_queue"
+exclude_reason: "Boundary-driven active-matter/material-transport paper; useful as a nonequilibrium transport side branch, but not directly aligned with current Synthetic_City, urban migration, spatial expansion, or generative inverse-problem priorities."
 source: "openalex"
 ---
 
@@ -33,3 +34,4 @@ We discuss analytical results for a run-and-tumble particle (RTP) in one dimensi
 
 ## Notes
 
+2026-04-28: Removed from the active must-read queue. Keep the PDF/MinerU output archived for possible future active-matter or material-transport work, but do not treat it as a current core reading item.

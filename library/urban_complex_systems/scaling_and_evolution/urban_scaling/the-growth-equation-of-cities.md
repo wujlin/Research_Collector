@@ -12,7 +12,8 @@ tier: 1
 citations: 0
 relevance_score: 39.0
 collected: "2026-04-24"
-status: "unread"
+status: "covered_by_book_chapters"
+coverage_note: "Core mechanism and equation chain have been covered through Statistics and Dynamics of Urban Populations Chapters 9-10; keep as primary-paper reference, but do not prioritize as a separate next deep read unless checking original empirical details or supplementary material."
 source: "arxiv + Nature DOI"
 ---
 
@@ -37,3 +38,5 @@ Local PDF: `pdfs/2026-04-24/the-growth-equation-of-cities/the-growth-equation-of
 Supplementary PDF: `pdfs/2026-04-24/the-growth-equation-of-cities/the-growth-equation-of-cities-supplementary.pdf`
 
 Publication status: Nature Article, version of record published 18 November 2020.
+
+2026-04-28: Do not treat as the next core reading item. The main growth-equation logic has already been linearly expanded through the book chapters; use this paper only for original empirical figures, dataset details, or supplementary checks.

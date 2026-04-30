@@ -4,7 +4,7 @@ authors: ["Yuki Yasuda", "Tobias Bischoff"]
 year: 2026
 journal: "ArXiv.org"
 doi: ""
-arxiv: ""
+arxiv: "2604.00327"
 url: "https://openalex.org/W7149210441"
 pdf_url: "https://arxiv.org/pdf/2604.00327"
 topics: ["statistical_physics", "statistical_physics/collective_structure/phase_transitions", "ai_for_physics", "ai_for_physics/generative_dynamics/conditional_generation", "statistical_physics/collective_structure", "ai_for_physics/generative_dynamics"]
@@ -12,7 +12,8 @@ tier: 0
 citations: 0
 relevance_score: 54.0
 collected: "2026-04-16"
-status: "unread"
+status: "read"
+digest: "digests/2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.md"
 source: "openalex"
 ---
 
@@ -34,4 +35,3 @@ Multiscale spatial structure complicates temporal prediction because small-scale
 - [[generative_dynamics]]
 
 ## Notes
-

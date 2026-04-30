@@ -3,6 +3,7 @@ title: "Predictor-Driven Diffusion for Spatiotemporal Generation"
 authors: "Yuki Yasuda, Tobias Bischoff"
 venue: "arXiv (2026)"
 date_read: "2026-04-16"
+date_deep_read: "2026-04-28"
 topics: ["时空生成", "条件扩散", "天气预测", "自回归"]
 ---
 
@@ -11,6 +12,60 @@ topics: ["时空生成", "条件扩散", "天气预测", "自回归"]
 ## 精读笔记
 
 ---
+
+## 〇、这篇文章在我们当前主线里的位置
+
+这篇文章要解决的问题不是“如何把普通 diffusion model 用到视频或时空数据上”，而是更具体：
+
+如果数据本身是一个随物理时间 $t$ 演化的空间场，那么 diffusion model 的去噪时间、物理演化时间、空间分辨率这三件事不能混在一起。
+
+标准 diffusion model 只有一个 artificial diffusion time。它把所有 Fourier modes 按同一个噪声进程推向 Gaussian，再学习反向去噪。这样做可以生成样本，但中间状态通常只表示“噪声水平”，不表示明确的空间尺度。
+
+时空系统的问题更尖锐。物理时间 $t$ 不是一个可以随便平滑的轴，因为平滑时间会把未来信息混入当前状态。例如，如果对一个轨迹同时在过去和未来上做卷积，那么当前时刻的 coarse-grained state 已经偷看了未来，因果预测就被破坏了。
+
+本文的核心设计是把两个轴分开：
+
+$$
+\begin{aligned}
+&t:\quad \text{physical time, causal evolution},\\
+&\lambda:\quad \text{diffusion scale, spatial coarse-graining}.
+\end{aligned}
+$$
+
+沿 $t$ 轴，模型只做 predictor：给定当前和过去状态，预测未来演化。
+
+沿 $\lambda$ 轴，模型做 RG-style diffusion：大的 $\lambda$ 表示更粗的空间尺度，小的 $\lambda$ 表示更细的空间尺度。
+
+这就把一个容易混乱的问题拆成两条互不替代的链：
+
+$$
+\begin{aligned}
+&\text{causal dynamics}
+\quad\Rightarrow\quad
+\text{learn } f^\theta_\lambda \text{ along physical time } t,\\
+&\text{spatial multiscale generation}
+\quad\Rightarrow\quad
+\text{reverse sampling along diffusion scale } \lambda.
+\end{aligned}
+$$
+
+和 PRX speed-accuracy 那篇相比，PRX 文章回答的是“什么样的 distributional protocol 更稳健”；这篇文章回答的是“对时空场来说，protocol 的轴应该怎么拆，才能同时保留空间多尺度和时间因果性”。
+
+因此，它对 Synthetic_City 更直接。城市问题里，$t$ 可以对应真实年份、迁移/发展阶段或 scenario evolution；$\lambda$ 可以对应空间分辨率、行政层级、grid resolution 或 PUMA-to-block-group 的 coarse-to-fine allocation。本文的价值在于，它提供了一种思路：不要把时间预测和空间细化放进同一个黑箱 diffusion time，而是让 predictor 管时间，让 RG diffusion 管空间尺度。
+
+这篇文章的主线可以写成：
+
+$$
+\begin{aligned}
+&\text{standard diffusion has no explicit spatial scale}\\
+&\rightarrow \text{RG diffusion gives a spatial scale axis } \lambda\\
+&\rightarrow \text{but temporal coarse-graining would violate causality}\\
+&\rightarrow \text{learn a causal predictor along physical time } t\\
+&\rightarrow \text{use the predictor to define a path density}\\
+&\rightarrow \text{differentiate the path density to obtain a path score}\\
+&\rightarrow \text{reverse-}\lambda\text{ sampling gives generation and super-resolution}.
+\end{aligned}
+$$
 
 ## 一、问题背景与动机
 
@@ -93,6 +148,18 @@ $$\partial_\lambda u_\lambda = \alpha\nabla_x^2 u_\lambda - \beta^2 \nabla_{u_\l
 - **沿 $t$ 轴**（蓝色箭头）：predictor 在任意固定 $\lambda$ 下模拟时间演化，仅使用过去信息，保证因果性
 - **沿 $\lambda$ 轴**（红色箭头）：逆向 $\lambda$ 积分实现空间分辨率从粗到细的恢复
 
+这里最容易误读的是把 $\lambda$ 当成另一个物理时间。它不是。$\lambda$ 是一个 scale coordinate。沿 $\lambda$ 前进，不表示系统在真实世界中又过了一段时间，而表示同一条时空轨迹被看成更粗的空间版本。
+
+因此，二维图里的每个点 $(t,\lambda)$ 都可以读成：
+
+$$
+\text{at physical time } t,
+\quad
+\text{view the spatial field at resolution level } \lambda.
+$$
+
+固定 $\lambda$ 后沿 $t$ 走，是仿真或预测。固定整条 $t$ 轨迹后沿 $\lambda$ 反向走，是把一条粗分辨率轨迹逐步恢复成细分辨率轨迹。这个区分是本文保留 causality 的关键。
+
 ### 3.2 随机控制方程与路径概率
 
 在每个固定的扩散尺度 $\lambda$，物理时间方向的演化用随机微分方程建模：
@@ -110,6 +177,25 @@ $$p_\lambda(\{u_\lambda\}_t) = \frac{r_\lambda}{Z_\lambda}\exp\left[-\int_{\math
 这个路径积分形式有两个关键性质：
 1. **可微**：对数密度关于 $u_\lambda$ 的梯度可通过自动微分计算，直接给出 path score $\nabla_{u_\lambda}\ln p_\lambda$
 2. **归一化常数 $Z_\lambda$ 与 $f_\lambda^\theta$ 无关**：$Z_\lambda$ 仅依赖 $\sigma_\lambda$、$\Delta t$ 和网格维度，简化了训练
+
+这一步是整篇文章的桥。作者不是额外训练一个 score network，而是先训练一个 temporal predictor，再把 predictor 诱导出来的 path density 当作能量函数。只要 $p_\lambda(\{u_\lambda\}_t)$ 可微，就可以通过
+
+$$
+s_\lambda
+=
+\nabla_{u_\lambda}
+\ln p_\lambda(\{u_\lambda\}_t)
+$$
+
+得到 reverse-$\lambda$ diffusion 所需的 score。
+
+所以 predictor 的角色有两层。
+
+第一层，它在固定 $\lambda$ 下预测物理时间演化。
+
+第二层，它定义整条时空轨迹的概率密度，从而间接提供空间尺度反演所需的 score。
+
+这就是标题里 predictor-driven diffusion 的意思：diffusion sampling 不是由一个独立 score model 驱动，而是由 temporal predictor 定义的 path density 驱动。
 
 ### 3.3 训练目标：路径密度间的 KL 散度
 
@@ -326,6 +412,96 @@ $$\widetilde{u}_{\lambda-\Delta\lambda}(k,t) = e^{\alpha\|k\|^2\Delta\lambda}\wi
 4. **三任务统一**：仿真（沿 $t$）、生成（沿 $\lambda$ 逆向）、超分辨率（从中间 $\lambda$ 开始逆向）共享一个网络，仅通过改变输入和积分方向切换任务。
 
 5. **噪声不可省略**：噪声实现了 RG 意义上的统计积分，是逆向过程能够重建小尺度结构的理论和实验前提。
+
+---
+
+## 十一、对 Synthetic_City 的直接启发
+
+这篇文章对 Synthetic_City 有用，不是因为城市系统一定满足 Lorenz-96 或 Kolmogorov flow 那样的 PDE，而是因为它给出了一个清晰的生成结构：把真实演化时间和空间分辨率拆开。
+
+在 Synthetic_City 中，可以做如下类比：
+
+$$
+\begin{aligned}
+&t
+\quad\Longleftrightarrow\quad
+\text{年份、迁移阶段、scenario step 或 policy time},\\
+&\lambda
+\quad\Longleftrightarrow\quad
+\text{空间 coarse-graining level},\\
+&u_\lambda(x,t)
+\quad\Longleftrightarrow\quad
+\text{某个分辨率下的 population / household / activity field}.
+\end{aligned}
+$$
+
+如果我们要从 coarse census summaries 生成 finer spatial allocation，一个直接风险是把时间预测和空间细化混成一个 diffusion chain。这样模型可能在训练中用未来信息解释当前分布，或者在空间细化时破坏跨时间一致性。
+
+本文建议的结构更稳：
+
+第一，沿真实时间 $t$ 训练 causal predictor。这个 predictor 学的是：
+
+$$
+\text{given current and past urban state}
+\quad\rightarrow\quad
+\text{predict next urban state}.
+$$
+
+第二，沿空间尺度 $\lambda$ 定义 coarse-to-fine path。大的 $\lambda$ 可以表示更粗的行政层级或更低空间分辨率，小的 $\lambda$ 表示更细的 spatial allocation。
+
+第三，用 predictor-induced path density 给 reverse-$\lambda$ sampling 提供 score。这样空间细化不是单张图像超分辨率，而是整条城市演化轨迹的超分辨率。
+
+这个结构特别适合我们现在的困惑：observation 里有 condition，例如 census summaries；也有 target，例如 PUMA 或更细 spatial units；但两者都缺乏清晰 PDE。本文说明，即使没有显式 PDE，也可以先定义两个清楚的轴：
+
+$$
+\text{causal temporal predictor}
+\quad+\quad
+\text{spatial scale diffusion}.
+$$
+
+需要注意的是，城市空间不一定是规则 Euclidean grid。PUMA、tract、block group 是不规则 polygon / graph。因此，如果把本文迁移到 Synthetic_City，$\nabla_x^2$ 不能直接照搬成 regular-grid Laplacian，更可能需要：
+
+$$
+\text{graph Laplacian}
+\quad\text{or}\quad
+\text{administrative adjacency / mobility-weighted Laplacian}.
+$$
+
+这也是后续建模需要决定的关键：空间粗粒化不是视觉图像里的 blur，而是行政区、交通联系、通勤流和人口分布共同定义的 spatial aggregation。
+
+---
+
+## 十二、和 PRX speed-accuracy 文章的衔接
+
+PRX speed-accuracy 文章告诉我们：diffusion model 的 forward path 不是随便选的；如果 path 在 distribution space 中运动代价很高，reverse generation 对初始误差会更敏感。它强调的是 protocol optimality。
+
+本文进一步给出一个时空系统里的 protocol decomposition：
+
+$$
+\text{physical time } t
+\neq
+\text{diffusion scale } \lambda.
+$$
+
+把两篇文章放在一起，可以得到一个更完整的生成模型设计原则：
+
+第一，生成过程应该有清楚的 distributional path，而不是任意 schedule。
+
+第二，对时空数据，path 的坐标轴要尊重物理含义。时间轴负责因果预测，尺度轴负责 coarse-to-fine generation。
+
+第三，reverse sampling 的 score 不一定必须来自单独 score network。它也可以来自一个 predictor 定义的 path density。
+
+这对我们后面整合 VI primer、HJB、HJ sampler 和 diffusion/flow 线很重要。共同点不是某个具体网络，而是：
+
+$$
+\text{define a path}
+\quad\rightarrow\quad
+\text{define a cost or density on the path}
+\quad\rightarrow\quad
+\text{derive a flow / score / control to move along the path}.
+$$
+
+差异在于，各框架对 path 的解释不同。VI 偏向 posterior approximation，HJB 偏向 optimal control，PRX diffusion thermodynamics 偏向 entropy production and OT，Predictor-Driven Diffusion 偏向 causal temporal prediction plus spatial RG.
 
 ---
 

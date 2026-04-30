@@ -11,7 +11,9 @@ focus: "AI + Generative Models ↔ Physics 交叉"
 
 ---
 
-## Must Read — AI / 生成模型核心 (13 篇)
+## Core Queue — AI / 生成模型核心（含已读与基础参考）
+
+2026-04-28 口径修正：这个队列不再等同于“下一篇必读”。`DDPM`、`Score-Based SDE` 和 `Flow Matching` 是基础参考层，时间上已经比较早，适合在概念断点出现时回读；当前推进位应优先给更新的桥接论文、城市动力学和直接服务 `Synthetic_City` 的方法文献。
 
 ### 1. Nonequilibrium physics of generative diffusion models
 - **Phys. Rev. E** 111, 014111 (2025) | Tier 2 | Rel: 64
@@ -32,14 +34,16 @@ focus: "AI + Generative Models ↔ Physics 交叉"
 - 期刊口碑: `trusted` — 三大 ML 顶会之一，接收率 ~25%，领域标杆
 - Authors: **Yang Song; Jascha Sohl-Dickstein; Diederik P. Kingma; Abhishek Kumar**
 - Topics: `Fokker-Planck` `SDE理论` `score_matching`
-- Song et al. 经典 seminal，SDE ↔ score-based diffusion 的奠基工作
+- Current status: `foundational_reference_not_next_read`
+- Song et al. 是 SDE ↔ score-based diffusion 的奠基工作，但不应被误读成当前下一篇必读。它的作用是补基础口径：forward SDE、reverse-time SDE、score、probability flow ODE 如何统一。
 
 ### 4. Flow Matching for Generative Modeling
 - **ICLR** (2023) | Tier 2 | Rel: 60
 - 期刊口碑: `trusted` — 同上，三大 ML 顶会之一
 - Authors: **Yaron Lipman; Ricky T. Q. Chen; Heli Ben-Hamu; Maximilian Nickel** (Meta AI)
 - Topics: `flow_matching` `最优传输`
-- Lipman et al. flow matching 经典，连续正则化流
+- Current status: `foundational_reference_not_next_read`
+- Lipman et al. 是 flow matching 经典，但它更适合作为 HJB matching / probability-flow / OT path 的背景参考，不再放在当前主线推进位。
 
 ### 5. Diffusion Models: A Mathematical Introduction
 - **arXiv** (2025) | 预印本 | Rel: 56
@@ -95,7 +99,8 @@ focus: "AI + Generative Models ↔ Physics 交叉"
 - 期刊口碑: `trusted` — ML 领域最顶级会议之一，接收率 ~20%
 - Authors: **Jonathan Ho; Ajay Jain; Pieter Abbeel** (UC Berkeley)
 - Topics: `DDPM`
-- Ho et al. DDPM 经典
+- Current status: `foundational_reference_not_next_read`
+- Ho et al. 是 DDPM 经典，但时间上更早，适合作为前向加噪、ELBO 和 $\epsilon$-prediction 的基础参考，不作为当前下一篇精读优先项。
 
 ### 13. Lipschitz regularity in Flow Matching and Diffusion Models
 - **arXiv** (2026) | 预印本 | Rel: 52
