@@ -1,15 +1,18 @@
 ---
 title: "集体结构与临界性"
 description: "相变、临界现象与普适结构。"
-paper_count: 46
-last_updated: "2026-04-24"
+paper_count: 47
+last_updated: "2026-05-01"
 ---
 
 # 集体结构与临界性
 
 相变、临界现象与普适结构。
 
-## Papers (46)
+## Papers (47)
+
+
+- [A network framework of cultural history](a-network-framework-of-cultural-history.md) (2014, Science 345(6196), 558-562 (2014), 0 citations)
 
 
 - [Hydrodynamic noise in one dimension: Projected Kubo formula and how it vanishes in integrable models](hydrodynamic-noise-in-one-dimension-projected-kubo-formula-and-how-it-vanishes-i.md) (2026, SciPost Physics, 1 citations)

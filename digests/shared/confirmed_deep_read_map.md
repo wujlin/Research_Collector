@@ -1,9 +1,9 @@
 ---
 title: "Confirmed Deep-Read Map"
-generated_at: "2026-04-28"
-paper_count: 11
+generated_at: "2026-05-03"
+paper_count: 12
 book_chapter_count: 8
-confirmed_item_count: 19
+confirmed_item_count: 20
 scope: "confirmed deep-read papers and book chapters only"
 ---
 
@@ -19,16 +19,17 @@ scope: "confirmed deep-read papers and book chapters only"
 
 ## 一、当前已经形成的总脉络
 
-目前真正搭起来的主线，不是“diffusion 模型总论”，而是下面这八层：
+目前真正搭起来的主线，不是“diffusion 模型总论”，而是下面这九层：
 
 1. 生成模型可以被看成 **非平衡随机过程**，因此可以讨论不可逆性、熵产生和时间箭头。
-2. 生成或采样过程可以被写成 **控制 / 势函数 / 输运问题**，因此 HJ/HJB 语言会自然进入。
-3. 不完整观测下的问题本质上是 **inverse problem**，因此 posterior、VI、UQ 会自然进入。
-4. 学习对象未必是单个样本，也可能是 **density、measure、path、posterior family** 这样的结构化对象。
-5. 城市系统中的 scaling law 不是简单 log-log 拟合，而是关于 **条件期望、波动结构和预测能力** 的统计假设。
-6. 城市增长模型从 Yule-Simon、Gibrat 到 GBM / Fokker-Planck，核心是在解释 **multiplicative growth、barrier、drift 和 tail formation**。
-7. migration 不是外部细节，而是会改变城市 size distribution 的 **耦合、扩散和 regularization 机制**。
-8. 当 migration shocks 具有 heavy tail 时，城市增长方程需要从 Gaussian noise 走向 **Levy noise、generalized CLT 和 fractional Fokker-Planck**。
+2. forward diffusion protocol 不是普通 noise schedule，而是一条带有 **entropy production / Wasserstein speed cost** 的 probability path，它会约束 reverse generation 的 robustness。
+3. 生成或采样过程可以被写成 **控制 / 势函数 / 输运问题**，因此 HJ/HJB 语言会自然进入。
+4. 不完整观测下的问题本质上是 **inverse problem**，因此 posterior、VI、UQ 会自然进入。
+5. 学习对象未必是单个样本，也可能是 **density、measure、path、posterior family** 这样的结构化对象。
+6. 城市系统中的 scaling law 不是简单 log-log 拟合，而是关于 **条件期望、波动结构和预测能力** 的统计假设。
+7. 城市增长模型从 Yule-Simon、Gibrat 到 GBM / Fokker-Planck，核心是在解释 **multiplicative growth、barrier、drift 和 tail formation**。
+8. migration 不是外部细节，而是会改变城市 size distribution 的 **耦合、扩散和 regularization 机制**。
+9. 当 migration shocks 具有 heavy tail 时，城市增长方程需要从 Gaussian noise 走向 **Levy noise、generalized CLT 和 fractional Fokker-Planck**。
 
 下面按这条主线分组整理。
 
@@ -67,7 +68,18 @@ scope: "confirmed deep-read papers and book chapters only"
 核心逻辑：文章用 fluctuation theorem、entropy production、equilibrium measure 和 Franz-Parisi potential 来分析 diffusion 的 forward / reverse dynamics，把生成扩散直接放进 stochastic thermodynamics 的语言里。  
 在整条主线里的位置：这篇建立了“**diffusion 模型是耗散的、不可逆的非平衡过程**”这一层解释。
 
-### 4. Stochastic Thermodynamics for Autoregressive Generative Models
+### 4. Speed-Accuracy Relations for Diffusion Models: Wisdom from Nonequilibrium Thermodynamics and Optimal Transport
+
+对应 digest：`2026-04-28/speed-accuracy-relations-for-diffusion-models.md`
+
+作者：**Kotaro Ikeda, Tomoya Uda, Daisuke Okanohara, Sosuke Ito**。
+机构：**Kotaro Ikeda** 来自 The University of Tokyo Department of Mathematical Engineering and Information Physics；**Tomoya Uda** 来自 The University of Tokyo Department of Earth and Planetary Physics；**Daisuke Okanohara** 来自 Preferred Networks Inc.；**Sosuke Ito** 来自 The University of Tokyo Universal Biology Institute。
+作者脉络：这是 Sosuke Ito 的 stochastic thermodynamics / information geometry / optimal transport 线和 diffusion model 结合的一篇文章。它不是泛泛地说 diffusion 有热力学类比，而是把 Fokker-Planck current、entropy production、Wasserstein speed limit 和 generative reverse error 放进同一条不等式链。
+核心问题：diffusion model 的 forward protocol 是否会定量限制 reverse generation 对初始噪声误差的敏感性。
+核心逻辑：文章证明 speed-accuracy relation：reverse error response 的 $\mathcal{W}_1$ 变化受 forward entropy production / Wasserstein speed cost 控制；没有 non-conservative force 时，最优 protocol 对应 $\mathcal{W}_2$ 空间中的 constant-speed geodesic。它还把 cosine schedule、conditional OT schedule 和真实图像 latent flow matching 放到同一个 robustness diagnostic 中比较。
+在整条主线里的位置：这篇把“**diffusion 的热力学解释**”从概念类比推进到 **可计算的 protocol design criterion**：好的生成路径不只是 loss 低，还应该有低耗散、低绕路、低 sensitivity 的 distributional path。
+
+### 5. Stochastic Thermodynamics for Autoregressive Generative Models
 
 对应 digest：`2026-04-16/stochastic-thermodynamics-for-autoregressive-generative-models.md`
 
@@ -80,7 +92,7 @@ scope: "confirmed deep-read papers and book chapters only"
 
 ## 三、diffusion 的统计物理、相变与动力学 regime
 
-### 5. Dynamical regimes of diffusion models
+### 6. Dynamical regimes of diffusion models
 
 对应 digest：`2026-04-11/dynamical-regimes-of-diffusion-models.md`
 
@@ -93,7 +105,7 @@ scope: "confirmed deep-read papers and book chapters only"
 
 ## 四、HJ / HJB / 控制 / 输运
 
-### 6. Generative Optimal Transport via Forward-Backward HJB Matching
+### 7. Generative Optimal Transport via Forward-Backward HJB Matching
 
 对应 digest：`2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.md`
 
@@ -104,7 +116,7 @@ scope: "confirmed deep-read papers and book chapters only"
 核心逻辑：文章把 backward generative control 改写成 forward value function 学习问题，用标量势函数 $W/U$ 代替直接学习控制向量场，并通过时间反转把训练时的 forward relaxation 接回生成时的 backward control。  
 在整条主线里的位置：这篇建立了“**生成 = value function / optimal control / transport**”这一层统一理解。
 
-### 7. HJ-sampler: Bayesian Sampler via Hamilton-Jacobi PDEs and Score-Based Generative Models
+### 8. HJ-sampler: Bayesian Sampler via Hamilton-Jacobi PDEs and Score-Based Generative Models
 
 对应 digest：`2026-04-16/hj-sampler.md`
 
@@ -117,7 +129,7 @@ scope: "confirmed deep-read papers and book chapters only"
 
 ## 五、逆问题、VI、UQ
 
-### 8. A Primer on Variational Inference for Physics-Informed Deep Generative Modelling
+### 9. A Primer on Variational Inference for Physics-Informed Deep Generative Modelling
 
 对应 digest：`2026-04-16/a-primer-on-variational-inference-for-physics-informed-deep-generative-modelling.md`
 
@@ -130,7 +142,7 @@ scope: "confirmed deep-read papers and book chapters only"
 
 ## 六、更一般的结构化动力学对象
 
-### 9. MVNN: A Measure-Valued Neural Network for Learning McKean-Vlasov Dynamics from Particle Data
+### 10. MVNN: A Measure-Valued Neural Network for Learning McKean-Vlasov Dynamics from Particle Data
 
 对应 digest：`2026-04-13/mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-particle-data.md`
 
@@ -141,7 +153,7 @@ scope: "confirmed deep-read papers and book chapters only"
 核心逻辑：文章提出 `measure-valued neural network`，把 probability measure 当作网络输入对象，通过 cylindrical features / measure embedding 学 McKean-Vlasov dynamics，并给出 well-posedness、propagation of chaos、universal approximation 和逼近率。  
 在整条主线里的位置：这篇让“**学习对象可以是 measure，而不是普通向量**”这件事变得清楚。
 
-### 10. Non-Markovian rock-paper-scissors games
+### 11. Non-Markovian rock-paper-scissors games
 
 对应 digest：`2026-04-13/non-markovian-rock-paper-scissors-games.md`
 
@@ -152,7 +164,7 @@ scope: "confirmed deep-read papers and book chapters only"
 核心逻辑：文章表明，一旦把 Markovian exponential clock 换成具有长记忆和非指数 waiting-time 的更新过程，经典的 `law of the weakest` 不再稳固，系统的长期选择结果会被 non-Markov structure 显著改写。  
 在整条主线里的位置：这篇说明了“**动力学对象一旦脱离 Markov 假设，很多经典结论都会失效**”。
 
-### 11. Real-World Robot Control by Deep Active Inference With a Temporally Hierarchical World Model
+### 12. Real-World Robot Control by Deep Active Inference With a Temporally Hierarchical World Model
 
 对应 digest：`2026-04-16/real-world-robot-control-by-deep-active-inference-with-a-temporally-hierarchical-world-model.md`
 
@@ -167,7 +179,7 @@ scope: "confirmed deep-read papers and book chapters only"
 
 这条线来自 *Statistics and Dynamics of Urban Populations* 的连续章节精读。它和前面的生成模型主线不是同一类文献，但对 `Synthetic_City` 更直接：前面的论文提供 inverse problem、posterior、flow、control 和 uncertainty 的方法语言；这组章节则提供城市人口系统里 **scaling、growth、migration、heavy-tailed shock 和 spatial expansion** 的机制语言。
 
-### 12. Statistics and Dynamics of Urban Populations, Chapter 2: Scaling in Cities
+### 13. Statistics and Dynamics of Urban Populations, Chapter 2: Scaling in Cities
 
 对应 digest：`2026-04-25/statistics-and-dynamics-of-urban-populations-ch02-scaling-in-cities.md`
 
@@ -175,7 +187,7 @@ scope: "confirmed deep-read papers and book chapters only"
 核心逻辑：这一章把 scaling 从一句 $Y \sim P^\beta$ 展开成条件期望、噪声模型、Taylor's law、local exponent、benchmark city 和 out-of-sample prediction 的完整统计链条。它的关键点不是“找到一个漂亮指数”，而是检验 scaling exponent 是否真的稳定、是否能预测、是否只是 threshold effect 或 sampling artifact。
 在整条主线里的位置：这章建立了“**城市 scaling 是强统计假设，不是默认事实**”这条警戒线。
 
-### 13. Statistics and Dynamics of Urban Populations, Chapter 5: Stochastic Calculus for Urban Growth
+### 14. Statistics and Dynamics of Urban Populations, Chapter 5: Stochastic Calculus for Urban Growth
 
 对应 digest：`2026-04-25/statistics-and-dynamics-of-urban-populations-ch05-stochastic-calculus-for-urban-growth.md`
 
@@ -183,7 +195,7 @@ scope: "confirmed deep-read papers and book chapters only"
 核心逻辑：这一章从随机游走和 white noise 开始，解释为什么 stochastic integral 不能像普通积分一样处理；随后比较 Itô 与 Stratonovich 的物理含义，并把一步随机更新推到 Fokker-Planck equation。重点是 multiplicative noise 下 extra drift 从哪里来，以及为什么不同积分 convention 会改变概率密度演化。
 在整条主线里的位置：这章给后面的城市增长模型提供 **SDE 到 density equation 的技术地基**。
 
-### 14. Statistics and Dynamics of Urban Populations, Chapter 6: Stochastic Models of Growth
+### 15. Statistics and Dynamics of Urban Populations, Chapter 6: Stochastic Models of Growth
 
 对应 digest：`2026-04-26/statistics-and-dynamics-of-urban-populations-ch06-stochastic-models-of-growth.md`
 
@@ -191,7 +203,7 @@ scope: "confirmed deep-read papers and book chapters only"
 核心逻辑：这一章按机制展开 Yule、Simon、weak Gibrat、strong Gibrat、Marsili-Zhang、Zanette-Manrubia 和 Gabaix model。它说明 preferential attachment 可以通过年龄混合或 size-class master equation 生成 power-law；strong Gibrat 本身更自然地产生 lognormal；要得到稳定 Pareto / Zipf tail，通常还需要 negative drift、friction 或 reflective barrier。
 在整条主线里的位置：这章把“**城市增长的尾部分布来自增长机制，而不只是拟合形状**”讲清楚。
 
-### 15. Statistics and Dynamics of Urban Populations, Chapter 7: Models With Migration
+### 16. Statistics and Dynamics of Urban Populations, Chapter 7: Models With Migration
 
 对应 digest：`2026-04-27/statistics-and-dynamics-of-urban-populations-ch07-models-with-migration.md`
 
@@ -199,7 +211,7 @@ scope: "confirmed deep-read papers and book chapters only"
 核心逻辑：这一章从 Haran-Vining 的 modified Yule-Simon model 进入 migration，再到 Haag et al. 的 utility-driven master equation，最后重点展开 Bouchaud-Mezard / Solomon-Richmond 这类 mean-field redistribution 模型。核心结构是：migration 既能把城市拉向平均规模，又能与 multiplicative growth noise 共同产生 stationary distribution 和 Pareto tail。
 在整条主线里的位置：这章建立了“**migration 是 regularization / coupling / diffusion，不是增长模型的外部补丁**”。
 
-### 16. Statistics and Dynamics of Urban Populations, Chapter 8: Generalized Central Limit Theorem and Levy Stable Laws
+### 17. Statistics and Dynamics of Urban Populations, Chapter 8: Generalized Central Limit Theorem and Levy Stable Laws
 
 对应 digest：`2026-04-27/statistics-and-dynamics-of-urban-populations-ch08-generalized-central-limit-theorem-and-levy-stable-laws.md`
 
@@ -207,7 +219,7 @@ scope: "confirmed deep-read papers and book chapters only"
 核心逻辑：这一章从 law of large numbers、CLT 和 characteristic function 证明开始，逐步说明 finite variance 是 Gaussian limit 的关键前提；当 tail 足够重时，normalization 从 $\sqrt{N}$ 变成 $N^{1/\alpha}$，极限分布从 Gaussian 变成 Levy stable law。它还线性展开了 stable law 的 characteristic function、tail exponent、skewness parameter 和 generalized CLT。
 在整条主线里的位置：这章给后面 migration shock 的 Levy noise 提供 **概率论理由**。
 
-### 17. Statistics and Dynamics of Urban Populations, Chapter 9: From First Principles to the Growth Equation
+### 18. Statistics and Dynamics of Urban Populations, Chapter 9: From First Principles to the Growth Equation
 
 对应 digest：`2026-04-27/statistics-and-dynamics-of-urban-populations-ch09-from-first-principles-to-the-growth-equation.md`
 
@@ -215,7 +227,7 @@ scope: "confirmed deep-read papers and book chapters only"
 核心逻辑：这一章先把城市增长拆成 out-of-system growth 和 interurban migration，再把 migration 写成 directed weighted graph。平均迁移流可以用 size、distance、neighbor-number scaling 描述，但 pairwise residual / net migration shock 呈 heavy tail；因此 generalized CLT 会把 migration sum 推向 Levy stable noise，最终得到比 Gaussian Gibrat model 更能解释 turbulent rank dynamics 的增长方程。
 在整条主线里的位置：这章是城市动力学线的核心转折点：**Gaussian growth noise 被 Levy migration noise 取代**。
 
-### 18. Statistics and Dynamics of Urban Populations, Chapter 10: About City Dynamics
+### 19. Statistics and Dynamics of Urban Populations, Chapter 10: About City Dynamics
 
 对应 digest：`2026-04-28/statistics-and-dynamics-of-urban-populations-ch10-about-city-dynamics.md`
 
@@ -223,7 +235,7 @@ scope: "confirmed deep-read papers and book chapters only"
 核心逻辑：这一章从 decoupled growth equation 出发，把 Levy SDE 推到 fractional Fokker-Planck equation，并比较 Itô / Stratonovich、force-free / linear force、large-tail expansion 和 scaling collapse。它还说明只看 distribution 不够，因为 heavy-tailed shocks 会产生更强的 rank jumps 和 turbulent rank dynamics。
 在整条主线里的位置：这章把 Chapter 9 的机制方程推进到 **density evolution、tail asymptotics 和 rank dynamics**。
 
-### 19. Statistics and Dynamics of Urban Populations, Chapter 11: Outlook: Beyond Zipf's Law
+### 20. Statistics and Dynamics of Urban Populations, Chapter 11: Outlook: Beyond Zipf's Law
 
 对应 digest：`2026-04-28/statistics-and-dynamics-of-urban-populations-ch11-outlook-beyond-zipfs-law.md`
 
@@ -231,31 +243,33 @@ scope: "confirmed deep-read papers and book chapters only"
 核心逻辑：这一章把问题从 rank-size distribution 推到更宽的城市系统动力学：rare events、spatial migration flow、hierarchical organization、surface area growth、transport infrastructure 和 boundary evolution。它的主张是，未来模型不能只解释人口排序，还要解释城市如何在空间中扩张、如何通过迁移网络耦合、以及边界 $r(\theta,t)$ 如何变粗糙。
 在整条主线里的位置：这章把城市动力学线从 **population distribution** 推向 **spatial structure and urban morphology**。
 
-## 八、这 19 个 confirmed items 最后汇成了什么
+## 八、这 20 个 confirmed items 最后汇成了什么
 
-如果把这 11 篇论文和 8 个章节再压成一句更紧的总脉络，它们共同搭出的不是“某一类生成模型教程”，而是：
+如果把这 12 篇论文和 8 个章节再压成一句更紧的总脉络，它们共同搭出的不是“某一类生成模型教程”，而是：
 
 1. 生成过程可以被理解为 **非平衡随机过程**。
 2. 这些过程的方向性可以用 **entropy production / irreversibility** 来刻画。
-3. 生成或采样又可以被改写成 **HJ/HJB、control、transport、posterior sampling**。
-4. 一旦观测不完整，问题自然变成 **inverse problem**，需要 posterior、VI、UQ 语言。
-5. 学习对象可以是 **sample、density、measure、path、posterior family**，而不只是单个输出向量。
-6. 城市系统的 empirical regularity 不能只看 Zipf 或 log-log scaling，而要追问 **mechanism、noise、migration 和 prediction**。
-7. 城市人口动力学里的随机项未必是 Gaussian；如果 migration residuals 重尾，growth equation 会自然走向 **Levy noise 和 fractional dynamics**。
-8. 对城市研究来说，最终问题不只是人口分布，还包括 **迁移网络、空间层级、surface area 和边界演化**。
+3. diffusion 的 forward protocol 会产生 **entropy production / Wasserstein speed cost**，并约束 reverse generation 的 robustness。
+4. 生成或采样又可以被改写成 **HJ/HJB、control、transport、posterior sampling**。
+5. 一旦观测不完整，问题自然变成 **inverse problem**，需要 posterior、VI、UQ 语言。
+6. 学习对象可以是 **sample、density、measure、path、posterior family**，而不只是单个输出向量。
+7. 城市系统的 empirical regularity 不能只看 Zipf 或 log-log scaling，而要追问 **mechanism、noise、migration 和 prediction**。
+8. 城市人口动力学里的随机项未必是 Gaussian；如果 migration residuals 重尾，growth equation 会自然走向 **Levy noise 和 fractional dynamics**。
+9. 对城市研究来说，最终问题不只是人口分布，还包括 **迁移网络、空间层级、surface area 和边界演化**。
 
 ## 九、和当前 Synthetic_City 项目的直接关系
 
-对 `Synthetic_City` 最有用的，不是所有 19 个 confirmed items 都等强，而是下面几条启发：
+对 `Synthetic_City` 最有用的，不是所有 20 个 confirmed items 都等强，而是下面几条启发：
 
 1. `VI primer` 提供主语义：你的问题本质上更像 **distribution-level amortized inverse problem**。
 2. `HJB matching` 和 `HJ-sampler` 提供结构启发：不要直接学最难对象，要先换到更有结构的表示。
 3. `MVNN` 提醒你：学习对象不一定是普通向量，distribution / measure 空间本身有几何结构。
-4. `entropy production / irreversibility` 这条线提醒你：如果以后真的引入 dynamics，才有必要认真讨论时间箭头、耗散和控制代价；在当前 `Synthetic_City` 问题里，这些更适合作为类比和灵感，而不是主数学语义。
-5. `Scaling in Cities` 提醒你：condition summary 和 target distribution 之间不能只追求视觉拟合，还要问 scaling exponent、local exponent 和预测能力是否稳定。
-6. `Stochastic Models of Growth` 到 `Models With Migration` 提醒你：PUMA-level synthetic allocation 可能需要区分内部增长、迁移耦合和空间 redistribution，而不是把所有残差都塞进一个 black-box decoder。
-7. `Generalized CLT`、`Chapter 9` 和 `Chapter 10` 提醒你：如果 observed residual / migration shock 有 heavy tail，用 Gaussian uncertainty 会低估 rare but consequential allocation shifts。
-8. `Chapter 11` 提醒你：未来如果把 `Synthetic_City` 从人口分配推进到空间形态生成，就需要显式处理 surface area、transport infrastructure 和 boundary roughness。
+4. `Speed-Accuracy Relations` 提供 protocol 诊断语义：如果后续继续使用 diffusion / flow / bridge model，不只要看 training loss，还要看 condition-to-target path 是否低耗散、短路径、低 sensitivity。
+5. `entropy production / irreversibility` 这条线提醒你：如果以后真的引入 dynamics，才有必要认真讨论时间箭头、耗散和控制代价；在当前 `Synthetic_City` 问题里，这些更适合作为类比和灵感，而不是主数学语义。
+6. `Scaling in Cities` 提醒你：condition summary 和 target distribution 之间不能只追求视觉拟合，还要问 scaling exponent、local exponent 和预测能力是否稳定。
+7. `Stochastic Models of Growth` 到 `Models With Migration` 提醒你：PUMA-level synthetic allocation 可能需要区分内部增长、迁移耦合和空间 redistribution，而不是把所有残差都塞进一个 black-box decoder。
+8. `Generalized CLT`、`Chapter 9` 和 `Chapter 10` 提醒你：如果 observed residual / migration shock 有 heavy tail，用 Gaussian uncertainty 会低估 rare but consequential allocation shifts。
+9. `Chapter 11` 提醒你：未来如果把 `Synthetic_City` 从人口分配推进到空间形态生成，就需要显式处理 surface area、transport infrastructure 和 boundary roughness。
 
 ## 十、当前不应混入这份清单的文本
 
@@ -274,6 +288,7 @@ scope: "confirmed deep-read papers and book chapters only"
 - 局部电流与 entropy production：UC Davis Complexity Sciences Center 页面，`https://csc.ucdavis.edu/~cmg/compmech/pubs/currents.htm`。
 - Coarse-grained entropy production：Physical Review Research 页面，`https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.6.023175`。
 - Haiping Huang diffusion thermodynamics：Physical Review E 页面，`https://journals.aps.org/pre/abstract/10.1103/PhysRevE.111.014111`；Haiping Huang 中山大学主页，`https://spe.sysu.edu.cn/node/2338`。
+- Speed-accuracy relations for diffusion models：本地 MinerU 源位于 `pdfs/2026-04-28/speed-accuracy-trade-off-for-diffusion-models/speed-accuracy-trade-off-for-diffusion-models.mineru/hybrid_auto/speed-accuracy-trade-off-for-diffusion-models.md`；论文 DOI 为 `10.1103/x5vj-8jq9`，digest 位于 `digests/2026-04-28/speed-accuracy-relations-for-diffusion-models.md`。
 - Sagawa autoregressive thermodynamics：arXiv 页面，`https://arxiv.org/abs/2604.07867`；University of Tokyo / InaRIS 新闻，`https://www.t.u-tokyo.ac.jp/en/topics/tp2026-03-13-001`；Kyoto Hakubi 项目页面，`https://www.hakubi.kyoto-u.ac.jp/en/mem/sagawa/`。
 - Dynamical regimes of diffusion models：Nature Communications 页面，`https://www.nature.com/articles/s41467-024-54281-3`。
 - Forward-backward HJB matching：arXiv 页面，`https://arxiv.org/abs/2604.07762`；作者机构来自 arXiv TeX source。

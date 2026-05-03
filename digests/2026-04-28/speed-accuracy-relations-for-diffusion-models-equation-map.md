@@ -21,7 +21,7 @@ date_created: "2026-04-30"
 |---|---|---|---|
 | Eq. (1)-Eq. (4) | forward Fokker--Planck、Langevin SDE、真实 reverse process、estimated reverse continuity equation | 已展开 | 已补 reverse-time notation 和 estimated reverse continuity equation |
 | Eq. (5)-Eq. (15) | score matching、probability flow ODE、flow matching、estimated reverse generation | 已展开 | 已补 optimization、SDE reverse velocity、probability-flow velocity、flow-matching reverse velocity |
-| Eq. (16)-Eq. (25) | linear force、conditional Gaussian transition、conditional objectives、$T_t$ 与 $f_t$ 的 schedule 参数化 | 已展开 | 已补 conditional objectives、argmins、temperature condition、Gaussian mean/covariance |
+| Eq. (16)-Eq. (25) | linear force、conditional Gaussian transition、conditional objectives、$T_t$ 与 $f_t$ 的 schedule 参数化 | 已展开 | 已补 conditional objectives、argmins、由 mean/covariance moment equations 反推 Eq. (22)-Eq. (23)、temperature condition、Gaussian mean/covariance |
 | Eq. (26)-Eq. (35) | VE、VP/DDPM、rescaled variable 与 schedule geometry | 已展开 | 已补 VE、VP、cosine、DDIM-style rescaled variable Eq. (33)-Eq. (35) |
 | Eq. (36)-Eq. (40) | entropy production、system entropy、bath entropy、total entropy | 已展开 | Eq. (36)-Eq. (40) 已补编号 |
 | Eq. (41)-Eq. (51) | path probability、forward/backward path KL、fluctuation-theorem framing、estimated path measure | 已展开 | 已补 dual dynamics、transition kernels、path products、path KL、fluctuation theorem、estimated reverse path |
@@ -32,7 +32,7 @@ date_created: "2026-04-30"
 | Eq. (77)-Eq. (83) | main speed-accuracy relation、conservative version、instantaneous version、loss-speed hierarchy | 已重点展开 | Eq. (77)-Eq. (83) 的主线编号已补齐 |
 | Eq. (84)-Eq. (91) | Eq. (77) 的证明：$W_1$ duality、density difference、Cauchy--Schwarz、时间积分 | 已重点展开 | 已补 Eq. (84)-Eq. (91)，包括 derivative sign cases Eq. (89)-Eq. (90) |
 | Eq. (92)-Eq. (95) | lower bound、dimension dependence、cosine / cond-OT schedule cost comparison | 已展开 | 已补 speed-cost lower bound、conditional kinetic energy、cond-OT 直线、cosine 圆弧 |
-| Eq. (96)-Eq. (99) | Swiss-roll / Gaussian-mixture toy data、velocity expression、non-conservative force setup | 已展开 | 已补 Gaussian mixture velocity Eq. (97)-Eq. (98) 和 Swiss-roll force Eq. (99) |
+| Eq. (96)-Eq. (99) | Swiss-roll / Gaussian-mixture toy data、velocity expression、non-conservative force setup | 已展开 | 已补 Gaussian mixture velocity Eq. (97)-Eq. (98)、Appendix G 的后验加权推导、Fig. 6(a)-(e) panel 级解读、Swiss-roll force Eq. (99) 和 Fig. 7(a)-(f) panel 级解读 |
 | Eq. (100) | incomplete estimation 时的 generalized bound | 已展开 | 已补 $D_{\max}$、training residual、退回 Eq. (77) 的条件 |
 | Eq. (101)-Eq. (103) | 与 thermodynamic uncertainty relation、Wasserstein stability bound 的比较 | 已展开 | 已补 TUR Cauchy--Schwarz、SADM Cauchy--Schwarz、ML convergence bound 对比 |
 
@@ -46,7 +46,7 @@ date_created: "2026-04-30"
 | Eq. (D1)-Eq. (D11) | path KL 与 entropy production 的证明 | 已展开 | 已补 dual backward path、ordinary backward path、system/bath split |
 | Eq. (E1) | Pearson $\chi^2$ divergence 保持常数的证明 | 已展开 | 已补共同 transport 下 $D_{\tau-t}$ 常数与 $\mathcal{W}_1$ 可变的区别 |
 | Eq. (F1)-Eq. (F6) | incomplete estimation 的 generalized bound 推导 | 已展开 | 已补 residual velocity term、instantaneous bound、time-integrated Eq. (100) 来源 |
-| Eq. (G1)-Eq. (G21) | 数值实验、non-conservative force、Gaussian-mixture velocity、OT velocity estimation、image experiment 估计量 | 已展开 | 已补一维 mixture velocity、Swiss-roll mean/covariance、kernel OT velocity、image latent speed cost 与 $D_0$ 估计 |
+| Eq. (G1)-Eq. (G21) | 数值实验、non-conservative force、Gaussian-mixture velocity、OT velocity estimation、image experiment 估计量 | 已展开 | 已补一维 mixture velocity、Swiss-roll mean/covariance、kernel OT velocity、Fig. 8(a)-(c) panel 级解读、image latent speed cost 与 $D_0$ 估计 |
 
 ## 当前最高优先级补漏
 
