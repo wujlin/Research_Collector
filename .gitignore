@@ -18,6 +18,8 @@ web/node_modules/
 
 # Keep derived transcripts/slides/notes in Git, but not raw media sources.
 youtube/transcripts/**/source.*
+youtube/audio/
+youtube/logs/
 youtube/video/
 *.mp4
 *.m4a
