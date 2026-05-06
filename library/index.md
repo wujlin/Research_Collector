@@ -47,6 +47,9 @@
 - [城市数据与生成](urban_complex_systems/urban_data_and_generation/_index.md)
   - [城市数据科学](urban_complex_systems/urban_data_and_generation/urban_data_science/_index.md)
 
+## [集体智能体系统](collective_agent_systems/_index.md)
+社会-技术层：研究多智能体、LLM populations、社会惯例、合作、竞争和 population-level dynamics。
+
 ## [桥接主题](bridges/_index.md)
 翻译层与桥接机制：把数学骨架、物理语义、生成建模和城市应用接起来。
 - [热力学与推断](bridges/thermodynamic_inference/_index.md)

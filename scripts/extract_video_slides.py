@@ -32,7 +32,10 @@ except ImportError:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Extract slide-like keyframes from a lecture video.")
-    parser.add_argument("url", help="YouTube video URL")
+    parser.add_argument("url", nargs="?", help="YouTube video URL")
+    parser.add_argument("--input-video", help="Use an existing local video file instead of downloading from YouTube")
+    parser.add_argument("--video-id", help="Video id used when --input-video is provided")
+    parser.add_argument("--title", help="Video title used when --input-video is provided")
     parser.add_argument("--output-root", default="youtube/slides", help="Slide artifact root directory")
     parser.add_argument("--scene-threshold", type=float, default=0.12, help="ffmpeg scene change threshold")
     parser.add_argument(
@@ -83,6 +86,19 @@ def download_video(url: str, working_dir: Path, max_height: int) -> tuple[str, s
 
     video_path = prepared if prepared.exists() else next(working_dir.glob("source.*"))
     return video_id, title, video_path
+
+
+def resolve_input_video(args: argparse.Namespace, temp_dir: Path) -> tuple[str, str, Path]:
+    if args.input_video:
+        video_path = Path(args.input_video).expanduser().resolve()
+        if not video_path.exists():
+            raise SystemExit(f"Missing --input-video file: {video_path}")
+        video_id = args.video_id or video_path.stem
+        title = args.title or video_path.stem
+        return video_id, title, video_path
+    if not args.url:
+        raise SystemExit("Provide a YouTube URL or --input-video.")
+    return download_video(args.url, temp_dir, args.max_height)
 
 
 def extract_frames(video_path: Path, output_dir: Path, filter_expression: str) -> list[float]:
@@ -185,7 +201,7 @@ def main() -> None:
 
     with tempfile.TemporaryDirectory(dir=temp_root) as temp_name:
         temp_dir = Path(temp_name)
-        video_id, title, video_path = download_video(args.url, temp_dir, args.max_height)
+        video_id, title, video_path = resolve_input_video(args, temp_dir)
         destination = root / f"{video_id}-{slugify(title)}"
 
         if destination.exists() and not args.force:
@@ -206,9 +222,10 @@ def main() -> None:
             clear_slide_files(destination)
             timestamps = extract_interval_frames(video_path, destination, args.fallback_interval_seconds)
             slide_files = sorted(destination.glob("slide-*.jpg"))
-        (destination / "index.md").write_text(render_index(title, args.url, timestamps, slide_files), encoding="utf-8")
+        source_url = args.url or f"local:{video_path}"
+        (destination / "index.md").write_text(render_index(title, source_url, timestamps, slide_files), encoding="utf-8")
 
-        if args.keep_video:
+        if args.keep_video and not args.input_video:
             target_video = destination / video_path.name
             video_path.replace(target_video)
 

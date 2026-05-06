@@ -57,6 +57,8 @@ channels:
       search_terms:
         - "Max Welling generative model"
         - "Max Welling variational inference"
+        - "Max Welling materials discovery CuspAI"
+        - "Max Welling from physics to AI to materials"
       topics: ["bridges/thermodynamic_inference/variational_free_energy", "ai_for_physics/physics_informed_modeling/physics_informed_generative", "ai_for_physics"]
 
     - name: "Steve Brunton"
@@ -93,6 +95,10 @@ channels:
       search_terms:
         - "generative models physics lecture"
         - "thermodynamics machine learning lecture"
+        - "energy-based transformers paper review"
+        - "energy-based models inference-time optimization"
+        - "equivariant materials foundation models"
+        - "riemannian flow matching materials"
       topics: ["ai_for_physics/physics_informed_modeling/physics_informed_generative", "bridges/thermodynamic_inference/variational_free_energy", "ai_for_physics"]
 
   frontier_bridges:

@@ -1,0 +1,12 @@
+{
+  "title": "Energy-Based Transformers are Scalable Learners and Thinkers (Paper Review)",
+  "url": "https://www.youtube.com/watch?v=RAEy3JZmIaA",
+  "backend": "faster-whisper",
+  "model": "large-v3",
+  "requested_language": "en",
+  "detected_language": "en",
+  "generated_at": "2026-05-05T12:51:35",
+  "language": "en",
+  "language_probability": 1,
+  "duration": 2870.6203125
+}

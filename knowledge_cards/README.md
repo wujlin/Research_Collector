@@ -13,3 +13,4 @@
 
 - [ELBO Derivation](./elbo-derivation.md)
 - [Flow Matching vs Score-Based Generative Modeling](./flow-matching-vs-score-based.md)
+- [Neural ODE / Neural SDE](./neural-ode-sde.md)

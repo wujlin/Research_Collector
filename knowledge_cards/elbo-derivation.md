@@ -34,7 +34,7 @@ $$
 
 ## 1. 变分推断到底在做什么
 
-变分推断的目标不是直接算出真实后验 $p(z\mid x)$，而是引入一个可控的近似分布 $q(z)$，让它逼近真实后验。
+变分推断的目标不是直接算出真实后验 $p(z\mid x)$，而是引入一个可控的近似分布 $q(z)$，让它逼近真实后验。如果强调它有可学习参数，也常写成 $q_\phi(z)$。
 
 最自然的目标是最小化
 
@@ -48,12 +48,29 @@ $$
 - $q(z)$ 是我们能优化、能计算的近似后验；
 - 变分推断想做的，就是让两者尽量接近。
 
-问题在于，右边仍然含有难算的 $p(z\mid x)$。  
-ELBO 的作用，就是把这个目标改写成一个可优化的形式。
+问题在于，右边仍然含有难算的 $p(z\mid x)$。ELBO 的作用，就是把这个后验 KL 目标改写成一个不需要显式计算 $p(x)$ 的优化目标。
+
+这条主线可以先记成：
+
+$$
+\begin{aligned}
+\text{posterior } p(z\mid x)\text{ 难算}
+&\rightarrow
+\text{引入 } q(z)\\
+&\rightarrow
+\min_q D_{\mathrm{KL}}(q(z)\,\|\,p(z\mid x))\\
+&\rightarrow
+\max_q \mathrm{ELBO}(q)\\
+&\rightarrow
+\min_q \mathcal F(q).
+\end{aligned}
+$$
 
 ---
 
 ## 2. ELBO 的第一种推导：从 KL 恒等式出发
+
+这条推导回答的问题是：为什么“最小化后验 KL”可以变成“最大化 ELBO”。
 
 从 KL 散度定义开始：
 
@@ -63,11 +80,23 @@ D_{\mathrm{KL}}\!\big(q(z)\,\|\,p(z\mid x)\big)
 \mathbb E_{q(z)}\!\left[\log q(z)-\log p(z\mid x)\right].
 $$
 
+这里左边是真正想优化的 posterior approximation error。它比较的是：
+
+$$
+\text{approximate posterior } q(z)
+\quad\text{vs.}\quad
+\text{true posterior } p(z\mid x).
+$$
+
+困难在第二项 $\log p(z\mid x)$，因为 posterior 里面含有 evidence $p(x)$。接下来只做一个代入：把 Bayes 公式写成 log 形式。
+
 由贝叶斯公式，
 
 $$
 \log p(z\mid x)=\log p(x,z)-\log p(x).
 $$
+
+这一步的意思是：posterior log-density 可以拆成 joint log-density 减去 evidence log-density。joint $p(x,z)$ 通常由模型直接给出；麻烦的是 $\log p(x)$。
 
 代入上式：
 
@@ -77,7 +106,7 @@ D_{\mathrm{KL}}\!\big(q(z)\,\|\,p(z\mid x)\big)
 \mathbb E_q\!\left[\log q(z)-\log p(x,z)+\log p(x)\right].
 $$
 
-因为 $\log p(x)$ 与 $z$ 无关，可以移到期望外面：
+现在注意 $\log p(x)$ 只依赖观测 $x$，不依赖积分变量 $z$。所以在对 $q(z)$ 取期望时，它是常数，可以移到期望外面：
 
 $$
 D_{\mathrm{KL}}\!\big(q(z)\,\|\,p(z\mid x)\big)
@@ -85,7 +114,7 @@ D_{\mathrm{KL}}\!\big(q(z)\,\|\,p(z\mid x)\big)
 \log p(x)+\mathbb E_q\!\left[\log q(z)-\log p(x,z)\right].
 $$
 
-移项得到
+这一步已经把难点暴露出来了：KL 里确实含有 $\log p(x)$，所以我们不能直接最小化它。但 $\log p(x)$ 对 $q$ 来说是常数。于是把式子移项：
 
 $$
 \log p(x)
@@ -96,6 +125,24 @@ D_{\mathrm{KL}}\!\big(q(z)\,\|\,p(z\mid x)\big).
 $$
 
 这就是最核心的恒等式。
+
+它可以读成：
+
+$$
+\text{log evidence}
+=
+\text{ELBO}
++
+\text{posterior KL gap}.
+$$
+
+也就是说，ELBO 不是凭空定义出来的。它是把 $\log p(x)$ 分解后剩下的那一部分：
+
+$$
+\mathrm{ELBO}(q)
+=
+\mathbb E_q[\log p(x,z)-\log q(z)].
+$$
 
 因为 KL 散度总是非负的，
 
@@ -109,8 +156,17 @@ $$
 \mathrm{ELBO}(q)\le \log p(x).
 $$
 
-这就是 `evidence lower bound` 这个名字的来源：  
-它是对 $\log p(x)$ 的一个下界。
+这就是 `evidence lower bound` 这个名字的来源：它是对 $\log p(x)$ 的一个下界。
+
+更重要的是，由于 $\log p(x)$ 对 $q$ 固定不变，最大化 ELBO 会自动压低 KL gap：
+
+$$
+\max_q \mathrm{ELBO}(q)
+\quad\Longleftrightarrow\quad
+\min_q D_{\mathrm{KL}}\!\big(q(z)\,\|\,p(z\mid x)\big).
+$$
+
+所以 VI 的散度核心不是“直接算 posterior”，而是用一个可优化的下界去间接减少 $q(z)$ 和真实 posterior 之间的 KL 散度。
 
 ---
 

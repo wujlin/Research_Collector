@@ -81,7 +81,6 @@ filtering:
     - "molecular recognition"
     - "syntaxin"
     - "protein-ligand"
-    - "protein design"
     - "pharmaceutical development"
     - "aqueous solution"
     - "enzyme kinetics"
@@ -141,6 +140,12 @@ filtering:
       - "score-based"
       - "score matching"
       - "flow matching"
+      - "energy-based model"
+      - "energy-based models"
+      - "energy-based transformer"
+      - "energy-based transformers"
+      - "energy minimization"
+      - "learned verifier"
       - "generative model"
       - "variational inference"
       - "free energy"
@@ -148,6 +153,10 @@ filtering:
       - "inverse problem"
       - "physics-informed"
       - "scientific machine learning"
+      - "equivariant"
+      - "geometric deep learning"
+      - "riemannian"
+      - "materials foundation model"
       - "dynamical systems"
       - "urban scaling"
       - "complexity and cities"
@@ -204,10 +213,13 @@ ranking:
       ai_for_physics/generative_dynamics/sde_generative: 22
       ai_for_physics/generative_dynamics/score_matching: 20
       ai_for_physics/generative_dynamics/flow_matching: 20
+      ai_for_physics/generative_dynamics/energy_based_models: 18
       ai_for_physics/generative_dynamics/ddpm: 16
       ai_for_physics/generative_dynamics/conditional_generation: 14
       ai_for_physics/physics_informed_modeling/physics_informed_generative: 16
       ai_for_physics/physics_informed_modeling/scientific_ml_applications: 12
+      ai_for_physics/geometric_equivariant_learning/equivariant_materials_models: 16
+      ai_for_physics/geometric_equivariant_learning/riemannian_generative_models: 16
       # 桥接层（连接物理与 AI 的翻译机制）
       bridges/translation_layers/fokker_planck_master: 16
       bridges/thermodynamic_inference/variational_free_energy: 18
@@ -325,6 +337,9 @@ ranking:
       ai_for_physics/generative_dynamics/sde_generative: 16
       ai_for_physics/generative_dynamics/ddpm: 14
       ai_for_physics/generative_dynamics/flow_matching: 14
+      ai_for_physics/generative_dynamics/energy_based_models: 16
+      ai_for_physics/geometric_equivariant_learning/equivariant_materials_models: 14
+      ai_for_physics/geometric_equivariant_learning/riemannian_generative_models: 14
       bridges/thermodynamic_inference/variational_free_energy: 16
       bridges/translation_layers/fokker_planck_master: 16
       statistical_physics/non_equilibrium_dynamics/nonequilibrium: 14

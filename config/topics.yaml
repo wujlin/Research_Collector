@@ -222,6 +222,23 @@ ai_for_physics:
             - "optimal transport"
             - "interpolant"
             - "stochastic interpolant"
+        energy_based_models:
+          display_name: "Energy-Based Models"
+          keywords:
+            - "energy-based model"
+            - "energy-based models"
+            - "energy based model"
+            - "energy based models"
+            - "energy-based transformer"
+            - "energy-based transformers"
+            - "energy based transformer"
+            - "energy based transformers"
+            - "EBM"
+            - "EBT"
+            - "energy minimization"
+            - "learned verifier"
+            - "inference-time optimization"
+            - "system 2 thinking"
         conditional_generation:
           display_name: "条件生成"
           keywords:
@@ -270,6 +287,40 @@ ai_for_physics:
             - "conservation law"
             - "integral conservation"
             - "pde solver"
+    geometric_equivariant_learning:
+      display_name: "几何与等变学习"
+      description: "把物理中的对称性、几何结构和流形约束转成模型架构与生成机制。"
+      keywords:
+        - "equivariant"
+        - "geometric deep learning"
+        - "symmetry"
+        - "riemannian"
+        - "manifold"
+        - "gauge equivariant"
+        - "clifford"
+        - "lie group"
+        - "materials foundation model"
+        - "protein design"
+      subtopics:
+        equivariant_materials_models:
+          display_name: "等变材料与分子模型"
+          keywords:
+            - "equivariant materials"
+            - "equivariant molecular"
+            - "materials foundation model"
+            - "all-atom diffusion transformer"
+            - "molecular generation"
+            - "protein design"
+        riemannian_generative_models:
+          display_name: "Riemannian Generative Models"
+          keywords:
+            - "riemannian flow matching"
+            - "riemannian variational flow matching"
+            - "riemannian diffusion"
+            - "manifold generative"
+            - "material and protein design"
+            - "geodesic"
+            - "curvature"
 
 urban_complex_systems:
   display_name: "城市复杂系统"
