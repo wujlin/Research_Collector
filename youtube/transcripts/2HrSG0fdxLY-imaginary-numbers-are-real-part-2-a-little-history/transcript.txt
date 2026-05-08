@@ -1,0 +1,62 @@
+Last time we left off wondering how imaginary numbers could help us find the roots of our
+equation x squared plus one, and further how imaginary and negative numbers even became part
+of modern mathematics after being avoided and ignored for a couple thousand years because,
+let's be honest here, they don't really make that much sense. But something happened in Europe
+around five centuries ago that would no longer allow mathematicians to ignore these numbers.
+An Italian mathematician, Scipione del Ferro, was trying to solve a problem not that different than
+ours. At some point you've probably seen the quadratic formula. This formula is super useful
+because it gives us the roots of any equation with a highest power of two. All you have to do is plug
+in a, b, and c and out pops the answer. Del Ferro was trying to find a formula like this for
+equations with a highest power of three, cubics. The general case is pretty tough so Del Ferro
+first considered the case where the x squared term is missing and the last term is negative.
+In the 16th century negative terms were way too sketchy to
+write so Del Ferro wrote his cubic as x cubed plus cx is equal to d and required c and d to be positive.
+Now that we have our equation set up the game here is to get x by itself on one side
+and all the constants on the other side. This is pretty easy in linear equations. We can just add,
+multiply, divide, or subtract until we get x alone. Quadratics make this a bit harder. You
+may have learned how to solve these in school. It requires some cleverness and factoring by
+completing the square. Del Ferro was trying to do the same thing
+for his cubic equation and through some clever substitution he eventually found a solution.
+Just like the quadratic formula Del Ferro's new formula allowed him to find the solution
+to cubic equations by simply plugging in values. Now for some reason the way mathematicians earned
+money in the 16th century was through challenging other mathematicians to what were basically
+math duels. So Del Ferro kept his new formula a secret to use in his next duel.
+What happens next is a bit of a long story. Here's the quick version. Del Ferro kept his
+formula secret until he was on his deathbed when he finally told his student Antonio Four. Four
+immediately thought he was invincible or at least invincible in a math duel and challenged a way
+more skilled mathematician, Fontana Tartaglia, to a duel. Tartaglia had already claimed he could
+solve cubic equations like this but had actually been totally faking it. Tartaglia freaked out
+before the math off and actually figured out how to solve these equations at the last minute and
+proceeded to completely dominate Fior. Tartaglia then went on to share his formula with the world.
+He kept it super secret so he could keep kicking butt in math duels. That is until a very talented
+mathematician named Cardon heard about the formula and pressured Tartaglia to share.
+He eventually went along but only after Cardon swore to an oath of secrecy. Fortunately for us,
+after Cardon came across the surviving work of the original discoverer, Del Ferro,
+he figured that it wasn't such a big secret and published the formula in his book Ars Magna.
+Cardon went on to improve his borrowed formula, even making it work for cubics that included an
+x-squared formula. He then went on to make it work for cubic equations that included an x-squared
+term. However, along the way Cardon came across a problem. In a slightly different version of the
+equation, written as x-cubed equals cx plus d, under certain values of c and d the formula
+would break. Let's take the innocent looking equation x-cubed equals 15x plus 4. When we
+plug into Cardon's formula we get a result that involves the square root of negative numbers.
+The square root of a negative number created enough of a problem to stop Cardon in his tracks.
+Square roots ask us to find a number that when multiplied by itself,
+yields the number inside the root sign. The square root of 9 is 3 because 3 times 3 is 9.
+Importantly, the square root of 9 is also negative 3 because negative 3 times negative 3 is also
+positive 9. But what about the roots of negative numbers? What is the square root of negative 9?
+Positive 3 won't work, and neither will negative 3, so we're stuck.
+Cardon was stuck too. He didn't know of any numbers that when multiplied by themselves
+resulted in a negative. Now, this certainly wasn't the first time the square root of a negative number
+had shown up. Usually, mathematicians would interpret this as the problem's way of saying
+there are no solutions, and in many cases this is true. However, in this case, we know there is at
+least one solution because of the way cubics are shaped. Regardless of their coefficients,
+cubic functions will always cross the x-axis at least once, meaning that our equation x-cubed
+equals 15x plus 4 will have at least one real solution. So what we have here is a problem we're
+going to solve.
+that must have an answer, and a formula that has been proven to work. But when we put these
+together and try to solve the problem with our formula, we quickly arrive at what appears to
+be the impossible – the square roots of negative numbers. Sometimes, when things break in math and
+science, it means just that – they're broken. But there are other, more interesting situations
+in which broken mathematics gives us the keys to unlock new insights. The way in which Cardan's
+formula was broken turned out to be incredibly important to mathematics and science,
+and that's what we'll discuss next time.

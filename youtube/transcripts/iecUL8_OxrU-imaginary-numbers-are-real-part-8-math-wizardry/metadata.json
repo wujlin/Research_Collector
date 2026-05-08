@@ -1,0 +1,12 @@
+{
+  "title": "Imaginary Numbers Are Real [Part 8: Math Wizardry]",
+  "url": "https://www.youtube.com/watch?v=iecUL8_OxrU",
+  "backend": "faster-whisper",
+  "model": "large-v3",
+  "requested_language": "en",
+  "detected_language": "en",
+  "generated_at": "2026-05-07T12:34:55",
+  "language": "en",
+  "language_probability": 1,
+  "duration": 279.0256875
+}

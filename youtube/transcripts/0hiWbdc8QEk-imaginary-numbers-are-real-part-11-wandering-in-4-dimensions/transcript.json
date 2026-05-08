@@ -1,0 +1,490 @@
+{
+  "segments": [
+    {
+      "start": 0.16,
+      "end": 4.44,
+      "text": "Last time, we left off trying to think of shapes to draw on our input plane that would"
+    },
+    {
+      "start": 4.44,
+      "end": 10.36,
+      "text": "help us better understand our function f of z equals z squared plus one. Since z squared"
+    },
+    {
+      "start": 10.36,
+      "end": 15.200000000000001,
+      "text": "means to multiply z by itself, and z is a complex number, our function's behavior"
+    },
+    {
+      "start": 15.200000000000001,
+      "end": 21.04,
+      "text": "should have some connection to complex multiplication. Back in part 7, we saw that one way to interpret"
+    },
+    {
+      "start": 21.04,
+      "end": 26.52,
+      "text": "complex multiplication is as a rotation and scaling of our input values. When we multiply"
+    },
+    {
+      "start": 26.52,
+      "end": 33.34,
+      "text": "two complex numbers together, their magnitudes multiply and their angles add. So the z squared"
+    },
+    {
+      "start": 33.34,
+      "end": 38.2,
+      "text": "part of our function should take our complex number z, square its distance to the origin,"
+    },
+    {
+      "start": 38.2,
+      "end": 44.1,
+      "text": "and double its angle. The plus one portion of our equation is a little less exciting."
+    },
+    {
+      "start": 44.1,
+      "end": 48.739999999999995,
+      "text": "Adding a positive real number will move all of our points in the positive real direction,"
+    },
+    {
+      "start": 48.739999999999995,
+      "end": 53.96,
+      "text": "so to the right, in this case, by one. Since this shift to the right doesn't affect the"
+    },
+    {
+      "start": 53.96,
+      "end": 56.480000000000004,
+      "text": "behavior we're interested in, we'll leave it out of the equation."
+    },
+    {
+      "start": 56.52,
+      "end": 63.64,
+      "text": "Let's test the idea that our function will double the angle of its input values. What"
+    },
+    {
+      "start": 63.64,
+      "end": 68.5,
+      "text": "kind of shape should we draw to test this idea? Ideally, we want to draw a shape that"
+    },
+    {
+      "start": 68.5,
+      "end": 72.60000000000001,
+      "text": "is made up of points that are all at the same angle, to see if our function changes all"
+    },
+    {
+      "start": 72.60000000000001,
+      "end": 77.9,
+      "text": "points of the same angle in the same way. So what kind of shape is made up of points"
+    },
+    {
+      "start": 77.9,
+      "end": 84.06,
+      "text": "all at the same angle? This turns out to be a straight line through the origin. If we"
+    },
+    {
+      "start": 84.06,
+      "end": 86.5,
+      "text": "draw a line like this in our input space,"
+    },
+    {
+      "start": 86.5,
+      "end": 91.26,
+      "text": "we see that the output is also a straight line, at what looks like double the angle."
+    },
+    {
+      "start": 91.26,
+      "end": 95.86,
+      "text": "We can add a few more lines to confirm this trend."
+    },
+    {
+      "start": 95.86,
+      "end": 101.24,
+      "text": "So we've shown that our transformation doubles the angle of our input values. Now, what about"
+    },
+    {
+      "start": 101.24,
+      "end": 107.46000000000001,
+      "text": "the magnitude of our inputs? We said earlier that when squaring a complex number, the magnitude"
+    },
+    {
+      "start": 107.46000000000001,
+      "end": 112.8,
+      "text": "of the complex number should also be squared. So the distance to the origin from our input"
+    },
+    {
+      "start": 112.8,
+      "end": 115.76,
+      "text": "points should be squared in our mapping."
+    },
+    {
+      "start": 116.5,
+      "end": 121.0,
+      "text": "What kind of shape should we draw to test this idea? We want to test magnitude alone,"
+    },
+    {
+      "start": 121.0,
+      "end": 125.76,
+      "text": "so it would be nice to have a shape with a constant magnitude. What kind of shape has"
+    },
+    {
+      "start": 125.76,
+      "end": 131.64,
+      "text": "the same magnitude, or distance to the origin, everywhere?"
+    },
+    {
+      "start": 131.64,
+      "end": 137.56,
+      "text": "The shape we need is exactly a circle. If we add sections of a few circles to our picture,"
+    },
+    {
+      "start": 137.56,
+      "end": 143.84,
+      "text": "we see that these result in new circle sections, but now at different distances to the origin."
+    },
+    {
+      "start": 143.84,
+      "end": 146.44,
+      "text": "So as we expected, our circles are preserved,"
+    },
+    {
+      "start": 146.44,
+      "end": 149.16,
+      "text": "but their radii are changed."
+    },
+    {
+      "start": 149.16,
+      "end": 153.6,
+      "text": "Now we're really getting somewhere. By carefully choosing our input shape, we were able to"
+    },
+    {
+      "start": 153.6,
+      "end": 159.38,
+      "text": "better understand exactly what our function does to complex numbers. Wonderful."
+    },
+    {
+      "start": 159.38,
+      "end": 164.48,
+      "text": "But before we celebrate here, let's keep a couple things in mind. For one, we're dealing"
+    },
+    {
+      "start": 164.48,
+      "end": 169.56,
+      "text": "with a really simple function. And secondly, even for this simple function, we can still"
+    },
+    {
+      "start": 169.56,
+      "end": 174.78,
+      "text": "run into trouble with our too complex plane setup. For example, we know that our mapping"
+    },
+    {
+      "start": 174.78,
+      "end": 176.44,
+      "text": "doubles the angle of the input point."
+    },
+    {
+      "start": 176.44,
+      "end": 182.4,
+      "text": "This is fine, until we use up too much of our input space. If we continue the circles"
+    },
+    {
+      "start": 182.4,
+      "end": 188.38,
+      "text": "we started earlier, once we arrive at 180 degrees, we begin to see a problem. Our shapes"
+    },
+    {
+      "start": 188.38,
+      "end": 193.32,
+      "text": "have been expanded to fill up the entire output space, but we've only used half of the input"
+    },
+    {
+      "start": 193.32,
+      "end": 198.88,
+      "text": "space. As we continue our circles, our new points have nowhere to go except directly"
+    },
+    {
+      "start": 198.88,
+      "end": 204.16,
+      "text": "on top of our old points. This does make sense algebraically, because of the way squaring"
+    },
+    {
+      "start": 204.16,
+      "end": 205.16,
+      "text": "works."
+    },
+    {
+      "start": 205.16,
+      "end": 210.22,
+      "text": "Points like 1 plus i and negative 1 minus i will map to the same exact output value,"
+    },
+    {
+      "start": 210.22,
+      "end": 213.22,
+      "text": "namely 2i."
+    },
+    {
+      "start": 213.22,
+      "end": 217.26,
+      "text": "So it's not that our function is broken or anything. It's just that the technique we're"
+    },
+    {
+      "start": 217.26,
+      "end": 221.98,
+      "text": "using to visualize it can't really handle multiple values being mapped to the same location"
+    },
+    {
+      "start": 221.98,
+      "end": 227.16,
+      "text": "on the output plane. After all, which pixel should we display? The one from here, or the"
+    },
+    {
+      "start": 227.16,
+      "end": 230.04,
+      "text": "one from there?"
+    },
+    {
+      "start": 230.04,
+      "end": 234.16,
+      "text": "Mappings like this create problems in mathematics, although typically in the reverse direction."
+    },
+    {
+      "start": 235.16,
+      "end": 239.66,
+      "text": "The reverse of a function, where the inputs become outputs and the outputs become inputs,"
+    },
+    {
+      "start": 239.66,
+      "end": 245.48,
+      "text": "is called the inverse. The inverse of our function is pretty straightforward to find."
+    },
+    {
+      "start": 245.48,
+      "end": 248.76,
+      "text": "We simply need to solve our equation for z."
+    },
+    {
+      "start": 248.76,
+      "end": 254.16,
+      "text": "We now run into the real math problem. Our inverse function represents the same exact"
+    },
+    {
+      "start": 254.16,
+      "end": 259.2,
+      "text": "connections as our forward function, just in the opposite direction. So our two inputs"
+    },
+    {
+      "start": 259.2,
+      "end": 265.0,
+      "text": "that map to the same output are now a single input that maps to two outputs."
+    },
+    {
+      "start": 265.0,
+      "end": 272.34,
+      "text": "The w value of 2i maps to both z equals 1 plus i, and z equals negative 1 minus i."
+    },
+    {
+      "start": 272.34,
+      "end": 277.3,
+      "text": "This mapping from a single input to multiple outputs is a big enough problem that our function's"
+    },
+    {
+      "start": 277.3,
+      "end": 282.66,
+      "text": "inverse is not technically even considered a function. The definition of a function requires"
+    },
+    {
+      "start": 282.66,
+      "end": 287.34,
+      "text": "that each input be mapped to one and only one output."
+    },
+    {
+      "start": 287.34,
+      "end": 292.5,
+      "text": "To make things nice and confusing, non-functions like this are called multifunctions. So our"
+    },
+    {
+      "start": 292.5,
+      "end": 293.54,
+      "text": "mapping is the same in either direction, but taken from the reverse direction. The inverse"
+    },
+    {
+      "start": 293.54,
+      "end": 294.54,
+      "text": "of a function is a function that maps to two outputs. The inverse of our function is a"
+    },
+    {
+      "start": 294.54,
+      "end": 298.84000000000003,
+      "text": "function, but taken from z to w is considered a function, but from w to z is considered"
+    },
+    {
+      "start": 298.84000000000003,
+      "end": 303.64000000000004,
+      "text": "a multifunction, which isn't really a function."
+    },
+    {
+      "start": 303.64000000000004,
+      "end": 308.84000000000003,
+      "text": "Let's experiment with our multifunction. When we draw shapes on our w plane, our shapes"
+    },
+    {
+      "start": 308.84000000000003,
+      "end": 314.16,
+      "text": "are duplicated and shrunk down onto our z plane. Our shapes are copied because each"
+    },
+    {
+      "start": 314.16,
+      "end": 319.40000000000003,
+      "text": "point in w is mapped to two points in z, and shrunk because the square root function takes"
+    },
+    {
+      "start": 319.40000000000003,
+      "end": 324.06,
+      "text": "the square root of the magnitude of our w values and divides each angle by 2."
+    },
+    {
+      "start": 324.54,
+      "end": 330.58000000000004,
+      "text": "Let's experiment with one more type of shape, a path. We'll pick a starting point"
+    },
+    {
+      "start": 330.58000000000004,
+      "end": 336.38,
+      "text": "on our w plane, wander around for a while, and return to where we started. By following"
+    },
+    {
+      "start": 336.38,
+      "end": 341.78000000000003,
+      "text": "paths on both our w and z planes, we can get some idea of what happens as we wander around"
+    },
+    {
+      "start": 341.78000000000003,
+      "end": 348.18,
+      "text": "the 4-dimensional space of our complex multifunction. Our first path returns us right back to where"
+    },
+    {
+      "start": 348.18,
+      "end": 354.38,
+      "text": "we started on both the z and w plane. No surprise there. But if we change our path a little,"
+    },
+    {
+      "start": 354.38,
+      "end": 361.21999999999997,
+      "text": "something weird happens. Our w path returns to where we started, but our z paths don't."
+    },
+    {
+      "start": 361.21999999999997,
+      "end": 366.32,
+      "text": "Our z values jump to a whole new part of the plane. Somehow we've wandered our way into"
+    },
+    {
+      "start": 366.32,
+      "end": 372.18,
+      "text": "a completely new part of our multifunction. So it seems that some paths on w lead us back"
+    },
+    {
+      "start": 372.18,
+      "end": 378.18,
+      "text": "to where we started, but others don't. What could be going on here? How is the complex"
+    },
+    {
+      "start": 378.18,
+      "end": 383.21999999999997,
+      "text": "landscape of our multifunction taking such similar paths in such different directions?"
+    },
+    {
+      "start": 384.38,
+      "end": 389.02,
+      "text": "One reason I like math is that for many problems, someone much smarter than me has already given"
+    },
+    {
+      "start": 389.02,
+      "end": 394.1,
+      "text": "them some serious thought, and quite often found an elegant solution. In this case, that"
+    },
+    {
+      "start": 394.1,
+      "end": 399.46,
+      "text": "person was one of Gauss's students, Bernhard Riemann. We'll discuss his solution next"
+    },
+    {
+      "start": 399.46,
+      "end": 404.12,
+      "text": "time."
+    },
+    {
+      "start": 404.12,
+      "end": 408.68,
+      "text": "If you're still watching, here's a quick bonus feature. A very slick way of visualizing"
+    },
+    {
+      "start": 408.68,
+      "end": 412.98,
+      "text": "functions of complex variables is to do this."
+    },
+    {
+      "start": 412.98,
+      "end": 414.18,
+      "text": "This technique is called Domain Comparison."
+    },
+    {
+      "start": 414.18,
+      "end": 414.34,
+      "text": "This technique is called Domain Comparison. This technique is called Domain Comparison."
+    },
+    {
+      "start": 414.34,
+      "end": 414.38,
+      "text": "This technique is called Domain Comparison. This technique is called Domain Comparison."
+    },
+    {
+      "start": 414.38,
+      "end": 417.08,
+      "text": "Domain Comparison. And I just had a little insight into that in hanover, here.."
+    },
+    {
+      "start": 417.08,
+      "end": 421.08,
+      "text": "If we follow a path around the z-plane, we can learn a tremendous amount about how our"
+    },
+    {
+      "start": 421.08,
+      "end": 423.1,
+      "text": "complex function works."
+    },
+    {
+      "start": 423.1,
+      "end": 430.15999999999997,
+      "text": "If we follow a path around the z-plane, we can learn a tremendous amount about how our"
+    },
+    {
+      "start": 430.15999999999997,
+      "end": 431.76,
+      "text": "complex function works."
+    },
+    {
+      "start": 431.76,
+      "end": 436.32,
+      "text": "For example, we can really get a feel here for how the square root function unfolds our"
+    },
+    {
+      "start": 436.32,
+      "end": 439.02,
+      "text": "w-plane into two copies of itself."
+    },
+    {
+      "start": 439.02,
+      "end": 443.08,
+      "text": "If we follow a path around the z-plane, we encounter every color twice."
+    },
+    {
+      "start": 443.08,
+      "end": 444.34,
+      "text": "We can compare these problems in each other."
+    },
+    {
+      "start": 444.34000000000003,
+      "end": 448.56000000000006,
+      "text": "place to start. Okay, the video is actually over. Stop watching."
+    }
+  ],
+  "segment_count": 97
+}

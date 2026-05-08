@@ -1,0 +1,170 @@
+{
+  "segments": [
+    {
+      "start": 0.4,
+      "end": 4.8,
+      "text": "Last time we decided to let the square root of minus one be its own new type of number,"
+    },
+    {
+      "start": 4.8,
+      "end": 9.76,
+      "text": "hoping it would help us solve Cardan's problem. Doing so is helpful, but finding a solution"
+    },
+    {
+      "start": 9.76,
+      "end": 14.8,
+      "text": "requires one more insight from our friend, Raphael Bombelli. Bombelli knew that because"
+    },
+    {
+      "start": 14.8,
+      "end": 19.12,
+      "text": "of the way cubics are shaped, our function had to have a solution that didn't involve the square"
+    },
+    {
+      "start": 19.12,
+      "end": 23.52,
+      "text": "root of minus one. It had to be a plain old regular positive or negative number as he had"
+    },
+    {
+      "start": 23.52,
+      "end": 29.12,
+      "text": "seen before. His second big insight here was that for this to be the case, the root of minus one"
+    },
+    {
+      "start": 29.12,
+      "end": 34.8,
+      "text": "parts of each half of the equation must cancel out when added together. Bombelli used this idea"
+    },
+    {
+      "start": 34.8,
+      "end": 39.120000000000005,
+      "text": "to equate the two parts of the equation to a plus b times the square root of minus one,"
+    },
+    {
+      "start": 39.120000000000005,
+      "end": 43.92,
+      "text": "and a minus b times the square root of minus one, where a and b are constants that we need to find."
+    },
+    {
+      "start": 44.72,
+      "end": 48.8,
+      "text": "To solve, we can first eliminate that annoying cubed root by cubing both sides."
+    },
+    {
+      "start": 49.44,
+      "end": 54.64,
+      "text": "The result is a particularly tough system of equations. Bombelli was able to get around this"
+    },
+    {
+      "start": 54.64,
+      "end": 59.040000000000006,
+      "text": "through some clever guessing and checking. If we look at our original equation and test a few"
+    },
+    {
+      "start": 59.04,
+      "end": 64.16,
+      "text": "integers, we eventually see that four is a solution. If we substitute four into our new"
+    },
+    {
+      "start": 64.16,
+      "end": 70.4,
+      "text": "equations, we can solve for a and b and obtain a equals two and b equals one. These values make"
+    },
+    {
+      "start": 70.4,
+      "end": 74.72,
+      "text": "the two parts of our expression equal to two plus the square root of minus one and two minus the"
+    },
+    {
+      "start": 74.72,
+      "end": 78.96000000000001,
+      "text": "square root of minus one. We can cube these and show that they are in fact equivalent to what we"
+    },
+    {
+      "start": 78.96000000000001,
+      "end": 83.92,
+      "text": "started with. And more importantly, when we add the two parts, as the formula tells us to do,"
+    },
+    {
+      "start": 83.92,
+      "end": 87.75999999999999,
+      "text": "we just get four, which we know is a solution to our original equation."
+    },
+    {
+      "start": 89.04,
+      "end": 94.48,
+      "text": "And what's really interesting is that our problem had nothing to do with the square"
+    },
+    {
+      "start": 94.48,
+      "end": 99.92,
+      "text": "root of minus one, and neither did our answer. However, along the way, we found that by extending"
+    },
+    {
+      "start": 99.92,
+      "end": 104.32000000000001,
+      "text": "our number system to include the square root of minus one, we were able to find a solution."
+    },
+    {
+      "start": 104.96000000000001,
+      "end": 109.04,
+      "text": "And it turns out that extending our number system in this way is helpful in lots and lots of other"
+    },
+    {
+      "start": 109.04,
+      "end": 113.76,
+      "text": "problems as well. So what did Bombelli do to celebrate after discovering a number so crucial"
+    },
+    {
+      "start": 113.76,
+      "end": 118.80000000000001,
+      "text": "to the future of science and mathematics? He actually did nothing. He discounted his"
+    },
+    {
+      "start": 118.8,
+      "end": 123.44,
+      "text": "discovery and basically said it was a hack. As ridiculous as that might seem now,"
+    },
+    {
+      "start": 123.44,
+      "end": 128.24,
+      "text": "Bombelli drew a pretty reasonable conclusion at the time. It just seemed a little too convenient,"
+    },
+    {
+      "start": 128.24,
+      "end": 130.8,
+      "text": "like a trick device just to solve problems like this."
+    },
+    {
+      "start": 131.68,
+      "end": 136.48,
+      "text": "Squaring numbers had, up until that point, largely been associated with what the operation is named"
+    },
+    {
+      "start": 136.48,
+      "end": 143.2,
+      "text": "for, squares. A square's area is equal to the length of its side, squared. So positive areas"
+    },
+    {
+      "start": 143.2,
+      "end": 148.07999999999998,
+      "text": "make sense. But what could a negative area be? What even is the square root of minus one?"
+    },
+    {
+      "start": 148.8,
+      "end": 151.92000000000002,
+      "text": "Questions like these slowed down the development of imaginary numbers."
+    },
+    {
+      "start": 152.72,
+      "end": 156.56,
+      "text": "It turns out there is a much deeper and richer meaning lurking below the surface,"
+    },
+    {
+      "start": 156.56,
+      "end": 159.68,
+      "text": "but it would take long after Bombelli's death to be revealed."
+    }
+  ],
+  "segment_count": 33
+}

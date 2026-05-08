@@ -1,0 +1,340 @@
+{
+  "segments": [
+    {
+      "start": 0.12,
+      "end": 4.28,
+      "text": "Before we finish up our series and solve our problem from part one, let's talk about how"
+    },
+    {
+      "start": 4.28,
+      "end": 9.44,
+      "text": "complex numbers are the missing puzzle piece that make algebra complete. Back in part one,"
+    },
+    {
+      "start": 9.44,
+      "end": 13.5,
+      "text": "we saw how the definition of what a number is has evolved over time, beginning with the"
+    },
+    {
+      "start": 13.5,
+      "end": 17.400000000000002,
+      "text": "natural numbers. The Egyptians figured out that these numbers were missing something,"
+    },
+    {
+      "start": 17.400000000000002,
+      "end": 21.6,
+      "text": "and it's pretty obvious today that the natural numbers are incomplete. However, as we saw"
+    },
+    {
+      "start": 21.6,
+      "end": 26.84,
+      "text": "with complex numbers, it's not always obvious when your numbers are missing something. Fortunately,"
+    },
+    {
+      "start": 26.84,
+      "end": 30.84,
+      "text": "there is a more sophisticated way to determine if we have all the types of numbers we need"
+    },
+    {
+      "start": 30.84,
+      "end": 36.46,
+      "text": "– the mathematical idea of closure. Let's play a game. I'll give you a set of numbers"
+    },
+    {
+      "start": 36.46,
+      "end": 42.06,
+      "text": "and an algebraic operation. I want you to tell me if any two numbers in the set, when"
+    },
+    {
+      "start": 42.06,
+      "end": 46.94,
+      "text": "combined with the operation, give a number that is not in the set. Our first set is the"
+    },
+    {
+      "start": 46.94,
+      "end": 52.56,
+      "text": "natural numbers, and our operation is addition. So the question is, are there any two natural"
+    },
+    {
+      "start": 52.56,
+      "end": 56.84,
+      "text": "numbers that, when added together, produce something that is not a natural number?"
+    },
+    {
+      "start": 56.84,
+      "end": 62.96,
+      "text": "After a little noodling, it should seem pretty reasonable that any two natural numbers"
+    },
+    {
+      "start": 62.96,
+      "end": 67.92,
+      "text": "added together result in another natural number. Mathematically, we can say that the set of"
+    },
+    {
+      "start": 67.92,
+      "end": 74.62,
+      "text": "natural numbers is closed under addition. Next, let's try the set of natural numbers"
+    },
+    {
+      "start": 74.62,
+      "end": 80.48,
+      "text": "and the operation of subtraction. For some pairs of natural numbers, like 6 and 4, things"
+    },
+    {
+      "start": 80.48,
+      "end": 86.24000000000001,
+      "text": "work out just fine. 6 minus 4 is 2, which is a natural number. But what about 4 minus"
+    },
+    {
+      "start": 86.24000000000001,
+      "end": 86.74000000000001,
+      "text": "6?"
+    },
+    {
+      "start": 86.84,
+      "end": 91.38000000000001,
+      "text": "This results in an answer that is nowhere to be found in our set of natural numbers,"
+    },
+    {
+      "start": 91.38000000000001,
+      "end": 96.92,
+      "text": "so our set is not closed under subtraction. We need to expand our set to include zero"
+    },
+    {
+      "start": 96.92,
+      "end": 102.04,
+      "text": "and negative numbers for this to be the case. So the set of natural numbers is not closed"
+    },
+    {
+      "start": 102.04,
+      "end": 107.24000000000001,
+      "text": "under subtraction, but the set of integers is. By expanding our number system, we can"
+    },
+    {
+      "start": 107.24000000000001,
+      "end": 112.12,
+      "text": "guarantee that any subtraction question we can ask will have an answer."
+    },
+    {
+      "start": 112.12,
+      "end": 116.24000000000001,
+      "text": "As we include more algebraic operations, we must continue to expand our number system."
+    },
+    {
+      "start": 116.24000000000001,
+      "end": 123.52000000000001,
+      "text": "We need to expand our number system to include fractions, also known as rational numbers."
+    },
+    {
+      "start": 123.52000000000001,
+      "end": 127.30000000000001,
+      "text": "Rational comes from the word ratio. Rational numbers are numbers that can be expressed"
+    },
+    {
+      "start": 127.30000000000001,
+      "end": 132.48000000000002,
+      "text": "as the ratio of two integers. Venn diagrams are pretty useful here, because they help"
+    },
+    {
+      "start": 132.48000000000002,
+      "end": 137.82000000000002,
+      "text": "us visually express the idea that one set includes another. All integers are rational"
+    },
+    {
+      "start": 137.82000000000002,
+      "end": 142.02,
+      "text": "numbers, because we can always express them as a ratio of two integers, but not all rational"
+    },
+    {
+      "start": 142.02,
+      "end": 146.24,
+      "text": "numbers are integers. Let's recap. So far we've made it to the"
+    },
+    {
+      "start": 146.24,
+      "end": 152.04000000000002,
+      "text": "set of rational numbers, which includes numbers like 1, 0, minus 5, and minus 2 thirds. What"
+    },
+    {
+      "start": 152.04000000000002,
+      "end": 157.72,
+      "text": "operations are the rational numbers closed under? Well, any two rational numbers added"
+    },
+    {
+      "start": 157.72,
+      "end": 162.08,
+      "text": "together yield another rational number, so we can say that the rational numbers are closed"
+    },
+    {
+      "start": 162.08,
+      "end": 169.28,
+      "text": "under addition. We can say the same for subtraction, multiplication, and division. Now, what about"
+    },
+    {
+      "start": 169.28,
+      "end": 174.74,
+      "text": "powers and roots? Does a rational number raised to a rational power always yield a rational"
+    },
+    {
+      "start": 174.74,
+      "end": 180.62,
+      "text": "result? It turns out that for problems like 2 ninths to the power of 2, this is no problem."
+    },
+    {
+      "start": 180.62,
+      "end": 185.3,
+      "text": "Our result is rational. Where we get into trouble are problems like 2 to the power of"
+    },
+    {
+      "start": 185.3,
+      "end": 189.84,
+      "text": "1 half. Raising something to the power of 1 half is the same thing as taking the square"
+    },
+    {
+      "start": 189.84,
+      "end": 194.12,
+      "text": "root, so this is equivalent to the square root of 2. We'll save the full argument for"
+    },
+    {
+      "start": 194.12,
+      "end": 199.06,
+      "text": "another day, but it turns out that root 2 is not rational. There are no two integers"
+    },
+    {
+      "start": 199.06,
+      "end": 203.82000000000002,
+      "text": "that when divided, equal exactly the square root of 2. Since numbers like this are not"
+    },
+    {
+      "start": 203.82000000000002,
+      "end": 204.62,
+      "text": "rational,"
+    },
+    {
+      "start": 204.62,
+      "end": 209.0,
+      "text": "we give them the name irrational. There's one more class of numbers that are even cooler"
+    },
+    {
+      "start": 209.0,
+      "end": 214.24,
+      "text": "than irrationals, the transcendental numbers, like pi and e. We'll also save these for another"
+    },
+    {
+      "start": 214.24,
+      "end": 219.94,
+      "text": "day. So we've expanded our number system again to include irrationals, and all these numbers"
+    },
+    {
+      "start": 219.94,
+      "end": 224.70000000000002,
+      "text": "taken together form what we call the real numbers."
+    },
+    {
+      "start": 224.70000000000002,
+      "end": 229.12,
+      "text": "Let's play our game one more time. Our set is now the real numbers, and our operation"
+    },
+    {
+      "start": 229.12,
+      "end": 234.54000000000002,
+      "text": "is taking roots. Do we have closure? Are there any real numbers that when we take some root"
+    },
+    {
+      "start": 234.54,
+      "end": 240.06,
+      "text": "root, yield a result that is not a real number? The answer is that despite all the types"
+    },
+    {
+      "start": 240.06,
+      "end": 244.28,
+      "text": "of numbers we've included along the way, we're still missing something. We can write"
+    },
+    {
+      "start": 244.28,
+      "end": 248.42,
+      "text": "an expression only using real numbers and roots, for example the square root of negative"
+    },
+    {
+      "start": 248.42,
+      "end": 254.06,
+      "text": "9, that has no solution in the real numbers. For this problem to have an answer, we must"
+    },
+    {
+      "start": 254.06,
+      "end": 259.68,
+      "text": "expand our number system once more to include imaginary numbers. And taking all our real"
+    },
+    {
+      "start": 259.68,
+      "end": 263.92,
+      "text": "numbers from before, together with imaginary numbers, we arrive at our broadest class of numbers."
+    },
+    {
+      "start": 264.54,
+      "end": 270.32,
+      "text": "The complex numbers. Initially, mathematicians were concerned that even complex numbers"
+    },
+    {
+      "start": 270.32,
+      "end": 274.3,
+      "text": "were not sufficient. That problems like the square root of negative i would result in"
+    },
+    {
+      "start": 274.3,
+      "end": 279.26000000000005,
+      "text": "an even more complex number. Perhaps even a 3-dimensional number instead of our 2-dimensional"
+    },
+    {
+      "start": 279.26000000000005,
+      "end": 284.44,
+      "text": "complex numbers. Fortunately, this turned out not to be the case. In fact, we can evaluate"
+    },
+    {
+      "start": 284.44,
+      "end": 289.20000000000005,
+      "text": "the square root of negative i, again using our good friend the complex plane. Since negative"
+    },
+    {
+      "start": 289.20000000000005,
+      "end": 294.06,
+      "text": "i has a magnitude of 1, and an angle of negative 90 degrees, we just need a number with a magnitude"
+    },
+    {
+      "start": 294.06,
+      "end": 299.26,
+      "text": "of 1 and an angle of negative 45 degrees. According to our unit circle, root 2 over"
+    },
+    {
+      "start": 299.26,
+      "end": 305.58,
+      "text": "2 minus root 2 over 2i. So the square root of negative i is just another complex number."
+    },
+    {
+      "start": 305.58,
+      "end": 310.32,
+      "text": "There's no need for some wild new 3-dimensional number. In fact, there's no operation in the"
+    },
+    {
+      "start": 310.32,
+      "end": 315.58,
+      "text": "world using addition, subtraction, multiplication, division, powers, and roots that the complex"
+    },
+    {
+      "start": 315.58,
+      "end": 320.02,
+      "text": "numbers can't handle. Imaginary numbers are the exact missing piece that makes algebra"
+    },
+    {
+      "start": 320.02,
+      "end": 320.52,
+      "text": "complete."
+    },
+    {
+      "start": 324.06,
+      "end": 340.46,
+      "text": "Thank you for watching!"
+    }
+  ],
+  "segment_count": 67
+}

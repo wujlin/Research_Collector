@@ -1,0 +1,12 @@
+{
+  "title": "Imaginary Numbers Are Real [Part 12: Riemann's Solution]",
+  "url": "https://www.youtube.com/watch?v=DpUmrKOQhAM",
+  "backend": "faster-whisper",
+  "model": "large-v3",
+  "requested_language": "en",
+  "detected_language": "en",
+  "generated_at": "2026-05-07T14:54:44",
+  "language": "en",
+  "language_probability": 1,
+  "duration": 237.0203125
+}

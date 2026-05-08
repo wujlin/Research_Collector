@@ -1,0 +1,255 @@
+{
+  "segments": [
+    {
+      "start": 0.48,
+      "end": 6.48,
+      "text": "Last time we left off with a real math problem. What is the connection between complex multiplication"
+    },
+    {
+      "start": 6.48,
+      "end": 12.08,
+      "text": "and the complex plane? To get to the bottom of this we'll use the four examples we mentioned"
+    },
+    {
+      "start": 12.08,
+      "end": 17.44,
+      "text": "last time. For each example we'll plot the two numbers we're multiplying together. We'll also"
+    },
+    {
+      "start": 17.44,
+      "end": 23.44,
+      "text": "compute the result algebraically and add it to each plot. Our job now is to look for patterns."
+    },
+    {
+      "start": 24.240000000000002,
+      "end": 28.72,
+      "text": "Back in part 5 we learned that i has something to do with rotation on the complex plane."
+    },
+    {
+      "start": 28.72,
+      "end": 34.48,
+      "text": "So a good thing to keep track of here will be the angle our complex numbers make with the real axis."
+    },
+    {
+      "start": 35.44,
+      "end": 40.16,
+      "text": "We can determine our angles using a little trigonometry, specifically the arc tangent function."
+    },
+    {
+      "start": 42.0,
+      "end": 44.72,
+      "text": "Now let's look for a connection between our three angles."
+    },
+    {
+      "start": 52.0,
+      "end": 56.72,
+      "text": "After a little pondering we see that the angle of the result is exactly equal to the angles"
+    },
+    {
+      "start": 56.72,
+      "end": 58.64,
+      "text": "of the numbers we're multiplying added to the angle of the triangle."
+    },
+    {
+      "start": 58.72,
+      "end": 64.64,
+      "text": "This is the first half of the connection we're looking for. When multiplying on the complex"
+    },
+    {
+      "start": 64.64,
+      "end": 69.6,
+      "text": "plane the angle of our result is equal to the sum of the angles of the numbers we're multiplying."
+    },
+    {
+      "start": 70.4,
+      "end": 75.52,
+      "text": "Let's now have a closer look at our first two examples. Notice that the angles are identical"
+    },
+    {
+      "start": 75.52,
+      "end": 80.72,
+      "text": "but the resulting complex numbers are not. This means that just keeping track of angles alone is"
+    },
+    {
+      "start": 80.72,
+      "end": 84.8,
+      "text": "not enough to sufficiently describe complex multiplication in the complex plane."
+    },
+    {
+      "start": 85.52,
+      "end": 86.96000000000001,
+      "text": "There is something else going on."
+    },
+    {
+      "start": 88.72,
+      "end": 93.76,
+      "text": "What is the difference between these examples? It looks like multiplying by 2i has pushed our"
+    },
+    {
+      "start": 93.76,
+      "end": 100.16,
+      "text": "result further from the origin than multiplying by i. A good follow-up question is, how much further?"
+    },
+    {
+      "start": 100.88,
+      "end": 105.75999999999999,
+      "text": "We can measure the distance between the origin and our complex numbers by forming right triangles"
+    },
+    {
+      "start": 105.75999999999999,
+      "end": 110.16,
+      "text": "and using the Pythagorean theorem. Just as before, let's compute our"
+    },
+    {
+      "start": 110.16,
+      "end": 112.48,
+      "text": "measurement for each example and look for patterns."
+    },
+    {
+      "start": 116.32,
+      "end": 118.4,
+      "text": "After some more pondering we see that if we multiply by 2i, the distance between the origin and the complex numbers will be the same."
+    },
+    {
+      "start": 118.72,
+      "end": 122.24,
+      "text": "If we multiply our distances, we obtain the distance from the origin of the result."
+    },
+    {
+      "start": 123.12,
+      "end": 128.4,
+      "text": "We now have the complete picture. When we multiply complex numbers on the complex plane,"
+    },
+    {
+      "start": 128.4,
+      "end": 132.8,
+      "text": "their angles from the real axis add and their distances from the origin multiply."
+    },
+    {
+      "start": 133.76,
+      "end": 138.32,
+      "text": "This is the connection we were looking for between complex multiplication and the complex plane."
+    },
+    {
+      "start": 138.88,
+      "end": 144.0,
+      "text": "We now have completely separate but completely equivalent interpretations of complex multiplication."
+    },
+    {
+      "start": 144.96,
+      "end": 148.56,
+      "text": "To multiply two complex numbers together, we can follow the rules of"
+    },
+    {
+      "start": 148.72,
+      "end": 156.72,
+      "text": "algebra, or we can find each number's distance from the origin, an angle to the real axis on the complex plane, and multiply and add each."
+    },
+    {
+      "start": 157.52,
+      "end": 162.48,
+      "text": "And what's really cool here is that although these approaches look and are totally different,"
+    },
+    {
+      "start": 162.48,
+      "end": 167.92,
+      "text": "they do the same exact thing. What we're seeing here is the same underlying process"
+    },
+    {
+      "start": 167.92,
+      "end": 172.88,
+      "text": "from two separate vantage points. I really like this idea because it reminds me that"
+    },
+    {
+      "start": 172.88,
+      "end": 178.16,
+      "text": "there's more to math than what we see on the page. There are deeper truths embedded in our universe,"
+    },
+    {
+      "start": 178.72,
+      "end": 180.4,
+      "text": "and math is one way of expressing them."
+    },
+    {
+      "start": 181.84,
+      "end": 184.88,
+      "text": "Now that we've made our discovery, let's formalize our results a bit."
+    },
+    {
+      "start": 185.6,
+      "end": 189.28,
+      "text": "We found that the quantities we should keep track of when multiplying complex numbers on"
+    },
+    {
+      "start": 189.28,
+      "end": 193.92,
+      "text": "the complex plane are the distance from the origin and the angle from the real axis."
+    },
+    {
+      "start": 194.48,
+      "end": 199.52,
+      "text": "These quantities turn out to be so important that we use them as another way to write complex numbers."
+    },
+    {
+      "start": 200.24,
+      "end": 204.48,
+      "text": "Instead of writing complex numbers as the sum of their real and imaginary parts,"
+    },
+    {
+      "start": 204.48,
+      "end": 208.56,
+      "text": "we instead write them as their distance from the origin and the angle they make with the real axis."
+    },
+    {
+      "start": 209.68,
+      "end": 214.32,
+      "text": "This is called polar form, and the distance from the origin gets a special name, magnitude."
+    },
+    {
+      "start": 215.36,
+      "end": 218.8,
+      "text": "Multiplying complex numbers in polar form is super easy."
+    },
+    {
+      "start": 218.8,
+      "end": 221.52,
+      "text": "We just multiply the magnitudes and add the angles."
+    },
+    {
+      "start": 222.16,
+      "end": 226.32,
+      "text": "Division is pretty simple too, especially compared to dividing in rectangular form."
+    },
+    {
+      "start": 226.96,
+      "end": 231.04,
+      "text": "To divide in polar form, we divide the magnitudes and subtract our angles."
+    },
+    {
+      "start": 232.48,
+      "end": 237.44,
+      "text": "Next time, we'll show that this discovery is not only cool, but useful. We'll use the complex plane"
+    },
+    {
+      "start": 237.44,
+      "end": 237.84,
+      "text": "to make hard algebra problems, and we'll show you how to do that in the next video. So until then,"
+    },
+    {
+      "start": 237.84,
+      "end": 238.4,
+      "text": "thanks for watching, and we'll see you next time."
+    },
+    {
+      "start": 238.72,
+      "end": 239.68,
+      "text": "Thanks for watching, and we'll see you next time."
+    },
+    {
+      "start": 239.68,
+      "end": 240.32,
+      "text": "We'll see you next time."
+    }
+  ],
+  "segment_count": 50
+}

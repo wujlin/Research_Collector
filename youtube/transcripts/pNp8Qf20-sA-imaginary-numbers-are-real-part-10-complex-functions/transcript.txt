@@ -1,0 +1,91 @@
+So, what is this? We saw this shape back in part one, and then proceeded to not talk
+about it for like ten episodes. And at this point, I really wouldn't blame you if you
+thought this was some science fiction designed to get you excited about doing boring algebra
+problems. But before we chalk this up to unnecessary special effects, let's remember where this
+shape came from.
+We began our conversation in part one with an equation that appeared to have no solution,
+x squared plus one equals zero. And after all the work we've done so far, you can probably
+see how to find the answer algebraically. Subtract one from both sides of the equation
+and take the square root, resulting in x equals plus or minus i. Done.
+So that's cool, but to really make sense of our shape from part one, we need to dig
+a little deeper, and talk about functions of complex variables.
+The kinds of functions most of us are used to, functions of real numbers, have inputs
+and outputs that can be visualized using a single dimension. This means all our x values
+fit on a single number line, and so do our y values. It seems pretty reasonable, then,
+that if we want to figure out how x and y are related, we should put our x number line
+facing one way on our piece of paper, and put our y number line on the same piece of
+paper, just facing the other way. This forms a two-dimensional grid known as the Cartesian
+Coordinate System.
+Apparently invented by Rene Descartes in the 16th century after watching flies crawl around,
+the Cartesian Coordinate System is a super powerful tool for understanding the relationship
+between two variables. The Cartesian Coordinate System is powerful because it allows us to
+take abstract ideas, like functions, and turn them into something our brains can grasp much
+more intuitively, shapes. By giving each point on the planet its very own coordinates, Descartes
+was able to bring together the two largest areas of mathematics at the time, algebra
+and geometry.
+This greatly aided early efforts at classifying functions by Newton and others, and today
+the Cartesian Coordinate System shows up everywhere, helping us do all kinds of things like spot
+trends in data.
+So that's all fun and wonderful, but the Cartesian Coordinate System does come with a disclaimer
+– it only works in two dimensions.
+This limitation becomes a real problem when we start to think about functions of complex
+variables. These functions take in complex numbers for their inputs, and for the most
+part also output complex numbers. This means that the numbers we put in and get out of
+our function no longer fit on number lines. We need two complex planes to keep track of
+our numbers, one for our input and one for our output.
+This raises the question, if, when visualizing these functions, what we're really interested
+in is the connection between the input and output, how do we visualize what's happening
+on both planes simultaneously? We could try to fit our input and output planes together
+somehow –
+did with our number lines for real valued functions, but we quickly run into a pretty
+serious issue. As you likely know, the universe we live in has three spatial dimensions. So there's
+no way to fit the four spatial dimensions we need into a single structure that our brains
+can comprehend. We simply run out of dimensions. Fortunately, there are some very clever ways to
+see the relationship between two complex variables. But before we can get to these,
+we need to think about the mathematics of complex functions. Even though using separate planes for
+our input and output is not a perfect solution, this approach can still help get us started.
+Let's try it out with our original function, f of x equals x squared plus 1. Before we begin,
+let's make a quick variable change to make things easier down the road.
+We'll change the name of our input variable from x to z, and call our output variable w.
+Since z and w each have a real and imaginary part, let's go one step further and give these
+parts the name of our input variable w. Since z and w each have a real and imaginary part,
+let's go one step further and give these parts the name of our input variable w.
+We'll let z equal x plus i y, so x represents the real part of z,
+and y represents the imaginary part. We'll also let w equal u plus i v.
+Just as we can use tables to keep track of our inputs and outputs for real valued functions,
+we can also use tables to keep track of our inputs and outputs for complex functions.
+However, we now need four columns to keep track of our four variables, x, y, u, and v.
+We can now experiment with our function f of z
+equals z squared plus 1. If we plug in a complex number to our function,
+for example z equals 1 plus i, we can do a little algebra and obtain our result,
+w equals 1 plus 2i. Plotting our inputs and outputs, we see that the point 1 plus i in
+our input plane was pushed or mapped by our function to 1 plus 2i in our output plane.
+Let's plug in a few more points here and see if we can find a pattern.
+If we test points along a straight line in our input space, we see that
+in our output space our straight line is transformed into a curved line.
+Interesting. As you can imagine, plugging in points like this can get pretty tedious.
+To speed things up, let's let a computer do it for us. And instead of having our
+computer just map certain points, let's have it map all the points.
+We'll take advantage of the fact that the image you're seeing is just a collection of pixels that
+happen to be arranged on a grid. We'll use some code written in the programming language Python
+to move every single pixel in our input space,
+to its proper location in the output space. To make this work, we'll assign each pixel in
+our input video a complex number that corresponds to its location on the complex plane.
+We can then let our code take care of the tedious work of moving each pixel to its new location
+as dictated by our function, z squared plus 1. Our code will move points exactly as we did by hand
+before. If we have a blue pixel at the 1 plus i location on our input graph, then this blue pixel
+is the 1 plus 2 i location on our output graph, because f of 1 plus i is equal to 1 plus 2 i.
+We saw before that our function warped a straight horizontal line into a curvy one,
+so it should have some interesting effects on our video. We'll include some reference
+markers on top of our input and output planes to keep track of our numbers,
+but we won't transform these pixels. Alright, ready?
+Let's start by drawing some simple lines. A horizontal line along the positive x-axis turns
+out to be pretty similar in our output space. But what about a line along the positive imaginary
+axis? This line appears to have been rotated. As we add more lines, we begin to see a pattern.
+Our family of straight lines is turned into a family of curved lines. Cool, right?
+So we found one pattern, but how is this pattern explained by our function z squared plus 1?
+And more importantly, how does this fit with everything else we've learned about complex numbers?
+What else would be interesting to draw in our input space to test our mapping?
+What shape would you draw to learn more about what our function is doing?
+Next time, more shapes.
+Thanks for watching, and I'll see you in the next video.

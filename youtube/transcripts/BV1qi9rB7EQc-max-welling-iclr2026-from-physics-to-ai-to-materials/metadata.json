@@ -1,0 +1,15 @@
+{
+  "title": "Max Welling ICLR 2026: From Physics to AI to Materials",
+  "url": "https://www.bilibili.com/video/BV1qi9rB7EQc/",
+  "backend": "faster-whisper",
+  "model": "large-v3",
+  "requested_language": "en",
+  "detected_language": "en",
+  "generated_at": "2026-05-07T20:33:46",
+  "language": "en",
+  "language_probability": 1,
+  "duration": 3486.08,
+  "refined_at": "2026-05-07T21:55:29",
+  "cleanup_rules": 31,
+  "paragraph_count": 130
+}

@@ -1,0 +1,97 @@
+Last time, we left off trying to think of shapes to draw on our input plane that would
+help us better understand our function f of z equals z squared plus one. Since z squared
+means to multiply z by itself, and z is a complex number, our function's behavior
+should have some connection to complex multiplication. Back in part 7, we saw that one way to interpret
+complex multiplication is as a rotation and scaling of our input values. When we multiply
+two complex numbers together, their magnitudes multiply and their angles add. So the z squared
+part of our function should take our complex number z, square its distance to the origin,
+and double its angle. The plus one portion of our equation is a little less exciting.
+Adding a positive real number will move all of our points in the positive real direction,
+so to the right, in this case, by one. Since this shift to the right doesn't affect the
+behavior we're interested in, we'll leave it out of the equation.
+Let's test the idea that our function will double the angle of its input values. What
+kind of shape should we draw to test this idea? Ideally, we want to draw a shape that
+is made up of points that are all at the same angle, to see if our function changes all
+points of the same angle in the same way. So what kind of shape is made up of points
+all at the same angle? This turns out to be a straight line through the origin. If we
+draw a line like this in our input space,
+we see that the output is also a straight line, at what looks like double the angle.
+We can add a few more lines to confirm this trend.
+So we've shown that our transformation doubles the angle of our input values. Now, what about
+the magnitude of our inputs? We said earlier that when squaring a complex number, the magnitude
+of the complex number should also be squared. So the distance to the origin from our input
+points should be squared in our mapping.
+What kind of shape should we draw to test this idea? We want to test magnitude alone,
+so it would be nice to have a shape with a constant magnitude. What kind of shape has
+the same magnitude, or distance to the origin, everywhere?
+The shape we need is exactly a circle. If we add sections of a few circles to our picture,
+we see that these result in new circle sections, but now at different distances to the origin.
+So as we expected, our circles are preserved,
+but their radii are changed.
+Now we're really getting somewhere. By carefully choosing our input shape, we were able to
+better understand exactly what our function does to complex numbers. Wonderful.
+But before we celebrate here, let's keep a couple things in mind. For one, we're dealing
+with a really simple function. And secondly, even for this simple function, we can still
+run into trouble with our too complex plane setup. For example, we know that our mapping
+doubles the angle of the input point.
+This is fine, until we use up too much of our input space. If we continue the circles
+we started earlier, once we arrive at 180 degrees, we begin to see a problem. Our shapes
+have been expanded to fill up the entire output space, but we've only used half of the input
+space. As we continue our circles, our new points have nowhere to go except directly
+on top of our old points. This does make sense algebraically, because of the way squaring
+works.
+Points like 1 plus i and negative 1 minus i will map to the same exact output value,
+namely 2i.
+So it's not that our function is broken or anything. It's just that the technique we're
+using to visualize it can't really handle multiple values being mapped to the same location
+on the output plane. After all, which pixel should we display? The one from here, or the
+one from there?
+Mappings like this create problems in mathematics, although typically in the reverse direction.
+The reverse of a function, where the inputs become outputs and the outputs become inputs,
+is called the inverse. The inverse of our function is pretty straightforward to find.
+We simply need to solve our equation for z.
+We now run into the real math problem. Our inverse function represents the same exact
+connections as our forward function, just in the opposite direction. So our two inputs
+that map to the same output are now a single input that maps to two outputs.
+The w value of 2i maps to both z equals 1 plus i, and z equals negative 1 minus i.
+This mapping from a single input to multiple outputs is a big enough problem that our function's
+inverse is not technically even considered a function. The definition of a function requires
+that each input be mapped to one and only one output.
+To make things nice and confusing, non-functions like this are called multifunctions. So our
+mapping is the same in either direction, but taken from the reverse direction. The inverse
+of a function is a function that maps to two outputs. The inverse of our function is a
+function, but taken from z to w is considered a function, but from w to z is considered
+a multifunction, which isn't really a function.
+Let's experiment with our multifunction. When we draw shapes on our w plane, our shapes
+are duplicated and shrunk down onto our z plane. Our shapes are copied because each
+point in w is mapped to two points in z, and shrunk because the square root function takes
+the square root of the magnitude of our w values and divides each angle by 2.
+Let's experiment with one more type of shape, a path. We'll pick a starting point
+on our w plane, wander around for a while, and return to where we started. By following
+paths on both our w and z planes, we can get some idea of what happens as we wander around
+the 4-dimensional space of our complex multifunction. Our first path returns us right back to where
+we started on both the z and w plane. No surprise there. But if we change our path a little,
+something weird happens. Our w path returns to where we started, but our z paths don't.
+Our z values jump to a whole new part of the plane. Somehow we've wandered our way into
+a completely new part of our multifunction. So it seems that some paths on w lead us back
+to where we started, but others don't. What could be going on here? How is the complex
+landscape of our multifunction taking such similar paths in such different directions?
+One reason I like math is that for many problems, someone much smarter than me has already given
+them some serious thought, and quite often found an elegant solution. In this case, that
+person was one of Gauss's students, Bernhard Riemann. We'll discuss his solution next
+time.
+If you're still watching, here's a quick bonus feature. A very slick way of visualizing
+functions of complex variables is to do this.
+This technique is called Domain Comparison.
+This technique is called Domain Comparison. This technique is called Domain Comparison.
+This technique is called Domain Comparison. This technique is called Domain Comparison.
+Domain Comparison. And I just had a little insight into that in hanover, here..
+If we follow a path around the z-plane, we can learn a tremendous amount about how our
+complex function works.
+If we follow a path around the z-plane, we can learn a tremendous amount about how our
+complex function works.
+For example, we can really get a feel here for how the square root function unfolds our
+w-plane into two copies of itself.
+If we follow a path around the z-plane, we encounter every color twice.
+We can compare these problems in each other.
+place to start. Okay, the video is actually over. Stop watching.

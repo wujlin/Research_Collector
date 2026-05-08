@@ -1,0 +1,55 @@
+Let's solve a simple equation, x cubed is equal to one. What value of x would make this equation
+work? If you said x equals one, way to go! One cubed is one, we have found an answer. Now,
+are there any more answers? Back in part one we introduced the fundamental theorem of algebra,
+which says that a polynomial must have as many roots as its highest power.
+We can rearrange our equation as x cubed minus one is equal to zero to make it a more obvious
+polynomial, and since our highest power is three, this equation must have three solutions.
+There is an algebraic way to find all three answers, but it involves perfect
+cube factoring and the quadratic formula, and takes some work.
+Instead, let's try to solve the problem visually using the complex plane.
+Our question, in words, is what numbers, when multiplied by themselves three times, equal one?
+Let's think about this problem using the polar form of
+complex numbers we discussed last time. We can think about one in the complex plane
+as the number with a magnitude of one and an angle of zero,
+or 360. When we multiply numbers in the complex domain, their magnitudes multiply and their angles
+add. Our result should have a magnitude of one, and since one times one times one is one, if we
+give each of our x's a magnitude of one, our resulting magnitude will work out to one. Easy.
+But what about our angles?
+We know that when multiplying complex numbers, our angles add,
+so we need an angle that when added together three times gives zero, or 360.
+360 seems a little more reasonable, so what's the correct angle here?
+Since we're dividing 360 into three even parts, the right answer here is 360 divided by three,
+or 120 degrees. When we put this together with a magnitude of one, we have a second solution.
+It's the complex number with a magnitude of one,
+and an angle of 120. This answer makes a lot of sense on the complex plane.
+Multiplying our answer by itself once results in a magnitude of one at an angle of 240 degrees,
+and multiplying by our answer again lands us exactly where we want it to be,
+at a magnitude of one and an angle of 360 degrees, also known as the real number one.
+This may seem like a strange answer for algebra class, so let's put it back in rectangular form.
+Our good friend the
+unit circle can save us some time here. We would like to know the rectangular
+coordinates of a point on the unit circle at an angle of 120 degrees.
+According to the unit circle, our answer is minus one half for the real part,
+and root three over two for the imaginary part.
+So now that we have an answer in rectangular form, let's try it. If we multiply out our result,
+we get one. Pretty cool, right? We were able to solve a tough algebra problem visually using the
+complex plane, and get the same exact answer we obtained earlier through factoring.
+Finally, we've only found two answers so far, and the fundamental theorem of algebra demands
+that we have three. We find our missing answer going the other way around the circle.
+If we start at minus 120 and multiply our number together three times,
+we also land at the purely real number one. So our missing answer is negative one half minus root 3
+over 2 i.
+So we've found all the answers to our problem x cubed is equal to one,
+and shown how the complex plane allows us to find these visually.
+In this case, using complex numbers saved us some time over the algebraic approach,
+and for more complicated problems, the complex plane becomes even more useful.
+For example, what if we changed the power in our original problem to eight?
+That is, x to the power of eight minus one is equal to zero.
+We could try to factor this, or turn to our complex plane, and
+see that just like our last problem, where we needed to divide the unit circle into three
+equal portions, we need to, in this case, divide our circle into eight equal portions.
+So our solutions need to be at 45 degrees, again along the unit circle.
+All eight answers, done.
+Next time, we'll show how imaginary numbers are the missing piece of the puzzle that make algebra
+complete.
+Thanks for watching, and I'll see you in the next video.

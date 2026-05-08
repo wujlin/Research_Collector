@@ -1,0 +1,57 @@
+We left off with Bombelli's discovery that if he allowed the square root of minus one
+to be its own number, he could solve problems that had been stumping mathematicians for
+decades. Despite the usefulness of his discovery, Bombelli and other mathematicians generally
+regarded it as a hack. After all, what could it possibly mean to take the square root of
+a negative number? Just like our friends zero and negative numbers before, the square root
+of negative one was generally regarded with suspicion because it didn't correspond to
+anything people could think of in the real world. For this reason, the square root of
+minus one was given the terrible names imaginary or impossible. A century or so later, Euler
+began using the symbol i to indicate the square root of negative one, making the algebra less
+clunky. Unfortunately, the name imaginary stuck around, and that's still what we call
+these numbers today. In response, everything on the original number line gets the name
+real. When we put together a real and an imaginary number, we obtain what we today call a complex
+number. What is remarkable about this time period is that although imaginary and complex
+numbers were used in calculations and derivations, the deeper meaning behind these numbers was
+left undiscovered for over two hundred years after Bombelli's death. Before we dive into
+this deeper meaning, let's think about i algebraically for a moment. If we raise i to higher and higher
+powers, it doesn't get bigger as other numbers would. We know i squared is negative one from
+the definition, and if we keep multiplying i by itself, we see a pattern of i squared
+that repeats every four multiplications, over and over and over and over. Hold onto
+that fact for ninety seconds. Let's return to our friend the number line. Remember that
+all the numbers we know about show up here, except imaginary numbers. They are nowhere
+to be found. If we think back to our original problem with the roots of negative numbers,
+we can visualize this using the number line. Remember the issue we had was finding a number
+that when multiplied by itself, would yield a negative. To see this more clearly, we'll
+use arrows instead of dots to indicate numbers. Multiplying a positive by itself maintains
+direction on the number line. It stays positive. If we multiply by a negative, we flip directions,
+or rotate a hundred and eighty degrees. Squaring a negative lands us in the positive numbers,
+because we start on the left side with our first negative, and rotate a hundred and eighty
+degrees when we multiply by the second negative. So there's no way to land on a negative number
+when squaring. A positive squared results in a positive, and
+a negative squared requires starting in the negative territory. And when we multiply
+by the other negative, we arrive back in the positive numbers.
+So what we need is something in the middle. A number that when we multiply by it, only
+rotates ninety degrees, not a hundred and eighty degrees as negatives do. This is exactly
+what imaginary numbers do. I squared is negative one, meaning that the first I puts us ninety
+degrees from the positive real numbers, and multiplying by I rotates us ninety degrees
+further, against the positive real numbers. So what we need is something in the middle,
+exactly where we want it to be, firmly in negative number territory.
+Back to that fact you were hanging on to. Since multiplying by I corresponds to one
+ninety degree rotation, if we place our imaginary axis at a right angle to our number line,
+our algebra will perfectly fit with our geometry. If we start with the real number one, and
+multiply by I, algebraically we get I, which geometrically corresponds to a ninety degree
+rotation from one to I.
+Multiplying by I again results in I squared, which, by definition, is minus one, and again
+matches a ninety degree rotation from I. As we keep raising I to higher and higher powers,
+we keep rotating around, with our values repeating every fourth power, just as they did algebraically.
+So the big insight here is that imaginary numbers do not exist apart from the real numbers,
+but right on top of them, hiding in a perpendicular dimension. This is the deeper meaning behind
+imaginary numbers. They aren't just imaginary numbers, they are real numbers. Imaginary numbers
+do not exist apart from the real numbers, but right on top of them, hiding in a perpendicular
+dimension. They aren't just some random extra number or hack, they are the natural
+extension of our number system from one dimension to two. Numbers are two-dimensional.
+And what's even more remarkable is that if we accept this, that numbers have a hidden
+dimension, we end up not only with a more complete mathematics, but with incredibly
+powerful tools for science and engineering. Next time we'll show how and why thinking
+about numbers this way is useful.
+Subtitles by the Amara.org community

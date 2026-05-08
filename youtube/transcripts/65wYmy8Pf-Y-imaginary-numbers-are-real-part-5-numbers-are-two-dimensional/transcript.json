@@ -1,0 +1,290 @@
+{
+  "segments": [
+    {
+      "start": 0.52,
+      "end": 4.44,
+      "text": "We left off with Bombelli's discovery that if he allowed the square root of minus one"
+    },
+    {
+      "start": 4.44,
+      "end": 8.08,
+      "text": "to be its own number, he could solve problems that had been stumping mathematicians for"
+    },
+    {
+      "start": 8.08,
+      "end": 13.48,
+      "text": "decades. Despite the usefulness of his discovery, Bombelli and other mathematicians generally"
+    },
+    {
+      "start": 13.48,
+      "end": 17.78,
+      "text": "regarded it as a hack. After all, what could it possibly mean to take the square root of"
+    },
+    {
+      "start": 17.78,
+      "end": 22.240000000000002,
+      "text": "a negative number? Just like our friends zero and negative numbers before, the square root"
+    },
+    {
+      "start": 22.240000000000002,
+      "end": 26.12,
+      "text": "of negative one was generally regarded with suspicion because it didn't correspond to"
+    },
+    {
+      "start": 26.12,
+      "end": 30.14,
+      "text": "anything people could think of in the real world. For this reason, the square root of"
+    },
+    {
+      "start": 30.14,
+      "end": 36.32,
+      "text": "minus one was given the terrible names imaginary or impossible. A century or so later, Euler"
+    },
+    {
+      "start": 36.32,
+      "end": 40.96,
+      "text": "began using the symbol i to indicate the square root of negative one, making the algebra less"
+    },
+    {
+      "start": 40.96,
+      "end": 45.72,
+      "text": "clunky. Unfortunately, the name imaginary stuck around, and that's still what we call"
+    },
+    {
+      "start": 45.72,
+      "end": 50.540000000000006,
+      "text": "these numbers today. In response, everything on the original number line gets the name"
+    },
+    {
+      "start": 50.540000000000006,
+      "end": 56.1,
+      "text": "real. When we put together a real and an imaginary number, we obtain what we today call a complex"
+    },
+    {
+      "start": 56.1,
+      "end": 61.7,
+      "text": "number. What is remarkable about this time period is that although imaginary and complex"
+    },
+    {
+      "start": 61.7,
+      "end": 66.38,
+      "text": "numbers were used in calculations and derivations, the deeper meaning behind these numbers was"
+    },
+    {
+      "start": 66.38,
+      "end": 71.48,
+      "text": "left undiscovered for over two hundred years after Bombelli's death. Before we dive into"
+    },
+    {
+      "start": 71.48,
+      "end": 77.32,
+      "text": "this deeper meaning, let's think about i algebraically for a moment. If we raise i to higher and higher"
+    },
+    {
+      "start": 77.32,
+      "end": 82.4,
+      "text": "powers, it doesn't get bigger as other numbers would. We know i squared is negative one from"
+    },
+    {
+      "start": 82.4,
+      "end": 86.08,
+      "text": "the definition, and if we keep multiplying i by itself, we see a pattern of i squared"
+    },
+    {
+      "start": 86.08,
+      "end": 90.9,
+      "text": "that repeats every four multiplications, over and over and over and over. Hold onto"
+    },
+    {
+      "start": 90.9,
+      "end": 96.24,
+      "text": "that fact for ninety seconds. Let's return to our friend the number line. Remember that"
+    },
+    {
+      "start": 96.24,
+      "end": 100.74,
+      "text": "all the numbers we know about show up here, except imaginary numbers. They are nowhere"
+    },
+    {
+      "start": 100.74,
+      "end": 105.64,
+      "text": "to be found. If we think back to our original problem with the roots of negative numbers,"
+    },
+    {
+      "start": 105.64,
+      "end": 110.52,
+      "text": "we can visualize this using the number line. Remember the issue we had was finding a number"
+    },
+    {
+      "start": 110.52,
+      "end": 115.62,
+      "text": "that when multiplied by itself, would yield a negative. To see this more clearly, we'll"
+    },
+    {
+      "start": 115.62,
+      "end": 121.02000000000001,
+      "text": "use arrows instead of dots to indicate numbers. Multiplying a positive by itself maintains"
+    },
+    {
+      "start": 121.02000000000001,
+      "end": 127.5,
+      "text": "direction on the number line. It stays positive. If we multiply by a negative, we flip directions,"
+    },
+    {
+      "start": 127.5,
+      "end": 132.8,
+      "text": "or rotate a hundred and eighty degrees. Squaring a negative lands us in the positive numbers,"
+    },
+    {
+      "start": 132.8,
+      "end": 136.84,
+      "text": "because we start on the left side with our first negative, and rotate a hundred and eighty"
+    },
+    {
+      "start": 136.84,
+      "end": 141.44,
+      "text": "degrees when we multiply by the second negative. So there's no way to land on a negative number"
+    },
+    {
+      "start": 141.44,
+      "end": 145.12,
+      "text": "when squaring. A positive squared results in a positive, and"
+    },
+    {
+      "start": 145.12,
+      "end": 149.34,
+      "text": "a negative squared requires starting in the negative territory. And when we multiply"
+    },
+    {
+      "start": 149.34,
+      "end": 153.92000000000002,
+      "text": "by the other negative, we arrive back in the positive numbers."
+    },
+    {
+      "start": 153.92000000000002,
+      "end": 158.26,
+      "text": "So what we need is something in the middle. A number that when we multiply by it, only"
+    },
+    {
+      "start": 158.26,
+      "end": 164.12,
+      "text": "rotates ninety degrees, not a hundred and eighty degrees as negatives do. This is exactly"
+    },
+    {
+      "start": 164.12,
+      "end": 169.76,
+      "text": "what imaginary numbers do. I squared is negative one, meaning that the first I puts us ninety"
+    },
+    {
+      "start": 169.76,
+      "end": 174.12,
+      "text": "degrees from the positive real numbers, and multiplying by I rotates us ninety degrees"
+    },
+    {
+      "start": 174.12,
+      "end": 175.12,
+      "text": "further, against the positive real numbers. So what we need is something in the middle,"
+    },
+    {
+      "start": 175.12,
+      "end": 179.56,
+      "text": "exactly where we want it to be, firmly in negative number territory."
+    },
+    {
+      "start": 179.56,
+      "end": 184.3,
+      "text": "Back to that fact you were hanging on to. Since multiplying by I corresponds to one"
+    },
+    {
+      "start": 184.3,
+      "end": 189.96,
+      "text": "ninety degree rotation, if we place our imaginary axis at a right angle to our number line,"
+    },
+    {
+      "start": 189.96,
+      "end": 195.28,
+      "text": "our algebra will perfectly fit with our geometry. If we start with the real number one, and"
+    },
+    {
+      "start": 195.28,
+      "end": 200.92000000000002,
+      "text": "multiply by I, algebraically we get I, which geometrically corresponds to a ninety degree"
+    },
+    {
+      "start": 200.92000000000002,
+      "end": 204.12,
+      "text": "rotation from one to I."
+    },
+    {
+      "start": 204.12,
+      "end": 209.12,
+      "text": "Multiplying by I again results in I squared, which, by definition, is minus one, and again"
+    },
+    {
+      "start": 209.12,
+      "end": 214.98000000000002,
+      "text": "matches a ninety degree rotation from I. As we keep raising I to higher and higher powers,"
+    },
+    {
+      "start": 214.98000000000002,
+      "end": 221.96,
+      "text": "we keep rotating around, with our values repeating every fourth power, just as they did algebraically."
+    },
+    {
+      "start": 221.96,
+      "end": 226.54000000000002,
+      "text": "So the big insight here is that imaginary numbers do not exist apart from the real numbers,"
+    },
+    {
+      "start": 226.54000000000002,
+      "end": 232.26,
+      "text": "but right on top of them, hiding in a perpendicular dimension. This is the deeper meaning behind"
+    },
+    {
+      "start": 232.26,
+      "end": 233.12,
+      "text": "imaginary numbers. They aren't just imaginary numbers, they are real numbers. Imaginary numbers"
+    },
+    {
+      "start": 233.12,
+      "end": 234.12,
+      "text": "do not exist apart from the real numbers, but right on top of them, hiding in a perpendicular"
+    },
+    {
+      "start": 234.12,
+      "end": 237.26,
+      "text": "dimension. They aren't just some random extra number or hack, they are the natural"
+    },
+    {
+      "start": 237.26,
+      "end": 243.5,
+      "text": "extension of our number system from one dimension to two. Numbers are two-dimensional."
+    },
+    {
+      "start": 243.5,
+      "end": 247.42000000000002,
+      "text": "And what's even more remarkable is that if we accept this, that numbers have a hidden"
+    },
+    {
+      "start": 247.42000000000002,
+      "end": 252.08,
+      "text": "dimension, we end up not only with a more complete mathematics, but with incredibly"
+    },
+    {
+      "start": 252.08,
+      "end": 256.88,
+      "text": "powerful tools for science and engineering. Next time we'll show how and why thinking"
+    },
+    {
+      "start": 256.88,
+      "end": 258.4,
+      "text": "about numbers this way is useful."
+    },
+    {
+      "start": 264.12,
+      "end": 267.12,
+      "text": "Subtitles by the Amara.org community"
+    }
+  ],
+  "segment_count": 57
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Imaginary Numbers Are Real [Part 5: Numbers are Two Dimensional]",
+  "url": "https://www.youtube.com/watch?v=65wYmy8Pf-Y",
+  "backend": "faster-whisper",
+  "model": "large-v3",
+  "requested_language": "en",
+  "detected_language": "en",
+  "generated_at": "2026-05-07T11:51:48",
+  "language": "en",
+  "language_probability": 1,
+  "duration": 277.0203125
+}

@@ -1,0 +1,270 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 29.98,
+      "text": "Let's say we're given the function f of x is equal to x squared plus one. We can graph our function and get a nice parabola. Now let's say we want to figure out where the equation equals zero. We want to find the roots. On our plot, this should be where the function crosses the x axis. As we can see, our parabola actually never crosses the x axis. So according to our plot, there are no solutions to the equation x squared plus one is equal to zero. But there's a small problem. A little over 200 years ago,"
+    },
+    {
+      "start": 29.98,
+      "end": 59.96,
+      "text": "a smart guy named Gauss proved that every polynomial equation of degree n has exactly n roots. Our polynomial has a highest power or degree of two. So we should have two roots. And Gauss's discovery is not just some random rule. Today we call it the fundamental theorem of algebra. So our plot seems to disagree with something so important. It's called the fundamental theorem of algebra, which might be a problem. What Gauss is telling us here is that there are two"
+    },
+    {
+      "start": 59.96,
+      "end": 89.94,
+      "text": "perfectly good values of x that we could plug into our function and get zero out. Where could these two missing roots be? The short answer here is that we don't have enough numbers. We typically think of numbers existing on a one dimensional continuum, the number line. All our friends are here, zero, one, negative numbers, fractions, and even irrational numbers like root two show up. But this system is incomplete. And our missing numbers are not just further left or right. They live in a whole new dimension."
+    },
+    {
+      "start": 89.96000000000001,
+      "end": 119.94000000000001,
+      "text": "Algebraically, this new dimension has everything to do with a problem that was considered impossible for over 2000 years, the square root of negative one. When we include this missing dimension in our analysis, our parabola gets way more interesting. Now that our input numbers are in their full two dimensional form, we can see how our function x squared plus one really behaves. Our function does cross the x axis, we were just looking in the wrong dimension. So why is this extra dimension that"
+    },
+    {
+      "start": 119.96000000000001,
+      "end": 132.72,
+      "text": "numbers possess not common knowledge? Part of the reason is that it has been given a terrible, terrible name, a name that suggests that these numbers aren't even real. In fact, Gauss himself had something to say about this naming convention."
+    },
+    {
+      "start": 149.96,
+      "end": 151.72,
+      "text": "A natural number is a number that does not exist in a real world."
+    },
+    {
+      "start": 151.72,
+      "end": 156.34,
+      "text": "So yes, our missing dimension is comprised of numbers that have been given the ridiculous"
+    },
+    {
+      "start": 156.34,
+      "end": 161.02,
+      "text": "name imaginary. Gauss proposed these numbers should instead be given the name lateral."
+    },
+    {
+      "start": 161.02,
+      "end": 167.24,
+      "text": "So from here on, let's let lateral mean imaginary. To get a better handle on imaginary, I mean"
+    },
+    {
+      "start": 167.24,
+      "end": 172.24,
+      "text": "lateral numbers, and really understand what's going on here, let's spend a little more time"
+    },
+    {
+      "start": 172.24,
+      "end": 175.22,
+      "text": "thinking about numbers themselves."
+    },
+    {
+      "start": 175.22,
+      "end": 179.84,
+      "text": "Early humans really only had use for the natural numbers, that is one, two, three, and so on."
+    },
+    {
+      "start": 179.96,
+      "end": 182.54000000000002,
+      "text": "This makes sense because of how numbers were used."
+    },
+    {
+      "start": 183.08,
+      "end": 186.36,
+      "text": "So to early humans, the number line would have just been a series of dots."
+    },
+    {
+      "start": 187.10000000000002,
+      "end": 191.62,
+      "text": "As civilizations advanced, people needed answers to more sophisticated math questions,"
+    },
+    {
+      "start": 192.32,
+      "end": 197.0,
+      "text": "like when to plant seeds, how to divide land, and how to keep track of financial transactions."
+    },
+    {
+      "start": 197.56,
+      "end": 199.66,
+      "text": "The natural numbers just weren't cutting it anymore,"
+    },
+    {
+      "start": 199.92000000000002,
+      "end": 204.04000000000002,
+      "text": "so the Egyptians innovated and developed a new high-tech solution, fractions."
+    },
+    {
+      "start": 204.86,
+      "end": 206.96,
+      "text": "Fractions filled the gaps in our number line"
+    },
+    {
+      "start": 206.96,
+      "end": 210.18,
+      "text": "and were basically cutting-edge technology for a couple thousand years."
+    },
+    {
+      "start": 211.0,
+      "end": 215.16,
+      "text": "The next big innovations to hit the number line were the number zero and negative numbers,"
+    },
+    {
+      "start": 215.38,
+      "end": 217.46,
+      "text": "but it took some time to get everyone on board."
+    },
+    {
+      "start": 218.42000000000002,
+      "end": 222.26000000000002,
+      "text": "Since it's not obvious what these numbers mean or how they fit into the real world,"
+    },
+    {
+      "start": 222.72,
+      "end": 226.78,
+      "text": "zero and negative numbers were met with skepticism and largely avoided or ignored."
+    },
+    {
+      "start": 227.36,
+      "end": 229.22,
+      "text": "Some cultures were more suspicious than others,"
+    },
+    {
+      "start": 229.36,
+      "end": 233.44,
+      "text": "depending largely on how people viewed the connection between mathematics and reality."
+    },
+    {
+      "start": 233.92000000000002,
+      "end": 235.72,
+      "text": "And this is not all ancient history."
+    },
+    {
+      "start": 235.72,
+      "end": 236.94,
+      "text": "Just a few centuries ago,"
+    },
+    {
+      "start": 236.96,
+      "end": 242.24,
+      "text": "mathematicians would intentionally move terms around to avoid having negatives show up in their equations."
+    },
+    {
+      "start": 243.26000000000002,
+      "end": 246.12,
+      "text": "Suspicion of zero and negative numbers did eventually fade,"
+    },
+    {
+      "start": 246.60000000000002,
+      "end": 249.96,
+      "text": "partially because negatives are useful for expressing concepts like debt,"
+    },
+    {
+      "start": 250.26000000000002,
+      "end": 253.68,
+      "text": "but mostly just because negatives kept sneaking into mathematics."
+    },
+    {
+      "start": 253.92000000000002,
+      "end": 258.98,
+      "text": "It turns out there's a whole lot of math you just can't do if you don't allow negative numbers to play."
+    },
+    {
+      "start": 259.8,
+      "end": 264.56,
+      "text": "Without negatives, simple algebra problems like x plus 3 equals 2 have no answer."
+    },
+    {
+      "start": 265.0,
+      "end": 266.8,
+      "text": "Before negatives were accepted,"
+    },
+    {
+      "start": 266.8,
+      "end": 268.8,
+      "text": "this problem would have had no solution,"
+    },
+    {
+      "start": 268.8,
+      "end": 271.42,
+      "text": "just like we thought our original problem had no solution."
+    },
+    {
+      "start": 271.7,
+      "end": 275.64,
+      "text": "The thing is, it's not crazy or weird to think these problems have no solutions."
+    },
+    {
+      "start": 275.64,
+      "end": 278.64,
+      "text": "In words, this algebra problem basically says,"
+    },
+    {
+      "start": 278.64,
+      "end": 281.1,
+      "text": "if I have two things and I take away three,"
+    },
+    {
+      "start": 281.2,
+      "end": 283.1,
+      "text": "how many things do I have left?"
+    },
+    {
+      "start": 283.1,
+      "end": 288.6,
+      "text": "It's not surprising that most people who have lived on our planet would be suspicious of questions like this."
+    },
+    {
+      "start": 288.96000000000004,
+      "end": 290.96000000000004,
+      "text": "These problems don't make much sense."
+    },
+    {
+      "start": 291.3,
+      "end": 295.04,
+      "text": "Even the brilliant mathematicians of the 18th century, such as Euler,"
+    },
+    {
+      "start": 295.26,
+      "end": 296.76,
+      "text": "didn't really know what to do with negatives."
+    },
+    {
+      "start": 296.76,
+      "end": 300.46,
+      "text": "He at one point wrote that negatives were greater than infinity."
+    },
+    {
+      "start": 301.0,
+      "end": 306.68,
+      "text": "So it's fair to say that negative and imaginary numbers raise lots of very good, very valid questions."
+    },
+    {
+      "start": 306.82,
+      "end": 313.71999999999997,
+      "text": "Like, why do we require students to understand and work with numbers that eluded the greatest mathematical minds for thousands of years?"
+    },
+    {
+      "start": 314.2,
+      "end": 318.2,
+      "text": "Why did we even come to accept negative and imaginary numbers in the first place,"
+    },
+    {
+      "start": 318.2,
+      "end": 321.2,
+      "text": "when they don't really seem to be connected to anything in the real world?"
+    },
+    {
+      "start": 321.2,
+      "end": 325.32,
+      "text": "And how do these extra numbers help us explain the missing solutions to our problem?"
+    },
+    {
+      "start": 325.76,
+      "end": 326.4,
+      "text": "Next time,"
+    },
+    {
+      "start": 326.40000000000003,
+      "end": 330.96000000000004,
+      "text": "we'll begin to address these questions by going way back to the discovery of imaginary numbers."
+    }
+  ],
+  "segment_count": 53
+}

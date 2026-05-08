@@ -1,0 +1,259 @@
+Can I have the slides? Yes, great. It's super nice to be here. Thank you for the kind introduction. And yeah, the talk is going to be about From Physics to AI to Materials, A Journey from Foundations to Impact.
+
+And indeed, it is true that I've been here before, as I'll say in a minute. The talk, the menu for today is, I'll have first a word on science, then I'll talk a bit about From Physics to AI, making waves, then I'll talk a bit from physics to AI and thermodynamics of AI, then I'll talk about From AI to Materials, which is the startup, and then I'll have an epilogue. So here goes the prologue.
+
+First, it is indeed true that I was given a keynote at the first ever ICLR in 2013. Here's the evidence for that. This was when, you know, the size of the group was, you know, you would know everyone in the room. It was a small room with maybe 50 to 100 people. And you all here are definitely a testament to how this field has completely exploded.
+
+So as the field has exploded, also,
+
+has the way we are doing science. And it's good to think about this for a moment. In the old days, like way back, you had researchers write each other letters, right? They thought about something long and hard, and then they wrote a letter, and then they physically mailed it to their, to their colleague, and it took weeks before a response came back. So science was slow. But it did, it did actually result in paradigm shifts, like general relativity. Modern research is fast.
+
+It means it's incremental, usually. And it is highly coupled. Every one of you is highly coupled to the rest. Everybody wants to work on LLMs, right? Okay, so, but the side effect of that is that, in principle, strange new ideas are suppressed in this environment. Basically, because you cannot produce the bold numbers. Everybody's chasing bold numbers. If it's hard to produce bold numbers in your first paper, it is a bit hard to get published. And I think this is bad, and we need to think about that.
+
+So I propose that we really need to go, to boldly go where no one has gone before. Not everyone has to do that, but those who do, I think, should be rewarded, and not have reviewer two write a very bad review.
+
+And so where has this taken us, right? The bitter lesson, really, is the lesson that we should scale. And it's nice and predictable. If you throw X amount more compute at it, your model will, Y, become better, right? So it's predictable companies like it. And so I call this scale your way out. And we are now talking about building data centers into space.
+
+The other side is innovate your way out. Think hard about the problem, shift the paradigm. And here we have a researcher researching the brain and figuring out that the brain actually uses 20 watt in order to operate at about the same level of intelligence as what we currently have, which is about a million to a billion times more efficient than quantum.
+
+So that's what I would think if we figure out how the brain works, why would we shoot data centers into space if there is something in here which would actually do the job for us? And this actually, I presented this curve, I think it was the first of its kind, actually, in 2018. It's a log linear curve about the increase of energy consumption or the increase of parameters in your models over time.
+
+And you can nicely see the bend here. When GPUs were invented, and so we got on a faster exponential acceleration, I predicted then that in 2025, we would reach 100 trillion parameter models, which is about the number of synapses in our brain. I actually don't know if we have reached that number. This may be in the trillions, but maybe one or two orders of magnitude off still. But we are closing in on AGI for sure.
+
+And so that was the introduction. And I'll now go to physics part one, which is making waves. I'll start first with celebrating 10 years of symmetries in AI. My student, Taco Cohen, even when he did his master's thesis, and after his PhD, he wrote this paper in 2016, Group Equivariant Convolutional Neural Networks.
+
+And if you want to learn about this, now there is this book written by Maurice Weiler, who was also in my group, which is a really nice introduction. In the field of... Equivariance, with lots of nice illustrations, and getting more and more mathy towards the end.
+
+And so to remind you what is equivariance, again, it is, and you can read it here in this book, and in fact, you know, these illustrations are from this book. So if you start with an image, which is kind of a gecko on the plane, and you know that a gecko doesn't really change if you move the gecko from one place to the other, or you move the camera, then you want to hardwire that in your network.
+
+And it's not given that your neural network understands that. In fact, only convolutional neural networks understand that. And so what you want mathematically is that if you filter the image, you get a filtered image, and then do the translation in your filtered space, that should come out to be the same as first translating the image, and then filtering. So this is a commutation relation that should hold.
+
+If it holds, you're in business, because now your neural network is equivariant. And of course, it represents a constraint on the parameters of your model. And equivariance has made it into my, so the field that I really like, which is AI for science. So here's two ways in which, you know, my students have worked on it.
+
+One of them is building equivariance into graph neural networks, and those can then be used to learn force fields, or machine learning interatomic potentials, to be able to simulate molecules much faster than if you would have to do the quantum mechanics. They also made it into generative models, so you can generate molecules from noise, and those also have this equivariance prior in them.
+
+I'll now talk about a new, bold new proposal without bold numbers, which is about the role of waves in computation, in neural computation. And this has been a journey for maybe five to seven years, or something like this. And many people accompanied me on this journey. It started with Andy Keller, and, you know, and all these people here have contributed to it as well.
+
+I know Nabil is here today, who has contributed to this particular project, so feel free to talk to him as well.
+
+So in these days, we build agents, right, and agents need to reason. In order to reason, you need to hold things in memory. But how do we build systems that naturally hold things in memory, is the question. And need to hold things in memory over long spatial temporal time scales, or scales. Now the universe has solved this problem, I will argue.
+
+The way it solved it is by creating waves, or, you know, communicating with waves. If you look out to the stars, the reason you can even see stars is because electromagnetic waves hit your retina, right? In fact, even the brain turns out to use waves. And I'll go into that a little bit more. So first, I'll go do a little bit of history.
+
+This is old work, mostly by, this is led by Andy Keller, where we started to play around with RNNs. We structured the RNNs in such a way that they would naturally create waves in their internal latent spaces. And so we studied two tasks where you need memory. The copy task and the adding task, which makes sense.
+
+Basically means you read something at some time, and then you have to hold it in memory and regurgitate it at some time. Could be a random time. Similar for the adding time, you have to sort of hold for a number, get another number, add them up, and then add, you know, provide the sum. And if you look at these latent representations, which are the channels here,
+
+what you'll find is that in the sort of, the one that creates waves, you'll get like channels, and it will create an activation, and it will then hand it to the next channel. It'll hand it to the next channel. It'll hand it to the next channel. And so what happens is this information spins around in these channels.
+
+And the beauty is that that structure really helped solve these problems where you needed long-time memory. Here's another work we did with Takiro Miyato. He worked on a neural network based on so-called Kuramoto oscillators. These are models where you have circles or complex numbers. Every neuron has a direction, a phase as well. They're coupled together next to each other, and they want to synchronize.
+
+Like actually, and this is based in neuroscience because in neuroscience, neurons bind together to create representations for objects, and they do this by synchronizing their waves, their oscillations. And so here you can see how if you build a model and you train it well, it will actually create these nice traveling waves through these curves. These networks.
+
+And then he did some tests, and it worked surprisingly well. I would say state-of-the-art. And there was a few things that caught my eye which were very interesting about this. The first one is if you try to adversarially attack these images, you'll find that the smallest change you can make to the input in order to change the class of the input
+
+actually created an image that looked like the class you were trying to bring it to, which is very different from the normal neural networks where you couldn't even see the change in the input image to get it to predict a new class. And so, you know, if you go from plane to bird, I can see a bird. If you could go from car to frog, you'll have to squint a bit, but you see a frog. Here's the head. Here's the paw.
+
+Ship to horse. Frog to dog. So to me, this means that the input space is smooth. If you take two inputs and you change them a little bit, what happens is that, the prediction is smooth. It won't change abruptly. He also applied this to solving Sudoku puzzles, which is clearly a reasoning task where you have to integrate information over the entire image,
+
+and he found actually that he could create state-of-the-art on these Sudoku puzzles. So I thought we were in the right direction. And so more recently, I've been thinking about, is there a physics principle behind this? Can we understand these kind of more empirical, intuitive ideas? And in order to illustrate this, I brought a stick. And the stick is going to do a little experiment. So if I put the stick here,
+
+the stick is beautifully rotation invariant. Well, it's not quite rotation invariant, but if you squint, you know, if you rotate it like this, it doesn't change. And now I'm going to do an experiment. I'm going to break the symmetry. So I can do this by pushing here. Okay, like this. I can do this by pushing here, but that clearly is... I am breaking the symmetry because I decide to do this, right?
+
+There's another way to break the symmetry, which is I'm going to push down. Now remember, if I push down, it's purely symmetric, because, you know, if I rotate, it's still the same force. If I do this, then... you know, this happens, right? So the symmetry is still broken, but now it's spontaneously broken. I didn't do anything myself to break the symmetry, but the natural stable state has broken the symmetry.
+
+All right, that's my experiment. Um... Oh, no, it's not, actually. So there's two more things I want to say about this. So once you've done that, you can get two kinds of oscillations. This is the first oscillation, right? And I have to put energy in that oscillation. That's called a Higgs mode. And yes, that is the... If you do this in quantum field theory, you get Higgs particles,
+
+which create the mass in the universe. That's pretty deep, isn't it? The other one is I can do this. It doesn't require me any energy, but it's still a wave of a kind. And that's called a Goldstone mode, and these are also modes, you know, things in physics. Okay. So these are actually very... The symmetry breaking is a very fundamental concept in physics. If you take a liquid, and a liquid, if you squint,
+
+is definitely translation invariant, and you lower the temperature, at some point, that liquid will turn into a crystal, right? It's like water turns into ice. And you've broken the symmetry, because the continuous symmetry, the translation symmetry, turned into a discrete symmetry, translation symmetry. And that's a phase transition. So it's a very fundamental concept in physics.
+
+And then you have these Goldstone modes, which are these modes which I talked about. So these modes are Goldstone modes. The equivalent of that Goldstone mode, in fact, is what we call phonons in crystals. So these are, you know, the oscillations of all these atoms that are moving, and they create traveling waves. So we thought that should be a good candidate for trying to get those things into our neural networks.
+
+And the argument I want to make is that they are useful because they can sort of act as memory. So here is a particular evolution equation that physicists really like. If you don't understand, it's fine. It creates waves. And there's a potential, and if you choose the potential to be this nice Mexican hat, you have exactly the situation that I described. The symmetry, the system likes to sit in this blue region,
+
+and in order to get there, it needs to break the symmetry. And you have these oscillations which go back and forth here, which are the Higgs oscillations, and the ones that go around, which are the Goldstone modes. And then if you look at the waves that you create, the waves, you know, of the ones that are flopping back and forth here are like this. And what happens is that the different frequencies start to mix.
+
+So you have information that involves this kind of mass term, and all the frequencies start to mix together, and it's very hard to hold the information. Where if you look at the one that moves around like this, you get these beautiful waves that hold their shape and move outward. So here's that particular movie made by Nabil that shows that very nicely the structure of the wave front is the same,
+
+which means you can store information in the wave fronts. Now I just mentioned that these things are actually discussed a lot in neuroscience, and especially Terry Sunowski and Lyle Miller, whom we have been working on this, they're a big proponent of actually understanding the function of these waves in the brain. And it's an interesting story because in the old days, people had only one electrode
+
+and you could stick it somewhere in the brain, of course you wouldn't see any waves, but now they have many multiple electrodes, hundreds of these electrodes they can put in and now they can actually see the waves that are going through the brain. So this is a whole new developing field and we wrote a paper together, the four of us, on the relationship between the neuroscience and the machine learning
+
+and the symmetries. Hopefully it's coming out soon in Nature Perspective. Okay, so how are we going to build neural networks that have this particular property? So that is now the challenge. And the way to do it is to go back to actually an old idea, I think Jeff Hinton called this capsules. Everything goes back to Jeff Hinton one way or the other, so here's capsules. And what we do is we create a neuron
+
+and the neuron has an internal structure. So it could be a doughnut or it could be an n-dimensional sphere with a little vector in it and the vector can move around. So you can think of this as a spin in some sense. And the equivariance in these networks is if I start to spin around these vectors in the input layer, all the other vectors in the internal and the output will have to spin with the same phase.
+
+And you can make these networks such that they have this property. You can bake it in. And so the theory behind it is this idea that we want to create networks where information propagates to many, many hundreds or thousands of layers of either an RNN or a deep neural network. And then you can study these networks as a map, or maybe even as dynamics. And there's this paper by these authors
+
+called Deep Information Propagation where they studied this. And they found that if the networks live on the edge of chaos, which I'll explain in a minute, they will perform best. What does that mean? Well, there's a number of phases, like phases in physics. There's a phase where any two inputs actually collapse to the same point. This is a stable fixed point. And there's another phase where any two inputs,
+
+even if they're infinitesimally close, they will eventually, and exponentially fast, diverge and they completely de-correlate. And it becomes basically random. You can best describe this as a random iterate. And you also lose information about the input. If it collapses or it becomes chaos, you all lose information about the input. But there's something in the middle that you can fine-tune to,
+
+where the information propagates through the whole neural network. And in fact, right before this, I googled for if this actually, I've heard that this actually, the brain is also on the edge of chaos, and you'll find it very quickly. And it says the human brain is on the edge of chaos, and since it's by the University of Cambridge, it must be true, so that's good. Okay, so let's dig a little bit
+
+into the mathematics of this. So what we are doing is we create a neural net and we randomly put weights on the, we draw random weights and we put them in the neural net. Now because the activations are a function of the weights, the activations also become random. Right? Now if we take the initial distribution of the weights to have small variance, you get through this thing where my little vector on my sphere
+
+will collapse to a point. I don't want that. But now if I take it larger than a certain threshold, it goes through a phase transition, but your sphere gets mapped to a bigger sphere. And we don't have to fine-tune anything here, we just have to get over this threshold, and that's very good. The information can be encoded in the various phases of these spins, and the equivariance makes sure
+
+that I can propagate that information all the way through my neural network. And the important piece is that we don't have to fine-tune, and you can see with a small experiment that the theoretically derived transition between these two phases is precisely the place where a neural network starts to work.
+
+So I'll close this particular section with some preliminary results. I should say thank you to Andy, because I think he worked through the night to produce these results. And so Andy, wherever you are, you are a hero. Now I can actually show these particular results. What he did was he looked at the number of parameters in your neural network, and then he trained both RNNs and GRU RNNs. with GRU functions.
+
+And then he had versions of that which had this internal structure, either a sphere with k dimensions, or k-1 dimensions, I guess, or a U1 symmetry.
+
+And then he plotted the performance on a task which is called permuted MNIST, where you make the task harder by permuting the pixels. You have to keep things in memory. You make it harder, as a function of the number of parameters. And you find that the symmetries really help you train these models well with less parameters. And to inspect a little bit how these internal channels work. So here are the channels.
+
+In a normal RNN they turn on, and then they stay on for a while, and then they turn off. But in these internal spin degrees of freedom, the magnitudes are somewhat stable. But then if you look closely here, you'll see 24 channels, and they oscillate. So this is a vector that moves around in this space. And here actually on this you see the trajectory projected onto the two principal components
+
+of some of these neurons. And you'll see that they oscillate around. So there's now internal oscillations that hold on to the information. Okay, so that was the first part. And now I'll move on to the second part, which is different but also not different. But I'll reset a little bit and say that yes, we are in a very special time. Sort of the same time as the people in the 18th century
+
+when the steam engine was invented, where we were, let me say, enhance or augment human labor with machine labor. You could also say replace, but it's subtle. And now we are in a time when we are enhancing or augmenting human intelligence with machine intelligence. This is the AI revolution. And we are in the middle of it. And so we decided to write a book about it. In fact, we just didn't get it out in time,
+
+but you can pre-order it. This is a bound version. But if you want to have a look, this is the book. And the book is written together with Cyril Liu and Lars Holdijk. Lars is somewhere here in the audience as well. And this tries to study the deep relationship between a field in physics called stochastic thermodynamics, which is an extension of normal thermodynamics, which deals with equilibrium situations,
+
+to non-equilibrium distributions. And of course, AI is all about non-equilibrium. And we found that they share the same probabilistic math, basically. And it is systems that describe, you know, it is a theory that describes systems that lose information. And then I asked Gemini to visualize how, you know, this could be related to time reversal symmetry breaking. And I got a somewhat dark image.
+
+I thought it was appropriate because sometimes I think we live in somewhat dark times. But here on this side is the phase, if you look at the microscopic physics, it's actually time reversal symmetric. So if you look at a bunch of molecules which are moving around and you reverse it, it goes the other direction, but you don't know if that's forward in time or backward in time. So the reversal symmetry is broken.
+
+Which means that we have a direction of time. So I am going to talk until the end in one direction. Unfortunately I cannot go back in time and get myself a little bit more time for this talk. And it's appropriate that things break. I think Gemini took breaking a little too serious on this side. But things do break when you have entropy. Things degrade. And so it's a theory about how to lose information
+
+and how to describe that. And a map that you cannot run backwards is a map that loses information. And we probably, hopefully all know this equation which is a Markov chain which is the equation that actually describes systems that lose information. In fact if you run a Markov chain long enough it's well known you have completely forgotten your initial state. So you start with an initial distribution.
+
+This is the path of the state and then you have these transition probabilities for lambda. And then in physics losing information basically is equivalent to entropy production. So every system that loses information produces entropy of some kind. And there is a beautiful theorem which I don't think many people know here which is called Crookes fluctuation theorem that quantifies very precisely what that means.
+
+So it says if I have this forward distribution over a path and then I look at the backward distribution so this is the same dynamics but I start at the end and I apply the control signal and reverse in the other direction. If it were reversible I would end up with exactly the same state. If it weren't reversible I end up in some other state. And the ratio between these two probability distributions over paths
+
+is e to the total entropy production of the system. And I'll tell you a little bit basic thermodynamics. If you don't like equations you can stare at this figure from Gemini and try to work out what I'm trying to say in a figure. But let me go through the equations. So I have a state which is an arbitrary state from zero to the final time t. And the first law of thermodynamics says that the total energy of the system
+
+or the total change in the energy of the system must be equal to the total work done on the system plus the total heat that's flowing into the system. These two terms determine the amount of energy that's changing. There's another really fundamental equation which is the change in free energy. That says that the change in free energy is the change in energy minus the temperature times the change in the entropy.
+
+And I will come back to this equation but it basically says that this is the energy that's free to do work. And it's not all the energy because all the degrees of freedom you've lost information about you can actually not do very effective work with. Okay, and now we get to this very fundamental equation which says that what is the actual work you're doing on a system that's out of equilibrium? It's given by
+
+and we can sort of use these two equations it's given by the total work done minus the change in the free energy. You get this by combining these two. That's the definition of dissipated work and by using these equations you can relate this to t times the change of the entropy of the system minus the heat generated. And the definition of this is actually t times the total entropy production.
+
+But now what's interesting is some very recent results actually show that that is lower bounded by the Wasserstein distance the squared the two Wasserstein distance squared between the initial distribution and the final distribution divided by the time you take to get there. So the faster you want to move something the more work you will have to do. And so that actually proves I think
+
+or it has this very strong argument that this is a limit to super intelligence because if I have a thought I need to change the distribution of my internal neurons my latent representations I need to change it otherwise I don't have a thought but in order to change it I have to satisfy this equation because one distribution has to go to the other distribution if I want to think fast I'm going to pay more
+
+and if I can do it slow then I can get close to zero but who wants to think slow? Okay, so then I do this little derivation which is we start from the Crookes equality and the Crookes equality you can just move this there and you move this guy here then and then you integrate over paths and what you'll get is this equation which says that if I take a path I start at the initial state I sample a point
+
+and I sample to my final state right and I do this many times and then I average e to the minus the work done over each one of these paths then in fact I can equate that to e to the minus change in free energy so here is a way to estimate the free energy which is actually very difficult to do and it's called the Jurczynski equality and even when Radford Neal wrote his paper on annealed importance sampling
+
+in that paper he says that this is equivalent to the Jurczynski equality so isn't that beautiful that actually these two things got independently sort of discovered and from these two different fields to me it's a testament that we're actually looking at the same problem and entropy is a truly deep concept and so I want to dive a little bit deeper into this with you and people actually
+
+when thermodynamics was invented really didn't understand this entropy and actually Boltzmann I think went almost mad he wasn't understood that he had his interpretation and so the thought experiment is I have a little demon and the demon actually has access to all the information about the individual atoms in the box so there's blue atoms which are slow and the demon knows where the atom is
+
+and at what speed it's moving and where it's going and then there is also hot ones which turns out you can open and close the door without doing any work and he opens the door whenever a fast particle comes in and he keeps the door closed when it's a slow particle and in doing that he will separate the cold atoms from the hot atoms but now it can do work because now it can close the door and then let the door move
+
+as a slider and the door will move to one side and that will create work so in principle this demon can build as long as he has access to the information and of course the problem is he will not have access to the information he will lose the information and that's exactly the entropy of the physical system and from this we conclude that Shannon entropy and physical entropy are truly the same thing
+
+and I think that's pretty deep in fact you can go one step further which is it's subjective because one demon knows more about the system than another demon knows about the system so actually entropy will be different than for the other demon so actually entropy is Bayesian in a way and so there is this interesting analogy I'll just start on this side because most people will know this side although it is maybe
+
+before the deep learning era so maybe most people forgot it but you can write down so let's say Z are degrees of freedom that we have lost track of we don't know what they precisely are we just have a distribution over them these are the data these are the observations and then we all know that the posterior distribution is given by Bayes' rule this is Bayes' rule and then Hinton and Jeff Hinton
+
+they wrote down the variational free energy which is the same thing we used for the variational autoencoder also known as the ELBO evidence lower bound and it's defined as minus log probability over the observed data and you can upper bound it by the variational free energy the variational distribution Q and that's defined as the expectation over this distribution of minus log of the joint minus the entropy of Q
+
+and on the other side we have the Boltzmann distribution which is the equilibrium distribution of a physical system which has H as the energy function and then in physics of course we also have a free energy of a system at equilibrium which is given by minus the log of the partition function and for non-equilibrium systems you can upper bound it by this free energy which is the expectation of the energy under the
+
+system out of equilibrium minus the entropy of that system and if you compare these two you'll see they're basically the same and on this side when we minimize the free energy we minimize it over Q which is the E-step in the EM algorithm and the M-step which is minimize F over P which is learning the E-step on the other side you would relax F over Q which is you relax the physical system
+
+you would generate entropy and heat and if you change H which would be learning you actually perform work on the system and actually in this book we sort through many relationships between these two fields when we do inference or learning or control or transport in machine learning with these particular tools like diffusion models or reinforcement learning or MCMC these things actually have an equivalent
+
+in the theory of stochastic thermodynamics that's why I think it's worth to read about it because there's a lot of things the physicists did which we can use and there's actually a nice dictionary you can come up with and I will highlight this one is equal to escorted free energies estimation in physics and optimal transport continuous normalizing flows is called counter-diabetic driving in physics okay and of course
+
+we all know that diffusion models are at the heart of this bridge in fact the original paper if you can read it said deep unsupervised learning using non-equilibrium thermodynamics right this is a paper by Jascha Sohl-Dickstein et al so they made the connection and so what happens is you have a system that follows the laws of physics in particular it follows the second law of thermodynamics you start with structure
+
+and you let it age like we all age and then in the end it turns into noise like we turn into dust at one day unfortunately let me create a force and do some work to move in the other direction so this one goes against the second law of thermodynamics it is like an egg that you turn into an omelet this is like the omelet that turns into an egg you don't actually see this happen in the real world
+
+but you could engineer it to happen if you are smart enough and so we set out to use this theory to actually understand the free energy difference between let's say a drug like molecule that is unbound to a protein and a drug like molecule which is bound to a protein and you need that because you want to figure out how well does that molecule like to sit in a particular pocket of the protein
+
+but it is actually very difficult calculation to do and so what you need to do if you just do MD simulation is to put it into the pocket and then later compensate for it but now we know how to do that we can train a diffusion model or a flow model which basically takes the initial distribution and we know then how to find forces or velocities or whatever we call them to flow that into another distribution
+
+so we train that model and then we can use the Jarzynski equality which I just explained in quite a bit of detail to measure every step how much work did we do and compute this expectation over the e to the minus work and that will give you an estimate for the free energy and now you think this is great this will work fantastic until you try and then you figure out this is actually a very high variance estimator
+
+because it's in the exponent and it's basically the large the paths which have a large amount of work completely dominate that estimate so you need to do something about it now it turns out there is a generalized equality this is something we can directly import from this physics theory the generalized equality says if you have a control force I won't go into the details but if you optimize for certain paths
+
+which are much less noisy you can get rid of that noise and in fact it's an optimal transport solution so you need to solve the optimal transport problem between the initial distribution and the final distribution and those paths that kind of control path you take and it has zero variance if you do it right that's amazing zero variance and so we know how to do this there is a paper called
+
+optimal transport continuous normalizing flows by these guys here where this would be the normal diffusion model and this would be the optimal transport diffusion model straight lines you match the particles or you match the samples and then you have a straight line between them at constant velocity and this is the paper we wrote about this so if you want to learn it's actually here at ICLR so you can check it out
+
+in one of the poster sessions or talk to Lars who is somewhere here okay so then the last part of this talk I want to talk about from foundation to impact so I've been working on foundations my whole life and in the last stretch of that career I wanted to do something useful finally and so I co-founded this company called AI and what does it do it will help design materials using AI
+
+and let me try to relate that back to thermodynamics so let's say I am in the business of designing drugs or something and I come up with my first design and in order to evaluate that particular drug I will have to go through lots of simulations which will cost me a lot of energy and money and then I figure out it wasn't actually a very good drug after all so I come up with my next design
+
+now I could go through the same sequence of things again but the devil in me or the demon in me actually thinks well maybe I should store the information from the first run in a big database and then the information from the database we can use that to train neural networks that is moving the information from the database into the weights of a neural network and then next time around what I can do is
+
+use the information from my neural network to either directly predict the properties which is very very cheap or use train maybe a machine learning inter-atomic potential or neural network force to accelerate this particular MD simulation ok so that's cool because now I have amortized the amount of effort I made I've learned from my first simulations and I've used that to accelerate the next ones
+
+which means I'm using less energy for the next round so that is literally Maxwell's demon situation and so we built this platform and the platform can be most easily thought about as a search engine although this one searches not over existing molecules like a search engine searches over existing I would say documents or images actually I would say maybe modern search engines also create text and create images
+
+so maybe it's better compared to that and so you'll start with a prompt you'll say I want a material that needs to have these properties and it cannot be toxic and so that goes to the agent so at the heart of this is a CuspAI agent that is orchestrating a big computation and the first thing it does is say is there actually material that satisfies these properties we have big databases from the various
+
+publishing houses that will help us look for materials that have the right properties and let's say that was disappointing so then we go to our generative models so now we're going to generate molecules candidate molecules which have the right properties and of course when we generate them we have to also evaluate them so we have a big scale stack of let's say digital twin stack of evaluating all of these molecules
+
+and then after all that has sort of converged we go to experimental layer hopefully this is a self-driving lab of kind so we get lots of feedback about data and when that is done we go actually expose the results to the chemist and the chemist thinks it's actually not what I wanted to find the prompt okay so that's how that works and now I'm going to actually announce something which I'm very very excited about
+
+and this is it will hopefully go live now or right after I don't know this is a new framework for molecular dynamic simulations that we developed at CuspAI and that we are open sourcing to the world this was done by Jonas Koehler and Nicolas Gao those are the heroes of this story and the kind of work of creating that in collaboration with Nvidia and it is a JAX based toolkit for atomistic simulations and it's a
+
+Python and GPU native so it will actually operate very fast on GPUs what is very interesting about that is you can just take your force field your machine learning force field and compile it into JAX and then run it directly into this MD simulation so you can do many computations at the same time maximally using your GPUs and it runs natively on accelerators one of them GPUs but also GPUs and others
+
+and of course we benchmarked it and we get quite nice sort of higher throughput on both MD and what you call grand canonical Monte Carlo which we need I'll just illustrate this okay so first maybe a few more words about this so it has different ensembles you can do MD and MD simulations you can also do geometry optimization we have Coulomb interactions using Ewald simulations in them
+
+we have Lennard Jones and all sorts of more classical forces in them but maybe the most exciting thing is you can just take your favorite machine learning force field compile it to JAX and run it in the MD simulator so here's an example this is actually one of the first projects we did at CuspAI which is trying to come up with a metal organic framework to be very good at capturing carbon dioxide from the atmosphere
+
+and regenerating afterwards and what you need to do then is you need to compute these isotherms which is at different pressure levels and different temperatures you need to figure out how much CO2 sticks to the inside of the pores of this metal organic framework and so here's the simulator that would run so you throw in at random positions you throw in these carbon dioxide molecules and you let them wiggle around
+
+and then at the end you figure out how much got stuck there here's another example this is basically a batch relaxation of a metal organic framework run with a UMA force field which we just compiled from PyTorch into JAX and the nice thing here is of course you can run a large batch of these minimizations all in parallel and this one is also very exciting I think so this is a particular
+
+diffusion process that we studied called Grothuis hopping of protons in sulfuric acid and so this is kind of illustrated here you have water molecules and they move these protons, these hydrogen atoms between those water molecules they hop between these water molecules creating H3O plus in the middle and so these little green dots are sulfuric acid the red sort of flashes are these
+
+when we actually observe in simulation these jumps and then these are these blue things are the H3O plus sort of places where the hop happened and we can show that we can actually very clearly reproduce the radial distribution functions even better than some of the DFT calculations which is this one the PBE one okay that was the announcement I'll show the QR codes in a minute and you can download the code
+
+read the blog and play around and let me know how you like it so undeniably the AF for science revolution is here I am very excited about this we are seeing massive progress on the quantum and cosmology side biomedicine side materials innovation and climate modeling and many more fields we are going to highlight this year because both of these students are here and they are very very smart
+
+so you should check them out one is Flora Eichelbaum and the other one is Maxim Zdanov and what happened here is this is variational flow matching this is a version of flow matching based on probability distributions where you actually estimate the probability distribution and he used it also to predict in one step basically to generate molecules this is sort of a new transformer which is very fast in order to model
+
+weather and storms and that paper is actually out here and you can find Maxim to talk about it so then in conclusion on a slightly more serious note but I think it kind of resonates with the talk of this morning and I didn't put it in afterwards this was already in my talk we are living in technologically disruptive times and this is very exciting to be in that particular disruptive time but we are
+
+this room all of you plus maybe two or three more of these rooms we are developing this technology we are very special in that sense and in a way we are all Oppenheimers that's the way I view it because we are building a powerful technology that has potential dual use it can be used for good and for bad and I feel this comes with great responsibility I am not going to tell you what to work on and what not to work on
+
+who to work with etc but I do ask you to make conscious choices about what to work on think about what you want to work on and do not look away from the problem and so this is the final slide for me so if you want to check out these two QR codes you will find the code and the blog for CuspAI which is the MD simulator I will leave it at that thank you very much
+
+I guess you are already there so go for it Thanks so much for the great talk so could you comment on the importance of reliability in science in general so trustworthy discovery and so on and specifically perhaps for CuspAI does your agent suffer from hallucinations is that like a problem in practice or not really that is a good question so typically it can it is doing an optimization so this optimization could be
+
+it could do way too many expensive calculations let's say so you have to put in some guard rails that if the costs start to grow you want to check things and you can sort of measure how well it is doing relative to standard methods like Bayesian optimization typically it is very good in general if you have agents to have uncertainty in them and in fact one of our recent papers with Dario Corcha
+
+has exactly is a transformer actually a LoRA-based transformer that adds uncertainty to the predictions and that could be very useful in this particular case so I don't know precisely when do you want to point to something I don't know you have to look at each other who was first and then play sound thank you Max quantum field theory is such a rich field are there any other methods that would be applicable
+
+to AI research from quantum field theory for example renormalization group theory or some other types of techniques the answer is definitely yes the renormalization group theory thing is already done so there is a paper we have written called GUD which is basically mapping renormalization group theory to sort of diffusion models so that one you can just look up I think that is what also this book is about
+
+there is a lot of really smart stuff in these physics fields and if you have a physics background if you can find the bridge between them you can walk the bridge in two directions so it is like smart ideas can make it into AI but AI can also really help push the frontier of these physics fields forward so that is why I love AI for science so much thank you hello thank you Max for this inspiring talk
+
+I have a question that has haunted me for quite a long time I am glad that you talked about the connection between the Shannon entropy and the thermodynamic entropy
+
+my question is that we know there is this Landauer's law specifying that erasing one bit would cause the KBT times LM2 this bit of energy but are you able to predict how much energy it would cause to train something to to deal with when it is the data or image set can you predict the theoretical minimum and how far away is the brain away from that these are great questions and there is a whole field actually
+
+I went to a conference in Japan on this topic and there is a whole field of physicists that actually thinks very deeply about the relationship between computation and stochastic thermodynamics and actually precisely this problem so what is the minimal amount of compute I would need to invest in order to reach a certain result and I can't give you the answer to how far the brain is away from it
+
+but these are great questions that need to be researched and I think we will discover lots of really interesting things when we study these questions ok but it is good to know that there are actually people in the networks or in the community but there is a whole bunch of other people as well ok thank you hi love your work I just wanted to ask with your company and all how are you facing the problem
+
+of synthetic accessibility and making sure those molecules that you predict actually go to are synthesizable two ways things have been synthesized which are very similar so we have a similarity metric that extracts all the molecules which are similar and then look at their synthesis recipes that is the first approach the second approach is we compute things like free energy use the free energy computation
+
+if you can estimate the free energy of the molecule that you are producing and you find that other versions of this have higher free energy as well as I would say literature approaches or matching things to literature or recipes that have already been published hello I love your talk I just wonder back in the day when we used to do umbrella sampling or blue moon sampling for the free energy calculations
+
+out of equilibrium although you could achieve the sampling the problem was most of the time the reaction coordinates so I wondered in your job is that part of the learning to select the reaction coordinates in order to perform the out of equilibrium calculation or you just took it ad hoc so you could argue that the nice thing about this method is that you don't need a reaction coordinate
+
+because the thing about a reaction coordinate is you have to choose one before you start and that already influences the success you will have and so these ones do not require you to after you have trained your diffusion model you could potentially try to extract a reaction coordinate and then maybe use umbrella sampling on that reaction coordinate we haven't tried that we have compared to FEP
+
+free energy perturbation methods also with neural nets they are pretty close the ones that I showed in FEP the best ones are pretty close I would say hello thank you for the talk you mentioned about algorithms for generating molecules that satisfy certain properties my first question is that how much those properties are close to real life drug discovery scenarios and my second question is that in your opinion
+
+the current evaluation metrics or benchmark how much they are close to the algorithms that recently were developed to generate such molecules I think what you are aiming at which is a very good question which is that the things you do in a computer do not actually reflect real life and so you have to go then through the experiment as well and then actually extract lots of information from the experiment
+
+but even then you are not there because then you have to even go to putting this material in a process or creating it at scale or in a reactor or something like this so your ability to model these systems like the actual like the actual material operating in a real situation a real process that is really key but it is also a very hard problem so you could argue it also depends a lot on the application area
+
+I think for semiconductors we are pretty good in being able to simulate that but what you could tell us is there is probably quite a big gap I am sure we could keep Max here all day asking him questions but I think to give him a break let's have one more question if you don't mind Thanks for your presentation I have a simple question don't you think that rapid AI driven growth of life sciences
+
+especially maybe biology is not actually bound by developing AI but rather by collecting more data Good point I would say it is the combination of the two but definitely the data is the key component otherwise you cannot train any models but in order to analyze these huge amounts of data or make use of it you really need the AI so I think it is a combination of the two one without the other
+
+you are not going to make a lot of progress Thank you Thank you

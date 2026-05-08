@@ -1,0 +1,43 @@
+Last time we arrived at an incredibly powerful tool in mathematics, science, and engineering,
+the complex plane. The complex plane is an extension of the number line where we include
+the imaginary dimension vertically. Just as we can plot xy coordinates on the xy plane,
+we can plot complex numbers on the complex plane. This arrangement is why Gauss preferred the term
+lateral over imaginary and inverse instead of negative. Gauss suggested that we should call
+the numbers to the right of the origin direct, the numbers to the left of the origin inverse,
+and the numbers above and below the origin lateral. Now that we've seen the complex plane,
+let's discuss why it's so powerful. We've seen two-dimensional planes before where each axis
+represents a different quantity. In fact, we started our whole conversation with one.
+In a normal xy plane, there's no required connection between the dimensions,
+no rules about how they should relate to each other. On the complex plane, however,
+we have the rules of the complex plane. We have the rules of the complex plane,
+and the rules of algebra with complex numbers we discussed earlier. These rules impose a very
+specific and useful relationship between the two dimensions. The first rule is how complex
+numbers add and subtract. The real and imaginary parts add independently, making complex numbers
+and the complex plane useful for problems involving motion in two dimensions. If we
+travel in one direction for a certain distance, and then in another direction, we can add the
+components of each part of our trip together to find the total distance we have traveled in each
+direction.
+So that's cool, but as you may already know, we can do the same exact thing with vectors.
+Where complex numbers get really interesting is through multiplication.
+We can multiply complex numbers together by FOILing, just as we do with binomials in algebra,
+with the minor complication that we know i squared can be replaced with minus one.
+This is a perfectly valid algebraic solution to our problem, but is only half the picture.
+There is another equally valid way to think about multiplying complex numbers, and it has every
+thing to do with the complex plane. Instead of just telling you what this interpretation is,
+it'll be way more fun to try to figure it out with some examples.
+To discover this deeper meaning for yourself, all you need to know is the following.
+How to multiply complex numbers algebraically, as we just did.
+How to plot numbers on the complex plane.
+The Pythagorean theorem.
+And finally, how to use arctangent to find angles.
+What's cool here is that if you're able to figure this out, you'll have discovered for yourself a
+super useful bit of math that was unknown to the smartest mathematicians on the planet until only
+two centuries ago. Next time we'll uncover this interpretation of complex multiplication using
+the complex plane, and we're going to do it with four examples. 4 plus 3i times i,
+4 plus 3i times 2i, 4 plus 3i times itself, and finally 2 plus i times 1 plus 2i.
+Through considering each of these problems on the complex plane, and looking at the patterns that
+naturally emerge, we'll arrive at the deeper meaning we're searching for. Do try this at home.
+You'll find a link below to the problem statement on the Welch Labs blog.
+Even if you're already a boss at complex numbers, or if you have no idea what I'm talking about,
+I promise it's a valuable process. And we'll sort out all the details next time.
+Thanks for watching, and I'll see you in the next video.

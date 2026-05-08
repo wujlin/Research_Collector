@@ -1,0 +1,315 @@
+{
+  "segments": [
+    {
+      "start": 0.48,
+      "end": 4.48,
+      "text": "Last time we left off wondering how imaginary numbers could help us find the roots of our"
+    },
+    {
+      "start": 4.48,
+      "end": 10.0,
+      "text": "equation x squared plus one, and further how imaginary and negative numbers even became part"
+    },
+    {
+      "start": 10.0,
+      "end": 14.64,
+      "text": "of modern mathematics after being avoided and ignored for a couple thousand years because,"
+    },
+    {
+      "start": 14.64,
+      "end": 19.52,
+      "text": "let's be honest here, they don't really make that much sense. But something happened in Europe"
+    },
+    {
+      "start": 19.52,
+      "end": 24.64,
+      "text": "around five centuries ago that would no longer allow mathematicians to ignore these numbers."
+    },
+    {
+      "start": 24.64,
+      "end": 29.6,
+      "text": "An Italian mathematician, Scipione del Ferro, was trying to solve a problem not that different than"
+    },
+    {
+      "start": 29.6,
+      "end": 35.04,
+      "text": "ours. At some point you've probably seen the quadratic formula. This formula is super useful"
+    },
+    {
+      "start": 35.04,
+      "end": 40.24,
+      "text": "because it gives us the roots of any equation with a highest power of two. All you have to do is plug"
+    },
+    {
+      "start": 40.24,
+      "end": 45.84,
+      "text": "in a, b, and c and out pops the answer. Del Ferro was trying to find a formula like this for"
+    },
+    {
+      "start": 45.84,
+      "end": 51.6,
+      "text": "equations with a highest power of three, cubics. The general case is pretty tough so Del Ferro"
+    },
+    {
+      "start": 51.6,
+      "end": 56.480000000000004,
+      "text": "first considered the case where the x squared term is missing and the last term is negative."
+    },
+    {
+      "start": 56.480000000000004,
+      "end": 59.44,
+      "text": "In the 16th century negative terms were way too sketchy to"
+    },
+    {
+      "start": 59.44,
+      "end": 66.56,
+      "text": "write so Del Ferro wrote his cubic as x cubed plus cx is equal to d and required c and d to be positive."
+    },
+    {
+      "start": 66.56,
+      "end": 71.6,
+      "text": "Now that we have our equation set up the game here is to get x by itself on one side"
+    },
+    {
+      "start": 71.6,
+      "end": 76.56,
+      "text": "and all the constants on the other side. This is pretty easy in linear equations. We can just add,"
+    },
+    {
+      "start": 76.56,
+      "end": 82.08,
+      "text": "multiply, divide, or subtract until we get x alone. Quadratics make this a bit harder. You"
+    },
+    {
+      "start": 82.08,
+      "end": 86.24,
+      "text": "may have learned how to solve these in school. It requires some cleverness and factoring by"
+    },
+    {
+      "start": 86.24,
+      "end": 89.28,
+      "text": "completing the square. Del Ferro was trying to do the same thing"
+    },
+    {
+      "start": 89.44,
+      "end": 93.92,
+      "text": "for his cubic equation and through some clever substitution he eventually found a solution."
+    },
+    {
+      "start": 94.64,
+      "end": 99.52,
+      "text": "Just like the quadratic formula Del Ferro's new formula allowed him to find the solution"
+    },
+    {
+      "start": 99.52,
+      "end": 104.88,
+      "text": "to cubic equations by simply plugging in values. Now for some reason the way mathematicians earned"
+    },
+    {
+      "start": 104.88,
+      "end": 109.84,
+      "text": "money in the 16th century was through challenging other mathematicians to what were basically"
+    },
+    {
+      "start": 109.84,
+      "end": 114.8,
+      "text": "math duels. So Del Ferro kept his new formula a secret to use in his next duel."
+    },
+    {
+      "start": 114.8,
+      "end": 119.36,
+      "text": "What happens next is a bit of a long story. Here's the quick version. Del Ferro kept his"
+    },
+    {
+      "start": 119.44,
+      "end": 124.39999999999999,
+      "text": "formula secret until he was on his deathbed when he finally told his student Antonio Four. Four"
+    },
+    {
+      "start": 124.39999999999999,
+      "end": 128.88,
+      "text": "immediately thought he was invincible or at least invincible in a math duel and challenged a way"
+    },
+    {
+      "start": 128.88,
+      "end": 134.32,
+      "text": "more skilled mathematician, Fontana Tartaglia, to a duel. Tartaglia had already claimed he could"
+    },
+    {
+      "start": 134.32,
+      "end": 139.12,
+      "text": "solve cubic equations like this but had actually been totally faking it. Tartaglia freaked out"
+    },
+    {
+      "start": 139.12,
+      "end": 143.2,
+      "text": "before the math off and actually figured out how to solve these equations at the last minute and"
+    },
+    {
+      "start": 143.2,
+      "end": 148.64,
+      "text": "proceeded to completely dominate Fior. Tartaglia then went on to share his formula with the world."
+    },
+    {
+      "start": 149.44,
+      "end": 154.56,
+      "text": "He kept it super secret so he could keep kicking butt in math duels. That is until a very talented"
+    },
+    {
+      "start": 154.56,
+      "end": 159.52,
+      "text": "mathematician named Cardon heard about the formula and pressured Tartaglia to share."
+    },
+    {
+      "start": 159.52,
+      "end": 165.04,
+      "text": "He eventually went along but only after Cardon swore to an oath of secrecy. Fortunately for us,"
+    },
+    {
+      "start": 165.04,
+      "end": 169.6,
+      "text": "after Cardon came across the surviving work of the original discoverer, Del Ferro,"
+    },
+    {
+      "start": 169.6,
+      "end": 174.24,
+      "text": "he figured that it wasn't such a big secret and published the formula in his book Ars Magna."
+    },
+    {
+      "start": 174.24,
+      "end": 178.88,
+      "text": "Cardon went on to improve his borrowed formula, even making it work for cubics that included an"
+    },
+    {
+      "start": 178.88,
+      "end": 179.4,
+      "text": "x-squared formula. He then went on to make it work for cubic equations that included an x-squared"
+    },
+    {
+      "start": 179.4,
+      "end": 184.36,
+      "text": "term. However, along the way Cardon came across a problem. In a slightly different version of the"
+    },
+    {
+      "start": 184.36,
+      "end": 190.20000000000002,
+      "text": "equation, written as x-cubed equals cx plus d, under certain values of c and d the formula"
+    },
+    {
+      "start": 190.20000000000002,
+      "end": 195.8,
+      "text": "would break. Let's take the innocent looking equation x-cubed equals 15x plus 4. When we"
+    },
+    {
+      "start": 195.8,
+      "end": 200.52,
+      "text": "plug into Cardon's formula we get a result that involves the square root of negative numbers."
+    },
+    {
+      "start": 200.52,
+      "end": 205.4,
+      "text": "The square root of a negative number created enough of a problem to stop Cardon in his tracks."
+    },
+    {
+      "start": 206.04000000000002,
+      "end": 209.32,
+      "text": "Square roots ask us to find a number that when multiplied by itself,"
+    },
+    {
+      "start": 209.4,
+      "end": 215.0,
+      "text": "yields the number inside the root sign. The square root of 9 is 3 because 3 times 3 is 9."
+    },
+    {
+      "start": 215.56,
+      "end": 220.92000000000002,
+      "text": "Importantly, the square root of 9 is also negative 3 because negative 3 times negative 3 is also"
+    },
+    {
+      "start": 220.92000000000002,
+      "end": 226.12,
+      "text": "positive 9. But what about the roots of negative numbers? What is the square root of negative 9?"
+    },
+    {
+      "start": 226.68,
+      "end": 230.04000000000002,
+      "text": "Positive 3 won't work, and neither will negative 3, so we're stuck."
+    },
+    {
+      "start": 230.76,
+      "end": 235.08,
+      "text": "Cardon was stuck too. He didn't know of any numbers that when multiplied by themselves"
+    },
+    {
+      "start": 235.08,
+      "end": 238.84,
+      "text": "resulted in a negative. Now, this certainly wasn't the first time the square root of a negative number"
+    },
+    {
+      "start": 238.84,
+      "end": 243.4,
+      "text": "had shown up. Usually, mathematicians would interpret this as the problem's way of saying"
+    },
+    {
+      "start": 243.4,
+      "end": 249.96,
+      "text": "there are no solutions, and in many cases this is true. However, in this case, we know there is at"
+    },
+    {
+      "start": 249.96,
+      "end": 255.72,
+      "text": "least one solution because of the way cubics are shaped. Regardless of their coefficients,"
+    },
+    {
+      "start": 255.72,
+      "end": 261.0,
+      "text": "cubic functions will always cross the x-axis at least once, meaning that our equation x-cubed"
+    },
+    {
+      "start": 261.0,
+      "end": 267.0,
+      "text": "equals 15x plus 4 will have at least one real solution. So what we have here is a problem we're"
+    },
+    {
+      "start": 267.0,
+      "end": 267.88,
+      "text": "going to solve."
+    },
+    {
+      "start": 268.84000000000003,
+      "end": 273.8,
+      "text": "that must have an answer, and a formula that has been proven to work. But when we put these"
+    },
+    {
+      "start": 273.8,
+      "end": 277.88000000000005,
+      "text": "together and try to solve the problem with our formula, we quickly arrive at what appears to"
+    },
+    {
+      "start": 277.88000000000005,
+      "end": 283.48,
+      "text": "be the impossible – the square roots of negative numbers. Sometimes, when things break in math and"
+    },
+    {
+      "start": 283.48,
+      "end": 288.6,
+      "text": "science, it means just that – they're broken. But there are other, more interesting situations"
+    },
+    {
+      "start": 288.6,
+      "end": 294.20000000000005,
+      "text": "in which broken mathematics gives us the keys to unlock new insights. The way in which Cardan's"
+    },
+    {
+      "start": 294.20000000000005,
+      "end": 298.36,
+      "text": "formula was broken turned out to be incredibly important to mathematics and science,"
+    },
+    {
+      "start": 298.36,
+      "end": 300.44,
+      "text": "and that's what we'll discuss next time."
+    }
+  ],
+  "segment_count": 62
+}

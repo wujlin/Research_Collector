@@ -1,0 +1,240 @@
+{
+  "segments": [
+    {
+      "start": 0.48,
+      "end": 5.68,
+      "text": "Last time we left off wondering why some paths on our w-plane led us to completely new values"
+    },
+    {
+      "start": 5.68,
+      "end": 11.68,
+      "text": "on our z-plane while others didn't. Gauss's student Bernhard Riemann made some powerful"
+    },
+    {
+      "start": 11.68,
+      "end": 18.0,
+      "text": "insights into problems like this in the mid-19th century. The first part of Riemann's contribution"
+    },
+    {
+      "start": 18.0,
+      "end": 23.12,
+      "text": "is the idea that for problems like this we need more than two complex planes to visualize our"
+    },
+    {
+      "start": 23.12,
+      "end": 29.44,
+      "text": "function. Since each point on our w-plane maps to two points on our z-plane we can begin to resolve"
+    },
+    {
+      "start": 29.44,
+      "end": 34.72,
+      "text": "our ambiguity by adding a second w-plane and letting each of our two points on z"
+    },
+    {
+      "start": 34.72,
+      "end": 40.24,
+      "text": "map to its very own copy of the w-plane. So that's fine but it immediately raises"
+    },
+    {
+      "start": 40.24,
+      "end": 44.64,
+      "text": "an important question. How do we pick which z-values to map to each plane?"
+    },
+    {
+      "start": 47.040000000000006,
+      "end": 51.44,
+      "text": "A simple and effective approach here is to simply divide the z-plane into two halves."
+    },
+    {
+      "start": 52.0,
+      "end": 57.040000000000006,
+      "text": "We'll let the right half map to our first w-plane and the left half map to our second w-plane."
+    },
+    {
+      "start": 58.0,
+      "end": 59.42,
+      "text": "These restricted versions of our"
+    },
+    {
+      "start": 59.42,
+      "end": 60.940000000000005,
+      "text": "multi-function are called branches."
+    },
+    {
+      "start": 63.82,
+      "end": 69.74000000000001,
+      "text": "Let's draw a path again but this time just on our first w-plane. Things look just fine until we"
+    },
+    {
+      "start": 69.74000000000001,
+      "end": 75.5,
+      "text": "cross the negative real axis and our path on the z-plane suddenly jumps. This of course is what"
+    },
+    {
+      "start": 75.5,
+      "end": 81.58,
+      "text": "must happen. We've required points from our first w-plane to only map to the right side of our z-plane."
+    },
+    {
+      "start": 82.46000000000001,
+      "end": 88.62,
+      "text": "Almost every point on w has two possible solutions on z and with our first branch we've decided to"
+    },
+    {
+      "start": 89.42,
+      "end": 95.02,
+      "text": "just leave one on the right. So our path now jumps around the z-plane. But what's perhaps more"
+    },
+    {
+      "start": 95.02,
+      "end": 99.74000000000001,
+      "text": "disappointing here is that we haven't gained any insight into our interesting loop behavior we saw"
+    },
+    {
+      "start": 99.74000000000001,
+      "end": 105.1,
+      "text": "last time. In fact we can't even recreate this setup. No matter what kind of loop we draw we"
+    },
+    {
+      "start": 105.1,
+      "end": 110.78,
+      "text": "always end up exactly where we started on both the z and w planes. It seems we've legalized this"
+    },
+    {
+      "start": 110.78,
+      "end": 117.1,
+      "text": "behavior out of existence. Further the fact that our function jumps across the z-plane means that"
+    },
+    {
+      "start": 117.1,
+      "end": 117.86,
+      "text": "our branches are discontinuous. A huge difference. So let's start with z. We've got a z-plane and a"
+    },
+    {
+      "start": 117.86,
+      "end": 118.38,
+      "text": "z-plane. We've got a z-plane and a z-plane. We've got a z-plane and a z-plane. We've got a z-plane and a z-plane."
+    },
+    {
+      "start": 118.38,
+      "end": 119.1,
+      "text": "We've got a z-plane and a z-plane. We've got a z-plane and a z-plane. We've got a z-plane and a z-plane."
+    },
+    {
+      "start": 119.1,
+      "end": 124.46,
+      "text": "A huge problem mathematically. Functions of complex variables are a big part of modern"
+    },
+    {
+      "start": 124.46,
+      "end": 129.26,
+      "text": "mathematics and science. And if our functions are jumping around like this we can't do important"
+    },
+    {
+      "start": 129.26,
+      "end": 135.26,
+      "text": "things like take derivatives and integrals. So we've fixed the multi-valued problem by splitting"
+    },
+    {
+      "start": 135.26,
+      "end": 140.85999999999999,
+      "text": "our multi-function into branches. Our function is now one to one. But in the process we've introduced"
+    },
+    {
+      "start": 140.85999999999999,
+      "end": 147.26,
+      "text": "some serious issues. Thus far Riemann's solution is not looking so great. Fortunately that was just"
+    },
+    {
+      "start": 147.26,
+      "end": 147.82,
+      "text": "part one and part two of the problem was solved. So now we just have to figure out how to fix it."
+    },
+    {
+      "start": 147.82,
+      "end": 148.14,
+      "text": "So now we just have to figure out how to fix it. So now we just have to figure out how to fix it. So"
+    },
+    {
+      "start": 148.14000000000001,
+      "end": 153.26000000000002,
+      "text": "part two is much cooler. Let's consider our discontinuity problem in a bit more detail."
+    },
+    {
+      "start": 153.98000000000002,
+      "end": 158.3,
+      "text": "We'll switch back to our forward function momentarily and again draw on our z-plane."
+    },
+    {
+      "start": 159.42000000000002,
+      "end": 162.54000000000002,
+      "text": "Let's pay careful attention to where our discontinuities show up."
+    },
+    {
+      "start": 163.34,
+      "end": 167.66000000000003,
+      "text": "We'll follow the points along a single path and to make sure we can tell our points apart"
+    },
+    {
+      "start": 167.66000000000003,
+      "end": 173.42000000000002,
+      "text": "we'll continuously change the color of our path. As we move from quadrant one to quadrant two on z"
+    },
+    {
+      "start": 173.42000000000002,
+      "end": 177.58,
+      "text": "we switch branches. We switch back to our first branch when moving from"
+    },
+    {
+      "start": 177.58,
+      "end": 184.06,
+      "text": "quadrant three to four. For our path to be continuous we need to somehow connect our 2w"
+    },
+    {
+      "start": 184.06,
+      "end": 190.46,
+      "text": "planes at the exact points where our path jumps. What Riemann saw here was a way to bring together"
+    },
+    {
+      "start": 190.46,
+      "end": 195.58,
+      "text": "our two complex planes in such a way that our multi-function would be perfectly continuous"
+    },
+    {
+      "start": 195.58,
+      "end": 199.66000000000003,
+      "text": "while maintaining the nice one-to-one properties of our 2w plane solution."
+    },
+    {
+      "start": 200.3,
+      "end": 204.78,
+      "text": "Our next step is to grab some scissors and tape. We'll figure out what to do with them next time."
+    },
+    {
+      "start": 207.58,
+      "end": 217.02,
+      "text": "It's so cool!"
+    },
+    {
+      "start": 217.02,
+      "end": 221.42000000000002,
+      "text": "Considerach-Rath predictions have increased substantially as we gain greater technical clarity,"
+    },
+    {
+      "start": 221.42000000000002,
+      "end": 227.42000000000002,
+      "text": "even though these findings sprout up when we slow- Heehee haha"
+    },
+    {
+      "start": 227.42000000000002,
+      "end": 233.5,
+      "text": "Thank you for watching!"
+    },
+    {
+      "start": 233.5,
+      "end": 235.36,
+      "text": "Subtitles by the Amara.org community"
+    }
+  ],
+  "segment_count": 47
+}

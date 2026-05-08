@@ -855,7 +855,53 @@ Eq. (3) 的意义是：要得到 scale $\lambda$ 下的 coarse path，不需要�
 
 ### 4.3 Eq. (4)：conditional density
 
-由 Eq. (3) 可以直接得到条件分布：
+由 Eq. (3) 可以直接得到条件分布。这里需要把“直接得到”展开一下。
+
+先固定一个 physical time slice $t^{(n)}$。Eq. (3) 在这个时间片上读作：
+
+$$
+u_\lambda(\cdot,t^{(n)})
+=
+\mathcal{C}_\lambda u_0(\cdot,t^{(n)})
++
+\sqrt{\Sigma_\lambda}\epsilon(\cdot,t^{(n)}).
+$$
+
+在这个式子里，$\mathcal{C}_\lambda u_0(\cdot,t^{(n)})$ 是确定性部分。也就是说，只要给定 fine-resolution field $u_0(\cdot,t^{(n)})$，coarse-graining operator $\mathcal{C}_\lambda$ 就会把它变成 scale $\lambda$ 下的平均场。
+
+随机部分来自：
+
+$$
+\sqrt{\Sigma_\lambda}\epsilon(\cdot,t^{(n)}).
+$$
+
+因为 $\epsilon$ 是标准 Gaussian，线性变换后的随机变量仍然是 Gaussian。因此，在给定这一帧 fine field 的条件下，这一帧 coarse field 的分布是：
+
+$$
+u_\lambda(\cdot,t^{(n)})
+\mid
+u_0(\cdot,t^{(n)})
+\sim
+\mathcal{N}\!\left(
+\mathcal{C}_\lambda u_0(\cdot,t^{(n)}),
+\Sigma_\lambda
+\right).
+$$
+
+这一步只说明单个 time slice 的 conditional density。Eq. (4) 要写的是整条 spatiotemporal path 的 conditional density，所以需要把所有 time slices 合起来。
+
+作者的 forward RG corruption 没有沿 physical time $t$ 做卷积，也没有让 $\lambda$-noise 在不同 $t^{(n)}$ 之间相关。也就是说，在已经给定整条 fine path $\{u_0\}_t$ 的条件下，每个 time slice 的 corruption noise 是独立的：
+
+$$
+\epsilon(\cdot,t^{(0)}),
+\epsilon(\cdot,t^{(1)}),
+\ldots,
+\epsilon(\cdot,t^{(N_t)})
+\quad
+\text{are conditionally independent}.
+$$
+
+所以整条 path 的 conditional density 就等于每一帧 conditional density 的乘积：
 
 $$
 \begin{aligned}
@@ -871,9 +917,110 @@ $$
 \tag{4}
 $$
 
-这个 product form 的含义是：coarse-graining 对每个 $t^{(n)}$ 独立作用。也就是说，$\lambda$ 方向的 forward corruption 不在时间上卷积，不会用未来状态污染当前状态。
+这个 product form 的含义是：Eq. (4) 是一个 corruption kernel，而不是一个 temporal dynamics model。它只描述：
 
-需要注意，Eq. (4) 并不是说不同时间步在数据中独立。它只是说，在给定整条 fine path $\{u_0\}_t$ 后，RG corruption 在每个 time slice 上独立。时间相关性仍然来自 fine path 的数据分布 $q_{\mathrm d}$。
+$$
+\text{given a fine path, how to stochastically coarse-grain each frame}.
+$$
+
+因此，$\Sigma_\lambda$ 描述的是一个 time slice 内部的空间 covariance。它告诉我们：同一帧里不同 spatial grid points 的 forward noise 如何相关。它不描述不同时间步之间的 covariance。
+
+这也是为什么 Eq. (4) 对 causality 很重要。如果 coarse-graining 同时作用在 $t$ 轴上，那么当前 frame 的 coarse state 可能混入未来 frame 的信息。这样后面的 temporal predictor 在训练时就可能偷看到未来。本文故意让 $\mathcal{C}_\lambda$ 只作用在 $x$ 上，并让 product over $n$ 成立，就是为了保证 $\lambda$ 方向的 corruption 不破坏 physical time 上的 causal ordering。
+
+但这一步不能误读成“数据本身在时间上独立”。这里要区分两个层次。
+
+第一层是给定 fine path 之后的 corruption process。令
+
+$$
+U_0^{(n)}:=u_0(\cdot,t^{(n)}),
+\qquad
+U_\lambda^{(n)}:=u_\lambda(\cdot,t^{(n)}).
+$$
+
+Eq. (3) 在每个时间片上就是：
+
+$$
+U_\lambda^{(n)}
+=
+\mathcal{C}_\lambda U_0^{(n)}
++
+\sqrt{\Sigma_\lambda}\epsilon^{(n)}.
+$$
+
+在已经知道整条 fine path $\{U_0^{(n)}\}_{n=0}^{N_t}$ 的条件下，$\mathcal{C}_\lambda U_0^{(n)}$ 都是固定的均值。剩下的随机性只来自每个时间片新抽的 $\epsilon^{(n)}$。因为这些 $\epsilon^{(n)}$ 在不同 $n$ 之间独立，所以有条件独立：
+
+$$
+\{u_\lambda(\cdot,t^{(n)})\}_{n=0}^{N_t}
+\quad
+\text{are independent only after conditioning on }
+\{u_0\}_t.
+$$
+
+这句话的意思不是：
+
+$$
+U_\lambda^{(0)},U_\lambda^{(1)},\ldots,U_\lambda^{(N_t)}
+\quad
+\text{在数据分布下彼此独立}.
+$$
+
+它只是在说：
+
+$$
+\text{once the underlying fine trajectory is fixed,}
+\quad
+\text{the extra RG corruption noises are independent across time}.
+$$
+
+第二层是没有条件化时的 coarse path distribution。真实 fine path 不是一组独立 frame，而是从真实数据分布中抽出来的整条 trajectory：
+
+$$
+\{u_0\}_t\sim q_{\mathrm d}(\{u_0\}_t).
+$$
+
+如果系统有 dynamics，那么相邻时间片通常相关。例如 $U_0^{(n+1)}$ 是由 $U_0^{(n)}$ 演化来的，所以 $q_{\mathrm d}$ 一般不会分解成：
+
+$$
+q_{\mathrm d}(\{u_0\}_t)
+\ne
+\prod_{n=0}^{N_t}q_{\mathrm d}(U_0^{(n)}).
+$$
+
+这条 fine trajectory 的时间相关会通过 $\mathcal{C}_\lambda$ 传递给 coarse trajectory。可以用两帧之间的 covariance 看得更清楚。对 $n\ne m$，因为 corruption noises $\epsilon^{(n)}$ 和 $\epsilon^{(m)}$ 独立，noise 本身不给跨时间 covariance；但均值项仍然相关：
+
+$$
+\mathrm{Cov}\!\left(
+U_\lambda^{(n)},U_\lambda^{(m)}
+\right)
+=
+\mathcal{C}_\lambda\,
+\mathrm{Cov}\!\left(
+U_0^{(n)},U_0^{(m)}
+\right)
+\mathcal{C}_\lambda^\top .
+$$
+
+所以只要 fine path 中 $U_0^{(n)}$ 和 $U_0^{(m)}$ 有 temporal correlation，coarse path 中 $U_\lambda^{(n)}$ 和 $U_\lambda^{(m)}$ 也会有 temporal correlation。独立的是“额外加进去的 corruption noise”，不是最终得到的 coarse frames。
+
+后面的 Eq. (5) 正是在做这个非条件化过程。它把 $\{u_0\}_t$ 积分掉：
+
+$$
+q_\lambda(\{u_\lambda\}_t)
+=
+\int \mathcal{D}u_0\,
+q_\lambda(\{u_\lambda\}_t\mid\{u_0\}_t)
+q_{\mathrm d}(\{u_0\}_t).
+$$
+
+积分之后，$q_\lambda(\{u_\lambda\}_t)$ 不再只是 Eq. (4) 的 product kernel，而是 data trajectory distribution $q_{\mathrm d}$ 经过 stochastic coarse-graining 后得到的 marginal path distribution。它仍然是一条有时间结构的 coarse-grained path distribution。
+
+所以 Eq. (4) 的准确读法是：
+
+$$
+\text{time-independent corruption kernel}
+\ne
+\text{time-independent data trajectory}.
+$$
 
 ### 4.4 Eq. (5)：coarse-grained path density
 
@@ -913,7 +1060,75 @@ f_\lambda^\theta(u_\lambda)
 \tag{6}
 $$
 
-$f_\lambda^\theta$ 是 neural predictor，也叫 drift。它的输入可以包括当前状态和若干过去状态。理论上先写成 Markov drift；如果用 history window，则通过 state augmentation 恢复 Markov form。
+$f_\lambda^\theta$ 是 neural predictor，也叫 drift。主文先把它写成只依赖当前状态的 Markov drift：
+
+$$
+f_\lambda^\theta(u_\lambda(t)).
+$$
+
+Markov 的意思是：如果当前 state 已经给定，下一步的分布不再需要更早的历史。离散地说就是：
+
+$$
+p(u_\lambda(t^{(n+1)})\mid u_\lambda(t^{(n)}),u_\lambda(t^{(n-1)}),\ldots)
+=
+p(u_\lambda(t^{(n+1)})\mid u_\lambda(t^{(n)})).
+$$
+
+这个假设让后面的 path density 容易写成 transition probabilities 的乘积。也就是说，Eq. (7) 能写得简洁，是因为每一步只需要比较：
+
+$$
+\partial_t u_\lambda(t)
+\quad\text{and}\quad
+f_\lambda^\theta(u_\lambda(t)).
+$$
+
+但实际网络往往不只看当前 frame，而是看一个 history window。例如输入当前状态和前四个 time steps：
+
+$$
+f_\lambda^\theta(
+u_\lambda(t^{(n)}),
+u_\lambda(t^{(n-1)}),
+\ldots,
+u_\lambda(t^{(n-K+1)})
+).
+$$
+
+表面上看，这不再是关于单个变量 $u_\lambda(t^{(n)})$ 的 Markov dynamics，因为下一步显式依赖过去。原因也很自然：coarse-graining 把小尺度变量消掉之后，大尺度变量的有效演化会带有 memory。只看当前 coarse frame，可能不足以判断小尺度反馈留下来的趋势。
+
+state augmentation 的做法是：不要把 state 只定义成当前 frame，而是把整个 history window 当成新的 state：
+
+$$
+Y^{(n)}
+:=
+\big(
+u_\lambda(t^{(n)}),
+u_\lambda(t^{(n-1)}),
+\ldots,
+u_\lambda(t^{(n-K+1)})
+\big).
+$$
+
+这样，模型虽然对原变量 $u_\lambda(t^{(n)})$ 是 history-dependent，但对增强变量 $Y^{(n)}$ 是 Markov 的：
+
+$$
+p(Y^{(n+1)}\mid Y^{(n)},Y^{(n-1)},\ldots)
+=
+p(Y^{(n+1)}\mid Y^{(n)}).
+$$
+
+原因是 $Y^{(n)}$ 已经把模型下一步需要的历史全部装进来了。更新时第一格由 predictor 生成下一帧，后面的格子只是把历史向后平移：
+
+$$
+\big(
+u^{(n)},u^{(n-1)},u^{(n-2)}
+\big)
+\rightarrow
+\big(
+u^{(n+1)},u^{(n)},u^{(n-1)}
+\big).
+$$
+
+因此，“通过 state augmentation 恢复 Markov form”不是说系统真的没有记忆，而是说：只要把记忆变量并入 state，路径概率仍然可以用 Markov chain 的形式写。Appendix A.5 的 Eq. (32)-Eq. (36) 就是在用当前帧加前一帧的二阶 state 例子，把这个逻辑正式写出来。
 
 $\xi(x,t)$ 是 physical-time white Gaussian noise。它不同于 Eq. (1) 里的 $\eta_\lambda$。两者对应不同轴：
 
@@ -930,7 +1145,155 @@ $\sigma_\lambda$ 是 physical-time governing equation 的 noise amplitude。它�
 
 ### 4.6 Eq. (7)：predictor-induced path density
 
-在 Itô 约定和 Euler-Maruyama 离散化下，Eq. (6) 诱导 path density：
+Eq. (7) 的作用是把 predictor 从一个“回归器”变成一个“轨迹概率模型”。这一步不能只读成形式上的指数，而要从 Eq. (6) 的一步随机更新开始。
+
+先把 physical time 离散成：
+
+$$
+t^{(n)}
+=
+n\Delta t,
+\qquad
+n=0,\ldots,N_t.
+$$
+
+为简洁起见，把 $u_\lambda(\cdot,t^{(n)})$ 写成 $u_\lambda^{(n)}$。在 Itô 约定下，drift 用当前时刻的状态计算，而不是用未来状态或中点状态计算。Euler-Maruyama 离散化给出：
+
+$$
+u_\lambda^{(n+1)}
+=
+u_\lambda^{(n)}
++
+f_\lambda^\theta(u_\lambda^{(n)})\Delta t
++
+\sigma_\lambda \xi^{(n)}\Delta t .
+$$
+
+这里 $\xi^{(n)}$ 是 white Gaussian noise 的离散版本。因为 white noise 可以理解成 Brownian increment 除以 $\Delta t$，所以它的尺度是：
+
+$$
+\xi^{(n)}
+\sim
+\mathcal{N}\!\left(0,\frac{1}{\Delta t}I_D\right),
+$$
+
+其中 $D$ 是一个 time slice 内的 state dimension，也就是所有空间点和通道合起来的维度。因此随机增量满足：
+
+$$
+\sigma_\lambda\xi^{(n)}\Delta t
+\sim
+\mathcal{N}\!\left(0,\sigma_\lambda^2\Delta t\,I_D\right).
+$$
+
+于是，给定当前状态 $u_\lambda^{(n)}$ 后，下一步状态的 conditional transition density 是 Gaussian：
+
+$$
+u_\lambda^{(n+1)}
+\mid
+u_\lambda^{(n)}
+\sim
+\mathcal{N}\!\left(
+u_\lambda^{(n)}
++
+f_\lambda^\theta(u_\lambda^{(n)})\Delta t,
+\sigma_\lambda^2\Delta t\,I_D
+\right).
+$$
+
+这一步的含义是：predictor 给出下一步的平均位置，$\sigma_\lambda$ 给出围绕这个平均位置的随机波动宽度。若实际下一帧离 predictor 的平均预测越远，这个 transition probability 就越小。
+
+把这个 Gaussian density 写成指数形式，就是：
+
+$$
+p(
+u_\lambda^{(n+1)}
+\mid
+u_\lambda^{(n)}
+)
+\propto
+\exp\left[
+-
+\frac{
+\left\|
+u_\lambda^{(n+1)}
+-
+u_\lambda^{(n)}
+-
+f_\lambda^\theta(u_\lambda^{(n)})\Delta t
+\right\|^2
+}{
+2\sigma_\lambda^2\Delta t
+}
+\right].
+$$
+
+分子里的残差可以除以 $\Delta t$，改写成“实际时间导数”和“predictor drift”的差：
+
+$$
+\frac{
+u_\lambda^{(n+1)}-u_\lambda^{(n)}
+}{
+\Delta t
+}
+-
+f_\lambda^\theta(u_\lambda^{(n)}).
+$$
+
+所以单步 exponent 也可以写成：
+
+$$
+-
+\frac{\Delta t}{2\sigma_\lambda^2}
+\left\|
+\frac{
+u_\lambda^{(n+1)}-u_\lambda^{(n)}
+}{
+\Delta t
+}
+-
+f_\lambda^\theta(u_\lambda^{(n)})
+\right\|^2.
+$$
+
+接下来用 Markov factorization。整条 path 的 density 等于 initial density 乘上所有 transition densities：
+
+$$
+p_\lambda(\{u_\lambda\}_t)
+=
+r_\lambda(u_\lambda^{(0)})
+\prod_{n=0}^{N_t-1}
+p(
+u_\lambda^{(n+1)}
+\mid
+u_\lambda^{(n)}
+).
+$$
+
+如果使用 history window，那么 $r_\lambda$ 应该理解为 initial history window 的 density；如果只用当前状态，则它就是 $t=t^{(0)}$ 的 initial density。
+
+把所有 Gaussian normalization constants 合到 $Z_\lambda$ 里，再把 product of exponentials 合成 exponential of sum，就得到：
+
+$$
+p_\lambda(\{u_\lambda\}_t)
+=
+\frac{r_\lambda}{Z_\lambda}
+\exp\left[
+-
+\sum_{n=0}^{N_t-1}
+\frac{\Delta t}{2\sigma_\lambda^2}
+\left\|
+\frac{
+u_\lambda^{(n+1)}-u_\lambda^{(n)}
+}{
+\Delta t
+}
+-
+f_\lambda^\theta(u_\lambda^{(n)})
+\right\|^2
+\right].
+$$
+
+主文的 Eq. (7) 是这条离散式子的连续记号。把 finite difference 写成 $\partial_t u_\lambda$，把对 time steps、spatial grid points 和 channels 的求和写成 $\int_{\mathrm{x,t}}$，就得到 predictor-induced path density：
 
 $$
 p_\lambda(\{u_\lambda\}_t)
@@ -948,9 +1311,66 @@ p_\lambda(\{u_\lambda\}_t)
 \tag{7}
 $$
 
-这里 $p_\lambda$ 是 surrogate path density，不是 data path density。它由 learned predictor $f_\lambda^\theta$ 定义。
+这里 $p_\lambda$ 是 surrogate path density，不是 data path density。它不是从真实样本统计出来的 $q_\lambda$，而是由 learned predictor $f_\lambda^\theta$ 和 noise amplitude $\sigma_\lambda$ 定义出来的轨迹分布。
 
-$r_\lambda$ 是 initial density，也就是 $t=t^{(0)}$ 处的 boundary distribution。训练时它会变成常数项；reverse-$\lambda$ sampling 时它的 score 会影响 temporal boundary，所以 Appendix B.6 用 extrapolation 处理。
+$r_\lambda$ 是 initial density，也就是 temporal boundary distribution。训练 Eq. (8) 时，$r_\lambda$ 不含 learnable parameter $\theta$，所以进入 KL 后会变成常数项，不影响 predictor 的回归目标。reverse-$\lambda$ sampling 时情况不同，因为采样需要的是 path score：
+
+$$
+\nabla_{u_\lambda}\ln p_\lambda(\{u_\lambda\}_t).
+$$
+
+这时要注意一个训练阶段没有出现的问题。Eq. (7) 的 log-density 可以拆成三块：
+
+$$
+\ln p_\lambda(\{u_\lambda\}_t)
+=
+\ln r_\lambda(u_\lambda(\cdot,t^{(0)}))
+-
+\int_{\mathrm{x,t}}
+\frac{\|\partial_t u_\lambda-f_\lambda^\theta(u_\lambda)\|^2}{2\sigma_\lambda^2}
+-
+\ln Z_\lambda.
+$$
+
+对整条 path 求 score 时，每个 time slice 都会收到来自 path energy 的梯度。中间时间片比较自然：它同时出现在前一个 transition 和后一个 transition 里，所以它的更新由相邻时间片和 predictor residual 共同决定。
+
+但第一个时间片 $u_\lambda(\cdot,t^{(0)})$ 不只是 transition chain 的起点。它还出现在 initial density $r_\lambda$ 里，因此它的 score 多出一项：
+
+$$
+\nabla_{u_\lambda(\cdot,t^{(0)})}
+\ln p_\lambda
+=
+\nabla_{u_\lambda(\cdot,t^{(0)})}
+\ln r_\lambda
++
+\text{path-energy score at }t^{(0)}.
+$$
+
+训练时这项可以忽略，是因为 $r_\lambda$ 不含 learnable parameter $\theta$，放进 KL objective 后只给出常数。forward-$t$ simulation 也不需要它，因为 simulation 只从给定 initial condition 出发，然后沿 $f_\lambda^\theta$ 向前积分。
+
+reverse-$\lambda$ generation 不一样。采样时整条 path 都是变量，Algorithm 3 每一步都要计算
+
+$$
+s_\lambda
+=
+\nabla_{u_\lambda}\ln p_\lambda(\{u_\lambda\}_t).
+$$
+
+如果不处理 $r_\lambda$ 的 score，那么 $t^{(0)}$ 的更新会缺一块 boundary force。这个缺口不是一个局部小细节，因为 predictor 通常用 history window 或相邻时间片来定义 temporal dynamics；起始时间片一旦被不合理地推歪，误差会沿着前几个时间片传播，使生成 path 在 temporal boundary 附近出现不自然的 kink。
+
+Appendix B.6 的处理是：不显式建模 $r_\lambda$，而是在每次 predictor step 和 Langevin corrector step 后，直接覆盖起始边界值。按 linear extrapolation 的含义，写成：
+
+$$
+u_{\lambda-\Delta\lambda}(\boldsymbol{x},t^{(0)})
+\leftarrow
+2u_{\lambda-\Delta\lambda}(\boldsymbol{x},t^{(1)})
+-
+u_{\lambda-\Delta\lambda}(\boldsymbol{x},t^{(2)}).
+$$
+
+这条式子的意思是：用第一个和第二个内部时间片反推出 boundary value，让 $t^{(0)},t^{(1)},t^{(2)}$ 在局部看起来像一条线性时间趋势。它不是在估计真实的 $\nabla\ln r_\lambda$，而是给 reverse sampling 加一个稳定的 temporal boundary condition，避免起始时间片被未知 initial-density score 随机牵引。
+
+所以这里更准确的说法不是“首尾时间片”，而是“起始 temporal boundary 及其邻近时间片”。作者还说明，即使 drift 使用过去四个 time steps，实验中只覆盖 $t^{(0)}$ 已经足够。这也暴露了一个 limitation：对于 stationary systems，把 $r_\lambda$ 当作 empirical given 并用 extrapolation 稳定边界通常可以接受；但对于 transient systems，initial distribution 本身可能携带重要信息，未来仍需要显式建模 $r_\lambda$ 或它的 score。
 
 $Z_\lambda$ 是 normalization constant。由于 $\sigma_\lambda$ 被设为 state-independent，$Z_\lambda$ 只依赖 $\sigma_\lambda,\Delta t$ 和维度，不依赖 $f_\lambda^\theta$。
 
@@ -1112,7 +1532,40 @@ Appendix A.6 会说明 Eq. (10) 是主文中的简化直觉；更精确的最优
 
 ### 4.10 Eq. (11)：inference 时的 reverse-$\lambda$ sampling
 
-训练完后，生成和超分辨率都使用：
+训练完后，作者进入 inference。这里 inference 分成两类：simulation 沿 physical time $t$ 前向积分 Eq. (6)，generation / super-resolution 则沿 diffusion scale $\lambda$ 反向积分。Eq. (11) 对应的是后一类。
+
+先回忆理想情况。Eq. (2) 给出的 reverse RG diffusion 需要真实 coarse-grained path density：
+
+$$
+q_\lambda(\{u_\lambda\}_t).
+$$
+
+如果我们知道这个 density，就可以用真实 score
+
+$$
+\nabla_{u_\lambda}\ln q_\lambda(\{u_\lambda\}_t)
+$$
+
+来引导 reverse-$\lambda$ sampling。问题是，$q_\lambda$ 是 data path distribution 经过 forward RG corruption 后的 marginal distribution。它由真实数据隐式定义，一般不能直接写出，也不能直接求梯度。
+
+本文的替代路线是：不直接学习 $q_\lambda$ 的 score，而是先用 temporal predictor $f_\lambda^\theta$ 定义一个 surrogate path density：
+
+$$
+p_\lambda(\{u_\lambda\}_t)
+=
+\frac{r_\lambda}{Z_\lambda}
+\exp\left[
+-
+\int_{\mathrm{x,t}}
+\frac{
+\|\partial_t u_\lambda-f_\lambda^\theta(u_\lambda)\|^2
+}{
+2\sigma_\lambda^2
+}
+\right].
+$$
+
+然后用这个 density 的 score 作为 reverse sampling 的 score：
 
 $$
 \partial_\lambda u_\lambda
@@ -1129,19 +1582,120 @@ s_\lambda
 \tag{11}
 $$
 
-它和 Eq. (2) 的区别是：真实 score
+这里 $s_\lambda$ 是 path score。它不是单个 time slice 的 score，而是对整条 spatiotemporal path $\{u_\lambda\}_t$ 求梯度。也就是说，$s_\lambda$ 的每个分量都在问：
 
 $$
+\text{如果我微调某个 }(\boldsymbol{x},t^{(n)})\text{ 上的 }u_\lambda,
+\text{整条 path 的 log-density 会怎么变？}
+$$
+
+这个 score 能够把时间一致性放进 reverse-$\lambda$ sampling。原因是 $p_\lambda$ 的 exponent 不是逐帧图像能量，而是 path residual energy：
+
+$$
+\int_{\mathrm{x,t}}
+\|\partial_t u_\lambda-f_\lambda^\theta(u_\lambda)\|^2.
+$$
+
+如果某个 reverse update 让某些 frame 之间的 temporal derivative 不再像 predictor dynamics，那么这条 path 的 $p_\lambda$ 会下降，score 会把它拉回更符合 learned dynamics 的方向。
+
+Eq. (11) 的三项可以逐项读。
+
+第一项是
+
+$$
+\alpha\nabla_x^2u_\lambda.
+$$
+
+这是 forward RG diffusion 中保留下来的 Laplacian 结构。注意采样时实际是从大 $\lambda$ 积分到小 $\lambda$，所以这个项在 reverse direction 上起到 anti-diffusion / high-frequency restoration 的作用：它允许被 coarse-graining 压低的高波数结构重新长出来。
+
+第二项是
+
+$$
+-\beta^2s_\lambda.
+$$
+
+这项决定“哪些细节应该长出来”。如果只有 anti-diffusion，reverse process 会盲目放大高频噪声；score term 则用 path density 告诉系统：哪些 high-frequency / fine-scale corrections 能让整条 trajectory 更像训练数据中的 path。
+
+第三项是
+
+$$
+\beta\eta_\lambda.
+$$
+
+它保留随机性。原因是从 coarse path 到 fine path 通常不是一对一映射。同一个 coarse spatiotemporal path 可能对应多个 fine-resolution realizations。噪声项让 reverse-$\lambda$ sampling 能在这些可能细节之间采样，而不是只给出一个 deterministic reconstruction。
+
+因此 Eq. (11) 和 Eq. (2) 的核心区别可以写成：
+
+$$
+\underbrace{
 \nabla_{u_\lambda}\ln q_\lambda(\{u_\lambda\}_t)
-$$
-
-被 predictor-induced score
-
-$$
+}_{\text{true but unavailable score}}
+\quad
+\Longrightarrow
+\quad
+\underbrace{
 \nabla_{u_\lambda}\ln p_\lambda(\{u_\lambda\}_t)
+}_{\text{predictor-induced score}}.
 $$
 
-替代。训练目标 Eq. (9) 的目的就是让 $p_\lambda\approx q_\lambda$，从而让这个替代有效。
+训练目标 Eq. (9) 的作用就是让这个替代尽量合理。Eq. (9) 最小化的是：
+
+$$
+D_{\mathrm{KL}}(q_\lambda\|p_\lambda)
+$$
+
+在 temporal increments 上诱导出的 regression loss。若训练成功，$p_\lambda$ 会在 path distribution 层面靠近 $q_\lambda$。于是：
+
+$$
+p_\lambda\approx q_\lambda
+\quad\Rightarrow\quad
+\nabla\ln p_\lambda\approx\nabla\ln q_\lambda.
+$$
+
+这一步要读成 modeling approximation，而不是严格数学定理。KL 变小本身不自动保证每个点上的 score 都精确相等；真正需要的是在 reverse sampling 经常访问的 high-probability path region 里，$p_\lambda$ 的 log-density landscape 和 $q_\lambda$ 足够接近。换句话说，如果 predictor-induced path density 已经把训练数据中的 temporal dynamics、coarse-scale uncertainty 和 path-level correlations 拟合得足够好，那么它的 score 就可以作为真实 reverse score 的有效近似。
+
+这也是本文区别于普通 score-based diffusion 的关键点。普通做法通常直接训练 score network：
+
+$$
+s_\theta(u_\lambda,\lambda)
+\approx
+\nabla_{u_\lambda}\ln q_\lambda.
+$$
+
+本文则训练 temporal predictor：
+
+$$
+f_\lambda^\theta
+\quad\Rightarrow\quad
+p_\lambda(\{u_\lambda\}_t)
+\quad\Rightarrow\quad
+s_\lambda=\nabla_{u_\lambda}\ln p_\lambda.
+$$
+
+也就是说，score 不是独立参数化出来的，而是从 learned dynamics 的 path density 中自动导出的。实现上，因为 Eq. (7) 对整条 tensor $\{u_\lambda\}_t$ 可微，作者可以用 automatic differentiation 直接计算 $s_\lambda$，不需要额外训练 score network，也不需要对 physical-time rollout 反复反向传播。
+
+最后看生成和超分辨率为什么共用 Eq. (11)。两者的 reverse dynamics 相同，区别只在 initial condition：
+
+$$
+\begin{aligned}
+\text{generation:}\quad
+&\{u_{\lambda_{\max}}\}_t
+\sim
+\mathcal{N}(0,\Sigma_{\lambda_{\max}}),\\
+\text{super-resolution:}\quad
+&\{u_{\lambda_{\max}}\}_t
+=
+\text{given coarse path}.
+\end{aligned}
+$$
+
+然后二者都沿 Eq. (11) 从 $\lambda_{\max}$ 走向 $\lambda_{\min}$，通常目标是 $\lambda_{\min}=0$。如果 $p_\lambda\approx q_\lambda$ 足够好，那么 reverse-$\lambda$ sampling 最终得到的 fine path 就近似来自：
+
+$$
+q_0=q_{\mathrm d}.
+$$
+
+这就是 Eq. (11) 的位置：它把前面的三个部分接起来。Eq. (1)-Eq. (5) 定义 data-induced multiscale path distributions，Eq. (6)-Eq. (9) 训练 predictor-induced path density 去逼近它们，Eq. (11) 则把这个 learned path density 的 score 用于实际生成。
 
 ---
 
@@ -1163,7 +1717,94 @@ $$
 
 ### 5.2 Unconditional generation：从 Gaussian noise 出发，沿 $\lambda$ 反向
 
-generation 从大 $\lambda$ 的 Gaussian noise path 初始化，再用 Eq. (11) 从 $\lambda_{\max}$ 积分到 $\lambda_{\min}$。这时生成对象不是单个空间场，而是一整条 spatiotemporal trajectory。
+generation 是 unconditional 的意思是：采样开始时没有给定真实 initial condition，也没有给定 low-resolution simulation path。模型只从 diffusion scale 很大的随机 path 出发。
+
+在 Algorithm 3 里，这个起点写成：
+
+$$
+u_{\lambda_{\max}}(\cdot,t^{(n)})
+\sim
+\mathcal{N}(0,\Sigma_{\lambda_{\max}}),
+\qquad
+n=0,\ldots,N_t.
+$$
+
+这里要注意两层含义。
+
+第一，$\lambda_{\max}$ 很大，表示 spatial field 已经被 coarse-graining / noising 推到很粗的尺度。小尺度结构基本不可见，所以起点可以近似看成 Gaussian noise。
+
+第二，作者不是只采样一个空间场 $u_{\lambda_{\max}}(\cdot,t^{(0)})$，而是对所有 time slices 采样：
+
+$$
+\{u_{\lambda_{\max}}\}_t
+=
+\left(
+u_{\lambda_{\max}}(\cdot,t^{(0)}),
+u_{\lambda_{\max}}(\cdot,t^{(1)}),
+\ldots,
+u_{\lambda_{\max}}(\cdot,t^{(N_t)})
+\right).
+$$
+
+也就是说，生成对象从一开始就是一个 spatiotemporal tensor。它有空间维度、时间维度和 channel 维度。Eq. (11) 不是把一帧图像从 noise 去噪成 clean image，而是把一整条 noisy path 从 large $\lambda$ 推回 small $\lambda$。
+
+接下来用 Eq. (11) 从 $\lambda_{\max}$ 积分到 $\lambda_{\min}$：
+
+$$
+\lambda_{\max}
+\rightarrow
+\lambda_{\max}-\Delta\lambda
+\rightarrow
+\cdots
+\rightarrow
+\lambda_{\min}.
+$$
+
+如果 $\lambda_{\min}=0$，终点就是 fine-resolution data scale。每一步 reverse-$\lambda$ update 都同时更新整条 path：
+
+$$
+\{u_\lambda\}_t
+\rightarrow
+\{u_{\lambda-\Delta\lambda}\}_t.
+$$
+
+这就是为什么这里说生成对象不是单个空间场，而是一整条 spatiotemporal trajectory。单个空间场只回答“某一时刻的空间图案长什么样”；trajectory 还要回答：
+
+$$
+\text{这些空间图案能不能按 physical time }t\text{ 连成一条合理演化？}
+$$
+
+这个 temporal consistency 不是靠起始 Gaussian noise 自己保证的。起始 noise path 只是一个大 $\lambda$ 下的随机初始点，通常还不是一条物理上合理的 trajectory。真正把它拉向合理 path 的，是 Eq. (11) 里的 predictor-induced path score：
+
+$$
+s_\lambda
+=
+\nabla_{u_\lambda}\ln p_\lambda(\{u_\lambda\}_t).
+$$
+
+因为 $p_\lambda$ 来自 Eq. (7) 的 path density，它惩罚的是整条 path 的 temporal residual：
+
+$$
+\partial_t u_\lambda
+-
+f_\lambda^\theta(u_\lambda).
+$$
+
+所以 reverse-$\lambda$ sampling 不只是逐帧恢复细节，而是在恢复细节的同时，让相邻时间片之间的变化尽量符合 learned temporal dynamics。
+
+可以把 unconditional generation 的逻辑压成一条线：
+
+$$
+\begin{aligned}
+&\text{large-}\lambda\text{ Gaussian noise path}\\
+&\rightarrow
+\text{reverse-}\lambda\text{ updates by Eq. (11)}\\
+&\rightarrow
+\text{path score enforces learned dynamics}\\
+&\rightarrow
+\text{fine spatiotemporal trajectory}.
+\end{aligned}
+$$
 
 这里的关键验证是：同一个 $f_\lambda^\theta$ 原本只是 temporal predictor，但它通过 Eq. (7) 也提供了 path score。因此它可以驱动 diffusion-like generation。
 
@@ -1206,13 +1847,31 @@ DDPM baseline 用同样 U-Net，但 simulation 和 generation 分别训练模型
 
 Figure 2 展示 Lorenz-96 的 simulation。上排是 fine resolution $\lambda=0$，下排是 coarse resolution $\lambda=0.2$。左边是 slow variable $X$，右边是 fast variable $Y$。每个 panel 又包含 spatiotemporal evolution 和 time-averaged spatial PSD。
 
-读图顺序应该是：
+这张图的作用不是展示 generation，而是回答一个更基础的问题：训练出来的 $f_\lambda^\theta$ 能不能在固定 $\lambda$ 时当作 temporal simulator 使用。也就是说，给定一个初始状态，沿 physical time $t$ 推进 Eq. (6)，模型是否能复现 physics-based simulation 在同一尺度下的动态。
 
-第一，看 $\lambda=0$。surrogate 是否能复制 physics simulation 的时空纹理和谱统计。这里它基本能做到。
+读图时不要先看所有小图，而要按三层结构读。
 
-第二，看 $\lambda=0.2$。小尺度成分被粗粒化压掉，但剩余的大尺度 pattern 仍然随时间 fluctuation。这个 fluctuation 不是简单滤波能自动给出的，它要求 predictor 学会被消除小尺度对大尺度的统计反馈。
+第一层是 resolution。上排是 $\lambda=0$，也就是 fine-resolution system。这个尺度下，模型面对的是原始 Lorenz-96 轨迹，既有 slow variable $X$ 的大尺度波动，也有 fast variable $Y$ 的细碎快速结构。下排是 $\lambda=0.2$，也就是 coarse-grained system。此时 high-wavenumber components 已经被 $\mathcal{C}_\lambda$ 压低，所以图像应该更平滑，PSD 也应该更集中在低波数。
 
-第三，看 PSD。PSD 用来判断模型是否只在短期轨迹上接近，还是长期统计结构也接近。
+第二层是变量。每一行的左半部分读 $X$，右半部分读 $Y$。$X$ 是 slow variable，所以它的 spatiotemporal plot 呈现比较连续的斜向 band。这些斜向 band 可以理解为模式在空间方向上的传播或相位移动。$Y$ 是 fast variable，所以在 $\lambda=0$ 时更碎、更高频，视觉上更接近细密纹理。这个对比很重要：如果模型只会学平滑的大尺度结构，它可能在 $X$ 上看起来还行，但会在 $Y$ 的高频细节和 PSD 上失败。
+
+第三层是每个变量内部的三列比较。以 $X$ 为例，先看 `Physics: X`，这是 physics-based simulation 给出的 reference trajectory；再看 `Surrogate: X`，这是 learned predictor 沿 $t$ 推出来的 trajectory；最后看 `Spatial PSD: X`，这是对 100 个样本做 time-averaged spatial power spectral density 后得到的统计比较。$Y$ 也按同样方式读。
+
+为什么要同时看 spatiotemporal plot 和 PSD？因为它们回答的问题不同。spatiotemporal plot 看的是一条代表性轨迹的视觉结构：斜向 band 是否存在、粗粒化后是否变平滑、快速变量是否仍有合适的纹理。PSD 看的是统计结构：能量是否集中在相同的 wavenumber，surrogate 有没有过度平滑 high-$k$ modes，或者制造出 physics simulation 没有的 spurious frequencies。
+
+在 $\lambda=0$ 的上排，$X$ 的 surrogate 和 physics reference 在斜向 band 的密度、方向和幅值范围上接近；对应的 PSD 中，blue physics curve 和 orange surrogate curve 在主峰附近基本重合。这说明 surrogate 不只是短期数值上接近，也学到了 $X$ 的 dominant spatial scale。
+
+同一行右侧的 $Y$ 更难。$Y$ 在 fine resolution 下包含更强的 high-frequency texture。这里 surrogate 的纹理不是逐点复刻 physics trajectory，而是在视觉密度和 PSD 形状上接近 reference。这个区别要明确：Figure 2 不是在证明 chaotic system 的长期 trajectory 可以逐点预测，而是在证明 surrogate simulation 能保持相似的 spatiotemporal statistics。
+
+在 $\lambda=0.2$ 的下排，粗粒化后 $X$ 和 $Y$ 都明显更平滑。这里要看的不是“细节是否还在”，而是“被粗粒化后的大尺度动态是否还能被 predictor 推出来”。$X$ 的下排显示 surrogate 仍能产生类似的斜向大尺度结构；PSD 中高波数能量被压低，surrogate 和 physics 的低波数谱形接近。
+
+$Y$ 在 $\lambda=0.2$ 下也被强烈平滑，原本的快速细碎结构变成更低频的斑块。surrogate 能复现这种平滑后的 fluctuation，说明模型不是简单输出平均场。它仍然在 coarse scale 上生成随时间变化的 pattern。
+
+这一步和文章理论主线直接相连。粗粒化会消掉小尺度自由度，但小尺度并不是对大尺度完全无影响。训练目标 Eq. (9) 让 predictor 学的是 coarse-grained path density 下的 temporal increment。Figure 2 的下排就是在检查：当小尺度被 integrated out 后，$f_\lambda^\theta$ 是否仍能给出合理的 effective coarse dynamics。
+
+所以 Figure 2 的结论可以分成两句。第一，在 $\lambda=0$，predictor-driven surrogate 能复现 Lorenz-96 fine dynamics 的视觉结构和空间谱统计。第二，在 $\lambda=0.2$，同一个模型仍能模拟 coarse-grained dynamics，说明这个框架的 $\lambda$ 轴不是纯粹的图像模糊参数，而是可以定义不同 spatial scale 上的 temporal dynamics。
+
+这个结论也有边界。Figure 2 本身没有和 DDPM baseline 比较，也没有证明 generation 成功；它只验证 forward-$t$ simulation。DDPM baseline 和定量误差要到 Table 1 / Appendix Figure 5 再比较，generation 要到 Figure 8-9 再看。
 
 ### 6.3 Figure 3：Kolmogorov flow simulation
 
@@ -1233,9 +1892,51 @@ Table 1 只在 $\lambda=0$ 比较，因为 DDPM baseline 没有 coarse-grained $
 | L96 spectral error | **0.120 ± 0.014** | 0.226 ± 0.077 |
 | KF spectral error | 0.182 ± 0.029 | **0.139 ± 0.021** |
 
-$L^2$ error 是第 6 个 time step 的 short-term prediction accuracy。spectral error 是 long-run statistical consistency。
+这里的两个指标不能混在一起读。
 
-结论要谨慎读：本文不是全方位压过 DDPM。它展示的是 comparable accuracy，同时多了 $\lambda>0$ simulation、generation、super-resolution 的统一能力。
+$L^2$ error 衡量的是 short-term prediction accuracy。作者取第 6 个 time step，是为了看模型从相同 initial condition 出发后，短时间内能不能贴近 physics-based trajectory。这个指标仍然关心具体轨迹：
+
+$$
+\text{same initial condition}
+\rightarrow
+\text{physics rollout and surrogate rollout}
+\rightarrow
+\text{compare states at the sixth time step}.
+$$
+
+为什么不是看很长时间后的逐点误差？因为 Lorenz-96 和 Kolmogorov flow 都是 chaotic systems。即使模型学到了正确 dynamics，微小误差也会随着时间放大，长期逐点 trajectory 很快失去可比性。所以 $L^2$ error 更适合读成 early-time fidelity，而不是长期机制是否正确的全部证据。
+
+spectral error 衡量的是 long-run statistical consistency。它不要求某一次 rollout 的每个时刻都和 reference 逐点对齐，而是看许多样本或长时间轨迹的 spatiotemporal statistics 是否相似。这里作者用的是 power spectral density，也就是不同 wavenumber 上的能量分布。
+
+直观地说，$L^2$ error 问：
+
+$$
+\text{短时间内，这条预测轨迹离 reference 有多近？}
+$$
+
+spectral error 问：
+
+$$
+\text{长期看，模型生成的空间尺度结构和能量分布是否像真实系统？}
+$$
+
+这两个指标会给出不同信息。一个模型可能短期 $L^2$ 不错，但长期谱结构过度平滑；也可能逐点轨迹很快偏离，但统计谱仍然接近真实系统。对于 chaotic multiscale dynamics，后者尤其重要，因为我们常常不指望长期逐点预测，但仍然希望模型保留正确的统计结构。
+
+现在再读 Table 1。Predictor-Driven 在 L96 的 $L^2$ error、KF 的 $L^2$ error、L96 的 spectral error 上更好；DDPM baseline 在 KF 的 spectral error 上更好。所以这张表不能读成“本文全面压过 DDPM”。
+
+更准确的结论是：在 $\lambda=0$ 的 fine-resolution simulation 任务上，Predictor-Driven 至少达到和 DDPM baseline 同一量级的 accuracy，有些指标更好，有些指标不占优。也就是说，它没有为了引入 predictor-induced path density 和 RG $\lambda$ 轴而明显牺牲基础 simulation 性能。
+
+真正的增量在表格之外。DDPM baseline 只能在 $\lambda=0$ 上做对应比较，因为它没有 explicit spatial coarse-graining hierarchy。Predictor-Driven 则用同一个 $f_\lambda^\theta$ 支持三件事：
+
+$$
+\begin{aligned}
+&\lambda=0\text{ fine simulation},\\
+&\lambda>0\text{ coarse-grained simulation},\\
+&\text{reverse-}\lambda\text{ generation / super-resolution}.
+\end{aligned}
+$$
+
+所以 Table 1 的作用是守住一个基础门槛：这个统一框架在普通 fine-resolution simulation 上没有崩。后面的 Figure 2-4、Table 2-3 才继续说明它为什么比普通 baseline 多了一条 $\lambda$ 轴上的生成和超分辨率能力。
 
 ### 6.5 Table 2：unconditional generation
 
@@ -1508,7 +2209,166 @@ $$
 
 Eq. (17) 是 scale-selective damping。Eq. (18) 是 OU process 的 accumulated noise variance。$\lambda\to0$ 时，$\widetilde{\Sigma}_\lambda(k)\to0$；$\lambda$ 变大时，variance 接近 $\beta^2/(2\alpha\|k\|^2)$。
 
-零波数 $k=0$ 被排除，因为数据预处理已经做了 zero mean standardization，constant Fourier mode 被去掉。如果保留 $k=0$，Eq. (18) 会出现 $1/\|k\|^2$ singularity，需要额外的 scale-independent damping。
+这里 Eq. (18) 值得展开，因为它不是凭空写出的 covariance，而是 Eq. (15) 里 noise integral 的方差。
+
+先把 Eq. (15) 的随机部分单独记为：
+
+$$
+N_\lambda(k)
+=
+\beta
+\int_0^\lambda
+e^{-\alpha\|k\|^2(\lambda-\lambda')}
+\widetilde{\eta}_{\lambda'}(k)
+\,d\lambda'.
+$$
+
+$\widetilde{\eta}_{\lambda'}(k)$ 是沿 diffusion scale $\lambda$ 的 white Gaussian noise。它的均值是 0，所以 $N_\lambda(k)$ 的均值也是 0。要得到 covariance，只需要算：
+
+$$
+\mathbb{E}\left[
+|N_\lambda(k)|^2
+\right].
+$$
+
+由于 white noise 在不同 $\lambda'$ 上不相关，
+
+$$
+\mathbb{E}\left[
+\widetilde{\eta}_{\lambda'}(k)
+\widetilde{\eta}_{\lambda''}(k)^*
+\right]
+\propto
+\delta(\lambda'-\lambda'').
+$$
+
+因此双重积分会被 delta function 压成单重积分：
+
+$$
+\begin{aligned}
+\mathbb{E}\left[
+|N_\lambda(k)|^2
+\right]
+&=
+\beta^2
+\int_0^\lambda
+e^{-2\alpha\|k\|^2(\lambda-\lambda')}
+\,d\lambda' .
+\end{aligned}
+$$
+
+令
+
+$$
+s=\lambda-\lambda',
+\qquad
+d s=-d\lambda'.
+$$
+
+当 $\lambda'=0$ 时，$s=\lambda$；当 $\lambda'=\lambda$ 时，$s=0$。所以：
+
+$$
+\int_0^\lambda
+e^{-2\alpha\|k\|^2(\lambda-\lambda')}
+d\lambda'
+=
+\int_0^\lambda
+e^{-2\alpha\|k\|^2s}
+ds.
+$$
+
+这个指数积分给出：
+
+$$
+\int_0^\lambda
+e^{-2\alpha\|k\|^2s}
+ds
+=
+\frac{
+1-e^{-2\alpha\|k\|^2\lambda}
+}{
+2\alpha\|k\|^2
+}.
+$$
+
+乘回 $\beta^2$，就得到 Eq. (18)：
+
+$$
+\widetilde{\Sigma}_\lambda(k)
+=
+\beta^2
+\frac{
+1-e^{-2\alpha\|k\|^2\lambda}
+}{
+2\alpha\|k\|^2
+}.
+$$
+
+所以 Eq. (18) 可以按三个因子读。
+
+第一，$\beta^2$ 控制 forward RG diffusion 注入噪声的强度。$\beta$ 越大，同一 scale 下 coarse-grained state 的不确定性越大。
+
+第二，$1-e^{-2\alpha\|k\|^2\lambda}$ 表示 noise 随 $\lambda$ 累积。刚开始 $\lambda$ 很小时，指数可以展开：
+
+$$
+1-e^{-2\alpha\|k\|^2\lambda}
+\approx
+2\alpha\|k\|^2\lambda.
+$$
+
+代回 Eq. (18)，得到：
+
+$$
+\widetilde{\Sigma}_\lambda(k)
+\approx
+\beta^2\lambda.
+$$
+
+也就是说，在 very small $\lambda$ 下，各个 Fourier mode 一开始都以近似相同的速度积累噪声。
+
+第三，分母 $2\alpha\|k\|^2$ 表示 Laplacian damping 的强度。$k$ 越大，$\|k\|^2$ 越大，forward process 对这个 mode 的 damping 越强。因此当 $\lambda$ 变大时，
+
+$$
+e^{-2\alpha\|k\|^2\lambda}
+\rightarrow
+0,
+$$
+
+variance 饱和到：
+
+$$
+\widetilde{\Sigma}_\lambda(k)
+\rightarrow
+\frac{\beta^2}{2\alpha\|k\|^2}.
+$$
+
+这个极限说明，高波数 mode 虽然被加噪，但也被更强地 damping，所以它们的 stationary variance 更小。低波数 mode damping 弱，能保留更大的 variance。
+
+这和 Eq. (17) 共同定义了 forward kernel 的两部分：
+
+$$
+\text{mean}
+=
+\widetilde{\mathcal{C}}_\lambda(k)\widetilde{u}_0(k),
+\qquad
+\text{variance}
+=
+\widetilde{\Sigma}_\lambda(k).
+$$
+
+因此 Eq. (3) 中的
+
+$$
+u_\lambda
+=
+\mathcal{C}_\lambda u_0
++
+\sqrt{\Sigma_\lambda}\epsilon
+$$
+
+在 Fourier space 里就是：每个 mode 的 mean 被 $e^{-\alpha\|k\|^2\lambda}$ damping，同时围绕这个 mean 加上 covariance 为 Eq. (18) 的 Gaussian noise。
+
+零波数 $k=0$ 被排除，因为数据预处理已经做了 zero mean standardization，constant Fourier mode 被去掉。如果保留 $k=0$，Laplacian damping 消失，Eq. (14) 不再是 mean-reverting OU process，而是沿 $\lambda$ 的 pure Brownian accumulation。虽然 Eq. (18) 对 $k\to0$ 有可取极限 $\beta^2\lambda$，但这个 mode 不会饱和到 stationary variance，会让整体 mean 随 $\lambda$ 随机漂移。因此作者直接在 $k\neq0$ 上写 Eq. (16)-Eq. (18)。
 
 ### 9.3 Eq. (19)-Eq. (23)：Carosso RG 和 effective action
 
@@ -1568,7 +2428,90 @@ q(\phi_\lambda\mid\phi_0)e^{-S_0(\phi_0)}.
 \tag{23}
 $$
 
-这组公式的作用是说明：coarse-graining 的效果被吸收到 action 从 $S_0$ 到 $S_\lambda$ 的变化里。本文 Eq. (7) 中的 squared path residual 就相当于一个 path-level effective action。
+这组公式的作用是说明：coarse-graining 不是只把 field 变模糊，而是把原来的 probability model 改写成一个新的 effective probability model。
+
+先看 fine scale。原始 field 是 $\phi_0$，它的 density 写成：
+
+$$
+q(\phi_0)
+=
+\frac{1}{\mathcal{Z}_0}
+e^{-S_0(\phi_0)}.
+$$
+
+这里 $S_0(\phi_0)$ 可以理解为 negative log-density，差一个 normalization constant。$S_0$ 越小，说明这个 fine-scale configuration 越可能出现；$S_0$ 越大，说明这个 configuration 在原始系统中越不自然。物理里把这个 exponent 叫 action，是因为它像 energy function 一样编码 field 的统计结构、interaction coefficients 和约束。
+
+然后做 coarse-graining。$\phi_\lambda$ 不是独立新变量，而是从 $\phi_0$ 经过一个 stochastic coarse-graining kernel 得到的 coarse field：
+
+$$
+q(\phi_\lambda\mid\phi_0).
+$$
+
+如果现在只关心 coarse field $\phi_\lambda$，fine field $\phi_0$ 就变成 hidden variable。于是必须把所有可能产生同一个 $\phi_\lambda$ 的 fine configurations 积分掉：
+
+$$
+q(\phi_\lambda)
+=
+\int \mathcal{D}\phi_0\,
+q(\phi_\lambda\mid\phi_0)
+q(\phi_0).
+$$
+
+把 Eq. (20) 代入，就得到：
+
+$$
+q(\phi_\lambda)
+=
+\frac{1}{\mathcal{Z}_0}
+\int \mathcal{D}\phi_0\,
+q(\phi_\lambda\mid\phi_0)
+e^{-S_0(\phi_0)}.
+$$
+
+这一步的含义是：coarse-scale density 不是任意指定的。它是原始 fine-scale density 经过 coarse-graining kernel 推出来的 marginal density。所有被消除的小尺度 mode，虽然不再显式出现在 $\phi_\lambda$ 里，但它们对 coarse field 的统计影响仍然留在这个积分中。
+
+既然 $q(\phi_\lambda)$ 仍然是一个 density，就可以重新写成 exponential form：
+
+$$
+q(\phi_\lambda)
+=
+\frac{1}{\mathcal{Z}_0}
+e^{-S_\lambda(\phi_\lambda)}.
+$$
+
+这实际上定义了 effective action：
+
+$$
+S_\lambda(\phi_\lambda)
+=
+-
+\log
+\int \mathcal{D}\phi_0\,
+q(\phi_\lambda\mid\phi_0)
+e^{-S_0(\phi_0)}.
+$$
+
+这里可以看到，“action 从 $S_0$ 变成 $S_\lambda$”不是把 $S_0$ 的变量名从 $\phi_0$ 换成 $\phi_\lambda$。更准确地说，$S_\lambda$ 是在积分掉 fine variables 之后得到的新 action。它可能包含新的 effective coefficients、新的 interaction terms，甚至更 nonlocal 的结构。小尺度自由度被消除以后，它们的影响不会消失，而是被压缩进 $S_\lambda$ 的形式和参数里。
+
+Eq. (23) 说 normalization constant $\mathcal{Z}_0$ 保持不变，是因为 coarse-graining kernel $q(\phi_\lambda\mid\phi_0)$ 对 $\phi_\lambda$ 积分后归一化为 1。直观地说，coarse-graining 只是重新组织 probability mass，不应该凭空创造或消灭总概率。
+
+所以原句里的“吸收到 action 的变化里”可以更线性地读成：
+
+$$
+\begin{aligned}
+\text{fine density }q(\phi_0)
+&\leftrightarrow
+\text{bare action }S_0,\\
+\text{coarse-grain and marginalize }\phi_0
+&\rightarrow
+\text{coarse density }q(\phi_\lambda),\\
+\text{rewrite }q(\phi_\lambda)\text{ as exponential form}
+&\leftrightarrow
+\text{effective action }S_\lambda.
+\end{aligned}
+$$
+
+本文 Eq. (7) 中的 squared path residual 就相当于一个 path-level effective action。它不再描述单个 spatial field configuration 的概率，而是描述整条 trajectory 在 learned dynamics 下有多自然：如果 $\partial_t u_\lambda$ 接近 $f_\lambda^\theta(u_\lambda)$，path action 低，path density 高；如果 trajectory 经常违反 learned drift，path action 高，path density 低。
 
 ### 9.4 Eq. (24)-Eq. (31)：从 Euler-Maruyama 到 path density
 
@@ -2471,7 +3414,19 @@ Algorithm 3 有两个初始化方式：
 3. 对 $t^{(0)}$ 做 boundary extrapolation。
 4. 做 3 次 Langevin corrector Eq. (65)。
 
-这里 boundary extrapolation 是为了绕开 $r_\lambda$ 的 score。训练和 simulation 不需要 $r_\lambda$，但 reverse sampling 的 path score 在 $t^{(0)}$ 会包含 $\nabla\ln r_\lambda$。作者没有显式建模它，而是用线性外推稳定边界。这也是 limitation 之一。
+这里 boundary extrapolation 是为了绕开 $r_\lambda$ 的 score。训练和 simulation 不需要 $r_\lambda$，但 reverse sampling 的 path score 在 $t^{(0)}$ 会包含 $\nabla\ln r_\lambda$。如果显式建模这项，就需要学习 initial temporal boundary 的分布；作者没有这样做。
+
+因此 Algorithm 3 采用一个更工程化的边界条件：每次 predictor update 后，先得到整条 path 的 provisional update，然后把起始时间片替换为
+
+$$
+u(\boldsymbol{x},t^{(0)})
+\leftarrow
+2u(\boldsymbol{x},t^{(1)})
+-
+u(\boldsymbol{x},t^{(2)}).
+$$
+
+接着在每次 Langevin corrector 后也重复同样操作。这样做的效果是把未知的 initial-density score 替换成一个 temporal smoothness constraint：起始点不要自己漂移，而要和后两个时间片保持局部线性延拓。它不会解决 $r_\lambda$ 的理论建模问题，但能防止 reverse-$\lambda$ sampling 在 boundary 处产生不合理的初始尖点。对于非平稳系统，这仍然是 limitation，因为 initial density 可能不是一个可随便外推的边界条件，而是 dynamics 的一部分。
 
 ### 10.9 computational cost
 

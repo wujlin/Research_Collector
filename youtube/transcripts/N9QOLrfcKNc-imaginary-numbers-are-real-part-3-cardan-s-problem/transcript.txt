@@ -1,0 +1,60 @@
+We left off last time with Cardan and his broken formula for finding the roots of cubic functions.
+Cardan knew that his problem had to have a solution, but didn't know what to do with the
+square roots of negative numbers that kept popping up in his equations. Cardan came close to finding
+a way to make his formula work, but got stuck in an algebraic loop where a bunch of work would
+just lead him right back to where he started. It took one more generation of mathematicians to get
+to the bottom of this. Cardan's student, Raphael Bombelli, made some incredible insights about
+what's really going on here. Let's remember why Cardan was stuck. The square roots of negative
+numbers ask us to find a number that when multiplied by itself will yield a negative.
+Neither positive nor negative numbers will work. Bombelli's first big insight was simply to accept
+that if positive numbers won't work and negative numbers won't work, then maybe there's some other
+kind of number out there that will. Now, if there is some other kind of number out there,
+a good follow-up question is, what are we going to call it? After all, we need to use it in our
+equations. Bombelli's approach was a very practical one. Rather than dream up a new name and symbol,
+Bombelli simply let the square roots of negatives be their own thing. In the past, mathematicians
+would have thrown in the towel here and declared the problem impossible, but Bombelli was able to
+press on simply by allowing the square roots of negatives to exist. Let's take a simple example
+of our new numbers, the square root of negative one. For being a new kind of number, it doesn't
+look very exciting, and might kind of seem like our old numbers. But remember,
+it does have the exact special property we need. When we square it, the result is negative.
+Further, since our number doesn't behave like a positive or a negative, it must be something
+new. Now, if this all seems a bit fishy to you, like a slightly too convenient algebra
+trick, you're in good company. In fact, it's hard to introduce imaginary numbers without
+them sounding like an arbitrary invention. However, before we dismiss the square root
+of minus one as some abstraction invented to torture students, let's review what we've
+learned so far.
+Bombelli was genuinely stuck on a tough problem that they knew had a solution. What Bombelli
+was able to see is that if he extended the existing number system, as had been done so
+many times before, he could solve the problem. Just as people needed fractions, zero, and
+negative numbers to solve new problems in the past, to solve this problem, Bombelli
+now needed the square root of negative one to be its own, brand new, number. Let's make
+sure we're clear about what it means for the square root of negative one to be its own
+number.
+Our new number is truly a discovery, and not an invention. It should behave like the
+other numbers we already know about. It should follow the established rules of algebra and
+arithmetic. And it turns out the square root of minus one does, for the most part. Just
+as we can split apart the root of the product of two positive numbers, we can also split
+apart the square roots of negatives. The square root of minus twenty-five splits into the
+square root of twenty-five times the square root of negative one. This process is important
+because it allows us to express the root of any
+negative using the square root of minus one. The square root of minus twenty-five becomes
+five times the square root of minus one.
+We can use this process to expand the root of any negative number, writing it as some
+number we already know about times the square root of minus one.
+Let's quickly make sure that our new numbers follow the same algebra rules as our old numbers.
+In algebra problems with x, only like terms can be added and subtracted. Two x plus three
+x is five x, but two plus three x is just two plus three x.
+Likewise, two square roots of minus one plus three square roots of minus one is equal to
+five square roots of minus one, but two plus three square roots of minus one is just two
+plus three square roots of minus one. Finally, unlike terms can be multiplied, just as in
+algebra with x. Five times x is just five x, and five times root minus one is just five
+roots of minus one. Now there are some cases where our new numbers behave a little strangely,
+but these can often be avoided by first separating out the square root of minus one.
+Now that we have a grasp on how our new numbers work, we can see how they fix one of our problems
+from last time. We now have a strategy for dealing with the roots of negatives. We can
+evaluate the square root of negative nine we were stuck on, and obtain three times the
+square root of negative one. All this is important, but it isn't enough to solve Cardan's problem.
+We still need to figure out how to deal with the cubed roots of these numbers.
+Bombelli was able to solve our problem through one more powerful insight, and that's what
+we'll discuss next time.
+Subtitles by the Amara.org community

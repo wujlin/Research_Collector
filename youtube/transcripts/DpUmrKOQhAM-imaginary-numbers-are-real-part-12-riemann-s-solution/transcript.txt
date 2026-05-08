@@ -1,0 +1,47 @@
+Last time we left off wondering why some paths on our w-plane led us to completely new values
+on our z-plane while others didn't. Gauss's student Bernhard Riemann made some powerful
+insights into problems like this in the mid-19th century. The first part of Riemann's contribution
+is the idea that for problems like this we need more than two complex planes to visualize our
+function. Since each point on our w-plane maps to two points on our z-plane we can begin to resolve
+our ambiguity by adding a second w-plane and letting each of our two points on z
+map to its very own copy of the w-plane. So that's fine but it immediately raises
+an important question. How do we pick which z-values to map to each plane?
+A simple and effective approach here is to simply divide the z-plane into two halves.
+We'll let the right half map to our first w-plane and the left half map to our second w-plane.
+These restricted versions of our
+multi-function are called branches.
+Let's draw a path again but this time just on our first w-plane. Things look just fine until we
+cross the negative real axis and our path on the z-plane suddenly jumps. This of course is what
+must happen. We've required points from our first w-plane to only map to the right side of our z-plane.
+Almost every point on w has two possible solutions on z and with our first branch we've decided to
+just leave one on the right. So our path now jumps around the z-plane. But what's perhaps more
+disappointing here is that we haven't gained any insight into our interesting loop behavior we saw
+last time. In fact we can't even recreate this setup. No matter what kind of loop we draw we
+always end up exactly where we started on both the z and w planes. It seems we've legalized this
+behavior out of existence. Further the fact that our function jumps across the z-plane means that
+our branches are discontinuous. A huge difference. So let's start with z. We've got a z-plane and a
+z-plane. We've got a z-plane and a z-plane. We've got a z-plane and a z-plane. We've got a z-plane and a z-plane.
+We've got a z-plane and a z-plane. We've got a z-plane and a z-plane. We've got a z-plane and a z-plane.
+A huge problem mathematically. Functions of complex variables are a big part of modern
+mathematics and science. And if our functions are jumping around like this we can't do important
+things like take derivatives and integrals. So we've fixed the multi-valued problem by splitting
+our multi-function into branches. Our function is now one to one. But in the process we've introduced
+some serious issues. Thus far Riemann's solution is not looking so great. Fortunately that was just
+part one and part two of the problem was solved. So now we just have to figure out how to fix it.
+So now we just have to figure out how to fix it. So now we just have to figure out how to fix it. So
+part two is much cooler. Let's consider our discontinuity problem in a bit more detail.
+We'll switch back to our forward function momentarily and again draw on our z-plane.
+Let's pay careful attention to where our discontinuities show up.
+We'll follow the points along a single path and to make sure we can tell our points apart
+we'll continuously change the color of our path. As we move from quadrant one to quadrant two on z
+we switch branches. We switch back to our first branch when moving from
+quadrant three to four. For our path to be continuous we need to somehow connect our 2w
+planes at the exact points where our path jumps. What Riemann saw here was a way to bring together
+our two complex planes in such a way that our multi-function would be perfectly continuous
+while maintaining the nice one-to-one properties of our 2w plane solution.
+Our next step is to grab some scissors and tape. We'll figure out what to do with them next time.
+It's so cool!
+Considerach-Rath predictions have increased substantially as we gain greater technical clarity,
+even though these findings sprout up when we slow- Heehee haha
+Thank you for watching!
+Subtitles by the Amara.org community

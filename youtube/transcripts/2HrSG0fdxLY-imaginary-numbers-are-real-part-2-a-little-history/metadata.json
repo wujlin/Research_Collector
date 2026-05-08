@@ -1,0 +1,12 @@
+{
+  "title": "Imaginary Numbers Are Real [Part 2: A Little History]",
+  "url": "https://www.youtube.com/watch?v=2HrSG0fdxLY",
+  "backend": "faster-whisper",
+  "model": "large-v3",
+  "requested_language": "en",
+  "detected_language": "en",
+  "generated_at": "2026-05-07T11:27:37",
+  "language": "en",
+  "language_probability": 1,
+  "duration": 315.9323125
+}

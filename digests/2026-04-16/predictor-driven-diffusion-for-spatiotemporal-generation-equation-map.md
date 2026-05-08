@@ -23,7 +23,7 @@ date_created: "2026-05-04"
 | Eq. (8) | KL divergence to regression loss | 已展开 | 展开代入 Eq. (7) 后哪些项与 $\theta$ 无关 |
 | Eq. (9) | final scale-averaged training objective | 已展开 | 解释 $\lambda$ sampling 与 $1/\sigma_\lambda^2$ weighting |
 | Eq. (10) | approximate optimal drift intuition | 已展开 | 解释先 fine drift 后 coarse-graining 的算子顺序 |
-| Eq. (11) | reverse-$\lambda$ inference with predictor-induced score | 已展开 | 解释 generation / super-resolution 共同采样方程 |
+| Eq. (11) | reverse-$\lambda$ inference with predictor-induced score | 已展开 | 展开 true score 不可得、$p_\lambda$ 替代 $q_\lambda$、三项物理含义、以及 generation / super-resolution 共用同一 reverse dynamics |
 
 ## Appendix A Formula Coverage
 
@@ -32,8 +32,8 @@ date_created: "2026-05-04"
 | Eq. (12)-Eq. (13) | Fourier transform and inverse transform | 已展开 | 作为 Laplacian diagonalization 的准备 |
 | Eq. (14)-Eq. (15) | Fourier-space OU process and solution | 已展开 | 解释每个 mode 独立演化 |
 | Eq. (16) | Fourier-space conditional Gaussian density | 已展开 | 由 OU 解读 mean / variance |
-| Eq. (17)-Eq. (18) | $\widetilde{\mathcal{C}}_\lambda(k)$ and $\widetilde{\Sigma}_\lambda(k)$ | 已展开 | 解释 cutoff、zero mode、$\lambda\to0$ |
-| Eq. (19)-Eq. (23) | Carosso RG, bare density, partition function, effective action | 已展开 | 连接 RG marginalization 与 path action |
+| Eq. (17)-Eq. (18) | $\widetilde{\mathcal{C}}_\lambda(k)$ and $\widetilde{\Sigma}_\lambda(k)$ | 已展开 | 展开 OU noise integral 如何给出 covariance、small/large-$\lambda$ 极限、zero mode 处理 |
+| Eq. (19)-Eq. (23) | Carosso RG, bare density, partition function, effective action | 已展开 | 展开 coarse-graining 如何通过 marginalization 把 $S_0$ 改写成 effective action $S_\lambda$，并连接到 path-level action |
 | Eq. (24)-Eq. (27) | Euler-Maruyama discretization, noise density, transition density | 已展开 | 展开从 white noise 到 transition density 的变量替换 |
 | Eq. (28)-Eq. (30) | product transition density to path-integral form | 已展开 | 展开 product、finite difference、compact integral notation |
 | Eq. (31) | effective path action | 已展开 | 解释 path residual energy |
@@ -53,6 +53,7 @@ date_created: "2026-05-04"
 | Eq. (63)-Eq. (64) | relative $L^2$ and spectral error | 已展开 | 解释 short-term vs long-run statistical metric |
 | Eq. (65) | Langevin corrector step | 已展开 | 解释 predictor-corrector sampling |
 | Eq. (66) | ETD reverse-$\lambda$ update | 已展开 | 解释 anti-diffusion stiffness and noise treatment |
+| Algorithm 3 / Appendix B.6 | reverse sampling boundary handling | 已展开 | 展开 $r_\lambda$ score 为什么只在起始 temporal boundary 造成问题，以及 temporal extrapolation 如何替代显式 boundary score |
 | Eq. (67) | Laplacian-augmented variance-preserving process | 已展开 | 用于 Figure 13-14 ablation |
 | Eq. (68) | deterministic coarse-graining without noise | 已展开 | 用于 Figure 15-16 noise ablation |
 
@@ -61,7 +62,8 @@ date_created: "2026-05-04"
 | Original Object | Role | Digest Status | Note |
 |---|---|---|---|
 | Figure 1 | two-axis framework | 已展开 | 解释 $t$ vs $\lambda$ |
-| Figure 2-Figure 4 | main simulation / super-resolution results | 已展开 | 主文图均插入并解释 |
+| Figure 2 | Lorenz-96 simulation at $\lambda=0$ and $\lambda=0.2$ | 已展开 | 逐层解释 resolution、变量 $X/Y$、physics vs surrogate、PSD，以及该图只验证 forward-$t$ simulation |
+| Figure 3-Figure 4 | Kolmogorov simulation and super-resolution results | 已展开 | 主文图均插入并解释 |
 | Table 1-Table 3 | simulation, generation, super-resolution metrics | 已展开 | 表格数值已整理 |
 | Figure 5-Figure 9 | appendix simulation and generation comparison | 已展开 | 补充说明其与 Table 1-2 的关系 |
 | Figure 10-Figure 12 | noise simulation and history window | 已展开 | 连接 $\sigma_\lambda$ 与 Mori-Zwanzig |

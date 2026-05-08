@@ -1,0 +1,208 @@
+This is a Riemann surface. It's going to help us think in four dimensions.
+We made it by cutting our planes at the discontinuities in our paths, and taping them together in
+a way that made our paths from one plane to the other continuous.
+Riemann's big idea here is that the domain, the input values of our multifunction, should
+not be a flat two-dimensional plane. Our domain should instead be this, a curved surface living
+in higher dimensional space, a Riemann surface.
+What's incredible here is what the geometry of our Riemann surface is going to allow us
+to do.
+Using our Riemann surface as the input space to our multifunction, we can literally fix
+all of the problems we've encountered thus far. Our function will be one-to-one, continuous,
+and our Riemann surface will even help us elegantly explain the weird loop behavior
+we saw back in part 11.
+Let's see how.
+Riemann envisioned these surfaces as sheets covering the input plane W.
+Our Riemann surface is constructed from two copies of the complex plane, and the idea
+here is that each input plane is a Riemann surface. Each input plane is a Riemann surface.
+The input value on W lies directly below its corresponding points on each layer of our
+Riemann surface.
+If we follow a line straight up from the value 2i on our W plane, we find two points that
+correspond to W equals 2i. Our Riemann surface fixes our one-to-one problem just as our two
+complex plane solution did. Each of our two solutions on Z corresponds to its very own
+copy of the W plane. These are called branches.
+So our Riemann surface makes our mapping one-to-one, just as our two-complex-plane approach did
+last time.
+But what about continuity? As we saw last time, a big problem with our two-complex-plane
+solution is that it introduced discontinuities.
+We constructed our surface in such a way that our colored path was continuous, but we encountered
+this weird self-intersection. So let's dig a little deeper. Remember the main idea here.
+Using our Riemann surface as the input plane, we can map one-to-one, just like we did last
+time.
+So instead of drawing paths or shapes on our W plane, we should really be drawing on our
+Riemann surface.
+Drawing on three-dimensional surfaces can be a little challenging, so we'll make use
+of a tool that wasn't invented until over a century after Riemann's death. A computer.
+Just as with our paper version, we'll start with our W plane lying flat on the ground,
+and place our Riemann surface directly above.
+Before we start drawing paths all over our surface, let's make sure we know what we're
+looking at.
+We're trying to understand the complex function W equals Z squared, or taken in the other
+direction, Z equals plus or minus the square root of W. The mapping between W and Z is
+the same in both directions.
+The visualization challenge here is that our mapping is four-dimensional. Both Z and W
+have real and imaginary dimensions. Both Z and W have real and imaginary dimensions.
+Both Z and W have real and imaginary dimensions. Both Z and W have real and imaginary dimensions.
+Both Z and W have real and imaginary dimensions. Both Z and W have real and imaginary dimensions.
+Back in part 10, we called these X, Y, U, and V.
+What we're seeing when we visualize our Riemann surface is a two-dimensional surface in three-dimensional
+space.
+In this case, since we positioned our surface directly above our W plane, two of our three
+dimensions correspond exactly to the real and imaginary parts of W. We called these
+U and V.
+Part of Riemann's idea is that our third dimension should represent the Z value of
+of our function. But as we know, z is a complex number. It has both a real and imaginary part,
+so there's no way to show both of these on a single axis.
+What's often done when visualizing these surfaces, and what we're going to do here, is simply
+pick the real or imaginary part of z, and use this value as the third dimension, the
+height of our surface. Here we're using x, the real part of z. Doing this has a nice
+visual result. Each point on our Riemann surface lives in 3D space at a location corresponding
+exactly to its u, v, and x values. So each point on our surface represents a single solution
+to our equation. And three of the four values needed to describe the solution are represented
+by the point's location in 3D space. This is a nice result, but we must remember
+that this is not the whole picture. There's another variable, the imaginary
+part of z, that we can not legislate. It's presented by its Hollywood's Himalayan
+of z, we call this y, that is not included in our visualization. This becomes important when trying
+to figure out if we've actually fixed our continuity problem. If we follow a path along a
+single branch of our Riemann surface, we run into a bit of a problem when we hit this self-intersection.
+After all, which way should we go? Up or down? To answer this question, let's try to figure out why
+our surface self-intersects in the first place. This intersection happens along the negative real
+axis of our w-plane. Let's consider a point on this axis, w equals minus 1. Plugging in negative
+1 for w yields two solutions, z equals plus i and z equals minus i. These two solutions are clearly
+different, but they have the same real part, zero. Since we're only visualizing the real part of z,
+we have no way of seeing that these are in the same real part.
+This is the danger of visualizing high-dimensional mathematical concepts.
+What we're really looking at here is just a projection, a shadow of our full
+four-dimensional surface. So our line of self-intersection actually isn't.
+This is exactly like the two-dimensional shadows of three-dimensional objects,
+giving the appearance that the objects intersect.
+There are inherent limitations to this.
+However, there are some very clever ways to get a feel for what's happening in our missing fourth
+dimension. One approach is to expand our visualization to include another dimension
+of human perception, such as color. We'll color each point on our surface with a color that
+corresponds to the value of the fourth dimension of our function, in this case the imaginary part
+of z, y. To do this, we need to use a function called the dimension of the fourth dimension.
+To do this, we need to decide which colors to map to which numbers. This is called a color map.
+Our colors now give us a nice idea of what's happening in our missing fourth dimension, y.
+If we look at our line of self-intersection now, it's much more clear that since our
+colors are different, our four-dimensional function actually doesn't intersect itself.
+The apparent self-intersection is just an artifact of our visualization technique.
+So as we follow paths on our Riemann surface,
+the right thing to do with these self-intersection lines is to ignore them.
+If we now follow our path around our surface, we see that it's perfectly continuous,
+even at our weird self-intersection line. Excellent!
+So that's great, we have continuity. But there's still one missing piece of the puzzle.
+What about the weird behavior we saw back in part 11,
+where some paths ended up in new locations, and others didn't?
+Let's recreate these suspicious paths, first,
+just on our W and Z planes. Now, let's do the same exact thing,
+but this time using our Riemann surface to help us see what's going on.
+To keep our surface from getting too crowded, we'll choose one of our two paths to visualize first.
+Alright, ready? We'll draw the same exact paths on W,
+and see how they show up on our Riemann surface as they are mapped to our Z plane.
+So let's go ahead and draw one of our Z planes, and see how it looks.
+So why does our green path start out in one location on our Z plane, only to end up in another?
+Simply because our green path leads us to the other layer of our surface.
+From the perspective of our W plane, it appears that we've returned exactly to our starting point,
+but actually we haven't.
+The w-plane is just a projection, a shadow.
+In reality, our path has led us to a completely different branch of our function, with different z-values.
+This, of course, is only half the picture.
+Each point on our w-plane has two solutions on z.
+This is why our single path became two paths back in part 11.
+On our Riemann surface, our second solution is a flipped version of our first.
+The important thing here, of course, is that for either set of paths,
+our Riemann surface allows us to clearly see that some paths on w lead to the other branch, and some don't.
+More specifically, paths that go around the central point on our Riemann surface end up on new branches.
+This point is called a branch point.
+Branch points occur wherever the two branches of our function have the same exact value,
+and can tell us a great deal about how our complex function behaves.
+For us, this is a very important point.
+For us, this is the point w equals zero.
+So our Riemann surface not only fixes the troubles we ran into earlier,
+but beautifully explains the strange path behavior we saw.
+And this is just the beginning.
+Riemann surfaces are a huge part of modern mathematics,
+and there's way more to say than we have time for here.
+All right, we're finally ready to answer the question,
+what is this?
+Our entire discussion has centered around a single function,
+f of z equals zero.
+And so far, we've looked at one way to visualize the Riemann surface for our function
+by plotting three of our four variables in 3D space.
+The two-dimensional plot we started our discussion with,
+the one most of us see in math class,
+only shows two of our four variables,
+the real parts of z and w.
+The surface we created back in part one
+is the result of including one more variable,
+the imaginary part of z,
+as the vertical dimension of our visual function.
+When we first saw this surface in part one,
+many of you asked a very good question.
+If, according to the fundamental theorem of algebra,
+our function is supposed to have exactly two roots,
+why does our surface appear to equal zero
+at way more than two locations?
+This apparent contradiction has everything to do
+with the shortcomings of living in three-dimensional space
+that we've been discussing.
+When we visualize four-dimensional functions
+in three-dimensional space,
+we must remember that what we're really seeing
+is a projection,
+a shadow of the function's full four-dimensional form.
+Let's have a closer look at our surface.
+In our opening shot,
+half of our surface was hidden behind our paper,
+and the colors we used were chosen somewhat arbitrarily
+to roughly correspond to the surface height.
+Now that we know a bit more
+about functions of complex variables,
+let's change the color of our surface
+to correspond to the fourth variable
+we were forced to leave out
+of our three-dimensional visualization, v.
+Now that we have some idea
+of what all four variables are doing,
+let's look for the two roots predicted by Gauss.
+Remember, roots are where the output
+of our function equals zero.
+For this to be the case,
+both the real and lateral parts
+of our output variable w, u and v, must be zero.
+Seeing where u equals zero isn't too bad.
+This is where our surface intersects the z-plane.
+Now, where does v, the imaginary part
+of our output variable w, u and v, intersect?
+v equals zero.
+If we look at our color map,
+this should be where our surface is green.
+It's difficult to see exactly which shade
+of green corresponds to zero,
+so let's add a blue line to our surface
+where v equals exactly zero.
+Now, if we look closely,
+we see that both the real and imaginary parts
+of w equals zero at exactly two points,
+positive and negative i on our complex z-plane,
+exactly as our algebra predicted.
+We've found our missing roots.
+So our friend Gauss was right all along.
+Our function does have exactly two roots.
+Of course, finding these roots took some effort.
+We had to journey deep into mathematics
+and ask ourselves what a number really is.
+This led us to the strange but necessary conclusion
+that the numbers we should really be using in algebra
+are the two-dimensional complex numbers.
+This result dragged us down deeper
+into the four-dimensional world of complex functions,
+and Riemann surfaces.
+When we finally emerged,
+we saw that the algebra many of us learn in school
+is only a shadow of an elegant, powerful,
+and higher-dimensional mathematics
+that has everything to do with the numbers
+that have been given the terrible name imaginary.
+Thanks for watching.
+Subtitles by the Amara.org community

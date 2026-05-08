@@ -1,0 +1,15 @@
+{
+  "title": "Recurrent World Models Facilitate Policy Evolution - David Ha - NeurIPS 2018 Oral",
+  "url": "https://youtu.be/HzA8LRqhujk",
+  "backend": "faster-whisper",
+  "model": "large-v3",
+  "requested_language": "en",
+  "detected_language": "en",
+  "generated_at": "2026-05-08T10:29:52",
+  "language": "en",
+  "language_probability": 1,
+  "duration": 834.780625,
+  "refined_at": "2026-05-08T10:32:26",
+  "cleanup_rules": 16,
+  "paragraph_count": 34
+}

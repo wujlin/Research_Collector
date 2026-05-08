@@ -33,6 +33,39 @@ global_replacements:
     replacement: "Santa Fe"
 
 video_specific:
+  BV1qi9rB7EQc:
+    title: "Max Welling ICLR 2026: From Physics to AI to Materials"
+    replacements:
+      - pattern: '\biClear\b'
+        replacement: "ICLR"
+      - pattern: '\bTaiko Kohan\b'
+        replacement: "Taco Cohen"
+      - pattern: '\bTaco Kohan\b'
+        replacement: "Taco Cohen"
+      - pattern: '\bMaurice Weiler\b'
+        replacement: "Maurice Weiler"
+      - pattern: '\bYasha Soldikstein\b'
+        replacement: "Jascha Sohl-Dickstein"
+      - pattern: '\bJascha Soldikstein\b'
+        replacement: "Jascha Sohl-Dickstein"
+      - pattern: '\bJarzinski equality\b'
+        replacement: "Jarzynski equality"
+      - pattern: '\bCUPS\b'
+        replacement: "CuspAI"
+      - pattern: '\bCUSP\b'
+        replacement: "CuspAI"
+      - pattern: '\bCUSP AI\b'
+        replacement: "CuspAI"
+      - pattern: '\bCUSP\.AI\b'
+        replacement: "CuspAI"
+      - pattern: '\bAWALT\b'
+        replacement: "Ewald"
+      - pattern: '\bGrand Canonical Monte Carlo\b'
+        replacement: "grand canonical Monte Carlo"
+      - pattern: '\bLoRa based transformer\b'
+        replacement: "LoRA-based transformer"
+      - pattern: '\bGUD\b'
+        replacement: "GUD"
   m023IrSLF-k:
     title: "An introduction to stochastic thermodynamics - Takahiro Sagawa / NEST"
     replacements:

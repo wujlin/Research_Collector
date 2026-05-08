@@ -1,0 +1,460 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 14.36,
+      "text": "So, what is this? We saw this shape back in part one, and then proceeded to not talk"
+    },
+    {
+      "start": 14.36,
+      "end": 19.080000000000002,
+      "text": "about it for like ten episodes. And at this point, I really wouldn't blame you if you"
+    },
+    {
+      "start": 19.080000000000002,
+      "end": 23.36,
+      "text": "thought this was some science fiction designed to get you excited about doing boring algebra"
+    },
+    {
+      "start": 23.36,
+      "end": 29.0,
+      "text": "problems. But before we chalk this up to unnecessary special effects, let's remember where this"
+    },
+    {
+      "start": 29.0,
+      "end": 31.7,
+      "text": "shape came from."
+    },
+    {
+      "start": 31.7,
+      "end": 36.36,
+      "text": "We began our conversation in part one with an equation that appeared to have no solution,"
+    },
+    {
+      "start": 36.36,
+      "end": 41.04,
+      "text": "x squared plus one equals zero. And after all the work we've done so far, you can probably"
+    },
+    {
+      "start": 41.04,
+      "end": 45.46,
+      "text": "see how to find the answer algebraically. Subtract one from both sides of the equation"
+    },
+    {
+      "start": 45.46,
+      "end": 50.5,
+      "text": "and take the square root, resulting in x equals plus or minus i. Done."
+    },
+    {
+      "start": 50.5,
+      "end": 54.24,
+      "text": "So that's cool, but to really make sense of our shape from part one, we need to dig"
+    },
+    {
+      "start": 54.24,
+      "end": 58.82,
+      "text": "a little deeper, and talk about functions of complex variables."
+    },
+    {
+      "start": 58.82,
+      "end": 63.1,
+      "text": "The kinds of functions most of us are used to, functions of real numbers, have inputs"
+    },
+    {
+      "start": 63.1,
+      "end": 68.2,
+      "text": "and outputs that can be visualized using a single dimension. This means all our x values"
+    },
+    {
+      "start": 68.2,
+      "end": 73.54,
+      "text": "fit on a single number line, and so do our y values. It seems pretty reasonable, then,"
+    },
+    {
+      "start": 73.54,
+      "end": 77.56,
+      "text": "that if we want to figure out how x and y are related, we should put our x number line"
+    },
+    {
+      "start": 77.56,
+      "end": 81.62,
+      "text": "facing one way on our piece of paper, and put our y number line on the same piece of"
+    },
+    {
+      "start": 81.62,
+      "end": 87.28,
+      "text": "paper, just facing the other way. This forms a two-dimensional grid known as the Cartesian"
+    },
+    {
+      "start": 87.28,
+      "end": 87.94,
+      "text": "Coordinate System."
+    },
+    {
+      "start": 88.82000000000001,
+      "end": 94.02000000000001,
+      "text": "Apparently invented by Rene Descartes in the 16th century after watching flies crawl around,"
+    },
+    {
+      "start": 94.02000000000001,
+      "end": 98.30000000000001,
+      "text": "the Cartesian Coordinate System is a super powerful tool for understanding the relationship"
+    },
+    {
+      "start": 98.30000000000001,
+      "end": 103.54,
+      "text": "between two variables. The Cartesian Coordinate System is powerful because it allows us to"
+    },
+    {
+      "start": 103.54,
+      "end": 108.32000000000001,
+      "text": "take abstract ideas, like functions, and turn them into something our brains can grasp much"
+    },
+    {
+      "start": 108.32000000000001,
+      "end": 114.2,
+      "text": "more intuitively, shapes. By giving each point on the planet its very own coordinates, Descartes"
+    },
+    {
+      "start": 114.2,
+      "end": 118.80000000000001,
+      "text": "was able to bring together the two largest areas of mathematics at the time, algebra"
+    },
+    {
+      "start": 118.8,
+      "end": 121.2,
+      "text": "and geometry."
+    },
+    {
+      "start": 121.2,
+      "end": 125.5,
+      "text": "This greatly aided early efforts at classifying functions by Newton and others, and today"
+    },
+    {
+      "start": 125.5,
+      "end": 129.92,
+      "text": "the Cartesian Coordinate System shows up everywhere, helping us do all kinds of things like spot"
+    },
+    {
+      "start": 129.92,
+      "end": 131.9,
+      "text": "trends in data."
+    },
+    {
+      "start": 131.9,
+      "end": 136.3,
+      "text": "So that's all fun and wonderful, but the Cartesian Coordinate System does come with a disclaimer"
+    },
+    {
+      "start": 136.3,
+      "end": 140.0,
+      "text": "– it only works in two dimensions."
+    },
+    {
+      "start": 140.0,
+      "end": 144.04,
+      "text": "This limitation becomes a real problem when we start to think about functions of complex"
+    },
+    {
+      "start": 144.04,
+      "end": 148.8,
+      "text": "variables. These functions take in complex numbers for their inputs, and for the most"
+    },
+    {
+      "start": 148.8,
+      "end": 153.4,
+      "text": "part also output complex numbers. This means that the numbers we put in and get out of"
+    },
+    {
+      "start": 153.4,
+      "end": 158.12,
+      "text": "our function no longer fit on number lines. We need two complex planes to keep track of"
+    },
+    {
+      "start": 158.12,
+      "end": 162.42000000000002,
+      "text": "our numbers, one for our input and one for our output."
+    },
+    {
+      "start": 162.42000000000002,
+      "end": 167.54000000000002,
+      "text": "This raises the question, if, when visualizing these functions, what we're really interested"
+    },
+    {
+      "start": 167.54000000000002,
+      "end": 171.82000000000002,
+      "text": "in is the connection between the input and output, how do we visualize what's happening"
+    },
+    {
+      "start": 171.82000000000002,
+      "end": 177.24,
+      "text": "on both planes simultaneously? We could try to fit our input and output planes together"
+    },
+    {
+      "start": 177.24,
+      "end": 178.24,
+      "text": "somehow –"
+    },
+    {
+      "start": 178.24,
+      "end": 182.4,
+      "text": "did with our number lines for real valued functions, but we quickly run into a pretty"
+    },
+    {
+      "start": 182.4,
+      "end": 188.88,
+      "text": "serious issue. As you likely know, the universe we live in has three spatial dimensions. So there's"
+    },
+    {
+      "start": 188.88,
+      "end": 192.88,
+      "text": "no way to fit the four spatial dimensions we need into a single structure that our brains"
+    },
+    {
+      "start": 192.88,
+      "end": 199.52,
+      "text": "can comprehend. We simply run out of dimensions. Fortunately, there are some very clever ways to"
+    },
+    {
+      "start": 199.52,
+      "end": 203.84,
+      "text": "see the relationship between two complex variables. But before we can get to these,"
+    },
+    {
+      "start": 203.84,
+      "end": 208.72,
+      "text": "we need to think about the mathematics of complex functions. Even though using separate planes for"
+    },
+    {
+      "start": 208.72,
+      "end": 212.96,
+      "text": "our input and output is not a perfect solution, this approach can still help get us started."
+    },
+    {
+      "start": 213.52,
+      "end": 218.88,
+      "text": "Let's try it out with our original function, f of x equals x squared plus 1. Before we begin,"
+    },
+    {
+      "start": 218.88,
+      "end": 222.16,
+      "text": "let's make a quick variable change to make things easier down the road."
+    },
+    {
+      "start": 222.8,
+      "end": 227.44,
+      "text": "We'll change the name of our input variable from x to z, and call our output variable w."
+    },
+    {
+      "start": 228.48000000000002,
+      "end": 233.52,
+      "text": "Since z and w each have a real and imaginary part, let's go one step further and give these"
+    },
+    {
+      "start": 233.52,
+      "end": 233.76,
+      "text": "parts the name of our input variable w. Since z and w each have a real and imaginary part,"
+    },
+    {
+      "start": 233.76,
+      "end": 233.84,
+      "text": "let's go one step further and give these parts the name of our input variable w."
+    },
+    {
+      "start": 233.84,
+      "end": 239.28,
+      "text": "We'll let z equal x plus i y, so x represents the real part of z,"
+    },
+    {
+      "start": 239.28,
+      "end": 244.4,
+      "text": "and y represents the imaginary part. We'll also let w equal u plus i v."
+    },
+    {
+      "start": 245.6,
+      "end": 250.32,
+      "text": "Just as we can use tables to keep track of our inputs and outputs for real valued functions,"
+    },
+    {
+      "start": 250.32,
+      "end": 253.92000000000002,
+      "text": "we can also use tables to keep track of our inputs and outputs for complex functions."
+    },
+    {
+      "start": 254.8,
+      "end": 259.84000000000003,
+      "text": "However, we now need four columns to keep track of our four variables, x, y, u, and v."
+    },
+    {
+      "start": 261.36,
+      "end": 263.76,
+      "text": "We can now experiment with our function f of z"
+    },
+    {
+      "start": 263.76,
+      "end": 268.4,
+      "text": "equals z squared plus 1. If we plug in a complex number to our function,"
+    },
+    {
+      "start": 268.4,
+      "end": 273.36,
+      "text": "for example z equals 1 plus i, we can do a little algebra and obtain our result,"
+    },
+    {
+      "start": 273.36,
+      "end": 279.28,
+      "text": "w equals 1 plus 2i. Plotting our inputs and outputs, we see that the point 1 plus i in"
+    },
+    {
+      "start": 279.28,
+      "end": 284.4,
+      "text": "our input plane was pushed or mapped by our function to 1 plus 2i in our output plane."
+    },
+    {
+      "start": 285.76,
+      "end": 288.88,
+      "text": "Let's plug in a few more points here and see if we can find a pattern."
+    },
+    {
+      "start": 289.84,
+      "end": 293.68,
+      "text": "If we test points along a straight line in our input space, we see that"
+    },
+    {
+      "start": 293.68,
+      "end": 297.76,
+      "text": "in our output space our straight line is transformed into a curved line."
+    },
+    {
+      "start": 297.76,
+      "end": 302.08,
+      "text": "Interesting. As you can imagine, plugging in points like this can get pretty tedious."
+    },
+    {
+      "start": 302.72,
+      "end": 306.64,
+      "text": "To speed things up, let's let a computer do it for us. And instead of having our"
+    },
+    {
+      "start": 306.64,
+      "end": 310.16,
+      "text": "computer just map certain points, let's have it map all the points."
+    },
+    {
+      "start": 310.88,
+      "end": 315.28000000000003,
+      "text": "We'll take advantage of the fact that the image you're seeing is just a collection of pixels that"
+    },
+    {
+      "start": 315.28000000000003,
+      "end": 321.04,
+      "text": "happen to be arranged on a grid. We'll use some code written in the programming language Python"
+    },
+    {
+      "start": 321.04,
+      "end": 323.44,
+      "text": "to move every single pixel in our input space,"
+    },
+    {
+      "start": 323.68,
+      "end": 329.28000000000003,
+      "text": "to its proper location in the output space. To make this work, we'll assign each pixel in"
+    },
+    {
+      "start": 329.28000000000003,
+      "end": 334.16,
+      "text": "our input video a complex number that corresponds to its location on the complex plane."
+    },
+    {
+      "start": 335.12,
+      "end": 340.0,
+      "text": "We can then let our code take care of the tedious work of moving each pixel to its new location"
+    },
+    {
+      "start": 340.0,
+      "end": 346.48,
+      "text": "as dictated by our function, z squared plus 1. Our code will move points exactly as we did by hand"
+    },
+    {
+      "start": 346.48,
+      "end": 352.88,
+      "text": "before. If we have a blue pixel at the 1 plus i location on our input graph, then this blue pixel"
+    },
+    {
+      "start": 353.68,
+      "end": 359.36,
+      "text": "is the 1 plus 2 i location on our output graph, because f of 1 plus i is equal to 1 plus 2 i."
+    },
+    {
+      "start": 360.8,
+      "end": 364.88,
+      "text": "We saw before that our function warped a straight horizontal line into a curvy one,"
+    },
+    {
+      "start": 365.6,
+      "end": 369.76,
+      "text": "so it should have some interesting effects on our video. We'll include some reference"
+    },
+    {
+      "start": 369.76,
+      "end": 373.2,
+      "text": "markers on top of our input and output planes to keep track of our numbers,"
+    },
+    {
+      "start": 373.2,
+      "end": 376.8,
+      "text": "but we won't transform these pixels. Alright, ready?"
+    },
+    {
+      "start": 377.44,
+      "end": 382.96000000000004,
+      "text": "Let's start by drawing some simple lines. A horizontal line along the positive x-axis turns"
+    },
+    {
+      "start": 383.68,
+      "end": 388.72,
+      "text": "out to be pretty similar in our output space. But what about a line along the positive imaginary"
+    },
+    {
+      "start": 388.72,
+      "end": 395.28000000000003,
+      "text": "axis? This line appears to have been rotated. As we add more lines, we begin to see a pattern."
+    },
+    {
+      "start": 396.08,
+      "end": 400.48,
+      "text": "Our family of straight lines is turned into a family of curved lines. Cool, right?"
+    },
+    {
+      "start": 401.68,
+      "end": 406.96000000000004,
+      "text": "So we found one pattern, but how is this pattern explained by our function z squared plus 1?"
+    },
+    {
+      "start": 407.76,
+      "end": 411.68,
+      "text": "And more importantly, how does this fit with everything else we've learned about complex numbers?"
+    },
+    {
+      "start": 412.24,
+      "end": 416.08,
+      "text": "What else would be interesting to draw in our input space to test our mapping?"
+    },
+    {
+      "start": 417.12,
+      "end": 420.0,
+      "text": "What shape would you draw to learn more about what our function is doing?"
+    },
+    {
+      "start": 421.04,
+      "end": 424.08,
+      "text": "Next time, more shapes."
+    },
+    {
+      "start": 441.68,
+      "end": 445.04,
+      "text": "Thanks for watching, and I'll see you in the next video."
+    }
+  ],
+  "segment_count": 91
+}

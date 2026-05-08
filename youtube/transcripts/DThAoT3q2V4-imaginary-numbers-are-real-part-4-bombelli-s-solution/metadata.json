@@ -1,0 +1,12 @@
+{
+  "title": "Imaginary Numbers Are Real [Part 4: Bombelli's Solution]",
+  "url": "https://www.youtube.com/watch?v=DThAoT3q2V4",
+  "backend": "faster-whisper",
+  "model": "large-v3",
+  "requested_language": "en",
+  "detected_language": "en",
+  "generated_at": "2026-05-07T11:44:51",
+  "language": "en",
+  "language_probability": 1,
+  "duration": 176.391
+}

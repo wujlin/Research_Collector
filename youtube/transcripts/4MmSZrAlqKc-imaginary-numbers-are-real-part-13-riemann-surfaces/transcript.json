@@ -1,0 +1,1045 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 22.8,
+      "text": "This is a Riemann surface. It's going to help us think in four dimensions."
+    },
+    {
+      "start": 22.8,
+      "end": 27.62,
+      "text": "We made it by cutting our planes at the discontinuities in our paths, and taping them together in"
+    },
+    {
+      "start": 27.62,
+      "end": 32.74,
+      "text": "a way that made our paths from one plane to the other continuous."
+    },
+    {
+      "start": 32.74,
+      "end": 37.42,
+      "text": "Riemann's big idea here is that the domain, the input values of our multifunction, should"
+    },
+    {
+      "start": 37.42,
+      "end": 44.120000000000005,
+      "text": "not be a flat two-dimensional plane. Our domain should instead be this, a curved surface living"
+    },
+    {
+      "start": 44.120000000000005,
+      "end": 49.0,
+      "text": "in higher dimensional space, a Riemann surface."
+    },
+    {
+      "start": 49.0,
+      "end": 53.08,
+      "text": "What's incredible here is what the geometry of our Riemann surface is going to allow us"
+    },
+    {
+      "start": 53.08,
+      "end": 55.08,
+      "text": "to do."
+    },
+    {
+      "start": 55.08,
+      "end": 59.76,
+      "text": "Using our Riemann surface as the input space to our multifunction, we can literally fix"
+    },
+    {
+      "start": 59.76,
+      "end": 65.25999999999999,
+      "text": "all of the problems we've encountered thus far. Our function will be one-to-one, continuous,"
+    },
+    {
+      "start": 65.25999999999999,
+      "end": 69.17999999999999,
+      "text": "and our Riemann surface will even help us elegantly explain the weird loop behavior"
+    },
+    {
+      "start": 69.17999999999999,
+      "end": 71.84,
+      "text": "we saw back in part 11."
+    },
+    {
+      "start": 71.84,
+      "end": 74.36,
+      "text": "Let's see how."
+    },
+    {
+      "start": 74.36,
+      "end": 79.1,
+      "text": "Riemann envisioned these surfaces as sheets covering the input plane W."
+    },
+    {
+      "start": 79.1,
+      "end": 83.75999999999999,
+      "text": "Our Riemann surface is constructed from two copies of the complex plane, and the idea"
+    },
+    {
+      "start": 83.75999999999999,
+      "end": 84.75999999999999,
+      "text": "here is that each input plane is a Riemann surface. Each input plane is a Riemann surface."
+    },
+    {
+      "start": 84.76,
+      "end": 89.72,
+      "text": "The input value on W lies directly below its corresponding points on each layer of our"
+    },
+    {
+      "start": 89.72,
+      "end": 91.48,
+      "text": "Riemann surface."
+    },
+    {
+      "start": 91.48,
+      "end": 96.78,
+      "text": "If we follow a line straight up from the value 2i on our W plane, we find two points that"
+    },
+    {
+      "start": 96.78,
+      "end": 103.16000000000001,
+      "text": "correspond to W equals 2i. Our Riemann surface fixes our one-to-one problem just as our two"
+    },
+    {
+      "start": 103.16000000000001,
+      "end": 108.60000000000001,
+      "text": "complex plane solution did. Each of our two solutions on Z corresponds to its very own"
+    },
+    {
+      "start": 108.60000000000001,
+      "end": 113.44,
+      "text": "copy of the W plane. These are called branches."
+    },
+    {
+      "start": 113.44,
+      "end": 118.32,
+      "text": "So our Riemann surface makes our mapping one-to-one, just as our two-complex-plane approach did"
+    },
+    {
+      "start": 118.32,
+      "end": 119.32,
+      "text": "last time."
+    },
+    {
+      "start": 119.32,
+      "end": 125.24,
+      "text": "But what about continuity? As we saw last time, a big problem with our two-complex-plane"
+    },
+    {
+      "start": 125.24,
+      "end": 129.74,
+      "text": "solution is that it introduced discontinuities."
+    },
+    {
+      "start": 129.74,
+      "end": 134.92,
+      "text": "We constructed our surface in such a way that our colored path was continuous, but we encountered"
+    },
+    {
+      "start": 134.92,
+      "end": 141.8,
+      "text": "this weird self-intersection. So let's dig a little deeper. Remember the main idea here."
+    },
+    {
+      "start": 141.8,
+      "end": 143.24,
+      "text": "Using our Riemann surface as the input plane, we can map one-to-one, just like we did last"
+    },
+    {
+      "start": 143.24,
+      "end": 144.04000000000002,
+      "text": "time."
+    },
+    {
+      "start": 144.04000000000002,
+      "end": 153.52,
+      "text": "So instead of drawing paths or shapes on our W plane, we should really be drawing on our"
+    },
+    {
+      "start": 153.52,
+      "end": 156.4,
+      "text": "Riemann surface."
+    },
+    {
+      "start": 156.4,
+      "end": 160.3,
+      "text": "Drawing on three-dimensional surfaces can be a little challenging, so we'll make use"
+    },
+    {
+      "start": 160.3,
+      "end": 167.4,
+      "text": "of a tool that wasn't invented until over a century after Riemann's death. A computer."
+    },
+    {
+      "start": 167.4,
+      "end": 172.32000000000002,
+      "text": "Just as with our paper version, we'll start with our W plane lying flat on the ground,"
+    },
+    {
+      "start": 172.32,
+      "end": 175.68,
+      "text": "and place our Riemann surface directly above."
+    },
+    {
+      "start": 175.68,
+      "end": 179.64,
+      "text": "Before we start drawing paths all over our surface, let's make sure we know what we're"
+    },
+    {
+      "start": 179.64,
+      "end": 181.38,
+      "text": "looking at."
+    },
+    {
+      "start": 181.38,
+      "end": 186.44,
+      "text": "We're trying to understand the complex function W equals Z squared, or taken in the other"
+    },
+    {
+      "start": 186.44,
+      "end": 192.44,
+      "text": "direction, Z equals plus or minus the square root of W. The mapping between W and Z is"
+    },
+    {
+      "start": 192.44,
+      "end": 195.56,
+      "text": "the same in both directions."
+    },
+    {
+      "start": 195.56,
+      "end": 201.07999999999998,
+      "text": "The visualization challenge here is that our mapping is four-dimensional. Both Z and W"
+    },
+    {
+      "start": 201.07999999999998,
+      "end": 202.12,
+      "text": "have real and imaginary dimensions. Both Z and W have real and imaginary dimensions."
+    },
+    {
+      "start": 202.12,
+      "end": 202.92000000000002,
+      "text": "Both Z and W have real and imaginary dimensions. Both Z and W have real and imaginary dimensions."
+    },
+    {
+      "start": 202.92000000000002,
+      "end": 204.28,
+      "text": "Both Z and W have real and imaginary dimensions. Both Z and W have real and imaginary dimensions."
+    },
+    {
+      "start": 204.28,
+      "end": 208.70000000000002,
+      "text": "Back in part 10, we called these X, Y, U, and V."
+    },
+    {
+      "start": 208.70000000000002,
+      "end": 214.0,
+      "text": "What we're seeing when we visualize our Riemann surface is a two-dimensional surface in three-dimensional"
+    },
+    {
+      "start": 214.0,
+      "end": 215.54,
+      "text": "space."
+    },
+    {
+      "start": 215.54,
+      "end": 220.5,
+      "text": "In this case, since we positioned our surface directly above our W plane, two of our three"
+    },
+    {
+      "start": 220.5,
+      "end": 226.02,
+      "text": "dimensions correspond exactly to the real and imaginary parts of W. We called these"
+    },
+    {
+      "start": 226.02,
+      "end": 228.18,
+      "text": "U and V."
+    },
+    {
+      "start": 228.18,
+      "end": 232.08,
+      "text": "Part of Riemann's idea is that our third dimension should represent the Z value of"
+    },
+    {
+      "start": 232.08,
+      "end": 238.88000000000002,
+      "text": "of our function. But as we know, z is a complex number. It has both a real and imaginary part,"
+    },
+    {
+      "start": 238.88000000000002,
+      "end": 243.12,
+      "text": "so there's no way to show both of these on a single axis."
+    },
+    {
+      "start": 243.12,
+      "end": 247.66000000000003,
+      "text": "What's often done when visualizing these surfaces, and what we're going to do here, is simply"
+    },
+    {
+      "start": 247.66000000000003,
+      "end": 252.54000000000002,
+      "text": "pick the real or imaginary part of z, and use this value as the third dimension, the"
+    },
+    {
+      "start": 252.54000000000002,
+      "end": 259.62,
+      "text": "height of our surface. Here we're using x, the real part of z. Doing this has a nice"
+    },
+    {
+      "start": 259.62,
+      "end": 265.7,
+      "text": "visual result. Each point on our Riemann surface lives in 3D space at a location corresponding"
+    },
+    {
+      "start": 265.7,
+      "end": 273.46,
+      "text": "exactly to its u, v, and x values. So each point on our surface represents a single solution"
+    },
+    {
+      "start": 273.46,
+      "end": 278.84000000000003,
+      "text": "to our equation. And three of the four values needed to describe the solution are represented"
+    },
+    {
+      "start": 278.84000000000003,
+      "end": 284.86,
+      "text": "by the point's location in 3D space. This is a nice result, but we must remember"
+    },
+    {
+      "start": 284.86,
+      "end": 289.5,
+      "text": "that this is not the whole picture. There's another variable, the imaginary"
+    },
+    {
+      "start": 289.5,
+      "end": 289.62,
+      "text": "part of z, that we can not legislate. It's presented by its Hollywood's Himalayan"
+    },
+    {
+      "start": 289.62,
+      "end": 296.26,
+      "text": "of z, we call this y, that is not included in our visualization. This becomes important when trying"
+    },
+    {
+      "start": 296.26,
+      "end": 301.46,
+      "text": "to figure out if we've actually fixed our continuity problem. If we follow a path along a"
+    },
+    {
+      "start": 301.46,
+      "end": 307.3,
+      "text": "single branch of our Riemann surface, we run into a bit of a problem when we hit this self-intersection."
+    },
+    {
+      "start": 307.3,
+      "end": 314.74,
+      "text": "After all, which way should we go? Up or down? To answer this question, let's try to figure out why"
+    },
+    {
+      "start": 314.74,
+      "end": 321.3,
+      "text": "our surface self-intersects in the first place. This intersection happens along the negative real"
+    },
+    {
+      "start": 321.3,
+      "end": 328.82,
+      "text": "axis of our w-plane. Let's consider a point on this axis, w equals minus 1. Plugging in negative"
+    },
+    {
+      "start": 328.82,
+      "end": 336.42,
+      "text": "1 for w yields two solutions, z equals plus i and z equals minus i. These two solutions are clearly"
+    },
+    {
+      "start": 336.42,
+      "end": 342.82,
+      "text": "different, but they have the same real part, zero. Since we're only visualizing the real part of z,"
+    },
+    {
+      "start": 342.82,
+      "end": 344.74,
+      "text": "we have no way of seeing that these are in the same real part."
+    },
+    {
+      "start": 344.74,
+      "end": 351.22,
+      "text": "This is the danger of visualizing high-dimensional mathematical concepts."
+    },
+    {
+      "start": 353.38,
+      "end": 357.62,
+      "text": "What we're really looking at here is just a projection, a shadow of our full"
+    },
+    {
+      "start": 357.62,
+      "end": 363.06,
+      "text": "four-dimensional surface. So our line of self-intersection actually isn't."
+    },
+    {
+      "start": 364.66,
+      "end": 368.90000000000003,
+      "text": "This is exactly like the two-dimensional shadows of three-dimensional objects,"
+    },
+    {
+      "start": 368.90000000000003,
+      "end": 371.3,
+      "text": "giving the appearance that the objects intersect."
+    },
+    {
+      "start": 373.14,
+      "end": 374.74,
+      "text": "There are inherent limitations to this."
+    },
+    {
+      "start": 374.74,
+      "end": 380.58,
+      "text": "However, there are some very clever ways to get a feel for what's happening in our missing fourth"
+    },
+    {
+      "start": 380.58,
+      "end": 386.34000000000003,
+      "text": "dimension. One approach is to expand our visualization to include another dimension"
+    },
+    {
+      "start": 386.34000000000003,
+      "end": 391.78000000000003,
+      "text": "of human perception, such as color. We'll color each point on our surface with a color that"
+    },
+    {
+      "start": 391.78000000000003,
+      "end": 397.14,
+      "text": "corresponds to the value of the fourth dimension of our function, in this case the imaginary part"
+    },
+    {
+      "start": 397.14,
+      "end": 403.14,
+      "text": "of z, y. To do this, we need to use a function called the dimension of the fourth dimension."
+    },
+    {
+      "start": 403.86,
+      "end": 409.14,
+      "text": "To do this, we need to decide which colors to map to which numbers. This is called a color map."
+    },
+    {
+      "start": 410.34,
+      "end": 414.97999999999996,
+      "text": "Our colors now give us a nice idea of what's happening in our missing fourth dimension, y."
+    },
+    {
+      "start": 416.18,
+      "end": 420.26,
+      "text": "If we look at our line of self-intersection now, it's much more clear that since our"
+    },
+    {
+      "start": 420.26,
+      "end": 424.5,
+      "text": "colors are different, our four-dimensional function actually doesn't intersect itself."
+    },
+    {
+      "start": 425.38,
+      "end": 429.62,
+      "text": "The apparent self-intersection is just an artifact of our visualization technique."
+    },
+    {
+      "start": 430.82,
+      "end": 433.14,
+      "text": "So as we follow paths on our Riemann surface,"
+    },
+    {
+      "start": 433.14,
+      "end": 436.74,
+      "text": "the right thing to do with these self-intersection lines is to ignore them."
+    },
+    {
+      "start": 438.09999999999997,
+      "end": 442.58,
+      "text": "If we now follow our path around our surface, we see that it's perfectly continuous,"
+    },
+    {
+      "start": 442.58,
+      "end": 446.18,
+      "text": "even at our weird self-intersection line. Excellent!"
+    },
+    {
+      "start": 447.3,
+      "end": 451.53999999999996,
+      "text": "So that's great, we have continuity. But there's still one missing piece of the puzzle."
+    },
+    {
+      "start": 452.41999999999996,
+      "end": 455.3,
+      "text": "What about the weird behavior we saw back in part 11,"
+    },
+    {
+      "start": 455.3,
+      "end": 458.65999999999997,
+      "text": "where some paths ended up in new locations, and others didn't?"
+    },
+    {
+      "start": 460.5,
+      "end": 463.14,
+      "text": "Let's recreate these suspicious paths, first,"
+    },
+    {
+      "start": 463.14,
+      "end": 468.9,
+      "text": "just on our W and Z planes. Now, let's do the same exact thing,"
+    },
+    {
+      "start": 468.9,
+      "end": 472.18,
+      "text": "but this time using our Riemann surface to help us see what's going on."
+    },
+    {
+      "start": 473.38,
+      "end": 478.02,
+      "text": "To keep our surface from getting too crowded, we'll choose one of our two paths to visualize first."
+    },
+    {
+      "start": 479.14,
+      "end": 483.06,
+      "text": "Alright, ready? We'll draw the same exact paths on W,"
+    },
+    {
+      "start": 483.06,
+      "end": 486.65999999999997,
+      "text": "and see how they show up on our Riemann surface as they are mapped to our Z plane."
+    },
+    {
+      "start": 493.14,
+      "end": 499.86,
+      "text": "So let's go ahead and draw one of our Z planes, and see how it looks."
+    },
+    {
+      "start": 505.7,
+      "end": 510.18,
+      "text": "So why does our green path start out in one location on our Z plane, only to end up in another?"
+    },
+    {
+      "start": 510.97999999999996,
+      "end": 514.8199999999999,
+      "text": "Simply because our green path leads us to the other layer of our surface."
+    },
+    {
+      "start": 515.86,
+      "end": 520.58,
+      "text": "From the perspective of our W plane, it appears that we've returned exactly to our starting point,"
+    },
+    {
+      "start": 521.3,
+      "end": 522.58,
+      "text": "but actually we haven't."
+    },
+    {
+      "start": 523.14,
+      "end": 526.3199999999999,
+      "text": "The w-plane is just a projection, a shadow."
+    },
+    {
+      "start": 527.1999999999999,
+      "end": 532.34,
+      "text": "In reality, our path has led us to a completely different branch of our function, with different z-values."
+    },
+    {
+      "start": 534.24,
+      "end": 536.42,
+      "text": "This, of course, is only half the picture."
+    },
+    {
+      "start": 537.0,
+      "end": 539.76,
+      "text": "Each point on our w-plane has two solutions on z."
+    },
+    {
+      "start": 540.4,
+      "end": 543.88,
+      "text": "This is why our single path became two paths back in part 11."
+    },
+    {
+      "start": 544.66,
+      "end": 548.76,
+      "text": "On our Riemann surface, our second solution is a flipped version of our first."
+    },
+    {
+      "start": 548.76,
+      "end": 553.92,
+      "text": "The important thing here, of course, is that for either set of paths,"
+    },
+    {
+      "start": 554.12,
+      "end": 559.8199999999999,
+      "text": "our Riemann surface allows us to clearly see that some paths on w lead to the other branch, and some don't."
+    },
+    {
+      "start": 560.64,
+      "end": 565.98,
+      "text": "More specifically, paths that go around the central point on our Riemann surface end up on new branches."
+    },
+    {
+      "start": 566.78,
+      "end": 568.4399999999999,
+      "text": "This point is called a branch point."
+    },
+    {
+      "start": 569.5,
+      "end": 573.68,
+      "text": "Branch points occur wherever the two branches of our function have the same exact value,"
+    },
+    {
+      "start": 574.02,
+      "end": 577.12,
+      "text": "and can tell us a great deal about how our complex function behaves."
+    },
+    {
+      "start": 577.9,
+      "end": 578.74,
+      "text": "For us, this is a very important point."
+    },
+    {
+      "start": 578.74,
+      "end": 580.5,
+      "text": "For us, this is the point w equals zero."
+    },
+    {
+      "start": 582.28,
+      "end": 586.0600000000001,
+      "text": "So our Riemann surface not only fixes the troubles we ran into earlier,"
+    },
+    {
+      "start": 586.24,
+      "end": 589.28,
+      "text": "but beautifully explains the strange path behavior we saw."
+    },
+    {
+      "start": 590.3,
+      "end": 591.88,
+      "text": "And this is just the beginning."
+    },
+    {
+      "start": 592.44,
+      "end": 595.0,
+      "text": "Riemann surfaces are a huge part of modern mathematics,"
+    },
+    {
+      "start": 595.32,
+      "end": 597.74,
+      "text": "and there's way more to say than we have time for here."
+    },
+    {
+      "start": 599.44,
+      "end": 602.3,
+      "text": "All right, we're finally ready to answer the question,"
+    },
+    {
+      "start": 602.66,
+      "end": 603.58,
+      "text": "what is this?"
+    },
+    {
+      "start": 604.28,
+      "end": 607.44,
+      "text": "Our entire discussion has centered around a single function,"
+    },
+    {
+      "start": 607.44,
+      "end": 608.44,
+      "text": "f of z equals zero."
+    },
+    {
+      "start": 608.74,
+      "end": 615.12,
+      "text": "And so far, we've looked at one way to visualize the Riemann surface for our function"
+    },
+    {
+      "start": 615.12,
+      "end": 618.48,
+      "text": "by plotting three of our four variables in 3D space."
+    },
+    {
+      "start": 619.64,
+      "end": 622.5,
+      "text": "The two-dimensional plot we started our discussion with,"
+    },
+    {
+      "start": 622.76,
+      "end": 624.52,
+      "text": "the one most of us see in math class,"
+    },
+    {
+      "start": 624.76,
+      "end": 627.02,
+      "text": "only shows two of our four variables,"
+    },
+    {
+      "start": 627.42,
+      "end": 628.94,
+      "text": "the real parts of z and w."
+    },
+    {
+      "start": 630.4,
+      "end": 632.7,
+      "text": "The surface we created back in part one"
+    },
+    {
+      "start": 632.7,
+      "end": 635.12,
+      "text": "is the result of including one more variable,"
+    },
+    {
+      "start": 635.12,
+      "end": 636.78,
+      "text": "the imaginary part of z,"
+    },
+    {
+      "start": 637.16,
+      "end": 638.72,
+      "text": "as the vertical dimension of our visual function."
+    },
+    {
+      "start": 638.74,
+      "end": 642.48,
+      "text": "When we first saw this surface in part one,"
+    },
+    {
+      "start": 642.78,
+      "end": 644.5,
+      "text": "many of you asked a very good question."
+    },
+    {
+      "start": 645.76,
+      "end": 648.16,
+      "text": "If, according to the fundamental theorem of algebra,"
+    },
+    {
+      "start": 648.46,
+      "end": 650.84,
+      "text": "our function is supposed to have exactly two roots,"
+    },
+    {
+      "start": 651.34,
+      "end": 653.14,
+      "text": "why does our surface appear to equal zero"
+    },
+    {
+      "start": 653.14,
+      "end": 654.6,
+      "text": "at way more than two locations?"
+    },
+    {
+      "start": 655.8,
+      "end": 658.36,
+      "text": "This apparent contradiction has everything to do"
+    },
+    {
+      "start": 658.36,
+      "end": 660.98,
+      "text": "with the shortcomings of living in three-dimensional space"
+    },
+    {
+      "start": 660.98,
+      "end": 661.74,
+      "text": "that we've been discussing."
+    },
+    {
+      "start": 662.96,
+      "end": 665.2,
+      "text": "When we visualize four-dimensional functions"
+    },
+    {
+      "start": 665.2,
+      "end": 666.36,
+      "text": "in three-dimensional space,"
+    },
+    {
+      "start": 666.36,
+      "end": 668.34,
+      "text": "we must remember that what we're really seeing"
+    },
+    {
+      "start": 668.74,
+      "end": 669.58,
+      "text": "is a projection,"
+    },
+    {
+      "start": 669.58,
+      "end": 672.38,
+      "text": "a shadow of the function's full four-dimensional form."
+    },
+    {
+      "start": 673.88,
+      "end": 675.82,
+      "text": "Let's have a closer look at our surface."
+    },
+    {
+      "start": 676.38,
+      "end": 677.42,
+      "text": "In our opening shot,"
+    },
+    {
+      "start": 677.42,
+      "end": 679.92,
+      "text": "half of our surface was hidden behind our paper,"
+    },
+    {
+      "start": 680.24,
+      "end": 683.1,
+      "text": "and the colors we used were chosen somewhat arbitrarily"
+    },
+    {
+      "start": 683.1,
+      "end": 685.42,
+      "text": "to roughly correspond to the surface height."
+    },
+    {
+      "start": 686.8,
+      "end": 688.0,
+      "text": "Now that we know a bit more"
+    },
+    {
+      "start": 688.0,
+      "end": 690.16,
+      "text": "about functions of complex variables,"
+    },
+    {
+      "start": 690.16,
+      "end": 691.84,
+      "text": "let's change the color of our surface"
+    },
+    {
+      "start": 691.84,
+      "end": 693.9,
+      "text": "to correspond to the fourth variable"
+    },
+    {
+      "start": 693.9,
+      "end": 694.98,
+      "text": "we were forced to leave out"
+    },
+    {
+      "start": 694.98,
+      "end": 697.42,
+      "text": "of our three-dimensional visualization, v."
+    },
+    {
+      "start": 698.74,
+      "end": 700.84,
+      "text": "Now that we have some idea"
+    },
+    {
+      "start": 700.84,
+      "end": 703.1800000000001,
+      "text": "of what all four variables are doing,"
+    },
+    {
+      "start": 703.1800000000001,
+      "end": 705.58,
+      "text": "let's look for the two roots predicted by Gauss."
+    },
+    {
+      "start": 706.74,
+      "end": 708.5600000000001,
+      "text": "Remember, roots are where the output"
+    },
+    {
+      "start": 708.5600000000001,
+      "end": 710.54,
+      "text": "of our function equals zero."
+    },
+    {
+      "start": 710.54,
+      "end": 711.7,
+      "text": "For this to be the case,"
+    },
+    {
+      "start": 711.7,
+      "end": 713.54,
+      "text": "both the real and lateral parts"
+    },
+    {
+      "start": 713.54,
+      "end": 717.1,
+      "text": "of our output variable w, u and v, must be zero."
+    },
+    {
+      "start": 718.46,
+      "end": 720.98,
+      "text": "Seeing where u equals zero isn't too bad."
+    },
+    {
+      "start": 720.98,
+      "end": 723.38,
+      "text": "This is where our surface intersects the z-plane."
+    },
+    {
+      "start": 724.48,
+      "end": 727.12,
+      "text": "Now, where does v, the imaginary part"
+    },
+    {
+      "start": 727.12,
+      "end": 728.58,
+      "text": "of our output variable w, u and v, intersect?"
+    },
+    {
+      "start": 728.58,
+      "end": 729.4200000000001,
+      "text": "v equals zero."
+    },
+    {
+      "start": 730.7,
+      "end": 732.08,
+      "text": "If we look at our color map,"
+    },
+    {
+      "start": 732.08,
+      "end": 734.0400000000001,
+      "text": "this should be where our surface is green."
+    },
+    {
+      "start": 735.12,
+      "end": 737.5200000000001,
+      "text": "It's difficult to see exactly which shade"
+    },
+    {
+      "start": 737.5200000000001,
+      "end": 739.62,
+      "text": "of green corresponds to zero,"
+    },
+    {
+      "start": 739.62,
+      "end": 741.9200000000001,
+      "text": "so let's add a blue line to our surface"
+    },
+    {
+      "start": 741.9200000000001,
+      "end": 743.96,
+      "text": "where v equals exactly zero."
+    },
+    {
+      "start": 745.08,
+      "end": 746.8000000000001,
+      "text": "Now, if we look closely,"
+    },
+    {
+      "start": 746.8000000000001,
+      "end": 749.22,
+      "text": "we see that both the real and imaginary parts"
+    },
+    {
+      "start": 749.22,
+      "end": 752.38,
+      "text": "of w equals zero at exactly two points,"
+    },
+    {
+      "start": 752.38,
+      "end": 755.12,
+      "text": "positive and negative i on our complex z-plane,"
+    },
+    {
+      "start": 755.12,
+      "end": 757.08,
+      "text": "exactly as our algebra predicted."
+    },
+    {
+      "start": 758.58,
+      "end": 760.08,
+      "text": "We've found our missing roots."
+    },
+    {
+      "start": 761.1600000000001,
+      "end": 763.7,
+      "text": "So our friend Gauss was right all along."
+    },
+    {
+      "start": 763.7,
+      "end": 766.5200000000001,
+      "text": "Our function does have exactly two roots."
+    },
+    {
+      "start": 768.0600000000001,
+      "end": 770.72,
+      "text": "Of course, finding these roots took some effort."
+    },
+    {
+      "start": 770.72,
+      "end": 772.62,
+      "text": "We had to journey deep into mathematics"
+    },
+    {
+      "start": 772.62,
+      "end": 775.7,
+      "text": "and ask ourselves what a number really is."
+    },
+    {
+      "start": 775.7,
+      "end": 778.5,
+      "text": "This led us to the strange but necessary conclusion"
+    },
+    {
+      "start": 778.5,
+      "end": 780.76,
+      "text": "that the numbers we should really be using in algebra"
+    },
+    {
+      "start": 780.76,
+      "end": 783.0200000000001,
+      "text": "are the two-dimensional complex numbers."
+    },
+    {
+      "start": 784.1400000000001,
+      "end": 785.96,
+      "text": "This result dragged us down deeper"
+    },
+    {
+      "start": 785.96,
+      "end": 788.4000000000001,
+      "text": "into the four-dimensional world of complex functions,"
+    },
+    {
+      "start": 788.4,
+      "end": 790.5,
+      "text": "and Riemann surfaces."
+    },
+    {
+      "start": 790.5,
+      "end": 791.86,
+      "text": "When we finally emerged,"
+    },
+    {
+      "start": 791.86,
+      "end": 794.38,
+      "text": "we saw that the algebra many of us learn in school"
+    },
+    {
+      "start": 794.38,
+      "end": 797.12,
+      "text": "is only a shadow of an elegant, powerful,"
+    },
+    {
+      "start": 797.12,
+      "end": 799.1999999999999,
+      "text": "and higher-dimensional mathematics"
+    },
+    {
+      "start": 799.1999999999999,
+      "end": 801.0,
+      "text": "that has everything to do with the numbers"
+    },
+    {
+      "start": 801.0,
+      "end": 804.22,
+      "text": "that have been given the terrible name imaginary."
+    },
+    {
+      "start": 804.22,
+      "end": 805.22,
+      "text": "Thanks for watching."
+    },
+    {
+      "start": 818.4,
+      "end": 821.4,
+      "text": "Subtitles by the Amara.org community"
+    }
+  ],
+  "segment_count": 208
+}

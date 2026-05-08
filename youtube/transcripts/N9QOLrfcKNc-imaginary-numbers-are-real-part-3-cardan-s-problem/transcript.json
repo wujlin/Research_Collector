@@ -1,0 +1,305 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 5.12,
+      "text": "We left off last time with Cardan and his broken formula for finding the roots of cubic functions."
+    },
+    {
+      "start": 5.72,
+      "end": 9.66,
+      "text": "Cardan knew that his problem had to have a solution, but didn't know what to do with the"
+    },
+    {
+      "start": 9.66,
+      "end": 14.4,
+      "text": "square roots of negative numbers that kept popping up in his equations. Cardan came close to finding"
+    },
+    {
+      "start": 14.4,
+      "end": 18.96,
+      "text": "a way to make his formula work, but got stuck in an algebraic loop where a bunch of work would"
+    },
+    {
+      "start": 18.96,
+      "end": 23.54,
+      "text": "just lead him right back to where he started. It took one more generation of mathematicians to get"
+    },
+    {
+      "start": 23.54,
+      "end": 28.62,
+      "text": "to the bottom of this. Cardan's student, Raphael Bombelli, made some incredible insights about"
+    },
+    {
+      "start": 28.62,
+      "end": 33.08,
+      "text": "what's really going on here. Let's remember why Cardan was stuck. The square roots of negative"
+    },
+    {
+      "start": 33.08,
+      "end": 37.44,
+      "text": "numbers ask us to find a number that when multiplied by itself will yield a negative."
+    },
+    {
+      "start": 38.14,
+      "end": 44.2,
+      "text": "Neither positive nor negative numbers will work. Bombelli's first big insight was simply to accept"
+    },
+    {
+      "start": 44.2,
+      "end": 49.3,
+      "text": "that if positive numbers won't work and negative numbers won't work, then maybe there's some other"
+    },
+    {
+      "start": 49.3,
+      "end": 53.46,
+      "text": "kind of number out there that will. Now, if there is some other kind of number out there,"
+    },
+    {
+      "start": 53.72,
+      "end": 58.58,
+      "text": "a good follow-up question is, what are we going to call it? After all, we need to use it in our"
+    },
+    {
+      "start": 58.58,
+      "end": 64.24,
+      "text": "equations. Bombelli's approach was a very practical one. Rather than dream up a new name and symbol,"
+    },
+    {
+      "start": 64.67999999999999,
+      "end": 69.84,
+      "text": "Bombelli simply let the square roots of negatives be their own thing. In the past, mathematicians"
+    },
+    {
+      "start": 69.84,
+      "end": 74.25999999999999,
+      "text": "would have thrown in the towel here and declared the problem impossible, but Bombelli was able to"
+    },
+    {
+      "start": 74.25999999999999,
+      "end": 79.6,
+      "text": "press on simply by allowing the square roots of negatives to exist. Let's take a simple example"
+    },
+    {
+      "start": 79.6,
+      "end": 84.3,
+      "text": "of our new numbers, the square root of negative one. For being a new kind of number, it doesn't"
+    },
+    {
+      "start": 84.3,
+      "end": 88.12,
+      "text": "look very exciting, and might kind of seem like our old numbers. But remember,"
+    },
+    {
+      "start": 88.58,
+      "end": 93.98,
+      "text": "it does have the exact special property we need. When we square it, the result is negative."
+    },
+    {
+      "start": 93.98,
+      "end": 98.72,
+      "text": "Further, since our number doesn't behave like a positive or a negative, it must be something"
+    },
+    {
+      "start": 98.72,
+      "end": 103.36,
+      "text": "new. Now, if this all seems a bit fishy to you, like a slightly too convenient algebra"
+    },
+    {
+      "start": 103.36,
+      "end": 107.86,
+      "text": "trick, you're in good company. In fact, it's hard to introduce imaginary numbers without"
+    },
+    {
+      "start": 107.86,
+      "end": 112.08,
+      "text": "them sounding like an arbitrary invention. However, before we dismiss the square root"
+    },
+    {
+      "start": 112.08,
+      "end": 116.48,
+      "text": "of minus one as some abstraction invented to torture students, let's review what we've"
+    },
+    {
+      "start": 116.48,
+      "end": 117.28,
+      "text": "learned so far."
+    },
+    {
+      "start": 118.58,
+      "end": 123.52,
+      "text": "Bombelli was genuinely stuck on a tough problem that they knew had a solution. What Bombelli"
+    },
+    {
+      "start": 123.52,
+      "end": 128.48,
+      "text": "was able to see is that if he extended the existing number system, as had been done so"
+    },
+    {
+      "start": 128.48,
+      "end": 134.1,
+      "text": "many times before, he could solve the problem. Just as people needed fractions, zero, and"
+    },
+    {
+      "start": 134.1,
+      "end": 138.4,
+      "text": "negative numbers to solve new problems in the past, to solve this problem, Bombelli"
+    },
+    {
+      "start": 138.4,
+      "end": 143.94,
+      "text": "now needed the square root of negative one to be its own, brand new, number. Let's make"
+    },
+    {
+      "start": 143.94,
+      "end": 147.52,
+      "text": "sure we're clear about what it means for the square root of negative one to be its own"
+    },
+    {
+      "start": 147.52,
+      "end": 148.52,
+      "text": "number."
+    },
+    {
+      "start": 148.58,
+      "end": 152.82000000000002,
+      "text": "Our new number is truly a discovery, and not an invention. It should behave like the"
+    },
+    {
+      "start": 152.82000000000002,
+      "end": 157.18,
+      "text": "other numbers we already know about. It should follow the established rules of algebra and"
+    },
+    {
+      "start": 157.18,
+      "end": 162.4,
+      "text": "arithmetic. And it turns out the square root of minus one does, for the most part. Just"
+    },
+    {
+      "start": 162.4,
+      "end": 166.86,
+      "text": "as we can split apart the root of the product of two positive numbers, we can also split"
+    },
+    {
+      "start": 166.86,
+      "end": 171.48000000000002,
+      "text": "apart the square roots of negatives. The square root of minus twenty-five splits into the"
+    },
+    {
+      "start": 171.48000000000002,
+      "end": 176.36,
+      "text": "square root of twenty-five times the square root of negative one. This process is important"
+    },
+    {
+      "start": 176.36,
+      "end": 178.56,
+      "text": "because it allows us to express the root of any"
+    },
+    {
+      "start": 178.58,
+      "end": 183.04000000000002,
+      "text": "negative using the square root of minus one. The square root of minus twenty-five becomes"
+    },
+    {
+      "start": 183.04000000000002,
+      "end": 185.96,
+      "text": "five times the square root of minus one."
+    },
+    {
+      "start": 185.96,
+      "end": 190.4,
+      "text": "We can use this process to expand the root of any negative number, writing it as some"
+    },
+    {
+      "start": 190.4,
+      "end": 194.64000000000001,
+      "text": "number we already know about times the square root of minus one."
+    },
+    {
+      "start": 194.64000000000001,
+      "end": 199.58,
+      "text": "Let's quickly make sure that our new numbers follow the same algebra rules as our old numbers."
+    },
+    {
+      "start": 199.58,
+      "end": 204.74,
+      "text": "In algebra problems with x, only like terms can be added and subtracted. Two x plus three"
+    },
+    {
+      "start": 204.74,
+      "end": 208.58,
+      "text": "x is five x, but two plus three x is just two plus three x."
+    },
+    {
+      "start": 208.58,
+      "end": 213.4,
+      "text": "Likewise, two square roots of minus one plus three square roots of minus one is equal to"
+    },
+    {
+      "start": 213.4,
+      "end": 218.22000000000003,
+      "text": "five square roots of minus one, but two plus three square roots of minus one is just two"
+    },
+    {
+      "start": 218.22000000000003,
+      "end": 222.94,
+      "text": "plus three square roots of minus one. Finally, unlike terms can be multiplied, just as in"
+    },
+    {
+      "start": 222.94,
+      "end": 229.16000000000003,
+      "text": "algebra with x. Five times x is just five x, and five times root minus one is just five"
+    },
+    {
+      "start": 229.16000000000003,
+      "end": 234.26000000000002,
+      "text": "roots of minus one. Now there are some cases where our new numbers behave a little strangely,"
+    },
+    {
+      "start": 234.26000000000002,
+      "end": 238.42000000000002,
+      "text": "but these can often be avoided by first separating out the square root of minus one."
+    },
+    {
+      "start": 238.58,
+      "end": 243.04000000000002,
+      "text": "Now that we have a grasp on how our new numbers work, we can see how they fix one of our problems"
+    },
+    {
+      "start": 243.04000000000002,
+      "end": 247.28,
+      "text": "from last time. We now have a strategy for dealing with the roots of negatives. We can"
+    },
+    {
+      "start": 247.28,
+      "end": 251.20000000000002,
+      "text": "evaluate the square root of negative nine we were stuck on, and obtain three times the"
+    },
+    {
+      "start": 251.20000000000002,
+      "end": 256.82,
+      "text": "square root of negative one. All this is important, but it isn't enough to solve Cardan's problem."
+    },
+    {
+      "start": 256.82,
+      "end": 260.58000000000004,
+      "text": "We still need to figure out how to deal with the cubed roots of these numbers."
+    },
+    {
+      "start": 260.58000000000004,
+      "end": 264.62,
+      "text": "Bombelli was able to solve our problem through one more powerful insight, and that's what"
+    },
+    {
+      "start": 264.62,
+      "end": 265.72,
+      "text": "we'll discuss next time."
+    },
+    {
+      "start": 268.58,
+      "end": 271.58,
+      "text": "Subtitles by the Amara.org community"
+    }
+  ],
+  "segment_count": 60
+}

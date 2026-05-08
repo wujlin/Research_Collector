@@ -1,0 +1,67 @@
+Before we finish up our series and solve our problem from part one, let's talk about how
+complex numbers are the missing puzzle piece that make algebra complete. Back in part one,
+we saw how the definition of what a number is has evolved over time, beginning with the
+natural numbers. The Egyptians figured out that these numbers were missing something,
+and it's pretty obvious today that the natural numbers are incomplete. However, as we saw
+with complex numbers, it's not always obvious when your numbers are missing something. Fortunately,
+there is a more sophisticated way to determine if we have all the types of numbers we need
+– the mathematical idea of closure. Let's play a game. I'll give you a set of numbers
+and an algebraic operation. I want you to tell me if any two numbers in the set, when
+combined with the operation, give a number that is not in the set. Our first set is the
+natural numbers, and our operation is addition. So the question is, are there any two natural
+numbers that, when added together, produce something that is not a natural number?
+After a little noodling, it should seem pretty reasonable that any two natural numbers
+added together result in another natural number. Mathematically, we can say that the set of
+natural numbers is closed under addition. Next, let's try the set of natural numbers
+and the operation of subtraction. For some pairs of natural numbers, like 6 and 4, things
+work out just fine. 6 minus 4 is 2, which is a natural number. But what about 4 minus
+6?
+This results in an answer that is nowhere to be found in our set of natural numbers,
+so our set is not closed under subtraction. We need to expand our set to include zero
+and negative numbers for this to be the case. So the set of natural numbers is not closed
+under subtraction, but the set of integers is. By expanding our number system, we can
+guarantee that any subtraction question we can ask will have an answer.
+As we include more algebraic operations, we must continue to expand our number system.
+We need to expand our number system to include fractions, also known as rational numbers.
+Rational comes from the word ratio. Rational numbers are numbers that can be expressed
+as the ratio of two integers. Venn diagrams are pretty useful here, because they help
+us visually express the idea that one set includes another. All integers are rational
+numbers, because we can always express them as a ratio of two integers, but not all rational
+numbers are integers. Let's recap. So far we've made it to the
+set of rational numbers, which includes numbers like 1, 0, minus 5, and minus 2 thirds. What
+operations are the rational numbers closed under? Well, any two rational numbers added
+together yield another rational number, so we can say that the rational numbers are closed
+under addition. We can say the same for subtraction, multiplication, and division. Now, what about
+powers and roots? Does a rational number raised to a rational power always yield a rational
+result? It turns out that for problems like 2 ninths to the power of 2, this is no problem.
+Our result is rational. Where we get into trouble are problems like 2 to the power of
+1 half. Raising something to the power of 1 half is the same thing as taking the square
+root, so this is equivalent to the square root of 2. We'll save the full argument for
+another day, but it turns out that root 2 is not rational. There are no two integers
+that when divided, equal exactly the square root of 2. Since numbers like this are not
+rational,
+we give them the name irrational. There's one more class of numbers that are even cooler
+than irrationals, the transcendental numbers, like pi and e. We'll also save these for another
+day. So we've expanded our number system again to include irrationals, and all these numbers
+taken together form what we call the real numbers.
+Let's play our game one more time. Our set is now the real numbers, and our operation
+is taking roots. Do we have closure? Are there any real numbers that when we take some root
+root, yield a result that is not a real number? The answer is that despite all the types
+of numbers we've included along the way, we're still missing something. We can write
+an expression only using real numbers and roots, for example the square root of negative
+9, that has no solution in the real numbers. For this problem to have an answer, we must
+expand our number system once more to include imaginary numbers. And taking all our real
+numbers from before, together with imaginary numbers, we arrive at our broadest class of numbers.
+The complex numbers. Initially, mathematicians were concerned that even complex numbers
+were not sufficient. That problems like the square root of negative i would result in
+an even more complex number. Perhaps even a 3-dimensional number instead of our 2-dimensional
+complex numbers. Fortunately, this turned out not to be the case. In fact, we can evaluate
+the square root of negative i, again using our good friend the complex plane. Since negative
+i has a magnitude of 1, and an angle of negative 90 degrees, we just need a number with a magnitude
+of 1 and an angle of negative 45 degrees. According to our unit circle, root 2 over
+2 minus root 2 over 2i. So the square root of negative i is just another complex number.
+There's no need for some wild new 3-dimensional number. In fact, there's no operation in the
+world using addition, subtraction, multiplication, division, powers, and roots that the complex
+numbers can't handle. Imaginary numbers are the exact missing piece that makes algebra
+complete.
+Thank you for watching!

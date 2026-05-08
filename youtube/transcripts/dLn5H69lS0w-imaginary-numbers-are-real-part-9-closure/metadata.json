@@ -1,0 +1,12 @@
+{
+  "title": "Imaginary Numbers Are Real [Part 9: Closure]",
+  "url": "https://www.youtube.com/watch?v=dLn5H69lS0w",
+  "backend": "faster-whisper",
+  "model": "large-v3",
+  "requested_language": "en",
+  "detected_language": "en",
+  "generated_at": "2026-05-07T13:00:42",
+  "language": "en",
+  "language_probability": 1,
+  "duration": 340.4656875
+}

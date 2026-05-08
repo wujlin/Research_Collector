@@ -1,0 +1,1710 @@
+{
+  "segments": [
+    {
+      "start": 1.0,
+      "end": 7.0,
+      "text": "So this work, at least to me, has been inspired by the literature in the cognitive neuroscience domain."
+    },
+    {
+      "start": 7.0,
+      "end": 13.0,
+      "text": "Our mental models, made up of our unique experiences, determines how we interpret the world."
+    },
+    {
+      "start": 13.0,
+      "end": 21.0,
+      "text": "They also affect our actions, how we assess opportunities, and also help us solve problems in our everyday lives."
+    },
+    {
+      "start": 21.0,
+      "end": 27.0,
+      "text": "In a sense, how we look at the world is through the lens of our mental world models."
+    },
+    {
+      "start": 27.0,
+      "end": 33.0,
+      "text": "So in this work, we explore building generative models of game environments."
+    },
+    {
+      "start": 33.0,
+      "end": 42.0,
+      "text": "And we also try to train agents to look at their worlds through the lens of their own generative world models."
+    },
+    {
+      "start": 42.0,
+      "end": 45.0,
+      "text": "So our generative models consist of pretty basic components."
+    },
+    {
+      "start": 45.0,
+      "end": 56.0,
+      "text": "To develop a representation of space, we use a variational autoencoder to compress screenshots of a game into a low-dimensional latent space."
+    },
+    {
+      "start": 56.0,
+      "end": 57.0,
+      "text": "To learn a representation of space, we use a variational autoencoder to compress screenshots of a game into a low-dimensional latent space."
+    },
+    {
+      "start": 57.0,
+      "end": 64.0,
+      "text": "To develop a representation of time, we train a recurrent neural network to predict the distribution of future events."
+    },
+    {
+      "start": 64.0,
+      "end": 69.0,
+      "text": "Just like how in this network, we train a recurrent neural network to predict future pen strokes of a pen,"
+    },
+    {
+      "start": 69.0,
+      "end": 72.0,
+      "text": "and we can sample from that distribution to generate different doodles."
+    },
+    {
+      "start": 72.0,
+      "end": 79.0,
+      "text": "In our case, rather than modeling pen strokes, we model the distribution of future latent vectors, encoded by our VAE,"
+    },
+    {
+      "start": 79.0,
+      "end": 83.0,
+      "text": "so we can sample trajectories of the future."
+    },
+    {
+      "start": 83.0,
+      "end": 86.0,
+      "text": "So in our setup, we have an environment that gives us a pixel image,"
+    },
+    {
+      "start": 86.0,
+      "end": 89.0,
+      "text": "at every time step."
+    },
+    {
+      "start": 89.0,
+      "end": 94.0,
+      "text": "We feed this pixel image into a variational autoencoder, trained to reconstruct it,"
+    },
+    {
+      "start": 94.0,
+      "end": 97.0,
+      "text": "and the encoder will output a low-dimensional latent vector z,"
+    },
+    {
+      "start": 97.0,
+      "end": 100.0,
+      "text": "our representation of space."
+    },
+    {
+      "start": 100.0,
+      "end": 105.0,
+      "text": "We then feed this latent vector z into a recurrent neural network called M,"
+    },
+    {
+      "start": 105.0,
+      "end": 108.0,
+      "text": "that's trained to predict the distribution of future latent vectors,"
+    },
+    {
+      "start": 108.0,
+      "end": 112.0,
+      "text": "condition or depending on the current information and previous information."
+    },
+    {
+      "start": 112.0,
+      "end": 115.0,
+      "text": "And the model M has a hidden state h,"
+    },
+    {
+      "start": 115.0,
+      "end": 119.0,
+      "text": "and this hidden state of the RNN we're going to use as a representation of time."
+    },
+    {
+      "start": 120.0,
+      "end": 124.0,
+      "text": "We'll feed these two low-dimensional representations of z and h,"
+    },
+    {
+      "start": 124.0,
+      "end": 126.0,
+      "text": "representing time and space,"
+    },
+    {
+      "start": 126.0,
+      "end": 129.0,
+      "text": "into a small linear controller c."
+    },
+    {
+      "start": 129.0,
+      "end": 132.0,
+      "text": "Now our controller c can only see z and h,"
+    },
+    {
+      "start": 132.0,
+      "end": 134.0,
+      "text": "it cannot see the actual pixel observations."
+    },
+    {
+      "start": 134.0,
+      "end": 138.0,
+      "text": "And its job is to output the action a,"
+    },
+    {
+      "start": 138.0,
+      "end": 140.0,
+      "text": "that will affect the environment,"
+    },
+    {
+      "start": 140.0,
+      "end": 144.0,
+      "text": "causing the environment to generate the actual states for the next time step."
+    },
+    {
+      "start": 145.0,
+      "end": 147.0,
+      "text": "And to train our controller c,"
+    },
+    {
+      "start": 147.0,
+      "end": 151.0,
+      "text": "we want to solve for the parameters of this linear controller,"
+    },
+    {
+      "start": 151.0,
+      "end": 154.0,
+      "text": "such that we maximize the expected cumulative reward"
+    },
+    {
+      "start": 154.0,
+      "end": 156.0,
+      "text": "of our agent acting in the environment."
+    },
+    {
+      "start": 156.0,
+      "end": 159.0,
+      "text": "So to test this simple framework,"
+    },
+    {
+      "start": 159.0,
+      "end": 163.0,
+      "text": "we tested on a car racing from pixel task from OpenAI Gym,"
+    },
+    {
+      "start": 163.0,
+      "end": 170.0,
+      "text": "where the agent has to navigate through these randomly generated tracks as fast as possible."
+    },
+    {
+      "start": 170.0,
+      "end": 174.0,
+      "text": "So in the procedure, we first collect a data set,"
+    },
+    {
+      "start": 174.0,
+      "end": 178.0,
+      "text": "using data set rollouts, using a random policy."
+    },
+    {
+      "start": 178.0,
+      "end": 181.0,
+      "text": "We then train the variational autoencoder v,"
+    },
+    {
+      "start": 181.0,
+      "end": 187.0,
+      "text": "to encode each frame of this data set into a low-dimensional latent space."
+    },
+    {
+      "start": 187.0,
+      "end": 192.0,
+      "text": "So we can then process this data set into a latent space version of the data set."
+    },
+    {
+      "start": 192.0,
+      "end": 195.0,
+      "text": "We then train the recurrent neural network m,"
+    },
+    {
+      "start": 195.0,
+      "end": 199.0,
+      "text": "using this data set to model the distribution of future latent vectors,"
+    },
+    {
+      "start": 199.0,
+      "end": 202.0,
+      "text": "conditioned on the current and previous information."
+    },
+    {
+      "start": 202.0,
+      "end": 204.0,
+      "text": "Now the important thing to note is,"
+    },
+    {
+      "start": 204.0,
+      "end": 208.0,
+      "text": "in this experiment, v and m does not have access to the reward information."
+    },
+    {
+      "start": 208.0,
+      "end": 213.0,
+      "text": "Its job is simply to compress space and to predict what's going to happen in the future."
+    },
+    {
+      "start": 213.0,
+      "end": 219.0,
+      "text": "So these two networks can actually be trained efficiently"
+    },
+    {
+      "start": 219.0,
+      "end": 223.0,
+      "text": "using a GPU on a data set in an unsupervised fashion."
+    },
+    {
+      "start": 223.0,
+      "end": 227.0,
+      "text": "So while these two models combined have millions of parameters,"
+    },
+    {
+      "start": 227.0,
+      "end": 230.0,
+      "text": "the controller, in contrast, is a very small model"
+    },
+    {
+      "start": 230.0,
+      "end": 233.0,
+      "text": "because of the low dimensionality of the inputs,"
+    },
+    {
+      "start": 233.0,
+      "end": 236.0,
+      "text": "and it has less than a thousand parameters,"
+    },
+    {
+      "start": 236.0,
+      "end": 238.0,
+      "text": "which makes this really easy to solve."
+    },
+    {
+      "start": 238.0,
+      "end": 241.0,
+      "text": "And in our case, we can even use evolution strategies,"
+    },
+    {
+      "start": 241.0,
+      "end": 243.0,
+      "text": "in our case CMAES,"
+    },
+    {
+      "start": 243.0,
+      "end": 246.0,
+      "text": "to solve for the parameters of this linear controller,"
+    },
+    {
+      "start": 246.0,
+      "end": 250.0,
+      "text": "such that we maximize the expected cumulative reward of the agents."
+    },
+    {
+      "start": 250.0,
+      "end": 254.0,
+      "text": "And here's the citation of the cake that's correctly done."
+    },
+    {
+      "start": 256.0,
+      "end": 259.0,
+      "text": "So here's an example, on the left side,"
+    },
+    {
+      "start": 259.0,
+      "end": 262.0,
+      "text": "of the actual input frames we feed into our agent."
+    },
+    {
+      "start": 262.0,
+      "end": 264.0,
+      "text": "And on the right side are reconstructions"
+    },
+    {
+      "start": 264.0,
+      "end": 267.0,
+      "text": "using the decoder of the VAE, using the latent space."
+    },
+    {
+      "start": 269.0,
+      "end": 274.0,
+      "text": "At the beginning, we also trained an agent using only Z, not H."
+    },
+    {
+      "start": 274.0,
+      "end": 276.0,
+      "text": "So we only give it the spatial information,"
+    },
+    {
+      "start": 276.0,
+      "end": 278.0,
+      "text": "but not the temporal information as an input."
+    },
+    {
+      "start": 278.0,
+      "end": 280.0,
+      "text": "And it still learned to drive,"
+    },
+    {
+      "start": 280.0,
+      "end": 282.0,
+      "text": "but the policy, the navigational policy,"
+    },
+    {
+      "start": 282.0,
+      "end": 286.0,
+      "text": "is very non-robust and wobbles a lot,"
+    },
+    {
+      "start": 286.0,
+      "end": 288.0,
+      "text": "tends to miss the sharp corners."
+    },
+    {
+      "start": 288.0,
+      "end": 290.0,
+      "text": "But when we then give it also H,"
+    },
+    {
+      "start": 290.0,
+      "end": 292.0,
+      "text": "so it knows both Z and H,"
+    },
+    {
+      "start": 292.0,
+      "end": 294.0,
+      "text": "the spatial and temporal information,"
+    },
+    {
+      "start": 294.0,
+      "end": 297.0,
+      "text": "it learns a more robust policy to navigate,"
+    },
+    {
+      "start": 297.0,
+      "end": 300.0,
+      "text": "and it's able to seemingly attack these sharp corners"
+    },
+    {
+      "start": 300.0,
+      "end": 304.0,
+      "text": "by predicting what's happening in the future intuitively."
+    },
+    {
+      "start": 306.0,
+      "end": 309.0,
+      "text": "So our model achieved an average score above 900"
+    },
+    {
+      "start": 309.0,
+      "end": 311.0,
+      "text": "for this task required to solve the task."
+    },
+    {
+      "start": 311.0,
+      "end": 313.0,
+      "text": "And to our knowledge, this is the first solution"
+    },
+    {
+      "start": 313.0,
+      "end": 316.0,
+      "text": "that's able to solve car racing v0."
+    },
+    {
+      "start": 316.0,
+      "end": 318.0,
+      "text": "But that's not the end of the story."
+    },
+    {
+      "start": 318.0,
+      "end": 320.0,
+      "text": "This paper has been up for a few months,"
+    },
+    {
+      "start": 320.0,
+      "end": 322.0,
+      "text": "and people have taken our code,"
+    },
+    {
+      "start": 322.0,
+      "end": 324.0,
+      "text": "or the framework, and did interesting things with it."
+    },
+    {
+      "start": 324.0,
+      "end": 326.0,
+      "text": "So someone used this framework,"
+    },
+    {
+      "start": 326.0,
+      "end": 328.0,
+      "text": "but rather than training M,"
+    },
+    {
+      "start": 328.0,
+      "end": 330.0,
+      "text": "they randomly set the weights of M,"
+    },
+    {
+      "start": 330.0,
+      "end": 333.0,
+      "text": "and they showed that by using these random temporal features,"
+    },
+    {
+      "start": 333.0,
+      "end": 335.0,
+      "text": "the score is still okay."
+    },
+    {
+      "start": 335.0,
+      "end": 337.0,
+      "text": "So I found that quite interesting."
+    },
+    {
+      "start": 337.0,
+      "end": 339.0,
+      "text": "Maybe it's not the weights, but the architecture"
+    },
+    {
+      "start": 339.0,
+      "end": 341.0,
+      "text": "that makes everything work."
+    },
+    {
+      "start": 341.0,
+      "end": 344.0,
+      "text": "It doesn't mean that DQN is bad or anything."
+    },
+    {
+      "start": 344.0,
+      "end": 346.0,
+      "text": "Another team improved DQN,"
+    },
+    {
+      "start": 346.0,
+      "end": 348.0,
+      "text": "made it a three-layer network"
+    },
+    {
+      "start": 348.0,
+      "end": 350.0,
+      "text": "where they put in dropout"
+    },
+    {
+      "start": 350.0,
+      "end": 352.0,
+      "text": "and some learning and all this stuff,"
+    },
+    {
+      "start": 352.0,
+      "end": 354.0,
+      "text": "and they also achieved a score at 900."
+    },
+    {
+      "start": 354.0,
+      "end": 356.0,
+      "text": "But the difference here is that in our case,"
+    },
+    {
+      "start": 356.0,
+      "end": 358.0,
+      "text": "we use a generative model,"
+    },
+    {
+      "start": 358.0,
+      "end": 360.0,
+      "text": "and our model can predict future frames."
+    },
+    {
+      "start": 360.0,
+      "end": 362.0,
+      "text": "So in theory,"
+    },
+    {
+      "start": 362.0,
+      "end": 364.0,
+      "text": "we can try to replace the environments"
+    },
+    {
+      "start": 364.0,
+      "end": 366.0,
+      "text": "with an environment generated by M,"
+    },
+    {
+      "start": 366.0,
+      "end": 368.0,
+      "text": "and we can try to train our controller"
+    },
+    {
+      "start": 368.0,
+      "end": 370.0,
+      "text": "not using the actual environment"
+    },
+    {
+      "start": 370.0,
+      "end": 372.0,
+      "text": "by training the controller entirely"
+    },
+    {
+      "start": 372.0,
+      "end": 374.0,
+      "text": "inside of an environment"
+    },
+    {
+      "start": 374.0,
+      "end": 376.0,
+      "text": "generated in latent space."
+    },
+    {
+      "start": 376.0,
+      "end": 378.0,
+      "text": "So training inside of latent space environments."
+    },
+    {
+      "start": 378.0,
+      "end": 380.0,
+      "text": "So to do that,"
+    },
+    {
+      "start": 380.0,
+      "end": 382.0,
+      "text": "we can train the output of the RNNM"
+    },
+    {
+      "start": 382.0,
+      "end": 384.0,
+      "text": "and feed that into a mixture density network layer,"
+    },
+    {
+      "start": 384.0,
+      "end": 386.0,
+      "text": "an MDN layer,"
+    },
+    {
+      "start": 386.0,
+      "end": 388.0,
+      "text": "so that it outputs the probability distribution function"
+    },
+    {
+      "start": 388.0,
+      "end": 390.0,
+      "text": "of the next time steps"
+    },
+    {
+      "start": 390.0,
+      "end": 392.0,
+      "text": "of the latent vector in the next time step."
+    },
+    {
+      "start": 392.0,
+      "end": 394.0,
+      "text": "We can then sample"
+    },
+    {
+      "start": 394.0,
+      "end": 396.0,
+      "text": "an XZ, a realization"
+    },
+    {
+      "start": 396.0,
+      "end": 398.0,
+      "text": "of what's going to happen next,"
+    },
+    {
+      "start": 398.0,
+      "end": 400.0,
+      "text": "and feed that back in"
+    },
+    {
+      "start": 400.0,
+      "end": 402.0,
+      "text": "as if it's the actual latent observation."
+    },
+    {
+      "start": 402.0,
+      "end": 404.0,
+      "text": "So we can train this controller"
+    },
+    {
+      "start": 404.0,
+      "end": 406.0,
+      "text": "inside this generated latent space environment"
+    },
+    {
+      "start": 406.0,
+      "end": 408.0,
+      "text": "not using the actual environment"
+    },
+    {
+      "start": 408.0,
+      "end": 410.0,
+      "text": "and not using any pixel information"
+    },
+    {
+      "start": 410.0,
+      "end": 412.0,
+      "text": "and we don't require the VAE."
+    },
+    {
+      "start": 412.0,
+      "end": 414.0,
+      "text": "So we test this"
+    },
+    {
+      "start": 414.0,
+      "end": 416.0,
+      "text": "on a simple VisDoom level"
+    },
+    {
+      "start": 416.0,
+      "end": 418.0,
+      "text": "where in this level"
+    },
+    {
+      "start": 418.0,
+      "end": 420.0,
+      "text": "the unfortunate agent"
+    },
+    {
+      "start": 420.0,
+      "end": 422.0,
+      "text": "is stuck in a room full of monsters"
+    },
+    {
+      "start": 422.0,
+      "end": 424.0,
+      "text": "shooting fireballs at it"
+    },
+    {
+      "start": 424.0,
+      "end": 426.0,
+      "text": "and his job is simply to survive"
+    },
+    {
+      "start": 426.0,
+      "end": 428.0,
+      "text": "as long as possible."
+    },
+    {
+      "start": 428.0,
+      "end": 430.0,
+      "text": "So the procedure is largely the same"
+    },
+    {
+      "start": 430.0,
+      "end": 432.0,
+      "text": "as the car racing task"
+    },
+    {
+      "start": 432.0,
+      "end": 434.0,
+      "text": "with a key difference of the RNNM model"
+    },
+    {
+      "start": 434.0,
+      "end": 436.0,
+      "text": "in addition to having to predict"
+    },
+    {
+      "start": 436.0,
+      "end": 438.0,
+      "text": "the probability distribution"
+    },
+    {
+      "start": 438.0,
+      "end": 440.0,
+      "text": "of the next latent vector,"
+    },
+    {
+      "start": 440.0,
+      "end": 442.0,
+      "text": "the distribution of whether the agent dies or not"
+    },
+    {
+      "start": 442.0,
+      "end": 444.0,
+      "text": "and we can sample from that."
+    },
+    {
+      "start": 444.0,
+      "end": 446.0,
+      "text": "We need to model this terminal"
+    },
+    {
+      "start": 446.0,
+      "end": 448.0,
+      "text": "the termination events"
+    },
+    {
+      "start": 448.0,
+      "end": 450.0,
+      "text": "because in order to replace"
+    },
+    {
+      "start": 450.0,
+      "end": 452.0,
+      "text": "the actual gym environments"
+    },
+    {
+      "start": 452.0,
+      "end": 454.0,
+      "text": "to get the done events"
+    },
+    {
+      "start": 454.0,
+      "end": 456.0,
+      "text": "with the generated environment."
+    },
+    {
+      "start": 456.0,
+      "end": 458.0,
+      "text": "We then train a controller"
+    },
+    {
+      "start": 458.0,
+      "end": 460.0,
+      "text": "inside of this generated latent space environment"
+    },
+    {
+      "start": 460.0,
+      "end": 462.0,
+      "text": "and then we can"
+    },
+    {
+      "start": 462.0,
+      "end": 464.0,
+      "text": "deploy these learned policies"
+    },
+    {
+      "start": 464.0,
+      "end": 466.0,
+      "text": "back to the actual environment"
+    },
+    {
+      "start": 466.0,
+      "end": 468.0,
+      "text": "to see how well we transfer."
+    },
+    {
+      "start": 468.0,
+      "end": 470.0,
+      "text": "So now"
+    },
+    {
+      "start": 470.0,
+      "end": 472.0,
+      "text": "the model of the environment M"
+    },
+    {
+      "start": 472.0,
+      "end": 474.0,
+      "text": "is only a model"
+    },
+    {
+      "start": 474.0,
+      "end": 476.0,
+      "text": "of the actual environment."
+    },
+    {
+      "start": 476.0,
+      "end": 478.0,
+      "text": "It's not perfect and it has flaws."
+    },
+    {
+      "start": 478.0,
+      "end": 480.0,
+      "text": "So when we first did this experiment"
+    },
+    {
+      "start": 480.0,
+      "end": 482.0,
+      "text": "it didn't really work."
+    },
+    {
+      "start": 482.0,
+      "end": 484.0,
+      "text": "What happened was the agent learned"
+    },
+    {
+      "start": 484.0,
+      "end": 486.0,
+      "text": "to take advantage of these flaws"
+    },
+    {
+      "start": 486.0,
+      "end": 488.0,
+      "text": "of the model"
+    },
+    {
+      "start": 488.0,
+      "end": 490.0,
+      "text": "and went to parts of the environment"
+    },
+    {
+      "start": 490.0,
+      "end": 492.0,
+      "text": "that was outside of his training distribution."
+    },
+    {
+      "start": 492.0,
+      "end": 494.0,
+      "text": "He learned to cheat."
+    },
+    {
+      "start": 494.0,
+      "end": 496.0,
+      "text": "So here we notice that the agent"
+    },
+    {
+      "start": 496.0,
+      "end": 498.0,
+      "text": "learned to move in a special way"
+    },
+    {
+      "start": 498.0,
+      "end": 500.0,
+      "text": "such that the fireballs"
+    },
+    {
+      "start": 500.0,
+      "end": 502.0,
+      "text": "when they get formed"
+    },
+    {
+      "start": 502.0,
+      "end": 504.0,
+      "text": "the agents can move in another way"
+    },
+    {
+      "start": 504.0,
+      "end": 506.0,
+      "text": "to extinguish them magically."
+    },
+    {
+      "start": 506.0,
+      "end": 508.0,
+      "text": "So of course this policy"
+    },
+    {
+      "start": 508.0,
+      "end": 510.0,
+      "text": "is never going to transfer well"
+    },
+    {
+      "start": 510.0,
+      "end": 512.0,
+      "text": "to the actual environments."
+    },
+    {
+      "start": 512.0,
+      "end": 514.0,
+      "text": "But what we notice is"
+    },
+    {
+      "start": 514.0,
+      "end": 516.0,
+      "text": "in the sampling process"
+    },
+    {
+      "start": 516.0,
+      "end": 518.0,
+      "text": "we can increase the temperature"
+    },
+    {
+      "start": 518.0,
+      "end": 520.0,
+      "text": "and by increasing the temperature"
+    },
+    {
+      "start": 520.0,
+      "end": 522.0,
+      "text": "we can make this generated environment"
+    },
+    {
+      "start": 522.0,
+      "end": 524.0,
+      "text": "more stochastic and more random."
+    },
+    {
+      "start": 524.0,
+      "end": 526.0,
+      "text": "And we notice that a more random environment"
+    },
+    {
+      "start": 526.0,
+      "end": 528.0,
+      "text": "is more difficult for the agents"
+    },
+    {
+      "start": 528.0,
+      "end": 530.0,
+      "text": "inside this environment."
+    },
+    {
+      "start": 530.0,
+      "end": 532.0,
+      "text": "Sometimes the agent may just die"
+    },
+    {
+      "start": 532.0,
+      "end": 534.0,
+      "text": "with no explanation."
+    },
+    {
+      "start": 534.0,
+      "end": 536.0,
+      "text": "Tough luck."
+    },
+    {
+      "start": 536.0,
+      "end": 538.0,
+      "text": "But in this more random environment"
+    },
+    {
+      "start": 538.0,
+      "end": 540.0,
+      "text": "the agent learns a policy"
+    },
+    {
+      "start": 540.0,
+      "end": 542.0,
+      "text": "that's more realistic"
+    },
+    {
+      "start": 542.0,
+      "end": 544.0,
+      "text": "and is able to transfer well"
+    },
+    {
+      "start": 544.0,
+      "end": 546.0,
+      "text": "back into the actual environment."
+    },
+    {
+      "start": 546.0,
+      "end": 548.0,
+      "text": "So in the results"
+    },
+    {
+      "start": 548.0,
+      "end": 550.0,
+      "text": "we can see that by increasing the temperature"
+    },
+    {
+      "start": 550.0,
+      "end": 552.0,
+      "text": "from deterministic to a high temperature"
+    },
+    {
+      "start": 552.0,
+      "end": 554.0,
+      "text": "in the virtual score"
+    },
+    {
+      "start": 554.0,
+      "end": 556.0,
+      "text": "the second column is the score"
+    },
+    {
+      "start": 556.0,
+      "end": 558.0,
+      "text": "the agent achieves in the generated environment"
+    },
+    {
+      "start": 558.0,
+      "end": 560.0,
+      "text": "by increasing the temperature"
+    },
+    {
+      "start": 560.0,
+      "end": 562.0,
+      "text": "the environment becomes more difficult"
+    },
+    {
+      "start": 562.0,
+      "end": 564.0,
+      "text": "because the score decreases"
+    },
+    {
+      "start": 564.0,
+      "end": 566.0,
+      "text": "but the policies learned transfers better"
+    },
+    {
+      "start": 566.0,
+      "end": 568.0,
+      "text": "when we deploy them"
+    },
+    {
+      "start": 568.0,
+      "end": 570.0,
+      "text": "to the actual environment."
+    },
+    {
+      "start": 570.0,
+      "end": 572.0,
+      "text": "Furthermore we notice that"
+    },
+    {
+      "start": 572.0,
+      "end": 574.0,
+      "text": "when the temperature is too high"
+    },
+    {
+      "start": 574.0,
+      "end": 576.0,
+      "text": "it also affects the quality of the policy being learned."
+    },
+    {
+      "start": 576.0,
+      "end": 578.0,
+      "text": "For instance at a temperature of 1.3"
+    },
+    {
+      "start": 578.0,
+      "end": 580.0,
+      "text": "the agent learns perhaps"
+    },
+    {
+      "start": 580.0,
+      "end": 582.0,
+      "text": "a more risk averse policy"
+    },
+    {
+      "start": 582.0,
+      "end": 584.0,
+      "text": "with a lower variance of returns"
+    },
+    {
+      "start": 584.0,
+      "end": 586.0,
+      "text": "at the expense of a lower mean."
+    },
+    {
+      "start": 586.0,
+      "end": 588.0,
+      "text": "Lower mean reward."
+    },
+    {
+      "start": 588.0,
+      "end": 590.0,
+      "text": "So the method outlined so far"
+    },
+    {
+      "start": 590.0,
+      "end": 592.0,
+      "text": "has many obvious limitations."
+    },
+    {
+      "start": 592.0,
+      "end": 594.0,
+      "text": "It assumes that"
+    },
+    {
+      "start": 594.0,
+      "end": 596.0,
+      "text": "an initial random policy"
+    },
+    {
+      "start": 596.0,
+      "end": 598.0,
+      "text": "is enough to collect a data set"
+    },
+    {
+      "start": 598.0,
+      "end": 600.0,
+      "text": "that maps out most of the space"
+    },
+    {
+      "start": 600.0,
+      "end": 602.0,
+      "text": "of the environment"
+    },
+    {
+      "start": 602.0,
+      "end": 604.0,
+      "text": "which is not true in any environment"
+    },
+    {
+      "start": 604.0,
+      "end": 606.0,
+      "text": "that requires any meaningful exploration."
+    },
+    {
+      "start": 606.0,
+      "end": 608.0,
+      "text": "So even in a simple"
+    },
+    {
+      "start": 608.0,
+      "end": 610.0,
+      "text": "swing up pendulum"
+    },
+    {
+      "start": 610.0,
+      "end": 612.0,
+      "text": "environment from pixels"
+    },
+    {
+      "start": 612.0,
+      "end": 614.0,
+      "text": "like this one"
+    },
+    {
+      "start": 614.0,
+      "end": 616.0,
+      "text": "where the initial policy"
+    },
+    {
+      "start": 616.0,
+      "end": 618.0,
+      "text": "the initial random policy"
+    },
+    {
+      "start": 618.0,
+      "end": 620.0,
+      "text": "mainly gathers data"
+    },
+    {
+      "start": 620.0,
+      "end": 622.0,
+      "text": "the pole is facing downwards"
+    },
+    {
+      "start": 622.0,
+      "end": 624.0,
+      "text": "we notice that the generative model"
+    },
+    {
+      "start": 624.0,
+      "end": 626.0,
+      "text": "has difficulty predicting"
+    },
+    {
+      "start": 626.0,
+      "end": 628.0,
+      "text": "what happens when the controller"
+    },
+    {
+      "start": 628.0,
+      "end": 630.0,
+      "text": "swings the pole upwards"
+    },
+    {
+      "start": 630.0,
+      "end": 632.0,
+      "text": "because it simply does not have that much data."
+    },
+    {
+      "start": 632.0,
+      "end": 634.0,
+      "text": "Although in this case at the beginning"
+    },
+    {
+      "start": 634.0,
+      "end": 636.0,
+      "text": "the controller still learns"
+    },
+    {
+      "start": 636.0,
+      "end": 638.0,
+      "text": "a policy to try to swing up the pole"
+    },
+    {
+      "start": 638.0,
+      "end": 640.0,
+      "text": "it just doesn't know what to do afterwards."
+    },
+    {
+      "start": 640.0,
+      "end": 642.0,
+      "text": "So what we can do is incorporate"
+    },
+    {
+      "start": 642.0,
+      "end": 644.0,
+      "text": "a simple iterative training loop"
+    },
+    {
+      "start": 644.0,
+      "end": 646.0,
+      "text": "where we deploy these policies"
+    },
+    {
+      "start": 646.0,
+      "end": 648.0,
+      "text": "back into the actual environment"
+    },
+    {
+      "start": 648.0,
+      "end": 650.0,
+      "text": "to collect more meaningful data"
+    },
+    {
+      "start": 650.0,
+      "end": 652.0,
+      "text": "and use the world model"
+    },
+    {
+      "start": 652.0,
+      "end": 654.0,
+      "text": "on this additional data"
+    },
+    {
+      "start": 654.0,
+      "end": 656.0,
+      "text": "to build a better model"
+    },
+    {
+      "start": 656.0,
+      "end": 658.0,
+      "text": "to then train the controller."
+    },
+    {
+      "start": 658.0,
+      "end": 660.0,
+      "text": "So after 20 iterations"
+    },
+    {
+      "start": 660.0,
+      "end": 662.0,
+      "text": "this world model can learn"
+    },
+    {
+      "start": 662.0,
+      "end": 664.0,
+      "text": "a better generated environment"
+    },
+    {
+      "start": 664.0,
+      "end": 666.0,
+      "text": "that maps out the states"
+    },
+    {
+      "start": 666.0,
+      "end": 668.0,
+      "text": "when the pendulum is swung upwards"
+    },
+    {
+      "start": 668.0,
+      "end": 670.0,
+      "text": "and when we train a controller"
+    },
+    {
+      "start": 670.0,
+      "end": 672.0,
+      "text": "on this improved world model"
+    },
+    {
+      "start": 672.0,
+      "end": 674.0,
+      "text": "it learns more correctly"
+    },
+    {
+      "start": 674.0,
+      "end": 676.0,
+      "text": "how to balance a pole"
+    },
+    {
+      "start": 676.0,
+      "end": 678.0,
+      "text": "and swing it upwards."
+    },
+    {
+      "start": 678.0,
+      "end": 680.0,
+      "text": "So if you're interested in this line of work"
+    },
+    {
+      "start": 680.0,
+      "end": 682.0,
+      "text": "maybe out this month"
+    },
+    {
+      "start": 682.0,
+      "end": 684.0,
+      "text": "that explores more in depth"
+    },
+    {
+      "start": 684.0,
+      "end": 686.0,
+      "text": "the concept of this iteratively"
+    },
+    {
+      "start": 686.0,
+      "end": 688.0,
+      "text": "training"
+    },
+    {
+      "start": 688.0,
+      "end": 690.0,
+      "text": "a generative model"
+    },
+    {
+      "start": 690.0,
+      "end": 692.0,
+      "text": "a high quality model of these environments"
+    },
+    {
+      "start": 692.0,
+      "end": 694.0,
+      "text": "and they show that by"
+    },
+    {
+      "start": 694.0,
+      "end": 696.0,
+      "text": "training an agent"
+    },
+    {
+      "start": 696.0,
+      "end": 698.0,
+      "text": "inside of these generated environments"
+    },
+    {
+      "start": 698.0,
+      "end": 700.0,
+      "text": "we can get really good sample efficiencies"
+    },
+    {
+      "start": 700.0,
+      "end": 702.0,
+      "text": "on domains like"
+    },
+    {
+      "start": 702.0,
+      "end": 704.0,
+      "text": "Atari"
+    },
+    {
+      "start": 704.0,
+      "end": 706.0,
+      "text": "or a continuous control task"
+    },
+    {
+      "start": 706.0,
+      "end": 708.0,
+      "text": "from pixels."
+    },
+    {
+      "start": 708.0,
+      "end": 710.0,
+      "text": "So in the third work led by"
+    },
+    {
+      "start": 710.0,
+      "end": 712.0,
+      "text": "Jerry Hafner"
+    },
+    {
+      "start": 712.0,
+      "end": 714.0,
+      "text": "which I'm part of"
+    },
+    {
+      "start": 714.0,
+      "end": 716.0,
+      "text": "we actually try to explore"
+    },
+    {
+      "start": 716.0,
+      "end": 718.0,
+      "text": "more sophisticated forms"
+    },
+    {
+      "start": 718.0,
+      "end": 720.0,
+      "text": "of these stochastic dynamic models"
+    },
+    {
+      "start": 720.0,
+      "end": 722.0,
+      "text": "so unlike this current work"
+    },
+    {
+      "start": 722.0,
+      "end": 724.0,
+      "text": "where for simplicity"
+    },
+    {
+      "start": 724.0,
+      "end": 726.0,
+      "text": "we train the VAE and the RNN separately"
+    },
+    {
+      "start": 726.0,
+      "end": 728.0,
+      "text": "here we try to train"
+    },
+    {
+      "start": 728.0,
+      "end": 730.0,
+      "text": "the dynamics model end to end"
+    },
+    {
+      "start": 730.0,
+      "end": 732.0,
+      "text": "on the data collected"
+    },
+    {
+      "start": 732.0,
+      "end": 734.0,
+      "text": "and we model everything"
+    },
+    {
+      "start": 734.0,
+      "end": 736.0,
+      "text": "and also unlike this current work"
+    },
+    {
+      "start": 736.0,
+      "end": 738.0,
+      "text": "where we use a very simple"
+    },
+    {
+      "start": 738.0,
+      "end": 740.0,
+      "text": "linear controller for simplicity"
+    },
+    {
+      "start": 740.0,
+      "end": 742.0,
+      "text": "by replacing, incorporating"
+    },
+    {
+      "start": 742.0,
+      "end": 744.0,
+      "text": "a planning module into the controller"
+    },
+    {
+      "start": 744.0,
+      "end": 746.0,
+      "text": "and we show that for this"
+    },
+    {
+      "start": 746.0,
+      "end": 748.0,
+      "text": "control suite task"
+    },
+    {
+      "start": 748.0,
+      "end": 750.0,
+      "text": "where we learn continuous control"
+    },
+    {
+      "start": 750.0,
+      "end": 752.0,
+      "text": "tasks from pixels"
+    },
+    {
+      "start": 752.0,
+      "end": 754.0,
+      "text": "that we can achieve a pretty good"
+    },
+    {
+      "start": 754.0,
+      "end": 756.0,
+      "text": "sample efficiency by learning"
+    },
+    {
+      "start": 756.0,
+      "end": 758.0,
+      "text": "purely from pixels."
+    },
+    {
+      "start": 758.0,
+      "end": 760.0,
+      "text": "So this work in addition to being"
+    },
+    {
+      "start": 760.0,
+      "end": 762.0,
+      "text": "a paper, it's also available"
+    },
+    {
+      "start": 762.0,
+      "end": 764.0,
+      "text": "as an interactive web article"
+    },
+    {
+      "start": 764.0,
+      "end": 766.0,
+      "text": "online at this URL"
+    },
+    {
+      "start": 766.0,
+      "end": 768.0,
+      "text": "so if you're interested"
+    },
+    {
+      "start": 768.0,
+      "end": 770.0,
+      "text": "you can download this work"
+    },
+    {
+      "start": 770.0,
+      "end": 772.0,
+      "text": "and also play around"
+    },
+    {
+      "start": 772.0,
+      "end": 774.0,
+      "text": "with these interactive web demos"
+    },
+    {
+      "start": 774.0,
+      "end": 776.0,
+      "text": "also there's code linked"
+    },
+    {
+      "start": 776.0,
+      "end": 778.0,
+      "text": "if you want to look at reproducing"
+    },
+    {
+      "start": 778.0,
+      "end": 780.0,
+      "text": "all of the experiments."
+    },
+    {
+      "start": 780.0,
+      "end": 782.0,
+      "text": "So this concludes my talk."
+    },
+    {
+      "start": 782.0,
+      "end": 784.0,
+      "text": "Thank you for your attention."
+    },
+    {
+      "start": 786.0,
+      "end": 788.0,
+      "text": "So we've got about"
+    },
+    {
+      "start": 788.0,
+      "end": 790.0,
+      "text": "three minutes for questions"
+    },
+    {
+      "start": 790.0,
+      "end": 792.0,
+      "text": "so if you have a question"
+    },
+    {
+      "start": 792.0,
+      "end": 794.0,
+      "text": "come up to the microphones"
+    },
+    {
+      "start": 794.0,
+      "end": 796.0,
+      "text": "I see there's one right there"
+    },
+    {
+      "start": 796.0,
+      "end": 798.0,
+      "text": "go for it."
+    },
+    {
+      "start": 798.0,
+      "end": 800.0,
+      "text": "My question is"
+    },
+    {
+      "start": 800.0,
+      "end": 802.0,
+      "text": "do you have"
+    },
+    {
+      "start": 802.0,
+      "end": 804.0,
+      "text": "any idea or opinion about"
+    },
+    {
+      "start": 804.0,
+      "end": 806.0,
+      "text": "training the model"
+    },
+    {
+      "start": 806.0,
+      "end": 808.0,
+      "text": "with the intrinsic reward"
+    },
+    {
+      "start": 808.0,
+      "end": 810.0,
+      "text": "what will be the challenge"
+    },
+    {
+      "start": 810.0,
+      "end": 812.0,
+      "text": "in that direction"
+    },
+    {
+      "start": 812.0,
+      "end": 814.0,
+      "text": "So that's a very good question"
+    },
+    {
+      "start": 814.0,
+      "end": 816.0,
+      "text": "the idea of intrinsic reward"
+    },
+    {
+      "start": 816.0,
+      "end": 818.0,
+      "text": "or curiosity is a natural"
+    },
+    {
+      "start": 818.0,
+      "end": 820.0,
+      "text": "extension of this and in fact"
+    },
+    {
+      "start": 820.0,
+      "end": 822.0,
+      "text": "Juergen Schmidhuber has published"
+    },
+    {
+      "start": 822.0,
+      "end": 824.0,
+      "text": "some work in 1990 where he"
+    },
+    {
+      "start": 824.0,
+      "end": 826.0,
+      "text": "looks at using the world model"
+    },
+    {
+      "start": 826.0,
+      "end": 828.0,
+      "text": "to get agents to look at"
+    },
+    {
+      "start": 828.0,
+      "end": 830.0,
+      "text": "states that he's not that aware of"
+    },
+    {
+      "start": 830.0,
+      "end": 832.0,
+      "text": "there also are some limitations"
+    },
+    {
+      "start": 832.0,
+      "end": 834.0,
+      "text": "of these approaches but feel free"
+    },
+    {
+      "start": 834.0,
+      "end": 836.0,
+      "text": "to come by our poster later."
+    }
+  ],
+  "segment_count": 341
+}
