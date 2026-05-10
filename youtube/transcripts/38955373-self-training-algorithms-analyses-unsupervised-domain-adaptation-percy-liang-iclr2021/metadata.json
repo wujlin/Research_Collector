@@ -1,0 +1,15 @@
+{
+  "title": "Self-training Algorithms and Analyses for Unsupervised Domain Adaptation",
+  "url": "https://slideslive.com/38955373/selftraining-algorithms-and-analyses-for-unsupervised-domain-adaptation",
+  "backend": "faster-whisper",
+  "model": "large-v3",
+  "requested_language": "en",
+  "detected_language": "en",
+  "generated_at": "2026-05-08T15:40:55",
+  "language": "en",
+  "language_probability": 1,
+  "duration": 2673.7778125,
+  "refined_at": "2026-05-08T15:42:40",
+  "cleanup_rules": 16,
+  "paragraph_count": 118
+}

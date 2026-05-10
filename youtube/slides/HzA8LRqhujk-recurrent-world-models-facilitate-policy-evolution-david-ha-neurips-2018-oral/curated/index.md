@@ -3,6 +3,7 @@
 - Source video: https://youtu.be/HzA8LRqhujk
 - Speaker: David Ha
 - Event: NeurIPS 2018 Oral
+- Strategy: semantic re-extraction from the WSA video source. The previous curated set contained transition and overlay frames, so it was replaced by this canonical set.
 - Curated frame count: `12`
 
 ## Contact Sheet
@@ -11,50 +12,15 @@
 
 ## Frames
 
-### 01. `00:00:27`
-
-![00:00:27](01-00-00-27.jpg)
-
-### 02. `00:00:42`
-
-![00:00:42](02-00-00-42.jpg)
-
-### 03. `00:00:56`
-
-![00:00:56](03-00-00-56.jpg)
-
-### 04. `00:04:15`
-
-![00:04:15](04-00-04-15.jpg)
-
-### 05. `00:04:29`
-
-![00:04:29](05-00-04-29.jpg)
-
-### 06. `00:05:06`
-
-![00:05:06](06-00-05-06.jpg)
-
-### 07. `00:06:53`
-
-![00:06:53](07-00-06-53.jpg)
-
-### 08. `00:07:48`
-
-![00:07:48](08-00-07-48.jpg)
-
-### 09. `00:09:06`
-
-![00:09:06](09-00-09-06.jpg)
-
-### 10. `00:09:48`
-
-![00:09:48](10-00-09-48.jpg)
-
-### 11. `00:11:18`
-
-![00:11:18](11-00-11-18.jpg)
-
-### 12. `00:12:37`
-
-![00:12:37](12-00-12-37.jpg)
+- `01-mental-world-models.jpg` @ `00:00:20`: mental/world model framing.
+- `02-variational-autoencoder.jpg` @ `00:00:50`: VAE as visual compression module.
+- `03-density-rnn-dynamics.jpg` @ `00:01:10`: recurrent density model for latent dynamics.
+- `04-carracing-training-procedure.jpg` @ `00:02:40`: CarRacing setup and training procedure.
+- `05-spatial-temporal-inputs.jpg` @ `00:04:30`: spatial-only versus spatial-plus-temporal controller inputs.
+- `06-carracing-results.jpg` @ `00:05:10`: CarRacing result table.
+- `07-latent-environment-controller.jpg` @ `00:06:50`: training the controller inside the latent environment.
+- `08-doom-takecover-setup.jpg` @ `00:07:00`: Doom TakeCover setup and procedure.
+- `09-cheating-world-model.jpg` @ `00:07:50`: model exploitation under a learned world model.
+- `10-doom-temperature-results.jpg` @ `00:09:10`: temperature controls uncertainty and transfer.
+- `11-iterative-training-policy.jpg` @ `00:09:50`: iterative policy/model improvement loop.
+- `12-model-based-rl-followup.jpg` @ `00:11:20`: follow-up model-based RL directions.

@@ -1,0 +1,2328 @@
+Good. Shall we get started? Okay, cool. So, my name is Kai Ming, and I will be joining this random university next month, actually. So, today I'm doing an unpaid job, and now let's see what's the title of my unpaid job.
+Well, it's learning deep representations, and I will talk about it in the context of image recognition, and perhaps in some other scenarios.
+And here is an overview of this tutorial. First I will talk about what is representation learning?
+And why representation learning is an important problem?
+And then, I will talk about how can we build and train very deep neural networks?
+And I will talk about a few milestones and influential neural network architectures.
+Then I will also cover some important components and elements for us to train very diminutive architecture,
+including some initiation methods, normalization methods,
+and next slide.
+introduction of residual connections. And then I will also cover the applications
+for image recognition and some sequence processing problems. So first of all, why
+deep learning? Why about ten years ago suddenly people started to talk about
+deep learning almost everywhere? So in a nutshell, deep learning is
+representation learning. And actually, interestingly, more than ten years ago,
+deep learning was not popular and was not favored by the mainstream conference
+in computer vision or in machine learning. And at that time, some of the
+pioneers in deep learning and neural network architectures, such as Yann LeCun
+and Yoshua Bengio, decided to start another conference that is more friendly
+and more open-minded to deep learning research. And interestingly, these
+pioneers in deep learning decided to name their new conference as the
+international
+conference on learning representations. And this reflects how closely related it
+is between deep learning and representation learning. Then, why
+representation learning is important? Representation learning is a common
+problem that can be shared across many applications in many areas. A common goal
+of representation learning is to transform the raw data into some high
+level representation space. And we will have the opportunity to share this
+holiday territory, for example, by presenting a video on artificial intelligence.
+In order to do that, we need to have many different types of discussion.
+We can use the artificial intelligence for example, to provide some
+very simple, simple examples of how to represent a given topic.
+For example, we can use them for operations to try and translate this
+topic into a shared discussion with an audience. And in this case, the
+real world field of view is the Neuron context. And we will have better
+compression or abstraction, or conceptualization in the
+representation space. And when the computer algorithms are operated on that
+representation space, they can solve very complex problems way more easily. And,
+depending on the scenarios, the raw data can be in many different forms in practice.
+or worse. In some other scenarios, such as speech recognition or audio recognition, the raw data can
+be audio waves or spectrograms. And in the case of game playing, the raw data can be the states of
+the game board. And in some scientific problems, the raw data can be the molecule sequences, DNA
+sequences, or some other structures. A common problem in many of these applications is on how
+can we represent the data in some high-level abstraction space such that the computer
+algorithms can solve the problem way more easily. Now let's take the game of Go as an example.
+Using computers to solve the game of Go has been believed as a very challenging or maybe even
+infeasible problem over the last several decades. So part of the reason is that there is an
+exponentially large number of different systems that can be used to solve the problem.
+For example, the board has 19 columns and 19 rows. And if we put everything together,
+then there would be 361 positions. And every single position may have three choices, black,
+white, and blank. Then this will give us three to the power of 361 different states. And this is a
+huge number. And if the computer algorithm is going to do analysis or maybe even enumeration
+or memorization of the data, then it's going to have to do a lot of work. And if the computer
+algorithm is going to do analysis or maybe even enumeration of the data, then it's going to have to
+do a lot of work. And if the computer algorithm is going to do analysis or maybe even enumeration
+in this space, then it would just be infeasible for today's computer to address this problem
+using this representation. However, if that is the case, then perhaps we will never solve
+computer vision or image recognition problems. Now let's think of a very simple case in computer
+vision. Let's say we will have a very small image, let's say 500 pixels by 500 pixels. And
+every single pixel may have three color channels, red, green, and blue. And if we have a very small
+image, let's say 500 pixels by 500 pixels. And every single pixel may have three color
+channels, red, green, and blue. And every single color channel may have 256 different
+values. And if we put everything together, then we will have 256 to the power of three
+by 500 by 500 different states, just for a very small image. And if our computer vision
+algorithm is directly operated on this raw pixel space, and if the algorithm is going
+to either enumerate or memorize this state space, then we will never solve the computer
+vision algorithm, because this problem is even more intractable than the problem of
+goal playing. However, this is not how computer vision algorithms address the image recognition
+problem. Instead of directly working on the raw pixel space, we will use a model to transform
+the raw pixels into some representations. And today, usually the most successful model
+for us to do this is to use a deep neural network, such as a convolutional neural network.
+And then, these representations will give us some very good compressions, abstractions,
+or conceptualizations. And when using these representations, the computer algorithms
+can solve many different problems, such as image classification, object detection, or
+image segmentation. Then, analogously, going back to the problem of goal playing, we can
+just think of the board in the goal playing as a very small image. And this image just
+has
+19 by 19 pixels and every single pixel has only three possible colors black
+white and blank and then we can use the same idea for example we can use a
+convolutional neural network to process the states of the game and obtain some
+high-level abstractions and the computer algorithm can directly work on this
+high-level abstraction space to do some analysis or do some search and this will
+make the problem of goal-playing way more easily to be solved. And this is
+actually one of the many fundamental ideas behind the famous alpha-goal
+algorithm. This figure is from the alpha-goal 0 paper and in this figure the
+authors compared four different versions of the alpha goal player and these
+versions are compared in terms of the ELO rating and usually a higher rating
+means a better goal-playing performance and this figure simply
+shows that alpha-goal is not a problem. It's more likely to be solved if you
+shows that by increasing the depths from, for example,
+12 layers to 40 layers, we can easily
+enjoy a huge boost in terms of the goal playing performance.
+And actually, if we keep increasing
+the depths of the neural networks,
+for example, to 80 layers, we are
+going to see another huge boost in terms
+of the goal playing performance.
+It is interesting to note that this performance is
+way better than even the best human players in the world.
+And AlphaGo algorithm can achieve this performance
+without using any human knowledge.
+And it is also worth noticing that for the four or five
+different players compared here, many of the other components
+are exactly the same.
+So for example, the usage of the reinforcement learning
+algorithm and the Monte Carlo tree search algorithms
+are exactly the same.
+It is only the neural network architectures
+that are used to learn the representations for goal
+playing are different.
+And for example, if you look at this image here,
+you can see that there are five different versions
+that are used to learn the representations for goal
+playing across these five different versions.
+So I hope this will give you some sense
+about how important representation learning is
+for us to address very challenging problems.
+Now, let's go back to the problem of computer vision.
+And next, I'm going to talk about how
+can we represent an image in computer vision
+before deep learning got popular.
+So let's start with the problem of computer vision.
+So in computer vision, we can represent a very small number
+of pixels into a classifier.
+The classifier can be an SVM classifier,
+Support Vector Machine, or it can be a decision tree,
+or it can be a random forest.
+Usually, this is not a good solution
+because even a small change in the object
+will lead to a larger change in the raw pixel representation
+space.
+Then in order to have a better question,
+how they thought about the game and how they represented it
+to get one thing, I suspect.
+And if we looked at the so-called representation
+that they know, system learning, would they
+look anything like one another?
+Has anybody done that experiment?
+Yeah.
+That's a very good question.
+So I'm not a good goal player, but I
+got to know that there are very fancy terminology about goal
+playing.
+It's the terminology about the expert player's sensation
+about how the current state is.
+So the goal player has their own internal representations
+for goal playing.
+And those internal representations
+may not be well aligned with what the representations can
+be learned by computer algorithms.
+And actually, after the AlphaGo was developed,
+I believe many of the expert players
+used the .
+I used the AI to help them to improve
+their own internal representation of human beings.
+OK, good.
+OK, let's go back to our story.
+So in order to have a slightly better representation,
+we may want to compute the edges on top of the pixels
+because this will give us some more robust representations
+in case the illumination or the colors of the input space
+may change.
+Then again, in order to have yet another better presentation,
+we may want to compute the orientations of the edges
+or the histograms of the orientations,
+or we may run some clustering algorithms
+on top of the histograms.
+So actually, this pipeline works pretty well
+if the problem is simple enough.
+However, in this pipeline, it require human beings
+or it require computer vision experts
+to define what are good representations
+or what are good features for some
+to solve the problems on hand.
+So while the feature designing problem
+is relatively doable for some low-level representations,
+such as the definition of edges or textures or colors,
+this problem would be extremely difficult
+if we want to define some high-level representations.
+For example, it turns out to be extremely difficult for us
+to define, for example, what is a fish, what is a cat,
+or on the other hand, what is a tree or what is a human.
+And actually, in computer vision, over the last several
+decades, defining high-level abstractions
+and representations has been a major bottleneck
+in the computer vision community.
+Deep learning provides another methodology
+for us to address the computer vision, image recognition,
+and many other complex problems.
+A key idea of deep learning is to compose
+a simple set of general modules into highly complex functions
+for us to solve highly complex problems.
+So if there is only one message that you can take away
+from my talk today, then this is the message.
+I'm going to repeat it many times
+in the following part of this talk.
+So with the help of a general set of modules,
+it is easy for us to build multiple levels of abstractions
+and to learn multiple levels of representations.
+And the concrete instantiations of these modules,
+such as the parameters or the weight
+of these modules, can be learned by backpropagation.
+So the reliance on human knowledge is largely reduced.
+And again, the learning is done on some larger-scale data.
+So the requirement of human knowledge
+has been transferred or shifted from engineering the features
+to another problem of collecting the data that
+is related to the problem.
+And overall, all of these key ideas or key concepts
+of deep learning can help us to solve
+the problem on hand.
+And again, the learning is done on some larger-scale data.
+And again, the learning is done on some larger-scale data.
+So these are many reasons why deep learning
+can be a general toolbox for us to solve
+many problems in many areas.
+can be a general toolbox for us to solve many problems in many areas.
+And next, I'm going to talk about how
+can we learn the deep representations for image
+recognition.
+And I'm going to go through a few milestone
+and influential steps in the history of computer
+learning and convolutional neural network development.
+I will start with the learning architecture that
+was developed about 30 years ago.
+The learning architecture is one of the successful instantiation
+of convolutional neural networks, or in short,
+a confnet or CNN.
+Simply speaking, a convolutional neural network
+is the translation invariant architecture.
+So by translation invariance, we usually mean,
+if we have some convolutional neural network, we can use it
+some operations inside a sliding window.
+And when the window is translated by a few pixels,
+we will still have more or less the same operations.
+And translation invariance can also
+mean, if we translate the entire input image by a few pixels,
+we can still have the same output class label
+if we are doing the classification problem.
+Then, the learning architecture has
+introduced several foundational elements
+for convolutional neural networks.
+These elements.
+include the usage of convolutional layers,
+pooling layers, fully connected layers, and more importantly,
+the idea of training the entire architecture end-to-end
+by backpropagation.
+And again, a convolutional neural network
+is just one instantiation of the deep learning methodology,
+which is to compose simple modules
+into highly complex functions.
+And next, I'm going to introduce two of these simple modules that
+are foundational.
+The first module is the convolutional layer.
+Simply speaking, a convolutional layer
+is just local connection plus spatial weight sharing.
+In contrast to a convolutional layer,
+one of the most popular layer type
+is the fully connected layer.
+In that case, every single output neuron
+is connected to every single input neuron in that layer.
+And here, every connection represents a weight.
+Or a parameter that can be trained.
+That is to say, if we have many input neurons,
+if we also have many output neurons,
+then we will have a great number of trainable parameters.
+And that is not ideal.
+And in order to partially address this problem,
+people have developed another layer type,
+which is called a locally connected layer.
+In that case, every single output neuron
+is connected to just a small subset of the input neurons.
+And usually, in practice, these small subsets
+will just be in a sliding window or a local neighborhood
+around the output neuron.
+And the introduction of a locally connected layer
+can greatly reduce the numbers of trainable parameters.
+And a convolutional layer is just one step ahead.
+That is to say, when we slide a window
+in different positions of the input image space,
+we can share the weight across different spatial positions.
+So let's zoom out a little bit.
+And again, the convolutional layer
+is local connections plus weight sharing.
+And we are going to see that these two concepts,
+local connection and weight sharing,
+are everywhere in neural network design.
+Another important component,
+another important module in convolutional neural network
+is a pooling layer.
+The role of a pooling layer is to reduce
+the size of the feature map
+so it can greatly reduce
+the computation required
+if the input image is big.
+On the other hand, a pooling layer
+can also help to achieve local invariance.
+That is to say, if our input contents undergo
+some local jittering inside a small window,
+we will still able to obtain more or less
+the same representations in that window.
+And this can help us to get
+more abstraction representations
+and this is a desired property
+for us to do classification problems.
+Then given these simple sets
+of general modules,
+next I'm going to walk through
+the learning architecture step by step.
+Even though this architecture
+has been proposed by more than 30 years,
+it is always enjoyable and inspiring
+for us to walk through
+this classical architecture.
+In this case, the input to the neural network
+has only one color channel
+because it is grayscale.
+And in this example,
+the spatial size would be 32 by 32.
+Then it will perform the first
+set of convolutional kernels,
+which has a spatial size of five by five.
+And in this case,
+it has six different output channels.
+And this will give us the first set
+of output feature map.
+And in this case,
+the spatial size is 28 by 28.
+And because our convolutional layer
+has six output channels,
+then this set of feature maps
+will also have six output channels.
+Then we can apply the first pooling operation
+to reduce the spatial size
+by a factor of two
+across each dimension.
+Then we will arrive at the next set
+of spatial feature map,
+which has a spatial size of 14 by 14.
+Then we are ready to apply the next set
+of convolutional layers,
+again, which has a kernel size of five by five.
+And at this time,
+it has 16 different output channels.
+Then we will arrive at the next set
+of feature map,
+which has a spatial size of 10 by 10 here.
+And again,
+the next pooling layer
+to reduce the spatial size.
+Then we will arrive at the next,
+at the final set of spatial feature map,
+which has a spatial size of five by five.
+And after that,
+we can just flatten this feature map,
+and we will process it
+with the first set of fully connected layers
+and the second set
+and the output fully connected layer,
+which has 10 channels in this case
+for 10 class classification problem.
+And at the high level,
+the entire architecture is very simple.
+It is just a composition
+of several basic modules
+which is just convolutional layers,
+pooling layers,
+and fully connected layer in this case.
+The learning architecture actually works extremely well
+if we have the data to train it.
+Unfortunately,
+this architecture has been ignored
+for more than 20 years
+after it was proposed.
+Part of the reason is that
+we don't have the compute
+or we don't have the data
+to fully demonstrate
+the power of this architecture.
+At that time,
+the largest data set,
+surprisingly,
+it was the largest data set at that time,
+was the MNIST data set,
+which has 50,000 images in 10 classes.
+This data set is good enough
+to train a very small model,
+but it's not enough
+to fully convince
+the computer vision community
+to adopt convolutional neural networks
+in their problems.
+Then the real revolution of deep learning
+happened in 2012,
+and it was introduced
+by this AlexNet paper.
+In my understanding,
+there is only one thesis
+in this AlexNet paper,
+which is to scale up
+convolutional neural networks.
+And the scaling up involves
+actually several aspects.
+The first aspect is about the data.
+The AlexNet was trained
+on the ImageNet data set,
+which has one million images
+and 1,000 classes.
+And actually at that time,
+it is way more bigger
+than many of the other data sets
+that people have been studying.
+And actually at that time,
+it's far beyond people's imagination
+that we can train
+a neural network architecture end-to-end
+on raw pixels
+in such a large-scale data set.
+On the other hand,
+the AlexNet architecture
+is actually big.
+And in the abstract of that paper,
+the authors specifically said
+this is a huge architecture,
+and this architecture
+has more than 60 million parameters
+and over 600,000 neurons.
+This model size
+is actually also way more bigger
+than many of the other models
+on those days.
+Then in order to train
+such a large model,
+even with the help
+of a larger-scale data,
+people need to introduce
+effective techniques
+to reduce overfitting.
+And the AlexNet paper
+explored two very effective techniques
+in this regard.
+One is data augmentation,
+and the other is dropout.
+These two techniques
+are still widely used
+in today's neural network
+training technologies.
+And another aspect
+about the AlexNet paper
+is about its excellent engineering work.
+It has explored the potential
+of using GPUs
+to train their models.
+And actually,
+they have paved the foundations
+for GPU training
+for the next 10 years.
+They have introduced
+two basic concepts
+about GPU training.
+One is data augmentation
+and the other is model distribution.
+In the case of data distribution,
+different samples
+in the same mini-batch
+can be handled
+by different GPUs,
+so the computation per GPU
+can be largely reduced.
+In the case of model distribution,
+different sets of filters
+or different layers
+can be stored
+in different GPUs,
+so it can also help
+to largely reduce
+the memory consumption.
+And these are still
+the foundations
+in today's GPU implementation.
+And here is just
+a side-by-side comparison
+between the original
+LeNet architecture
+and the AlexNet architecture.
+At the high level,
+they are just the same thing
+because they are just
+a composition of many simple
+and general modules,
+convolutional layers,
+pooling layers,
+and fully connected layers.
+They are just the same thing.
+Then what would be the difference?
+So why is AlexNet revolutionary?
+The first difference
+is that the AlexNet is deeper.
+It has three more convolutional layers
+and one more pooling layer.
+And these layers
+can help it to learn
+higher-level abstractions
+from larger-scale data
+than it is going to have
+a stronger representational power
+than the shallower models.
+Another difference
+is the usage
+of the ReLU activation,
+as you have seen
+in Philip's talk.
+In the original LeNet,
+the activation function
+is a sigmoid.
+And when the input signal
+is too big
+or the input signal is too small,
+we will have zero gradients
+when using
+the sigmoid activation function.
+And as a comparison,
+in the AlexNet,
+for the first time,
+it started to explore
+the usage of ReLU activation function
+to train a very deep
+neural network architecture.
+And in the case of ReLU,
+it is only when
+the input signal
+is smaller than zero,
+it will have zero gradient.
+Then when you have
+many activation functions
+in a very deep neural network,
+you will have
+a much higher chance
+of having non-zero gradients
+in the backward propagation process.
+It turns out that
+this can largely facilitate
+the training of very deep models.
+So in some sense,
+the introduction
+of the ReLU activation
+is kind of a revolution
+of the deep learning.
+Another huge difference
+between these two architectures
+that has been largely ignored
+by many people
+is that
+the AlexNet
+is actually
+a wider architecture
+than the original LeNet.
+And in the terminology
+of deep learning,
+by wider,
+we usually mean
+the model has more channels.
+Then by having more channels
+for every single layer,
+we are going to have
+a richer set of features
+than it will be more representative
+than a narrower model.
+The success of the AlexNet
+in the ImageNet dataset
+has drawn a lot of attention
+in the community
+of computer vision.
+In the next year,
+after the AlexNet was proposed,
+the computer vision community
+started to pay more attention
+into the understanding
+of the neural network behaviors.
+And one way
+for the computer vision community
+to obtain better understanding
+is by visualization.
+And a very successful
+visualization method
+is to answer the following question.
+So what input
+can produce
+a specific feature?
+In order to answer this question,
+we can do the following two steps.
+First,
+we just need to set
+a feature map
+as a one-hot vector
+or a one-hot tensor.
+That is to say,
+for this specific feature map,
+there is only one element
+that is non-zero,
+and all other elements
+would be set as zero.
+Then we can use
+exactly the same
+back-propagation algorithm
+to propagate
+this one-hot feature map
+from the feature space
+back to the pixel space.
+Then we will have
+some visualizations
+about this feature
+on the pixel space.
+And next,
+I'm going to show
+some visualization
+obtained in this way.
+And I'm going to show
+the visualization
+of a convolutional neural network
+that has five convolutional layers.
+And here are the visualizations
+of the first convolutional layer.
+Here I'm going to show
+the features on the left,
+and I'm also going to show
+some stimuli on the right.
+So by stimuli,
+I mean these are the patches
+or input images
+that will have
+the strongest activations
+in the corresponding features.
+And as we can see,
+in the first layer
+of this neural network,
+there are usually
+kind of edge detectors
+or some color detectors.
+And this behavior
+is very similar
+to a classical
+image recognition system
+in which the first layer
+is an edge detector.
+And here are some visualizations
+of the second convolutional layer
+in the same network.
+In this case,
+we can see that the features
+are slightly higher level
+than the features
+in the first layer.
+And we can see
+some of the features
+show some patterns of textures.
+And in some other cases,
+they show some local shapes
+such as a circle or a corner
+or the shape
+of a thin line.
+And this is why we say
+these features
+may be higher level
+than the features
+in the first layer
+which are just edges.
+And here are the visualizations
+of the third layer.
+In this case,
+we start to see that
+it begins to show
+some semantic patterns.
+For example,
+for this feature,
+it starts to show
+some semantic patterns
+about the upper body
+of human beings.
+And in another case,
+it starts to show
+the patterns
+of something like a net
+or a honeycomb.
+And again,
+here are the visualizations
+of the fourth layer.
+And again,
+it is higher level
+than the representations
+of the previous layer.
+And there are some shapes
+of dog heads
+or perhaps the shapes
+of the body of a bird
+with two legs.
+And again,
+these are the visualizations
+of the last convolutional network
+or the convolutional layer
+in this network.
+And again,
+this would be higher level.
+It is not perfect.
+For example,
+in this layer,
+it will mix
+several things together.
+But in some other examples,
+for example,
+for this filter,
+it will give the representations
+for different types of dogs.
+And for this filter,
+it will give the representations
+for different types of animals
+with eyes.
+And actually,
+in computer vision,
+these high level abstractions
+or high level representations
+are very difficult
+to be designed by hand.
+So these high level representations
+are exactly
+what the computer vision community
+have been looking for
+over the last several decades.
+So this visualization
+helps to convince
+the computer vision community
+that deep learning
+or deep convolutional neural networks
+are the right way to go.
+And as a byproduct
+of this visualization,
+at that time,
+the computer vision community
+started to make
+a very significant discovery.
+At that time,
+they discovered that
+these deep representations
+are transferable.
+And in my opinion,
+this is actually
+the single most important discovery
+in the deep learning revolution.
+Then what does it mean
+by transferable
+or what does it mean
+by transfer learning?
+In my opinion,
+transfer learning
+is just an amazing idea.
+Let's say,
+if we can train
+a larger scale network
+on a larger scale data set,
+and if we can discover
+that this network
+will learn
+some high level representations
+or high level abstractions,
+then we can hope
+this high level representation
+is not just related
+to this data set.
+These high level representations
+can also be used
+in many other
+smaller scale data sets
+that have something to do
+with this larger scale data set.
+But in order to enjoy
+this benefit,
+we can transfer these features
+to some smaller scale data set,
+and usually we can do
+this transfer learning
+by fine-tuning.
+For example,
+we can just train
+a small part
+of the neural network.
+And this can be done
+on just small scale data sets.
+And this discovery
+can enable
+deep learning models
+to be applied
+on small scale data sets.
+So you don't need
+a larger scale data set
+for your specific task
+to train very large scale models.
+You just need
+a small amount
+of data set
+that is relevant
+to your task.
+Then this discovery
+completely revolutionized
+the computer vision community.
+Because with the help
+of transfer learning,
+we can enjoy
+the benefits
+of deep learning
+in basically
+all small scale data sets,
+and they can achieve
+unprecedented accuracy
+in many of the
+computer vision tasks.
+So this is just
+game changing.
+So in this sense,
+some of the larger scale data sets
+such as the ImageNet data set
+is no longer
+a fine-grained
+or a tedious
+fine-grained classification problem
+that has more than
+one million images
+or one thousand classes
+that I'm not going to tell.
+The ImageNet data set
+becomes the engine
+for us to learn
+general representations
+that can help
+basically all
+computer vision tasks.
+And this discovery
+of transfer learning
+is so influential
+that its impact
+is far beyond
+just computer vision.
+For example,
+the GPT
+or the chat GPT model
+was also developed
+in exactly
+the same principle.
+Then next,
+I'm going to talk about
+another work
+that is kind of
+my favorite.
+This work is called
+VGG,
+which is short
+for the
+Visual Geometric Group
+which is a group
+at Oxford University.
+It can also be short
+for a very good group
+or something like that.
+The VGG architecture
+is very simple.
+It is just the idea
+about how can we build
+a very deep
+neural network architecture
+without bells
+and whistles.
+So,
+the VGG network
+is a highly modularized design
+and it only has
+convolution layers,
+pooling layers,
+connected layers
+and all the convolution layers
+are actually
+three by three
+so you don't need to
+carefully design these layers.
+So,
+the VGG network
+just simply
+stack the same type
+of modules
+and they can build
+a very deep
+neural network architecture
+for example,
+up to 90 layers
+which are twice as deep
+as the previous
+deepest model.
+And interestingly,
+for the first time,
+it showed clear evidence
+that a deeper model
+would be better
+than their
+shallow counterpart.
+So this seems to be
+a surprising statement
+because,
+well,
+actually,
+at that time
+there was very little
+clear evidence
+that a deeper model
+is better.
+Part of the reason
+is that
+before the VGGNet paper,
+when people increase
+the depth
+of the neural networks,
+they also do something else
+at the same time.
+So there was no
+clear evidence
+that going deeper
+is the only reason,
+is the main reason
+for the network
+to get better accuracy.
+Then in the VGGNet paper,
+the authors have designed
+very carefully controlled experiments.
+They tried to remove
+all the bells and whistles
+in the architectural design.
+They introduced very little
+config engineering
+and they developed
+very simple rules
+for them to set
+the number of channels
+or the number of layers
+for every single stage.
+And all the thing they do
+is just to add
+more and more
+three by three convolutional layers.
+This is a very simple design.
+This is extremely simple.
+This is very elegant.
+However,
+these simple baselines
+are very hard to beat.
+Actually,
+in those years,
+the VGGNetworks
+are just the state-of-the-art
+architecture
+in computer vision.
+It is the default
+backbone architecture
+for us to solve
+many different problems,
+including classification,
+detection,
+and segmentation.
+And they can easily outperform
+the counterpart
+that uses
+shallower neural network architectures.
+Actually,
+the VGGNetworks
+are just the state-of-the-art
+before
+Deeper Neural Network came along.
+And there is just one caveat
+about the VGGNetwork architectures.
+That is,
+these models
+were not trained end-to-end.
+Surprisingly,
+these models were trained
+by a technique
+that is called
+a stage-wise training.
+For example,
+in order to train
+a Deeper Neural Network architecture,
+they need to pre-train
+a shallower counterpart of it.
+Then they add,
+for example,
+two more layers
+to the model,
+and then they keep
+fine-tuning it.
+So this stage-wise
+training strategy
+is actually
+not ideal.
+It is actually
+against
+the end-to-end training
+philosophy
+of deep learning.
+In order to train
+these model architectures
+from scratch,
+we need to develop
+better initialization
+algorithms.
+Then,
+in the next year
+after the VGGNetwork paper,
+the community
+started to pay
+more attention
+into the network
+initialization issue.
+So,
+now,
+let's zoom out
+a little bit again
+and we are going to talk
+about why these
+Deeper Neural Networks
+are more difficult
+to train.
+Intuitively,
+a very deep
+neural network
+will have
+just
+a stack
+of many
+building blocks
+and many modules.
+Now,
+let's say
+if every single
+building block
+will do something
+wrong
+or it will introduce
+some troubles,
+then,
+after we stack
+this building block
+for many times,
+our troubles
+will just
+simply be
+accumulated.
+So,
+in practice,
+we are going to see
+some exploding
+signal problem
+or we may also
+see some
+vanishing
+signal problem.
+And,
+in this case,
+we may need
+some network
+initializations
+to help us
+to get the neural
+networks
+to start training.
+Next,
+I'm going to delve
+a little bit
+deeper
+into the network
+initialization
+algorithms.
+So,
+let's say
+we have
+a layer
+which is
+linear
+in a neural
+network.
+In this case,
+the input,
+x,
+will have
+x nodes
+or x neurons
+and the output,
+y,
+will have
+m nodes
+and the output
+is just
+a linear
+transform
+of the input
+and the transformation
+will be
+represented
+by a weight
+matrix,
+w.
+And,
+if we further
+assume
+there is only
+linear activation
+inside the entire
+neural network,
+then we can show
+that after
+the signal
+being processed
+by one layer,
+the variance
+of the signals
+will be scaled
+by a scaling
+factor.
+For example,
+this equation
+basically says
+the variance
+of the output
+of this layer
+equals
+to the number
+of input
+neurons
+times
+the variance
+of the weight
+of this layer.
+So this layer
+will scale
+the signal,
+will scale
+the variance
+of the signal
+by this scaling
+factor.
+And,
+we can apply
+this formulation
+many times
+in a very
+deep
+neural network
+if we don't
+have any
+activation
+or if our
+activation
+function
+is linear.
+Well,
+we are going
+to see
+that the variance
+is still
+scaled
+as the output,
+the variance
+of the network
+output
+equals
+to the product
+of these many
+numbers
+times
+the variance
+of the network
+input.
+And this is
+the formulation
+of the forward
+propagation.
+And,
+we can
+do
+some math
+and then
+we will get
+a backward
+formulation
+and the backward
+formulation
+is in a very
+similar fashion.
+And basically
+this is
+the
+product
+of these
+many
+factors
+basically
+says
+if
+the scaling
+factor
+for every
+single
+layer
+is
+smaller
+than
+one,
+then
+after
+this
+effect
+we can
+see
+that
+the
+product
+of
+this
+scaling factor
+is greater
+than one
+for every
+single
+layer,
+then after
+this effect
+will be
+accumulated
+by many
+layers,
+you are
+going to
+experience
+the
+vanishing
+gradient
+problem.
+That is
+to say
+your network
+is not
+going to
+train.
+It seems
+to be
+saturated
+or it
+will
+be
+diverged
+perhaps
+in the
+first
+iteration.
+Then in
+order for
+the network
+to at
+least
+start
+training,
+we need
+to develop
+good
+initialization
+algorithms
+and the
+previous
+derivation
+will lead
+us to
+this
+initialization
+method
+which
+is
+called
+the
+forward
+formulation.
+You may
+either
+want to
+set the
+forward
+formulation
+as one
+or the
+backward
+formulation
+as one.
+This is
+how you
+can
+initialize
+the
+weight
+in
+your
+neural
+network
+for
+every
+single
+layer.
+And the
+previous
+derivation
+was based
+on the
+assumption
+that the
+activation
+function is
+linear.
+And in
+practice,
+usually that's
+not what
+you want.
+You may
+want to
+introduce
+a
+ReLU
+activation.
+Then we
+can also
+show that
+with the
+introduction
+of
+ReLU,
+you
+the ReLU
+activation
+may
+cut
+half of
+a signal
+in the
+training
+process.
+That's
+why you
+need to
+introduce
+this
+scaling
+factor
+of
+one
+over
+two.
+And even
+though this
+seems to
+be a
+very
+small
+change
+comparing
+with
+the
+initialization
+method,
+you are
+going to
+experience
+the
+vanishing
+gradient
+problem in
+this case.
+And this
+initialization
+method can
+help us
+to train
+the VGG
+network
+from
+scratch
+without
+the
+requirement
+of
+statewide
+training.
+And this
+is about
+how we
+can
+design
+deep
+and
+at
+the
+same
+time
+economical
+convolutional
+neural
+networks.
+There are
+several
+interesting
+ideas
+involved.
+The
+first
+idea
+is to
+use
+multiple
+branches.
+For
+example,
+you
+may
+have
+one
+by one,
+three by
+three,
+or five
+by five
+convolutions
+in the
+same
+module.
+And at
+the
+same
+time,
+you
+may
+use
+a
+one
+by one
+convolution
+to
+flexibly
+control
+the
+number
+of
+channels
+in
+your
+module.
+So it
+is a
+shortcut
+because
+this one
+by one
+convolution
+can
+be
+shallower
+than
+the
+other
+branches
+in
+the
+same
+module.
+So it
+can
+be
+called
+a
+shortcut.
+Well,
+actually,
+in
+my
+previous
+lecture,
+I
+talked
+a
+little
+bit
+about
+neural
+network
+design.
+However,
+I
+also
+introduced
+another
+problem.
+So the
+crazy
+design
+of
+these
+architectures
+may
+break
+the
+simple
+assumptions
+that
+exist
+in
+neural
+networks.
+And
+motivated
+by
+these
+inception
+architectures,
+people
+started
+to
+look
+at
+another
+family
+of
+methods,
+which
+is
+called
+normalization
+modules
+in
+the
+neural
+networks.
+And
+in
+the
+neural
+networks,
+there
+are
+several
+methods
+to
+normalize
+the
+inputs.
+And
+actually,
+even
+today,
+this is
+what you
+need to
+do as
+a
+preprocessing
+for
+your
+data.
+And
+on
+the
+other
+side,
+there
+are
+a
+number
+of
+methods
+that
+you
+can
+use
+to
+normalize
+the
+neural
+networks.
+And
+in
+the
+neural
+networks,
+there
+are
+a
+number
+of
+methods
+that
+can
+keep
+the
+signal
+being
+normalized
+throughout
+the
+process.
+And
+if
+you
+want
+to
+apply
+these
+modules
+for
+all
+layers,
+they
+can
+also
+help
+you
+to
+keep
+the
+signal
+normalized
+throughout
+the
+process.
+And
+here is
+an example
+of the
+typical
+computations
+that can
+be
+performed
+by a
+normalization
+module.
+And
+usually,
+there
+would be
+three steps
+that's
+involved.
+In
+the
+first
+step,
+we
+may
+want
+to
+reduce
+the
+degree
+of
+freedom
+because
+we
+do
+this
+normalization.
+So,
+we
+may
+want
+to
+compensate
+for
+this
+reduction
+by
+introducing
+another
+linear
+transformation,
+which
+can
+simply
+be
+done
+in
+the
+neural
+network
+architectures.
+In
+practice,
+there
+are
+many
+types
+of
+normalization
+modules,
+and
+one
+of
+the
+differences
+between
+these
+modules
+is
+about
+the
+support
+set
+in
+the
+neural network.
+The
+support
+set
+is
+the
+number
+of
+channels,
+and
+h
+and w
+is
+the
+height
+or
+width,
+which
+is
+the
+spatial
+size.
+And
+this
+operation
+represents
+the
+batch
+of the
+support
+sets.
+And
+today,
+one of
+the most
+popular
+choice
+for
+us
+to
+use,
+or
+perhaps
+the
+default
+choice
+for
+us
+to
+use,
+is
+the
+layer
+normalization
+operation.
+So
+it
+allows
+models
+to
+start
+training,
+otherwise
+they will
+just stop
+training or
+they will
+just diverge
+at the
+very
+beginning.
+On
+the
+other
+hand,
+even
+when
+the
+models
+can
+start
+training,
+the
+introduction
+of
+normalization
+will
+be
+much
+easier.
+So
+let's
+look
+a
+little
+bit
+and
+let's
+record
+what
+is
+the
+key
+idea
+of
+deep
+learning.
+The
+key
+idea
+is
+to
+compose
+a
+simple
+neural
+network
+with
+hundreds
+of
+layers
+to
+train
+from
+scratch
+and
+to
+adapt
+to
+the
+environment.
+So
+in
+this
+work
+of
+residual
+learning,
+we
+demonstrated
+that
+deep
+learning
+or
+neural
+learning
+can
+be
+used
+to
+train
+neural
+networks
+from
+scratch
+and to
+achieve
+better
+accuracy.
+And
+next
+I'm
+going to
+tell a
+little
+bit
+about
+the
+ResNet
+story.
+The
+ResNet
+was
+developed
+in
+the
+early
+20th
+century
+in
+the
+late
+20th
+century.
+The
+ResNet
+was
+developed
+in
+the
+early
+20th
+century
+and
+the
+ResNet
+was
+developed
+in
+the
+early
+20th
+century.
+The
+ResNet
+was
+developed
+in
+the
+early
+20th
+century.
+And
+the
+ResNet
+was
+developed
+in
+the
+early
+20th
+century.
+And
+the
+ResNet
+was
+developed
+in
+the
+early
+20th
+century.
+And
+the
+ResNet
+was
+developed
+in
+the
+early
+20th
+century.
+The
+ResNet
+was
+developed
+in
+the
+early
+20th
+century.
+And
+the
+ResNet
+was
+developed
+in
+the
+early
+20th
+suggests that each at least has the same training accuracy as some of the
+shallower counterparts. So the empirical observation of degradation suggests that
+the optimization may not be able to find this solution or the optimization may
+not be able to find a solution that's similar enough to this one. And this
+motivate us to develop a framework which is called deep residual learning. And
+again here, let's zoom out a bit and let's think of a very deep neural
+neural architecture, and then let's focus on a small subnet inside of narrative
+neural neural architecture, and in this illustration this small subnet has only
+two layers in this case. And then we use a function h to denote the
+underlying desired function that is to be fit by this small subnet. Then in the
+case of a classical
+that is to be fit by this small subnet. Then in the case of a classical
+To denote the underlying desired function that is to be fit by this small subnet. Then in the case of a classical
+vanilla neural network, the only thing we can do is that we hope these two layers can fit this
+underlying function of HX. Then, the idea of residual learning is different. We don't need to
+use this weight layer to directly fit this function HX. Instead, we may want them to fit
+another function, which is FX, and this function will represent the delta or the change that we
+can make on top of the input to this small subnet. In order to have the original decided function,
+we just need to add the FX into the input of this subnet, and this addition can be easily
+achieved as an identity mapping, which connects the input of this subnet to the output of this
+subnet, and the signal will be merged by element-wise and addition. This will also turn
+this subnet into a neural network, and this will also turn this subnet into a neural network.
+In this residual block, the weight layers will perform a function which is called a residual
+function. Basically, the residual function is just incremental changes on top of the input.
+Now, let's think of the entire residual block as a function that we want to use. If the identity
+mapping is optimal for this function, then it should be easy for us to achieve it because we can
+set all the weight layers as zero. And if identity mapping is almost optimal, then we may also be
+able to have a good solution because we can set the weight as some small numbers. In this sense,
+actually, the idea of residual learning encourages a building block to make small and conservative
+and incremental changes. However, by putting many small changes together, it is still possible for us to have a
+to learn a very complex function, and this also follows the deep learning methodology.
+And again,
+as a byproduct of the introduction of the residual block, it is easy for us to have another initialization method.
+and we can just set the weight as some small numbers or set them as zero at the beginning of training.
+This is to say, the entire residual block will just be identity mapping, or similar to an identity mapping, at the beginning of training.
+this is to say, the entire residual block will just be identity mapping, or similar to an identity mapping, at the beginning of training.
+So the signal in the forward process and also in the in the backward process can be easily
+propagated
+with this identity mapping at the beginning of training. So you don't need to worry too much about the initialization algorithm.
+Then it is easy for us to adopt this idea to build a very deep neural network architecture.
+So in some sense you may just need to add this many
+identity connections into a vanilla neural network, then you can turn it into a residual neural net. Or
+equivalently this can be thought of as simply stacking many residual blocks to create a very deep model.
+So in this sense
+the introduction or the design of a residual block
+actually becomes the new generic design or the new generic modules for us to build a very deep neural network architectures.
+So after the introduction of
+ResNet
+people started to focus on a design of every single building blocks and perhaps one of the most successful
+design is the transformer block. And then after that you just need to stack the same type of block for many times and you don't
+need to carefully design every single specific layers when you have many more layers.
+And
+then here are just some results
+about ResNet. In this figure the x-axis is the depth of neural network and the
+y-axis is the
+classification accuracy. And this figure basically says a vanilla neural network will start to degrade very quickly
+after 20 layers, for example, and ResNet can keep improving after many layers.
+And the same pattern can happen on ImageNet and many other datasets, and this pattern can be summarized in this form.
+So without the help of residual connections
+the neural network will start to degrade after a certain point depending on the scenarios. And
+With the help of residual connections, it can keep improving and when you add more and more layers, and this is highly desired property.
+Here is a checklist of the several things that you may do to build and train very deep neural network architectures.
+And many of these concepts are just about how we can have a healthy signal propagation
+in the training process. And this aspect includes the usage of a
+Rear-look activation or other activations of a similar shape and also the usage of an appropriate initialization algorithm.
+And it also includes the introduction of normalization modules and residual connections into your neural neural architectures.
+Good, I have talked about
+learning deep representations with convolutional neural networks for 2D images.
+The next I will also briefly talk about how can we learn deep
+representations
+from 1D sequences.
+A classical model for us to do 1D sequence modeling is
+recurrent neural networks or in short RNN.
+A recurrent neural network is a very special kind of neural network
+which has loops in its connections.
+So that is to say, given a recurrent neural network unit, it will take the input from the current time step,
+let's say Xt, and then it will produce
+a hidden state given that input, for example, Ht, and this hidden state will be used to determine the output at that time step.
+And this hidden state will also be used as the input to the next time step.
+And if we unfold this recurrent neural network architecture along the time axis,
+we can see that it is actually yet another way to sharing model
+with the weight shared.
+yelling
+across the temporal dimensions.
+So, and also, this architecture is also a locally connected formulation.
+For example, for every single unit, it is only connected to the input of this time step.
+And it is also connected to the immediate previous time step.
+So, again, we see that weight sharing and local connections are still two of the key properties in a recurrent neural
+network.
+So, again, we see that weight sharing and local connections are still two of the key properties in a recurrent neural network.
+is often used in recurrent neural network.
+design and this is conceptually very similar to a convolutional neural network and how can we build
+a deep recurrent neural network and it also turns out to be very simple in some sense you just need
+to view the state from a recurrent neural network unit as a new sequence and then you can process
+this sequence by using another unit so that is to say you can just stack many recurring
+new recurrent neural network units together and you will have a different neural network
+for example here i show the case of a three layer recurrent neural network
+and in this case if we consider on the output of of this neuron it will depend on the output
+of all the shallower layers and it will also depend on all the previous time steps
+in the same layer and this is just a property of recurrent neural neural architectures
+and here is an example of of deep recurrent neural networks in practice this example is
+from google's neural machine translation system that was developed for their products in 2016.
+in this case they stack several lstm units to make this deep recurrent neural network
+and lstm is just a special form of a very effective form of irns in this workbook
+the author reported that in order to build this very deep lstm model they still need to use the
+residual connections they report that with the help of residual connections they can train a
+deep lstm with up to 16 layers and enjoy the benefits of going deeper and if they don't use
+the residual connections they observe the degradation problem just after four layers
+so interestingly this observation is very similar to the observation we made on convolutional neural
+networks and again this demonstrates the power and the generality of the deep learning methodology
+that is to say if we develop a very effective and very general component from one application
+then it is likely that you are going to enjoy the benefit in some other applications so in this case
+the original residual connection was developed in the scenario of convolutional neural network
+for 2d image processing
+but its behavior can also be observed in a completely different scenario
+with recurrent neural networks for 1d sequence modeling
+then recurrent neural network is not the only way for us to model 1d sequences
+we can still use the classical convolutional neural network to achieve more or less the same goal
+we just need to apply a sliding window across the 1d dimension and then we can perform a
+convolution on the 1d sequences and if we want to have some causal reasoning we may want to make
+a small change here which is we we may want to make the convolution to perform some causal
+computation that is to say for the kernel for the convolutional kernel it can only see the current
+time step or any of the previous time step it is not going to see any of the future time steps
+then in the case of a convolutional neural
+network the limitation is very obvious that is to say if you want to capture a longer context
+you need to be built a different neural network architecture this is because for every single
+layer the context lens will be limited by the kernel size for example in this case for this
+neuron its context only depends on the current time step and the immediate previous time step
+so in order to have a longer context for example in this case you may want to have more layers and
+more time steps for example this neuron will depend on up to three time steps away and this is how
+you can have a longer context when we use convolutional neural networks for sequence modeling
+and next i'm going to discuss yet another concrete example this example is from deep
+mines wave net architecture and the application here is for audio generation in this case they
+not only use the causal convolution but they also are
+and another operation, which is called a dilation.
+So a dilated convolution means the convolutional kernel
+does not need to depend on the immediate previous step.
+It can depend on a time step that
+can be many time steps away.
+Then the dilation operation can help
+us to greatly increase the size of the convolutional kernel,
+and it can help us to capture a longer context.
+But even so, the authors still need
+to stack many convolutional layers
+to build a very deep convolutional neural network
+to capture long context.
+And as such, they still need the help
+from the residual connections for them
+to enjoy the benefits of training
+deeper neural networks.
+And here is a summary of different sequence modeling
+paradigms conceptually.
+In the case of a convolutional kernel,
+we have a recurrent neural network.
+For every single layer and for every single time step,
+it can see the full context.
+That is to say, if we consider this neuron,
+its computation will depend on the computations
+of all the previous time steps in the same layer.
+And this could be a decided property
+if you want some long range reasoning in your application.
+However, on the other hand, also because
+of this property, the computation of recurrent neural
+network is not feed forward.
+That is to say, in order to compute
+the outputs of this neuron, you need
+to wait the outputs of all the previous neuron to be finished.
+So this behavior is not friendly to parallel implementation
+in GPUs.
+So in practice, the recurrent neural networks
+are not efficient in GPU implementation.
+As a comparison, the convolutional neural
+network had completely different behavior.
+On one hand, the model is fully feed forward.
+So for every single neuron in the same layer,
+you don't need to wait for the other neurons
+to finish their computation.
+So this is very friendly to parallel implementation
+in GPUs.
+So usually, the convolutional neural networks
+are very efficient in GPU implementation.
+On the other hand, as we have discussed,
+the context length would be limited by the size
+of the convolutional kernels.
+And this is not a decided property.
+How can we enjoy the best of both worlds?
+And this is why the attentional mechanism has been introduced.
+Simply speaking, in the attentional mechanism,
+we allowed every single neuron or every single time step
+to see every single other time step in the sequence.
+So as such.
+And for every single neuron, it will
+be able to see the full context from the previous layer.
+So if modeling a long range reasoning is what you want,
+then this is a decided property in the neural neural
+architectures.
+On the other hand, in the attentional mechanism,
+all computations are feed forward.
+So you don't need to wait.
+You don't need to wait the computation
+of the previous time step at the same layer to finish.
+So this feed forward computation is also very friendly to GPU implementation.
+The attentional mechanism is a core idea
+behind a very popular architecture, which
+is known as the transformers.
+Because time is limited, I'm not going
+to delve into the technical details of the transformers.
+But I'm going to share some of the intriguing properties
+of the transformers design.
+The first property is that, in the transformers,
+we allow every single node to see every single other node,
+as what we have discussed.
+Another interesting property, which
+to the surprise of many practitioners,
+is that, actually, the attention computation is parameter-free.
+So you don't need to introduce any parameters.
+That is to say, if you are given three sequences, let's say,
+q, k, v, which is short for queries, keys, and values.
+Let's say, qkv, which is short for queries, keys, and values.
+then the attention computation does not need to introduce any trainable parameters.
+So this is unlike a classical fully connected layer
+where every single connection may represent a trainable parameter.
+In the case of the attentional computation,
+in this attentional computation,
+every single connection represents no trainable parameter.
+It just means these two things are related to each other.
+So if the attentional computation is parameter-free,
+then where are the parameters?
+So interestingly, in the transformer architecture,
+all the parameter layers are feed-forward.
+The parameter layers will be used for us to obtain the sequences
+that are called QKV,
+and they will also be used in the MLP blocks
+that is to transform these sequences in the representation space.
+And in some sense, all these parameter layers
+are just kind of one-by-one convolutional layers.
+And again, all these layers are locally connected
+because they are only connected to the current time step,
+and all these layers have weight-sharing across the time dimension.
+And again, we can see that local connection and weight-sharing
+are still the two key properties in neural network architectures.
+And also, the transformer architecture,
+it's a very deep model,
+so we need to rely on a certain type of normalization operations
+and also the residual connections
+for us to train these very deep models.
+There are many successful applications
+of the transformer architectures,
+and perhaps the most popular and most famous one
+is the generative pre-trained transformers,
+or in short, GPT.
+Simply speaking, the GPT model
+is a very deep model,
+the representation learning model
+for natural language processing.
+The GPT models are designed for a task
+which is known as next-word prediction.
+In this task, the model is given a prefix of a sentence,
+and it is asked to predict what would be the next word
+after this prefix.
+In this case, the sentence could be, for example,
+the students opened their something,
+and the model is asked to predict something,
+and with some probability,
+the models may say,
+book.
+And this model, the GPT model,
+is trained on a larger scale data set
+collected from the internet.
+So it is able to learn very good representations
+about the natural languages.
+It is also going to learn the knowledge
+that is contained in this language data.
+And the GPT model
+is the foundation behind many of the language applications,
+including chat GPT.
+And actually, in order to enjoy the benefit,
+we still need to rely on the transfer learning paradigm.
+That is to say, we pre-train this model on larger scale data,
+then we need to fine-tune or transfer this model
+in some smaller scale data sets.
+Another successful application of transformers
+is the alpha-fold application.
+And simply speaking, alpha-fold is a representation learning
+method for the application of protein folding.
+In this case, the input to the neural neural architecture
+is amino acid sequences.
+And the outputs of the architecture
+are just the protein structures.
+And this architecture has 48 transformer blocks,
+and the architecture would be trained
+on a larger scale protein structure data set
+that has been collected by human experiments
+over the last several decades.
+And interestingly, even though many of these components,
+such as the transformers,
+the transformer block, or the usage of residual connections,
+were originally developed for many other applications,
+such as natural language processing or image recognition,
+this exact same set of building blocks
+can be applied to a completely different problem
+of protein folding.
+And again, this demonstrates the generality
+of the deep learning methodology.
+If you develop a very effective set of tools,
+then you may be able to enjoy
+the benefits of these tools, perhaps
+in completely different areas.
+Then we are ready to go back to computer vision,
+and we're going to introduce another very successful work,
+which is called the Vision Transformer, or VIT.
+So conceptually, VIT is just the application of transformers
+to 2D image processing.
+And it turns out that the idea can be very simple.
+We just need to prepare.
+An input image as a sequence of non-overlapping patches.
+Then we can apply the transformer architecture
+on this 1D sequence as if it is whatever any other 1D sequences.
+And it turns out that this simple idea
+is very successful and very effective.
+And today, it is one of the default choice
+for us to do image recognition in computer vision.
+And the significance of the VIT architecture
+is not just within computer vision, because, for the first,
+VIT is not just within computer vision, because, for the first,
+VIT is not just within computer vision, because, for the first,
+it demonstrated that the transformer architecture
+can be a unified architecture for many problems,
+including natural language processing, computer vision,
+or audio recognition, or 3D processing,
+and many other sequence processing problems.
+And again, it demonstrates the generality
+of the deep learning methodology.
+Now, here is a conclusion of this tutorial,
+and this would be some takeaways from this part.
+And in this tutorial, I have introduced
+what is representation learning and why
+it is an important problem.
+Representation learning can be a common problem
+and that we may have across different areas
+and for different applications.
+And deep learning and deep neural networks
+are just very effective tools for us
+to address the representation learning problem.
+And again, the key idea of deep learning
+is to compose a simple set of generic models,
+or generic modules, into highly complex functions.
+And the deep learning idea can provide us general tools
+to address different problems in different areas,
+and I hope you will be able to use these tools
+in your areas in the future.
+And that's it for this part.

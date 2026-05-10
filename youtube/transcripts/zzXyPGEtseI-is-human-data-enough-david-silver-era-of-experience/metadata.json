@@ -1,0 +1,15 @@
+{
+  "title": "Is Human Data Enough? With David Silver",
+  "url": "https://www.youtube.com/watch?v=zzXyPGEtseI",
+  "backend": "faster-whisper",
+  "model": "large-v3",
+  "requested_language": "en",
+  "detected_language": "en",
+  "generated_at": "2026-05-08T19:11:01",
+  "language": "en",
+  "language_probability": 1,
+  "duration": 2970.3963125,
+  "refined_at": "2026-05-08T19:14:29",
+  "cleanup_rules": 16,
+  "paragraph_count": 140
+}

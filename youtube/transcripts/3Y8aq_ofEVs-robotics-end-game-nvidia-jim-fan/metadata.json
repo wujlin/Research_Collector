@@ -1,0 +1,12 @@
+{
+  "title": "Robotics End Game: Nvidia Jim Fan",
+  "url": "https://www.youtube.com/watch?v=3Y8aq_ofEVs",
+  "backend": "faster-whisper",
+  "model": "large-v3",
+  "requested_language": "en",
+  "detected_language": "en",
+  "generated_at": "2026-05-09T18:29:16",
+  "language": "en",
+  "language_probability": 1,
+  "duration": 1202.4603125
+}

@@ -1,0 +1,2055 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 12.18,
+      "text": "And up first, I'm delighted to introduce my friend, Jim Phan. Jim leads the embodied autonomous research group at NVIDIA, otherwise known as NVIDIA Robotics."
+    },
+    {
+      "start": 13.200000000000001,
+      "end": 22.12,
+      "text": "I think that robots are just one of the most thrilling things that's going to happen. A car basically is a big robot, but I'm excited for robots can go beep boop and lift things for us."
+    },
+    {
+      "start": 22.3,
+      "end": 26.94,
+      "text": "And so Jim was a standout at last year's AI Ascent, and we're delighted to have you back."
+    },
+    {
+      "start": 27.84,
+      "end": 28.96,
+      "text": "Thanks, everyone. Thanks."
+    },
+    {
+      "start": 30.0,
+      "end": 43.0,
+      "text": "So it was a summer day in 2016. Actually, right in this office that we're sitting in, there's a guy in shiny leather jacket, you know, big biceps, hurling in this large metal tray."
+    },
+    {
+      "start": 43.44,
+      "end": 54.36,
+      "text": "And on this large piece of metal, he wrote, to Elon and the OpenAI team, to the future of computing and humanity, I present you the world's first DGX-1."
+    },
+    {
+      "start": 55.0,
+      "end": 59.8,
+      "text": "So that was the first time I met Jensen. And as any good intern would do."
+    },
+    {
+      "start": 60.3,
+      "end": 69.54,
+      "text": "I rushed to get in line to sign my name on it. So can you spot it? My name is here. And can you spot another? That's Andre right there."
+    },
+    {
+      "start": 69.96000000000001,
+      "end": 75.0,
+      "text": "So Andre, we're going to the Computer History Museum. I feel like a dinosaur."
+    },
+    {
+      "start": 76.44,
+      "end": 86.16,
+      "text": "You know, back then I had no clue what I was signing up for. And then no one can describe what happened next better than Ilya himself."
+    },
+    {
+      "start": 86.7,
+      "end": 89.16,
+      "text": "If you believe in deep learning, deep learning will believe you."
+    },
+    {
+      "start": 90.0,
+      "end": 94.66,
+      "text": "And oh, boy, did deep learning believe in all of us big time."
+    },
+    {
+      "start": 96.6,
+      "end": 101.7,
+      "text": "Three-step functions, six years. That's how all it took to bring us here today."
+    },
+    {
+      "start": 102.4,
+      "end": 111.34,
+      "text": "The first take, GPT-3, pre-training, next token prediction is really about learning the rules of grammar, the shape of language."
+    },
+    {
+      "start": 111.76,
+      "end": 116.76,
+      "text": "It's about simulating how thoughts and code and strings in general should unfold."
+    },
+    {
+      "start": 117.9,
+      "end": 119.5,
+      "text": "2022, instruct GPT."
+    },
+    {
+      "start": 120.0,
+      "end": 123.9,
+      "text": "Supervised fine-tuning, allowing this simulation to do useful work."
+    },
+    {
+      "start": 125.7,
+      "end": 130.4,
+      "text": "01, reasoning, using reinforcement learning to surpass imitation learning."
+    },
+    {
+      "start": 130.8,
+      "end": 135.8,
+      "text": "And finally, auto-research, accelerating the whole loop beyond what's humanly possible."
+    },
+    {
+      "start": 136.8,
+      "end": 141.6,
+      "text": "So as Andre said, all the labs are getting to the final boss fight."
+    },
+    {
+      "start": 142.6,
+      "end": 146.0,
+      "text": "So for LOMs, they're in the thick of the end game."
+    },
+    {
+      "start": 147.0,
+      "end": 148.5,
+      "text": "And honestly, I'm very jealous."
+    },
+    {
+      "start": 148.9,
+      "end": 149.9,
+      "text": "Look at how happy I am."
+    },
+    {
+      "start": 150.1,
+      "end": 150.8,
+      "text": "Happy Andre was."
+    },
+    {
+      "start": 150.9,
+      "end": 152.9,
+      "text": "Big smile on his face."
+    },
+    {
+      "start": 153.5,
+      "end": 157.0,
+      "text": "The LOM folks are having the party of their lifetime."
+    },
+    {
+      "start": 157.9,
+      "end": 162.8,
+      "text": "They're speedrunning AGI on mythical creatures literally called mythos."
+    },
+    {
+      "start": 163.9,
+      "end": 166.1,
+      "text": "So why can't robotics get a piece of fun?"
+    },
+    {
+      "start": 167.4,
+      "end": 172.7,
+      "text": "So as any self-respecting scientist will do, I copy homework and I give it a new name."
+    },
+    {
+      "start": 173.9,
+      "end": 175.6,
+      "text": "I call it the Great Parallel."
+    },
+    {
+      "start": 176.5,
+      "end": 179.9,
+      "text": "So instead of simulating strings, can we simulate next?"
+    },
+    {
+      "start": 180.1,
+      "end": 181.3,
+      "text": "The physical world state."
+    },
+    {
+      "start": 182.4,
+      "end": 189.1,
+      "text": "And then we can align through action fine-tuning onto a thin slice of that simulation that matters for real robots."
+    },
+    {
+      "start": 190.1,
+      "end": 193.2,
+      "text": "And we let reinforcement learning carry the last mile."
+    },
+    {
+      "start": 194.7,
+      "end": 195.4,
+      "text": "And that's it."
+    },
+    {
+      "start": 196.3,
+      "end": 198.7,
+      "text": "The Great Parallel, copying the LOM's success."
+    },
+    {
+      "start": 199.2,
+      "end": 200.6,
+      "text": "If you can't beat them, join them."
+    },
+    {
+      "start": 201.1,
+      "end": 205.4,
+      "text": "So please join me in a new episode, Robotics, the End Game."
+    },
+    {
+      "start": 206.3,
+      "end": 207.4,
+      "text": "And sorry, I just couldn't resist."
+    },
+    {
+      "start": 207.5,
+      "end": 208.5,
+      "text": "Not a banana is too good."
+    },
+    {
+      "start": 208.6,
+      "end": 209.4,
+      "text": "Thanks, Demis."
+    },
+    {
+      "start": 211.4,
+      "end": 212.7,
+      "text": "So how do we play the end game?"
+    },
+    {
+      "start": 213.1,
+      "end": 214.3,
+      "text": "It boils down to two things."
+    },
+    {
+      "start": 214.5,
+      "end": 216.6,
+      "text": "Model strategy and data strategy."
+    },
+    {
+      "start": 217.4,
+      "end": 218.6,
+      "text": "Let's look at a model first."
+    },
+    {
+      "start": 219.8,
+      "end": 228.4,
+      "text": "The last three years were dominated by VOAs or visual language action models and models like Pi and Groot fall in this category."
+    },
+    {
+      "start": 229.4,
+      "end": 235.2,
+      "text": "So we assume that the pre-training is done by a VOM and we simply graph an action head on top of it."
+    },
+    {
+      "start": 236.4,
+      "end": 238.1,
+      "text": "But really, if you think about these models,"
+    },
+    {
+      "start": 238.1,
+      "end": 243.6,
+      "text": "they're LVAs because the most amount of parameters are dedicated to language."
+    },
+    {
+      "start": 244.0,
+      "end": 247.7,
+      "text": "So language is first class citizen followed by vision and action."
+    },
+    {
+      "start": 248.4,
+      "end": 254.5,
+      "text": "And by design, VOAs are great at encoding knowledge and nouns, but not so much at physics and verbs."
+    },
+    {
+      "start": 255.0,
+      "end": 257.4,
+      "text": "It's kind of head heavy in the wrong places."
+    },
+    {
+      "start": 258.8,
+      "end": 262.0,
+      "text": "This is my favorite example from the original VOA paper."
+    },
+    {
+      "start": 262.5,
+      "end": 265.0,
+      "text": "Move the Coke can to a picture of Taylor Swift."
+    },
+    {
+      "start": 265.4,
+      "end": 267.3,
+      "text": "Yes, it has not seen Taylor Swift before."
+    },
+    {
+      "start": 267.5,
+      "end": 267.8,
+      "text": "Yes."
+    },
+    {
+      "start": 267.8,
+      "end": 268.8,
+      "text": "It's able to generalize."
+    },
+    {
+      "start": 269.2,
+      "end": 272.2,
+      "text": "But this is not quite a pre-training ability that we're looking for."
+    },
+    {
+      "start": 272.90000000000003,
+      "end": 275.3,
+      "text": "So what's the second pre-training paradigm?"
+    },
+    {
+      "start": 276.0,
+      "end": 279.0,
+      "text": "And I always thought that it would be something glorious."
+    },
+    {
+      "start": 279.90000000000003,
+      "end": 280.6,
+      "text": "Unfortunate."
+    },
+    {
+      "start": 280.90000000000003,
+      "end": 284.40000000000003,
+      "text": "It turns out that this is AI video slop that we call."
+    },
+    {
+      "start": 285.1,
+      "end": 288.90000000000003,
+      "text": "You know, I can watch these cats playing banjo on security cam all day."
+    },
+    {
+      "start": 288.90000000000003,
+      "end": 290.1,
+      "text": "It's peak internet."
+    },
+    {
+      "start": 291.40000000000003,
+      "end": 293.8,
+      "text": "But really, look at this."
+    },
+    {
+      "start": 293.90000000000003,
+      "end": 297.7,
+      "text": "No one can take this seriously until we realize."
+    },
+    {
+      "start": 298.40000000000003,
+      "end": 302.40000000000003,
+      "text": "That these video models are learning to simulate next world state internally."
+    },
+    {
+      "start": 302.90000000000003,
+      "end": 305.40000000000003,
+      "text": "So these are some roles from VOA three."
+    },
+    {
+      "start": 305.90000000000003,
+      "end": 312.90000000000003,
+      "text": "You can see that the models, they pick up gravity, buoyancy, lighting, reflection, refraction, all by themselves."
+    },
+    {
+      "start": 313.1,
+      "end": 314.40000000000003,
+      "text": "None of this is coded in."
+    },
+    {
+      "start": 315.40000000000003,
+      "end": 320.0,
+      "text": "Physics emerge by predicting the next blob of pixels at scale."
+    },
+    {
+      "start": 321.1,
+      "end": 323.0,
+      "text": "And even visual planning emerges."
+    },
+    {
+      "start": 323.7,
+      "end": 327.0,
+      "text": "Look at how VO solves these maces."
+    },
+    {
+      "start": 327.6,
+      "end": 331.3,
+      "text": "It solves them by running simulation forward in pixel space."
+    },
+    {
+      "start": 332.2,
+      "end": 334.8,
+      "text": "And draw attention to the lower right corner here."
+    },
+    {
+      "start": 334.8,
+      "end": 336.1,
+      "text": "This is my favorite example."
+    },
+    {
+      "start": 336.3,
+      "end": 340.1,
+      "text": "Let's watch and you blink if you miss how VO3 solves this one."
+    },
+    {
+      "start": 343.2,
+      "end": 344.1,
+      "text": "It's super smart."
+    },
+    {
+      "start": 344.1,
+      "end": 348.1,
+      "text": "You know, VO3 figures out that if you're not looking, geometry is optional."
+    },
+    {
+      "start": 349.8,
+      "end": 351.0,
+      "text": "I call this physics slop."
+    },
+    {
+      "start": 353.2,
+      "end": 355.7,
+      "text": "So how do we make these world models useful?"
+    },
+    {
+      "start": 356.3,
+      "end": 358.9,
+      "text": "Well, we do action fine tuning."
+    },
+    {
+      "start": 359.4,
+      "end": 368.5,
+      "text": "We align this superposition of all possible future states and collapse that onto a thing size that matters for real robots."
+    },
+    {
+      "start": 369.7,
+      "end": 371.4,
+      "text": "Introducing dream zero."
+    },
+    {
+      "start": 372.09999999999997,
+      "end": 378.3,
+      "text": "It's a new type of policy model that dreams a couple of seconds into the future and acts accordingly."
+    },
+    {
+      "start": 379.5,
+      "end": 384.0,
+      "text": "And you know that motor actions, there are high dimensional continuous signals."
+    },
+    {
+      "start": 384.5,
+      "end": 385.5,
+      "text": "So that looks just like pixels."
+    },
+    {
+      "start": 386.1,
+      "end": 389.3,
+      "text": "We can render it at the same time as we render the videos."
+    },
+    {
+      "start": 389.6,
+      "end": 394.7,
+      "text": "So dream zero jointly decodes the next world states and next actions."
+    },
+    {
+      "start": 395.4,
+      "end": 401.7,
+      "text": "And as a result, it's able to zero shot, solve tasks and verbs that it has never seen in training."
+    },
+    {
+      "start": 403.8,
+      "end": 406.9,
+      "text": "And as a robot executes, we can visualize what it's dreaming about."
+    },
+    {
+      "start": 407.5,
+      "end": 408.8,
+      "text": "And the correlation is very tight."
+    },
+    {
+      "start": 409.3,
+      "end": 411.3,
+      "text": "If the video prediction works, the action works."
+    },
+    {
+      "start": 411.9,
+      "end": 414.4,
+      "text": "If the video hallucinates, the action fails."
+    },
+    {
+      "start": 414.40000000000003,
+      "end": 418.90000000000003,
+      "text": "So once again, vision and action are now first class citizens."
+    },
+    {
+      "start": 420.1,
+      "end": 421.8,
+      "text": "And we have a lot of fun with dream zero."
+    },
+    {
+      "start": 422.1,
+      "end": 427.3,
+      "text": "So we just wrote a robot around in our lab and then type random things into the prompt box."
+    },
+    {
+      "start": 428.00000000000006,
+      "end": 433.40000000000003,
+      "text": "And of course, dream zero is not going to get all of these tasks 100% robust."
+    },
+    {
+      "start": 433.8,
+      "end": 435.1,
+      "text": "But it's kind of like GPT-2."
+    },
+    {
+      "start": 435.6,
+      "end": 438.8,
+      "text": "It's trying to get the shape of the motion correct in every case."
+    },
+    {
+      "start": 439.8,
+      "end": 444.00000000000006,
+      "text": "So dream zero is our first step towards open-ended, open vocabulary."
+    },
+    {
+      "start": 444.40000000000003,
+      "end": 446.6,
+      "text": "And it's very, very prompting for robotics."
+    },
+    {
+      "start": 447.6,
+      "end": 451.20000000000005,
+      "text": "And we call this new type of model world action models, or WAM."
+    },
+    {
+      "start": 452.40000000000003,
+      "end": 457.00000000000006,
+      "text": "So let's all take a moment of silence for our dear friend, VOAs."
+    },
+    {
+      "start": 458.00000000000006,
+      "end": 462.40000000000003,
+      "text": "They've served us well, rest in peace, long live world action models."
+    },
+    {
+      "start": 464.00000000000006,
+      "end": 465.6,
+      "text": "And next, data strategy."
+    },
+    {
+      "start": 467.20000000000005,
+      "end": 472.90000000000003,
+      "text": "This is NVIDIA's chief scientist, Bill Dahle, operating teleoperation inside our lab."
+    },
+    {
+      "start": 473.50000000000006,
+      "end": 474.3,
+      "text": "And given his salary,"
+    },
+    {
+      "start": 474.40000000000003,
+      "end": 479.90000000000003,
+      "text": "I think this is by far the most expensive teleop trajectory ever collected in our data set."
+    },
+    {
+      "start": 481.5,
+      "end": 485.3,
+      "text": "The past three years have been dominated by teleoperation."
+    },
+    {
+      "start": 485.5,
+      "end": 487.5,
+      "text": "It's the golden era, right?"
+    },
+    {
+      "start": 487.5,
+      "end": 493.0,
+      "text": "VR headsets, extremely optimized latency for streaming,"
+    },
+    {
+      "start": 493.40000000000003,
+      "end": 496.7,
+      "text": "and these complex rigs that look like medieval torture devices."
+    },
+    {
+      "start": 497.1,
+      "end": 500.7,
+      "text": "You know, so much investment in industry, so much pain and suffering."
+    },
+    {
+      "start": 502.0,
+      "end": 503.40000000000003,
+      "text": "And yet, for teleop,"
+    },
+    {
+      "start": 503.50000000000006,
+      "end": 506.6,
+      "text": "it's upper bounded by 24 hours per robot per day,"
+    },
+    {
+      "start": 507.00000000000006,
+      "end": 508.50000000000006,
+      "text": "the fundamental physical limit."
+    },
+    {
+      "start": 509.00000000000006,
+      "end": 510.1,
+      "text": "And actually, who am I kidding?"
+    },
+    {
+      "start": 510.3,
+      "end": 512.3000000000001,
+      "text": "It's more like three hours per robot per day,"
+    },
+    {
+      "start": 512.4000000000001,
+      "end": 514.5,
+      "text": "and only when the robot god is merciful."
+    },
+    {
+      "start": 515.0,
+      "end": 517.2,
+      "text": "Because they throw tantrums all the time."
+    },
+    {
+      "start": 517.8000000000001,
+      "end": 519.0,
+      "text": "So how can we do better?"
+    },
+    {
+      "start": 519.9000000000001,
+      "end": 521.1,
+      "text": "Well, how about this?"
+    },
+    {
+      "start": 521.6,
+      "end": 524.6,
+      "text": "You just wear the robot hand on your own hand."
+    },
+    {
+      "start": 525.8000000000001,
+      "end": 529.0,
+      "text": "So this is called UMI, or Universal Manipulation Interface."
+    },
+    {
+      "start": 529.4000000000001,
+      "end": 531.3000000000001,
+      "text": "And it's a deceptively simple idea."
+    },
+    {
+      "start": 532.0,
+      "end": 533.3000000000001,
+      "text": "You wear the robot actuator on your own hand."
+    },
+    {
+      "start": 533.5,
+      "end": 536.1999999999999,
+      "text": "And directly collect the data as humans,"
+    },
+    {
+      "start": 536.6,
+      "end": 540.1999999999999,
+      "text": "while getting the rest of the robot body out of the loop."
+    },
+    {
+      "start": 541.1999999999999,
+      "end": 544.1999999999999,
+      "text": "Yet, I would say UMI is perhaps one of the greatest papers"
+    },
+    {
+      "start": 544.1999999999999,
+      "end": 545.9,
+      "text": "ever written in robotics data."
+    },
+    {
+      "start": 546.4,
+      "end": 548.6,
+      "text": "And it spawned two unicorn startups."
+    },
+    {
+      "start": 549.3,
+      "end": 551.8,
+      "text": "On the left-hand side is a journalist improving this design,"
+    },
+    {
+      "start": 551.8,
+      "end": 553.4,
+      "text": "so you can wear the gripper here."
+    },
+    {
+      "start": 553.8,
+      "end": 554.9,
+      "text": "And on the right-hand side,"
+    },
+    {
+      "start": 555.1,
+      "end": 557.8,
+      "text": "Sunday made these three-finger data gloves."
+    },
+    {
+      "start": 558.6999999999999,
+      "end": 560.6999999999999,
+      "text": "So last year, we took it one step further."
+    },
+    {
+      "start": 561.1999999999999,
+      "end": 563.4,
+      "text": "We designed these exoskeleton,"
+    },
+    {
+      "start": 563.6,
+      "end": 564.9,
+      "text": "that has a one-to-one mapping,"
+    },
+    {
+      "start": 564.9,
+      "end": 566.8,
+      "text": "with five-finger dexterous robot hands."
+    },
+    {
+      "start": 567.1,
+      "end": 568.3,
+      "text": "And we call it DEX-UMI."
+    },
+    {
+      "start": 569.0,
+      "end": 570.4,
+      "text": "Let's look at it in action."
+    },
+    {
+      "start": 571.1999999999999,
+      "end": 571.9,
+      "text": "On the left,"
+    },
+    {
+      "start": 572.6999999999999,
+      "end": 574.1999999999999,
+      "text": "the human directly collecting the data,"
+    },
+    {
+      "start": 574.1999999999999,
+      "end": 575.1999999999999,
+      "text": "always the fastest."
+    },
+    {
+      "start": 575.6999999999999,
+      "end": 576.4,
+      "text": "On the right,"
+    },
+    {
+      "start": 576.5,
+      "end": 578.6999999999999,
+      "text": "look at how difficult teleop is, right?"
+    },
+    {
+      "start": 578.6999999999999,
+      "end": 579.6,
+      "text": "The human operator,"
+    },
+    {
+      "start": 579.6,
+      "end": 581.4,
+      "text": "here one of our most skilled PhDs,"
+    },
+    {
+      "start": 581.6999999999999,
+      "end": 584.9,
+      "text": "he has to align very carefully, right?"
+    },
+    {
+      "start": 584.9,
+      "end": 586.4,
+      "text": "And then it's super slow."
+    },
+    {
+      "start": 586.5,
+      "end": 589.0,
+      "text": "Also, the success rate is very low as well."
+    },
+    {
+      "start": 589.9,
+      "end": 590.6999999999999,
+      "text": "And in the middle,"
+    },
+    {
+      "start": 590.8,
+      "end": 592.5,
+      "text": "you just wear these exoskeleton,"
+    },
+    {
+      "start": 592.5,
+      "end": 593.3,
+      "text": "and you collect data,"
+    },
+    {
+      "start": 593.4000000000001,
+      "end": 593.9000000000001,
+      "text": "directly."
+    },
+    {
+      "start": 595.2,
+      "end": 597.6,
+      "text": "And we train a robot policy on this data."
+    },
+    {
+      "start": 598.1,
+      "end": 602.6,
+      "text": "So here what you see is a fully autonomous rollout of a policy,"
+    },
+    {
+      "start": 602.8000000000001,
+      "end": 605.1,
+      "text": "that's trained on zero teleoperation data."
+    },
+    {
+      "start": 606.5000000000001,
+      "end": 610.9000000000001,
+      "text": "So we're able to break the curse of 24 hours per robot per day,"
+    },
+    {
+      "start": 611.2,
+      "end": 612.7,
+      "text": "and see how happy these robots are,"
+    },
+    {
+      "start": 612.7,
+      "end": 615.6,
+      "text": "because they no longer need to be in the loop for data collection."
+    },
+    {
+      "start": 616.5000000000001,
+      "end": 617.7,
+      "text": "So is this the answer?"
+    },
+    {
+      "start": 618.1,
+      "end": 619.9000000000001,
+      "text": "Have we solved scaling for robotics?"
+    },
+    {
+      "start": 621.8000000000001,
+      "end": 622.9000000000001,
+      "text": "Anyone driving Tesla,"
+    },
+    {
+      "start": 622.9,
+      "end": 623.8,
+      "text": "or Waymo here?"
+    },
+    {
+      "start": 623.9,
+      "end": 624.4,
+      "text": "Anyone?"
+    },
+    {
+      "start": 626.1,
+      "end": 626.4,
+      "text": "You know,"
+    },
+    {
+      "start": 626.4,
+      "end": 627.3,
+      "text": "when you're driving,"
+    },
+    {
+      "start": 627.6999999999999,
+      "end": 632.3,
+      "text": "you're actually contributing to the biggest physical data flywheel."
+    },
+    {
+      "start": 633.6,
+      "end": 634.3,
+      "text": "And the beauty is,"
+    },
+    {
+      "start": 634.3,
+      "end": 636.6,
+      "text": "you don't even feel it during FSD,"
+    },
+    {
+      "start": 636.8,
+      "end": 639.5,
+      "text": "because the data upload is an ambient process."
+    },
+    {
+      "start": 640.1999999999999,
+      "end": 642.5,
+      "text": "Yet wearing these UMI or data wearables,"
+    },
+    {
+      "start": 642.5,
+      "end": 643.4,
+      "text": "it's still cumbersome,"
+    },
+    {
+      "start": 643.4,
+      "end": 643.6,
+      "text": "right?"
+    },
+    {
+      "start": 643.6,
+      "end": 644.4,
+      "text": "It's intrusive."
+    },
+    {
+      "start": 644.6999999999999,
+      "end": 647.3,
+      "text": "It's not as seamless as just driving to work."
+    },
+    {
+      "start": 648.1999999999999,
+      "end": 651.6999999999999,
+      "text": "So we need an FSD equivalent."
+    },
+    {
+      "start": 652.9,
+      "end": 655.9,
+      "text": "The data collection needs to get out of the way,"
+    },
+    {
+      "start": 656.1,
+      "end": 657.3,
+      "text": "fade into the background,"
+    },
+    {
+      "start": 657.6999999999999,
+      "end": 660.6999999999999,
+      "text": "so we can capture the full glory of human dexterity"
+    },
+    {
+      "start": 660.9,
+      "end": 662.4,
+      "text": "across all walks of life,"
+    },
+    {
+      "start": 662.6999999999999,
+      "end": 665.1999999999999,
+      "text": "across all labors of economic value."
+    },
+    {
+      "start": 666.5,
+      "end": 669.9,
+      "text": "So we're going all in on human egocentric videos"
+    },
+    {
+      "start": 670.1,
+      "end": 672.1999999999999,
+      "text": "that come with these detailed annotations,"
+    },
+    {
+      "start": 672.5,
+      "end": 674.1999999999999,
+      "text": "like hand position tracking,"
+    },
+    {
+      "start": 674.5,
+      "end": 676.4,
+      "text": "and dense language annotations."
+    },
+    {
+      "start": 677.6,
+      "end": 679.4,
+      "text": "Introducing EgoScale,"
+    },
+    {
+      "start": 680.1,
+      "end": 682.6,
+      "text": "where 99.9% of the training,"
+    },
+    {
+      "start": 682.6,
+      "end": 683.6,
+      "text": "that goes into this,"
+    },
+    {
+      "start": 683.9,
+      "end": 685.9,
+      "text": "is based on human egocentric videos."
+    },
+    {
+      "start": 686.6,
+      "end": 688.9,
+      "text": "And the result is an end-to-end policy"
+    },
+    {
+      "start": 689.1,
+      "end": 691.4,
+      "text": "that maps directly from the camera pixels here"
+    },
+    {
+      "start": 691.8000000000001,
+      "end": 693.7,
+      "text": "to 22 degrees of freedom,"
+    },
+    {
+      "start": 693.9,
+      "end": 695.5,
+      "text": "high dexterity robot hands."
+    },
+    {
+      "start": 696.0,
+      "end": 697.9,
+      "text": "What you see here is fully autonomous."
+    },
+    {
+      "start": 699.8000000000001,
+      "end": 705.8000000000001,
+      "text": "We pre-train EgoScale on 21K hours of in-the-wild egocentric human data"
+    },
+    {
+      "start": 706.5,
+      "end": 708.5,
+      "text": "with zero robot data whatsoever."
+    },
+    {
+      "start": 709.4,
+      "end": 710.2,
+      "text": "And during pre-training,"
+    },
+    {
+      "start": 710.2,
+      "end": 712.1,
+      "text": "we predict these hand joints"
+    },
+    {
+      "start": 712.1,
+      "end": 713.1,
+      "text": "and wrist poses."
+    },
+    {
+      "start": 714.0,
+      "end": 715.2,
+      "text": "Then in action fine-tuning,"
+    },
+    {
+      "start": 715.4,
+      "end": 717.4,
+      "text": "we collect only 50 hours"
+    },
+    {
+      "start": 717.6,
+      "end": 719.9,
+      "text": "of high-precision mocap data gobs"
+    },
+    {
+      "start": 720.2,
+      "end": 721.5,
+      "text": "and four hours of teleop."
+    },
+    {
+      "start": 722.2,
+      "end": 723.9,
+      "text": "That's four hours of teleop,"
+    },
+    {
+      "start": 724.7,
+      "end": 727.8000000000001,
+      "text": "less than 0.1% of our training mix."
+    },
+    {
+      "start": 729.3000000000001,
+      "end": 730.0,
+      "text": "And with this,"
+    },
+    {
+      "start": 730.1,
+      "end": 733.6,
+      "text": "EgoScale is able to generalize to these very dexterous tasks,"
+    },
+    {
+      "start": 733.7,
+      "end": 734.9,
+      "text": "like sorting card"
+    },
+    {
+      "start": 735.7,
+      "end": 737.1,
+      "text": "or manipulating syringe,"
+    },
+    {
+      "start": 737.9,
+      "end": 739.1,
+      "text": "right, over,"
+    },
+    {
+      "start": 739.5,
+      "end": 740.4,
+      "text": "transferring the liquid."
+    },
+    {
+      "start": 740.5,
+      "end": 742.0,
+      "text": "You know, someday we might have robot nurses"
+    },
+    {
+      "start": 742.1,
+      "end": 742.6,
+      "text": "at home,"
+    },
+    {
+      "start": 742.9,
+      "end": 744.0,
+      "text": "might as well try this."
+    },
+    {
+      "start": 745.1,
+      "end": 746.5,
+      "text": "And for these tasks,"
+    },
+    {
+      "start": 746.7,
+      "end": 749.3,
+      "text": "it takes only one-shot demonstration at test time"
+    },
+    {
+      "start": 749.5,
+      "end": 752.0,
+      "text": "to learn different shirt-folding strategies."
+    },
+    {
+      "start": 753.8,
+      "end": 756.5,
+      "text": "And perhaps the most fascinating finding from the paper"
+    },
+    {
+      "start": 757.0,
+      "end": 760.0,
+      "text": "is that we discovered this neural scaling law"
+    },
+    {
+      "start": 760.4,
+      "end": 761.3,
+      "text": "for dexterity."
+    },
+    {
+      "start": 762.5,
+      "end": 764.6,
+      "text": "It's a very clean relationship between"
+    },
+    {
+      "start": 764.8,
+      "end": 767.2,
+      "text": "the amount of hours we put into pre-training"
+    },
+    {
+      "start": 767.4,
+      "end": 768.9,
+      "text": "and the optimal validation loss."
+    },
+    {
+      "start": 769.3,
+      "end": 769.9,
+      "text": "In fact,"
+    },
+    {
+      "start": 770.0,
+      "end": 770.8,
+      "text": "it's a clean,"
+    },
+    {
+      "start": 771.0,
+      "end": 771.4,
+      "text": "log,"
+    },
+    {
+      "start": 771.4,
+      "end": 772.1,
+      "text": "linear,"
+    },
+    {
+      "start": 772.1999999999999,
+      "end": 773.4,
+      "text": "mathematical equation."
+    },
+    {
+      "start": 773.9,
+      "end": 776.6,
+      "text": "Six years after the original neural scaling law"
+    },
+    {
+      "start": 776.6999999999999,
+      "end": 777.6,
+      "text": "for language models."
+    },
+    {
+      "start": 779.1,
+      "end": 782.0,
+      "text": "So if we put all of these data strategies on this chart,"
+    },
+    {
+      "start": 782.5,
+      "end": 785.0,
+      "text": "x-axis is alignment to the robot hardware,"
+    },
+    {
+      "start": 785.1999999999999,
+      "end": 786.6999999999999,
+      "text": "y-axis is scalability,"
+    },
+    {
+      "start": 787.1,
+      "end": 788.3,
+      "text": "this is what it looks like."
+    },
+    {
+      "start": 788.6,
+      "end": 789.1999999999999,
+      "text": "Teleop,"
+    },
+    {
+      "start": 789.5,
+      "end": 791.6,
+      "text": "the least scalable data wearables,"
+    },
+    {
+      "start": 791.6999999999999,
+      "end": 793.9,
+      "text": "you can go up to hundreds of thousands of hours."
+    },
+    {
+      "start": 794.4,
+      "end": 795.9,
+      "text": "And egocentric video,"
+    },
+    {
+      "start": 796.0,
+      "end": 798.1999999999999,
+      "text": "if we're able to spin the FSD flywheel,"
+    },
+    {
+      "start": 798.6,
+      "end": 801.3,
+      "text": "easily 10-minute hours in the next year or so."
+    },
+    {
+      "start": 802.4,
+      "end": 803.8,
+      "text": "And if we draw a line here,"
+    },
+    {
+      "start": 804.0,
+      "end": 806.6,
+      "text": "everything to the left of this line is a new paradigm,"
+    },
+    {
+      "start": 806.8,
+      "end": 808.6,
+      "text": "sensorized human data."
+    },
+    {
+      "start": 809.5,
+      "end": 811.1999999999999,
+      "text": "So let me make a few predictions."
+    },
+    {
+      "start": 811.6999999999999,
+      "end": 812.6999999999999,
+      "text": "In the next year or two,"
+    },
+    {
+      "start": 813.1,
+      "end": 814.9,
+      "text": "we'll see Teleop dropping and dropping"
+    },
+    {
+      "start": 815.0,
+      "end": 816.6999999999999,
+      "text": "to almost negligible amount."
+    },
+    {
+      "start": 817.6,
+      "end": 820.8,
+      "text": "And then there will be an ensemble of data wearables,"
+    },
+    {
+      "start": 821.0,
+      "end": 823.8,
+      "text": "custom designed for different hardware and use cases."
+    },
+    {
+      "start": 824.3,
+      "end": 824.9,
+      "text": "And finally,"
+    },
+    {
+      "start": 825.0,
+      "end": 828.1999999999999,
+      "text": "the main diet for robotics will be egocentric videos."
+    },
+    {
+      "start": 829.3,
+      "end": 831.1999999999999,
+      "text": "So a moment of silence,"
+    },
+    {
+      "start": 831.8,
+      "end": 832.6,
+      "text": "for our dear friend,"
+    },
+    {
+      "start": 832.6999999999999,
+      "end": 833.1999999999999,
+      "text": "Teleop."
+    },
+    {
+      "start": 833.6,
+      "end": 834.6,
+      "text": "You have served us well,"
+    },
+    {
+      "start": 834.6999999999999,
+      "end": 835.5,
+      "text": "rest in peace,"
+    },
+    {
+      "start": 835.9,
+      "end": 837.4,
+      "text": "long live sensorized human data."
+    },
+    {
+      "start": 839.1999999999999,
+      "end": 840.8,
+      "text": "Are we done with the data strategy yet?"
+    },
+    {
+      "start": 841.3,
+      "end": 843.6999999999999,
+      "text": "Did you notice I put two rings on data strategy?"
+    },
+    {
+      "start": 844.3,
+      "end": 845.5,
+      "text": "What's the outer ring here?"
+    },
+    {
+      "start": 846.8,
+      "end": 848.3,
+      "text": "All the LLM frontier labs"
+    },
+    {
+      "start": 849.1999999999999,
+      "end": 850.9,
+      "text": "have spent significant budget now"
+    },
+    {
+      "start": 851.0,
+      "end": 854.0,
+      "text": "on acquiring millions of coding environments"
+    },
+    {
+      "start": 854.1,
+      "end": 855.3,
+      "text": "to do reinforcement learning."
+    },
+    {
+      "start": 855.8,
+      "end": 857.0,
+      "text": "So robotics is the same."
+    },
+    {
+      "start": 857.3,
+      "end": 859.8,
+      "text": "We're in urgent need to scale up environments."
+    },
+    {
+      "start": 860.8000000000001,
+      "end": 861.4000000000001,
+      "text": "And of course,"
+    },
+    {
+      "start": 861.5000000000001,
+      "end": 863.9000000000001,
+      "text": "you can always do reinforcement learning"
+    },
+    {
+      "start": 864.0000000000001,
+      "end": 865.2,
+      "text": "directly on the real robot."
+    },
+    {
+      "start": 865.6,
+      "end": 866.4000000000001,
+      "text": "So in our lab,"
+    },
+    {
+      "start": 866.5000000000001,
+      "end": 868.8000000000001,
+      "text": "we use RL to push certain tasks"
+    },
+    {
+      "start": 869.0000000000001,
+      "end": 871.4000000000001,
+      "text": "to almost 100% success rate"
+    },
+    {
+      "start": 871.7,
+      "end": 873.6,
+      "text": "so you can do these continuous execution"
+    },
+    {
+      "start": 873.7,
+      "end": 874.6,
+      "text": "for hours on end."
+    },
+    {
+      "start": 875.3000000000001,
+      "end": 875.5000000000001,
+      "text": "You know,"
+    },
+    {
+      "start": 875.6,
+      "end": 877.3000000000001,
+      "text": "it's kind of therapeutic to see these robots"
+    },
+    {
+      "start": 877.4000000000001,
+      "end": 879.3000000000001,
+      "text": "assembling GPUs just by themselves,"
+    },
+    {
+      "start": 879.5000000000001,
+      "end": 880.8000000000001,
+      "text": "or as a wise man will say,"
+    },
+    {
+      "start": 881.0000000000001,
+      "end": 881.6,
+      "text": "good boy,"
+    },
+    {
+      "start": 881.7,
+      "end": 883.6,
+      "text": "this task has been approved by my boss."
+    },
+    {
+      "start": 886.0000000000001,
+      "end": 889.2,
+      "text": "Yet we can't get to 1 million environments"
+    },
+    {
+      "start": 889.2,
+      "end": 891.2,
+      "text": "because that will require 1 million robots"
+    },
+    {
+      "start": 891.3000000000001,
+      "end": 892.6,
+      "text": "if you do it the previous way."
+    },
+    {
+      "start": 893.2,
+      "end": 894.5,
+      "text": "So we need a better way."
+    },
+    {
+      "start": 895.2,
+      "end": 895.7,
+      "text": "Here,"
+    },
+    {
+      "start": 895.8000000000001,
+      "end": 898.2,
+      "text": "let's say you take an iPhone picture"
+    },
+    {
+      "start": 899.0,
+      "end": 900.4000000000001,
+      "text": "and you can pass this through"
+    },
+    {
+      "start": 900.6,
+      "end": 902.3000000000001,
+      "text": "this 3D world scan pipeline"
+    },
+    {
+      "start": 902.6,
+      "end": 904.2,
+      "text": "to extract all the objects"
+    },
+    {
+      "start": 904.5,
+      "end": 907.4000000000001,
+      "text": "and then automatically synthesize them again"
+    },
+    {
+      "start": 907.7,
+      "end": 910.0,
+      "text": "inside a classical physics simulator."
+    },
+    {
+      "start": 910.2,
+      "end": 912.3000000000001,
+      "text": "So all these objects are actually interactive"
+    },
+    {
+      "start": 912.4000000000001,
+      "end": 913.1,
+      "text": "after the scan."
+    },
+    {
+      "start": 914.2,
+      "end": 916.7,
+      "text": "And then you can augment this infinitely in simulation"
+    },
+    {
+      "start": 917.0,
+      "end": 918.0,
+      "text": "with variations"
+    },
+    {
+      "start": 918.2,
+      "end": 919.1,
+      "text": "that we call"
+    },
+    {
+      "start": 919.2,
+      "end": 920.1,
+      "text": "digital cousins."
+    },
+    {
+      "start": 921.5,
+      "end": 923.7,
+      "text": "So now iPhone basically become"
+    },
+    {
+      "start": 924.4,
+      "end": 926.2,
+      "text": "a pocket world scanner"
+    },
+    {
+      "start": 926.7,
+      "end": 927.9,
+      "text": "in this process that we call"
+    },
+    {
+      "start": 928.0,
+      "end": 929.3000000000001,
+      "text": "real-to-sim-to-real."
+    },
+    {
+      "start": 929.7,
+      "end": 930.5,
+      "text": "And in this way,"
+    },
+    {
+      "start": 930.7,
+      "end": 931.9,
+      "text": "we have a scalable way"
+    },
+    {
+      "start": 932.0,
+      "end": 933.6,
+      "text": "to port the physical world"
+    },
+    {
+      "start": 933.7,
+      "end": 934.7,
+      "text": "into the digital world."
+    },
+    {
+      "start": 935.6,
+      "end": 936.9,
+      "text": "But still this method relies"
+    },
+    {
+      "start": 937.0,
+      "end": 939.2,
+      "text": "on a classical graphics engine."
+    },
+    {
+      "start": 939.5,
+      "end": 940.3000000000001,
+      "text": "Can we do better?"
+    },
+    {
+      "start": 941.3000000000001,
+      "end": 943.3000000000001,
+      "text": "Introducing Dream Dojo."
+    },
+    {
+      "start": 944.6,
+      "end": 946.5,
+      "text": "So it's always been on video world model"
+    },
+    {
+      "start": 946.7,
+      "end": 948.1,
+      "text": "and turning them into"
+    },
+    {
+      "start": 948.2,
+      "end": 950.4,
+      "text": "full-fledged neural simulators."
+    },
+    {
+      "start": 951.2,
+      "end": 952.8000000000001,
+      "text": "Dream Dojo takes as input"
+    },
+    {
+      "start": 953.0,
+      "end": 955.1,
+      "text": "these continuous action signals"
+    },
+    {
+      "start": 955.5,
+      "end": 957.3000000000001,
+      "text": "and outputs the next RGB frames"
+    },
+    {
+      "start": 957.4,
+      "end": 959.2,
+      "text": "as well as sensor states in real time."
+    },
+    {
+      "start": 960.5,
+      "end": 962.5,
+      "text": "Not a single pixel you see here is real."
+    },
+    {
+      "start": 963.6,
+      "end": 965.1,
+      "text": "And Dream Dojo is able to capture"
+    },
+    {
+      "start": 965.2,
+      "end": 967.2,
+      "text": "and learn the mechanics of different robots"
+    },
+    {
+      "start": 968.0,
+      "end": 970.0,
+      "text": "through a purely data-driven approach."
+    },
+    {
+      "start": 970.3000000000001,
+      "end": 971.7,
+      "text": "There is no physics equation,"
+    },
+    {
+      "start": 971.9,
+      "end": 973.1,
+      "text": "no graphics engine"
+    },
+    {
+      "start": 973.3000000000001,
+      "end": 974.5,
+      "text": "involving this process."
+    },
+    {
+      "start": 976.2,
+      "end": 978.0,
+      "text": "So the new post-training paradigm"
+    },
+    {
+      "start": 978.1,
+      "end": 979.1,
+      "text": "designed for robotics"
+    },
+    {
+      "start": 979.3,
+      "end": 981.8,
+      "text": "is a massively parallel RO system"
+    },
+    {
+      "start": 982.5,
+      "end": 985.6,
+      "text": "that runs on a few real robot stations,"
+    },
+    {
+      "start": 985.8,
+      "end": 988.2,
+      "text": "a bunch of graphics cores running world scans,"
+    },
+    {
+      "start": 988.4,
+      "end": 989.9,
+      "text": "and heavy inference compute"
+    },
+    {
+      "start": 990.1,
+      "end": 991.5,
+      "text": "running world models."
+    },
+    {
+      "start": 992.7,
+      "end": 994.4,
+      "text": "Or as this equation goes,"
+    },
+    {
+      "start": 994.5,
+      "end": 996.7,
+      "text": "compute now equals environment,"
+    },
+    {
+      "start": 997.0,
+      "end": 998.5,
+      "text": "now equals data."
+    },
+    {
+      "start": 998.9,
+      "end": 1000.5,
+      "text": "Or as a wise man would say,"
+    },
+    {
+      "start": 1000.9,
+      "end": 1002.3,
+      "text": "the more you buy, the more you save."
+    },
+    {
+      "start": 1003.3,
+      "end": 1005.3,
+      "text": "And this message has been approved by my boss."
+    },
+    {
+      "start": 1005.6,
+      "end": 1007.1,
+      "text": "So that's it."
+    },
+    {
+      "start": 1007.1,
+      "end": 1008.1,
+      "text": "Putting it together,"
+    },
+    {
+      "start": 1008.2,
+      "end": 1010.6,
+      "text": "the great parallel that robotics will follow."
+    },
+    {
+      "start": 1011.1,
+      "end": 1012.6,
+      "text": "And it's happening as we speak."
+    },
+    {
+      "start": 1013.1,
+      "end": 1015.6,
+      "text": "And we're looking at the beginning of the end game."
+    },
+    {
+      "start": 1017.6,
+      "end": 1020.1,
+      "text": "You guys play the video game Civilization?"
+    },
+    {
+      "start": 1021.1,
+      "end": 1022.1,
+      "text": "Still my favorite."
+    },
+    {
+      "start": 1023.1,
+      "end": 1024.6,
+      "text": "I like to think of my research"
+    },
+    {
+      "start": 1025.1,
+      "end": 1027.1,
+      "text": "as unlocking game achievements"
+    },
+    {
+      "start": 1027.2,
+      "end": 1029.6,
+      "text": "on this civilizational technology tree."
+    },
+    {
+      "start": 1030.6,
+      "end": 1032.6,
+      "text": "And there are three more achievements"
+    },
+    {
+      "start": 1032.7,
+      "end": 1034.1,
+      "text": "to unlock for robotics,"
+    },
+    {
+      "start": 1034.2,
+      "end": 1035.1,
+      "text": "and then we're done."
+    },
+    {
+      "start": 1035.2,
+      "end": 1036.2,
+      "text": "We're done."
+    },
+    {
+      "start": 1036.2,
+      "end": 1038.2,
+      "text": "I can retire, and I can't wait for that."
+    },
+    {
+      "start": 1039.2,
+      "end": 1042.2,
+      "text": "The first is passing the physical Turing test."
+    },
+    {
+      "start": 1043.2,
+      "end": 1046.2,
+      "text": "Across a wide range of activities,"
+    },
+    {
+      "start": 1046.3,
+      "end": 1048.2,
+      "text": "you cannot tell the difference"
+    },
+    {
+      "start": 1048.3,
+      "end": 1050.2,
+      "text": "between a human doing a task"
+    },
+    {
+      "start": 1050.3,
+      "end": 1051.2,
+      "text": "or a robot doing it."
+    },
+    {
+      "start": 1051.3,
+      "end": 1054.2,
+      "text": "Maybe not drunk humans, but, you know."
+    },
+    {
+      "start": 1055.2,
+      "end": 1057.2,
+      "text": "Physical Turing test is about"
+    },
+    {
+      "start": 1057.3,
+      "end": 1060.2,
+      "text": "unit energy in and unit labor out."
+    },
+    {
+      "start": 1061.2,
+      "end": 1063.2,
+      "text": "And just by judging at the sexy pose of this robot,"
+    },
+    {
+      "start": 1063.3,
+      "end": 1065.2,
+      "text": "I think the worst thing about this robot"
+    },
+    {
+      "start": 1065.2,
+      "end": 1067.2,
+      "text": "I think the work is cut out for us."
+    },
+    {
+      "start": 1067.3,
+      "end": 1070.2,
+      "text": "So maybe it's two to three years away."
+    },
+    {
+      "start": 1070.3,
+      "end": 1073.2,
+      "text": "And next, physical API."
+    },
+    {
+      "start": 1073.3,
+      "end": 1075.2,
+      "text": "You have a whole fleet of robots,"
+    },
+    {
+      "start": 1075.3,
+      "end": 1078.2,
+      "text": "and they can be configured just like any other software"
+    },
+    {
+      "start": 1078.3,
+      "end": 1080.2,
+      "text": "using APIs and command lines,"
+    },
+    {
+      "start": 1080.3,
+      "end": 1083.2,
+      "text": "orchestrated someday by Opus 9.0."
+    },
+    {
+      "start": 1083.3,
+      "end": 1085.2,
+      "text": "And if we have this physical API,"
+    },
+    {
+      "start": 1085.3,
+      "end": 1088.2,
+      "text": "we'll be able to realize lights out factories."
+    },
+    {
+      "start": 1088.3,
+      "end": 1091.2,
+      "text": "Those are essentially printers of atoms."
+    },
+    {
+      "start": 1091.3,
+      "end": 1094.1000000000001,
+      "text": "They take as input design in Markdown files,"
+    },
+    {
+      "start": 1094.1000000000001,
+      "end": 1096.1000000000001,
+      "text": "and then output fully assembled products,"
+    },
+    {
+      "start": 1096.2,
+      "end": 1098.1000000000001,
+      "text": "completely autonomous."
+    },
+    {
+      "start": 1098.2,
+      "end": 1100.1000000000001,
+      "text": "Or these wet labs"
+    },
+    {
+      "start": 1100.2,
+      "end": 1103.1000000000001,
+      "text": "that automate scientific discoveries"
+    },
+    {
+      "start": 1103.2,
+      "end": 1106.1000000000001,
+      "text": "in chemistry, biology, and medicine."
+    },
+    {
+      "start": 1107.2,
+      "end": 1110.1000000000001,
+      "text": "And the final stop, physical auto research."
+    },
+    {
+      "start": 1110.2,
+      "end": 1113.1000000000001,
+      "text": "When the robots start to design, improve,"
+    },
+    {
+      "start": 1113.2,
+      "end": 1116.1000000000001,
+      "text": "and build the next iteration of themselves"
+    },
+    {
+      "start": 1116.2,
+      "end": 1119.1000000000001,
+      "text": "far beyond what's humanly possible."
+    },
+    {
+      "start": 1119.2,
+      "end": 1121.1000000000001,
+      "text": "So you might ask,"
+    },
+    {
+      "start": 1121.2,
+      "end": 1123.1000000000001,
+      "text": "is this too science fiction?"
+    },
+    {
+      "start": 1123.1000000000001,
+      "end": 1126.1000000000001,
+      "text": "Like, are we going to see this in our lifetime?"
+    },
+    {
+      "start": 1126.2,
+      "end": 1131.1000000000001,
+      "text": "Well, it took the AI community 14 years"
+    },
+    {
+      "start": 1131.2,
+      "end": 1135.1000000000001,
+      "text": "to go from the first forward pass of AlexNet in 2012,"
+    },
+    {
+      "start": 1135.2,
+      "end": 1138.1000000000001,
+      "text": "a model that barely recognized cat versus dog,"
+    },
+    {
+      "start": 1138.2,
+      "end": 1141.1000000000001,
+      "text": "to AI ascent today, 2026,"
+    },
+    {
+      "start": 1141.2,
+      "end": 1144.1000000000001,
+      "text": "where we talk about agentic auto research."
+    },
+    {
+      "start": 1144.2,
+      "end": 1146.1000000000001,
+      "text": "And let's just add another 14 years."
+    },
+    {
+      "start": 1146.2,
+      "end": 1148.1000000000001,
+      "text": "How about that?"
+    },
+    {
+      "start": 1148.2,
+      "end": 1152.1000000000001,
+      "text": "2026 is right in the middle of 2012 and 2014."
+    },
+    {
+      "start": 1152.1000000000001,
+      "end": 1154.1000000000001,
+      "text": "And technology does not advance linearly."
+    },
+    {
+      "start": 1154.2,
+      "end": 1156.1000000000001,
+      "text": "It advances exponentially."
+    },
+    {
+      "start": 1156.2,
+      "end": 1159.1000000000001,
+      "text": "So I can say with 95% certainty"
+    },
+    {
+      "start": 1159.2,
+      "end": 1162.1000000000001,
+      "text": "that we'll get to the end of the end game,"
+    },
+    {
+      "start": 1162.2,
+      "end": 1166.1000000000001,
+      "text": "the end of the technology tree, by 2040."
+    },
+    {
+      "start": 1166.2,
+      "end": 1168.1000000000001,
+      "text": "And we'll still be on."
+    },
+    {
+      "start": 1168.2,
+      "end": 1170.1000000000001,
+      "text": "We'll still be on."
+    },
+    {
+      "start": 1170.2,
+      "end": 1172.1000000000001,
+      "text": "If you believe in robotics,"
+    },
+    {
+      "start": 1172.2,
+      "end": 1174.1000000000001,
+      "text": "robotics will believe in you."
+    },
+    {
+      "start": 1174.2,
+      "end": 1177.1000000000001,
+      "text": "And to all of us here, sitting here,"
+    },
+    {
+      "start": 1177.2,
+      "end": 1180.1000000000001,
+      "text": "I think this is the first step"
+    },
+    {
+      "start": 1180.1000000000001,
+      "end": 1185.1000000000001,
+      "text": "I think our generation was born too late"
+    },
+    {
+      "start": 1185.2,
+      "end": 1188.1000000000001,
+      "text": "to explore the Earth and too early to explore the stars,"
+    },
+    {
+      "start": 1188.2,
+      "end": 1192.1000000000001,
+      "text": "but we are born just in time to solve robotics."
+    },
+    {
+      "start": 1192.2,
+      "end": 1194.1000000000001,
+      "text": "Thanks."
+    }
+  ],
+  "segment_count": 410
+}

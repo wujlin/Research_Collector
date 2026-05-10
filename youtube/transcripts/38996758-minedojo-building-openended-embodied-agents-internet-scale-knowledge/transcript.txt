@@ -1,0 +1,133 @@
+I want to start today's talk with a story of two kittens. Actually, back in 1963, two scientists, Held and Hine, they did an ingenious experiment. They put two newborn kittens that have not seen the visual world yet in this device. So it's sort of like a merry-go-round. And the two kittens are linked by a rigid mechanical bar. So the movements are exactly mirrored.
+
+And the active kitten on the right-hand side is able to move freely while transmitting the motion over this rigid link. And the passive kitten on the left, it can observe the exact same visual world as the other kitten, but it's confined to a basket. So it cannot really control its own movement. And then after a few days, the scientists free the kittens and then test their behaviors.
+
+And they found that only the active kitten developed a healthy visual motor loop, while the passive kitten is not able to navigate things like visual cliff or respond properly to approaching objects. And note that both kittens experience the exact same visual stimuli, or so to speak, exact same observation sequence. And the only difference is agency.
+
+So I find this experiment very fascinating, because nowadays we have a very powerful passive kitten, and that's GBD-3. GBD-3 passively observes and regurgitates the task. So it's kind of like a stochastic parent, but its knowledge is abstract and ungrounded. And it also hallucinates things that is incompatible with our physical experience.
+
+But I believe the future belongs to active kittens, which translates to journalist agents. And they are the decision makers in a constant feedback loop. They not only inherit GBD-3's vast knowledge, but also proactively take actions and endlessly explore the world. And learn to make their knowledge executable. So I'm calling this goal embodied GBD-3.
+
+And I argue that such an agent should have the following capabilities. First, it should be able to pursue very complex, semantically rich, and open world objectives, usually specified by language. You explain what you want in an arbitrary natural language prompt. And embodied GBD-3 should perform the actions for you in a dynamic world. And next, massively multitask. A journalist agent, as its name implies,
+
+must be able to do more than a few tasks. It should be massively, or even better, infinitely multitasked, as capable as human language can express. And finally, world knowledge. It should still inherit from the heritage of the passive kitten, having common sense and lots of portraying knowledge, instead of overfitting to only a few concepts in an environment.
+
+So today's agents, they've got many shiny achievements, but we're still not quite there yet. Like DeepRO is able to beat human champions, including Go, StarCraft, and Dota, but these agents have a single objective, to beat the opponent, and can't really do anything else. And the number of tasks are typically very limited, like a few dozen distinct tasks, let's say, in robot learning.
+
+And RL tends to have this tabula rasa mindset. So, for example, in Atari games, you don't need any external knowledge to do well. Most of the time, the agent is trained from scratch, and you need more reflex than reasoning. So, what does it need? I argue that this is not the case. There are three main ingredients in the recipe for journalist-agent to emerge.
+
+The first is that the environment needs to be open-ended enough, because the agent's capability is upper-bounded by the complexity of the simulator or the environment. And I think Earth is a great example. It's so open-ended that it allows an algorithm called natural evolution to produce all the diverse behaviors of life. So can we have a simulator that's essentially a lo-fi Earth that we can still run,
+
+on our lab cluster? And second, we need to provide the agent with massive pre-training data, because exploration from scratch in an open-ended environment is simply intractable. So the data will serve two purposes. One, as a reference manual on how to do things. And second, as a guidance for what are the interesting things worth doing. So GPT-3 only learns from pure text on the web. But can we do better?
+
+Can we provide the agent with much richer data, like video walkthroughs, multimedia tutorials, and even free-form wiki documents? And finally, once we have an environment database, we're ready to train this foundation active kit. And it should be flexible enough to pursue open-ended tasks without task-specific assumptions, and also scalable enough to convert large-scale multimodal data into actionable insights.
+
+And ideally, we want language here to play two key roles. First, as an intuitive interface to communicate a task. We're very used to prompt engineering. And second, as a bridge to grounding things like visual concepts. So these three ingredients landed us in Minecraft, which is the best-selling video game of all time. And for those who are unfamiliar here in the audience,
+
+Minecraft is a procedurally generated 3D voxel world. And in this game, you can do pretty much whatever you want. You can explore the terrains, mine all kinds of materials, fight monsters, craft hundreds of tools and recipes, and build amazing structures. And it does require a big repertoire of skills to play very well. And what's so special about Minecraft is that it defines no particular score to maximize
+
+and no fixed storyline to follow. And that makes it very well suited as a truly open-ended AI environment. And as a result, we see very impressive creations. So here is someone reproducing the entire Hogwarts castle block by block by hand in Minecraft. I suppose that person might want some AI to help them. And this is another example of someone building a really beautiful temple inside a deep cave
+
+with an underground river. So I want to highlight one number. That is, Minecraft has 140 million active players. And just to put that number in perspective, it is more than twice the population of the UK, five times the number of people who know how to code, and 10,000 times the size of these new rifts, just to give you a sense of magnitude. So a lot more Minecraft players than AI researchers.
+
+And it just happens that gamers are generally happier than PhDs. So they want to stream and share a lot of things. So what does that mean? This means this huge human mass produces an enormous amount of online knowledge every day. And can we tap into this treasure trove of learning materials? And just to show one more example before we move on. So this kind of mind-blowing emergent behavior in Minecraft.
+
+Someone built a functioning CPU server to circuit inside Minecraft, because the game supports logic blocks, and it's essentially Turing-complete. So that's kind of how far you can push this game. And based on Minecraft, we introduced MindDojo, a new open framework to help the community develop generally capable agents.
+
+So we are basically following the recipe I just mentioned, the three ingredients towards journalist agent. The first is open-ended environment, and next, Internet-scale knowledge. And finally, can we learn an active kitten using the simulator and the massive data? So let's zoom in the first part. MindDojo features a massive benchmarking suite of more than 3,000 tasks.
+
+So this is among the largest open-source agent benchmark ever created, to our knowledge. And it is enabled by a very versatile simulator that unlocks the full potential of the game. So for example, we support multi-modal observation space, like RGB, voxel, and GPS signal, and rich action space as well, like movement, camera, attack, and inventory management. Also, MindDojo can be customized at every detail,
+
+such as terrains, weather, block placement, and monster spawning. And given this simulator, we introduce around 1,500 programmatic tasks. So these are tasks that we define to have ground truth, success conditions in Python code. And you can explicitly write down the sparse or even dense reward function sometimes. So examples are harvesting event resources, learn to use a tree of tools, and combat various monsters.
+
+And all these tasks come with a language prompt, and it's a template language prompt, like harvest n units of a certain resource in a terrain, or combat some monster at night. And next, we also introduce 1,500 creative tasks, because Minecraft, by its nature, is free-form and open-ended. So in contrast to programmatic tasks, creative tasks don't necessarily have well-defined or easily automated success criteria.
+
+For example, let's say we want to build a house. Well, what makes a house a house? So this is very similar to the image generation literature, like how can we programmatically decide if it generates a cat or a dog? And these tasks don't have a simple check, so human judgment or some learned kind of model-based scoring method we're calling embodied FID score should be used. And finally, there is one task
+
+that holds a special status called play-through, which is to be the final boss of Minecraft. That is the ender dragon. So while Minecraft doesn't force you to do this mission, it is considered a big milestone achievement for any beginner players. So I want to highlight that it's an extremely difficult task that requires very complex preparation, exploration, planning, and, of course, fighting skills.
+
+So for an average human, it takes many hours or even days to solve. And it's easy over a million action steps in a single episode. So it's supported by Mind Dojo, but this is probably the longest horizon ever in a decision-making benchmark. So I have to admit, I'm a below-average human. I was never able to beat Ender Dragon myself, so I really want my AI to kind of avenge my poor game-playing skills.
+
+So you may wonder, how do we obtain 3,000 tasks, right? We do have a very good task curation pipeline. So first, for programming tasks, it's very simple. Just do template generation. But for creative tasks, there are two ways. We directly borrow from YouTube and see what are those big YouTube gamers doing, what are the interesting things that they're thinking about. And the other way is simply to ask GPT-3.
+
+So here's the labeling UI we implemented to curate the tasks from YouTube. And just one fun fact, whenever you see human annotators in our paper, it's just us, the co-authors, dividing up the work. And we have open-sourced our tool, by the way, so you can curate your own tasks from YouTube if you want. And a very interesting fact, we find that GPT-3 actually loves Minecraft. So we query the DaVinci 002 API
+
+and find that it actually knows quite a lot about Minecraft, probably because it's such a well-known game that's present in the training corpus. And we simply pick GPT-3, and we ask GPT-3's brain to brainstorm some tasks for us and help write some paper. So these are some tasks that GPT-3 came up that are pretty interesting. And then we also, given a task, we ask if GPT-3 can provide step-by-step guidance.
+
+So the way we do it is asking GPT-3 nicely. Like, oh, could you please give us some instruction on how to sail on a boat with a sheep? And you need to add the magic incantation. Let's think step-by-step. So that's another paper from Google Brain. Just add this, and GPT-3's gonna work. So here's a sample gallery of the interesting tasks in MindDojo. I'll leave you here for two seconds for you to enjoy.
+
+All right, now moving to the second ingredient. MindDojo features an internet knowledge base of three parts, YouTube, Wiki, and Reddit. So the first is YouTube. And we find that Minecraft is among the most streamed games on YouTube. And gamers, they love to narrate what they are doing. So we collected more than 700,000 videos with about two billion words in transcript.
+
+And these time-aligned transcripts provide a very good signal to ground free-form language in video pixels so the agent can learn about human strategies and activities without manual labeling. And second, players have compiled a large Minecraft-specific Wikipedia that literally explains every entity and mechanism in the game. And we scraped 7,000 Wikipedias with this kind of interleaving multimodal data.
+
+So here are some examples. This is a gallery of all of the monsters you will ever see in Minecraft. And their habits and kind of strategies to fight them is, like, well explained. And also, all of the crafting recipes and very complex diagrams, tables, tables and embedded figures. And finally, the Minecraft subreddit is a very active forum. Players showcase their creations and also ask for help sometimes.
+
+So we scraped more than 300K posts and they add up to more than 6 million comments. So here are some examples of how kind of people are using Reddit as a stack overflow for Minecraft. Like, people asking for help. Oh, like, my wheat farm is not growing. What can I do? And people reply, you don't have lighting in this dark room. So, of course, your wheat isn't growing. And we can see that the top voted answers
+
+are actually quite good. And some more examples of players asking for help are, like, mining in a discarded cave or building a house. So now, given the massive task suite and internet data, we have the essential components to train foundation models. So in Mind Dojo, we propose a new algorithm that takes a baby step towards this grand goal of journalist agent. So the idea is very simple. For our YouTube database,
+
+we have time-aligned video clips and transcripts because players like to talk about what they're doing. And we can train a contrastive video text foundation model called MindClip, very much in the same spirit as OpenEyeClip. So if you're unfamiliar, OpenEyeClip essentially learns to associate images and their textual captions with a massive internet image dataset. And what we do is similar.
+
+So intuitively, MindClip learns to associate video and the transcript that describes the action in the video. The score is between 0 and 1, so that means 1 means it's a perfect match, and 0 means the text is irrelevant to the video. So it's a full continuous spectrum. And then we can repurpose MindClip to be a language-conditioned learn-the-reward function for our agent. So here's how we do it.
+
+Our agent interacts with MindDojo simulator, the simulator sends observations to the agent and the agent sends actions back. And the task here is share sheep to obtain wool. So it's expressed in natural language. And as the agent explores, it will generate a video snippet which can be encoded and fed to MindClip. And then MindClip computes this association between the video and the text.
+
+So intuitively, the higher the association, the more the agent's behavior aligns with the language, and so we know that it's making progress, it's on the right track. And this simply becomes the reward function to any reinforcement learning algorithm. And we chose PPO as a standard RL technique, and suddenly there are many other techniques that can be used, but we just want to showcase the reward function,
+
+so we pick the simplest.
+
+Yeah, it computes the reward and gives to the agent. So here's a quick visualization of our learned agent behavior of various tasks.
+
+And let's look at some quantitative results. So for these eight tasks, we showed a percentage success rate over 200 test episodes. And here in the green circle is two variants of our MindClip methods. One is attention pooling over the video, and the other is simply average pooling. And in the orange circle are the baselines. So the first baseline is just RL training with sparse reward. And we can see that most tasks
+
+kind of fail at a flat line if we only provide like a binary success reward signal at the end, because some of the tasks are really difficult in exploration, and a sparse reward at the end is not helping it explore. We also construct a manual dense reward function using privilege simulator state. So we implement the reward function individually for each task, and this column should be considered as,
+
+kind of an oracle result that's close to optimal, because the RL algorithm is being shaped very smoothly with our kind of hand-engineered prior. And for PPO trained with our MindClip reward, we can see that we're able to match the quality of the oracle reward in many tasks. And it's important to highlight that MindClip is open vocabulary, which means we did not specifically customize it for this set of tasks.
+
+We simply prompt MindClip with the natural language description, and then reuse the same model for all of the tasks. But for manual dense reward, it is unscalable, and sometimes even impossible to implement for every new task that you encounter. And finally, we also compare against an untrained OpenAI clip checkpoint, and it performs even worse than sparse, meaning that it actually provides the agent
+
+with some counterproductive reward signal. And this is very likely because there's a huge domain shift between the real images that Clip was trained on versus the visuals in Minecraft, which looks very kind of voxel world. So we also ask, can our multitask agent generalize to unseen tasks like hunting pigs or collect spider strings that were not trained before? So here, we note that zero shot doesn't work,
+
+but that is expected because while MindClip generalizes as a reward function, the policy doesn't. The policy is trained against MindClip at every time. But we do observe that after just a little bit of RL fine-tuning, it performs much better, while training from scratch is much worse, given the same computational budget. So there's still a lot of advantage from this pre-training. And lastly, can our agent generalize
+
+to dramatic changes in the visual appearance? So during training, the agent only sees the default terrain at noon on a sunny day. But we also tested zero shot on a diverse set of terrains, weathers, and day-night cycles. So these are all customizable and supported by MindDojo. And here, we measure the robustness by the relative drop in performance, moving from the default training environment
+
+to the novel test environments. And here, we see that the drop is inevitable because during policy learning, it has never seen these environments.
+
+But compared to a baseline agent with the open-end clip visual encoder, our drop is much smaller. So this is because our agent is equipped with a frozen mind clip visual encoder. And that encoder has seen hundreds of thousands of gameplay videos, which has really good coverage of all kinds of scenarios. So this is another big advantage of using internet-scale data, because you kind of get robustness out of the box.
+
+And before I conclude, I want to highlight a few concurrent works that are also very exciting. One paper is the video pre-training of VPT work from OpenAI. And in that paper, they find a very clever way to enable behavior cloning directly from in-the-wild YouTube videos. So VPT solves the long horizon issue, but it is not language conditioned. So it's very much complementary to MindDojo,
+
+and we're excited to see multiple algorithms tackling the same problem from totally different environments. From different angles. And a big shout out to the MindRO team. I think I saw Ansi in the audience. So his team is hosting the longest running Minecraft AI challenge at NeurIPS for the past four years. And that challenge laid the foundation for MindDojo. So thanks a lot for MindRO.
+
+And also the Igloo team that uses Minecraft for grounded language understanding. And another big shout out to Julia's team. I'm very glad to see them. I'm very glad to see that many different communities are all converging to Minecraft as a very promising touchstone for journalist AI. But still, despite all of these efforts, what we can do is very far from the ingenuity that human players have demonstrated,
+
+such as decorating a winter wonderland or at the beginning we saw someone simulating the CPU circuit. So here is a call to action for the community. If humans can do these mind-blowing tasks, then why not our AI? So I guess we'll find out together. Or, you know, if you just want an excuse to play Minecraft at work, MindDojo is perfect for you too. And when you get caught, just tell your boss
+
+that you are collecting human demos in MindDojo for training embodied GPT-3. So that's all for science, right? Totally cool. And this is our website. So on the website we have a lot more details. So the website is minddojo.org and some more videos on the website. And also we have a tab called Knowledge Base that you can go to and you can sample some videos from our YouTube data set
+
+and also the wiki and Reddit data set. So please visit our website. And we open source everything. So the simulator, the benchmark code, pre-trained Minecraft models, and even the YouTube annotation tools are all open source under github.com slash minddojo. So please check it out. So this project is a big teamwork at NVIDIA. Our advisors are Senior Director Anima Anandkumar, also Professor at Caltech,
+
+and Professor Yuko Chu from UT Austin. And we're planning follow-up works in the future. So if you're interested, I post announcements on Twitter, so welcome you to follow. And my Twitter DM is also open for any follow-up questions, burning questions you may have. And thank you so much to the organizers of the first FMDM workshop. Let's solve Minecraft together. It's exciting times. Thanks.
+
+One of the challenges with Microsoft's previous work was that the simulator was non-deterministic for Minecraft. Have you guys sort of resolved that and what kind of frame rates can you get from the simulator now? Yeah, these are all great questions. So yes, non-determinism is a big issue. And we tried really hard to solve it, but I'm sorry, like, we did not. And that is because, like,
+
+Minecraft is kind of optimized for human players, right? So they don't have to control the seed. And actually, human players appreciate more randomness. So yeah, we dig very deep. I believe the random seeds are all over the Java code. By the way, Minecraft is implementing Java. I haven't written Java in years. It was a pain, a really big pain. So there's that. And then to the second part of the question,
+
+yeah, so the speed, also very hard to boost because the Minecraft developers have no incentive to optimize it beyond, like, 90 FPS. But we did get the GPU acceleration working. So we have, like, a Docker file that can run GPU acceleration. Yeah, but that could only get you to about 100 FPS. So that is kind of a price we need to pay for open-endedness. So it's a lot better to use, like,
+
+custom simulators like, you know, Habitat, iGypsum, these simulators if you really want to train RO at, like, 1,000 FPS. But these environments, like, they're definitely not as open-ended as Minecraft. And also, you don't have kind of this paired data. So it's a price we need to pay. But we're working on that, yeah. Thanks for the question. So I'm going to jump ahead and ask the question
+
+that probably every Minecraft player in the audience is asking themselves. Did the agent manage to beat the Elden Dragon? Or not? No, no. So, like, currently, the longest horizon that the agent can do is, like, mining diamond. So that was from the VPT team. And for us, we're more like open vocabulary learning, but our task, a bit shorter horizon. So, yeah, we're working on solving the Elden Dragon.
+
+Hopefully, we can come back with a little bit more updates. So I think an immediate next step is to scale up Minecraft. Because currently, the horizon is still relatively short. And if the horizon is short, MineClip cannot provide reliable reward for extremely long horizon tasks like Ender Dragon. So how to extend the horizon of MineClip to provide more informative reward? So that is one question.
+
+And then second, probably we should not use, like, a monolithic model for Ender Dragon. Because now we have GPT-3 or, like, other big language models. Can it first do planning in the language space? Like, we ask it, you know, how to beat Ender Dragon. Give me a list of steps. A list of a hundred steps. And each step is relatively short horizon. So we can feed it to the agent to perform that step.
+
+So I feel that is a better way to do it. But I'm happy to be proven wrong. Maybe, like, next year we'll have a transformer that can process one million steps in context, right? Like, yeah, the community is going crazy. So I don't want to predict anything. Yeah, but thanks for the question. Could you talk about a couple more ideas in terms of how to define those creative and open-ended tasks?
+
+You know, things that you tried and didn't work, or things that you're thinking about doing. Sorry, can you say it again? So it's like, how do we create those tasks? Yeah, how do you automate the creation of them, essentially? Yes, so for the 1,500 program-ended tasks, it's relatively simple. Because we know all of the blocks supported by Minecraft. And then we simply write out some templated prompts.
+
+And those prompts are, like, hand-engineered. And then for each prompt, you can generate a lot of variations. Like, collect n units of a noun. So it can be collect 10 units of wood. Collect 5 units of stone, right? So for that, you can combinatorially generate a lot of tasks. And for the creative tasks, it's more challenging. So we brainstorm some ourselves. And then we also rely on the task creation UI from YouTube.
+
+Because the YouTubers are much bigger, kind of, Minecraft gamers. And they know what are the interesting tasks to do. And we simply harvest some of the tasks from there. And then also we query the GPT-3 for some tasks. I remember we had about, like, 100 or 200 tasks brainstormed by GPT-3. So GPT-3 should probably be a co-author.

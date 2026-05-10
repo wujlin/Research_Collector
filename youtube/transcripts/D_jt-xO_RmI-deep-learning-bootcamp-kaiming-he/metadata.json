@@ -1,0 +1,12 @@
+{
+  "title": "Deep Learning Bootcamp: Kaiming He",
+  "url": "https://www.youtube.com/watch?v=D_jt-xO_RmI",
+  "backend": "faster-whisper",
+  "model": "large-v3",
+  "requested_language": "en",
+  "detected_language": "en",
+  "generated_at": "2026-05-09T13:26:42",
+  "language": "en",
+  "language_probability": 1,
+  "duration": 4545.1668125
+}

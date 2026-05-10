@@ -1,0 +1,12 @@
+{
+  "title": "最优传输的理论与计算系列讲座之一：深度学习的几何观点",
+  "url": "https://www.bilibili.com/video/BV1qQ4y1q7V8/",
+  "backend": "faster-whisper",
+  "model": "large-v3",
+  "requested_language": "zh",
+  "detected_language": "zh",
+  "generated_at": "2026-05-09T18:42:31",
+  "language": "zh",
+  "language_probability": 1,
+  "duration": 4709.536
+}

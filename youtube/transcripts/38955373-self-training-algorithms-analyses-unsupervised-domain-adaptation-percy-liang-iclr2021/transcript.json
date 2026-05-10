@@ -1,0 +1,3275 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 18.54,
+      "text": "Hello, everyone. Today, I'm going to be talking about a recent work on unsupervised domain adaptation using self-training, which is a really simple and age-old tool in machine learning."
+    },
+    {
+      "start": 19.14,
+      "end": 24.14,
+      "text": "This is joint work with Michael Xie, Ananya Kumar, Robbie Jones, Fereshte Khani, and Tengyu Ma."
+    },
+    {
+      "start": 25.0,
+      "end": 28.66,
+      "text": "So let me begin with a motivating example from remote sensing."
+    },
+    {
+      "start": 28.66,
+      "end": 36.4,
+      "text": "So an example task that you might want to be solving is to give it a satellite image, predict its land cover type."
+    },
+    {
+      "start": 36.94,
+      "end": 40.66,
+      "text": "Is this crops? Is it grass? Is it a forest?"
+    },
+    {
+      "start": 41.66,
+      "end": 49.36,
+      "text": "And solving such a problem could be useful for forecasting crop yields or assessing a nation's food security and so on."
+    },
+    {
+      "start": 50.260000000000005,
+      "end": 55.6,
+      "text": "So collecting data for this problem can be difficult, especially if it's labeled data."
+    },
+    {
+      "start": 55.6,
+      "end": 59.6,
+      "text": "And often, you can collect data, maybe in only some parts of the world."
+    },
+    {
+      "start": 61.36,
+      "end": 71.5,
+      "text": "So if you were to train a model on only the parts of the world, which are in dark green here, and test it on the same countries, you would get 76% accuracy on this task."
+    },
+    {
+      "start": 72.0,
+      "end": 82.1,
+      "text": "But if you were to take the same model and you apply it out of distribution to Africa here, your accuracy plummets to only 58%, which is not great."
+    },
+    {
+      "start": 83.32,
+      "end": 85.32,
+      "text": "On the other hand, if you're doing this,"
+    },
+    {
+      "start": 85.60000000000001,
+      "end": 92.00000000000001,
+      "text": "this is a case where we have satellites, which are collecting images from all corners of the world, so we have a lot of unlabeled data."
+    },
+    {
+      "start": 92.44000000000001,
+      "end": 93.88000000000001,
+      "text": "How can we use this unlabeled data?"
+    },
+    {
+      "start": 94.72000000000001,
+      "end": 99.4,
+      "text": "So this is a very good example of the classical problem of unsupervised domain adaptation."
+    },
+    {
+      "start": 99.72000000000001,
+      "end": 113.36000000000001,
+      "text": "We're given labeled examples from a source domain, and we want to train and unlabeled examples from a target domain, and we want to use these, the combination of these two somehow to produce a model that works well in both the source and the target domains."
+    },
+    {
+      "start": 114.92000000000002,
+      "end": 115.4,
+      "text": "So there's a lot of data."
+    },
+    {
+      "start": 115.4,
+      "end": 118.4,
+      "text": "There's been a long line of work on unsupervised domain adaptation."
+    },
+    {
+      "start": 118.4,
+      "end": 136.4,
+      "text": "So some of the earliest work used this idea of importance weighting, where the idea is you use the unlabeled data from your target domain to identify regions where there's more target than source, and you use that to upweight the examples in your source so that the model will pay more attention."
+    },
+    {
+      "start": 137.12,
+      "end": 141.92000000000002,
+      "text": "But this only works if you have examples in those areas."
+    },
+    {
+      "start": 142.24,
+      "end": 144.72,
+      "text": "So this is often a very restrictive example,"
+    },
+    {
+      "start": 144.72,
+      "end": 150.35999999999999,
+      "text": "and you can't really extrapolate to target domains, which are outside of your source domain."
+    },
+    {
+      "start": 152.12,
+      "end": 158.8,
+      "text": "And since the rise of deep learning, there's been a lot of interest in representation learning methods for unsupervised domain adaptation."
+    },
+    {
+      "start": 158.84,
+      "end": 163.04,
+      "text": "There's many, many methods here, including adversarial learning and feature matching."
+    },
+    {
+      "start": 163.64,
+      "end": 174.04,
+      "text": "Roughly, these methods try to map inputs in a source domain into a representation and inputs in a target domain into some representation so that the distribution"
+    },
+    {
+      "start": 174.72,
+      "end": 180.16,
+      "text": "of the induced distributions of the representations in the source matches that of the target."
+    },
+    {
+      "start": 181.0,
+      "end": 190.56,
+      "text": "So while this has been really effective in practice, why it works and when it does work is unclear."
+    },
+    {
+      "start": 191.96,
+      "end": 200.84,
+      "text": "You have no, you're matching only the marginal distributions of the inputs because you don't actually have alignments between the instances,"
+    },
+    {
+      "start": 201.76,
+      "end": 204.52,
+      "text": "which means you could technically map all the positive examples,"
+    },
+    {
+      "start": 204.52,
+      "end": 204.7,
+      "text": "you could technically map all the positive examples,"
+    },
+    {
+      "start": 204.7,
+      "end": 204.72,
+      "text": "you could technically map all the positive examples,"
+    },
+    {
+      "start": 204.72,
+      "end": 207.22,
+      "text": "in the source to the same place in lane space"
+    },
+    {
+      "start": 207.22,
+      "end": 210.46,
+      "text": "as all the negative examples in target,"
+    },
+    {
+      "start": 210.46,
+      "end": 211.9,
+      "text": "which would be catastrophic."
+    },
+    {
+      "start": 214.3,
+      "end": 216.3,
+      "text": "More state-of-the-art methods"
+    },
+    {
+      "start": 216.3,
+      "end": 218.1,
+      "text": "for unsupervised domain adaptation"
+    },
+    {
+      "start": 218.1,
+      "end": 220.44,
+      "text": "actually combine many different ideas,"
+    },
+    {
+      "start": 220.44,
+      "end": 222.44,
+      "text": "which I won't get into here."
+    },
+    {
+      "start": 222.44,
+      "end": 226.14,
+      "text": "In this talk, we're gonna try to focus on simplicity,"
+    },
+    {
+      "start": 226.14,
+      "end": 228.84,
+      "text": "and I'm only gonna talk about one particular idea,"
+    },
+    {
+      "start": 228.84,
+      "end": 231.48,
+      "text": "self-training, and show that it can be used"
+    },
+    {
+      "start": 231.48,
+      "end": 234.72,
+      "text": "to leverage a bunch of different types of structures"
+    },
+    {
+      "start": 234.72,
+      "end": 238.56,
+      "text": "that happen organically in domain shift problems."
+    },
+    {
+      "start": 240.1,
+      "end": 243.72,
+      "text": "So we're gonna consider two types of structures."
+    },
+    {
+      "start": 243.72,
+      "end": 247.54,
+      "text": "The first one is the presence of auxiliary information."
+    },
+    {
+      "start": 247.54,
+      "end": 250.34,
+      "text": "So back to this crop cover,"
+    },
+    {
+      "start": 250.34,
+      "end": 252.1,
+      "text": "you know, land cover prediction problem,"
+    },
+    {
+      "start": 252.1,
+      "end": 254.54,
+      "text": "we have inputs, which are satellite images,"
+    },
+    {
+      "start": 254.54,
+      "end": 257.3,
+      "text": "but we know the location of these images,"
+    },
+    {
+      "start": 257.3,
+      "end": 261.54,
+      "text": "so we can actually get the weather or climate information"
+    },
+    {
+      "start": 261.54,
+      "end": 263.08,
+      "text": "at each of these locations."
+    },
+    {
+      "start": 263.08,
+      "end": 264.72,
+      "text": "So that's a form of auxiliary."
+    },
+    {
+      "start": 264.72,
+      "end": 269.06,
+      "text": "That's auxiliary information, which may be useful."
+    },
+    {
+      "start": 269.06,
+      "end": 271.90000000000003,
+      "text": "And we'll show later that we can use this information"
+    },
+    {
+      "start": 271.90000000000003,
+      "end": 273.86,
+      "text": "as an auxiliary task output"
+    },
+    {
+      "start": 273.86,
+      "end": 275.5,
+      "text": "to learn better representations."
+    },
+    {
+      "start": 277.40000000000003,
+      "end": 279.74,
+      "text": "So in the second type of structure we're gonna consider"
+    },
+    {
+      "start": 279.74,
+      "end": 281.14000000000004,
+      "text": "is a gradual shift."
+    },
+    {
+      "start": 281.14000000000004,
+      "end": 284.90000000000003,
+      "text": "So in this case, we have our source and target domains,"
+    },
+    {
+      "start": 284.90000000000003,
+      "end": 287.34000000000003,
+      "text": "but we also have a sequence of intermediate domains"
+    },
+    {
+      "start": 287.34000000000003,
+      "end": 291.54,
+      "text": "between the source and the target, which vary gradually."
+    },
+    {
+      "start": 291.54,
+      "end": 294.22,
+      "text": "So this is interesting because the source and the target domains"
+    },
+    {
+      "start": 294.22,
+      "end": 296.12,
+      "text": "are very far apart,"
+    },
+    {
+      "start": 296.12,
+      "end": 299.72,
+      "text": "but each adjacent set of domains is actually very close,"
+    },
+    {
+      "start": 299.72,
+      "end": 303.40000000000003,
+      "text": "which means adaptation between each individual,"
+    },
+    {
+      "start": 304.6,
+      "end": 307.5,
+      "text": "between consecutive domains is quite easy."
+    },
+    {
+      "start": 308.40000000000003,
+      "end": 311.20000000000005,
+      "text": "And we're gonna assume we only have labels"
+    },
+    {
+      "start": 311.20000000000005,
+      "end": 312.98,
+      "text": "from the source domain and unlabeled data"
+    },
+    {
+      "start": 312.98,
+      "end": 314.64000000000004,
+      "text": "for all the other domains."
+    },
+    {
+      "start": 316.5,
+      "end": 319.18,
+      "text": "So let's begin with setting one,"
+    },
+    {
+      "start": 319.18,
+      "end": 322.24,
+      "text": "which is when we have auxiliary information."
+    },
+    {
+      "start": 322.24,
+      "end": 323.94000000000005,
+      "text": "So this is a work,"
+    },
+    {
+      "start": 324.22,
+      "end": 327.02000000000004,
+      "text": "which actually appeared at this iClear."
+    },
+    {
+      "start": 327.02000000000004,
+      "end": 328.96000000000004,
+      "text": "It's called in and out pre-training and self-training"
+    },
+    {
+      "start": 328.96000000000004,
+      "end": 330.46000000000004,
+      "text": "using auxiliary information"
+    },
+    {
+      "start": 330.46000000000004,
+      "end": 333.0,
+      "text": "for out of distribution robustness."
+    },
+    {
+      "start": 333.0,
+      "end": 336.6,
+      "text": "This is with Michael, Ananya, Robby, Freshday, Tenryu."
+    },
+    {
+      "start": 337.6,
+      "end": 339.76000000000005,
+      "text": "And the setup is as follows."
+    },
+    {
+      "start": 339.76000000000005,
+      "end": 343.24,
+      "text": "So we have the same problem as before."
+    },
+    {
+      "start": 343.24,
+      "end": 345.54,
+      "text": "Given an input we want to predict,"
+    },
+    {
+      "start": 345.54,
+      "end": 346.48,
+      "text": "which is satellite image,"
+    },
+    {
+      "start": 346.48,
+      "end": 349.98,
+      "text": "we wanna predict the output, which is a label."
+    },
+    {
+      "start": 349.98,
+      "end": 354.22,
+      "text": "And for each data point, we also have a variable z,"
+    },
+    {
+      "start": 354.22,
+      "end": 356.26000000000005,
+      "text": "which is the auxiliary information."
+    },
+    {
+      "start": 356.26000000000005,
+      "end": 358.36,
+      "text": "So I think it's a vector,"
+    },
+    {
+      "start": 358.36,
+      "end": 360.36,
+      "text": "which can include things like timestamps,"
+    },
+    {
+      "start": 360.36,
+      "end": 363.06,
+      "text": "weather data, and other kind of signals."
+    },
+    {
+      "start": 364.5,
+      "end": 366.20000000000005,
+      "text": "So in distribution,"
+    },
+    {
+      "start": 366.20000000000005,
+      "end": 369.46000000000004,
+      "text": "we're gonna assume we have these tuples of X, Y, and Zs."
+    },
+    {
+      "start": 369.46000000000004,
+      "end": 372.38000000000005,
+      "text": "We have everything in distribution."
+    },
+    {
+      "start": 372.38000000000005,
+      "end": 376.14000000000004,
+      "text": "And for both in distribution and out of distribution,"
+    },
+    {
+      "start": 376.14000000000004,
+      "end": 380.78000000000003,
+      "text": "we have many, many unlabeled pairs, X and Z,"
+    },
+    {
+      "start": 380.78000000000003,
+      "end": 383.22,
+      "text": "which are easy to collect, but we don't have Y."
+    },
+    {
+      "start": 384.22,
+      "end": 387.82000000000005,
+      "text": "So the question is, how can we use this unlabeled data,"
+    },
+    {
+      "start": 387.82000000000005,
+      "end": 389.90000000000003,
+      "text": "which has auxiliary information,"
+    },
+    {
+      "start": 389.90000000000003,
+      "end": 394.1,
+      "text": "to improve both in-domain and out-of-domain accuracy?"
+    },
+    {
+      "start": 394.1,
+      "end": 395.46000000000004,
+      "text": "And in particular, we're gonna focus on"
+    },
+    {
+      "start": 395.46000000000004,
+      "end": 397.04,
+      "text": "how this auxiliary information"
+    },
+    {
+      "start": 397.04,
+      "end": 398.90000000000003,
+      "text": "is going to enter into the equation."
+    },
+    {
+      "start": 399.94000000000005,
+      "end": 401.74,
+      "text": "So here's a natural thing you might do."
+    },
+    {
+      "start": 401.74,
+      "end": 402.98,
+      "text": "And we call it aux inputs"
+    },
+    {
+      "start": 402.98,
+      "end": 406.68,
+      "text": "because we're going to use the auxiliary variable z here"
+    },
+    {
+      "start": 406.68,
+      "end": 408.48,
+      "text": "as input features."
+    },
+    {
+      "start": 408.48,
+      "end": 412.62,
+      "text": "So we're going to just concatenate the input"
+    },
+    {
+      "start": 412.62,
+      "end": 414.18,
+      "text": "and auxiliary information, just feeding it in,"
+    },
+    {
+      "start": 414.18,
+      "end": 416.98,
+      "text": "feed them into the model, and predict the output."
+    },
+    {
+      "start": 416.98,
+      "end": 419.66,
+      "text": "So this is a very natural thing to do."
+    },
+    {
+      "start": 419.66,
+      "end": 420.98,
+      "text": "How well does it work?"
+    },
+    {
+      "start": 420.98,
+      "end": 425.02,
+      "text": "On two datasets, cropland and lambcover,"
+    },
+    {
+      "start": 425.02,
+      "end": 428.46000000000004,
+      "text": "we show that in-domain, it works a bit better."
+    },
+    {
+      "start": 428.46000000000004,
+      "end": 432.6,
+      "text": "And this is nice because we're adding additional features"
+    },
+    {
+      "start": 432.6,
+      "end": 434.8,
+      "text": "which provide extra sources of information,"
+    },
+    {
+      "start": 434.8,
+      "end": 437.04,
+      "text": "so there's improved accuracy."
+    },
+    {
+      "start": 437.04,
+      "end": 438.8,
+      "text": "What happens in out-of-domain?"
+    },
+    {
+      "start": 438.8,
+      "end": 440.94,
+      "text": "Out-of-domain, we actually find that adding"
+    },
+    {
+      "start": 440.94,
+      "end": 444.18,
+      "text": "these auxiliary information variables as inputs,"
+    },
+    {
+      "start": 444.18,
+      "end": 447.62,
+      "text": "actually hurts the accuracy."
+    },
+    {
+      "start": 447.62,
+      "end": 449.42,
+      "text": "So this is not good."
+    },
+    {
+      "start": 449.42,
+      "end": 451.06,
+      "text": "So what else can we do?"
+    },
+    {
+      "start": 451.06,
+      "end": 454.2,
+      "text": "So another thing we can do is we can use"
+    },
+    {
+      "start": 454.2,
+      "end": 458.26,
+      "text": "the auxiliary information as targets for pre-training."
+    },
+    {
+      "start": 458.26,
+      "end": 459.86,
+      "text": "So intuitively, what we're gonna do is"
+    },
+    {
+      "start": 459.86,
+      "end": 462.34000000000003,
+      "text": "we're going to pre-train a model"
+    },
+    {
+      "start": 462.34000000000003,
+      "end": 465.0,
+      "text": "that takes the input satellite image"
+    },
+    {
+      "start": 465.0,
+      "end": 467.74,
+      "text": "and predicts this auxiliary information."
+    },
+    {
+      "start": 467.74,
+      "end": 470.38,
+      "text": "And intuitively, you can think about the pre-train models"
+    },
+    {
+      "start": 470.38,
+      "end": 472.38,
+      "text": "learning more high-level representations"
+    },
+    {
+      "start": 472.38,
+      "end": 473.78000000000003,
+      "text": "like the presence of trees,"
+    },
+    {
+      "start": 474.18,
+      "end": 476.52,
+      "text": "and water, and so on,"
+    },
+    {
+      "start": 476.52,
+      "end": 479.36,
+      "text": "to be able to predict the climate information."
+    },
+    {
+      "start": 479.36,
+      "end": 483.36,
+      "text": "And then we're gonna initialize this pre-train model,"
+    },
+    {
+      "start": 483.36,
+      "end": 485.6,
+      "text": "and model with this pre-train model,"
+    },
+    {
+      "start": 485.6,
+      "end": 489.2,
+      "text": "and then we're gonna fine-tune on our labeled examples."
+    },
+    {
+      "start": 489.2,
+      "end": 491.5,
+      "text": "Now, so now notice that the fine-tuned model"
+    },
+    {
+      "start": 491.5,
+      "end": 495.24,
+      "text": "is not using the auxiliary information z,"
+    },
+    {
+      "start": 495.24,
+      "end": 497.24,
+      "text": "it's just mapping x to y."
+    },
+    {
+      "start": 499.0,
+      "end": 500.54,
+      "text": "So how well does this work?"
+    },
+    {
+      "start": 501.44,
+      "end": 503.48,
+      "text": "We show that out-of-domain,"
+    },
+    {
+      "start": 504.18,
+      "end": 505.84000000000003,
+      "text": "this actually improves things."
+    },
+    {
+      "start": 506.74,
+      "end": 509.12,
+      "text": "And the idea here is that the z,"
+    },
+    {
+      "start": 509.12,
+      "end": 510.86,
+      "text": "the auxiliary information,"
+    },
+    {
+      "start": 510.86,
+      "end": 515.36,
+      "text": "is not, suffers from a domain shift,"
+    },
+    {
+      "start": 515.36,
+      "end": 519.22,
+      "text": "which means that using a misinput is harmful,"
+    },
+    {
+      "start": 519.22,
+      "end": 521.5,
+      "text": "but we can actually use a misoutput"
+    },
+    {
+      "start": 521.5,
+      "end": 524.76,
+      "text": "to learn better representations, and this works."
+    },
+    {
+      "start": 524.76,
+      "end": 526.6,
+      "text": "But unfortunately, in-domain,"
+    },
+    {
+      "start": 527.6,
+      "end": 530.1,
+      "text": "it turns out not to work very well."
+    },
+    {
+      "start": 531.44,
+      "end": 533.14,
+      "text": "So now the question, a natural question is,"
+    },
+    {
+      "start": 533.14,
+      "end": 534.1800000000001,
+      "text": "how can you get the best results?"
+    },
+    {
+      "start": 534.1800000000001,
+      "end": 536.34,
+      "text": "How can you get the best of both worlds?"
+    },
+    {
+      "start": 536.34,
+      "end": 539.0600000000001,
+      "text": "So the immediate thing that might come to mind is,"
+    },
+    {
+      "start": 539.0600000000001,
+      "end": 542.1200000000001,
+      "text": "well, why don't you use them as both inputs and outputs?"
+    },
+    {
+      "start": 542.1200000000001,
+      "end": 543.72,
+      "text": "Okay, so we're gonna pre-train a model"
+    },
+    {
+      "start": 543.72,
+      "end": 547.1600000000001,
+      "text": "where we feed x into this input and ask it,"
+    },
+    {
+      "start": 547.1600000000001,
+      "end": 552.1600000000001,
+      "text": "sorry, feed x and z as input and ask it to produce z."
+    },
+    {
+      "start": 552.3000000000001,
+      "end": 554.24,
+      "text": "And you can see immediately this is not gonna work"
+    },
+    {
+      "start": 554.24,
+      "end": 557.1600000000001,
+      "text": "because the model is just going to learn the identity"
+    },
+    {
+      "start": 557.1600000000001,
+      "end": 559.6800000000001,
+      "text": "from z to z and ignore x."
+    },
+    {
+      "start": 559.6800000000001,
+      "end": 562.0400000000001,
+      "text": "So we have to do something a little bit smarter."
+    },
+    {
+      "start": 562.0400000000001,
+      "end": 563.7800000000001,
+      "text": "So what we came up with,"
+    },
+    {
+      "start": 563.78,
+      "end": 565.98,
+      "text": "in this paper, is in and out."
+    },
+    {
+      "start": 565.98,
+      "end": 568.38,
+      "text": "And that's gonna capture the best of both worlds."
+    },
+    {
+      "start": 569.76,
+      "end": 574.56,
+      "text": "So intuitively, aux inputs, remember, using z as input,"
+    },
+    {
+      "start": 574.56,
+      "end": 577.12,
+      "text": "gets good in-domain accuracy."
+    },
+    {
+      "start": 577.12,
+      "end": 580.24,
+      "text": "And aux outputs gets good out-of-main accuracy."
+    },
+    {
+      "start": 580.24,
+      "end": 581.9599999999999,
+      "text": "And here's where self-training comes in."
+    },
+    {
+      "start": 581.9599999999999,
+      "end": 583.6999999999999,
+      "text": "Self-training is gonna provide this glue"
+    },
+    {
+      "start": 583.6999999999999,
+      "end": 588.24,
+      "text": "that's gonna transfer the good in-domain accuracy"
+    },
+    {
+      "start": 588.24,
+      "end": 591.3399999999999,
+      "text": "of aux inputs into aux outputs."
+    },
+    {
+      "start": 591.3399999999999,
+      "end": 592.78,
+      "text": "So here's the procedure."
+    },
+    {
+      "start": 592.78,
+      "end": 593.78,
+      "text": "It's quite simple."
+    },
+    {
+      "start": 593.78,
+      "end": 598.78,
+      "text": "So we're first gonna train an aux inputs model."
+    },
+    {
+      "start": 598.92,
+      "end": 602.16,
+      "text": "And then we're gonna use it to pseudo-label"
+    },
+    {
+      "start": 602.16,
+      "end": 604.8199999999999,
+      "text": "our unlabeled in-domain data."
+    },
+    {
+      "start": 604.8199999999999,
+      "end": 607.4,
+      "text": "Okay, so remember the unlabeled in-domain data"
+    },
+    {
+      "start": 607.4,
+      "end": 610.3199999999999,
+      "text": "consists of x, y, x, z pairs."
+    },
+    {
+      "start": 610.3199999999999,
+      "end": 611.3,
+      "text": "We don't have y."
+    },
+    {
+      "start": 611.3,
+      "end": 615.06,
+      "text": "We're just gonna use the aux-in model to produce some y's."
+    },
+    {
+      "start": 616.1,
+      "end": 621.1,
+      "text": "Next, we're gonna take the aux-out model from before,"
+    },
+    {
+      "start": 621.18,
+      "end": 622.8,
+      "text": "which was, remember, pre-trained"
+    },
+    {
+      "start": 622.8000000000001,
+      "end": 625.34,
+      "text": "on using a z as output."
+    },
+    {
+      "start": 627.1800000000001,
+      "end": 629.5400000000001,
+      "text": "And we're gonna initialize this model."
+    },
+    {
+      "start": 629.5400000000001,
+      "end": 632.5200000000001,
+      "text": "And finally, we're gonna fine-tune this model"
+    },
+    {
+      "start": 632.5200000000001,
+      "end": 635.2800000000001,
+      "text": "on not just the original labels,"
+    },
+    {
+      "start": 635.2800000000001,
+      "end": 638.08,
+      "text": "but also on the pseudo-labels"
+    },
+    {
+      "start": 638.08,
+      "end": 640.32,
+      "text": "that we got from the aux-in model."
+    },
+    {
+      "start": 640.32,
+      "end": 641.1600000000001,
+      "text": "And this is the key part."
+    },
+    {
+      "start": 641.1600000000001,
+      "end": 642.96,
+      "text": "Self-training allows us to transfer"
+    },
+    {
+      "start": 642.96,
+      "end": 645.08,
+      "text": "some of this modeling predictive power"
+    },
+    {
+      "start": 645.08,
+      "end": 647.5600000000001,
+      "text": "from the aux-in model to the in-and-out model."
+    },
+    {
+      "start": 647.5600000000001,
+      "end": 649.9000000000001,
+      "text": "So therefore, in-and-out model is somehow able"
+    },
+    {
+      "start": 649.9000000000001,
+      "end": 652.8000000000001,
+      "text": "to leverage both the aux-out and the aux-in model."
+    },
+    {
+      "start": 652.8000000000001,
+      "end": 656.6400000000001,
+      "text": "So how well does it work?"
+    },
+    {
+      "start": 656.6400000000001,
+      "end": 659.7,
+      "text": "Across the board, in-and-out improves the accuracy"
+    },
+    {
+      "start": 659.7,
+      "end": 661.6800000000001,
+      "text": "over all of the different baselines"
+    },
+    {
+      "start": 661.6800000000001,
+      "end": 664.7400000000001,
+      "text": "on both the cropland, landcover datasets,"
+    },
+    {
+      "start": 664.7400000000001,
+      "end": 666.1800000000001,
+      "text": "as well as syllabic."
+    },
+    {
+      "start": 669.0200000000001,
+      "end": 674.0200000000001,
+      "text": "So let's explore the question of why in-and-out works."
+    },
+    {
+      "start": 674.2800000000001,
+      "end": 677.2600000000001,
+      "text": "And we don't have a full picture of everything"
+    },
+    {
+      "start": 677.2600000000001,
+      "end": 680.1,
+      "text": "that in-and-out is doing in the realistic setting"
+    },
+    {
+      "start": 680.1,
+      "end": 682.1800000000001,
+      "text": "with deep neural networks, so we constructed,"
+    },
+    {
+      "start": 682.1800000000001,
+      "end": 686.0600000000001,
+      "text": "we constructed a simple multitask linear regression setting"
+    },
+    {
+      "start": 686.0600000000001,
+      "end": 688.5000000000001,
+      "text": "to explore this question further."
+    },
+    {
+      "start": 688.5000000000001,
+      "end": 690.72,
+      "text": "So here's the setup."
+    },
+    {
+      "start": 690.72,
+      "end": 695.72,
+      "text": "We're gonna have inputs X and targets Y, as usual."
+    },
+    {
+      "start": 696.32,
+      "end": 700.08,
+      "text": "But the true distribution is going to be,"
+    },
+    {
+      "start": 700.08,
+      "end": 703.36,
+      "text": "you take the inputs, which are D-dimensional,"
+    },
+    {
+      "start": 703.36,
+      "end": 704.94,
+      "text": "and map them, project them down"
+    },
+    {
+      "start": 704.94,
+      "end": 706.48,
+      "text": "into some low-dimensional subsets,"
+    },
+    {
+      "start": 706.48,
+      "end": 709.24,
+      "text": "which is K-dimensional, that's W."
+    },
+    {
+      "start": 709.24,
+      "end": 711.8800000000001,
+      "text": "And then there's going to be this latent noise, U."
+    },
+    {
+      "start": 712.1800000000001,
+      "end": 716.94,
+      "text": "Which is going to both influence the output,"
+    },
+    {
+      "start": 716.94,
+      "end": 718.96,
+      "text": "as well as this auxiliary information."
+    },
+    {
+      "start": 718.96,
+      "end": 721.1600000000001,
+      "text": "So you can think about these two latent variables"
+    },
+    {
+      "start": 721.1600000000001,
+      "end": 724.2600000000001,
+      "text": "as governing both the output that you care about"
+    },
+    {
+      "start": 724.2600000000001,
+      "end": 727.5000000000001,
+      "text": "and this auxiliary variable."
+    },
+    {
+      "start": 727.5000000000001,
+      "end": 730.6400000000001,
+      "text": "And the key thing is that U is going to shift"
+    },
+    {
+      "start": 730.6400000000001,
+      "end": 735.0400000000001,
+      "text": "between the source and the target domains."
+    },
+    {
+      "start": 735.0400000000001,
+      "end": 738.9200000000001,
+      "text": "And you can see kind of immediately that if U is shifting,"
+    },
+    {
+      "start": 738.9200000000001,
+      "end": 742.0600000000001,
+      "text": "that means that Z is shifting quite a bit,"
+    },
+    {
+      "start": 742.0600000000001,
+      "end": 744.0000000000001,
+      "text": "which means that Z as an input"
+    },
+    {
+      "start": 744.0000000000001,
+      "end": 747.24,
+      "text": "is not going to be reliable out of domain."
+    },
+    {
+      "start": 748.7,
+      "end": 751.58,
+      "text": "So let's see what happens with aux inputs."
+    },
+    {
+      "start": 751.58,
+      "end": 756.58,
+      "text": "So we're going to use Z as an input to predict Y."
+    },
+    {
+      "start": 757.1600000000001,
+      "end": 762.1600000000001,
+      "text": "And intuitively, we can show that Z is giving you"
+    },
+    {
+      "start": 762.72,
+      "end": 766.48,
+      "text": "information, allowing you to recover U."
+    },
+    {
+      "start": 766.48,
+      "end": 770.1800000000001,
+      "text": "And U is clearly relevant for predicting Y."
+    },
+    {
+      "start": 770.1800000000001,
+      "end": 771.96,
+      "text": "So you can prove that if you have enough"
+    },
+    {
+      "start": 771.96,
+      "end": 775.5,
+      "text": "samples, aux inputs improves in-domain accuracy."
+    },
+    {
+      "start": 776.72,
+      "end": 778.58,
+      "text": "What happens out of domain?"
+    },
+    {
+      "start": 778.58,
+      "end": 780.96,
+      "text": "Well, as we mentioned before, U is going,"
+    },
+    {
+      "start": 780.96,
+      "end": 783.38,
+      "text": "the distribution of U shifts out of domain,"
+    },
+    {
+      "start": 783.38,
+      "end": 788.38,
+      "text": "which means that Z is no longer a robust indicator of U."
+    },
+    {
+      "start": 792.34,
+      "end": 796.22,
+      "text": "And we proved that aux inputs always can hurt"
+    },
+    {
+      "start": 796.22,
+      "end": 798.1,
+      "text": "for some out-of-domain shift."
+    },
+    {
+      "start": 798.1,
+      "end": 799.72,
+      "text": "So it's not, it can also help sometimes, but you can, you know,"
+    },
+    {
+      "start": 799.72,
+      "end": 800.5600000000001,
+      "text": "it can also help sometimes, but you can, you know,"
+    },
+    {
+      "start": 800.5600000000001,
+      "end": 801.48,
+      "text": "it can also help sometimes, but you can, you know,"
+    },
+    {
+      "start": 801.48,
+      "end": 801.5,
+      "text": "it can also help sometimes, but you can, you know,"
+    },
+    {
+      "start": 801.5,
+      "end": 802.0,
+      "text": "it can also help sometimes, but you can, you know,"
+    },
+    {
+      "start": 802.0,
+      "end": 804.44,
+      "text": "always find a case where it hurts."
+    },
+    {
+      "start": 805.76,
+      "end": 807.28,
+      "text": "What about aux outputs?"
+    },
+    {
+      "start": 807.28,
+      "end": 810.2,
+      "text": "So what's going on here is that pre-training,"
+    },
+    {
+      "start": 810.2,
+      "end": 813.68,
+      "text": "where you're trying to predict Z from X,"
+    },
+    {
+      "start": 813.68,
+      "end": 816.82,
+      "text": "is going to help you nail down this latent feature,"
+    },
+    {
+      "start": 816.82,
+      "end": 819.54,
+      "text": "or at least the kind of subspace,"
+    },
+    {
+      "start": 819.54,
+      "end": 822.86,
+      "text": "and reduces it essentially to a prediction problem"
+    },
+    {
+      "start": 822.86,
+      "end": 825.42,
+      "text": "from W to Y."
+    },
+    {
+      "start": 825.42,
+      "end": 830.3,
+      "text": "And because of this, the standard kind of balance show"
+    },
+    {
+      "start": 830.3,
+      "end": 831.18,
+      "text": "that instead of having a D of X, it's going to be a D of X."
+    },
+    {
+      "start": 831.18,
+      "end": 831.44,
+      "text": "And because of this, the standard kind of balance show that instead of having a D of X,"
+    },
+    {
+      "start": 831.44,
+      "end": 831.84,
+      "text": "it's going to be a D of X,"
+    },
+    {
+      "start": 831.84,
+      "end": 833.94,
+      "text": "and if you have a D dimensional dependence,"
+    },
+    {
+      "start": 833.94,
+      "end": 839.0400000000001,
+      "text": "the SS risk scaling is D, now it still scales with K."
+    },
+    {
+      "start": 839.0400000000001,
+      "end": 840.84,
+      "text": "So that's in domain."
+    },
+    {
+      "start": 840.84,
+      "end": 843.2800000000001,
+      "text": "So out of domain is actually a little bit trickier"
+    },
+    {
+      "start": 843.2800000000001,
+      "end": 847.98,
+      "text": "because the SS risk actually depends on the covariance"
+    },
+    {
+      "start": 847.98,
+      "end": 850.08,
+      "text": "of X and W."
+    },
+    {
+      "start": 850.08,
+      "end": 853.0200000000001,
+      "text": "So in domain, because the training and tests are the same,"
+    },
+    {
+      "start": 853.0200000000001,
+      "end": 855.7,
+      "text": "the covariances are the same, so they kind of cancel out."
+    },
+    {
+      "start": 855.7,
+      "end": 858.74,
+      "text": "Whereas out of domain, you get some dependence,"
+    },
+    {
+      "start": 858.74,
+      "end": 860.1,
+      "text": "extra dependence here."
+    },
+    {
+      "start": 860.1,
+      "end": 861.44,
+      "text": "And a priori,"
+    },
+    {
+      "start": 861.44,
+      "end": 864.32,
+      "text": "it's not clear whether just because you reduce the dimensionality,"
+    },
+    {
+      "start": 864.32,
+      "end": 866.5400000000001,
+      "text": "it doesn't, maybe you worsen the conditioning"
+    },
+    {
+      "start": 866.5400000000001,
+      "end": 867.46,
+      "text": "and that makes things worse."
+    },
+    {
+      "start": 867.46,
+      "end": 870.48,
+      "text": "So it's not clear, pre-training is actually better"
+    },
+    {
+      "start": 870.48,
+      "end": 871.86,
+      "text": "for out of domain."
+    },
+    {
+      "start": 871.86,
+      "end": 873.6800000000001,
+      "text": "But actually with a little bit more work,"
+    },
+    {
+      "start": 873.6800000000001,
+      "end": 876.58,
+      "text": "we actually ended up proving that pre-training actually"
+    },
+    {
+      "start": 876.58,
+      "end": 879.0200000000001,
+      "text": "improves the SS risk for this model"
+    },
+    {
+      "start": 879.0200000000001,
+      "end": 881.1400000000001,
+      "text": "on arbitrary covariance shifts,"
+    },
+    {
+      "start": 881.1400000000001,
+      "end": 882.62,
+      "text": "which is actually a pretty,"
+    },
+    {
+      "start": 882.62,
+      "end": 886.0200000000001,
+      "text": "I was a little bit surprised by the generality of this result."
+    },
+    {
+      "start": 888.12,
+      "end": 891.12,
+      "text": "Okay, so now you can put pre-training and self-tuning,"
+    },
+    {
+      "start": 891.12,
+      "end": 893.42,
+      "text": "self-training together."
+    },
+    {
+      "start": 893.42,
+      "end": 898.42,
+      "text": "And here the intuition is aux inputs model uses Z."
+    },
+    {
+      "start": 899.46,
+      "end": 903.04,
+      "text": "So it's better in domain and we can use it to produce"
+    },
+    {
+      "start": 903.04,
+      "end": 906.64,
+      "text": "more accurate pseudo labels in distribution."
+    },
+    {
+      "start": 906.64,
+      "end": 909.5600000000001,
+      "text": "And these pseudo labels are going to increase the amount"
+    },
+    {
+      "start": 909.5600000000001,
+      "end": 913.08,
+      "text": "of data that the NML model is trained on."
+    },
+    {
+      "start": 913.08,
+      "end": 916.36,
+      "text": "And notice that it is important that we are not using Z here"
+    },
+    {
+      "start": 916.36,
+      "end": 919.0600000000001,
+      "text": "because Z is not robust as an input."
+    },
+    {
+      "start": 921.12,
+      "end": 924.3,
+      "text": "So we can prove that in an out does much better"
+    },
+    {
+      "start": 924.3,
+      "end": 925.88,
+      "text": "than aux outputs."
+    },
+    {
+      "start": 925.88,
+      "end": 930.1,
+      "text": "When Z reduces uncertainty about why given X."
+    },
+    {
+      "start": 930.1,
+      "end": 932.6,
+      "text": "In other words, if you condition on Z that variants"
+    },
+    {
+      "start": 932.6,
+      "end": 935.22,
+      "text": "over Y is, you know"
+    },
+    {
+      "start": 935.22,
+      "end": 936.04,
+      "text": "diminished."
+    },
+    {
+      "start": 938.36,
+      "end": 940.64,
+      "text": "So the summary so far is"
+    },
+    {
+      "start": 940.64,
+      "end": 945.24,
+      "text": "aux inputs using auxiliary information Z as input features,"
+    },
+    {
+      "start": 945.24,
+      "end": 947.22,
+      "text": "this is great in domain,"
+    },
+    {
+      "start": 947.22,
+      "end": 949.1800000000001,
+      "text": "because you're adding more information,"
+    },
+    {
+      "start": 949.1800000000001,
+      "end": 950.9,
+      "text": "but it doesn't work out of domain."
+    },
+    {
+      "start": 951.12,
+      "end": 954.04,
+      "text": "because of the distribution of Z shifts."
+    },
+    {
+      "start": 954.04,
+      "end": 957.94,
+      "text": "You can use it as a pre-training output,"
+    },
+    {
+      "start": 957.94,
+      "end": 962.94,
+      "text": "and this helps out a domain, but doesn't work in domain."
+    },
+    {
+      "start": 963.16,
+      "end": 966.44,
+      "text": "And you can use self-training to combine the two"
+    },
+    {
+      "start": 966.44,
+      "end": 970.68,
+      "text": "to produce in and out, and you get the best of both worlds."
+    },
+    {
+      "start": 970.68,
+      "end": 973.26,
+      "text": "So one thing that I think is really interesting,"
+    },
+    {
+      "start": 973.26,
+      "end": 975.66,
+      "text": "conceptually interesting here is that"
+    },
+    {
+      "start": 975.66,
+      "end": 976.84,
+      "text": "we have these spurious features."
+    },
+    {
+      "start": 976.84,
+      "end": 981.0400000000001,
+      "text": "Z is, in some sense, a bit of a spurious feature."
+    },
+    {
+      "start": 982.58,
+      "end": 983.84,
+      "text": "And in general, spurious features,"
+    },
+    {
+      "start": 983.84,
+      "end": 985.02,
+      "text": "if you think about them, is bad."
+    },
+    {
+      "start": 985.02,
+      "end": 986.5600000000001,
+      "text": "We want to remove them."
+    },
+    {
+      "start": 986.5600000000001,
+      "end": 989.88,
+      "text": "But here we are able to, even with the box outputs model,"
+    },
+    {
+      "start": 989.88,
+      "end": 992.88,
+      "text": "show that we can leverage these spurious features"
+    },
+    {
+      "start": 992.88,
+      "end": 995.38,
+      "text": "for improving robustness."
+    },
+    {
+      "start": 996.6,
+      "end": 998.72,
+      "text": "And then the extra kind of,"
+    },
+    {
+      "start": 999.84,
+      "end": 1001.4200000000001,
+      "text": "we can kind of go the extra mile"
+    },
+    {
+      "start": 1001.4200000000001,
+      "end": 1003.48,
+      "text": "to show that using self-training,"
+    },
+    {
+      "start": 1003.48,
+      "end": 1006.84,
+      "text": "we can actually kind of glue the ALX inputs and ALX outputs"
+    },
+    {
+      "start": 1006.84,
+      "end": 1009.4,
+      "text": "model together so that we don't suffer"
+    },
+    {
+      "start": 1009.4,
+      "end": 1012.72,
+      "text": "in distribution accuracy as well."
+    },
+    {
+      "start": 1013.94,
+      "end": 1017.52,
+      "text": "So what happens if you don't have auxiliary information Z?"
+    },
+    {
+      "start": 1017.52,
+      "end": 1021.0600000000001,
+      "text": "Well, notice that there's nothing semantically meaningful"
+    },
+    {
+      "start": 1021.0600000000001,
+      "end": 1023.4200000000001,
+      "text": "about Z versus X."
+    },
+    {
+      "start": 1024.3600000000001,
+      "end": 1028.52,
+      "text": "You might as well just assume that if you have just an input,"
+    },
+    {
+      "start": 1028.52,
+      "end": 1031.74,
+      "text": "you can call part of it X, and you can call part of it Z."
+    },
+    {
+      "start": 1031.74,
+      "end": 1034.2,
+      "text": "And maybe, this is kind of future work,"
+    },
+    {
+      "start": 1034.2,
+      "end": 1036.6200000000001,
+      "text": "we can actually find better ways of automatically splitting,"
+    },
+    {
+      "start": 1036.6200000000001,
+      "end": 1039.6200000000001,
+      "text": "your features and leverage it so that you can leverage"
+    },
+    {
+      "start": 1039.6200000000001,
+      "end": 1041.5200000000002,
+      "text": "in and out to get better robustness."
+    },
+    {
+      "start": 1043.4,
+      "end": 1046.66,
+      "text": "All right, let's shift gears and talk about gradual shifts."
+    },
+    {
+      "start": 1046.66,
+      "end": 1049.42,
+      "text": "So this is a paper from ICML,"
+    },
+    {
+      "start": 1049.42,
+      "end": 1051.14,
+      "text": "last year with Nanyang Ting."
+    },
+    {
+      "start": 1052.5200000000002,
+      "end": 1055.8200000000002,
+      "text": "So, gradual shifts occur in many different settings,"
+    },
+    {
+      "start": 1055.8200000000002,
+      "end": 1058.72,
+      "text": "like self-driving cars with different weather conditions,"
+    },
+    {
+      "start": 1058.72,
+      "end": 1061.48,
+      "text": "with neuroscience applications,"
+    },
+    {
+      "start": 1061.48,
+      "end": 1064.7800000000002,
+      "text": "and applications related to chemistry."
+    },
+    {
+      "start": 1065.8000000000002,
+      "end": 1066.6200000000001,
+      "text": "So,"
+    },
+    {
+      "start": 1066.6200000000001,
+      "end": 1071.8000000000002,
+      "text": "Here is a motivating example that we're going to consider."
+    },
+    {
+      "start": 1071.8000000000002,
+      "end": 1076.18,
+      "text": "It's a little bit questionable to do a gender classification,"
+    },
+    {
+      "start": 1076.18,
+      "end": 1077.38,
+      "text": "so I apologize,"
+    },
+    {
+      "start": 1077.38,
+      "end": 1080.7600000000002,
+      "text": "but this is what we had in our paper,"
+    },
+    {
+      "start": 1080.7600000000002,
+      "end": 1083.5000000000002,
+      "text": "and we didn't think about this at the time."
+    },
+    {
+      "start": 1083.5000000000002,
+      "end": 1090.9,
+      "text": "So the task here is to predict whether an image is male or female,"
+    },
+    {
+      "start": 1090.9,
+      "end": 1093.74,
+      "text": "and doing this across time."
+    },
+    {
+      "start": 1093.74,
+      "end": 1096.4,
+      "text": "So we have a source domain,"
+    },
+    {
+      "start": 1096.4,
+      "end": 1099.7,
+      "text": "which is pictures in 1905,"
+    },
+    {
+      "start": 1099.7,
+      "end": 1101.5,
+      "text": "and we have the target domain,"
+    },
+    {
+      "start": 1101.5,
+      "end": 1103.66,
+      "text": "which is pictures in 1973,"
+    },
+    {
+      "start": 1103.66,
+      "end": 1106.06,
+      "text": "and we have intermediate domains,"
+    },
+    {
+      "start": 1106.06,
+      "end": 1110.22,
+      "text": "which are pictures from intermediate points in time."
+    },
+    {
+      "start": 1110.22,
+      "end": 1112.92,
+      "text": "Remember, we have labels only for the source,"
+    },
+    {
+      "start": 1112.92,
+      "end": 1116.46,
+      "text": "and unlabeled examples for everything else."
+    },
+    {
+      "start": 1116.46,
+      "end": 1122.3,
+      "text": "So our goal is to get high accuracy for now only on the target domain."
+    },
+    {
+      "start": 1122.3,
+      "end": 1123.5,
+      "text": "You can also ask for"
+    },
+    {
+      "start": 1123.5,
+      "end": 1125.58,
+      "text": "high accuracy on all the domains,"
+    },
+    {
+      "start": 1125.58,
+      "end": 1128.9,
+      "text": "but we'll leave that aside for now."
+    },
+    {
+      "start": 1128.9,
+      "end": 1132.62,
+      "text": "So on this dataset,"
+    },
+    {
+      "start": 1132.62,
+      "end": 1134.78,
+      "text": "we train a source classifier,"
+    },
+    {
+      "start": 1134.78,
+      "end": 1138.54,
+      "text": "and it does really well, 98% on the source,"
+    },
+    {
+      "start": 1138.54,
+      "end": 1142.62,
+      "text": "but it drops in accuracy quite a bit on the target"
+    },
+    {
+      "start": 1142.62,
+      "end": 1145.7,
+      "text": "because, well, fashions change."
+    },
+    {
+      "start": 1145.7,
+      "end": 1150.38,
+      "text": "If you do straight-up self-training on the target,"
+    },
+    {
+      "start": 1150.38,
+      "end": 1152.02,
+      "text": "so in other words, train on source,"
+    },
+    {
+      "start": 1152.02,
+      "end": 1153.46,
+      "text": "label the target,"
+    },
+    {
+      "start": 1153.46,
+      "end": 1156.22,
+      "text": "unlabel it, and just train again,"
+    },
+    {
+      "start": 1156.22,
+      "end": 1157.18,
+      "text": "it doesn't really improve."
+    },
+    {
+      "start": 1157.18,
+      "end": 1160.98,
+      "text": "It improves things by 2%, so that's not great."
+    },
+    {
+      "start": 1160.98,
+      "end": 1163.02,
+      "text": "Yeah, but if you do gradual self-training,"
+    },
+    {
+      "start": 1163.02,
+      "end": 1165.02,
+      "text": "which I'll explain in a bit,"
+    },
+    {
+      "start": 1165.02,
+      "end": 1169.1000000000001,
+      "text": "we can actually close about half the gap"
+    },
+    {
+      "start": 1169.1000000000001,
+      "end": 1174.18,
+      "text": "to the kind of oracle where you train and test on the target."
+    },
+    {
+      "start": 1174.18,
+      "end": 1176.02,
+      "text": "So this is kind of as good as you can do"
+    },
+    {
+      "start": 1176.02,
+      "end": 1179.74,
+      "text": "if you actually have labeled examples on the target."
+    },
+    {
+      "start": 1179.74,
+      "end": 1181.74,
+      "text": "And we were able to close half the gap."
+    },
+    {
+      "start": 1181.74,
+      "end": 1182.6200000000001,
+      "text": "So how does this work?"
+    },
+    {
+      "start": 1182.6200000000001,
+      "end": 1183.14,
+      "text": "So this is kind of as good as you can do if you actually have labeled examples on the target. And we were able to close half the gap. So how does this work?"
+    },
+    {
+      "start": 1183.14,
+      "end": 1185.98,
+      "text": "So how does this gradual self-training work?"
+    },
+    {
+      "start": 1185.98,
+      "end": 1189.8600000000001,
+      "text": "So you have labeled examples in your source domain."
+    },
+    {
+      "start": 1189.8600000000001,
+      "end": 1191.5,
+      "text": "You're going to train a classifier."
+    },
+    {
+      "start": 1191.5,
+      "end": 1198.1000000000001,
+      "text": "You're going to use that classifier on the next domain to pseudo-label the examples."
+    },
+    {
+      "start": 1198.1000000000001,
+      "end": 1201.42,
+      "text": "We're going to assume that the examples have shifted a little bit."
+    },
+    {
+      "start": 1201.42,
+      "end": 1205.3000000000002,
+      "text": "And then you're going to fit a new classifier on the pseudo-labels."
+    },
+    {
+      "start": 1205.3000000000002,
+      "end": 1209.8600000000001,
+      "text": "And you kind of repeat until you get to the target domain."
+    },
+    {
+      "start": 1209.8600000000001,
+      "end": 1212.3000000000002,
+      "text": "And then you take your classifier."
+    },
+    {
+      "start": 1212.3,
+      "end": 1215.46,
+      "text": "So notice that this is not a covariate shift problem."
+    },
+    {
+      "start": 1215.46,
+      "end": 1219.54,
+      "text": "The actual optimal classifier changes between source and target."
+    },
+    {
+      "start": 1219.54,
+      "end": 1222.82,
+      "text": "And the idea is that by doing this self-training,"
+    },
+    {
+      "start": 1222.82,
+      "end": 1227.18,
+      "text": "you can kind of gradually track the changes over time."
+    },
+    {
+      "start": 1227.18,
+      "end": 1232.58,
+      "text": "So in order to show when gradual self-training works,"
+    },
+    {
+      "start": 1232.58,
+      "end": 1234.54,
+      "text": "we need some assumptions."
+    },
+    {
+      "start": 1234.54,
+      "end": 1241.02,
+      "text": "So some of the assumptions we made are you can classify the data with some margin."
+    },
+    {
+      "start": 1241.02,
+      "end": 1241.46,
+      "text": "So some of the assumptions we made are you can classify the data with some margin."
+    },
+    {
+      "start": 1241.46,
+      "end": 1241.78,
+      "text": "So some of the assumptions we made are you can classify the data with some margin."
+    },
+    {
+      "start": 1241.78,
+      "end": 1242.98,
+      "text": "It doesn't have to be separable."
+    },
+    {
+      "start": 1242.98,
+      "end": 1247.78,
+      "text": "But the majority of the examples have to be separable by a margin."
+    },
+    {
+      "start": 1248.82,
+      "end": 1253.54,
+      "text": "And also that the amount of shift is less than the margin."
+    },
+    {
+      "start": 1253.54,
+      "end": 1255.14,
+      "text": "And that your model is also elliptical."
+    },
+    {
+      "start": 1256.74,
+      "end": 1261.78,
+      "text": "So first we show that if you don't do any self-training,"
+    },
+    {
+      "start": 1261.78,
+      "end": 1265.46,
+      "text": "then the classifier can become stale and you get everything wrong."
+    },
+    {
+      "start": 1265.46,
+      "end": 1269.46,
+      "text": "So because the optimal classifier changes over time,"
+    },
+    {
+      "start": 1269.46,
+      "end": 1270.66,
+      "text": "your points can shift around."
+    },
+    {
+      "start": 1271.46,
+      "end": 1275.7,
+      "text": "And if you don't adapt, then you just can't do it."
+    },
+    {
+      "start": 1277.94,
+      "end": 1279.78,
+      "text": "So if you don't do self-training, that's bad."
+    },
+    {
+      "start": 1280.5,
+      "end": 1284.42,
+      "text": "We prove in this paper, I'm not going to have time to get through the details,"
+    },
+    {
+      "start": 1285.22,
+      "end": 1287.7,
+      "text": "that self-training does better."
+    },
+    {
+      "start": 1287.7,
+      "end": 1294.82,
+      "text": "So the error on the target domain after t iterations is going to be exponential in t"
+    },
+    {
+      "start": 1295.6200000000001,
+      "end": 1300.1000000000001,
+      "text": "times an error of your source classifier plus something that depends on the number of,"
+    },
+    {
+      "start": 1301.46,
+      "end": 1302.02,
+      "text": "for example."
+    },
+    {
+      "start": 1304.26,
+      "end": 1310.9,
+      "text": "And so notice, I mean, this looks bad because it's exponential growing in t."
+    },
+    {
+      "start": 1311.54,
+      "end": 1315.94,
+      "text": "We show that this bound is actually tight for gradual self-training."
+    },
+    {
+      "start": 1317.38,
+      "end": 1322.18,
+      "text": "Because in the worst case, the error is compound, kind of exponential."
+    },
+    {
+      "start": 1323.06,
+      "end": 1331.38,
+      "text": "But what you can, what the studies show is that if your initial base error is small,"
+    },
+    {
+      "start": 1331.46,
+      "end": 1336.98,
+      "text": "enough, then the blow up, you still get non-vacuous results."
+    },
+    {
+      "start": 1336.98,
+      "end": 1342.98,
+      "text": "Whereas if you don't do self-training, then immediately, even after two rounds of adaptation,"
+    },
+    {
+      "start": 1342.98,
+      "end": 1345.14,
+      "text": "then you get kind of trivial error."
+    },
+    {
+      "start": 1349.06,
+      "end": 1357.54,
+      "text": "So this is in the setting where we're making really no distributional assumptions other"
+    },
+    {
+      "start": 1357.54,
+      "end": 1358.9,
+      "text": "than a kind of margin assumption."
+    },
+    {
+      "start": 1359.54,
+      "end": 1361.3,
+      "text": "You can get stronger results."
+    },
+    {
+      "start": 1361.3,
+      "end": 1365.06,
+      "text": "If you assume that x given y is Gaussian."
+    },
+    {
+      "start": 1365.7,
+      "end": 1370.98,
+      "text": "And the key idea here is that since the shift is small and things are Gaussian,"
+    },
+    {
+      "start": 1370.98,
+      "end": 1374.74,
+      "text": "you can actually maintain the Bayes opt over time."
+    },
+    {
+      "start": 1375.46,
+      "end": 1381.46,
+      "text": "And the takeaway here is that self-training can actually do better than this kind of exponential"
+    },
+    {
+      "start": 1382.1,
+      "end": 1386.58,
+      "text": "rate is if when your distribution is kind of nice."
+    },
+    {
+      "start": 1387.7,
+      "end": 1389.3799999999999,
+      "text": "So you can see the paper for more details."
+    },
+    {
+      "start": 1389.3799999999999,
+      "end": 1390.1,
+      "text": "So how do we do this?"
+    },
+    {
+      "start": 1390.1,
+      "end": 1390.6599999999999,
+      "text": "So how do we do this?"
+    },
+    {
+      "start": 1390.6599999999999,
+      "end": 1391.1399999999999,
+      "text": "So how do we do this?"
+    },
+    {
+      "start": 1391.14,
+      "end": 1392.74,
+      "text": "So how well does this work in practice?"
+    },
+    {
+      "start": 1392.74,
+      "end": 1399.0600000000002,
+      "text": "We looked at three different data sets, rotating MNIST data set, portraits, which is the example"
+    },
+    {
+      "start": 1399.0600000000002,
+      "end": 1402.3400000000001,
+      "text": "I've been demonstrating, and cuff type."
+    },
+    {
+      "start": 1403.6200000000001,
+      "end": 1407.38,
+      "text": "And we see that here, the blue is the oracle."
+    },
+    {
+      "start": 1407.38,
+      "end": 1410.8200000000002,
+      "text": "So this is training on and testing on the target."
+    },
+    {
+      "start": 1411.5400000000002,
+      "end": 1419.0600000000002,
+      "text": "Gradual self-training, and if you do jump directly to the target, and if you use, I"
+    },
+    {
+      "start": 1419.0600000000002,
+      "end": 1420.5800000000002,
+      "text": "guess, this is the source."
+    },
+    {
+      "start": 1421.14,
+      "end": 1424.98,
+      "text": "So we see that for rotating MNIST, which is a rather simple data set,"
+    },
+    {
+      "start": 1424.98,
+      "end": 1431.94,
+      "text": "gradual self-training actually recovers most of the gap between adapting and not adapting."
+    },
+    {
+      "start": 1434.26,
+      "end": 1438.9,
+      "text": "And in other cases, it recovers about half the gap."
+    },
+    {
+      "start": 1439.6200000000001,
+      "end": 1446.3400000000001,
+      "text": "So I want to point out kind of two important details here that the theory actually tells"
+    },
+    {
+      "start": 1446.3400000000001,
+      "end": 1449.94,
+      "text": "us about, which we found also to be useful in practice."
+    },
+    {
+      "start": 1449.94,
+      "end": 1450.98,
+      "text": "So the first is Rی."
+    },
+    {
+      "start": 1450.98,
+      "end": 1457.7,
+      "text": "regularization and so the idea is that if you don't"
+    },
+    {
+      "start": 1457.7,
+      "end": 1461.38,
+      "text": "regularize then you're just going to find any old"
+    },
+    {
+      "start": 1461.38,
+      "end": 1463.94,
+      "text": "classifier that gets low loss not necessarily the"
+    },
+    {
+      "start": 1463.94,
+      "end": 1467.22,
+      "text": "max margin which means that even after a small shift"
+    },
+    {
+      "start": 1467.22,
+      "end": 1470.34,
+      "text": "your classifier is too close to the boundary"
+    },
+    {
+      "start": 1470.34,
+      "end": 1475.06,
+      "text": "and you can get a lot of points wrong and your balance go outs out the window"
+    },
+    {
+      "start": 1475.06,
+      "end": 1478.5,
+      "text": "the second detail which is important is the idea of label sharpening so when"
+    },
+    {
+      "start": 1478.5,
+      "end": 1485.54,
+      "text": "we're doing self-training we pseudo label some points and then we"
+    },
+    {
+      "start": 1485.54,
+      "end": 1492.74,
+      "text": "use the actual kind of binarized label so if it's 60 percent plus and 40"
+    },
+    {
+      "start": 1492.74,
+      "end": 1497.22,
+      "text": "minus when just treated less a plus versus if you use soft pseudo labels"
+    },
+    {
+      "start": 1497.22,
+      "end": 1501.54,
+      "text": "we're actually going to train on you know kind of a 0.6 plus and a 0.4"
+    },
+    {
+      "start": 1501.54,
+      "end": 1505.46,
+      "text": "minus and the idea here is that without label"
+    },
+    {
+      "start": 1505.46,
+      "end": 1508.42,
+      "text": "sharpening we"
+    },
+    {
+      "start": 1508.5,
+      "end": 1513.86,
+      "text": "don't change the classifier so if you train on kind of the same"
+    },
+    {
+      "start": 1513.86,
+      "end": 1518.98,
+      "text": "distribution then we can you know get the same thing back so"
+    },
+    {
+      "start": 1518.98,
+      "end": 1522.74,
+      "text": "label sharpening is actually important here to get"
+    },
+    {
+      "start": 1522.74,
+      "end": 1526.42,
+      "text": "self-training to work and experimentally on"
+    },
+    {
+      "start": 1526.42,
+      "end": 1531.46,
+      "text": "rotating MNIST we show that if you don't do explicit regularization or don't do"
+    },
+    {
+      "start": 1531.46,
+      "end": 1536.98,
+      "text": "soft hard don't do hard pseudo labels then your accuracy drops quite a bit"
+    },
+    {
+      "start": 1536.98,
+      "end": 1538.42,
+      "text": "from 84 to"
+    },
+    {
+      "start": 1538.42,
+      "end": 1542.74,
+      "text": "you know 45 and notice that regularization is not"
+    },
+    {
+      "start": 1542.74,
+      "end": 1544.9,
+      "text": "just like kind of for generalization even"
+    },
+    {
+      "start": 1544.9,
+      "end": 1549.6200000000001,
+      "text": "as the data set of your source increases you still need the regularization"
+    },
+    {
+      "start": 1549.6200000000001,
+      "end": 1551.8600000000001,
+      "text": "here"
+    },
+    {
+      "start": 1552.66,
+      "end": 1556.02,
+      "text": "so another point thing i want to point out is"
+    },
+    {
+      "start": 1556.02,
+      "end": 1560.1000000000001,
+      "text": "this idea of what it means for the shifts to be"
+    },
+    {
+      "start": 1560.1000000000001,
+      "end": 1565.14,
+      "text": "kind of small and in the paper we as require theoretically that"
+    },
+    {
+      "start": 1565.14,
+      "end": 1568.3400000000001,
+      "text": "the shifts be small in watts of saying infinity this"
+    },
+    {
+      "start": 1568.42,
+      "end": 1573.14,
+      "text": "means that each image is kind of shifting by only"
+    },
+    {
+      "start": 1573.14,
+      "end": 1578.02,
+      "text": "you know a kind of small amount and this is"
+    },
+    {
+      "start": 1578.02,
+      "end": 1582.02,
+      "text": "you know satisfied by kind of rotating the MNIST"
+    },
+    {
+      "start": 1582.02,
+      "end": 1585.38,
+      "text": "data set you can think about other cases where"
+    },
+    {
+      "start": 1585.38,
+      "end": 1589.22,
+      "text": "the successive distributions between two domains"
+    },
+    {
+      "start": 1589.22,
+      "end": 1592.74,
+      "text": "is actually kind of small in let's say KL divergence"
+    },
+    {
+      "start": 1592.74,
+      "end": 1596.26,
+      "text": "for example let's say the source domain is all"
+    },
+    {
+      "start": 1596.26,
+      "end": 1598.26,
+      "text": "is well again still a little bit smaller than the source domain but it's still kind of small in let's say KL divergence for example let's say the source domain is all is well again still all is well again still"
+    },
+    {
+      "start": 1598.42,
+      "end": 1601.78,
+      "text": "you know non-rotated digits"
+    },
+    {
+      "start": 1601.78,
+      "end": 1605.94,
+      "text": "and the target is everything is rotated"
+    },
+    {
+      "start": 1605.94,
+      "end": 1607.14,
+      "text": "by 60 degrees"
+    },
+    {
+      "start": 1607.14,
+      "end": 1611.0600000000002,
+      "text": "and you have intermediate domains where you're kind of mixing in"
+    },
+    {
+      "start": 1611.0600000000002,
+      "end": 1614.8200000000002,
+      "text": "more parts of the target so in this case"
+    },
+    {
+      "start": 1614.8200000000002,
+      "end": 1618.1000000000001,
+      "text": "you know graduate self training actually"
+    },
+    {
+      "start": 1618.1000000000001,
+      "end": 1621.6200000000001,
+      "text": "doesn't work because you're not really learning"
+    },
+    {
+      "start": 1621.6200000000001,
+      "end": 1625.38,
+      "text": "anything about how to you know"
+    },
+    {
+      "start": 1625.38,
+      "end": 1628.3400000000001,
+      "text": "you're basically exposing the model to the target immediately"
+    },
+    {
+      "start": 1628.8200000000002,
+      "end": 1632.66,
+      "text": "and you're not really learning anything about how to classify"
+    },
+    {
+      "start": 1632.66,
+      "end": 1634.8200000000002,
+      "text": "them and you're just going to kind of get the target wrong"
+    },
+    {
+      "start": 1637.54,
+      "end": 1640.8200000000002,
+      "text": "so the summary of this section so far is that"
+    },
+    {
+      "start": 1640.8200000000002,
+      "end": 1644.3400000000001,
+      "text": "gradual shifts and self-training is a really"
+    },
+    {
+      "start": 1644.3400000000001,
+      "end": 1648.1000000000001,
+      "text": "interesting tool because you know one of the main challenges behind domain"
+    },
+    {
+      "start": 1648.1000000000001,
+      "end": 1651.6200000000001,
+      "text": "adaptation is how can you extrapolate to distributions"
+    },
+    {
+      "start": 1651.6200000000001,
+      "end": 1655.0600000000002,
+      "text": "which are very different from your training distribution"
+    },
+    {
+      "start": 1655.0600000000002,
+      "end": 1657.8600000000001,
+      "text": "and generally this is impossible in general"
+    },
+    {
+      "start": 1658.5000000000002,
+      "end": 1664.66,
+      "text": "gradual domain adaptation gives you additional structure whereas that you"
+    },
+    {
+      "start": 1664.66,
+      "end": 1667.14,
+      "text": "can actually go far but we're going to help you"
+    },
+    {
+      "start": 1667.14,
+      "end": 1671.7800000000002,
+      "text": "along the way by tracking the changes and self-training we show that with a"
+    },
+    {
+      "start": 1671.7800000000002,
+      "end": 1676.5000000000002,
+      "text": "simple technique that allows you to do that so you can think"
+    },
+    {
+      "start": 1676.5000000000002,
+      "end": 1679.46,
+      "text": "about this self-graduates just over time it's"
+    },
+    {
+      "start": 1679.46,
+      "end": 1683.38,
+      "text": "essentially leveraging the smoothness over the distribution changes of all on"
+    },
+    {
+      "start": 1683.38,
+      "end": 1687.22,
+      "text": "some axis but it's interesting to think about other types of layers and the way"
+    },
+    {
+      "start": 1687.22,
+      "end": 1691.7,
+      "text": "other types of smoothness and other variables. There's nothing that says that this has to be"
+    },
+    {
+      "start": 1691.7,
+      "end": 1697.06,
+      "text": "time. What about kind of distribution changes in space? That seems very natural or other kind of"
+    },
+    {
+      "start": 1697.06,
+      "end": 1700.74,
+      "text": "variables. So this is something that would be interesting to explore in future work."
+    },
+    {
+      "start": 1702.74,
+      "end": 1708.98,
+      "text": "So that concludes the basic portion of the talk. We talked about auxiliary information"
+    },
+    {
+      "start": 1708.98,
+      "end": 1716.82,
+      "text": "and gradual shifts, two types of structures that we can exploit to get good unsurprised"
+    },
+    {
+      "start": 1716.82,
+      "end": 1724.1799999999998,
+      "text": "domain adaptation results. So I'll just end with some final remarks. So domain adaptation,"
+    },
+    {
+      "start": 1724.1799999999998,
+      "end": 1730.98,
+      "text": "as we've seen in this workshop, is a really important problem. But it's almost too broad."
+    },
+    {
+      "start": 1732.82,
+      "end": 1737.78,
+      "text": "And I would argue that we kind of need to start developing a language of looking at different"
+    },
+    {
+      "start": 1737.78,
+      "end": 1743.54,
+      "text": "types of structures. It's not enough to say that OOD. OOD doesn't really mean anything,"
+    },
+    {
+      "start": 1743.54,
+      "end": 1746.58,
+      "text": "because it's the complement of ID."
+    },
+    {
+      "start": 1747.1399999999999,
+      "end": 1750.98,
+      "text": "In this talk, we looked at auxiliary information,"
+    },
+    {
+      "start": 1750.98,
+      "end": 1754.74,
+      "text": "gradual shifts. There's other things to explore, like conditional independence."
+    },
+    {
+      "start": 1758.1,
+      "end": 1762.98,
+      "text": "And then the second point I want to make is we leverage self-training quite a bit here."
+    },
+    {
+      "start": 1762.98,
+      "end": 1768.02,
+      "text": "Self-training, I would put it as old technology that just kind of works. It's like a shovel."
+    },
+    {
+      "start": 1769.9399999999998,
+      "end": 1776.58,
+      "text": "You're shoveling predictive power from the source domain to the target domain or transferring power"
+    },
+    {
+      "start": 1776.58,
+      "end": 1782.02,
+      "text": "between two models in general. And I want to kind of say that self-training intrinsically"
+    },
+    {
+      "start": 1782.02,
+      "end": 1790.1,
+      "text": "should be a useful resource for robustness. Because if you think about ID versus OOD,"
+    },
+    {
+      "start": 1791.22,
+      "end": 1798.26,
+      "text": "in general, you have different models that work for ID versus OOD. And you often are in the"
+    },
+    {
+      "start": 1798.26,
+      "end": 1804.4199999999998,
+      "text": "situation where you need to kind of transfer predictive power. For example, in the auxiliary"
+    },
+    {
+      "start": 1804.4199999999998,
+      "end": 1806.5,
+      "text": "information, we're able to transfer predictive power to the target domain. So we're able to try to"
+    },
+    {
+      "start": 1806.5,
+      "end": 1811.54,
+      "text": "transfer the predictive power from the aux inputs model, which uses auxiliary information as"
+    },
+    {
+      "start": 1811.54,
+      "end": 1816.66,
+      "text": "inputs, to the aux outputs model, which uses auxiliary information as outputs."
+    },
+    {
+      "start": 1820.18,
+      "end": 1822.58,
+      "text": "So that's it. Thanks for your attention."
+    },
+    {
+      "start": 1827.94,
+      "end": 1834.42,
+      "text": "So now we are entering the Q&A section with Percy Lam, the assistant professor at Stanford."
+    },
+    {
+      "start": 1836.5,
+      "end": 1841.46,
+      "text": "I guess I'll come up with the first one, my question. So Percy, I really like your talk on"
+    },
+    {
+      "start": 1841.46,
+      "end": 1848.18,
+      "text": "the self-training and different methods. So in general, for building robust ML models,"
+    },
+    {
+      "start": 1848.18,
+      "end": 1852.02,
+      "text": "what do you think are the major challenges that we're facing?"
+    },
+    {
+      "start": 1854.26,
+      "end": 1862.66,
+      "text": "Yeah, that's a pretty broad and good question. I mean, I think there's a few challenges"
+    },
+    {
+      "start": 1862.66,
+      "end": 1866.26,
+      "text": "when thinking about robustness. Maybe one kind of"
+    },
+    {
+      "start": 1866.5,
+      "end": 1873.14,
+      "text": "technical thing is that robustness is very broad. So I think we should be trying to develop"
+    },
+    {
+      "start": 1873.14,
+      "end": 1879.22,
+      "text": "a better language to think about forms of robustness, whether it be small perturbations"
+    },
+    {
+      "start": 1879.22,
+      "end": 1885.06,
+      "text": "or is it shifts in distribution. And even if you look at distribution shifts, I feel like we"
+    },
+    {
+      "start": 1885.06,
+      "end": 1891.38,
+      "text": "still lack kind of a language for talking about the types. If you think about in domain and then"
+    },
+    {
+      "start": 1891.38,
+      "end": 1896.1,
+      "text": "out of domain, OOD, we talk about OOD as if it's like one thing, but it's the complement of in"
+    },
+    {
+      "start": 1896.1000000000001,
+      "end": 1902.66,
+      "text": "domain, which is kind of pretty unspecified. And you can think about maybe the distance between"
+    },
+    {
+      "start": 1903.46,
+      "end": 1907.0600000000002,
+      "text": "the distributions, but in high dimensions, this doesn't really give you that much."
+    },
+    {
+      "start": 1909.6200000000001,
+      "end": 1916.5800000000002,
+      "text": "And then I guess maybe another challenge is more on the practical side. A lot of what we've been"
+    },
+    {
+      "start": 1916.5800000000002,
+      "end": 1924.7400000000002,
+      "text": "thinking about lately is what are the quote unquote realistic shifts that one would see in the wild."
+    },
+    {
+      "start": 1926.5800000000002,
+      "end": 1932.66,
+      "text": "And we had this recent data set called Wilds that where we sought to talk to a bunch of domain"
+    },
+    {
+      "start": 1932.66,
+      "end": 1940.3400000000001,
+      "text": "experts and look at the cases that come up, generalization between hospitals or generalization"
+    },
+    {
+      "start": 1940.3400000000001,
+      "end": 1949.0600000000002,
+      "text": "between camera traps. I think in a lot of the work focused on kind of challenge problems,"
+    },
+    {
+      "start": 1949.0600000000002,
+      "end": 1953.7,
+      "text": "for example, going from photographs to sketches, for example, which I think is"
+    },
+    {
+      "start": 1953.7,
+      "end": 1961.8600000000001,
+      "text": "interesting and hard, but in the real world, does that kind of thing come up or not?"
+    },
+    {
+      "start": 1963.54,
+      "end": 1970.74,
+      "text": "And then I guess maybe a third thing I'll mention is more on the solution side. It seems that"
+    },
+    {
+      "start": 1972.5,
+      "end": 1978.5800000000002,
+      "text": "using unlabeled data or data in general seems to be a very powerful way to get at robustness."
+    },
+    {
+      "start": 1979.7,
+      "end": 1982.74,
+      "text": "Any sort of data where you"
+    },
+    {
+      "start": 1983.7,
+      "end": 1989.6200000000001,
+      "text": "presumably don't have a label data, otherwise you would have used it. So pre-training and"
+    },
+    {
+      "start": 1989.6200000000001,
+      "end": 1995.22,
+      "text": "self-training are primary ways that you can try to leverage unlabeled data. And I think"
+    },
+    {
+      "start": 1997.14,
+      "end": 2002.3400000000001,
+      "text": "figuring out the best way to leverage the data is still a kind of open problem."
+    },
+    {
+      "start": 2003.6200000000001,
+      "end": 2009.94,
+      "text": "I see. Thanks a lot for the insights. So here we get a question from the audience. I'll read it out."
+    },
+    {
+      "start": 2010.5800000000002,
+      "end": 2013.54,
+      "text": "So the person asks, when you try to leverage unlabeled data, what is the best way to leverage the data?"
+    },
+    {
+      "start": 2013.54,
+      "end": 2020.18,
+      "text": "So if you train aux outputs, you initialize from pre-trained. Instead of merely initializing,"
+    },
+    {
+      "start": 2020.18,
+      "end": 2025.54,
+      "text": "can you keep training with the original data around? Similarly, for the final model,"
+    },
+    {
+      "start": 2025.54,
+      "end": 2033.06,
+      "text": "you initialize from the aux out model. Again, what if you train a model back propagating all"
+    },
+    {
+      "start": 2033.06,
+      "end": 2037.78,
+      "text": "the way through into the aux model? So more than just initializing."
+    },
+    {
+      "start": 2039.86,
+      "end": 2043.3799999999999,
+      "text": "Right. So I guess there's maybe two parts. The first,"
+    },
+    {
+      "start": 2043.54,
+      "end": 2054.58,
+      "text": "is when we do aux outs, we have pre-training. So we train inputs to the auxiliary information."
+    },
+    {
+      "start": 2058.82,
+      "end": 2066.18,
+      "text": "So we initialize. And then in practice, we fine tune the model, which is kind of typical."
+    },
+    {
+      "start": 2072.58,
+      "end": 2073.38,
+      "text": "In the theory,"
+    },
+    {
+      "start": 2073.54,
+      "end": 2082.1,
+      "text": "I guess, because the simplified assumption is that even by predicting the auxiliary information,"
+    },
+    {
+      "start": 2082.1,
+      "end": 2091.3,
+      "text": "you already learn the relevant subspace that governs the predictor. You kind of don't really"
+    },
+    {
+      "start": 2091.3,
+      "end": 2099.94,
+      "text": "need to do that. And you can just tune the last layer. And then, I don't know."
+    },
+    {
+      "start": 2099.94,
+      "end": 2101.14,
+      "text": "There was a second part of that."
+    },
+    {
+      "start": 2101.14,
+      "end": 2101.7799999999997,
+      "text": "Yeah."
+    },
+    {
+      "start": 2101.7799999999997,
+      "end": 2102.2799999999997,
+      "text": "Yeah."
+    },
+    {
+      "start": 2102.2799999999997,
+      "end": 2102.7799999999997,
+      "text": "Yeah."
+    },
+    {
+      "start": 2102.78,
+      "end": 2105.0600000000004,
+      "text": "Yeah. Sort of about the final model."
+    },
+    {
+      "start": 2105.0600000000004,
+      "end": 2105.9,
+      "text": "Yeah. Sort of about the final model."
+    },
+    {
+      "start": 2105.9,
+      "end": 2109.98,
+      "text": "Similarly, for the final model, you initialize from the aux out model."
+    },
+    {
+      "start": 2109.98,
+      "end": 2113.5800000000004,
+      "text": "Again, what if you train a model back propagating all the way through"
+    },
+    {
+      "start": 2113.5800000000004,
+      "end": 2116.94,
+      "text": "into the aux model? So it's more than initializing."
+    },
+    {
+      "start": 2119.1000000000004,
+      "end": 2126.38,
+      "text": "When you say back propagating through the aux model, I mean, this is what we do when we have"
+    },
+    {
+      "start": 2126.38,
+      "end": 2132.1400000000003,
+      "text": "the fine tuning, right? The aux model provides the initial parameters, and then we are doing back"
+    },
+    {
+      "start": 2132.14,
+      "end": 2138.7799999999997,
+      "text": "propagation on the pseudo-labeled and the label data set through the entire model."
+    },
+    {
+      "start": 2141.02,
+      "end": 2150.7799999999997,
+      "text": "I see. Yeah. So maybe the person who asked the question can further clarify."
+    },
+    {
+      "start": 2151.74,
+      "end": 2154.06,
+      "text": "But we can go to the next question for now."
+    },
+    {
+      "start": 2155.9,
+      "end": 2161.98,
+      "text": "Have you tried any of these distribution shift techniques on security data, such as network,"
+    },
+    {
+      "start": 2161.98,
+      "end": 2165.98,
+      "text": "network intrusion, malware, spam, and et cetera?"
+    },
+    {
+      "start": 2168.46,
+      "end": 2170.3,
+      "text": "Yeah. So the short answer is no."
+    },
+    {
+      "start": 2172.06,
+      "end": 2182.46,
+      "text": "One maybe thing to point out is that a lot of this work is more on distribution shifts that are,"
+    },
+    {
+      "start": 2182.46,
+      "end": 2187.26,
+      "text": "I guess, more sarcastic as opposed to adversarial. There's a whole line of work that we've done"
+    },
+    {
+      "start": 2188.06,
+      "end": 2190.94,
+      "text": "that addresses more of the adversarial setting."
+    },
+    {
+      "start": 2191.98,
+      "end": 2196.62,
+      "text": "As well as subpopulation shift, where it's kind of worst case over group. So this is all"
+    },
+    {
+      "start": 2197.34,
+      "end": 2203.34,
+      "text": "more average. And I imagine for some of these more security applications,"
+    },
+    {
+      "start": 2203.34,
+      "end": 2212.46,
+      "text": "you want to be modeling the worst case. Now, of course, nailing down worst case over what,"
+    },
+    {
+      "start": 2212.46,
+      "end": 2219.26,
+      "text": "I think, is challenging in general. So I think"
+    },
+    {
+      "start": 2219.26,
+      "end": 2228.3,
+      "text": "that this is a place where it's maybe helpful to think about something in between,"
+    },
+    {
+      "start": 2228.3,
+      "end": 2234.1400000000003,
+      "text": "where you can have something a bit more distributional to tell you,"
+    },
+    {
+      "start": 2234.1400000000003,
+      "end": 2237.82,
+      "text": "here are the general types of distributions that we're interested in generalizing, but"
+    },
+    {
+      "start": 2238.78,
+      "end": 2246.3,
+      "text": "being worst case. Maybe you can have multiple target distributions and worst case over them,"
+    },
+    {
+      "start": 2246.3,
+      "end": 2248.86,
+      "text": "or maybe target distributions and you allow for some"
+    },
+    {
+      "start": 2249.26,
+      "end": 2259.26,
+      "text": "worst-case perturbations. I see. Got you. Another question I have is that, like, it seems like for"
+    },
+    {
+      "start": 2259.26,
+      "end": 2265.42,
+      "text": "a lot of methods, such as this self-training method, use auxiliary data. Like, do you,"
+    },
+    {
+      "start": 2266.46,
+      "end": 2272.2200000000003,
+      "text": "like, in your future work, do you plan to, like, look at data sets with other features? Because"
+    },
+    {
+      "start": 2272.2200000000003,
+      "end": 2278.1400000000003,
+      "text": "the nature of the data set really, like, influences the model design we have. Are you"
+    },
+    {
+      "start": 2278.14,
+      "end": 2283.2599999999998,
+      "text": "interested in, like, looking more at new data sets with interesting features or, like, dive"
+    },
+    {
+      "start": 2283.2599999999998,
+      "end": 2290.94,
+      "text": "deeper into the existing methodology? Yeah. Well, certainly, we want to look at different"
+    },
+    {
+      "start": 2290.94,
+      "end": 2297.1,
+      "text": "types of, you know, data sets more broadly. One thing to point out, which I mentioned at the end"
+    },
+    {
+      "start": 2297.1,
+      "end": 2304.7,
+      "text": "of the first section, is that the auxiliary information is, in some sense, not fundamental,"
+    },
+    {
+      "start": 2304.7,
+      "end": 2308.14,
+      "text": "right? You can always take your input and split it up into something that you"
+    },
+    {
+      "start": 2308.14,
+      "end": 2316.06,
+      "text": "call auxiliary and something that you don't call auxiliary. The key thing with this,"
+    },
+    {
+      "start": 2316.06,
+      "end": 2320.8599999999997,
+      "text": "what we call auxiliary information, is it's intuitively the part of the input that shifts"
+    },
+    {
+      "start": 2320.8599999999997,
+      "end": 2326.7,
+      "text": "more. It's informative in domain, but it shifts out of domain. So, if you could identify"
+    },
+    {
+      "start": 2328.14,
+      "end": 2333.3399999999997,
+      "text": "parts of your input that satisfy this criteria, then you can leverage some of the techniques,"
+    },
+    {
+      "start": 2333.3399999999997,
+      "end": 2338.14,
+      "text": "the in and out algorithm that we've developed. It'll be interesting to figure out how you can"
+    },
+    {
+      "start": 2338.8599999999997,
+      "end": 2346.22,
+      "text": "automatically, you know, learn to split the two, because then this is more of a general domain"
+    },
+    {
+      "start": 2346.22,
+      "end": 2356.94,
+      "text": "adaptation kind of algorithm. I see. Got you. We get a new question. It's about, have you"
+    },
+    {
+      "start": 2357.8199999999997,
+      "end": 2365.66,
+      "text": "experimented with training a generative model on the ID and OOD data, then generating interpolations"
+    },
+    {
+      "start": 2365.66,
+      "end": 2368.06,
+      "text": "in the latent space to artificially"
+    },
+    {
+      "start": 2368.14,
+      "end": 2374.8599999999997,
+      "text": "create a gradually shifting distribution? Yeah. So, I guess this is in reference to"
+    },
+    {
+      "start": 2374.8599999999997,
+      "end": 2380.06,
+      "text": "the work on gradual domain adaptation, where we have a source and target. I mean, in short answer,"
+    },
+    {
+      "start": 2380.06,
+      "end": 2390.3799999999997,
+      "text": "we didn't try that. That seems like an interesting idea. So, this would be, I guess, a situation"
+    },
+    {
+      "start": 2390.3799999999997,
+      "end": 2396.7799999999997,
+      "text": "where you have a source and you have a target, unlabeled data, but they're very far away. So,"
+    },
+    {
+      "start": 2396.78,
+      "end": 2401.6600000000003,
+      "text": "you can try to kind of bridge the two synthetically, as opposed to, in our case,"
+    },
+    {
+      "start": 2401.6600000000003,
+      "end": 2408.7000000000003,
+      "text": "this is kind of the data is kind of naturally occurring. Yeah. It would be interesting to try"
+    },
+    {
+      "start": 2408.7000000000003,
+      "end": 2413.5,
+      "text": "this. I think I'm trying to think on the fly, I haven't thought about this, whether some of"
+    },
+    {
+      "start": 2413.5,
+      "end": 2421.1800000000003,
+      "text": "the assumptions, how they would kind of hold. So, we need to be the case. I mean, the set is"
+    },
+    {
+      "start": 2421.1800000000003,
+      "end": 2425.5,
+      "text": "the assumption that its distribution doesn't change that much. I think that's easy to satisfy."
+    },
+    {
+      "start": 2426.78,
+      "end": 2436.6200000000003,
+      "text": "There's also, I guess, some kind of covariate shift. So, if you classify data with a margin,"
+    },
+    {
+      "start": 2436.6200000000003,
+      "end": 2446.0600000000004,
+      "text": "you want there to be a true classifier that kind of works in a successive domain that is shifting"
+    },
+    {
+      "start": 2446.0600000000004,
+      "end": 2454.2200000000003,
+      "text": "by less than the margin. Yeah. Yeah. I mean, I think it's worth trying. I mean, I can't, maybe"
+    },
+    {
+      "start": 2457.1000000000004,
+      "end": 2469.6600000000003,
+      "text": "think of any kind of immediate problems with this. I mean, it depends on the nature of the"
+    },
+    {
+      "start": 2469.6600000000003,
+      "end": 2474.94,
+      "text": "interpolation. It might go through some weird part of the space. And it's certainly not"
+    },
+    {
+      "start": 2474.94,
+      "end": 2481.6600000000003,
+      "text": "necessarily related to the Y given X part, but it's an intriguing idea."
+    },
+    {
+      "start": 2483.5,
+      "end": 2486.78,
+      "text": "Great. Yeah. Interesting proposal from the audience."
+    },
+    {
+      "start": 2486.78,
+      "end": 2492.94,
+      "text": "And one last question is, for a gradual self-training, one data require,"
+    },
+    {
+      "start": 2492.94,
+      "end": 2497.7400000000002,
+      "text": "this question is a little bit long. I read it fast. So, for gradual training,"
+    },
+    {
+      "start": 2497.7400000000002,
+      "end": 2503.6600000000003,
+      "text": "one data requirement is to have the sequence of data sets where the distribution gradually shifts"
+    },
+    {
+      "start": 2503.6600000000003,
+      "end": 2510.5400000000004,
+      "text": "over some axis, such as over time. However, oftentimes real data is not so well organized."
+    },
+    {
+      "start": 2510.5400000000004,
+      "end": 2516.46,
+      "text": "We may receive a bunch of data, which has shifts along this entire axis, but it's not clearly,"
+    },
+    {
+      "start": 2516.46,
+      "end": 2522.78,
+      "text": "organized into gradual shifts, such as not all jumbled together. Would it still be possible to"
+    },
+    {
+      "start": 2522.78,
+      "end": 2529.7400000000002,
+      "text": "do a form of gradual self-learning in this type of messier setting? Or is this inherently impossible"
+    },
+    {
+      "start": 2529.7400000000002,
+      "end": 2535.34,
+      "text": "without the organizational structure? This is related in some sense to the previous question"
+    },
+    {
+      "start": 2535.34,
+      "end": 2541.66,
+      "text": "form, like the previous ID and OOD question. Yeah, that's a good question."
+    },
+    {
+      "start": 2543.42,
+      "end": 2546.2200000000003,
+      "text": "I think in our current setting, we kind of assume that,"
+    },
+    {
+      "start": 2546.46,
+      "end": 2551.66,
+      "text": "time is somehow governing the distance of the shift, but that may not be the case. The only"
+    },
+    {
+      "start": 2551.66,
+      "end": 2559.18,
+      "text": "thing we need is a sequence of distributions whose, I guess, the discrepancy doesn't vary too"
+    },
+    {
+      "start": 2559.18,
+      "end": 2564.62,
+      "text": "much. So, if you have periods where nothing is happening, but you're getting data in spurts,"
+    },
+    {
+      "start": 2564.62,
+      "end": 2568.54,
+      "text": "but across that spurt, the distributions are still close, then that's fine."
+    },
+    {
+      "start": 2569.42,
+      "end": 2573.7400000000002,
+      "text": "I also think that it's, there's nothing sacred with time."
+    },
+    {
+      "start": 2573.7400000000002,
+      "end": 2579.42,
+      "text": "You know, we thought briefly about a kind of spatial shifts"
+    },
+    {
+      "start": 2579.42,
+      "end": 2586.0600000000004,
+      "text": "as well, or any other variable where you can think about varying the distribution,"
+    },
+    {
+      "start": 2586.0600000000004,
+      "end": 2590.38,
+      "text": "like the distribution changes gradually from one place to another."
+    },
+    {
+      "start": 2591.34,
+      "end": 2595.42,
+      "text": "Also, the converse of the question is true. Like in space, there are cases where,"
+    },
+    {
+      "start": 2596.38,
+      "end": 2601.82,
+      "text": "let's say you go over, you hit the ocean, and then all of a sudden, obviously your distribution is"
+    },
+    {
+      "start": 2601.82,
+      "end": 2603.0200000000004,
+      "text": "changing. You know, you're getting a little bit of, like, you know, this, this kind of change."
+    },
+    {
+      "start": 2603.0200000000004,
+      "end": 2603.34,
+      "text": "And then, like, you know, like, you're getting a little bit of, like, you're getting a little bit of,"
+    },
+    {
+      "start": 2603.34,
+      "end": 2603.7200000000003,
+      "text": "you know, you're getting a little bit of, like, you're getting a little bit of change. And so, you know,"
+    },
+    {
+      "start": 2603.7400000000002,
+      "end": 2611.82,
+      "text": "wildly. So in that case, I mean, the gradual domain shift wouldn't work. You can't gradually"
+    },
+    {
+      "start": 2611.82,
+      "end": 2619.6600000000003,
+      "text": "shift from Africa to North America by crossing the Atlantic. But in those cases, we probably"
+    },
+    {
+      "start": 2619.6600000000003,
+      "end": 2627.0200000000004,
+      "text": "need to be a bit more creative about how we define this kind of latent space in which we"
+    },
+    {
+      "start": 2627.02,
+      "end": 2633.98,
+      "text": "prioritize the distributions. Maybe like looking at kind of geography and like straight line"
+    },
+    {
+      "start": 2633.98,
+      "end": 2640.78,
+      "text": "distance is not really the right. So I guess this relates to maybe some sort of kind of metric"
+    },
+    {
+      "start": 2640.78,
+      "end": 2649.66,
+      "text": "learning stuff. And same with time. Maybe there's, if you can add other variables which do are"
+    },
+    {
+      "start": 2649.66,
+      "end": 2656.86,
+      "text": "similar, maybe you have data that coming from, also there's a space or users, specific data,"
+    },
+    {
+      "start": 2656.86,
+      "end": 2656.94,
+      "text": "there's data coming from, also there's space or users, specific data, there's data coming from,"
+    },
+    {
+      "start": 2656.94,
+      "end": 2657.02,
+      "text": "also there's space or users, specific data, there's data coming from, also there's space or users,"
+    },
+    {
+      "start": 2657.02,
+      "end": 2664.62,
+      "text": "and you can perhaps kind of use those as bridges rather than just relying on time."
+    },
+    {
+      "start": 2664.62,
+      "end": 2671.02,
+      "text": "Got you. Thanks a lot. And now it's a good time to wrap up."
+    },
+    {
+      "start": 2671.02,
+      "end": 2686.94,
+      "text": "Thanks, Percy, again for the Q&A section."
+    }
+  ],
+  "segment_count": 654
+}

@@ -2,6 +2,9 @@
 
 - URL: local:/home/jinlin/projects/Research_Collector/youtube/video/iclr_2026_ebt_yannic/source.mp4
 - Slide count: `77`
+- Canonical curated set: [curated/index.md](curated/index.md)
+
+Use `curated/` for notes and study-pack reading. The root-level `slide-*.jpg` files are retained as the raw extraction archive.
 
 ## Frames
 

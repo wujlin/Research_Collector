@@ -1,0 +1,326 @@
+JEPA has been one of the most audacious AI concepts that you either first heard about it
+through how Jan LeCun said that LLMs are doomed, or through him flaming people online about JEPA.
+But if you don't really understand it, I don't really blame you. I think it is one of the most
+convoluted research topics that's just impossible to follow. Like for LLMs, we predict tokens,
+for image generation, we predict a less noisy image, but for JEPA, we are literally predicting
+a high-dimensional representation in a learned latent space, and just trying to explain its goal
+is already too abstract in itself. To top that off, just imagine someone trying to explain the
+progress of JEPA. Oh, okay, so JEPA kind of went from using exponential moving average target
+networks to isotropic gaussian embedding construction average target networks to also
+What am I even saying? I probably just spammed a lot of words that probably doesn't even mean
+anything. So in today's video, I'll be breaking down the essence of JEPA, the current state of it,
+all without instantly drowning you in a bunch of technical terms. And before we dive into it,
+if you're running ClockCode, Codex, or OpenCode in 2026,
+you have probably hit the same wall where the agent is strong, but the terminal experience
+could still somehow be better. If you find yourself juggling sessions, losing track of
+what's running where, or constantly copy-pasting context, it may be worth it for you to look into
+Warp. They're rolling out features that turn it into a more cohesive, agentic-focused development
+environment for the CLI tools you already use. Warp now has universal agent support, so you can
+run ClockCode, Codex, OpenCode, and more side-by-side in one setup, and actually manage them
+like vertical tabs that lets you monitor sessions with rich context at a glance so you're not
+constantly clicking around just to remember which agent is doing what, along with directory view,
+git branch, and conversation statuses. And the CLI agent toolbar makes your workflow even more
+agent-native. You get the controls you actually need without leaving the terminal, like attaching
+context, jumping into files, and reviewing what changed. On top of that, for code review, you can
+leave inline comments and send that feedback straight into the running agent so it iterates
+without you bouncing between tools. Because you shouldn't have to rethink your setup every time
+you switch harnesses. So if you're ready to upgrade the place you run your coding agent, just like the
+700,000 other developers running 1 million ClockCode and Codex sessions in Warp, check them
+out using the link down in the description, and thank you Warp for sponsoring this video.
+Anyways, to comprehend what JEPA, short for Joint Embedding Predictive Architecture, is doing,
+think of it like how LLM is predicting the next token, but JEPA is just predicting this thing
+called a view. A view is a transformer.
+Masking or partial observation of an input that preserves the underlying semantic state
+while hiding or removing some information. So let's say there's a cat sitting on a couch.
+You could observe an image, the left half of the image, the right half of the image,
+a zoomed in crop, a masked version of the image, a different camera angle of the same scene,
+a video, a different frame from the same video. All of these I just mentioned are views. Even
+though they are different sensory observations, their representations correspond approximately
+to the same underlying scenario. So if you're going to be doing a video, you're going to have to
+line scene or world state. So the idea of a cat sitting on a couch can be captured in a high
+dimensional latent space with all kinds of sentences or images that show this idea will
+point to that spot in the latent space. Then in JEPA's training, one view is used as the
+context and another as the target. So instead of learning by reconstructing pixels or predicting
+a token, the model encodes both into latent embeddings and learns to predict the target
+embedding from the context embedding. JEPA's objective would then naturally encourage
+capturing what is shared and predictable across views while discarding unpredictable or irrelevant
+details. So theoretically, the benefits of being able to think in higher dimensions like the latent
+space should provide better incentives for the model to learn concepts or semantics clearly
+and consistently. As the problem of directly working with pixels or tokens is that the
+objective is full of entropy. For example, text variations that does not have a right answer
+while all meaning roughly the same thing and lighting changes of background within an image
+that doesn't even matter.
+But the reconstruction error will always be full of noise. This results in the actual
+model having the need to accommodate for everything, even for things that are fundamentally unpredictable.
+But when you compress these views into a latent space, the target embedding will naturally
+remove all the noises and only contain this compressed abstraction and semantics. So when
+the predictor minimizes distance to the target embedding, it is encouraged to model only
+the stable structure between views and the noise will not interfere, which is the culprit
+that makes the model predictions harder than it should.
+Although apparently scale solves the problem a little bit, more and more models are hitting
+the 1 trillion parameter number.
+But anyways, this shifts the learning focus for the model from What exactly are these
+pixels to what underlying factors explain both observations? This doesn't mean the
+model would not be able to see pixels or texts.
+But before that, the typical jetpaw learning setup contains three components-
+A context encoder that takes the current context view like visible image blocks or text, and
+produces an embedding.
+that takes the target view like mask blocks or a future segment and produces the target embedding.
+This embedding represents what actually happens next or what is missing, but it is still within
+the same representation space. And lastly, a predictor component that bridges the two states,
+which is a representation of the current situation and a representation of the future or missing
+part. What this component does is that it takes the context embedding and tries to produce the
+target embedding, basically predicting the representation of the next or the missing
+observation. So there is no pixel reconstruction loss. There is no token cross entropy. The only
+objective is alignment in representation space. And over time, this encourages the encoder to
+represent object position, spatial configuration, motion dynamics, scene structure, physical
+relationships, and so much more. Rather than just surface level statistics that are brute force to
+learn semantic relations at scale. Then at inference, the target encoder is typically
+not needed. What is then generally used is the trained context encoder,
+which now serves as a feature extractor or latent state estimator. And there are multiple ways to
+apply JEPA. One is representation extraction, where you feed an input like an image, video clip,
+etc. into the context encoder and obtain an embedding. And that embedding can be used for
+classification, retrieval, similarity search, or even downstream supervised fine tuning. So in this
+setting, JEPA behaves like a foundational representation model. Two is latent prediction
+for world modeling, where if the predictor is incorporated, the model can take a current state
+embedding and apply it to the context encoder. And that embedding can be used for classification,
+and predict the embedding of a future state. In video JEPA, for instance, this enables forecasting
+in latent space rather than in pixel space. And instead of predicting future frames, it predicts
+future latent states. This is computationally cheaper and focuses on semantic dynamics rather
+than texture. So you would save so much more money not needing to generate the extra visual tokens.
+Three is planning in latent space, where the model can condition predictions based on actions,
+such as in robotics. So now you basically have two inputs. One is the context encoder,
+which observes the current scene and produces an embedding that represents the current latent
+state of the environment. And two is an embedding of the action being taken or considered by the
+robot. The predictor then takes the latent state together with the action embedding and predicts
+the embedding of future states. The key here is that no pixels are generated during planning,
+which means the system is essentially imagining possible outcomes internally before acting.
+So remember how in that video model where I talked about how AI video models might be used for world
+simulation? Well, that's not the case. So let's talk about how AI video models might be used for
+world simulation. Well, with JIPA, you do not need to materialize anything into pixel space to
+simulate the world. So you're basically saving the compute for generating the pixels. So instead of
+generating the full video frames to predict the future, JIPA performs the simulation directly in
+latent space where action sequences and state transitions are represented as embeddings.
+And because the computations happen in representation space rather than pixel space,
+this process is significantly more efficient while still capturing the underlying dynamics
+of the environment.
+But
+that is if JIPA works, because as great as JIPA sounds, compressing and operating in latent space
+is still much harder as the model has learned a representation that actually contains the right
+information about the world. If the embedding misses important variables like object position,
+velocity, or interaction constraints, then predicting future embeddings becomes meaningless.
+So the latent space must be consistent and predictable. If two very similar but slightly
+different states produce embeddings that are way too far away, then the predictor would not be
+able to learn the stable dynamics. On top of that, for more complicated JIPA applications,
+the latent space must be structured in a way that supports planning. The predictor needs
+to learn smooth transitions between states through conditional actions so the changes
+in the latent state would make sense. So if the geometry of the embedding space is poorly
+structured, then the predicted trajectories would drift, accumulate errors, or stop corresponding
+to real-world outcomes. But the last and most important thing for JIPA is the representation
+must be informative without collapsing.
+So if you're able to learn the stable dynamics, then you're able to learn the stable dynamics.
+Since JEPA does not reconstruct pixels or have any inherent noise,
+nothing stops the encoder from outputting the same vector for every input,
+especially when there are two encoders used for JEPA, the context and the target encoder.
+So the model could discover a very easy shortcut.
+Instead of learning meaningful representations of the scene,
+both encoders could simply output the same constant embedding for everything.
+A cat, a car, or a building would all produce the exact same embedding.
+And now, the predictor's job becomes very easy.
+Because no matter what the context is, it would just output the same constant embedding,
+which will always match the target embedding.
+So the training loss becomes extremely small, but the model has learned
+absolutely nothing about the world, and everything looks identical in the latent space.
+This failure mode is called representation collapse,
+where the embedding space collapses into a single point with no useful information.
+But since it'll keep the loss very low, this would happen really easily.
+The first practical solution researchers used was updating the target encoder
+with something called JEPA.
+Or EMA, short for Exponential Moving Average.
+So instead of letting both encoders learn freely and can instantly copy each other's behavior,
+the target encoder is updated very slowly.
+If the context encoder suddenly changes its representation,
+the target encoder does not immediately follow.
+It only moves gradually over time, acting like a delayed version of the context encoder.
+You can think of it like chasing a slowly moving target.
+And because the target encoder changes slowly,
+the system cannot instantly collapse to a constant embedding.
+The predictor has to keep
+adapting to a representation that keeps drifting forward.
+So in practice, only the context encoder is trained directly with gradients,
+while the target encoder is updated as a slow-moving average of the context encoder's weights.
+So they basically will never match,
+which makes collapsing much harder and stabilizes training easily.
+So in the early experiments of JEPA, like iJEPA,
+where JEPA is applied to image generations,
+and vJEPA, where JEPA is applied to video generation,
+or even DYNO, which is a self-supervised vision method for learning image representations
+without labels, they are all utilizing EMA.
+However, EMA is ultimately a training trick rather than a principled objective,
+as there does not exist a loss function for EMA,
+which prevents it from being minimized directly.
+It is also heuristic based because stability depends on EMA schedules,
+weight sharing, and training dynamics, which can be fragile and require manual tuning.
+This is why later research still explored other methods for preventing representation collapse.
+With one major direction known as the InfoMax approach,
+which tries to ensure the representation itself contains information uniquely about the input.
+The idea of InfoMax first appeared in 1995 from Bell and Savnovsky,
+and the main idea is simple.
+A good representation should retain as much information about the input as possible.
+In other words, if you look at the representation produced by the model,
+you should still be able to tell something meaningful about what the original input was.
+The representation should not be throwing away the important signals
+and collapse everything into something trivial.
+Bell and Savnovsky,
+they formalized this by proposing that learning systems should maximize
+the mutual information between the input and the representation,
+which simply means the representation should preserve as much useful signal from the input as possible.
+This principle later became the foundation for many self-supervised learning methods,
+and it is one of the key ideas that influenced the approaches used in JEPA.
+So instead of stabilizing training with a slow-moving technique like EMA,
+these methods add regularization terms that force the embedding space to remain informative.
+There are two main ways researchers try to use this method.
+The first is sample contrastive methods,
+where the model is encouraged to make embeddings of different samples distinct from one another.
+Methods like SimCLR, published in 2020 long before JEPA,
+work this way by creating two augmented views of the same image
+and training the model to recognize that they come from the same underlying sample.
+The model basically learns to pull the embeddings of those two views closer together
+while pushing embeddings of other images further apart.
+So if two inputs are just different views of the same object,
+their embeddings should lend closer to each other.
+So if two inputs are just different views of the same object, their embeddings should lend closer to each other.
+So if two inputs are just different views of the same object, their embeddings should lend closer to each other.
+But if they come from different images, the model should place them far apart.
+Over time, this forces the embedding space to organize itself
+so that similar things cluster together while unrelated samples spread apart,
+which helps prevent the representation from collapsing into a single point.
+But the downside of this approach is that it relies heavily on negative samples.
+So to properly separate representations,
+the model needs a large batch of other images to push away from.
+This means you often need very large batch sizes or memory banks,
+which makes training computationally
+expensive and harder to scale.
+So a second approach is dimension contrastive methods,
+which focus on the structure of the embedding itself
+rather than comparing it to different samples.
+Instead of pushing different samples apart,
+these methods try to ensure that each dimension of the representation
+captures different information about the input.
+You can think of it like making each coordinate in the representation
+describing a different aspect of the input,
+such as shape, position, texture, or motion.
+To encourage this, these methods add regularization terms to the loss that penalize,
+redundancy between dimensions, basically enforcing diversity across dimensions,
+resulting in the embedding space remaining rich and informative
+without needing to explicitly push different samples apart.
+So techniques like Barlow-Twins and VIC-REC implement this by measuring
+the correlation between embedding dimensions and penalizing the model
+if multiple dimensions start carrying the same signal.
+And this was already a big step forward because the model no longer needed
+large batches of negative samples to achieve the contrastive method.
+But these methods still relied on
+multiple loss terms and carefully balanced hyperparameters
+to keep the representation stable.
+And this is the latest bet that Yann LeCun is making, called Legerpa comes in.
+Released in November 2025, instead of simply de-correlating dimensions,
+Legerpa takes a more direct approach where it constrains the overall geometry
+of the embedding space itself.
+It specifically encourages the embeddings to follow an isotropic Gaussian distribution,
+meaning the representation space spreads information evenly across dimensions,
+so no direction can be changed.
+And the model also allows the embedding space to be
+a point-based distribution, so that the direction collapses or dominates.
+To not go too crazy on the math, imagine the embedding space as a cloud of points
+where every input becomes a point in this space, so if the model collapses,
+all points basically fall into one point, or it could also collapse into a thin line
+or a flat sheet because many dimensions stop carrying information.
+So what Legerpa does is it encourages the embeddings to follow an isotropic
+Gaussian distribution, which means the point cloud should look like a round ball
+and be similar across all dimensions.
+And interestingly, this simple geometric constraint turns out to work surprisingly well in practice.
+In their experiments, Legerpa was able to train GIPA-style models without relying on EMA
+while still avoiding collapse and learning strong representations.
+Despite using a simpler objective, it achieves competitive or better performance
+compared to earlier self-supervised methods, VICReg, Barlow twins, and SimCLR
+on standard vision benchmarks, even achieving accuracy levels similar to Dino
+on ImageNet, which is state-of-the-art.
+So if GIPA is this good, why is the LLM field not using it?
+Well, GIPA works best when the data contains a lot of unpredictable low-level detail
+that doesn't really matter a lot, which images and videos are full of.
+Trying to predict those details directly is pretty wasteful, so like I mentioned earlier,
+GIPA solved this by predicting abstract representations instead of pixels.
+But language is very different.
+Text is already a symbolic and compressed representation of meaning.
+Words are discrete tokens,
+that already remove most of the low-level noise found in sensory data.
+So when an LLM predicts the next token, it is already operating at a fairly high semantic level.
+In other words, the problem GIPA is designed to solve,
+which is removing unpredictable sensory noise from prediction,
+does not exist as strongly in text.
+And of course, autoregressive training works perfectly already.
+It's an objective that can provide high signal feedback to the model.
+And GIPA is probably not going to be a better design to predict text,
+especially when languages have more constraints,
+like word order, which is already implicitly defined in next token prediction.
+A really prominent direction of GIPA I've been seeing, though,
+is using it for medical imaging.
+There's this research called Echo GIPA,
+which applies the GIPA framework to echocardiography videos,
+which are basically ultrasound videos of the heart.
+But why is it potentially a perfect fit for medical imaging?
+Well, this is because many medical imaging modalities
+contain a huge amount of noise and artifact.
+For example, ultrasound images are full of things like speckle noise, sensor artifacts,
+inconsistent probe angles, machine-specific distortions, and more.
+So if a model is trained to reconstruct pixels,
+it ends up wasting a lot of capacity trying to model these random patterns
+that are not clinically meaningful.
+And doctors do not really care about the exact pixel pattern of the ultrasound image.
+What they care about are stable anatomical signals,
+such as the size of the heart chambers, how the walls move during each beat,
+how valves open and close, which is the type of information GIPA tends to learn.
+So as GIPA encodes and predicts representations instead of pixels,
+predictable noise cannot be reliably predicted from the context.
+The model is therefore pushed to focus on the consistent structures
+and dynamics of the anatomy instead.
+So in Echo GIPA, the model learns to predict representations
+of future cardiac motion from earlier frames,
+which encourages it to encode things like heart geometry and motion patterns.
+Then instead of memorizing noisy ultrasound textures,
+the representation becomes so much more aligned
+with the actual physiological structure of the heart,
+which makes it useful for downstream tasks like diagnosis or measurement.
+This is why I think GIPA has the potential
+to become the dominant method in the medical field.
+So when Yann LeCun said LLM is doomed, I low-key took it out of context.
+LLM is only meant to work with languages
+due to how it is a symbolic system with a lot less noise.
+So if you want to truly scale beyond language,
+especially for research on natural or real-life data, he's got a point.
+So yeah, that's it for this video.
+And if you like how I explained the AI concepts today,
+you should definitely check out my latest project, IntuitiveAI.academy,
+where it contains an intuitive explanation
+of modern LLMs from the ground up.
+Ranging from LLM architectures, MOE, LoRa,
+to our latest chapters, Reinforcement Learning,
+where we cover how RL works and how it interacts with LLMs,
+literally published yesterday.
+With how challenging RL can be,
+we have also built interactive visualizations
+to help you better understand its logic.
+This website is a series where I break down AI topics intuitively
+because I genuinely think anyone could understand them
+no matter how difficult it may seem.
+So for those wanting to get into the technical side of AI or LLMs,
+this should be the perfect place for you to dive into the technical parts
+without being intimidated by crazy-looking maths.
+And right now, the early bird discount is nearly over,
+but you can still use the limited code EARLY for 40% off a yearly plan.
+And thank you guys for watching.
+A big shout out to Spamadge, Chris Ledoux, Degan, Robert Zaviasa,
+Marcelo Ferreria, Proof and Inu, DX Research Group, Alex, Midwest Maker,
+and many others that support me through Patreon or YouTube.
+Follow me on Twitter if you haven't, and I'll see you in the next one.
+Subtitles by the Amara.org community

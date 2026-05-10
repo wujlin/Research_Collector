@@ -1,0 +1,3840 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 5.2,
+      "text": "I guess this is, in a way, you're sort of thumping the table saying large language models are not the only AI."
+    },
+    {
+      "start": 5.2,
+      "end": 10.56,
+      "text": "We're going to need our AIs to actually figure things out for themselves and to discover new things that humans don't know."
+    },
+    {
+      "start": 10.56,
+      "end": 16.96,
+      "text": "So if you remove that human feedback aspect, do you still end up with models that are grounded?"
+    },
+    {
+      "start": 16.96,
+      "end": 21.36,
+      "text": "I almost want to argue the opposite. This is sometimes called the bitter lesson of AI."
+    },
+    {
+      "start": 21.36,
+      "end": 27.28,
+      "text": "We really want to believe that all of the knowledge that we've accumulated as humans is really important."
+    },
+    {
+      "start": 27.28,
+      "end": 35.92,
+      "text": "AlphaGo for me is not just teaching me something new technically. Maybe it opens my mind. It changes my mind."
+    },
+    {
+      "start": 40.08,
+      "end": 45.44,
+      "text": "Welcome back to Google DeepMind, the podcast. My guest today is the inimitable David Silver,"
+    },
+    {
+      "start": 45.44,
+      "end": 50.88,
+      "text": "an original DeepMinder, one of the key people behind the phenomenal success of AlphaGo,"
+    },
+    {
+      "start": 50.88,
+      "end": 56.96,
+      "text": "the first program to master the world's most complex board game and achieve superhuman"
+    },
+    {
+      "start": 56.96,
+      "end": 57.120000000000005,
+      "text": "performance. I'm going to be talking to you about the first program to master the world's most complex board game and achieve superhuman performance."
+    },
+    {
+      "start": 57.120000000000005,
+      "end": 58.080000000000005,
+      "text": "I'm going to be talking to you about the first program to master the world's most complex board game and achieve superhuman performance."
+    },
+    {
+      "start": 58.080000000000005,
+      "end": 61.2,
+      "text": "Now, at the end of today's podcast, we have a little extra treat for you,"
+    },
+    {
+      "start": 61.2,
+      "end": 67.76,
+      "text": "a conversation with David and Fan Hui, the first professional Go player to take on the AI."
+    },
+    {
+      "start": 67.76,
+      "end": 73.76,
+      "text": "But now, David has a bold idea about the direction that AI should go in next."
+    },
+    {
+      "start": 73.76,
+      "end": 78.64,
+      "text": "After all of the current buzz and excitement and achievements of multimodal models,"
+    },
+    {
+      "start": 78.64,
+      "end": 86.80000000000001,
+      "text": "David has a plan for the path towards superhuman intelligence, a new phase which he calls the era of experience."
+    },
+    {
+      "start": 86.8,
+      "end": 87.75999999999999,
+      "text": "David has a bold idea about the direction that AI should go in next."
+    },
+    {
+      "start": 87.75999999999999,
+      "end": 88.24,
+      "text": "After all of the current buzz and excitement and achievements of multimodal models,"
+    },
+    {
+      "start": 88.24,
+      "end": 88.32,
+      "text": "David has a bold idea about the direction that AI should go in next."
+    },
+    {
+      "start": 88.32,
+      "end": 92.96,
+      "text": "This is a profound idea and not one without risks."
+    },
+    {
+      "start": 92.96,
+      "end": 94.24,
+      "text": "David, welcome to the podcast."
+    },
+    {
+      "start": 94.8,
+      "end": 97.2,
+      "text": "Hi, it's great to be here. Real pleasure. Thank you."
+    },
+    {
+      "start": 97.2,
+      "end": 103.44,
+      "text": "Okay, so I have spent the weekend with a very enjoyable read of your position paper."
+    },
+    {
+      "start": 104.24,
+      "end": 108.64,
+      "text": "And in it, you are talking about the era of experience."
+    },
+    {
+      "start": 108.64,
+      "end": 110.8,
+      "text": "Summarize for us, what do you mean by that?"
+    },
+    {
+      "start": 110.8,
+      "end": 116.47999999999999,
+      "text": "What I mean is that if you look at where AI has been for the last few years, it's been in the"
+    },
+    {
+      "start": 116.48,
+      "end": 121.52000000000001,
+      "text": "what I call the era of human data, which is that all of these AI methods,"
+    },
+    {
+      "start": 122.16,
+      "end": 126.56,
+      "text": "they're based on one common idea, which is we extract every piece of knowledge"
+    },
+    {
+      "start": 126.56,
+      "end": 129.04,
+      "text": "that humans have, and you kind of feed it into the machine."
+    },
+    {
+      "start": 129.6,
+      "end": 132.16,
+      "text": "And that's one incredibly powerful way to do things."
+    },
+    {
+      "start": 132.72,
+      "end": 134.0,
+      "text": "There's another way to do things."
+    },
+    {
+      "start": 134.0,
+      "end": 137.52,
+      "text": "And this is what's going to lead us into the era of experience,"
+    },
+    {
+      "start": 138.16,
+      "end": 144.32,
+      "text": "which is where the machine actually interacts with the world itself."
+    },
+    {
+      "start": 144.32,
+      "end": 146.08,
+      "text": "And it generates its own experience."
+    },
+    {
+      "start": 146.48,
+      "end": 153.2,
+      "text": "And if you think of that data as fueling the machine, then that will lead to this next"
+    },
+    {
+      "start": 153.84,
+      "end": 156.72,
+      "text": "generation of AI that we can think of as the era of experience."
+    },
+    {
+      "start": 156.72,
+      "end": 159.67999999999998,
+      "text": "I guess this is in a way you're sort of thumping the table saying,"
+    },
+    {
+      "start": 159.67999999999998,
+      "end": 162.39999999999998,
+      "text": "large language models are not the only AI, right?"
+    },
+    {
+      "start": 162.39999999999998,
+      "end": 164.0,
+      "text": "Like there are alternatives."
+    },
+    {
+      "start": 164.0,
+      "end": 166.23999999999998,
+      "text": "There are different ways that we can approach this."
+    },
+    {
+      "start": 166.23999999999998,
+      "end": 171.6,
+      "text": "I think we've really got a lot out in the field of AI of building large language models,"
+    },
+    {
+      "start": 172.32,
+      "end": 173.2,
+      "text": "like how do we do this?"
+    },
+    {
+      "start": 173.2,
+      "end": 173.92,
+      "text": "How do we do this?"
+    },
+    {
+      "start": 173.92,
+      "end": 174.56,
+      "text": "How do we do this?"
+    },
+    {
+      "start": 174.56,
+      "end": 175.28,
+      "text": "How do we do this?"
+    },
+    {
+      "start": 175.28,
+      "end": 175.92,
+      "text": "How do we do this?"
+    },
+    {
+      "start": 176.4,
+      "end": 180.88000000000002,
+      "text": "Harnessing the vast quantity of human, particularly natural language data that's out"
+    },
+    {
+      "start": 180.88000000000002,
+      "end": 185.68,
+      "text": "there and kind of assimilating that all into a machine that knows everything that humans"
+    },
+    {
+      "start": 185.68,
+      "end": 186.48000000000002,
+      "text": "have ever written down."
+    },
+    {
+      "start": 187.36,
+      "end": 189.36,
+      "text": "But at some point, we need to get past that."
+    },
+    {
+      "start": 189.36,
+      "end": 190.4,
+      "text": "We want to go beyond that."
+    },
+    {
+      "start": 190.4,
+      "end": 192.4,
+      "text": "We want to go beyond what humans know."
+    },
+    {
+      "start": 192.4,
+      "end": 194.88000000000002,
+      "text": "And to do that, we're going to need a different type of method."
+    },
+    {
+      "start": 194.88000000000002,
+      "end": 200.00000000000003,
+      "text": "And that type of method will require our AIs to actually figure things out for themselves"
+    },
+    {
+      "start": 200.00000000000003,
+      "end": 202.32000000000002,
+      "text": "and to discover new things that humans don't know."
+    },
+    {
+      "start": 203.12,
+      "end": 205.76000000000002,
+      "text": "And I think that's going to be a whole new era of AI that's going to"
+    },
+    {
+      "start": 205.92000000000002,
+      "end": 208.96,
+      "text": "be incredibly exciting and profound for society."
+    },
+    {
+      "start": 208.96,
+      "end": 214.00000000000003,
+      "text": "Well, okay, then let's talk about some other sort of famous AIs, famous algorithms that"
+    },
+    {
+      "start": 214.00000000000003,
+      "end": 216.56,
+      "text": "have employed different types of methods."
+    },
+    {
+      "start": 216.56,
+      "end": 223.20000000000002,
+      "text": "Most notably, AlphaGo and AlphaZero, which of course, notoriously beat the world's best"
+    },
+    {
+      "start": 223.20000000000002,
+      "end": 226.00000000000003,
+      "text": "Go players about a decade ago, right?"
+    },
+    {
+      "start": 226.00000000000003,
+      "end": 229.92000000000002,
+      "text": "Tell us about the techniques that we use in that and how they differ from large language"
+    },
+    {
+      "start": 229.92000000000002,
+      "end": 231.04000000000002,
+      "text": "models that we see today."
+    },
+    {
+      "start": 231.04000000000002,
+      "end": 235.84000000000003,
+      "text": "AlphaZero in particular is very different from the type of human data."
+    },
+    {
+      "start": 235.84,
+      "end": 238.0,
+      "text": "AlphaZero in particular is very different from the type of human data that we see today."
+    },
+    {
+      "start": 238.0,
+      "end": 238.72,
+      "text": "AlphaZero in particular is very different from the type of human data that we see today."
+    },
+    {
+      "start": 238.72,
+      "end": 241.52,
+      "text": "Because it literally uses no human data."
+    },
+    {
+      "start": 241.52,
+      "end": 243.20000000000002,
+      "text": "That's the zero in AlphaZero."
+    },
+    {
+      "start": 243.20000000000002,
+      "end": 247.52,
+      "text": "So there is literally zero human knowledge that's pre-programmed into this system."
+    },
+    {
+      "start": 247.52,
+      "end": 249.04,
+      "text": "And so what's the alternative?"
+    },
+    {
+      "start": 249.04,
+      "end": 253.84,
+      "text": "How do you learn Go knowledge if you're not copying humans and you don't really know in"
+    },
+    {
+      "start": 253.84,
+      "end": 255.36,
+      "text": "advance the right way to play?"
+    },
+    {
+      "start": 255.92000000000002,
+      "end": 261.2,
+      "text": "Well, the way you go about it is through a form of trial and error learning, where AlphaZero"
+    },
+    {
+      "start": 261.2,
+      "end": 265.84000000000003,
+      "text": "basically played itself millions of games of Go, or chess, or whatever the game is."
+    },
+    {
+      "start": 265.84000000000003,
+      "end": 267.76000000000005,
+      "text": "That it was wanting to play."
+    },
+    {
+      "start": 267.76000000000005,
+      "end": 271.68,
+      "text": "Bit by bit, it figured out, oh, if I play this move, this kind of move in this kind"
+    },
+    {
+      "start": 271.68,
+      "end": 274.48,
+      "text": "of situation, then I end up winning more games."
+    },
+    {
+      "start": 274.48,
+      "end": 279.04,
+      "text": "And then that's a piece of experience that is used to fuel it to become stronger."
+    },
+    {
+      "start": 279.04,
+      "end": 280.96000000000004,
+      "text": "And then it will play a little bit more like that."
+    },
+    {
+      "start": 280.96000000000004,
+      "end": 284.16,
+      "text": "And the next time it will discover something new and say, you know, there'll be some new"
+    },
+    {
+      "start": 284.16,
+      "end": 284.48,
+      "text": "pattern."
+    },
+    {
+      "start": 284.48,
+      "end": 288.56000000000006,
+      "text": "It's like, oh, when I use this particular pattern, I end up winning more games or losing"
+    },
+    {
+      "start": 288.56000000000006,
+      "end": 289.52000000000004,
+      "text": "more games."
+    },
+    {
+      "start": 289.52000000000004,
+      "end": 292.00000000000006,
+      "text": "And that feeds the next generation and so forth."
+    },
+    {
+      "start": 292.00000000000006,
+      "end": 295.44000000000005,
+      "text": "And that learning from experience, this learning from"
+    },
+    {
+      "start": 295.44,
+      "end": 301.04,
+      "text": "the agent's self-generated experience is enough and was enough in AlphaZero to fuel"
+    },
+    {
+      "start": 301.04,
+      "end": 305.92,
+      "text": "its progress all the way from completely random behavior, all the way up to the strongest"
+    },
+    {
+      "start": 305.92,
+      "end": 308.96,
+      "text": "chess and Go playing programs that the world has ever known."
+    },
+    {
+      "start": 309.68,
+      "end": 314.96,
+      "text": "They didn't start off just as like random, random empty boxes though, right?"
+    },
+    {
+      "start": 314.96,
+      "end": 317.44,
+      "text": "That kind of found how to play Go from nothing."
+    },
+    {
+      "start": 317.44,
+      "end": 320.8,
+      "text": "I mean, initially when you were designing your Go algorithms, you'd worked out a way"
+    },
+    {
+      "start": 320.8,
+      "end": 325.36,
+      "text": "to encode Go games and then feed them in as a database, right?"
+    },
+    {
+      "start": 325.36,
+      "end": 326.16,
+      "text": "Yeah, that's right."
+    },
+    {
+      "start": 326.16,
+      "end": 331.44,
+      "text": "So the original version of AlphaGo, the version which famously beat Lisa Dahl in 2016, this"
+    },
+    {
+      "start": 331.44,
+      "end": 336.16,
+      "text": "version of AlphaGo actually did use some human data to start it off."
+    },
+    {
+      "start": 336.16,
+      "end": 344.56,
+      "text": "So we basically fed it a database of human professional moves and it learned, it ingested"
+    },
+    {
+      "start": 344.56,
+      "end": 347.12,
+      "text": "those human moves, and that gave it a starting point."
+    },
+    {
+      "start": 347.12,
+      "end": 350.88,
+      "text": "And then it learned for itself by experience from that point onwards."
+    },
+    {
+      "start": 350.88,
+      "end": 354.96000000000004,
+      "text": "However, what we discovered a year later was that, you know, there's a lot of things that"
+    },
+    {
+      "start": 355.36,
+      "end": 357.44,
+      "text": "the human data wasn't necessary."
+    },
+    {
+      "start": 357.44,
+      "end": 360.08000000000004,
+      "text": "That you could actually throw out the human moves altogether."
+    },
+    {
+      "start": 360.72,
+      "end": 368.88,
+      "text": "And what we showed was that actually the resulting program, not only was it able to recover this"
+    },
+    {
+      "start": 368.88,
+      "end": 374.16,
+      "text": "level of performance, it actually worked better and was able to learn even faster than the"
+    },
+    {
+      "start": 374.16,
+      "end": 377.28000000000003,
+      "text": "original AlphaGo to achieve a much higher level of performance."
+    },
+    {
+      "start": 377.28000000000003,
+      "end": 379.6,
+      "text": "I mean, that is such a strange idea."
+    },
+    {
+      "start": 379.6,
+      "end": 385.16,
+      "text": "It's such a strange idea that you throw away the human data and you find not only that,"
+    },
+    {
+      "start": 385.16,
+      "end": 390.16,
+      "text": "not only was it not necessary, but it was actively limiting performance in a way."
+    },
+    {
+      "start": 390.16,
+      "end": 396.24,
+      "text": "One of the hard lessons for people in AI, this is sometimes called the bitter lesson of AI,"
+    },
+    {
+      "start": 396.8,
+      "end": 402.24,
+      "text": "is that we really want to believe that all of the knowledge that we've accumulated as humans"
+    },
+    {
+      "start": 402.8,
+      "end": 403.84000000000003,
+      "text": "is really important."
+    },
+    {
+      "start": 403.84000000000003,
+      "end": 404.96000000000004,
+      "text": "We really want to believe that."
+    },
+    {
+      "start": 404.96000000000004,
+      "end": 406.88,
+      "text": "And so we feed it into our systems."
+    },
+    {
+      "start": 406.88,
+      "end": 408.40000000000003,
+      "text": "We build it into our algorithms."
+    },
+    {
+      "start": 408.40000000000003,
+      "end": 414.56,
+      "text": "What happens is that actually that makes us design the algorithms in a way which is maybe"
+    },
+    {
+      "start": 415.44,
+      "end": 419.68,
+      "text": "fitted to the human data and is less good at actually learning for itself."
+    },
+    {
+      "start": 420.48,
+      "end": 423.84000000000003,
+      "text": "And what happens is if you throw out the human data, you actually"
+    },
+    {
+      "start": 424.48,
+      "end": 427.36,
+      "text": "spend more effort on how the system can learn for itself."
+    },
+    {
+      "start": 428.08000000000004,
+      "end": 430.96000000000004,
+      "text": "And that's the part which can then learn and learn and learn forever."
+    },
+    {
+      "start": 430.96000000000004,
+      "end": 432.88,
+      "text": "The bitter lesson."
+    },
+    {
+      "start": 432.88,
+      "end": 436.0,
+      "text": "In a way, it's sort of saying, accepting that it's possible that"
+    },
+    {
+      "start": 436.0,
+      "end": 441.28000000000003,
+      "text": "something could PlayGo better than humans can and sort of removing that ceiling in a way."
+    },
+    {
+      "start": 441.28000000000003,
+      "end": 442.08000000000004,
+      "text": "That's right."
+    },
+    {
+      "start": 442.08000000000004,
+      "end": 443.28000000000003,
+      "text": "That, you know, human data."
+    },
+    {
+      "start": 444.32000000000005,
+      "end": 445.12,
+      "text": "It's really helpful."
+    },
+    {
+      "start": 445.12,
+      "end": 446.24,
+      "text": "It's really helpful to get you off the ground."
+    },
+    {
+      "start": 446.8,
+      "end": 449.28000000000003,
+      "text": "But there is a ceiling to everything that humans have done."
+    },
+    {
+      "start": 449.28000000000003,
+      "end": 450.48,
+      "text": "And, you know, we see that in Go."
+    },
+    {
+      "start": 450.48,
+      "end": 453.68,
+      "text": "There was a maximum level of performance that humans have ever achieved."
+    },
+    {
+      "start": 453.68,
+      "end": 455.52,
+      "text": "And we need to break through these ceilings."
+    },
+    {
+      "start": 456.48,
+      "end": 460.4,
+      "text": "And in AlphaZero, we were able to break through that ceiling by building a system that learned"
+    },
+    {
+      "start": 460.4,
+      "end": 464.72,
+      "text": "for itself by self-play and got better and better and better until it blasted through"
+    },
+    {
+      "start": 464.72,
+      "end": 466.64,
+      "text": "that ceiling and went far beyond."
+    },
+    {
+      "start": 466.64,
+      "end": 471.76,
+      "text": "And I think the idea of the era of experience is that we find the methods that allow us"
+    },
+    {
+      "start": 471.76,
+      "end": 473.68,
+      "text": "to break through that ceiling everywhere."
+    },
+    {
+      "start": 473.68,
+      "end": 475.0,
+      "text": "We build AI systems that..."
+    },
+    {
+      "start": 475.52,
+      "end": 482.0,
+      "text": "become superhuman in all of the capacities that humans seem so amazing, but we find the"
+    },
+    {
+      "start": 482.0,
+      "end": 483.12,
+      "text": "way to go beyond that."
+    },
+    {
+      "start": 483.12,
+      "end": 487.36,
+      "text": "Let me just stick with Go for a second, okay, before we get onto the other ways that you"
+    },
+    {
+      "start": 487.36,
+      "end": 492.56,
+      "text": "can get rid of human data and thus improve on human ability."
+    },
+    {
+      "start": 493.44,
+      "end": 495.84000000000003,
+      "text": "Because it sort of sounds a little bit..."
+    },
+    {
+      "start": 495.84000000000003,
+      "end": 499.92,
+      "text": "When you say, let's just get rid of all of the games of Go that humans have played and"
+    },
+    {
+      "start": 499.92,
+      "end": 502.96,
+      "text": "start with nothing, it sort of sounds like a magic trick."
+    },
+    {
+      "start": 503.92,
+      "end": 504.92,
+      "text": "Just tell me a little bit about that."
+    },
+    {
+      "start": 504.92,
+      "end": 508.92,
+      "text": "Just tell me a little bit about the techniques that you're really using there in order to"
+    },
+    {
+      "start": 508.92,
+      "end": 515.32,
+      "text": "get a machine to, as you say, chain together thousands and thousands of different ideas"
+    },
+    {
+      "start": 515.32,
+      "end": 517.96,
+      "text": "in order to be amazing at the game of Go."
+    },
+    {
+      "start": 517.96,
+      "end": 522.12,
+      "text": "Well, the main idea is an approach that we call reinforcement learning."
+    },
+    {
+      "start": 522.12,
+      "end": 527.08,
+      "text": "And the idea of reinforcement learning is you basically give the outcome of your game"
+    },
+    {
+      "start": 527.08,
+      "end": 527.72,
+      "text": "a number."
+    },
+    {
+      "start": 527.72,
+      "end": 531.08,
+      "text": "And we say, you know, plus one if you win and minus one if you lose."
+    },
+    {
+      "start": 531.08,
+      "end": 531.5600000000001,
+      "text": "One point."
+    },
+    {
+      "start": 532.28,
+      "end": 533.16,
+      "text": "Exactly."
+    },
+    {
+      "start": 533.16,
+      "end": 533.5600000000001,
+      "text": "Exactly."
+    },
+    {
+      "start": 534.04,
+      "end": 534.28,
+      "text": "And..."
+    },
+    {
+      "start": 534.28,
+      "end": 534.32,
+      "text": "Yeah."
+    },
+    {
+      "start": 534.32,
+      "end": 534.4,
+      "text": "Exactly."
+    },
+    {
+      "start": 534.4,
+      "end": 534.44,
+      "text": "Exactly."
+    },
+    {
+      "start": 534.44,
+      "end": 534.6800000000001,
+      "text": "Exactly."
+    },
+    {
+      "start": 534.6800000000001,
+      "end": 534.76,
+      "text": "Exactly."
+    },
+    {
+      "start": 534.76,
+      "end": 534.84,
+      "text": "Exactly."
+    },
+    {
+      "start": 534.84,
+      "end": 534.88,
+      "text": "Exactly."
+    },
+    {
+      "start": 534.92,
+      "end": 540.56,
+      "text": "And what we do then with reinforcement learning is we get the system to basically..."
+    },
+    {
+      "start": 540.56,
+      "end": 546.16,
+      "text": "We give it a reward each time it does something right, and we train the system to basically"
+    },
+    {
+      "start": 546.16,
+      "end": 547.04,
+      "text": "reinforce."
+    },
+    {
+      "start": 547.04,
+      "end": 550.3199999999999,
+      "text": "That means do more of the things that get more reward."
+    },
+    {
+      "start": 550.3199999999999,
+      "end": 554.3199999999999,
+      "text": "In terms of, for example, if you've got a neural network like we do in AlphaGo that's"
+    },
+    {
+      "start": 554.3199999999999,
+      "end": 558.7199999999999,
+      "text": "picking the moves, what you want to do is tweak the weights of your neural network a"
+    },
+    {
+      "start": 558.7199999999999,
+      "end": 561.12,
+      "text": "little bit in the direction that gives you more reward."
+    },
+    {
+      "start": 561.92,
+      "end": 564.8399999999999,
+      "text": "And that's the main idea of reinforcement."
+    },
+    {
+      "start": 564.84,
+      "end": 565.52,
+      "text": "And that's the main idea of reinforcement learning."
+    },
+    {
+      "start": 565.52,
+      "end": 566.8000000000001,
+      "text": "A game that goes quite long."
+    },
+    {
+      "start": 567.76,
+      "end": 574.8000000000001,
+      "text": "How do you make it so that you do the right moves in the beginning so that you end up"
+    },
+    {
+      "start": 574.8000000000001,
+      "end": 576.32,
+      "text": "with the right outcome towards the end?"
+    },
+    {
+      "start": 576.32,
+      "end": 581.0400000000001,
+      "text": "Like, how do you distribute, as it were, that one single point that you're offering?"
+    },
+    {
+      "start": 581.0400000000001,
+      "end": 583.76,
+      "text": "How do you work out which bits of the game are important, I suppose?"
+    },
+    {
+      "start": 583.76,
+      "end": 585.12,
+      "text": "So this is a really important problem."
+    },
+    {
+      "start": 585.12,
+      "end": 587.84,
+      "text": "It's called the credit assignment problem."
+    },
+    {
+      "start": 587.84,
+      "end": 593.12,
+      "text": "And the idea is that if you've, yeah, you're absolutely right, that you could have had,"
+    },
+    {
+      "start": 593.12,
+      "end": 594.64,
+      "text": "you know, 100 or 200 or 300 points."
+    },
+    {
+      "start": 594.64,
+      "end": 596.16,
+      "text": "Or 300 different moves."
+    },
+    {
+      "start": 596.16,
+      "end": 600.3199999999999,
+      "text": "And then at the end, you just get one bit of information saying, you know, win or loss."
+    },
+    {
+      "start": 600.3199999999999,
+      "end": 604.1999999999999,
+      "text": "And you somehow have to work out which of the moves in the game were responsible for"
+    },
+    {
+      "start": 604.1999999999999,
+      "end": 607.3199999999999,
+      "text": "winning and which of the moves in the game were responsible for losing."
+    },
+    {
+      "start": 607.3199999999999,
+      "end": 609.12,
+      "text": "And there's lots of ways to do that."
+    },
+    {
+      "start": 609.12,
+      "end": 614.4,
+      "text": "The simplest way is just to assume that everything that you've done contributes a little bit"
+    },
+    {
+      "start": 614.4,
+      "end": 616.76,
+      "text": "to that outcome at the end."
+    },
+    {
+      "start": 616.76,
+      "end": 618.72,
+      "text": "And it sort of all comes out in the wash."
+    },
+    {
+      "start": 618.72,
+      "end": 623.56,
+      "text": "One of the biggest moments of the AlphaGo story was move 37."
+    },
+    {
+      "start": 623.5600000000001,
+      "end": 625.6,
+      "text": "Everyone always references."
+    },
+    {
+      "start": 625.6,
+      "end": 626.6,
+      "text": "Just tell me about that."
+    },
+    {
+      "start": 626.6,
+      "end": 633.08,
+      "text": "Move 37 was a move that happened in the second game of AlphaGo against Lee Sedol."
+    },
+    {
+      "start": 633.08,
+      "end": 637.32,
+      "text": "AlphaGo played a move that defied everyone's expectations."
+    },
+    {
+      "start": 637.32,
+      "end": 641.6,
+      "text": "The traditional idea in the game of Go is that you play your moves typically on the"
+    },
+    {
+      "start": 641.6,
+      "end": 645.1800000000001,
+      "text": "third line or the fourth line of the board, because this either gives you territory for"
+    },
+    {
+      "start": 645.1800000000001,
+      "end": 648.2600000000001,
+      "text": "the third line or influence on the fourth line."
+    },
+    {
+      "start": 648.2600000000001,
+      "end": 650.32,
+      "text": "And you never go below or above that."
+    },
+    {
+      "start": 650.32,
+      "end": 652.08,
+      "text": "It just wouldn't make sense to humans."
+    },
+    {
+      "start": 652.08,
+      "end": 653.5600000000001,
+      "text": "AlphaGo played on the fifth line."
+    },
+    {
+      "start": 653.5600000000001,
+      "end": 659.1400000000001,
+      "text": "And it somehow played this in a way that just made everything make sense in the board."
+    },
+    {
+      "start": 659.1400000000001,
+      "end": 662.5600000000001,
+      "text": "It kind of connected everything together with this move on the fifth line."
+    },
+    {
+      "start": 662.5600000000001,
+      "end": 668.94,
+      "text": "And it was so alien to humans that we estimated that only one in 10,000 probability that a"
+    },
+    {
+      "start": 668.94,
+      "end": 670.84,
+      "text": "human would ever think of playing this move."
+    },
+    {
+      "start": 670.84,
+      "end": 674.0000000000001,
+      "text": "Humans were shocked by this move, and yet it helped win the game."
+    },
+    {
+      "start": 674.0000000000001,
+      "end": 678.9200000000001,
+      "text": "And so it was a moment where humans said, look, here's something creative that happened."
+    },
+    {
+      "start": 678.9200000000001,
+      "end": 682.2,
+      "text": "Something that a machine came up with that was different from the way humans traditionally"
+    },
+    {
+      "start": 682.2,
+      "end": 683.2,
+      "text": "thought about the game."
+    },
+    {
+      "start": 683.2,
+      "end": 688.76,
+      "text": "That actually was a big piece of progress and took us beyond the kind of confines of"
+    },
+    {
+      "start": 688.76,
+      "end": 689.76,
+      "text": "human knowledge."
+    },
+    {
+      "start": 689.76,
+      "end": 694.6800000000001,
+      "text": "And I guess if we really do want to advance AI, we sort of do want those alien ideas,"
+    },
+    {
+      "start": 694.6800000000001,
+      "end": 695.6800000000001,
+      "text": "as you put it."
+    },
+    {
+      "start": 695.6800000000001,
+      "end": 699.6600000000001,
+      "text": "Do you think you've seen an equivalent of Move 37 with large language models?"
+    },
+    {
+      "start": 699.6600000000001,
+      "end": 705.4000000000001,
+      "text": "Move 37 in some ways was special because it was the first moment."
+    },
+    {
+      "start": 705.4000000000001,
+      "end": 708.6400000000001,
+      "text": "It was the first time that people had seen a big breakthrough like this."
+    },
+    {
+      "start": 708.6400000000001,
+      "end": 713.08,
+      "text": "The second thing to say is that because we've been in the era of human data."
+    },
+    {
+      "start": 713.08,
+      "end": 718.74,
+      "text": "We've focused a huge amount on reproducing human capabilities, and we've focused much"
+    },
+    {
+      "start": 718.74,
+      "end": 726.22,
+      "text": "less on going beyond them until we really emphasize systems learning for themselves"
+    },
+    {
+      "start": 726.22,
+      "end": 728.36,
+      "text": "to go beyond human data."
+    },
+    {
+      "start": 728.36,
+      "end": 735.0400000000001,
+      "text": "We won't see huge breakthroughs, the equivalent of Move 37 in the real world."
+    },
+    {
+      "start": 735.0400000000001,
+      "end": 738.44,
+      "text": "Because when you're anchored in human data, you're only ever going to have human like"
+    },
+    {
+      "start": 738.44,
+      "end": 739.44,
+      "text": "responses."
+    },
+    {
+      "start": 739.44,
+      "end": 740.76,
+      "text": "That's right."
+    },
+    {
+      "start": 740.76,
+      "end": 742.24,
+      "text": "And I think there are things you can do that."
+    },
+    {
+      "start": 742.24,
+      "end": 742.84,
+      "text": "That."
+    },
+    {
+      "start": 743.08,
+      "end": 746.8000000000001,
+      "text": "Allow you to maybe do things in the middle a little bit."
+    },
+    {
+      "start": 746.8000000000001,
+      "end": 751.38,
+      "text": "So if you push me to say what's the greatest Move 37 like moment, I would probably pick"
+    },
+    {
+      "start": 751.38,
+      "end": 759.22,
+      "text": "out some work by scientists at MIT who discovered a new antibiotic that no human knew about."
+    },
+    {
+      "start": 759.22,
+      "end": 767.0600000000001,
+      "text": "And I think that's an incredible, incredible discovery of massive importance to humanity."
+    },
+    {
+      "start": 767.0600000000001,
+      "end": 769.72,
+      "text": "So in that sense, it goes way beyond Move 37."
+    },
+    {
+      "start": 769.72,
+      "end": 772.24,
+      "text": "But what I like about Move 37 is that it's not just a single discovery."
+    },
+    {
+      "start": 772.24,
+      "end": 778.2,
+      "text": "It's one of an infinite series of discoveries, where the system can just keep on learning"
+    },
+    {
+      "start": 778.2,
+      "end": 780.1,
+      "text": "and learning and learning."
+    },
+    {
+      "start": 780.1,
+      "end": 785.28,
+      "text": "And Move 37 is important to me because it represents just a single point in that infinite"
+    },
+    {
+      "start": 785.28,
+      "end": 789.24,
+      "text": "sequence of discoveries that can happen once you've got this kind of approach of learning"
+    },
+    {
+      "start": 789.24,
+      "end": 790.24,
+      "text": "from experience."
+    },
+    {
+      "start": 790.24,
+      "end": 793.0,
+      "text": "Rather than actual result in its in and of its own right."
+    },
+    {
+      "start": 793.0,
+      "end": 794.0,
+      "text": "Yeah, that's right."
+    },
+    {
+      "start": 794.0,
+      "end": 796.26,
+      "text": "Give me a brief rundown of how AlphaZero worked."
+    },
+    {
+      "start": 796.26,
+      "end": 798.24,
+      "text": "So AlphaZero is surprisingly simple."
+    },
+    {
+      "start": 798.24,
+      "end": 800.24,
+      "text": "I mean, there's some very complicated algorithms out there in the world."
+    },
+    {
+      "start": 800.24,
+      "end": 801.24,
+      "text": "But it's not just a single discovery."
+    },
+    {
+      "start": 801.24,
+      "end": 802.24,
+      "text": "It's one of an infinite series of discoveries where the system can just keep on learning"
+    },
+    {
+      "start": 802.24,
+      "end": 803.24,
+      "text": "and learning."
+    },
+    {
+      "start": 803.24,
+      "end": 804.24,
+      "text": "Yeah."
+    },
+    {
+      "start": 804.24,
+      "end": 805.24,
+      "text": "And it's a very complex set of activities."
+    },
+    {
+      "start": 805.24,
+      "end": 806.24,
+      "text": "It's a whole wide range of activities that you can do in a few minutes."
+    },
+    {
+      "start": 806.24,
+      "end": 807.24,
+      "text": "Yeah."
+    },
+    {
+      "start": 807.24,
+      "end": 808.24,
+      "text": "So AlphaZero is a big, really complex, really complex world."
+    },
+    {
+      "start": 808.24,
+      "end": 809.24,
+      "text": "But this one is really straightforward from, you know, that side of things."
+    },
+    {
+      "start": 809.24,
+      "end": 814.74,
+      "text": "So all you do is you start with a policy, a way to pick moves, and a value function,"
+    },
+    {
+      "start": 814.74,
+      "end": 819.16,
+      "text": "which is a way to evaluate games and evaluate moves and say whether they're good or bad."
+    },
+    {
+      "start": 819.16,
+      "end": 822.74,
+      "text": "So you start with that, you run a search, and then what you do is you take the best"
+    },
+    {
+      "start": 822.74,
+      "end": 827.44,
+      "text": "move according to your search, and you train your policy to do more things like that, to"
+    },
+    {
+      "start": 827.44,
+      "end": 829.24,
+      "text": "do more of the good moves according to your search."
+    },
+    {
+      "start": 829.24,
+      "end": 832.2,
+      "text": "And you train your value function based on how the game actually plays."
+    },
+    {
+      "start": 832.24,
+      "end": 836.86,
+      "text": "hand out when you played a game with this search. And that's it. You just iterate that"
+    },
+    {
+      "start": 836.86,
+      "end": 841.12,
+      "text": "millions of times and out pops a superhuman game player."
+    },
+    {
+      "start": 841.12,
+      "end": 843.28,
+      "text": "It's like magic, basically."
+    },
+    {
+      "start": 843.28,
+      "end": 848.26,
+      "text": "It does sometimes feel like magic. I remember the first time that really felt like magic"
+    },
+    {
+      "start": 848.26,
+      "end": 853.72,
+      "text": "to me was when we had just completed AlphaZero on chess. Someone had the idea of trying it"
+    },
+    {
+      "start": 853.72,
+      "end": 858.8,
+      "text": "on a different game. So we plugged it into a game that none of us could play, a game"
+    },
+    {
+      "start": 858.8000000000001,
+      "end": 864.2600000000001,
+      "text": "called Shogi, which is Japanese chess. And we had no idea how to play this game, but"
+    },
+    {
+      "start": 864.2600000000001,
+      "end": 865.2600000000001,
+      "text": "we plugged it in."
+    },
+    {
+      "start": 865.2600000000001,
+      "end": 866.46,
+      "text": "What, you didn't even know the rules?"
+    },
+    {
+      "start": 866.46,
+      "end": 870.96,
+      "text": "The system knew the rules. The agent, we taught it the rules. So we knew the rules of the"
+    },
+    {
+      "start": 870.96,
+      "end": 876.0400000000001,
+      "text": "game, but none of us had the first clue of how to really, you know, strategy or tactics."
+    },
+    {
+      "start": 876.0400000000001,
+      "end": 880.2800000000001,
+      "text": "It would have been like blunder after blunder if we'd been playing this game. And we just"
+    },
+    {
+      "start": 880.2800000000001,
+      "end": 888.3800000000001,
+      "text": "plugged it in. And it was literally the first ever time we ran AlphaZero on Shogi. We had"
+    },
+    {
+      "start": 888.3800000000001,
+      "end": 888.7800000000001,
+      "text": "no idea."
+    },
+    {
+      "start": 888.78,
+      "end": 891.68,
+      "text": "We had no idea whether it was good or not. We couldn't evaluate it. We sent it off to"
+    },
+    {
+      "start": 891.68,
+      "end": 897.04,
+      "text": "Demis, who's actually a reasonably strong player, of course."
+    },
+    {
+      "start": 897.04,
+      "end": 901.8199999999999,
+      "text": "And he said, hmm, this looks quite good. I'm sending it to the world champion. And the"
+    },
+    {
+      "start": 901.8199999999999,
+      "end": 907.88,
+      "text": "world champion said, hmm, I think this is superhuman. And so it literally felt like"
+    },
+    {
+      "start": 907.88,
+      "end": 913.36,
+      "text": "magic because we, you know, we just pressed go on this system and had no idea of the process"
+    },
+    {
+      "start": 913.36,
+      "end": 918.36,
+      "text": "and how it got there. But somehow out popped a superhuman Shogi player."
+    },
+    {
+      "start": 918.36,
+      "end": 919.36,
+      "text": "Yeah, because it's an actual Shogi."
+    },
+    {
+      "start": 919.36,
+      "end": 920.36,
+      "text": "It's a superhuman Shogi, double shogi player."
+    },
+    {
+      "start": 920.36,
+      "end": 921.36,
+      "text": "It's a superhuman Shogi player."
+    },
+    {
+      "start": 921.36,
+      "end": 922.36,
+      "text": "It's actually a superhuman Shogi."
+    },
+    {
+      "start": 922.36,
+      "end": 923.36,
+      "text": "Can AI design its own reinforcement learning algorithms?"
+    },
+    {
+      "start": 923.36,
+      "end": 926.22,
+      "text": "Well, funnily enough, we have actually done some work in this area, work we actually did"
+    },
+    {
+      "start": 926.22,
+      "end": 932.62,
+      "text": "a few years ago, but is coming out now. And what we did was actually to build a system"
+    },
+    {
+      "start": 932.62,
+      "end": 938.7,
+      "text": "that through trial and error, through reinforcement learning itself, figured out what algorithm"
+    },
+    {
+      "start": 938.7,
+      "end": 944.82,
+      "text": "was best at reinforcement learning. It literally went one level meta, and it learned how to"
+    },
+    {
+      "start": 944.82,
+      "end": 947.36,
+      "text": "build its own reinforcement learning system. And incredibly, it's an AI system. So it's"
+    },
+    {
+      "start": 947.36,
+      "end": 948.34,
+      "text": "a big deal. Yeah, it's a huge deal, the big deal. And it's ever been around two or three"
+    },
+    {
+      "start": 948.36,
+      "end": 952.28,
+      "text": "actually outperformed all of the human reinforcement learning algorithms"
+    },
+    {
+      "start": 952.28,
+      "end": 955.8000000000001,
+      "text": "that we'd come up with ourselves over many, many years in the past."
+    },
+    {
+      "start": 955.8000000000001,
+      "end": 957.96,
+      "text": "I mean, this is the same story over and over again."
+    },
+    {
+      "start": 957.96,
+      "end": 960.44,
+      "text": "The more of a human you put into something,"
+    },
+    {
+      "start": 960.44,
+      "end": 963.8000000000001,
+      "text": "the worse it acts, the worse it performs."
+    },
+    {
+      "start": 963.8000000000001,
+      "end": 965.8000000000001,
+      "text": "Take the human out, does better."
+    },
+    {
+      "start": 965.8000000000001,
+      "end": 969.72,
+      "text": "If AlphaGo and AlphaZero then are really exceptional examples"
+    },
+    {
+      "start": 969.72,
+      "end": 973.4,
+      "text": "of reinforcement learning used to the best it can be,"
+    },
+    {
+      "start": 973.4,
+      "end": 976.2,
+      "text": "you still find reinforcement learning in the large language models"
+    },
+    {
+      "start": 976.2,
+      "end": 977.8000000000001,
+      "text": "that we have at the moment, right?"
+    },
+    {
+      "start": 977.8000000000001,
+      "end": 980.6,
+      "text": "Tell me about how they're integrated into these systems."
+    },
+    {
+      "start": 980.6,
+      "end": 982.5200000000001,
+      "text": "So reinforcement learning is used"
+    },
+    {
+      "start": 982.5200000000001,
+      "end": 985.4000000000001,
+      "text": "in almost all large language model systems."
+    },
+    {
+      "start": 986.0400000000001,
+      "end": 991.0000000000001,
+      "text": "And the main way it's used is by combining it with human data."
+    },
+    {
+      "start": 991.0000000000001,
+      "end": 993.8000000000001,
+      "text": "Unlike the AlphaZero approach,"
+    },
+    {
+      "start": 993.8000000000001,
+      "end": 995.96,
+      "text": "this means that the reinforcement learning"
+    },
+    {
+      "start": 995.96,
+      "end": 999.32,
+      "text": "is actually trained on human preferences."
+    },
+    {
+      "start": 999.32,
+      "end": 1003.32,
+      "text": "So the system is basically asked to produce outputs,"
+    },
+    {
+      "start": 1003.32,
+      "end": 1004.6,
+      "text": "and then a human says,"
+    },
+    {
+      "start": 1004.6,
+      "end": 1006.5200000000001,
+      "text": "this one is better than this other one."
+    },
+    {
+      "start": 1006.5200000000001,
+      "end": 1007.6400000000001,
+      "text": "And the system becomes"
+    },
+    {
+      "start": 1007.64,
+      "end": 1009.3199999999999,
+      "text": "more like the one that the human prefers."
+    },
+    {
+      "start": 1009.3199999999999,
+      "end": 1012.6,
+      "text": "This is called reinforcement learning from human feedback,"
+    },
+    {
+      "start": 1012.6,
+      "end": 1015.08,
+      "text": "and it's been massively important in LLMs."
+    },
+    {
+      "start": 1015.08,
+      "end": 1018.28,
+      "text": "And it's helped transform them from systems"
+    },
+    {
+      "start": 1018.28,
+      "end": 1021.88,
+      "text": "that just blindly mimic any kind of data"
+    },
+    {
+      "start": 1021.88,
+      "end": 1023.3199999999999,
+      "text": "that you see on the internet"
+    },
+    {
+      "start": 1023.3199999999999,
+      "end": 1027.24,
+      "text": "into systems that actually usefully produce answers"
+    },
+    {
+      "start": 1027.24,
+      "end": 1029.8,
+      "text": "to the kind of questions that people really want to see."
+    },
+    {
+      "start": 1030.52,
+      "end": 1033.0,
+      "text": "And so it's an incredible advance."
+    },
+    {
+      "start": 1033.72,
+      "end": 1037.48,
+      "text": "However, I think we've thrown out the baby with the bathwater."
+    },
+    {
+      "start": 1038.1200000000001,
+      "end": 1042.1200000000001,
+      "text": "These reinforcement learning from human feedback systems or RLHF,"
+    },
+    {
+      "start": 1043.5600000000002,
+      "end": 1044.92,
+      "text": "they're very powerful,"
+    },
+    {
+      "start": 1044.92,
+      "end": 1047.96,
+      "text": "but they do not have the ability to go beyond human knowledge."
+    },
+    {
+      "start": 1047.96,
+      "end": 1053.0800000000002,
+      "text": "Like if a human rater doesn't recognize some new idea"
+    },
+    {
+      "start": 1053.0800000000002,
+      "end": 1056.2800000000002,
+      "text": "and under appreciates that there are some series of actions"
+    },
+    {
+      "start": 1056.2800000000002,
+      "end": 1058.2800000000002,
+      "text": "that would actually end up being far better"
+    },
+    {
+      "start": 1058.2800000000002,
+      "end": 1059.72,
+      "text": "than some other series of actions,"
+    },
+    {
+      "start": 1059.72,
+      "end": 1064.2800000000002,
+      "text": "there is no way that the system will ever learn to find that sequence"
+    },
+    {
+      "start": 1064.2800000000002,
+      "end": 1067.64,
+      "text": "because the raters might not understand that better."
+    },
+    {
+      "start": 1068.1200000000001,
+      "end": 1069.64,
+      "text": "That human feedback element though,"
+    },
+    {
+      "start": 1070.5200000000002,
+      "end": 1074.68,
+      "text": "it does seem to give these models some sense of grounding."
+    },
+    {
+      "start": 1074.68,
+      "end": 1075.96,
+      "text": "I know the last time we spoke,"
+    },
+    {
+      "start": 1075.96,
+      "end": 1078.44,
+      "text": "grounding was like this really big topic,"
+    },
+    {
+      "start": 1078.44,
+      "end": 1081.5600000000002,
+      "text": "this idea that you want these algorithms"
+    },
+    {
+      "start": 1081.5600000000002,
+      "end": 1083.8000000000002,
+      "text": "to have a conceptual understanding almost"
+    },
+    {
+      "start": 1083.8000000000002,
+      "end": 1085.88,
+      "text": "of the world that we're living in."
+    },
+    {
+      "start": 1085.88,
+      "end": 1090.6000000000001,
+      "text": "So if you take away or you remove that human feedback aspect,"
+    },
+    {
+      "start": 1090.6000000000001,
+      "end": 1094.1200000000001,
+      "text": "do you still end up with models that are grounded?"
+    },
+    {
+      "start": 1094.1200000000001,
+      "end": 1095.64,
+      "text": "I almost want to argue the opposite."
+    },
+    {
+      "start": 1095.64,
+      "end": 1096.1200000000001,
+      "text": "Oh."
+    },
+    {
+      "start": 1096.1200000000001,
+      "end": 1097.5600000000002,
+      "text": "I want to say that when we train,"
+    },
+    {
+      "start": 1097.56,
+      "end": 1102.44,
+      "text": "we train a system from human feedback that it is not grounded."
+    },
+    {
+      "start": 1102.44,
+      "end": 1104.52,
+      "text": "And the reason is that we are basically,"
+    },
+    {
+      "start": 1104.52,
+      "end": 1106.6799999999998,
+      "text": "the way our LHF systems normally work"
+    },
+    {
+      "start": 1106.6799999999998,
+      "end": 1109.6399999999999,
+      "text": "is the system presents its response,"
+    },
+    {
+      "start": 1109.6399999999999,
+      "end": 1111.48,
+      "text": "its answer to a question, for example,"
+    },
+    {
+      "start": 1111.48,
+      "end": 1114.44,
+      "text": "and a rater says that's good or bad"
+    },
+    {
+      "start": 1114.44,
+      "end": 1119.96,
+      "text": "before the system actually does anything with that information."
+    },
+    {
+      "start": 1119.96,
+      "end": 1123.96,
+      "text": "So it's like the human is prejudging the output of the system."
+    },
+    {
+      "start": 1123.96,
+      "end": 1125.96,
+      "text": "So for example, if you're asking for"
+    },
+    {
+      "start": 1127.56,
+      "end": 1129.96,
+      "text": "a cake recipe from an LLM,"
+    },
+    {
+      "start": 1129.96,
+      "end": 1134.28,
+      "text": "the human rater will look at the recipe that's output by the system"
+    },
+    {
+      "start": 1134.28,
+      "end": 1137.24,
+      "text": "and judge whether that recipe is good or bad"
+    },
+    {
+      "start": 1137.24,
+      "end": 1141.3999999999999,
+      "text": "before anyone has actually made the recipe and eaten the cake."
+    },
+    {
+      "start": 1141.3999999999999,
+      "end": 1141.96,
+      "text": "Yeah."
+    },
+    {
+      "start": 1141.96,
+      "end": 1143.6399999999999,
+      "text": "And in that sense, it's ungrounded."
+    },
+    {
+      "start": 1143.6399999999999,
+      "end": 1147.0,
+      "text": "Like a grounded outcome would be someone actually eats the cake"
+    },
+    {
+      "start": 1147.0,
+      "end": 1150.76,
+      "text": "and the cake is either delicious or disgusting."
+    },
+    {
+      "start": 1150.76,
+      "end": 1153.08,
+      "text": "And then you've got grounded feedback that says,"
+    },
+    {
+      "start": 1153.08,
+      "end": 1154.76,
+      "text": "you know, this cake really was a good cake"
+    },
+    {
+      "start": 1154.76,
+      "end": 1156.76,
+      "text": "or this cake was a bad cake."
+    },
+    {
+      "start": 1156.76,
+      "end": 1157.24,
+      "text": "And it's that"
+    },
+    {
+      "start": 1157.24,
+      "end": 1160.1200000000001,
+      "text": "grounded feedback that allows the system"
+    },
+    {
+      "start": 1160.1200000000001,
+      "end": 1162.44,
+      "text": "to iterate and discover new things"
+    },
+    {
+      "start": 1162.44,
+      "end": 1164.04,
+      "text": "because it can try out new recipes"
+    },
+    {
+      "start": 1164.04,
+      "end": 1165.24,
+      "text": "that maybe, you know,"
+    },
+    {
+      "start": 1165.24,
+      "end": 1167.32,
+      "text": "expert chefs presume will be disgusting,"
+    },
+    {
+      "start": 1167.32,
+      "end": 1169.16,
+      "text": "but actually turn out to be delicious."
+    },
+    {
+      "start": 1169.16,
+      "end": 1172.28,
+      "text": "Yeah, like a monster munch muffin or whatever."
+    },
+    {
+      "start": 1172.28,
+      "end": 1173.4,
+      "text": "Exactly, yeah."
+    },
+    {
+      "start": 1173.4,
+      "end": 1176.1200000000001,
+      "text": "Who knew that that's the most delicious food that ever existed?"
+    },
+    {
+      "start": 1176.68,
+      "end": 1177.88,
+      "text": "Okay, that's interesting, though,"
+    },
+    {
+      "start": 1177.88,
+      "end": 1179.32,
+      "text": "because I have heard,"
+    },
+    {
+      "start": 1179.32,
+      "end": 1181.48,
+      "text": "I mean, even a conversation with Demis"
+    },
+    {
+      "start": 1181.48,
+      "end": 1183.88,
+      "text": "talking about how grounding gets into these models,"
+    },
+    {
+      "start": 1183.88,
+      "end": 1186.84,
+      "text": "how they kind of have built this conceptual understanding of things."
+    },
+    {
+      "start": 1187.24,
+      "end": 1189.24,
+      "text": "And it sounds almost like what you're saying"
+    },
+    {
+      "start": 1189.24,
+      "end": 1191.32,
+      "text": "is that the grounding that they have"
+    },
+    {
+      "start": 1191.32,
+      "end": 1195.24,
+      "text": "is like a sort of superficial level of grounding, maybe?"
+    },
+    {
+      "start": 1195.24,
+      "end": 1201.48,
+      "text": "I think human data is grounded in human experience."
+    },
+    {
+      "start": 1201.48,
+      "end": 1207.0,
+      "text": "So it's like the LLMs are sort of inheriting all of that information"
+    },
+    {
+      "start": 1207.0,
+      "end": 1209.48,
+      "text": "that humans may be figured out from their own experiments."
+    },
+    {
+      "start": 1209.48,
+      "end": 1211.0,
+      "text": "For example, in science, you know,"
+    },
+    {
+      "start": 1211.0,
+      "end": 1213.32,
+      "text": "a human might have tried to walk across water"
+    },
+    {
+      "start": 1213.32,
+      "end": 1214.92,
+      "text": "and discovered that they fell in,"
+    },
+    {
+      "start": 1214.92,
+      "end": 1217.08,
+      "text": "and then they might have created a boat and discovered that,"
+    },
+    {
+      "start": 1217.08,
+      "end": 1217.8,
+      "text": "that floated."
+    },
+    {
+      "start": 1217.8,
+      "end": 1223.3999999999999,
+      "text": "And all of that information can be inherited somewhat by the LLM."
+    },
+    {
+      "start": 1223.3999999999999,
+      "end": 1226.4399999999998,
+      "text": "But if we want a system that actually makes discoveries"
+    },
+    {
+      "start": 1226.4399999999998,
+      "end": 1229.8799999999999,
+      "text": "and discovers some completely new form of propulsion across water,"
+    },
+    {
+      "start": 1229.8799999999999,
+      "end": 1233.24,
+      "text": "or, you know, some completely new mathematical idea,"
+    },
+    {
+      "start": 1233.24,
+      "end": 1234.84,
+      "text": "or some completely new way to..."
+    },
+    {
+      "start": 1235.8799999999999,
+      "end": 1237.0,
+      "text": "Part the seas."
+    },
+    {
+      "start": 1237.0,
+      "end": 1240.28,
+      "text": "Yeah, new medicine and new approach to biology,"
+    },
+    {
+      "start": 1240.28,
+      "end": 1242.12,
+      "text": "the data just isn't there."
+    },
+    {
+      "start": 1242.12,
+      "end": 1244.84,
+      "text": "And the system needs to figure out for itself,"
+    },
+    {
+      "start": 1244.84,
+      "end": 1246.6,
+      "text": "through its own kind of experimentation,"
+    },
+    {
+      "start": 1246.6000000000001,
+      "end": 1249.64,
+      "text": "its own trial and error and its own grounded feedback,"
+    },
+    {
+      "start": 1249.64,
+      "end": 1252.2,
+      "text": "whether that's a good idea or a bad idea."
+    },
+    {
+      "start": 1252.2,
+      "end": 1254.5200000000002,
+      "text": "I got to talk to Aurel, Aurel Vinales."
+    },
+    {
+      "start": 1254.5200000000002,
+      "end": 1255.96,
+      "text": "He said that there was this real problem"
+    },
+    {
+      "start": 1255.96,
+      "end": 1257.88,
+      "text": "that we were running out of human data."
+    },
+    {
+      "start": 1257.88,
+      "end": 1260.1200000000001,
+      "text": "The solution, I suppose, as he was describing it,"
+    },
+    {
+      "start": 1260.1200000000001,
+      "end": 1262.44,
+      "text": "was that you can then create synthetic data"
+    },
+    {
+      "start": 1262.44,
+      "end": 1267.0800000000002,
+      "text": "by using large language models to generate more human-style dialogue."
+    },
+    {
+      "start": 1267.0800000000002,
+      "end": 1269.16,
+      "text": "I mean, this is related, right, to that idea."
+    },
+    {
+      "start": 1269.16,
+      "end": 1272.7600000000002,
+      "text": "It's just rather than using LLMs to create more human dialogue data,"
+    },
+    {
+      "start": 1272.7600000000002,
+      "end": 1275.0800000000002,
+      "text": "you're going about the solution in a different way."
+    },
+    {
+      "start": 1275.0800000000002,
+      "end": 1275.4800000000002,
+      "text": "That's right."
+    },
+    {
+      "start": 1275.4800000000002,
+      "end": 1276.5200000000002,
+      "text": "Synthetic data can..."
+    },
+    {
+      "start": 1276.92,
+      "end": 1277.88,
+      "text": "can mean a lot of things,"
+    },
+    {
+      "start": 1277.88,
+      "end": 1280.7600000000002,
+      "text": "but normally it would mean that you've got some process"
+    },
+    {
+      "start": 1280.7600000000002,
+      "end": 1282.8400000000001,
+      "text": "where you kind of take your existing LLM"
+    },
+    {
+      "start": 1282.8400000000001,
+      "end": 1285.3200000000002,
+      "text": "and you use it to generate some set of data."
+    },
+    {
+      "start": 1285.3200000000002,
+      "end": 1287.0800000000002,
+      "text": "And I guess the argument is,"
+    },
+    {
+      "start": 1287.0800000000002,
+      "end": 1290.1200000000001,
+      "text": "similar to the ceiling that we have from human data,"
+    },
+    {
+      "start": 1290.7600000000002,
+      "end": 1293.4,
+      "text": "that however good that synthetic data is,"
+    },
+    {
+      "start": 1293.4,
+      "end": 1295.3200000000002,
+      "text": "they will reach a point where that synthetic data"
+    },
+    {
+      "start": 1295.3200000000002,
+      "end": 1298.5200000000002,
+      "text": "is no longer useful to the system becoming stronger."
+    },
+    {
+      "start": 1298.5200000000002,
+      "end": 1300.3600000000001,
+      "text": "So the beauty of a self-learning system,"
+    },
+    {
+      "start": 1300.3600000000001,
+      "end": 1303.3200000000002,
+      "text": "where the fuel of the system is actually experience,"
+    },
+    {
+      "start": 1303.3200000000002,
+      "end": 1305.4800000000002,
+      "text": "is that as the system starts to get stronger,"
+    },
+    {
+      "start": 1305.48,
+      "end": 1311.4,
+      "text": "it starts to encounter problems that are exactly appropriate to the level it's at."
+    },
+    {
+      "start": 1311.4,
+      "end": 1316.6,
+      "text": "So it will always be generating experience that allows it to solve"
+    },
+    {
+      "start": 1316.6,
+      "end": 1318.68,
+      "text": "the next problem that it's encountering."
+    },
+    {
+      "start": 1318.68,
+      "end": 1321.64,
+      "text": "And so it can just get stronger and stronger and stronger forever."
+    },
+    {
+      "start": 1321.64,
+      "end": 1322.6,
+      "text": "There is no limit."
+    },
+    {
+      "start": 1322.6,
+      "end": 1325.24,
+      "text": "And that, I think, is what differentiates this particular approach"
+    },
+    {
+      "start": 1325.24,
+      "end": 1330.04,
+      "text": "of using self-generated experience from other forms of synthetic data."
+    },
+    {
+      "start": 1330.04,
+      "end": 1332.44,
+      "text": "Just returning to your cake example, though,"
+    },
+    {
+      "start": 1332.44,
+      "end": 1334.3600000000001,
+      "text": "I mean, if you kind of follow that through,"
+    },
+    {
+      "start": 1334.3600000000001,
+      "end": 1335.14,
+      "text": "somebody eats the cake and says, oh, yeah, that's a great idea."
+    },
+    {
+      "start": 1335.14,
+      "end": 1340.5,
+      "text": "and says yes this was delicious you're using the human feedback then at the end of the process"
+    },
+    {
+      "start": 1340.5,
+      "end": 1344.74,
+      "text": "anyway are we talking about that or are we talking about maybe having systems that are completely"
+    },
+    {
+      "start": 1344.74,
+      "end": 1349.7,
+      "text": "untethered from humans and are embodied or in the physical world somehow so that they can get their"
+    },
+    {
+      "start": 1349.7,
+      "end": 1354.5800000000002,
+      "text": "feedback in that way the ideal is that like alpha zero we have systems which are able to generate"
+    },
+    {
+      "start": 1354.5800000000002,
+      "end": 1360.26,
+      "text": "vast volumes of self-generated data experience that they can then verify for themselves and"
+    },
+    {
+      "start": 1360.26,
+      "end": 1364.26,
+      "text": "in many domains that's going to be possible and in many domains it's not going to be possible"
+    },
+    {
+      "start": 1364.26,
+      "end": 1368.66,
+      "text": "in the ones where it's not possible you know we have to acknowledge that humans are a big"
+    },
+    {
+      "start": 1368.66,
+      "end": 1372.82,
+      "text": "part of the of the environment that we're in we have to acknowledge that that they're a part of"
+    },
+    {
+      "start": 1372.82,
+      "end": 1378.9,
+      "text": "the world that we want our agents to live in and so it seems reasonable to think of humans as a"
+    },
+    {
+      "start": 1378.9,
+      "end": 1383.86,
+      "text": "part of that environment and to think of the way that they behave as part of the observation that"
+    },
+    {
+      "start": 1383.86,
+      "end": 1388.1,
+      "text": "that the agent receives i think the thing which i'm pushing back against and saying is not grounded"
+    },
+    {
+      "start": 1388.1,
+      "end": 1394.18,
+      "text": "is not that it's the fact the rewards that the agent learns from is coming from"
+    },
+    {
+      "start": 1394.26,
+      "end": 1401.86,
+      "text": "a human's judgment of like whether this sequence of actions is good or bad right and the system is"
+    },
+    {
+      "start": 1401.86,
+      "end": 1407.7,
+      "text": "not judging for itself based on the consequence of those actions in the actual world we shouldn't make"
+    },
+    {
+      "start": 1407.7,
+      "end": 1412.02,
+      "text": "you know human data a privileged part of the agent's experience it's just observations in"
+    },
+    {
+      "start": 1412.02,
+      "end": 1415.7,
+      "text": "the world and we should be able to learn from that like any other data if we go back to that"
+    },
+    {
+      "start": 1415.7,
+      "end": 1420.98,
+      "text": "to the alpha go example earlier of assigning that reward that one point that it gets at the end is"
+    },
+    {
+      "start": 1420.98,
+      "end": 1424.18,
+      "text": "this almost like the way that we're handling ai at the moment is that"
+    },
+    {
+      "start": 1424.26,
+      "end": 1429.62,
+      "text": "the algorithm does its first 10 moves or 15 moves and then then we insert a human in who says yes"
+    },
+    {
+      "start": 1429.62,
+      "end": 1436.74,
+      "text": "that's a good first 10 moves and doesn't allow the whole process to to to kind of execute fully"
+    },
+    {
+      "start": 1436.74,
+      "end": 1443.7,
+      "text": "before you input that little bit of feedback that's exactly right so imagine imagine that"
+    },
+    {
+      "start": 1443.7,
+      "end": 1450.26,
+      "text": "we were training alpha go and after every single move like our best go player comes in and says"
+    },
+    {
+      "start": 1451.14,
+      "end": 1454.18,
+      "text": "oh that move that move was amazing oh oh no no that move was"
+    },
+    {
+      "start": 1454.26,
+      "end": 1458.74,
+      "text": "totally wrong and then we we get that feedback and we put it in and the system learns to pick"
+    },
+    {
+      "start": 1458.74,
+      "end": 1464.34,
+      "text": "the move that the human prefers it would not end up discovering move 37 because it would just end"
+    },
+    {
+      "start": 1464.34,
+      "end": 1468.9,
+      "text": "up playing like the human thinks is a good game of go and it would never discover the new ways to"
+    },
+    {
+      "start": 1468.9,
+      "end": 1473.3,
+      "text": "play go that that human didn't know about what you're saying makes a lot of sense in that"
+    },
+    {
+      "start": 1473.3,
+      "end": 1478.18,
+      "text": "environment there are other environments too where i think that this makes a lot of sense"
+    },
+    {
+      "start": 1478.18,
+      "end": 1482.5,
+      "text": "i'm thinking here about the pinnacle of human thought of mathematics um tell me what's been"
+    },
+    {
+      "start": 1482.5,
+      "end": 1484.18,
+      "text": "going on in that space it's like you said it's like you said it's like you said it's like you"
+    },
+    {
+      "start": 1484.26,
+      "end": 1489.46,
+      "text": "say it is an incredible human endeavor that's had millennia of human effort going into it and so in"
+    },
+    {
+      "start": 1489.46,
+      "end": 1495.78,
+      "text": "many ways it does represent like literally the the limits of achievement by by the human mind and so"
+    },
+    {
+      "start": 1495.78,
+      "end": 1501.06,
+      "text": "naturally we turn to it for ai to see can we achieve those same levels of performance that"
+    },
+    {
+      "start": 1501.06,
+      "end": 1506.42,
+      "text": "you know humans have achieved over all of those years of endeavor we recently put together um i"
+    },
+    {
+      "start": 1506.42,
+      "end": 1511.54,
+      "text": "think it's a very exciting piece of work called alpha proof it is a system that learns through"
+    },
+    {
+      "start": 1514.26,
+      "end": 1520.58,
+      "text": "a method of proofing mathematical problems if you give it a theorem and you don't tell it anything"
+    },
+    {
+      "start": 1520.58,
+      "end": 1526.34,
+      "text": "about how to actually prove that theorem it will go away and figure out for itself a perfect proof"
+    },
+    {
+      "start": 1526.34,
+      "end": 1531.3,
+      "text": "of that of that theorem we can actually verify and guarantee that this proof is correct one thing"
+    },
+    {
+      "start": 1531.3,
+      "end": 1536.74,
+      "text": "which is interesting about this is that it's the exact opposite of how llms normally work if you"
+    },
+    {
+      "start": 1536.74,
+      "end": 1543.22,
+      "text": "ask llms to prove a mathematical problem at the moment they will normally output some informal"
+    },
+    {
+      "start": 1544.26,
+      "end": 1549.14,
+      "text": "and say just trust me this is correct and it might be correct but it might not be because we know"
+    },
+    {
+      "start": 1549.14,
+      "end": 1554.5,
+      "text": "that llms tend to hallucinate a lot they can make things up and the nice thing about alpha proof it"
+    },
+    {
+      "start": 1554.5,
+      "end": 1559.78,
+      "text": "will actually guaranteed produce the truth so let's think of an example here to kind of anchor"
+    },
+    {
+      "start": 1559.78,
+      "end": 1565.46,
+      "text": "this in people's minds prime numbers are something that can't be divided uh by anything but themselves"
+    },
+    {
+      "start": 1565.46,
+      "end": 1571.62,
+      "text": "and one and there are infinite number of them off you go prove it so the way alpha proof works"
+    },
+    {
+      "start": 1571.62,
+      "end": 1573.94,
+      "text": "is it's trained on millions of different"
+    },
+    {
+      "start": 1574.82,
+      "end": 1581.14,
+      "text": "examples of of theorems not just one and what happens it goes off and it trains on them and"
+    },
+    {
+      "start": 1581.14,
+      "end": 1587.54,
+      "text": "to begin with it can't solve you know the vast majority of them 99.999 of the theorems it it just"
+    },
+    {
+      "start": 1587.54,
+      "end": 1593.46,
+      "text": "can't do and these are theorems that that humans have already proved are you feeding in we feed into"
+    },
+    {
+      "start": 1593.46,
+      "end": 1602.5,
+      "text": "the system um something like um a million different theorems that humans have come up with themselves"
+    },
+    {
+      "start": 1602.5,
+      "end": 1604.18,
+      "text": "but we don't provide the human proof"
+    },
+    {
+      "start": 1604.26,
+      "end": 1608.74,
+      "text": "we just provide the questions but not the answers so you're giving it stuff that you know is true"
+    },
+    {
+      "start": 1608.74,
+      "end": 1612.9,
+      "text": "but you're just not not not telling it how to prove it and sometimes we don't even know it's"
+    },
+    {
+      "start": 1612.9,
+      "end": 1618.66,
+      "text": "true because what we actually do is we take the the human theorem the human question turn it into"
+    },
+    {
+      "start": 1618.66,
+      "end": 1624.18,
+      "text": "a formal language these aren't using language in the sense that language models are using but they"
+    },
+    {
+      "start": 1624.18,
+      "end": 1630.18,
+      "text": "are using a form of language like a mathematical language that's right so um in fact we do use"
+    },
+    {
+      "start": 1630.18,
+      "end": 1633.22,
+      "text": "small large language model and that allows us to output"
+    },
+    {
+      "start": 1634.9,
+      "end": 1640.1,
+      "text": "programming languages and in particular we use a programming language that's called lean that"
+    },
+    {
+      "start": 1640.1,
+      "end": 1644.66,
+      "text": "allows all of mathematics to be expressed and so it's an amazing idea that mathematicians have come"
+    },
+    {
+      "start": 1644.66,
+      "end": 1650.26,
+      "text": "up with that you can actually formalize all of these kind of things that we normally talk about"
+    },
+    {
+      "start": 1650.26,
+      "end": 1655.62,
+      "text": "in english language or whatever language you happen to be speaking can be transformed into a"
+    },
+    {
+      "start": 1655.62,
+      "end": 1663.62,
+      "text": "perfectly clear verifiable mathematical language that allows all of the ideas of maths to be"
+    },
+    {
+      "start": 1664.26,
+      "end": 1670.26,
+      "text": "expressed and also all of the ideas of mathematical proof to be expressed so you can say for example"
+    },
+    {
+      "start": 1670.26,
+      "end": 1677.06,
+      "text": "that a implies b and b implies c then there's a way to go from that to a implies c and that's the"
+    },
+    {
+      "start": 1677.06,
+      "end": 1681.94,
+      "text": "kind of thing that you can do in this mathematical programming language you essentially write a"
+    },
+    {
+      "start": 1681.94,
+      "end": 1687.54,
+      "text": "program that takes you from one to the other and you have a proof of of this statement so"
+    },
+    {
+      "start": 1687.54,
+      "end": 1694.18,
+      "text": "we take our kind of million human problems and from that we generate a hundred million formal problems"
+    },
+    {
+      "start": 1694.18,
+      "end": 1697.38,
+      "text": "and some of those might actually not be possible or they might be incorrectly"
+    },
+    {
+      "start": 1698.1000000000001,
+      "end": 1704.5800000000002,
+      "text": "formulated or um or yeah they might just be false and it doesn't matter because all we do is we learn"
+    },
+    {
+      "start": 1704.5800000000002,
+      "end": 1709.46,
+      "text": "to prove those things and the ones which we can't prove we keep trying and keep trying the ones that"
+    },
+    {
+      "start": 1709.46,
+      "end": 1712.9,
+      "text": "we already prove okay they're done they're out the way now if we disprove them that's fine they're out"
+    },
+    {
+      "start": 1712.9,
+      "end": 1716.42,
+      "text": "the way and we're left with the really interesting ones which are the ones which are really hard to"
+    },
+    {
+      "start": 1716.42,
+      "end": 1720.3400000000001,
+      "text": "prove and we keep kind of climbing up from just being able to solve one or two of them"
+    },
+    {
+      "start": 1720.3400000000001,
+      "end": 1724.1000000000001,
+      "text": "to then being able to solve 10 or 20 of them and eventually being able to solve a million of them"
+    },
+    {
+      "start": 1724.18,
+      "end": 1730.74,
+      "text": "is this the equivalent then that moment of uh you the proof is correct or incorrect"
+    },
+    {
+      "start": 1730.74,
+      "end": 1736.5,
+      "text": "is that equivalent to alpha go you win the game or you don't it's exactly equivalent so we use"
+    },
+    {
+      "start": 1736.5,
+      "end": 1742.9,
+      "text": "the idea that lean says well done you've proved this as a reward and we give the system you know"
+    },
+    {
+      "start": 1742.9,
+      "end": 1748.66,
+      "text": "plus one if it if it if it solves it and and minus one if it doesn't get that correct and so this"
+    },
+    {
+      "start": 1748.66,
+      "end": 1754.1000000000001,
+      "text": "allows us to then train a system by reinforcement learning to get better and better at proving my"
+    },
+    {
+      "start": 1754.1000000000001,
+      "end": 1760.0200000000002,
+      "text": "mathematical statements in fact we literally use the same alpha zero codes that were used"
+    },
+    {
+      "start": 1760.0200000000002,
+      "end": 1764.66,
+      "text": "to get better at go and chess and all of these other games it's literally the same code"
+    },
+    {
+      "start": 1764.66,
+      "end": 1768.18,
+      "text": "but it's running if you like with the game of mathematics how dare you"
+    },
+    {
+      "start": 1772.66,
+      "end": 1774.1000000000001,
+      "text": "dare trivialize my subject"
+    },
+    {
+      "start": 1777.14,
+      "end": 1782.1000000000001,
+      "text": "um okay how good is it it's not yet a superhuman mathematician although that is where we'd like"
+    },
+    {
+      "start": 1782.1000000000001,
+      "end": 1784.1000000000001,
+      "text": "to get to one day but one thing which alpha zero doesn't mean that we're going to be able to solve"
+    },
+    {
+      "start": 1784.1000000000001,
+      "end": 1790.42,
+      "text": "a proof did achieve was the most well-known and challenging of mathematical competitions"
+    },
+    {
+      "start": 1790.42,
+      "end": 1795.5400000000002,
+      "text": "is called the international mathematics olympiad and this is a competition that happens once a year"
+    },
+    {
+      "start": 1795.5400000000002,
+      "end": 1800.66,
+      "text": "for the most incredible and amazing young mathematicians from all around the world and"
+    },
+    {
+      "start": 1800.66,
+      "end": 1807.94,
+      "text": "the problems to say the least are extremely hard they're spicy they're very spicy as a professor"
+    },
+    {
+      "start": 1807.94,
+      "end": 1812.5000000000002,
+      "text": "of math sometimes i i mean they're they're spicy so you heard it from from hannah these are hard"
+    },
+    {
+      "start": 1812.5000000000002,
+      "end": 1814.0200000000002,
+      "text": "problems very hard and alfred"
+    },
+    {
+      "start": 1814.1000000000001,
+      "end": 1820.0200000000002,
+      "text": "proof amazingly it actually achieved a silver medal level of performance in this competition"
+    },
+    {
+      "start": 1820.0200000000002,
+      "end": 1824.9800000000002,
+      "text": "so this is a level of performance that only uh roughly 10 percent of the of the contestants"
+    },
+    {
+      "start": 1824.9800000000002,
+      "end": 1829.22,
+      "text": "would actually be able to achieve in the entire world in the entire world this is like the cream"
+    },
+    {
+      "start": 1829.22,
+      "end": 1834.18,
+      "text": "of young mathematicians like the sixth best from every country and not only that but there was one"
+    },
+    {
+      "start": 1834.18,
+      "end": 1838.9,
+      "text": "particular question that less than one percent of all the contestants were able to solve and alpha"
+    },
+    {
+      "start": 1838.9,
+      "end": 1843.94,
+      "text": "proof got a perfect proof for this particular problem so that was nice to see what do the"
+    },
+    {
+      "start": 1844.1000000000001,
+      "end": 1851.38,
+      "text": "proofs look like i mean do they follow human style arguments if you're not inputting any human"
+    },
+    {
+      "start": 1851.38,
+      "end": 1856.18,
+      "text": "data into them i have to say that to me the proofs i don't understand them at all"
+    },
+    {
+      "start": 1858.1000000000001,
+      "end": 1862.18,
+      "text": "but tim gowers i mean the fields medalist and former imo i mean did he get was he a gold"
+    },
+    {
+      "start": 1862.18,
+      "end": 1867.7800000000002,
+      "text": "medalist i think multiple gold medalists mega brain right like extraordinary mathematician"
+    },
+    {
+      "start": 1867.7800000000002,
+      "end": 1873.22,
+      "text": "but i mean he understands these proofs right tim gowers actually was the um refereed our"
+    },
+    {
+      "start": 1874.1000000000001,
+      "end": 1878.5800000000002,
+      "text": "solutions to make sure that they were um valid solutions and that we hadn't you know broken any"
+    },
+    {
+      "start": 1878.5800000000002,
+      "end": 1882.8200000000002,
+      "text": "of the rules he understands the solutions and thought that they were you know a huge leap"
+    },
+    {
+      "start": 1882.8200000000002,
+      "end": 1889.22,
+      "text": "beyond anything that that um previous ai mathematics could do before so it's a jump"
+    },
+    {
+      "start": 1889.22,
+      "end": 1895.22,
+      "text": "forward but it's still just the beginning in the sense that you know we really want to go"
+    },
+    {
+      "start": 1895.22,
+      "end": 1899.22,
+      "text": "beyond human mathematicians and that's where we'd like to go next because at the moment"
+    },
+    {
+      "start": 1899.22,
+      "end": 1904.1000000000001,
+      "text": "basically you've you've got yourself a very very very talented 17 year old mathematician basically"
+    },
+    {
+      "start": 1904.1000000000001,
+      "end": 1909.14,
+      "text": "right that's right and it should be said that in the system that entered the imo did take longer"
+    },
+    {
+      "start": 1909.14,
+      "end": 1913.0600000000002,
+      "text": "than a human contestant would be allowed to take so you know that's something we're just going to"
+    },
+    {
+      "start": 1913.0600000000002,
+      "end": 1918.0200000000002,
+      "text": "assume will get better over time as machines get faster i mean the imo is like the perfect test"
+    },
+    {
+      "start": 1918.0200000000002,
+      "end": 1922.5000000000002,
+      "text": "bed because there are correct answers it can be judged you can compare it to human performance"
+    },
+    {
+      "start": 1922.5000000000002,
+      "end": 1927.7,
+      "text": "all of that kind of thing but if you are feeding in conjectures so things that we don't even know"
+    },
+    {
+      "start": 1927.7,
+      "end": 1933.6200000000001,
+      "text": "are true um you know i'm thinking of like the abc conjecture here or the riemann hypothesis or any of"
+    },
+    {
+      "start": 1934.1000000000001,
+      "end": 1939.94,
+      "text": "the like really grand unsolved challenges in mathematics if alpha proof outputs something"
+    },
+    {
+      "start": 1939.94,
+      "end": 1947.3000000000002,
+      "text": "and says no no we've checked this proof it works can you trust it and and maybe even beyond that"
+    },
+    {
+      "start": 1947.3000000000002,
+      "end": 1953.7,
+      "text": "is it worth anything if we if we don't understand it i think the good news about lean is that"
+    },
+    {
+      "start": 1953.7,
+      "end": 1959.8600000000001,
+      "text": "mathematicians who are better than myself are always able to take a lean proof and translate"
+    },
+    {
+      "start": 1959.8600000000001,
+      "end": 1963.8600000000001,
+      "text": "it back into something that humans can understand and in fact we've even built an"
+    },
+    {
+      "start": 1964.1000000000001,
+      "end": 1968.7400000000002,
+      "text": "ai system that can do this which can take any formal proof and what we call informalize it"
+    },
+    {
+      "start": 1968.7400000000002,
+      "end": 1972.9800000000002,
+      "text": "which means it will turn it back into something which is very understandable to humans and if we"
+    },
+    {
+      "start": 1972.9800000000002,
+      "end": 1977.46,
+      "text": "did solve the riemann hypothesis and by the way we're a long way from from doing doing that but"
+    },
+    {
+      "start": 1977.46,
+      "end": 1980.8200000000002,
+      "text": "if it was done there would be millions of mathematicians who'd be very excited to"
+    },
+    {
+      "start": 1981.38,
+      "end": 1985.5400000000002,
+      "text": "to you know understand whatever new mathematics came out of it and decode it back into things"
+    },
+    {
+      "start": 1985.5400000000002,
+      "end": 1989.38,
+      "text": "that humans can understand okay but here's my question right the clay maths institute in the"
+    },
+    {
+      "start": 1989.38,
+      "end": 1994.1000000000001,
+      "text": "year 2000 offered a million dollar prize for for seven different mathematical"
+    },
+    {
+      "start": 1994.1000000000001,
+      "end": 1998.5800000000002,
+      "text": "problems human mathematicians have had a quarter of a century in order to try and solve them and"
+    },
+    {
+      "start": 1998.5800000000002,
+      "end": 2004.42,
+      "text": "only one has has fallen do you think potentially the next one could go to ai yes i do actually"
+    },
+    {
+      "start": 2004.42,
+      "end": 2008.9,
+      "text": "i think that it might take time i don't think we're there yet i think there's a long way before"
+    },
+    {
+      "start": 2008.9,
+      "end": 2013.7800000000002,
+      "text": "ai systems are capable of doing this ai is on the right track and systems like alpha proof will"
+    },
+    {
+      "start": 2013.7800000000002,
+      "end": 2017.94,
+      "text": "become stronger and stronger and stronger you know what we saw in the imo is just the beginning and"
+    },
+    {
+      "start": 2017.94,
+      "end": 2022.1000000000001,
+      "text": "you know that once you have a system that can scale and can keep learning and learning and"
+    },
+    {
+      "start": 2022.1000000000001,
+      "end": 2023.94,
+      "text": "learning really the sky's the limit so"
+    },
+    {
+      "start": 2024.1000000000001,
+      "end": 2029.38,
+      "text": "so you know what what will these systems look like in two years or five years or or 20 years"
+    },
+    {
+      "start": 2029.38,
+      "end": 2034.5000000000002,
+      "text": "i personally would be amazed if ai mathematicians don't transform the whole of mathematics i think"
+    },
+    {
+      "start": 2034.5000000000002,
+      "end": 2041.46,
+      "text": "it's coming mathematics is one of the few areas where in principle everything can be done"
+    },
+    {
+      "start": 2041.46,
+      "end": 2046.1000000000001,
+      "text": "completely digitally by a machine interacting with itself and just going and going and going"
+    },
+    {
+      "start": 2046.1000000000001,
+      "end": 2052.6600000000003,
+      "text": "so there's really no fundamental barrier to a experience driven ai system mastering mathematics"
+    },
+    {
+      "start": 2052.6600000000003,
+      "end": 2053.1600000000003,
+      "text": "okay"
+    },
+    {
+      "start": 2053.48,
+      "end": 2057.64,
+      "text": "i i really buy what you're saying about alpha proof by the way and and the same with alpha"
+    },
+    {
+      "start": 2057.64,
+      "end": 2062.12,
+      "text": "zero i mean i think they're really excellent examples of how far you can go with reinforcement"
+    },
+    {
+      "start": 2062.12,
+      "end": 2066.44,
+      "text": "learning but they are also examples where there is a very clear metric of success you win a game"
+    },
+    {
+      "start": 2066.44,
+      "end": 2072.2799999999997,
+      "text": "of go or you don't your proof is correct or it isn't how did these ideas translate to systems"
+    },
+    {
+      "start": 2072.2799999999997,
+      "end": 2077.56,
+      "text": "where it's a lot messier and actually these these very clear metrics might not necessarily be"
+    },
+    {
+      "start": 2077.56,
+      "end": 2083.08,
+      "text": "present so first i want to acknowledge that this is this question is probably"
+    },
+    {
+      "start": 2083.16,
+      "end": 2088.52,
+      "text": "the reason why reinforcement learning methods or these kind of experience-based methods that i'm"
+    },
+    {
+      "start": 2088.52,
+      "end": 2093.96,
+      "text": "talking about have not yet broken into the mainstream of absolutely everything that we"
+    },
+    {
+      "start": 2093.96,
+      "end": 2098.7599999999998,
+      "text": "do in every ai system so it has to be cracked if if the era of experience is to come about"
+    },
+    {
+      "start": 2098.7599999999998,
+      "end": 2103.24,
+      "text": "then we have to have an answer to this but i think the answer might be right in front of us"
+    },
+    {
+      "start": 2104.04,
+      "end": 2107.48,
+      "text": "because actually when you look at it the real world contains"
+    },
+    {
+      "start": 2107.48,
+      "end": 2112.44,
+      "text": "innumerable signals there's just a vast number of signals in the way the world works you know if we"
+    },
+    {
+      "start": 2113.16,
+      "end": 2118.92,
+      "text": "look at all of the things that we do on on on the internet for example there's any number of"
+    },
+    {
+      "start": 2118.92,
+      "end": 2124.68,
+      "text": "signals like likes or dislikes or profits or losses or pleasure pain signals you might get or"
+    },
+    {
+      "start": 2124.68,
+      "end": 2129.7999999999997,
+      "text": "yields or you know properties of materials there's all these different numbers representing different"
+    },
+    {
+      "start": 2129.7999999999997,
+      "end": 2138.12,
+      "text": "things about different aspects of of experience and so what we need is really a way to build a"
+    },
+    {
+      "start": 2138.12,
+      "end": 2142.2,
+      "text": "system which can adapt and which can say well which one of these is really the important thing"
+    },
+    {
+      "start": 2143.16,
+      "end": 2147.24,
+      "text": "in this situation and so another way to say that is wouldn't it be great if we could have systems"
+    },
+    {
+      "start": 2147.24,
+      "end": 2154.52,
+      "text": "where you know a human maybe specifies um what they want but that gets translated into a set"
+    },
+    {
+      "start": 2154.52,
+      "end": 2158.68,
+      "text": "of different numbers that the system can then optimize for itself completely autonomously"
+    },
+    {
+      "start": 2158.68,
+      "end": 2164.2799999999997,
+      "text": "so okay an example then let's say i said okay i want to be healthier this year and that's"
+    },
+    {
+      "start": 2164.2799999999997,
+      "end": 2168.68,
+      "text": "kind of a bit nebulous a bit fuzzy but what you're saying here is that that could be translated into"
+    },
+    {
+      "start": 2168.68,
+      "end": 2173.0,
+      "text": "a series of metrics like resting heart rate or bmi or whatever it might be"
+    },
+    {
+      "start": 2173.16,
+      "end": 2179.64,
+      "text": "and a combination of those metrics could then be used as a reward for reinforcement learning"
+    },
+    {
+      "start": 2179.64,
+      "end": 2183.64,
+      "text": "is that if i understood that correctly absolutely correctly are we talking about one metric though"
+    },
+    {
+      "start": 2183.64,
+      "end": 2187.96,
+      "text": "are we talking about a combination here the general idea would be that you've got one thing"
+    },
+    {
+      "start": 2187.96,
+      "end": 2194.52,
+      "text": "which the human wants like to optimize my health and and then the system can learn for itself like"
+    },
+    {
+      "start": 2194.52,
+      "end": 2201.8799999999997,
+      "text": "which rewards help you to be healthier and so that can be like a combination of numbers that adapts"
+    },
+    {
+      "start": 2203.16,
+      "end": 2207.56,
+      "text": "so it could be that it starts off saying okay well you know right now it's your resting heart"
+    },
+    {
+      "start": 2207.56,
+      "end": 2211.64,
+      "text": "rate that really matters and then later you know it gets some feedback saying hang on you know i"
+    },
+    {
+      "start": 2211.64,
+      "end": 2216.52,
+      "text": "really don't just care about that i care about my anxiety level or something and then it includes"
+    },
+    {
+      "start": 2216.52,
+      "end": 2221.64,
+      "text": "that into the mixture and and based on on on feedback it could actually adapt so one way to"
+    },
+    {
+      "start": 2221.64,
+      "end": 2228.8399999999997,
+      "text": "say this is that a very small amount of human data can allow the system to generate goals for itself"
+    },
+    {
+      "start": 2229.3999999999996,
+      "end": 2233.08,
+      "text": "that enable a vast amount of learning from experience because this is"
+    },
+    {
+      "start": 2233.16,
+      "end": 2238.7599999999998,
+      "text": "where the the real questions of alignment come in right i mean if you said for instance let's"
+    },
+    {
+      "start": 2238.7599999999998,
+      "end": 2244.92,
+      "text": "do a reinforcement learning algorithm that's just minimizes my resting heart rate i mean"
+    },
+    {
+      "start": 2244.92,
+      "end": 2251.56,
+      "text": "quite quickly zero is is like a good minimization strategy there which would achieve its objective"
+    },
+    {
+      "start": 2251.56,
+      "end": 2257.24,
+      "text": "just not maybe quite in the way that you wanted it to i mean obviously you really want to avoid"
+    },
+    {
+      "start": 2257.24,
+      "end": 2262.92,
+      "text": "that kind of scenario so how do you have confidence that the metrics that you're choosing aren't"
+    },
+    {
+      "start": 2263.16,
+      "end": 2269.3199999999997,
+      "text": "creating additional problems one way you can do this is to leverage the the same answer which has"
+    },
+    {
+      "start": 2269.3199999999997,
+      "end": 2275.3199999999997,
+      "text": "been so effective so far elsewhere in ai which is at that level you can make use of of some human"
+    },
+    {
+      "start": 2275.3199999999997,
+      "end": 2279.8799999999997,
+      "text": "input if it's a human goal that we're optimizing then we probably at that level need to measure"
+    },
+    {
+      "start": 2279.8799999999997,
+      "end": 2284.7599999999998,
+      "text": "you know and say well you know a human gives feedback to say actually you know i'm starting"
+    },
+    {
+      "start": 2284.7599999999998,
+      "end": 2289.08,
+      "text": "to feel uncomfortable and in fact while i don't want to claim that we have the answers and i think"
+    },
+    {
+      "start": 2289.08,
+      "end": 2292.8399999999997,
+      "text": "there's an enormous amount of research to get this right and make sure that this kind of thing is safe"
+    },
+    {
+      "start": 2293.16,
+      "end": 2298.2799999999997,
+      "text": "could actually help in certain ways in terms of this kind of safety and adaptation there's this"
+    },
+    {
+      "start": 2298.2799999999997,
+      "end": 2302.68,
+      "text": "famous example of paving over the whole world with paper clips when a system's been asked to make as"
+    },
+    {
+      "start": 2302.68,
+      "end": 2307.96,
+      "text": "many paper clips as possible if you have a system which which is really its overall goal is to you"
+    },
+    {
+      "start": 2307.96,
+      "end": 2313.7999999999997,
+      "text": "know support human um well-being or and and it gets that feedback from humans about and it"
+    },
+    {
+      "start": 2313.7999999999997,
+      "end": 2318.52,
+      "text": "understands their their distress signals and their happiness signals and so forth the moment it"
+    },
+    {
+      "start": 2318.52,
+      "end": 2322.92,
+      "text": "starts to you know do create too many paper clips and starts to cause people distress"
+    },
+    {
+      "start": 2323.16,
+      "end": 2327.56,
+      "text": "it would adapt that that combination and it would choose a different combination and start to"
+    },
+    {
+      "start": 2327.56,
+      "end": 2331.3999999999996,
+      "text": "optimize for something which isn't going to pave over the world with paper clips we're not there"
+    },
+    {
+      "start": 2331.3999999999996,
+      "end": 2337.72,
+      "text": "yet yeah but i think there are some some versions of this which could actually end up not only"
+    },
+    {
+      "start": 2337.72,
+      "end": 2343.64,
+      "text": "addressing some of the alignment issues that have been faced by previous approaches to you know goal"
+    },
+    {
+      "start": 2343.64,
+      "end": 2350.12,
+      "text": "focused systems that maybe even you know be be more adaptive and therefore safer than what we"
+    },
+    {
+      "start": 2350.12,
+      "end": 2353.08,
+      "text": "have today outside of the world of ai though"
+    },
+    {
+      "start": 2353.56,
+      "end": 2358.68,
+      "text": "i mean is there a problem with using quantitative metrics as a measure for success at all i mean"
+    },
+    {
+      "start": 2358.68,
+      "end": 2367.24,
+      "text": "i'm thinking here about exam scores or or gdp or the the the myriad of of problems that you can get"
+    },
+    {
+      "start": 2367.24,
+      "end": 2373.08,
+      "text": "into when you focus too carefully and end up with a tyranny of metrics i would be the first to agree"
+    },
+    {
+      "start": 2373.08,
+      "end": 2378.2799999999997,
+      "text": "that that when you like mindlessly pursue a metric in in the human world that it often leads to"
+    },
+    {
+      "start": 2378.2799999999997,
+      "end": 2382.7599999999998,
+      "text": "undesired consequences at the same time the whole world of of"
+    },
+    {
+      "start": 2383.16,
+      "end": 2388.04,
+      "text": "human endeavor is organized around us optimizing for some things if we didn't have anything that"
+    },
+    {
+      "start": 2388.04,
+      "end": 2392.44,
+      "text": "we could optimize for we wouldn't ever be able to make progress we have all kinds of signals"
+    },
+    {
+      "start": 2392.44,
+      "end": 2397.3999999999996,
+      "text": "and metrics and and so forth that drive progress and then people say oh maybe that isn't the"
+    },
+    {
+      "start": 2398.3599999999997,
+      "end": 2401.8799999999997,
+      "text": "you know the right metric and they adapt it is is part of the problem then"
+    },
+    {
+      "start": 2401.8799999999997,
+      "end": 2406.7599999999998,
+      "text": "that at the moment you have an interaction with an ai that is really contained within"
+    },
+    {
+      "start": 2406.7599999999998,
+      "end": 2412.7599999999998,
+      "text": "time there aren't these sort of longer-term learnings or adjustment of of what the goals might"
+    },
+    {
+      "start": 2413.16,
+      "end": 2417.56,
+      "text": "like once you decide that gdp is the thing that you're going for is gdp forever and there's no"
+    },
+    {
+      "start": 2417.56,
+      "end": 2422.04,
+      "text": "change i think that's absolutely right that the kind of ai that we have today doesn't have like"
+    },
+    {
+      "start": 2422.04,
+      "end": 2426.2,
+      "text": "a life you know it's not something which has its own stream of experience in the way that you know"
+    },
+    {
+      "start": 2426.2,
+      "end": 2430.68,
+      "text": "an animal or a human might have that kind of goes on for for years and years and years and can keep"
+    },
+    {
+      "start": 2430.68,
+      "end": 2434.8399999999997,
+      "text": "adapting over time and and that needs to change and one of the reasons it needs to change is so"
+    },
+    {
+      "start": 2434.8399999999997,
+      "end": 2439.64,
+      "text": "that we can have systems that that just keep learning and learning and learning over time"
+    },
+    {
+      "start": 2439.64,
+      "end": 2442.8399999999997,
+      "text": "and adapting and understanding how to better achieve"
+    },
+    {
+      "start": 2443.16,
+      "end": 2447.96,
+      "text": "um the kind of outcome that we really want is there something that is quite risky about"
+    },
+    {
+      "start": 2447.96,
+      "end": 2454.7599999999998,
+      "text": "untethering algorithms with with i mean potentially quite a lot of power from human"
+    },
+    {
+      "start": 2456.3599999999997,
+      "end": 2460.44,
+      "text": "data really there are certainly risks and there are certainly benefits"
+    },
+    {
+      "start": 2460.44,
+      "end": 2467.8799999999997,
+      "text": "and i think we absolutely have to take this very seriously and be extraordinarily careful"
+    },
+    {
+      "start": 2467.8799999999997,
+      "end": 2473.16,
+      "text": "about taking these steps um that come next on the in this journey towards the era of experience"
+    },
+    {
+      "start": 2473.16,
+      "end": 2477.8799999999997,
+      "text": "and i should say that you know one of my reasons to write this position paper is because i feel"
+    },
+    {
+      "start": 2477.8799999999997,
+      "end": 2483.72,
+      "text": "that that people aren't recognizing that this transition is going to come and that it will"
+    },
+    {
+      "start": 2483.72,
+      "end": 2489.08,
+      "text": "have consequences and and it will require careful thought about many of these decisions and the fact"
+    },
+    {
+      "start": 2489.08,
+      "end": 2494.92,
+      "text": "that so many people are still thinking only about their human data approach means that not enough"
+    },
+    {
+      "start": 2494.92,
+      "end": 2498.92,
+      "text": "people are taking seriously these kinds of questions the last time i got to speak to you"
+    },
+    {
+      "start": 2498.92,
+      "end": 2503.08,
+      "text": "on this podcast we talked about a different position paper that you've been working on for a"
+    },
+    {
+      "start": 2503.7999999999997,
+      "end": 2509.3999999999996,
+      "text": "while now and just wanted to bring it up a little bit so we were thinking to discus about"
+    },
+    {
+      "start": 2509.3999999999996,
+      "end": 2513.7999999999997,
+      "text": "what is our combat strategy what are human data data goals i think something similar to what"
+    },
+    {
+      "start": 2513.7999999999997,
+      "end": 2531.04,
+      "text": "we were discussing earlier about how we're not particularly"
+    },
+    {
+      "start": 2531.04,
+      "end": 2532.2799999999997,
+      "text": "attracts the chat"
+    },
+    {
+      "start": 2532.2799999999997,
+      "end": 2533.08,
+      "text": "by the organization"
+    },
+    {
+      "start": 2533.08,
+      "end": 2540.1,
+      "text": "you know a certain level of performance that they have for free but then we need in the analogy"
+    },
+    {
+      "start": 2540.1,
+      "end": 2545.22,
+      "text": "some kind of sustainable fuel that kind of keeps the world going once all the fossil fuels are gone"
+    },
+    {
+      "start": 2545.22,
+      "end": 2549.8199999999997,
+      "text": "and I think that's what reinforcement learning is it's the sustainable fuel this experience that it"
+    },
+    {
+      "start": 2549.8199999999997,
+      "end": 2553.88,
+      "text": "can keep like generating and using and learning from and generating more and learning from it"
+    },
+    {
+      "start": 2553.88,
+      "end": 2558.16,
+      "text": "that's really the process that's going to drive progress in AI and I don't want to in any way"
+    },
+    {
+      "start": 2558.16,
+      "end": 2562.4,
+      "text": "denigrate what's been done with with human data I think it's great AIs that we've got now are"
+    },
+    {
+      "start": 2562.4,
+      "end": 2567.1600000000003,
+      "text": "amazing mind-blowing things I love them and and enjoy working with them and and do research on"
+    },
+    {
+      "start": 2567.1600000000003,
+      "end": 2573.82,
+      "text": "them myself but it's just the beginning. Dave thank you so much that was amazing. Thank you"
+    },
+    {
+      "start": 2573.82,
+      "end": 2578.9,
+      "text": "thank you it's always really really fun. Of course there is this monumental amount of progress that's"
+    },
+    {
+      "start": 2578.9,
+      "end": 2583.78,
+      "text": "going on at the moment but when you stop to think about it there really has been this narrowing in"
+    },
+    {
+      "start": 2583.78,
+      "end": 2589.94,
+      "text": "the diversity of ideas around AI I mean the success of multimodal models has been so rapid"
+    },
+    {
+      "start": 2589.94,
+      "end": 2592.38,
+      "text": "it's been so profound so beyond what most people think about it and I think it's really important"
+    },
+    {
+      "start": 2592.38,
+      "end": 2595.6800000000003,
+      "text": "to have this preface I think it has been a very valuable shift in the course of our research"
+    },
+    {
+      "start": 2595.6800000000003,
+      "end": 2598.88,
+      "text": "and I've had the pleasure of working with the SBA and the Department of Health to talk to us about"
+    },
+    {
+      "start": 2598.88,
+      "end": 2602.94,
+      "text": "this but I think it's really important to point out that there are risks involved with this"
+    },
+    {
+      "start": 2602.94,
+      "end": 2608.1600000000003,
+      "text": "process in terms of being able to use human data like AI in the future as well. So there have been"
+    },
+    {
+      "start": 2608.1600000000003,
+      "end": 2612.9,
+      "text": "there's been plenty of things that have happened to make AI the way that most people were expecting"
+    },
+    {
+      "start": 2612.9,
+      "end": 2619.26,
+      "text": "but they kind of have sucked a lot of the oxygen out of the broader conversation and it is noticeable"
+    },
+    {
+      "start": 2619.26,
+      "end": 2625.6600000000003,
+      "text": "can't help but be quite convinced by what David was saying there. If we really want"
+    },
+    {
+      "start": 2625.6600000000003,
+      "end": 2630.98,
+      "text": "superhuman intelligence, maybe it is now time to step away from the human."
+    },
+    {
+      "start": 2631.92,
+      "end": 2636.0600000000004,
+      "text": "You have been listening to Google DeepMind, the podcast with me, Professor Hannah Fry."
+    },
+    {
+      "start": 2636.6400000000003,
+      "end": 2642.38,
+      "text": "And before you go, we have got an extra special treat for you today in the form of a conversation"
+    },
+    {
+      "start": 2642.38,
+      "end": 2648.6600000000003,
+      "text": "between David Silver, the man behind AlphaGo, and Fan Hui, the first professional Go player to face"
+    },
+    {
+      "start": 2648.66,
+      "end": 2656.2,
+      "text": "it. A decade ago, a little while before the very famous 4-1 victory over Lisa Dole, Fan Hui became"
+    },
+    {
+      "start": 2656.2,
+      "end": 2662.3799999999997,
+      "text": "the first professional Go player to test his skills against your algorithm. Thank you so much"
+    },
+    {
+      "start": 2662.3799999999997,
+      "end": 2666.98,
+      "text": "for joining us, Fan Hui. Oh, thank you. Thank you. For me, it's a very extraordinary experience."
+    },
+    {
+      "start": 2667.22,
+      "end": 2671.3999999999996,
+      "text": "How long has it been since you spoke to him? It's been quite a few years. It's so nice to"
+    },
+    {
+      "start": 2671.3999999999996,
+      "end": 2677.58,
+      "text": "see Fan Hui. It's been absolutely amazing to catch up with someone who Fan Hui played such a huge"
+    },
+    {
+      "start": 2677.58,
+      "end": 2678.64,
+      "text": "part in the journey."
+    },
+    {
+      "start": 2678.66,
+      "end": 2681.98,
+      "text": "I have always liked the development of AlphaGo, so it's really just a genuine delight."
+    },
+    {
+      "start": 2681.98,
+      "end": 2688.48,
+      "text": "Okay, so I want to ask you about that match that you had all those years ago, because I think, I guess now,"
+    },
+    {
+      "start": 2688.48,
+      "end": 2694.2799999999997,
+      "text": "looking at the full history of it, it almost seems like a like a foregone conclusion. But at the time,"
+    },
+    {
+      "start": 2694.2799999999997,
+      "end": 2698.18,
+      "text": "I mean, you must have been pretty nervous, David. And how did you feel about it as well, Fan Hui?"
+    },
+    {
+      "start": 2698.18,
+      "end": 2705.2799999999997,
+      "text": "I remember the first time I saw the DM's email telling me, like, the exciting Go project."
+    },
+    {
+      "start": 2705.2799999999997,
+      "end": 2708.42,
+      "text": "I still remember when I played with AlphaGo, the first game I lost."
+    },
+    {
+      "start": 2708.42,
+      "end": 2714.9,
+      "text": "I feel something strange. I also remember when I lost the second game."
+    },
+    {
+      "start": 2714.9,
+      "end": 2721.04,
+      "text": "I feel fear because I feel maybe I will never win with this program or AI."
+    },
+    {
+      "start": 2721.04,
+      "end": 2727.84,
+      "text": "And when I lost my last, my five-game last game, I feel my goal world is broken."
+    },
+    {
+      "start": 2727.84,
+      "end": 2732.58,
+      "text": "But maybe this is also a good moment."
+    },
+    {
+      "start": 2732.58,
+      "end": 2735.8,
+      "text": "My new goal world is open."
+    },
+    {
+      "start": 2735.8,
+      "end": 2738.2000000000003,
+      "text": "So I started thinking about it."
+    },
+    {
+      "start": 2738.42,
+      "end": 2745.98,
+      "text": "I think AlphaGo for me is not just teaching me something new technically, not just a technique."
+    },
+    {
+      "start": 2745.98,
+      "end": 2752.46,
+      "text": "Maybe it's telling me the words to open my mind and change my mind."
+    },
+    {
+      "start": 2752.46,
+      "end": 2759.92,
+      "text": "After that, for me, even today, for me, I never ask a question like, I can't or I can."
+    },
+    {
+      "start": 2759.92,
+      "end": 2765.52,
+      "text": "My question is always like, I want or I don't want."
+    },
+    {
+      "start": 2765.52,
+      "end": 2770.52,
+      "text": "So I think this is AI or AlphaGo teaching me about that."
+    },
+    {
+      "start": 2770.52,
+      "end": 2777.18,
+      "text": "David, I want to ask you as well, though, in advance of that match, I mean, how confident"
+    },
+    {
+      "start": 2777.18,
+      "end": 2779.92,
+      "text": "were you about the performance of your algorithm?"
+    },
+    {
+      "start": 2779.92,
+      "end": 2781.2,
+      "text": "We really weren't confident."
+    },
+    {
+      "start": 2781.2,
+      "end": 2787.8,
+      "text": "It was just, it's so hard to judge where we were, because we knew that we'd gone beyond"
+    },
+    {
+      "start": 2787.8,
+      "end": 2791.24,
+      "text": "the players that we had at DeepMind."
+    },
+    {
+      "start": 2791.24,
+      "end": 2794.4,
+      "text": "And we knew that we'd gone beyond all the programs that had been written before."
+    },
+    {
+      "start": 2794.4,
+      "end": 2795.5,
+      "text": "But there's such a huge gap."
+    },
+    {
+      "start": 2795.5,
+      "end": 2799.28,
+      "text": "There's such a huge gap beyond that towards the level of professional players like FanHui."
+    },
+    {
+      "start": 2799.28,
+      "end": 2801.82,
+      "text": "And we had no idea, you know, are we somewhere in that gap?"
+    },
+    {
+      "start": 2801.82,
+      "end": 2803.56,
+      "text": "Are we somewhere beyond that gap?"
+    },
+    {
+      "start": 2803.56,
+      "end": 2805.14,
+      "text": "We just genuinely didn't know."
+    },
+    {
+      "start": 2805.14,
+      "end": 2811.24,
+      "text": "And so this was the first time we had any opportunity to calibrate our level of performance."
+    },
+    {
+      "start": 2811.24,
+      "end": 2818.3,
+      "text": "And I don't think any of us would have been surprised if we'd lost all five games."
+    },
+    {
+      "start": 2818.3,
+      "end": 2823.26,
+      "text": "And so it was a very pleasant surprise to win all five."
+    },
+    {
+      "start": 2823.26,
+      "end": 2824.26,
+      "text": "And yeah."
+    },
+    {
+      "start": 2824.26,
+      "end": 2825.26,
+      "text": "We just..."
+    },
+    {
+      "start": 2825.26,
+      "end": 2828.76,
+      "text": "I mean, genuinely, it was like one of those moments where the world could have branched"
+    },
+    {
+      "start": 2828.76,
+      "end": 2829.76,
+      "text": "either way."
+    },
+    {
+      "start": 2829.76,
+      "end": 2831.82,
+      "text": "And we just didn't know until the match happened."
+    },
+    {
+      "start": 2831.82,
+      "end": 2836.1400000000003,
+      "text": "But of course, FanHui, this algorithm then advanced, I mean, with your help."
+    },
+    {
+      "start": 2836.1400000000003,
+      "end": 2842.2000000000003,
+      "text": "In fact, after your match, you came on board and supported the team in developing it further."
+    },
+    {
+      "start": 2842.2000000000003,
+      "end": 2845.26,
+      "text": "But that earlier version, what did it feel like to play it?"
+    },
+    {
+      "start": 2845.26,
+      "end": 2848.42,
+      "text": "Did it feel fundamentally different to having a human opponent?"
+    },
+    {
+      "start": 2848.42,
+      "end": 2851.44,
+      "text": "You know, I played with another program before AlphaGo."
+    },
+    {
+      "start": 2851.44,
+      "end": 2855.26,
+      "text": "So when I play with another program, I feel like, oh, this is a program."
+    },
+    {
+      "start": 2855.26,
+      "end": 2857.8,
+      "text": "Because they don't play like a human."
+    },
+    {
+      "start": 2857.8,
+      "end": 2860.6600000000003,
+      "text": "But with AlphaGo, I feel something very strange."
+    },
+    {
+      "start": 2860.6600000000003,
+      "end": 2864.5,
+      "text": "It's like sometimes I feel like it's really, really like human."
+    },
+    {
+      "start": 2864.5,
+      "end": 2869.76,
+      "text": "What's the impact been then of AlphaGo and AlphaZero on the Go community?"
+    },
+    {
+      "start": 2869.76,
+      "end": 2870.76,
+      "text": "Has it been..."
+    },
+    {
+      "start": 2870.76,
+      "end": 2876.96,
+      "text": "Has there had to be a process of acceptance or was it, you know, positive from the off?"
+    },
+    {
+      "start": 2876.96,
+      "end": 2883.26,
+      "text": "First of all, when I lost with AlphaGo, for the all-Go community, nobody really believed"
+    },
+    {
+      "start": 2883.26,
+      "end": 2884.26,
+      "text": "this is true."
+    },
+    {
+      "start": 2884.26,
+      "end": 2885.26,
+      "text": "Because, yeah."
+    },
+    {
+      "start": 2885.26,
+      "end": 2886.26,
+      "text": "I'm only a champion."
+    },
+    {
+      "start": 2886.26,
+      "end": 2887.26,
+      "text": "I'm only a champion."
+    },
+    {
+      "start": 2887.26,
+      "end": 2888.26,
+      "text": "I'm only a champion."
+    },
+    {
+      "start": 2888.26,
+      "end": 2889.26,
+      "text": "I'm only a champion."
+    },
+    {
+      "start": 2889.26,
+      "end": 2890.26,
+      "text": "I'm only a champion."
+    },
+    {
+      "start": 2890.26,
+      "end": 2891.26,
+      "text": "So it's not more than champion."
+    },
+    {
+      "start": 2891.26,
+      "end": 2895.6000000000004,
+      "text": "But when AlphaGo, when they started, and the all-Go community sees something different."
+    },
+    {
+      "start": 2895.6000000000004,
+      "end": 2899.2200000000003,
+      "text": "Because AlphaGo played really, really well."
+    },
+    {
+      "start": 2899.2200000000003,
+      "end": 2907.5,
+      "text": "I remember in the second game, the move 37, such beautiful move, really, really beautiful."
+    },
+    {
+      "start": 2907.5,
+      "end": 2909.6800000000003,
+      "text": "So creative, very creative."
+    },
+    {
+      "start": 2909.6800000000003,
+      "end": 2912.34,
+      "text": "For the human, we will never play this move."
+    },
+    {
+      "start": 2912.34,
+      "end": 2915.2200000000003,
+      "text": "After that move, everything changed in the Go world."
+    },
+    {
+      "start": 2915.26,
+      "end": 2919.26,
+      "text": "Because for us, everything is possible."
+    },
+    {
+      "start": 2919.26,
+      "end": 2924.6800000000003,
+      "text": "Today, even the student, even the Go student use AI to learn."
+    },
+    {
+      "start": 2924.6800000000003,
+      "end": 2929.1800000000003,
+      "text": "So yes, I think this is really, really good for all-Go community."
+    },
+    {
+      "start": 2929.1800000000003,
+      "end": 2932.1800000000003,
+      "text": "I think it's not just for Go community."
+    },
+    {
+      "start": 2932.1800000000003,
+      "end": 2935.5,
+      "text": "It's also for the world, I think."
+    },
+    {
+      "start": 2935.5,
+      "end": 2936.5,
+      "text": "For everything."
+    },
+    {
+      "start": 2936.5,
+      "end": 2937.5,
+      "text": "Absolutely."
+    },
+    {
+      "start": 2937.5,
+      "end": 2939.76,
+      "text": "Fan Hui, thank you so much for joining us."
+    },
+    {
+      "start": 2939.76,
+      "end": 2943.26,
+      "text": "That was such a real treat, especially with the big anniversary coming up, I guess."
+    },
+    {
+      "start": 2943.26,
+      "end": 2944.26,
+      "text": "Just great to see you again."
+    },
+    {
+      "start": 2944.26,
+      "end": 2946.26,
+      "text": "And yeah, thanks for coming in."
+    },
+    {
+      "start": 2946.26,
+      "end": 2948.26,
+      "text": "And thanks for everything you did on AlphaGo."
+    },
+    {
+      "start": 2948.26,
+      "end": 2951.26,
+      "text": "I don't think it would have been the same without you."
+    },
+    {
+      "start": 2951.26,
+      "end": 2956.26,
+      "text": "I think we would have made some terrible mistakes if we hadn't had your advice to help us along"
+    },
+    {
+      "start": 2956.26,
+      "end": 2957.26,
+      "text": "the way."
+    },
+    {
+      "start": 2957.26,
+      "end": 2958.26,
+      "text": "So thank you."
+    },
+    {
+      "start": 2958.26,
+      "end": 2959.26,
+      "text": "Thank you, Dave."
+    }
+  ],
+  "segment_count": 767
+}

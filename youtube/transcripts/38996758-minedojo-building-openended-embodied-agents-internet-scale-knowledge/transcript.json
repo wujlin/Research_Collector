@@ -1,0 +1,3165 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 7.140000000000001,
+      "text": "I want to start today's talk with a story of two kittens."
+    },
+    {
+      "start": 7.86,
+      "end": 13.9,
+      "text": "Actually, back in 1963, two scientists, Held and Hine, they did an ingenious experiment."
+    },
+    {
+      "start": 14.44,
+      "end": 19.7,
+      "text": "They put two newborn kittens that have not seen the visual world yet in this device."
+    },
+    {
+      "start": 19.7,
+      "end": 21.7,
+      "text": "So it's sort of like a merry-go-round."
+    },
+    {
+      "start": 22.240000000000002,
+      "end": 25.14,
+      "text": "And the two kittens are linked by a rigid mechanical bar."
+    },
+    {
+      "start": 25.54,
+      "end": 27.3,
+      "text": "So the movements are exactly mirrored."
+    },
+    {
+      "start": 27.3,
+      "end": 32.78,
+      "text": "And the active kitten on the right-hand side is able to move freely while transmitting"
+    },
+    {
+      "start": 32.78,
+      "end": 34.42,
+      "text": "the motion over this rigid link."
+    },
+    {
+      "start": 35.160000000000004,
+      "end": 40.56,
+      "text": "And the passive kitten on the left, it can observe the exact same visual world as the"
+    },
+    {
+      "start": 40.56,
+      "end": 42.4,
+      "text": "other kitten, but it's confined to a basket."
+    },
+    {
+      "start": 42.84,
+      "end": 44.86,
+      "text": "So it cannot really control its own movement."
+    },
+    {
+      "start": 46.2,
+      "end": 50.58,
+      "text": "And then after a few days, the scientists free the kittens and then test their behaviors."
+    },
+    {
+      "start": 51.120000000000005,
+      "end": 56.68,
+      "text": "And they found that only the active kitten developed a healthy visual motor loop, while"
+    },
+    {
+      "start": 56.68,
+      "end": 62.64,
+      "text": "the passive kitten is not able to navigate things like visual cliff or respond properly"
+    },
+    {
+      "start": 62.64,
+      "end": 64.34,
+      "text": "to approaching objects."
+    },
+    {
+      "start": 65.14,
+      "end": 71.02,
+      "text": "And note that both kittens experience the exact same visual stimuli, or so to speak,"
+    },
+    {
+      "start": 71.38,
+      "end": 73.03999999999999,
+      "text": "exact same observation sequence."
+    },
+    {
+      "start": 73.36,
+      "end": 74.8,
+      "text": "And the only difference is agency."
+    },
+    {
+      "start": 76.1,
+      "end": 81.68,
+      "text": "So I find this experiment very fascinating, because nowadays we have a very powerful passive"
+    },
+    {
+      "start": 81.68,
+      "end": 82.9,
+      "text": "kitten, and that's GBD-3."
+    },
+    {
+      "start": 83.7,
+      "end": 86.66,
+      "text": "GBD-3 passively observes and regurgitates the task."
+    },
+    {
+      "start": 86.68,
+      "end": 93.94000000000001,
+      "text": "So it's kind of like a stochastic parent, but its knowledge is abstract and ungrounded."
+    },
+    {
+      "start": 94.42,
+      "end": 99.30000000000001,
+      "text": "And it also hallucinates things that is incompatible with our physical experience."
+    },
+    {
+      "start": 100.18,
+      "end": 105.06,
+      "text": "But I believe the future belongs to active kittens, which translates to journalist agents."
+    },
+    {
+      "start": 105.7,
+      "end": 108.80000000000001,
+      "text": "And they are the decision makers in a constant feedback loop."
+    },
+    {
+      "start": 109.34,
+      "end": 115.9,
+      "text": "They not only inherit GBD-3's vast knowledge, but also proactively take actions and endlessly"
+    },
+    {
+      "start": 115.9,
+      "end": 116.66000000000001,
+      "text": "explore the world."
+    },
+    {
+      "start": 116.68,
+      "end": 119.24000000000001,
+      "text": "And learn to make their knowledge executable."
+    },
+    {
+      "start": 120.12,
+      "end": 122.86000000000001,
+      "text": "So I'm calling this goal embodied GBD-3."
+    },
+    {
+      "start": 123.4,
+      "end": 126.0,
+      "text": "And I argue that such an agent should have the following capabilities."
+    },
+    {
+      "start": 126.88000000000001,
+      "end": 132.1,
+      "text": "First, it should be able to pursue very complex, semantically rich, and open world objectives,"
+    },
+    {
+      "start": 132.58,
+      "end": 133.96,
+      "text": "usually specified by language."
+    },
+    {
+      "start": 134.44,
+      "end": 136.9,
+      "text": "You explain what you want in an arbitrary natural language prompt."
+    },
+    {
+      "start": 137.46,
+      "end": 141.32,
+      "text": "And embodied GBD-3 should perform the actions for you in a dynamic world."
+    },
+    {
+      "start": 142.18,
+      "end": 143.68,
+      "text": "And next, massively multitask."
+    },
+    {
+      "start": 143.98000000000002,
+      "end": 146.12,
+      "text": "A journalist agent, as its name implies,"
+    },
+    {
+      "start": 146.12,
+      "end": 148.04,
+      "text": "must be able to do more than a few tasks."
+    },
+    {
+      "start": 148.62,
+      "end": 152.06,
+      "text": "It should be massively, or even better, infinitely multitasked,"
+    },
+    {
+      "start": 152.20000000000002,
+      "end": 154.54,
+      "text": "as capable as human language can express."
+    },
+    {
+      "start": 155.44,
+      "end": 156.62,
+      "text": "And finally, world knowledge."
+    },
+    {
+      "start": 156.94,
+      "end": 160.74,
+      "text": "It should still inherit from the heritage of the passive kitten,"
+    },
+    {
+      "start": 161.26,
+      "end": 163.58,
+      "text": "having common sense and lots of portraying knowledge,"
+    },
+    {
+      "start": 163.78,
+      "end": 166.86,
+      "text": "instead of overfitting to only a few concepts in an environment."
+    },
+    {
+      "start": 168.46,
+      "end": 171.44,
+      "text": "So today's agents, they've got many shiny achievements,"
+    },
+    {
+      "start": 171.86,
+      "end": 173.04000000000002,
+      "text": "but we're still not quite there yet."
+    },
+    {
+      "start": 173.46,
+      "end": 175.88,
+      "text": "Like DeepRO is able to beat human champions,"
+    },
+    {
+      "start": 176.12,
+      "end": 178.12,
+      "text": "including Go, StarCraft, and Dota,"
+    },
+    {
+      "start": 178.12,
+      "end": 180.12,
+      "text": "but these agents have a single objective,"
+    },
+    {
+      "start": 180.12,
+      "end": 182.12,
+      "text": "to beat the opponent,"
+    },
+    {
+      "start": 182.12,
+      "end": 184.12,
+      "text": "and can't really do anything else."
+    },
+    {
+      "start": 184.12,
+      "end": 186.12,
+      "text": "And the number of tasks are typically very limited,"
+    },
+    {
+      "start": 186.12,
+      "end": 188.12,
+      "text": "like a few dozen distinct tasks,"
+    },
+    {
+      "start": 188.12,
+      "end": 190.12,
+      "text": "let's say, in robot learning."
+    },
+    {
+      "start": 190.12,
+      "end": 193.12,
+      "text": "And RL tends to have this tabula rasa mindset."
+    },
+    {
+      "start": 193.12,
+      "end": 195.12,
+      "text": "So, for example, in Atari games,"
+    },
+    {
+      "start": 195.12,
+      "end": 197.12,
+      "text": "you don't need any external knowledge to do well."
+    },
+    {
+      "start": 197.12,
+      "end": 199.12,
+      "text": "Most of the time, the agent is trained from scratch,"
+    },
+    {
+      "start": 199.12,
+      "end": 203.12,
+      "text": "and you need more reflex than reasoning."
+    },
+    {
+      "start": 203.12,
+      "end": 205.12,
+      "text": "So, what does it need?"
+    },
+    {
+      "start": 205.12,
+      "end": 206.12,
+      "text": "I argue that this is not the case."
+    },
+    {
+      "start": 206.12,
+      "end": 208.12,
+      "text": "There are three main ingredients"
+    },
+    {
+      "start": 208.12,
+      "end": 211.12,
+      "text": "in the recipe for journalist-agent to emerge."
+    },
+    {
+      "start": 211.12,
+      "end": 215.12,
+      "text": "The first is that the environment needs to be open-ended enough,"
+    },
+    {
+      "start": 215.12,
+      "end": 218.12,
+      "text": "because the agent's capability is upper-bounded"
+    },
+    {
+      "start": 218.12,
+      "end": 221.12,
+      "text": "by the complexity of the simulator or the environment."
+    },
+    {
+      "start": 221.12,
+      "end": 223.12,
+      "text": "And I think Earth is a great example."
+    },
+    {
+      "start": 223.12,
+      "end": 227.12,
+      "text": "It's so open-ended that it allows an algorithm called natural evolution"
+    },
+    {
+      "start": 227.12,
+      "end": 230.12,
+      "text": "to produce all the diverse behaviors of life."
+    },
+    {
+      "start": 230.12,
+      "end": 234.12,
+      "text": "So can we have a simulator that's essentially a lo-fi Earth"
+    },
+    {
+      "start": 234.12,
+      "end": 235.12,
+      "text": "that we can still run,"
+    },
+    {
+      "start": 235.12,
+      "end": 238.12,
+      "text": "on our lab cluster?"
+    },
+    {
+      "start": 238.12,
+      "end": 240.12,
+      "text": "And second, we need to provide the agent"
+    },
+    {
+      "start": 240.12,
+      "end": 241.12,
+      "text": "with massive pre-training data,"
+    },
+    {
+      "start": 241.12,
+      "end": 243.12,
+      "text": "because exploration from scratch"
+    },
+    {
+      "start": 243.12,
+      "end": 246.12,
+      "text": "in an open-ended environment is simply intractable."
+    },
+    {
+      "start": 246.12,
+      "end": 248.12,
+      "text": "So the data will serve two purposes."
+    },
+    {
+      "start": 248.12,
+      "end": 251.12,
+      "text": "One, as a reference manual on how to do things."
+    },
+    {
+      "start": 251.12,
+      "end": 252.12,
+      "text": "And second, as a guidance"
+    },
+    {
+      "start": 252.12,
+      "end": 255.12,
+      "text": "for what are the interesting things worth doing."
+    },
+    {
+      "start": 255.12,
+      "end": 258.12,
+      "text": "So GPT-3 only learns from pure text on the web."
+    },
+    {
+      "start": 258.12,
+      "end": 259.12,
+      "text": "But can we do better?"
+    },
+    {
+      "start": 259.12,
+      "end": 261.12,
+      "text": "Can we provide the agent with much richer data,"
+    },
+    {
+      "start": 261.12,
+      "end": 264.12,
+      "text": "like video walkthroughs, multimedia tutorials,"
+    },
+    {
+      "start": 264.12,
+      "end": 267.12,
+      "text": "and even free-form wiki documents?"
+    },
+    {
+      "start": 267.12,
+      "end": 270.12,
+      "text": "And finally, once we have an environment database,"
+    },
+    {
+      "start": 270.12,
+      "end": 273.12,
+      "text": "we're ready to train this foundation active kit."
+    },
+    {
+      "start": 273.12,
+      "end": 275.12,
+      "text": "And it should be flexible enough"
+    },
+    {
+      "start": 275.12,
+      "end": 277.12,
+      "text": "to pursue open-ended tasks"
+    },
+    {
+      "start": 277.12,
+      "end": 279.12,
+      "text": "without task-specific assumptions,"
+    },
+    {
+      "start": 279.12,
+      "end": 281.12,
+      "text": "and also scalable enough"
+    },
+    {
+      "start": 281.12,
+      "end": 284.12,
+      "text": "to convert large-scale multimodal data"
+    },
+    {
+      "start": 284.12,
+      "end": 286.12,
+      "text": "into actionable insights."
+    },
+    {
+      "start": 286.12,
+      "end": 289.12,
+      "text": "And ideally, we want language here to play two key roles."
+    },
+    {
+      "start": 289.12,
+      "end": 292.12,
+      "text": "First, as an intuitive interface to communicate a task."
+    },
+    {
+      "start": 292.12,
+      "end": 293.12,
+      "text": "We're very used to prompt engineering."
+    },
+    {
+      "start": 293.12,
+      "end": 296.12,
+      "text": "And second, as a bridge"
+    },
+    {
+      "start": 296.12,
+      "end": 299.12,
+      "text": "to grounding things like visual concepts."
+    },
+    {
+      "start": 299.12,
+      "end": 302.12,
+      "text": "So these three ingredients landed us in Minecraft,"
+    },
+    {
+      "start": 302.12,
+      "end": 305.12,
+      "text": "which is the best-selling video game of all time."
+    },
+    {
+      "start": 305.12,
+      "end": 308.12,
+      "text": "And for those who are unfamiliar here in the audience,"
+    },
+    {
+      "start": 308.12,
+      "end": 311.12,
+      "text": "Minecraft is a procedurally generated 3D voxel world."
+    },
+    {
+      "start": 311.12,
+      "end": 314.12,
+      "text": "And in this game, you can do pretty much whatever you want."
+    },
+    {
+      "start": 314.12,
+      "end": 317.12,
+      "text": "You can explore the terrains, mine all kinds of materials,"
+    },
+    {
+      "start": 317.12,
+      "end": 320.12,
+      "text": "fight monsters, craft hundreds of tools and recipes,"
+    },
+    {
+      "start": 320.12,
+      "end": 322.12,
+      "text": "and build amazing structures."
+    },
+    {
+      "start": 322.12,
+      "end": 325.12,
+      "text": "And it does require a big repertoire of skills"
+    },
+    {
+      "start": 325.12,
+      "end": 327.12,
+      "text": "to play very well."
+    },
+    {
+      "start": 327.12,
+      "end": 330.12,
+      "text": "And what's so special about Minecraft"
+    },
+    {
+      "start": 330.12,
+      "end": 333.12,
+      "text": "is that it defines no particular score to maximize"
+    },
+    {
+      "start": 333.12,
+      "end": 335.12,
+      "text": "and no fixed storyline to follow."
+    },
+    {
+      "start": 335.12,
+      "end": 337.12,
+      "text": "And that makes it very well suited"
+    },
+    {
+      "start": 337.12,
+      "end": 340.12,
+      "text": "as a truly open-ended AI environment."
+    },
+    {
+      "start": 340.12,
+      "end": 343.12,
+      "text": "And as a result, we see very impressive creations."
+    },
+    {
+      "start": 343.12,
+      "end": 346.12,
+      "text": "So here is someone reproducing the entire Hogwarts castle"
+    },
+    {
+      "start": 346.12,
+      "end": 349.12,
+      "text": "block by block by hand in Minecraft."
+    },
+    {
+      "start": 349.12,
+      "end": 352.12,
+      "text": "I suppose that person might want some AI to help them."
+    },
+    {
+      "start": 352.12,
+      "end": 355.12,
+      "text": "And this is another example of someone building"
+    },
+    {
+      "start": 355.12,
+      "end": 358.12,
+      "text": "a really beautiful temple inside a deep cave"
+    },
+    {
+      "start": 358.12,
+      "end": 360.12,
+      "text": "with an underground river."
+    },
+    {
+      "start": 360.12,
+      "end": 362.12,
+      "text": "So I want to highlight one number."
+    },
+    {
+      "start": 362.12,
+      "end": 366.12,
+      "text": "That is, Minecraft has 140 million active players."
+    },
+    {
+      "start": 366.12,
+      "end": 369.12,
+      "text": "And just to put that number in perspective,"
+    },
+    {
+      "start": 369.12,
+      "end": 372.12,
+      "text": "it is more than twice the population of the UK,"
+    },
+    {
+      "start": 372.12,
+      "end": 376.12,
+      "text": "five times the number of people who know how to code,"
+    },
+    {
+      "start": 376.12,
+      "end": 379.12,
+      "text": "and 10,000 times the size of these new rifts,"
+    },
+    {
+      "start": 379.12,
+      "end": 381.12,
+      "text": "just to give you a sense of magnitude."
+    },
+    {
+      "start": 382.12,
+      "end": 386.12,
+      "text": "So a lot more Minecraft players than AI researchers."
+    },
+    {
+      "start": 386.12,
+      "end": 388.12,
+      "text": "And it just happens that gamers are generally"
+    },
+    {
+      "start": 388.12,
+      "end": 389.12,
+      "text": "happier than PhDs."
+    },
+    {
+      "start": 389.12,
+      "end": 392.12,
+      "text": "So they want to stream and share a lot of things."
+    },
+    {
+      "start": 392.12,
+      "end": 394.12,
+      "text": "So what does that mean?"
+    },
+    {
+      "start": 394.12,
+      "end": 397.12,
+      "text": "This means this huge human mass produces an enormous amount"
+    },
+    {
+      "start": 397.12,
+      "end": 399.12,
+      "text": "of online knowledge every day."
+    },
+    {
+      "start": 399.12,
+      "end": 402.12,
+      "text": "And can we tap into this treasure trove"
+    },
+    {
+      "start": 402.12,
+      "end": 404.12,
+      "text": "of learning materials?"
+    },
+    {
+      "start": 404.12,
+      "end": 407.12,
+      "text": "And just to show one more example before we move on."
+    },
+    {
+      "start": 407.12,
+      "end": 410.12,
+      "text": "So this kind of mind-blowing emergent behavior in Minecraft."
+    },
+    {
+      "start": 410.12,
+      "end": 412.12,
+      "text": "Someone built a functioning CPU server"
+    },
+    {
+      "start": 412.12,
+      "end": 414.12,
+      "text": "to circuit inside Minecraft,"
+    },
+    {
+      "start": 414.12,
+      "end": 416.12,
+      "text": "because the game supports logic blocks,"
+    },
+    {
+      "start": 416.12,
+      "end": 418.12,
+      "text": "and it's essentially Turing-complete."
+    },
+    {
+      "start": 418.12,
+      "end": 421.12,
+      "text": "So that's kind of how far you can push this game."
+    },
+    {
+      "start": 421.12,
+      "end": 424.12,
+      "text": "And based on Minecraft, we introduced MindDojo,"
+    },
+    {
+      "start": 424.12,
+      "end": 427.12,
+      "text": "a new open framework to help the community"
+    },
+    {
+      "start": 427.12,
+      "end": 429.12,
+      "text": "develop generally capable agents."
+    },
+    {
+      "start": 433.12,
+      "end": 436.12,
+      "text": "So we are basically following the recipe I just mentioned,"
+    },
+    {
+      "start": 436.12,
+      "end": 438.12,
+      "text": "the three ingredients towards journalist agent."
+    },
+    {
+      "start": 438.12,
+      "end": 440.12,
+      "text": "The first is open-ended environment,"
+    },
+    {
+      "start": 440.12,
+      "end": 442.12,
+      "text": "and next, Internet-scale knowledge."
+    },
+    {
+      "start": 442.12,
+      "end": 445.12,
+      "text": "And finally, can we learn an active kitten"
+    },
+    {
+      "start": 445.12,
+      "end": 448.12,
+      "text": "using the simulator and the massive data?"
+    },
+    {
+      "start": 448.12,
+      "end": 451.12,
+      "text": "So let's zoom in the first part."
+    },
+    {
+      "start": 451.12,
+      "end": 454.12,
+      "text": "MindDojo features a massive benchmarking suite"
+    },
+    {
+      "start": 454.12,
+      "end": 456.12,
+      "text": "of more than 3,000 tasks."
+    },
+    {
+      "start": 456.12,
+      "end": 459.12,
+      "text": "So this is among the largest open-source agent benchmark"
+    },
+    {
+      "start": 459.12,
+      "end": 461.12,
+      "text": "ever created, to our knowledge."
+    },
+    {
+      "start": 461.12,
+      "end": 464.12,
+      "text": "And it is enabled by a very versatile simulator"
+    },
+    {
+      "start": 464.12,
+      "end": 467.12,
+      "text": "that unlocks the full potential of the game."
+    },
+    {
+      "start": 467.12,
+      "end": 471.12,
+      "text": "So for example, we support multi-modal observation space,"
+    },
+    {
+      "start": 471.12,
+      "end": 474.12,
+      "text": "like RGB, voxel, and GPS signal,"
+    },
+    {
+      "start": 474.12,
+      "end": 476.12,
+      "text": "and rich action space as well,"
+    },
+    {
+      "start": 476.12,
+      "end": 480.12,
+      "text": "like movement, camera, attack, and inventory management."
+    },
+    {
+      "start": 480.12,
+      "end": 483.12,
+      "text": "Also, MindDojo can be customized at every detail,"
+    },
+    {
+      "start": 483.12,
+      "end": 486.12,
+      "text": "such as terrains, weather, block placement,"
+    },
+    {
+      "start": 486.12,
+      "end": 488.12,
+      "text": "and monster spawning."
+    },
+    {
+      "start": 489.12,
+      "end": 491.12,
+      "text": "And given this simulator,"
+    },
+    {
+      "start": 491.12,
+      "end": 494.12,
+      "text": "we introduce around 1,500 programmatic tasks."
+    },
+    {
+      "start": 494.12,
+      "end": 497.12,
+      "text": "So these are tasks that we define to have ground truth,"
+    },
+    {
+      "start": 497.12,
+      "end": 500.12,
+      "text": "success conditions in Python code."
+    },
+    {
+      "start": 500.12,
+      "end": 503.12,
+      "text": "And you can explicitly write down the sparse"
+    },
+    {
+      "start": 503.12,
+      "end": 505.12,
+      "text": "or even dense reward function sometimes."
+    },
+    {
+      "start": 505.12,
+      "end": 508.12,
+      "text": "So examples are harvesting event resources,"
+    },
+    {
+      "start": 508.12,
+      "end": 510.12,
+      "text": "learn to use a tree of tools,"
+    },
+    {
+      "start": 510.12,
+      "end": 512.12,
+      "text": "and combat various monsters."
+    },
+    {
+      "start": 512.12,
+      "end": 515.12,
+      "text": "And all these tasks come with a language prompt,"
+    },
+    {
+      "start": 515.12,
+      "end": 517.12,
+      "text": "and it's a template language prompt,"
+    },
+    {
+      "start": 517.12,
+      "end": 520.12,
+      "text": "like harvest n units of a certain resource in a terrain,"
+    },
+    {
+      "start": 520.12,
+      "end": 523.12,
+      "text": "or combat some monster at night."
+    },
+    {
+      "start": 523.12,
+      "end": 526.12,
+      "text": "And next, we also introduce 1,500 creative tasks,"
+    },
+    {
+      "start": 526.12,
+      "end": 528.12,
+      "text": "because Minecraft, by its nature,"
+    },
+    {
+      "start": 528.12,
+      "end": 530.12,
+      "text": "is free-form and open-ended."
+    },
+    {
+      "start": 530.12,
+      "end": 532.12,
+      "text": "So in contrast to programmatic tasks,"
+    },
+    {
+      "start": 532.12,
+      "end": 535.12,
+      "text": "creative tasks don't necessarily have well-defined"
+    },
+    {
+      "start": 535.12,
+      "end": 537.12,
+      "text": "or easily automated success criteria."
+    },
+    {
+      "start": 537.12,
+      "end": 539.12,
+      "text": "For example, let's say we want to build a house."
+    },
+    {
+      "start": 539.12,
+      "end": 542.12,
+      "text": "Well, what makes a house a house?"
+    },
+    {
+      "start": 542.12,
+      "end": 545.12,
+      "text": "So this is very similar to the image generation literature,"
+    },
+    {
+      "start": 545.12,
+      "end": 547.12,
+      "text": "like how can we programmatically decide"
+    },
+    {
+      "start": 547.12,
+      "end": 550.12,
+      "text": "if it generates a cat or a dog?"
+    },
+    {
+      "start": 550.12,
+      "end": 552.12,
+      "text": "And these tasks don't have a simple check,"
+    },
+    {
+      "start": 552.12,
+      "end": 554.12,
+      "text": "so human judgment or some learned"
+    },
+    {
+      "start": 554.12,
+      "end": 556.12,
+      "text": "kind of model-based scoring method"
+    },
+    {
+      "start": 556.12,
+      "end": 559.12,
+      "text": "we're calling embodied FID score should be used."
+    },
+    {
+      "start": 560.12,
+      "end": 562.12,
+      "text": "And finally, there is one task"
+    },
+    {
+      "start": 562.12,
+      "end": 565.12,
+      "text": "that holds a special status called play-through,"
+    },
+    {
+      "start": 565.12,
+      "end": 567.12,
+      "text": "which is to be the final boss of Minecraft."
+    },
+    {
+      "start": 567.12,
+      "end": 569.12,
+      "text": "That is the ender dragon."
+    },
+    {
+      "start": 569.12,
+      "end": 572.12,
+      "text": "So while Minecraft doesn't force you to do this mission,"
+    },
+    {
+      "start": 572.12,
+      "end": 574.12,
+      "text": "it is considered a big milestone achievement"
+    },
+    {
+      "start": 574.12,
+      "end": 576.12,
+      "text": "for any beginner players."
+    },
+    {
+      "start": 576.12,
+      "end": 579.12,
+      "text": "So I want to highlight that it's an extremely difficult task"
+    },
+    {
+      "start": 579.12,
+      "end": 582.12,
+      "text": "that requires very complex preparation,"
+    },
+    {
+      "start": 582.12,
+      "end": 585.12,
+      "text": "exploration, planning, and, of course, fighting skills."
+    },
+    {
+      "start": 585.12,
+      "end": 587.12,
+      "text": "So for an average human,"
+    },
+    {
+      "start": 587.12,
+      "end": 589.12,
+      "text": "it takes many hours or even days to solve."
+    },
+    {
+      "start": 589.12,
+      "end": 592.12,
+      "text": "And it's easy over a million action steps"
+    },
+    {
+      "start": 592.12,
+      "end": 593.12,
+      "text": "in a single episode."
+    },
+    {
+      "start": 593.12,
+      "end": 595.12,
+      "text": "So it's supported by Mind Dojo,"
+    },
+    {
+      "start": 595.12,
+      "end": 598.12,
+      "text": "but this is probably the longest horizon ever"
+    },
+    {
+      "start": 598.12,
+      "end": 600.12,
+      "text": "in a decision-making benchmark."
+    },
+    {
+      "start": 600.12,
+      "end": 603.12,
+      "text": "So I have to admit, I'm a below-average human."
+    },
+    {
+      "start": 603.12,
+      "end": 606.12,
+      "text": "I was never able to beat Ender Dragon myself,"
+    },
+    {
+      "start": 606.12,
+      "end": 608.12,
+      "text": "so I really want my AI to kind of avenge"
+    },
+    {
+      "start": 608.12,
+      "end": 612.12,
+      "text": "my poor game-playing skills."
+    },
+    {
+      "start": 612.12,
+      "end": 615.12,
+      "text": "So you may wonder, how do we obtain 3,000 tasks, right?"
+    },
+    {
+      "start": 615.12,
+      "end": 618.12,
+      "text": "We do have a very good task curation pipeline."
+    },
+    {
+      "start": 618.12,
+      "end": 621.12,
+      "text": "So first, for programming tasks, it's very simple."
+    },
+    {
+      "start": 621.12,
+      "end": 623.12,
+      "text": "Just do template generation."
+    },
+    {
+      "start": 623.12,
+      "end": 626.12,
+      "text": "But for creative tasks, there are two ways."
+    },
+    {
+      "start": 626.12,
+      "end": 629.12,
+      "text": "We directly borrow from YouTube"
+    },
+    {
+      "start": 629.12,
+      "end": 632.12,
+      "text": "and see what are those big YouTube gamers doing,"
+    },
+    {
+      "start": 632.12,
+      "end": 635.12,
+      "text": "what are the interesting things that they're thinking about."
+    },
+    {
+      "start": 635.12,
+      "end": 638.12,
+      "text": "And the other way is simply to ask GPT-3."
+    },
+    {
+      "start": 638.12,
+      "end": 641.12,
+      "text": "So here's the labeling UI we implemented"
+    },
+    {
+      "start": 641.12,
+      "end": 643.12,
+      "text": "to curate the tasks from YouTube."
+    },
+    {
+      "start": 643.12,
+      "end": 645.12,
+      "text": "And just one fun fact,"
+    },
+    {
+      "start": 645.12,
+      "end": 648.12,
+      "text": "whenever you see human annotators in our paper,"
+    },
+    {
+      "start": 648.12,
+      "end": 651.12,
+      "text": "it's just us, the co-authors, dividing up the work."
+    },
+    {
+      "start": 651.12,
+      "end": 654.12,
+      "text": "And we have open-sourced our tool, by the way,"
+    },
+    {
+      "start": 654.12,
+      "end": 658.12,
+      "text": "so you can curate your own tasks from YouTube if you want."
+    },
+    {
+      "start": 658.12,
+      "end": 660.12,
+      "text": "And a very interesting fact,"
+    },
+    {
+      "start": 660.12,
+      "end": 663.12,
+      "text": "we find that GPT-3 actually loves Minecraft."
+    },
+    {
+      "start": 663.12,
+      "end": 667.12,
+      "text": "So we query the DaVinci 002 API"
+    },
+    {
+      "start": 667.12,
+      "end": 670.12,
+      "text": "and find that it actually knows quite a lot about Minecraft,"
+    },
+    {
+      "start": 670.12,
+      "end": 673.12,
+      "text": "probably because it's such a well-known game"
+    },
+    {
+      "start": 673.12,
+      "end": 676.12,
+      "text": "that's present in the training corpus."
+    },
+    {
+      "start": 676.12,
+      "end": 678.12,
+      "text": "And we simply pick GPT-3,"
+    },
+    {
+      "start": 678.12,
+      "end": 681.12,
+      "text": "and we ask GPT-3's brain to brainstorm some tasks for us"
+    },
+    {
+      "start": 681.12,
+      "end": 683.12,
+      "text": "and help write some paper."
+    },
+    {
+      "start": 683.12,
+      "end": 686.12,
+      "text": "So these are some tasks that GPT-3 came up"
+    },
+    {
+      "start": 686.12,
+      "end": 688.12,
+      "text": "that are pretty interesting."
+    },
+    {
+      "start": 688.12,
+      "end": 691.12,
+      "text": "And then we also, given a task,"
+    },
+    {
+      "start": 691.12,
+      "end": 695.12,
+      "text": "we ask if GPT-3 can provide step-by-step guidance."
+    },
+    {
+      "start": 695.12,
+      "end": 698.12,
+      "text": "So the way we do it is asking GPT-3 nicely."
+    },
+    {
+      "start": 698.12,
+      "end": 702.12,
+      "text": "Like, oh, could you please give us some instruction"
+    },
+    {
+      "start": 702.12,
+      "end": 705.12,
+      "text": "on how to sail on a boat with a sheep?"
+    },
+    {
+      "start": 705.12,
+      "end": 707.12,
+      "text": "And you need to add the magic incantation."
+    },
+    {
+      "start": 707.12,
+      "end": 709.12,
+      "text": "Let's think step-by-step."
+    },
+    {
+      "start": 709.12,
+      "end": 711.12,
+      "text": "So that's another paper from Google Brain."
+    },
+    {
+      "start": 711.12,
+      "end": 715.12,
+      "text": "Just add this, and GPT-3's gonna work."
+    },
+    {
+      "start": 715.12,
+      "end": 716.12,
+      "text": "So here's a sample gallery"
+    },
+    {
+      "start": 716.12,
+      "end": 719.12,
+      "text": "of the interesting tasks in MindDojo."
+    },
+    {
+      "start": 719.12,
+      "end": 723.12,
+      "text": "I'll leave you here for two seconds for you to enjoy."
+    },
+    {
+      "start": 723.12,
+      "end": 726.12,
+      "text": "All right, now moving to the second ingredient."
+    },
+    {
+      "start": 726.12,
+      "end": 729.12,
+      "text": "MindDojo features an internet knowledge base of three parts,"
+    },
+    {
+      "start": 729.12,
+      "end": 732.12,
+      "text": "YouTube, Wiki, and Reddit."
+    },
+    {
+      "start": 732.12,
+      "end": 734.12,
+      "text": "So the first is YouTube."
+    },
+    {
+      "start": 734.12,
+      "end": 737.12,
+      "text": "And we find that Minecraft is among the most streamed games"
+    },
+    {
+      "start": 737.12,
+      "end": 738.12,
+      "text": "on YouTube."
+    },
+    {
+      "start": 738.12,
+      "end": 741.12,
+      "text": "And gamers, they love to narrate what they are doing."
+    },
+    {
+      "start": 741.12,
+      "end": 744.12,
+      "text": "So we collected more than 700,000 videos"
+    },
+    {
+      "start": 744.12,
+      "end": 747.12,
+      "text": "with about two billion words in transcript."
+    },
+    {
+      "start": 747.12,
+      "end": 750.12,
+      "text": "And these time-aligned transcripts provide a very good signal"
+    },
+    {
+      "start": 750.12,
+      "end": 753.12,
+      "text": "to ground free-form language in video pixels"
+    },
+    {
+      "start": 753.12,
+      "end": 756.12,
+      "text": "so the agent can learn about human strategies and activities"
+    },
+    {
+      "start": 756.12,
+      "end": 759.12,
+      "text": "without manual labeling."
+    },
+    {
+      "start": 759.12,
+      "end": 763.12,
+      "text": "And second, players have compiled a large Minecraft-specific Wikipedia"
+    },
+    {
+      "start": 763.12,
+      "end": 767.12,
+      "text": "that literally explains every entity and mechanism"
+    },
+    {
+      "start": 767.12,
+      "end": 768.12,
+      "text": "in the game."
+    },
+    {
+      "start": 768.12,
+      "end": 770.12,
+      "text": "And we scraped 7,000 Wikipedias"
+    },
+    {
+      "start": 770.12,
+      "end": 773.12,
+      "text": "with this kind of interleaving multimodal data."
+    },
+    {
+      "start": 773.12,
+      "end": 774.12,
+      "text": "So here are some examples."
+    },
+    {
+      "start": 774.12,
+      "end": 776.12,
+      "text": "This is a gallery of all of the monsters"
+    },
+    {
+      "start": 776.12,
+      "end": 778.12,
+      "text": "you will ever see in Minecraft."
+    },
+    {
+      "start": 778.12,
+      "end": 781.12,
+      "text": "And their habits and kind of strategies to fight them"
+    },
+    {
+      "start": 781.12,
+      "end": 783.12,
+      "text": "is, like, well explained."
+    },
+    {
+      "start": 783.12,
+      "end": 786.12,
+      "text": "And also, all of the crafting recipes"
+    },
+    {
+      "start": 786.12,
+      "end": 789.12,
+      "text": "and very complex diagrams, tables,"
+    },
+    {
+      "start": 789.12,
+      "end": 792.12,
+      "text": "tables and embedded figures."
+    },
+    {
+      "start": 792.12,
+      "end": 794.12,
+      "text": "And finally, the Minecraft subreddit"
+    },
+    {
+      "start": 794.12,
+      "end": 796.12,
+      "text": "is a very active forum."
+    },
+    {
+      "start": 796.12,
+      "end": 798.12,
+      "text": "Players showcase their creations"
+    },
+    {
+      "start": 798.12,
+      "end": 801.12,
+      "text": "and also ask for help sometimes."
+    },
+    {
+      "start": 801.12,
+      "end": 805.12,
+      "text": "So we scraped more than 300K posts"
+    },
+    {
+      "start": 805.12,
+      "end": 809.12,
+      "text": "and they add up to more than 6 million comments."
+    },
+    {
+      "start": 809.12,
+      "end": 812.12,
+      "text": "So here are some examples of how kind of people"
+    },
+    {
+      "start": 812.12,
+      "end": 816.12,
+      "text": "are using Reddit as a stack overflow for Minecraft."
+    },
+    {
+      "start": 816.12,
+      "end": 818.12,
+      "text": "Like, people asking for help."
+    },
+    {
+      "start": 818.12,
+      "end": 820.12,
+      "text": "Oh, like, my wheat farm is not growing."
+    },
+    {
+      "start": 820.12,
+      "end": 821.12,
+      "text": "What can I do?"
+    },
+    {
+      "start": 821.12,
+      "end": 825.12,
+      "text": "And people reply, you don't have lighting in this dark room."
+    },
+    {
+      "start": 825.12,
+      "end": 827.12,
+      "text": "So, of course, your wheat isn't growing."
+    },
+    {
+      "start": 827.12,
+      "end": 829.12,
+      "text": "And we can see that the top voted answers"
+    },
+    {
+      "start": 829.12,
+      "end": 831.12,
+      "text": "are actually quite good."
+    },
+    {
+      "start": 831.12,
+      "end": 835.12,
+      "text": "And some more examples of players asking for help"
+    },
+    {
+      "start": 835.12,
+      "end": 838.12,
+      "text": "are, like, mining in a discarded cave"
+    },
+    {
+      "start": 838.12,
+      "end": 841.12,
+      "text": "or building a house."
+    },
+    {
+      "start": 841.12,
+      "end": 845.12,
+      "text": "So now, given the massive task suite and internet data,"
+    },
+    {
+      "start": 845.12,
+      "end": 847.12,
+      "text": "we have the essential components"
+    },
+    {
+      "start": 847.12,
+      "end": 849.12,
+      "text": "to train foundation models."
+    },
+    {
+      "start": 849.12,
+      "end": 851.12,
+      "text": "So in Mind Dojo, we propose a new algorithm"
+    },
+    {
+      "start": 851.12,
+      "end": 854.12,
+      "text": "that takes a baby step towards this grand goal"
+    },
+    {
+      "start": 854.12,
+      "end": 856.12,
+      "text": "of journalist agent."
+    },
+    {
+      "start": 856.12,
+      "end": 858.12,
+      "text": "So the idea is very simple."
+    },
+    {
+      "start": 858.12,
+      "end": 860.12,
+      "text": "For our YouTube database,"
+    },
+    {
+      "start": 860.12,
+      "end": 862.12,
+      "text": "we have time-aligned video clips and transcripts"
+    },
+    {
+      "start": 862.12,
+      "end": 865.12,
+      "text": "because players like to talk about what they're doing."
+    },
+    {
+      "start": 865.12,
+      "end": 870.12,
+      "text": "And we can train a contrastive video text foundation model"
+    },
+    {
+      "start": 870.12,
+      "end": 873.12,
+      "text": "called MindClip, very much in the same spirit"
+    },
+    {
+      "start": 873.12,
+      "end": 875.12,
+      "text": "as OpenEyeClip."
+    },
+    {
+      "start": 875.12,
+      "end": 877.12,
+      "text": "So if you're unfamiliar,"
+    },
+    {
+      "start": 877.12,
+      "end": 881.12,
+      "text": "OpenEyeClip essentially learns to associate images"
+    },
+    {
+      "start": 881.12,
+      "end": 883.12,
+      "text": "and their textual captions"
+    },
+    {
+      "start": 883.12,
+      "end": 885.12,
+      "text": "with a massive internet image dataset."
+    },
+    {
+      "start": 885.12,
+      "end": 887.12,
+      "text": "And what we do is similar."
+    },
+    {
+      "start": 887.12,
+      "end": 890.12,
+      "text": "So intuitively, MindClip learns to associate video"
+    },
+    {
+      "start": 890.12,
+      "end": 894.12,
+      "text": "and the transcript that describes the action in the video."
+    },
+    {
+      "start": 894.12,
+      "end": 896.12,
+      "text": "The score is between 0 and 1,"
+    },
+    {
+      "start": 896.12,
+      "end": 899.12,
+      "text": "so that means 1 means it's a perfect match,"
+    },
+    {
+      "start": 899.12,
+      "end": 902.12,
+      "text": "and 0 means the text is irrelevant to the video."
+    },
+    {
+      "start": 902.12,
+      "end": 904.12,
+      "text": "So it's a full continuous spectrum."
+    },
+    {
+      "start": 904.12,
+      "end": 906.12,
+      "text": "And then we can repurpose MindClip"
+    },
+    {
+      "start": 906.12,
+      "end": 908.12,
+      "text": "to be a language-conditioned"
+    },
+    {
+      "start": 908.12,
+      "end": 911.12,
+      "text": "learn-the-reward function for our agent."
+    },
+    {
+      "start": 911.12,
+      "end": 912.12,
+      "text": "So here's how we do it."
+    },
+    {
+      "start": 912.12,
+      "end": 915.12,
+      "text": "Our agent interacts with MindDojo simulator,"
+    },
+    {
+      "start": 915.12,
+      "end": 918.12,
+      "text": "the simulator sends observations to the agent"
+    },
+    {
+      "start": 918.12,
+      "end": 920.12,
+      "text": "and the agent sends actions back."
+    },
+    {
+      "start": 920.12,
+      "end": 924.12,
+      "text": "And the task here is share sheep to obtain wool."
+    },
+    {
+      "start": 924.12,
+      "end": 926.12,
+      "text": "So it's expressed in natural language."
+    },
+    {
+      "start": 926.12,
+      "end": 929.12,
+      "text": "And as the agent explores,"
+    },
+    {
+      "start": 929.12,
+      "end": 931.12,
+      "text": "it will generate a video snippet"
+    },
+    {
+      "start": 931.12,
+      "end": 935.12,
+      "text": "which can be encoded and fed to MindClip."
+    },
+    {
+      "start": 935.12,
+      "end": 937.12,
+      "text": "And then MindClip computes this association"
+    },
+    {
+      "start": 937.12,
+      "end": 939.12,
+      "text": "between the video and the text."
+    },
+    {
+      "start": 939.12,
+      "end": 942.12,
+      "text": "So intuitively, the higher the association,"
+    },
+    {
+      "start": 942.12,
+      "end": 945.12,
+      "text": "the more the agent's behavior aligns with the language,"
+    },
+    {
+      "start": 945.12,
+      "end": 948.12,
+      "text": "and so we know that it's making progress,"
+    },
+    {
+      "start": 948.12,
+      "end": 950.12,
+      "text": "it's on the right track."
+    },
+    {
+      "start": 950.12,
+      "end": 952.12,
+      "text": "And this simply becomes the reward function"
+    },
+    {
+      "start": 952.12,
+      "end": 954.12,
+      "text": "to any reinforcement learning algorithm."
+    },
+    {
+      "start": 954.12,
+      "end": 957.12,
+      "text": "And we chose PPO as a standard RL technique,"
+    },
+    {
+      "start": 957.12,
+      "end": 959.12,
+      "text": "and suddenly there are many other techniques"
+    },
+    {
+      "start": 959.12,
+      "end": 960.12,
+      "text": "that can be used,"
+    },
+    {
+      "start": 960.12,
+      "end": 962.12,
+      "text": "but we just want to showcase the reward function,"
+    },
+    {
+      "start": 962.12,
+      "end": 964.12,
+      "text": "so we pick the simplest."
+    },
+    {
+      "start": 966.12,
+      "end": 969.12,
+      "text": "Yeah, it computes the reward and gives to the agent."
+    },
+    {
+      "start": 969.12,
+      "end": 971.12,
+      "text": "So here's a quick visualization"
+    },
+    {
+      "start": 971.12,
+      "end": 975.12,
+      "text": "of our learned agent behavior of various tasks."
+    },
+    {
+      "start": 978.12,
+      "end": 981.12,
+      "text": "And let's look at some quantitative results."
+    },
+    {
+      "start": 981.12,
+      "end": 983.12,
+      "text": "So for these eight tasks,"
+    },
+    {
+      "start": 983.12,
+      "end": 985.12,
+      "text": "we showed a percentage success rate"
+    },
+    {
+      "start": 985.12,
+      "end": 987.12,
+      "text": "over 200 test episodes."
+    },
+    {
+      "start": 987.12,
+      "end": 989.12,
+      "text": "And here in the green circle"
+    },
+    {
+      "start": 989.12,
+      "end": 992.12,
+      "text": "is two variants of our MindClip methods."
+    },
+    {
+      "start": 992.12,
+      "end": 994.12,
+      "text": "One is attention pooling over the video,"
+    },
+    {
+      "start": 994.12,
+      "end": 996.12,
+      "text": "and the other is simply average pooling."
+    },
+    {
+      "start": 996.12,
+      "end": 999.12,
+      "text": "And in the orange circle are the baselines."
+    },
+    {
+      "start": 999.12,
+      "end": 1001.12,
+      "text": "So the first baseline"
+    },
+    {
+      "start": 1001.12,
+      "end": 1004.12,
+      "text": "is just RL training with sparse reward."
+    },
+    {
+      "start": 1004.12,
+      "end": 1006.12,
+      "text": "And we can see that most tasks"
+    },
+    {
+      "start": 1006.12,
+      "end": 1008.12,
+      "text": "kind of fail at a flat line"
+    },
+    {
+      "start": 1008.12,
+      "end": 1011.12,
+      "text": "if we only provide like a binary success reward signal"
+    },
+    {
+      "start": 1011.12,
+      "end": 1012.12,
+      "text": "at the end,"
+    },
+    {
+      "start": 1012.12,
+      "end": 1014.12,
+      "text": "because some of the tasks are really difficult"
+    },
+    {
+      "start": 1014.12,
+      "end": 1015.12,
+      "text": "in exploration,"
+    },
+    {
+      "start": 1015.12,
+      "end": 1017.12,
+      "text": "and a sparse reward at the end"
+    },
+    {
+      "start": 1017.12,
+      "end": 1020.12,
+      "text": "is not helping it explore."
+    },
+    {
+      "start": 1020.12,
+      "end": 1023.12,
+      "text": "We also construct a manual dense reward function"
+    },
+    {
+      "start": 1023.12,
+      "end": 1025.12,
+      "text": "using privilege simulator state."
+    },
+    {
+      "start": 1025.12,
+      "end": 1028.12,
+      "text": "So we implement the reward function individually"
+    },
+    {
+      "start": 1028.12,
+      "end": 1029.12,
+      "text": "for each task,"
+    },
+    {
+      "start": 1029.12,
+      "end": 1031.12,
+      "text": "and this column should be considered as,"
+    },
+    {
+      "start": 1031.1200000000001,
+      "end": 1034.1200000000001,
+      "text": "kind of an oracle result that's close to optimal,"
+    },
+    {
+      "start": 1034.1200000000001,
+      "end": 1037.1200000000001,
+      "text": "because the RL algorithm is being shaped very smoothly"
+    },
+    {
+      "start": 1037.1200000000001,
+      "end": 1040.1200000000001,
+      "text": "with our kind of hand-engineered prior."
+    },
+    {
+      "start": 1040.1200000000001,
+      "end": 1043.1200000000001,
+      "text": "And for PPO trained with our MindClip reward,"
+    },
+    {
+      "start": 1043.1200000000001,
+      "end": 1045.1200000000001,
+      "text": "we can see that we're able to match"
+    },
+    {
+      "start": 1045.1200000000001,
+      "end": 1049.1200000000001,
+      "text": "the quality of the oracle reward in many tasks."
+    },
+    {
+      "start": 1049.1200000000001,
+      "end": 1051.1200000000001,
+      "text": "And it's important to highlight"
+    },
+    {
+      "start": 1051.1200000000001,
+      "end": 1053.1200000000001,
+      "text": "that MindClip is open vocabulary,"
+    },
+    {
+      "start": 1053.1200000000001,
+      "end": 1056.1200000000001,
+      "text": "which means we did not specifically customize it"
+    },
+    {
+      "start": 1056.1200000000001,
+      "end": 1058.1200000000001,
+      "text": "for this set of tasks."
+    },
+    {
+      "start": 1058.1200000000001,
+      "end": 1060.1200000000001,
+      "text": "We simply prompt MindClip"
+    },
+    {
+      "start": 1060.1200000000001,
+      "end": 1062.1200000000001,
+      "text": "with the natural language description,"
+    },
+    {
+      "start": 1062.1200000000001,
+      "end": 1065.1200000000001,
+      "text": "and then reuse the same model for all of the tasks."
+    },
+    {
+      "start": 1065.1200000000001,
+      "end": 1066.1200000000001,
+      "text": "But for manual dense reward,"
+    },
+    {
+      "start": 1066.1200000000001,
+      "end": 1067.1200000000001,
+      "text": "it is unscalable,"
+    },
+    {
+      "start": 1067.1200000000001,
+      "end": 1070.1200000000001,
+      "text": "and sometimes even impossible to implement"
+    },
+    {
+      "start": 1070.1200000000001,
+      "end": 1073.1200000000001,
+      "text": "for every new task that you encounter."
+    },
+    {
+      "start": 1073.1200000000001,
+      "end": 1075.1200000000001,
+      "text": "And finally, we also compare against"
+    },
+    {
+      "start": 1075.1200000000001,
+      "end": 1078.1200000000001,
+      "text": "an untrained OpenAI clip checkpoint,"
+    },
+    {
+      "start": 1078.1200000000001,
+      "end": 1080.1200000000001,
+      "text": "and it performs even worse than sparse,"
+    },
+    {
+      "start": 1080.1200000000001,
+      "end": 1083.1200000000001,
+      "text": "meaning that it actually provides the agent"
+    },
+    {
+      "start": 1083.1200000000001,
+      "end": 1086.1200000000001,
+      "text": "with some counterproductive reward signal."
+    },
+    {
+      "start": 1086.1200000000001,
+      "end": 1087.1200000000001,
+      "text": "And this is very likely"
+    },
+    {
+      "start": 1087.1200000000001,
+      "end": 1089.1200000000001,
+      "text": "because there's a huge domain shift"
+    },
+    {
+      "start": 1089.1200000000001,
+      "end": 1091.1200000000001,
+      "text": "between the real images that Clip was trained on"
+    },
+    {
+      "start": 1091.1200000000001,
+      "end": 1093.1200000000001,
+      "text": "versus the visuals in Minecraft,"
+    },
+    {
+      "start": 1093.1200000000001,
+      "end": 1096.1200000000001,
+      "text": "which looks very kind of voxel world."
+    },
+    {
+      "start": 1096.1200000000001,
+      "end": 1097.1200000000001,
+      "text": "So we also ask,"
+    },
+    {
+      "start": 1097.1200000000001,
+      "end": 1101.1200000000001,
+      "text": "can our multitask agent"
+    },
+    {
+      "start": 1101.1200000000001,
+      "end": 1103.1200000000001,
+      "text": "generalize to unseen tasks"
+    },
+    {
+      "start": 1103.1200000000001,
+      "end": 1105.1200000000001,
+      "text": "like hunting pigs or collect spider strings"
+    },
+    {
+      "start": 1105.1200000000001,
+      "end": 1107.1200000000001,
+      "text": "that were not trained before?"
+    },
+    {
+      "start": 1107.1200000000001,
+      "end": 1110.1200000000001,
+      "text": "So here, we note that zero shot doesn't work,"
+    },
+    {
+      "start": 1110.1200000000001,
+      "end": 1111.1200000000001,
+      "text": "but that is expected"
+    },
+    {
+      "start": 1111.1200000000001,
+      "end": 1114.1200000000001,
+      "text": "because while MindClip generalizes"
+    },
+    {
+      "start": 1114.1200000000001,
+      "end": 1116.1200000000001,
+      "text": "as a reward function, the policy doesn't."
+    },
+    {
+      "start": 1116.1200000000001,
+      "end": 1118.1200000000001,
+      "text": "The policy is trained against MindClip"
+    },
+    {
+      "start": 1118.1200000000001,
+      "end": 1121.1200000000001,
+      "text": "at every time."
+    },
+    {
+      "start": 1121.1200000000001,
+      "end": 1122.1200000000001,
+      "text": "But we do observe that"
+    },
+    {
+      "start": 1122.1200000000001,
+      "end": 1124.1200000000001,
+      "text": "after just a little bit of RL fine-tuning,"
+    },
+    {
+      "start": 1124.1200000000001,
+      "end": 1127.1200000000001,
+      "text": "it performs much better,"
+    },
+    {
+      "start": 1127.1200000000001,
+      "end": 1130.1200000000001,
+      "text": "while training from scratch is much worse,"
+    },
+    {
+      "start": 1130.1200000000001,
+      "end": 1132.1200000000001,
+      "text": "given the same computational budget."
+    },
+    {
+      "start": 1132.1200000000001,
+      "end": 1134.1200000000001,
+      "text": "So there's still a lot of advantage"
+    },
+    {
+      "start": 1134.1200000000001,
+      "end": 1137.1200000000001,
+      "text": "from this pre-training."
+    },
+    {
+      "start": 1137.1200000000001,
+      "end": 1140.1200000000001,
+      "text": "And lastly, can our agent generalize"
+    },
+    {
+      "start": 1140.1200000000001,
+      "end": 1143.1200000000001,
+      "text": "to dramatic changes in the visual appearance?"
+    },
+    {
+      "start": 1143.1200000000001,
+      "end": 1144.1200000000001,
+      "text": "So during training,"
+    },
+    {
+      "start": 1144.1200000000001,
+      "end": 1146.1200000000001,
+      "text": "the agent only sees the default terrain"
+    },
+    {
+      "start": 1146.1200000000001,
+      "end": 1148.1200000000001,
+      "text": "at noon on a sunny day."
+    },
+    {
+      "start": 1148.1200000000001,
+      "end": 1151.1200000000001,
+      "text": "But we also tested zero shot"
+    },
+    {
+      "start": 1151.1200000000001,
+      "end": 1153.1200000000001,
+      "text": "on a diverse set of terrains,"
+    },
+    {
+      "start": 1153.1200000000001,
+      "end": 1155.1200000000001,
+      "text": "weathers, and day-night cycles."
+    },
+    {
+      "start": 1155.1200000000001,
+      "end": 1157.1200000000001,
+      "text": "So these are all customizable"
+    },
+    {
+      "start": 1157.1200000000001,
+      "end": 1159.1200000000001,
+      "text": "and supported by MindDojo."
+    },
+    {
+      "start": 1159.1200000000001,
+      "end": 1161.1200000000001,
+      "text": "And here, we measure the robustness"
+    },
+    {
+      "start": 1161.1200000000001,
+      "end": 1163.1200000000001,
+      "text": "by the relative drop in performance,"
+    },
+    {
+      "start": 1163.1200000000001,
+      "end": 1166.1200000000001,
+      "text": "moving from the default training environment"
+    },
+    {
+      "start": 1166.1200000000001,
+      "end": 1168.1200000000001,
+      "text": "to the novel test environments."
+    },
+    {
+      "start": 1168.1200000000001,
+      "end": 1171.1200000000001,
+      "text": "And here, we see that the drop is inevitable"
+    },
+    {
+      "start": 1171.1200000000001,
+      "end": 1173.1200000000001,
+      "text": "because during policy learning,"
+    },
+    {
+      "start": 1173.1200000000001,
+      "end": 1175.1200000000001,
+      "text": "it has never seen these environments."
+    },
+    {
+      "start": 1178.1200000000001,
+      "end": 1180.1200000000001,
+      "text": "But compared to a baseline agent"
+    },
+    {
+      "start": 1180.1200000000001,
+      "end": 1182.1200000000001,
+      "text": "with the open-end clip visual encoder,"
+    },
+    {
+      "start": 1182.1200000000001,
+      "end": 1184.1200000000001,
+      "text": "our drop is much smaller."
+    },
+    {
+      "start": 1184.1200000000001,
+      "end": 1186.1200000000001,
+      "text": "So this is because our agent is equipped"
+    },
+    {
+      "start": 1186.1200000000001,
+      "end": 1189.1200000000001,
+      "text": "with a frozen mind clip visual encoder."
+    },
+    {
+      "start": 1189.1200000000001,
+      "end": 1192.1200000000001,
+      "text": "And that encoder has seen hundreds of thousands"
+    },
+    {
+      "start": 1192.1200000000001,
+      "end": 1193.1200000000001,
+      "text": "of gameplay videos,"
+    },
+    {
+      "start": 1193.1200000000001,
+      "end": 1195.1200000000001,
+      "text": "which has really good coverage"
+    },
+    {
+      "start": 1195.1200000000001,
+      "end": 1197.1200000000001,
+      "text": "of all kinds of scenarios."
+    },
+    {
+      "start": 1197.1200000000001,
+      "end": 1199.1200000000001,
+      "text": "So this is another big advantage"
+    },
+    {
+      "start": 1199.1200000000001,
+      "end": 1201.1200000000001,
+      "text": "of using internet-scale data,"
+    },
+    {
+      "start": 1201.1200000000001,
+      "end": 1204.1200000000001,
+      "text": "because you kind of get robustness out of the box."
+    },
+    {
+      "start": 1206.1200000000001,
+      "end": 1207.1200000000001,
+      "text": "And before I conclude,"
+    },
+    {
+      "start": 1207.1200000000001,
+      "end": 1210.1200000000001,
+      "text": "I want to highlight a few concurrent works"
+    },
+    {
+      "start": 1210.1200000000001,
+      "end": 1212.1200000000001,
+      "text": "that are also very exciting."
+    },
+    {
+      "start": 1212.1200000000001,
+      "end": 1214.1200000000001,
+      "text": "One paper is the video pre-training"
+    },
+    {
+      "start": 1214.1200000000001,
+      "end": 1217.1200000000001,
+      "text": "of VPT work from OpenAI."
+    },
+    {
+      "start": 1217.1200000000001,
+      "end": 1218.1200000000001,
+      "text": "And in that paper,"
+    },
+    {
+      "start": 1218.1200000000001,
+      "end": 1220.1200000000001,
+      "text": "they find a very clever way"
+    },
+    {
+      "start": 1220.1200000000001,
+      "end": 1222.1200000000001,
+      "text": "to enable behavior cloning directly"
+    },
+    {
+      "start": 1222.1200000000001,
+      "end": 1224.1200000000001,
+      "text": "from in-the-wild YouTube videos."
+    },
+    {
+      "start": 1224.1200000000001,
+      "end": 1227.1200000000001,
+      "text": "So VPT solves the long horizon issue,"
+    },
+    {
+      "start": 1227.1200000000001,
+      "end": 1229.1200000000001,
+      "text": "but it is not language conditioned."
+    },
+    {
+      "start": 1229.1200000000001,
+      "end": 1232.1200000000001,
+      "text": "So it's very much complementary to MindDojo,"
+    },
+    {
+      "start": 1232.1200000000001,
+      "end": 1234.1200000000001,
+      "text": "and we're excited to see multiple algorithms"
+    },
+    {
+      "start": 1234.1200000000001,
+      "end": 1235.1200000000001,
+      "text": "tackling the same problem"
+    },
+    {
+      "start": 1235.1200000000001,
+      "end": 1237.1200000000001,
+      "text": "from totally different environments."
+    },
+    {
+      "start": 1237.1200000000001,
+      "end": 1239.1200000000001,
+      "text": "From different angles."
+    },
+    {
+      "start": 1239.1200000000001,
+      "end": 1242.1200000000001,
+      "text": "And a big shout out to the MindRO team."
+    },
+    {
+      "start": 1242.1200000000001,
+      "end": 1245.1200000000001,
+      "text": "I think I saw Ansi in the audience."
+    },
+    {
+      "start": 1245.1200000000001,
+      "end": 1247.1200000000001,
+      "text": "So his team is hosting the longest running"
+    },
+    {
+      "start": 1247.1200000000001,
+      "end": 1249.1200000000001,
+      "text": "Minecraft AI challenge at NeurIPS"
+    },
+    {
+      "start": 1249.1200000000001,
+      "end": 1251.1200000000001,
+      "text": "for the past four years."
+    },
+    {
+      "start": 1251.1200000000001,
+      "end": 1254.1200000000001,
+      "text": "And that challenge laid the foundation for MindDojo."
+    },
+    {
+      "start": 1254.1200000000001,
+      "end": 1258.1200000000001,
+      "text": "So thanks a lot for MindRO."
+    },
+    {
+      "start": 1258.1200000000001,
+      "end": 1261.1200000000001,
+      "text": "And also the Igloo team that uses Minecraft"
+    },
+    {
+      "start": 1261.1200000000001,
+      "end": 1263.1200000000001,
+      "text": "for grounded language understanding."
+    },
+    {
+      "start": 1263.1200000000001,
+      "end": 1265.1200000000001,
+      "text": "And another big shout out to Julia's team."
+    },
+    {
+      "start": 1265.1200000000001,
+      "end": 1266.1200000000001,
+      "text": "I'm very glad to see them."
+    },
+    {
+      "start": 1266.1200000000001,
+      "end": 1269.1200000000001,
+      "text": "I'm very glad to see that many different communities"
+    },
+    {
+      "start": 1269.1200000000001,
+      "end": 1271.1200000000001,
+      "text": "are all converging to Minecraft"
+    },
+    {
+      "start": 1271.1200000000001,
+      "end": 1276.1200000000001,
+      "text": "as a very promising touchstone for journalist AI."
+    },
+    {
+      "start": 1276.1200000000001,
+      "end": 1280.1200000000001,
+      "text": "But still, despite all of these efforts,"
+    },
+    {
+      "start": 1280.1200000000001,
+      "end": 1283.1200000000001,
+      "text": "what we can do is very far from the ingenuity"
+    },
+    {
+      "start": 1283.1200000000001,
+      "end": 1285.1200000000001,
+      "text": "that human players have demonstrated,"
+    },
+    {
+      "start": 1285.1200000000001,
+      "end": 1288.1200000000001,
+      "text": "such as decorating a winter wonderland"
+    },
+    {
+      "start": 1288.1200000000001,
+      "end": 1290.1200000000001,
+      "text": "or at the beginning we saw someone"
+    },
+    {
+      "start": 1290.1200000000001,
+      "end": 1292.1200000000001,
+      "text": "simulating the CPU circuit."
+    },
+    {
+      "start": 1292.1200000000001,
+      "end": 1294.1200000000001,
+      "text": "So here is a call to action for the community."
+    },
+    {
+      "start": 1294.1200000000001,
+      "end": 1297.1200000000001,
+      "text": "If humans can do these mind-blowing tasks,"
+    },
+    {
+      "start": 1297.1200000000001,
+      "end": 1299.1200000000001,
+      "text": "then why not our AI?"
+    },
+    {
+      "start": 1299.1200000000001,
+      "end": 1302.1200000000001,
+      "text": "So I guess we'll find out together."
+    },
+    {
+      "start": 1302.1200000000001,
+      "end": 1304.1200000000001,
+      "text": "Or, you know, if you just want an excuse"
+    },
+    {
+      "start": 1304.1200000000001,
+      "end": 1306.1200000000001,
+      "text": "to play Minecraft at work,"
+    },
+    {
+      "start": 1306.1200000000001,
+      "end": 1308.1200000000001,
+      "text": "MindDojo is perfect for you too."
+    },
+    {
+      "start": 1308.1200000000001,
+      "end": 1310.1200000000001,
+      "text": "And when you get caught, just tell your boss"
+    },
+    {
+      "start": 1310.1200000000001,
+      "end": 1312.1200000000001,
+      "text": "that you are collecting human demos"
+    },
+    {
+      "start": 1312.1200000000001,
+      "end": 1315.1200000000001,
+      "text": "in MindDojo for training embodied GPT-3."
+    },
+    {
+      "start": 1315.1200000000001,
+      "end": 1319.1200000000001,
+      "text": "So that's all for science, right? Totally cool."
+    },
+    {
+      "start": 1319.1200000000001,
+      "end": 1321.1200000000001,
+      "text": "And this is our website."
+    },
+    {
+      "start": 1321.1200000000001,
+      "end": 1323.1200000000001,
+      "text": "So on the website we have a lot more details."
+    },
+    {
+      "start": 1323.1200000000001,
+      "end": 1326.1200000000001,
+      "text": "So the website is minddojo.org"
+    },
+    {
+      "start": 1326.1200000000001,
+      "end": 1329.1200000000001,
+      "text": "and some more videos on the website."
+    },
+    {
+      "start": 1329.1200000000001,
+      "end": 1332.1200000000001,
+      "text": "And also we have a tab called Knowledge Base"
+    },
+    {
+      "start": 1332.1200000000001,
+      "end": 1335.1200000000001,
+      "text": "that you can go to and you can sample"
+    },
+    {
+      "start": 1335.1200000000001,
+      "end": 1338.1200000000001,
+      "text": "some videos from our YouTube data set"
+    },
+    {
+      "start": 1338.1200000000001,
+      "end": 1340.1200000000001,
+      "text": "and also the wiki and Reddit data set."
+    },
+    {
+      "start": 1340.1200000000001,
+      "end": 1342.1200000000001,
+      "text": "So please visit our website."
+    },
+    {
+      "start": 1342.1200000000001,
+      "end": 1345.1200000000001,
+      "text": "And we open source everything."
+    },
+    {
+      "start": 1345.1200000000001,
+      "end": 1347.1200000000001,
+      "text": "So the simulator, the benchmark code,"
+    },
+    {
+      "start": 1347.1200000000001,
+      "end": 1349.1200000000001,
+      "text": "pre-trained Minecraft models,"
+    },
+    {
+      "start": 1349.1200000000001,
+      "end": 1351.1200000000001,
+      "text": "and even the YouTube annotation tools"
+    },
+    {
+      "start": 1351.1200000000001,
+      "end": 1352.1200000000001,
+      "text": "are all open source"
+    },
+    {
+      "start": 1352.1200000000001,
+      "end": 1354.1200000000001,
+      "text": "under github.com slash minddojo."
+    },
+    {
+      "start": 1354.1200000000001,
+      "end": 1357.1200000000001,
+      "text": "So please check it out."
+    },
+    {
+      "start": 1357.1200000000001,
+      "end": 1360.1200000000001,
+      "text": "So this project is a big teamwork at NVIDIA."
+    },
+    {
+      "start": 1360.1200000000001,
+      "end": 1363.1200000000001,
+      "text": "Our advisors are Senior Director Anima Anandkumar,"
+    },
+    {
+      "start": 1363.1200000000001,
+      "end": 1365.1200000000001,
+      "text": "also Professor at Caltech,"
+    },
+    {
+      "start": 1365.1200000000001,
+      "end": 1367.1200000000001,
+      "text": "and Professor Yuko Chu from UT Austin."
+    },
+    {
+      "start": 1367.1200000000001,
+      "end": 1370.1200000000001,
+      "text": "And we're planning follow-up works in the future."
+    },
+    {
+      "start": 1370.1200000000001,
+      "end": 1372.1200000000001,
+      "text": "So if you're interested,"
+    },
+    {
+      "start": 1372.1200000000001,
+      "end": 1373.1200000000001,
+      "text": "I post announcements on Twitter,"
+    },
+    {
+      "start": 1373.1200000000001,
+      "end": 1375.1200000000001,
+      "text": "so welcome you to follow."
+    },
+    {
+      "start": 1375.1200000000001,
+      "end": 1377.1200000000001,
+      "text": "And my Twitter DM is also open"
+    },
+    {
+      "start": 1377.1200000000001,
+      "end": 1378.1200000000001,
+      "text": "for any follow-up questions,"
+    },
+    {
+      "start": 1378.1200000000001,
+      "end": 1380.1200000000001,
+      "text": "burning questions you may have."
+    },
+    {
+      "start": 1380.1200000000001,
+      "end": 1381.1200000000001,
+      "text": "And thank you so much"
+    },
+    {
+      "start": 1381.1200000000001,
+      "end": 1384.1200000000001,
+      "text": "to the organizers of the first FMDM workshop."
+    },
+    {
+      "start": 1384.1200000000001,
+      "end": 1387.1200000000001,
+      "text": "Let's solve Minecraft together."
+    },
+    {
+      "start": 1387.1200000000001,
+      "end": 1388.1200000000001,
+      "text": "It's exciting times."
+    },
+    {
+      "start": 1388.1200000000001,
+      "end": 1389.1200000000001,
+      "text": "Thanks."
+    },
+    {
+      "start": 1392.1200000000001,
+      "end": 1393.1200000000001,
+      "text": "One of the challenges"
+    },
+    {
+      "start": 1393.1200000000001,
+      "end": 1395.1200000000001,
+      "text": "with Microsoft's previous work"
+    },
+    {
+      "start": 1395.1200000000001,
+      "end": 1396.1200000000001,
+      "text": "was that the simulator"
+    },
+    {
+      "start": 1396.1200000000001,
+      "end": 1399.1200000000001,
+      "text": "was non-deterministic for Minecraft."
+    },
+    {
+      "start": 1399.1200000000001,
+      "end": 1401.1200000000001,
+      "text": "Have you guys sort of resolved that"
+    },
+    {
+      "start": 1401.1200000000001,
+      "end": 1403.1200000000001,
+      "text": "and what kind of frame rates"
+    },
+    {
+      "start": 1403.1200000000001,
+      "end": 1405.1200000000001,
+      "text": "can you get from the simulator now?"
+    },
+    {
+      "start": 1405.1200000000001,
+      "end": 1407.1200000000001,
+      "text": "Yeah, these are all great questions."
+    },
+    {
+      "start": 1407.1200000000001,
+      "end": 1410.1200000000001,
+      "text": "So yes, non-determinism is a big issue."
+    },
+    {
+      "start": 1410.1200000000001,
+      "end": 1413.1200000000001,
+      "text": "And we tried really hard to solve it,"
+    },
+    {
+      "start": 1413.1200000000001,
+      "end": 1415.1200000000001,
+      "text": "but I'm sorry, like, we did not."
+    },
+    {
+      "start": 1415.1200000000001,
+      "end": 1417.1200000000001,
+      "text": "And that is because, like,"
+    },
+    {
+      "start": 1417.1200000000001,
+      "end": 1420.1200000000001,
+      "text": "Minecraft is kind of optimized for human players, right?"
+    },
+    {
+      "start": 1420.1200000000001,
+      "end": 1422.1200000000001,
+      "text": "So they don't have to control the seed."
+    },
+    {
+      "start": 1422.1200000000001,
+      "end": 1425.1200000000001,
+      "text": "And actually, human players appreciate more randomness."
+    },
+    {
+      "start": 1425.1200000000001,
+      "end": 1427.1200000000001,
+      "text": "So yeah, we dig very deep."
+    },
+    {
+      "start": 1427.1200000000001,
+      "end": 1430.1200000000001,
+      "text": "I believe the random seeds are all over the Java code."
+    },
+    {
+      "start": 1430.1200000000001,
+      "end": 1432.1200000000001,
+      "text": "By the way, Minecraft is implementing Java."
+    },
+    {
+      "start": 1432.1200000000001,
+      "end": 1434.1200000000001,
+      "text": "I haven't written Java in years."
+    },
+    {
+      "start": 1434.1200000000001,
+      "end": 1437.1200000000001,
+      "text": "It was a pain, a really big pain."
+    },
+    {
+      "start": 1437.1200000000001,
+      "end": 1439.1200000000001,
+      "text": "So there's that."
+    },
+    {
+      "start": 1439.1200000000001,
+      "end": 1442.1200000000001,
+      "text": "And then to the second part of the question,"
+    },
+    {
+      "start": 1442.1200000000001,
+      "end": 1445.1200000000001,
+      "text": "yeah, so the speed, also very hard to boost"
+    },
+    {
+      "start": 1445.1200000000001,
+      "end": 1448.1200000000001,
+      "text": "because the Minecraft developers have no incentive"
+    },
+    {
+      "start": 1448.1200000000001,
+      "end": 1451.1200000000001,
+      "text": "to optimize it beyond, like, 90 FPS."
+    },
+    {
+      "start": 1451.1200000000001,
+      "end": 1454.1200000000001,
+      "text": "But we did get the GPU acceleration working."
+    },
+    {
+      "start": 1454.1200000000001,
+      "end": 1456.1200000000001,
+      "text": "So we have, like, a Docker file"
+    },
+    {
+      "start": 1456.1200000000001,
+      "end": 1458.1200000000001,
+      "text": "that can run GPU acceleration."
+    },
+    {
+      "start": 1458.1200000000001,
+      "end": 1462.1200000000001,
+      "text": "Yeah, but that could only get you to about 100 FPS."
+    },
+    {
+      "start": 1462.1200000000001,
+      "end": 1464.1200000000001,
+      "text": "So that is kind of a price"
+    },
+    {
+      "start": 1464.1200000000001,
+      "end": 1466.1200000000001,
+      "text": "we need to pay for open-endedness."
+    },
+    {
+      "start": 1466.1200000000001,
+      "end": 1468.1200000000001,
+      "text": "So it's a lot better to use, like,"
+    },
+    {
+      "start": 1468.1200000000001,
+      "end": 1470.1200000000001,
+      "text": "custom simulators like, you know,"
+    },
+    {
+      "start": 1470.1200000000001,
+      "end": 1473.1200000000001,
+      "text": "Habitat, iGypsum, these simulators"
+    },
+    {
+      "start": 1473.1200000000001,
+      "end": 1476.1200000000001,
+      "text": "if you really want to train RO at, like, 1,000 FPS."
+    },
+    {
+      "start": 1476.1200000000001,
+      "end": 1478.1200000000001,
+      "text": "But these environments, like,"
+    },
+    {
+      "start": 1478.1200000000001,
+      "end": 1481.1200000000001,
+      "text": "they're definitely not as open-ended as Minecraft."
+    },
+    {
+      "start": 1481.1200000000001,
+      "end": 1483.1200000000001,
+      "text": "And also, you don't have kind of this paired data."
+    },
+    {
+      "start": 1483.1200000000001,
+      "end": 1485.1200000000001,
+      "text": "So it's a price we need to pay."
+    },
+    {
+      "start": 1485.1200000000001,
+      "end": 1487.1200000000001,
+      "text": "But we're working on that, yeah."
+    },
+    {
+      "start": 1487.1200000000001,
+      "end": 1490.1200000000001,
+      "text": "Thanks for the question."
+    },
+    {
+      "start": 1490.1200000000001,
+      "end": 1492.1200000000001,
+      "text": "So I'm going to jump ahead and ask the question"
+    },
+    {
+      "start": 1492.1200000000001,
+      "end": 1494.1200000000001,
+      "text": "that probably every Minecraft player in the audience"
+    },
+    {
+      "start": 1494.1200000000001,
+      "end": 1496.1200000000001,
+      "text": "is asking themselves."
+    },
+    {
+      "start": 1496.1200000000001,
+      "end": 1498.1200000000001,
+      "text": "Did the agent manage to beat the Elden Dragon?"
+    },
+    {
+      "start": 1498.1200000000001,
+      "end": 1499.1200000000001,
+      "text": "Or not?"
+    },
+    {
+      "start": 1499.1200000000001,
+      "end": 1500.1200000000001,
+      "text": "No, no."
+    },
+    {
+      "start": 1500.1200000000001,
+      "end": 1503.1200000000001,
+      "text": "So, like, currently, the longest horizon"
+    },
+    {
+      "start": 1503.1200000000001,
+      "end": 1505.1200000000001,
+      "text": "that the agent can do is, like, mining diamond."
+    },
+    {
+      "start": 1505.1200000000001,
+      "end": 1508.1200000000001,
+      "text": "So that was from the VPT team."
+    },
+    {
+      "start": 1508.1200000000001,
+      "end": 1512.1200000000001,
+      "text": "And for us, we're more like open vocabulary learning,"
+    },
+    {
+      "start": 1512.1200000000001,
+      "end": 1514.1200000000001,
+      "text": "but our task, a bit shorter horizon."
+    },
+    {
+      "start": 1514.1200000000001,
+      "end": 1516.1200000000001,
+      "text": "So, yeah, we're working on solving the Elden Dragon."
+    },
+    {
+      "start": 1516.1200000000001,
+      "end": 1519.1200000000001,
+      "text": "Hopefully, we can come back with a little bit more updates."
+    },
+    {
+      "start": 1519.1200000000001,
+      "end": 1521.1200000000001,
+      "text": "So I think an immediate next step"
+    },
+    {
+      "start": 1521.1200000000001,
+      "end": 1523.1200000000001,
+      "text": "is to scale up Minecraft."
+    },
+    {
+      "start": 1523.1200000000001,
+      "end": 1526.1200000000001,
+      "text": "Because currently, the horizon is still relatively short."
+    },
+    {
+      "start": 1526.1200000000001,
+      "end": 1528.1200000000001,
+      "text": "And if the horizon is short,"
+    },
+    {
+      "start": 1528.1200000000001,
+      "end": 1531.1200000000001,
+      "text": "MineClip cannot provide reliable reward"
+    },
+    {
+      "start": 1531.1200000000001,
+      "end": 1534.1200000000001,
+      "text": "for extremely long horizon tasks like Ender Dragon."
+    },
+    {
+      "start": 1534.1200000000001,
+      "end": 1537.1200000000001,
+      "text": "So how to extend the horizon of MineClip"
+    },
+    {
+      "start": 1537.1200000000001,
+      "end": 1539.1200000000001,
+      "text": "to provide more informative reward?"
+    },
+    {
+      "start": 1539.1200000000001,
+      "end": 1541.1200000000001,
+      "text": "So that is one question."
+    },
+    {
+      "start": 1541.1200000000001,
+      "end": 1543.1200000000001,
+      "text": "And then second, probably we should not use, like,"
+    },
+    {
+      "start": 1543.1200000000001,
+      "end": 1545.1200000000001,
+      "text": "a monolithic model for Ender Dragon."
+    },
+    {
+      "start": 1545.1200000000001,
+      "end": 1549.1200000000001,
+      "text": "Because now we have GPT-3 or, like, other big language models."
+    },
+    {
+      "start": 1549.1200000000001,
+      "end": 1552.1200000000001,
+      "text": "Can it first do planning in the language space?"
+    },
+    {
+      "start": 1552.1200000000001,
+      "end": 1555.1200000000001,
+      "text": "Like, we ask it, you know, how to beat Ender Dragon."
+    },
+    {
+      "start": 1555.1200000000001,
+      "end": 1557.1200000000001,
+      "text": "Give me a list of steps."
+    },
+    {
+      "start": 1557.1200000000001,
+      "end": 1559.1200000000001,
+      "text": "A list of a hundred steps."
+    },
+    {
+      "start": 1559.1200000000001,
+      "end": 1561.1200000000001,
+      "text": "And each step is relatively short horizon."
+    },
+    {
+      "start": 1561.1200000000001,
+      "end": 1564.1200000000001,
+      "text": "So we can feed it to the agent to perform that step."
+    },
+    {
+      "start": 1564.1200000000001,
+      "end": 1566.1200000000001,
+      "text": "So I feel that is a better way to do it."
+    },
+    {
+      "start": 1566.1200000000001,
+      "end": 1568.1200000000001,
+      "text": "But I'm happy to be proven wrong."
+    },
+    {
+      "start": 1568.1200000000001,
+      "end": 1570.1200000000001,
+      "text": "Maybe, like, next year we'll have a transformer"
+    },
+    {
+      "start": 1570.1200000000001,
+      "end": 1572.1200000000001,
+      "text": "that can process one million steps in context, right?"
+    },
+    {
+      "start": 1572.1200000000001,
+      "end": 1574.1200000000001,
+      "text": "Like, yeah, the community is going crazy."
+    },
+    {
+      "start": 1574.1200000000001,
+      "end": 1577.1200000000001,
+      "text": "So I don't want to predict anything."
+    },
+    {
+      "start": 1577.1200000000001,
+      "end": 1579.1200000000001,
+      "text": "Yeah, but thanks for the question."
+    },
+    {
+      "start": 1579.1200000000001,
+      "end": 1581.1200000000001,
+      "text": "Could you talk about a couple more ideas"
+    },
+    {
+      "start": 1581.1200000000001,
+      "end": 1585.1200000000001,
+      "text": "in terms of how to define those creative and open-ended tasks?"
+    },
+    {
+      "start": 1585.1200000000001,
+      "end": 1586.1200000000001,
+      "text": "You know, things that you tried and didn't work,"
+    },
+    {
+      "start": 1586.1200000000001,
+      "end": 1589.1200000000001,
+      "text": "or things that you're thinking about doing."
+    },
+    {
+      "start": 1589.1200000000001,
+      "end": 1591.1200000000001,
+      "text": "Sorry, can you say it again?"
+    },
+    {
+      "start": 1591.1200000000001,
+      "end": 1594.1200000000001,
+      "text": "So it's like, how do we create those tasks?"
+    },
+    {
+      "start": 1594.1200000000001,
+      "end": 1598.1200000000001,
+      "text": "Yeah, how do you automate the creation of them, essentially?"
+    },
+    {
+      "start": 1598.1200000000001,
+      "end": 1600.1200000000001,
+      "text": "Yes, so for the 1,500 program-ended tasks,"
+    },
+    {
+      "start": 1600.1200000000001,
+      "end": 1602.1200000000001,
+      "text": "it's relatively simple."
+    },
+    {
+      "start": 1602.1200000000001,
+      "end": 1605.1200000000001,
+      "text": "Because we know all of the blocks supported by Minecraft."
+    },
+    {
+      "start": 1605.1200000000001,
+      "end": 1608.1200000000001,
+      "text": "And then we simply write out some templated prompts."
+    },
+    {
+      "start": 1608.1200000000001,
+      "end": 1611.1200000000001,
+      "text": "And those prompts are, like, hand-engineered."
+    },
+    {
+      "start": 1611.1200000000001,
+      "end": 1614.1200000000001,
+      "text": "And then for each prompt, you can generate a lot of variations."
+    },
+    {
+      "start": 1614.1200000000001,
+      "end": 1616.1200000000001,
+      "text": "Like, collect n units of a noun."
+    },
+    {
+      "start": 1616.1200000000001,
+      "end": 1618.1200000000001,
+      "text": "So it can be collect 10 units of wood."
+    },
+    {
+      "start": 1618.1200000000001,
+      "end": 1620.1200000000001,
+      "text": "Collect 5 units of stone, right?"
+    },
+    {
+      "start": 1620.1200000000001,
+      "end": 1624.1200000000001,
+      "text": "So for that, you can combinatorially generate a lot of tasks."
+    },
+    {
+      "start": 1624.1200000000001,
+      "end": 1627.1200000000001,
+      "text": "And for the creative tasks, it's more challenging."
+    },
+    {
+      "start": 1627.1200000000001,
+      "end": 1629.1200000000001,
+      "text": "So we brainstorm some ourselves."
+    },
+    {
+      "start": 1629.1200000000001,
+      "end": 1633.1200000000001,
+      "text": "And then we also rely on the task creation UI from YouTube."
+    },
+    {
+      "start": 1633.1200000000001,
+      "end": 1636.1200000000001,
+      "text": "Because the YouTubers are much bigger, kind of, Minecraft gamers."
+    },
+    {
+      "start": 1636.1200000000001,
+      "end": 1639.1200000000001,
+      "text": "And they know what are the interesting tasks to do."
+    },
+    {
+      "start": 1639.1200000000001,
+      "end": 1641.1200000000001,
+      "text": "And we simply harvest some of the tasks from there."
+    },
+    {
+      "start": 1641.1200000000001,
+      "end": 1644.1200000000001,
+      "text": "And then also we query the GPT-3 for some tasks."
+    },
+    {
+      "start": 1644.1200000000001,
+      "end": 1645.1200000000001,
+      "text": "I remember we had about, like,"
+    },
+    {
+      "start": 1645.1200000000001,
+      "end": 1648.1200000000001,
+      "text": "100 or 200 tasks brainstormed by GPT-3."
+    },
+    {
+      "start": 1648.1200000000001,
+      "end": 1651.1200000000001,
+      "text": "So GPT-3 should probably be a co-author."
+    }
+  ],
+  "segment_count": 632
+}

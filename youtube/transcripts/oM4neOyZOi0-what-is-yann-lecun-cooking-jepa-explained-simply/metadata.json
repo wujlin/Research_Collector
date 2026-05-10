@@ -1,0 +1,12 @@
+{
+  "title": "What Is Yann LeCun Cooking? JEPA Explained Simply",
+  "url": "https://www.youtube.com/watch?v=oM4neOyZOi0",
+  "backend": "faster-whisper",
+  "model": "large-v3",
+  "requested_language": "en",
+  "detected_language": "en",
+  "generated_at": "2026-05-09T18:35:48",
+  "language": "en",
+  "language_probability": 1,
+  "duration": 1190.1155625
+}
