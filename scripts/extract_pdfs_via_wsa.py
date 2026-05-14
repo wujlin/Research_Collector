@@ -154,8 +154,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("inputs", nargs="+", help="PDF files or directories to extract")
     parser.add_argument(
         "--remote-host",
-        default="jinlin@10.13.12.164",
-        help="SSH target for WSA",
+        default="jinlin@10.13.17.113",
+        help="SSH target for WSA; override if WSA gets a new IP after reboot",
     )
     parser.add_argument(
         "--remote-project-root",
