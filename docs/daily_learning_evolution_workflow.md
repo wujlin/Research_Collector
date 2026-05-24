@@ -111,15 +111,17 @@ For books and long-form methods material:
 - keep the source PDF, full MinerU Markdown, images, layout PDFs, OCR intermediates, and extraction logs on HKUSTGZ
 - sync back only transformed chapter notes, method manuals, skill references, indexes, and manifests
 - do not treat the book as a flat summary task; identify high-leverage method chapters and expand them in detail
-- convert durable principles into the core research-knowledge skill when they change repeated research behavior; do not create a new skill for each book or daily insight
+- put daily domain accumulation into documentation first: method manuals, topic notes, digests, knowledge cards, or workflow docs
+- update `writing-research-craft` only when the material contributes a reusable research-writing method
+- treat stable repeated domain knowledge as a future knowledge-skill candidate, not an immediate new skill
 
-The book-to-skill loop is:
+The book-to-knowledge loop is:
 
 ```text
-remote extraction -> weighted chapter notes -> method manual -> update writing-research-craft references/checklists -> installed skill sync -> repo update
+remote extraction -> weighted chapter notes -> method manual/topic doc -> documentation update -> future knowledge-skill candidate
 ```
 
-When the material is about writing, research design, literature review, methods, or analysis habits, the final artifact should include an operational checklist or skill reference, not only a reading note.
+When the material is about writing, research design, literature review, methods, or analysis habits, the final artifact should include an operational checklist or documentation update, not only a reading note. Only mature research-writing procedures should update `writing-research-craft`.
 
 ### 5. Knowledge Base Update
 
@@ -158,9 +160,10 @@ Then check:
 - whether new topics are over-collecting noise
 - whether high-value papers are being missed
 - whether query phrases should be split by source
-- whether an existing `writing-research-craft` reference/checklist should be updated
+- which documentation should absorb the week's accumulated knowledge
 - whether a new script is needed for repeated deterministic work
-- whether a long-form book, lecture series, or methods text should update the core research-knowledge skill
+- whether a reusable research-writing method should update `writing-research-craft`
+- whether any stable domain cluster should become a future knowledge skill
 
 ## Source Status
 
