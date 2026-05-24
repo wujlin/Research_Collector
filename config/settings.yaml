@@ -59,6 +59,11 @@ filtering:
       - "ai_for_physics/"
       - "bridges/"
       - "urban_complex_systems/"
+      - "complex_systems_dynamics/"
+      - "general_swarm_intelligence/"
+      - "swarm_robotics/"
+      - "physics_informed_spatial_intelligence/"
+      - "physical_ai/"
 
   # 最大采集论文数 / 每次
   max_papers_per_run: 320
@@ -160,6 +165,20 @@ filtering:
       - "dynamical systems"
       - "urban scaling"
       - "complexity and cities"
+      - "complex systems"
+      - "complex systems dynamics"
+      - "collective intelligence"
+      - "swarm intelligence"
+      - "swarm robotics"
+      - "multi-robot systems"
+      - "distributed control"
+      - "physical AI"
+      - "embodied AI"
+      - "world model"
+      - "vision language action"
+      - "geospatial foundation model"
+      - "spatial intelligence"
+      - "physics-informed spatial"
     negative_keywords:
       - "biomedical portfolios"
       - "rare diseases"
@@ -235,6 +254,21 @@ ranking:
       # 城市系统
       urban_complex_systems/scaling_and_evolution/urban_scaling: 8
       urban_complex_systems/urban_data_and_generation/urban_data_science: 6
+      # 用户新增视野：复杂系统、群体智能、群体机器人、空间智能与Physical AI
+      complex_systems_dynamics/nonlinear_collective_dynamics/emergence_and_self_organization: 14
+      complex_systems_dynamics/nonlinear_collective_dynamics/criticality_and_tipping: 12
+      complex_systems_dynamics/adaptive_complex_systems/learning_and_adaptation: 12
+      general_swarm_intelligence/collective_decision_making/consensus_and_quorum: 14
+      general_swarm_intelligence/collective_decision_making/exploration_exploitation: 12
+      general_swarm_intelligence/emergent_coordination/division_of_labor: 12
+      swarm_robotics/distributed_control/formation_and_coverage: 14
+      swarm_robotics/distributed_control/task_allocation: 12
+      swarm_robotics/embodied_collective_learning/sim_to_real_swarms: 12
+      physics_informed_spatial_intelligence/spatial_foundation_models/geospatial_representation_learning: 14
+      physics_informed_spatial_intelligence/physics_informed_spatial_models/spatiotemporal_dynamics: 14
+      physical_ai/embodied_world_models/vision_language_action: 14
+      physical_ai/embodied_world_models/model_based_control: 12
+      physical_ai/physics_constrained_action/contact_and_dynamics: 12
     priority_keywords:
       "score-based diffusion": 16
       "score matching": 14
@@ -260,6 +294,19 @@ ranking:
       "thermalization": 6
       "ergodicity": 6
       "urban air pollution": 6
+      "complex systems dynamics": 12
+      "collective intelligence": 12
+      "swarm intelligence": 12
+      "swarm robotics": 12
+      "multi-robot systems": 10
+      "distributed control": 10
+      "physical AI": 12
+      "embodied AI": 10
+      "world model": 10
+      "vision language action": 10
+      "geospatial foundation model": 12
+      "spatial intelligence": 10
+      "physics-informed spatial": 10
     suspicious_keywords:
       "neuroscience": 18
       "clinical": 14
@@ -346,6 +393,11 @@ ranking:
       stochastic_analysis/stochastic_dynamics/sde_numerics: 10
       stochastic_analysis/path_foundations/brownian_motion: 8
       urban_complex_systems/scaling_and_evolution/urban_scaling: 10
+      complex_systems_dynamics/nonlinear_collective_dynamics/emergence_and_self_organization: 12
+      general_swarm_intelligence/collective_decision_making/consensus_and_quorum: 12
+      swarm_robotics/distributed_control/formation_and_coverage: 12
+      physics_informed_spatial_intelligence/spatial_foundation_models/geospatial_representation_learning: 12
+      physical_ai/embodied_world_models/vision_language_action: 12
     priority_channels:
       "MIT OpenCourseWare": 12
       "Max Welling Talks": 12

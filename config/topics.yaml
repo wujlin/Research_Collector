@@ -409,6 +409,237 @@ urban_complex_systems:
             - "air pollution"
             - "air quality"
 
+complex_systems_dynamics:
+  display_name: "复杂系统动力学"
+  description: "视野扩展层：关注多主体、多尺度、非线性耦合系统中的涌现、临界、适应和可控性。"
+  subtopics:
+    nonlinear_collective_dynamics:
+      display_name: "非线性集体动力学"
+      description: "从耦合振子、网络动力学到相变与自组织。"
+      keywords:
+        - "complex systems dynamics"
+        - "nonlinear dynamics"
+        - "collective dynamics"
+        - "emergence"
+        - "self-organization"
+        - "coupled oscillator"
+        - "network dynamics"
+      subtopics:
+        emergence_and_self_organization:
+          display_name: "涌现与自组织"
+          keywords:
+            - "emergent behavior"
+            - "self-organization"
+            - "collective behavior"
+            - "pattern formation"
+            - "active matter"
+        criticality_and_tipping:
+          display_name: "临界性与突变"
+          keywords:
+            - "criticality"
+            - "tipping point"
+            - "phase transition"
+            - "early warning signal"
+            - "critical slowing down"
+    adaptive_complex_systems:
+      display_name: "适应性复杂系统"
+      description: "关注学习、演化、反馈和环境耦合。"
+      keywords:
+        - "adaptive complex systems"
+        - "coevolution"
+        - "feedback"
+        - "resilience"
+        - "self adaptation"
+      subtopics:
+        learning_and_adaptation:
+          display_name: "学习与适应"
+          keywords:
+            - "adaptive behavior"
+            - "multi-agent learning"
+            - "collective learning"
+            - "evolutionary dynamics"
+            - "reinforcement learning complex systems"
+
+general_swarm_intelligence:
+  display_name: "通用群体智能"
+  description: "视野扩展层：寻找跨生物群体、人工多智能体和机器人群体都成立的集体决策与协同原则。"
+  subtopics:
+    collective_decision_making:
+      display_name: "集体决策"
+      description: "群体如何在局部信息、噪声和冲突目标下形成稳定选择。"
+      keywords:
+        - "swarm intelligence"
+        - "collective intelligence"
+        - "collective decision making"
+        - "distributed decision making"
+        - "consensus"
+        - "quorum sensing"
+      subtopics:
+        consensus_and_quorum:
+          display_name: "共识与法定数"
+          keywords:
+            - "consensus dynamics"
+            - "quorum response"
+            - "majority rule"
+            - "distributed consensus"
+        exploration_exploitation:
+          display_name: "探索-利用权衡"
+          keywords:
+            - "exploration exploitation"
+            - "collective search"
+            - "foraging"
+            - "multi-agent exploration"
+    emergent_coordination:
+      display_name: "涌现协同"
+      description: "局部交互如何形成群体级组织、分工和鲁棒性。"
+      keywords:
+        - "emergent coordination"
+        - "distributed coordination"
+        - "self-organized coordination"
+        - "collective robustness"
+      subtopics:
+        division_of_labor:
+          display_name: "分工与角色形成"
+          keywords:
+            - "division of labor"
+            - "task allocation"
+            - "role emergence"
+            - "collective specialization"
+
+swarm_robotics:
+  display_name: "群体机器人"
+  description: "视野扩展层：关注可部署机器人群体中的分布式控制、协同学习、物理约束和任务执行。"
+  subtopics:
+    distributed_control:
+      display_name: "分布式控制"
+      description: "无中心或弱中心条件下的协同控制、队形、覆盖和任务分配。"
+      keywords:
+        - "swarm robotics"
+        - "multi-robot systems"
+        - "distributed control"
+        - "formation control"
+        - "coverage control"
+        - "task allocation"
+      subtopics:
+        formation_and_coverage:
+          display_name: "队形与覆盖"
+          keywords:
+            - "formation control"
+            - "coverage control"
+            - "flocking control"
+            - "multi-robot coordination"
+        task_allocation:
+          display_name: "任务分配"
+          keywords:
+            - "multi-robot task allocation"
+            - "distributed task allocation"
+            - "market-based task allocation"
+            - "swarm task allocation"
+    embodied_collective_learning:
+      display_name: "具身群体学习"
+      description: "机器人身体、传感、通信和环境反馈共同塑造群体行为。"
+      keywords:
+        - "embodied swarm intelligence"
+        - "collective robot learning"
+        - "multi-agent reinforcement learning"
+        - "robot swarm learning"
+        - "sim-to-real swarm"
+      subtopics:
+        sim_to_real_swarms:
+          display_name: "群体机器人Sim-to-Real"
+          keywords:
+            - "sim-to-real swarm robotics"
+            - "reality gap swarm"
+            - "robot swarm transfer"
+            - "embodied multi-agent learning"
+
+physics_informed_spatial_intelligence:
+  display_name: "物理信息空间智能"
+  description: "视野扩展层：把物理约束、空间动力学、地理观测和生成模型结合成可解释的空间智能。"
+  subtopics:
+    spatial_foundation_models:
+      display_name: "空间基础模型"
+      description: "面向地理、遥感、城市和环境数据的基础模型与表征学习。"
+      keywords:
+        - "spatial intelligence"
+        - "geospatial foundation model"
+        - "spatial foundation model"
+        - "geospatial artificial intelligence"
+        - "remote sensing foundation model"
+        - "earth observation foundation model"
+      subtopics:
+        geospatial_representation_learning:
+          display_name: "地理空间表征学习"
+          keywords:
+            - "geospatial representation learning"
+            - "spatial representation learning"
+            - "remote sensing representation"
+            - "earth observation representation"
+    physics_informed_spatial_models:
+      display_name: "物理约束空间模型"
+      description: "用守恒、扩散、传输、边界条件和多尺度结构约束空间预测与生成。"
+      keywords:
+        - "physics-informed spatial model"
+        - "physics-informed geospatial"
+        - "spatial dynamics"
+        - "diffusion spatial data"
+        - "physics-guided remote sensing"
+        - "spatiotemporal foundation model"
+      subtopics:
+        spatiotemporal_dynamics:
+          display_name: "时空动力学建模"
+          keywords:
+            - "spatiotemporal dynamics"
+            - "spatiotemporal forecasting"
+            - "neural operator geospatial"
+            - "physics-guided spatiotemporal"
+
+physical_ai:
+  display_name: "物理人工智能"
+  description: "视野扩展层：关注在物理世界中感知、推理、行动和学习的 AI，强调具身、世界模型和物理约束。"
+  subtopics:
+    embodied_world_models:
+      display_name: "具身世界模型"
+      description: "学习可行动的物理世界表征，用于控制、规划和泛化。"
+      keywords:
+        - "physical AI"
+        - "embodied AI"
+        - "world model"
+        - "robot learning"
+        - "foundation model robotics"
+        - "vision language action"
+      subtopics:
+        vision_language_action:
+          display_name: "Vision-Language-Action模型"
+          keywords:
+            - "vision language action"
+            - "VLA model"
+            - "robot foundation model"
+            - "embodied foundation model"
+        model_based_control:
+          display_name: "模型驱动控制"
+          keywords:
+            - "model-based control"
+            - "planning with world models"
+            - "robot world model"
+            - "dynamics model control"
+    physics_constrained_action:
+      display_name: "物理约束行动"
+      description: "把可达性、接触、动力学和安全约束嵌入行动策略。"
+      keywords:
+        - "physics-constrained robot learning"
+        - "contact-rich manipulation"
+        - "dynamics-aware policy"
+        - "safe robot learning"
+      subtopics:
+        contact_and_dynamics:
+          display_name: "接触与动力学"
+          keywords:
+            - "contact-rich manipulation"
+            - "dynamics-aware learning"
+            - "physics-based control"
+            - "robot dynamics learning"
+
 bridges:
   display_name: "桥接主题"
   description: "翻译层与桥接机制：把数学骨架、物理语义、生成建模和城市应用接起来。"

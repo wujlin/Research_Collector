@@ -7,6 +7,11 @@ arxiv:
   - "physics-informed neural networks stochastic dynamics"
   - "non-equilibrium statistical mechanics generative modelling"
   - "urban scaling mobility network diffusion cities"
+  - "complex systems dynamics collective behavior criticality emergence"
+  - "swarm intelligence collective decision making emergent coordination"
+  - "swarm robotics distributed control multi robot systems"
+  - "physics-informed spatial intelligence geospatial foundation models"
+  - "physical AI embodied world models robot learning"
 
 semantic_scholar:
   - "variational free energy physics-informed generative modeling"
@@ -14,6 +19,11 @@ semantic_scholar:
   - "bayesian inverse problems generative prior scientific machine learning"
   - "fokker planck score matching reverse time diffusion"
   - "markov-modulated random walk ergodicity master equation"
+  - "complex systems dynamics collective behavior phase transition"
+  - "general swarm intelligence collective decision making"
+  - "swarm robotics multi robot coordination distributed control"
+  - "physics informed geospatial artificial intelligence"
+  - "physical AI embodied intelligence world model robotics"
 
 openalex:
   - "stochastic thermodynamics entropy production fluctuation theorem"
@@ -24,8 +34,18 @@ openalex:
   - "flow matching probability flow ode stochastic dynamics"
   - "bayesian inverse problems deep generative prior"
   - "boundary driven active systems run-and-tumble transport"
+  - "complex systems dynamics emergence self organization criticality"
+  - "swarm intelligence distributed consensus collective search"
+  - "swarm robotics task allocation formation control coverage control"
+  - "geospatial foundation model spatial intelligence physics informed"
+  - "physical AI embodied robot learning vision language action"
 
 youtube:
   - "stochastic differential equations"
   - "non-equilibrium statistical physics"
   - "diffusion models"
+  - "complex systems dynamics"
+  - "swarm intelligence"
+  - "swarm robotics"
+  - "physical AI"
+  - "geospatial foundation models"

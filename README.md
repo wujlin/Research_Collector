@@ -6,8 +6,11 @@
 - **统计物理**：提供熵、自由能、不可逆性等宏观语义
 - **AI for Physics**：提供把这些动力学转成可训练模型的计算机制，内部再分为 `generative dynamics` 和 `physics-informed modeling`
 - **城市复杂系统**：提供真实数据、真实结构和真实问题的应用场景
+- **Zhihang 视野扩展层**：在个人分支中持续加入复杂系统动力学、通用群体智能、群体机器人、物理信息空间智能与物理人工智能
 
 因此，这里更接近“主干 + 翻译层 + 桥接主题 + 应用场景”，而不是“四个相互独立的学科盒子”。
+
+每日学习和视野演化流程见 [`docs/daily_learning_evolution_workflow.md`](docs/daily_learning_evolution_workflow.md)。除论文和视频外，个人分支也把重要书籍、方法材料和长期课程纳入“远端解析 -> 本地轻量笔记 -> 可复用 skill”的学习演化链条。
 
 ## 项目架构
 
@@ -59,6 +62,13 @@ python scripts/collect.py                    # 采集全部源
 python scripts/collect.py --source arxiv     # 仅 arXiv
 python scripts/collect.py --source youtube   # 仅 YouTube
 ```
+
+当前来源状态：
+
+- `arxiv` 可无 API key 做基础在线采集；高频重复 smoke test 可能触发官方 `429` 限流，需要按 `settings.yaml` 的间隔和重试策略运行。
+- `openalex` 已支持从项目 `.env` 读取 `OPENALEX_API_KEY`；个人分支的 key 不入库，默认用 `OpenAlexCollector` 或 `scripts/collect.py --source openalex` 调用。
+- `semantic_scholar` 已支持从项目 `.env` 读取 `SEMANTIC_SCHOLAR_API_KEY`；个人分支的 key 不入库，默认全源采集在有 key 时可稳定启用。
+- `youtube` 已支持从项目 `.env` 读取 `YOUTUBE_API_KEY`；个人分支的 key 不入库，默认用 `YouTubeCollector` 或 `scripts/collect.py --source youtube` 调用。
 
 ### 5. 启动定时采集
 
