@@ -10,7 +10,7 @@
 
 因此，这里更接近“主干 + 翻译层 + 桥接主题 + 应用场景”，而不是“四个相互独立的学科盒子”。
 
-每日学习和视野演化流程见 [`docs/daily_learning_evolution_workflow.md`](docs/daily_learning_evolution_workflow.md)。除论文和视频外，个人分支也把重要书籍、方法材料和长期课程纳入“远端解析 -> 本地轻量笔记 -> 可复用 skill”的学习演化链条。
+每日学习和视野演化流程见 [`docs/daily_learning_evolution_workflow.md`](docs/daily_learning_evolution_workflow.md)。除论文和视频外，个人分支也把重要书籍、方法材料和长期课程纳入“远端解析 -> 本地轻量笔记 -> 更新核心研究知识 skill”的学习演化链条。默认把研究方法沉淀进 `writing-research-craft`，不为每日学习随意新建 skill。
 
 ## 项目架构
 

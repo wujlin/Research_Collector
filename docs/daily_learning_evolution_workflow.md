@@ -111,12 +111,12 @@ For books and long-form methods material:
 - keep the source PDF, full MinerU Markdown, images, layout PDFs, OCR intermediates, and extraction logs on HKUSTGZ
 - sync back only transformed chapter notes, method manuals, skill references, indexes, and manifests
 - do not treat the book as a flat summary task; identify high-leverage method chapters and expand them in detail
-- convert durable principles into Codex skills when they change repeated research behavior
+- convert durable principles into the core research-knowledge skill when they change repeated research behavior; do not create a new skill for each book or daily insight
 
 The book-to-skill loop is:
 
 ```text
-remote extraction -> weighted chapter notes -> method manual -> reusable skill -> installed skill -> repo update
+remote extraction -> weighted chapter notes -> method manual -> update writing-research-craft references/checklists -> installed skill sync -> repo update
 ```
 
 When the material is about writing, research design, literature review, methods, or analysis habits, the final artifact should include an operational checklist or skill reference, not only a reading note.
@@ -158,8 +158,9 @@ Then check:
 - whether new topics are over-collecting noise
 - whether high-value papers are being missed
 - whether query phrases should be split by source
-- whether a new skill or script is needed for repeated work
-- whether a long-form book, lecture series, or methods text should be converted into a reusable skill
+- whether an existing `writing-research-craft` reference/checklist should be updated
+- whether a new script is needed for repeated deterministic work
+- whether a long-form book, lecture series, or methods text should update the core research-knowledge skill
 
 ## Source Status
 
