@@ -1,0 +1,1070 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 6.7,
+      "text": "I'm excited to share some recent work that provides some of the first analysis about when and where unsupervised skill learning algorithms are optimal for pre-training."
+    },
+    {
+      "start": 7.12,
+      "end": 10.38,
+      "text": "This is joint work with my advisors, Ruslan Salakutinov and Sergey Levin."
+    },
+    {
+      "start": 11.92,
+      "end": 21.400000000000002,
+      "text": "Reinforcement learning algorithms are expensive in terms of data, in terms of compute, and so there's been a lot of work in trying to speed them up by performing some sort of unsupervised pre-training without any reward functions."
+    },
+    {
+      "start": 21.96,
+      "end": 27.66,
+      "text": "While these methods can work well in practice, there's been very little analysis probing when and where they're guaranteed to provide good results."
+    },
+    {
+      "start": 27.66,
+      "end": 36.66,
+      "text": "Perhaps the most popular of these methods are skill learning methods, and our analysis will focus on how these skill learning methods do or do not make it easier to solve downstream tasks."
+    },
+    {
+      "start": 38.38,
+      "end": 39.620000000000005,
+      "text": "What are skill learning algorithms?"
+    },
+    {
+      "start": 39.980000000000004,
+      "end": 45.82,
+      "text": "Skill learning algorithms try to identify many different useful behaviors for an agent before a reward function is given."
+    },
+    {
+      "start": 46.620000000000005,
+      "end": 52.980000000000004,
+      "text": "For example, on this dog-like robot, we might want to learn skills corresponding to walking forwards and backwards, to crouching, to jumping."
+    },
+    {
+      "start": 53.620000000000005,
+      "end": 57.5,
+      "text": "The motivation for learning such skills is that they might make it easier to solve new tasks."
+    },
+    {
+      "start": 57.74,
+      "end": 60.220000000000006,
+      "text": "Either by combining or adapting these skills."
+    },
+    {
+      "start": 61.38,
+      "end": 68.74000000000001,
+      "text": "As another example, for this robot arm, we might want to learn skills that interact with the blocks in different ways, sorting and grasping and reaching."
+    },
+    {
+      "start": 70.62,
+      "end": 73.10000000000001,
+      "text": "Unsupervised skill learning is a vibrant area of research."
+    },
+    {
+      "start": 73.5,
+      "end": 80.10000000000001,
+      "text": "Prior work has shown that it's possible to learn skills without any reward function, and that these skills often do help solve downstream tasks."
+    },
+    {
+      "start": 81.34,
+      "end": 87.5,
+      "text": "While the precise details of all these different methods are different, many of them follow a similar template, maximizing a mutual information objective."
+    },
+    {
+      "start": 88.38,
+      "end": 90.94,
+      "text": "To define that objective, we have to introduce a bit of notation."
+    },
+    {
+      "start": 91.74,
+      "end": 94.78,
+      "text": "We will use zed as a latent variable indicating the skill."
+    },
+    {
+      "start": 95.02,
+      "end": 98.62,
+      "text": "This is often a one-hot vector, though some work uses a continuous latent variable."
+    },
+    {
+      "start": 99.17999999999999,
+      "end": 102.02,
+      "text": "And we'll use s to denote the states visited by the policy."
+    },
+    {
+      "start": 102.58,
+      "end": 105.9,
+      "text": "To denote a specific skill, we'll use pi conditioned on zed."
+    },
+    {
+      "start": 106.94,
+      "end": 113.22,
+      "text": "Formally, most of these methods maximize the mutual information between the latent variable zed and the states visited."
+    },
+    {
+      "start": 113.58,
+      "end": 116.34,
+      "text": "Some of these methods include additional conditioning information."
+    },
+    {
+      "start": 117.66,
+      "end": 123.89999999999999,
+      "text": "And finally, the mutual information tells us how much changes in the latent variable affect changes in the states visited."
+    },
+    {
+      "start": 125.89999999999999,
+      "end": 129.42,
+      "text": "I like to think about the latent variable as a small number of knobs."
+    },
+    {
+      "start": 129.82,
+      "end": 135.22,
+      "text": "Ideally, we'd like to find some knobs that allow us to sweep over the entire range of behaviors for the agent."
+    },
+    {
+      "start": 135.98,
+      "end": 142.78,
+      "text": "Because we only have a small number of knobs, fiddling with these knobs is much easier than trying to find the right neural network parameters for solving a task."
+    },
+    {
+      "start": 145.1,
+      "end": 145.66,
+      "text": "So far,"
+    },
+    {
+      "start": 145.66,
+      "end": 146.46,
+      "text": "we lack a clear,"
+    },
+    {
+      "start": 146.46,
+      "end": 147.62,
+      "text": "theoretical understanding,"
+    },
+    {
+      "start": 147.62,
+      "end": 150.06,
+      "text": "of when these skill learning methods are provably useful."
+    },
+    {
+      "start": 150.9,
+      "end": 153.94,
+      "text": "While many prior works have proposed various objectives for learning skills,"
+    },
+    {
+      "start": 154.22,
+      "end": 160.86,
+      "text": "it's not yet clear what sorts of skills these methods will produce and how the skill learning objectives relate to reward maximization."
+    },
+    {
+      "start": 161.5,
+      "end": 167.58,
+      "text": "It's unclear whether learning skills via mutual information maximization is a provably good way of doing pre-training."
+    },
+    {
+      "start": 168.1,
+      "end": 170.74,
+      "text": "What does it even mean for a skill learning algorithm to be optimal?"
+    },
+    {
+      "start": 171.70000000000002,
+      "end": 173.66,
+      "text": "This is the main question that we answer in this paper."
+    },
+    {
+      "start": 174.14000000000001,
+      "end": 177.5,
+      "text": "The rest of the talk explains how skill learning can be seen as geometry,"
+    },
+    {
+      "start": 177.62,
+      "end": 179.22,
+      "text": "which is the key to answering this question."
+    },
+    {
+      "start": 182.22,
+      "end": 182.70000000000002,
+      "text": "To start,"
+    },
+    {
+      "start": 182.70000000000002,
+      "end": 185.18,
+      "text": "we'll think about skills not as animated behaviors,"
+    },
+    {
+      "start": 185.3,
+      "end": 187.26,
+      "text": "but rather in terms of the states that they visit."
+    },
+    {
+      "start": 187.78,
+      "end": 188.46,
+      "text": "For example,"
+    },
+    {
+      "start": 188.46,
+      "end": 190.38,
+      "text": "if we have this ant-like robot shown here,"
+    },
+    {
+      "start": 190.70000000000002,
+      "end": 193.9,
+      "text": "the distribution of future states might look like the line below."
+    },
+    {
+      "start": 194.38,
+      "end": 198.86,
+      "text": "Note that this is a combination of looking one step into the future and many steps into the future."
+    },
+    {
+      "start": 200.34,
+      "end": 200.86,
+      "text": "Formally,"
+    },
+    {
+      "start": 200.86,
+      "end": 204.3,
+      "text": "we'll define the average state distribution using this equation here."
+    },
+    {
+      "start": 204.3,
+      "end": 204.9,
+      "text": "Formally,"
+    },
+    {
+      "start": 204.9,
+      "end": 205.54000000000002,
+      "text": "we'll define the average state distribution using this equation here."
+    },
+    {
+      "start": 205.54000000000002,
+      "end": 206.1,
+      "text": "Formally,"
+    },
+    {
+      "start": 206.1,
+      "end": 206.74,
+      "text": "we'll define the average state distribution using this equation here."
+    },
+    {
+      "start": 206.74,
+      "end": 207.22,
+      "text": "Formally,"
+    },
+    {
+      "start": 207.22,
+      "end": 207.3,
+      "text": "we'll define the average state distribution using this equation here."
+    },
+    {
+      "start": 207.3,
+      "end": 207.94,
+      "text": "Throughout this talk,"
+    },
+    {
+      "start": 207.94,
+      "end": 210.34,
+      "text": "I'll use a three-state MDP as a running example."
+    },
+    {
+      "start": 210.34,
+      "end": 212.58,
+      "text": "Our theory applies to arbitrary discrete MDPs."
+    },
+    {
+      "start": 213.22,
+      "end": 214.42,
+      "text": "In this three-state example,"
+    },
+    {
+      "start": 214.42,
+      "end": 217.38,
+      "text": "each policy corresponds to a distribution over three states,"
+    },
+    {
+      "start": 217.38,
+      "end": 220.18,
+      "text": "so we can plot each policy as a point in R3."
+    },
+    {
+      "start": 220.18,
+      "end": 221.94,
+      "text": "We're showing six different policies here."
+    },
+    {
+      "start": 222.5,
+      "end": 225.46,
+      "text": "Because probability distributions must be positive and sum to one,"
+    },
+    {
+      "start": 225.46,
+      "end": 228.42,
+      "text": "these points must lie on the blue triangle, a probability simplex."
+    },
+    {
+      "start": 229.22,
+      "end": 230.1,
+      "text": "To reduce clutter,"
+    },
+    {
+      "start": 230.1,
+      "end": 232.66,
+      "text": "I'll remove the coordinate axes and kill the same data on the right."
+    },
+    {
+      "start": 233.62,
+      "end": 235.46,
+      "text": "The orange region here is really important."
+    },
+    {
+      "start": 235.46,
+      "end": 236.34,
+      "text": "This is the set of feasible state distributions."
+    },
+    {
+      "start": 236.34,
+      "end": 236.9,
+      "text": "This is the set of feasible state distributions."
+    },
+    {
+      "start": 236.9,
+      "end": 237.94,
+      "text": "This is the set of feasible state distributions."
+    },
+    {
+      "start": 237.94,
+      "end": 240.42000000000002,
+      "text": "I'll refer to it as the state marginal polytope."
+    },
+    {
+      "start": 240.98000000000002,
+      "end": 244.74,
+      "text": "This polytope is important because it reflects the dynamics of the environment."
+    },
+    {
+      "start": 244.74,
+      "end": 247.54000000000002,
+      "text": "Some states are easy to visit, some states are hard to visit."
+    },
+    {
+      "start": 247.54000000000002,
+      "end": 249.86,
+      "text": "The agent can't spend all of its time at some states."
+    },
+    {
+      "start": 252.58,
+      "end": 255.3,
+      "text": "To provide some orientation into this land of state marginals,"
+    },
+    {
+      "start": 255.3,
+      "end": 257.38,
+      "text": "I want to think a little bit about reward maximization."
+    },
+    {
+      "start": 258.18,
+      "end": 262.18,
+      "text": "We'll focus on reward functions that depend only on the state, not the action."
+    },
+    {
+      "start": 262.18,
+      "end": 263.54,
+      "text": "In this land of state marginals,"
+    },
+    {
+      "start": 263.54,
+      "end": 266.42,
+      "text": "we can plot reward functions as vectors starting at the origin,"
+    },
+    {
+      "start": 266.9,
+      "end": 270.17999999999995,
+      "text": "and the expected return is the sum of the reward at each state"
+    },
+    {
+      "start": 270.17999999999995,
+      "end": 272.82,
+      "text": "times the probability that a policy visits that state."
+    },
+    {
+      "start": 273.85999999999996,
+      "end": 277.53999999999996,
+      "text": "Which state marginal distribution maximizes this reward function shown here?"
+    },
+    {
+      "start": 278.34,
+      "end": 282.09999999999997,
+      "text": "Recall that we can only choose state marginal distributions inside this orange polytope."
+    },
+    {
+      "start": 284.26,
+      "end": 285.38,
+      "text": "For this reward function,"
+    },
+    {
+      "start": 285.38,
+      "end": 288.73999999999995,
+      "text": "the optimal policy has a state marginal in the lower left-hand corner."
+    },
+    {
+      "start": 290.65999999999997,
+      "end": 292.58,
+      "text": "In general, for a given reward function,"
+    },
+    {
+      "start": 292.58,
+      "end": 295.53999999999996,
+      "text": "the optimal policy always lies at one of these vertices."
+    },
+    {
+      "start": 296.26000000000005,
+      "end": 299.86,
+      "text": "This is intriguing because it suggests that the vertices of the state marginal"
+    },
+    {
+      "start": 299.86,
+      "end": 302.66,
+      "text": "are sufficient for solving any reinforcement learning problem."
+    },
+    {
+      "start": 303.3,
+      "end": 307.14000000000004,
+      "text": "So, one way of quantifying whether a skill learning algorithm is optimal or not"
+    },
+    {
+      "start": 307.14000000000004,
+      "end": 310.66,
+      "text": "is by seeing how many of these vertices are covered by some skill."
+    },
+    {
+      "start": 312.98,
+      "end": 317.14000000000004,
+      "text": "So, where do the skills learned by mutual information-based skill learning algorithms"
+    },
+    {
+      "start": 317.14000000000004,
+      "end": 318.74,
+      "text": "lie on this polytope?"
+    },
+    {
+      "start": 318.74,
+      "end": 320.26,
+      "text": "Do they neatly tile the space?"
+    },
+    {
+      "start": 320.26,
+      "end": 321.78000000000003,
+      "text": "Do they pick out every vertex?"
+    },
+    {
+      "start": 321.78000000000003,
+      "end": 322.58000000000004,
+      "text": "Do they overlap?"
+    },
+    {
+      "start": 324.58000000000004,
+      "end": 325.54,
+      "text": "Well, for this example,"
+    },
+    {
+      "start": 325.54,
+      "end": 328.18,
+      "text": "they learned three skills, each of which lies at a vertex."
+    },
+    {
+      "start": 328.90000000000003,
+      "end": 331.14000000000004,
+      "text": "But no skill is assigned to one of the vertices."
+    },
+    {
+      "start": 331.70000000000005,
+      "end": 334.82,
+      "text": "Even if we tried to learn four skills or 100 skills,"
+    },
+    {
+      "start": 334.82,
+      "end": 337.22,
+      "text": "skill learning algorithms based on mutual information"
+    },
+    {
+      "start": 337.22,
+      "end": 339.38,
+      "text": "would never place a skill at this vertex."
+    },
+    {
+      "start": 339.38,
+      "end": 341.46000000000004,
+      "text": "Instead, they would repeat one of the old skills."
+    },
+    {
+      "start": 343.46000000000004,
+      "end": 344.82000000000005,
+      "text": "Here are four different environments,"
+    },
+    {
+      "start": 344.82000000000005,
+      "end": 347.78000000000003,
+      "text": "and we again visualize where the skills lie on the polytope."
+    },
+    {
+      "start": 348.90000000000003,
+      "end": 350.90000000000003,
+      "text": "So, what's the general principle?"
+    },
+    {
+      "start": 350.90000000000003,
+      "end": 355.06,
+      "text": "We formally prove the following results for mutual information-based skill learning algorithms."
+    },
+    {
+      "start": 356.42,
+      "end": 358.42,
+      "text": "First, skills always lie at vertices."
+    },
+    {
+      "start": 358.42,
+      "end": 360.66,
+      "text": "They never lie on the interior of this polytope."
+    },
+    {
+      "start": 362.02000000000004,
+      "end": 365.78000000000003,
+      "text": "But, while every skill lies at a vertex, not every vertex contains a skill."
+    },
+    {
+      "start": 366.74,
+      "end": 368.5,
+      "text": "This isn't a failure of optimization."
+    },
+    {
+      "start": 368.5,
+      "end": 370.66,
+      "text": "It's not an artifact of trying too few skills."
+    },
+    {
+      "start": 371.22,
+      "end": 374.18,
+      "text": "It's a reflection of the underlying optimization problem."
+    },
+    {
+      "start": 374.18,
+      "end": 378.34000000000003,
+      "text": "Optimizing for mutual information will not, in general, learn policies for every vertex."
+    },
+    {
+      "start": 379.14000000000004,
+      "end": 382.18,
+      "text": "And this result is interesting because, as we discussed before,"
+    },
+    {
+      "start": 382.18,
+      "end": 384.98,
+      "text": "reward-maximizing policies always lie at vertices."
+    },
+    {
+      "start": 386.5,
+      "end": 389.94,
+      "text": "Finally, the number of unique skills is at most equal to the number of states."
+    },
+    {
+      "start": 390.5,
+      "end": 394.74,
+      "text": "If, say, you tried to learn an infinite number of skills using a continuous latent variable,"
+    },
+    {
+      "start": 394.74,
+      "end": 396.5,
+      "text": "you would still run up against this upper bound."
+    },
+    {
+      "start": 397.62,
+      "end": 398.90000000000003,
+      "text": "These results are pretty negative."
+    },
+    {
+      "start": 398.90000000000003,
+      "end": 403.06,
+      "text": "The skills learned by mutual information are not necessarily sufficient for solving downstream"
+    },
+    {
+      "start": 403.06,
+      "end": 406.34000000000003,
+      "text": "tasks, even if we could, say, take linear combinations of these skills."
+    },
+    {
+      "start": 407.46000000000004,
+      "end": 410.26,
+      "text": "But what if we used skills in a different way to solve downstream tasks?"
+    },
+    {
+      "start": 410.98,
+      "end": 414.1,
+      "text": "Our next result will look at how the skills can be used for fine-tuning."
+    },
+    {
+      "start": 415.78000000000003,
+      "end": 418.02000000000004,
+      "text": "To explain how the skills can be used for fine-tuning,"
+    },
+    {
+      "start": 418.02000000000004,
+      "end": 420.74,
+      "text": "we need to think about the skill learning algorithms in a different way."
+    },
+    {
+      "start": 421.62,
+      "end": 425.94,
+      "text": "Usually, we think about these algorithms as optimizing for a small number of skills."
+    },
+    {
+      "start": 426.82,
+      "end": 430.58000000000004,
+      "text": "In this talk so far, we've discussed what states these skills end up visiting,"
+    },
+    {
+      "start": 430.58000000000004,
+      "end": 432.90000000000003,
+      "text": "shown as the orange dots in some of those plots before."
+    },
+    {
+      "start": 433.62,
+      "end": 435.14000000000004,
+      "text": "And we thought about the skill learning algorithms"
+    },
+    {
+      "start": 435.14000000000004,
+      "end": 437.70000000000005,
+      "text": "as moving these orange dots around inside the orange polytope."
+    },
+    {
+      "start": 440.90000000000003,
+      "end": 442.74,
+      "text": "To explain how skill learning relates to fine-tuning,"
+    },
+    {
+      "start": 442.74,
+      "end": 445.5,
+      "text": "I want to discuss a different way of thinking about these same skill learning algorithms."
+    },
+    {
+      "start": 445.5,
+      "end": 448.94,
+      "text": "This is simple. Instead of optimizing some small number of skills,"
+    },
+    {
+      "start": 448.94,
+      "end": 452.06,
+      "text": "we can think about skill learning algorithms as assigning probabilities"
+    },
+    {
+      "start": 452.06,
+      "end": 454.38,
+      "text": "to every single possible policy."
+    },
+    {
+      "start": 455.26,
+      "end": 457.34,
+      "text": "This is sort of like saying that the skill learning algorithm"
+    },
+    {
+      "start": 457.34,
+      "end": 459.58,
+      "text": "is given a big bucket of policies."
+    },
+    {
+      "start": 459.58,
+      "end": 462.7,
+      "text": "Some of these policies may have a uniform distribution over states,"
+    },
+    {
+      "start": 462.7,
+      "end": 465.42,
+      "text": "some of them may lie at boundaries of the polytope."
+    },
+    {
+      "start": 465.42,
+      "end": 468.34,
+      "text": "And now the skill learning algorithm gets to select some of these policies."
+    },
+    {
+      "start": 468.34,
+      "end": 470.54,
+      "text": "Formally,"
+    },
+    {
+      "start": 470.54,
+      "end": 474.62,
+      "text": "the skill learning algorithm has to assign a probability to each of these policies."
+    },
+    {
+      "start": 474.62,
+      "end": 475.08,
+      "text": "So, if you go back and look at the net value of these policies, the real data will be the same as the numbers on this table."
+    },
+    {
+      "start": 475.08,
+      "end": 475.34,
+      "text": "So, the real data will get the numbers onto each of these policies. So that's why we think about these skills as something that can be used to design certain probabilities."
+    },
+    {
+      "start": 475.34000000000003,
+      "end": 481.72,
+      "text": "So maybe the skill learning algorithm assigns a 70% probability to the red skill and a 30%"
+    },
+    {
+      "start": 481.72,
+      "end": 484.90000000000003,
+      "text": "probability to the pink skill and a 0% probability to the other skill."
+    },
+    {
+      "start": 484.90000000000003,
+      "end": 488.48,
+      "text": "And these probabilities reflect how often the skill learning algorithm would use this"
+    },
+    {
+      "start": 488.48,
+      "end": 493.22,
+      "text": "policy in the environment."
+    },
+    {
+      "start": 493.22,
+      "end": 496.8,
+      "text": "One important note is that from a mathematical perspective, these two ways of thinking about"
+    },
+    {
+      "start": 496.8,
+      "end": 498.18,
+      "text": "skill learning are the same."
+    },
+    {
+      "start": 498.18,
+      "end": 500.90000000000003,
+      "text": "They both correspond to maximizing mutual information."
+    },
+    {
+      "start": 500.90000000000003,
+      "end": 503.98,
+      "text": "While you would implement them in different ways, their mathematical equivalence means"
+    },
+    {
+      "start": 503.98,
+      "end": 509.62,
+      "text": "that we can use this new perspective to analyze the old perspective."
+    },
+    {
+      "start": 509.62,
+      "end": 514.52,
+      "text": "So now we can view skill learning algorithms as selecting policies from this big bucket."
+    },
+    {
+      "start": 514.52,
+      "end": 519.36,
+      "text": "An example before, the skill learning algorithm assigned a probability of 70% to the red policy"
+    },
+    {
+      "start": 519.36,
+      "end": 521.74,
+      "text": "and 30% to the pink policy."
+    },
+    {
+      "start": 521.74,
+      "end": 525.32,
+      "text": "Maybe those policies lie in the upper left and lower left corners, and we'll use orange"
+    },
+    {
+      "start": 525.32,
+      "end": 529.46,
+      "text": "dots to visualize the probabilities assigned to those policies."
+    },
+    {
+      "start": 529.46,
+      "end": 533.96,
+      "text": "After deciding which policies to select from this big bucket, we can then ask the following"
+    },
+    {
+      "start": 533.98,
+      "end": 534.98,
+      "text": "question."
+    },
+    {
+      "start": 534.98,
+      "end": 538.9200000000001,
+      "text": "On average, what states do the selected policies visit?"
+    },
+    {
+      "start": 538.9200000000001,
+      "end": 544.34,
+      "text": "This depends on which policies we've selected and the probabilities we've put on those"
+    },
+    {
+      "start": 544.34,
+      "end": 545.34,
+      "text": "policies."
+    },
+    {
+      "start": 545.34,
+      "end": 549.66,
+      "text": "In this example, the average state distribution is shown as this black dot."
+    },
+    {
+      "start": 549.66,
+      "end": 552.96,
+      "text": "Because the skill learning algorithm has assigned a higher probability to the red policy than"
+    },
+    {
+      "start": 552.96,
+      "end": 556.4,
+      "text": "the pink policy, this average is closer to the red policy."
+    },
+    {
+      "start": 556.4,
+      "end": 561.36,
+      "text": "And I'll refer to this average as the prior, because later we'll use it as an initialization"
+    },
+    {
+      "start": 561.36,
+      "end": 563.82,
+      "text": "for solving downstream tasks."
+    },
+    {
+      "start": 563.98,
+      "end": 566.8000000000001,
+      "text": "We didn't express this prior using this equation."
+    },
+    {
+      "start": 566.8000000000001,
+      "end": 571.5,
+      "text": "It says that the probability of a state under the average state distribution is the probability"
+    },
+    {
+      "start": 571.5,
+      "end": 576.78,
+      "text": "that each policy visits that state times the probability that we sampled that policy."
+    },
+    {
+      "start": 576.78,
+      "end": 582.1,
+      "text": "Intuitively, this average state distribution will be in the middle of the selected policies."
+    },
+    {
+      "start": 582.1,
+      "end": 588.32,
+      "text": "So one might imagine that it might be good for fine tuning to solve downstream tasks."
+    },
+    {
+      "start": 588.32,
+      "end": 591.98,
+      "text": "So let's think about using this prior to solve downstream tasks via fine tuning."
+    },
+    {
+      "start": 591.98,
+      "end": 593.98,
+      "text": "Ideally, we'd like to find tuning."
+    },
+    {
+      "start": 593.98,
+      "end": 598.66,
+      "text": "to happen quickly, so we need to measure the speed of learning new tasks. We'll measure speed of"
+    },
+    {
+      "start": 598.66,
+      "end": 604.0600000000001,
+      "text": "learning based on the distance between the prior state distribution and the state distribution of"
+    },
+    {
+      "start": 604.0600000000001,
+      "end": 609.0600000000001,
+      "text": "a reward-maximizing policy. And recall that the reward-maximizing policies always lie at vertices"
+    },
+    {
+      "start": 609.0600000000001,
+      "end": 615.12,
+      "text": "of this orange polytope. So ideally, we'd like to find a prior distribution that's close to all of"
+    },
+    {
+      "start": 615.12,
+      "end": 621.24,
+      "text": "the vertices. In our analysis, we'll use the Kale divergence to measure this distance. This Kale"
+    },
+    {
+      "start": 621.24,
+      "end": 625.08,
+      "text": "divergence is different from the number of gradient steps, and we encourage future work to"
+    },
+    {
+      "start": 625.08,
+      "end": 632.2,
+      "text": "analyze fine-tuning under more practically relevant distance measures. Now, it turns out that there's"
+    },
+    {
+      "start": 632.2,
+      "end": 637.54,
+      "text": "a very close relationship between the speed of fine-tuning and mutual information. Maximizing"
+    },
+    {
+      "start": 637.54,
+      "end": 643.14,
+      "text": "mutual information is equivalent to finding a prior that's closest to the furthest policy."
+    },
+    {
+      "start": 644.48,
+      "end": 649.1800000000001,
+      "text": "That is, maximizing mutual information is equivalent to finding a prior that minimizes"
+    },
+    {
+      "start": 649.1800000000001,
+      "end": 651.22,
+      "text": "the length of the longest black line."
+    },
+    {
+      "start": 651.24,
+      "end": 658.2,
+      "text": "Here, we visualize how optimizing mutual information changes the prior. At convergence,"
+    },
+    {
+      "start": 658.2,
+      "end": 663.1800000000001,
+      "text": "the optimization alternates between updating the prior using the hardest vertices. These"
+    },
+    {
+      "start": 663.1800000000001,
+      "end": 667.62,
+      "text": "hardest vertices exactly correspond to the skills, and the frequency of updates in each direction"
+    },
+    {
+      "start": 667.62,
+      "end": 672.3,
+      "text": "corresponds to the probability that that skill is sampled. And note that some vertices are"
+    },
+    {
+      "start": 672.3,
+      "end": 677.1800000000001,
+      "text": "never used for updates. These vertices are never used as skills. This connection helps"
+    },
+    {
+      "start": 677.1800000000001,
+      "end": 680.84,
+      "text": "explain why maximizing mutual information might be useful for solving downstream tasks."
+    },
+    {
+      "start": 681.24,
+      "end": 687.96,
+      "text": "The average skill is close to all other skills. So, what happens if we use this average skill"
+    },
+    {
+      "start": 687.96,
+      "end": 691.0600000000001,
+      "text": "as an initialization for solving downstream tasks?"
+    },
+    {
+      "start": 691.0600000000001,
+      "end": 695.86,
+      "text": "Let's think about what it would mean to use this initialization for solving the downstream"
+    },
+    {
+      "start": 695.86,
+      "end": 701.4,
+      "text": "tasks. Some prior work has argued that a uniform distribution over states is a good initialization,"
+    },
+    {
+      "start": 701.4,
+      "end": 705.44,
+      "text": "so let's look at that. The red dots correspond to the optimal policies for a bunch of different"
+    },
+    {
+      "start": 705.44,
+      "end": 710.94,
+      "text": "tasks. And to analyze the optimization, we'll use an idealized learning algorithm that can"
+    },
+    {
+      "start": 711.24,
+      "end": 715.7,
+      "text": "easily control the state distribution. The expanding contours here show progressive steps"
+    },
+    {
+      "start": 715.7,
+      "end": 720.08,
+      "text": "of this idealized learning algorithm. And we see that a uniform prior is a good prior,"
+    },
+    {
+      "start": 720.08,
+      "end": 723.0,
+      "text": "as all of the tasks are solved relatively quickly."
+    },
+    {
+      "start": 723.0,
+      "end": 727.86,
+      "text": "Now, let's compare this to the prior learned by skill learning. Whereas the prior from"
+    },
+    {
+      "start": 727.86,
+      "end": 733.2,
+      "text": "skill learning takes only 9 steps to solve all of the tasks, a uniform prior takes more"
+    },
+    {
+      "start": 733.2,
+      "end": 736.2,
+      "text": "than 13 steps to solve all of the tasks."
+    },
+    {
+      "start": 736.2,
+      "end": 741.1800000000001,
+      "text": "Formally, we prove that skill learning using mutual information will always find the"
+    },
+    {
+      "start": 741.24,
+      "end": 746.32,
+      "text": "optimal prior. That is, maximizing mutual information corresponds to finding a prior"
+    },
+    {
+      "start": 746.32,
+      "end": 749.16,
+      "text": "that's closest to the hardest task."
+    },
+    {
+      "start": 749.16,
+      "end": 753.82,
+      "text": "As noted before, the learning procedure visualized here is very idealized. Real RL algorithms"
+    },
+    {
+      "start": 753.82,
+      "end": 758.22,
+      "text": "take gradient steps in parameter space or in action space, not in state space. So, while"
+    },
+    {
+      "start": 758.22,
+      "end": 764.6,
+      "text": "current mutual information algorithms are optimized for this idealized learning procedure,"
+    },
+    {
+      "start": 764.6,
+      "end": 768.04,
+      "text": "other yet-to-be-invented skill learning algorithms might be better for more realistic learning"
+    },
+    {
+      "start": 768.04,
+      "end": 771.04,
+      "text": "procedures."
+    },
+    {
+      "start": 771.24,
+      "end": 775.78,
+      "text": "The main takeaways from this talk are that unsupervised skill learning algorithms cannot"
+    },
+    {
+      "start": 775.78,
+      "end": 780.58,
+      "text": "learn the optimal policy for every downstream task, but they do provide an optimal initialization"
+    },
+    {
+      "start": 780.58,
+      "end": 782.6800000000001,
+      "text": "under some strict assumptions."
+    },
+    {
+      "start": 782.6800000000001,
+      "end": 786.5600000000001,
+      "text": "Please check out the poster for more information. I'm happy to take any questions now. Thanks!"
+    }
+  ],
+  "segment_count": 213
+}

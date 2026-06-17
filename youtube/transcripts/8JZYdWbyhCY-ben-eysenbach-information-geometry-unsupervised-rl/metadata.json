@@ -1,0 +1,12 @@
+{
+  "title": "The Information Geometry of Unsupervised Reinforcement Learning",
+  "url": "https://www.youtube.com/watch?v=8JZYdWbyhCY",
+  "backend": "faster-whisper",
+  "model": "large-v3",
+  "requested_language": "en",
+  "detected_language": "en",
+  "generated_at": "2026-05-13T15:11:44",
+  "language": "en",
+  "language_probability": 1,
+  "duration": 787.207
+}

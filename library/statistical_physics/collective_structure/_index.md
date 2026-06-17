@@ -2,7 +2,7 @@
 title: "集体结构与临界性"
 description: "相变、临界现象与普适结构。"
 paper_count: 47
-last_updated: "2026-05-01"
+last_updated: "2026-05-18"
 ---
 
 # 集体结构与临界性
@@ -10,9 +10,6 @@ last_updated: "2026-05-01"
 相变、临界现象与普适结构。
 
 ## Papers (47)
-
-
-- [A network framework of cultural history](a-network-framework-of-cultural-history.md) (2014, Science 345(6196), 558-562 (2014), 0 citations)
 
 
 - [Hydrodynamic noise in one dimension: Projected Kubo formula and how it vanishes in integrable models](hydrodynamic-noise-in-one-dimension-projected-kubo-formula-and-how-it-vanishes-i.md) (2026, SciPost Physics, 1 citations)
@@ -24,6 +21,8 @@ last_updated: "2026-05-01"
 - [Mean-field limit from general mixtures of experts to quantum neural networks](mean-field-limit-from-general-mixtures-of-experts-to-quantum-neural-networks.md) (2026, Letters in Mathematical Physics, 0 citations)
 
 - [Mean-field stochastic Volterra equations](mean-field-stochastic-volterra-equations.md) (2026, Journal of Applied Probability, 0 citations)
+
+- [Scaling Laws from Sequential Feature Recovery: A Solvable Hierarchical Model](scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model.md) (2026, arXiv, 0 citations)
 
 - [Hydrodynamic Limit and Large Deviations for Run-And-Tumble Particles with Mean-Field Switching Rates](hydrodynamic-limit-and-large-deviations-for-run-and-tumble-particles-with-mean-f.md) (2026, Journal of Statistical Physics, 0 citations)
 

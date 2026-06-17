@@ -4829,6 +4829,39 @@
     "venue_quality": "high_quality"
   },
   {
+    "id": 398,
+    "title": "The growth equation of cities",
+    "abstract": "The science of cities seeks to understand and explain regularities observed in the world's major urban systems. Modelling the population evolution of cities is at the core of this science and of all urban studies. Quantitatively, the most fundamental problem is to understand the hierarchical organization of cities and the statistical occurrence of megacities, first thought to be described by a universal law due to Zipf, but whose validity has been challenged by recent empirical studies. A theoretical model must also be able to explain the relatively frequent rises and falls of cities and civilizations, and despite many attempts these fundamental questions have not been satisfactorily answered yet. Here we fill this gap by introducing a new kind of stochastic equation for modelling population growth in cities, which we construct from an empirical analysis of recent datasets (for Canada, France, UK and USA) that reveals how rare but large interurban migratory shocks dominate city growth. This equation predicts a complex shape for the city distribution and shows that Zipf's law does not hold in general due to finite-time effects, implying a more complex organization of cities. It also",
+    "authors": [
+      "Marc Barthelemy",
+      "Vincent Verbavatz"
+    ],
+    "year": 2020,
+    "publication_date": "2020-11-18",
+    "journal": "Nature 587, 397-401 (2020)",
+    "venue": "Nature",
+    "doi": "10.1038/s41586-020-2900-x",
+    "arxiv_id": "2011.09403",
+    "url": "https://www.nature.com/articles/s41586-020-2900-x",
+    "pdf_url": "https://arxiv.org/pdf/2011.09403v2",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "relevance_score": 39.0,
+    "tier": 1,
+    "status": "unread",
+    "is_seminal": false,
+    "source": "arxiv",
+    "topics": [
+      "urban_complex_systems",
+      "urban_complex_systems/scaling_and_evolution/urban_scaling",
+      "urban_complex_systems/scaling_and_evolution"
+    ],
+    "markdown_path": "urban_complex_systems/scaling_and_evolution/urban_scaling/the-growth-equation-of-cities.md",
+    "importance_score": 49.4,
+    "importance_bucket": "review",
+    "venue_quality": "top_tier"
+  },
+  {
     "id": 394,
     "title": "Hydrodynamic Limit and Large Deviations for Run-And-Tumble Particles with Mean-Field Switching Rates",
     "abstract": "Abstract In this paper, we study run-and-tumble particles moving on two copies of the discrete torus (referred to as layers), where the switching rate between layers depends on a mean-field interaction among the particles. We derive the hydrodynamic limit of this model, as well as the large deviations from the hydrodynamic limit. Our main tool is the introduction of a weakly perturbed version of the system, whose hydrodynamic equations precisely characterize the trajectories associated with large deviations.",
@@ -8071,6 +8104,42 @@
     "venue_quality": "preprint"
   },
   {
+    "id": 399,
+    "title": "Scaling Laws from Sequential Feature Recovery: A Solvable Hierarchical Model",
+    "abstract": "We propose a simple mechanism by which scaling laws emerge from feature learning in multi-layer networks. We study a high-dimensional hierarchical target that is a globally high-degree function, but that can be represented by a combination of latent compositional features whose weights decrease as a power law. We show that a layer-wise spectral algorithm adapted to this compositional structure achieves improved scaling relative to shallow, non-adaptive methods, and recovers the latent directions sequentially: strong features become detectable at small sample sizes, while weaker features require more data. We prove sharp feature-wise recovery thresholds and show that aggregating these transitions yields an explicit power-law decay of the prediction error. Technically, the analysis relies on random matrix methods and a resolvent-based perturbation argument, which gives matching upper and lower bounds for individual eigenvector recovery beyond what standard gap-based perturbation bounds provide. Numerical experiments confirm the predicted sequential recovery, finite-size smoothing of the thresholds, and separation from non-hierarchical kernel baselines. Together, these results show how smooth scaling laws can emerge from a cascade of sharp feature-learning transitions.",
+    "authors": [
+      "Arie Wortsman-Zurich",
+      "Hugo Tabanelli",
+      "Yatin Dandi",
+      "Florent Krzakala",
+      "Bruno Loureiro"
+    ],
+    "year": 2026,
+    "publication_date": "2026-05-14",
+    "journal": "arXiv",
+    "venue": "arXiv",
+    "doi": "10.48550/arXiv.2605.14567",
+    "arxiv_id": "2605.14567",
+    "url": "https://arxiv.org/abs/2605.14567",
+    "pdf_url": "https://arxiv.org/pdf/2605.14567",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "relevance_score": 58.0,
+    "tier": 0,
+    "status": "unread",
+    "is_seminal": false,
+    "source": "arxiv",
+    "topics": [
+      "statistical_physics",
+      "statistical_physics/collective_structure/phase_transitions",
+      "statistical_physics/collective_structure"
+    ],
+    "markdown_path": "statistical_physics/collective_structure/phase_transitions/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model.md",
+    "importance_score": 32.8,
+    "importance_bucket": "archive",
+    "venue_quality": "preprint"
+  },
+  {
     "id": 349,
     "title": "Stochastic entropy production in scattering theory",
     "abstract": "We formulate a stochastic description of entropy production in scattering theory for coherent transport. We distinguish between the information entropy change due to partial knowledge of the leads' state and the thermodynamic entropy change due to the equilibration of each lead with its bath. By employing a two-point measurement scheme, we access the stochastic entropy production at these different stages of the process, as well as the statistics of generic transport quantities. When restricted to particle or energy transport, our approach reproduces the Landauer-Büttiker formulas. The possibility to consider more general quantities such as the entropy currents and their fluctuations, provides a systematic connection between stochastic thermodynamics and coherent transport.",
@@ -8644,39 +8713,6 @@
     "importance_score": 29.8,
     "importance_bucket": "archive",
     "venue_quality": "unranked"
-  },
-  {
-    "id": 398,
-    "title": "The growth equation of cities",
-    "abstract": "The science of cities seeks to understand and explain regularities observed in the world's major urban systems. Modelling the population evolution of cities is at the core of this science and of all urban studies. Quantitatively, the most fundamental problem is to understand the hierarchical organization of cities and the statistical occurrence of megacities, first thought to be described by a universal law due to Zipf, but whose validity has been challenged by recent empirical studies. A theoretical model must also be able to explain the relatively frequent rises and falls of cities and civilizations, and despite many attempts these fundamental questions have not been satisfactorily answered yet. Here we fill this gap by introducing a new kind of stochastic equation for modelling population growth in cities, which we construct from an empirical analysis of recent datasets (for Canada, France, UK and USA) that reveals how rare but large interurban migratory shocks dominate city growth. This equation predicts a complex shape for the city distribution and shows that Zipf's law does not hold in general due to finite-time effects, implying a more complex organization of cities. It also",
-    "authors": [
-      "Marc Barthelemy",
-      "Vincent Verbavatz"
-    ],
-    "year": 2020,
-    "publication_date": "2020-11-18",
-    "journal": "Nature, vol. 587, pages 397-401 (2020)",
-    "venue": "arXiv",
-    "doi": "10.1038/s41586-020-2900-x",
-    "arxiv_id": "2011.09403",
-    "url": "http://arxiv.org/abs/2011.09403v2",
-    "pdf_url": "https://arxiv.org/pdf/2011.09403v2",
-    "citation_count": 0,
-    "influential_citation_count": 0,
-    "relevance_score": 39.0,
-    "tier": 0,
-    "status": "unread",
-    "is_seminal": false,
-    "source": "arxiv",
-    "topics": [
-      "urban_complex_systems",
-      "urban_complex_systems/scaling_and_evolution/urban_scaling",
-      "urban_complex_systems/scaling_and_evolution"
-    ],
-    "markdown_path": "urban_complex_systems/scaling_and_evolution/urban_scaling/the-growth-equation-of-cities.md",
-    "importance_score": 29.4,
-    "importance_bucket": "archive",
-    "venue_quality": "preprint"
   },
   {
     "id": 289,

@@ -243,6 +243,42 @@ Fig. 3 的重点是把 birth-death network 从统计图变成历史叙事。作�
 
 这里的 “fit-gets-richer” 借用了 Bianconi-Barabási fitness model 的语言。它和 pure preferential attachment 不同：不是已有规模越大就必然越强，而是 location 的 intrinsic fitness 也决定它能否持续吸引 links。
 
+先看 pure preferential attachment。它的基本直觉是 rich-get-richer：一个节点已经有越多 links，未来越容易获得新 links。写成最简形式，就是 location $i$ 被新 link 连接到的概率正比于它已有的 degree 或 cumulative attractiveness：
+
+$$
+P(i)
+\propto
+k_i.
+$$
+
+放到这篇文章里，$k_i$ 可以粗略理解为一个 location 已经积累的 notable deaths、incoming birth-death links 或文化中心性。这个机制会强化历史惯性：一个城市过去越成功，未来越容易继续吸引 notable individuals。如果只看 pure preferential attachment，那么早期领先的中心会持续放大优势，最后容易走向 Paris 这种 winner-takes-all pattern。
+
+Bianconi-Barabási fitness model 在这个基础上多加了一个 $\eta_i$：
+
+$$
+P(i)
+\propto
+\eta_i k_i.
+$$
+
+这里 $\eta_i$ 是节点自身的 fitness，也就是在同样已有规模 $k_i$ 下，它吸引新 links 的内在能力。对应到 cultural history，location 的 fitness 不是一个单一变量，而可能来自大学、宫廷、出版业、宗教机构、艺术市场、商业网络、政治地位、语言共同体、地理位置和交通可达性等长期条件。
+
+这样一来，增长就不再只由“过去已经多大”决定。一个城市即使当前 $k_i$ 不是最大，只要 $\eta_i$ 足够高，也能持续吸引 notable individuals。反过来，一个早期有规模优势的城市，如果 fitness 不够强，也未必能永久垄断文化吸引力。
+
+所以 fit-gets-richer 的重点不是“所有城市机会均等”，而是“多个高-fitness 城市都可以增长”。Germany 的例子正是这个意思：Berlin、Munich、Hamburg、Leipzig、Dresden、Frankfurt 等不同 subcenters 可以在不同区域或专业网络中保持吸引力。它们之间不是完全平均分布，而是形成 multicentric competition。没有一个城市像 Paris 那样长期吞掉压倒性 death share，因此作者称其为 subcritical fit-gets-richer regime。
+
+这里的 “subcritical” 也有含义：fitness 差异足以让多个中心持续竞争，但还没有强到让某一个中心发生 condensation，也就是把大部分 links 都吸到自己身上。France 更接近 winner-takes-all，Germany 更接近 multicentric fit-gets-richer。两者的差别可以简化成：
+
+```text
+pure preferential attachment / winner-takes-all:
+    accumulated advantage dominates
+    one center keeps amplifying its lead
+
+fitness-mediated competition / fit-gets-richer:
+    accumulated advantage + intrinsic fitness jointly matter
+    several fit centers can coexist and compete
+```
+
 所以 Fig. 3 的历史解释链条是：
 
 ```text

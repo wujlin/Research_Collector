@@ -31,6 +31,24 @@ global_replacements:
     replacement: "the University of Tokyo"
   - pattern: '\bSanta Fee\b'
     replacement: "Santa Fe"
+  - pattern: '\blost landscapes\b'
+    replacement: "loss landscapes"
+  - pattern: '\blost landscape\b'
+    replacement: "loss landscape"
+  - pattern: '\bhighdimensional\b'
+    replacement: "high-dimensional"
+  - pattern: '\bback propagation\b'
+    replacement: "backpropagation"
+  - pattern: '\bRLU\b'
+    replacement: "ReLU"
+  - pattern: '\bru activation\b'
+    replacement: "ReLU activation"
+  - pattern: '\bru simply\b'
+    replacement: "ReLU simply"
+  - pattern: '\bru of\b'
+    replacement: "ReLU of"
+  - pattern: '\bzero relu\b'
+    replacement: "zero ReLU"
 
 video_specific:
   BV1qi9rB7EQc:
@@ -375,3 +393,80 @@ video_specific:
         replacement: "Tractatus"
       - pattern: 'logical philosophicus'
         replacement: "Logico-Philosophicus"
+  v_jDvpEGTIg:
+    title: "Can Yann LeCun Reshape AI (again)?"
+    replacements:
+      - pattern: '\bLacun\b'
+        replacement: "LeCun"
+      - pattern: '\bLun\b'
+        replacement: "LeCun"
+      - pattern: '\bYan\b'
+        replacement: "Yann"
+      - pattern: '\bJeepa\b'
+        replacement: "JEPA"
+      - pattern: '\bJeppa\b'
+        replacement: "JEPA"
+      - pattern: '\bVJEPA\b'
+        replacement: "V-JEPA"
+      - pattern: '\bVLA are doomed\b'
+        replacement: "VLAs are doomed"
+      - pattern: '\bVA approaches\b'
+        replacement: "VLA approaches"
+      - pattern: '\bVA models\b'
+        replacement: "VLA models"
+      - pattern: '\bPIO7\b'
+        replacement: "Pi Zero"
+      - pattern: '\baector\b'
+        replacement: "actuator"
+      - pattern: '\buklidian\b'
+        replacement: "Euclidean"
+      - pattern: '\bpusht\b'
+        replacement: "Push-T"
+  VkHfRKewkWw:
+    title: "The F=ma of Artificial Intelligence [Backpropagation, How Models Learn Part 2]"
+    replacements:
+      - pattern: '\bWorbos\b'
+        replacement: "Werbos"
+      - pattern: '\bWarbos\b'
+        replacement: "Werbos"
+      - pattern: '\bLama\b'
+        replacement: "Llama"
+      - pattern: '\bMeta Lama\b'
+        replacement: "Meta Llama"
+      - pattern: '\brecmp compute\b'
+        replacement: "recompute"
+      - pattern: '\bprobability of pairs\b'
+        replacement: "probability of Paris"
+  NrO20Jb-hy0:
+    title: "The Misconception that Almost Stopped AI [How Models Learn Part 1]"
+    replacements:
+      - pattern: '\bLama\b'
+        replacement: "Llama"
+      - pattern: '\bMeta Lama\b'
+        replacement: "Meta Llama"
+      - pattern: '\bBoltzman machines\b'
+        replacement: "Boltzmann machines"
+  qx7hirqgfuU:
+    title: "Why Deep Learning Works Unreasonably Well [How Models Learn Part 3]"
+    replacements:
+      - pattern: '\bRLU\b'
+        replacement: "ReLU"
+      - pattern: '\bru activation\b'
+        replacement: "ReLU activation"
+      - pattern: '\bru simply\b'
+        replacement: "ReLU simply"
+      - pattern: '\bru of\b'
+        replacement: "ReLU of"
+  2mrGMMmrVNE:
+    title: "Inside the World's Smartest Robot Brain [VLA]"
+    replacements:
+      - pattern: '\bPali Gemma\b'
+        replacement: "PaliGemma"
+      - pattern: '\bSigLip\b'
+        replacement: "SigLIP"
+      - pattern: '\bPhysical intelligence\b'
+        replacement: "Physical Intelligence"
+      - pattern: '\bAloha\b'
+        replacement: "ALOHA"
+      - pattern: '\bPi0\b'
+        replacement: "Pi Zero"

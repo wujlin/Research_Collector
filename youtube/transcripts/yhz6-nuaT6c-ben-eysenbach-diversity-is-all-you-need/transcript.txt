@@ -1,0 +1,1066 @@
+Excellent. Okay. So thanks so much for having me here today. I'm really excited to talk about some of this work. So the title of the talk is Diversity is All You Need, Learning Skills Without a Reward Function. And this is joint work with a number of collaborators, including Shane Gu, Abhishek Gupta, Juliet Yerbaaz, and Sergey Levin.
+And if you have any questions during the talk, please feel free to stop me and ask questions. The point of this is not so I can talk, but so that you can learn cool things.
+Okay. So to start before talking about what we actually do in this paper, I want to talk about some of the challenges that face reinforcement learning today.
+And a lot of these challenges revolve around human supervision. That is, when we want to get, when we want to deploy reinforcement learning algorithms, what often stops us is not technical problems, but problems that have to do with relying on humans.
+We do this in a number of ways. For example, we rely on humans to design reward functions.
+We somehow expect that humans will be able to say, okay, this is what I want the robot to do. And to do that, here's some really complicated mathematical expression of corresponding to these are good states and these are bad states.
+And in practice, this is really hard to define.
+A second challenge is designing skills. Especially when we want robots or other autonomous agents to solve temporally extended tasks, it's often useful to be able to break down those tasks into a series of simpler tasks.
+But automatically learning these tasks is often quite challenging. And that will actually be the main focus of today's talk.
+A third challenge is tuning hyperparameters. Despite reinforcement learning algorithms being much more stable today than they were, say, five years ago, they still depend heavily on a number of really critical hyperparameters.
+And tuning those parameters often relies on just human ingenuity, which is sort of annoying.
+Resetting.
+This is an issue that often gets overlooked.
+When we have something like a robot deployed in the real world, we often segment its training into a sequence of episodes.
+And at the end of every episode, we assume that the robot is magically reset back to some initial state.
+And for things like video games, this is a perfectly reasonable thing to do. You can just reset all the bits in the game back to some initial state.
+But for things like robots or self-driving cars or chemical plants, resetting the state is often quite challenging.
+You often have to have some human operator come in and rearrange everything.
+I'm not going to talk about this in this talk, but it's one important challenge that I want to see more work on in the future.
+And the last two challenges are safety, we don't want robots to break themselves, and curriculum learning.
+For really complicated tasks, it's often nearly impossible to solve them in a single shot.
+And so insofar as we can break down those tasks into a sequence of easier tasks, then it might be easier to solve them.
+And so today's talk, as I alluded to before, is going to focus mostly on learning useful skills.
+Before we actually dive into what skills are, one of the reasons that skills will be useful is that they'll actually help us solve a number of these other problems.
+They'll help us make progress on things like designing reward functions, hyperparameter tuning, and curriculum learning.
+OK, so what do we mean by a skill?
+So a skill fundamentally is some behavior that some autonomous agent can do.
+And ultimately, what defines a skill depends on the environment you're in.
+So if you look at this quadruped robot right here, skills might correspond to walking forward or walking backwards, crouching down or jumping up.
+But for a different robot, you might get different sorts of skills.
+For example, for this arm robot, skills may correspond to throwing or stacking or sorting objects.
+And in both of these examples, it's pretty clear what different skills would be.
+You and I can sit down and write down what a set of rules are.
+And that's what a set of reasonable skills would be.
+Now, one of the interesting things about learning skills is that they might also help us understand what are the capabilities of a robot like this.
+Of a robot that is really hard a priori to know, what is it possible for this robot to do?
+Can this robot roll forward and roll backwards?
+Can this robot jump?
+Can this robot flatten itself like a pancake?
+If we can learn a set of skills that spans the behavior.
+Of the robot, we might be able to figure out and then better understand what robots can do.
+OK.
+So at this point, we've introduced skills.
+Now I want to talk a little bit about what are good skills?
+What makes one skill or some skills better than other skills?
+And there are a couple of things that might make skills useful.
+One is we might want skills that do good exploration.
+That is, we might want different behaviors that go to different parts of the body.
+We might want behaviors that go to different parts of the state space.
+Another thing we might want is predictability.
+That is, if you say I'm executing skill one, we should always be able to know what will skill one do?
+What will be the outcome of executing skill one?
+And this is especially important if we want to compose skills hierarchically.
+That is, if we want to string together some sequence of skills.
+First executing skill one and then executing skill two.
+Because if the means are different.
+Because if the meaning of skills change, if the outcome of executing skills change,
+then it's really hard to know what will happen when I execute skill one and then skill two.
+And then a third property that might be useful is interpretability.
+That is, if you see the robot doing something, if you see that the robot's in some state taking some actions,
+you should be able to infer, OK, oh, that robot's in that state.
+So it must be executing skill seven, for example.
+And what all these properties hint at is that what makes a skill good or bad can't be determined in isolation.
+Rather, what makes a skill good or bad depends on its relationship to other skills.
+And so one of the key ideas of this talk is that instead of learning skills in isolation,
+rather, we're going to focus on learning an entire set of skills.
+And the objective we're going to use for learning the set of skills is that the set, jointly,
+should be as diverse as possible.
+OK, so this is sort of the setup of what we want out of a skill learning algorithm.
+And I'm actually going to present the method we use for learning the set of skills.
+And before presenting it mathematically, I'm going to present it as a game,
+a game that you or I could actually play if this were in person.
+So this game works as follows.
+We have two players standing on our side.
+Either side of, say, a big football field.
+And the goal of the game is for the blue player to communicate some message to the red player.
+And the players can't talk to each other.
+They're too far away.
+And so the only way that the blue player can communicate to the red player is by doing things.
+By, say, standing upright with his hands on the side.
+Or maybe communicate a different message by leaning over to one side.
+Or it could communicate a third message by jumping and kicking.
+Or by holding his leg.
+Or by doing other motions.
+And one of the ideas here is that the blue player, in trying to convey information to the red player on the opposite side of the football field,
+the blue player has to figure out different motions they can do.
+Different motions that are distinguishable from one another.
+Because if the red player can't distinguish one motion from another motion,
+the blue player won't be able to tell what message the blue player is trying to play.
+This game here lies at the core of the algorithm that we proposed.
+I'll explain how that works now.
+So to do that, we need a little bit of mathematical machinery.
+And so we can formally quantify the amount of information that the blue player conveys to the red player.
+As follows.
+So let's say that the blue player is communicating three messages.
+Either A, B, or C.
+And they're going to do that using three actions.
+Leaning over, jumping and kicking, or swaying to one side.
+We can precisely say that the amount of information that the blue player is sending to the red player
+is at least as great as how well the red player can predict what the blue player is doing.
+So you get some intuition for this.
+If the red player can always accurately infer that kicking means code word B,
+then the subjective, this probability is going to be quite large.
+And so that means that the blue player is successfully communicating many bits to the red player.
+If in contrast, the red player is never able to predict what message the blue player is trying to send,
+then this term is going to be quite low.
+And what this bound here highlights is that if we want to maximize information,
+we actually have to care about the performance of both the players.
+We both want the blue player to execute distinguishable behavior.
+We also want the red player to be able to accurately guess what the blue player is trying to do.
+So before we instantiate this inside a reinforcement learning algorithm,
+I want to pause here to see if there are any questions.
+Well, I'm kind of interested still in how you, you know, a step earlier,
+how did you get into that perspective that the diversity of skills
+and like these three requirements are really what matters about skills?
+There.
+Like a little bit of a step before that.
+Like, how did you end up with these three requirements?
+You know, it's a really good point.
+A lot of this just came from looking at what like intuitively what we think useful skills would be.
+And ultimately, we care about learning skills, not for the purpose of learning skills,
+but we learn we care about learning skills because they will help us solve downstream tasks.
+And so one way we can use skills for solving downstream tasks
+is to compose them hierarchically.
+That is, instead of planning at the love-love, say, motor torques or joint angles,
+we can plan at the love-love more abstract behaviors.
+And this requirement that we'd be able to use skills for hierarchical RO
+was one of the motivations for making skills predictable.
+The motivation for exploration is sort of similar.
+That is, if we want to be able to use skills to accelerate learning downstream tasks,
+it would be useful if, when given a reward function in some environment,
+we're able to very quickly explore this environment.
+And that motivates us to have skills explore.
+And one thing that actually makes exploration easier in this setting is that
+we don't need to have a single skill that does good exploration everywhere.
+All we need is that different skills explore different areas.
+And that if there's a certain state you want to get to,
+there's some skill that will get you to that state.
+And so it was this sort of reasoning about how are we eventually going to use skills
+that suggested these properties.
+Yeah, thank you. Makes sense.
+Excellent.
+Any other questions?
+If not, maybe we'll move on.
+OK, so we have this game, this two-player game.
+And to turn this into a reinforcement learning algorithm,
+we're going to basically assign neural networks to the blue player and the red player.
+And I'll explain how that works.
+So the blue player is what we're going to call the skill or the policy.
+And this player takes as input the current state of the world and some Z.
+Z corresponds to the code word A, B, or C,
+or some other object that we discussed before.
+And the skill outputs a sequence of actions.
+The other player, the red player, is the discriminator.
+And the discriminator looks at the state of the world
+and tries to guess what code word is the skill trying to send.
+And both the skill and the discriminator are learned.
+These are learned neural networks.
+And the whole algorithm works as follows.
+At the start of every episode, we sample some code words,
+some Z from a prior distribution.
+And we send that to the skill.
+The skill then interacts with the environment,
+collecting a whole bunch of experience.
+Now, at every time step,
+the discriminator, the red player,
+looks at the state of the world and tries to guess,
+OK, what code word, what Z,
+is the blue player trying to tell me?
+Are they trying to send A or are they trying to send B
+or are they trying to send C?
+And then the most important step is how we update the skill.
+So what we do is we say,
+if the discriminator was able to successfully guess
+what code word the skill was trying to send,
+then we should give the skill some high reward.
+If the discriminator failed to guess what code word
+the blue player was trying to send,
+then the skill shouldn't get very much reward.
+And mathematically, this exactly corresponds to saying
+that the reward for the skill corresponds to
+the log probability that the red player was able to guess
+the correct code word.
+And the discriminator here is just updated.
+Using standard maximum likelihood.
+So we tell the discriminator afterwards,
+OK, so the blue player was actually trying to send code word four.
+Update your model to get better at predicting
+that when they do that behavior,
+you should predict code word four.
+And we call this algorithm diversity is all you need,
+or DIAN for short.
+One of the neat things about DIAN is that we show that maximize,
+that this two player game here,
+corresponds to maximizing the amount of information sent
+from the blue player to the red player.
+Exactly corresponds to trying to do well on that game
+where we had two players on the other side of the football field.
+Let's look at some of the behaviors learned by DIAN.
+So I'll start with a very simple task and move to more complex tasks.
+On this very simple task,
+we have an agent that starts at the center of a room,
+and it can navigate in any direction.
+And here we're plotting six different skills.
+And we see that different skills correspond
+to going to different states in the environment.
+We see, say, this pink skill goes to the left,
+and this light green skill goes to the right.
+And looking at this plot,
+we see that this algorithm seems to achieve
+the three properties that we mentioned before.
+It does good exploration.
+It goes to most of the states in the environment.
+It's predictable.
+That is, if I say, where will the pink skill go?
+You can tell me, oh, the pink skill,
+that skill goes to the left.
+And finally, it's interpretable.
+Interpretable in the sense that if I say,
+the agent is at this state right here,
+what skill did he use to get there?
+I can say, oh, that was this off-color shade of green
+that got us there.
+One other important property of DIAN
+that I want to highlight
+is DIAN maximizes not just the diversity
+at the current time step,
+but rather diversity in the future.
+And to illustrate that,
+I want to consider this environment.
+In this environment,
+we have the agent start in a hallway.
+And the hallway is really narrow.
+And so when the agent is in the hallway,
+there's nothing it can do to differentiate itself
+from others.
+There's nothing the agent can do
+to differentiate one skill from another skill.
+And so for skills to become discriminable
+from one another,
+they must get to the end of the hallway
+and out into this open room.
+And once out in the open room,
+different skills can make different actions
+to become discriminable from one another.
+For example, the yellow skill can go down,
+and the purple skill can go to the right.
+And this is important because it shows that
+you can continue to learn skills
+even in settings where you can't be discriminable soon
+to become discriminable.
+To become discriminable in the future,
+agents must take actions to get to spaces
+where it's possible to be discriminable
+from one another.
+Okay, so now that we've built up some of the intuition
+for what these skills look like,
+I want to show some results
+on some higher dimensional tasks.
+So here we're looking at a sort of dog-like robot,
+and we're visualizing some of the skills
+that were learned.
+And we see that we've learned skills corresponding
+to running forwards, running backwards,
+and even doing front flips.
+In fact, we've learned more than that.
+We've learned different ways of running forward.
+We've learned ways of running forward quickly
+and ways of running forward slowly,
+ways of running forward that involve sort of
+lying on your nose and scooping forward.
+We've likewise learned different ways of running backwards
+and even different types of front flips.
+And one of the things I want to emphasize here
+is that all of these different behaviors
+have emerged just out of playing that game
+that we mentioned before.
+These have all emerged out of playing the game
+where the robot's trying to communicate some message
+to the discriminator, to some outside user
+that's trying to guess what message
+is the robot trying to send.
+This also works on other sorts of tasks.
+So,
+we applied to this quadruped robot,
+and here the skills are slightly less interpretable,
+but you still learn skills moving, corresponding
+to moving in different directions.
+For a hopping robot, you learn skills corresponding
+to going forward and backwards.
+And you even learn different ways of solving
+Kurt Pol, the famous control task.
+Any questions about the skills that we've seen so far?
+After this, I'm going to talk about some of the applications
+of learning these skills.
+Yes.
+So, one, I can just want to confirm.
+So, do these agents get no reward
+for getting high rewards from the environment,
+only intrinsic diversity rewards?
+Exactly, yes.
+I could have emphasized that more.
+So, all of these skills are learned
+without any reward function.
+So, these skills are learned just by saying,
+be as diverse as possible.
+We don't include any term that says,
+be as diverse and also try to maximize this reward function.
+No, we don't do that.
+That is very impressive.
+There's also a question in the chat,
+which I think is the same question
+that I also wanted to ask.
+Let's do this.
+Brandon, I will ask the question,
+and you please then confirm if it's the same thing
+that you wanted to know.
+So, is this discriminator looking at trying to discriminate
+which skills is being used continuously,
+or is it looking at the entire trajectory
+at the end of the episode?
+That's a really good question.
+So, the way we do it is that we look at just individual states.
+We say, given the state, what is the robot trying to do?
+You can formulate similar objectives
+that look at entire trajectories
+or look at states and actions,
+look at the state in the initial state,
+look at the state in the final state,
+just look at the final state.
+And there's actually been a lot of work
+that looks at different aspects of these.
+There's a good paper by Joshua Acom
+called Variational Option Discovery Algorithms
+that talks a little bit about comparisons
+between these different sorts of objectives.
+But fundamentally, they all correspond
+to playing the same game.
+They're sort of different instantiations of that game.
+Interesting. Thanks.
+There's another question in the chat.
+Do you see them?
+No.
+So, it says, once the skills are learned,
+how are they selected from a hierarchical standpoint?
+Excellent.
+Garrett, is it okay if I pull it off
+from that question for a couple slides?
+I think in like three slides,
+I'm going to have a description of that.
+Excellent.
+And I see that there was a question
+about using hindsight experience replay.
+No, that's...
+Well, you can answer that.
+Oh, that was earlier.
+Yeah, that's something that we were talking about before.
+Excellent.
+But feel free to comment on that as well.
+There is a way to use something similar
+to hindsight experience replay for this.
+If people are interested,
+we can talk more about it at the end of the talk.
+Okay, so let's talk about some of the applications.
+So, fundamentally, what Diane learns
+is it learns this range of behaviors
+that a certain policy can do in a certain environment.
+And it sort of gives us a low-dimensional knob.
+And by tuning this knob,
+we can sweep over the range of behaviors.
+And note that while the range of behaviors,
+things a robot can do in an environment,
+might be somewhat limited,
+it's a much smaller space
+than the set of parameters.
+And so, effectively,
+we've sort of done something like PCA,
+or dimensionality reduction,
+on the space of behaviors.
+And now we have this compact space of behaviors.
+And just by tuning this low-dimensional knob,
+see, we can sweep over different behaviors.
+And I'll show how this is useful for four applications.
+For hierarchical reinforcement learning,
+as Garrett mentioned,
+as imitation learning,
+as parameter initialization,
+and then for a kind of cool application
+relating to meta-learning.
+So let's start with a hierarchical RL application.
+So we use Diane for hierarchical RL as follows.
+To start, we place the agent in some environment,
+and we learn a set of skills.
+For example, in the top left,
+we place the cheetah robot
+on this track with these obstacles,
+and we just have it learn a set of skills
+without any reward function.
+Then, after learning a set of skills,
+we do hierarchical reinforcement learning as follows.
+We say that we'll have some high-level policy
+that chooses skills to execute.
+Instead of choosing actions,
+they choose skills.
+And each skill will be executed for 50 time steps.
+And then we optimize this high-level policy,
+in this case, just using policy gradient,
+using a version of policy gradient called TRPM.
+And we find that by controlling the agent
+at the level of skills,
+which is the red curve,
+you're able to learn much faster
+than if you directly control the agent
+at the level of motor torques,
+which is the green line here,
+or if you use other algorithms
+that directly control the motor's joint angles
+rather than controlling the behaviors.
+And that's what's shown in the top right plot.
+The bottom left plot shows
+a very similar experiment
+where we first put this ant-like robot
+in an environment
+and we have it learning a set of skills
+without any reward function.
+Then, when a reward function is given,
+we learn a high-level policy
+that chooses which of these skills to execute,
+and each skill is executed for many time steps.
+And again, we find that using the skills,
+commanding the robot
+at the level of skills
+is able to learn much faster.
+We see the purple curve is much higher
+than the other curves here.
+Garrett, does that answer the question
+about how skills are used hierarchically?
+Excellent.
+So another application is,
+or one thing I want to highlight here
+is that for the purpose of hierarchical RL,
+learning more skills is useful.
+This would make sense.
+If you only learn two skills,
+it's really hard to solve complex tasks.
+But if you learn 100 skills,
+it becomes much easier.
+And this plot here is just showing
+that if you learn more skills,
+then you do much better
+at solving these hierarchical tasks.
+There's a question.
+So for the higher level policy,
+action space is basically
+the set of skills, precisely.
+And so in our experiments,
+we learned a discrete set of skills.
+I think we used 20 or 50.
+And so the action space is discrete
+and it's size 20 or size 50,
+depending on how many skills you learned.
+And we do execute each skill
+for multiple time steps.
+I believe it was 50 in the paper.
+And so is it the same?
+So you execute a skill for 50 time steps
+and then the discriminators looks
+at the 50 time steps at the same number, right?
+So there's sort of two stages of the method.
+So during training,
+I think we trained for 1,000 time steps,
+which is the length of these episodes
+in these environments.
+And the discriminator looks
+at every time step individually.
+And then when we deploy
+or when we use the skills
+for hierarchical reinforcement learning,
+we actually don't use the discriminator at all.
+All we do is we, I guess,
+execute the learned skills.
+Got it.
+See you sometime later, Thijs.
+Join our next time errors.
+So, well, for hierarchical RL,
+we didn't need to use the discriminator
+to solve the downstream application.
+For imitation learning,
+we will actually use the discriminator.
+So one other sort of neat application of Diane
+is for zero-shot imitation learning.
+And by, I mean, zero-shot imitation learning,
+I mean the following thing.
+We show the agent some behavior.
+Like we show the agent, okay,
+here's a robot performing some task.
+And then we immediately want our agent
+to replicate that behavior.
+We want our robot to do the exact same thing
+without any additional training.
+And here's how we can do that.
+And it's actually a very small modification
+to the algorithm we used
+for learning this set of skills.
+So whereas before we took a skill,
+fed it into the environment,
+and then had the discriminator guess
+what code word is the skill trying to send,
+what we do now is we take the expert
+and we say, given the expert states,
+what skill is the expert trying to send?
+And of course the expert has no idea
+what these skills are,
+but we can still ask the discriminator,
+if this were one of the skills,
+which skill would this be?
+And so the discriminator tells us
+which of our skills is most similar to the expert.
+And then by executing the corresponding skill,
+we can get a good approximation
+to the expert's behavior.
+So here's some examples of that.
+So this top row shows,
+so in this top left example,
+we have an expert that's lying
+on his back,
+and then we feed this state
+into this group, the discriminator,
+and the discriminator says,
+oh, that must be skill seven
+or something like that.
+And then we execute
+the corresponding die-in skill.
+And we see that this skill
+is a pretty good approximation
+to the expert's behavior.
+Similarly, if the expert rolls on its nose,
+then we see that the retrieved die-in skill
+also rolls on its nose.
+And of course,
+that doesn't always work.
+And so in the far right,
+we show an example of a failure case
+where the expert is on its nose
+and the die-in skill also rolls onto its nose,
+but doesn't quite do the full handstand.
+And this sort of makes sense
+because if you haven't learned
+how to learn a skill for a certain behavior,
+then it's going to be really hard
+to imitate that behavior.
+Okay.
+Any questions about either the hierarchical RL
+or the imitation learning applications?
+I mean, the approach is pretty clear,
+but the applications,
+you haven't talked about them too much,
+but I can think of so many directions.
+So have you looked into it further?
+What can you apply it to actually?
+What are you thinking of?
+Well, multi-agent,
+various multi-agent games where,
+for example,
+judging what the other player does is important.
+Like you're playing Pong with two players,
+for example, or something.
+That'd be really cool.
+There's been some work on,
+so here we're maximizing information
+between the,
+basically between the two players
+in this game.
+Interestingly,
+there's been some work on multi-agent RL
+that minimizes information between players,
+where they try to say that you want to have agents
+solve a task independently.
+And so you want them to specialize,
+but I very much agree.
+It would be cool to see this in a multi-agent setting.
+And maybe you could show that you get
+interesting robustness benefits
+because different agents end up solving a task
+in different ways.
+I don't know.
+I think it's a good idea.
+Yeah, basically like tons of directions
+for further work for all of you guys
+to pick up potentially.
+Yeah, definitely.
+And if anyone has ideas,
+they want to chat more about,
+you can bring them up now or at the end,
+or shoot me an email.
+Sure.
+Of a policy for downstream tasks.
+So let's say you want to solve a task
+in some environment.
+And normally you would say run reinforcement learning.
+And you would initialize your parameters,
+say by sampling from a normal distribution.
+We can do something slightly smarter,
+which is that instead of initializing the policy
+using random weights,
+we can initialize the policy weights
+using one of the skills learned by Diane.
+And the intuition here is that
+the skills learned by Diane
+reflect the set of behaviors
+that are possible in this environment.
+And so it sort of reflects a bias
+about what sorts of behaviors
+will be useful in this environment.
+And you hear that by initializing a policy
+using one of the skills learned by Diane,
+you're able to learn much faster
+than if you just randomly initialize your policy.
+And so I think this is sort of interesting
+because it suggests that even in settings
+where you wouldn't really think
+of skill learning being useful,
+just the standard,
+so this here is the standard RL setting.
+There's no multi-agent.
+There's no hierarchical RL.
+We don't have multiple agents.
+And these aren't hard exploration tasks.
+Even in this setting,
+learning skills is useful
+because it gives us good parameters,
+good parameter initializations
+for solving these sorts of tasks.
+And the final application
+is kind of weird,
+but also sort of interesting
+in thinking about
+what are the range of things you can learn
+without a reward function?
+And this is to meta-reinforcement learning.
+So I'll first explain
+how meta-reinforcement learning...
+back a little bit.
+Great, okay.
+So what is meta-reinforcement learning?
+Meta-reinforcement learning is the problem
+of learning a learning
+algorithm that's good at solving tasks.
+So this usually works as follows.
+You put an agent in an environment
+with an unknown reward function,
+and then the robot has to quickly figure out
+what is the reward function
+and maximize that reward function.
+And usually,
+this reward function might correspond
+to navigating to different locations
+or maybe running at different philosophies.
+And ordinarily...
+Sorry, can you specify
+a little bit
+what do you mean by unknown reward function?
+Because in one sense of the word,
+it's always unknown, right?
+We only get samples from the function.
+In another sense of the world,
+like it's...
+How do we even...
+If we don't even get examples of rewards,
+how is it possible to optimize it?
+Yeah, it's a really good question.
+But unknown here,
+I mean that the agent
+does get samples of the reward,
+but every time the agent interacts
+with the environment,
+so for every episode,
+they're solving a different task.
+And so the reward function changes.
+So one day,
+the robot's solving one task.
+The next day,
+the robot's trying to go
+to a different location.
+And the third day,
+the robot's trying to go
+to a third location.
+And so what this means is that
+in the course of every episode,
+the robot has to infer,
+has to say,
+okay,
+I've gotten a little bit of reward
+so far today,
+so maybe I'm trying...
+Maybe the goal is hidden over here.
+I should try to run over there.
+And so meta-reinforcement learning works,
+but it has one main limitation,
+which is that you have to design
+a set of reward functions
+to use for training.
+So the hope of meta-reinforcement learning
+is that you learn
+how to quickly learn unknown tasks,
+and then you can put a robot
+in a new environment,
+and it will be able to solve
+any task you want.
+But this ability hinges on
+the design of the reward functions
+used for training.
+So during training,
+you may have placed the goal
+in three different locations,
+or you may have given
+the robot rewards corresponding
+to going forwards one day
+and going backwards
+a different day.
+But you had to sit down
+and manually define
+those reward functions.
+And manually defining them
+is actually really hard.
+I'll give one sort of funny
+example of this.
+So one of the tasks people do
+in meta-reinforcement learning
+is ants now.
+Ants,
+you know,
+they're like,
+they're like,
+oh,
+oh,
+oh,
+oh,
+oh,
+oh,
+oh,
+you know,
+it's always a little
+tricky to navigate
+about an ant-like robot
+for bringing you
+a task.
+What we can do
+is go to the scale
+lectures
+where you need
+to go to a separate
+class to study
+the task.
+And you'll slightly
+listen to what
+Google is doing
+so that you can
+document
+this however you
+like.
+And when you think
+that,
+well,
+then you get
+like honestly,
+somebody라고
+meanwhile
+inaudible
+but to get mental reinforcement learning algorithms
+to work well, you have to very carefully consider
+how are you going to define reward functions?
+How are you gonna make sure that the reward functions
+are not too easy and not too hard
+and induce a sufficiently diverse set of behaviors?
+Now, Dyan allows us to lift one of these limitations.
+Dyan allows us to automatically propose
+the set of reward functions we use
+for mental reinforcement learning.
+So this works as follows.
+So first, we assume we're given some environment
+and then we do what we call unsupervised mental learning.
+And what I mean by this is that instead of,
+so normally in mental reinforcement learning,
+you have some agent try to solve
+new reward functions in every episode.
+And these reward functions are manually specified
+by some human.
+What we do now is something slightly different.
+We say, we're gonna maximize reward functions
+that are specified by skills.
+So we have one reward function corresponding
+to code word one.
+And specifically the reward function we use
+is the discriminator's predictions.
+So one task is make the discriminator think
+that you're conveying code word one.
+And different task is make the discriminator think
+that you're conveying code word two.
+And so on and so forth.
+And so the interesting thing here is that these tasks
+that we've learned,
+these tasks that we're using for meta reinforcement learning
+are not manually specified.
+And so we no longer have to have a human come in
+and write down what are the set of behaviors
+that we wanna train on.
+We can learn this unsupervised.
+Without any human in the loop.
+And the motivation for doing this,
+for doing this unsupervised meta learning
+is that at test time,
+when a human actually comes along and says,
+maximize this reward function as quickly as possible,
+we can do that.
+And we can do that because we've learned how to solve
+a wide range of tasks.
+We've learned how to solve a very diverse set of tasks
+in this environment.
+I know this is a little bit convoluted.
+Are there any questions about this unsupervised model?
+Are there any questions about this unsupervised model?
+Are there any questions about this unsupervised model?
+Are there any questions about this unsupervised model?
+Are there any questions about this unsupervised model?
+Are there any questions about this unsupervised model?
+I mean, I have a like version in my head of how it works.
+I want you to verify if it's true or not.
+So you pick a, one of the skills.
+So you acquire this set of skills,
+then you pick one of them
+and then you reward following that skill.
+Is that what happens?
+Exactly, yeah.
+And importantly, we're doing this
+in the meta learning setting.
+And so, we're learning a policy that is not just
+that can quickly adapt to maximize,
+to learn these different skills.
+So the robot could be able to very quickly adapt
+its behavior to do skill one or do skill two
+or do skill three.
+And this fast adaptation is important
+because when we're trying to solve a new task,
+we don't want to have to keep trying and failing
+and trying and failing to solve that task.
+We want to very rapidly be able to figure out
+which of the behaviors that we've learned before
+can solve this new task.
+Okay, so this highlights four applications of Dianne.
+Oh, sorry, I forgot to get the results on that.
+So here's an example of some results
+on the half-cuted task.
+And there are a couple,
+there's two things I want you to look at in this plot.
+The green line is our method.
+So when you learn, when you meta-learn,
+using the skills learned from Dianne,
+you're able to learn quite quickly.
+And the X-axis here is number of trials
+it takes to learn the task.
+And we see that we're able to learn these tasks
+in less than, say, 20 trials.
+The black line here,
+is that what we want?
+Yeah, I think maybe a good comparison is the black line
+in the right plot.
+And what that's showing is if you had a human come in
+and design the set of tasks,
+that's how quickly you would learn.
+And we observed that given these oracle human tasks,
+you will learn initially a little bit faster,
+but actually asymptotically, you would get lower reward.
+And what this highlights is that not only does skill learning
+provide a good set of skills,
+it actually provides the right set of skills.
+It provides the right set of skills
+for learning unknown tasks.
+Okay, so in this talk,
+we talked about how we can learn sets of skills
+without reward functions.
+And one of the main ideas is that we should optimize
+over the entire set.
+And this set should be optimized
+to be as diverse as possible.
+The method for doing that was this sort of two-player game,
+where you have one player, the policy,
+try to communicate some message,
+and another player try to infer what message is,
+the first player try to send.
+We then look at some applications of these learned skills.
+We looked at applications
+for hierarchical reinforcement learning,
+for zero-shot imitation learning,
+for parameter initialization,
+and for unsupervised meta learning.
+There are a number of new and interesting ways
+we can take this.
+A lot of these problems have people have looked at
+certain aspects of them,
+but they're still lots of interesting, open questions.
+So, one is, there's a problem, which is this.
+One is this sort of chicken and the egg problem, where we're jointly optimizing the skills
+in the discriminator, but if the policy hasn't learned discriminable skills, then the discriminator
+can't distinguish one skill from another, and then the policy doesn't get any reward.
+And somehow we sort of have to break this chicken and the egg cycle, where nothing ever
+gets improved.
+In practice, some amount of random initialization seems to help with that, but maybe there are
+more intelligent ways of doing that.
+Maybe you could start by, say, running an off-the-shelf exploration algorithm, and then
+segmenting that behavior into a set of skills.
+A second application is applying this to real-world tasks.
+As I alluded to in the beginning, when we apply things in the real world, we have to
+cope with a whole range of additional challenges, things like resetting and things like ensuring
+safety and figuring out how do you learn skills that can be learned in a reset-free manner,
+and can be learned in a safe manner.
+I think it's a really interesting research question.
+A third question is about semi-supervised reinforcement learning.
+So while many of the tasks we look at are relatively low-dimensional, as we move on
+to higher-dimensional tasks, the range of behaviors that you could do can be quite large.
+And maybe if we could provide just a little bit of additional supervision about what skills
+we actually care about, we'd be able to solve downstream tasks.
+And that would be really interesting.
+Thank you.
+So how can we improve our skills in these environments much more quickly?
+For example, maybe you have a robot that has arms and legs, but maybe all that you really
+care about is walking around.
+And if all you care about is walking around, you probably can ignore any behaviors that
+move the arms around.
+And figuring out how can you efficiently encode this inductive bias that walking is important
+but arm motions aren't seems useful for accelerating.
+Finally, and I think the thing I'm most excited about, is just figuring out how to
+scale this.
+So, in the environment we tried, we found that using more than about 50 skills didn't
+improve behavior.
+We found that it's really hard to learn more than 50 behaviors in these environments.
+But for more complex tasks, for tasks that involve many objects or multiple robots, say,
+in a multi-agent environment, it's really hard to just figure out how to scale this.
+setting, there have to be a much larger range of possible behaviors. And figuring out how
+do you efficiently learn huge sets of skills, huge libraries of skills, I think is a really
+important problem. You could imagine that given an unknown environment, you first learn
+the library of behaviors, and then any researcher that wants to use this environment in the
+future no longer has to do reinforcement learning on the original environment, but now can just
+search over the space of learning skills. This would provide in the same way that people
+use pre-trained language embeddings, like Bert, or pre-trained image embeddings from
+say Resonant. This would provide us with a similar mechanism to use pre-trained skills
+for solving downstream tasks. So, those are four ideas of directions that we could take
+this. I would love to open the floor now to hear some of the ideas that all of you have
+for taking these sorts of projects.
+If any of you want to ask any questions, please do so in the comment section below.
+And if any of you want to ask any questions, please do so in the comment section below.
+to chat more about this afterwards feel free to shoot me an email and we can set up a time to chat
+thanks no thank you very much ben that was a very interesting talk
+do you want me to read questions from the chat or
+oh yeah i figured out how to pull it up thanks i see there's an earlier question from anton about
+have you tried it on a football environment uh no but i think it'll be really cool
+maybe you would learn like different uh strategies like i know that different football players
+have played their position in different ways different goalies have different strategies
+different strikers have different strategies they're really cool to see that um
+those sort of differences of behaviors could emerge out of an objective like this
+a question from brandon does the meta rl agent use any information the skill agent or does it
+just use the discriminator from diane uh for meta reinforcement learning we just used the
+discriminator we did not use the policy itself
+yeah i wonder if it can be applied in discrimination first
+yeah i think it can be applied in discrimination first
+so we're a main goal is actually not to control agents but to understand what they're doing
+i'm not sure what would be a good example maybe you're looking for
+connections to your server that are trying to break it break into or something and then you
+train with diane agents and skills and then you classify skills with discriminator
+yeah
+we've thought about this a little bit in terms of like uh hacking or fuzzing or uh making test
+cases so many autonomous car companies have entire teams dedicated to constructing hard examples
+examples where their agents will fail because we know that in many of these real world applications
+of autonomous systems
+it's pretty easy driving on a highway or on suburban roads is pretty easy
+but there are these edge cases that end up being really hard and you can imagine using an algorithm
+like this to automatically discover edge cases it would work probably as follows it would be
+something like figure out how to change the settings of a scene figure out what signs to
+add and how to change the behavior of other cars such that your own car behaves in different ways
+and if you can make your
+car behave in different wacky ways then it's possible those are hard those are cases that
+you want to focus more on for example if you set up a scene where your car drives off the road
+you set up another scene where the car drives into oncoming traffic except the third scene
+where the car stops in the middle of a lane then those seem like useful cases to try to debug
+definitely i see this question from anton how much faster is fine tuning
+meta models um so this is in respect
+uh anton i'm not quite sure i understand the question
+is it asking how much faster do you learn by
+doing fine tuning instead of doing reinforcement learning from scratch
+or is that in this slide here
+so i don't know maybe even some people who the
+one of the steps between being able to tune for these features are roughly two to three times
+easier than if you just randomly initialize the policy and learn from there and how much
+faster you learn depends a lot on how many steps do you have you're trying to learn to tune.
+on the environment.
+And so for the cheetah task,
+we observed you learn much, much faster.
+So we observe it up until this point,
+the randomly initialized policy hasn't learned anything,
+but the policy initialized with Italian
+has already gotten a reward of about 5,000.
+One of the interesting things is for this ant robot.
+If you look at the initial starting state,
+so ant is one of these robots
+where it's really easy to fall over.
+And by initializing with one of the skills,
+you're guaranteed to initialize with a policy
+that doesn't fall over.
+And what that means is that this gap
+of roughly a thousand rewards
+just comes from already knowing how to stand up.
+And knowing how to stand up is a really useful prior
+for solving downstream tasks.
+On the hopper task,
+we observed that these curves are closer together.
+So there isn't as much benefit from initializing
+with one of the dying skills.
+I think we should let you go
+for a couple of minutes, right?
+So you have your last chance to ask a question.
+I should mention that there has been a huge amount
+of follow-up work.
+And so I'd highly recommend checking out some
+of the papers that have come after this.
+I personally really liked the unsupervised
+meta-learning project that we worked on,
+but there's been a lot of other really interesting work
+on things you can do using these sorts of tools,
+you can do using these sorts of skill learning methods.
+What other environments have you run on
+and were there any difficulties?
+Yeah, so I'll talk about a failure case.
+So one setting where I really wanted this to work
+was on a manipulation setting,
+sort of like the one at the very beginning of this talk.
+Yeah, so I'll talk about a failure case. So one setting where I really wanted this to work was on a manipulation setting, sort of like the one at the very beginning of this talk,
+talk. So imagine that you have some robot and you can interact with some objects and ideally you
+learn different skills corresponding to manipulating the objects in different ways.
+Now in practice actually learning that set of skills is really hard.
+And the reason it's hard is because of exploration. So on a robot like this what you find
+when you run something on Diane is that you learn many different ways of moving the arm around but
+the arm actually rarely touches the blocks and because the robot rarely touches the blocks it
+becomes hard to solve this chicken and the egg problem because if the robot never touches the
+blocks the discriminator doesn't learn to associate any configuration of blocks with any certain skill.
+And because the discriminator doesn't know to identify stacking with one skill and pushing
+with another skill then the robot doesn't get rewarded for doing that. And so I really want
+to see someone figure out how to apply similar skill learning algorithms to a robot like this.
+I think that'll be really really cool especially because these exploration problems are not only
+the problem for skill learning but they're also the problem for every downstream task
+that you would try to solve using this robot.
+If you would learn a set of skills that correspond to throwing, stacking,
+pushing, grasping, sorting, etc then solving downstream tasks becomes almost trivial.
+And so this is one failure case but I think it's also an opportunity
+if you're figuring out how can we extend this.
+So hopefully that provides some idea of some failure case as well.
+So hopefully that provides some idea of some failure case as well.
+Are there any other questions right now?
+It seems like they're not.
+Great. Well, as I mentioned at the beginning, if you have questions,
+shoot me an email. You can find it on my website.
+And thanks so much for having me. It's been really fun.
+Yeah. Thank you for this talk.
+Let's keep in touch.
+Maybe we'll join some of our later seminars as well.
+Yeah.
+And thanks everyone for joining.

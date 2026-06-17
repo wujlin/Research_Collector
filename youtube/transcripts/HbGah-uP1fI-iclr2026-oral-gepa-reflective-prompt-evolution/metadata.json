@@ -1,0 +1,12 @@
+{
+  "title": "GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning",
+  "url": "https://www.youtube.com/watch?v=HbGah-uP1fI",
+  "backend": "faster-whisper",
+  "model": "large-v3",
+  "requested_language": "en",
+  "detected_language": "en",
+  "generated_at": "2026-05-12T00:59:07",
+  "language": "en",
+  "language_probability": 1,
+  "duration": 629.127
+}

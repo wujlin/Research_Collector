@@ -1,0 +1,1810 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 9.82,
+      "text": "All right. Welcome back, everyone, to the workshop."
+    },
+    {
+      "start": 10.3,
+      "end": 15.06,
+      "text": "So we have a couple of really exciting invited talks in our next session."
+    },
+    {
+      "start": 15.58,
+      "end": 17.38,
+      "text": "So the first talk will be by Amy Zhang."
+    },
+    {
+      "start": 17.38,
+      "end": 23.26,
+      "text": "So Amy is an assistant professor at UT Austin in the Department of Electrical and Computer Engineering."
+    },
+    {
+      "start": 23.78,
+      "end": 28.3,
+      "text": "Her group works on improving robustness and generalization for reinforcement learning agents."
+    },
+    {
+      "start": 28.3,
+      "end": 36.120000000000005,
+      "text": "And today she will be talking about how we can leverage structure and abstractions for improved OOD generalization in reinforcement learning."
+    },
+    {
+      "start": 36.480000000000004,
+      "end": 37.96,
+      "text": "So Amy, whenever you're ready, take it away."
+    },
+    {
+      "start": 39.22,
+      "end": 40.72,
+      "text": "Awesome. Thanks, Ani, for the introduction."
+    },
+    {
+      "start": 41.18,
+      "end": 45.96,
+      "text": "And thank you for the organizers for organizing a workshop on such an important topic."
+    },
+    {
+      "start": 46.760000000000005,
+      "end": 48.96,
+      "text": "All right. So I'm just going to jump right in."
+    },
+    {
+      "start": 50.16,
+      "end": 55.28,
+      "text": "You know, I think for OOD generalization, we all understand that there's no free lunch, right?"
+    },
+    {
+      "start": 55.28,
+      "end": 58.28,
+      "text": "If we expect generalization, that means we're assuming some type."
+    },
+    {
+      "start": 58.300000000000004,
+      "end": 60.7,
+      "text": "Of structure underlying in our problem."
+    },
+    {
+      "start": 60.7,
+      "end": 70.92,
+      "text": "So today I want to talk about two, I would say, fairly general forms, fairly relaxed types of assumptions of structure that we can make."
+    },
+    {
+      "start": 72.46000000000001,
+      "end": 80.86,
+      "text": "The first is, is this notion of compositionality that our environment is made up of underlying common independent factors."
+    },
+    {
+      "start": 81.28,
+      "end": 87.28,
+      "text": "And so we can expect generalization to new versions of the environment where there are"
+    },
+    {
+      "start": 88.3,
+      "end": 95.8,
+      "text": "maybe, maybe different compositions of factors, or we see the same factors, but in kind of like different scenarios."
+    },
+    {
+      "start": 96.74,
+      "end": 102.96,
+      "text": "And I think that's a bit more specific than the kind of like next assumption that I'm going to make."
+    },
+    {
+      "start": 102.96,
+      "end": 110.32,
+      "text": "So in the final two works that I'm going to talk about today, we're just going to focus on structure that exists in goal conditioned problems in general."
+    },
+    {
+      "start": 110.32,
+      "end": 118.28,
+      "text": "And by goal conditioned, I just mean tasks where our goal is a specific state that we would like to reach."
+    },
+    {
+      "start": 118.3,
+      "end": 124.16,
+      "text": "All right. So with that I'm just going to jump right in and talk about structure and compositionality."
+    },
+    {
+      "start": 124.17999999999999,
+      "end": 129.26,
+      "text": "So before I do that, I want to talk a little bit about what compositionality means right?"
+    },
+    {
+      "start": 129.26,
+      "end": 136.74,
+      "text": "Like. what? What is the set of the underlying assumptions that we're making when we talk about compositionality or compositional generalization?"
+    },
+    {
+      "start": 136.74,
+      "end": 142.44,
+      "text": "So, in RL. You know, we typically deal with simulators, but I think a lot of this applies to robotics as well."
+    },
+    {
+      "start": 142.44,
+      "end": 142.7,
+      "text": "you know, in block stacking or in proc gen, which is this nuances that we're using today, we really like to go through more of this også in"
+    },
+    {
+      "start": 142.7,
+      "end": 143.74,
+      "text": "At you might be looking at, like a little definition sniff image."
+    },
+    {
+      "start": 143.74,
+      "end": 143.9,
+      "text": "Or you might be thinking well, we would, we'll talk about things like aha."
+    },
+    {
+      "start": 143.9,
+      "end": 144.62,
+      "text": "reduce?"
+    },
+    {
+      "start": 144.62,
+      "end": 144.98,
+      "text": "For like regime changes, which is the size distribution of graphics earlyevnding modeling also, you know."
+    },
+    {
+      "start": 144.98,
+      "end": 145.1,
+      "text": "Stberly it's still common."
+    },
+    {
+      "start": 145.1,
+      "end": 153.57999999999998,
+      "text": "you know in block stacking or in procgen which is this this uh set of uh compositionally generated"
+    },
+    {
+      "start": 153.57999999999998,
+      "end": 161.01999999999998,
+      "text": "environments um in simulators for autonomous driving um and but then this also applies to"
+    },
+    {
+      "start": 161.01999999999998,
+      "end": 168.7,
+      "text": "real world scenarios right like uh say loading or unloading a dishwasher or navigating in a"
+    },
+    {
+      "start": 168.70000000000002,
+      "end": 175.82000000000002,
+      "text": "warehouse and manipulating boxes and objects in a warehouse scene all of these have underlying"
+    },
+    {
+      "start": 175.82000000000002,
+      "end": 183.26000000000002,
+      "text": "components um that we can become very familiar with and therefore generalize to new environments"
+    },
+    {
+      "start": 183.98000000000002,
+      "end": 191.42000000000002,
+      "text": "with different configurations of those factors right so um i think that factorization is a way"
+    },
+    {
+      "start": 191.42000000000002,
+      "end": 197.26000000000002,
+      "text": "like by by discovering these factors or utilizing these factors in these environments is a way for"
+    },
+    {
+      "start": 197.26000000000002,
+      "end": 198.70000000000002,
+      "text": "us to achieve compositional"
+    },
+    {
+      "start": 198.70000000000002,
+      "end": 206.38000000000002,
+      "text": "generalization and i i think the notion of compositional generalization is something that"
+    },
+    {
+      "start": 207.34000000000003,
+      "end": 214.06,
+      "text": "other subfields have actually explored a lot more than we have um and so this figure is is actually"
+    },
+    {
+      "start": 214.06,
+      "end": 219.50000000000003,
+      "text": "from this really nice paper called compositionality decomposed how do neural networks generalize"
+    },
+    {
+      "start": 220.3,
+      "end": 225.02,
+      "text": "and this is focusing on compositional generalization in language actually rather than"
+    },
+    {
+      "start": 225.02,
+      "end": 228.38000000000002,
+      "text": "robotics and uh they"
+    },
+    {
+      "start": 228.70000000000002,
+      "end": 235.18,
+      "text": "have this really nice figure that defines these five types of generalization that we can expect"
+    },
+    {
+      "start": 235.74,
+      "end": 242.54000000000002,
+      "text": "um so one is systematicity generalization first via systematically recombining known parts and rules"
+    },
+    {
+      "start": 243.10000000000002,
+      "end": 248.38000000000002,
+      "text": "productivity the ability to extend predictions beyond the length seen in training data"
+    },
+    {
+      "start": 248.38000000000002,
+      "end": 253.18,
+      "text": "substitutivity generalization via the ability to replace components with synonyms"
+    },
+    {
+      "start": 254.38000000000002,
+      "end": 258.22,
+      "text": "localism if model decomposition or if model composition"
+    },
+    {
+      "start": 258.7,
+      "end": 264.56,
+      "text": "operations are local versus global, like if the rules are local versus global. And then"
+    },
+    {
+      "start": 264.56,
+      "end": 271.7,
+      "text": "overgeneralization, which is more of a trait, right? If models pay attention to or are robust"
+    },
+    {
+      "start": 271.7,
+      "end": 279.15999999999997,
+      "text": "to exceptions to rules, right? So I think a lot of these we can see can apply to robotics, but"
+    },
+    {
+      "start": 279.15999999999997,
+      "end": 285.09999999999997,
+      "text": "maybe not necessarily all of them. But I think there's already some related concepts that we"
+    },
+    {
+      "start": 285.1,
+      "end": 290.26000000000005,
+      "text": "use in RL to define MDPs that have this type of structure as well. And one example is the"
+    },
+    {
+      "start": 290.26000000000005,
+      "end": 296.0,
+      "text": "relational MDP, right? So a relational MDP family can be described by a set of classes that denote"
+    },
+    {
+      "start": 296.0,
+      "end": 302.22,
+      "text": "different types of objects, a set of function schemata that takes those objects as inputs."
+    },
+    {
+      "start": 302.46000000000004,
+      "end": 309.06,
+      "text": "And so these can be transformations to those objects or actions that you can take for some"
+    },
+    {
+      "start": 309.06,
+      "end": 314.66,
+      "text": "objects and maybe not others. Oh, sorry. Actually, the action specifically is the set of action"
+    },
+    {
+      "start": 314.66,
+      "end": 315.08000000000004,
+      "text": "schemata."
+    },
+    {
+      "start": 315.1,
+      "end": 324.18,
+      "text": "And then for a specific domain, for a specific environment, we can talk about a set of domain"
+    },
+    {
+      "start": 324.18,
+      "end": 330.70000000000005,
+      "text": "objects. And each of those objects come from a specific type or a specific class from C."
+    },
+    {
+      "start": 331.24,
+      "end": 335.88,
+      "text": "And then we have our standard transition function and reward model, right? So you can see how"
+    },
+    {
+      "start": 335.88,
+      "end": 341.68,
+      "text": "this is a slight modification of the standard MDP definition that takes into account kind of"
+    },
+    {
+      "start": 341.68,
+      "end": 345.06,
+      "text": "common factors across domains. All right."
+    },
+    {
+      "start": 345.1,
+      "end": 353.90000000000003,
+      "text": "So how can we leverage factorization in problems that have them, maybe specifically in robotics?"
+    },
+    {
+      "start": 353.90000000000003,
+      "end": 360.04,
+      "text": "And so in this paper from ICLR that we presented this year, we presented this method called neural"
+    },
+    {
+      "start": 360.04,
+      "end": 365.32000000000005,
+      "text": "constraint satisfaction, which marries the strengths of non-parametric planning with"
+    },
+    {
+      "start": 365.32000000000005,
+      "end": 370.76000000000005,
+      "text": "object-centric representations. And so the main contribution of this work was to show that"
+    },
+    {
+      "start": 370.76000000000005,
+      "end": 374.94,
+      "text": "by factorizing the traditionally monolithic entity representation,"
+    },
+    {
+      "start": 375.1,
+      "end": 381.28000000000003,
+      "text": "into a set of action invariant features, the object type, and action-dependent features,"
+    },
+    {
+      "start": 381.28000000000003,
+      "end": 387.28000000000003,
+      "text": "its state, then we can reuse these components during planning and control."
+    },
+    {
+      "start": 388.18,
+      "end": 393.76000000000005,
+      "text": "All right. So to implement this factorization, NCS first constructs a two-level hierarchy,"
+    },
+    {
+      "start": 393.76000000000005,
+      "end": 399.16,
+      "text": "which abstracts the experience buffer into a graph over state transitions of individual entities,"
+    },
+    {
+      "start": 399.16,
+      "end": 405.04,
+      "text": "right, separated from other contextual entities. So to solve new arrang- and so,"
+    },
+    {
+      "start": 405.04,
+      "end": 410.98,
+      "text": "this is specifically focused on object rearrangement. And so to solve new or rearrangement problems,"
+    },
+    {
+      "start": 410.98,
+      "end": 416.68,
+      "text": "NCS infers what state transitions can be taken given the current and goal image observations,"
+    },
+    {
+      "start": 416.68,
+      "end": 421.24,
+      "text": "and recomposes sequences of state transitions from the graph and translate these transitions"
+    },
+    {
+      "start": 421.24,
+      "end": 428.92,
+      "text": "into actions. So the first problem that comes up is the correspondence problem of how we can abstract"
+    },
+    {
+      "start": 428.92,
+      "end": 434.92,
+      "text": "these raw sensory motor signal, which in our case is this high-dimensional observation space,"
+    },
+    {
+      "start": 434.92,
+      "end": 441.76,
+      "text": "pixels, into representations of entities such that there's a correspondence between how an agent"
+    },
+    {
+      "start": 441.76,
+      "end": 445.48,
+      "text": "intervenes on an entity and how its action affects an object in the environment, right."
+    },
+    {
+      "start": 446.08000000000004,
+      "end": 453.40000000000003,
+      "text": "And so the very first step is actually extracting out what an entity is. And we can actually do this"
+    },
+    {
+      "start": 453.40000000000003,
+      "end": 461.86,
+      "text": "using self-supervised object detection methods. And the idea being that these methods already do"
+    },
+    {
+      "start": 461.86,
+      "end": 464.20000000000005,
+      "text": "kind of like the, the kind of like,"
+    },
+    {
+      "start": 464.92,
+      "end": 470.86,
+      "text": "like already exhibited desired property, which is that it determines what pixels are correlated"
+    },
+    {
+      "start": 470.86,
+      "end": 478.18,
+      "text": "across a data set of images and encompasses that into a specific factor, right, into a specific"
+    },
+    {
+      "start": 478.18,
+      "end": 485.74,
+      "text": "entity. And so then once we've discovered these entities and mapped them across different images"
+    },
+    {
+      "start": 485.74,
+      "end": 490.36,
+      "text": "or across different frames or across different states in a trajectory, then we can start using"
+    },
+    {
+      "start": 490.36,
+      "end": 494.38,
+      "text": "them as abstractions. So the second part of this problem"
+    },
+    {
+      "start": 494.92,
+      "end": 499.78000000000003,
+      "text": "is the combinatorial one, which is how do we actually represent this combinatorial task space"
+    },
+    {
+      "start": 499.78000000000003,
+      "end": 504.76,
+      "text": "in a way that allows us to get this type of generalization across different domains where"
+    },
+    {
+      "start": 504.76,
+      "end": 510.88,
+      "text": "we have different objects or different numbers of objects or combinations of objects in these"
+    },
+    {
+      "start": 510.88,
+      "end": 517.54,
+      "text": "different domains, right. And the point that we leverage in this paper is that the same state"
+    },
+    {
+      "start": 517.54,
+      "end": 521.98,
+      "text": "transition can manifest for different objects and in different contexts, right. So if we're only"
+    },
+    {
+      "start": 521.98,
+      "end": 524.62,
+      "text": "focusing on a specific target object in this image,"
+    },
+    {
+      "start": 524.92,
+      "end": 533.0799999999999,
+      "text": "this pink object, this pink cube, it doesn't matter what's going on with any of the other"
+    },
+    {
+      "start": 533.0799999999999,
+      "end": 540.28,
+      "text": "objects in this scene, right, which means that we can now generalize to like use this transition or"
+    },
+    {
+      "start": 542.0799999999999,
+      "end": 546.64,
+      "text": "leverage this transition in a different version of this environment where there"
+    },
+    {
+      "start": 546.64,
+      "end": 549.4599999999999,
+      "text": "are other additional objects or objects that have been removed."
+    },
+    {
+      "start": 552.16,
+      "end": 552.76,
+      "text": "Okay."
+    },
+    {
+      "start": 553.7199999999999,
+      "end": 554.86,
+      "text": "So NCS"
+    },
+    {
+      "start": 554.92,
+      "end": 558.88,
+      "text": "instructs a two-level abstraction hierarchy to model transitions in the experience buffer,"
+    },
+    {
+      "start": 558.88,
+      "end": 564.64,
+      "text": "right. So in the first, NCS learns to infer a set of energies from sensory motor transitions"
+    },
+    {
+      "start": 564.64,
+      "end": 571.7199999999999,
+      "text": "with pick and move options, so actions. So we're assuming a very high-level action space where an"
+    },
+    {
+      "start": 571.7199999999999,
+      "end": 577.12,
+      "text": "entity is moved per transition. So we don't necessarily need to do this. We can learn these"
+    },
+    {
+      "start": 577.12,
+      "end": 583.0,
+      "text": "abstractions using lower-level action spaces, but it just means that it would require multiple steps"
+    },
+    {
+      "start": 583.0,
+      "end": 584.86,
+      "text": "of moves. And so it was much"
+    },
+    {
+      "start": 584.92,
+      "end": 590.5,
+      "text": "simpler to first kind of think of each of these transitions as only taking a single action rather"
+    },
+    {
+      "start": 590.5,
+      "end": 595.9,
+      "text": "than having to account for multiple actions or learn abstractions of skills, right."
+    },
+    {
+      "start": 596.74,
+      "end": 602.86,
+      "text": "And then our dynamics model can learn to sparsely predict the states shown with the different"
+    },
+    {
+      "start": 602.86,
+      "end": 607.5999999999999,
+      "text": "textures in this figure of the entities at the next time step, right. And so this addresses the"
+    },
+    {
+      "start": 607.5999999999999,
+      "end": 612.5799999999999,
+      "text": "correspondence problem by forcing the network to predict and reconstruct observations through an"
+    },
+    {
+      "start": 612.5799999999999,
+      "end": 614.86,
+      "text": "entity bottleneck. And so this way we can kind of keep"
+    },
+    {
+      "start": 614.92,
+      "end": 617.86,
+      "text": "track of the same objects throughout a trajectory."
+    },
+    {
+      "start": 619.24,
+      "end": 623.8,
+      "text": "So once we have these entities and these one-step transitions of how these entities are moving"
+    },
+    {
+      "start": 623.8,
+      "end": 632.4399999999999,
+      "text": "within a trajectory, we can now build a graph. And how this graph is different from prior works"
+    },
+    {
+      "start": 632.4399999999999,
+      "end": 638.38,
+      "text": "is that instead of building a graph where nodes corresponds to the entire state, right, where now"
+    },
+    {
+      "start": 638.38,
+      "end": 644.3199999999999,
+      "text": "the state is unique to a domain, where a domain kind of like represents the number and combination,"
+    },
+    {
+      "start": 644.92,
+      "end": 652.66,
+      "text": "a specific set of objects, we're now constructing a per-entity graph, where a graph just shows how"
+    },
+    {
+      "start": 652.66,
+      "end": 661.9599999999999,
+      "text": "a single abstract object type moves around, where we can now kind of group together all of the"
+    },
+    {
+      "start": 663.52,
+      "end": 668.68,
+      "text": "versions of that entity across all the different trajectories, across all the different domains"
+    },
+    {
+      "start": 668.68,
+      "end": 674.68,
+      "text": "that we have in our dataset. And so we can do this by clustering these entity transitions,"
+    },
+    {
+      "start": 674.6800000000001,
+      "end": 678.4000000000001,
+      "text": "expressions that share similar initial states and final states. So,"
+    },
+    {
+      "start": 678.4000000000001,
+      "end": 682.36,
+      "text": "this is one way in which we can kind of aggregate all of the information that"
+    },
+    {
+      "start": 682.36,
+      "end": 686.86,
+      "text": "we have about abstract entities in our dataset across different domains."
+    },
+    {
+      "start": 687.82,
+      "end": 695.6800000000001,
+      "text": "And so now we can actually figure out how to use this for planning and control, right."
+    },
+    {
+      "start": 697.0000000000001,
+      "end": 704.2,
+      "text": "So, given a rearrangement problem, specified only by a current observation and a goal observation, we can now"
+    },
+    {
+      "start": 704.6800000000001,
+      "end": 714.6600000000001,
+      "text": "this rearrangement problem into a sub problem per entity all right so um for so the first step is to"
+    },
+    {
+      "start": 714.6600000000001,
+      "end": 720.6400000000001,
+      "text": "run this self-supervised object detection method on our new domain and then randomly select an"
+    },
+    {
+      "start": 720.6400000000001,
+      "end": 728.46,
+      "text": "entity from our domain and uh search in our graph how to move it from its current location to the"
+    },
+    {
+      "start": 728.46,
+      "end": 733.84,
+      "text": "goal location right and now we can do this independently per entity we can look up the"
+    },
+    {
+      "start": 733.84,
+      "end": 740.84,
+      "text": "action which is just an edge in our graph and if there is a failure um basically you know if we"
+    },
+    {
+      "start": 740.84,
+      "end": 748.74,
+      "text": "have like a block stacking scenario where uh we can't move say like a lower uh a lower block in"
+    },
+    {
+      "start": 748.74,
+      "end": 755.2,
+      "text": "a stack then we can try and fail on that entity and then pick another entity and try again right"
+    },
+    {
+      "start": 755.2,
+      "end": 761.82,
+      "text": "so basically with enough of these random selections of entities we know that we'll pick"
+    },
+    {
+      "start": 761.82,
+      "end": 763.52,
+      "text": "we'll find the right ordering"
+    },
+    {
+      "start": 763.52,
+      "end": 769.4,
+      "text": "of movements for entities so that we can actually solve uh block stacking examples as well"
+    },
+    {
+      "start": 770.6,
+      "end": 779.36,
+      "text": "all right so um in the figure on the top left we can see this is a partitioning of states from the"
+    },
+    {
+      "start": 779.36,
+      "end": 785.3,
+      "text": "training set into equivalence classes so the nodes represent um these equivalence classes over states"
+    },
+    {
+      "start": 785.3,
+      "end": 793.1,
+      "text": "right so this is specifically a clustering of states inferred from uh uh um the RoboGem simulation"
+    },
+    {
+      "start": 793.52,
+      "end": 801.02,
+      "text": "uh where we've created this rearrangement uh task so we have a library of objects that we randomly"
+    },
+    {
+      "start": 801.02,
+      "end": 807.38,
+      "text": "select from to create a to create each domain and then these clusters just represent the abstract"
+    },
+    {
+      "start": 807.38,
+      "end": 814.04,
+      "text": "entities that we've extracted out and then these slot attention masks are just averaged over all of"
+    },
+    {
+      "start": 814.04,
+      "end": 819.5,
+      "text": "the entities in this cluster so you can see that that what we're actually uh the information that"
+    },
+    {
+      "start": 819.5,
+      "end": 823.16,
+      "text": "we're taking away from those observations just corresponds to the object location"
+    },
+    {
+      "start": 823.52,
+      "end": 831.68,
+      "text": "because for pick and place action space uh the action is determined only by the location of the"
+    },
+    {
+      "start": 831.68,
+      "end": 841.4,
+      "text": "object so just from the um actions the transitions that we have in our data set and um this slide"
+    },
+    {
+      "start": 841.4,
+      "end": 845.72,
+      "text": "attention based method we've extracted that the only information that we care about in this"
+    },
+    {
+      "start": 845.72,
+      "end": 852.26,
+      "text": "environment and with this action space is the location of the object all right and so this table"
+    },
+    {
+      "start": 852.26,
+      "end": 853.16,
+      "text": "or these tables"
+    },
+    {
+      "start": 853.52,
+      "end": 860.3,
+      "text": "just compare our method ncs with various baselines on both complete and partial evaluation settings"
+    },
+    {
+      "start": 860.3,
+      "end": 865.16,
+      "text": "so partial evaluation just corresponds to the setting where we don't necessarily have an entire"
+    },
+    {
+      "start": 865.16,
+      "end": 872.0,
+      "text": "goal image of uh the kind of like final required placement of all objects and we only have say a"
+    },
+    {
+      "start": 872.0,
+      "end": 878.48,
+      "text": "partial specification that certain objects have to be in certain goal locations so these objects"
+    },
+    {
+      "start": 878.48,
+      "end": 883.16,
+      "text": "were trained um sorry these methods were trained on four objects and evaluated on"
+    },
+    {
+      "start": 883.52,
+      "end": 890.54,
+      "text": "the ability to generalize to four five six and seven objects and we report the fractional success"
+    },
+    {
+      "start": 890.54,
+      "end": 896.06,
+      "text": "rate as well as standard error computed over 10 seeds and so we see that across a lot of these"
+    },
+    {
+      "start": 896.06,
+      "end": 903.5,
+      "text": "methods um you know reinforcement learning based methods behavior cloning based methods MPC um"
+    },
+    {
+      "start": 903.5,
+      "end": 908.96,
+      "text": "they're not really able to perform very well in these settings and don't really generalize across"
+    },
+    {
+      "start": 908.96,
+      "end": 913.46,
+      "text": "different numbers of objects whereas we're able to achieve much better performance and"
+    },
+    {
+      "start": 913.52,
+      "end": 917.48,
+      "text": "there's obviously still a lot of room for improvement we actually find that a lot of"
+    },
+    {
+      "start": 917.48,
+      "end": 922.8199999999999,
+      "text": "this performance gap is actually caused by errors in each of the steps in this process right so if"
+    },
+    {
+      "start": 922.8199999999999,
+      "end": 928.88,
+      "text": "we have some error in our slot attention for extracting out entities or if there is an error"
+    },
+    {
+      "start": 928.88,
+      "end": 937.4,
+      "text": "in terms of pick and place so it's it's not magic we're actually using uh a controller to to actually"
+    },
+    {
+      "start": 937.4,
+      "end": 942.98,
+      "text": "perform pick and place and so there are some stochasticity in our transitions um so all of"
+    },
+    {
+      "start": 943.52,
+      "end": 950.54,
+      "text": "these methods contribute to lower performance in these in terms of these success rates all right"
+    },
+    {
+      "start": 952.9399999999999,
+      "end": 959.3,
+      "text": "um so I want to move on now to talk about just general goal condition problems right and so"
+    },
+    {
+      "start": 959.3,
+      "end": 964.46,
+      "text": "um in this work we specifically focus on the fact that there is geometric structure that"
+    },
+    {
+      "start": 964.46,
+      "end": 970.52,
+      "text": "exists in goal conditioned um RL problems right and so you know this is just a graphic kind of"
+    },
+    {
+      "start": 970.52,
+      "end": 972.92,
+      "text": "showing like what I mean by goal condition problems"
+    },
+    {
+      "start": 973.52,
+      "end": 979.22,
+      "text": "um and so we're just trying to find an optimal goal reaching value function for some target MDP"
+    },
+    {
+      "start": 980.42,
+      "end": 987.5,
+      "text": "so it turns out that this uh optimal goal reaching value function is a quasi metric and we actually"
+    },
+    {
+      "start": 987.5,
+      "end": 992.9,
+      "text": "have a theoretical result in our paper that shows that the set of all possible optimal value"
+    },
+    {
+      "start": 992.9,
+      "end": 1000.1,
+      "text": "functions is exactly the set of quasi metrics so every quasi metric corresponds to um an optimal"
+    },
+    {
+      "start": 1000.1,
+      "end": 1002.86,
+      "text": "value function for some MDP with some Dynamics"
+    },
+    {
+      "start": 1003.52,
+      "end": 1009.34,
+      "text": "uh and vice versa right every optimal value function for any MDP is also a quasi metric"
+    },
+    {
+      "start": 1009.34,
+      "end": 1014.56,
+      "text": "and the thing to point out uh is that the reason we're focusing on goal condition problems here is"
+    },
+    {
+      "start": 1014.56,
+      "end": 1019.36,
+      "text": "that this type of structure doesn't exist in single task RL right so this is specific to"
+    },
+    {
+      "start": 1019.36,
+      "end": 1027.94,
+      "text": "goal reaching where our goal space is the same as our state space all right so given that so"
+    },
+    {
+      "start": 1027.94,
+      "end": 1033.46,
+      "text": "we're again kind of assuming that we have this offline data set um or replay buffer of transitions"
+    },
+    {
+      "start": 1033.52,
+      "end": 1039.76,
+      "text": "where we can sample these transitions from a replay buffer we can sample random states and"
+    },
+    {
+      "start": 1039.76,
+      "end": 1048.6399999999999,
+      "text": "random goals to specify some task and we introduce quasi metric RL which optimizes a quasi metric"
+    },
+    {
+      "start": 1048.6399999999999,
+      "end": 1056.3799999999999,
+      "text": "embedding as a negated value function right so now we're just saying we are imposing a a"
+    },
+    {
+      "start": 1056.3799999999999,
+      "end": 1062.26,
+      "text": "constraint on our value function we're imposing a constraint on the architecture of our value function"
+    },
+    {
+      "start": 1062.26,
+      "end": 1063.46,
+      "text": "so that it has to be a"
+    },
+    {
+      "start": 1063.52,
+      "end": 1068.86,
+      "text": "quasi metric right and the to just to remind the audience the difference between a quasi metric and"
+    },
+    {
+      "start": 1068.86,
+      "end": 1074.56,
+      "text": "a metric is just that a quasi metric does not insist that the distance function between distinct"
+    },
+    {
+      "start": 1074.56,
+      "end": 1080.5,
+      "text": "elements S and G is commutative right so if we were to use a standard metric for learning a value"
+    },
+    {
+      "start": 1080.5,
+      "end": 1086.98,
+      "text": "function which we've done in our own prior work it basically is incorporating an additional assumption"
+    },
+    {
+      "start": 1086.98,
+      "end": 1092.86,
+      "text": "that your Dynamics and your MDP are reversible which in a lot of safe settings is true you know"
+    },
+    {
+      "start": 1092.86,
+      "end": 1093.34,
+      "text": "so if we're"
+    },
+    {
+      "start": 1093.34,
+      "end": 1099.6399999999999,
+      "text": "thinking about um just moving objects around on a tabletop where you kind of have a border around"
+    },
+    {
+      "start": 1099.6399999999999,
+      "end": 1107.1399999999999,
+      "text": "your uh your your play area then this is the setting where Dynamics are pretty much reversible"
+    },
+    {
+      "start": 1107.1399999999999,
+      "end": 1112.6599999999999,
+      "text": "but if you have an object fall off the edge of your table then that's not something that we can"
+    },
+    {
+      "start": 1112.6599999999999,
+      "end": 1118.54,
+      "text": "easily recover from right by taking the reverse of an action um so in that case our our Dynamics"
+    },
+    {
+      "start": 1118.54,
+      "end": 1123.28,
+      "text": "are clearly not reversible and this is a setting in which um enforcing our value function"
+    },
+    {
+      "start": 1123.34,
+      "end": 1127.3,
+      "text": "to be a quasi metric makes a lot of sense all right"
+    },
+    {
+      "start": 1129.4599999999998,
+      "end": 1137.02,
+      "text": "so um we first have some toy experiments uh in this mountain car setting and so this is basically"
+    },
+    {
+      "start": 1137.02,
+      "end": 1144.3999999999999,
+      "text": "the simplest setting that we could imagine where our Dynamics are clearly not reversible right so"
+    },
+    {
+      "start": 1144.3999999999999,
+      "end": 1148.54,
+      "text": "you know this this mountain car can try to climb up this hill but as soon as it stops"
+    },
+    {
+      "start": 1148.54,
+      "end": 1152.3799999999999,
+      "text": "it's going to roll back down right so the Dynamics are not the same in both directions"
+    },
+    {
+      "start": 1153.34,
+      "end": 1164.1399999999999,
+      "text": "um so here we can just see uh the ground truth Dynamics of our system right um and then we see"
+    },
+    {
+      "start": 1164.1399999999999,
+      "end": 1170.6799999999998,
+      "text": "what we the optimal value function um sorry this is a visualization of the optimal value function"
+    },
+    {
+      "start": 1170.6799999999998,
+      "end": 1179.02,
+      "text": "for different goal points in this Hill in this Hill environment as well as what we learn with QRL"
+    },
+    {
+      "start": 1180.22,
+      "end": 1183.12,
+      "text": "as well as a comparison to what standard"
+    },
+    {
+      "start": 1183.34,
+      "end": 1188.5,
+      "text": "is learning. So this imposes no constraints on our Q function. It's just a neural network,"
+    },
+    {
+      "start": 1188.6,
+      "end": 1193.62,
+      "text": "so it's a universal function approximator, as well as some other methods, so conservative"
+    },
+    {
+      "start": 1193.62,
+      "end": 1199.52,
+      "text": "Q learning and contrastive RL. And then this is an example of our QRL objective,"
+    },
+    {
+      "start": 1200.1,
+      "end": 1206.22,
+      "text": "where instead of imposing that our value function is a quasimetric, we instead just"
+    },
+    {
+      "start": 1206.22,
+      "end": 1210.86,
+      "text": "impose that it's a metric. It's just L2 distance in some latent representation space."
+    },
+    {
+      "start": 1213.34,
+      "end": 1222.34,
+      "text": "Okay, cool. All right. So on the left-hand side for all of these figures, we have"
+    },
+    {
+      "start": 1222.34,
+      "end": 1227.6,
+      "text": "just the ground truth distances, as well as the expected distance for the behavior policy that"
+    },
+    {
+      "start": 1227.6,
+      "end": 1231.98,
+      "text": "generated the data set. And then these are kind of all of the learned versions, right? So we can"
+    },
+    {
+      "start": 1231.98,
+      "end": 1236.8,
+      "text": "see by just doing a visual comparison between ground truth and our learned Q functions,"
+    },
+    {
+      "start": 1237.1,
+      "end": 1240.62,
+      "text": "that QRL is the one that is really capturing"
+    },
+    {
+      "start": 1240.62,
+      "end": 1243.32,
+      "text": "the same thing."
+    },
+    {
+      "start": 1243.34,
+      "end": 1245.32,
+      "text": "The same structure that exists in the ground truth Q function."
+    },
+    {
+      "start": 1248.32,
+      "end": 1255.4599999999998,
+      "text": "All right. So QRL learns an optimal decision-aware representation, right? So we can kind of like"
+    },
+    {
+      "start": 1255.4599999999998,
+      "end": 1261.4599999999998,
+      "text": "think of this quasimetric space that we're learning. So we're learning this D latent"
+    },
+    {
+      "start": 1261.4599999999998,
+      "end": 1268.04,
+      "text": "that should just correspond to the optimal state reaching cost. All right."
+    },
+    {
+      "start": 1272.02,
+      "end": 1273.32,
+      "text": "And so then now we can see that the Q function is a quasimetric space."
+    },
+    {
+      "start": 1273.34,
+      "end": 1276.28,
+      "text": "So we can actually use this quasimetric for downstream control."
+    },
+    {
+      "start": 1279.86,
+      "end": 1287.12,
+      "text": "All right. So we have some additional experiments benchmarking QRL, again, just in the offline RL"
+    },
+    {
+      "start": 1287.12,
+      "end": 1292.32,
+      "text": "setting. So the first is this maze 2D environment where we just need to guide a ball through a maze"
+    },
+    {
+      "start": 1292.32,
+      "end": 1295.8,
+      "text": "towards a target location. We have different versions of this maze."
+    },
+    {
+      "start": 1299.3799999999999,
+      "end": 1303.1599999999999,
+      "text": "And QRL can learn this policy network by just backcropping"
+    },
+    {
+      "start": 1303.1599999999999,
+      "end": 1303.32,
+      "text": "the Q function. So we can see that the Q function is a quasimetric space."
+    },
+    {
+      "start": 1303.32,
+      "end": 1309.8,
+      "text": "All right. So we have results on this for the single goal, as well as multi-goal setting"
+    },
+    {
+      "start": 1309.8,
+      "end": 1317.06,
+      "text": "across different configurations of mazes, large, medium, and new maze. And we compare again against"
+    },
+    {
+      "start": 1317.06,
+      "end": 1325.52,
+      "text": "contrastive RL, MSG, which is a gradient-based approach. I actually don't remember what MSG"
+    },
+    {
+      "start": 1325.52,
+      "end": 1329.58,
+      "text": "stands for, but MSG combined with hindsight experience replay, as well as planning-based"
+    },
+    {
+      "start": 1329.58,
+      "end": 1333.3,
+      "text": "methods, MPPI, and then decision-based approach. So we can see that the Q function is a quasimetric"
+    },
+    {
+      "start": 1333.3,
+      "end": 1333.86,
+      "text": "area, and then decision-based approach. So I can see that the Q function is a quasimetric area,"
+    },
+    {
+      "start": 1333.86,
+      "end": 1334.1,
+      "text": "and then decision-based approach. So we can see that the Q function is a quasimetric area,"
+    },
+    {
+      "start": 1334.1,
+      "end": 1336.1,
+      "text": "and then decision-based approach. So this is more of a trajectory modeling"
+    },
+    {
+      "start": 1336.1,
+      "end": 1339.86,
+      "text": "approach, and then diffuser with a hand-coded controller, right?"
+    },
+    {
+      "start": 1339.94,
+      "end": 1346.1,
+      "text": "So one problem with diffuser is that it does a good job of generating kind of like a trajectory"
+    },
+    {
+      "start": 1346.1,
+      "end": 1351.1399999999999,
+      "text": "of states that you should follow, but doesn't do as well with predicting those actions correctly."
+    },
+    {
+      "start": 1351.74,
+      "end": 1356.54,
+      "text": "And so we actually achieve much better performance by incorporating a hand-coded controller. So"
+    },
+    {
+      "start": 1356.54,
+      "end": 1363.04,
+      "text": "having a separate method for learning the actions, for extracting actions given a goal state,"
+    },
+    {
+      "start": 1363.3,
+      "end": 1369.06,
+      "text": "and so we see much better performance in this column compared to just straight diffuser so"
+    },
+    {
+      "start": 1369.06,
+      "end": 1376.1,
+      "text": "these scores represent average normalized episodic return where 100 represents comparable performance"
+    },
+    {
+      "start": 1376.1,
+      "end": 1384.4199999999998,
+      "text": "with a d4l reference a hand-coded controller right and so again we can kind of see that QRL"
+    },
+    {
+      "start": 1384.4199999999998,
+      "end": 1388.5,
+      "text": "is able to outperform all these other methods and is able to achieve better sample efficiency"
+    },
+    {
+      "start": 1388.5,
+      "end": 1393.1399999999999,
+      "text": "and generalization performance because it's leveraging this geometric structure that exists"
+    },
+    {
+      "start": 1393.14,
+      "end": 1396.66,
+      "text": "in the goal conditioned RL problem"
+    },
+    {
+      "start": 1401.14,
+      "end": 1408.18,
+      "text": "so we also evaluate QRL in an online setting so in for the online setting we again kind of use"
+    },
+    {
+      "start": 1408.18,
+      "end": 1416.0200000000002,
+      "text": "this robo gym environment and so here the robot is just trying to push say push a block right"
+    },
+    {
+      "start": 1416.0200000000002,
+      "end": 1422.66,
+      "text": "and so now we're also focusing on continuous action spaces all right and so here for the"
+    },
+    {
+      "start": 1422.66,
+      "end": 1422.96,
+      "text": "online level there's a depend-on platform here i'm going to show you how it works here so here"
+    },
+    {
+      "start": 1422.96,
+      "end": 1423.1200000000001,
+      "text": "there's a depend-on platform here i'm going to show you how it works here"
+    },
+    {
+      "start": 1423.1200000000001,
+      "end": 1428.88,
+      "text": "learning setting, we're comparing again against contrast of RL, goal condition behavior cloning,"
+    },
+    {
+      "start": 1429.6200000000001,
+      "end": 1438.74,
+      "text": "DDPG plus HER, DDPG plus HER plus the quasi-metric, and I guess two different"
+    },
+    {
+      "start": 1438.74,
+      "end": 1444.88,
+      "text": "types of quasi-metric methods. And so again, we can kind of see that QRL learns faster and better"
+    },
+    {
+      "start": 1444.88,
+      "end": 1449.0000000000002,
+      "text": "compared to baseline methods across all environments for both state-based and"
+    },
+    {
+      "start": 1449.0,
+      "end": 1455.38,
+      "text": "image-based observations. All right, so that's kind of just showing that there is this geometric"
+    },
+    {
+      "start": 1455.38,
+      "end": 1460.38,
+      "text": "structure that exists in goal-conditioned RL problems, and by leveraging that, by incorporating"
+    },
+    {
+      "start": 1460.38,
+      "end": 1466.94,
+      "text": "that structure into the architecture of our value function, we can achieve better performance across"
+    },
+    {
+      "start": 1466.94,
+      "end": 1472.98,
+      "text": "a gamut of goal-conditioned RL problems, or goal-conditioned robotics problems. So there's"
+    },
+    {
+      "start": 1472.98,
+      "end": 1478.14,
+      "text": "kind of one additional thing that we can also do in the goal-conditioned setting that is instead"
+    },
+    {
+      "start": 1478.14,
+      "end": 1478.98,
+      "text": "related to just"
+    },
+    {
+      "start": 1478.98,
+      "end": 1485.1200000000001,
+      "text": "richer learning signal. So one problem with the goal-conditioned RL problem, kind of like why it's"
+    },
+    {
+      "start": 1485.1200000000001,
+      "end": 1493.0,
+      "text": "so hard, is that the standard reward function that we use is very sparse, right? So usually we assume"
+    },
+    {
+      "start": 1493.0,
+      "end": 1497.3600000000001,
+      "text": "that we're not getting any reward from the environment until we actually reach the goal"
+    },
+    {
+      "start": 1497.3600000000001,
+      "end": 1502.96,
+      "text": "state, in which case we receive a reward of one, right? And so learning goal-conditioned policies"
+    },
+    {
+      "start": 1502.96,
+      "end": 1507.9,
+      "text": "under the sparse reward is very difficult. So I just want to first introduce"
+    },
+    {
+      "start": 1507.9,
+      "end": 1508.96,
+      "text": "the"
+    },
+    {
+      "start": 1508.98,
+      "end": 1518.7,
+      "text": "F-divergence as a way of matching distributions. So F-divergence is a notion of distance between"
+    },
+    {
+      "start": 1518.7,
+      "end": 1529.58,
+      "text": "probability distributions. And so here's just kind of a graphic showing what divergence between two"
+    },
+    {
+      "start": 1529.58,
+      "end": 1538.96,
+      "text": "probability distributions looks like as those distributions change over time. And so you can kind of think of these as just"
+    },
+    {
+      "start": 1538.98,
+      "end": 1555.18,
+      "text": "different notions of distance. They're just different. They're just different notions of distance, right? Like they both get larger if the distributions move further away. They all get smaller if the distributions become closer. But the rate at which they do, like what value they take can"
+    },
+    {
+      "start": 1555.18,
+      "end": 1568.96,
+      "text": "be different, right? And so there are many different F-divergences that we can use, and we do find kind of like different performance when using different F-divergences. But I think the main thing to take away from this slide is that depending on the dynamics,"
+    },
+    {
+      "start": 1568.98,
+      "end": 1576.76,
+      "text": "of your system, depending on how the probability distributions over states changes in your"
+    },
+    {
+      "start": 1576.76,
+      "end": 1582.92,
+      "text": "environment, different divergences can get better or worse performance. So it really kind of just"
+    },
+    {
+      "start": 1582.92,
+      "end": 1592.04,
+      "text": "depends on your dynamics. But so just to dive right in, we propose this method called F policy"
+    },
+    {
+      "start": 1592.04,
+      "end": 1600.76,
+      "text": "gradients. And our policy is learned by minimizing a slightly different objective than what the"
+    },
+    {
+      "start": 1600.76,
+      "end": 1607.92,
+      "text": "standard goal condition RL objective is, right? So our objective here is to minimize the F"
+    },
+    {
+      "start": 1607.92,
+      "end": 1616.0,
+      "text": "divergence between our current state occupancy exhibited by our current policy and our goal,"
+    },
+    {
+      "start": 1617.1599999999999,
+      "end": 1621.78,
+      "text": "right? So P theta is the agent state visitation distribution, and PG is the"
+    },
+    {
+      "start": 1621.78,
+      "end": 1622.02,
+      "text": "distribution of the state visitation distribution. And so we're going to"
+    },
+    {
+      "start": 1622.04,
+      "end": 1630.2,
+      "text": "So we could actually do this for any kind of reinforcement learning, any kind of robotics,"
+    },
+    {
+      "start": 1630.3799999999999,
+      "end": 1637.04,
+      "text": "any kind of control problem. But in most settings, assuming that we have access to this distribution"
+    },
+    {
+      "start": 1637.04,
+      "end": 1641.96,
+      "text": "over the goal space is a pretty restrictive assumption, except in the goal condition setting"
+    },
+    {
+      "start": 1641.96,
+      "end": 1646.84,
+      "text": "or imitation learning settings, right? When we have access to demonstrations, because in both"
+    },
+    {
+      "start": 1646.84,
+      "end": 1651.3999999999999,
+      "text": "of these settings, we actually do have access to the distribution over the goal. In the goal"
+    },
+    {
+      "start": 1651.3999999999999,
+      "end": 1651.78,
+      "text": "condition setting, we have access to the distribution over the goal. And in the goal"
+    },
+    {
+      "start": 1651.78,
+      "end": 1655.28,
+      "text": "condition setting, it's easy because it's just a direct function, right? Like, it's just a delta"
+    },
+    {
+      "start": 1655.28,
+      "end": 1661.18,
+      "text": "right at the goal state. And then in imitation learning or learning from demonstration settings,"
+    },
+    {
+      "start": 1661.6399999999999,
+      "end": 1668.68,
+      "text": "if we're given a set of demonstrations, then we're kind of, we're given a sampling from PG,"
+    },
+    {
+      "start": 1669.04,
+      "end": 1673.3999999999999,
+      "text": "which we could use to compute the distribution over the goal space. All right."
+    },
+    {
+      "start": 1675.86,
+      "end": 1681.52,
+      "text": "All right. So, okay, I kind of covered this already. So we want to the agent to be,"
+    },
+    {
+      "start": 1681.78,
+      "end": 1686.5,
+      "text": "by minimizing this F divergence, we just want our agent to be at the goal state with high"
+    },
+    {
+      "start": 1686.5,
+      "end": 1691.56,
+      "text": "probability. And so this is, we show in our paper that this is equivalent to the standard goal"
+    },
+    {
+      "start": 1691.56,
+      "end": 1698.76,
+      "text": "conditioned RL objective. We show that this objective does produce the optimal policy."
+    },
+    {
+      "start": 1699.42,
+      "end": 1705.12,
+      "text": "And it turns out that we can optimize for this objective by taking the gradient. So we actually"
+    },
+    {
+      "start": 1705.12,
+      "end": 1709.3,
+      "text": "derive the analytical gradient for the F divergence. And it turns out that this looks"
+    },
+    {
+      "start": 1709.3,
+      "end": 1711.6399999999999,
+      "text": "very similar to a policy gradient, where the gradient is the same as the F divergence. So we"
+    },
+    {
+      "start": 1711.64,
+      "end": 1720.6000000000001,
+      "text": "gradient of log probabilities of the policy are weighted by this term F prime, right? And I think"
+    },
+    {
+      "start": 1720.6000000000001,
+      "end": 1725.92,
+      "text": "one thing I want to point out is that this dense weight is not a reward because it's non-stationary."
+    },
+    {
+      "start": 1726.0200000000002,
+      "end": 1731.88,
+      "text": "It depends on the current policy. So we can't call this a reward function. Instead, it's because it's"
+    },
+    {
+      "start": 1731.88,
+      "end": 1736.88,
+      "text": "non-stationary, we can maybe call it an intrinsic reward, but we're just calling this learning"
+    },
+    {
+      "start": 1736.88,
+      "end": 1741.1200000000001,
+      "text": "signal, right? So it's a richer learning signal. It's a dense learning signal that we have access"
+    },
+    {
+      "start": 1741.1200000000001,
+      "end": 1741.44,
+      "text": "to."
+    },
+    {
+      "start": 1741.64,
+      "end": 1747.0600000000002,
+      "text": "In any goal conditioned RL problem. And I just want to point out one additional thing, which is"
+    },
+    {
+      "start": 1747.0600000000002,
+      "end": 1754.18,
+      "text": "we could actually call this MaxEnt RL. This is different from the standard definition of MaxEnt"
+    },
+    {
+      "start": 1754.18,
+      "end": 1758.66,
+      "text": "RL, which is just saying, I want to learn an optimal policy that has the highest entropy,"
+    },
+    {
+      "start": 1759.1200000000001,
+      "end": 1764.48,
+      "text": "where the entropy is being computed on the policy's action distribution, just in a single"
+    },
+    {
+      "start": 1764.48,
+      "end": 1771.3200000000002,
+      "text": "step, right? I think this is actually a better form of MaxEnt. And so we actually call this"
+    },
+    {
+      "start": 1771.3200000000002,
+      "end": 1771.6000000000001,
+      "text": "state."
+    },
+    {
+      "start": 1771.64,
+      "end": 1777.24,
+      "text": "MaxEnt, where we're actually learning a policy that is maximizing entropy over the state"
+    },
+    {
+      "start": 1777.24,
+      "end": 1786.14,
+      "text": "distribution, right? So it basically, until we start extracting learning signal by knowing where"
+    },
+    {
+      "start": 1786.14,
+      "end": 1792.8600000000001,
+      "text": "the goal is, this learning objective is just going to learn a very exploratory policy that"
+    },
+    {
+      "start": 1792.8600000000001,
+      "end": 1801.18,
+      "text": "just tries to put discovery, discover every state in our state space. All right."
+    },
+    {
+      "start": 1801.64,
+      "end": 1808.66,
+      "text": "And so maximizing, basically, we find that maximizing the entropy, sorry, maximizing this"
+    },
+    {
+      "start": 1808.66,
+      "end": 1815.3000000000002,
+      "text": "objective ensures exploration in a way that the standard MaxEnt definition of maximizing the"
+    },
+    {
+      "start": 1815.3000000000002,
+      "end": 1824.16,
+      "text": "entropy of the policy does not. All right. So it also turns out that this objective looks a lot"
+    },
+    {
+      "start": 1824.16,
+      "end": 1828.44,
+      "text": "like existing metric-based shaping rewards. So depending on the F divergence that you do,"
+    },
+    {
+      "start": 1828.44,
+      "end": 1831.16,
+      "text": "this can look a lot like a,"
+    },
+    {
+      "start": 1831.64,
+      "end": 1838.2,
+      "text": "a richer learning signal, just using, say, like L2 distance between your current state and your"
+    },
+    {
+      "start": 1838.2,
+      "end": 1848.22,
+      "text": "goal, or a temporal, like, reachability distance. All right. And so we have examples of what this"
+    },
+    {
+      "start": 1848.22,
+      "end": 1852.26,
+      "text": "looks like in grid world settings, which is really nice, because you can actually see how the state"
+    },
+    {
+      "start": 1852.26,
+      "end": 1857.8000000000002,
+      "text": "occupancy of the policy changes over time. We also scale up to more complex domains,"
+    },
+    {
+      "start": 1858.8000000000002,
+      "end": 1861.22,
+      "text": "including these maze configurations,"
+    },
+    {
+      "start": 1861.64,
+      "end": 1867.2800000000002,
+      "text": "as well as fetch reach. And I think the thing I just want to point out from these results are that"
+    },
+    {
+      "start": 1867.2800000000002,
+      "end": 1873.76,
+      "text": "we are able to achieve, we have much stabler performance, right? We achieve higher success"
+    },
+    {
+      "start": 1873.76,
+      "end": 1881.2,
+      "text": "rates, but we also have lower variance compared to existing methods. And with that, I want to"
+    },
+    {
+      "start": 1881.2,
+      "end": 1886.3000000000002,
+      "text": "conclude. I know I'm running over on time already, but I kind of just want to end with some open"
+    },
+    {
+      "start": 1886.3000000000002,
+      "end": 1891.5800000000002,
+      "text": "questions. Do existing benchmarks test all the forms of generalization that we care about?"
+    },
+    {
+      "start": 1891.64,
+      "end": 1895.42,
+      "text": "And I think the answer here is no. And so maybe we can discuss this a little bit more later."
+    },
+    {
+      "start": 1896.38,
+      "end": 1900.22,
+      "text": "Are these assumptions the right level of granularity, right? Or are there others"
+    },
+    {
+      "start": 1900.22,
+      "end": 1904.72,
+      "text": "that are useful for other types of problems? You know, this is only a couple of possible"
+    },
+    {
+      "start": 1904.72,
+      "end": 1909.46,
+      "text": "assumptions that we can make. And I'm sure that there are others that are very interesting for"
+    },
+    {
+      "start": 1909.46,
+      "end": 1915.5200000000002,
+      "text": "a lot of robotics problems that we care about. And I would love to see, you know, how we can leverage"
+    },
+    {
+      "start": 1915.5200000000002,
+      "end": 1921.1000000000001,
+      "text": "these new and different assumptions for better generalization. And with that, thank you very much."
+    },
+    {
+      "start": 1921.64,
+      "end": 1922.72,
+      "text": "Do we need to take any questions?"
+    },
+    {
+      "start": 1922.72,
+      "end": 1933.88,
+      "text": "We're just going to switch the audio and then open it up for questions."
+    },
+    {
+      "start": 1933.88,
+      "end": 1948.1000000000001,
+      "text": "Hi. Can you hear us, Amy?"
+    },
+    {
+      "start": 1948.1000000000001,
+      "end": 1948.88,
+      "text": "Yes."
+    },
+    {
+      "start": 1948.88,
+      "end": 1950.38,
+      "text": "Perfect."
+    },
+    {
+      "start": 1950.38,
+      "end": 1951.0800000000002,
+      "text": "Hi."
+    },
+    {
+      "start": 1951.0800000000002,
+      "end": 1951.5800000000002,
+      "text": "Hi."
+    },
+    {
+      "start": 1951.58,
+      "end": 1955.78,
+      "text": "Thanks for the great talk. I guess my question was for the last part,"
+    },
+    {
+      "start": 1955.78,
+      "end": 1959.56,
+      "text": "how do you decide which divergence to use?"
+    },
+    {
+      "start": 1961.12,
+      "end": 1963.52,
+      "text": "Sorry, I didn't actually catch the question."
+    },
+    {
+      "start": 1964.48,
+      "end": 1969.6999999999998,
+      "text": "For the last part, how to decide what F divergence metric to use?"
+    },
+    {
+      "start": 1969.6999999999998,
+      "end": 1976.12,
+      "text": "Yeah, that's a great question. I don't have a lot of intuition actually for what properties"
+    },
+    {
+      "start": 1976.12,
+      "end": 1980.86,
+      "text": "of different dynamics of different MDPs correspond better to different F divergences."
+    },
+    {
+      "start": 1981.5800000000002,
+      "end": 1986.68,
+      "text": "So in our experiments, we did find that different F divergences led to different performance."
+    },
+    {
+      "start": 1986.68,
+      "end": 1991.4800000000002,
+      "text": "Unfortunately, I don't have a more coherent answer than that."
+    },
+    {
+      "start": 1991.48,
+      "end": 1995.56,
+      "text": "take one more question from the audience"
+    },
+    {
+      "start": 2003.3,
+      "end": 2006.96,
+      "text": "so actually maybe I can ask a question so on the the first part of the the talk"
+    },
+    {
+      "start": 2006.96,
+      "end": 2012.3,
+      "text": "um I was wondering if there's some kind of story about causal inference like did you"
+    },
+    {
+      "start": 2012.3,
+      "end": 2017.34,
+      "text": "interpret what you're doing and learning causal models that you can kind of do interventions on"
+    },
+    {
+      "start": 2017.34,
+      "end": 2021.46,
+      "text": "and that leads to compositional generalization or is that not kind of how you think about it"
+    },
+    {
+      "start": 2021.48,
+      "end": 2030.54,
+      "text": "yeah um so I think that so um yes I I think that what we're in effect kind of building is"
+    },
+    {
+      "start": 2030.54,
+      "end": 2036.84,
+      "text": "a causal graph um you know I I think to push the causal inference envelope further we should also"
+    },
+    {
+      "start": 2036.84,
+      "end": 2041.7,
+      "text": "be talking about counterfactuals performing interventions in the environment and we were"
+    },
+    {
+      "start": 2041.7,
+      "end": 2046.26,
+      "text": "doing this in an offline setting so in some sense like we don't have any interventional data so"
+    },
+    {
+      "start": 2046.26,
+      "end": 2051.3,
+      "text": "we're not really doing causal inference but I think that uh you know there are extensions"
+    },
+    {
+      "start": 2051.3,
+      "end": 2056.28,
+      "text": "of that work where we can make that that uh connection more closely but yeah that's a"
+    },
+    {
+      "start": 2056.28,
+      "end": 2061.6800000000003,
+      "text": "great question thank you all right thanks so we'll move on to the next talk thank you"
+    },
+    {
+      "start": 2068.2200000000003,
+      "end": 2069.0600000000004,
+      "text": "all the audience"
+    }
+  ],
+  "segment_count": 361
+}

@@ -1,0 +1,12 @@
+{
+  "title": "RLDM2025 Ben Eysenbach Self-Supervised Representations and Reinforcement",
+  "url": "https://www.youtube.com/watch?v=K-YKff74KSQ",
+  "backend": "faster-whisper",
+  "model": "large-v3",
+  "requested_language": "en",
+  "detected_language": "en",
+  "generated_at": "2026-05-13T10:27:20",
+  "language": "en",
+  "language_probability": 1,
+  "duration": 3524.999
+}

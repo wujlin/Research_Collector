@@ -2,7 +2,7 @@
 title: "生成动力学"
 description: "用 score、diffusion、reverse-time SDE 与 flow 描写生成过程。"
 paper_count: 44
-last_updated: "2026-04-24"
+last_updated: "2026-05-18"
 ---
 
 # 生成动力学

@@ -1,0 +1,2800 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 12.26,
+      "text": "Hi everyone, thanks for coming and welcome to the next installment of the UCL Dark invited speaker series. Today we're going to hear from Amy Zhang on the topic of exploring context for better generalization in reinforcement learning."
+    },
+    {
+      "start": 13.18,
+      "end": 22.2,
+      "text": "Amy has just graduated, I hear, from a PhD at McGill University and is now doing a postdoctoral fellowship, I guess, at Berkeley."
+    },
+    {
+      "start": 22.2,
+      "end": 30.96,
+      "text": "During her PhD she was co-supervised by Joelle Pinot and Dorina Precup and was a member of Facebook AI Research."
+    },
+    {
+      "start": 31.619999999999997,
+      "end": 40.84,
+      "text": "She works on state abstractions, model-based reinforcement learning, representation learning, and, of course, generalization in reinforcement learning. Amy, really excited to hear what you have to say."
+    },
+    {
+      "start": 42.42,
+      "end": 46.78,
+      "text": "Thank you, thank you for the very nice introduction. Like you said, today I'll be talking"
+    },
+    {
+      "start": 47.14,
+      "end": 52.1,
+      "text": "more about exploring context for better generalization and reinforcement learning and"
+    },
+    {
+      "start": 52.2,
+      "end": 55.800000000000004,
+      "text": "this works, builds on top of, you know, the work I'd done previously on"
+    },
+    {
+      "start": 56.1,
+      "end": 64.32000000000001,
+      "text": "bisimulation and state abstractions, but those topics I'm going to skip over a bit, but please feel free to stop me and ask clarifying questions."
+    },
+    {
+      "start": 64.8,
+      "end": 72.06,
+      "text": "Or if you want to talk a little bit more about about state abstractions for the single test setting, we can also talk more about that."
+    },
+    {
+      "start": 73.66,
+      "end": 81.98,
+      "text": "But yeah, with that I'll just get started. So I'm really excited about the potential of reinforcement learning to be applied to the real world and so"
+    },
+    {
+      "start": 82.98,
+      "end": 91.5,
+      "text": "a lot of my work on generalization on trying to get better sample efficiency is very much geared towards thinking about these applications."
+    },
+    {
+      "start": 91.74000000000001,
+      "end": 98.96000000000001,
+      "text": "And so, specifically, the kinds of applications that I like thinking about that are natural for me are to think about personalized household robots,"
+    },
+    {
+      "start": 99.64,
+      "end": 108.24000000000001,
+      "text": "having robots that can perform a variety of tasks within a single home and generalize to new homes, learned autonomous driving, having"
+    },
+    {
+      "start": 108.60000000000001,
+      "end": 112.14,
+      "text": "autonomous cars that can generalize to new terrain that they weren't trained on,"
+    },
+    {
+      "start": 112.54,
+      "end": 120.0,
+      "text": "and personalized healthcare. Healthcare where we can train on a on a data set of patients and obviously be able to extrapolate to new patients."
+    },
+    {
+      "start": 121.08,
+      "end": 127.44,
+      "text": "So there's been a lot of exciting recent success in deep reinforcement learning, in particular in the last few years."
+    },
+    {
+      "start": 127.8,
+      "end": 138.66,
+      "text": "And some examples of this that have been in sort of like the wider media are OpenAI, StarCraft, and Dota, DeepMind, AlphaGo, AlphaZero, and Atari. And so these are all examples where"
+    },
+    {
+      "start": 139.32,
+      "end": 142.14000000000001,
+      "text": "deep RL algorithms have been able to achieve beyond"
+    },
+    {
+      "start": 142.54000000000002,
+      "end": 150.58,
+      "text": "human performance. But I think we're all aware that there's still a lot of disappointing failures and we're still not really seeing reinforcement learning in the wild yet."
+    },
+    {
+      "start": 151.46,
+      "end": 167.4,
+      "text": "So why is there this discrepancy? We're seeing that deep RL works really well in these single task settings in simulation when you have access to millions of transitions, but it works less well in visually complex, natural, and multitask settings."
+    },
+    {
+      "start": 167.70000000000002,
+      "end": 171.54000000000002,
+      "text": "And specifically what I mean by this is that we're not seeing the same kind of generalization progress."
+    },
+    {
+      "start": 172.58,
+      "end": 180.66000000000003,
+      "text": "So what you can see here in the box for example, as we would supposeída s we can know this is the same type of learning performance that we've been getting out of deep learning in computer vision and natural language processing."
+    },
+    {
+      "start": 181.72000000000003,
+      "end": 184.56,
+      "text": "And so what I'm really interested in is structure."
+    },
+    {
+      "start": 185.14000000000001,
+      "end": 191.46,
+      "text": "And what kind of additional inductive biases can be leveraged from the environments that we care about."
+    },
+    {
+      "start": 191.76000000000002,
+      "end": 199.22000000000003,
+      "text": "So before I jump into that, you know, I think it's good to just go over what is the typical setting that we assume in reinforcement learning."
+    },
+    {
+      "start": 199.62,
+      "end": 200.66000000000003,
+      "text": "So we assume that the"
+    },
+    {
+      "start": 200.66000000000003,
+      "end": 201.72000000000003,
+      "text": "environment"
+    },
+    {
+      "start": 201.72,
+      "end": 208.04,
+      "text": "just means that we have a state space s an action space a a transition probability distribution p"
+    },
+    {
+      "start": 208.04,
+      "end": 214.68,
+      "text": "reward function r and the agency states from the environment st takes an action based on that"
+    },
+    {
+      "start": 215.24,
+      "end": 222.76,
+      "text": "based on that state um that that action taken in the environment steps it and updates it and so uh"
+    },
+    {
+      "start": 222.76,
+      "end": 228.6,
+      "text": "then the agent receives the next reward and next state and the goal of the agent is to maximize"
+    },
+    {
+      "start": 228.6,
+      "end": 234.35999999999999,
+      "text": "this reward signal and so an interesting question i think to we can ask here is what kind of"
+    },
+    {
+      "start": 234.35999999999999,
+      "end": 238.92,
+      "text": "additional structure is reasonable to assume in mdps in in the environments that we care about"
+    },
+    {
+      "start": 239.88,
+      "end": 246.68,
+      "text": "and so the focus of this talk is about context as structure and so there are a couple of different"
+    },
+    {
+      "start": 246.68,
+      "end": 253.24,
+      "text": "additional assumptions that define these um new types of mdp families that i'm going to focus on"
+    },
+    {
+      "start": 253.24,
+      "end": 258.52,
+      "text": "so the first two are just these uh block mdp and hidden parameter mdp and so we're"
+    },
+    {
+      "start": 258.52,
+      "end": 258.58,
+      "text": "going to talk a little bit more about that and then we're going to talk a little bit more about"
+    },
+    {
+      "start": 258.58,
+      "end": 262.65999999999997,
+      "text": "both of these assumptions which i'll describe in more detail later in this talk"
+    },
+    {
+      "start": 263.46,
+      "end": 268.74,
+      "text": "for this paper on learning robust state abstractions for hidden parameter block mdps and"
+    },
+    {
+      "start": 268.74,
+      "end": 273.94,
+      "text": "later i'm going to talk about two papers that leverage contextual mdps and also the block"
+    },
+    {
+      "start": 273.94,
+      "end": 281.53999999999996,
+      "text": "assumption on that block contextual mdps so let's dive right in into this first paper which"
+    },
+    {
+      "start": 281.53999999999996,
+      "end": 288.5,
+      "text": "is presented at iclair this year um so the hidden parameter block mdp uh family can be"
+    },
+    {
+      "start": 288.5,
+      "end": 294.26,
+      "text": "described by all the same components as what we have in the typical mvp but we're adding on a"
+    },
+    {
+      "start": 294.26,
+      "end": 302.18,
+      "text": "couple of additional um assumptions so the first is that instead of seeing our latents uh our state"
+    },
+    {
+      "start": 302.18,
+      "end": 307.38,
+      "text": "space s we're going to assume that this is latent and instead all we have access to is this"
+    },
+    {
+      "start": 307.38,
+      "end": 313.54,
+      "text": "observation space x um and i think like a natural way to think about this setting is is that we"
+    },
+    {
+      "start": 313.54,
+      "end": 318.42,
+      "text": "don't necessarily always have the most um minimal sufficient amount of information that we have to"
+    },
+    {
+      "start": 318.42,
+      "end": 324.18,
+      "text": "get to the point where we can actually get a more efficient statistic of the future dynamics and"
+    },
+    {
+      "start": 324.18,
+      "end": 329.38,
+      "text": "reward as the state space that we're given typically we're given access to something that"
+    },
+    {
+      "start": 329.38,
+      "end": 334.1,
+      "text": "is much noisier or just like much higher dimensional because we don't necessarily know"
+    },
+    {
+      "start": 334.1,
+      "end": 340.34000000000003,
+      "text": "what information is necessary um and so one example of this in robotics is is just cameras"
+    },
+    {
+      "start": 340.34000000000003,
+      "end": 346.90000000000003,
+      "text": "rgb cameras are a very cheap way to gather a lot of information about the world um but what you can"
+    },
+    {
+      "start": 346.90000000000003,
+      "end": 348.34000000000003,
+      "text": "have in this setting is that there are many possible"
+    },
+    {
+      "start": 348.42,
+      "end": 354.02000000000004,
+      "text": "images that can map to the same low dimensional state and so you have this one-to-many mapping"
+    },
+    {
+      "start": 354.02000000000004,
+      "end": 357.86,
+      "text": "from states to observations which can make the problem much more complex"
+    },
+    {
+      "start": 358.90000000000003,
+      "end": 365.3,
+      "text": "but but knowing that we have this structure means that we can leverage it and get better"
+    },
+    {
+      "start": 365.3,
+      "end": 371.94,
+      "text": "guarantees and and possibly better algorithms so that's the block uh component that's this"
+    },
+    {
+      "start": 371.94,
+      "end": 378.18,
+      "text": "observation space x and this one-to-many rendering mapping q from s to x another"
+    },
+    {
+      "start": 378.42,
+      "end": 383.46000000000004,
+      "text": "function that we can make is is this this one about hidden parameter mdps so here we're"
+    },
+    {
+      "start": 383.46000000000004,
+      "end": 389.22,
+      "text": "assuming that we have multiple environments that have different dynamics but all of the"
+    },
+    {
+      "start": 389.22,
+      "end": 394.66,
+      "text": "different dynamics can be described by a single universal dynamics model t and"
+    },
+    {
+      "start": 396.26,
+      "end": 402.58000000000004,
+      "text": "there's really just this latent variable or this hidden parameter space theta that can explain the"
+    },
+    {
+      "start": 402.58000000000004,
+      "end": 407.78000000000003,
+      "text": "variations in dynamics across these different environments that we have access to and so t is"
+    },
+    {
+      "start": 408.42,
+      "end": 414.66,
+      "text": "an example of this latent parameter theta and so this again maps to some real-world applications"
+    },
+    {
+      "start": 414.66,
+      "end": 422.58000000000004,
+      "text": "um so we can think of of uh the laws of physics the universal dynamics of the world as t uh but"
+    },
+    {
+      "start": 422.58000000000004,
+      "end": 427.86,
+      "text": "depending on on what task you're focusing on um like as an example different objects have"
+    },
+    {
+      "start": 427.86,
+      "end": 434.18,
+      "text": "different dynamics and that that can be explained by friction coefficients and like mass and so"
+    },
+    {
+      "start": 434.18,
+      "end": 438.02000000000004,
+      "text": "those would be examples of this hidden this this latent parameter theta"
+    },
+    {
+      "start": 439.38,
+      "end": 445.14000000000004,
+      "text": "so for this hip bmdp setting and we sort of conflate the term and also use it to name our"
+    },
+    {
+      "start": 445.14000000000004,
+      "end": 453.78000000000003,
+      "text": "method as hip bmdp um we our goal is to learn uh so we're we're in this multitask setting"
+    },
+    {
+      "start": 453.78000000000003,
+      "end": 458.1,
+      "text": "a constrained multitask setting where we assume that we have the same reward function it's the"
+    },
+    {
+      "start": 458.1,
+      "end": 462.02000000000004,
+      "text": "same task we're just trying to perform it in these different environments that have different"
+    },
+    {
+      "start": 462.02000000000004,
+      "end": 467.86,
+      "text": "dynamics and because we're assuming this a multitask setting we assume that we have access to"
+    },
+    {
+      "start": 468.42,
+      "end": 489.06,
+      "text": "this"
+    },
+    {
+      "start": 491.16,
+      "end": 498.26,
+      "text": "we want l2 distance in this task embedding space to correspond to some notion of the distance between"
+    },
+    {
+      "start": 498.42,
+      "end": 504.40000000000003,
+      "text": "these two environments. And we can define that distance between these environments to be the"
+    },
+    {
+      "start": 504.40000000000003,
+      "end": 509.82,
+      "text": "Wasserstein. And so the Wasserstein is just a distance between probability distributions."
+    },
+    {
+      "start": 510.34000000000003,
+      "end": 515.02,
+      "text": "So this will be a distance between the probability distributions into next state of these different"
+    },
+    {
+      "start": 515.02,
+      "end": 523.86,
+      "text": "tasks. So another way to think about this is the distance in terms of the L2 distance between task"
+    },
+    {
+      "start": 523.86,
+      "end": 530.76,
+      "text": "embeddings for different tasks corresponds to how different the dynamics between those two tasks"
+    },
+    {
+      "start": 530.76,
+      "end": 536.44,
+      "text": "are. And so in order to train this component, it requires that we have to train a dynamics model"
+    },
+    {
+      "start": 536.44,
+      "end": 540.92,
+      "text": "over all of these different environments. And so we train a universal dynamics model"
+    },
+    {
+      "start": 540.92,
+      "end": 545.48,
+      "text": "that is conditioned on the theta produced by this environment encoder."
+    },
+    {
+      "start": 546.82,
+      "end": 553.22,
+      "text": "And we use this to also measure distance between tasks in order to train this environment encoder."
+    },
+    {
+      "start": 553.86,
+      "end": 560.5600000000001,
+      "text": "And so this, so that's how we train the environment encoder. And we train the state"
+    },
+    {
+      "start": 560.5600000000001,
+      "end": 568.52,
+      "text": "encoder in a very similar way using bisimulation metrics. And so the state encoder we train so that"
+    },
+    {
+      "start": 568.52,
+      "end": 574.82,
+      "text": "so that it's just like a compressed version of the pixel observation space as well."
+    },
+    {
+      "start": 577.5600000000001,
+      "end": 582.5,
+      "text": "And so then this produces these two representation spaces, our task embedding space,"
+    },
+    {
+      "start": 582.5,
+      "end": 583.7,
+      "text": "our state embedding space."
+    },
+    {
+      "start": 583.86,
+      "end": 588.9,
+      "text": "And now we can just train any policy optimization method on top. And so here we're just using"
+    },
+    {
+      "start": 588.9,
+      "end": 594.66,
+      "text": "software critic. But you can think of all of these components as being trained online together,"
+    },
+    {
+      "start": 594.66,
+      "end": 600.42,
+      "text": "but they are separate optimization steps. So with every step that the agent takes in the"
+    },
+    {
+      "start": 600.42,
+      "end": 606.5,
+      "text": "environment, we train our dynamics model and reward model. We train our state representation"
+    },
+    {
+      "start": 606.5,
+      "end": 612.66,
+      "text": "space, our environment representation space, and we train our actor and critic."
+    },
+    {
+      "start": 613.86,
+      "end": 618.08,
+      "text": "Sandra"
+    },
+    {
+      "start": 618.1,
+      "end": 624.26,
+      "text": "So before we dive into empirical results, I wanted to talk a little bit about the kind of theoretical"
+    },
+    {
+      "start": 624.26,
+      "end": 629.46,
+      "text": "analysis that we can do. So because in effect we're learning this approximate bisimulation"
+    },
+    {
+      "start": 629.46,
+      "end": 637.0600000000001,
+      "text": "abstraction we can measure our error in terms of how far that so by learning this abstraction,"
+    },
+    {
+      "start": 638.1,
+      "end": 643.62,
+      "text": "we're constructing a new MDP and we are doing our policy optimization on top of this MDP as opposed to the original."
+    },
+    {
+      "start": 643.86,
+      "end": 648.24,
+      "text": "The reason that we want to do this is that because we're learning an abstraction of the"
+    },
+    {
+      "start": 648.24,
+      "end": 653.8000000000001,
+      "text": "original environment, we can construct it to be more amenable to learning, it can be"
+    },
+    {
+      "start": 653.8000000000001,
+      "end": 661.46,
+      "text": "a much smaller MDP because of this assumption of this like latent block structure."
+    },
+    {
+      "start": 661.46,
+      "end": 668.76,
+      "text": "So in order to measure sort of how far off this MDP is from the original and therefore"
+    },
+    {
+      "start": 668.76,
+      "end": 676.96,
+      "text": "how suboptimal is a Q function learned on this new MDP going to be compared to the true"
+    },
+    {
+      "start": 676.96,
+      "end": 683.3199999999999,
+      "text": "optimal Q on top of the ground truth MDP, we want to use these error terms."
+    },
+    {
+      "start": 683.3199999999999,
+      "end": 688.42,
+      "text": "So we have epsilon r, epsilon t, and epsilon theta, and these just correspond to the worst"
+    },
+    {
+      "start": 688.42,
+      "end": 695.78,
+      "text": "case error for any possible state action from our ground truth MDP and where it maps to"
+    },
+    {
+      "start": 695.78,
+      "end": 697.76,
+      "text": "in terms of this abstract MDP."
+    },
+    {
+      "start": 697.76,
+      "end": 698.76,
+      "text": "And we can just measure this."
+    },
+    {
+      "start": 698.76,
+      "end": 703.08,
+      "text": "This is like empirically as the training error."
+    },
+    {
+      "start": 703.08,
+      "end": 706.76,
+      "text": "So these two components really just describe a new MDP, which is close to the original"
+    },
+    {
+      "start": 706.76,
+      "end": 709.42,
+      "text": "for a specific task."
+    },
+    {
+      "start": 709.42,
+      "end": 714.12,
+      "text": "And this epsilon theta is now, you can think of this as a per task error because we're"
+    },
+    {
+      "start": 714.12,
+      "end": 718.76,
+      "text": "now in a multitask setting."
+    },
+    {
+      "start": 718.76,
+      "end": 724.42,
+      "text": "So the first question that we want to ask is how does the error in theta prediction"
+    },
+    {
+      "start": 724.42,
+      "end": 728.6,
+      "text": "and the learned by simulation representation affect the learned optimal policy?"
+    },
+    {
+      "start": 728.76,
+      "end": 733.08,
+      "text": "And so the bound that we really want to compute here is this."
+    },
+    {
+      "start": 733.08,
+      "end": 734.96,
+      "text": "And so I'm going to explain this notation."
+    },
+    {
+      "start": 734.96,
+      "end": 740.6,
+      "text": "So this is saying that through our learned representations, we've constructed this approximate"
+    },
+    {
+      "start": 740.6,
+      "end": 743.58,
+      "text": "new MDP M bar."
+    },
+    {
+      "start": 743.58,
+      "end": 748.6,
+      "text": "We're learning an optimal Q function on M bar, and so that can be denoted as Q star"
+    },
+    {
+      "start": 748.6,
+      "end": 750.26,
+      "text": "M bar."
+    },
+    {
+      "start": 750.26,
+      "end": 755.6,
+      "text": "And now we want to take the policy informed by this Q function and apply it back to the"
+    },
+    {
+      "start": 755.6,
+      "end": 756.6,
+      "text": "true environment."
+    },
+    {
+      "start": 756.6,
+      "end": 757.76,
+      "text": "And so we're basically lifting it."
+    },
+    {
+      "start": 757.76,
+      "end": 758.76,
+      "text": "Okay."
+    },
+    {
+      "start": 758.76,
+      "end": 761.14,
+      "text": "To this M theta."
+    },
+    {
+      "start": 761.14,
+      "end": 767.68,
+      "text": "And we want to know what is the difference between Q star learned on M bar and the true"
+    },
+    {
+      "start": 767.68,
+      "end": 770.04,
+      "text": "Q star of our ground truth environment."
+    },
+    {
+      "start": 770.04,
+      "end": 776.28,
+      "text": "And so then we can see that this very simply that this difference is upper bounded by those"
+    },
+    {
+      "start": 776.28,
+      "end": 778.98,
+      "text": "terms that we had introduced in the last slide."
+    },
+    {
+      "start": 778.98,
+      "end": 781.48,
+      "text": "And then this component is something that you can't really change."
+    },
+    {
+      "start": 781.48,
+      "end": 788.24,
+      "text": "So our max is the maximum reward in your environment, and we know that the largest value that you"
+    },
+    {
+      "start": 788.24,
+      "end": 793.6800000000001,
+      "text": "can see in this environment is going to scale with with respect to our max over one minus"
+    },
+    {
+      "start": 793.6800000000001,
+      "end": 798.5600000000001,
+      "text": "gamma our discount factor."
+    },
+    {
+      "start": 798.5600000000001,
+      "end": 803.04,
+      "text": "So a very related result that we can also compute is how well is a policy trained in"
+    },
+    {
+      "start": 803.04,
+      "end": 807.38,
+      "text": "one task going to do when it's applied to another task."
+    },
+    {
+      "start": 807.38,
+      "end": 811.52,
+      "text": "So moving from task theta i to task theta j."
+    },
+    {
+      "start": 811.52,
+      "end": 813.74,
+      "text": "So this is the exact same thing."
+    },
+    {
+      "start": 813.74,
+      "end": 817.62,
+      "text": "We've trained a Q star on our approximate version of theta i."
+    },
+    {
+      "start": 817.62,
+      "end": 820.42,
+      "text": "We're going to apply it to theta j."
+    },
+    {
+      "start": 820.42,
+      "end": 826.76,
+      "text": "And that bound also depends on the same sorts of things, but it actually now has a term"
+    },
+    {
+      "start": 826.76,
+      "end": 830.88,
+      "text": "that lends itself really nicely to that task embedding space that we're learning."
+    },
+    {
+      "start": 830.88,
+      "end": 836.74,
+      "text": "So here now we're seeing that this notion of distance between tasks is incorporated"
+    },
+    {
+      "start": 836.74,
+      "end": 840.5600000000001,
+      "text": "in this bound as the L1 distance between theta i and theta j."
+    },
+    {
+      "start": 840.5600000000001,
+      "end": 846.7,
+      "text": "So this is very similar now to that distance metric in our task embedding space."
+    },
+    {
+      "start": 846.7,
+      "end": 847.62,
+      "text": "So I think."
+    },
+    {
+      "start": 847.62,
+      "end": 853.0,
+      "text": "One final nice thing to look at is the sample complexity analysis."
+    },
+    {
+      "start": 853.0,
+      "end": 857.62,
+      "text": "This analysis doesn't really apply to our algorithm because it's really only relevant"
+    },
+    {
+      "start": 857.62,
+      "end": 861.54,
+      "text": "for the tabular setting, but I think it's still useful to look at because it shows you"
+    },
+    {
+      "start": 861.54,
+      "end": 867.2,
+      "text": "exactly the kinds of gains that you get from making these additional assumptions of structure"
+    },
+    {
+      "start": 867.2,
+      "end": 869.5600000000001,
+      "text": "in your MDP."
+    },
+    {
+      "start": 869.5600000000001,
+      "end": 872.58,
+      "text": "So we get."
+    },
+    {
+      "start": 872.58,
+      "end": 877.42,
+      "text": "We get a speed up or improvement in sample complexity in two places."
+    },
+    {
+      "start": 877.62,
+      "end": 880.12,
+      "text": "So the first is here."
+    },
+    {
+      "start": 880.12,
+      "end": 883.0,
+      "text": "So because of the block assumption."
+    },
+    {
+      "start": 883.0,
+      "end": 892.6,
+      "text": "We know that our true state space is much smaller than the state space that we're given or what we're calling it the observation space."
+    },
+    {
+      "start": 892.6,
+      "end": 895.0,
+      "text": "So we can sort of denote these two separate spaces."
+    },
+    {
+      "start": 895.0,
+      "end": 905.54,
+      "text": "So typically, if we don't use the block assumption, then this sample complexity analysis is going to depend on the cardinality of the space that you're that you're taking as input."
+    },
+    {
+      "start": 905.54,
+      "end": 907.5,
+      "text": "So if it's high dimensional pixels."
+    },
+    {
+      "start": 907.5,
+      "end": 912.38,
+      "text": "space and this is going to be huge because we know that we have the block assumption we're"
+    },
+    {
+      "start": 912.38,
+      "end": 917.66,
+      "text": "learning the state abstraction that corresponds to like a much smaller equivalent mdp we get this"
+    },
+    {
+      "start": 917.66,
+      "end": 924.38,
+      "text": "gain another gain that we get because we're operating in this multi-task setting most sample"
+    },
+    {
+      "start": 924.38,
+      "end": 930.16,
+      "text": "complexity bounds for the multi-task setting depend on the number of tasks that you see at"
+    },
+    {
+      "start": 930.16,
+      "end": 935.26,
+      "text": "training time because we're making this hidden parameter mdp assumption which says that we're"
+    },
+    {
+      "start": 935.26,
+      "end": 942.0,
+      "text": "really in a single mdp and the variation across tasks can be described by just the single latent"
+    },
+    {
+      "start": 942.0,
+      "end": 950.36,
+      "text": "variable it means that we can instead rely on the number of samples that you see in aggregate over"
+    },
+    {
+      "start": 950.36,
+      "end": 955.1,
+      "text": "all of your tasks which is a pretty significant improvement and that's sort of denoted by this"
+    },
+    {
+      "start": 955.1,
+      "end": 965.06,
+      "text": "n5d here so now we can move to the empirical results so we've just modified some basic"
+    },
+    {
+      "start": 965.06,
+      "end": 965.24,
+      "text": "basic"
+    },
+    {
+      "start": 965.24,
+      "end": 968.92,
+      "text": "benchmarks that we typically use in reinforcement learning so here we're just looking at deep mind"
+    },
+    {
+      "start": 968.92,
+      "end": 975.96,
+      "text": "control and we we're modifying just specific factors in each of these environments in order"
+    },
+    {
+      "start": 975.96,
+      "end": 984.36,
+      "text": "to create this this range of different dynamics across these tasks so here we examine four"
+    },
+    {
+      "start": 984.36,
+      "end": 989.8,
+      "text": "environments but only two of them have differences in dynamics that are visually observable so those"
+    },
+    {
+      "start": 989.8,
+      "end": 995.04,
+      "text": "ones i have here so on the top we have half cheetah where the length of the torso changes and"
+    },
+    {
+      "start": 995.0400000000001,
+      "end": 999.72,
+      "text": "so one is the length of his arms this is the size of his head so we've got about 16 feet almost"
+    },
+    {
+      "start": 999.72,
+      "end": 1002.8600000000001,
+      "text": "of any of the other elements and on the bottom it's harder to see but we have walker and the size"
+    },
+    {
+      "start": 1002.8600000000001,
+      "end": 1008.7400000000001,
+      "text": "of the left foot also changes and so these are two examples of two things that change the dynamics"
+    },
+    {
+      "start": 1008.7400000000001,
+      "end": 1014.9000000000001,
+      "text": "we also change things like the friction coefficient and um for finger spin i think"
+    },
+    {
+      "start": 1014.9000000000001,
+      "end": 1018.72,
+      "text": "yeah for fingerspin we change the friction coefficient that the the component like spins in"
+    },
+    {
+      "start": 1018.72,
+      "end": 1022.9000000000001,
+      "text": "and i think for walk or run we change the friction coefficient with the floor to also change the"
+    },
+    {
+      "start": 1022.9000000000001,
+      "end": 1023.6200000000001,
+      "text": "dynamics"
+    },
+    {
+      "start": 1023.62,
+      "end": 1028.7,
+      "text": "new unseen environments on environments with different dynamics than what the agent saw at"
+    },
+    {
+      "start": 1028.7,
+      "end": 1035.12,
+      "text": "training time. So we compare against other multitask methods like distro, grad norm, and PC"
+    },
+    {
+      "start": 1035.12,
+      "end": 1040.36,
+      "text": "grad. And the component that I really want to highlight is the difference between our method"
+    },
+    {
+      "start": 1040.36,
+      "end": 1050.1,
+      "text": "hit BMDP and the sublation hit BMDP node by sim. So this in orange is really just the exact same"
+    },
+    {
+      "start": 1050.1,
+      "end": 1056.4599999999998,
+      "text": "thing as our method, but without the constraint in the task embedding space to incorporate this"
+    },
+    {
+      "start": 1056.4599999999998,
+      "end": 1061.4399999999998,
+      "text": "like smoothness with respect to the changes in dynamics. And so we can see that the difference"
+    },
+    {
+      "start": 1061.4399999999998,
+      "end": 1067.7199999999998,
+      "text": "in performance here is entirely just because of that objective that we have in the task embedding"
+    },
+    {
+      "start": 1067.7199999999998,
+      "end": 1073.6799999999998,
+      "text": "space. We also have results for the meta reinforcement learning setting. So the main"
+    },
+    {
+      "start": 1073.6799999999998,
+      "end": 1078.1599999999999,
+      "text": "difference here is that instead of showing zero shot generalization, we're showing performance"
+    },
+    {
+      "start": 1078.1599999999999,
+      "end": 1079.9399999999998,
+      "text": "when the agent can"
+    },
+    {
+      "start": 1079.94,
+      "end": 1088.5,
+      "text": "update for a few cycles on the new unseen environment at evaluation time. So here we can see"
+    },
+    {
+      "start": 1088.5,
+      "end": 1095.0,
+      "text": "that the differences in performance are much smaller because both hit BMDP and PERL are able"
+    },
+    {
+      "start": 1095.0,
+      "end": 1103.2,
+      "text": "to update based on the new samples from the new evaluation time. Another thing that we can look"
+    },
+    {
+      "start": 1103.2,
+      "end": 1109.92,
+      "text": "at in the meta reinforcement learning setting is just model error. And so again, we're just"
+    },
+    {
+      "start": 1109.92,
+      "end": 1115.68,
+      "text": "looking at our method compared to the ablation without that context, without that task embedding"
+    },
+    {
+      "start": 1115.68,
+      "end": 1122.88,
+      "text": "objective. And we can see that our learned dynamics model can generalize much more quickly"
+    },
+    {
+      "start": 1122.88,
+      "end": 1126.64,
+      "text": "to the new environment compared to the version without that objective."
+    },
+    {
+      "start": 1130.24,
+      "end": 1134.8000000000002,
+      "text": "Another thing we can look at is just relaxing the block MDP assumption. So I kind of glossed"
+    },
+    {
+      "start": 1134.8000000000002,
+      "end": 1139.8400000000001,
+      "text": "over this, but a key component of the block MDP assumption is that we're assuming we've"
+    },
+    {
+      "start": 1139.92,
+      "end": 1144.88,
+      "text": "got the probability P, and that we have the Markov property and the observation space."
+    },
+    {
+      "start": 1144.88,
+      "end": 1152.5600000000002,
+      "text": "And so this is the only thing really that separates it from the POMDP setting. This is a pretty"
+    },
+    {
+      "start": 1152.5600000000002,
+      "end": 1158.24,
+      "text": "stringent assumption to make in a lot of real world settings. And so what we did here is we wanted"
+    },
+    {
+      "start": 1158.24,
+      "end": 1164.48,
+      "text": "to see how gracefully does our method degrade compared to other baselines if we were to relax"
+    },
+    {
+      "start": 1164.48,
+      "end": 1169.3600000000001,
+      "text": "the Markov assumption. So in fingerspin, what we did is, for some probability P, the probability P,"
+    },
+    {
+      "start": 1169.68,
+      "end": 1172.96,
+      "text": "the agent's not going to see the current observation. It's going to get dropped,"
+    },
+    {
+      "start": 1172.96,
+      "end": 1177.68,
+      "text": "and it just gets a copy of the previous observation again. I want to highlight that"
+    },
+    {
+      "start": 1178.2400000000002,
+      "end": 1190.3200000000002,
+      "text": "in this example, the agent is not using history. And so it won't be able to achieve sort of the"
+    },
+    {
+      "start": 1190.3200000000002,
+      "end": 1195.92,
+      "text": "best performance it can because it is losing information. So we can see here on the right"
+    },
+    {
+      "start": 1195.92,
+      "end": 1199.2,
+      "text": "hand side that performance degrades as P gets larger, which is not a surprise."
+    },
+    {
+      "start": 1199.3600000000001,
+      "end": 1203.5200000000002,
+      "text": "But on the left hand side, I think this is interesting, which is that when we compare"
+    },
+    {
+      "start": 1203.5200000000002,
+      "end": 1209.0400000000002,
+      "text": "for a small P against the other baselines, it seems like our method is still able to perform"
+    },
+    {
+      "start": 1209.7600000000002,
+      "end": 1212.88,
+      "text": "better in this setting than the other baselines do."
+    },
+    {
+      "start": 1214.72,
+      "end": 1221.68,
+      "text": "So to conclude from this work, I think really the main contribution is that we highlight that we"
+    },
+    {
+      "start": 1221.68,
+      "end": 1228.96,
+      "text": "should be using different types of frameworks to address multitask reinforcement learning and really,"
+    },
+    {
+      "start": 1229.3600000000001,
+      "end": 1232.0000000000002,
+      "text": "we're exploiting here is just the slate and structure and the dynamics."
+    },
+    {
+      "start": 1232.0000000000002,
+      "end": 1238.64,
+      "text": "We show that you can provide error and value bounds for both state space and rich observation"
+    },
+    {
+      "start": 1238.64,
+      "end": 1244.5600000000002,
+      "text": "space settings, and show these improvements in sample complexity. And our code is also"
+    },
+    {
+      "start": 1244.5600000000002,
+      "end": 1249.8400000000001,
+      "text": "publicly available. I just want to talk a little bit about some of the limitations of this work."
+    },
+    {
+      "start": 1249.8400000000001,
+      "end": 1256.64,
+      "text": "So here, the multitask setting, after working on this, I kind of decided I really didn't like it,"
+    },
+    {
+      "start": 1256.64,
+      "end": 1258.72,
+      "text": "because we have..."
+    },
+    {
+      "start": 1259.3600000000001,
+      "end": 1262.72,
+      "text": "We have access to something that I think you can think of as privileged information,"
+    },
+    {
+      "start": 1262.72,
+      "end": 1267.7600000000002,
+      "text": "the fact that each task is clearly delineated, we're given access to this environment ID."
+    },
+    {
+      "start": 1268.64,
+      "end": 1273.0400000000002,
+      "text": "I think a much more realistic and interesting setting is the continual learning setting,"
+    },
+    {
+      "start": 1274.0800000000002,
+      "end": 1278.8000000000002,
+      "text": "where things like dynamics and reward can possibly change slowly over time."
+    },
+    {
+      "start": 1280.2400000000002,
+      "end": 1285.7600000000002,
+      "text": "After working on this, after being really excited about this HIP MDP setting,"
+    },
+    {
+      "start": 1285.7600000000002,
+      "end": 1289.2800000000002,
+      "text": "I realized that we could have very easily handled different reward functions,"
+    },
+    {
+      "start": 1289.3600000000001,
+      "end": 1293.6000000000001,
+      "text": "as well, that could have been incorporated as part of a notion of distance between tasks."
+    },
+    {
+      "start": 1294.8000000000002,
+      "end": 1298.8000000000002,
+      "text": "And I think it would be really interesting to be able to handle more realistic settings."
+    },
+    {
+      "start": 1298.8000000000002,
+      "end": 1303.6000000000001,
+      "text": "And specifically, I mean, settings where more than one factor varies at a time."
+    },
+    {
+      "start": 1303.6000000000001,
+      "end": 1306.4,
+      "text": "And I think the interesting thing to look at there is if you can learn"
+    },
+    {
+      "start": 1307.44,
+      "end": 1312.64,
+      "text": "this task embedding space that decomposes nicely and can also generalize to new compositions"
+    },
+    {
+      "start": 1313.68,
+      "end": 1314.5600000000002,
+      "text": "of those factors."
+    },
+    {
+      "start": 1316.5600000000002,
+      "end": 1319.1200000000001,
+      "text": "So in order to address some of these limitations,"
+    },
+    {
+      "start": 1319.3600000000001,
+      "end": 1325.6000000000001,
+      "text": "I think the contextual MDP framework is actually a little bit more universal and"
+    },
+    {
+      "start": 1325.6000000000001,
+      "end": 1327.8400000000001,
+      "text": "more useful than the hidden parameter MDP one."
+    },
+    {
+      "start": 1328.48,
+      "end": 1335.92,
+      "text": "And so the contextual MDP setting, you can think of as you having all of these similar tasks that"
+    },
+    {
+      "start": 1335.92,
+      "end": 1339.92,
+      "text": "potentially even have different state spaces, different dynamics, and different reward."
+    },
+    {
+      "start": 1341.1200000000001,
+      "end": 1344.8000000000002,
+      "text": "And they're described by this different context."
+    },
+    {
+      "start": 1344.8000000000002,
+      "end": 1348.88,
+      "text": "And so now the question is, how do we leverage shared structure across these tasks?"
+    },
+    {
+      "start": 1350.16,
+      "end": 1356.48,
+      "text": "So I think it's useful to look at the formal definitions of these things."
+    },
+    {
+      "start": 1356.48,
+      "end": 1361.2800000000002,
+      "text": "So the contextual MDP, we now have this C, this context space."
+    },
+    {
+      "start": 1363.6000000000001,
+      "end": 1369.5200000000002,
+      "text": "Typically, you assume that you have the same state and action space across these different MDPs."
+    },
+    {
+      "start": 1370.48,
+      "end": 1374.2400000000002,
+      "text": "But here, your reward and dynamics are now conditioned on C."
+    },
+    {
+      "start": 1375.5200000000002,
+      "end": 1378.96,
+      "text": "So we're just going to update this a little bit because I think this is still a little bit"
+    },
+    {
+      "start": 1379.3600000000001,
+      "end": 1380.3200000000002,
+      "text": "restrictive."
+    },
+    {
+      "start": 1380.3200000000002,
+      "end": 1388.16,
+      "text": "So we're defining a block contextual MDP where the only difference is that we now assume"
+    },
+    {
+      "start": 1388.16,
+      "end": 1390.2400000000002,
+      "text": "your state space can change across different tasks."
+    },
+    {
+      "start": 1390.2400000000002,
+      "end": 1391.2,
+      "text": "And this makes sense, right?"
+    },
+    {
+      "start": 1391.2,
+      "end": 1397.92,
+      "text": "Like in the real world, if your state space is the entire world, if your attention shifts"
+    },
+    {
+      "start": 1397.92,
+      "end": 1399.7600000000002,
+      "text": "to different tasks, then that's fine."
+    },
+    {
+      "start": 1399.7600000000002,
+      "end": 1402.8000000000002,
+      "text": "Your dynamics are different, but your state space has to be the same."
+    },
+    {
+      "start": 1403.3600000000001,
+      "end": 1409.2800000000002,
+      "text": "But in actuality, what we do is we try to constrain the state space to only pay attention"
+    },
+    {
+      "start": 1409.28,
+      "end": 1414.8,
+      "text": "to what matters for a specific task, which means that your state space will change depending"
+    },
+    {
+      "start": 1414.8,
+      "end": 1417.36,
+      "text": "on what your task is because you want to attend to different things."
+    },
+    {
+      "start": 1420.0,
+      "end": 1428.0,
+      "text": "So I think of this as sort of just a continuation of that first paper on BMPs that kind of fixes"
+    },
+    {
+      "start": 1428.0,
+      "end": 1430.72,
+      "text": "a lot of the issues that I had raised at the end."
+    },
+    {
+      "start": 1431.68,
+      "end": 1434.24,
+      "text": "So now we're looking at the non-stationary setting."
+    },
+    {
+      "start": 1434.24,
+      "end": 1435.84,
+      "text": "We care about continual learning."
+    },
+    {
+      "start": 1436.72,
+      "end": 1439.04,
+      "text": "And I think the motivation for this work"
+    },
+    {
+      "start": 1439.04,
+      "end": 1443.68,
+      "text": "just looking at adaptive control so i think adaptive control is really nice because the"
+    },
+    {
+      "start": 1443.68,
+      "end": 1451.44,
+      "text": "goal there is to just and you you know what you don't know um you we can call this known unknowns"
+    },
+    {
+      "start": 1452.1599999999999,
+      "end": 1456.08,
+      "text": "where you know what the variable is that you're trying to infer you just don't know what the"
+    },
+    {
+      "start": 1456.08,
+      "end": 1463.76,
+      "text": "value of that is in in different states um and i we want to extend this idea to the setting where"
+    },
+    {
+      "start": 1463.76,
+      "end": 1468.56,
+      "text": "we have unknown unknowns we don't know what we don't know and we need to infer it to try and"
+    },
+    {
+      "start": 1468.56,
+      "end": 1475.28,
+      "text": "get good performance in these new unseen environments um i want to define an additional"
+    },
+    {
+      "start": 1475.84,
+      "end": 1482.72,
+      "text": "thing that i i think is really useful so so um one property that i think that we want to have in"
+    },
+    {
+      "start": 1482.72,
+      "end": 1488.56,
+      "text": "order to get good generalization is smoothness is is the lipshits property so we can define a"
+    },
+    {
+      "start": 1488.56,
+      "end": 1496.32,
+      "text": "lipshits block contextual mdp as one in which your dynamics and your reward are lipshits with respect"
+    },
+    {
+      "start": 1496.32,
+      "end": 1498.1599999999999,
+      "text": "to this context um"
+    },
+    {
+      "start": 1498.56,
+      "end": 1505.6,
+      "text": "this seems like a limitation but i'm going to show how because we are not given this context space"
+    },
+    {
+      "start": 1505.6,
+      "end": 1509.76,
+      "text": "um so i can you can think of like if you're given the context space then you're and you're just"
+    },
+    {
+      "start": 1509.76,
+      "end": 1514.72,
+      "text": "trying to infer what the context is for different environments then that's the known unknown setting"
+    },
+    {
+      "start": 1514.72,
+      "end": 1518.3999999999999,
+      "text": "if we're not given the context space and we have to construct it ourselves we're in the unknown"
+    },
+    {
+      "start": 1519.36,
+      "end": 1525.9199999999998,
+      "text": "unknown unknowns setting um and so if we don't have the context space then we can actually"
+    },
+    {
+      "start": 1525.9199999999998,
+      "end": 1528.32,
+      "text": "construct one that obeys this property"
+    },
+    {
+      "start": 1528.56,
+      "end": 1534.96,
+      "text": "um which is why i'm putting this here uh so this is the more formal definition of the task metric"
+    },
+    {
+      "start": 1534.96,
+      "end": 1540.56,
+      "text": "that we've kind of defined previously in the hip bmdp setting it just now also incorporates report"
+    },
+    {
+      "start": 1540.56,
+      "end": 1546.3999999999999,
+      "text": "so we can define a notion of distance between tasks that just depends on the difference in"
+    },
+    {
+      "start": 1546.3999999999999,
+      "end": 1551.6799999999998,
+      "text": "the reward and the difference in the dynamics between uh for those tasks so i think that's"
+    },
+    {
+      "start": 1551.6799999999998,
+      "end": 1558.3999999999999,
+      "text": "pretty straightforward um and if we learn a task embedding space"
+    },
+    {
+      "start": 1558.56,
+      "end": 1567.36,
+      "text": "that obeys this distance metric this d task then we have the property that the optimal universal"
+    },
+    {
+      "start": 1567.36,
+      "end": 1576.3999999999999,
+      "text": "value function conditioned on c is lipschitz with respect to this task metric and so this"
+    },
+    {
+      "start": 1576.3999999999999,
+      "end": 1580.56,
+      "text": "is a property that we want to have that we're we're going to try and construct like with our"
+    },
+    {
+      "start": 1580.56,
+      "end": 1587.76,
+      "text": "method uh another assumption that we have to make for this setting is identifiability so"
+    },
+    {
+      "start": 1588.56,
+      "end": 1595.28,
+      "text": "now because we're in this non-stationary continual learning setting it means like"
+    },
+    {
+      "start": 1595.28,
+      "end": 1600.08,
+      "text": "because we don't have it we're not um i mean the the main relaxation here right from the"
+    },
+    {
+      "start": 1600.08,
+      "end": 1605.36,
+      "text": "multitask setting is that we no longer assume access to a task id so if we don't have the"
+    },
+    {
+      "start": 1605.36,
+      "end": 1610.96,
+      "text": "task id it actually puts us in the partial observability setting so what this assumption"
+    },
+    {
+      "start": 1610.96,
+      "end": 1618.48,
+      "text": "is saying is really that um given a sufficient history or given some amount of history"
+    },
+    {
+      "start": 1618.96,
+      "end": 1626.08,
+      "text": "we can it is possible to infer what the context is and so i think another way of thinking about"
+    },
+    {
+      "start": 1626.08,
+      "end": 1630.32,
+      "text": "this is that we're really just making an assumption that we're in a k order mdp as"
+    },
+    {
+      "start": 1630.32,
+      "end": 1638.0,
+      "text": "opposed to like a true plumb dp where sort of like worst case is unboundedly bad um another"
+    },
+    {
+      "start": 1638.0,
+      "end": 1646.32,
+      "text": "nice result that comes from um older work is just this generalization via lipschitz continuity so"
+    },
+    {
+      "start": 1646.32,
+      "end": 1648.24,
+      "text": "basically if you have the"
+    },
+    {
+      "start": 1648.56,
+      "end": 1651.28,
+      "text": "if your learning algorithm has the property of being lipshits"
+    },
+    {
+      "start": 1652.48,
+      "end": 1657.12,
+      "text": "then um even if you're collecting data in the reinforcement learning way even"
+    },
+    {
+      "start": 1657.12,
+      "end": 1668.24,
+      "text": "even if you don't have the iid assumption um we can bound sort of the the generalization gap"
+    },
+    {
+      "start": 1669.6,
+      "end": 1676.0,
+      "text": "of this algorithm um and so this is a result that we can actually apply to our setting and so i and"
+    },
+    {
+      "start": 1676.0,
+      "end": 1678.48,
+      "text": "and uh we can only apply this to"
+    },
+    {
+      "start": 1678.56,
+      "end": 1684.48,
+      "text": "our setting because we are trying to um form a representation space that has the slipshots property"
+    },
+    {
+      "start": 1686.3999999999999,
+      "end": 1690.8,
+      "text": "another type of generalization bound which is now much more relevant for the reinforcement"
+    },
+    {
+      "start": 1690.8,
+      "end": 1695.76,
+      "text": "learning setting is is just again something that looks very similar to the kinds of bounds that"
+    },
+    {
+      "start": 1695.76,
+      "end": 1702.56,
+      "text": "we had in the hip bmdp setting um here just focusing on uh transfer across different"
+    },
+    {
+      "start": 1702.56,
+      "end": 1708.48,
+      "text": "contexts and so this looks the same as before it's just that we've now replaced theta with this kind"
+    },
+    {
+      "start": 1708.48,
+      "end": 1712.56,
+      "text": "context c and the c incorporates both differences in dynamics and reward"
+    },
+    {
+      "start": 1715.3600000000001,
+      "end": 1720.72,
+      "text": "so this gives rise to our our algorithm and i think like again if you were following along"
+    },
+    {
+      "start": 1720.72,
+      "end": 1726.16,
+      "text": "with the hip bmdp paper this looks very similar and the main difference is that instead of"
+    },
+    {
+      "start": 1726.16,
+      "end": 1734.56,
+      "text": "assuming access to task ids we are using the the the history uh in from our environment um"
+    },
+    {
+      "start": 1734.56,
+      "end": 1738.32,
+      "text": "and so we're using the interaction history in place of the task id"
+    },
+    {
+      "start": 1738.48,
+      "end": 1742.08,
+      "text": "um and yellow we're using the context industry um in place of that last us button"
+    },
+    {
+      "start": 1742.08,
+      "end": 1745.04,
+      "text": "and so i'm just a little joking but we're using that this is much more explicit this is in the"
+    },
+    {
+      "start": 1745.04,
+      "end": 1750.58,
+      "text": "contribution context but we're also exploring how to utilize um merge tool to find meaningful"
+    },
+    {
+      "start": 1750.58,
+      "end": 1754.4,
+      "text": "data and so along with the a hit bmdp transmission setup we're also swallow up that set so here"
+    },
+    {
+      "start": 1754.4,
+      "end": 1761.28,
+      "text": "is a sample of a sample of uh data for us to characterize um skip here to the h help me"
+    },
+    {
+      "start": 1761.28,
+      "end": 1766.24,
+      "text": "for email this is the context letters mais context by prefix where we can draw Deadland to"
+    },
+    {
+      "start": 1766.24,
+      "end": 1766.32,
+      "text": "feed into our context encoder we still have a very similar kind of context loss as we had in the hip bmdp setting um it just now uses the task metric which depends on dynamics and reward. We still need those same components of training like a dynamics loss and reward loss so that we can compute what this task metric is and then we can apply即 eractive critical on topic"
+    },
+    {
+      "start": 1766.32,
+      "end": 1770.04,
+      "text": "different types of settings. So one is non stationary dynamics."
+    },
+    {
+      "start": 1770.08,
+      "end": 1772.82,
+      "text": "So this is the same set of environments that we had in hit"
+    },
+    {
+      "start": 1772.82,
+      "end": 1778.4399999999998,
+      "text": "the MDP setting, we now we're comparing against other sort of,"
+    },
+    {
+      "start": 1779.34,
+      "end": 1782.34,
+      "text": "like other kind of system identification methods that also"
+    },
+    {
+      "start": 1782.34,
+      "end": 1786.8999999999999,
+      "text": "don't assume access to the task ID. And we again, perform the"
+    },
+    {
+      "start": 1786.8999999999999,
+      "end": 1792.3,
+      "text": "same ablation here where our method Zeus. We also have Zeus"
+    },
+    {
+      "start": 1792.3,
+      "end": 1795.12,
+      "text": "no context loss. So we don't have that context objective in"
+    },
+    {
+      "start": 1795.1200000000001,
+      "end": 1798.1200000000001,
+      "text": "our context embedding space that we're constructing. And so"
+    },
+    {
+      "start": 1798.1200000000001,
+      "end": 1802.98,
+      "text": "we can see that our method performs much better than any of"
+    },
+    {
+      "start": 1802.98,
+      "end": 1808.0600000000002,
+      "text": "these other baselines and this ablation in red. And this also"
+    },
+    {
+      "start": 1808.0800000000002,
+      "end": 1811.0400000000002,
+      "text": "we don't have hit the MDP in here because it's not really a"
+    },
+    {
+      "start": 1811.0400000000002,
+      "end": 1815.8000000000002,
+      "text": "fair comparison because hippie MDP needs access to the task ID."
+    },
+    {
+      "start": 1816.5400000000002,
+      "end": 1820.14,
+      "text": "But these do get much better generalization performance than"
+    },
+    {
+      "start": 1820.14,
+      "end": 1824.5800000000002,
+      "text": "hippie MDP as well. We can also now look at non stationary"
+    },
+    {
+      "start": 1824.5800000000002,
+      "end": 1825.1200000000001,
+      "text": "reward."
+    },
+    {
+      "start": 1825.5400000000002,
+      "end": 1829.0600000000002,
+      "text": "And so we look at two environments here. This cheater"
+    },
+    {
+      "start": 1829.0600000000002,
+      "end": 1832.2600000000002,
+      "text": "run is different from the one on the previous slide. So this one,"
+    },
+    {
+      "start": 1832.3000000000002,
+      "end": 1838.38,
+      "text": "we just have different target velocities. And so here in both"
+    },
+    {
+      "start": 1838.38,
+      "end": 1841.6200000000001,
+      "text": "of these examples, in all of these experiments here, what"
+    },
+    {
+      "start": 1841.6200000000001,
+      "end": 1845.46,
+      "text": "we're looking at in terms of validation is is generalization"
+    },
+    {
+      "start": 1845.46,
+      "end": 1849.8400000000001,
+      "text": "to new unseen environments. So same baselines, same ablations,"
+    },
+    {
+      "start": 1850.0200000000002,
+      "end": 1854.4,
+      "text": "just now looking at non stationary reward. The other"
+    },
+    {
+      "start": 1854.4,
+      "end": 1855.0000000000002,
+      "text": "environment"
+    },
+    {
+      "start": 1855.1200000000001,
+      "end": 1859.14,
+      "text": "is just this Sawyer peg. And so it's just a Sawyer arm that has"
+    },
+    {
+      "start": 1859.14,
+      "end": 1864.5400000000002,
+      "text": "to insert this key into or this peg into into, into different"
+    },
+    {
+      "start": 1864.5400000000002,
+      "end": 1871.3200000000002,
+      "text": "holes. And so it's asked to at training time, it is training to"
+    },
+    {
+      "start": 1871.3200000000002,
+      "end": 1875.2800000000002,
+      "text": "insert this peg into a different hole at training time than a new"
+    },
+    {
+      "start": 1875.2800000000002,
+      "end": 1879.7800000000002,
+      "text": "unseen hole at test time. So we can see again, that Zeus is"
+    },
+    {
+      "start": 1879.7800000000002,
+      "end": 1882.8200000000002,
+      "text": "performs much better than all of these other environments. And"
+    },
+    {
+      "start": 1882.8400000000001,
+      "end": 1885.1000000000001,
+      "text": "you know, I think these are all like very standard type of"
+    },
+    {
+      "start": 1885.1200000000001,
+      "end": 1888.96,
+      "text": "like main result experiments. But I like this experiment a lot"
+    },
+    {
+      "start": 1888.96,
+      "end": 1894.96,
+      "text": "better. So we want to be able to interpret what kind of context"
+    },
+    {
+      "start": 1894.96,
+      "end": 1899.22,
+      "text": "embedding we've learned. And these kinds of more toy"
+    },
+    {
+      "start": 1899.22,
+      "end": 1903.24,
+      "text": "environments, because we know, because we've designed the"
+    },
+    {
+      "start": 1903.24,
+      "end": 1906.1200000000001,
+      "text": "environments, we do actually know what is the true latent"
+    },
+    {
+      "start": 1906.1200000000001,
+      "end": 1909.0000000000002,
+      "text": "variable, what is the thing that we're varying across these"
+    },
+    {
+      "start": 1909.0000000000002,
+      "end": 1914.8000000000002,
+      "text": "different tasks. So this is looking at that, that half cheetah"
+    },
+    {
+      "start": 1915.1200000000001,
+      "end": 1922.68,
+      "text": "the torso length changes. And these indices just represent the"
+    },
+    {
+      "start": 1922.68,
+      "end": 1929.46,
+      "text": "order of the torso length. So these task IDs really do have"
+    },
+    {
+      "start": 1929.46,
+      "end": 1933.24,
+      "text": "some structure in it in that task IDs that are closer"
+    },
+    {
+      "start": 1933.24,
+      "end": 1935.96,
+      "text": "together represent tasks that are also closer together in"
+    },
+    {
+      "start": 1935.96,
+      "end": 1941.96,
+      "text": "terms of names. So we see, so here, we're just plotting cosine"
+    },
+    {
+      "start": 1941.96,
+      "end": 1942.7800000000002,
+      "text": "similarity,"
+    },
+    {
+      "start": 1943.8000000000002,
+      "end": 1944.7,
+      "text": "in terms of the"
+    },
+    {
+      "start": 1945.1200000000001,
+      "end": 1948.1200000000001,
+      "text": "context embedding that we're learning. And so we can see this,"
+    },
+    {
+      "start": 1948.14,
+      "end": 1951.48,
+      "text": "this really nice, this is normalized, which is why it looks"
+    },
+    {
+      "start": 1951.48,
+      "end": 1955.5800000000002,
+      "text": "so nice between like zero and one. But we can see that the,"
+    },
+    {
+      "start": 1956.2800000000002,
+      "end": 1960.8400000000001,
+      "text": "the context space that we've learned, perfectly captures the"
+    },
+    {
+      "start": 1960.8400000000001,
+      "end": 1964.72,
+      "text": "true ordering of tasks, the true, the sort of like true"
+    },
+    {
+      "start": 1964.72,
+      "end": 1967.96,
+      "text": "ordering of the actual latent variable, which is the cheetah"
+    },
+    {
+      "start": 1967.96,
+      "end": 1972.38,
+      "text": "torso length. And we see that if we don't have that context loss,"
+    },
+    {
+      "start": 1972.38,
+      "end": 1973.8000000000002,
+      "text": "so this corresponds to that Zeus, no context, like the"
+    },
+    {
+      "start": 1973.8,
+      "end": 1979.56,
+      "text": "Zeus, no context loss ablation, there's some structure there,"
+    },
+    {
+      "start": 1979.58,
+      "end": 1984.96,
+      "text": "but it like the ordering is not preserved. And so I really like"
+    },
+    {
+      "start": 1984.96,
+      "end": 1988.8,
+      "text": "this, because it shows that we are able to in an unsupervised"
+    },
+    {
+      "start": 1988.8999999999999,
+      "end": 1995.6,
+      "text": "way, capture sort of meaningful information about the true"
+    },
+    {
+      "start": 1995.6,
+      "end": 2002.8999999999999,
+      "text": "context. So I think the takeaways from this paper are that"
+    },
+    {
+      "start": 2003.8,
+      "end": 2007.22,
+      "text": "we're now tackling the non stationary setting, the continual"
+    },
+    {
+      "start": 2007.22,
+      "end": 2010.02,
+      "text": "learning setting with this block contextual DP framework. And so"
+    },
+    {
+      "start": 2010.02,
+      "end": 2016.9199999999998,
+      "text": "this framework allows us to take RL algorithms that do that rely"
+    },
+    {
+      "start": 2016.9199999999998,
+      "end": 2019.7,
+      "text": "on this stationarity assumption, which I think of as like a very"
+    },
+    {
+      "start": 2019.7,
+      "end": 2024.3,
+      "text": "limiting one, and apply them to this new setting, we've proposed"
+    },
+    {
+      "start": 2024.32,
+      "end": 2028.1,
+      "text": "a method that can adapt to new unseen environments with zero"
+    },
+    {
+      "start": 2028.1,
+      "end": 2031.6399999999999,
+      "text": "shot generalization. And a nice thing about this method is that"
+    },
+    {
+      "start": 2031.6399999999999,
+      "end": 2033.1399999999999,
+      "text": "it doesn't require learning updates."
+    },
+    {
+      "start": 2033.8,
+      "end": 2037.56,
+      "text": "In fact, just learning like an inference module that learns to"
+    },
+    {
+      "start": 2037.56,
+      "end": 2044.56,
+      "text": "detect what how things have changed, in comparison to"
+    },
+    {
+      "start": 2044.6,
+      "end": 2048.86,
+      "text": "environments that it has seen before. And it makes this method"
+    },
+    {
+      "start": 2048.86,
+      "end": 2054.1,
+      "text": "very amenable to safety critical settings where you can train a"
+    },
+    {
+      "start": 2054.1,
+      "end": 2058.7599999999998,
+      "text": "model, you can verify it, and then you can deploy it on new"
+    },
+    {
+      "start": 2058.7599999999998,
+      "end": 2063.7799999999997,
+      "text": "unseen environments and trust that it'll adapt in an expected"
+    },
+    {
+      "start": 2063.8,
+      "end": 2068.1800000000003,
+      "text": "ways. And so I think that that's sort of a crucial difference"
+    },
+    {
+      "start": 2068.1800000000003,
+      "end": 2073.82,
+      "text": "between this method and meta learning methods that do rely that"
+    },
+    {
+      "start": 2073.82,
+      "end": 2078.04,
+      "text": "do rely on having access to optimization updates at test"
+    },
+    {
+      "start": 2078.04,
+      "end": 2086.1800000000003,
+      "text": "time. So one major, I think, not surprising limitation is that we"
+    },
+    {
+      "start": 2086.1800000000003,
+      "end": 2089.1200000000003,
+      "text": "do still see that generalization degrades as we move further away"
+    },
+    {
+      "start": 2089.1200000000003,
+      "end": 2092.52,
+      "text": "from the training distribution. And so in this plot, we're just"
+    },
+    {
+      "start": 2092.52,
+      "end": 2093.5600000000004,
+      "text": "seeing that"
+    },
+    {
+      "start": 2093.8,
+      "end": 2098.48,
+      "text": "this is now on the half cheetah task where the reward is changing,"
+    },
+    {
+      "start": 2098.48,
+      "end": 2102.02,
+      "text": "so different target velocities. So we can see that as the target"
+    },
+    {
+      "start": 2102.02,
+      "end": 2105.36,
+      "text": "velocity gets higher moves further away from what it saw at"
+    },
+    {
+      "start": 2105.36,
+      "end": 2108.8,
+      "text": "training time, the performance of all methods, all these"
+    },
+    {
+      "start": 2108.8,
+      "end": 2112.88,
+      "text": "methods do degrade. But we're still able to obtain better"
+    },
+    {
+      "start": 2112.88,
+      "end": 2115.34,
+      "text": "performance than the other designs. But obviously, ideally,"
+    },
+    {
+      "start": 2115.34,
+      "end": 2118.76,
+      "text": "we want this to be flat, like we really want to have a method"
+    },
+    {
+      "start": 2118.76,
+      "end": 2122.32,
+      "text": "that truly can generalize, because we know that it should"
+    },
+    {
+      "start": 2122.32,
+      "end": 2123.1400000000003,
+      "text": "be capable of it."
+    },
+    {
+      "start": 2123.8,
+      "end": 2129.02,
+      "text": "Okay, so final piece of work that I wanted to talk about, was"
+    },
+    {
+      "start": 2129.36,
+      "end": 2132.34,
+      "text": "still looking at this multitask setting, and still looking at"
+    },
+    {
+      "start": 2132.34,
+      "end": 2138.0800000000004,
+      "text": "context. But now looking at a different type of context, like"
+    },
+    {
+      "start": 2138.0800000000004,
+      "end": 2143.0600000000004,
+      "text": "what if you have useful site information? Examples of this are"
+    },
+    {
+      "start": 2143.0800000000004,
+      "end": 2145.7000000000003,
+      "text": "are like, what if you have access to instructions, right?"
+    },
+    {
+      "start": 2145.7000000000003,
+      "end": 2148.34,
+      "text": "Like you, you could have a command that's, that's, you"
+    },
+    {
+      "start": 2148.34,
+      "end": 2152.2400000000002,
+      "text": "know, like, go pour me coffee. But you can have a more"
+    },
+    {
+      "start": 2152.2400000000002,
+      "end": 2153.6800000000003,
+      "text": "informative version of that."
+    },
+    {
+      "start": 2153.8,
+      "end": 2156.92,
+      "text": "Which is like, you know, you need to put the coffee pot in the"
+    },
+    {
+      "start": 2157.0600000000004,
+      "end": 2159.98,
+      "text": "coffee maker, you know, put in water, put in coffee grounds,"
+    },
+    {
+      "start": 2160.02,
+      "end": 2166.28,
+      "text": "etc. So and I think this is well, yeah, I have a slide later"
+    },
+    {
+      "start": 2166.28,
+      "end": 2168.44,
+      "text": "that talks about a little bit about NetHack. But I know that"
+    },
+    {
+      "start": 2168.44,
+      "end": 2171.38,
+      "text": "you guys are all very familiar with that setting. So I think"
+    },
+    {
+      "start": 2171.38,
+      "end": 2176.9,
+      "text": "NetHack is also sort of like a very intuitive example of of"
+    },
+    {
+      "start": 2177.02,
+      "end": 2181.28,
+      "text": "context aside information, right? Like the wiki is not needed in"
+    },
+    {
+      "start": 2181.28,
+      "end": 2182.42,
+      "text": "order to"
+    },
+    {
+      "start": 2183.8,
+      "end": 2188.78,
+      "text": "agent to explore the environment and to get reward. But it's it's"
+    },
+    {
+      "start": 2188.78,
+      "end": 2193.4,
+      "text": "very useful, and I think actually necessary. So the problem"
+    },
+    {
+      "start": 2193.4,
+      "end": 2196.28,
+      "text": "setting that we're focusing on in this paper is meta world. And"
+    },
+    {
+      "start": 2196.28,
+      "end": 2199.4,
+      "text": "I and I think it's useful to show this, because it'll give some"
+    },
+    {
+      "start": 2199.4,
+      "end": 2203.1800000000003,
+      "text": "intuition for the method. So meta world is the multitask"
+    },
+    {
+      "start": 2203.9,
+      "end": 2208.7000000000003,
+      "text": "benchmark, and it has MT 10 with just these 10 environments, and"
+    },
+    {
+      "start": 2208.7400000000002,
+      "end": 2211.1600000000003,
+      "text": "MT 50 with 50 environments."
+    },
+    {
+      "start": 2213.8,
+      "end": 2218.78,
+      "text": "So it's a multitask setting. So they assume that you have access"
+    },
+    {
+      "start": 2218.78,
+      "end": 2223.6800000000003,
+      "text": "to a task ID. What they also give you are these short sentence"
+    },
+    {
+      "start": 2223.6800000000003,
+      "end": 2228.98,
+      "text": "descriptions of the tasks. These sentences were not meant to be"
+    },
+    {
+      "start": 2228.98,
+      "end": 2231.5,
+      "text": "part of the MVP. So it's never it's not supposed to be"
+    },
+    {
+      "start": 2231.5,
+      "end": 2234.54,
+      "text": "something that was given to the agent. The sentences were just"
+    },
+    {
+      "start": 2234.54,
+      "end": 2237.2400000000002,
+      "text": "provided for human consumption so that we could read these"
+    },
+    {
+      "start": 2237.2400000000002,
+      "end": 2240.2000000000003,
+      "text": "sentences and then exactly understand like what this task"
+    },
+    {
+      "start": 2240.2000000000003,
+      "end": 2242.54,
+      "text": "is without having to play around with the environment."
+    },
+    {
+      "start": 2243.8,
+      "end": 2247.52,
+      "text": "And so if this if these short sentences can be useful for us,"
+    },
+    {
+      "start": 2247.94,
+      "end": 2250.6400000000003,
+      "text": "then it makes sense that they can also be useful for the agent."
+    },
+    {
+      "start": 2251.6600000000003,
+      "end": 2255.26,
+      "text": "And so our method contextual attention based representation"
+    },
+    {
+      "start": 2255.26,
+      "end": 2256.0600000000004,
+      "text": "learning care."
+    },
+    {
+      "start": 2257.84,
+      "end": 2261.8,
+      "text": "We just, this is just a way for us to incorporate the information"
+    },
+    {
+      "start": 2261.82,
+      "end": 2265.1000000000004,
+      "text": "in those sentences in a multitask pipeline."
+    },
+    {
+      "start": 2266.28,
+      "end": 2271.76,
+      "text": "And the way we do that is we are training a mixture of K encoders."
+    },
+    {
+      "start": 2272.2200000000003,
+      "end": 2273.42,
+      "text": "And I think like,"
+    },
+    {
+      "start": 2273.8,
+      "end": 2278.6600000000003,
+      "text": "a way to interpret what this is doing is that we want each of"
+    },
+    {
+      "start": 2278.6600000000003,
+      "end": 2281.5600000000004,
+      "text": "these K encoders to correspond to something interpretable that's"
+    },
+    {
+      "start": 2281.5600000000004,
+      "end": 2286.5,
+      "text": "shared across tasks. So in this meta world setting, you know, we"
+    },
+    {
+      "start": 2286.5,
+      "end": 2289.76,
+      "text": "can see that there are objects and skills that are shared"
+    },
+    {
+      "start": 2289.76,
+      "end": 2295.1000000000004,
+      "text": "across these tasks. There are multiple tasks with a puck that"
+    },
+    {
+      "start": 2295.1000000000004,
+      "end": 2299.54,
+      "text": "you're trying to push around to a goal, multiple tasks with a"
+    },
+    {
+      "start": 2299.54,
+      "end": 2301.52,
+      "text": "drawer and multiple tasks with a window."
+    },
+    {
+      "start": 2303.8,
+      "end": 2306.86,
+      "text": "And also skills across these that are the same like open versus"
+    },
+    {
+      "start": 2306.86,
+      "end": 2311.54,
+      "text": "close versus push. And so I think like we can think of this mixture"
+    },
+    {
+      "start": 2311.54,
+      "end": 2314.78,
+      "text": "of K encoders, where each encoder corresponds to one of those"
+    },
+    {
+      "start": 2314.78,
+      "end": 2316.04,
+      "text": "objects or skills."
+    },
+    {
+      "start": 2317.96,
+      "end": 2321.2400000000002,
+      "text": "So we have this mixture of representations, and we want to"
+    },
+    {
+      "start": 2321.2400000000002,
+      "end": 2325.36,
+      "text": "now learn a universal representation that's useful across all of our"
+    },
+    {
+      "start": 2325.36,
+      "end": 2329.1800000000003,
+      "text": "tasks. But the way that we combine these representations into this"
+    },
+    {
+      "start": 2329.1800000000003,
+      "end": 2333.36,
+      "text": "universal one will depend on the context. So we take our metadata"
+    },
+    {
+      "start": 2333.36,
+      "end": 2333.6600000000003,
+      "text": "here,"
+    },
+    {
+      "start": 2333.66,
+      "end": 2338.3399999999997,
+      "text": "which is just those natural language sentences, we use Roberta as a"
+    },
+    {
+      "start": 2338.3399999999997,
+      "end": 2341.7,
+      "text": "pre trained language model to turn those into an embedding."
+    },
+    {
+      "start": 2342.8399999999997,
+      "end": 2348.7799999999997,
+      "text": "And we train a context encoding from that embedding. And we use"
+    },
+    {
+      "start": 2348.7799999999997,
+      "end": 2353.22,
+      "text": "that context encoding, that context encoding is used as input"
+    },
+    {
+      "start": 2353.22,
+      "end": 2357.18,
+      "text": "into an attention mechanism that dictates how these different"
+    },
+    {
+      "start": 2357.18,
+      "end": 2360.1,
+      "text": "representations are combined together. And so now we have a"
+    },
+    {
+      "start": 2360.1,
+      "end": 2362.8399999999997,
+      "text": "universal representation for which we can use a universal"
+    },
+    {
+      "start": 2363.18,
+      "end": 2363.6,
+      "text": "policy."
+    },
+    {
+      "start": 2363.66,
+      "end": 2366.42,
+      "text": "So we can use a multi test algorithm in this multi test setting."
+    },
+    {
+      "start": 2367.3199999999997,
+      "end": 2371.58,
+      "text": "And we basically find that we get state of the art results on"
+    },
+    {
+      "start": 2371.58,
+      "end": 2375.58,
+      "text": "meta world, we get better performance than any existing method on"
+    },
+    {
+      "start": 2375.58,
+      "end": 2380.06,
+      "text": "this benchmark, just from incorporating this metadata."
+    },
+    {
+      "start": 2381.8799999999997,
+      "end": 2384.44,
+      "text": "So we have the baseline"
+    },
+    {
+      "start": 2387.48,
+      "end": 2392.3399999999997,
+      "text": "comparisons with multitask, sack, multitask sack with the task encoder,"
+    },
+    {
+      "start": 2392.3399999999997,
+      "end": 2393.18,
+      "text": "multi head sack."
+    },
+    {
+      "start": 2393.18,
+      "end": 2399.5,
+      "text": "also other multitask methods again pc grad soft modularization which takes the same policy network"
+    },
+    {
+      "start": 2399.5,
+      "end": 2405.4199999999996,
+      "text": "and does different routing depending on the task to create different policies and we also"
+    },
+    {
+      "start": 2405.4199999999996,
+      "end": 2411.3399999999997,
+      "text": "incorporated film so film is like a general conditioning method for natural language"
+    },
+    {
+      "start": 2412.46,
+      "end": 2417.5,
+      "text": "and it's not was not meant for the reinforcement learning setting but we thought of this as sort"
+    },
+    {
+      "start": 2417.5,
+      "end": 2423.9,
+      "text": "of like a a useful baseline and so we just incorporated film with soft actor credit to"
+    },
+    {
+      "start": 2423.9,
+      "end": 2429.5,
+      "text": "see how well it performs in the reinforcement learning setting um and then we also have an"
+    },
+    {
+      "start": 2429.5,
+      "end": 2435.26,
+      "text": "upper bound so if we just train a single sack agent per task this is its performance and so"
+    },
+    {
+      "start": 2435.26,
+      "end": 2439.34,
+      "text": "we can see that there's still a small gap so there's still room for improvement but this"
+    },
+    {
+      "start": 2439.34,
+      "end": 2447.42,
+      "text": "could also have to do with um um parameterization right the fact that this given that"
+    },
+    {
+      "start": 2447.5,
+      "end": 2452.3,
+      "text": "we're training one sack agent per task this will have a lot more parameters than any of these other"
+    },
+    {
+      "start": 2452.3,
+      "end": 2458.86,
+      "text": "methods and so we have results for mt10 and mt50 um and we can see that we get better performance"
+    },
+    {
+      "start": 2458.86,
+      "end": 2465.26,
+      "text": "in all of these other baselines so an important question to ask here is because we have all of"
+    },
+    {
+      "start": 2465.26,
+      "end": 2472.54,
+      "text": "these like new components um is you know what is actually contributing to this better performance"
+    },
+    {
+      "start": 2473.1,
+      "end": 2476.78,
+      "text": "so we just look at these ablations on on both settings um"
+    },
+    {
+      "start": 2477.5,
+      "end": 2483.98,
+      "text": "we have soft actor credit soft actor critic with just the mixture of encoders so no metadata so it"
+    },
+    {
+      "start": 2483.98,
+      "end": 2490.86,
+      "text": "just gets passed in like a task id instead we have software critic with metadata but without the"
+    },
+    {
+      "start": 2490.86,
+      "end": 2496.94,
+      "text": "mixture of encoders and then the whole combination which is our method and so we can see that"
+    },
+    {
+      "start": 2498.7,
+      "end": 2502.62,
+      "text": "the metadata is definitely more important than the mixture of encoders but both"
+    },
+    {
+      "start": 2502.62,
+      "end": 2505.66,
+      "text": "things together is still better than everything else"
+    },
+    {
+      "start": 2508.3,
+      "end": 2512.22,
+      "text": "and and i you know it's the same kind of visualization as the last paper but i really"
+    },
+    {
+      "start": 2512.22,
+      "end": 2518.78,
+      "text": "like this um so here again we're looking at cosine similarity across like all of the tasks"
+    },
+    {
+      "start": 2518.78,
+      "end": 2524.78,
+      "text": "um the task embeddings um what we are showing here so in this first image we just have the"
+    },
+    {
+      "start": 2524.78,
+      "end": 2531.58,
+      "text": "pre-trained task embeddings or actually really what sorry i shouldn't have written task embeddings"
+    },
+    {
+      "start": 2531.58,
+      "end": 2536.94,
+      "text": "this is confusing this is just the embeddings out of roberta so this is just out of the"
+    },
+    {
+      "start": 2538.14,
+      "end": 2546.14,
+      "text": "language model and so we can see you don't even need to use roberta i think if you just treated"
+    },
+    {
+      "start": 2546.14,
+      "end": 2552.06,
+      "text": "the words as tokens you would see this same kind of similarity it's just that how many words in"
+    },
+    {
+      "start": 2552.06,
+      "end": 2556.78,
+      "text": "common do these different sentences have this corresponds to the cosine some of the like these"
+    },
+    {
+      "start": 2556.78,
+      "end": 2564.86,
+      "text": "tasks having more similarity but we see that when we use these language embedded these um"
+    },
+    {
+      "start": 2565.74,
+      "end": 2567.42,
+      "text": "this language embedding as"
+    },
+    {
+      "start": 2567.5,
+      "end": 2574.46,
+      "text": "input into our method and now we can look at our context embeddings at the end of training"
+    },
+    {
+      "start": 2575.66,
+      "end": 2581.9,
+      "text": "we can see that that structure persists and actually um for some of these tasks it actually"
+    },
+    {
+      "start": 2581.9,
+      "end": 2589.34,
+      "text": "gets even stronger so these areas in yellow that differ between these two are between 9 10 and 4 5 6"
+    },
+    {
+      "start": 2589.9,
+      "end": 2596.46,
+      "text": "so we can see that the things that these have in common are opening and closing doors and drawers"
+    },
+    {
+      "start": 2596.46,
+      "end": 2597.02,
+      "text": "and windows"
+    },
+    {
+      "start": 2597.5,
+      "end": 2599.42,
+      "text": "and so i think the really nice thing here is that"
+    },
+    {
+      "start": 2601.18,
+      "end": 2607.82,
+      "text": "our agent has discovered that opening and closing a door versus a drawer versus a window is very"
+    },
+    {
+      "start": 2607.82,
+      "end": 2611.9,
+      "text": "similar and even more similar than the sentences would have you could tell from the sentences"
+    },
+    {
+      "start": 2613.1,
+      "end": 2615.9,
+      "text": "and so we can see that this this similarity is leveraged"
+    },
+    {
+      "start": 2618.3,
+      "end": 2625.98,
+      "text": "in comparison if we just train care but without using the metadata as those embeddings we no"
+    },
+    {
+      "start": 2625.98,
+      "end": 2627.1,
+      "text": "similarity is found"
+    },
+    {
+      "start": 2627.5,
+      "end": 2633.66,
+      "text": "and so it means that having access to that metadata is really important for finding this similar"
+    },
+    {
+      "start": 2633.66,
+      "end": 2634.94,
+      "text": "structure across tasks"
+    },
+    {
+      "start": 2637.58,
+      "end": 2641.82,
+      "text": "um another experiment that we wanted to try was to see if we can get zero shot"
+    },
+    {
+      "start": 2641.82,
+      "end": 2646.3,
+      "text": "generalization to new unseen environments there's some hope that we can do this because of the"
+    },
+    {
+      "start": 2646.3,
+      "end": 2652.3,
+      "text": "compositional aspect um of of this environment you know the fact that like different objects"
+    },
+    {
+      "start": 2652.3,
+      "end": 2655.74,
+      "text": "and different skills like if you've learned these things separately maybe we can combine them"
+    },
+    {
+      "start": 2655.74,
+      "end": 2656.22,
+      "text": "together"
+    },
+    {
+      "start": 2657.5,
+      "end": 2662.54,
+      "text": "try this with mt10 we were very careful about picking like which which of the environments"
+    },
+    {
+      "start": 2662.54,
+      "end": 2667.34,
+      "text": "we train on and which were the two environments we test on so we're evaluating on drawer open"
+    },
+    {
+      "start": 2667.34,
+      "end": 2673.18,
+      "text": "and window open with the idea that it has learned how to open thing other things in the training"
+    },
+    {
+      "start": 2673.18,
+      "end": 2678.54,
+      "text": "tasks and it understands the dynamics of drawers and windows also from the training tasks"
+    },
+    {
+      "start": 2678.54,
+      "end": 2685.02,
+      "text": "um performance is pretty abysmal it's better than the other methods but obviously there's still a"
+    },
+    {
+      "start": 2685.02,
+      "end": 2690.86,
+      "text": "lot of room for improvement so i'm really excited about sort of trying to improve uh performance in"
+    },
+    {
+      "start": 2690.86,
+      "end": 2696.7,
+      "text": "in this aspect in terms of this kind of compositional generalization but i'm not"
+    },
+    {
+      "start": 2696.7,
+      "end": 2703.18,
+      "text": "sure yet how to do this so uh to conclude from this paper which is getting presented at icml"
+    },
+    {
+      "start": 2703.18,
+      "end": 2709.42,
+      "text": "this year i i think the main takeaways are site information is important if we can incorporate it"
+    },
+    {
+      "start": 2709.42,
+      "end": 2714.46,
+      "text": "in the right way we can dramatically improve performance we show that one way of doing this"
+    },
+    {
+      "start": 2714.46,
+      "end": 2715.0,
+      "text": "is through use of the tools that are available to us and the tools that are available to us and"
+    },
+    {
+      "start": 2715.0,
+      "end": 2718.2,
+      "text": "one way of doing this is through using this mixture of encoders that allows for positive transfer"
+    },
+    {
+      "start": 2718.2,
+      "end": 2722.52,
+      "text": "and i think a key question to ask is like how can we scale this up and so this is where net"
+    },
+    {
+      "start": 2722.52,
+      "end": 2729.24,
+      "text": "hack comes in um you know net hack has this wiki that that uh i think the thing that tim likes to"
+    },
+    {
+      "start": 2729.24,
+      "end": 2735.0,
+      "text": "say right is that no human has been able to solve net hack without reading the wiki uh without using"
+    },
+    {
+      "start": 2735.0,
+      "end": 2744.92,
+      "text": "the wiki um and so i i think there's huge problems um open problems here of how we can take something"
+    },
+    {
+      "start": 2745.0,
+      "end": 2750.96,
+      "text": "like care, which we show works in this very toy setting with just these very simple"
+    },
+    {
+      "start": 2750.96,
+      "end": 2757.78,
+      "text": "sentences, how we can apply something like that to NetHack. And for me, I guess like the things"
+    },
+    {
+      "start": 2757.78,
+      "end": 2764.14,
+      "text": "that I'm excited about, again, sort of tying these things back into applications, personalizing"
+    },
+    {
+      "start": 2764.14,
+      "end": 2768.88,
+      "text": "healthcare, treating each patient, you can treat each patient and patient information as context."
+    },
+    {
+      "start": 2768.88,
+      "end": 2776.12,
+      "text": "And so through this, we can get, we can expect generalization to new patients, maybe who have,"
+    },
+    {
+      "start": 2776.26,
+      "end": 2783.46,
+      "text": "who have, who have different metadata or different information about their lives and their health."
+    },
+    {
+      "start": 2784.1600000000003,
+      "end": 2788.76,
+      "text": "But we should be able to get compositional generalization to these patients. Same thing"
+    },
+    {
+      "start": 2788.76,
+      "end": 2792.7400000000002,
+      "text": "with household robots. We should be able to generalize to new environments and layouts."
+    },
+    {
+      "start": 2792.7400000000002,
+      "end": 2797.02,
+      "text": "We should be able to generalize to new tasks just through like simple language instruction."
+    },
+    {
+      "start": 2798.88,
+      "end": 2806.26,
+      "text": "And yeah, so in, in conclusion, I think sort of like the, the takeaways from this talk from,"
+    },
+    {
+      "start": 2806.46,
+      "end": 2813.3,
+      "text": "from these three papers is that I think leveraging structure will improve generalization. Context"
+    },
+    {
+      "start": 2813.3,
+      "end": 2820.7200000000003,
+      "text": "is a way to convey the structure that exists in the environment, both either as metadata or learned"
+    },
+    {
+      "start": 2820.9,
+      "end": 2827.42,
+      "text": "from just like the dynamics and context comes in different forms. It can be just like the history"
+    },
+    {
+      "start": 2827.42,
+      "end": 2828.86,
+      "text": "and the environment. It can be,"
+    },
+    {
+      "start": 2828.92,
+      "end": 2836.76,
+      "text": "natural language. It can be video, video demonstrations. And yeah, so I think this"
+    },
+    {
+      "start": 2836.76,
+      "end": 2841.38,
+      "text": "is something that would be really interesting to sort of, to discuss and learn also from the"
+    },
+    {
+      "start": 2841.38,
+      "end": 2845.56,
+      "text": "things that you guys are working on, sort of like what are other forms of context? What are"
+    },
+    {
+      "start": 2845.56,
+      "end": 2852.26,
+      "text": "interesting applications of these kinds of works? And then obviously I, none of this work would be"
+    },
+    {
+      "start": 2852.26,
+      "end": 2856.1,
+      "text": "possible without my collaborators. So these are just the people that I worked with on these three"
+    },
+    {
+      "start": 2856.1,
+      "end": 2858.78,
+      "text": "papers. And yeah, so now I'm,"
+    },
+    {
+      "start": 2858.88,
+      "end": 2863.48,
+      "text": "I'm really happy to take any questions or comments from people."
+    }
+  ],
+  "segment_count": 559
+}

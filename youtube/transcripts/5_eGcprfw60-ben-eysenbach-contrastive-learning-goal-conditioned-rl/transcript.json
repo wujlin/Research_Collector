@@ -1,0 +1,355 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 5.92,
+      "text": "I'm excited to share our work entitled Contrastive Learning as Goal-Conditioned Reinforcement Learning."
+    },
+    {
+      "start": 5.92,
+      "end": 8.86,
+      "text": "Deep reinforcement learning algorithms have achieved really great results in the last"
+    },
+    {
+      "start": 8.86,
+      "end": 11.72,
+      "text": "few years, but they've also become a fair bit more complex."
+    },
+    {
+      "start": 11.72,
+      "end": 15.280000000000001,
+      "text": "Today, they're like an engine with many moving parts."
+    },
+    {
+      "start": 15.280000000000001,
+      "end": 17.42,
+      "text": "One part predicts the future rewards."
+    },
+    {
+      "start": 17.42,
+      "end": 20.46,
+      "text": "Maybe you have another part that learns a model of the environment."
+    },
+    {
+      "start": 20.46,
+      "end": 25.14,
+      "text": "Maybe another part learns compact representations of high-dimensional data."
+    },
+    {
+      "start": 25.14,
+      "end": 29.240000000000002,
+      "text": "In this work, we propose a much simpler approach, where we will have a single objective that"
+    },
+    {
+      "start": 29.240000000000002,
+      "end": 34.02,
+      "text": "simultaneously results in predicting the future rewards, learning a model of the environment,"
+    },
+    {
+      "start": 34.02,
+      "end": 36.940000000000005,
+      "text": "and learning good representations."
+    },
+    {
+      "start": 36.940000000000005,
+      "end": 39.22,
+      "text": "We focus on goal-conditioned reinforcement learning."
+    },
+    {
+      "start": 39.22,
+      "end": 43.14,
+      "text": "We want to learn a policy that takes as input some current image and goal image, and takes"
+    },
+    {
+      "start": 43.14,
+      "end": 46.06,
+      "text": "actions to try to get to this goal image."
+    },
+    {
+      "start": 46.06,
+      "end": 50.660000000000004,
+      "text": "We train this policy using a big dataset of videos labeled with actions."
+    },
+    {
+      "start": 50.660000000000004,
+      "end": 54.800000000000004,
+      "text": "Unlike trajectories in the standard reinforcement learning setting, these are not labeled with"
+    },
+    {
+      "start": 54.800000000000004,
+      "end": 57.58,
+      "text": "rewards."
+    },
+    {
+      "start": 57.58,
+      "end": 61.4,
+      "text": "We'll define the reward function to be whether you reach the goal state at the next time"
+    },
+    {
+      "start": 61.4,
+      "end": 62.4,
+      "text": "step."
+    },
+    {
+      "start": 62.4,
+      "end": 65.84,
+      "text": "But this reward function doesn't require reward engineering, and is defined purely"
+    },
+    {
+      "start": 65.84,
+      "end": 68.02,
+      "text": "in terms of the physics."
+    },
+    {
+      "start": 68.02,
+      "end": 72.58,
+      "text": "We maximize the sum of these rewards, and the queue function is the same objective,"
+    },
+    {
+      "start": 72.58,
+      "end": 76.12,
+      "text": "conditioned on some current state and action."
+    },
+    {
+      "start": 76.12,
+      "end": 80.03999999999999,
+      "text": "The key idea of our approach is to use contrastive learning to build an entire reinforcement"
+    },
+    {
+      "start": 80.03999999999999,
+      "end": 84.4,
+      "text": "learning algorithm, one that doesn't require any sort of extra representation learning,"
+    },
+    {
+      "start": 84.4,
+      "end": 85.5,
+      "text": "reward learning, or model learning."
+    },
+    {
+      "start": 85.5,
+      "end": 86.48,
+      "text": "I'll first explain how we apply that contrastive learning algorithm."
+    },
+    {
+      "start": 86.48,
+      "end": 87.48,
+      "text": "I'll explain how we apply the contrastive learning algorithm."
+    },
+    {
+      "start": 87.48,
+      "end": 87.58,
+      "text": "I'll first explain how we apply the contrastive learning algorithm."
+    },
+    {
+      "start": 87.58,
+      "end": 91.82,
+      "text": "of learning. And then the next slide will show how this is an entire reinforcement learning"
+    },
+    {
+      "start": 91.82,
+      "end": 95.82,
+      "text": "algorithm. Our method is going to look pretty similar to prior methods for representation"
+    },
+    {
+      "start": 95.82,
+      "end": 100.52,
+      "text": "learning on video, for audio, on text. But the key difference is that our method will"
+    },
+    {
+      "start": 100.52,
+      "end": 107.16,
+      "text": "allow us to solve the reinforcement learning problem. We're going to learn two representations,"
+    },
+    {
+      "start": 107.16,
+      "end": 114.4,
+      "text": "one of states and actions and one of future states. The data will be sampled from trajectories."
+    },
+    {
+      "start": 114.4,
+      "end": 118.56,
+      "text": "We'll sample the positive examples using a state and an action and a future state from"
+    },
+    {
+      "start": 118.56,
+      "end": 123.46000000000001,
+      "text": "the same trajectory. Precisely, we'll use a future state sample from a geometric distribution"
+    },
+    {
+      "start": 123.46000000000001,
+      "end": 129.1,
+      "text": "that allows us to draw a connection with q values. And we'll sample random states from"
+    },
+    {
+      "start": 129.1,
+      "end": 133.58,
+      "text": "different trajectories and push those representations further apart from each other."
+    },
+    {
+      "start": 133.58,
+      "end": 138.04000000000002,
+      "text": "Now, intuitively, these representations will allow us to reason about what states are we"
+    },
+    {
+      "start": 138.04000000000002,
+      "end": 143.68,
+      "text": "likely to visit in the future. And importantly, they will allow us to figure out which actions"
+    },
+    {
+      "start": 143.68,
+      "end": 144.38,
+      "text": "are likely to get a positive result."
+    },
+    {
+      "start": 144.4,
+      "end": 150.58,
+      "text": "to the desired goal state. Here's how the complete algorithm works. We start with the data set,"
+    },
+    {
+      "start": 150.58,
+      "end": 155.5,
+      "text": "maybe from a different experiment, maybe from a random policy. We apply contrastive learning to"
+    },
+    {
+      "start": 155.5,
+      "end": 160.0,
+      "text": "learn the representations, and then we learn the policy to maximize the likelihood of the desired"
+    },
+    {
+      "start": 160.0,
+      "end": 165.24,
+      "text": "goal state. Optionally, we could go back and collect more data. We've shown that our method"
+    },
+    {
+      "start": 165.24,
+      "end": 172.08,
+      "text": "can work well even when we don't collect more data. Our method doesn't include many of the"
+    },
+    {
+      "start": 172.08,
+      "end": 176.46,
+      "text": "tricks and extra machinery that prior methods do, and our open source code is very fast."
+    },
+    {
+      "start": 178.52,
+      "end": 182.66000000000003,
+      "text": "There are a number of ways of viewing what contrastive learning gives us. One is that it"
+    },
+    {
+      "start": 182.66000000000003,
+      "end": 187.14000000000001,
+      "text": "gives us an implicit model of the world, something that allows us to predict what's going to happen,"
+    },
+    {
+      "start": 187.14000000000001,
+      "end": 193.20000000000002,
+      "text": "but doesn't require regressing to high-dimensional outputs. It can also be viewed as giving us a"
+    },
+    {
+      "start": 193.20000000000002,
+      "end": 198.94,
+      "text": "predictor of the future returns of a Q function, and also gives us low-dimensional representations"
+    },
+    {
+      "start": 198.94,
+      "end": 200.0,
+      "text": "of states."
+    },
+    {
+      "start": 202.08,
+      "end": 206.10000000000002,
+      "text": "Training the actor has a nice geometric interpretation. Let's think about the"
+    },
+    {
+      "start": 206.10000000000002,
+      "end": 209.78,
+      "text": "representation of the goal state and the representation of the current state, which"
+    },
+    {
+      "start": 209.78,
+      "end": 213.64000000000001,
+      "text": "might be different for different actions. If we simply look at the similarity between these"
+    },
+    {
+      "start": 213.64000000000001,
+      "end": 218.4,
+      "text": "representations, training the actor corresponds to choosing whichever state action representation"
+    },
+    {
+      "start": 218.4,
+      "end": 223.56,
+      "text": "brings us closest to the goal representation. We can think about this as doing planning in"
+    },
+    {
+      "start": 223.56,
+      "end": 227.8,
+      "text": "a representation space. Now, normally, planning is hard. For example, if you greedily tried to"
+    },
+    {
+      "start": 227.8,
+      "end": 232.04000000000002,
+      "text": "solve this task by moving the arm to the goal, then you wouldn't pick up the block. But what"
+    },
+    {
+      "start": 232.08,
+      "end": 236.58,
+      "text": "we've done by learning these representations is make the planning problem easier. Greedy"
+    },
+    {
+      "start": 236.58,
+      "end": 241.36,
+      "text": "planning in the representation space is optimal."
+    },
+    {
+      "start": 241.36,
+      "end": 245.5,
+      "text": "We evaluated on many tasks, including this bin-picking task. The agent has to pick up"
+    },
+    {
+      "start": 245.5,
+      "end": 249.02,
+      "text": "the block and move it towards the blue bin, and it's really hard because we don't have"
+    },
+    {
+      "start": 249.02,
+      "end": 254.26000000000002,
+      "text": "reward shaping, we don't have demonstrations, and it's done entirely from images."
+    },
+    {
+      "start": 254.26000000000002,
+      "end": 258.34000000000003,
+      "text": "Our first baseline is goal-conditioned behavioral cloning, which is a pretty simple baseline"
+    },
+    {
+      "start": 258.34000000000003,
+      "end": 260.92,
+      "text": "that works really well, according to prior work."
+    },
+    {
+      "start": 262.08,
+      "end": 266.59999999999997,
+      "text": "The second one is TD3 plus HER, which is a temporal difference method combined with"
+    },
+    {
+      "start": 266.59999999999997,
+      "end": 276.96,
+      "text": "hindsight relabeling. Only our method is able to solve this task. We evaluated baselines"
+    },
+    {
+      "start": 276.96,
+      "end": 281.65999999999997,
+      "text": "and a number of other manipulation tasks and observed that our method achieves better results"
+    },
+    {
+      "start": 281.65999999999997,
+      "end": 287.59999999999997,
+      "text": "on all but the easiest tasks. Please stop by the poster to learn more, such as experiments"
+    },
+    {
+      "start": 287.59999999999997,
+      "end": 289.5,
+      "text": "and future directions. Thanks."
+    }
+  ],
+  "segment_count": 70
+}

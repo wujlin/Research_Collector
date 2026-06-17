@@ -5,8 +5,10 @@ dist/
 build/
 .venv/
 .env
+.secrets/
 data/papers.db
 data/cache/
+data/social/
 pdfs/
 .tmp_figures/
 .ruff_cache/

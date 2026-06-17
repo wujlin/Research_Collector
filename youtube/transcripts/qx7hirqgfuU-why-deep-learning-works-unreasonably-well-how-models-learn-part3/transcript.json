@@ -1,0 +1,4590 @@
+{
+  "segments": [
+    {
+      "start": 0.08,
+      "end": 5.279,
+      "text": "In 1989, George Sabeno proved what's now"
+    },
+    {
+      "start": 3.36,
+      "end": 7.6,
+      "text": "known as the universal approximation"
+    },
+    {
+      "start": 5.279,
+      "end": 9.679,
+      "text": "theorem. If we take some complex"
+    },
+    {
+      "start": 7.6,
+      "end": 11.44,
+      "text": "function, for example, this really"
+    },
+    {
+      "start": 9.679,
+      "end": 13.679,
+      "text": "complicated border in the town of Barlay"
+    },
+    {
+      "start": 11.44,
+      "end": 14.96,
+      "text": "Hertok, these parts of the map are in"
+    },
+    {
+      "start": 13.679,
+      "end": 17.52,
+      "text": "Belgium and these parts are in the"
+    },
+    {
+      "start": 14.96,
+      "end": 19.76,
+      "text": "Netherlands. The universal approximation"
+    },
+    {
+      "start": 17.52,
+      "end": 21.76,
+      "text": "theorem guarantees that there exists a"
+    },
+    {
+      "start": 19.76,
+      "end": 25.039,
+      "text": "two-layer neural network that can fit"
+    },
+    {
+      "start": 21.76,
+      "end": 26.96,
+      "text": "this border as precisely as we want. A"
+    },
+    {
+      "start": 25.039,
+      "end": 28.88,
+      "text": "nice way to get a feel for this result"
+    },
+    {
+      "start": 26.96,
+      "end": 31.199,
+      "text": "is to see what a two-layer network like"
+    },
+    {
+      "start": 28.88,
+      "end": 32.88,
+      "text": "this does. geometrically."
+    },
+    {
+      "start": 31.199,
+      "end": 34.96,
+      "text": "Most modern neural networks use some"
+    },
+    {
+      "start": 32.88,
+      "end": 37.28,
+      "text": "version of rectified linear activation"
+    },
+    {
+      "start": 34.96,
+      "end": 38.96,
+      "text": "functions. Visually, this means that"
+    },
+    {
+      "start": 37.28,
+      "end": 41.44,
+      "text": "each neuron in the first layer of our"
+    },
+    {
+      "start": 38.96,
+      "end": 43.76,
+      "text": "network folds up a copy of our map along"
+    },
+    {
+      "start": 41.44,
+      "end": 45.28,
+      "text": "a single fold line where the location of"
+    },
+    {
+      "start": 43.76,
+      "end": 47.92,
+      "text": "the fold line is controlled by the"
+    },
+    {
+      "start": 45.28,
+      "end": 50.0,
+      "text": "neurons learned weights. From here, our"
+    },
+    {
+      "start": 47.92,
+      "end": 52.48,
+      "text": "first neuron in our second layer takes"
+    },
+    {
+      "start": 50.0,
+      "end": 54.399,
+      "text": "in these bent planes and multiplies"
+    },
+    {
+      "start": 52.48,
+      "end": 56.64,
+      "text": "their heights by another learned weight"
+    },
+    {
+      "start": 54.399,
+      "end": 58.559,
+      "text": "value, which geometrically further bends"
+    },
+    {
+      "start": 56.64,
+      "end": 61.039,
+      "text": "up or down the folded parts of our"
+    },
+    {
+      "start": 58.559,
+      "end": 62.48,
+      "text": "planes and flips over our folded region"
+    },
+    {
+      "start": 61.039,
+      "end": 64.72,
+      "text": "when that neuron's weight value is"
+    },
+    {
+      "start": 62.48,
+      "end": 67.04,
+      "text": "negative. These three bent planes are"
+    },
+    {
+      "start": 64.72,
+      "end": 70.0,
+      "text": "then added together by our neuron,"
+    },
+    {
+      "start": 67.04,
+      "end": 71.84,
+      "text": "resulting in a surface like this. Our"
+    },
+    {
+      "start": 70.0,
+      "end": 73.92,
+      "text": "three-fold lines from our first layer"
+    },
+    {
+      "start": 71.84,
+      "end": 75.84,
+      "text": "now divide up our map into these five"
+    },
+    {
+      "start": 73.92,
+      "end": 78.72,
+      "text": "regions that each become different"
+    },
+    {
+      "start": 75.84,
+      "end": 80.24,
+      "text": "planes in our second layer surface. This"
+    },
+    {
+      "start": 78.72,
+      "end": 82.72,
+      "text": "surface shows the output of our first"
+    },
+    {
+      "start": 80.24,
+      "end": 84.4,
+      "text": "neuron in our second layer. The second"
+    },
+    {
+      "start": 82.72,
+      "end": 86.159,
+      "text": "neuron in our second layer flips,"
+    },
+    {
+      "start": 84.4,
+      "end": 88.479,
+      "text": "scales, and combines our first planes"
+    },
+    {
+      "start": 86.159,
+      "end": 90.64,
+      "text": "using different learned parameters,"
+    },
+    {
+      "start": 88.479,
+      "end": 92.64,
+      "text": "resulting in this surface that again"
+    },
+    {
+      "start": 90.64,
+      "end": 94.88,
+      "text": "uses the same five regions of our map,"
+    },
+    {
+      "start": 92.64,
+      "end": 96.96,
+      "text": "but at different heights."
+    },
+    {
+      "start": 94.88,
+      "end": 98.96,
+      "text": "The height of the surface formed by our"
+    },
+    {
+      "start": 96.96,
+      "end": 100.64,
+      "text": "first neuron corresponds to the model's"
+    },
+    {
+      "start": 98.96,
+      "end": 103.04,
+      "text": "confidence in a certain part of the map"
+    },
+    {
+      "start": 100.64,
+      "end": 104.88,
+      "text": "being in the Netherlands. And the height"
+    },
+    {
+      "start": 103.04,
+      "end": 107.6,
+      "text": "of the second neuron surface corresponds"
+    },
+    {
+      "start": 104.88,
+      "end": 109.52,
+      "text": "to the model's confidence in Belgium."
+    },
+    {
+      "start": 107.6,
+      "end": 111.68,
+      "text": "Coloring our Netherlands surface blue"
+    },
+    {
+      "start": 109.52,
+      "end": 113.36,
+      "text": "and our Belgium surface yellow. And"
+    },
+    {
+      "start": 111.68,
+      "end": 115.84,
+      "text": "bringing these surfaces together onto"
+    },
+    {
+      "start": 113.36,
+      "end": 117.439,
+      "text": "the same axis, the intersection of our"
+    },
+    {
+      "start": 115.84,
+      "end": 120.32,
+      "text": "surfaces shows us where our model is"
+    },
+    {
+      "start": 117.439,
+      "end": 122.079,
+      "text": "equally confident in both countries."
+    },
+    {
+      "start": 120.32,
+      "end": 125.36,
+      "text": "This is the model's learn decision"
+    },
+    {
+      "start": 122.079,
+      "end": 127.2,
+      "text": "boundary which gives us a basic border"
+    },
+    {
+      "start": 125.36,
+      "end": 129.92,
+      "text": "separating the core Belgium region from"
+    },
+    {
+      "start": 127.2,
+      "end": 131.76,
+      "text": "the surrounding Netherlands region. Now"
+    },
+    {
+      "start": 129.92,
+      "end": 133.36,
+      "text": "the universal approximation theorem"
+    },
+    {
+      "start": 131.76,
+      "end": 135.76,
+      "text": "tells us that if we just keep adding"
+    },
+    {
+      "start": 133.36,
+      "end": 137.52,
+      "text": "neurons to our first layer, eventually"
+    },
+    {
+      "start": 135.76,
+      "end": 140.48,
+      "text": "we'll land on an architecture capable of"
+    },
+    {
+      "start": 137.52,
+      "end": 142.319,
+      "text": "representing our full border. Training a"
+    },
+    {
+      "start": 140.48,
+      "end": 145.04,
+      "text": "network with eight neurons in its first"
+    },
+    {
+      "start": 142.319,
+      "end": 146.64,
+      "text": "layer, we get this set of eight folds"
+    },
+    {
+      "start": 145.04,
+      "end": 149.04,
+      "text": "leading to this surface for our first"
+    },
+    {
+      "start": 146.64,
+      "end": 151.28,
+      "text": "output neuron and this surface for our"
+    },
+    {
+      "start": 149.04,
+      "end": 153.36,
+      "text": "second output neuron. Bringing these new"
+    },
+    {
+      "start": 151.28,
+      "end": 155.2,
+      "text": "surfaces onto the same axis, we see"
+    },
+    {
+      "start": 153.36,
+      "end": 157.44,
+      "text": "these new more complex intersection"
+    },
+    {
+      "start": 155.2,
+      "end": 159.76,
+      "text": "lines leading to this more detailed"
+    },
+    {
+      "start": 157.44,
+      "end": 162.319,
+      "text": "final border that begins to break our"
+    },
+    {
+      "start": 159.76,
+      "end": 164.08,
+      "text": "map into separate regions."
+    },
+    {
+      "start": 162.319,
+      "end": 166.879,
+      "text": "Here's the surfaces and border for a"
+    },
+    {
+      "start": 164.08,
+      "end": 170.08,
+      "text": "larger model with 16 neurons. Here's a"
+    },
+    {
+      "start": 166.879,
+      "end": 172.16,
+      "text": "32 neuron model. Here's 64. And here's"
+    },
+    {
+      "start": 170.08,
+      "end": 174.319,
+      "text": "128."
+    },
+    {
+      "start": 172.16,
+      "end": 176.0,
+      "text": "It starts to become difficult to see how"
+    },
+    {
+      "start": 174.319,
+      "end": 178.72,
+      "text": "our surfaces are intersecting exactly"
+    },
+    {
+      "start": 176.0,
+      "end": 180.72,
+      "text": "with this many fold lines. Let's flatten"
+    },
+    {
+      "start": 178.72,
+      "end": 182.48,
+      "text": "out our surfaces to make it easier to"
+    },
+    {
+      "start": 180.72,
+      "end": 184.959,
+      "text": "see how the model uses all its different"
+    },
+    {
+      "start": 182.48,
+      "end": 187.68,
+      "text": "fold lines to fit our border. Doubling"
+    },
+    {
+      "start": 184.959,
+      "end": 189.2,
+      "text": "our neuron count again to 256."
+    },
+    {
+      "start": 187.68,
+      "end": 190.879,
+      "text": "Here's how our neurons divide up our"
+    },
+    {
+      "start": 189.2,
+      "end": 193.84,
+      "text": "map. And here's the final decision"
+    },
+    {
+      "start": 190.879,
+      "end": 196.319,
+      "text": "boundary. Here's 512 neurons. And here"
+    },
+    {
+      "start": 193.84,
+      "end": 198.56,
+      "text": "is 1,024."
+    },
+    {
+      "start": 196.319,
+      "end": 200.08,
+      "text": "We're getting closer to our true border,"
+    },
+    {
+      "start": 198.56,
+      "end": 202.159,
+      "text": "but we're still missing a number of"
+    },
+    {
+      "start": 200.08,
+      "end": 203.92,
+      "text": "parts of the town. And we've reached a"
+    },
+    {
+      "start": 202.159,
+      "end": 206.0,
+      "text": "point where I can't actually render any"
+    },
+    {
+      "start": 203.92,
+      "end": 208.4,
+      "text": "more polygons, but we can still render"
+    },
+    {
+      "start": 206.0,
+      "end": 211.2,
+      "text": "our decision boundary. Here's the border"
+    },
+    {
+      "start": 208.4,
+      "end": 213.28,
+      "text": "we get with a 10,000 neuron model. And"
+    },
+    {
+      "start": 211.2,
+      "end": 214.799,
+      "text": "finally, here's a model with a 100,000"
+    },
+    {
+      "start": 213.28,
+      "end": 217.12,
+      "text": "neurons."
+    },
+    {
+      "start": 214.799,
+      "end": 219.92,
+      "text": "We're getting even closer at this point,"
+    },
+    {
+      "start": 217.12,
+      "end": 221.519,
+      "text": "but even with a 100,000 neurons, there's"
+    },
+    {
+      "start": 219.92,
+      "end": 223.76,
+      "text": "a couple of parts of the border that our"
+    },
+    {
+      "start": 221.519,
+      "end": 225.36,
+      "text": "model hasn't learned."
+    },
+    {
+      "start": 223.76,
+      "end": 227.12,
+      "text": "It feels like the universal"
+    },
+    {
+      "start": 225.36,
+      "end": 230.48,
+      "text": "approximation theorem isn't really"
+    },
+    {
+      "start": 227.12,
+      "end": 232.08,
+      "text": "working. What are we missing here? But"
+    },
+    {
+      "start": 230.48,
+      "end": 234.159,
+      "text": "before we get into the details of what's"
+    },
+    {
+      "start": 232.08,
+      "end": 238.08,
+      "text": "going wrong, let me show you one more"
+    },
+    {
+      "start": 234.159,
+      "end": 239.599,
+      "text": "thing. Let's take just 128 neurons. But"
+    },
+    {
+      "start": 238.08,
+      "end": 241.84,
+      "text": "instead of arranging them in a single"
+    },
+    {
+      "start": 239.599,
+      "end": 244.72,
+      "text": "wide layer, let's arrange them in four"
+    },
+    {
+      "start": 241.84,
+      "end": 246.72,
+      "text": "separate layers of 32 each like this,"
+    },
+    {
+      "start": 244.72,
+      "end": 249.36,
+      "text": "where the output of each layer is passed"
+    },
+    {
+      "start": 246.72,
+      "end": 251.12,
+      "text": "into the next. After training this"
+    },
+    {
+      "start": 249.36,
+      "end": 254.159,
+      "text": "model, these are the resulting learned"
+    },
+    {
+      "start": 251.12,
+      "end": 256.479,
+      "text": "regions and decision boundary. Our five"
+    },
+    {
+      "start": 254.159,
+      "end": 259.12,
+      "text": "layer network with just 130 total"
+    },
+    {
+      "start": 256.479,
+      "end": 262.24,
+      "text": "neurons is able to learn a more precise"
+    },
+    {
+      "start": 259.12,
+      "end": 264.0,
+      "text": "border than our 100,000 neuron model and"
+    },
+    {
+      "start": 262.24,
+      "end": 265.759,
+      "text": "it's able to divide up our map more"
+    },
+    {
+      "start": 264.0,
+      "end": 268.0,
+      "text": "effectively."
+    },
+    {
+      "start": 265.759,
+      "end": 270.08,
+      "text": "How is it that rearranging our neurons"
+    },
+    {
+      "start": 268.0,
+      "end": 272.8,
+      "text": "into multiple layers makes our model so"
+    },
+    {
+      "start": 270.08,
+      "end": 274.96,
+      "text": "much more powerful? The neurons in both"
+    },
+    {
+      "start": 272.8,
+      "end": 276.96,
+      "text": "our deeper and shallow models do the"
+    },
+    {
+      "start": 274.96,
+      "end": 278.56,
+      "text": "same folding, scaling, and combining"
+    },
+    {
+      "start": 276.96,
+      "end": 280.24,
+      "text": "operations."
+    },
+    {
+      "start": 278.56,
+      "end": 282.24,
+      "text": "Why are these operations so much more"
+    },
+    {
+      "start": 280.24,
+      "end": 285.04,
+      "text": "effective when composed in multiple"
+    },
+    {
+      "start": 282.24,
+      "end": 287.04,
+      "text": "layers? And how does the geometry of our"
+    },
+    {
+      "start": 285.04,
+      "end": 290.16,
+      "text": "map change as it moves through these"
+    },
+    {
+      "start": 287.04,
+      "end": 292.24,
+      "text": "stacked operations?"
+    },
+    {
+      "start": 290.16,
+      "end": 294.88,
+      "text": "This video is part of a series sponsored"
+    },
+    {
+      "start": 292.24,
+      "end": 297.36,
+      "text": "by Incogn. These videos have really"
+    },
+    {
+      "start": 294.88,
+      "end": 299.68,
+      "text": "pushed my animation abilities, requiring"
+    },
+    {
+      "start": 297.36,
+      "end": 301.84,
+      "text": "a bunch of deeply focused hours, which"
+    },
+    {
+      "start": 299.68,
+      "end": 303.36,
+      "text": "Incogn has really helped me with by"
+    },
+    {
+      "start": 301.84,
+      "end": 305.84,
+      "text": "significantly reducing the number of"
+    },
+    {
+      "start": 303.36,
+      "end": 308.8,
+      "text": "spam text and calls that I receive."
+    },
+    {
+      "start": 305.84,
+      "end": 310.4,
+      "text": "Incogn also helps protect my privacy. In"
+    },
+    {
+      "start": 308.8,
+      "end": 312.96,
+      "text": "the United States, we have these people"
+    },
+    {
+      "start": 310.4,
+      "end": 314.96,
+      "text": "search sites where for a small fee,"
+    },
+    {
+      "start": 312.96,
+      "end": 316.8,
+      "text": "anyone can look up information about you"
+    },
+    {
+      "start": 314.96,
+      "end": 318.639,
+      "text": "like your address, your email, phone"
+    },
+    {
+      "start": 316.8,
+      "end": 320.96,
+      "text": "number, education, employment history,"
+    },
+    {
+      "start": 318.639,
+      "end": 322.479,
+      "text": "social media accounts, and so on. This"
+    },
+    {
+      "start": 320.96,
+      "end": 324.32,
+      "text": "gives you an idea of all the information"
+    },
+    {
+      "start": 322.479,
+      "end": 326.72,
+      "text": "about you that data brokers are able to"
+    },
+    {
+      "start": 324.32,
+      "end": 328.639,
+      "text": "gather and sell. Last year, I signed up"
+    },
+    {
+      "start": 326.72,
+      "end": 330.24,
+      "text": "for one of these people search sites to"
+    },
+    {
+      "start": 328.639,
+      "end": 333.28,
+      "text": "see what information I could find on"
+    },
+    {
+      "start": 330.24,
+      "end": 335.6,
+      "text": "myself. After being an incogn for a few"
+    },
+    {
+      "start": 333.28,
+      "end": 338.32,
+      "text": "months, I impressively wasn't able to"
+    },
+    {
+      "start": 335.6,
+      "end": 340.0,
+      "text": "find any information on myself, but I"
+    },
+    {
+      "start": 338.32,
+      "end": 342.16,
+      "text": "was able to find a ton of information on"
+    },
+    {
+      "start": 340.0,
+      "end": 344.0,
+      "text": "my wife. Since then, I've upgraded to"
+    },
+    {
+      "start": 342.16,
+      "end": 346.24,
+      "text": "Incogn's friends and family plan and"
+    },
+    {
+      "start": 344.0,
+      "end": 347.84,
+      "text": "added my wife to the plan. I checked the"
+    },
+    {
+      "start": 346.24,
+      "end": 349.6,
+      "text": "same people's search site again this"
+    },
+    {
+      "start": 347.84,
+      "end": 352.24,
+      "text": "week and was happy to see that all of"
+    },
+    {
+      "start": 349.6,
+      "end": 354.56,
+      "text": "her information had been removed."
+    },
+    {
+      "start": 352.24,
+      "end": 356.0,
+      "text": "Incogn has just released a new feature"
+    },
+    {
+      "start": 354.56,
+      "end": 358.88,
+      "text": "that makes their service even more"
+    },
+    {
+      "start": 356.0,
+      "end": 360.479,
+      "text": "effective called custom data removals."
+    },
+    {
+      "start": 358.88,
+      "end": 362.32,
+      "text": "If you type your name and address into"
+    },
+    {
+      "start": 360.479,
+      "end": 364.319,
+      "text": "Google, you may be surprised to find"
+    },
+    {
+      "start": 362.32,
+      "end": 366.8,
+      "text": "where exactly your personal information"
+    },
+    {
+      "start": 364.319,
+      "end": 368.72,
+      "text": "pops up. With custom removals, you can"
+    },
+    {
+      "start": 366.8,
+      "end": 371.039,
+      "text": "submit specific URLs directly to the"
+    },
+    {
+      "start": 368.72,
+      "end": 373.28,
+      "text": "Incogn who will work to remove your"
+    },
+    {
+      "start": 371.039,
+      "end": 375.759,
+      "text": "information from eligible sites. You can"
+    },
+    {
+      "start": 373.28,
+      "end": 376.88,
+      "text": "get a great deal on incogn 60% off an"
+    },
+    {
+      "start": 375.759,
+      "end": 379.68,
+      "text": "annual plan by visiting"
+    },
+    {
+      "start": 376.88,
+      "end": 382.319,
+      "text": "incogn.com/welchlabs"
+    },
+    {
+      "start": 379.68,
+      "end": 383.759,
+      "text": "and using code welchlabs at checkout."
+    },
+    {
+      "start": 382.319,
+      "end": 386.4,
+      "text": "It's been a while since I've made a"
+    },
+    {
+      "start": 383.759,
+      "end": 388.4,
+      "text": "multi-part series like this. Huge thanks"
+    },
+    {
+      "start": 386.4,
+      "end": 390.639,
+      "text": "to incogn for helping make this series"
+    },
+    {
+      "start": 388.4,
+      "end": 393.919,
+      "text": "possible and helping me get more quality"
+    },
+    {
+      "start": 390.639,
+      "end": 396.639,
+      "text": "focus time as I work on it."
+    },
+    {
+      "start": 393.919,
+      "end": 398.479,
+      "text": "Last time in part two of this series, we"
+    },
+    {
+      "start": 396.639,
+      "end": 399.84,
+      "text": "dug into the mathematics of how modern"
+    },
+    {
+      "start": 398.479,
+      "end": 402.56,
+      "text": "models are trained using back"
+    },
+    {
+      "start": 399.84,
+      "end": 404.16,
+      "text": "propagation and gradient descent. We saw"
+    },
+    {
+      "start": 402.56,
+      "end": 406.319,
+      "text": "how given the inputs of latitude and"
+    },
+    {
+      "start": 404.16,
+      "end": 407.919,
+      "text": "longitude, a single layer model can"
+    },
+    {
+      "start": 406.319,
+      "end": 410.479,
+      "text": "effectively learn to position planes"
+    },
+    {
+      "start": 407.919,
+      "end": 412.639,
+      "text": "over different European cities, learning"
+    },
+    {
+      "start": 410.479,
+      "end": 414.72,
+      "text": "to separate Paris, Berlin, Madrid, and"
+    },
+    {
+      "start": 412.639,
+      "end": 416.56,
+      "text": "Barcelona. The key piece of"
+    },
+    {
+      "start": 414.72,
+      "end": 418.24,
+      "text": "functionality here is that our model"
+    },
+    {
+      "start": 416.56,
+      "end": 421.039,
+      "text": "learns to position the Madrid plane"
+    },
+    {
+      "start": 418.24,
+      "end": 422.72,
+      "text": "above all the other planes above Madrid,"
+    },
+    {
+      "start": 421.039,
+      "end": 425.44,
+      "text": "the Barcelona plane above all the other"
+    },
+    {
+      "start": 422.72,
+      "end": 427.28,
+      "text": "planes above Barcelona, and so on. And"
+    },
+    {
+      "start": 425.44,
+      "end": 428.96,
+      "text": "the height of our planes corresponds to"
+    },
+    {
+      "start": 427.28,
+      "end": 431.599,
+      "text": "our network's final confidence in a"
+    },
+    {
+      "start": 428.96,
+      "end": 433.599,
+      "text": "specific city. We left off considering"
+    },
+    {
+      "start": 431.599,
+      "end": 435.68,
+      "text": "the most complex geographic border in"
+    },
+    {
+      "start": 433.599,
+      "end": 437.52,
+      "text": "the world between Belgium and the"
+    },
+    {
+      "start": 435.68,
+      "end": 439.599,
+      "text": "Netherlands in the municipality of"
+    },
+    {
+      "start": 437.52,
+      "end": 442.0,
+      "text": "Barlay Herto."
+    },
+    {
+      "start": 439.599,
+      "end": 444.0,
+      "text": "Given a single plane for each country,"
+    },
+    {
+      "start": 442.0,
+      "end": 445.919,
+      "text": "there's no way to position our planes."
+    },
+    {
+      "start": 444.0,
+      "end": 448.16,
+      "text": "So our Belgium plane is on top of our"
+    },
+    {
+      "start": 445.919,
+      "end": 450.88,
+      "text": "Netherlands plane above only the Belgium"
+    },
+    {
+      "start": 448.16,
+      "end": 452.96,
+      "text": "portions of our map. Another way to"
+    },
+    {
+      "start": 450.88,
+      "end": 455.36,
+      "text": "think about this is that our two tilted"
+    },
+    {
+      "start": 452.96,
+      "end": 456.88,
+      "text": "planes intersect at a line on our map"
+    },
+    {
+      "start": 455.36,
+      "end": 458.8,
+      "text": "where everything on one side of the line"
+    },
+    {
+      "start": 456.88,
+      "end": 460.24,
+      "text": "will be classified as part of Belgium"
+    },
+    {
+      "start": 458.8,
+      "end": 462.16,
+      "text": "and everything on the other side will be"
+    },
+    {
+      "start": 460.24,
+      "end": 463.759,
+      "text": "classified as part of the Netherlands."
+    },
+    {
+      "start": 462.16,
+      "end": 465.599,
+      "text": "And there's no way this linear decision"
+    },
+    {
+      "start": 463.759,
+      "end": 468.56,
+      "text": "boundary can correctly divide up our"
+    },
+    {
+      "start": 465.599,
+      "end": 471.36,
+      "text": "city. Our networks from last time looked"
+    },
+    {
+      "start": 468.56,
+      "end": 474.24,
+      "text": "like this with a single layer of neurons"
+    },
+    {
+      "start": 471.36,
+      "end": 476.56,
+      "text": "between our inputs and softmax function."
+    },
+    {
+      "start": 474.24,
+      "end": 478.96,
+      "text": "As we saw last time, the softmax"
+    },
+    {
+      "start": 476.56,
+      "end": 481.36,
+      "text": "function bends our planes to output nice"
+    },
+    {
+      "start": 478.96,
+      "end": 482.879,
+      "text": "final probability values. But"
+    },
+    {
+      "start": 481.36,
+      "end": 484.479,
+      "text": "importantly, it doesn't change the"
+    },
+    {
+      "start": 482.879,
+      "end": 486.8,
+      "text": "location of the decision boundaries at"
+    },
+    {
+      "start": 484.479,
+      "end": 488.319,
+      "text": "the intersections of our planes. For"
+    },
+    {
+      "start": 486.8,
+      "end": 491.28,
+      "text": "this reason, we won't concern ourselves"
+    },
+    {
+      "start": 488.319,
+      "end": 492.879,
+      "text": "too much with softmax in this video. The"
+    },
+    {
+      "start": 491.28,
+      "end": 495.52,
+      "text": "networks we saw at the beginning of this"
+    },
+    {
+      "start": 492.879,
+      "end": 497.28,
+      "text": "video add one more layer of neurons and"
+    },
+    {
+      "start": 495.52,
+      "end": 499.759,
+      "text": "are able to accomplish significantly"
+    },
+    {
+      "start": 497.28,
+      "end": 502.0,
+      "text": "more. Just like the neurons in our"
+    },
+    {
+      "start": 499.759,
+      "end": 503.52,
+      "text": "simple single layer model, each of the"
+    },
+    {
+      "start": 502.0,
+      "end": 505.199,
+      "text": "neurons in the first layer of our"
+    },
+    {
+      "start": 503.52,
+      "end": 508.0,
+      "text": "two-layer network contains a simple"
+    },
+    {
+      "start": 505.199,
+      "end": 510.96,
+      "text": "linear model that geometrically looks"
+    },
+    {
+      "start": 508.0,
+      "end": 512.8,
+      "text": "like a plane. Mathematically, the first"
+    },
+    {
+      "start": 510.96,
+      "end": 514.959,
+      "text": "neuron in our first layer takes in the"
+    },
+    {
+      "start": 512.8,
+      "end": 516.399,
+      "text": "coordinates of our point, multiplies"
+    },
+    {
+      "start": 514.959,
+      "end": 518.0,
+      "text": "each coordinate by a learned number"
+    },
+    {
+      "start": 516.399,
+      "end": 520.399,
+      "text": "called a weight, which we're writing"
+    },
+    {
+      "start": 518.0,
+      "end": 522.56,
+      "text": "here using lowercase m, and adds these"
+    },
+    {
+      "start": 520.399,
+      "end": 524.32,
+      "text": "results together. The weight values"
+    },
+    {
+      "start": 522.56,
+      "end": 526.72,
+      "text": "control the steepness of our plane in"
+    },
+    {
+      "start": 524.32,
+      "end": 529.36,
+      "text": "each direction. Finally, we add one more"
+    },
+    {
+      "start": 526.72,
+      "end": 532.48,
+      "text": "learnable parameter called a bias. This"
+    },
+    {
+      "start": 529.36,
+      "end": 534.56,
+      "text": "shifts our whole plane up and down. So,"
+    },
+    {
+      "start": 532.48,
+      "end": 538.24,
+      "text": "if we pass in this Belgium point on our"
+    },
+    {
+      "start": 534.56,
+      "end": 541.519,
+      "text": "map with coordinates of x1= 0.6 and x2="
+    },
+    {
+      "start": 538.24,
+      "end": 543.76,
+      "text": "0.4, we multiply our x1 value by our"
+    },
+    {
+      "start": 541.519,
+      "end": 545.519,
+      "text": "first weight and our x2 value by our"
+    },
+    {
+      "start": 543.76,
+      "end": 547.92,
+      "text": "second weight and add these results"
+    },
+    {
+      "start": 545.519,
+      "end": 550.0,
+      "text": "together. And finally, we add our bias"
+    },
+    {
+      "start": 547.92,
+      "end": 552.16,
+      "text": "value to compute our final result of"
+    },
+    {
+      "start": 550.0,
+      "end": 554.16,
+      "text": "minus0.14."
+    },
+    {
+      "start": 552.16,
+      "end": 556.16,
+      "text": "This computed value corresponds to the"
+    },
+    {
+      "start": 554.16,
+      "end": 559.04,
+      "text": "height of our first neurons plane at"
+    },
+    {
+      "start": 556.16,
+      "end": 562.16,
+      "text": "these input coordinates. Now, if we just"
+    },
+    {
+      "start": 559.04,
+      "end": 564.32,
+      "text": "pass the height of our plane, minus0.14"
+    },
+    {
+      "start": 562.16,
+      "end": 566.72,
+      "text": "in this example, into our second layer"
+    },
+    {
+      "start": 564.32,
+      "end": 568.72,
+      "text": "of neurons, our multiple layers of"
+    },
+    {
+      "start": 566.72,
+      "end": 571.12,
+      "text": "neurons will actually just collapse back"
+    },
+    {
+      "start": 568.72,
+      "end": 573.279,
+      "text": "down into what is effectively a single"
+    },
+    {
+      "start": 571.12,
+      "end": 575.44,
+      "text": "layer of neurons. We can show this"
+    },
+    {
+      "start": 573.279,
+      "end": 577.76,
+      "text": "collapsing algebraically. There's just a"
+    },
+    {
+      "start": 575.44,
+      "end": 579.44,
+      "text": "bunch of terms to deal with. These first"
+    },
+    {
+      "start": 577.76,
+      "end": 581.839,
+      "text": "two equations correspond to the first"
+    },
+    {
+      "start": 579.44,
+      "end": 583.44,
+      "text": "two neurons in our first layer. Note"
+    },
+    {
+      "start": 581.839,
+      "end": 584.959,
+      "text": "that we're using these superscripts to"
+    },
+    {
+      "start": 583.44,
+      "end": 587.12,
+      "text": "keep track of where each weight comes"
+    },
+    {
+      "start": 584.959,
+      "end": 589.76,
+      "text": "from. Everything with a superscript of"
+    },
+    {
+      "start": 587.12,
+      "end": 591.44,
+      "text": "one comes from our model's first layer."
+    },
+    {
+      "start": 589.76,
+      "end": 593.92,
+      "text": "Here's the equation for the first neuron"
+    },
+    {
+      "start": 591.44,
+      "end": 595.839,
+      "text": "in our second layer. If we pass the"
+    },
+    {
+      "start": 593.92,
+      "end": 597.92,
+      "text": "outputs of our first layer directly into"
+    },
+    {
+      "start": 595.839,
+      "end": 599.68,
+      "text": "our second layer, this is equivalent to"
+    },
+    {
+      "start": 597.92,
+      "end": 602.24,
+      "text": "plugging in our first set of equations"
+    },
+    {
+      "start": 599.68,
+      "end": 605.04,
+      "text": "into our second equation like this."
+    },
+    {
+      "start": 602.24,
+      "end": 606.8,
+      "text": "Distributing and collecting terms, we"
+    },
+    {
+      "start": 605.04,
+      "end": 609.44,
+      "text": "end up with a new constant times our"
+    },
+    {
+      "start": 606.8,
+      "end": 612.959,
+      "text": "input x1 plus another new constant times"
+    },
+    {
+      "start": 609.44,
+      "end": 615.2,
+      "text": "our input x2 plus this final constant."
+    },
+    {
+      "start": 612.959,
+      "end": 617.68,
+      "text": "This equation has the same shape as our"
+    },
+    {
+      "start": 615.2,
+      "end": 620.0,
+      "text": "individual neuron equations just with"
+    },
+    {
+      "start": 617.68,
+      "end": 621.76,
+      "text": "different constants."
+    },
+    {
+      "start": 620.0,
+      "end": 623.519,
+      "text": "This result tells us that if we just"
+    },
+    {
+      "start": 621.76,
+      "end": 625.6,
+      "text": "hook up the outputs of one layer of"
+    },
+    {
+      "start": 623.519,
+      "end": 627.68,
+      "text": "plane fitting neurons to the inputs of"
+    },
+    {
+      "start": 625.6,
+      "end": 630.16,
+      "text": "our next layer, we end up adding"
+    },
+    {
+      "start": 627.68,
+      "end": 631.76,
+      "text": "together different tilted planes, which"
+    },
+    {
+      "start": 630.16,
+      "end": 634.16,
+      "text": "just results in a different tilted"
+    },
+    {
+      "start": 631.76,
+      "end": 636.0,
+      "text": "plane. So, a two-layer network connected"
+    },
+    {
+      "start": 634.16,
+      "end": 638.0,
+      "text": "like this is still only capable in"
+    },
+    {
+      "start": 636.0,
+      "end": 641.6,
+      "text": "practice of fitting two planes to our"
+    },
+    {
+      "start": 638.0,
+      "end": 643.36,
+      "text": "map, just as our single layer model did."
+    },
+    {
+      "start": 641.6,
+      "end": 645.76,
+      "text": "For our multi-layer neural network to be"
+    },
+    {
+      "start": 643.36,
+      "end": 647.519,
+      "text": "able to learn more complex patterns, we"
+    },
+    {
+      "start": 645.76,
+      "end": 648.959,
+      "text": "need to add one more small piece of"
+    },
+    {
+      "start": 647.519,
+      "end": 650.72,
+      "text": "math."
+    },
+    {
+      "start": 648.959,
+      "end": 652.399,
+      "text": "We'll pass the output of our planes from"
+    },
+    {
+      "start": 650.72,
+      "end": 654.959,
+      "text": "our first layer into a function called"
+    },
+    {
+      "start": 652.399,
+      "end": 656.64,
+      "text": "an activation function that will modify"
+    },
+    {
+      "start": 654.959,
+      "end": 659.36,
+      "text": "their shape into something more complex"
+    },
+    {
+      "start": 656.64,
+      "end": 660.959,
+      "text": "for our model to work with. It turns out"
+    },
+    {
+      "start": 659.36,
+      "end": 662.959,
+      "text": "that we can build high performing neural"
+    },
+    {
+      "start": 660.959,
+      "end": 665.2,
+      "text": "networks using a variety of activation"
+    },
+    {
+      "start": 662.959,
+      "end": 666.72,
+      "text": "functions. But one of the simplest and"
+    },
+    {
+      "start": 665.2,
+      "end": 670.079,
+      "text": "most widely used today is a function"
+    },
+    {
+      "start": 666.72,
+      "end": 672.8,
+      "text": "called a rectified linear unit or ReLU."
+    },
+    {
+      "start": 670.079,
+      "end": 676.0,
+      "text": "ReLU is incredibly simple. For input"
+    },
+    {
+      "start": 672.8,
+      "end": 677.68,
+      "text": "values less than zero, ReLU returns zero."
+    },
+    {
+      "start": 676.0,
+      "end": 680.16,
+      "text": "And for input values greater than or"
+    },
+    {
+      "start": 677.68,
+      "end": 683.519,
+      "text": "equal to zero, ReLU simply passes its"
+    },
+    {
+      "start": 680.16,
+      "end": 687.68,
+      "text": "input value through. So ReLU of minus1 is"
+    },
+    {
+      "start": 683.519,
+      "end": 690.0,
+      "text": "zero and ReLU of one is one."
+    },
+    {
+      "start": 687.68,
+      "end": 692.399,
+      "text": "Applying our ReLU activation function to"
+    },
+    {
+      "start": 690.0,
+      "end": 694.0,
+      "text": "the output planes of our first layer."
+    },
+    {
+      "start": 692.399,
+      "end": 696.16,
+      "text": "The regions of our plane with heights"
+    },
+    {
+      "start": 694.0,
+      "end": 698.48,
+      "text": "less than zero are folded up or clipped"
+    },
+    {
+      "start": 696.16,
+      "end": 700.88,
+      "text": "to a height of zero. So instead of"
+    },
+    {
+      "start": 698.48,
+      "end": 702.56,
+      "text": "outputting planes, the first layer of"
+    },
+    {
+      "start": 700.88,
+      "end": 705.279,
+      "text": "our network now outputs these bent"
+    },
+    {
+      "start": 702.56,
+      "end": 707.92,
+      "text": "planes. This is the folding operation we"
+    },
+    {
+      "start": 705.279,
+      "end": 710.32,
+      "text": "saw at the beginning of the video. So to"
+    },
+    {
+      "start": 707.92,
+      "end": 711.839,
+      "text": "decide which country a point is in. For"
+    },
+    {
+      "start": 710.32,
+      "end": 714.16,
+      "text": "example, this Belgium point with"
+    },
+    {
+      "start": 711.839,
+      "end": 716.399,
+      "text": "coordinates of 0.60.4 that we saw"
+    },
+    {
+      "start": 714.16,
+      "end": 718.64,
+      "text": "earlier, we pass these coordinates into"
+    },
+    {
+      "start": 716.399,
+      "end": 722.64,
+      "text": "our first layer of neurons and get"
+    },
+    {
+      "start": 718.64,
+      "end": 724.0,
+      "text": "values of minus0.14 and minus0.33 out"
+    },
+    {
+      "start": 722.64,
+      "end": 725.76,
+      "text": "corresponding to the height of each of"
+    },
+    {
+      "start": 724.0,
+      "end": 728.48,
+      "text": "our planes at the input coordinates of"
+    },
+    {
+      "start": 725.76,
+      "end": 731.12,
+      "text": "our point. From here we apply our ReLU"
+    },
+    {
+      "start": 728.48,
+      "end": 734.079,
+      "text": "activation function folding all values"
+    },
+    {
+      "start": 731.12,
+      "end": 736.56,
+      "text": "below zero up to zero. The height of our"
+    },
+    {
+      "start": 734.079,
+      "end": 739.36,
+      "text": "point on both planes is negative. So we"
+    },
+    {
+      "start": 736.56,
+      "end": 741.839,
+      "text": "set both points to zero. So our input"
+    },
+    {
+      "start": 739.36,
+      "end": 744.32,
+      "text": "point 0.60.4"
+    },
+    {
+      "start": 741.839,
+      "end": 746.959,
+      "text": "has now been mapped to values of 0 0 by"
+    },
+    {
+      "start": 744.32,
+      "end": 748.88,
+      "text": "our bent planes. From here our final"
+    },
+    {
+      "start": 746.959,
+      "end": 752.079,
+      "text": "layer of neurons multiplies these values"
+    },
+    {
+      "start": 748.88,
+      "end": 755.36,
+      "text": "of 0 by its weights and adds its bias"
+    },
+    {
+      "start": 752.079,
+      "end": 758.56,
+      "text": "terms, shifting our combined bent planes"
+    },
+    {
+      "start": 755.36,
+      "end": 761.6,
+      "text": "up and down. moving our point to 0.03 on"
+    },
+    {
+      "start": 758.56,
+      "end": 764.24,
+      "text": "our top surface and minus 0.89 on our"
+    },
+    {
+      "start": 761.6,
+      "end": 765.839,
+      "text": "bottom surface. Our second neuron's"
+    },
+    {
+      "start": 764.24,
+      "end": 768.079,
+      "text": "output corresponds to our model's"
+    },
+    {
+      "start": 765.839,
+      "end": 770.399,
+      "text": "confidence in Belgium, which is higher"
+    },
+    {
+      "start": 768.079,
+      "end": 772.8,
+      "text": "in this case, meaning this point will be"
+    },
+    {
+      "start": 770.399,
+      "end": 774.24,
+      "text": "classified as being in Belgium. And"
+    },
+    {
+      "start": 772.8,
+      "end": 776.32,
+      "text": "visually, we see this point on our"
+    },
+    {
+      "start": 774.24,
+      "end": 779.04,
+      "text": "Belgium plane being above our point on"
+    },
+    {
+      "start": 776.32,
+      "end": 780.72,
+      "text": "our Netherlands plane. We can do a"
+    },
+    {
+      "start": 779.04,
+      "end": 784.959,
+      "text": "similar analysis for a point in the"
+    },
+    {
+      "start": 780.72,
+      "end": 786.88,
+      "text": "Netherlands like this point at 0.3 0.7."
+    },
+    {
+      "start": 784.959,
+      "end": 789.12,
+      "text": "The key difference here is that this"
+    },
+    {
+      "start": 786.88,
+      "end": 791.2,
+      "text": "point does not fall in the zero ReLU"
+    },
+    {
+      "start": 789.12,
+      "end": 793.04,
+      "text": "region of our second neuron. Meaning"
+    },
+    {
+      "start": 791.2,
+      "end": 795.36,
+      "text": "that it gets pushed up on our final"
+    },
+    {
+      "start": 793.04,
+      "end": 797.839,
+      "text": "Netherlands bent plane and pushed down"
+    },
+    {
+      "start": 795.36,
+      "end": 800.56,
+      "text": "on our final Belgium plane, resulting in"
+    },
+    {
+      "start": 797.839,
+      "end": 803.279,
+      "text": "a correct Netherlands classification."
+    },
+    {
+      "start": 800.56,
+      "end": 805.12,
+      "text": "So our bent plane geometry is equivalent"
+    },
+    {
+      "start": 803.279,
+      "end": 807.279,
+      "text": "numerically to moving data through our"
+    },
+    {
+      "start": 805.12,
+      "end": 809.12,
+      "text": "network, but gives us a nice way to see"
+    },
+    {
+      "start": 807.279,
+      "end": 811.44,
+      "text": "how all of the points on our map are"
+    },
+    {
+      "start": 809.12,
+      "end": 813.36,
+      "text": "processed at once."
+    },
+    {
+      "start": 811.44,
+      "end": 815.279,
+      "text": "As we add more neurons to our first"
+    },
+    {
+      "start": 813.36,
+      "end": 817.76,
+      "text": "layer, we're able to make more and more"
+    },
+    {
+      "start": 815.279,
+      "end": 819.36,
+      "text": "folds in our map, cutting our map into"
+    },
+    {
+      "start": 817.76,
+      "end": 821.519,
+      "text": "more and more regions for our output"
+    },
+    {
+      "start": 819.36,
+      "end": 823.839,
+      "text": "neurons to push up and down into more"
+    },
+    {
+      "start": 821.519,
+      "end": 825.6,
+      "text": "and more complex surfaces."
+    },
+    {
+      "start": 823.839,
+      "end": 827.92,
+      "text": "Now, as we saw at the opening of the"
+    },
+    {
+      "start": 825.6,
+      "end": 830.079,
+      "text": "video, assuming a sufficient number of"
+    },
+    {
+      "start": 827.92,
+      "end": 832.0,
+      "text": "neurons in our first layer, the"
+    },
+    {
+      "start": 830.079,
+      "end": 834.16,
+      "text": "universal approximation theorem tells us"
+    },
+    {
+      "start": 832.0,
+      "end": 835.68,
+      "text": "that a two-layer neural network exists"
+    },
+    {
+      "start": 834.16,
+      "end": 838.959,
+      "text": "that can represent the borders of our"
+    },
+    {
+      "start": 835.68,
+      "end": 841.279,
+      "text": "town at arbitrarily high precision."
+    },
+    {
+      "start": 838.959,
+      "end": 843.68,
+      "text": "But as we saw, even at a 100,000 neurons"
+    },
+    {
+      "start": 841.279,
+      "end": 845.6,
+      "text": "in our first layer, we were not able to"
+    },
+    {
+      "start": 843.68,
+      "end": 848.639,
+      "text": "successfully train a model to completely"
+    },
+    {
+      "start": 845.6,
+      "end": 851.519,
+      "text": "match our borders. What is going on"
+    },
+    {
+      "start": 848.639,
+      "end": 854.0,
+      "text": "here? The universal approximation"
+    },
+    {
+      "start": 851.519,
+      "end": 856.8,
+      "text": "theorem is sometimes mistaken to mean"
+    },
+    {
+      "start": 854.0,
+      "end": 858.88,
+      "text": "that neural networks can learn anything."
+    },
+    {
+      "start": 856.8,
+      "end": 860.56,
+      "text": "But what it really says is that a wide"
+    },
+    {
+      "start": 858.88,
+      "end": 863.76,
+      "text": "enough neural network is capable of"
+    },
+    {
+      "start": 860.56,
+      "end": 865.6,
+      "text": "representing any continuous function."
+    },
+    {
+      "start": 863.76,
+      "end": 868.079,
+      "text": "Now the borders of our town are actually"
+    },
+    {
+      "start": 865.6,
+      "end": 870.079,
+      "text": "not continuous. But the continuity that"
+    },
+    {
+      "start": 868.079,
+      "end": 871.519,
+      "text": "the theorem is referring to here is"
+    },
+    {
+      "start": 870.079,
+      "end": 873.6,
+      "text": "actually the continuity of the final"
+    },
+    {
+      "start": 871.519,
+      "end": 876.639,
+      "text": "surfaces that we intersect to find our"
+    },
+    {
+      "start": 873.6,
+      "end": 878.24,
+      "text": "border. The real issue here is that"
+    },
+    {
+      "start": 876.639,
+      "end": 879.839,
+      "text": "although the universal approximation"
+    },
+    {
+      "start": 878.24,
+      "end": 882.56,
+      "text": "theorem tells us that a two-layer"
+    },
+    {
+      "start": 879.839,
+      "end": 884.399,
+      "text": "solution exists, it does not mean that"
+    },
+    {
+      "start": 882.56,
+      "end": 886.88,
+      "text": "in practice we can actually find the"
+    },
+    {
+      "start": 884.399,
+      "end": 888.72,
+      "text": "solution. And the theorem does not tell"
+    },
+    {
+      "start": 886.88,
+      "end": 891.04,
+      "text": "us how many neurons we actually need to"
+    },
+    {
+      "start": 888.72,
+      "end": 892.959,
+      "text": "solve a given problem."
+    },
+    {
+      "start": 891.04,
+      "end": 895.279,
+      "text": "As we saw in parts one and two of this"
+    },
+    {
+      "start": 892.959,
+      "end": 897.04,
+      "text": "series, modern neural networks learn"
+    },
+    {
+      "start": 895.279,
+      "end": 899.92,
+      "text": "using backpropagation and gradient"
+    },
+    {
+      "start": 897.04,
+      "end": 901.519,
+      "text": "descent, which provide no guarantees of"
+    },
+    {
+      "start": 899.92,
+      "end": 904.399,
+      "text": "finding the best or even a good"
+    },
+    {
+      "start": 901.519,
+      "end": 906.0,
+      "text": "solution. Instead, these algorithms make"
+    },
+    {
+      "start": 904.399,
+      "end": 908.24,
+      "text": "small iterative updates to our"
+    },
+    {
+      "start": 906.0,
+      "end": 909.92,
+      "text": "parameters, and we typically just stop"
+    },
+    {
+      "start": 908.24,
+      "end": 912.079,
+      "text": "the learning process when performance"
+    },
+    {
+      "start": 909.92,
+      "end": 914.16,
+      "text": "stops improving."
+    },
+    {
+      "start": 912.079,
+      "end": 916.639,
+      "text": "Before training, our network is randomly"
+    },
+    {
+      "start": 914.16,
+      "end": 919.44,
+      "text": "initialized, placing our fold lines at"
+    },
+    {
+      "start": 916.639,
+      "end": 921.44,
+      "text": "random locations on our map. Here's one"
+    },
+    {
+      "start": 919.44,
+      "end": 924.24,
+      "text": "initialization for our five neuron"
+    },
+    {
+      "start": 921.44,
+      "end": 926.0,
+      "text": "two-layer model. Here's how our folded"
+    },
+    {
+      "start": 924.24,
+      "end": 928.0,
+      "text": "planes are combined by the second layer"
+    },
+    {
+      "start": 926.0,
+      "end": 929.76,
+      "text": "of this model. And here's how these"
+    },
+    {
+      "start": 928.0,
+      "end": 932.48,
+      "text": "surfaces intersect to form a decision"
+    },
+    {
+      "start": 929.76,
+      "end": 934.079,
+      "text": "boundary before training. If we pass in"
+    },
+    {
+      "start": 932.48,
+      "end": 936.56,
+      "text": "the Belgium point we considered earlier"
+    },
+    {
+      "start": 934.079,
+      "end": 938.56,
+      "text": "into our randomly initialized model,"
+    },
+    {
+      "start": 936.56,
+      "end": 941.44,
+      "text": "this point ends up on this planer region"
+    },
+    {
+      "start": 938.56,
+      "end": 943.6,
+      "text": "in our second layer surface. This first"
+    },
+    {
+      "start": 941.44,
+      "end": 946.0,
+      "text": "neuron surface ends up on top in our"
+    },
+    {
+      "start": 943.6,
+      "end": 947.6,
+      "text": "final output shown here in blue. meaning"
+    },
+    {
+      "start": 946.0,
+      "end": 950.16,
+      "text": "that our model incorrectly classifies"
+    },
+    {
+      "start": 947.6,
+      "end": 951.759,
+      "text": "our point as being in the Netherlands."
+    },
+    {
+      "start": 950.16,
+      "end": 954.639,
+      "text": "This error is measured using the cross"
+    },
+    {
+      "start": 951.759,
+      "end": 956.24,
+      "text": "entropy loss as we saw in part two. And"
+    },
+    {
+      "start": 954.639,
+      "end": 958.639,
+      "text": "this loss is then run through our back"
+    },
+    {
+      "start": 956.24,
+      "end": 961.12,
+      "text": "propagation algorithm resulting in"
+    },
+    {
+      "start": 958.639,
+      "end": 962.959,
+      "text": "gradient values for each of our model 17"
+    },
+    {
+      "start": 961.12,
+      "end": 964.639,
+      "text": "parameters."
+    },
+    {
+      "start": 962.959,
+      "end": 966.8,
+      "text": "Some of the largest resulting gradients"
+    },
+    {
+      "start": 964.639,
+      "end": 970.639,
+      "text": "are for this third neuron in our first"
+    },
+    {
+      "start": 966.8,
+      "end": 973.68,
+      "text": "layer. Both our DLDM31 and our DLDB3"
+    },
+    {
+      "start": 970.639,
+      "end": 976.48,
+      "text": "gradients are large and negative."
+    },
+    {
+      "start": 973.68,
+      "end": 979.519,
+      "text": "Currently m31 is negative tilting our"
+    },
+    {
+      "start": 976.48,
+      "end": 981.6,
+      "text": "plane down in the x1 direction. Our"
+    },
+    {
+      "start": 979.519,
+      "end": 985.12,
+      "text": "gradient is telling us that to decrease"
+    },
+    {
+      "start": 981.6,
+      "end": 987.199,
+      "text": "our loss we should increase m31"
+    },
+    {
+      "start": 985.12,
+      "end": 990.32,
+      "text": "which will reduce the slope of our plane"
+    },
+    {
+      "start": 987.199,
+      "end": 992.0,
+      "text": "making it flatter. backpropagation also"
+    },
+    {
+      "start": 990.32,
+      "end": 993.839,
+      "text": "returns a large negative value for"
+    },
+    {
+      "start": 992.0,
+      "end": 995.68,
+      "text": "dlddb3"
+    },
+    {
+      "start": 993.839,
+      "end": 997.36,
+      "text": "which tells us to shift our whole plane"
+    },
+    {
+      "start": 995.68,
+      "end": 998.959,
+      "text": "upwards."
+    },
+    {
+      "start": 997.36,
+      "end": 1001.36,
+      "text": "Adjusting our parameters in this"
+    },
+    {
+      "start": 998.959,
+      "end": 1004.24,
+      "text": "direction moves our plane and shifts our"
+    },
+    {
+      "start": 1001.36,
+      "end": 1006.48,
+      "text": "ReLU joint line to the right."
+    },
+    {
+      "start": 1004.24,
+      "end": 1008.24,
+      "text": "Zooming out to our full network, we can"
+    },
+    {
+      "start": 1006.48,
+      "end": 1010.079,
+      "text": "see how this update moves the center"
+    },
+    {
+      "start": 1008.24,
+      "end": 1013.839,
+      "text": "fold line in our second layer to the"
+    },
+    {
+      "start": 1010.079,
+      "end": 1016.24,
+      "text": "right. On our final surfaces, our update"
+    },
+    {
+      "start": 1013.839,
+      "end": 1017.839,
+      "text": "moves our top blue surface down,"
+    },
+    {
+      "start": 1016.24,
+      "end": 1020.079,
+      "text": "reducing the model's confidence in the"
+    },
+    {
+      "start": 1017.839,
+      "end": 1021.68,
+      "text": "incorrect answer of the Netherlands"
+    },
+    {
+      "start": 1020.079,
+      "end": 1023.199,
+      "text": "while moving our decision boundary to"
+    },
+    {
+      "start": 1021.68,
+      "end": 1025.199,
+      "text": "the right."
+    },
+    {
+      "start": 1023.199,
+      "end": 1028.4,
+      "text": "We can now repeat this gradient descent"
+    },
+    {
+      "start": 1025.199,
+      "end": 1030.959,
+      "text": "process and watch our model learn. Step"
+    },
+    {
+      "start": 1028.4,
+      "end": 1032.88,
+      "text": "by step, these small updates adjust both"
+    },
+    {
+      "start": 1030.959,
+      "end": 1034.959,
+      "text": "the locations of the fold lines in our"
+    },
+    {
+      "start": 1032.88,
+      "end": 1037.439,
+      "text": "first layer and the way these bent"
+    },
+    {
+      "start": 1034.959,
+      "end": 1039.439,
+      "text": "planes are combined by our second layer"
+    },
+    {
+      "start": 1037.439,
+      "end": 1041.76,
+      "text": "until we have a nice concave down"
+    },
+    {
+      "start": 1039.439,
+      "end": 1043.6,
+      "text": "surface on top of Belgium that"
+    },
+    {
+      "start": 1041.76,
+      "end": 1046.48,
+      "text": "intersects a concave up Netherland"
+    },
+    {
+      "start": 1043.6,
+      "end": 1048.16,
+      "text": "surface at a nice border."
+    },
+    {
+      "start": 1046.48,
+      "end": 1049.679,
+      "text": "Now, when I initially tried to train"
+    },
+    {
+      "start": 1048.16,
+      "end": 1052.0,
+      "text": "this model, it didn't actually work"
+    },
+    {
+      "start": 1049.679,
+      "end": 1053.76,
+      "text": "nearly this well. I had a different"
+    },
+    {
+      "start": 1052.0,
+      "end": 1056.559,
+      "text": "random initialization that looked more"
+    },
+    {
+      "start": 1053.76,
+      "end": 1058.96,
+      "text": "like this. Placing our blue surface on"
+    },
+    {
+      "start": 1056.559,
+      "end": 1060.64,
+      "text": "top of our yellow surface when we want"
+    },
+    {
+      "start": 1058.96,
+      "end": 1063.039,
+      "text": "our model to learn the exact opposite"
+    },
+    {
+      "start": 1060.64,
+      "end": 1065.919,
+      "text": "orientation with a central yellow region"
+    },
+    {
+      "start": 1063.039,
+      "end": 1068.0,
+      "text": "for Belgium on top. As our model learns"
+    },
+    {
+      "start": 1065.919,
+      "end": 1070.0,
+      "text": "from this starting point, our back"
+    },
+    {
+      "start": 1068.0,
+      "end": 1072.32,
+      "text": "propagation algorithm begins to reverse"
+    },
+    {
+      "start": 1070.0,
+      "end": 1074.88,
+      "text": "the orientation of these surfaces,"
+    },
+    {
+      "start": 1072.32,
+      "end": 1076.88,
+      "text": "lowering our loss values and moving the"
+    },
+    {
+      "start": 1074.88,
+      "end": 1080.16,
+      "text": "blue surface down and the yellow surface"
+    },
+    {
+      "start": 1076.88,
+      "end": 1081.919,
+      "text": "up. But in doing so, backpropagation"
+    },
+    {
+      "start": 1080.16,
+      "end": 1084.4,
+      "text": "pushes the decision boundaries off of"
+    },
+    {
+      "start": 1081.919,
+      "end": 1086.48,
+      "text": "our planes, leaving our whole town in"
+    },
+    {
+      "start": 1084.4,
+      "end": 1089.28,
+      "text": "the zeroed out part of our bent relu"
+    },
+    {
+      "start": 1086.48,
+      "end": 1091.6,
+      "text": "plane. Gradient descent is not able to"
+    },
+    {
+      "start": 1089.28,
+      "end": 1093.2,
+      "text": "recover from this configuration since"
+    },
+    {
+      "start": 1091.6,
+      "end": 1095.12,
+      "text": "the gradients through the zeroed out"
+    },
+    {
+      "start": 1093.2,
+      "end": 1097.6,
+      "text": "part of our ReLU activation function are"
+    },
+    {
+      "start": 1095.12,
+      "end": 1100.08,
+      "text": "also zero, leaving our model with"
+    },
+    {
+      "start": 1097.6,
+      "end": 1101.919,
+      "text": "effectively a single plane to work with,"
+    },
+    {
+      "start": 1100.08,
+      "end": 1104.4,
+      "text": "resulting in a sub-optimal linear"
+    },
+    {
+      "start": 1101.919,
+      "end": 1106.16,
+      "text": "decision boundary. So even though we"
+    },
+    {
+      "start": 1104.4,
+      "end": 1108.72,
+      "text": "know that a nice solution exists for our"
+    },
+    {
+      "start": 1106.16,
+      "end": 1110.799,
+      "text": "five neuron network given this starting"
+    },
+    {
+      "start": 1108.72,
+      "end": 1114.08,
+      "text": "point gradient descent is not able to"
+    },
+    {
+      "start": 1110.799,
+      "end": 1116.799,
+      "text": "find it in the case of our super wide"
+    },
+    {
+      "start": 1114.08,
+      "end": 1119.44,
+      "text": "100,000 neuron network there may be"
+    },
+    {
+      "start": 1116.799,
+      "end": 1120.799,
+      "text": "analogously good solutions out there we"
+    },
+    {
+      "start": 1119.44,
+      "end": 1122.88,
+      "text": "just can't reach them with gradient"
+    },
+    {
+      "start": 1120.799,
+      "end": 1125.44,
+      "text": "descent"
+    },
+    {
+      "start": 1122.88,
+      "end": 1127.84,
+      "text": "now there is some subtlety here as we"
+    },
+    {
+      "start": 1125.44,
+      "end": 1130.0,
+      "text": "saw back in part one when models become"
+    },
+    {
+      "start": 1127.84,
+      "end": 1131.44,
+      "text": "large the chances of gradient descent"
+    },
+    {
+      "start": 1130.0,
+      "end": 1133.2,
+      "text": "actually getting stuck in a local"
+    },
+    {
+      "start": 1131.44,
+      "end": 1136.559,
+      "text": "minimum in this high-dimensional loss"
+    },
+    {
+      "start": 1133.2,
+      "end": 1138.24,
+      "text": "landscape becomes very small. Our super"
+    },
+    {
+      "start": 1136.559,
+      "end": 1140.32,
+      "text": "wide network is probably not getting"
+    },
+    {
+      "start": 1138.24,
+      "end": 1142.32,
+      "text": "stuck in quite the same way as our small"
+    },
+    {
+      "start": 1140.32,
+      "end": 1144.0,
+      "text": "network."
+    },
+    {
+      "start": 1142.32,
+      "end": 1146.559,
+      "text": "In addition to not telling us how to"
+    },
+    {
+      "start": 1144.0,
+      "end": 1148.64,
+      "text": "find a specific solution, the universal"
+    },
+    {
+      "start": 1146.559,
+      "end": 1150.72,
+      "text": "approximation theorem also does not tell"
+    },
+    {
+      "start": 1148.64,
+      "end": 1153.28,
+      "text": "us how many neurons we actually need to"
+    },
+    {
+      "start": 1150.72,
+      "end": 1155.52,
+      "text": "solve a given problem. And in fact, for"
+    },
+    {
+      "start": 1153.28,
+      "end": 1157.039,
+      "text": "a broad class of functions, it's been"
+    },
+    {
+      "start": 1155.52,
+      "end": 1159.52,
+      "text": "shown that the number of neurons we need"
+    },
+    {
+      "start": 1157.039,
+      "end": 1161.6,
+      "text": "in a shallow network is exponentially"
+    },
+    {
+      "start": 1159.52,
+      "end": 1164.32,
+      "text": "larger than the number of neurons needed"
+    },
+    {
+      "start": 1161.6,
+      "end": 1166.64,
+      "text": "in a deep network. So, it's possible"
+    },
+    {
+      "start": 1164.32,
+      "end": 1169.36,
+      "text": "that a 100,000 neurons may actually not"
+    },
+    {
+      "start": 1166.64,
+      "end": 1171.44,
+      "text": "be enough. Finally, it's difficult to"
+    },
+    {
+      "start": 1169.36,
+      "end": 1173.52,
+      "text": "prove a negative. In the course of"
+    },
+    {
+      "start": 1171.44,
+      "end": 1174.799,
+      "text": "making this video, I experimented with a"
+    },
+    {
+      "start": 1173.52,
+      "end": 1177.2,
+      "text": "bunch of different optimizer"
+    },
+    {
+      "start": 1174.799,
+      "end": 1178.88,
+      "text": "configurations for these wide models."
+    },
+    {
+      "start": 1177.2,
+      "end": 1181.039,
+      "text": "But it wouldn't surprise me if there's a"
+    },
+    {
+      "start": 1178.88,
+      "end": 1183.12,
+      "text": "way to train a 100,000 neuron, a 10,000"
+    },
+    {
+      "start": 1181.039,
+      "end": 1185.44,
+      "text": "neuron, or maybe even smaller two-layer"
+    },
+    {
+      "start": 1183.12,
+      "end": 1186.96,
+      "text": "model to fit the borders of our town."
+    },
+    {
+      "start": 1185.44,
+      "end": 1188.96,
+      "text": "I'll leave a link to my code in the"
+    },
+    {
+      "start": 1186.96,
+      "end": 1190.4,
+      "text": "description if you want to experiment."
+    },
+    {
+      "start": 1188.96,
+      "end": 1192.08,
+      "text": "And please send me your results if you"
+    },
+    {
+      "start": 1190.4,
+      "end": 1195.2,
+      "text": "make progress. I would love to see a"
+    },
+    {
+      "start": 1192.08,
+      "end": 1196.72,
+      "text": "solution. Exact number of neurons aside,"
+    },
+    {
+      "start": 1195.2,
+      "end": 1198.96,
+      "text": "as we saw earlier, we can make"
+    },
+    {
+      "start": 1196.72,
+      "end": 1201.28,
+      "text": "incredible efficiency gains by going"
+    },
+    {
+      "start": 1198.96,
+      "end": 1203.28,
+      "text": "deep instead of wide, stacking our"
+    },
+    {
+      "start": 1201.28,
+      "end": 1204.64,
+      "text": "neurons into additional layers. And"
+    },
+    {
+      "start": 1203.28,
+      "end": 1207.44,
+      "text": "that's where we'll turn our attention"
+    },
+    {
+      "start": 1204.64,
+      "end": 1209.84,
+      "text": "next. What new geometry does stacking"
+    },
+    {
+      "start": 1207.44,
+      "end": 1211.44,
+      "text": "our layers create? And how does this"
+    },
+    {
+      "start": 1209.84,
+      "end": 1214.16,
+      "text": "geometry help our model learn the"
+    },
+    {
+      "start": 1211.44,
+      "end": 1216.16,
+      "text": "complex borders of our town? Let's begin"
+    },
+    {
+      "start": 1214.16,
+      "end": 1218.64,
+      "text": "with a simple two-layer model with two"
+    },
+    {
+      "start": 1216.16,
+      "end": 1220.88,
+      "text": "neurons each. This simple two-layer"
+    },
+    {
+      "start": 1218.64,
+      "end": 1222.48,
+      "text": "model learns these folds in our map"
+    },
+    {
+      "start": 1220.88,
+      "end": 1224.799,
+      "text": "which are combined by our second layer"
+    },
+    {
+      "start": 1222.48,
+      "end": 1227.44,
+      "text": "into this bent up surface and this bent"
+    },
+    {
+      "start": 1224.799,
+      "end": 1229.84,
+      "text": "down surface. Taking the intersection of"
+    },
+    {
+      "start": 1227.44,
+      "end": 1232.32,
+      "text": "our surfaces where our model is equally"
+    },
+    {
+      "start": 1229.84,
+      "end": 1235.28,
+      "text": "confident in both countries, we get this"
+    },
+    {
+      "start": 1232.32,
+      "end": 1237.12,
+      "text": "simple decision boundary. Now let's add"
+    },
+    {
+      "start": 1235.28,
+      "end": 1240.0,
+      "text": "a third layer to our model with two"
+    },
+    {
+      "start": 1237.12,
+      "end": 1242.799,
+      "text": "additional neurons. So we now have three"
+    },
+    {
+      "start": 1240.0,
+      "end": 1244.64,
+      "text": "layers and six neurons total. After"
+    },
+    {
+      "start": 1242.799,
+      "end": 1246.88,
+      "text": "training, our first layer learns to fold"
+    },
+    {
+      "start": 1244.64,
+      "end": 1248.72,
+      "text": "our input planes like this. And our"
+    },
+    {
+      "start": 1246.88,
+      "end": 1251.52,
+      "text": "second layer learns to combine our bent"
+    },
+    {
+      "start": 1248.72,
+      "end": 1253.6,
+      "text": "planes like this. Now, if we only had"
+    },
+    {
+      "start": 1251.52,
+      "end": 1255.28,
+      "text": "two layers, we would just bring these"
+    },
+    {
+      "start": 1253.6,
+      "end": 1257.919,
+      "text": "surfaces together to form our final"
+    },
+    {
+      "start": 1255.28,
+      "end": 1259.12,
+      "text": "decision boundary. But we now have a"
+    },
+    {
+      "start": 1257.919,
+      "end": 1261.6,
+      "text": "whole additional layer of"
+    },
+    {
+      "start": 1259.12,
+      "end": 1263.28,
+      "text": "transformations to apply."
+    },
+    {
+      "start": 1261.6,
+      "end": 1265.28,
+      "text": "Just as we did in our first layer, we"
+    },
+    {
+      "start": 1263.28,
+      "end": 1267.76,
+      "text": "now need to apply our ReLU activation"
+    },
+    {
+      "start": 1265.28,
+      "end": 1269.52,
+      "text": "function where all of the values on our"
+    },
+    {
+      "start": 1267.76,
+      "end": 1272.559,
+      "text": "surface with heights less than zero are"
+    },
+    {
+      "start": 1269.52,
+      "end": 1274.72,
+      "text": "set to zero. In our first layer, this"
+    },
+    {
+      "start": 1272.559,
+      "end": 1277.44,
+      "text": "operation folds our planes along linear"
+    },
+    {
+      "start": 1274.72,
+      "end": 1279.44,
+      "text": "fold lines. But now in the second layer"
+    },
+    {
+      "start": 1277.44,
+      "end": 1282.799,
+      "text": "of our model, the surfaces we're folding"
+    },
+    {
+      "start": 1279.44,
+      "end": 1285.12,
+      "text": "are no longer simple planes. If we add a"
+    },
+    {
+      "start": 1282.799,
+      "end": 1287.52,
+      "text": "plane at Z equals 0 to our first neuron"
+    },
+    {
+      "start": 1285.12,
+      "end": 1289.44,
+      "text": "surface, we can see that this surface"
+    },
+    {
+      "start": 1287.52,
+      "end": 1292.64,
+      "text": "actually has three separate planes that"
+    },
+    {
+      "start": 1289.44,
+      "end": 1295.12,
+      "text": "all cross Z equals 0. When we apply our"
+    },
+    {
+      "start": 1292.64,
+      "end": 1298.0,
+      "text": "ReLU activation function and fold up our"
+    },
+    {
+      "start": 1295.12,
+      "end": 1300.88,
+      "text": "surface, we create three separate new"
+    },
+    {
+      "start": 1298.0,
+      "end": 1303.84,
+      "text": "fold lines, one for each region that"
+    },
+    {
+      "start": 1300.88,
+      "end": 1305.6,
+      "text": "crosses the Z equals0 plane. And"
+    },
+    {
+      "start": 1303.84,
+      "end": 1308.0,
+      "text": "interestingly, these folds are not at"
+    },
+    {
+      "start": 1305.6,
+      "end": 1309.679,
+      "text": "the same angle, but actually bend at the"
+    },
+    {
+      "start": 1308.0,
+      "end": 1312.64,
+      "text": "joints of the planes we get from our"
+    },
+    {
+      "start": 1309.679,
+      "end": 1314.96,
+      "text": "first layer. So here, a single neuron is"
+    },
+    {
+      "start": 1312.64,
+      "end": 1317.679,
+      "text": "able to make three separate folds with"
+    },
+    {
+      "start": 1314.96,
+      "end": 1319.52,
+      "text": "fairly complex geometries. Our second"
+    },
+    {
+      "start": 1317.679,
+      "end": 1321.52,
+      "text": "neuron in our second layer applies the"
+    },
+    {
+      "start": 1319.52,
+      "end": 1324.0,
+      "text": "same operations, but with different"
+    },
+    {
+      "start": 1321.52,
+      "end": 1326.48,
+      "text": "learned weights, resulting in these"
+    },
+    {
+      "start": 1324.0,
+      "end": 1328.559,
+      "text": "three new folds."
+    },
+    {
+      "start": 1326.48,
+      "end": 1330.799,
+      "text": "Now, just as our previous two layers"
+    },
+    {
+      "start": 1328.559,
+      "end": 1334.08,
+      "text": "did, our third and final layer scales"
+    },
+    {
+      "start": 1330.799,
+      "end": 1336.24,
+      "text": "and adds our new surfaces together."
+    },
+    {
+      "start": 1334.08,
+      "end": 1338.64,
+      "text": "After our first layer, the combination"
+    },
+    {
+      "start": 1336.24,
+      "end": 1340.64,
+      "text": "of our two ReLU folds created four"
+    },
+    {
+      "start": 1338.64,
+      "end": 1342.88,
+      "text": "regions for the next layer of our model"
+    },
+    {
+      "start": 1340.64,
+      "end": 1346.159,
+      "text": "to work with. These are easiest to see"
+    },
+    {
+      "start": 1342.88,
+      "end": 1347.84,
+      "text": "in a 2D projection like this."
+    },
+    {
+      "start": 1346.159,
+      "end": 1350.48,
+      "text": "Stacking the new fold lines from our"
+    },
+    {
+      "start": 1347.84,
+      "end": 1352.32,
+      "text": "second layer. These new folds at various"
+    },
+    {
+      "start": 1350.48,
+      "end": 1354.96,
+      "text": "angles come together in a significantly"
+    },
+    {
+      "start": 1352.32,
+      "end": 1357.36,
+      "text": "more complex tiling of our map with"
+    },
+    {
+      "start": 1354.96,
+      "end": 1359.039,
+      "text": "these 10 separate regions. When the"
+    },
+    {
+      "start": 1357.36,
+      "end": 1360.96,
+      "text": "final layer of our network scales and"
+    },
+    {
+      "start": 1359.039,
+      "end": 1363.039,
+      "text": "adds together the outputs of our second"
+    },
+    {
+      "start": 1360.96,
+      "end": 1365.6,
+      "text": "layer, the resulting surfaces are"
+    },
+    {
+      "start": 1363.039,
+      "end": 1368.08,
+      "text": "composed of the same 10 regions, just"
+    },
+    {
+      "start": 1365.6,
+      "end": 1370.0,
+      "text": "with different heights."
+    },
+    {
+      "start": 1368.08,
+      "end": 1371.919,
+      "text": "The height of these surfaces corresponds"
+    },
+    {
+      "start": 1370.0,
+      "end": 1374.64,
+      "text": "to the model's final confidence in our"
+    },
+    {
+      "start": 1371.919,
+      "end": 1376.48,
+      "text": "two countries. Bringing these surfaces"
+    },
+    {
+      "start": 1374.64,
+      "end": 1378.96,
+      "text": "together and finding their intersection,"
+    },
+    {
+      "start": 1376.48,
+      "end": 1381.039,
+      "text": "we get this final decision boundary,"
+    },
+    {
+      "start": 1378.96,
+      "end": 1382.88,
+      "text": "which shows some nice peace-wise linear"
+    },
+    {
+      "start": 1381.039,
+      "end": 1385.039,
+      "text": "curvature around the Belgium regions of"
+    },
+    {
+      "start": 1382.88,
+      "end": 1386.559,
+      "text": "our map."
+    },
+    {
+      "start": 1385.039,
+      "end": 1388.48,
+      "text": "So the first layer of our network"
+    },
+    {
+      "start": 1386.559,
+      "end": 1390.559,
+      "text": "creates these two folds and four"
+    },
+    {
+      "start": 1388.48,
+      "end": 1392.32,
+      "text": "separate regions on our map which are"
+    },
+    {
+      "start": 1390.559,
+      "end": 1394.72,
+      "text": "then split by our second layer into"
+    },
+    {
+      "start": 1392.32,
+      "end": 1396.96,
+      "text": "these 10 regions which are used by our"
+    },
+    {
+      "start": 1394.72,
+      "end": 1399.679,
+      "text": "final layer to create these surfaces"
+    },
+    {
+      "start": 1396.96,
+      "end": 1401.2,
+      "text": "which intersect in a nice border. The"
+    },
+    {
+      "start": 1399.679,
+      "end": 1403.28,
+      "text": "fact that just adding two additional"
+    },
+    {
+      "start": 1401.2,
+      "end": 1406.559,
+      "text": "neurons takes our map from these four"
+    },
+    {
+      "start": 1403.28,
+      "end": 1408.08,
+      "text": "regions to these 10 is remarkable to me"
+    },
+    {
+      "start": 1406.559,
+      "end": 1410.88,
+      "text": "especially considering the complex"
+    },
+    {
+      "start": 1408.08,
+      "end": 1412.799,
+      "text": "geometry of these 10 regions."
+    },
+    {
+      "start": 1410.88,
+      "end": 1415.6,
+      "text": "If we instead arrange our six neurons in"
+    },
+    {
+      "start": 1412.799,
+      "end": 1417.52,
+      "text": "a two-layer network like this, our model"
+    },
+    {
+      "start": 1415.6,
+      "end": 1420.08,
+      "text": "learns to fold four copies of our map"
+    },
+    {
+      "start": 1417.52,
+      "end": 1423.12,
+      "text": "like this, resulting in these seven"
+    },
+    {
+      "start": 1420.08,
+      "end": 1425.52,
+      "text": "regions, these surfaces, and this final"
+    },
+    {
+      "start": 1423.12,
+      "end": 1427.52,
+      "text": "decision boundary."
+    },
+    {
+      "start": 1425.52,
+      "end": 1429.2,
+      "text": "This decision boundary isn't necessarily"
+    },
+    {
+      "start": 1427.52,
+      "end": 1431.12,
+      "text": "worse than the one learned by our deeper"
+    },
+    {
+      "start": 1429.2,
+      "end": 1433.2,
+      "text": "model, but I'm particularly struck by"
+    },
+    {
+      "start": 1431.12,
+      "end": 1436.159,
+      "text": "how much more complex the tiling learned"
+    },
+    {
+      "start": 1433.2,
+      "end": 1437.76,
+      "text": "by our deeper model is. Qualitatively,"
+    },
+    {
+      "start": 1436.159,
+      "end": 1439.44,
+      "text": "the tiling of our map learned by our"
+    },
+    {
+      "start": 1437.76,
+      "end": 1442.08,
+      "text": "shallow network feels very much like"
+    },
+    {
+      "start": 1439.44,
+      "end": 1444.32,
+      "text": "we've just stacked four lines together,"
+    },
+    {
+      "start": 1442.08,
+      "end": 1446.08,
+      "text": "which is exactly what we've done. While"
+    },
+    {
+      "start": 1444.32,
+      "end": 1448.0,
+      "text": "the tiling learned by our deeper model"
+    },
+    {
+      "start": 1446.08,
+      "end": 1449.84,
+      "text": "feels to me like something entirely"
+    },
+    {
+      "start": 1448.0,
+      "end": 1451.919,
+      "text": "different"
+    },
+    {
+      "start": 1449.84,
+      "end": 1454.559,
+      "text": "by repeating our folding, scaling, and"
+    },
+    {
+      "start": 1451.919,
+      "end": 1457.36,
+      "text": "combining operations, these operations"
+    },
+    {
+      "start": 1454.559,
+      "end": 1459.039,
+      "text": "are able to compound on themselves,"
+    },
+    {
+      "start": 1457.36,
+      "end": 1461.039,
+      "text": "allowing the neurons in our second layer"
+    },
+    {
+      "start": 1459.039,
+      "end": 1462.88,
+      "text": "to generate significantly more complex"
+    },
+    {
+      "start": 1461.039,
+      "end": 1464.559,
+      "text": "patterns than they would if they were"
+    },
+    {
+      "start": 1462.88,
+      "end": 1466.4,
+      "text": "instead positioned in the first layer of"
+    },
+    {
+      "start": 1464.559,
+      "end": 1468.24,
+      "text": "our model."
+    },
+    {
+      "start": 1466.4,
+      "end": 1470.32,
+      "text": "The compounding analogy is not a"
+    },
+    {
+      "start": 1468.24,
+      "end": 1472.4,
+      "text": "coincidence. It turns out that we can"
+    },
+    {
+      "start": 1470.32,
+      "end": 1474.24,
+      "text": "show that the maximum number of regions"
+    },
+    {
+      "start": 1472.4,
+      "end": 1477.12,
+      "text": "a rail network like ours can divide our"
+    },
+    {
+      "start": 1474.24,
+      "end": 1479.919,
+      "text": "map into grows exponentially with the"
+    },
+    {
+      "start": 1477.12,
+      "end": 1481.919,
+      "text": "number of layers in our network. This"
+    },
+    {
+      "start": 1479.919,
+      "end": 1483.84,
+      "text": "equation gives the theoretical maximum"
+    },
+    {
+      "start": 1481.919,
+      "end": 1485.6,
+      "text": "number of regions our model can create"
+    },
+    {
+      "start": 1483.84,
+      "end": 1488.24,
+      "text": "as a function of the number of neurons"
+    },
+    {
+      "start": 1485.6,
+      "end": 1490.48,
+      "text": "in each layer D, the number of inputs D"
+    },
+    {
+      "start": 1488.24,
+      "end": 1492.96,
+      "text": "subi, and the number of layers in our"
+    },
+    {
+      "start": 1490.48,
+      "end": 1496.24,
+      "text": "network K, not including our final"
+    },
+    {
+      "start": 1492.96,
+      "end": 1499.679,
+      "text": "output layer. Plugging in d= two neurons"
+    },
+    {
+      "start": 1496.24,
+      "end": 1503.76,
+      "text": "per layer, d subi equals 2 inputs, and k"
+    },
+    {
+      "start": 1499.679,
+      "end": 1506.159,
+      "text": "equals 2 layers, we get 2 ^2 * 4 equ= 16"
+    },
+    {
+      "start": 1503.76,
+      "end": 1508.08,
+      "text": "total possible regions for our model."
+    },
+    {
+      "start": 1506.159,
+      "end": 1510.559,
+      "text": "This is a bit above the 10 regions our"
+    },
+    {
+      "start": 1508.08,
+      "end": 1512.799,
+      "text": "model actually learned. If we add"
+    },
+    {
+      "start": 1510.559,
+      "end": 1515.679,
+      "text": "another two neuron layer to our model,"
+    },
+    {
+      "start": 1512.799,
+      "end": 1519.039,
+      "text": "our number of regions grows to 2 ^ of 4"
+    },
+    {
+      "start": 1515.679,
+      "end": 1522.64,
+      "text": "* 4 = 64. And adding another layer gets"
+    },
+    {
+      "start": 1519.039,
+      "end": 1524.559,
+      "text": "us to 256 and so on. So each layer"
+    },
+    {
+      "start": 1522.64,
+      "end": 1526.32,
+      "text": "theoretically quadruples the number of"
+    },
+    {
+      "start": 1524.559,
+      "end": 1528.32,
+      "text": "regions our model can create in this"
+    },
+    {
+      "start": 1526.32,
+      "end": 1530.72,
+      "text": "configuration."
+    },
+    {
+      "start": 1528.32,
+      "end": 1532.48,
+      "text": "This final polomial part of the equation"
+    },
+    {
+      "start": 1530.72,
+      "end": 1535.76,
+      "text": "captures what happens in the final layer"
+    },
+    {
+      "start": 1532.48,
+      "end": 1538.72,
+      "text": "of our model. If we cut back down to a"
+    },
+    {
+      "start": 1535.76,
+      "end": 1541.36,
+      "text": "shallow two-layer model K becomes one"
+    },
+    {
+      "start": 1538.72,
+      "end": 1543.36,
+      "text": "eliminating the exponential growth term."
+    },
+    {
+      "start": 1541.36,
+      "end": 1545.52,
+      "text": "As we've seen two-layer networks divide"
+    },
+    {
+      "start": 1543.36,
+      "end": 1547.679,
+      "text": "up the input plane by stacking separate"
+    },
+    {
+      "start": 1545.52,
+      "end": 1549.279,
+      "text": "ReLU folds."
+    },
+    {
+      "start": 1547.679,
+      "end": 1551.279,
+      "text": "So finding the number of regions we can"
+    },
+    {
+      "start": 1549.279,
+      "end": 1553.76,
+      "text": "divide our map into with a two-layer"
+    },
+    {
+      "start": 1551.279,
+      "end": 1555.279,
+      "text": "network is equivalent to asking how many"
+    },
+    {
+      "start": 1553.76,
+      "end": 1558.72,
+      "text": "separate regions we can split a plane"
+    },
+    {
+      "start": 1555.279,
+      "end": 1561.279,
+      "text": "into with d lines. This is a well-known"
+    },
+    {
+      "start": 1558.72,
+      "end": 1564.64,
+      "text": "result in combinatorial geometry with"
+    },
+    {
+      "start": 1561.279,
+      "end": 1566.88,
+      "text": "the answer given by this polomial."
+    },
+    {
+      "start": 1564.64,
+      "end": 1568.32,
+      "text": "So our theory tells us that the maximum"
+    },
+    {
+      "start": 1566.88,
+      "end": 1570.799,
+      "text": "number of regions we can create with a"
+    },
+    {
+      "start": 1568.32,
+      "end": 1573.44,
+      "text": "two-layer network grows as a polomial"
+    },
+    {
+      "start": 1570.799,
+      "end": 1574.799,
+      "text": "function of our number of neurons while"
+    },
+    {
+      "start": 1573.44,
+      "end": 1576.88,
+      "text": "the number of regions we can create with"
+    },
+    {
+      "start": 1574.799,
+      "end": 1579.84,
+      "text": "a deeper network grows exponentially"
+    },
+    {
+      "start": 1576.88,
+      "end": 1582.08,
+      "text": "with the number of layers."
+    },
+    {
+      "start": 1579.84,
+      "end": 1584.24,
+      "text": "Placing 64 neurons in the first layer of"
+    },
+    {
+      "start": 1582.08,
+      "end": 1587.52,
+      "text": "a two-layer network like this results in"
+    },
+    {
+      "start": 1584.24,
+      "end": 1589.12,
+      "text": "a maximum 281 possible regions while"
+    },
+    {
+      "start": 1587.52,
+      "end": 1591.039,
+      "text": "rearranging these neurons into four"
+    },
+    {
+      "start": 1589.12,
+      "end": 1593.44,
+      "text": "layers instead results in a theoretical"
+    },
+    {
+      "start": 1591.039,
+      "end": 1595.679,
+      "text": "maximum of over 70 million possible"
+    },
+    {
+      "start": 1593.44,
+      "end": 1596.96,
+      "text": "regions."
+    },
+    {
+      "start": 1595.679,
+      "end": 1599.2,
+      "text": "The difference between these growth"
+    },
+    {
+      "start": 1596.96,
+      "end": 1600.96,
+      "text": "rates is compelling and is often pointed"
+    },
+    {
+      "start": 1599.2,
+      "end": 1603.36,
+      "text": "to as a reason for the effectiveness of"
+    },
+    {
+      "start": 1600.96,
+      "end": 1605.76,
+      "text": "deep learning. However, these numbers"
+    },
+    {
+      "start": 1603.36,
+      "end": 1607.2,
+      "text": "are theoretical upper bounds and as a"
+    },
+    {
+      "start": 1605.76,
+      "end": 1609.84,
+      "text": "number of papers have pointed out, these"
+    },
+    {
+      "start": 1607.2,
+      "end": 1611.76,
+      "text": "bounds are very loose. In practice, we"
+    },
+    {
+      "start": 1609.84,
+      "end": 1613.84,
+      "text": "typically do not see exponential growth"
+    },
+    {
+      "start": 1611.76,
+      "end": 1616.64,
+      "text": "in the number of regions created by deep"
+    },
+    {
+      "start": 1613.84,
+      "end": 1618.96,
+      "text": "networks as we add layers."
+    },
+    {
+      "start": 1616.64,
+      "end": 1620.559,
+      "text": "Let's scale up our own deep network and"
+    },
+    {
+      "start": 1618.96,
+      "end": 1622.24,
+      "text": "see how our number of regions scales"
+    },
+    {
+      "start": 1620.559,
+      "end": 1624.799,
+      "text": "with our network and how our fit"
+    },
+    {
+      "start": 1622.24,
+      "end": 1627.279,
+      "text": "improves. We left off with this three"
+    },
+    {
+      "start": 1624.799,
+      "end": 1629.919,
+      "text": "layer six neuron model that divided our"
+    },
+    {
+      "start": 1627.279,
+      "end": 1632.559,
+      "text": "map into these 10 regions resulting in"
+    },
+    {
+      "start": 1629.919,
+      "end": 1634.64,
+      "text": "this final decision boundary."
+    },
+    {
+      "start": 1632.559,
+      "end": 1636.559,
+      "text": "Let's first expand our model to have"
+    },
+    {
+      "start": 1634.64,
+      "end": 1639.44,
+      "text": "eight neurons in each of our first two"
+    },
+    {
+      "start": 1636.559,
+      "end": 1641.6,
+      "text": "layers. The eight folds in our first"
+    },
+    {
+      "start": 1639.44,
+      "end": 1644.08,
+      "text": "layer now break up our map into these 19"
+    },
+    {
+      "start": 1641.6,
+      "end": 1646.0,
+      "text": "regions. And the various folds of the"
+    },
+    {
+      "start": 1644.08,
+      "end": 1649.36,
+      "text": "surfaces created by our second layer"
+    },
+    {
+      "start": 1646.0,
+      "end": 1651.039,
+      "text": "come together in these 102 regions. Our"
+    },
+    {
+      "start": 1649.36,
+      "end": 1654.24,
+      "text": "second layer patterns start to get"
+    },
+    {
+      "start": 1651.039,
+      "end": 1655.919,
+      "text": "really interesting. Here the ReLU"
+    },
+    {
+      "start": 1654.24,
+      "end": 1658.0,
+      "text": "function in our second neuron is folding"
+    },
+    {
+      "start": 1655.919,
+      "end": 1660.64,
+      "text": "our surface along 10 different unique"
+    },
+    {
+      "start": 1658.0,
+      "end": 1662.559,
+      "text": "joints. Our final layer scales and"
+    },
+    {
+      "start": 1660.64,
+      "end": 1665.76,
+      "text": "combines these outputs into these final"
+    },
+    {
+      "start": 1662.559,
+      "end": 1668.559,
+      "text": "surfaces which intersect like this"
+    },
+    {
+      "start": 1665.76,
+      "end": 1670.159,
+      "text": "resulting in this final decision border"
+    },
+    {
+      "start": 1668.559,
+      "end": 1672.559,
+      "text": "capturing the two largest sections of"
+    },
+    {
+      "start": 1670.159,
+      "end": 1674.159,
+      "text": "our town nicely."
+    },
+    {
+      "start": 1672.559,
+      "end": 1675.76,
+      "text": "Note that a couple of the neurons in our"
+    },
+    {
+      "start": 1674.159,
+      "end": 1678.32,
+      "text": "second layer don't have any colored"
+    },
+    {
+      "start": 1675.76,
+      "end": 1680.48,
+      "text": "regions. This means that the entire"
+    },
+    {
+      "start": 1678.32,
+      "end": 1683.36,
+      "text": "surface from our first layer was below Z"
+    },
+    {
+      "start": 1680.48,
+      "end": 1685.919,
+      "text": "equals 0 and all inputs are set to zero"
+    },
+    {
+      "start": 1683.36,
+      "end": 1688.24,
+      "text": "by our ReLU activation function. Dead"
+    },
+    {
+      "start": 1685.919,
+      "end": 1690.0,
+      "text": "neurons like this are common. And a"
+    },
+    {
+      "start": 1688.24,
+      "end": 1692.24,
+      "text": "reminder that gradient descent gives no"
+    },
+    {
+      "start": 1690.0,
+      "end": 1694.559,
+      "text": "guarantees about efficiently using our"
+    },
+    {
+      "start": 1692.24,
+      "end": 1696.559,
+      "text": "model architecture."
+    },
+    {
+      "start": 1694.559,
+      "end": 1698.96,
+      "text": "Let's add another eight neuron layer to"
+    },
+    {
+      "start": 1696.559,
+      "end": 1701.679,
+      "text": "our model resulting in four total"
+    },
+    {
+      "start": 1698.96,
+      "end": 1703.679,
+      "text": "layers. We can now really start to see"
+    },
+    {
+      "start": 1701.679,
+      "end": 1705.44,
+      "text": "the compounding effects of our repeated"
+    },
+    {
+      "start": 1703.679,
+      "end": 1706.96,
+      "text": "folding, scaling, and combining"
+    },
+    {
+      "start": 1705.44,
+      "end": 1708.96,
+      "text": "operations."
+    },
+    {
+      "start": 1706.96,
+      "end": 1711.279,
+      "text": "The relu folding happening in this third"
+    },
+    {
+      "start": 1708.96,
+      "end": 1714.08,
+      "text": "neuron of our third layer creates these"
+    },
+    {
+      "start": 1711.279,
+      "end": 1716.08,
+      "text": "tiny regions around the border. It's so"
+    },
+    {
+      "start": 1714.08,
+      "end": 1718.48,
+      "text": "interesting to me that our model guided"
+    },
+    {
+      "start": 1716.08,
+      "end": 1720.24,
+      "text": "by backpropagation figures out how to"
+    },
+    {
+      "start": 1718.48,
+      "end": 1722.32,
+      "text": "create all these extra little polygons"
+    },
+    {
+      "start": 1720.24,
+      "end": 1725.279,
+      "text": "around our town's borders to capture"
+    },
+    {
+      "start": 1722.32,
+      "end": 1727.279,
+      "text": "their detailed structure."
+    },
+    {
+      "start": 1725.279,
+      "end": 1728.24,
+      "text": "Now, at this scale, it becomes tough to"
+    },
+    {
+      "start": 1727.279,
+      "end": 1731.12,
+      "text": "make sense of everything that's"
+    },
+    {
+      "start": 1728.24,
+      "end": 1733.039,
+      "text": "happening in 3D space like this. Let's"
+    },
+    {
+      "start": 1731.12,
+      "end": 1735.36,
+      "text": "focus on the regions formed on our 2D"
+    },
+    {
+      "start": 1733.039,
+      "end": 1737.12,
+      "text": "map by each layer, the final 3D"
+    },
+    {
+      "start": 1735.36,
+      "end": 1739.44,
+      "text": "surfaces, and our final decision"
+    },
+    {
+      "start": 1737.12,
+      "end": 1741.76,
+      "text": "boundary. Let's watch our model learn"
+    },
+    {
+      "start": 1739.44,
+      "end": 1743.44,
+      "text": "from this perspective. Before training,"
+    },
+    {
+      "start": 1741.76,
+      "end": 1745.679,
+      "text": "here's how our model initially divides"
+    },
+    {
+      "start": 1743.44,
+      "end": 1748.159,
+      "text": "up our input space, creating this"
+    },
+    {
+      "start": 1745.679,
+      "end": 1749.919,
+      "text": "decision boundary. Before we start the"
+    },
+    {
+      "start": 1748.159,
+      "end": 1751.6,
+      "text": "training process, let's add one more"
+    },
+    {
+      "start": 1749.919,
+      "end": 1754.799,
+      "text": "panel that will track the model's loss"
+    },
+    {
+      "start": 1751.6,
+      "end": 1756.559,
+      "text": "as it learns."
+    },
+    {
+      "start": 1754.799,
+      "end": 1759.2,
+      "text": "In less than a 100 gradient descent"
+    },
+    {
+      "start": 1756.559,
+      "end": 1761.919,
+      "text": "steps, our model is able to pick out the"
+    },
+    {
+      "start": 1759.2,
+      "end": 1763.36,
+      "text": "core structure of our town"
+    },
+    {
+      "start": 1761.919,
+      "end": 1765.84,
+      "text": "and then is able to progressively"
+    },
+    {
+      "start": 1763.36,
+      "end": 1767.36,
+      "text": "tighten its borders as it learns,"
+    },
+    {
+      "start": 1765.84,
+      "end": 1770.799,
+      "text": "creating more and more regions around"
+    },
+    {
+      "start": 1767.36,
+      "end": 1773.12,
+      "text": "the fine details of the border."
+    },
+    {
+      "start": 1770.799,
+      "end": 1774.72,
+      "text": "Finally, let's add one more layer,"
+    },
+    {
+      "start": 1773.12,
+      "end": 1777.039,
+      "text": "bringing our total number of layers to"
+    },
+    {
+      "start": 1774.72,
+      "end": 1780.24,
+      "text": "five, and increase our width one last"
+    },
+    {
+      "start": 1777.039,
+      "end": 1782.72,
+      "text": "time to 32 neurons. Our additional layer"
+    },
+    {
+      "start": 1780.24,
+      "end": 1784.72,
+      "text": "gives us one more tiling of our map. And"
+    },
+    {
+      "start": 1782.72,
+      "end": 1787.12,
+      "text": "at this scale, our 3D plot becomes a bit"
+    },
+    {
+      "start": 1784.72,
+      "end": 1789.039,
+      "text": "too chaotic to make sense of. So, we'll"
+    },
+    {
+      "start": 1787.12,
+      "end": 1791.76,
+      "text": "just watch the 2D plots in this final"
+    },
+    {
+      "start": 1789.039,
+      "end": 1793.84,
+      "text": "training animation. Unlike our smaller"
+    },
+    {
+      "start": 1791.76,
+      "end": 1796.64,
+      "text": "models, this deeper model really"
+    },
+    {
+      "start": 1793.84,
+      "end": 1798.799,
+      "text": "benefits from more training steps. Using"
+    },
+    {
+      "start": 1796.64,
+      "end": 1801.44,
+      "text": "the extra steps to refine the details of"
+    },
+    {
+      "start": 1798.799,
+      "end": 1803.52,
+      "text": "our town's border."
+    },
+    {
+      "start": 1801.44,
+      "end": 1805.279,
+      "text": "The fact that just four layers with 32"
+    },
+    {
+      "start": 1803.52,
+      "end": 1808.159,
+      "text": "neurons each can learn this level of"
+    },
+    {
+      "start": 1805.279,
+      "end": 1809.919,
+      "text": "complexity is remarkable to me. Our"
+    },
+    {
+      "start": 1808.159,
+      "end": 1813.2,
+      "text": "final decision boundary impressively"
+    },
+    {
+      "start": 1809.919,
+      "end": 1815.039,
+      "text": "captures every region of our town. It's"
+    },
+    {
+      "start": 1813.2,
+      "end": 1816.96,
+      "text": "incredible to me that a bunch of little"
+    },
+    {
+      "start": 1815.039,
+      "end": 1819.52,
+      "text": "linear models can come together to do"
+    },
+    {
+      "start": 1816.96,
+      "end": 1821.36,
+      "text": "something so complex and that we can"
+    },
+    {
+      "start": 1819.52,
+      "end": 1824.76,
+      "text": "actually find these solutions using"
+    },
+    {
+      "start": 1821.36,
+      "end": 1824.76,
+      "text": "gradient descent."
+    },
+    {
+      "start": 1825.2,
+      "end": 1830.0,
+      "text": "Around 10 years ago, I released the very"
+    },
+    {
+      "start": 1827.52,
+      "end": 1832.72,
+      "text": "first Welch Labs video. It's called"
+    },
+    {
+      "start": 1830.0,
+      "end": 1834.32,
+      "text": "Neural Networks Demystified."
+    },
+    {
+      "start": 1832.72,
+      "end": 1836.24,
+      "text": "Like the series you're watching now,"
+    },
+    {
+      "start": 1834.32,
+      "end": 1838.399,
+      "text": "neural networks demystified was a series"
+    },
+    {
+      "start": 1836.24,
+      "end": 1839.919,
+      "text": "about how neural networks learn,"
+    },
+    {
+      "start": 1838.399,
+      "end": 1842.32,
+      "text": "focusing on backpropagation and"
+    },
+    {
+      "start": 1839.919,
+      "end": 1844.24,
+      "text": "gradient descent."
+    },
+    {
+      "start": 1842.32,
+      "end": 1846.159,
+      "text": "Sitting down to work on this series 10"
+    },
+    {
+      "start": 1844.24,
+      "end": 1848.24,
+      "text": "years later, I honestly didn't know"
+    },
+    {
+      "start": 1846.159,
+      "end": 1849.919,
+      "text": "where to start. Although most of the"
+    },
+    {
+      "start": 1848.24,
+      "end": 1852.24,
+      "text": "core approaches in my old videos are"
+    },
+    {
+      "start": 1849.919,
+      "end": 1854.559,
+      "text": "unchanged, these core ideas have been"
+    },
+    {
+      "start": 1852.24,
+      "end": 1856.96,
+      "text": "scaled to solve unbelievably complex"
+    },
+    {
+      "start": 1854.559,
+      "end": 1858.559,
+      "text": "problems. And this shocking ability to"
+    },
+    {
+      "start": 1856.96,
+      "end": 1860.32,
+      "text": "scale has led the research community to"
+    },
+    {
+      "start": 1858.559,
+      "end": 1863.12,
+      "text": "dig deeper into what makes these models"
+    },
+    {
+      "start": 1860.32,
+      "end": 1866.64,
+      "text": "tick. We've learned a great deal in 10"
+    },
+    {
+      "start": 1863.12,
+      "end": 1868.88,
+      "text": "years, but many mysteries remain."
+    },
+    {
+      "start": 1866.64,
+      "end": 1871.2,
+      "text": "In part one of this series, we dug into"
+    },
+    {
+      "start": 1868.88,
+      "end": 1872.72,
+      "text": "loss landscapes, and we saw how the"
+    },
+    {
+      "start": 1871.2,
+      "end": 1874.88,
+      "text": "standard mental picture of gradient"
+    },
+    {
+      "start": 1872.72,
+      "end": 1876.48,
+      "text": "descent that I presented 10 years ago"
+    },
+    {
+      "start": 1874.88,
+      "end": 1878.159,
+      "text": "really doesn't hold up in the incredibly"
+    },
+    {
+      "start": 1876.48,
+      "end": 1881.039,
+      "text": "high-dimensional spaces these models"
+    },
+    {
+      "start": 1878.159,
+      "end": 1883.52,
+      "text": "operate in. In part two, we dug into the"
+    },
+    {
+      "start": 1881.039,
+      "end": 1885.2,
+      "text": "core mechanics of how models learn,"
+    },
+    {
+      "start": 1883.52,
+      "end": 1886.88,
+      "text": "dissecting backpropagation in the"
+    },
+    {
+      "start": 1885.2,
+      "end": 1889.52,
+      "text": "context of a modern large language"
+    },
+    {
+      "start": 1886.88,
+      "end": 1891.44,
+      "text": "model. Finally, in this video, we saw"
+    },
+    {
+      "start": 1889.52,
+      "end": 1893.6,
+      "text": "how deep models are able to recursively"
+    },
+    {
+      "start": 1891.44,
+      "end": 1896.08,
+      "text": "fold, scale, and combine their input"
+    },
+    {
+      "start": 1893.6,
+      "end": 1899.44,
+      "text": "spaces, learning incredibly complex"
+    },
+    {
+      "start": 1896.08,
+      "end": 1901.2,
+      "text": "patterns with remarkably few neurons."
+    },
+    {
+      "start": 1899.44,
+      "end": 1903.76,
+      "text": "Maybe in another 10 years, I can make"
+    },
+    {
+      "start": 1901.2,
+      "end": 1905.36,
+      "text": "another series like this. We'll have to"
+    },
+    {
+      "start": 1903.76,
+      "end": 1907.84,
+      "text": "wait and see what these models can do"
+    },
+    {
+      "start": 1905.36,
+      "end": 1911.679,
+      "text": "then, and how much sense we'll be able"
+    },
+    {
+      "start": 1907.84,
+      "end": 1914.399,
+      "text": "to make of how they do it."
+    },
+    {
+      "start": 1911.679,
+      "end": 1916.88,
+      "text": "Back in 2019, I completely quit Welch"
+    },
+    {
+      "start": 1914.399,
+      "end": 1918.64,
+      "text": "Labs. I had just tried going full-time"
+    },
+    {
+      "start": 1916.88,
+      "end": 1920.799,
+      "text": "creating videos, but I wasn't able to"
+    },
+    {
+      "start": 1918.64,
+      "end": 1923.2,
+      "text": "earn enough money to make it work. I got"
+    },
+    {
+      "start": 1920.799,
+      "end": 1924.72,
+      "text": "frustrated and I quit. I went off and"
+    },
+    {
+      "start": 1923.2,
+      "end": 1926.559,
+      "text": "worked as a machine learning engineer,"
+    },
+    {
+      "start": 1924.72,
+      "end": 1928.159,
+      "text": "which was great, but I couldn't shake"
+    },
+    {
+      "start": 1926.559,
+      "end": 1931.6,
+      "text": "the feeling that I was really supposed"
+    },
+    {
+      "start": 1928.159,
+      "end": 1934.0,
+      "text": "to be making videos. Starting in 2022, I"
+    },
+    {
+      "start": 1931.6,
+      "end": 1935.44,
+      "text": "slowly eased back on Tik Tok and was"
+    },
+    {
+      "start": 1934.0,
+      "end": 1937.2,
+      "text": "able to gradually build enough momentum"
+    },
+    {
+      "start": 1935.44,
+      "end": 1940.559,
+      "text": "to take another crack at going full-time"
+    },
+    {
+      "start": 1937.2,
+      "end": 1942.0,
+      "text": "last year. When I quit in 2019, I had"
+    },
+    {
+      "start": 1940.559,
+      "end": 1945.039,
+      "text": "some time to really think about what"
+    },
+    {
+      "start": 1942.0,
+      "end": 1946.88,
+      "text": "kept pulling me back into making videos."
+    },
+    {
+      "start": 1945.039,
+      "end": 1949.12,
+      "text": "And I realized that deep down it was"
+    },
+    {
+      "start": 1946.88,
+      "end": 1951.519,
+      "text": "really about education."
+    },
+    {
+      "start": 1949.12,
+      "end": 1952.88,
+      "text": "I loved math and science as a kid, but I"
+    },
+    {
+      "start": 1951.519,
+      "end": 1955.44,
+      "text": "really disliked the way I had to learn"
+    },
+    {
+      "start": 1952.88,
+      "end": 1957.279,
+      "text": "it in school. After undergrad, I really"
+    },
+    {
+      "start": 1955.44,
+      "end": 1959.6,
+      "text": "found myself questioning if I even liked"
+    },
+    {
+      "start": 1957.279,
+      "end": 1961.279,
+      "text": "math at all. Only through my own work"
+    },
+    {
+      "start": 1959.6,
+      "end": 1963.919,
+      "text": "and study did I fall back into love with"
+    },
+    {
+      "start": 1961.279,
+      "end": 1966.08,
+      "text": "math and science years later. And now I"
+    },
+    {
+      "start": 1963.919,
+      "end": 1969.12,
+      "text": "want to use Welsh Labs to make education"
+    },
+    {
+      "start": 1966.08,
+      "end": 1971.2,
+      "text": "better. But I've realized for me to be"
+    },
+    {
+      "start": 1969.12,
+      "end": 1973.36,
+      "text": "able to do this, I have to first build a"
+    },
+    {
+      "start": 1971.2,
+      "end": 1975.12,
+      "text": "viable business. If I can't support"
+    },
+    {
+      "start": 1973.36,
+      "end": 1978.08,
+      "text": "myself and my family, I can't spend the"
+    },
+    {
+      "start": 1975.12,
+      "end": 1979.919,
+      "text": "time I need to make this work. Last"
+    },
+    {
+      "start": 1978.08,
+      "end": 1982.159,
+      "text": "year, through sponsorships, poster and"
+    },
+    {
+      "start": 1979.919,
+      "end": 1983.679,
+      "text": "book sales, and support on Patreon, I"
+    },
+    {
+      "start": 1982.159,
+      "end": 1986.48,
+      "text": "was able to make about half of what I"
+    },
+    {
+      "start": 1983.679,
+      "end": 1988.559,
+      "text": "made as a machine learning engineer. I'm"
+    },
+    {
+      "start": 1986.48,
+      "end": 1991.2,
+      "text": "not going to lie, so far, this is a much"
+    },
+    {
+      "start": 1988.559,
+      "end": 1993.6,
+      "text": "harder way to earn a living. My goal"
+    },
+    {
+      "start": 1991.2,
+      "end": 1995.039,
+      "text": "this year is to replace my full income."
+    },
+    {
+      "start": 1993.6,
+      "end": 1997.279,
+      "text": "This will allow me to really reach"
+    },
+    {
+      "start": 1995.039,
+      "end": 1999.36,
+      "text": "escape velocity and continue full-time"
+    },
+    {
+      "start": 1997.279,
+      "end": 2001.039,
+      "text": "on Welch Labs."
+    },
+    {
+      "start": 1999.36,
+      "end": 2003.2,
+      "text": "Sponsorships, posters, and book sales"
+    },
+    {
+      "start": 2001.039,
+      "end": 2005.679,
+      "text": "are going well this year, but to hit my"
+    },
+    {
+      "start": 2003.2,
+      "end": 2007.44,
+      "text": "goal, I need to grow Patreon as well."
+    },
+    {
+      "start": 2005.679,
+      "end": 2010.24,
+      "text": "Your monthly support on Patreon would"
+    },
+    {
+      "start": 2007.44,
+      "end": 2012.48,
+      "text": "mean a lot. As a way to say thank you,"
+    },
+    {
+      "start": 2010.24,
+      "end": 2014.88,
+      "text": "and today I'm launching a new reward."
+    },
+    {
+      "start": 2012.48,
+      "end": 2016.799,
+      "text": "Starting at the $5 per month level, I'll"
+    },
+    {
+      "start": 2014.88,
+      "end": 2019.44,
+      "text": "send you a real paper cutout used in a"
+    },
+    {
+      "start": 2016.799,
+      "end": 2020.88,
+      "text": "Welch Labs video. It comes in a nice"
+    },
+    {
+      "start": 2019.44,
+      "end": 2022.72,
+      "text": "protective sleeve with the Welch Labs"
+    },
+    {
+      "start": 2020.88,
+      "end": 2024.559,
+      "text": "logo on the front, and on the back, it"
+    },
+    {
+      "start": 2022.72,
+      "end": 2027.36,
+      "text": "says the video it came from, the release"
+    },
+    {
+      "start": 2024.559,
+      "end": 2028.88,
+      "text": "date, and a sign by me. These are a lot"
+    },
+    {
+      "start": 2027.36,
+      "end": 2031.84,
+      "text": "of fun. I have them going all the way"
+    },
+    {
+      "start": 2028.88,
+      "end": 2033.919,
+      "text": "back to 2017. At the $5 per month level,"
+    },
+    {
+      "start": 2031.84,
+      "end": 2035.84,
+      "text": "you'll receive a smaller cutout and a"
+    },
+    {
+      "start": 2033.919,
+      "end": 2037.84,
+      "text": "larger cutout at the $10 or higher"
+    },
+    {
+      "start": 2035.84,
+      "end": 2039.6,
+      "text": "level. Cutouts ship after your first"
+    },
+    {
+      "start": 2037.84,
+      "end": 2041.36,
+      "text": "monthly payment goes through, and you'll"
+    },
+    {
+      "start": 2039.6,
+      "end": 2043.84,
+      "text": "find a link to the Watch Labs Patreon in"
+    },
+    {
+      "start": 2041.36,
+      "end": 2045.6,
+      "text": "the description below. Huge thank you to"
+    },
+    {
+      "start": 2043.84,
+      "end": 2049.6,
+      "text": "everyone who supported Welch Labs over"
+    },
+    {
+      "start": 2045.6,
+      "end": 2049.6,
+      "text": "the years. Thanks for watching."
+    }
+  ],
+  "segment_count": 917
+}

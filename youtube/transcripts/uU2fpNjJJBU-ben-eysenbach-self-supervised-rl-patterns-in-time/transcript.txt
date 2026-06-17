@@ -1,0 +1,481 @@
+And I'm Ben Eysenbach.
+I'm an assistant professor of computer science here at Princeton.
+And this talk is largely about research that my students and I have been doing over the last year or so.
+And it's largely about how my students have changed my mind, how I think about AI differently today than I did a couple years ago because of the research that we've done.
+And it's about problems that I thought were supposed to be hard that turned out not to be so hard.
+And as a bit of a preface, today's talk is going to be about AI agents, AI agents that make decisions.
+And I think often when people think about AI agents today, they think about language models.
+They think about Gemini, they think about chat, QPT, they think about other tools like this.
+But I think that's just the current zeitgeist.
+A couple years before this, people used to think about AI agents as reinforcement.
+Things like AlphaGo, things that were really good at maximizing rewards.
+And in today's talk, I want to argue that there's a third way.
+There's a third way of building AI agents.
+Self-supervised agents.
+Agents that are not learned by reading text on the internet.
+Agents that are not learned by trying to maximize the score in a game.
+But agents, rather, that are trained by trying to find patterns in the physical world.
+And then use those patterns for disinformation.
+Okay.
+So if you take away one thing from this talk is that when we think about agents, when we think about acting in the world,
+we don't necessarily need to say, we're going to take a giant language model and use that.
+There are other compelling ways of building agents.
+So I want to start with a thought experiment.
+Why do we use deep learning?
+Why deep?
+I think often when we think about deep learning, we think about a sort of fuzzy magic.
+Where if I give you an image.
+And you learn to predict this in the cat and I give you a new image of a slightly different cat, you can still recognize that this is a cat.
+You're not, you're sort of doing this sort of fuzzy night King saying this, this cat looks similar to a cat I've seen before.
+And therefore as you label it, looking now under the plate, what's happening is a lot more powerful.
+I keep learning about what they're doing is they're automatically finding patterns in your data.
+It turns out, look at the layer.
+It's your deep learning.
+You find that they're automatically learning to identify edges in these images and objects in these images, entire scenes in these images.
+And so I think I'd argue deep learning methods are, they're finding patterns in space, finding patterns in their training data.
+I come from a reinforcement learning background and it's typically,
+typically when I think about reinforcement learning.
+We're thinking about maximizing rewards about things like trading stock stock that plenty of video games to try to get a high score about educational outcomes.
+How do I give different problems to students so that they, so that they master material by the end of the semester, but how standard yeah, what, uh, Daniel, would you mind muting your microphone?
+Okay.
+I thought you want me to turn on, but I think I have to turn off.
+Okay.
+Great.
+Cool.
+Um, but how the standard, the standard reinforcement learning textbook defines reinforcement learning.
+They argue that it's really not about finding patterns.
+They say reinforcement learning is different from the self-supervised methods and that reinforcement learning is not trying to find hidden structure.
+In today's talk, I want to argue that this isn't necessarily true, that it might be possible to find structure in the solutions to decision-making problems.
+Why did you could find that sort of hidden structure, hidden structure and what you could see hidden structure and how you act in structure and how you plan.
+What if there existed reinforcement learning algorithms that didn't find patterns in data, what sort of capabilities would that unlock?
+So in the same way that these image models, these deep learning image models can find patterns in images of cats, I'm going to talk about finding patterns in time.
+We'll see how uncovering temporal patterns gives us new notions of generalization.
+We'll see how uncovering temporal patterns gives us new notions of generalization.
+allowing us to learn from lost data, and it will give rise to surprising sorts of exploration.
+It will allow us to explore wide, open-world environments more effectively.
+And so that first half of the talk, we'll talk about how we find about hunting for these patterns.
+So what exactly is a temporal pattern?
+Well, one way of talking about a temporal pattern is that it's really a description of behavior.
+If you see this woman here running through a city, you can describe what she's doing as
+jogging down a busy street.
+And that's a relatively compact, short description of the scene.
+Another way of describing a temporal pattern is that it's a form of temporal abstraction.
+You might think of things like options or skills.
+These have been well studied in the literature.
+I'll talk more about the prior work in a couple slides.
+Maybe a third definition of a temporal pattern is, I could introduce it by way of analogy.
+A temporal pattern is akin to what computer vision models find in space.
+And so when we think about patterns in this sort of image here, they really are two orthogonal axes.
+There's this space axis, and there's this time axis.
+And computer vision models, they try to find patterns along this space axis.
+They might recognize that, say, this patch of a fence, this looks sort of similar to a patch of a fence I've seen before.
+And so once they've learned to identify this fence near the top, I can also identify this fence near the bottom.
+Temporal patterns are looking at this orthogonal axis, this axis of time.
+And they're saying, hey, once I can identify this snippet of motion, I can also recognize this other snippet of motion.
+In general, recognizing patterns in our data gives us a form of generalization.
+It allows us to continue to make predictions on inputs we haven't seen before.
+Identifying these patterns, identifying the structure, it allows for faster learning.
+One way of thinking about this is a bit like Oregonic.
+Where if you take this image, you can fold it up on top of itself, because the top half and bottom half look similar.
+And this means that you now have half the number of pixels you have to look at.
+You also can fold up the image along the time dimension.
+And folding up the image along the time dimension allows you to solve decision-making problems much more quickly.
+Okay, so how would we go about finding these sorts of temporal patterns?
+Finding these temporal patterns is a big open problem in the field.
+And I want to talk about some details of this big open problem.
+And I want to talk about some details of this big open problem.
+So let's get to the question.
+One aspect is, how can we learn temporal patterns directly via end-to-end learning?
+A second is, how can we learn very large numbers of these temporal patterns?
+The benefit of learning a large number of patterns is that they can facilitate generalization.
+It means that after we've learned some number of patterns on our training data,
+we might be able to try new patterns or find new patterns in our testing data
+that we haven't explicitly seen before during training.
+One way to see this is by way of analogy.
+So I think the way that temporal patterns historically have been conceived
+is by saying that we're going to learn five or ten discrete patterns
+and use those to solve new tasks.
+But if this is the case, what does it mean to try to use
+pattern number nine and three quarters to solve a new task?
+I don't know.
+Like, this doesn't really compute.
+So I think that when we're thinking about patterns,
+we should be thinking not about a finite number of patterns,
+but really,
+but an infinite number of patterns.
+And then the last question that I want to focus on today is,
+how can finding these sorts of patterns accelerate learning?
+And there's the standard argument that the complexity of solving a decision-making problem,
+if you have to read over a long horizon, a horizon of length h,
+then the difficulty of doing that scales exponentially with a horizon.
+But if you can find patterns in time,
+then this shrinks the length of it,
+and this is an effective horizon.
+And so now the space you have to search for is much smaller.
+There's also a perception argument that by finding these sorts of patterns,
+we now no longer need to explore states that look similar to states we've seen before.
+This should significantly accelerate the exploration problem.
+And there's also a planning aspect to this as well,
+namely, after we've learned how to solve some tasks,
+we don't need to go learn how to solve tasks that look similar to tasks we've seen before.
+So if we would find these temporal patterns,
+it seems like they'd open up a number of important avenues.
+There's several approaches for learning these sorts of temporal patterns.
+For the sake of time, I'm going to gloss over most of the details now.
+But needless to say, there's been a lot of study in the literature
+that we did see methods have certain limitations,
+such as having to learn lots of structure from a small amount of feedback.
+Compression-based methods often require having lots of data to start with a priori.
+But we'll see today how there's a really special piece of these compression-based methods,
+methods based on finding patterns in time,
+that fill up several limitations from these hierarchical methods,
+because they end up finding lots and lots of additional training data.
+And it will turn out that there's a very close mathematical connection
+between these temporal contrast methods
+and perhaps the third class of approaches for finding patterns in time,
+those based on successor representations.
+These successor representations have been well-studied in neuroscience.
+Okay, so I want to start by going over what is this contrastive learning
+that I've been talking about.
+And then I'll talk a little bit about how we can use it for decision-making.
+We'll start by talking about how people have used contrastive learning
+for computer vision applications.
+There, what we try to do is we try to take an image
+and learn a representation of that image.
+And the goal is that if you have a similar image,
+say this other image of a cat,
+it has a similar representation.
+And importantly, if you look at other images, say an image of a dog,
+the dog has a representation that's pretty different
+than the representations of cats.
+Now, the key operation that makes this work is augmentation, data augmentation.
+You should be able to take an image and then rotate that image or crop that image
+or change the brightness of that image to create some other similar image.
+And that is what you use for training.
+Now, the line of work that I do is in decision-making.
+And so, we have to think carefully about what would be the right form of augmentation
+to do for decision-making.
+And it turns out that in the context of decision-making,
+nature, physics, tells us how to do the augmentation.
+So, let me walk you through how we do that.
+So, we start with videos, say the sequence of images
+showing a robot picking up a block.
+And again, we're going to learn representations,
+representations of each of the frames in this video.
+And we're going to learn the representations.
+So, the images that occur nearby in time have similar representations
+and images that occur far apart in time have dissimilar representations.
+Now, as you'll recall, when we're doing this contrastive learning,
+the key operation was augmentation.
+Given one image, you have to create another similar image.
+But when we're dealing with videos, time or physics tells us how to do the augmentations.
+Namely, just by looking at one image,
+I can generate another possible image that should have a similar representation,
+but I guess jumping forward in time.
+Now, this is really powerful.
+After we saw these methods, one of the questions we looked at was,
+how can we use these sorts of representations for decision-making for control?
+How can we use these sorts of representations, not for just understanding what a robot is doing,
+but actually for controlling that robot?
+And this gave rise to a method that I'll refer to as contrastive learning.
+And this gave rise to a method that I'll refer to as contrastive learning.
+And this gave rise to a method that I'll refer to as contrastive learning.
+And this gave rise to a method that I'll refer to as contrastive reinforcement learning.
+And this gave rise to a method that I'll refer to as contrastive reinforcement learning.
+The approach here is very similar to what I described before,
+where we're learning representations for representations that now take as input
+both an image as well as an action.
+And so, these representations here,
+they tell us both about the image that produced this representation,
+but also about the corresponding action.
+And this dependence on actions is important because we'll be able to use these representations
+for figuring out what action we should use for figuring out how to get to some design.
+some desired outcome. So I'll walk you through how that works. Let's say that the world looks
+like this. We have a robot. It has an object, maybe has several objects. And let's say that
+we would like the world to look like this. We would like the robot to figure out how do you
+go and pick up this object and pick it up and move it over and put it down and let go of it.
+That's what we would like the robot to figure out how to do.
+And for simplicity, let's imagine that we have just two actions, action one and action two.
+And we can use these representations that we've learned to figure out which of these two actions
+would be better for getting to this eventual goal state. Namely, we can look at the representations
+and just based on these representations, we can predict would action A1 or action A2 would be
+more likely to get us to the goal state. So we can just look at the similarity between these
+representations and we can predict would action A1 or action A2 would be more likely to get us to
+the goal state. And based on this, it seems like action A2 was the one that would get us
+closer towards the goal. So that's the action that we'll take. And we do this over and over
+again, every kind of step, seeing which action would get us closer towards the goal and repeat
+this. Importantly, we do this from scratch. We don't need any demonstrations. We don't need to
+have a model of the world. We don't need a big VLN. We don't need a language model. We just have
+the robot. It takes some random actions. It learns from those representations. It learns from those
+representations. It takes some more random actions. It learns from those representations.
+And so it's entirely good strapped from scratch. One way of interpreting what's happening here is
+that it's learning how to work the space of states. Rather than thinking in the space of images,
+it's thinking in the space of representations. So the space of representations is warped so
+that greedy planning is walking right directly from point A to point B in a straight line becomes
+more important. Importantly, this doesn't require any rewards. It doesn't require any
+demonstrations. It doesn't require any RLHF. And so compared to other reinforcement learning
+algorithms that you might consider or may have heard of before, this is likely much simpler.
+So at this point, you might be wondering, okay, this seems nice. It seems like a nice heuristic.
+Do you have any guarantees that this is going to work?
+And in fact, we can prove that this is a reasonable thing to do mathematically.
+We can show that when you're looking at these representations and using them for decision
+making, this is grounded in the theory of reinforcement learning. And particularly,
+you can show that the similarity between these representations very
+closely corresponds to the sum of rewards that you'll get.
+What this means is that acting greedily isn't a heuristic,
+but actually is a very reasonable thing to do. Is there a question there?
+Just raising your hand.
+Oh, yeah, yeah. So no worries. I'm just sharing the screen so other people can also,
+you can see the other people here.
+Great. Cool.
+It turns out these representations have lots of really beautiful geometric properties. If folks
+remember from their
+geometry classes back in math classes, there's this notion of a triangle inequality. This
+triangle inequality is really, really beautiful and powerful. And in fact, basically underlies
+all of dynamic programming that we've learned in our computer science classes. And these
+representations, they obey the triangle inequality, and this gives rise to important
+generalization properties. And in fact, these representations support a form of probabilistic
+inference. And so for folks familiar with graphical models, you inherit many of the
+nice properties that you get there.
+Probably there are several ideas in the literature, and you can mathematically relate
+several of these ideas. And so I think for folks that are new to the reinforcement learning area,
+if you've heard things like successor representations or latent space models
+or forward-backward representations, I think all of these things are pointed in similar directions.
+And so from a scientific perspective, this is really aesthetically pleasing because it means
+that they're really likely one grand unified theory that helps connect all these pieces.
+I don't know what that theory is. All I know is that a lot of work is pointing in similar directions,
+and I'm really excited to run in that direction and see what's out there to really better understand
+the science of these decision-making algorithms. So just to summarize how this complete method works,
+we'll start with some data, maybe it's random data, a robot or other agent doing things.
+We then learn these representations from these data, and then we select actions by just acting
+credibly.
+It's as simple as possible if using the representations for decision-making.
+You could use this policy and then go back and collect more data and repeat this loop.
+One thing to emphasize here is this is the entire algorithm. We didn't start with a pre-trained
+language model. We didn't start with a whole bunch of demonstrations from having humans
+tele-operate robots. We're not doing R like Chef. We're not doing GRPO. This is the entire algorithm.
+The entire algorithm that's taking care of this.
+We have some of the same data, learned representations, act credibly to
+maybe collect some more data.
+This is it and it turns out this algorithm is really
+powerful and it can be used to solve several problems.
+There's an interesting semantic question about whether
+this is actually reinforcement learning.
+Am I allowed to call The Work That Had a Reinforcement Learning?
+Often reinforcement learning, people think about reward maximization, but rewards never occur here.
+Our code doesn't use the word reward in it. So I don't know whether to call this reward renewal in one of these cases nor the negativities it has towards that.
+in it. So I don't know whether to call this reward maximization or not, but I know that it works.
+And I want to show you some examples of that. Here's one example done by my student Changyi
+and a collaborator, Homer. What they wanted to do is get this robot to set the table.
+And so they collected a bunch of data. They had a bunch of data of the robot doing other tasks.
+They then took this data, they learned the representations, and then they gave the robot
+a picture where this table had been set how they want the table to be set. And just by giving the
+robot this picture, the robot had to figure out what sequence of actions to take to set the table
+in the desired configuration. From a robotics perspective, this is really appealing because
+it meant that for solving this task, we didn't have to have any humans demonstrate how to solve
+this task. It means that we didn't have to have any remote teleoperation. It means that we never
+had to handcraft reward function or do any complex
+tasks.
+We could do this directly from raw, random data.
+Another fun example of this is for solving the Rubik's cube. We took a bunch of random data from
+the Rubik's cube and learned these representations. And just by acting greedily with respect to these
+representations, you can solve the Rubik's cube. In fact, if you look at the video here, you'll
+see that the strategy that it ends up learning for solving the cube is not too dissimilar to
+the strategy that novice QNQ solvers use for solving the Rubik's cube.
+And one last application that I think is sort of cool, this was done not by me, but by folks down
+the street at a healthcare company, is for figuring out how do you control esophageal ultrasound
+devices. These are devices that you put down someone's throat and you use to take pictures of
+their heart. These devices are really challenging to control, but by using these devices, you can
+use these self-supervised methods that are able to figure out how do you take exactly the right
+images of someone's heart. And so this first half of the talk, we've sort of gone over how we
+automatically find these sorts of temporal patterns. In the second half, I want to talk
+about some properties of these temporal patterns, how learning these representations, these patterns
+can automatically allow us to generalize and solve new tasks more quickly, but also can
+accelerate exploration and solve tasks that we didn't think were possible.
+So I'm going to start with a hypothesis. If our goal is to find these temporal patterns, and in
+particular use deep learning methods to find temporal patterns, then deep learning, the deep
+part, is likely going to be important. And this gives us a testable prediction, namely that deeper
+networks should be better at finding temporal patterns. This sounds pretty obvious, but it's not
+the case. But in fact, it's contrary to be met with a list in the field. I just got back from a
+major machine learning conference a couple weeks ago. And there, most of the papers doing
+reinforcement learning used about two to five layers. We're about two to five layers deep.
+Compared to models in computer vision and NLP, that's tiny. It's really, really small.
+And the reason that people don't try bigger networks is that historically, it just hasn't
+worked. Lost papers have tried getting really big networks to work for reinforcement
+learning, but it hasn't worked. But in recent work, we've found that these self-supervised
+methods, these methods are just one of these representations, they do seem to benefit from
+really deep networks in ways that other reinforcement learning methods don't.
+And so in one experiment, we looked at this humanoid robot that's on the left here.
+This humanoid robot, we wanted to get it to run across the table, so it eventually reached this
+blue sphere. And when we ran this experiment with a small network, it basically failed,
+to solve this task. The amount of time it spent at the goal was then extremely small.
+But when we used bigger networks, networks that were significantly, significantly larger than those
+used in prior work, we found that performance increased significantly.
+Second hypothesis. When we're alerting these representations, we're actually capturing
+some sort of temporal pattern. To give a bit of context for this hypothesis, I want to show the
+representations that we're looking at right now. The first hypothesis is that we're looking at a
+scene, and then we want to tell you about the scene itself, but then we want to tell you about other
+machine learning methods as well. So a standard way of understanding representations is to learn an
+autoencoder, or a variational autoencoder. These are methods that seek an image and try to
+understand what are the parts of that image? What are the objects that are included in that image?
+And these methods, they typically find that the representations capture the contents of a scene.
+But they don't tell you about how you would go about rearranging those objects. They don't tell you about time.
+Now, in contrast with our methods, we find that the representations we learn not only
+tell us about the contents of the scene, but they also tell us something about time.
+They seem to have captured some amount of spatial awareness.
+So if you look at the representations from the left side of the screen to the right side
+of the screen, you see that the objects move, this red object here, it moves closer towards
+the camera, and the robot arm, it goes down, it touches the red object, it touches the
+drawer, and that moves again.
+But the red object, it only moves when the arm is touching it, and the drawer, it only
+moves when the robot arm is touching it.
+And I think this is really powerful, because it means that these representations are really
+telling us something about planning, they're really telling us something about time.
+In fact, you can prove formally that this isn't just a fluke, but it should happen.
+The theoretical reasons why we should expect that.
+When you take the representations we've learned, and just draw a line between the two representations,
+this line should tell you how to solve a problem.
+And for the sake of time, I'll skip over the math, but the math ends up being really beautiful,
+and I can talk about that afterwards if there are questions.
+So these representations, they do seem to capture temporal patterns.
+And it turns out that capturing these temporal patterns allows us to generalize in ways that
+seem really unique to the world.
+They reinforce the learning problem setting, and they also give rise to certain exploration
+properties.
+And I'll start by talking about generalization.
+So very broadly in machine learning, finding patterns, finding learning and variances allows
+us to build models that generalize.
+So to make an analogy to computer vision, let's say that you have a computer vision
+model that treats an image of a cat and a slightly different image of a cat identically.
+Then if you build a model on top of these representations,
+that model will be invariant to these small changes, these small changes in brightness
+and rotation.
+When we learn these representations with time, these temporal representations, what are the
+corresponding generalization properties?
+Well, it turns out that when you learn these temporal representations, the generalization
+properties you get are really powerful.
+And I can explain this as follows.
+When, let's say that you're this rabbit here, and you want to figure out how do you get
+to this purple star here.
+Maybe the first action you take is to move down to this state here.
+And maybe tomorrow, this rabbit has to solve a different navigation problem, going from
+this state here to this brown star here.
+And the first action it takes is to go down.
+Well, the, for both these tasks, the purple star task and the brown star task, the first
+action was the same.
+In both cases, the action was the same.
+And so we might say that this policy should be invariant to plan.
+It should produce the same action for getting to the purple star as it should for getting
+to a waypoint on the route to the purple star.
+I can visualize that as follows.
+Now what this means is that if you can build policies that have this invariance process,
+then you can train them on short horizon tasks, like getting to the idea of a small
+circle here.
+And without any more training, they'll generalize to reach more distant goals, like this outer
+circle shown here.
+So in summary, with takes of generalization, they really seem unique to decision-making
+problems.
+Very, very broadly, I think today, a lot of people, when they talk about agents and AI,
+they talk about building generalist agents.
+But the next time you hear that term, I want you to ask, what specific notion of generalization
+are you talking about?
+Generalization is about training at one task and doing well in other tasks.
+And there's some notions of generalization that are studied by computer vision models
+and language models.
+But there are other notions of generalization that seem unique in making problems.
+So the last few minutes of the talk, I want to talk a little bit about exploration.
+I want to talk a little bit about generalization.
+I want to talk a little bit about generalization.
+And the problem setting here is one that's almost diabolically difficult.
+It's one where we want to learn a policy for navigating from one state to some other very
+far away state.
+And so you could think about solving a Rubik's cube.
+If I give you a Rubik's cube, you want to figure out, how do you get from the current
+Rubik's cube configuration to the state where the Rubik's cube is solved?
+And here's how you might go about solving that problem.
+And here's how you might go about solving that problem.
+You take a random policy, because policies can be garbage to start.
+And then you say, policy, try to get to this goal.
+And you collect some data.
+And then you use these data to learn some representations.
+You learn a policy.
+And then you go back and you collect some more data.
+And you try to get to this one very difficult goal.
+Now, intuitively, it seems like this shouldn't work.
+It seems like if I tell you, try to navigate from one state to some very far away state,
+this should just be impossible.
+It seems like you should need to, I don't know, put down some brain crumbs to tell you
+how to get to that goal.
+But in recent work, we found that this really simple approach, this approach that seems
+like it shouldn't work.
+In fact, it does work.
+It does work if you learn a policy using the representations I showed before.
+And I want to show you a video of what this exploration method looks like.
+We've told the robot.
+I want you to figure out how to pick up the green block and put it in the blue bin.
+And I'm just showing you the robot train right now.
+It's exploring the environment by itself, trying out different positions, exploring
+the space, tries touching different objects.
+And we haven't programmed any of this.
+We haven't told the robot to try touching objects.
+It's just learned on its own that touching objects is an interesting thing to do.
+And at this point, it's learned on its own that picking up objects is an interesting
+thing to do.
+It's all emerged from scratch.
+At some point, at about this point in training, it's learned that it actually can pick up
+the object.
+And then it learns how to do this more and more quickly.
+One reason why I really like this video is it helps highlight the capability of these
+methods that I think is really lacking in other areas of reinforcement learning and
+lacking especially in areas of computer graphics and language modeling.
+Which is the capacity to discover something new.
+The capacity to find solutions to a problem that haven't been written about on the internet
+that haven't been shown to you in any videos that you've seen before.
+It's really about generating knowledge.
+I think the power of reinforcement learning and these self-supervised methods is that
+they can generate their own knowledge.
+Here we're seeing that play out in a rather simple block stacking environment.
+But we could look at other much more complex tasks as well.
+Here is one example of this demonstrated in a multi-agent setting.
+So here we have teams of agents.
+And the teams of agents have to automatically learn how to cooperate to reach some goal.
+And the goal here is to make all of the opponents be dead.
+One of the really cool things about this work is that we find that throughout the course
+of learning, before the agents have ever succeeded at the task, they automatically learn to try
+out different exploration strategies, different teamwork strategies.
+And so finding these temporal patterns, they unlock certain forms of generalization.
+And they unlock new forms of exploration.
+I started this talk by talking about finding patterns in space.
+How deep learning methods for computer vision automatically find these rich spatial patterns.
+And I think my hope is to convey how finding patterns in time may unlock capabilities for
+decision-making and reinforcement learning.
+For decision-making agents.
+And in the last couple of minutes, I'm going to chart a path for what the future might look like.
+Today, we have robots that can stack some blocks.
+In a couple months, we probably could have robots that can build a Jenga tower.
+But how long until we have robots that can build a tower like the one shown on the right?
+The tower shown on the right has 1,500 blocks.
+All stacked on top of a single block.
+If I show you this image, do you think it's a real image?
+Or was this just a generative AI image?
+How do you figure it out?
+How do you guess whether this was a real image or a generative AI image?
+If you're like me, you'd go get a bunch of blocks and try building it.
+How do we make AI agents that do something similar, that automatically try little experiments
+to see whether it would be possible to build a tower like this?
+I don't know.
+We recently put out a benchmark so that you can try it.
+You can figure out how to design AI agents that can automatically become mini-scientists.
+Learn how to perform these controlled experiments to really learn about the world and generate knowledge.
+I want to note a couple other code repositories and papers for folks that want to get involved in the research.
+For folks that really want to study AI.
+For folks that really want to study scaling laws for reinforcement learning.
+I'd recommend checking out the paper and codebase from here.
+We've also spent a lot of time thinking about how do you build reinforcement learning experimental frameworks that are really, really fast.
+We know that fast training is important for unlocking certain capabilities.
+And this codebase here allows us to train in about a million frames in one minute.
+There's also this important problem setting of learning from offline data.
+We've built a new benchmark for studying this problem setting as well.
+I should thank my amazing group of students and collaborators who have referred to most of the research I've talked about today.
+And I'm happy to take any questions.
+Thanks.

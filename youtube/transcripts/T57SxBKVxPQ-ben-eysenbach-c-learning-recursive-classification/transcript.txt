@@ -1,0 +1,25 @@
+I'm Ben Eysenbach. I'm presenting our work entitled C-Learning, Learning to Achieve Goals by a Recursive Classification. This is joint work with Sergey and Ross.
+Typically, reinforcement learning is viewed as the process of transforming a reward function into useful behavior.
+Designing reward functions can be quite tedious. So in this work, we consider how can we learn useful behaviors directly from data without reward functions?
+To this end, we'll reframe the problem of goal-conditioned RL as one of predicting and controlling the future.
+For example, looking at this ant-like robot here, we want to predict where will this robot be in the future.
+In particular, we want to estimate the density over time-discounted future states.
+Prior methods such as C-Learning and successive features don't solve this paper, as we discussed in the paper.
+So how are we going to learn this density function? Our main idea is to learn a future state classifier.
+This classifier takes as input the current state in action, as well as some other state, and tries to guess,
+does this other state come from the future, or is it just some random state?
+And it turns out that we can use Bayes' rule to transform this classifier into a density function.
+We call this algorithm Monte Carlo C-Learning.
+Here's some visualizations showing that C-Learning accurately predicts where the agent will be in the time-discounted future.
+We extended this to a variant called Temporal Different C-Learning that allows us to learn a classifier from off-policy experience.
+I'm not going to go into the details, but the resulting algorithm ends up looking similar to Q-Learning, with a couple of differences.
+For one, things like hindsight relabeling emerge automatically from our derivation, and our derivation even tells us how to optimally sample goals for relabeling.
+We can also use C-Learning to control the future. In particular, if there's some goal state we want to reach, we can ask our classifier, what action should we choose now, such that this goal state is likely a future state?
+Let's look at some experiments of using C-Learning for goal-conditioned RL.
+On this task, the robot is trying to move the red puck to the green region.
+We compared our method to prior methods based on Q-Learning, and these prior methods relabel experience in different ways.
+We observe that none of these prior methods make any progress on this task. And it's not surprising. We don't have any reward function, we don't have any reward shaping, and there's no notion of an epsilon ball or distance metric.
+In contrast, our method performs quite well on this task.
+We also compared our method to prior methods on a wide range of tasks, and observed that on the easier tasks, our method performs as well as the best prior methods, and on the more complex tasks, our method was quite a bit better.
+One of the most surprising observations from this project was that C-Learning has learned fairly complex behaviors. These are failure cases when the robot has failed to reach the goal, but has learned to automatically retry.
+In short, we've presented C-Learning. There are a number of things I didn't get a chance to talk about, so I guess how C-Learning satisfies certain Bellman equations. Check out the paper for more information.

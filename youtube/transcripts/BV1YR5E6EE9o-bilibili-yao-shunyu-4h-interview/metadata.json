@@ -1,0 +1,17 @@
+{
+  "title": "对姚顺宇的4小时访谈：请允许我小疯一下！在Anthropic和Gemini训模型、技术预测、英雄主义已过去",
+  "url": "https://www.bilibili.com/video/BV1YR5E6EE9o/",
+  "backend": "faster-whisper",
+  "model": "large-v3",
+  "requested_language": "zh",
+  "detected_language": "zh",
+  "generated_at": "2026-05-12T13:10:16",
+  "language": "zh",
+  "language_probability": 1,
+  "duration": 13680.6864375,
+  "asr_options": {
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "beam_size": 8
+  }
+}

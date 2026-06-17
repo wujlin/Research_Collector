@@ -2,7 +2,7 @@
 title: "AI for Physics"
 description: "计算层：把动力学、热力学与物理先验转成可训练的生成和建模机制。"
 paper_count: 87
-last_updated: "2026-04-24"
+last_updated: "2026-05-18"
 ---
 
 # AI for Physics

@@ -1,0 +1,12 @@
+{
+  "title": "Benjamin Eysenbach Self-Supervised Agents Exploring and Learning with Minimal Feedback",
+  "url": "https://www.youtube.com/watch?v=AhoOcPi2QIA",
+  "backend": "faster-whisper",
+  "model": "large-v3",
+  "requested_language": "en",
+  "detected_language": "en",
+  "generated_at": "2026-05-13T13:37:08",
+  "language": "en",
+  "language_probability": 1,
+  "duration": 5163.207
+}

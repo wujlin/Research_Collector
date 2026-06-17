@@ -1,0 +1,12 @@
+{
+  "title": "Contrastive Learning as Goal-Conditioned Reinforcement Learning",
+  "url": "https://www.youtube.com/watch?v=5_eGcprfw60",
+  "backend": "faster-whisper",
+  "model": "large-v3",
+  "requested_language": "en",
+  "detected_language": "en",
+  "generated_at": "2026-05-13T15:12:47",
+  "language": "en",
+  "language_probability": 1,
+  "duration": 291.6763125
+}

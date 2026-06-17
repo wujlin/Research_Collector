@@ -1,0 +1,5335 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 17.14,
+      "text": "Excellent. Okay. So thanks so much for having me here today. I'm really excited to talk about some of this work. So the title of the talk is Diversity is All You Need, Learning Skills Without a Reward Function. And this is joint work with a number of collaborators, including Shane Gu, Abhishek Gupta, Juliet Yerbaaz, and Sergey Levin."
+    },
+    {
+      "start": 19.1,
+      "end": 26.88,
+      "text": "And if you have any questions during the talk, please feel free to stop me and ask questions. The point of this is not so I can talk, but so that you can learn cool things."
+    },
+    {
+      "start": 26.88,
+      "end": 36.6,
+      "text": "Okay. So to start before talking about what we actually do in this paper, I want to talk about some of the challenges that face reinforcement learning today."
+    },
+    {
+      "start": 37.1,
+      "end": 50.18,
+      "text": "And a lot of these challenges revolve around human supervision. That is, when we want to get, when we want to deploy reinforcement learning algorithms, what often stops us is not technical problems, but problems that have to do with relying on humans."
+    },
+    {
+      "start": 50.18,
+      "end": 55.08,
+      "text": "We do this in a number of ways. For example, we rely on humans to design reward functions."
+    },
+    {
+      "start": 55.08,
+      "end": 67.32,
+      "text": "We somehow expect that humans will be able to say, okay, this is what I want the robot to do. And to do that, here's some really complicated mathematical expression of corresponding to these are good states and these are bad states."
+    },
+    {
+      "start": 67.32,
+      "end": 69.42,
+      "text": "And in practice, this is really hard to define."
+    },
+    {
+      "start": 71.47999999999999,
+      "end": 84.7,
+      "text": "A second challenge is designing skills. Especially when we want robots or other autonomous agents to solve temporally extended tasks, it's often useful to be able to break down those tasks into a series of simpler tasks."
+    },
+    {
+      "start": 85.08,
+      "end": 92.08,
+      "text": "But automatically learning these tasks is often quite challenging. And that will actually be the main focus of today's talk."
+    },
+    {
+      "start": 94.08,
+      "end": 105.08,
+      "text": "A third challenge is tuning hyperparameters. Despite reinforcement learning algorithms being much more stable today than they were, say, five years ago, they still depend heavily on a number of really critical hyperparameters."
+    },
+    {
+      "start": 105.08,
+      "end": 111.08,
+      "text": "And tuning those parameters often relies on just human ingenuity, which is sort of annoying."
+    },
+    {
+      "start": 114.08,
+      "end": 115.08,
+      "text": "Resetting."
+    },
+    {
+      "start": 115.08,
+      "end": 117.08,
+      "text": "This is an issue that often gets overlooked."
+    },
+    {
+      "start": 117.08,
+      "end": 125.08,
+      "text": "When we have something like a robot deployed in the real world, we often segment its training into a sequence of episodes."
+    },
+    {
+      "start": 125.08,
+      "end": 131.07999999999998,
+      "text": "And at the end of every episode, we assume that the robot is magically reset back to some initial state."
+    },
+    {
+      "start": 131.07999999999998,
+      "end": 139.07999999999998,
+      "text": "And for things like video games, this is a perfectly reasonable thing to do. You can just reset all the bits in the game back to some initial state."
+    },
+    {
+      "start": 139.07999999999998,
+      "end": 144.07999999999998,
+      "text": "But for things like robots or self-driving cars or chemical plants, resetting the state is often quite challenging."
+    },
+    {
+      "start": 144.08,
+      "end": 148.08,
+      "text": "You often have to have some human operator come in and rearrange everything."
+    },
+    {
+      "start": 148.08,
+      "end": 155.08,
+      "text": "I'm not going to talk about this in this talk, but it's one important challenge that I want to see more work on in the future."
+    },
+    {
+      "start": 155.08,
+      "end": 162.08,
+      "text": "And the last two challenges are safety, we don't want robots to break themselves, and curriculum learning."
+    },
+    {
+      "start": 162.08,
+      "end": 166.08,
+      "text": "For really complicated tasks, it's often nearly impossible to solve them in a single shot."
+    },
+    {
+      "start": 166.08,
+      "end": 173.08,
+      "text": "And so insofar as we can break down those tasks into a sequence of easier tasks, then it might be easier to solve them."
+    },
+    {
+      "start": 173.08,
+      "end": 179.08,
+      "text": "And so today's talk, as I alluded to before, is going to focus mostly on learning useful skills."
+    },
+    {
+      "start": 179.08,
+      "end": 188.08,
+      "text": "Before we actually dive into what skills are, one of the reasons that skills will be useful is that they'll actually help us solve a number of these other problems."
+    },
+    {
+      "start": 188.08,
+      "end": 194.08,
+      "text": "They'll help us make progress on things like designing reward functions, hyperparameter tuning, and curriculum learning."
+    },
+    {
+      "start": 194.08,
+      "end": 197.08,
+      "text": "OK, so what do we mean by a skill?"
+    },
+    {
+      "start": 197.08,
+      "end": 202.08,
+      "text": "So a skill fundamentally is some behavior that some autonomous agent can do."
+    },
+    {
+      "start": 203.08,
+      "end": 207.08,
+      "text": "And ultimately, what defines a skill depends on the environment you're in."
+    },
+    {
+      "start": 207.08,
+      "end": 216.08,
+      "text": "So if you look at this quadruped robot right here, skills might correspond to walking forward or walking backwards, crouching down or jumping up."
+    },
+    {
+      "start": 216.08,
+      "end": 219.08,
+      "text": "But for a different robot, you might get different sorts of skills."
+    },
+    {
+      "start": 219.08,
+      "end": 226.08,
+      "text": "For example, for this arm robot, skills may correspond to throwing or stacking or sorting objects."
+    },
+    {
+      "start": 226.08,
+      "end": 230.08,
+      "text": "And in both of these examples, it's pretty clear what different skills would be."
+    },
+    {
+      "start": 230.08,
+      "end": 233.08,
+      "text": "You and I can sit down and write down what a set of rules are."
+    },
+    {
+      "start": 233.08,
+      "end": 236.08,
+      "text": "And that's what a set of reasonable skills would be."
+    },
+    {
+      "start": 236.08,
+      "end": 245.08,
+      "text": "Now, one of the interesting things about learning skills is that they might also help us understand what are the capabilities of a robot like this."
+    },
+    {
+      "start": 245.08,
+      "end": 251.08,
+      "text": "Of a robot that is really hard a priori to know, what is it possible for this robot to do?"
+    },
+    {
+      "start": 251.08,
+      "end": 253.08,
+      "text": "Can this robot roll forward and roll backwards?"
+    },
+    {
+      "start": 253.08,
+      "end": 255.08,
+      "text": "Can this robot jump?"
+    },
+    {
+      "start": 255.08,
+      "end": 259.08000000000004,
+      "text": "Can this robot flatten itself like a pancake?"
+    },
+    {
+      "start": 259.08000000000004,
+      "end": 262.08000000000004,
+      "text": "If we can learn a set of skills that spans the behavior."
+    },
+    {
+      "start": 263.08,
+      "end": 274.08,
+      "text": "Of the robot, we might be able to figure out and then better understand what robots can do."
+    },
+    {
+      "start": 274.08,
+      "end": 275.08,
+      "text": "OK."
+    },
+    {
+      "start": 275.08,
+      "end": 277.08,
+      "text": "So at this point, we've introduced skills."
+    },
+    {
+      "start": 277.08,
+      "end": 279.08,
+      "text": "Now I want to talk a little bit about what are good skills?"
+    },
+    {
+      "start": 279.08,
+      "end": 284.08,
+      "text": "What makes one skill or some skills better than other skills?"
+    },
+    {
+      "start": 284.08,
+      "end": 287.08,
+      "text": "And there are a couple of things that might make skills useful."
+    },
+    {
+      "start": 287.08,
+      "end": 290.08,
+      "text": "One is we might want skills that do good exploration."
+    },
+    {
+      "start": 290.08,
+      "end": 292.08,
+      "text": "That is, we might want different behaviors that go to different parts of the body."
+    },
+    {
+      "start": 292.08,
+      "end": 297.08,
+      "text": "We might want behaviors that go to different parts of the state space."
+    },
+    {
+      "start": 297.08,
+      "end": 299.08,
+      "text": "Another thing we might want is predictability."
+    },
+    {
+      "start": 299.08,
+      "end": 305.08,
+      "text": "That is, if you say I'm executing skill one, we should always be able to know what will skill one do?"
+    },
+    {
+      "start": 305.08,
+      "end": 308.08,
+      "text": "What will be the outcome of executing skill one?"
+    },
+    {
+      "start": 308.08,
+      "end": 313.08,
+      "text": "And this is especially important if we want to compose skills hierarchically."
+    },
+    {
+      "start": 313.08,
+      "end": 318.08,
+      "text": "That is, if we want to string together some sequence of skills."
+    },
+    {
+      "start": 318.08,
+      "end": 320.08,
+      "text": "First executing skill one and then executing skill two."
+    },
+    {
+      "start": 320.08,
+      "end": 321.08,
+      "text": "Because if the means are different."
+    },
+    {
+      "start": 321.08,
+      "end": 327.08,
+      "text": "Because if the meaning of skills change, if the outcome of executing skills change,"
+    },
+    {
+      "start": 327.08,
+      "end": 333.08,
+      "text": "then it's really hard to know what will happen when I execute skill one and then skill two."
+    },
+    {
+      "start": 333.08,
+      "end": 336.08,
+      "text": "And then a third property that might be useful is interpretability."
+    },
+    {
+      "start": 336.08,
+      "end": 342.08,
+      "text": "That is, if you see the robot doing something, if you see that the robot's in some state taking some actions,"
+    },
+    {
+      "start": 342.08,
+      "end": 345.08,
+      "text": "you should be able to infer, OK, oh, that robot's in that state."
+    },
+    {
+      "start": 345.08,
+      "end": 350.08,
+      "text": "So it must be executing skill seven, for example."
+    },
+    {
+      "start": 350.08,
+      "end": 357.08,
+      "text": "And what all these properties hint at is that what makes a skill good or bad can't be determined in isolation."
+    },
+    {
+      "start": 357.08,
+      "end": 363.08,
+      "text": "Rather, what makes a skill good or bad depends on its relationship to other skills."
+    },
+    {
+      "start": 363.08,
+      "end": 368.08,
+      "text": "And so one of the key ideas of this talk is that instead of learning skills in isolation,"
+    },
+    {
+      "start": 368.08,
+      "end": 373.08,
+      "text": "rather, we're going to focus on learning an entire set of skills."
+    },
+    {
+      "start": 373.08,
+      "end": 379.08,
+      "text": "And the objective we're going to use for learning the set of skills is that the set, jointly,"
+    },
+    {
+      "start": 379.08,
+      "end": 386.08,
+      "text": "should be as diverse as possible."
+    },
+    {
+      "start": 386.08,
+      "end": 390.08,
+      "text": "OK, so this is sort of the setup of what we want out of a skill learning algorithm."
+    },
+    {
+      "start": 390.08,
+      "end": 395.08,
+      "text": "And I'm actually going to present the method we use for learning the set of skills."
+    },
+    {
+      "start": 395.08,
+      "end": 399.08,
+      "text": "And before presenting it mathematically, I'm going to present it as a game,"
+    },
+    {
+      "start": 399.08,
+      "end": 405.08,
+      "text": "a game that you or I could actually play if this were in person."
+    },
+    {
+      "start": 405.08,
+      "end": 407.08,
+      "text": "So this game works as follows."
+    },
+    {
+      "start": 407.08,
+      "end": 409.08,
+      "text": "We have two players standing on our side."
+    },
+    {
+      "start": 409.08,
+      "end": 412.08,
+      "text": "Either side of, say, a big football field."
+    },
+    {
+      "start": 412.08,
+      "end": 419.08,
+      "text": "And the goal of the game is for the blue player to communicate some message to the red player."
+    },
+    {
+      "start": 419.08,
+      "end": 421.08,
+      "text": "And the players can't talk to each other."
+    },
+    {
+      "start": 421.08,
+      "end": 423.08,
+      "text": "They're too far away."
+    },
+    {
+      "start": 423.08,
+      "end": 428.08,
+      "text": "And so the only way that the blue player can communicate to the red player is by doing things."
+    },
+    {
+      "start": 428.08,
+      "end": 432.08,
+      "text": "By, say, standing upright with his hands on the side."
+    },
+    {
+      "start": 432.08,
+      "end": 437.08,
+      "text": "Or maybe communicate a different message by leaning over to one side."
+    },
+    {
+      "start": 437.08,
+      "end": 442.08,
+      "text": "Or it could communicate a third message by jumping and kicking."
+    },
+    {
+      "start": 442.08,
+      "end": 444.08,
+      "text": "Or by holding his leg."
+    },
+    {
+      "start": 444.08,
+      "end": 446.08,
+      "text": "Or by doing other motions."
+    },
+    {
+      "start": 446.08,
+      "end": 456.08,
+      "text": "And one of the ideas here is that the blue player, in trying to convey information to the red player on the opposite side of the football field,"
+    },
+    {
+      "start": 456.08,
+      "end": 460.08,
+      "text": "the blue player has to figure out different motions they can do."
+    },
+    {
+      "start": 460.08,
+      "end": 463.08,
+      "text": "Different motions that are distinguishable from one another."
+    },
+    {
+      "start": 463.08,
+      "end": 467.08,
+      "text": "Because if the red player can't distinguish one motion from another motion,"
+    },
+    {
+      "start": 467.08,
+      "end": 476.08,
+      "text": "the blue player won't be able to tell what message the blue player is trying to play."
+    },
+    {
+      "start": 476.08,
+      "end": 483.08,
+      "text": "This game here lies at the core of the algorithm that we proposed."
+    },
+    {
+      "start": 483.08,
+      "end": 487.08,
+      "text": "I'll explain how that works now."
+    },
+    {
+      "start": 487.08,
+      "end": 491.08,
+      "text": "So to do that, we need a little bit of mathematical machinery."
+    },
+    {
+      "start": 491.08,
+      "end": 497.08,
+      "text": "And so we can formally quantify the amount of information that the blue player conveys to the red player."
+    },
+    {
+      "start": 497.08,
+      "end": 499.08,
+      "text": "As follows."
+    },
+    {
+      "start": 499.08,
+      "end": 502.08,
+      "text": "So let's say that the blue player is communicating three messages."
+    },
+    {
+      "start": 502.08,
+      "end": 504.08,
+      "text": "Either A, B, or C."
+    },
+    {
+      "start": 504.08,
+      "end": 507.08,
+      "text": "And they're going to do that using three actions."
+    },
+    {
+      "start": 507.08,
+      "end": 511.08,
+      "text": "Leaning over, jumping and kicking, or swaying to one side."
+    },
+    {
+      "start": 511.08,
+      "end": 517.0799999999999,
+      "text": "We can precisely say that the amount of information that the blue player is sending to the red player"
+    },
+    {
+      "start": 517.0799999999999,
+      "end": 526.0799999999999,
+      "text": "is at least as great as how well the red player can predict what the blue player is doing."
+    },
+    {
+      "start": 526.08,
+      "end": 528.08,
+      "text": "So you get some intuition for this."
+    },
+    {
+      "start": 528.08,
+      "end": 538.08,
+      "text": "If the red player can always accurately infer that kicking means code word B,"
+    },
+    {
+      "start": 538.08,
+      "end": 541.08,
+      "text": "then the subjective, this probability is going to be quite large."
+    },
+    {
+      "start": 541.08,
+      "end": 547.08,
+      "text": "And so that means that the blue player is successfully communicating many bits to the red player."
+    },
+    {
+      "start": 547.08,
+      "end": 555.08,
+      "text": "If in contrast, the red player is never able to predict what message the blue player is trying to send,"
+    },
+    {
+      "start": 555.08,
+      "end": 558.08,
+      "text": "then this term is going to be quite low."
+    },
+    {
+      "start": 558.08,
+      "end": 566.08,
+      "text": "And what this bound here highlights is that if we want to maximize information,"
+    },
+    {
+      "start": 566.08,
+      "end": 569.08,
+      "text": "we actually have to care about the performance of both the players."
+    },
+    {
+      "start": 569.08,
+      "end": 574.08,
+      "text": "We both want the blue player to execute distinguishable behavior."
+    },
+    {
+      "start": 574.08,
+      "end": 584.08,
+      "text": "We also want the red player to be able to accurately guess what the blue player is trying to do."
+    },
+    {
+      "start": 584.08,
+      "end": 589.08,
+      "text": "So before we instantiate this inside a reinforcement learning algorithm,"
+    },
+    {
+      "start": 589.08,
+      "end": 596.08,
+      "text": "I want to pause here to see if there are any questions."
+    },
+    {
+      "start": 596.08,
+      "end": 603.08,
+      "text": "Well, I'm kind of interested still in how you, you know, a step earlier,"
+    },
+    {
+      "start": 603.08,
+      "end": 608.08,
+      "text": "how did you get into that perspective that the diversity of skills"
+    },
+    {
+      "start": 608.08,
+      "end": 613.08,
+      "text": "and like these three requirements are really what matters about skills?"
+    },
+    {
+      "start": 613.08,
+      "end": 614.08,
+      "text": "There."
+    },
+    {
+      "start": 614.08,
+      "end": 618.08,
+      "text": "Like a little bit of a step before that."
+    },
+    {
+      "start": 618.08,
+      "end": 622.08,
+      "text": "Like, how did you end up with these three requirements?"
+    },
+    {
+      "start": 622.08,
+      "end": 625.08,
+      "text": "You know, it's a really good point."
+    },
+    {
+      "start": 625.08,
+      "end": 631.08,
+      "text": "A lot of this just came from looking at what like intuitively what we think useful skills would be."
+    },
+    {
+      "start": 631.08,
+      "end": 635.08,
+      "text": "And ultimately, we care about learning skills, not for the purpose of learning skills,"
+    },
+    {
+      "start": 635.08,
+      "end": 639.08,
+      "text": "but we learn we care about learning skills because they will help us solve downstream tasks."
+    },
+    {
+      "start": 639.08,
+      "end": 643.08,
+      "text": "And so one way we can use skills for solving downstream tasks"
+    },
+    {
+      "start": 643.08,
+      "end": 645.08,
+      "text": "is to compose them hierarchically."
+    },
+    {
+      "start": 645.08,
+      "end": 650.08,
+      "text": "That is, instead of planning at the love-love, say, motor torques or joint angles,"
+    },
+    {
+      "start": 650.08,
+      "end": 655.08,
+      "text": "we can plan at the love-love more abstract behaviors."
+    },
+    {
+      "start": 655.08,
+      "end": 660.08,
+      "text": "And this requirement that we'd be able to use skills for hierarchical RO"
+    },
+    {
+      "start": 660.08,
+      "end": 666.08,
+      "text": "was one of the motivations for making skills predictable."
+    },
+    {
+      "start": 666.08,
+      "end": 669.08,
+      "text": "The motivation for exploration is sort of similar."
+    },
+    {
+      "start": 669.08,
+      "end": 672.08,
+      "text": "That is, if we want to be able to use skills to accelerate learning downstream tasks,"
+    },
+    {
+      "start": 672.08,
+      "end": 677.08,
+      "text": "it would be useful if, when given a reward function in some environment,"
+    },
+    {
+      "start": 677.08,
+      "end": 680.08,
+      "text": "we're able to very quickly explore this environment."
+    },
+    {
+      "start": 680.08,
+      "end": 683.08,
+      "text": "And that motivates us to have skills explore."
+    },
+    {
+      "start": 683.08,
+      "end": 686.08,
+      "text": "And one thing that actually makes exploration easier in this setting is that"
+    },
+    {
+      "start": 686.08,
+      "end": 691.08,
+      "text": "we don't need to have a single skill that does good exploration everywhere."
+    },
+    {
+      "start": 691.08,
+      "end": 697.08,
+      "text": "All we need is that different skills explore different areas."
+    },
+    {
+      "start": 697.08,
+      "end": 699.08,
+      "text": "And that if there's a certain state you want to get to,"
+    },
+    {
+      "start": 699.08,
+      "end": 702.08,
+      "text": "there's some skill that will get you to that state."
+    },
+    {
+      "start": 702.08,
+      "end": 707.08,
+      "text": "And so it was this sort of reasoning about how are we eventually going to use skills"
+    },
+    {
+      "start": 707.08,
+      "end": 713.08,
+      "text": "that suggested these properties."
+    },
+    {
+      "start": 713.08,
+      "end": 715.08,
+      "text": "Yeah, thank you. Makes sense."
+    },
+    {
+      "start": 715.08,
+      "end": 717.08,
+      "text": "Excellent."
+    },
+    {
+      "start": 717.08,
+      "end": 719.08,
+      "text": "Any other questions?"
+    },
+    {
+      "start": 719.08,
+      "end": 734.08,
+      "text": "If not, maybe we'll move on."
+    },
+    {
+      "start": 734.08,
+      "end": 736.08,
+      "text": "OK, so we have this game, this two-player game."
+    },
+    {
+      "start": 736.08,
+      "end": 740.08,
+      "text": "And to turn this into a reinforcement learning algorithm,"
+    },
+    {
+      "start": 740.08,
+      "end": 746.08,
+      "text": "we're going to basically assign neural networks to the blue player and the red player."
+    },
+    {
+      "start": 746.08,
+      "end": 748.08,
+      "text": "And I'll explain how that works."
+    },
+    {
+      "start": 749.08,
+      "end": 755.08,
+      "text": "So the blue player is what we're going to call the skill or the policy."
+    },
+    {
+      "start": 755.08,
+      "end": 762.08,
+      "text": "And this player takes as input the current state of the world and some Z."
+    },
+    {
+      "start": 762.08,
+      "end": 765.08,
+      "text": "Z corresponds to the code word A, B, or C,"
+    },
+    {
+      "start": 765.08,
+      "end": 769.08,
+      "text": "or some other object that we discussed before."
+    },
+    {
+      "start": 769.08,
+      "end": 772.08,
+      "text": "And the skill outputs a sequence of actions."
+    },
+    {
+      "start": 772.08,
+      "end": 775.08,
+      "text": "The other player, the red player, is the discriminator."
+    },
+    {
+      "start": 775.08,
+      "end": 778.08,
+      "text": "And the discriminator looks at the state of the world"
+    },
+    {
+      "start": 778.08,
+      "end": 786.08,
+      "text": "and tries to guess what code word is the skill trying to send."
+    },
+    {
+      "start": 786.08,
+      "end": 789.08,
+      "text": "And both the skill and the discriminator are learned."
+    },
+    {
+      "start": 789.08,
+      "end": 791.08,
+      "text": "These are learned neural networks."
+    },
+    {
+      "start": 791.08,
+      "end": 795.08,
+      "text": "And the whole algorithm works as follows."
+    },
+    {
+      "start": 795.08,
+      "end": 797.08,
+      "text": "At the start of every episode, we sample some code words,"
+    },
+    {
+      "start": 797.08,
+      "end": 800.08,
+      "text": "some Z from a prior distribution."
+    },
+    {
+      "start": 800.08,
+      "end": 803.08,
+      "text": "And we send that to the skill."
+    },
+    {
+      "start": 803.08,
+      "end": 806.08,
+      "text": "The skill then interacts with the environment,"
+    },
+    {
+      "start": 806.08,
+      "end": 808.08,
+      "text": "collecting a whole bunch of experience."
+    },
+    {
+      "start": 808.08,
+      "end": 811.08,
+      "text": "Now, at every time step,"
+    },
+    {
+      "start": 811.08,
+      "end": 813.08,
+      "text": "the discriminator, the red player,"
+    },
+    {
+      "start": 813.08,
+      "end": 815.08,
+      "text": "looks at the state of the world and tries to guess,"
+    },
+    {
+      "start": 815.08,
+      "end": 818.08,
+      "text": "OK, what code word, what Z,"
+    },
+    {
+      "start": 818.08,
+      "end": 820.08,
+      "text": "is the blue player trying to tell me?"
+    },
+    {
+      "start": 820.08,
+      "end": 822.08,
+      "text": "Are they trying to send A or are they trying to send B"
+    },
+    {
+      "start": 822.08,
+      "end": 825.08,
+      "text": "or are they trying to send C?"
+    },
+    {
+      "start": 825.08,
+      "end": 829.08,
+      "text": "And then the most important step is how we update the skill."
+    },
+    {
+      "start": 829.08,
+      "end": 831.08,
+      "text": "So what we do is we say,"
+    },
+    {
+      "start": 831.08,
+      "end": 834.08,
+      "text": "if the discriminator was able to successfully guess"
+    },
+    {
+      "start": 834.08,
+      "end": 837.08,
+      "text": "what code word the skill was trying to send,"
+    },
+    {
+      "start": 838.08,
+      "end": 841.08,
+      "text": "then we should give the skill some high reward."
+    },
+    {
+      "start": 841.08,
+      "end": 845.08,
+      "text": "If the discriminator failed to guess what code word"
+    },
+    {
+      "start": 845.08,
+      "end": 847.08,
+      "text": "the blue player was trying to send,"
+    },
+    {
+      "start": 847.08,
+      "end": 851.08,
+      "text": "then the skill shouldn't get very much reward."
+    },
+    {
+      "start": 851.08,
+      "end": 854.08,
+      "text": "And mathematically, this exactly corresponds to saying"
+    },
+    {
+      "start": 854.08,
+      "end": 858.08,
+      "text": "that the reward for the skill corresponds to"
+    },
+    {
+      "start": 858.08,
+      "end": 862.08,
+      "text": "the log probability that the red player was able to guess"
+    },
+    {
+      "start": 862.08,
+      "end": 866.08,
+      "text": "the correct code word."
+    },
+    {
+      "start": 866.08,
+      "end": 868.08,
+      "text": "And the discriminator here is just updated."
+    },
+    {
+      "start": 868.08,
+      "end": 871.08,
+      "text": "Using standard maximum likelihood."
+    },
+    {
+      "start": 871.08,
+      "end": 874.08,
+      "text": "So we tell the discriminator afterwards,"
+    },
+    {
+      "start": 874.08,
+      "end": 878.08,
+      "text": "OK, so the blue player was actually trying to send code word four."
+    },
+    {
+      "start": 878.08,
+      "end": 880.08,
+      "text": "Update your model to get better at predicting"
+    },
+    {
+      "start": 880.08,
+      "end": 881.08,
+      "text": "that when they do that behavior,"
+    },
+    {
+      "start": 881.08,
+      "end": 885.08,
+      "text": "you should predict code word four."
+    },
+    {
+      "start": 885.08,
+      "end": 888.08,
+      "text": "And we call this algorithm diversity is all you need,"
+    },
+    {
+      "start": 888.08,
+      "end": 893.08,
+      "text": "or DIAN for short."
+    },
+    {
+      "start": 893.08,
+      "end": 896.08,
+      "text": "One of the neat things about DIAN is that we show that maximize,"
+    },
+    {
+      "start": 896.08,
+      "end": 897.08,
+      "text": "that this two player game here,"
+    },
+    {
+      "start": 897.08,
+      "end": 900.08,
+      "text": "corresponds to maximizing the amount of information sent"
+    },
+    {
+      "start": 900.08,
+      "end": 903.08,
+      "text": "from the blue player to the red player."
+    },
+    {
+      "start": 903.08,
+      "end": 906.08,
+      "text": "Exactly corresponds to trying to do well on that game"
+    },
+    {
+      "start": 906.08,
+      "end": 912.08,
+      "text": "where we had two players on the other side of the football field."
+    },
+    {
+      "start": 912.08,
+      "end": 917.08,
+      "text": "Let's look at some of the behaviors learned by DIAN."
+    },
+    {
+      "start": 917.08,
+      "end": 920.08,
+      "text": "So I'll start with a very simple task and move to more complex tasks."
+    },
+    {
+      "start": 920.08,
+      "end": 922.08,
+      "text": "On this very simple task,"
+    },
+    {
+      "start": 922.08,
+      "end": 925.08,
+      "text": "we have an agent that starts at the center of a room,"
+    },
+    {
+      "start": 925.08,
+      "end": 929.08,
+      "text": "and it can navigate in any direction."
+    },
+    {
+      "start": 929.08,
+      "end": 932.08,
+      "text": "And here we're plotting six different skills."
+    },
+    {
+      "start": 932.08,
+      "end": 934.08,
+      "text": "And we see that different skills correspond"
+    },
+    {
+      "start": 934.08,
+      "end": 936.08,
+      "text": "to going to different states in the environment."
+    },
+    {
+      "start": 936.08,
+      "end": 938.08,
+      "text": "We see, say, this pink skill goes to the left,"
+    },
+    {
+      "start": 938.08,
+      "end": 941.08,
+      "text": "and this light green skill goes to the right."
+    },
+    {
+      "start": 941.08,
+      "end": 943.08,
+      "text": "And looking at this plot,"
+    },
+    {
+      "start": 943.08,
+      "end": 946.08,
+      "text": "we see that this algorithm seems to achieve"
+    },
+    {
+      "start": 946.08,
+      "end": 948.08,
+      "text": "the three properties that we mentioned before."
+    },
+    {
+      "start": 948.08,
+      "end": 950.08,
+      "text": "It does good exploration."
+    },
+    {
+      "start": 950.08,
+      "end": 952.08,
+      "text": "It goes to most of the states in the environment."
+    },
+    {
+      "start": 952.08,
+      "end": 954.08,
+      "text": "It's predictable."
+    },
+    {
+      "start": 954.08,
+      "end": 957.08,
+      "text": "That is, if I say, where will the pink skill go?"
+    },
+    {
+      "start": 957.08,
+      "end": 959.08,
+      "text": "You can tell me, oh, the pink skill,"
+    },
+    {
+      "start": 959.08,
+      "end": 961.08,
+      "text": "that skill goes to the left."
+    },
+    {
+      "start": 961.08,
+      "end": 963.08,
+      "text": "And finally, it's interpretable."
+    },
+    {
+      "start": 963.08,
+      "end": 966.08,
+      "text": "Interpretable in the sense that if I say,"
+    },
+    {
+      "start": 966.08,
+      "end": 969.08,
+      "text": "the agent is at this state right here,"
+    },
+    {
+      "start": 969.08,
+      "end": 972.08,
+      "text": "what skill did he use to get there?"
+    },
+    {
+      "start": 972.08,
+      "end": 976.08,
+      "text": "I can say, oh, that was this off-color shade of green"
+    },
+    {
+      "start": 976.08,
+      "end": 980.08,
+      "text": "that got us there."
+    },
+    {
+      "start": 980.08,
+      "end": 982.08,
+      "text": "One other important property of DIAN"
+    },
+    {
+      "start": 982.08,
+      "end": 984.08,
+      "text": "that I want to highlight"
+    },
+    {
+      "start": 984.08,
+      "end": 987.08,
+      "text": "is DIAN maximizes not just the diversity"
+    },
+    {
+      "start": 987.08,
+      "end": 989.08,
+      "text": "at the current time step,"
+    },
+    {
+      "start": 989.08,
+      "end": 992.08,
+      "text": "but rather diversity in the future."
+    },
+    {
+      "start": 992.08,
+      "end": 994.08,
+      "text": "And to illustrate that,"
+    },
+    {
+      "start": 994.08,
+      "end": 996.08,
+      "text": "I want to consider this environment."
+    },
+    {
+      "start": 996.08,
+      "end": 997.08,
+      "text": "In this environment,"
+    },
+    {
+      "start": 997.08,
+      "end": 1000.08,
+      "text": "we have the agent start in a hallway."
+    },
+    {
+      "start": 1000.08,
+      "end": 1002.08,
+      "text": "And the hallway is really narrow."
+    },
+    {
+      "start": 1002.08,
+      "end": 1004.08,
+      "text": "And so when the agent is in the hallway,"
+    },
+    {
+      "start": 1004.08,
+      "end": 1007.08,
+      "text": "there's nothing it can do to differentiate itself"
+    },
+    {
+      "start": 1007.08,
+      "end": 1009.08,
+      "text": "from others."
+    },
+    {
+      "start": 1009.08,
+      "end": 1011.08,
+      "text": "There's nothing the agent can do"
+    },
+    {
+      "start": 1011.08,
+      "end": 1014.08,
+      "text": "to differentiate one skill from another skill."
+    },
+    {
+      "start": 1014.08,
+      "end": 1017.08,
+      "text": "And so for skills to become discriminable"
+    },
+    {
+      "start": 1017.08,
+      "end": 1018.08,
+      "text": "from one another,"
+    },
+    {
+      "start": 1018.08,
+      "end": 1020.08,
+      "text": "they must get to the end of the hallway"
+    },
+    {
+      "start": 1020.08,
+      "end": 1022.08,
+      "text": "and out into this open room."
+    },
+    {
+      "start": 1022.08,
+      "end": 1024.08,
+      "text": "And once out in the open room,"
+    },
+    {
+      "start": 1024.08,
+      "end": 1026.08,
+      "text": "different skills can make different actions"
+    },
+    {
+      "start": 1026.08,
+      "end": 1029.08,
+      "text": "to become discriminable from one another."
+    },
+    {
+      "start": 1029.08,
+      "end": 1031.08,
+      "text": "For example, the yellow skill can go down,"
+    },
+    {
+      "start": 1031.08,
+      "end": 1034.08,
+      "text": "and the purple skill can go to the right."
+    },
+    {
+      "start": 1034.08,
+      "end": 1036.08,
+      "text": "And this is important because it shows that"
+    },
+    {
+      "start": 1036.08,
+      "end": 1038.08,
+      "text": "you can continue to learn skills"
+    },
+    {
+      "start": 1038.08,
+      "end": 1042.08,
+      "text": "even in settings where you can't be discriminable soon"
+    },
+    {
+      "start": 1042.08,
+      "end": 1043.08,
+      "text": "to become discriminable."
+    },
+    {
+      "start": 1043.08,
+      "end": 1046.08,
+      "text": "To become discriminable in the future,"
+    },
+    {
+      "start": 1046.08,
+      "end": 1049.08,
+      "text": "agents must take actions to get to spaces"
+    },
+    {
+      "start": 1049.08,
+      "end": 1051.08,
+      "text": "where it's possible to be discriminable"
+    },
+    {
+      "start": 1051.08,
+      "end": 1055.08,
+      "text": "from one another."
+    },
+    {
+      "start": 1055.08,
+      "end": 1057.08,
+      "text": "Okay, so now that we've built up some of the intuition"
+    },
+    {
+      "start": 1057.08,
+      "end": 1059.08,
+      "text": "for what these skills look like,"
+    },
+    {
+      "start": 1059.08,
+      "end": 1060.08,
+      "text": "I want to show some results"
+    },
+    {
+      "start": 1060.08,
+      "end": 1065.08,
+      "text": "on some higher dimensional tasks."
+    },
+    {
+      "start": 1065.08,
+      "end": 1068.08,
+      "text": "So here we're looking at a sort of dog-like robot,"
+    },
+    {
+      "start": 1068.08,
+      "end": 1070.08,
+      "text": "and we're visualizing some of the skills"
+    },
+    {
+      "start": 1070.08,
+      "end": 1071.08,
+      "text": "that were learned."
+    },
+    {
+      "start": 1071.08,
+      "end": 1073.08,
+      "text": "And we see that we've learned skills corresponding"
+    },
+    {
+      "start": 1073.08,
+      "end": 1075.08,
+      "text": "to running forwards, running backwards,"
+    },
+    {
+      "start": 1075.08,
+      "end": 1079.08,
+      "text": "and even doing front flips."
+    },
+    {
+      "start": 1079.08,
+      "end": 1082.08,
+      "text": "In fact, we've learned more than that."
+    },
+    {
+      "start": 1082.08,
+      "end": 1084.08,
+      "text": "We've learned different ways of running forward."
+    },
+    {
+      "start": 1084.08,
+      "end": 1086.08,
+      "text": "We've learned ways of running forward quickly"
+    },
+    {
+      "start": 1086.08,
+      "end": 1088.08,
+      "text": "and ways of running forward slowly,"
+    },
+    {
+      "start": 1088.08,
+      "end": 1090.08,
+      "text": "ways of running forward that involve sort of"
+    },
+    {
+      "start": 1090.08,
+      "end": 1096.08,
+      "text": "lying on your nose and scooping forward."
+    },
+    {
+      "start": 1096.08,
+      "end": 1100.08,
+      "text": "We've likewise learned different ways of running backwards"
+    },
+    {
+      "start": 1100.08,
+      "end": 1103.08,
+      "text": "and even different types of front flips."
+    },
+    {
+      "start": 1103.08,
+      "end": 1105.08,
+      "text": "And one of the things I want to emphasize here"
+    },
+    {
+      "start": 1105.08,
+      "end": 1108.08,
+      "text": "is that all of these different behaviors"
+    },
+    {
+      "start": 1108.08,
+      "end": 1110.08,
+      "text": "have emerged just out of playing that game"
+    },
+    {
+      "start": 1110.08,
+      "end": 1112.08,
+      "text": "that we mentioned before."
+    },
+    {
+      "start": 1112.08,
+      "end": 1114.08,
+      "text": "These have all emerged out of playing the game"
+    },
+    {
+      "start": 1114.08,
+      "end": 1116.08,
+      "text": "where the robot's trying to communicate some message"
+    },
+    {
+      "start": 1116.08,
+      "end": 1119.08,
+      "text": "to the discriminator, to some outside user"
+    },
+    {
+      "start": 1119.08,
+      "end": 1121.08,
+      "text": "that's trying to guess what message"
+    },
+    {
+      "start": 1121.08,
+      "end": 1128.08,
+      "text": "is the robot trying to send."
+    },
+    {
+      "start": 1128.08,
+      "end": 1131.08,
+      "text": "This also works on other sorts of tasks."
+    },
+    {
+      "start": 1131.08,
+      "end": 1132.08,
+      "text": "So,"
+    },
+    {
+      "start": 1132.08,
+      "end": 1135.08,
+      "text": "we applied to this quadruped robot,"
+    },
+    {
+      "start": 1135.08,
+      "end": 1137.08,
+      "text": "and here the skills are slightly less interpretable,"
+    },
+    {
+      "start": 1137.08,
+      "end": 1139.08,
+      "text": "but you still learn skills moving, corresponding"
+    },
+    {
+      "start": 1139.08,
+      "end": 1142.08,
+      "text": "to moving in different directions."
+    },
+    {
+      "start": 1142.08,
+      "end": 1144.08,
+      "text": "For a hopping robot, you learn skills corresponding"
+    },
+    {
+      "start": 1144.08,
+      "end": 1147.08,
+      "text": "to going forward and backwards."
+    },
+    {
+      "start": 1147.08,
+      "end": 1150.08,
+      "text": "And you even learn different ways of solving"
+    },
+    {
+      "start": 1150.08,
+      "end": 1156.08,
+      "text": "Kurt Pol, the famous control task."
+    },
+    {
+      "start": 1156.08,
+      "end": 1159.08,
+      "text": "Any questions about the skills that we've seen so far?"
+    },
+    {
+      "start": 1159.08,
+      "end": 1161.08,
+      "text": "After this, I'm going to talk about some of the applications"
+    },
+    {
+      "start": 1161.08,
+      "end": 1163.08,
+      "text": "of learning these skills."
+    },
+    {
+      "start": 1163.08,
+      "end": 1164.08,
+      "text": "Yes."
+    },
+    {
+      "start": 1164.08,
+      "end": 1167.08,
+      "text": "So, one, I can just want to confirm."
+    },
+    {
+      "start": 1167.08,
+      "end": 1172.08,
+      "text": "So, do these agents get no reward"
+    },
+    {
+      "start": 1172.08,
+      "end": 1175.08,
+      "text": "for getting high rewards from the environment,"
+    },
+    {
+      "start": 1175.08,
+      "end": 1178.08,
+      "text": "only intrinsic diversity rewards?"
+    },
+    {
+      "start": 1178.08,
+      "end": 1179.08,
+      "text": "Exactly, yes."
+    },
+    {
+      "start": 1179.08,
+      "end": 1180.08,
+      "text": "I could have emphasized that more."
+    },
+    {
+      "start": 1180.08,
+      "end": 1182.08,
+      "text": "So, all of these skills are learned"
+    },
+    {
+      "start": 1182.08,
+      "end": 1184.08,
+      "text": "without any reward function."
+    },
+    {
+      "start": 1184.08,
+      "end": 1186.08,
+      "text": "So, these skills are learned just by saying,"
+    },
+    {
+      "start": 1186.08,
+      "end": 1188.08,
+      "text": "be as diverse as possible."
+    },
+    {
+      "start": 1188.08,
+      "end": 1190.08,
+      "text": "We don't include any term that says,"
+    },
+    {
+      "start": 1190.08,
+      "end": 1193.08,
+      "text": "be as diverse and also try to maximize this reward function."
+    },
+    {
+      "start": 1193.08,
+      "end": 1195.08,
+      "text": "No, we don't do that."
+    },
+    {
+      "start": 1195.08,
+      "end": 1198.08,
+      "text": "That is very impressive."
+    },
+    {
+      "start": 1198.08,
+      "end": 1200.08,
+      "text": "There's also a question in the chat,"
+    },
+    {
+      "start": 1200.08,
+      "end": 1201.08,
+      "text": "which I think is the same question"
+    },
+    {
+      "start": 1201.08,
+      "end": 1205.08,
+      "text": "that I also wanted to ask."
+    },
+    {
+      "start": 1205.08,
+      "end": 1206.08,
+      "text": "Let's do this."
+    },
+    {
+      "start": 1206.08,
+      "end": 1208.08,
+      "text": "Brandon, I will ask the question,"
+    },
+    {
+      "start": 1208.08,
+      "end": 1210.08,
+      "text": "and you please then confirm if it's the same thing"
+    },
+    {
+      "start": 1210.08,
+      "end": 1213.08,
+      "text": "that you wanted to know."
+    },
+    {
+      "start": 1213.08,
+      "end": 1219.08,
+      "text": "So, is this discriminator looking at trying to discriminate"
+    },
+    {
+      "start": 1219.08,
+      "end": 1222.08,
+      "text": "which skills is being used continuously,"
+    },
+    {
+      "start": 1222.08,
+      "end": 1224.08,
+      "text": "or is it looking at the entire trajectory"
+    },
+    {
+      "start": 1224.08,
+      "end": 1226.08,
+      "text": "at the end of the episode?"
+    },
+    {
+      "start": 1226.08,
+      "end": 1228.08,
+      "text": "That's a really good question."
+    },
+    {
+      "start": 1228.08,
+      "end": 1233.08,
+      "text": "So, the way we do it is that we look at just individual states."
+    },
+    {
+      "start": 1233.08,
+      "end": 1238.08,
+      "text": "We say, given the state, what is the robot trying to do?"
+    },
+    {
+      "start": 1238.08,
+      "end": 1241.08,
+      "text": "You can formulate similar objectives"
+    },
+    {
+      "start": 1241.08,
+      "end": 1243.08,
+      "text": "that look at entire trajectories"
+    },
+    {
+      "start": 1243.08,
+      "end": 1245.08,
+      "text": "or look at states and actions,"
+    },
+    {
+      "start": 1245.08,
+      "end": 1247.08,
+      "text": "look at the state in the initial state,"
+    },
+    {
+      "start": 1247.08,
+      "end": 1249.08,
+      "text": "look at the state in the final state,"
+    },
+    {
+      "start": 1249.08,
+      "end": 1251.08,
+      "text": "just look at the final state."
+    },
+    {
+      "start": 1251.08,
+      "end": 1252.08,
+      "text": "And there's actually been a lot of work"
+    },
+    {
+      "start": 1252.08,
+      "end": 1254.08,
+      "text": "that looks at different aspects of these."
+    },
+    {
+      "start": 1254.08,
+      "end": 1257.08,
+      "text": "There's a good paper by Joshua Acom"
+    },
+    {
+      "start": 1257.08,
+      "end": 1261.08,
+      "text": "called Variational Option Discovery Algorithms"
+    },
+    {
+      "start": 1261.08,
+      "end": 1263.08,
+      "text": "that talks a little bit about comparisons"
+    },
+    {
+      "start": 1263.08,
+      "end": 1265.08,
+      "text": "between these different sorts of objectives."
+    },
+    {
+      "start": 1265.08,
+      "end": 1267.08,
+      "text": "But fundamentally, they all correspond"
+    },
+    {
+      "start": 1267.08,
+      "end": 1268.08,
+      "text": "to playing the same game."
+    },
+    {
+      "start": 1268.08,
+      "end": 1273.08,
+      "text": "They're sort of different instantiations of that game."
+    },
+    {
+      "start": 1273.08,
+      "end": 1276.08,
+      "text": "Interesting. Thanks."
+    },
+    {
+      "start": 1276.08,
+      "end": 1278.08,
+      "text": "There's another question in the chat."
+    },
+    {
+      "start": 1278.08,
+      "end": 1279.08,
+      "text": "Do you see them?"
+    },
+    {
+      "start": 1279.08,
+      "end": 1281.08,
+      "text": "No."
+    },
+    {
+      "start": 1281.08,
+      "end": 1286.08,
+      "text": "So, it says, once the skills are learned,"
+    },
+    {
+      "start": 1286.08,
+      "end": 1291.08,
+      "text": "how are they selected from a hierarchical standpoint?"
+    },
+    {
+      "start": 1291.08,
+      "end": 1293.08,
+      "text": "Excellent."
+    },
+    {
+      "start": 1293.08,
+      "end": 1295.08,
+      "text": "Garrett, is it okay if I pull it off"
+    },
+    {
+      "start": 1295.08,
+      "end": 1297.08,
+      "text": "from that question for a couple slides?"
+    },
+    {
+      "start": 1297.08,
+      "end": 1298.08,
+      "text": "I think in like three slides,"
+    },
+    {
+      "start": 1298.08,
+      "end": 1300.08,
+      "text": "I'm going to have a description of that."
+    },
+    {
+      "start": 1300.08,
+      "end": 1301.08,
+      "text": "Excellent."
+    },
+    {
+      "start": 1309.08,
+      "end": 1313.08,
+      "text": "And I see that there was a question"
+    },
+    {
+      "start": 1313.08,
+      "end": 1316.08,
+      "text": "about using hindsight experience replay."
+    },
+    {
+      "start": 1316.08,
+      "end": 1317.08,
+      "text": "No, that's..."
+    },
+    {
+      "start": 1317.08,
+      "end": 1318.08,
+      "text": "Well, you can answer that."
+    },
+    {
+      "start": 1318.08,
+      "end": 1319.08,
+      "text": "Oh, that was earlier."
+    },
+    {
+      "start": 1319.08,
+      "end": 1321.08,
+      "text": "Yeah, that's something that we were talking about before."
+    },
+    {
+      "start": 1321.08,
+      "end": 1322.08,
+      "text": "Excellent."
+    },
+    {
+      "start": 1322.08,
+      "end": 1324.08,
+      "text": "But feel free to comment on that as well."
+    },
+    {
+      "start": 1324.08,
+      "end": 1326.08,
+      "text": "There is a way to use something similar"
+    },
+    {
+      "start": 1326.08,
+      "end": 1330.08,
+      "text": "to hindsight experience replay for this."
+    },
+    {
+      "start": 1330.08,
+      "end": 1331.08,
+      "text": "If people are interested,"
+    },
+    {
+      "start": 1331.08,
+      "end": 1336.08,
+      "text": "we can talk more about it at the end of the talk."
+    },
+    {
+      "start": 1336.08,
+      "end": 1338.08,
+      "text": "Okay, so let's talk about some of the applications."
+    },
+    {
+      "start": 1339.08,
+      "end": 1345.08,
+      "text": "So, fundamentally, what Diane learns"
+    },
+    {
+      "start": 1345.08,
+      "end": 1348.08,
+      "text": "is it learns this range of behaviors"
+    },
+    {
+      "start": 1348.08,
+      "end": 1352.08,
+      "text": "that a certain policy can do in a certain environment."
+    },
+    {
+      "start": 1352.08,
+      "end": 1355.08,
+      "text": "And it sort of gives us a low-dimensional knob."
+    },
+    {
+      "start": 1355.08,
+      "end": 1356.08,
+      "text": "And by tuning this knob,"
+    },
+    {
+      "start": 1356.08,
+      "end": 1359.08,
+      "text": "we can sweep over the range of behaviors."
+    },
+    {
+      "start": 1359.08,
+      "end": 1362.08,
+      "text": "And note that while the range of behaviors,"
+    },
+    {
+      "start": 1362.08,
+      "end": 1364.08,
+      "text": "things a robot can do in an environment,"
+    },
+    {
+      "start": 1364.08,
+      "end": 1366.08,
+      "text": "might be somewhat limited,"
+    },
+    {
+      "start": 1366.08,
+      "end": 1368.08,
+      "text": "it's a much smaller space"
+    },
+    {
+      "start": 1368.08,
+      "end": 1370.08,
+      "text": "than the set of parameters."
+    },
+    {
+      "start": 1370.08,
+      "end": 1371.08,
+      "text": "And so, effectively,"
+    },
+    {
+      "start": 1371.08,
+      "end": 1372.08,
+      "text": "we've sort of done something like PCA,"
+    },
+    {
+      "start": 1372.08,
+      "end": 1374.08,
+      "text": "or dimensionality reduction,"
+    },
+    {
+      "start": 1374.08,
+      "end": 1376.08,
+      "text": "on the space of behaviors."
+    },
+    {
+      "start": 1376.08,
+      "end": 1379.08,
+      "text": "And now we have this compact space of behaviors."
+    },
+    {
+      "start": 1379.08,
+      "end": 1381.08,
+      "text": "And just by tuning this low-dimensional knob,"
+    },
+    {
+      "start": 1381.08,
+      "end": 1384.08,
+      "text": "see, we can sweep over different behaviors."
+    },
+    {
+      "start": 1384.08,
+      "end": 1387.08,
+      "text": "And I'll show how this is useful for four applications."
+    },
+    {
+      "start": 1387.08,
+      "end": 1389.08,
+      "text": "For hierarchical reinforcement learning,"
+    },
+    {
+      "start": 1389.08,
+      "end": 1390.08,
+      "text": "as Garrett mentioned,"
+    },
+    {
+      "start": 1390.08,
+      "end": 1391.08,
+      "text": "as imitation learning,"
+    },
+    {
+      "start": 1391.08,
+      "end": 1394.08,
+      "text": "as parameter initialization,"
+    },
+    {
+      "start": 1394.08,
+      "end": 1396.08,
+      "text": "and then for a kind of cool application"
+    },
+    {
+      "start": 1396.08,
+      "end": 1398.08,
+      "text": "relating to meta-learning."
+    },
+    {
+      "start": 1398.08,
+      "end": 1402.08,
+      "text": "So let's start with a hierarchical RL application."
+    },
+    {
+      "start": 1402.08,
+      "end": 1406.08,
+      "text": "So we use Diane for hierarchical RL as follows."
+    },
+    {
+      "start": 1406.08,
+      "end": 1409.08,
+      "text": "To start, we place the agent in some environment,"
+    },
+    {
+      "start": 1409.08,
+      "end": 1411.08,
+      "text": "and we learn a set of skills."
+    },
+    {
+      "start": 1411.08,
+      "end": 1413.08,
+      "text": "For example, in the top left,"
+    },
+    {
+      "start": 1413.08,
+      "end": 1415.08,
+      "text": "we place the cheetah robot"
+    },
+    {
+      "start": 1415.08,
+      "end": 1418.08,
+      "text": "on this track with these obstacles,"
+    },
+    {
+      "start": 1418.08,
+      "end": 1420.08,
+      "text": "and we just have it learn a set of skills"
+    },
+    {
+      "start": 1420.08,
+      "end": 1423.08,
+      "text": "without any reward function."
+    },
+    {
+      "start": 1423.08,
+      "end": 1426.08,
+      "text": "Then, after learning a set of skills,"
+    },
+    {
+      "start": 1426.08,
+      "end": 1431.08,
+      "text": "we do hierarchical reinforcement learning as follows."
+    },
+    {
+      "start": 1431.08,
+      "end": 1435.08,
+      "text": "We say that we'll have some high-level policy"
+    },
+    {
+      "start": 1435.08,
+      "end": 1438.08,
+      "text": "that chooses skills to execute."
+    },
+    {
+      "start": 1438.08,
+      "end": 1440.08,
+      "text": "Instead of choosing actions,"
+    },
+    {
+      "start": 1440.08,
+      "end": 1441.08,
+      "text": "they choose skills."
+    },
+    {
+      "start": 1441.08,
+      "end": 1445.08,
+      "text": "And each skill will be executed for 50 time steps."
+    },
+    {
+      "start": 1445.08,
+      "end": 1448.08,
+      "text": "And then we optimize this high-level policy,"
+    },
+    {
+      "start": 1448.08,
+      "end": 1450.08,
+      "text": "in this case, just using policy gradient,"
+    },
+    {
+      "start": 1450.08,
+      "end": 1455.08,
+      "text": "using a version of policy gradient called TRPM."
+    },
+    {
+      "start": 1455.08,
+      "end": 1459.08,
+      "text": "And we find that by controlling the agent"
+    },
+    {
+      "start": 1459.08,
+      "end": 1461.08,
+      "text": "at the level of skills,"
+    },
+    {
+      "start": 1461.08,
+      "end": 1462.08,
+      "text": "which is the red curve,"
+    },
+    {
+      "start": 1462.08,
+      "end": 1464.08,
+      "text": "you're able to learn much faster"
+    },
+    {
+      "start": 1464.08,
+      "end": 1466.08,
+      "text": "than if you directly control the agent"
+    },
+    {
+      "start": 1466.08,
+      "end": 1469.08,
+      "text": "at the level of motor torques,"
+    },
+    {
+      "start": 1469.08,
+      "end": 1472.08,
+      "text": "which is the green line here,"
+    },
+    {
+      "start": 1472.08,
+      "end": 1474.08,
+      "text": "or if you use other algorithms"
+    },
+    {
+      "start": 1474.08,
+      "end": 1477.08,
+      "text": "that directly control the motor's joint angles"
+    },
+    {
+      "start": 1477.08,
+      "end": 1480.08,
+      "text": "rather than controlling the behaviors."
+    },
+    {
+      "start": 1480.08,
+      "end": 1483.08,
+      "text": "And that's what's shown in the top right plot."
+    },
+    {
+      "start": 1483.08,
+      "end": 1484.08,
+      "text": "The bottom left plot shows"
+    },
+    {
+      "start": 1484.08,
+      "end": 1486.08,
+      "text": "a very similar experiment"
+    },
+    {
+      "start": 1486.08,
+      "end": 1488.08,
+      "text": "where we first put this ant-like robot"
+    },
+    {
+      "start": 1488.08,
+      "end": 1489.08,
+      "text": "in an environment"
+    },
+    {
+      "start": 1489.08,
+      "end": 1491.08,
+      "text": "and we have it learning a set of skills"
+    },
+    {
+      "start": 1491.08,
+      "end": 1494.08,
+      "text": "without any reward function."
+    },
+    {
+      "start": 1494.08,
+      "end": 1497.08,
+      "text": "Then, when a reward function is given,"
+    },
+    {
+      "start": 1497.08,
+      "end": 1500.08,
+      "text": "we learn a high-level policy"
+    },
+    {
+      "start": 1500.08,
+      "end": 1503.08,
+      "text": "that chooses which of these skills to execute,"
+    },
+    {
+      "start": 1503.08,
+      "end": 1507.08,
+      "text": "and each skill is executed for many time steps."
+    },
+    {
+      "start": 1507.08,
+      "end": 1512.08,
+      "text": "And again, we find that using the skills,"
+    },
+    {
+      "start": 1512.08,
+      "end": 1513.08,
+      "text": "commanding the robot"
+    },
+    {
+      "start": 1513.08,
+      "end": 1515.08,
+      "text": "at the level of skills"
+    },
+    {
+      "start": 1515.08,
+      "end": 1516.08,
+      "text": "is able to learn much faster."
+    },
+    {
+      "start": 1516.08,
+      "end": 1518.08,
+      "text": "We see the purple curve is much higher"
+    },
+    {
+      "start": 1518.08,
+      "end": 1521.08,
+      "text": "than the other curves here."
+    },
+    {
+      "start": 1521.08,
+      "end": 1523.08,
+      "text": "Garrett, does that answer the question"
+    },
+    {
+      "start": 1523.08,
+      "end": 1531.08,
+      "text": "about how skills are used hierarchically?"
+    },
+    {
+      "start": 1531.08,
+      "end": 1533.08,
+      "text": "Excellent."
+    },
+    {
+      "start": 1533.08,
+      "end": 1536.08,
+      "text": "So another application is,"
+    },
+    {
+      "start": 1536.08,
+      "end": 1538.08,
+      "text": "or one thing I want to highlight here"
+    },
+    {
+      "start": 1538.08,
+      "end": 1541.08,
+      "text": "is that for the purpose of hierarchical RL,"
+    },
+    {
+      "start": 1541.08,
+      "end": 1542.08,
+      "text": "learning more skills is useful."
+    },
+    {
+      "start": 1542.08,
+      "end": 1543.08,
+      "text": "This would make sense."
+    },
+    {
+      "start": 1543.08,
+      "end": 1545.08,
+      "text": "If you only learn two skills,"
+    },
+    {
+      "start": 1545.08,
+      "end": 1547.08,
+      "text": "it's really hard to solve complex tasks."
+    },
+    {
+      "start": 1547.08,
+      "end": 1548.08,
+      "text": "But if you learn 100 skills,"
+    },
+    {
+      "start": 1548.08,
+      "end": 1550.08,
+      "text": "it becomes much easier."
+    },
+    {
+      "start": 1550.08,
+      "end": 1551.08,
+      "text": "And this plot here is just showing"
+    },
+    {
+      "start": 1551.08,
+      "end": 1553.08,
+      "text": "that if you learn more skills,"
+    },
+    {
+      "start": 1553.08,
+      "end": 1554.08,
+      "text": "then you do much better"
+    },
+    {
+      "start": 1554.08,
+      "end": 1561.08,
+      "text": "at solving these hierarchical tasks."
+    },
+    {
+      "start": 1561.08,
+      "end": 1562.08,
+      "text": "There's a question."
+    },
+    {
+      "start": 1562.08,
+      "end": 1563.08,
+      "text": "So for the higher level policy,"
+    },
+    {
+      "start": 1563.08,
+      "end": 1564.08,
+      "text": "action space is basically"
+    },
+    {
+      "start": 1564.08,
+      "end": 1566.08,
+      "text": "the set of skills, precisely."
+    },
+    {
+      "start": 1566.08,
+      "end": 1567.08,
+      "text": "And so in our experiments,"
+    },
+    {
+      "start": 1567.08,
+      "end": 1569.08,
+      "text": "we learned a discrete set of skills."
+    },
+    {
+      "start": 1569.08,
+      "end": 1571.08,
+      "text": "I think we used 20 or 50."
+    },
+    {
+      "start": 1571.08,
+      "end": 1574.08,
+      "text": "And so the action space is discrete"
+    },
+    {
+      "start": 1574.08,
+      "end": 1576.08,
+      "text": "and it's size 20 or size 50,"
+    },
+    {
+      "start": 1576.08,
+      "end": 1583.08,
+      "text": "depending on how many skills you learned."
+    },
+    {
+      "start": 1583.08,
+      "end": 1584.08,
+      "text": "And we do execute each skill"
+    },
+    {
+      "start": 1584.08,
+      "end": 1585.08,
+      "text": "for multiple time steps."
+    },
+    {
+      "start": 1585.08,
+      "end": 1591.08,
+      "text": "I believe it was 50 in the paper."
+    },
+    {
+      "start": 1591.08,
+      "end": 1593.08,
+      "text": "And so is it the same?"
+    },
+    {
+      "start": 1593.08,
+      "end": 1597.08,
+      "text": "So you execute a skill for 50 time steps"
+    },
+    {
+      "start": 1597.08,
+      "end": 1600.08,
+      "text": "and then the discriminators looks"
+    },
+    {
+      "start": 1600.08,
+      "end": 1606.08,
+      "text": "at the 50 time steps at the same number, right?"
+    },
+    {
+      "start": 1606.08,
+      "end": 1610.08,
+      "text": "So there's sort of two stages of the method."
+    },
+    {
+      "start": 1610.08,
+      "end": 1613.08,
+      "text": "So during training,"
+    },
+    {
+      "start": 1613.08,
+      "end": 1616.08,
+      "text": "I think we trained for 1,000 time steps,"
+    },
+    {
+      "start": 1616.08,
+      "end": 1618.08,
+      "text": "which is the length of these episodes"
+    },
+    {
+      "start": 1618.08,
+      "end": 1619.08,
+      "text": "in these environments."
+    },
+    {
+      "start": 1619.08,
+      "end": 1620.08,
+      "text": "And the discriminator looks"
+    },
+    {
+      "start": 1620.08,
+      "end": 1623.08,
+      "text": "at every time step individually."
+    },
+    {
+      "start": 1623.08,
+      "end": 1625.08,
+      "text": "And then when we deploy"
+    },
+    {
+      "start": 1625.08,
+      "end": 1627.08,
+      "text": "or when we use the skills"
+    },
+    {
+      "start": 1627.08,
+      "end": 1629.08,
+      "text": "for hierarchical reinforcement learning,"
+    },
+    {
+      "start": 1629.08,
+      "end": 1631.08,
+      "text": "we actually don't use the discriminator at all."
+    },
+    {
+      "start": 1631.08,
+      "end": 1634.08,
+      "text": "All we do is we, I guess,"
+    },
+    {
+      "start": 1634.08,
+      "end": 1640.08,
+      "text": "execute the learned skills."
+    },
+    {
+      "start": 1640.08,
+      "end": 1642.08,
+      "text": "Got it."
+    },
+    {
+      "start": 1642.08,
+      "end": 1646.08,
+      "text": "See you sometime later, Thijs."
+    },
+    {
+      "start": 1646.08,
+      "end": 1650.08,
+      "text": "Join our next time errors."
+    },
+    {
+      "start": 1650.08,
+      "end": 1652.08,
+      "text": "So, well, for hierarchical RL,"
+    },
+    {
+      "start": 1652.08,
+      "end": 1655.08,
+      "text": "we didn't need to use the discriminator"
+    },
+    {
+      "start": 1655.08,
+      "end": 1657.08,
+      "text": "to solve the downstream application."
+    },
+    {
+      "start": 1657.08,
+      "end": 1658.08,
+      "text": "For imitation learning,"
+    },
+    {
+      "start": 1658.08,
+      "end": 1661.08,
+      "text": "we will actually use the discriminator."
+    },
+    {
+      "start": 1661.08,
+      "end": 1666.08,
+      "text": "So one other sort of neat application of Diane"
+    },
+    {
+      "start": 1666.08,
+      "end": 1668.08,
+      "text": "is for zero-shot imitation learning."
+    },
+    {
+      "start": 1668.08,
+      "end": 1670.08,
+      "text": "And by, I mean, zero-shot imitation learning,"
+    },
+    {
+      "start": 1670.08,
+      "end": 1672.08,
+      "text": "I mean the following thing."
+    },
+    {
+      "start": 1672.08,
+      "end": 1675.08,
+      "text": "We show the agent some behavior."
+    },
+    {
+      "start": 1675.08,
+      "end": 1677.08,
+      "text": "Like we show the agent, okay,"
+    },
+    {
+      "start": 1677.08,
+      "end": 1679.08,
+      "text": "here's a robot performing some task."
+    },
+    {
+      "start": 1679.08,
+      "end": 1682.08,
+      "text": "And then we immediately want our agent"
+    },
+    {
+      "start": 1682.08,
+      "end": 1683.08,
+      "text": "to replicate that behavior."
+    },
+    {
+      "start": 1683.08,
+      "end": 1686.08,
+      "text": "We want our robot to do the exact same thing"
+    },
+    {
+      "start": 1686.08,
+      "end": 1688.08,
+      "text": "without any additional training."
+    },
+    {
+      "start": 1688.08,
+      "end": 1691.08,
+      "text": "And here's how we can do that."
+    },
+    {
+      "start": 1691.08,
+      "end": 1693.08,
+      "text": "And it's actually a very small modification"
+    },
+    {
+      "start": 1693.08,
+      "end": 1695.08,
+      "text": "to the algorithm we used"
+    },
+    {
+      "start": 1695.08,
+      "end": 1697.08,
+      "text": "for learning this set of skills."
+    },
+    {
+      "start": 1697.08,
+      "end": 1700.08,
+      "text": "So whereas before we took a skill,"
+    },
+    {
+      "start": 1700.08,
+      "end": 1702.08,
+      "text": "fed it into the environment,"
+    },
+    {
+      "start": 1702.08,
+      "end": 1704.08,
+      "text": "and then had the discriminator guess"
+    },
+    {
+      "start": 1704.08,
+      "end": 1707.08,
+      "text": "what code word is the skill trying to send,"
+    },
+    {
+      "start": 1707.08,
+      "end": 1710.08,
+      "text": "what we do now is we take the expert"
+    },
+    {
+      "start": 1710.08,
+      "end": 1713.08,
+      "text": "and we say, given the expert states,"
+    },
+    {
+      "start": 1713.08,
+      "end": 1717.08,
+      "text": "what skill is the expert trying to send?"
+    },
+    {
+      "start": 1717.08,
+      "end": 1719.08,
+      "text": "And of course the expert has no idea"
+    },
+    {
+      "start": 1719.08,
+      "end": 1720.08,
+      "text": "what these skills are,"
+    },
+    {
+      "start": 1720.08,
+      "end": 1723.08,
+      "text": "but we can still ask the discriminator,"
+    },
+    {
+      "start": 1723.08,
+      "end": 1725.08,
+      "text": "if this were one of the skills,"
+    },
+    {
+      "start": 1725.08,
+      "end": 1727.08,
+      "text": "which skill would this be?"
+    },
+    {
+      "start": 1727.08,
+      "end": 1729.08,
+      "text": "And so the discriminator tells us"
+    },
+    {
+      "start": 1729.08,
+      "end": 1732.08,
+      "text": "which of our skills is most similar to the expert."
+    },
+    {
+      "start": 1732.08,
+      "end": 1735.08,
+      "text": "And then by executing the corresponding skill,"
+    },
+    {
+      "start": 1735.08,
+      "end": 1736.08,
+      "text": "we can get a good approximation"
+    },
+    {
+      "start": 1736.08,
+      "end": 1739.08,
+      "text": "to the expert's behavior."
+    },
+    {
+      "start": 1739.08,
+      "end": 1741.08,
+      "text": "So here's some examples of that."
+    },
+    {
+      "start": 1741.08,
+      "end": 1744.08,
+      "text": "So this top row shows,"
+    },
+    {
+      "start": 1744.08,
+      "end": 1745.08,
+      "text": "so in this top left example,"
+    },
+    {
+      "start": 1745.08,
+      "end": 1747.08,
+      "text": "we have an expert that's lying"
+    },
+    {
+      "start": 1747.08,
+      "end": 1748.08,
+      "text": "on his back,"
+    },
+    {
+      "start": 1748.08,
+      "end": 1750.08,
+      "text": "and then we feed this state"
+    },
+    {
+      "start": 1750.08,
+      "end": 1752.08,
+      "text": "into this group, the discriminator,"
+    },
+    {
+      "start": 1752.08,
+      "end": 1754.08,
+      "text": "and the discriminator says,"
+    },
+    {
+      "start": 1754.08,
+      "end": 1756.08,
+      "text": "oh, that must be skill seven"
+    },
+    {
+      "start": 1756.08,
+      "end": 1757.08,
+      "text": "or something like that."
+    },
+    {
+      "start": 1757.08,
+      "end": 1758.08,
+      "text": "And then we execute"
+    },
+    {
+      "start": 1758.08,
+      "end": 1760.08,
+      "text": "the corresponding die-in skill."
+    },
+    {
+      "start": 1760.08,
+      "end": 1762.08,
+      "text": "And we see that this skill"
+    },
+    {
+      "start": 1762.08,
+      "end": 1763.08,
+      "text": "is a pretty good approximation"
+    },
+    {
+      "start": 1763.08,
+      "end": 1766.08,
+      "text": "to the expert's behavior."
+    },
+    {
+      "start": 1766.08,
+      "end": 1770.08,
+      "text": "Similarly, if the expert rolls on its nose,"
+    },
+    {
+      "start": 1770.08,
+      "end": 1773.08,
+      "text": "then we see that the retrieved die-in skill"
+    },
+    {
+      "start": 1773.08,
+      "end": 1776.08,
+      "text": "also rolls on its nose."
+    },
+    {
+      "start": 1776.08,
+      "end": 1777.08,
+      "text": "And of course,"
+    },
+    {
+      "start": 1777.08,
+      "end": 1779.08,
+      "text": "that doesn't always work."
+    },
+    {
+      "start": 1779.08,
+      "end": 1780.08,
+      "text": "And so in the far right,"
+    },
+    {
+      "start": 1780.08,
+      "end": 1782.08,
+      "text": "we show an example of a failure case"
+    },
+    {
+      "start": 1782.08,
+      "end": 1784.08,
+      "text": "where the expert is on its nose"
+    },
+    {
+      "start": 1784.08,
+      "end": 1787.08,
+      "text": "and the die-in skill also rolls onto its nose,"
+    },
+    {
+      "start": 1787.08,
+      "end": 1790.08,
+      "text": "but doesn't quite do the full handstand."
+    },
+    {
+      "start": 1790.08,
+      "end": 1791.08,
+      "text": "And this sort of makes sense"
+    },
+    {
+      "start": 1791.08,
+      "end": 1793.08,
+      "text": "because if you haven't learned"
+    },
+    {
+      "start": 1793.08,
+      "end": 1795.08,
+      "text": "how to learn a skill for a certain behavior,"
+    },
+    {
+      "start": 1795.08,
+      "end": 1797.08,
+      "text": "then it's going to be really hard"
+    },
+    {
+      "start": 1797.08,
+      "end": 1802.08,
+      "text": "to imitate that behavior."
+    },
+    {
+      "start": 1802.08,
+      "end": 1804.08,
+      "text": "Okay."
+    },
+    {
+      "start": 1804.08,
+      "end": 1806.08,
+      "text": "Any questions about either the hierarchical RL"
+    },
+    {
+      "start": 1806.08,
+      "end": 1808.08,
+      "text": "or the imitation learning applications?"
+    },
+    {
+      "start": 1816.08,
+      "end": 1818.08,
+      "text": "I mean, the approach is pretty clear,"
+    },
+    {
+      "start": 1818.08,
+      "end": 1820.08,
+      "text": "but the applications,"
+    },
+    {
+      "start": 1820.08,
+      "end": 1822.08,
+      "text": "you haven't talked about them too much,"
+    },
+    {
+      "start": 1822.08,
+      "end": 1825.08,
+      "text": "but I can think of so many directions."
+    },
+    {
+      "start": 1825.08,
+      "end": 1828.08,
+      "text": "So have you looked into it further?"
+    },
+    {
+      "start": 1828.08,
+      "end": 1831.08,
+      "text": "What can you apply it to actually?"
+    },
+    {
+      "start": 1831.08,
+      "end": 1835.08,
+      "text": "What are you thinking of?"
+    },
+    {
+      "start": 1835.08,
+      "end": 1838.08,
+      "text": "Well, multi-agent,"
+    },
+    {
+      "start": 1838.08,
+      "end": 1840.08,
+      "text": "various multi-agent games where,"
+    },
+    {
+      "start": 1840.08,
+      "end": 1841.08,
+      "text": "for example,"
+    },
+    {
+      "start": 1841.08,
+      "end": 1844.08,
+      "text": "judging what the other player does is important."
+    },
+    {
+      "start": 1844.08,
+      "end": 1848.08,
+      "text": "Like you're playing Pong with two players,"
+    },
+    {
+      "start": 1848.08,
+      "end": 1851.08,
+      "text": "for example, or something."
+    },
+    {
+      "start": 1851.08,
+      "end": 1853.08,
+      "text": "That'd be really cool."
+    },
+    {
+      "start": 1853.08,
+      "end": 1856.08,
+      "text": "There's been some work on,"
+    },
+    {
+      "start": 1856.08,
+      "end": 1859.08,
+      "text": "so here we're maximizing information"
+    },
+    {
+      "start": 1859.08,
+      "end": 1862.08,
+      "text": "between the,"
+    },
+    {
+      "start": 1862.08,
+      "end": 1864.08,
+      "text": "basically between the two players"
+    },
+    {
+      "start": 1864.08,
+      "end": 1866.08,
+      "text": "in this game."
+    },
+    {
+      "start": 1866.08,
+      "end": 1867.08,
+      "text": "Interestingly,"
+    },
+    {
+      "start": 1867.08,
+      "end": 1869.08,
+      "text": "there's been some work on multi-agent RL"
+    },
+    {
+      "start": 1869.08,
+      "end": 1872.08,
+      "text": "that minimizes information between players,"
+    },
+    {
+      "start": 1872.08,
+      "end": 1875.08,
+      "text": "where they try to say that you want to have agents"
+    },
+    {
+      "start": 1875.08,
+      "end": 1877.08,
+      "text": "solve a task independently."
+    },
+    {
+      "start": 1877.08,
+      "end": 1879.08,
+      "text": "And so you want them to specialize,"
+    },
+    {
+      "start": 1879.08,
+      "end": 1881.08,
+      "text": "but I very much agree."
+    },
+    {
+      "start": 1881.08,
+      "end": 1883.08,
+      "text": "It would be cool to see this in a multi-agent setting."
+    },
+    {
+      "start": 1883.08,
+      "end": 1885.08,
+      "text": "And maybe you could show that you get"
+    },
+    {
+      "start": 1885.08,
+      "end": 1887.08,
+      "text": "interesting robustness benefits"
+    },
+    {
+      "start": 1887.08,
+      "end": 1889.08,
+      "text": "because different agents end up solving a task"
+    },
+    {
+      "start": 1889.08,
+      "end": 1892.08,
+      "text": "in different ways."
+    },
+    {
+      "start": 1892.08,
+      "end": 1893.08,
+      "text": "I don't know."
+    },
+    {
+      "start": 1894.08,
+      "end": 1896.08,
+      "text": "I think it's a good idea."
+    },
+    {
+      "start": 1896.08,
+      "end": 1903.08,
+      "text": "Yeah, basically like tons of directions"
+    },
+    {
+      "start": 1903.08,
+      "end": 1905.08,
+      "text": "for further work for all of you guys"
+    },
+    {
+      "start": 1905.08,
+      "end": 1908.08,
+      "text": "to pick up potentially."
+    },
+    {
+      "start": 1908.08,
+      "end": 1909.08,
+      "text": "Yeah, definitely."
+    },
+    {
+      "start": 1909.08,
+      "end": 1910.08,
+      "text": "And if anyone has ideas,"
+    },
+    {
+      "start": 1910.08,
+      "end": 1911.08,
+      "text": "they want to chat more about,"
+    },
+    {
+      "start": 1911.08,
+      "end": 1912.08,
+      "text": "you can bring them up now or at the end,"
+    },
+    {
+      "start": 1912.08,
+      "end": 1915.08,
+      "text": "or shoot me an email."
+    },
+    {
+      "start": 1915.08,
+      "end": 1918.08,
+      "text": "Sure."
+    },
+    {
+      "start": 1918.08,
+      "end": 1921.08,
+      "text": "Of a policy for downstream tasks."
+    },
+    {
+      "start": 1921.08,
+      "end": 1923.08,
+      "text": "So let's say you want to solve a task"
+    },
+    {
+      "start": 1923.08,
+      "end": 1925.08,
+      "text": "in some environment."
+    },
+    {
+      "start": 1925.08,
+      "end": 1931.08,
+      "text": "And normally you would say run reinforcement learning."
+    },
+    {
+      "start": 1931.08,
+      "end": 1932.08,
+      "text": "And you would initialize your parameters,"
+    },
+    {
+      "start": 1932.08,
+      "end": 1936.08,
+      "text": "say by sampling from a normal distribution."
+    },
+    {
+      "start": 1936.08,
+      "end": 1938.08,
+      "text": "We can do something slightly smarter,"
+    },
+    {
+      "start": 1938.08,
+      "end": 1941.08,
+      "text": "which is that instead of initializing the policy"
+    },
+    {
+      "start": 1941.08,
+      "end": 1943.08,
+      "text": "using random weights,"
+    },
+    {
+      "start": 1943.08,
+      "end": 1945.08,
+      "text": "we can initialize the policy weights"
+    },
+    {
+      "start": 1945.08,
+      "end": 1949.08,
+      "text": "using one of the skills learned by Diane."
+    },
+    {
+      "start": 1949.08,
+      "end": 1951.08,
+      "text": "And the intuition here is that"
+    },
+    {
+      "start": 1951.08,
+      "end": 1953.08,
+      "text": "the skills learned by Diane"
+    },
+    {
+      "start": 1953.08,
+      "end": 1955.08,
+      "text": "reflect the set of behaviors"
+    },
+    {
+      "start": 1955.08,
+      "end": 1958.08,
+      "text": "that are possible in this environment."
+    },
+    {
+      "start": 1958.08,
+      "end": 1960.08,
+      "text": "And so it sort of reflects a bias"
+    },
+    {
+      "start": 1960.08,
+      "end": 1963.08,
+      "text": "about what sorts of behaviors"
+    },
+    {
+      "start": 1963.08,
+      "end": 1965.08,
+      "text": "will be useful in this environment."
+    },
+    {
+      "start": 1965.08,
+      "end": 1969.08,
+      "text": "And you hear that by initializing a policy"
+    },
+    {
+      "start": 1969.08,
+      "end": 1971.08,
+      "text": "using one of the skills learned by Diane,"
+    },
+    {
+      "start": 1971.08,
+      "end": 1973.08,
+      "text": "you're able to learn much faster"
+    },
+    {
+      "start": 1973.08,
+      "end": 1978.08,
+      "text": "than if you just randomly initialize your policy."
+    },
+    {
+      "start": 1978.08,
+      "end": 1980.08,
+      "text": "And so I think this is sort of interesting"
+    },
+    {
+      "start": 1980.08,
+      "end": 1982.08,
+      "text": "because it suggests that even in settings"
+    },
+    {
+      "start": 1982.0800000000002,
+      "end": 1984.0800000000002,
+      "text": "where you wouldn't really think"
+    },
+    {
+      "start": 1984.0800000000002,
+      "end": 1986.0800000000002,
+      "text": "of skill learning being useful,"
+    },
+    {
+      "start": 1986.0800000000002,
+      "end": 1987.0800000000002,
+      "text": "just the standard,"
+    },
+    {
+      "start": 1987.0800000000002,
+      "end": 1989.0800000000002,
+      "text": "so this here is the standard RL setting."
+    },
+    {
+      "start": 1989.0800000000002,
+      "end": 1993.0800000000002,
+      "text": "There's no multi-agent."
+    },
+    {
+      "start": 1993.0800000000002,
+      "end": 1995.0800000000002,
+      "text": "There's no hierarchical RL."
+    },
+    {
+      "start": 1995.0800000000002,
+      "end": 1996.0800000000002,
+      "text": "We don't have multiple agents."
+    },
+    {
+      "start": 1996.0800000000002,
+      "end": 1998.0800000000002,
+      "text": "And these aren't hard exploration tasks."
+    },
+    {
+      "start": 1998.0800000000002,
+      "end": 2000.0800000000002,
+      "text": "Even in this setting,"
+    },
+    {
+      "start": 2000.0800000000002,
+      "end": 2002.0800000000002,
+      "text": "learning skills is useful"
+    },
+    {
+      "start": 2002.0800000000002,
+      "end": 2004.0800000000002,
+      "text": "because it gives us good parameters,"
+    },
+    {
+      "start": 2004.0800000000002,
+      "end": 2006.0800000000002,
+      "text": "good parameter initializations"
+    },
+    {
+      "start": 2006.0800000000002,
+      "end": 2008.0800000000002,
+      "text": "for solving these sorts of tasks."
+    },
+    {
+      "start": 2012.0800000000002,
+      "end": 2015.0800000000002,
+      "text": "And the final application"
+    },
+    {
+      "start": 2015.0800000000002,
+      "end": 2018.0800000000002,
+      "text": "is kind of weird,"
+    },
+    {
+      "start": 2018.0800000000002,
+      "end": 2020.0800000000002,
+      "text": "but also sort of interesting"
+    },
+    {
+      "start": 2020.0800000000002,
+      "end": 2021.0800000000002,
+      "text": "in thinking about"
+    },
+    {
+      "start": 2021.0800000000002,
+      "end": 2023.0800000000002,
+      "text": "what are the range of things you can learn"
+    },
+    {
+      "start": 2023.0800000000002,
+      "end": 2025.0800000000002,
+      "text": "without a reward function?"
+    },
+    {
+      "start": 2025.0800000000002,
+      "end": 2028.0800000000002,
+      "text": "And this is to meta-reinforcement learning."
+    },
+    {
+      "start": 2028.0800000000002,
+      "end": 2029.0800000000002,
+      "text": "So I'll first explain"
+    },
+    {
+      "start": 2029.0800000000002,
+      "end": 2035.0800000000002,
+      "text": "how meta-reinforcement learning..."
+    },
+    {
+      "start": 2035.0800000000002,
+      "end": 2036.0800000000002,
+      "text": "back a little bit."
+    },
+    {
+      "start": 2036.0800000000002,
+      "end": 2037.0800000000002,
+      "text": "Great, okay."
+    },
+    {
+      "start": 2037.0800000000002,
+      "end": 2038.0800000000002,
+      "text": "So what is meta-reinforcement learning?"
+    },
+    {
+      "start": 2038.0800000000002,
+      "end": 2040.0800000000002,
+      "text": "Meta-reinforcement learning is the problem"
+    },
+    {
+      "start": 2040.0800000000002,
+      "end": 2042.0800000000002,
+      "text": "of learning a learning"
+    },
+    {
+      "start": 2042.0800000000002,
+      "end": 2046.0800000000002,
+      "text": "algorithm that's good at solving tasks."
+    },
+    {
+      "start": 2046.0800000000002,
+      "end": 2048.08,
+      "text": "So this usually works as follows."
+    },
+    {
+      "start": 2048.08,
+      "end": 2050.08,
+      "text": "You put an agent in an environment"
+    },
+    {
+      "start": 2050.08,
+      "end": 2053.08,
+      "text": "with an unknown reward function,"
+    },
+    {
+      "start": 2053.08,
+      "end": 2055.08,
+      "text": "and then the robot has to quickly figure out"
+    },
+    {
+      "start": 2055.08,
+      "end": 2056.08,
+      "text": "what is the reward function"
+    },
+    {
+      "start": 2056.08,
+      "end": 2059.08,
+      "text": "and maximize that reward function."
+    },
+    {
+      "start": 2059.08,
+      "end": 2060.08,
+      "text": "And usually,"
+    },
+    {
+      "start": 2060.08,
+      "end": 2062.08,
+      "text": "this reward function might correspond"
+    },
+    {
+      "start": 2062.08,
+      "end": 2064.08,
+      "text": "to navigating to different locations"
+    },
+    {
+      "start": 2064.08,
+      "end": 2067.08,
+      "text": "or maybe running at different philosophies."
+    },
+    {
+      "start": 2067.08,
+      "end": 2070.08,
+      "text": "And ordinarily..."
+    },
+    {
+      "start": 2070.08,
+      "end": 2072.08,
+      "text": "Sorry, can you specify"
+    },
+    {
+      "start": 2072.08,
+      "end": 2073.08,
+      "text": "a little bit"
+    },
+    {
+      "start": 2073.08,
+      "end": 2076.08,
+      "text": "what do you mean by unknown reward function?"
+    },
+    {
+      "start": 2076.08,
+      "end": 2078.08,
+      "text": "Because in one sense of the word,"
+    },
+    {
+      "start": 2078.08,
+      "end": 2079.08,
+      "text": "it's always unknown, right?"
+    },
+    {
+      "start": 2079.08,
+      "end": 2081.08,
+      "text": "We only get samples from the function."
+    },
+    {
+      "start": 2081.08,
+      "end": 2083.08,
+      "text": "In another sense of the world,"
+    },
+    {
+      "start": 2083.08,
+      "end": 2085.08,
+      "text": "like it's..."
+    },
+    {
+      "start": 2085.08,
+      "end": 2087.08,
+      "text": "How do we even..."
+    },
+    {
+      "start": 2087.08,
+      "end": 2090.08,
+      "text": "If we don't even get examples of rewards,"
+    },
+    {
+      "start": 2090.08,
+      "end": 2094.08,
+      "text": "how is it possible to optimize it?"
+    },
+    {
+      "start": 2094.08,
+      "end": 2096.08,
+      "text": "Yeah, it's a really good question."
+    },
+    {
+      "start": 2096.08,
+      "end": 2097.08,
+      "text": "But unknown here,"
+    },
+    {
+      "start": 2097.08,
+      "end": 2098.08,
+      "text": "I mean that the agent"
+    },
+    {
+      "start": 2098.08,
+      "end": 2100.08,
+      "text": "does get samples of the reward,"
+    },
+    {
+      "start": 2100.08,
+      "end": 2102.08,
+      "text": "but every time the agent interacts"
+    },
+    {
+      "start": 2102.08,
+      "end": 2103.08,
+      "text": "with the environment,"
+    },
+    {
+      "start": 2103.08,
+      "end": 2104.08,
+      "text": "so for every episode,"
+    },
+    {
+      "start": 2104.08,
+      "end": 2106.08,
+      "text": "they're solving a different task."
+    },
+    {
+      "start": 2106.08,
+      "end": 2108.08,
+      "text": "And so the reward function changes."
+    },
+    {
+      "start": 2108.08,
+      "end": 2109.08,
+      "text": "So one day,"
+    },
+    {
+      "start": 2109.08,
+      "end": 2110.08,
+      "text": "the robot's solving one task."
+    },
+    {
+      "start": 2110.08,
+      "end": 2111.08,
+      "text": "The next day,"
+    },
+    {
+      "start": 2111.08,
+      "end": 2112.08,
+      "text": "the robot's trying to go"
+    },
+    {
+      "start": 2112.08,
+      "end": 2113.08,
+      "text": "to a different location."
+    },
+    {
+      "start": 2113.08,
+      "end": 2114.08,
+      "text": "And the third day,"
+    },
+    {
+      "start": 2114.08,
+      "end": 2115.08,
+      "text": "the robot's trying to go"
+    },
+    {
+      "start": 2115.08,
+      "end": 2116.08,
+      "text": "to a third location."
+    },
+    {
+      "start": 2116.08,
+      "end": 2118.08,
+      "text": "And so what this means is that"
+    },
+    {
+      "start": 2118.08,
+      "end": 2120.08,
+      "text": "in the course of every episode,"
+    },
+    {
+      "start": 2120.08,
+      "end": 2121.08,
+      "text": "the robot has to infer,"
+    },
+    {
+      "start": 2121.08,
+      "end": 2122.08,
+      "text": "has to say,"
+    },
+    {
+      "start": 2122.08,
+      "end": 2123.08,
+      "text": "okay,"
+    },
+    {
+      "start": 2123.08,
+      "end": 2124.08,
+      "text": "I've gotten a little bit of reward"
+    },
+    {
+      "start": 2124.08,
+      "end": 2125.08,
+      "text": "so far today,"
+    },
+    {
+      "start": 2125.08,
+      "end": 2126.08,
+      "text": "so maybe I'm trying..."
+    },
+    {
+      "start": 2126.08,
+      "end": 2128.08,
+      "text": "Maybe the goal is hidden over here."
+    },
+    {
+      "start": 2128.08,
+      "end": 2130.08,
+      "text": "I should try to run over there."
+    },
+    {
+      "start": 2132.08,
+      "end": 2138.08,
+      "text": "And so meta-reinforcement learning works,"
+    },
+    {
+      "start": 2138.08,
+      "end": 2141.08,
+      "text": "but it has one main limitation,"
+    },
+    {
+      "start": 2141.08,
+      "end": 2143.08,
+      "text": "which is that you have to design"
+    },
+    {
+      "start": 2143.08,
+      "end": 2145.08,
+      "text": "a set of reward functions"
+    },
+    {
+      "start": 2145.08,
+      "end": 2147.08,
+      "text": "to use for training."
+    },
+    {
+      "start": 2147.08,
+      "end": 2149.08,
+      "text": "So the hope of meta-reinforcement learning"
+    },
+    {
+      "start": 2149.08,
+      "end": 2151.08,
+      "text": "is that you learn"
+    },
+    {
+      "start": 2151.08,
+      "end": 2154.08,
+      "text": "how to quickly learn unknown tasks,"
+    },
+    {
+      "start": 2154.08,
+      "end": 2155.08,
+      "text": "and then you can put a robot"
+    },
+    {
+      "start": 2155.08,
+      "end": 2156.08,
+      "text": "in a new environment,"
+    },
+    {
+      "start": 2156.08,
+      "end": 2157.08,
+      "text": "and it will be able to solve"
+    },
+    {
+      "start": 2157.08,
+      "end": 2160.08,
+      "text": "any task you want."
+    },
+    {
+      "start": 2160.08,
+      "end": 2161.08,
+      "text": "But this ability hinges on"
+    },
+    {
+      "start": 2161.08,
+      "end": 2162.08,
+      "text": "the design of the reward functions"
+    },
+    {
+      "start": 2162.08,
+      "end": 2163.08,
+      "text": "used for training."
+    },
+    {
+      "start": 2163.08,
+      "end": 2164.08,
+      "text": "So during training,"
+    },
+    {
+      "start": 2164.08,
+      "end": 2165.08,
+      "text": "you may have placed the goal"
+    },
+    {
+      "start": 2165.08,
+      "end": 2166.08,
+      "text": "in three different locations,"
+    },
+    {
+      "start": 2166.08,
+      "end": 2167.08,
+      "text": "or you may have given"
+    },
+    {
+      "start": 2167.08,
+      "end": 2168.08,
+      "text": "the robot rewards corresponding"
+    },
+    {
+      "start": 2168.08,
+      "end": 2169.08,
+      "text": "to going forwards one day"
+    },
+    {
+      "start": 2169.08,
+      "end": 2170.08,
+      "text": "and going backwards"
+    },
+    {
+      "start": 2170.08,
+      "end": 2171.08,
+      "text": "a different day."
+    },
+    {
+      "start": 2171.08,
+      "end": 2172.08,
+      "text": "But you had to sit down"
+    },
+    {
+      "start": 2172.08,
+      "end": 2173.08,
+      "text": "and manually define"
+    },
+    {
+      "start": 2173.08,
+      "end": 2174.08,
+      "text": "those reward functions."
+    },
+    {
+      "start": 2174.08,
+      "end": 2175.08,
+      "text": "And manually defining them"
+    },
+    {
+      "start": 2175.08,
+      "end": 2176.08,
+      "text": "is actually really hard."
+    },
+    {
+      "start": 2176.08,
+      "end": 2177.08,
+      "text": "I'll give one sort of funny"
+    },
+    {
+      "start": 2177.08,
+      "end": 2178.08,
+      "text": "example of this."
+    },
+    {
+      "start": 2178.08,
+      "end": 2179.08,
+      "text": "So one of the tasks people do"
+    },
+    {
+      "start": 2179.08,
+      "end": 2180.08,
+      "text": "in meta-reinforcement learning"
+    },
+    {
+      "start": 2180.08,
+      "end": 2181.08,
+      "text": "is ants now."
+    },
+    {
+      "start": 2181.08,
+      "end": 2182.08,
+      "text": "Ants,"
+    },
+    {
+      "start": 2182.08,
+      "end": 2183.08,
+      "text": "you know,"
+    },
+    {
+      "start": 2183.08,
+      "end": 2184.08,
+      "text": "they're like,"
+    },
+    {
+      "start": 2184.08,
+      "end": 2185.08,
+      "text": "they're like,"
+    },
+    {
+      "start": 2185.08,
+      "end": 2186.08,
+      "text": "oh,"
+    },
+    {
+      "start": 2186.08,
+      "end": 2187.08,
+      "text": "oh,"
+    },
+    {
+      "start": 2187.08,
+      "end": 2188.08,
+      "text": "oh,"
+    },
+    {
+      "start": 2188.08,
+      "end": 2189.08,
+      "text": "oh,"
+    },
+    {
+      "start": 2189.08,
+      "end": 2190.08,
+      "text": "oh,"
+    },
+    {
+      "start": 2190.08,
+      "end": 2191.08,
+      "text": "oh,"
+    },
+    {
+      "start": 2191.08,
+      "end": 2192.08,
+      "text": "oh,"
+    },
+    {
+      "start": 2192.08,
+      "end": 2193.08,
+      "text": "you know,"
+    },
+    {
+      "start": 2193.08,
+      "end": 2194.08,
+      "text": "it's always a little"
+    },
+    {
+      "start": 2194.08,
+      "end": 2195.08,
+      "text": "tricky to navigate"
+    },
+    {
+      "start": 2195.08,
+      "end": 2196.08,
+      "text": "about an ant-like robot"
+    },
+    {
+      "start": 2196.08,
+      "end": 2197.08,
+      "text": "for bringing you"
+    },
+    {
+      "start": 2197.08,
+      "end": 2198.08,
+      "text": "a task."
+    },
+    {
+      "start": 2198.08,
+      "end": 2199.08,
+      "text": "What we can do"
+    },
+    {
+      "start": 2199.08,
+      "end": 2200.08,
+      "text": "is go to the scale"
+    },
+    {
+      "start": 2200.08,
+      "end": 2201.08,
+      "text": "lectures"
+    },
+    {
+      "start": 2201.08,
+      "end": 2202.08,
+      "text": "where you need"
+    },
+    {
+      "start": 2202.08,
+      "end": 2203.08,
+      "text": "to go to a separate"
+    },
+    {
+      "start": 2203.08,
+      "end": 2204.08,
+      "text": "class to study"
+    },
+    {
+      "start": 2204.08,
+      "end": 2205.08,
+      "text": "the task."
+    },
+    {
+      "start": 2205.08,
+      "end": 2206.08,
+      "text": "And you'll slightly"
+    },
+    {
+      "start": 2206.08,
+      "end": 2207.08,
+      "text": "listen to what"
+    },
+    {
+      "start": 2207.08,
+      "end": 2208.08,
+      "text": "Google is doing"
+    },
+    {
+      "start": 2208.08,
+      "end": 2209.08,
+      "text": "so that you can"
+    },
+    {
+      "start": 2209.08,
+      "end": 2210.08,
+      "text": "document"
+    },
+    {
+      "start": 2210.08,
+      "end": 2211.08,
+      "text": "this however you"
+    },
+    {
+      "start": 2211.08,
+      "end": 2212.08,
+      "text": "like."
+    },
+    {
+      "start": 2212.08,
+      "end": 2213.08,
+      "text": "And when you think"
+    },
+    {
+      "start": 2213.08,
+      "end": 2214.08,
+      "text": "that,"
+    },
+    {
+      "start": 2214.08,
+      "end": 2215.08,
+      "text": "well,"
+    },
+    {
+      "start": 2215.08,
+      "end": 2216.08,
+      "text": "then you get"
+    },
+    {
+      "start": 2216.08,
+      "end": 2217.08,
+      "text": "like honestly,"
+    },
+    {
+      "start": 2217.08,
+      "end": 2218.08,
+      "text": "somebody라고"
+    },
+    {
+      "start": 2218.08,
+      "end": 2219.08,
+      "text": "meanwhile"
+    },
+    {
+      "start": 2219.08,
+      "end": 2220.08,
+      "text": "inaudible"
+    },
+    {
+      "start": 2220.08,
+      "end": 2224.38,
+      "text": "but to get mental reinforcement learning algorithms"
+    },
+    {
+      "start": 2224.38,
+      "end": 2227.54,
+      "text": "to work well, you have to very carefully consider"
+    },
+    {
+      "start": 2227.54,
+      "end": 2230.62,
+      "text": "how are you going to define reward functions?"
+    },
+    {
+      "start": 2230.62,
+      "end": 2232.86,
+      "text": "How are you gonna make sure that the reward functions"
+    },
+    {
+      "start": 2232.86,
+      "end": 2235.54,
+      "text": "are not too easy and not too hard"
+    },
+    {
+      "start": 2235.54,
+      "end": 2238.56,
+      "text": "and induce a sufficiently diverse set of behaviors?"
+    },
+    {
+      "start": 2242.1,
+      "end": 2246.7999999999997,
+      "text": "Now, Dyan allows us to lift one of these limitations."
+    },
+    {
+      "start": 2246.7999999999997,
+      "end": 2249.94,
+      "text": "Dyan allows us to automatically propose"
+    },
+    {
+      "start": 2249.94,
+      "end": 2252.3,
+      "text": "the set of reward functions we use"
+    },
+    {
+      "start": 2252.3,
+      "end": 2254.7000000000003,
+      "text": "for mental reinforcement learning."
+    },
+    {
+      "start": 2254.7000000000003,
+      "end": 2256.34,
+      "text": "So this works as follows."
+    },
+    {
+      "start": 2258.18,
+      "end": 2263.18,
+      "text": "So first, we assume we're given some environment"
+    },
+    {
+      "start": 2264.38,
+      "end": 2269.2200000000003,
+      "text": "and then we do what we call unsupervised mental learning."
+    },
+    {
+      "start": 2269.2200000000003,
+      "end": 2274.14,
+      "text": "And what I mean by this is that instead of,"
+    },
+    {
+      "start": 2274.14,
+      "end": 2276.48,
+      "text": "so normally in mental reinforcement learning,"
+    },
+    {
+      "start": 2276.48,
+      "end": 2279.6,
+      "text": "you have some agent try to solve"
+    },
+    {
+      "start": 2279.6,
+      "end": 2281.88,
+      "text": "new reward functions in every episode."
+    },
+    {
+      "start": 2281.88,
+      "end": 2285.2799999999997,
+      "text": "And these reward functions are manually specified"
+    },
+    {
+      "start": 2285.2799999999997,
+      "end": 2286.16,
+      "text": "by some human."
+    },
+    {
+      "start": 2287.3199999999997,
+      "end": 2288.98,
+      "text": "What we do now is something slightly different."
+    },
+    {
+      "start": 2288.98,
+      "end": 2291.88,
+      "text": "We say, we're gonna maximize reward functions"
+    },
+    {
+      "start": 2291.88,
+      "end": 2294.48,
+      "text": "that are specified by skills."
+    },
+    {
+      "start": 2294.48,
+      "end": 2297.2599999999998,
+      "text": "So we have one reward function corresponding"
+    },
+    {
+      "start": 2297.2599999999998,
+      "end": 2299.24,
+      "text": "to code word one."
+    },
+    {
+      "start": 2299.24,
+      "end": 2301.2,
+      "text": "And specifically the reward function we use"
+    },
+    {
+      "start": 2301.2,
+      "end": 2303.98,
+      "text": "is the discriminator's predictions."
+    },
+    {
+      "start": 2303.98,
+      "end": 2307.46,
+      "text": "So one task is make the discriminator think"
+    },
+    {
+      "start": 2307.46,
+      "end": 2308.04,
+      "text": "that you're conveying code word one."
+    },
+    {
+      "start": 2308.04,
+      "end": 2313.52,
+      "text": "And different task is make the discriminator think"
+    },
+    {
+      "start": 2313.52,
+      "end": 2315.34,
+      "text": "that you're conveying code word two."
+    },
+    {
+      "start": 2315.34,
+      "end": 2317.62,
+      "text": "And so on and so forth."
+    },
+    {
+      "start": 2317.62,
+      "end": 2322.52,
+      "text": "And so the interesting thing here is that these tasks"
+    },
+    {
+      "start": 2322.52,
+      "end": 2323.6,
+      "text": "that we've learned,"
+    },
+    {
+      "start": 2323.6,
+      "end": 2327.2799999999997,
+      "text": "these tasks that we're using for meta reinforcement learning"
+    },
+    {
+      "start": 2327.2799999999997,
+      "end": 2329.42,
+      "text": "are not manually specified."
+    },
+    {
+      "start": 2329.42,
+      "end": 2331.6,
+      "text": "And so we no longer have to have a human come in"
+    },
+    {
+      "start": 2331.6,
+      "end": 2334.2599999999998,
+      "text": "and write down what are the set of behaviors"
+    },
+    {
+      "start": 2334.2599999999998,
+      "end": 2335.64,
+      "text": "that we wanna train on."
+    },
+    {
+      "start": 2335.64,
+      "end": 2337.7599999999998,
+      "text": "We can learn this unsupervised."
+    },
+    {
+      "start": 2337.76,
+      "end": 2339.38,
+      "text": "Without any human in the loop."
+    },
+    {
+      "start": 2342.0600000000004,
+      "end": 2343.2400000000002,
+      "text": "And the motivation for doing this,"
+    },
+    {
+      "start": 2343.2400000000002,
+      "end": 2345.1800000000003,
+      "text": "for doing this unsupervised meta learning"
+    },
+    {
+      "start": 2345.1800000000003,
+      "end": 2347.1000000000004,
+      "text": "is that at test time,"
+    },
+    {
+      "start": 2347.1000000000004,
+      "end": 2349.1000000000004,
+      "text": "when a human actually comes along and says,"
+    },
+    {
+      "start": 2349.1000000000004,
+      "end": 2352.1000000000004,
+      "text": "maximize this reward function as quickly as possible,"
+    },
+    {
+      "start": 2352.1000000000004,
+      "end": 2353.2000000000003,
+      "text": "we can do that."
+    },
+    {
+      "start": 2353.2000000000003,
+      "end": 2355.98,
+      "text": "And we can do that because we've learned how to solve"
+    },
+    {
+      "start": 2355.98,
+      "end": 2357.28,
+      "text": "a wide range of tasks."
+    },
+    {
+      "start": 2357.28,
+      "end": 2360.6400000000003,
+      "text": "We've learned how to solve a very diverse set of tasks"
+    },
+    {
+      "start": 2360.6400000000003,
+      "end": 2361.5800000000004,
+      "text": "in this environment."
+    },
+    {
+      "start": 2363.3,
+      "end": 2365.1400000000003,
+      "text": "I know this is a little bit convoluted."
+    },
+    {
+      "start": 2365.1400000000003,
+      "end": 2367.32,
+      "text": "Are there any questions about this unsupervised model?"
+    },
+    {
+      "start": 2367.32,
+      "end": 2367.5600000000004,
+      "text": "Are there any questions about this unsupervised model?"
+    },
+    {
+      "start": 2367.5600000000004,
+      "end": 2367.76,
+      "text": "Are there any questions about this unsupervised model?"
+    },
+    {
+      "start": 2367.76,
+      "end": 2368.76,
+      "text": "Are there any questions about this unsupervised model?"
+    },
+    {
+      "start": 2368.76,
+      "end": 2369.2400000000002,
+      "text": "Are there any questions about this unsupervised model?"
+    },
+    {
+      "start": 2369.2400000000002,
+      "end": 2369.3,
+      "text": "Are there any questions about this unsupervised model?"
+    },
+    {
+      "start": 2371.86,
+      "end": 2376.2000000000003,
+      "text": "I mean, I have a like version in my head of how it works."
+    },
+    {
+      "start": 2376.2000000000003,
+      "end": 2378.86,
+      "text": "I want you to verify if it's true or not."
+    },
+    {
+      "start": 2378.86,
+      "end": 2381.6200000000003,
+      "text": "So you pick a, one of the skills."
+    },
+    {
+      "start": 2381.6200000000003,
+      "end": 2384.1600000000003,
+      "text": "So you acquire this set of skills,"
+    },
+    {
+      "start": 2384.1600000000003,
+      "end": 2385.1800000000003,
+      "text": "then you pick one of them"
+    },
+    {
+      "start": 2385.1800000000003,
+      "end": 2387.8,
+      "text": "and then you reward following that skill."
+    },
+    {
+      "start": 2387.8,
+      "end": 2388.92,
+      "text": "Is that what happens?"
+    },
+    {
+      "start": 2389.9,
+      "end": 2391.0,
+      "text": "Exactly, yeah."
+    },
+    {
+      "start": 2392.5600000000004,
+      "end": 2393.6400000000003,
+      "text": "And importantly, we're doing this"
+    },
+    {
+      "start": 2393.6400000000003,
+      "end": 2395.2000000000003,
+      "text": "in the meta learning setting."
+    },
+    {
+      "start": 2395.2000000000003,
+      "end": 2397.5600000000004,
+      "text": "And so, we're learning a policy that is not just"
+    },
+    {
+      "start": 2397.56,
+      "end": 2400.7599999999998,
+      "text": "that can quickly adapt to maximize,"
+    },
+    {
+      "start": 2400.7599999999998,
+      "end": 2403.0,
+      "text": "to learn these different skills."
+    },
+    {
+      "start": 2403.0,
+      "end": 2404.6,
+      "text": "So the robot could be able to very quickly adapt"
+    },
+    {
+      "start": 2404.6,
+      "end": 2407.7999999999997,
+      "text": "its behavior to do skill one or do skill two"
+    },
+    {
+      "start": 2407.7999999999997,
+      "end": 2408.92,
+      "text": "or do skill three."
+    },
+    {
+      "start": 2409.88,
+      "end": 2413.36,
+      "text": "And this fast adaptation is important"
+    },
+    {
+      "start": 2413.36,
+      "end": 2416.0,
+      "text": "because when we're trying to solve a new task,"
+    },
+    {
+      "start": 2416.0,
+      "end": 2418.4,
+      "text": "we don't want to have to keep trying and failing"
+    },
+    {
+      "start": 2418.4,
+      "end": 2420.32,
+      "text": "and trying and failing to solve that task."
+    },
+    {
+      "start": 2420.32,
+      "end": 2422.44,
+      "text": "We want to very rapidly be able to figure out"
+    },
+    {
+      "start": 2422.44,
+      "end": 2424.72,
+      "text": "which of the behaviors that we've learned before"
+    },
+    {
+      "start": 2424.72,
+      "end": 2426.52,
+      "text": "can solve this new task."
+    },
+    {
+      "start": 2427.56,
+      "end": 2432.56,
+      "text": "Okay, so this highlights four applications of Dianne."
+    },
+    {
+      "start": 2438.88,
+      "end": 2441.56,
+      "text": "Oh, sorry, I forgot to get the results on that."
+    },
+    {
+      "start": 2441.56,
+      "end": 2444.56,
+      "text": "So here's an example of some results"
+    },
+    {
+      "start": 2444.56,
+      "end": 2447.74,
+      "text": "on the half-cuted task."
+    },
+    {
+      "start": 2447.74,
+      "end": 2449.24,
+      "text": "And there are a couple,"
+    },
+    {
+      "start": 2449.24,
+      "end": 2452.2999999999997,
+      "text": "there's two things I want you to look at in this plot."
+    },
+    {
+      "start": 2452.2999999999997,
+      "end": 2454.06,
+      "text": "The green line is our method."
+    },
+    {
+      "start": 2454.06,
+      "end": 2457.54,
+      "text": "So when you learn, when you meta-learn,"
+    },
+    {
+      "start": 2457.54,
+      "end": 2460.5,
+      "text": "using the skills learned from Dianne,"
+    },
+    {
+      "start": 2460.5,
+      "end": 2462.1,
+      "text": "you're able to learn quite quickly."
+    },
+    {
+      "start": 2462.1,
+      "end": 2464.42,
+      "text": "And the X-axis here is number of trials"
+    },
+    {
+      "start": 2464.42,
+      "end": 2465.74,
+      "text": "it takes to learn the task."
+    },
+    {
+      "start": 2465.74,
+      "end": 2468.18,
+      "text": "And we see that we're able to learn these tasks"
+    },
+    {
+      "start": 2468.18,
+      "end": 2470.66,
+      "text": "in less than, say, 20 trials."
+    },
+    {
+      "start": 2473.58,
+      "end": 2474.98,
+      "text": "The black line here,"
+    },
+    {
+      "start": 2477.74,
+      "end": 2478.7,
+      "text": "is that what we want?"
+    },
+    {
+      "start": 2482.7799999999997,
+      "end": 2485.86,
+      "text": "Yeah, I think maybe a good comparison is the black line"
+    },
+    {
+      "start": 2485.86,
+      "end": 2486.86,
+      "text": "in the right plot."
+    },
+    {
+      "start": 2487.54,
+      "end": 2490.74,
+      "text": "And what that's showing is if you had a human come in"
+    },
+    {
+      "start": 2490.74,
+      "end": 2492.98,
+      "text": "and design the set of tasks,"
+    },
+    {
+      "start": 2492.98,
+      "end": 2495.02,
+      "text": "that's how quickly you would learn."
+    },
+    {
+      "start": 2495.02,
+      "end": 2499.42,
+      "text": "And we observed that given these oracle human tasks,"
+    },
+    {
+      "start": 2499.42,
+      "end": 2502.38,
+      "text": "you will learn initially a little bit faster,"
+    },
+    {
+      "start": 2502.38,
+      "end": 2505.66,
+      "text": "but actually asymptotically, you would get lower reward."
+    },
+    {
+      "start": 2505.66,
+      "end": 2509.42,
+      "text": "And what this highlights is that not only does skill learning"
+    },
+    {
+      "start": 2509.42,
+      "end": 2511.7599999999998,
+      "text": "provide a good set of skills,"
+    },
+    {
+      "start": 2511.7599999999998,
+      "end": 2513.72,
+      "text": "it actually provides the right set of skills."
+    },
+    {
+      "start": 2513.72,
+      "end": 2515.32,
+      "text": "It provides the right set of skills"
+    },
+    {
+      "start": 2515.32,
+      "end": 2516.98,
+      "text": "for learning unknown tasks."
+    },
+    {
+      "start": 2517.54,
+      "end": 2522.54,
+      "text": "Okay, so in this talk,"
+    },
+    {
+      "start": 2523.9,
+      "end": 2526.88,
+      "text": "we talked about how we can learn sets of skills"
+    },
+    {
+      "start": 2526.88,
+      "end": 2528.38,
+      "text": "without reward functions."
+    },
+    {
+      "start": 2528.38,
+      "end": 2530.3,
+      "text": "And one of the main ideas is that we should optimize"
+    },
+    {
+      "start": 2530.3,
+      "end": 2531.58,
+      "text": "over the entire set."
+    },
+    {
+      "start": 2531.58,
+      "end": 2534.08,
+      "text": "And this set should be optimized"
+    },
+    {
+      "start": 2534.08,
+      "end": 2536.18,
+      "text": "to be as diverse as possible."
+    },
+    {
+      "start": 2537.48,
+      "end": 2540.18,
+      "text": "The method for doing that was this sort of two-player game,"
+    },
+    {
+      "start": 2540.18,
+      "end": 2542.4,
+      "text": "where you have one player, the policy,"
+    },
+    {
+      "start": 2542.4,
+      "end": 2544.14,
+      "text": "try to communicate some message,"
+    },
+    {
+      "start": 2544.14,
+      "end": 2547.38,
+      "text": "and another player try to infer what message is,"
+    },
+    {
+      "start": 2547.38,
+      "end": 2548.88,
+      "text": "the first player try to send."
+    },
+    {
+      "start": 2550.1400000000003,
+      "end": 2553.62,
+      "text": "We then look at some applications of these learned skills."
+    },
+    {
+      "start": 2553.62,
+      "end": 2554.48,
+      "text": "We looked at applications"
+    },
+    {
+      "start": 2554.48,
+      "end": 2556.26,
+      "text": "for hierarchical reinforcement learning,"
+    },
+    {
+      "start": 2556.26,
+      "end": 2558.32,
+      "text": "for zero-shot imitation learning,"
+    },
+    {
+      "start": 2558.32,
+      "end": 2562.08,
+      "text": "for parameter initialization,"
+    },
+    {
+      "start": 2562.08,
+      "end": 2563.88,
+      "text": "and for unsupervised meta learning."
+    },
+    {
+      "start": 2565.88,
+      "end": 2568.26,
+      "text": "There are a number of new and interesting ways"
+    },
+    {
+      "start": 2568.26,
+      "end": 2569.46,
+      "text": "we can take this."
+    },
+    {
+      "start": 2569.46,
+      "end": 2571.6,
+      "text": "A lot of these problems have people have looked at"
+    },
+    {
+      "start": 2571.6,
+      "end": 2572.5,
+      "text": "certain aspects of them,"
+    },
+    {
+      "start": 2572.5,
+      "end": 2575.9,
+      "text": "but they're still lots of interesting, open questions."
+    },
+    {
+      "start": 2575.9,
+      "end": 2576.92,
+      "text": "So, one is, there's a problem, which is this."
+    },
+    {
+      "start": 2576.92,
+      "end": 2583.38,
+      "text": "One is this sort of chicken and the egg problem, where we're jointly optimizing the skills"
+    },
+    {
+      "start": 2583.38,
+      "end": 2590.16,
+      "text": "in the discriminator, but if the policy hasn't learned discriminable skills, then the discriminator"
+    },
+    {
+      "start": 2590.16,
+      "end": 2594.98,
+      "text": "can't distinguish one skill from another, and then the policy doesn't get any reward."
+    },
+    {
+      "start": 2594.98,
+      "end": 2598.12,
+      "text": "And somehow we sort of have to break this chicken and the egg cycle, where nothing ever"
+    },
+    {
+      "start": 2598.12,
+      "end": 2601.46,
+      "text": "gets improved."
+    },
+    {
+      "start": 2601.46,
+      "end": 2606.2400000000002,
+      "text": "In practice, some amount of random initialization seems to help with that, but maybe there are"
+    },
+    {
+      "start": 2606.2400000000002,
+      "end": 2608.28,
+      "text": "more intelligent ways of doing that."
+    },
+    {
+      "start": 2608.28,
+      "end": 2614.1200000000003,
+      "text": "Maybe you could start by, say, running an off-the-shelf exploration algorithm, and then"
+    },
+    {
+      "start": 2614.1200000000003,
+      "end": 2619.42,
+      "text": "segmenting that behavior into a set of skills."
+    },
+    {
+      "start": 2619.42,
+      "end": 2622.92,
+      "text": "A second application is applying this to real-world tasks."
+    },
+    {
+      "start": 2622.92,
+      "end": 2626.48,
+      "text": "As I alluded to in the beginning, when we apply things in the real world, we have to"
+    },
+    {
+      "start": 2626.48,
+      "end": 2630.8,
+      "text": "cope with a whole range of additional challenges, things like resetting and things like ensuring"
+    },
+    {
+      "start": 2630.8,
+      "end": 2636.2400000000002,
+      "text": "safety and figuring out how do you learn skills that can be learned in a reset-free manner,"
+    },
+    {
+      "start": 2636.2400000000002,
+      "end": 2637.2400000000002,
+      "text": "and can be learned in a safe manner."
+    },
+    {
+      "start": 2637.2400000000002,
+      "end": 2641.92,
+      "text": "I think it's a really interesting research question."
+    },
+    {
+      "start": 2641.92,
+      "end": 2645.0200000000004,
+      "text": "A third question is about semi-supervised reinforcement learning."
+    },
+    {
+      "start": 2645.0200000000004,
+      "end": 2650.4,
+      "text": "So while many of the tasks we look at are relatively low-dimensional, as we move on"
+    },
+    {
+      "start": 2650.4,
+      "end": 2657.0400000000004,
+      "text": "to higher-dimensional tasks, the range of behaviors that you could do can be quite large."
+    },
+    {
+      "start": 2657.0400000000004,
+      "end": 2661.9,
+      "text": "And maybe if we could provide just a little bit of additional supervision about what skills"
+    },
+    {
+      "start": 2661.9,
+      "end": 2664.28,
+      "text": "we actually care about, we'd be able to solve downstream tasks."
+    },
+    {
+      "start": 2664.28,
+      "end": 2665.28,
+      "text": "And that would be really interesting."
+    },
+    {
+      "start": 2665.28,
+      "end": 2665.78,
+      "text": "Thank you."
+    },
+    {
+      "start": 2666.2400000000002,
+      "end": 2669.6200000000003,
+      "text": "So how can we improve our skills in these environments much more quickly?"
+    },
+    {
+      "start": 2669.6200000000003,
+      "end": 2676.6800000000003,
+      "text": "For example, maybe you have a robot that has arms and legs, but maybe all that you really"
+    },
+    {
+      "start": 2676.6800000000003,
+      "end": 2678.2400000000002,
+      "text": "care about is walking around."
+    },
+    {
+      "start": 2678.2400000000002,
+      "end": 2684.0400000000004,
+      "text": "And if all you care about is walking around, you probably can ignore any behaviors that"
+    },
+    {
+      "start": 2684.0400000000004,
+      "end": 2686.28,
+      "text": "move the arms around."
+    },
+    {
+      "start": 2686.28,
+      "end": 2693.34,
+      "text": "And figuring out how can you efficiently encode this inductive bias that walking is important"
+    },
+    {
+      "start": 2693.34,
+      "end": 2696.2200000000003,
+      "text": "but arm motions aren't seems useful for accelerating."
+    },
+    {
+      "start": 2696.2200000000003,
+      "end": 2702.1400000000003,
+      "text": "Finally, and I think the thing I'm most excited about, is just figuring out how to"
+    },
+    {
+      "start": 2702.1400000000003,
+      "end": 2703.5200000000004,
+      "text": "scale this."
+    },
+    {
+      "start": 2703.5200000000004,
+      "end": 2711.7000000000003,
+      "text": "So, in the environment we tried, we found that using more than about 50 skills didn't"
+    },
+    {
+      "start": 2711.7000000000003,
+      "end": 2712.7000000000003,
+      "text": "improve behavior."
+    },
+    {
+      "start": 2712.7000000000003,
+      "end": 2720.2000000000003,
+      "text": "We found that it's really hard to learn more than 50 behaviors in these environments."
+    },
+    {
+      "start": 2720.2000000000003,
+      "end": 2725.5800000000004,
+      "text": "But for more complex tasks, for tasks that involve many objects or multiple robots, say,"
+    },
+    {
+      "start": 2725.5800000000004,
+      "end": 2725.6600000000003,
+      "text": "in a multi-agent environment, it's really hard to just figure out how to scale this."
+    },
+    {
+      "start": 2726.2200000000003,
+      "end": 2733.5200000000004,
+      "text": "setting, there have to be a much larger range of possible behaviors. And figuring out how"
+    },
+    {
+      "start": 2733.5200000000004,
+      "end": 2738.92,
+      "text": "do you efficiently learn huge sets of skills, huge libraries of skills, I think is a really"
+    },
+    {
+      "start": 2738.92,
+      "end": 2744.5600000000004,
+      "text": "important problem. You could imagine that given an unknown environment, you first learn"
+    },
+    {
+      "start": 2744.5600000000004,
+      "end": 2750.1400000000003,
+      "text": "the library of behaviors, and then any researcher that wants to use this environment in the"
+    },
+    {
+      "start": 2750.1400000000003,
+      "end": 2755.7400000000002,
+      "text": "future no longer has to do reinforcement learning on the original environment, but now can just"
+    },
+    {
+      "start": 2755.7400000000002,
+      "end": 2760.78,
+      "text": "search over the space of learning skills. This would provide in the same way that people"
+    },
+    {
+      "start": 2760.78,
+      "end": 2765.42,
+      "text": "use pre-trained language embeddings, like Bert, or pre-trained image embeddings from"
+    },
+    {
+      "start": 2765.42,
+      "end": 2772.1400000000003,
+      "text": "say Resonant. This would provide us with a similar mechanism to use pre-trained skills"
+    },
+    {
+      "start": 2772.1400000000003,
+      "end": 2779.36,
+      "text": "for solving downstream tasks. So, those are four ideas of directions that we could take"
+    },
+    {
+      "start": 2779.36,
+      "end": 2783.1000000000004,
+      "text": "this. I would love to open the floor now to hear some of the ideas that all of you have"
+    },
+    {
+      "start": 2783.1000000000004,
+      "end": 2785.34,
+      "text": "for taking these sorts of projects."
+    },
+    {
+      "start": 2785.34,
+      "end": 2785.7000000000003,
+      "text": "If any of you want to ask any questions, please do so in the comment section below."
+    },
+    {
+      "start": 2785.7000000000003,
+      "end": 2785.7200000000003,
+      "text": "And if any of you want to ask any questions, please do so in the comment section below."
+    },
+    {
+      "start": 2785.7200000000003,
+      "end": 2789.96,
+      "text": "to chat more about this afterwards feel free to shoot me an email and we can set up a time to chat"
+    },
+    {
+      "start": 2790.6800000000003,
+      "end": 2797.88,
+      "text": "thanks no thank you very much ben that was a very interesting talk"
+    },
+    {
+      "start": 2810.76,
+      "end": 2813.0000000000005,
+      "text": "do you want me to read questions from the chat or"
+    },
+    {
+      "start": 2813.0,
+      "end": 2818.84,
+      "text": "oh yeah i figured out how to pull it up thanks i see there's an earlier question from anton about"
+    },
+    {
+      "start": 2818.84,
+      "end": 2823.56,
+      "text": "have you tried it on a football environment uh no but i think it'll be really cool"
+    },
+    {
+      "start": 2823.56,
+      "end": 2828.92,
+      "text": "maybe you would learn like different uh strategies like i know that different football players"
+    },
+    {
+      "start": 2828.92,
+      "end": 2833.16,
+      "text": "have played their position in different ways different goalies have different strategies"
+    },
+    {
+      "start": 2833.16,
+      "end": 2837.48,
+      "text": "different strikers have different strategies they're really cool to see that um"
+    },
+    {
+      "start": 2839.24,
+      "end": 2842.44,
+      "text": "those sort of differences of behaviors could emerge out of an objective like this"
+    },
+    {
+      "start": 2843.88,
+      "end": 2850.36,
+      "text": "a question from brandon does the meta rl agent use any information the skill agent or does it"
+    },
+    {
+      "start": 2850.36,
+      "end": 2855.4,
+      "text": "just use the discriminator from diane uh for meta reinforcement learning we just used the"
+    },
+    {
+      "start": 2855.4,
+      "end": 2858.84,
+      "text": "discriminator we did not use the policy itself"
+    },
+    {
+      "start": 2868.6,
+      "end": 2872.52,
+      "text": "yeah i wonder if it can be applied in discrimination first"
+    },
+    {
+      "start": 2873.0,
+      "end": 2873.96,
+      "text": "yeah i think it can be applied in discrimination first"
+    },
+    {
+      "start": 2873.96,
+      "end": 2878.76,
+      "text": "so we're a main goal is actually not to control agents but to understand what they're doing"
+    },
+    {
+      "start": 2879.48,
+      "end": 2883.64,
+      "text": "i'm not sure what would be a good example maybe you're looking for"
+    },
+    {
+      "start": 2885.24,
+      "end": 2891.96,
+      "text": "connections to your server that are trying to break it break into or something and then you"
+    },
+    {
+      "start": 2891.96,
+      "end": 2897.24,
+      "text": "train with diane agents and skills and then you classify skills with discriminator"
+    },
+    {
+      "start": 2900.68,
+      "end": 2901.18,
+      "text": "yeah"
+    },
+    {
+      "start": 2903.0,
+      "end": 2909.96,
+      "text": "we've thought about this a little bit in terms of like uh hacking or fuzzing or uh making test"
+    },
+    {
+      "start": 2909.96,
+      "end": 2921.0,
+      "text": "cases so many autonomous car companies have entire teams dedicated to constructing hard examples"
+    },
+    {
+      "start": 2921.72,
+      "end": 2929.08,
+      "text": "examples where their agents will fail because we know that in many of these real world applications"
+    },
+    {
+      "start": 2929.08,
+      "end": 2930.12,
+      "text": "of autonomous systems"
+    },
+    {
+      "start": 2933.0,
+      "end": 2936.76,
+      "text": "it's pretty easy driving on a highway or on suburban roads is pretty easy"
+    },
+    {
+      "start": 2937.32,
+      "end": 2942.76,
+      "text": "but there are these edge cases that end up being really hard and you can imagine using an algorithm"
+    },
+    {
+      "start": 2942.76,
+      "end": 2947.8,
+      "text": "like this to automatically discover edge cases it would work probably as follows it would be"
+    },
+    {
+      "start": 2947.8,
+      "end": 2954.68,
+      "text": "something like figure out how to change the settings of a scene figure out what signs to"
+    },
+    {
+      "start": 2954.68,
+      "end": 2960.76,
+      "text": "add and how to change the behavior of other cars such that your own car behaves in different ways"
+    },
+    {
+      "start": 2962.04,
+      "end": 2962.92,
+      "text": "and if you can make your"
+    },
+    {
+      "start": 2963.0,
+      "end": 2968.76,
+      "text": "car behave in different wacky ways then it's possible those are hard those are cases that"
+    },
+    {
+      "start": 2968.76,
+      "end": 2973.56,
+      "text": "you want to focus more on for example if you set up a scene where your car drives off the road"
+    },
+    {
+      "start": 2973.56,
+      "end": 2977.24,
+      "text": "you set up another scene where the car drives into oncoming traffic except the third scene"
+    },
+    {
+      "start": 2977.24,
+      "end": 2983.56,
+      "text": "where the car stops in the middle of a lane then those seem like useful cases to try to debug"
+    },
+    {
+      "start": 2987.64,
+      "end": 2991.88,
+      "text": "definitely i see this question from anton how much faster is fine tuning"
+    },
+    {
+      "start": 2993.96,
+      "end": 2997.88,
+      "text": "meta models um so this is in respect"
+    },
+    {
+      "start": 3002.76,
+      "end": 3004.84,
+      "text": "uh anton i'm not quite sure i understand the question"
+    },
+    {
+      "start": 3006.28,
+      "end": 3009.0,
+      "text": "is it asking how much faster do you learn by"
+    },
+    {
+      "start": 3009.8,
+      "end": 3014.04,
+      "text": "doing fine tuning instead of doing reinforcement learning from scratch"
+    },
+    {
+      "start": 3019.0,
+      "end": 3020.2,
+      "text": "or is that in this slide here"
+    },
+    {
+      "start": 3023.0,
+      "end": 3039.56,
+      "text": "so i don't know maybe even some people who the"
+    },
+    {
+      "start": 3039.56,
+      "end": 3045.16,
+      "text": "one of the steps between being able to tune for these features are roughly two to three times"
+    },
+    {
+      "start": 3045.16,
+      "end": 3051.0,
+      "text": "easier than if you just randomly initialize the policy and learn from there and how much"
+    },
+    {
+      "start": 3051.0,
+      "end": 3052.44,
+      "text": "faster you learn depends a lot on how many steps do you have you're trying to learn to tune."
+    },
+    {
+      "start": 3052.44,
+      "end": 3055.34,
+      "text": "on the environment."
+    },
+    {
+      "start": 3055.34,
+      "end": 3056.68,
+      "text": "And so for the cheetah task,"
+    },
+    {
+      "start": 3056.68,
+      "end": 3058.76,
+      "text": "we observed you learn much, much faster."
+    },
+    {
+      "start": 3058.76,
+      "end": 3063.76,
+      "text": "So we observe it up until this point,"
+    },
+    {
+      "start": 3064.14,
+      "end": 3066.9,
+      "text": "the randomly initialized policy hasn't learned anything,"
+    },
+    {
+      "start": 3066.9,
+      "end": 3069.28,
+      "text": "but the policy initialized with Italian"
+    },
+    {
+      "start": 3069.28,
+      "end": 3071.38,
+      "text": "has already gotten a reward of about 5,000."
+    },
+    {
+      "start": 3073.4,
+      "end": 3076.6,
+      "text": "One of the interesting things is for this ant robot."
+    },
+    {
+      "start": 3076.6,
+      "end": 3079.8,
+      "text": "If you look at the initial starting state,"
+    },
+    {
+      "start": 3079.8,
+      "end": 3081.4,
+      "text": "so ant is one of these robots"
+    },
+    {
+      "start": 3081.4,
+      "end": 3083.56,
+      "text": "where it's really easy to fall over."
+    },
+    {
+      "start": 3083.56,
+      "end": 3086.78,
+      "text": "And by initializing with one of the skills,"
+    },
+    {
+      "start": 3086.78,
+      "end": 3088.98,
+      "text": "you're guaranteed to initialize with a policy"
+    },
+    {
+      "start": 3088.98,
+      "end": 3090.38,
+      "text": "that doesn't fall over."
+    },
+    {
+      "start": 3091.38,
+      "end": 3093.2200000000003,
+      "text": "And what that means is that this gap"
+    },
+    {
+      "start": 3093.2200000000003,
+      "end": 3094.88,
+      "text": "of roughly a thousand rewards"
+    },
+    {
+      "start": 3094.88,
+      "end": 3098.0,
+      "text": "just comes from already knowing how to stand up."
+    },
+    {
+      "start": 3098.0,
+      "end": 3100.46,
+      "text": "And knowing how to stand up is a really useful prior"
+    },
+    {
+      "start": 3100.46,
+      "end": 3102.2200000000003,
+      "text": "for solving downstream tasks."
+    },
+    {
+      "start": 3103.92,
+      "end": 3104.76,
+      "text": "On the hopper task,"
+    },
+    {
+      "start": 3104.76,
+      "end": 3108.04,
+      "text": "we observed that these curves are closer together."
+    },
+    {
+      "start": 3108.04,
+      "end": 3111.4,
+      "text": "So there isn't as much benefit from initializing"
+    },
+    {
+      "start": 3111.4,
+      "end": 3113.28,
+      "text": "with one of the dying skills."
+    },
+    {
+      "start": 3139.38,
+      "end": 3140.92,
+      "text": "I think we should let you go"
+    },
+    {
+      "start": 3141.4,
+      "end": 3143.2200000000003,
+      "text": "for a couple of minutes, right?"
+    },
+    {
+      "start": 3143.2200000000003,
+      "end": 3146.44,
+      "text": "So you have your last chance to ask a question."
+    },
+    {
+      "start": 3152.48,
+      "end": 3154.06,
+      "text": "I should mention that there has been a huge amount"
+    },
+    {
+      "start": 3154.06,
+      "end": 3155.04,
+      "text": "of follow-up work."
+    },
+    {
+      "start": 3155.04,
+      "end": 3156.56,
+      "text": "And so I'd highly recommend checking out some"
+    },
+    {
+      "start": 3156.56,
+      "end": 3158.56,
+      "text": "of the papers that have come after this."
+    },
+    {
+      "start": 3159.82,
+      "end": 3161.9,
+      "text": "I personally really liked the unsupervised"
+    },
+    {
+      "start": 3161.9,
+      "end": 3163.9,
+      "text": "meta-learning project that we worked on,"
+    },
+    {
+      "start": 3165.02,
+      "end": 3169.06,
+      "text": "but there's been a lot of other really interesting work"
+    },
+    {
+      "start": 3169.06,
+      "end": 3169.38,
+      "text": "on things you can do using these sorts of tools,"
+    },
+    {
+      "start": 3169.38,
+      "end": 3173.1600000000003,
+      "text": "you can do using these sorts of skill learning methods."
+    },
+    {
+      "start": 3182.78,
+      "end": 3184.4,
+      "text": "What other environments have you run on"
+    },
+    {
+      "start": 3184.4,
+      "end": 3186.54,
+      "text": "and were there any difficulties?"
+    },
+    {
+      "start": 3186.54,
+      "end": 3190.04,
+      "text": "Yeah, so I'll talk about a failure case."
+    },
+    {
+      "start": 3190.04,
+      "end": 3194.7200000000003,
+      "text": "So one setting where I really wanted this to work"
+    },
+    {
+      "start": 3194.7200000000003,
+      "end": 3197.1600000000003,
+      "text": "was on a manipulation setting,"
+    },
+    {
+      "start": 3197.1600000000003,
+      "end": 3198.54,
+      "text": "sort of like the one at the very beginning of this talk."
+    },
+    {
+      "start": 3198.54,
+      "end": 3199.36,
+      "text": "Yeah, so I'll talk about a failure case. So one setting where I really wanted this to work was on a manipulation setting, sort of like the one at the very beginning of this talk,"
+    },
+    {
+      "start": 3199.38,
+      "end": 3213.06,
+      "text": "talk. So imagine that you have some robot and you can interact with some objects and ideally you"
+    },
+    {
+      "start": 3213.06,
+      "end": 3216.9,
+      "text": "learn different skills corresponding to manipulating the objects in different ways."
+    },
+    {
+      "start": 3218.58,
+      "end": 3223.86,
+      "text": "Now in practice actually learning that set of skills is really hard."
+    },
+    {
+      "start": 3223.86,
+      "end": 3231.06,
+      "text": "And the reason it's hard is because of exploration. So on a robot like this what you find"
+    },
+    {
+      "start": 3231.06,
+      "end": 3236.6600000000003,
+      "text": "when you run something on Diane is that you learn many different ways of moving the arm around but"
+    },
+    {
+      "start": 3236.6600000000003,
+      "end": 3242.7400000000002,
+      "text": "the arm actually rarely touches the blocks and because the robot rarely touches the blocks it"
+    },
+    {
+      "start": 3242.7400000000002,
+      "end": 3247.46,
+      "text": "becomes hard to solve this chicken and the egg problem because if the robot never touches the"
+    },
+    {
+      "start": 3247.46,
+      "end": 3252.98,
+      "text": "blocks the discriminator doesn't learn to associate any configuration of blocks with any certain skill."
+    },
+    {
+      "start": 3254.58,
+      "end": 3259.94,
+      "text": "And because the discriminator doesn't know to identify stacking with one skill and pushing"
+    },
+    {
+      "start": 3259.94,
+      "end": 3266.5,
+      "text": "with another skill then the robot doesn't get rewarded for doing that. And so I really want"
+    },
+    {
+      "start": 3266.5,
+      "end": 3271.3,
+      "text": "to see someone figure out how to apply similar skill learning algorithms to a robot like this."
+    },
+    {
+      "start": 3271.3,
+      "end": 3276.6600000000003,
+      "text": "I think that'll be really really cool especially because these exploration problems are not only"
+    },
+    {
+      "start": 3276.6600000000003,
+      "end": 3280.98,
+      "text": "the problem for skill learning but they're also the problem for every downstream task"
+    },
+    {
+      "start": 3280.98,
+      "end": 3282.98,
+      "text": "that you would try to solve using this robot."
+    },
+    {
+      "start": 3283.86,
+      "end": 3288.1,
+      "text": "If you would learn a set of skills that correspond to throwing, stacking,"
+    },
+    {
+      "start": 3288.1,
+      "end": 3292.7400000000002,
+      "text": "pushing, grasping, sorting, etc then solving downstream tasks becomes almost trivial."
+    },
+    {
+      "start": 3294.98,
+      "end": 3297.78,
+      "text": "And so this is one failure case but I think it's also an opportunity"
+    },
+    {
+      "start": 3297.78,
+      "end": 3300.58,
+      "text": "if you're figuring out how can we extend this."
+    },
+    {
+      "start": 3313.86,
+      "end": 3319.94,
+      "text": "So hopefully that provides some idea of some failure case as well."
+    },
+    {
+      "start": 3319.94,
+      "end": 3323.46,
+      "text": "So hopefully that provides some idea of some failure case as well."
+    },
+    {
+      "start": 3330.58,
+      "end": 3331.86,
+      "text": "Are there any other questions right now?"
+    },
+    {
+      "start": 3337.1400000000003,
+      "end": 3339.06,
+      "text": "It seems like they're not."
+    },
+    {
+      "start": 3343.86,
+      "end": 3345.86,
+      "text": "Great. Well, as I mentioned at the beginning, if you have questions,"
+    },
+    {
+      "start": 3345.86,
+      "end": 3347.86,
+      "text": "shoot me an email. You can find it on my website."
+    },
+    {
+      "start": 3347.86,
+      "end": 3349.86,
+      "text": "And thanks so much for having me. It's been really fun."
+    },
+    {
+      "start": 3349.86,
+      "end": 3351.86,
+      "text": "Yeah. Thank you for this talk."
+    },
+    {
+      "start": 3351.86,
+      "end": 3353.86,
+      "text": "Let's keep in touch."
+    },
+    {
+      "start": 3353.86,
+      "end": 3355.86,
+      "text": "Maybe we'll join some of our later seminars as well."
+    },
+    {
+      "start": 3355.86,
+      "end": 3357.86,
+      "text": "Yeah."
+    },
+    {
+      "start": 3357.86,
+      "end": 3359.86,
+      "text": "And thanks everyone for joining."
+    }
+  ],
+  "segment_count": 1066
+}

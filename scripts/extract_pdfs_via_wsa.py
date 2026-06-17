@@ -76,6 +76,9 @@ def run_expect(command: list[str], password: str, timeout: int) -> None:
 
 def ssh_base_options(control_path: str = "") -> list[str]:
     options = ["-o", "StrictHostKeyChecking=no"]
+    proxy_command = os.getenv("WSA_SSH_PROXY_COMMAND", "")
+    if proxy_command:
+        options.extend(["-o", f"ProxyCommand={proxy_command}"])
     if control_path:
         options.extend(["-S", control_path])
     return options

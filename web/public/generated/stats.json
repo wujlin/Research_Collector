@@ -1,22 +1,22 @@
 {
-  "total_papers": 349,
+  "total_papers": 350,
   "by_status": {
-    "unread": 340,
+    "unread": 341,
     "reading": 0,
     "read": 9,
     "noted": 0
   },
   "by_topic": {
-    "statistical_physics": 166,
+    "statistical_physics": 167,
     "statistical_physics/non_equilibrium_dynamics/nonequilibrium": 119,
     "statistical_physics/non_equilibrium_dynamics": 119,
     "ai_for_physics": 87,
     "bridges": 58,
+    "statistical_physics/collective_structure": 47,
     "ai_for_physics/physics_informed_modeling": 47,
     "stochastic_analysis": 46,
-    "statistical_physics/collective_structure": 46,
     "ai_for_physics/generative_dynamics": 44,
-    "statistical_physics/collective_structure/phase_transitions": 42,
+    "statistical_physics/collective_structure/phase_transitions": 43,
     "bridges/translation_layers": 37,
     "bridges/translation_layers/fokker_planck_master": 35,
     "urban_complex_systems": 27,

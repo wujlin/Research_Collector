@@ -2,7 +2,7 @@
 title: "城市复杂系统"
 description: "应用场景层：在城市流动、网络、标度和空间动力学中检验这些理论。"
 paper_count: 27
-last_updated: "2026-04-24"
+last_updated: "2026-05-18"
 ---
 
 # 城市复杂系统
@@ -64,4 +64,4 @@ last_updated: "2026-04-24"
 
 - [Growth, innovation, scaling, and the pace of life in cities](growth-innovation-scaling-and-the-pace-of-life-in-cities.md) (2007, PNAS, 0 citations)
 
-- [The growth equation of cities](the-growth-equation-of-cities.md) (2020, Nature, vol. 587, pages 397-401 (2020), 0 citations)
+- [The growth equation of cities](the-growth-equation-of-cities.md) (2020, Nature 587, 397-401 (2020), 0 citations)

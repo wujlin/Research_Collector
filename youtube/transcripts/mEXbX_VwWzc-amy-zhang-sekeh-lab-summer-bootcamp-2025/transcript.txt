@@ -1,0 +1,660 @@
+Thank you for the very kind introduction and for inviting me here to give a talk.
+So yeah, a little bit about my journey. My journey has been a bit of a meandering one. I actually didn't start out in machine learning. I started out more on the electrical engineering side.
+In my undergrad and master's, I was working more on information theory, communication protocols, and that sort of thing. And that area is a very mature field, which means that it's very hard to come up with new results and do research.
+And so it's kind of a slog, and I'd actually started a PhD at UCSD, and in this area, in information theory, and I was like, I don't know what I'm doing here.
+And so I actually ended up quitting after about nine months, moved back up to the Bay Area, and then I started working on computer vision, deep learning, and I was like, wow, it is so much easier to make to get results in machine learning.
+This is so exciting.
+And then I realized, okay, I'm not a good enough software engineer to get results in computer.
+And so that's how I found myself in working on reinforcement learning.
+I particularly liked the mathematical framework of reinforcement learning, and so I ended up going back to do a PhD again, this time at McGill University in Montreal.
+After my PhD, I did a postdoc at Berkeley, and then I started at UT in the beginning of 2023.
+All right, so today I'd like to talk about how generationality.
+Genitive AI and reinforcement learning intersect.
+Basically, you know, I think especially in the last few years, there's been a lot of excitement around generative modeling, around generative AI, foundation models, large language models, because of the recent, like, very widespread success of these methods.
+And I really want to point out that, you know, I think reinforcement learning has kind of been a side note in all of this, but actually I think reinforcement learning is the way that we should be thinking about these problems.
+And I think.
+It's a way that we can move forward and continue to make progress in this space of generative modeling is is by looking at everything through a reinforcement learning lens.
+And so I hope by at the end of this hour I will be able to convince you guys of that.
+Okay, so I'm going to start with the story of chess.
+Many of you are familiar with AlphaZero, which came out of DeepMind, which is DeepMind's chess playing agent that was developed in 2018.
+You're probably also maybe familiar with DeepBlue, which is AlphaZero.
+You're probably also maybe familiar with DeepBlue, which is AlphaZero.
+You're probably also maybe familiar with DeepBlue, which is AlphaZero.
+Which was IBM's chess playing agent, which was developed in 1995.
+And this this machine famously beat Garry Kasparov, who was a chess grandmaster.
+But these were not the first attempts at developing a chess playing agent.
+So that actually started in the 70s in the 1770s.
+And so this was the chess playing agent.
+This was developed in Hungary.
+And it performed well against a wide array of human opponents.
+And won most of its games, including against Napoleon and Benjamin Franklin.
+And so here's just a picture of that system, along with the internal cogs that worked it and how this story usually ends is that it turns out that these clogs are just a facade.
+Literally.
+Right?
+The way that the machine worked was it?
+Actually there was a human hiding inside who was actually making all of the moves.
+And so there was an elaborate setup of mirrors so that you can open it up.
+So there was an elaborate setup of mirrors so that you can open it up.
+And you wouldn't be able to see the human hiding.
+to see the human hiding inside. And so people are disappointed by this, because once the secret is
+revealed, it means that there's no magic, right? The machine is no better than the human inside of
+it. So when we now zoom forward to 250, almost 250 years to today, the analogy is clear, right,
+to generative models. This is a feat of engineering, and it's impressed many into
+thinking that we've truly gotten to, you know, AGI, artificial general intelligence. But it turns
+out that if we peel back the mirrors, these foundation models are still no smarter than the
+humans on which they were trained, right? So today we have the technology to memorize the human's
+moves and encode it into these cogs. Now they're tiny silicon cogs rather than these copper ones
+in this image. But most AI machines today are simply mimicking the human data that they're
+trained on, rather than trying to make it work. And so I think that's a great way to
+to do better, right? So these imitation-based methods that we use to train current foundation
+models, it means that we're only ever going to get machines that do as well as
+the humans used to collect those data sets. And so today I want to talk about how we can
+potentially do better than imitation, and how this is a key ingredient missing in today's
+generative models. And so we're going to see how, also how generative models will provide some key
+ingredients that are missing from reinforcement learning.
+Okay. So for today, I just want to highlight the tight connections between GenAI and RL,
+and highlight how each provides a crucial tool for making progress in the other domain.
+So as the plan for today, we're going to introduce the basic and necessary components
+of the reinforcement learning framework, because I think we haven't yet seen that today,
+and so I think it's useful to get a better understanding of what the reinforcement
+learning framework is. Then we're going to talk about how generative models can be used
+in reinforcement learning.
+And then we'll describe how interaction can be framed as a generative model.
+And we'll talk a little bit about goal-reaching tasks in particular.
+And then we're going to talk about learning likelihoods and how we can use this
+in reinforcement learning. And finally, we'll just end on some future research
+directions that I'm particularly excited about. Okay, so let's now dive into this first part.
+So first, we'll talk about,
+you know, what is reinforcement learning? We'll introduce the key concepts. We'll review RL.
+And then we're going to talk about how generative models can be used as world models,
+how you can use it as a simulator, like how Ziad described in his talk.
+Then we're going to talk about data, right? So in the standard supervised learning setup,
+what we've seen so far today, the typical assumption is that you already have some
+offline pot of data that you're training on, data and labels. But in reinforcement,
+learning, you're typically interacting with an environment, which means that you're trying to
+collect data using a policy that you're learning. And so where you get your data from now becomes a
+question in reinforcement learning. And then finally, we're going to talk about how we can
+use generative models as the policy. Okay, so how does reinforcement learning work?
+So typically, the standard set of assumptions is that we have a policy,
+um, pi a given s. All right,
+I'm not going to, I'm not sure I'm going to be able to do this, use the mouse, but, um,
+uh, this I think is, uh, we have a policy and we have an environment. And we are taking actions in
+this environment. And we're going to get back observations from the environment. So the policy
+now takes in these observations as input and outputs actions based on those observations. And
+we're just going to keep doing this in this cycle. And then we're also going to get rewards from the
+environment.
+And so the policy is trying to visit states and actions that will give it high rewards. So for
+example, in a game, these rewards can correspond to points, such as in Tetris, maybe for an
+assistive robot. Rewards might be based on how well the robot enables a human to complete their tasks.
+And then we're often also going to talk about trajectories of experience,
+which is just means this kind of sequence of states and actions.
+And our goal,
+is, is to learn this policy, right? So, and so we're going to embed a machine learning model as
+this policy. All right. So the reinforcement learning objective basically consists of trying
+to, like we said, maximize the sum of future rewards that we're going to get back from the
+environment. So we're not just trying to maximize the rewards of today, but we'd also like to put
+ourselves in a position in a state that will allow us to get future, uh, high rewards tomorrow and
+the next day and so on and so forth. Right.
+Um, as an example, eating vegetables today will make you happier tomorrow. And so we're
+not trying to just maximize our current happiness by eating candy all the time.
+Uh, we typically also include this discount factor here, typically 0.9 or 0.99. And so what this
+discount factor does is basically all else things being, um, all else being equal, we would like to
+get rewards sooner rather than later, right? Um, if we only get one chocolate bar in our lives,
+we'd rather have that chocolate bar today,
+rather than, uh, in a year from now. And so we're going to also have this expectation.
+Um, and so the point of this expectation is that, that again, like I always said before,
+this objective doesn't depend on a dataset, right? This objective depends, um, this expectation that
+we're computing is over trajectories that are being collected from the environment by our policy.
+Okay.
+That's how one trajectory gets sampled because we're going to return this to this many times,
+right? So we have this initial state. So, you know, when we come online in our environment,
+where we are right now is our initial state sampled from some initial distribution. Our
+policy takes in that initial state and decides on the first action that it wants to take.
+The environment is going to react to that, that taken action, and it's going to change.
+And so that means the next state that we get back as one is going to be the update,
+um, of now what has happened according to that action. And so then, uh, now we do it again. We,
+uh, put that state back into our policy and we get the next action, right? And so the nice thing
+about looking at all of these as these probability distributions is that now we can start to see
+what are the parts that we can replace with a generative model, right? We could replace the
+initial state, that initial state distribution. We could replace the policy. We could replace the
+dynamics.
+Simulator. And so what also, what if, what if we think about this process as just layers of a
+deep neural network? And that's just a little bit of a teaser for later in this talk.
+Okay. So reinforcement learning, just to kind of bring this point home, reinforcement learning is
+not supervised learning, right? And I want to highlight the key similarities and differences.
+So for both RL and supervised learning, we have a model that's going to take in inputs and,
+and give out outputs, right?
+Right.
+So in a supervised learning case, we're taking in observations from the world and we're outputting
+labels. Um, so as an example, if we're trying to play Tetris, if we're training a model to
+play Tetris, you're going to record moves from a human player and do supervised learning in order
+to mimic those moves, right? And so that means our policy is only going to be as good as the human
+that is collecting those labels. So RL uses different rewards. It's not mimicry, but reward,
+optimization. So instead, we're going to take the Tetris score and point the number of points that
+you're getting in Tetris and use that as the reward that we're trying to maximize, which means
+that potentially we can train a reinforcement learning agent to policy that can outperform any
+human at playing Tetris. Okay. Um, so how can we use generative models to do RL better?
+Let's now talk about, uh, generative models as a world model.
+So the key challenge is that, uh, there are many tasks where data is going to be expensive
+or simulators are slow. We've already seen some examples of this in, in some previous talks,
+right? Um, so some examples of this are going to be nuclear fusion, right? How are we, we can't
+actually just do reinforcement learning from scratch, like on a fusion reactor, um, for in
+the atmospheric sciences, we can't just launch weather balloons and say, I don't know what's
+going to happen. Let's learn how to steer.
+We can't do it. You know, this weather balloon same with education and healthcare, right?
+Settings where humans are involved. We can't just randomly try actions and learn how to do
+better, right? You, you, you hopefully don't want your doctor to be doing that with you.
+And so there's a lot of these applications where we have no simulator. We, we, uh, we have no
+simulator. We only have a very slow simulator. And so what can we do? How can we learn good
+policies in these very safety critical or very expensive settings? So again, generative models,
+are may provide a key ingredient right so our solution is that we can use generative models
+as a simulator for learning and evaluating your policy so let's see how this would work let's say
+that we start with some data set we have a bunch of data corresponding to states actions and next
+states and so we're going to feed that into a world model generative model and so this is going
+to take in states and actions and output next state so we're just training the world model to
+mimic the data that we have so far right and so this world model can be it can you can take your
+pick of any kind of architecture it can be a generative adversarial network a gaussian process
+diffusion model and so on and so forth there are many possibilities that you can use here and so
+really your policy can now just practice on this simulator on this generative model
+you can take in states and actions and output next state so we're just training the world model to
+and then now we can use this policy and go back and collect more data
+and then use this to continue training your generative model and so this is one example
+of how you can use generative models in order to get better reinforcement learning algorithms
+all right so there are some opportunities and pitfalls with this approach right opportunities
+include you know if your generative model is very efficient where typically it's going to be a lot
+more efficient than the real world we're going to have very fast data collection you can now
+batch your data collection because you could just make multiple copies of your generative model and
+so now you can collect data even faster as long as you have enough compute data and training are
+now both going to be on gpu so that's very fast and efficient and we like that the problem with
+generative models with learning models as world models is that any errors are going to compound
+over time so let's just think about that a little bit right so if we pass in a state and action
+into our generative model and output and ask it to output next state they're probably just going to
+be a little bit of error there and so that next state is going to be a little bit off
+from the true next state that are the real environment would have given us
+but if we're now feeding that erroneous state back into our generative model
+then the next state that we that we get next the next output from that generative model is probably
+going to be even more wrong right and so that's what we mean when we say these errors are going
+to compound over time and so you know we also have a question of can i trust my model right
+if i've trained a policy using my model as a simulator and we know that our simulator has
+these errors am i going to feel comfortable deploying that policy out in the real world
+okay so we've talked about generative models as world models and some of the benefits and issues
+with using it as that and now i want to talk a little bit about jointly optimizing
+policy and data right so where does data come from in the supervised learning setting we
+typically just assume that there's already all of these nice curated data sets available for
+us which is generally true you know we have imagenet we have wikipedia we have reddit for
+language um in reinforcement learning the thing that you're learning is the parameters of your
+policy neural network right or the model of the world and so you're
+you don't have any data to start with right typically we're assuming
+that the policy is going to generate the data for us and then we can use that data to train
+our world model or to train our policy and so on and so forth right um but but now we so now
+in the reinforcement learning setup we have to think about data now as something that is also
+being optimized because we want a good policy in order to get good data right and so you can think
+about in the reinforcement learning framework that we're really trying to do this joint optimization
+both the data and the policy rather rather than just the model in supervised learning
+right so this is a chicken and egg problem where we need a good data set in order to train a good
+policy but we also need a good policy in order to collect good data right uh and so
+um if we think about this data as a trajectory or sequence of actions
+it's going to be visualized like this right so we have this example
+navigation problem where we're trying to go from this initial state to the goal
+and if we think about rl from a probabilistic perspective which is has been very successful
+for generative modeling we want to get a policy that uh that gets high returns right but we don't
+know which of these trajectories are actually going to get those high returns and so now these
+trajectories you can think of as a latent variable and so the general the gen ai perspectives gives
+us important tools for how we can think about solving this problem
+right and so um before we proceed further i just want to now introduce some notation
+uh so we're going to typically talk about the policy or model here as pi theta which takes in
+some previous trajectory or data as tau and then q tau is going to be the data that we've gathered
+so far all right and so when we write out the reinforcement learning objective uh we can see that
+here and then we write out the reinforcement learning objective uh we can see that here
+right so we're just trying to maximize we've just added a log in there
+which you can you can disregard but we're just trying to maximize this objective we're trying
+to maximize the log of the expected return uh return and the big r here just corresponds to
+the sum over our future rewards right and so it turns out that in general modeling
+there's a nice trick for figuring out how to learn this latent variable how to learn
+what this uh what this trajectory should be what a good trajectory is that has gives a
+me high return and that's an evidence lower bound and so we can apply this trick this elbow trick
+to our rl maximizing objective and it turns out that now this expression that it gives us
+is now actually jointly optimizing both our policy both pi theta and the data q
+yes
+oh you're right there is a typo there um yes there is a typo uh oh no no sorry there um
+pi theta rt
+um so i think we're just missing a parentheses but we're just adding in uh q over tau q q tau over q tau
+q over tau q q tau over q tau
+because that just is one and so we're adding that in and then um yeah yeah
+yes but there is a typo and so i should correct that in the slide
+okay um and so right so usually we think about q tau as a bucket of trajectories each with a
+different weight and so we can now also think about this as learning a parametric world model
+and so now we can take this optimal
+distribution of our data and plug it back in and solve for pi right
+and so one way of thinking about this objective on the last line here
+is that we're multiplying these two quantities our higher our return by our uh probability of
+uh of the trajectory right so sorry let me say that again um we're multiplying the reward
+our summed reward for a trajectory by the likelihood of that trajectory under our
+current policy and so we can see that we want to the way to that we maximize this
+is by trying to increase the likelihood of trajectories that give us high returns
+all right and so uh with so with that intuition we now are trying to optimize for pi
+to make this true okay so the complete algorithm now looks as follows we're going to sample
+trajectories from your policy weight those trajectories by the return and then we're
+going to try to maximize the likelihood of the high return trajectories and so this method is
+called reward weighted regression because you're basically just regressing your policy
+onto the reward weighted trajectories
+okay and so this last expression actually looks the same as a very standard algorithm that we use
+in reinforcement learning which is called policy gradient so maybe some of you have already heard
+about policy gradient because it's also what's used to fine-tune large language models so in
+rlhf typically what people do is you learn a reward model based on human preferences
+and then you use policy gradient to maximize that reward with the llm right so now we're just trying
+to
+maximize the human preferences for responses by making those responses
+more likely for the large language model to output
+and so the nice thing is that typically in reinforcement learning we actually come to this
+policy gradient objective from a slightly different angle but here we've actually come
+to it from using this elbow this this evidence lower bound from a more probabilistic generative
+modeling perspective and so it's nice to kind of see that you can come to the same objective from
+two very different perspectives
+okay so the key takeaway is that this generative modeling perspective on reinforcement learning is
+is not new but it does provide some key insights into data right how we should collect it how we
+can learn from it and so while we've been discussing how to optimize all of this uh
+how to optimize both the data set of trajectories as well as well as the policy
+we can also think about this as optimizing a model of the world
+all right
+and so now i want to start talking about generative modeling as the policy so
+one of the simplest ways in which people have been using generative models as policies
+is uh one example work is this work called decision transformer where they're just training
+a transformer to uh with a supervised learning objective an auto-aggressive objective to mimic
+trajectories of data that we already have access to right so again it should be pretty obvious to us
+that if we are using generative models as policies we're going to be using generative models as policies
+as the only anys that we have available in that offline data set as opposed to just
+the auger of a single requirement on that so what we're trying to do is if we are assuming that we
+have this big bucket of data and we're training a transformer to just auto regress on that sequence
+of data that we're only going to get the same behavior as what's available in that offline
+data set but it turns out that you can actually take the reward achieved by each of those
+trajectories and train the transformer conditioned on that reward to go
+and now you can at test time you can actually pass an trickset and then at test time you can actually pass an outcomes to
+pass in a higher reward to go to that transformer and it can somewhat generalize and actually
+attempt to return trajectories that can achieve that higher score so it's a very simple somewhat
+naive method it turns out that we can do something a little bit nicer with diffusion policies
+so in this setting I want to train an optimal policy from an offline data set and I want to
+do it with a diffusion model and so I can first again just train this diffusion model to imitate
+my behavior policy but now I want to ask again how do I improve upon this behavior policy we
+can do the same thing we did last time we can condition the diffusion model on the return
+but it turns out that I can do something slightly better than that with diffusion models you can
+actually guide the diffusion model at sampling time to output better actions and you can do
+this by using a guidance term so some possible guides that you can use
+are going to be your reward function or your Q function so the Q function just outputs the
+predicted return for a specific reward function and it turns out that that um the way that I'm
+going to sample from my diffusion model is that uh the or the the policy that I end up learning from
+my diffusion model is going to look like follows I'm going to have this first oops this first term
+um
+which
+is just trying to maximize the likelihood of the action in my data set right so that's just
+the standard supervised learning loss but I also have a weighted guidance term that
+says I also want to try to maximize my Q function and so guide based methods basically uh can drift
+the generated actions to do better than what's in the data set and try to uh try
+to maximize the Q function and so I just want to note that this is happening not
+during training but at inference time when we're sampling from our diffusion model
+and so diffuser is just one example of a model that does this
+and here are just some examples
+let's try this again it was just very fast
+okay it won't play anymore uh okay but you basically saw in this maze task right that we can start with random noise
+with all of these states kind of like over the maze environment and the diffusion model is
+basically slowly denoising that trajectory to get the shortest path through the maze
+and so the guidance that we're using at sampling time will just correspond to the length of that
+path right and so the guidance term that we're using in this example is just saying I want to I
+want to minimize the length of the path and so I can now guide my diffusion model to output actions that correspond
+respond to a shorter path in this maze. And so I can have another example of block stacking.
+And this is unconditional stacking. So here I'm just trying to maximize the height of this block
+tower with no other constraints. And so my guidance term just corresponds to what is the height of my
+block tower so far and I want to maximize it. I can also do this with conditional stacking and
+say that I have maybe some test time constraints. Maybe I don't want to put gray blocks on top of
+the blue ones. And so my guidance term is basically going to give me a penalty if I do that.
+And I can now learn to stack blocks at test time as long as I have access to that guidance term.
+And so I want to point out that that guidance term is something that I'm assuming is is probably
+going to be some learned function. But once I have it, I can swap in and out different score
+functions and just use that same pre-trained diffusion model to get policies. Okay so there
+are a lot of different ways to do this. There are a lot of different ways to do this. There are a
+also a slightly different type of approach that we can use to try to get better behavior out of a
+diffusion model. And so that's called a select based approach. So here we're just going to
+generate a bunch of candidate actions from our behavior policy. So we've trained this diffusion
+model to just mimic the behavior data set. We're going to sample a bunch of actions from it and
+then we're going to use again some criterion like a reward function or Q function to select out of
+that set of actions. Right and so I'm just going to want to select an action that has
+a high reward or a high Q function, a high Q value from that set of actions. And so one example
+method is called implicit diffusion Q learning. And so this is just a modification of an existing
+offline reinforcement learning method that I'm not going to get too much into. But we're basically
+just going to replace the standard more simplistic Gaussian policy learned from the original method
+with a diffusion model. We're going to train a Q function and I'm not going to get into how
+to do that. But we're going to weight samples from this diffusion policy using the Q function
+that we've learned. So we're going to use importance sampling to basically just pull
+out high value actions. And I just want to point out in this really simple example, so here I've
+just created, I just have a 2D bandit problem which just means I have these like 2D actions.
+And so I have these clusters of actions on the left hand side and the color represents the reward
+that it gives me. Right.
+So blue is low reward and red is high reward. And so I can see that I would like to select
+actions that correspond to that red cluster. So if I train a Gaussian policy based on this data,
+it kind of mixes up these clusters and doesn't do a really great job. And so I'm kind of getting all
+of these different erroneous clusters of actions from my Gaussian policy, whereas a diffusion
+policy is actually able to
+correctly model each of those clusters and select out the ones that have high value.
+Okay. So it turns out that we can actually combine both of these steps. We can combine both the guide
+and select steps. And I also want to talk about, so using both guide and select can be error prone.
+There are some issues with both of these approaches.
+One is that your diffusion model can have approximation error in modeling this complicated
+policy distribution. And the other is that your critic, your Q function, can also have error
+in evaluating unseen actions. And so even though your diffusion model is trained on offline data,
+the more you sample from it, the more likely it is that you're accidentally going to sample an
+action that wasn't actually in your data set, which is just caused by an error in your diffusion model.
+And if you pass in those OODI actions into your value function, your value function can also give
+you wrong estimated Q values. And because we're trying to take a max of that Q value, it's very
+likely that it's even more likely that the highest value in that set is going to be a mistake from
+their value function. And so, as a result, the generation of high quality actions with
+these existing methods is affected by this kind of error exploitation.
+So in this in this method we're going to do something slightly different, which is instead of using as a guidance term the reward function or Q function which we've established the Q function can can have errors we're actually going
+to instead use the density ratio. So this density ratio just corresponds to the likelihood of the correct action.
+So the density star here corresponds to the optimal policy, or our current policy in practice over the probability of us taking that action from our current state s present in the data set.
+And i'm not going to talk about how we learn this density ratio, but there are a lot of existing approaches looking into how we learn this, and so those methods are called dice methods.
+So, and then the select step is very standard so again we're just going to generate a few candidate actions and use the Q.
+Step one with the highest value right and again I just want to show a very classic example.
+Again of the of a 2d bandit problem. So on the upper left hand side we have our action distribution.
+So yellow is where we have a lot of sampling of actions, and in dark blue we don't have a lot of actions.
+Right. So we don't have a lot of actions in that very center dot, and we don't have a lot of actions in those corners.
+So if we train a diffusion behavior policy on that data.
+We see that in the center it's not it's not looking very accurate right because we have no data there.
+And then our true reward function is, you can see, has these 2 rings, these annular rings.
+And because I have no data in that center I don't expect my method to be able to select actions from that center.
+So what i'm hoping to see is that my my my policy, my optimal policy at the end is going to try to select actions in that bigger yellow ring.
+That's the dot side. And so again we can see that our learned reward function based on that data set has this error right because it doesn't see anything in the center.
+It has erroneously predicted that there is going to be high reward in that center.
+So let's look at what happens across some different methods.
+So here we have a select only method and a guide only method first, and we'll look at them right.
+So in the select only method it means that we're not doing a guidance step.
+So all we're seeing is our diffusion model fitting to the behavior data set that action distribution that we saw in the last slide.
+And because our diffusion model was inaccurate it's erroneously predicting these high actions in the center.
+Right. And so when we sample from it we are getting actions in the center that we shouldn't same thing is happening with our guide only method.
+Our guide only method. Our critic is erroneously thinking that there's high value actions in the center.
+And so we're accidentally selecting for them, or we're so we're sampling from our diffusion model, there's no select steps so the bottom looks the same as the top.
+And so again we're kind of we're doing not a very good job of selecting actions.
+Whereas our method that is doing guide and then select right so we're guiding the diffusion model.
+The the output the actions that are being output by the diffusion model using that density ratio as a guidance term.
+We're actually only selecting the best ones out of those, and so we see that we can get this really nice ring of actions.
+Okay.
+So we've looked at a couple of different ways in which we can use transformers diffusion models generative models as policies, and some very toy examples. Right. So, a policy, we've established is a generative model.
+And I want to just revisit policy gradient again right so we saw policy gradient.
+Where we were computing.
+The elbow of our objective of trying to maximize the expected return our expected sum over rewards.
+Right. So the more standard way of deriving policy gradient is shown here.
+So again, we're just taking our objective, which is trying to maximize our expected sum over rewards.
+And we can actually just compute the derivative directly of this objective, and this is how we get typically how we get policy gradient.
+And so it turns out that this thing that we have on the right hand side right the derivative of the log probability of our trajectory is also called our square function.
+And so it turns out that we're also optimizing for a score function with policy gradient, which is exactly what we're doing with generative models.
+And so now this leads us to a question which is, can we actually train diffusion models with reinforcement learning.
+And it turns out that the answer is yes.
+So let's step back a bit and just think about what does it mean to think about diffusion models from an oral perspective, right so let's formalize this.
+Let's think about how diffusion can be cast as a Markov decision process as an MVP.
+So our states can be the noisy image at each diffusion step.
+Our actions correspond to how we do noise.
+So what the prediction is.
+What the predicted noise is which is the output of our diffusion model.
+Our reward can be just some final utility function such as, you know, image aesthetics or compressibility.
+And so, so here's how we can kind of like cast the diffusion model as an MVP.
+And now it turns out that we can take that that framework, and just directly train diffusion models with policy gradient.
+So we're going to fine tune diffusion models, using reinforcement learning over the denoising trajectory.
+And I want to point out that this is different from how we typically train diffusion models right because typically we're doing something that looks more like supervised learning.
+We're trying to maximize the likelihood that the diffusion model is going to output, something from the data set it was trained on.
+But now we're going to apply policy gradient to maximize.
+Some score function some reward.
+So why would we want to do this, why would we want to do this instead of maximizing likelihood.
+One example would be that we're trying to optimize for some qualitative metric.
+That's not easily captured by likelihood and again some examples for this can be just sort of aesthetic score or compressibility or alignment with some prompt.
+And so this is fundamentally different from what we've seen so far.
+Because everything we've seen beforehand was about how we can sample better from a pre trained model generative model.
+And here we're talking about how can we change the way that we train generative models by training them with reinforcement learning.
+And so I just want to show a really cool example of what's possible when you train with reinforcement learning.
+So here is a diffusion model that's being trained, so so the x axis here just corresponds to training over time.
+And I want to just show this again, because each of these will just let me do it again.
+Okay, each of these just corresponds to different score functions right compressibility aesthetic quality prompt image alignment according to some Vlm.
+And so you can see how the diffusion model output changes over time according to the score functions right.
+So again, I want to show that again, because a standard diffusion model.
+Is typically just trying to, you know, recreate the original image, or there's some, you know, label of like of what you want the diffusion model to create.
+But here it's completely open ended it's just trying to maximize for some score.
+So that was pretty cool. Okay, so we've shown that generative models can be framed as Mdps that we can train generative models with Rl.
+We've seen that we can incorporate generative models into Rl.
+And train world models or policies using generative models.
+And so in this next part.
+I want to take this one step further, which is that in the same way that generative models today are trained with data as supervision.
+Can we think about reinforcement learning from this data only perspective?
+Right.
+So here.
+So the key idea is that.
+An agent.
+Is iteratively interacting with an environment is a generative process.
+Right. So if we can condition our policy, then our policy can generate for us different outputs, which just corresponds to different trajectories.
+So generative models are trained on data to maximize likelihoods.
+So where do rewards come in right there's one bit about this Rl.
+As Jenny I story that doesn't really quite fit right which is still the reward function.
+Right.
+The problem with Rl.
+Is that we're defining the problem in terms of this scalar reward.
+When we want to teach an image classifier to identify cats and dogs, we give it data.
+Right. We give it a bunch of images accompanied by labels, which is just more data.
+But when we want to teach an Rl policy to play pong, we have to write a bunch of code describing that assign scalar values to each observation.
+And so these reward functions make it really challenging to think about how Rl fits into this broader machine learning landscape.
+And so it makes it really challenging for non-experts and even experts to use our own practice, because this reward design aspect can be really hard.
+And so right now what we're hoping to do is we're going to try and remove this reward, or we're going to try and think about reinforcement learning from a perspective that that removes reward.
+And so just to hammer this point home again.
+I just have here some example code from a very common benchmark in reinforcement learning called Meta World.
+And so Meta World just consists of these simulated manipulation tasks with a robot.
+But this is an example of what a reward function looks like for one task in Meta World.
+Right. And there's like a 100 tasks in Meta World. So you can see that this is something that hinders us from being able to create new tasks.
+Right.
+Right.
+And this is something that hinders us from being able to create new generalist agents with reinforcement learning.
+So reward design can be prohibitively difficult.
+It often requires a lot of expert domain knowledge.
+And so we'd like to ask the question, How can we actually define many tasks while avoiding this problem?
+And so one thing that we can look at is goal conditioned reinforcement learning.
+So reaching goals is a classic pro problem dating back to the early days of machine learning and has many practical applications, including robot navigation.
+path planning and route optimization, chemical synthesis, autonomous driving, and gains.
+And so what is the goal? Ideally, we just want to reach the goal as quickly as possible,
+and we would like to stay there for as long as we can. And so the nice thing about this
+goal-reaching problem is that the reward function is often already defined for us, right? It looks
+as follows. You can define this as an indicator function that just says, I'm going to receive a
+reward of 1 when I've reached my goal, and 0 otherwise. So how can we actually think about
+this in terms of probabilities? Again, our objective is that we would like to learn a
+policy to maximize the expected cumulative discounted sum of rewards. So here's our
+objective. For goal-reaching, we can just plug in that indicator function as the reward.
+But what happens to this objective in continuous settings? In continuous settings,
+it's very, very unlikely that we're going to reach the exact same state that we've specified
+as a goal, right? And so this probability goes to 0. And so this is what we call a measure 0 event.
+OK. So in the coming sections, we're going to think about goal-reaching in a different way.
+We're going to think about it in terms of probabilities. So instead of thinking about
+the time you spend at a goal, we want to think about the probability that you get to a goal.
+Right? So what's the reward? We can now write this reward in terms of this probability.
+And we just have this 1 minus gamma term in order to make sure that our probability sums to 1.
+And so now our reward is defined in terms of probabilities over states,
+which is much better than reward. All right. So we're going to formalize this a little bit more.
+In order to understand this a little bit better, we're going to introduce this term,
+which is called the discounted sum of rewards. So we're going to formalize this a little bit more.
+So this is a discounted state occupancy measure. So imagine that you close your eyes and you're
+going to open them after some random number of time steps. And you want to know at that future
+point in time, what action, sorry, what state am I going to be at? So this discounted state
+occupancy measure basically gives us the probability that we're going to see some
+future state SF at some point. And we can also write this down in terms of in the form
+of a conditional probability. So we can write this in for other types of probabilities. So we can write this for, you know, probability of seeing some future state condition on the fact that I'm in a current state.
+We can write this down in terms of a conditional probability, given that I'm in a current state, and I'm going to take some action A or some other latent variable.
+And so
+when we've been talking about RL so far,
+we've been talking about the standard primal form of reinforcement learning, where we're trying to maximize this reward function.
+It turns out that in optimization there's something that's also called the dual form of your problem.
+So if in the primal form I'm trying to maximize some objective, there is an equivalent problem, the dual form, where I'm trying to minimize some objective.
+And so it turns out that in dual reinforcement learning, we're actually going to switch out our optimization variables.
+So if we want to turn this into a minimization problem,
+we're going to actually try to minimize the we're going to talk about this in terms of occupancy measures, and we're going to be trying to minimize the distance between the probability distribution under my current policy and some target distribution, which is my goal.
+Alright, so we're going to start with a really simple method for using generative models to get to a goal, and that's just going to be goal-conditioned imitation learning.
+And so this objective is again, we can think about this in terms of maximizing likelihood.
+We're just trying to train a goal-conditioned policy that maximizes the likelihood of returning the action that is provided in my data set.
+And it turns out that I can use Bayes' rule to expand this out.
+And here beta just corresponds to my behavior policy or my data set distribution.
+And this first term should look very familiar, right?
+So we're just trying to select actions that maximize your expected reward, while also staying close to the likelihood of the actions in the data as a form of regularization.
+So this is really simple. This is very intuitive, and it turns out that this kind of method is actually very effective in practice in robot learning.
+But again, this is relying on this assumption that we have some offline data set that's pretty good.
+So what about the online setting?
+It turns out that we can actually think about training a goal-conditioned policy by minimizing a different kind of objective.
+And so here we're just trying to minimize the F divergence between the probability distribution over states under my current policy, so that's this P theta, and our goal distribution policy, Pg of s.
+So in the goal-conditioned setting, Pg is very similar.
+It's pretty simple. It just corresponds to a direct distribution where all of the mass is at our goal state.
+And so the intuition is that ideally we just want our agent to be in that goal state with high probability.
+And so we want the probability to be high at the goal state and low everywhere else.
+So I just want to give a little bit of intuition for what this F divergence is.
+So there's several different F divergences.
+All of these just correspond to different distance metrics over probability distributions.
+And so if I have 2 distributions, P1 and P2, so P2 you can see here is my target distribution, and P1 is slowly over time moving closer and closer to P2 as they move closer together.
+I can see that these different F divergences the the value is basically dropping right?
+So as we get closer together, this notion of distance is getting smaller.
+So this is just to provide some intuition for what these different F divergences are doing.
+So now one question that I can ask is if I maximize that objective, or sorry, if I optimize for that objective, right, which is minimizing this F divergence between these probability distributions.
+The question that I want to ask is, does the policy that I get from that?
+Is that going to be the same policy as I get from maximizing my goal condition reward?
+And it turns out the answer is yes.
+So how do I actually optimize this objective?
+It turns out we can just compute the derivative.
+And if I look at this expression, it should look a lot like what we already saw before with policy gradient, right?
+I have this first term, which is computing the derivative of my log probability of my policy multiplied by.
+And what we saw before is that that's the same policy gradient.
+And what we saw before is that that second term is supposed to be your reward.
+But here instead I have again this density ratio, right?
+This this ratio of my the probability of being in a state under my current policy over the probability of being in that state in my goal distribution.
+Okay. So just to give some intuition for what different F divergences are doing.
+With this objective, you can see that in this example our goal just corresponds to that red dot in the middle left hand side.
+And so when I optimize for this objective before i've seen the goal, all of these methods basically are trying to spread out a uniform distribution over the entire state space.
+And then, as soon as they find the goal.
+It's going to try to.
+It's going to try to concentrate all of that probability mass onto that goal.
+And so you can see that across all of these different types of F divergences that they all basically do the same thing.
+They all kind of like have different dynamics learning dynamics.
+And so that's why they all look different at first.
+But in the end they all end up concentrating into the same policy.
+Okay. But what if my task can't be described by a goal?
+If I just want a robot to clean my apartment or pick a flight for me.
+These are tasks that aren't necessarily just easily described by goals right like I don't want to have to give a robot a picture of my clean room and say match this exactly.
+There are many possible ways in which my living room can be cleaned.
+I don't necessarily care that it has to match one particular image.
+Same with trying to reach somewhere.
+If i'm trying to go to Vancouver.
+If i'm trying to go to Vancouver for Icml.
+I don't necessarily want to pick the shortest path to get to Vancouver, because I care about other things.
+I care about what airline i'm taking what time of day i'm flying maybe where my layover is right.
+And so most tasks that we care about have more complex target distributions than just a single direct distribution at a goal state.
+Okay, So we thought about interaction.
+Being a generative model.
+This can be iterative denoising.
+And here we're just doing iterative computation to arrive at some sample
+We've also talked about how our all can be seen as a generative model that the environment and policy together are acting as a generative model to output different trajectories.
+And so if we want to think about.
+Reinforcement learning from a generative modeling perspective.
+We have to think about log likelihood, and we have to talk about how we can actually model estimate log likelihood both directly and indirectly.
+And we're going to show how this connects to Q functions.
+Okay, So we've talked about how reinforcement learning can be seen as sampling from a generative model, right?
+Because our policy is basically sampling from the environment.
+But we need to talk about log likelihoods.
+Sorry. Okay.
+So how do we actually estimate the likelihood of a certain sample?
+All right. So let's start by formally defining the likelihood.
+Let's see. Likelihood is exactly the same as that discounted state occupancy that we saw earlier.
+Right. So this expression should look pretty familiar.
+And again, I just want to note that this one minus gamma term.
+Is just used to make sure that we're normalizing our probability to one.
+So and and we want to estimate these types of likelihoods in order to train an interactive generative model which corresponds to our policy.
+Okay. So how can we actually estimate these likelihoods either directly or via density ratios?
+And then we want to talk about how can we actually do off policy evaluation?
+Right?
+Because again, everything that we've talked about so far, or when we talk about estimating likelihoods, the assumption is that the data is already there, right?
+We're estimating likelihood for some good data that we already have.
+But in reinforcement learning we have a chicken and egg problem.
+And so we'd also like to be able to compute the likelihood of one policy using data from another.
+We'd like to compute the likelihood of a better policy compared to the data that we have.
+And then we're going to talk about how we can use this to maximize arbitrary rewards.
+Okay, I think i'm pretty much out of time so i'm going to skip over this.
+Okay, we're not going to talk about likelihoods.
+I just want to point out one thing which is that it turns out that when we learn these likelihoods.
+We can actually add rewards back in.
+So if we multiply this likelihood by a reward, we get the optimal Q function.
+We get we get the Q function for that likelihood for that policy.
+And so we can now estimate our future return.
+Okay, so sorry i'm just gonna wrap this up because I totally lost track of time.
+Okay.
+Okay.
+So just as a takeaway.
+I we've seen how sorry.
+Okay, So we've seen how generative models and reinforcement learning can interact right?
+We can see how reinforcement learning can be used to train generative models to train generative models to do things beyond what is in the data that they we train them on.
+We've seen how generative models can be used in reinforcement learning to act as simulators to act directly as policies.
+We've seen that in reinforcement learning.
+One of the issues, one of the things that's kind of holding us back is the use of reward, and we've looked at ways in which we can go beyond reward.
+And some of the things that I didn't get a chance to talk about was actually how we can learn likelihoods, how we can optimize for arbitrary tasks using likelihood.
+And so I just want to end to say that I think that we need more research on reinforcement learning methods.
+And more specifically.
+I think we need more research on the dual perspective of reinforcement learning, and this allows us to move away from these hand design rewards.
+Actually, I thought it was pretty funny that in the earlier tutorial that you saw you.
+We had this same comic for standard supervised learning.
+But I think this applies to reinforcement learning as well, right?
+And it applies to how we train generative models, which is basically we're trying to just stir the pot.
+Stir the data and hope for something better right?
+But I think with better reinforcement learning methods we can do better than this.
+We can actually curate the kind of data that we get rather than rather than just kind of moving things around.
+And I the other thing I wanted to point out is that the touring award last year was awarded to the fathers of reinforcement learning Sutton and Bardo.
+And so I I think that kind of shows that the general community is starting to realize how important reinforcement learning is.
+And you know, in this picture I just wanted to show that the capability is of Rl.
+Today just kind of correspond to this like little peak of the iceberg that you can see over above the surface of the ocean.
+But there's a lot of possible future capabilities there's a lot of future directions, especially in generative modeling that i'm really excited about.
+And I hope that this talk has served as a bit of a teaser for that, and I apologies.
+I apologies for totally going over time.
+Okay.
+And in the end I just want to thank my group
+Okay.
+Any questions.
+I have one question.
+Which is, we're talking.
+Do you see any new questions.
+I think so.
+No. Okay.
+Okay.
+So, like, as far as like reinforcement learning, like, do you think that it could be applied to like other like fields in Ai like that are like as traditional for machine learning?
+Like, for example, like something like computer vision like that somehow be integrated into, you know, feel like that.
+Yeah. So if we look back at one of the things that I showed earlier.
+Yeah. So if we look back at one of the things that I showed earlier.
+Yeah. So if we look back at one of the things that I showed earlier.
+So I one of the things I talked about right was that we could actually use reinforcement learning to train diffusion models.
+And so one of the things I was hinting at was that we can use reinforcement learning to fine tune to train language models better compared to what we do today.
+But one of the things that we can also do is use them for vision.
+Right. And so one of the examples that I had was you could use reinforcement learning to steer.
+So, for example, I have diffusion models.
+I.
+Did I.
+After this.
+Yeah, I think is after this.
+You can train so diffusion models, you can use them for computer vision right to generate images or to generate video.
+But we can train them with reinforcement learning to.
+Optimize for different objectives right to train them to output things that don't exist in the data set.
+And so here was just an example of that.
+Right. And so the last one, I think, is particularly funny because this is using a Vlm to basically say, I want a picture of a raccoon washing dishes.
+Start from a picture of a raccoon. Make it look more and more like that language description.
+Right. So that's one example of how you could use Rl for for vision.
+Yeah, thanks.
+Yeah, that's a good question.
+So the reinforcement learning example that we use for diffusion models was very specific to diffusion.
+Right, because we were saying so that corresponding to this slide.
+Right. Which is that?
+We can look at diffusion specifically as an Mdp.
+Because diffusion has this iterative process of of denoising.
+So if we were to use something like a generative adversarial network, it could look a little different.
+But I think
+anything that has a recursive form.
+Actually, in games you can kind of think of it as having a recursive form.
+So I I think, like with any of these generative models like we can pose them as reinforcement.
+Learning problems, right?
+Because another maybe like a another more general way of thinking about it is anything where your generative model is outputting sequential data, video or language.
+That sequence is an Mdp right?
+Because the context everything you've seen that it's generated before all of the video frames before all the language before.
+You can see that as your state what frame or what language token you generate next is your action.
+So from that perspective, then you can frame any of these generative modeling problems as reinforcement learning.

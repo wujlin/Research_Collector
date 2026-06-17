@@ -1,0 +1,1195 @@
+{
+  "v_jDvpEGTIg-can-yann-lecun-reshape-ai-again": {
+    "frame_count": 94,
+    "dimensions": [
+      "1706x960"
+    ],
+    "median_size_bytes": 38335.5,
+    "median_std_luma": 49.795,
+    "flagged_count": 12,
+    "flagged_frames": [
+      {
+        "name": "slide-0007.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 9857,
+        "mean_luma": 1.0,
+        "std_luma": 0.0,
+        "ahash": "ffffffffffffffff",
+        "flags": [
+          "tiny-file",
+          "near-black",
+          "low-contrast"
+        ]
+      },
+      {
+        "name": "slide-0012.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 28627,
+        "mean_luma": 6.62,
+        "std_luma": 25.52,
+        "ahash": "185f067e24666666",
+        "flags": [
+          "near-black"
+        ]
+      },
+      {
+        "name": "slide-0023.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 9907,
+        "mean_luma": 1.0,
+        "std_luma": 0.06,
+        "ahash": "ffffffffffffffff",
+        "flags": [
+          "tiny-file",
+          "near-black",
+          "low-contrast"
+        ]
+      },
+      {
+        "name": "slide-0032.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 22529,
+        "mean_luma": 7.54,
+        "std_luma": 26.29,
+        "ahash": "00007e7e7e7e2000",
+        "flags": [
+          "near-black"
+        ]
+      },
+      {
+        "name": "slide-0057.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 50694,
+        "mean_luma": 77.84,
+        "std_luma": 80.62,
+        "ahash": "0076383e7e7e3e00",
+        "flags": [
+          "adjacent-near-duplicate"
+        ]
+      },
+      {
+        "name": "slide-0061.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 34034,
+        "mean_luma": 55.93,
+        "std_luma": 55.9,
+        "ahash": "002c3e3e7e7e7c00",
+        "flags": [
+          "adjacent-near-duplicate"
+        ]
+      },
+      {
+        "name": "slide-0068.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 9853,
+        "mean_luma": 0.0,
+        "std_luma": 0.01,
+        "ahash": "ffffffffffffffff",
+        "flags": [
+          "tiny-file",
+          "near-black",
+          "low-contrast"
+        ]
+      },
+      {
+        "name": "slide-0070.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 9857,
+        "mean_luma": 1.0,
+        "std_luma": 0.0,
+        "ahash": "ffffffffffffffff",
+        "flags": [
+          "tiny-file",
+          "near-black",
+          "low-contrast"
+        ]
+      },
+      {
+        "name": "slide-0074.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 9854,
+        "mean_luma": 0.0,
+        "std_luma": 0.01,
+        "ahash": "ffffffffffffffff",
+        "flags": [
+          "tiny-file",
+          "near-black",
+          "low-contrast"
+        ]
+      },
+      {
+        "name": "slide-0076.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 9857,
+        "mean_luma": 1.0,
+        "std_luma": 0.0,
+        "ahash": "ffffffffffffffff",
+        "flags": [
+          "tiny-file",
+          "near-black",
+          "low-contrast"
+        ]
+      },
+      {
+        "name": "slide-0081.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 9858,
+        "mean_luma": 32.0,
+        "std_luma": 0.03,
+        "ahash": "ffffffffffffffff",
+        "flags": [
+          "tiny-file",
+          "low-contrast"
+        ]
+      },
+      {
+        "name": "slide-0094.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 9855,
+        "mean_luma": 0.0,
+        "std_luma": 0.03,
+        "ahash": "ffffffffffffffff",
+        "flags": [
+          "tiny-file",
+          "near-black",
+          "low-contrast"
+        ]
+      }
+    ],
+    "adjacent_near_duplicates": [
+      {
+        "prev": "slide-0056.jpg",
+        "cur": "slide-0057.jpg",
+        "hamming": 0
+      },
+      {
+        "prev": "slide-0060.jpg",
+        "cur": "slide-0061.jpg",
+        "hamming": 1
+      }
+    ],
+    "contact_sheet": "youtube/slides/_quality_audit/v_jDvpEGTIg-can-yann-lecun-reshape-ai-again__contact_sheet.jpg"
+  },
+  "NrO20Jb-hy0-the-misconception-that-almost-stopped-ai-how-models-learn-part-1": {
+    "frame_count": 62,
+    "dimensions": [
+      "1706x960"
+    ],
+    "median_size_bytes": 41919.0,
+    "median_std_luma": 58.445,
+    "flagged_count": 12,
+    "flagged_frames": [
+      {
+        "name": "slide-0002.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 9864,
+        "mean_luma": 0.0,
+        "std_luma": 0.03,
+        "ahash": "ffffffffffffffff",
+        "flags": [
+          "tiny-file",
+          "near-black",
+          "low-contrast"
+        ]
+      },
+      {
+        "name": "slide-0003.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 56802,
+        "mean_luma": 7.07,
+        "std_luma": 28.99,
+        "ahash": "3838607060607818",
+        "flags": [
+          "near-black"
+        ]
+      },
+      {
+        "name": "slide-0005.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 9856,
+        "mean_luma": 0.0,
+        "std_luma": 0.02,
+        "ahash": "ffffffffffffffff",
+        "flags": [
+          "tiny-file",
+          "near-black",
+          "low-contrast"
+        ]
+      },
+      {
+        "name": "slide-0007.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 9855,
+        "mean_luma": 255.0,
+        "std_luma": 0.02,
+        "ahash": "ffffffffffffffff",
+        "flags": [
+          "tiny-file",
+          "near-white",
+          "low-contrast"
+        ]
+      },
+      {
+        "name": "slide-0008.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 10372,
+        "mean_luma": 27.43,
+        "std_luma": 11.4,
+        "ahash": "000000000000003c",
+        "flags": [
+          "tiny-file"
+        ]
+      },
+      {
+        "name": "slide-0014.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 9856,
+        "mean_luma": 0.0,
+        "std_luma": 0.02,
+        "ahash": "ffffffffffffffff",
+        "flags": [
+          "tiny-file",
+          "near-black",
+          "low-contrast"
+        ]
+      },
+      {
+        "name": "slide-0041.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 14145,
+        "mean_luma": 1.66,
+        "std_luma": 9.48,
+        "ahash": "00606060607e7e00",
+        "flags": [
+          "near-black"
+        ]
+      },
+      {
+        "name": "slide-0044.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 36757,
+        "mean_luma": 132.8,
+        "std_luma": 46.49,
+        "ahash": "1c367fe7f79fdbfb",
+        "flags": [
+          "adjacent-near-duplicate"
+        ]
+      },
+      {
+        "name": "slide-0048.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 11653,
+        "mean_luma": 1.3,
+        "std_luma": 5.43,
+        "ahash": "00000008381c1400",
+        "flags": [
+          "tiny-file",
+          "near-black"
+        ]
+      },
+      {
+        "name": "slide-0051.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 28637,
+        "mean_luma": 5.44,
+        "std_luma": 26.78,
+        "ahash": "0000fedec0c30000",
+        "flags": [
+          "near-black"
+        ]
+      },
+      {
+        "name": "slide-0055.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 9856,
+        "mean_luma": 0.0,
+        "std_luma": 0.02,
+        "ahash": "ffffffffffffffff",
+        "flags": [
+          "tiny-file",
+          "near-black",
+          "low-contrast"
+        ]
+      },
+      {
+        "name": "slide-0062.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 12561,
+        "mean_luma": 6.13,
+        "std_luma": 21.53,
+        "ahash": "00000000000000ff",
+        "flags": [
+          "tiny-file",
+          "near-black"
+        ]
+      }
+    ],
+    "adjacent_near_duplicates": [
+      {
+        "prev": "slide-0043.jpg",
+        "cur": "slide-0044.jpg",
+        "hamming": 0
+      }
+    ],
+    "contact_sheet": "youtube/slides/_quality_audit/NrO20Jb-hy0-the-misconception-that-almost-stopped-ai-how-models-learn-part-1__contact_sheet.jpg"
+  },
+  "VkHfRKewkWw-the-fma-of-artificial-intelligence-backpropagation-how-models-learn-part-2": {
+    "frame_count": 70,
+    "dimensions": [
+      "1706x960"
+    ],
+    "median_size_bytes": 42058.5,
+    "median_std_luma": 57.67,
+    "flagged_count": 12,
+    "flagged_frames": [
+      {
+        "name": "slide-0001.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 10076,
+        "mean_luma": 0.32,
+        "std_luma": 0.47,
+        "ahash": "0066666018181818",
+        "flags": [
+          "tiny-file",
+          "near-black",
+          "low-contrast"
+        ]
+      },
+      {
+        "name": "slide-0008.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 9851,
+        "mean_luma": 255.0,
+        "std_luma": 0.0,
+        "ahash": "ffffffffffffffff",
+        "flags": [
+          "tiny-file",
+          "near-white",
+          "low-contrast"
+        ]
+      },
+      {
+        "name": "slide-0009.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 10337,
+        "mean_luma": 27.18,
+        "std_luma": 9.75,
+        "ahash": "00000000001c003c",
+        "flags": [
+          "tiny-file"
+        ]
+      },
+      {
+        "name": "slide-0010.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 21976,
+        "mean_luma": 248.04,
+        "std_luma": 16.45,
+        "ahash": "9ffdf1c3c1fdbbab",
+        "flags": [
+          "near-white"
+        ]
+      },
+      {
+        "name": "slide-0012.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 9901,
+        "mean_luma": 26.02,
+        "std_luma": 0.51,
+        "ahash": "ffffffffffffffff",
+        "flags": [
+          "tiny-file",
+          "low-contrast"
+        ]
+      },
+      {
+        "name": "slide-0047.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 27013,
+        "mean_luma": 3.86,
+        "std_luma": 17.64,
+        "ahash": "00007cfffe7e0000",
+        "flags": [
+          "near-black"
+        ]
+      },
+      {
+        "name": "slide-0049.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 25423,
+        "mean_luma": 4.17,
+        "std_luma": 19.15,
+        "ahash": "003e767e341e0001",
+        "flags": [
+          "near-black"
+        ]
+      },
+      {
+        "name": "slide-0053.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 25116,
+        "mean_luma": 4.31,
+        "std_luma": 19.79,
+        "ahash": "001e3e7e7e3c1e00",
+        "flags": [
+          "near-black"
+        ]
+      },
+      {
+        "name": "slide-0055.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 93783,
+        "mean_luma": 23.62,
+        "std_luma": 46.97,
+        "ahash": "0000fe7efefe0000",
+        "flags": [
+          "adjacent-near-duplicate"
+        ]
+      },
+      {
+        "name": "slide-0058.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 9851,
+        "mean_luma": 1.0,
+        "std_luma": 0.0,
+        "ahash": "ffffffffffffffff",
+        "flags": [
+          "tiny-file",
+          "near-black",
+          "low-contrast"
+        ]
+      },
+      {
+        "name": "slide-0061.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 89656,
+        "mean_luma": 14.38,
+        "std_luma": 30.78,
+        "ahash": "007efefefe7e0000",
+        "flags": [
+          "adjacent-near-duplicate"
+        ]
+      },
+      {
+        "name": "slide-0062.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 23539,
+        "mean_luma": 5.83,
+        "std_luma": 30.24,
+        "ahash": "0018181818181818",
+        "flags": [
+          "near-black"
+        ]
+      }
+    ],
+    "adjacent_near_duplicates": [
+      {
+        "prev": "slide-0054.jpg",
+        "cur": "slide-0055.jpg",
+        "hamming": 0
+      },
+      {
+        "prev": "slide-0060.jpg",
+        "cur": "slide-0061.jpg",
+        "hamming": 2
+      }
+    ],
+    "contact_sheet": "youtube/slides/_quality_audit/VkHfRKewkWw-the-fma-of-artificial-intelligence-backpropagation-how-models-learn-part-2__contact_sheet.jpg"
+  },
+  "qx7hirqgfuU-why-deep-learning-works-unreasonably-well-how-models-learn-part-3": {
+    "frame_count": 83,
+    "dimensions": [
+      "1706x960"
+    ],
+    "median_size_bytes": 37951,
+    "median_std_luma": 46.73,
+    "flagged_count": 17,
+    "flagged_frames": [
+      {
+        "name": "slide-0006.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 16048,
+        "mean_luma": 2.85,
+        "std_luma": 18.68,
+        "ahash": "0000060606060400",
+        "flags": [
+          "near-black"
+        ]
+      },
+      {
+        "name": "slide-0009.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 26725,
+        "mean_luma": 4.36,
+        "std_luma": 16.63,
+        "ahash": "0010787878781800",
+        "flags": [
+          "near-black"
+        ]
+      },
+      {
+        "name": "slide-0019.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 9901,
+        "mean_luma": 26.02,
+        "std_luma": 0.51,
+        "ahash": "ffffffffffffffff",
+        "flags": [
+          "tiny-file",
+          "low-contrast"
+        ]
+      },
+      {
+        "name": "slide-0021.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 9852,
+        "mean_luma": 0.0,
+        "std_luma": 0.0,
+        "ahash": "ffffffffffffffff",
+        "flags": [
+          "tiny-file",
+          "near-black",
+          "low-contrast"
+        ]
+      },
+      {
+        "name": "slide-0025.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 19612,
+        "mean_luma": 4.55,
+        "std_luma": 14.29,
+        "ahash": "00041c3c38381800",
+        "flags": [
+          "near-black"
+        ]
+      },
+      {
+        "name": "slide-0027.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 23416,
+        "mean_luma": 4.18,
+        "std_luma": 24.57,
+        "ahash": "0000107e7e7e0000",
+        "flags": [
+          "near-black"
+        ]
+      },
+      {
+        "name": "slide-0029.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 23386,
+        "mean_luma": 4.18,
+        "std_luma": 24.56,
+        "ahash": "0000107e7e7e0000",
+        "flags": [
+          "near-black"
+        ]
+      },
+      {
+        "name": "slide-0035.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 29353,
+        "mean_luma": 6.47,
+        "std_luma": 23.23,
+        "ahash": "0040666666666060",
+        "flags": [
+          "near-black"
+        ]
+      },
+      {
+        "name": "slide-0036.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 26713,
+        "mean_luma": 6.34,
+        "std_luma": 24.8,
+        "ahash": "3e3e060e0c0c0c00",
+        "flags": [
+          "near-black"
+        ]
+      },
+      {
+        "name": "slide-0047.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 24220,
+        "mean_luma": 5.36,
+        "std_luma": 19.66,
+        "ahash": "00180c1c18181901",
+        "flags": [
+          "near-black"
+        ]
+      },
+      {
+        "name": "slide-0051.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 60357,
+        "mean_luma": 115.95,
+        "std_luma": 61.01,
+        "ahash": "1c1c5c5e5e5e5808",
+        "flags": [
+          "adjacent-near-duplicate"
+        ]
+      },
+      {
+        "name": "slide-0053.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 9852,
+        "mean_luma": 0.0,
+        "std_luma": 0.0,
+        "ahash": "ffffffffffffffff",
+        "flags": [
+          "tiny-file",
+          "near-black",
+          "low-contrast"
+        ]
+      },
+      {
+        "name": "slide-0054.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 22866,
+        "mean_luma": 4.6,
+        "std_luma": 18.4,
+        "ahash": "206020c0c0f07000",
+        "flags": [
+          "near-black"
+        ]
+      },
+      {
+        "name": "slide-0055.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 18035,
+        "mean_luma": 2.52,
+        "std_luma": 17.11,
+        "ahash": "00000000003c3c3c",
+        "flags": [
+          "near-black"
+        ]
+      },
+      {
+        "name": "slide-0059.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 11044,
+        "mean_luma": 0.21,
+        "std_luma": 5.61,
+        "ahash": "0030300000000000",
+        "flags": [
+          "tiny-file",
+          "near-black"
+        ]
+      },
+      {
+        "name": "slide-0062.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 9858,
+        "mean_luma": 0.0,
+        "std_luma": 0.03,
+        "ahash": "ffffffffffffffff",
+        "flags": [
+          "tiny-file",
+          "near-black",
+          "low-contrast"
+        ]
+      },
+      {
+        "name": "slide-0064.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 9852,
+        "mean_luma": 0.0,
+        "std_luma": 0.0,
+        "ahash": "ffffffffffffffff",
+        "flags": [
+          "tiny-file",
+          "near-black",
+          "low-contrast"
+        ]
+      }
+    ],
+    "adjacent_near_duplicates": [
+      {
+        "prev": "slide-0050.jpg",
+        "cur": "slide-0051.jpg",
+        "hamming": 2
+      }
+    ],
+    "contact_sheet": "youtube/slides/_quality_audit/qx7hirqgfuU-why-deep-learning-works-unreasonably-well-how-models-learn-part-3__contact_sheet.jpg"
+  },
+  "2hcsmtkSzIw-can-humans-make-ai-any-better": {
+    "frame_count": 72,
+    "dimensions": [
+      "1706x960"
+    ],
+    "median_size_bytes": 37780.0,
+    "median_std_luma": 53.025,
+    "flagged_count": 10,
+    "flagged_frames": [
+      {
+        "name": "slide-0026.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 114940,
+        "mean_luma": 147.13,
+        "std_luma": 73.55,
+        "ahash": "00187e7e7e7e7e7c",
+        "flags": [
+          "adjacent-near-duplicate"
+        ]
+      },
+      {
+        "name": "slide-0037.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 13745,
+        "mean_luma": 1.4,
+        "std_luma": 13.12,
+        "ahash": "0018383838380800",
+        "flags": [
+          "near-black"
+        ]
+      },
+      {
+        "name": "slide-0041.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 9852,
+        "mean_luma": 0.0,
+        "std_luma": 0.0,
+        "ahash": "ffffffffffffffff",
+        "flags": [
+          "tiny-file",
+          "near-black",
+          "low-contrast"
+        ]
+      },
+      {
+        "name": "slide-0051.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 9852,
+        "mean_luma": 0.0,
+        "std_luma": 0.0,
+        "ahash": "ffffffffffffffff",
+        "flags": [
+          "tiny-file",
+          "near-black",
+          "low-contrast"
+        ]
+      },
+      {
+        "name": "slide-0052.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 15688,
+        "mean_luma": 1.61,
+        "std_luma": 14.38,
+        "ahash": "0000187c3c1c0000",
+        "flags": [
+          "near-black"
+        ]
+      },
+      {
+        "name": "slide-0054.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 11702,
+        "mean_luma": 15.86,
+        "std_luma": 26.61,
+        "ahash": "003c3c3c3c3c1800",
+        "flags": [
+          "tiny-file"
+        ]
+      },
+      {
+        "name": "slide-0067.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 30467,
+        "mean_luma": 123.36,
+        "std_luma": 87.66,
+        "ahash": "1c7c7c7c7c7e3c00",
+        "flags": [
+          "adjacent-near-duplicate"
+        ]
+      },
+      {
+        "name": "slide-0068.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 37150,
+        "mean_luma": 123.21,
+        "std_luma": 92.03,
+        "ahash": "3c7c7c7c7c7c3c00",
+        "flags": [
+          "adjacent-near-duplicate"
+        ]
+      },
+      {
+        "name": "slide-0069.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 37004,
+        "mean_luma": 127.64,
+        "std_luma": 89.05,
+        "ahash": "3c7c7c7c7c7c3c08",
+        "flags": [
+          "adjacent-near-duplicate"
+        ]
+      },
+      {
+        "name": "slide-0072.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 29057,
+        "mean_luma": 126.84,
+        "std_luma": 88.01,
+        "ahash": "3c7c7c7c7c7c7c40",
+        "flags": [
+          "adjacent-near-duplicate"
+        ]
+      }
+    ],
+    "adjacent_near_duplicates": [
+      {
+        "prev": "slide-0025.jpg",
+        "cur": "slide-0026.jpg",
+        "hamming": 2
+      },
+      {
+        "prev": "slide-0066.jpg",
+        "cur": "slide-0067.jpg",
+        "hamming": 3
+      },
+      {
+        "prev": "slide-0067.jpg",
+        "cur": "slide-0068.jpg",
+        "hamming": 2
+      },
+      {
+        "prev": "slide-0068.jpg",
+        "cur": "slide-0069.jpg",
+        "hamming": 1
+      },
+      {
+        "prev": "slide-0071.jpg",
+        "cur": "slide-0072.jpg",
+        "hamming": 2
+      }
+    ],
+    "contact_sheet": "youtube/slides/_quality_audit/2hcsmtkSzIw-can-humans-make-ai-any-better__contact_sheet.jpg"
+  },
+  "2mrGMMmrVNE-inside-the-worlds-smartest-robot-brain-vla": {
+    "frame_count": 66,
+    "dimensions": [
+      "1706x960"
+    ],
+    "median_size_bytes": 45813.0,
+    "median_std_luma": 48.69,
+    "flagged_count": 17,
+    "flagged_frames": [
+      {
+        "name": "slide-0004.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 10532,
+        "mean_luma": 233.87,
+        "std_luma": 3.3,
+        "ahash": "ffffffff3f3fffff",
+        "flags": [
+          "tiny-file",
+          "low-contrast"
+        ]
+      },
+      {
+        "name": "slide-0006.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 39264,
+        "mean_luma": 166.46,
+        "std_luma": 81.75,
+        "ahash": "ff0303038301ffff",
+        "flags": [
+          "adjacent-near-duplicate"
+        ]
+      },
+      {
+        "name": "slide-0007.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 42227,
+        "mean_luma": 170.31,
+        "std_luma": 78.85,
+        "ahash": "ff0303030301ffff",
+        "flags": [
+          "adjacent-near-duplicate"
+        ]
+      },
+      {
+        "name": "slide-0008.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 40103,
+        "mean_luma": 166.63,
+        "std_luma": 81.99,
+        "ahash": "ff0303070301ffff",
+        "flags": [
+          "adjacent-near-duplicate"
+        ]
+      },
+      {
+        "name": "slide-0009.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 40865,
+        "mean_luma": 169.13,
+        "std_luma": 79.85,
+        "ahash": "ff0303070301ffff",
+        "flags": [
+          "adjacent-near-duplicate"
+        ]
+      },
+      {
+        "name": "slide-0010.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 38987,
+        "mean_luma": 167.5,
+        "std_luma": 80.74,
+        "ahash": "ff0303078701ffff",
+        "flags": [
+          "adjacent-near-duplicate"
+        ]
+      },
+      {
+        "name": "slide-0012.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 9852,
+        "mean_luma": 0.0,
+        "std_luma": 0.0,
+        "ahash": "ffffffffffffffff",
+        "flags": [
+          "tiny-file",
+          "near-black",
+          "low-contrast"
+        ]
+      },
+      {
+        "name": "slide-0017.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 9852,
+        "mean_luma": 0.0,
+        "std_luma": 0.0,
+        "ahash": "ffffffffffffffff",
+        "flags": [
+          "tiny-file",
+          "near-black",
+          "low-contrast"
+        ]
+      },
+      {
+        "name": "slide-0020.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 23966,
+        "mean_luma": 3.14,
+        "std_luma": 17.72,
+        "ahash": "200000343cf1f10c",
+        "flags": [
+          "near-black"
+        ]
+      },
+      {
+        "name": "slide-0023.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 21979,
+        "mean_luma": 3.71,
+        "std_luma": 18.13,
+        "ahash": "383c1c343c3c1c3c",
+        "flags": [
+          "near-black"
+        ]
+      },
+      {
+        "name": "slide-0026.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 14872,
+        "mean_luma": 4.01,
+        "std_luma": 12.05,
+        "ahash": "0060606000000000",
+        "flags": [
+          "near-black"
+        ]
+      },
+      {
+        "name": "slide-0028.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 9852,
+        "mean_luma": 0.0,
+        "std_luma": 0.0,
+        "ahash": "ffffffffffffffff",
+        "flags": [
+          "tiny-file",
+          "near-black",
+          "low-contrast"
+        ]
+      },
+      {
+        "name": "slide-0030.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 9852,
+        "mean_luma": 0.0,
+        "std_luma": 0.0,
+        "ahash": "ffffffffffffffff",
+        "flags": [
+          "tiny-file",
+          "near-black",
+          "low-contrast"
+        ]
+      },
+      {
+        "name": "slide-0032.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 9853,
+        "mean_luma": 0.0,
+        "std_luma": 0.01,
+        "ahash": "ffffffffffffffff",
+        "flags": [
+          "tiny-file",
+          "near-black",
+          "low-contrast"
+        ]
+      },
+      {
+        "name": "slide-0038.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 66754,
+        "mean_luma": 36.78,
+        "std_luma": 56.6,
+        "ahash": "000066ffffff0000",
+        "flags": [
+          "adjacent-near-duplicate"
+        ]
+      },
+      {
+        "name": "slide-0053.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 50627,
+        "mean_luma": 102.22,
+        "std_luma": 68.23,
+        "ahash": "007e665a1a126626",
+        "flags": [
+          "adjacent-near-duplicate"
+        ]
+      },
+      {
+        "name": "slide-0062.jpg",
+        "width": 1706,
+        "height": 960,
+        "size_bytes": 71599,
+        "mean_luma": 5.58,
+        "std_luma": 31.11,
+        "ahash": "0000007e7e020000",
+        "flags": [
+          "near-black"
+        ]
+      }
+    ],
+    "adjacent_near_duplicates": [
+      {
+        "prev": "slide-0005.jpg",
+        "cur": "slide-0006.jpg",
+        "hamming": 2
+      },
+      {
+        "prev": "slide-0006.jpg",
+        "cur": "slide-0007.jpg",
+        "hamming": 1
+      },
+      {
+        "prev": "slide-0007.jpg",
+        "cur": "slide-0008.jpg",
+        "hamming": 1
+      },
+      {
+        "prev": "slide-0008.jpg",
+        "cur": "slide-0009.jpg",
+        "hamming": 0
+      },
+      {
+        "prev": "slide-0009.jpg",
+        "cur": "slide-0010.jpg",
+        "hamming": 2
+      },
+      {
+        "prev": "slide-0037.jpg",
+        "cur": "slide-0038.jpg",
+        "hamming": 2
+      },
+      {
+        "prev": "slide-0052.jpg",
+        "cur": "slide-0053.jpg",
+        "hamming": 0
+      }
+    ],
+    "contact_sheet": "youtube/slides/_quality_audit/2mrGMMmrVNE-inside-the-worlds-smartest-robot-brain-vla__contact_sheet.jpg"
+  }
+}

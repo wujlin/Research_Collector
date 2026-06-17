@@ -1,0 +1,12 @@
+{
+  "title": "Locality-aware Parallel Decoding for Efficient Autoregressive Image Generation",
+  "url": "https://www.youtube.com/watch?v=cPeGBXXHxZM",
+  "backend": "faster-whisper",
+  "model": "large-v3",
+  "requested_language": "en",
+  "detected_language": "en",
+  "generated_at": "2026-05-12T01:07:04",
+  "language": "en",
+  "language_probability": 1,
+  "duration": 799.495
+}

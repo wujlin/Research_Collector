@@ -1,0 +1,213 @@
+I'm excited to share some recent work that provides some of the first analysis about when and where unsupervised skill learning algorithms are optimal for pre-training.
+This is joint work with my advisors, Ruslan Salakutinov and Sergey Levin.
+Reinforcement learning algorithms are expensive in terms of data, in terms of compute, and so there's been a lot of work in trying to speed them up by performing some sort of unsupervised pre-training without any reward functions.
+While these methods can work well in practice, there's been very little analysis probing when and where they're guaranteed to provide good results.
+Perhaps the most popular of these methods are skill learning methods, and our analysis will focus on how these skill learning methods do or do not make it easier to solve downstream tasks.
+What are skill learning algorithms?
+Skill learning algorithms try to identify many different useful behaviors for an agent before a reward function is given.
+For example, on this dog-like robot, we might want to learn skills corresponding to walking forwards and backwards, to crouching, to jumping.
+The motivation for learning such skills is that they might make it easier to solve new tasks.
+Either by combining or adapting these skills.
+As another example, for this robot arm, we might want to learn skills that interact with the blocks in different ways, sorting and grasping and reaching.
+Unsupervised skill learning is a vibrant area of research.
+Prior work has shown that it's possible to learn skills without any reward function, and that these skills often do help solve downstream tasks.
+While the precise details of all these different methods are different, many of them follow a similar template, maximizing a mutual information objective.
+To define that objective, we have to introduce a bit of notation.
+We will use zed as a latent variable indicating the skill.
+This is often a one-hot vector, though some work uses a continuous latent variable.
+And we'll use s to denote the states visited by the policy.
+To denote a specific skill, we'll use pi conditioned on zed.
+Formally, most of these methods maximize the mutual information between the latent variable zed and the states visited.
+Some of these methods include additional conditioning information.
+And finally, the mutual information tells us how much changes in the latent variable affect changes in the states visited.
+I like to think about the latent variable as a small number of knobs.
+Ideally, we'd like to find some knobs that allow us to sweep over the entire range of behaviors for the agent.
+Because we only have a small number of knobs, fiddling with these knobs is much easier than trying to find the right neural network parameters for solving a task.
+So far,
+we lack a clear,
+theoretical understanding,
+of when these skill learning methods are provably useful.
+While many prior works have proposed various objectives for learning skills,
+it's not yet clear what sorts of skills these methods will produce and how the skill learning objectives relate to reward maximization.
+It's unclear whether learning skills via mutual information maximization is a provably good way of doing pre-training.
+What does it even mean for a skill learning algorithm to be optimal?
+This is the main question that we answer in this paper.
+The rest of the talk explains how skill learning can be seen as geometry,
+which is the key to answering this question.
+To start,
+we'll think about skills not as animated behaviors,
+but rather in terms of the states that they visit.
+For example,
+if we have this ant-like robot shown here,
+the distribution of future states might look like the line below.
+Note that this is a combination of looking one step into the future and many steps into the future.
+Formally,
+we'll define the average state distribution using this equation here.
+Formally,
+we'll define the average state distribution using this equation here.
+Formally,
+we'll define the average state distribution using this equation here.
+Formally,
+we'll define the average state distribution using this equation here.
+Throughout this talk,
+I'll use a three-state MDP as a running example.
+Our theory applies to arbitrary discrete MDPs.
+In this three-state example,
+each policy corresponds to a distribution over three states,
+so we can plot each policy as a point in R3.
+We're showing six different policies here.
+Because probability distributions must be positive and sum to one,
+these points must lie on the blue triangle, a probability simplex.
+To reduce clutter,
+I'll remove the coordinate axes and kill the same data on the right.
+The orange region here is really important.
+This is the set of feasible state distributions.
+This is the set of feasible state distributions.
+This is the set of feasible state distributions.
+I'll refer to it as the state marginal polytope.
+This polytope is important because it reflects the dynamics of the environment.
+Some states are easy to visit, some states are hard to visit.
+The agent can't spend all of its time at some states.
+To provide some orientation into this land of state marginals,
+I want to think a little bit about reward maximization.
+We'll focus on reward functions that depend only on the state, not the action.
+In this land of state marginals,
+we can plot reward functions as vectors starting at the origin,
+and the expected return is the sum of the reward at each state
+times the probability that a policy visits that state.
+Which state marginal distribution maximizes this reward function shown here?
+Recall that we can only choose state marginal distributions inside this orange polytope.
+For this reward function,
+the optimal policy has a state marginal in the lower left-hand corner.
+In general, for a given reward function,
+the optimal policy always lies at one of these vertices.
+This is intriguing because it suggests that the vertices of the state marginal
+are sufficient for solving any reinforcement learning problem.
+So, one way of quantifying whether a skill learning algorithm is optimal or not
+is by seeing how many of these vertices are covered by some skill.
+So, where do the skills learned by mutual information-based skill learning algorithms
+lie on this polytope?
+Do they neatly tile the space?
+Do they pick out every vertex?
+Do they overlap?
+Well, for this example,
+they learned three skills, each of which lies at a vertex.
+But no skill is assigned to one of the vertices.
+Even if we tried to learn four skills or 100 skills,
+skill learning algorithms based on mutual information
+would never place a skill at this vertex.
+Instead, they would repeat one of the old skills.
+Here are four different environments,
+and we again visualize where the skills lie on the polytope.
+So, what's the general principle?
+We formally prove the following results for mutual information-based skill learning algorithms.
+First, skills always lie at vertices.
+They never lie on the interior of this polytope.
+But, while every skill lies at a vertex, not every vertex contains a skill.
+This isn't a failure of optimization.
+It's not an artifact of trying too few skills.
+It's a reflection of the underlying optimization problem.
+Optimizing for mutual information will not, in general, learn policies for every vertex.
+And this result is interesting because, as we discussed before,
+reward-maximizing policies always lie at vertices.
+Finally, the number of unique skills is at most equal to the number of states.
+If, say, you tried to learn an infinite number of skills using a continuous latent variable,
+you would still run up against this upper bound.
+These results are pretty negative.
+The skills learned by mutual information are not necessarily sufficient for solving downstream
+tasks, even if we could, say, take linear combinations of these skills.
+But what if we used skills in a different way to solve downstream tasks?
+Our next result will look at how the skills can be used for fine-tuning.
+To explain how the skills can be used for fine-tuning,
+we need to think about the skill learning algorithms in a different way.
+Usually, we think about these algorithms as optimizing for a small number of skills.
+In this talk so far, we've discussed what states these skills end up visiting,
+shown as the orange dots in some of those plots before.
+And we thought about the skill learning algorithms
+as moving these orange dots around inside the orange polytope.
+To explain how skill learning relates to fine-tuning,
+I want to discuss a different way of thinking about these same skill learning algorithms.
+This is simple. Instead of optimizing some small number of skills,
+we can think about skill learning algorithms as assigning probabilities
+to every single possible policy.
+This is sort of like saying that the skill learning algorithm
+is given a big bucket of policies.
+Some of these policies may have a uniform distribution over states,
+some of them may lie at boundaries of the polytope.
+And now the skill learning algorithm gets to select some of these policies.
+Formally,
+the skill learning algorithm has to assign a probability to each of these policies.
+So, if you go back and look at the net value of these policies, the real data will be the same as the numbers on this table.
+So, the real data will get the numbers onto each of these policies. So that's why we think about these skills as something that can be used to design certain probabilities.
+So maybe the skill learning algorithm assigns a 70% probability to the red skill and a 30%
+probability to the pink skill and a 0% probability to the other skill.
+And these probabilities reflect how often the skill learning algorithm would use this
+policy in the environment.
+One important note is that from a mathematical perspective, these two ways of thinking about
+skill learning are the same.
+They both correspond to maximizing mutual information.
+While you would implement them in different ways, their mathematical equivalence means
+that we can use this new perspective to analyze the old perspective.
+So now we can view skill learning algorithms as selecting policies from this big bucket.
+An example before, the skill learning algorithm assigned a probability of 70% to the red policy
+and 30% to the pink policy.
+Maybe those policies lie in the upper left and lower left corners, and we'll use orange
+dots to visualize the probabilities assigned to those policies.
+After deciding which policies to select from this big bucket, we can then ask the following
+question.
+On average, what states do the selected policies visit?
+This depends on which policies we've selected and the probabilities we've put on those
+policies.
+In this example, the average state distribution is shown as this black dot.
+Because the skill learning algorithm has assigned a higher probability to the red policy than
+the pink policy, this average is closer to the red policy.
+And I'll refer to this average as the prior, because later we'll use it as an initialization
+for solving downstream tasks.
+We didn't express this prior using this equation.
+It says that the probability of a state under the average state distribution is the probability
+that each policy visits that state times the probability that we sampled that policy.
+Intuitively, this average state distribution will be in the middle of the selected policies.
+So one might imagine that it might be good for fine tuning to solve downstream tasks.
+So let's think about using this prior to solve downstream tasks via fine tuning.
+Ideally, we'd like to find tuning.
+to happen quickly, so we need to measure the speed of learning new tasks. We'll measure speed of
+learning based on the distance between the prior state distribution and the state distribution of
+a reward-maximizing policy. And recall that the reward-maximizing policies always lie at vertices
+of this orange polytope. So ideally, we'd like to find a prior distribution that's close to all of
+the vertices. In our analysis, we'll use the Kale divergence to measure this distance. This Kale
+divergence is different from the number of gradient steps, and we encourage future work to
+analyze fine-tuning under more practically relevant distance measures. Now, it turns out that there's
+a very close relationship between the speed of fine-tuning and mutual information. Maximizing
+mutual information is equivalent to finding a prior that's closest to the furthest policy.
+That is, maximizing mutual information is equivalent to finding a prior that minimizes
+the length of the longest black line.
+Here, we visualize how optimizing mutual information changes the prior. At convergence,
+the optimization alternates between updating the prior using the hardest vertices. These
+hardest vertices exactly correspond to the skills, and the frequency of updates in each direction
+corresponds to the probability that that skill is sampled. And note that some vertices are
+never used for updates. These vertices are never used as skills. This connection helps
+explain why maximizing mutual information might be useful for solving downstream tasks.
+The average skill is close to all other skills. So, what happens if we use this average skill
+as an initialization for solving downstream tasks?
+Let's think about what it would mean to use this initialization for solving the downstream
+tasks. Some prior work has argued that a uniform distribution over states is a good initialization,
+so let's look at that. The red dots correspond to the optimal policies for a bunch of different
+tasks. And to analyze the optimization, we'll use an idealized learning algorithm that can
+easily control the state distribution. The expanding contours here show progressive steps
+of this idealized learning algorithm. And we see that a uniform prior is a good prior,
+as all of the tasks are solved relatively quickly.
+Now, let's compare this to the prior learned by skill learning. Whereas the prior from
+skill learning takes only 9 steps to solve all of the tasks, a uniform prior takes more
+than 13 steps to solve all of the tasks.
+Formally, we prove that skill learning using mutual information will always find the
+optimal prior. That is, maximizing mutual information corresponds to finding a prior
+that's closest to the hardest task.
+As noted before, the learning procedure visualized here is very idealized. Real RL algorithms
+take gradient steps in parameter space or in action space, not in state space. So, while
+current mutual information algorithms are optimized for this idealized learning procedure,
+other yet-to-be-invented skill learning algorithms might be better for more realistic learning
+procedures.
+The main takeaways from this talk are that unsupervised skill learning algorithms cannot
+learn the optimal policy for every downstream task, but they do provide an optimal initialization
+under some strict assumptions.
+Please check out the poster for more information. I'm happy to take any questions now. Thanks!

@@ -1,0 +1,4080 @@
+{
+  "segments": [
+    {
+      "start": 0.32,
+      "end": 5.12,
+      "text": "In the early 1970s, a Harvard graduate"
+    },
+    {
+      "start": 3.04,
+      "end": 6.879,
+      "text": "student named Paul Werbos discovered a"
+    },
+    {
+      "start": 5.12,
+      "end": 8.72,
+      "text": "method for training multi-layer neural"
+    },
+    {
+      "start": 6.879,
+      "end": 11.12,
+      "text": "networks that we now call back"
+    },
+    {
+      "start": 8.72,
+      "end": 13.599,
+      "text": "propagation. Werbos would later compare"
+    },
+    {
+      "start": 11.12,
+      "end": 15.36,
+      "text": "the discovery to Newton's laws,"
+    },
+    {
+      "start": 13.599,
+      "end": 16.96,
+      "text": "positioning backpropagation as a"
+    },
+    {
+      "start": 15.36,
+      "end": 19.439,
+      "text": "fundamental mathematical law of"
+    },
+    {
+      "start": 16.96,
+      "end": 21.6,
+      "text": "intelligence. When Werbos took his"
+    },
+    {
+      "start": 19.439,
+      "end": 24.0,
+      "text": "discovery to AI legend Marvin Minsky,"
+    },
+    {
+      "start": 21.6,
+      "end": 25.76,
+      "text": "Minsky rejected it outright, claiming"
+    },
+    {
+      "start": 24.0,
+      "end": 28.24,
+      "text": "that backpropagation would not be able"
+    },
+    {
+      "start": 25.76,
+      "end": 29.359,
+      "text": "to learn anything difficult. However,"
+    },
+    {
+      "start": 28.24,
+      "end": 31.119,
+      "text": "despite being consistently"
+    },
+    {
+      "start": 29.359,
+      "end": 33.6,
+      "text": "underestimated by Minsky and many"
+    },
+    {
+      "start": 31.119,
+      "end": 36.0,
+      "text": "others, backpropagation just kept"
+    },
+    {
+      "start": 33.6,
+      "end": 38.48,
+      "text": "working, successfully training models to"
+    },
+    {
+      "start": 36.0,
+      "end": 40.8,
+      "text": "drive cars in the 1980s, recognize"
+    },
+    {
+      "start": 38.48,
+      "end": 42.96,
+      "text": "handwritten digits in the 1990s, and"
+    },
+    {
+      "start": 40.8,
+      "end": 46.0,
+      "text": "classify images with incredible accuracy"
+    },
+    {
+      "start": 42.96,
+      "end": 48.16,
+      "text": "in the early 2010s. And today, virtually"
+    },
+    {
+      "start": 46.0,
+      "end": 50.96,
+      "text": "all modern AI models are trained using"
+    },
+    {
+      "start": 48.16,
+      "end": 52.879,
+      "text": "backpropagation. This animation shows"
+    },
+    {
+      "start": 50.96,
+      "end": 56.32,
+      "text": "the flow of real data through Meta's"
+    },
+    {
+      "start": 52.879,
+      "end": 58.239,
+      "text": "Llama 3.2 large language model. Note"
+    },
+    {
+      "start": 56.32,
+      "end": 60.64,
+      "text": "that the entire model is too large to"
+    },
+    {
+      "start": 58.239,
+      "end": 63.28,
+      "text": "show on screen. Here we're showing the"
+    },
+    {
+      "start": 60.64,
+      "end": 66.0,
+      "text": "strongest connections. Given some input"
+    },
+    {
+      "start": 63.28,
+      "end": 67.68,
+      "text": "text, like the capital of France is,"
+    },
+    {
+      "start": 66.0,
+      "end": 70.24,
+      "text": "Llama predicts the token that will come"
+    },
+    {
+      "start": 67.68,
+      "end": 71.76,
+      "text": "next, and the backpropagation algorithm"
+    },
+    {
+      "start": 70.24,
+      "end": 74.72,
+      "text": "figures out how to update each of the"
+    },
+    {
+      "start": 71.76,
+      "end": 76.72,
+      "text": "models 1.2 billion parameters to make"
+    },
+    {
+      "start": 74.72,
+      "end": 79.759,
+      "text": "Llama more confident in the correct next"
+    },
+    {
+      "start": 76.72,
+      "end": 82.08,
+      "text": "token. These updates are shown in blue,"
+    },
+    {
+      "start": 79.759,
+      "end": 84.56,
+      "text": "where thicker lines correspond to larger"
+    },
+    {
+      "start": 82.08,
+      "end": 86.72,
+      "text": "updates. In this middle layer of the"
+    },
+    {
+      "start": 84.56,
+      "end": 88.56,
+      "text": "model, we can see backpropagation is"
+    },
+    {
+      "start": 86.72,
+      "end": 91.36,
+      "text": "modifying the weights flowing in and out"
+    },
+    {
+      "start": 88.56,
+      "end": 93.2,
+      "text": "of this attention pattern. This pattern"
+    },
+    {
+      "start": 91.36,
+      "end": 96.079,
+      "text": "tells the model to focus on the second"
+    },
+    {
+      "start": 93.2,
+      "end": 98.479,
+      "text": "and fourth token in the input text. In"
+    },
+    {
+      "start": 96.079,
+      "end": 100.079,
+      "text": "this case, the words capital and France,"
+    },
+    {
+      "start": 98.479,
+      "end": 103.36,
+      "text": "which are important for predicting the"
+    },
+    {
+      "start": 100.079,
+      "end": 105.04,
+      "text": "next token of Paris. backpropagation is"
+    },
+    {
+      "start": 103.36,
+      "end": 107.36,
+      "text": "remarkably able to figure out which"
+    },
+    {
+      "start": 105.04,
+      "end": 109.36,
+      "text": "parts of these massive models to update"
+    },
+    {
+      "start": 107.36,
+      "end": 112.159,
+      "text": "to iteratively improve performance and"
+    },
+    {
+      "start": 109.36,
+      "end": 114.56,
+      "text": "learn highly complex behaviors."
+    },
+    {
+      "start": 112.159,
+      "end": 116.399,
+      "text": "Like Newton's laws, the backpropagation"
+    },
+    {
+      "start": 114.56,
+      "end": 118.64,
+      "text": "algorithm is simple, elegant, and"
+    },
+    {
+      "start": 116.399,
+      "end": 120.159,
+      "text": "deceptively scalable, leading to"
+    },
+    {
+      "start": 118.64,
+      "end": 121.68,
+      "text": "incredibly rich structures and"
+    },
+    {
+      "start": 120.159,
+      "end": 123.439,
+      "text": "behaviors."
+    },
+    {
+      "start": 121.68,
+      "end": 125.28,
+      "text": "In this video and the next in this"
+    },
+    {
+      "start": 123.439,
+      "end": 129.0,
+      "text": "series, we'll see precisely how back"
+    },
+    {
+      "start": 125.28,
+      "end": 129.0,
+      "text": "propagation works."
+    },
+    {
+      "start": 129.2,
+      "end": 133.599,
+      "text": "Now, before we get started, we need to"
+    },
+    {
+      "start": 131.2,
+      "end": 134.879,
+      "text": "talk about"
+    },
+    {
+      "start": 133.599,
+      "end": 137.52,
+      "text": "Remember when you used to be able to"
+    },
+    {
+      "start": 134.879,
+      "end": 139.68,
+      "text": "just ignore calls from unknown numbers?"
+    },
+    {
+      "start": 137.52,
+      "end": 141.28,
+      "text": "I do. It was awesome. But now that I"
+    },
+    {
+      "start": 139.68,
+      "end": 143.2,
+      "text": "have kids, I've learned it's much less"
+    },
+    {
+      "start": 141.28,
+      "end": 145.52,
+      "text": "awesome to ignore calls from your kids"
+    },
+    {
+      "start": 143.2,
+      "end": 147.36,
+      "text": "school principles and doctors. But you"
+    },
+    {
+      "start": 145.52,
+      "end": 149.44,
+      "text": "know who never calls me anymore?"
+    },
+    {
+      "start": 147.36,
+      "end": 151.599,
+      "text": "Telemarketers. Thanks to this video"
+    },
+    {
+      "start": 149.44,
+      "end": 153.36,
+      "text": "sponsor, Incogn, I get so few marketing"
+    },
+    {
+      "start": 151.599,
+      "end": 155.36,
+      "text": "calls these days that I've actually"
+    },
+    {
+      "start": 153.36,
+      "end": 156.879,
+      "text": "started answering unknown numbers"
+    },
+    {
+      "start": 155.36,
+      "end": 159.36,
+      "text": "because more often than not now, it's"
+    },
+    {
+      "start": 156.879,
+      "end": 160.879,
+      "text": "someone I actually need to talk to. The"
+    },
+    {
+      "start": 159.36,
+      "end": 162.8,
+      "text": "way Incogn does this is really"
+    },
+    {
+      "start": 160.879,
+      "end": 164.319,
+      "text": "impressive. After signing up for an"
+    },
+    {
+      "start": 162.8,
+      "end": 166.16,
+      "text": "account, you give Incogn permission to"
+    },
+    {
+      "start": 164.319,
+      "end": 168.4,
+      "text": "work on your behalf to contact data"
+    },
+    {
+      "start": 166.16,
+      "end": 170.48,
+      "text": "brokers to remove your data. From here,"
+    },
+    {
+      "start": 168.4,
+      "end": 172.8,
+      "text": "you get this great dashboard that tracks"
+    },
+    {
+      "start": 170.48,
+      "end": 174.56,
+      "text": "all the removal requests in progress and"
+    },
+    {
+      "start": 172.8,
+      "end": 176.64,
+      "text": "is always working in the background."
+    },
+    {
+      "start": 174.56,
+      "end": 178.4,
+      "text": "Incogn is sponsoring this whole series,"
+    },
+    {
+      "start": 176.64,
+      "end": 180.239,
+      "text": "which is great. And I actually had to"
+    },
+    {
+      "start": 178.4,
+      "end": 182.4,
+      "text": "re-record this graphic because in the"
+    },
+    {
+      "start": 180.239,
+      "end": 184.72,
+      "text": "few weeks since I released part one, my"
+    },
+    {
+      "start": 182.4,
+      "end": 187.68,
+      "text": "data has been removed from 34 more data"
+    },
+    {
+      "start": 184.72,
+      "end": 189.44,
+      "text": "brokers. Incogn has just released a new"
+    },
+    {
+      "start": 187.68,
+      "end": 191.519,
+      "text": "feature that makes their service even"
+    },
+    {
+      "start": 189.44,
+      "end": 193.92,
+      "text": "more effective called custom data"
+    },
+    {
+      "start": 191.519,
+      "end": 195.84,
+      "text": "removals. If you Google your name and"
+    },
+    {
+      "start": 193.92,
+      "end": 197.68,
+      "text": "address, you may be surprised to find"
+    },
+    {
+      "start": 195.84,
+      "end": 200.159,
+      "text": "exactly where your personal information"
+    },
+    {
+      "start": 197.68,
+      "end": 202.0,
+      "text": "pops up. With custom removals, you can"
+    },
+    {
+      "start": 200.159,
+      "end": 204.319,
+      "text": "submit specific URLs directly to the"
+    },
+    {
+      "start": 202.0,
+      "end": 206.56,
+      "text": "Incogn who will work to remove your"
+    },
+    {
+      "start": 204.319,
+      "end": 208.959,
+      "text": "information from eligible sites. You can"
+    },
+    {
+      "start": 206.56,
+      "end": 211.2,
+      "text": "get a great deal on Incogn 60% off an"
+    },
+    {
+      "start": 208.959,
+      "end": 212.799,
+      "text": "annual plan by using the code Welch Labs"
+    },
+    {
+      "start": 211.2,
+      "end": 215.28,
+      "text": "or following the link in the description"
+    },
+    {
+      "start": 212.799,
+      "end": 217.76,
+      "text": "below. It's been a while since I've made"
+    },
+    {
+      "start": 215.28,
+      "end": 219.28,
+      "text": "a multi-part series like this. Huge"
+    },
+    {
+      "start": 217.76,
+      "end": 221.519,
+      "text": "thank you to incogn for helping make"
+    },
+    {
+      "start": 219.28,
+      "end": 224.239,
+      "text": "this series possible and helping me get"
+    },
+    {
+      "start": 221.519,
+      "end": 227.04,
+      "text": "more quality focus time. Now back to the"
+    },
+    {
+      "start": 224.239,
+      "end": 229.2,
+      "text": "backpropagation algorithm. In part one"
+    },
+    {
+      "start": 227.04,
+      "end": 232.159,
+      "text": "of this series, we took a visual first"
+    },
+    {
+      "start": 229.2,
+      "end": 234.72,
+      "text": "approach to training Meta Llama 3.2 1.2"
+    },
+    {
+      "start": 232.159,
+      "end": 236.879,
+      "text": "billion parameter model. We showed how"
+    },
+    {
+      "start": 234.72,
+      "end": 238.72,
+      "text": "loss landscapes give us a sense for the"
+    },
+    {
+      "start": 236.879,
+      "end": 240.959,
+      "text": "high-dimensional spaces these models"
+    },
+    {
+      "start": 238.72,
+      "end": 243.439,
+      "text": "operate in, but also how these types of"
+    },
+    {
+      "start": 240.959,
+      "end": 245.519,
+      "text": "visualizations can fall short. In this"
+    },
+    {
+      "start": 243.439,
+      "end": 246.799,
+      "text": "video, we'll take a math first approach"
+    },
+    {
+      "start": 245.519,
+      "end": 248.72,
+      "text": "that will lead us to the back"
+    },
+    {
+      "start": 246.799,
+      "end": 251.36,
+      "text": "propagation algorithm that Werbos"
+    },
+    {
+      "start": 248.72,
+      "end": 253.519,
+      "text": "discovered over 50 years ago. To build"
+    },
+    {
+      "start": 251.36,
+      "end": 255.439,
+      "text": "up the equations we need, we'll simplify"
+    },
+    {
+      "start": 253.519,
+      "end": 258.079,
+      "text": "our learning problem, work out the"
+    },
+    {
+      "start": 255.439,
+      "end": 259.68,
+      "text": "equations, and then scale back up."
+    },
+    {
+      "start": 258.079,
+      "end": 261.519,
+      "text": "Instead of training a large language"
+    },
+    {
+      "start": 259.68,
+      "end": 263.28,
+      "text": "model like llama to predict what comes"
+    },
+    {
+      "start": 261.519,
+      "end": 265.84,
+      "text": "next in phrases like the capital of"
+    },
+    {
+      "start": 263.28,
+      "end": 267.68,
+      "text": "France is, let's train a smaller model"
+    },
+    {
+      "start": 265.84,
+      "end": 270.32,
+      "text": "to predict what city you're in based on"
+    },
+    {
+      "start": 267.68,
+      "end": 272.56,
+      "text": "your GPS coordinates. Our training data"
+    },
+    {
+      "start": 270.32,
+      "end": 274.32,
+      "text": "is now GPS coordinates taken from a few"
+    },
+    {
+      "start": 272.56,
+      "end": 275.84,
+      "text": "different cities. Here's five"
+    },
+    {
+      "start": 274.32,
+      "end": 278.56,
+      "text": "coordinates from Paris and five"
+    },
+    {
+      "start": 275.84,
+      "end": 280.32,
+      "text": "coordinates from Madrid and Berlin. Our"
+    },
+    {
+      "start": 278.56,
+      "end": 282.08,
+      "text": "full Llama language model returns"
+    },
+    {
+      "start": 280.32,
+      "end": 284.479,
+      "text": "vectors of probabilities of length"
+    },
+    {
+      "start": 282.08,
+      "end": 286.32,
+      "text": "128,256"
+    },
+    {
+      "start": 284.479,
+      "end": 289.68,
+      "text": "with one entry for every token in"
+    },
+    {
+      "start": 286.32,
+      "end": 291.44,
+      "text": "Llama's vocabulary. Our tiny GPS model"
+    },
+    {
+      "start": 289.68,
+      "end": 293.919,
+      "text": "also returns vectors of probabilities"
+    },
+    {
+      "start": 291.44,
+      "end": 296.32,
+      "text": "but on a much smaller vocabulary of just"
+    },
+    {
+      "start": 293.919,
+      "end": 298.0,
+      "text": "our three cities, Paris, Madrid, and"
+    },
+    {
+      "start": 296.32,
+      "end": 300.4,
+      "text": "Berlin."
+    },
+    {
+      "start": 298.0,
+      "end": 303.12,
+      "text": "Instead of taking in text inputs, our"
+    },
+    {
+      "start": 300.4,
+      "end": 304.72,
+      "text": "tiny model will take in GPS coordinates."
+    },
+    {
+      "start": 303.12,
+      "end": 307.68,
+      "text": "And we'll start by just taking in one"
+    },
+    {
+      "start": 304.72,
+      "end": 309.919,
+      "text": "coordinate, the longitude. So our model"
+    },
+    {
+      "start": 307.68,
+      "end": 312.639,
+      "text": "takes in a single numerical input, the"
+    },
+    {
+      "start": 309.919,
+      "end": 315.12,
+      "text": "longitude, which we'll call X. And it"
+    },
+    {
+      "start": 312.639,
+      "end": 317.039,
+      "text": "returns three numbers, one probability"
+    },
+    {
+      "start": 315.12,
+      "end": 319.919,
+      "text": "for each city. We'll call these"
+    },
+    {
+      "start": 317.039,
+      "end": 322.72,
+      "text": "probabilities Yhat 1, Yhat 2, and Yhat"
+    },
+    {
+      "start": 319.919,
+      "end": 325.919,
+      "text": "3. Architecturally, our model has just"
+    },
+    {
+      "start": 322.72,
+      "end": 328.56,
+      "text": "three total neurons, one for each city."
+    },
+    {
+      "start": 325.919,
+      "end": 330.24,
+      "text": "Each neuron's job is really simple. It"
+    },
+    {
+      "start": 328.56,
+      "end": 332.8,
+      "text": "multiplies its input by a learnable"
+    },
+    {
+      "start": 330.24,
+      "end": 334.639,
+      "text": "parameter called a weight, adds another"
+    },
+    {
+      "start": 332.8,
+      "end": 336.88,
+      "text": "learnable parameter called a bias, and"
+    },
+    {
+      "start": 334.639,
+      "end": 338.639,
+      "text": "outputs the result."
+    },
+    {
+      "start": 336.88,
+      "end": 340.639,
+      "text": "Mathematically, we can write the output"
+    },
+    {
+      "start": 338.639,
+      "end": 344.08,
+      "text": "of our first neuron, which we'll call"
+    },
+    {
+      "start": 340.639,
+      "end": 347.84,
+      "text": "H1, as our first learnable parameter m1*"
+    },
+    {
+      "start": 344.08,
+      "end": 349.68,
+      "text": "our input x plus our bias value b1. This"
+    },
+    {
+      "start": 347.84,
+      "end": 352.16,
+      "text": "model is completely equivalent to a"
+    },
+    {
+      "start": 349.68,
+      "end": 354.4,
+      "text": "simple linear y= mx plusb equation from"
+    },
+    {
+      "start": 352.16,
+      "end": 356.0,
+      "text": "high school algebra. Each of the neurons"
+    },
+    {
+      "start": 354.4,
+      "end": 357.84,
+      "text": "that make up artificial neural networks"
+    },
+    {
+      "start": 356.0,
+      "end": 360.32,
+      "text": "like llama is effectively a simple"
+    },
+    {
+      "start": 357.84,
+      "end": 363.199,
+      "text": "linear model like this, although with"
+    },
+    {
+      "start": 360.32,
+      "end": 364.8,
+      "text": "more inputs x and slopes m. And it's the"
+    },
+    {
+      "start": 363.199,
+      "end": 366.56,
+      "text": "job of our learning algorithm to make"
+    },
+    {
+      "start": 364.8,
+      "end": 368.96,
+      "text": "the appropriate adjustments to all of"
+    },
+    {
+      "start": 366.56,
+      "end": 371.44,
+      "text": "our m and b values to solve the larger"
+    },
+    {
+      "start": 368.96,
+      "end": 373.759,
+      "text": "task at hand. Note that we're calling"
+    },
+    {
+      "start": 371.44,
+      "end": 375.36,
+      "text": "our output h instead of y here because"
+    },
+    {
+      "start": 373.759,
+      "end": 378.319,
+      "text": "we have to take one more step before"
+    },
+    {
+      "start": 375.36,
+      "end": 380.16,
+      "text": "reaching our final outputs yhat."
+    },
+    {
+      "start": 378.319,
+      "end": 382.319,
+      "text": "Now depending on their location in the"
+    },
+    {
+      "start": 380.16,
+      "end": 384.0,
+      "text": "overall model, the outputs of these"
+    },
+    {
+      "start": 382.319,
+      "end": 385.84,
+      "text": "little linear models are sometimes"
+    },
+    {
+      "start": 384.0,
+      "end": 387.759,
+      "text": "passed into a few other types of"
+    },
+    {
+      "start": 385.84,
+      "end": 390.319,
+      "text": "functions. We know that we want the"
+    },
+    {
+      "start": 387.759,
+      "end": 393.039,
+      "text": "final outputs of our model Y hat to be"
+    },
+    {
+      "start": 390.319,
+      "end": 394.56,
+      "text": "probabilities between 0 and one. But"
+    },
+    {
+      "start": 393.039,
+      "end": 396.479,
+      "text": "right now, each of our neurons are"
+    },
+    {
+      "start": 394.56,
+      "end": 399.36,
+      "text": "capable of returning a full range of"
+    },
+    {
+      "start": 396.479,
+      "end": 401.36,
+      "text": "positive and negative values. to squish"
+    },
+    {
+      "start": 399.36,
+      "end": 402.96,
+      "text": "the outputs of our neurons and ensure"
+    },
+    {
+      "start": 401.36,
+      "end": 405.28,
+      "text": "that our probabilities all add up to"
+    },
+    {
+      "start": 402.96,
+      "end": 406.88,
+      "text": "one. The outputs h of our final layer"
+    },
+    {
+      "start": 405.28,
+      "end": 409.039,
+      "text": "are typically passed into a function"
+    },
+    {
+      "start": 406.88,
+      "end": 411.12,
+      "text": "called softmax."
+    },
+    {
+      "start": 409.039,
+      "end": 414.4,
+      "text": "To compute the probability of Madrid"
+    },
+    {
+      "start": 411.12,
+      "end": 416.319,
+      "text": "yhat 1 using softmax, we raise e to the"
+    },
+    {
+      "start": 414.4,
+      "end": 418.88,
+      "text": "power of the output of our first neuron"
+    },
+    {
+      "start": 416.319,
+      "end": 421.599,
+      "text": "h1 and divide by the sum of each of the"
+    },
+    {
+      "start": 418.88,
+      "end": 423.759,
+      "text": "power of each of our neuron outputs h1,"
+    },
+    {
+      "start": 421.599,
+      "end": 425.919,
+      "text": "h2, and h3."
+    },
+    {
+      "start": 423.759,
+      "end": 427.36,
+      "text": "The exponentials in the softmax equation"
+    },
+    {
+      "start": 425.919,
+      "end": 430.0,
+      "text": "amplify the difference between our"
+    },
+    {
+      "start": 427.36,
+      "end": 431.759,
+      "text": "neuron outputs, assigning more but not"
+    },
+    {
+      "start": 430.0,
+      "end": 434.24,
+      "text": "all probability to the neuron with the"
+    },
+    {
+      "start": 431.759,
+      "end": 437.12,
+      "text": "highest output value. This is why it's"
+    },
+    {
+      "start": 434.24,
+      "end": 439.36,
+      "text": "called a soft max. If our Madrid, Paris,"
+    },
+    {
+      "start": 437.12,
+      "end": 442.08,
+      "text": "and Berlin neurons output values of 1,"
+    },
+    {
+      "start": 439.36,
+      "end": 445.12,
+      "text": "two, and one, our softmax operation will"
+    },
+    {
+      "start": 442.08,
+      "end": 448.0,
+      "text": "assign a 58% probability to yhat 2 for"
+    },
+    {
+      "start": 445.12,
+      "end": 450.72,
+      "text": "Paris. If our model is more confident in"
+    },
+    {
+      "start": 448.0,
+      "end": 453.039,
+      "text": "Paris and returns values of 1, 10, and"
+    },
+    {
+      "start": 450.72,
+      "end": 455.28,
+      "text": "1, softax behaves more like our"
+    },
+    {
+      "start": 453.039,
+      "end": 459.039,
+      "text": "traditional maximum function, assigning"
+    },
+    {
+      "start": 455.28,
+      "end": 461.12,
+      "text": "Paris a probability of 99.98%."
+    },
+    {
+      "start": 459.039,
+      "end": 463.36,
+      "text": "Softmax is the most complicated piece of"
+    },
+    {
+      "start": 461.12,
+      "end": 464.8,
+      "text": "math we'll encounter in this video. And"
+    },
+    {
+      "start": 463.36,
+      "end": 467.12,
+      "text": "happily, we'll see that when we apply"
+    },
+    {
+      "start": 464.8,
+      "end": 469.84,
+      "text": "some calculus and differentiate softmax,"
+    },
+    {
+      "start": 467.12,
+      "end": 471.759,
+      "text": "it actually gets much simpler. So, we"
+    },
+    {
+      "start": 469.84,
+      "end": 474.16,
+      "text": "now have all the equations we need to"
+    },
+    {
+      "start": 471.759,
+      "end": 476.56,
+      "text": "make predictions using our tiny GPS"
+    },
+    {
+      "start": 474.16,
+      "end": 479.039,
+      "text": "model. Before training, our model"
+    },
+    {
+      "start": 476.56,
+      "end": 481.599,
+      "text": "weights are randomly initialized."
+    },
+    {
+      "start": 479.039,
+      "end": 484.639,
+      "text": "Let's pick some simple starting values."
+    },
+    {
+      "start": 481.599,
+      "end": 488.96,
+      "text": "We'll set our slope parameters to m1= 1,"
+    },
+    {
+      "start": 484.639,
+      "end": 491.759,
+      "text": "m2= 0, and m3= -1, and set all our bias"
+    },
+    {
+      "start": 488.96,
+      "end": 493.12,
+      "text": "values to zero. If we now pass in the"
+    },
+    {
+      "start": 491.759,
+      "end": 495.12,
+      "text": "longitude for one of our Paris"
+    },
+    {
+      "start": 493.12,
+      "end": 498.16,
+      "text": "coordinates, for example, the center of"
+    },
+    {
+      "start": 495.12,
+      "end": 500.479,
+      "text": "the city at 2.3514°,"
+    },
+    {
+      "start": 498.16,
+      "end": 504.08,
+      "text": "our positive value for M1 gives us a"
+    },
+    {
+      "start": 500.479,
+      "end": 505.68,
+      "text": "large H1 value of 2.35, leading our"
+    },
+    {
+      "start": 504.08,
+      "end": 509.599,
+      "text": "model to incorrectly predict that we're"
+    },
+    {
+      "start": 505.68,
+      "end": 512.08,
+      "text": "in Madrid with a probability of 0.91."
+    },
+    {
+      "start": 509.599,
+      "end": 514.08,
+      "text": "Now, as we saw in part one, to train our"
+    },
+    {
+      "start": 512.08,
+      "end": 515.76,
+      "text": "model to make better predictions, we"
+    },
+    {
+      "start": 514.08,
+      "end": 518.32,
+      "text": "first need a way to measure our model's"
+    },
+    {
+      "start": 515.76,
+      "end": 520.159,
+      "text": "performance. The metric of choice for"
+    },
+    {
+      "start": 518.32,
+      "end": 523.039,
+      "text": "llama and many modern models is the"
+    },
+    {
+      "start": 520.159,
+      "end": 525.279,
+      "text": "cross entropy loss. To compute the cross"
+    },
+    {
+      "start": 523.039,
+      "end": 527.04,
+      "text": "entropy loss here, we take the negative"
+    },
+    {
+      "start": 525.279,
+      "end": 529.6,
+      "text": "logarithm of the model's predicted"
+    },
+    {
+      "start": 527.04,
+      "end": 531.44,
+      "text": "probability of the correct answer. The"
+    },
+    {
+      "start": 529.6,
+      "end": 533.44,
+      "text": "model's current probability of Paris is"
+    },
+    {
+      "start": 531.44,
+      "end": 535.2,
+      "text": "only 8.6%."
+    },
+    {
+      "start": 533.44,
+      "end": 539.92,
+      "text": "Leading to a cross entropy loss of the"
+    },
+    {
+      "start": 535.2,
+      "end": 541.6,
+      "text": "negative log of 0.086 equals 2.45."
+    },
+    {
+      "start": 539.92,
+      "end": 544.72,
+      "text": "If our model's predicted probability of"
+    },
+    {
+      "start": 541.6,
+      "end": 546.8,
+      "text": "Paris was 100%. Our cross entropy loss"
+    },
+    {
+      "start": 544.72,
+      "end": 549.839,
+      "text": "would equal the minus logarithm of 1"
+    },
+    {
+      "start": 546.8,
+      "end": 552.24,
+      "text": "which equals zero. Our job from here is"
+    },
+    {
+      "start": 549.839,
+      "end": 555.279,
+      "text": "to change our six m and b parameters to"
+    },
+    {
+      "start": 552.24,
+      "end": 556.959,
+      "text": "make our loss go down. As we saw in part"
+    },
+    {
+      "start": 555.279,
+      "end": 558.32,
+      "text": "one, we can do this efficiently by"
+    },
+    {
+      "start": 556.959,
+      "end": 561.12,
+      "text": "computing the slope of each of our"
+    },
+    {
+      "start": 558.32,
+      "end": 562.8,
+      "text": "parameters with respect to our loss."
+    },
+    {
+      "start": 561.12,
+      "end": 564.88,
+      "text": "Combining these slopes into a vector"
+    },
+    {
+      "start": 562.8,
+      "end": 566.56,
+      "text": "called the gradient and using the"
+    },
+    {
+      "start": 564.88,
+      "end": 569.519,
+      "text": "gradient to make iterative updates to"
+    },
+    {
+      "start": 566.56,
+      "end": 571.519,
+      "text": "our weights. Let's now make this idea"
+    },
+    {
+      "start": 569.519,
+      "end": 573.36,
+      "text": "more tangible."
+    },
+    {
+      "start": 571.519,
+      "end": 575.279,
+      "text": "Let's explore as we did last time how"
+    },
+    {
+      "start": 573.36,
+      "end": 577.519,
+      "text": "our loss varies with a single model"
+    },
+    {
+      "start": 575.279,
+      "end": 579.839,
+      "text": "parameter by plotting our loss as a"
+    },
+    {
+      "start": 577.519,
+      "end": 582.0,
+      "text": "function of m2."
+    },
+    {
+      "start": 579.839,
+      "end": 584.56,
+      "text": "Our M2 parameter in our Paris neuron"
+    },
+    {
+      "start": 582.0,
+      "end": 587.279,
+      "text": "currently has a value of zero resulting"
+    },
+    {
+      "start": 584.56,
+      "end": 589.12,
+      "text": "in a loss of 2.45."
+    },
+    {
+      "start": 587.279,
+      "end": 592.32,
+      "text": "If we increase the parameters value to"
+    },
+    {
+      "start": 589.12,
+      "end": 593.68,
+      "text": "0.1, we can recompute our outputs"
+    },
+    {
+      "start": 592.32,
+      "end": 595.6,
+      "text": "and see that this increases our"
+    },
+    {
+      "start": 593.68,
+      "end": 598.399,
+      "text": "probability of being in Paris according"
+    },
+    {
+      "start": 595.6,
+      "end": 601.76,
+      "text": "to the model to 0.107,"
+    },
+    {
+      "start": 598.399,
+      "end": 603.68,
+      "text": "reducing our loss to 2.24. 24. Now, with"
+    },
+    {
+      "start": 601.76,
+      "end": 605.6,
+      "text": "these two computations of our loss for"
+    },
+    {
+      "start": 603.68,
+      "end": 607.519,
+      "text": "different values of M2, we've"
+    },
+    {
+      "start": 605.6,
+      "end": 610.8,
+      "text": "effectively estimated the value of our"
+    },
+    {
+      "start": 607.519,
+      "end": 612.8,
+      "text": "slope, delta L over delta M2."
+    },
+    {
+      "start": 610.8,
+      "end": 615.44,
+      "text": "This tells us that if we increase M2,"
+    },
+    {
+      "start": 612.8,
+      "end": 617.04,
+      "text": "our loss will go down, increasing model"
+    },
+    {
+      "start": 615.44,
+      "end": 618.959,
+      "text": "performance."
+    },
+    {
+      "start": 617.04,
+      "end": 621.04,
+      "text": "We could theoretically do this for all"
+    },
+    {
+      "start": 618.959,
+      "end": 622.88,
+      "text": "six parameters in our model and use"
+    },
+    {
+      "start": 621.04,
+      "end": 625.44,
+      "text": "these estimated slopes to guide the"
+    },
+    {
+      "start": 622.88,
+      "end": 627.04,
+      "text": "gradient descent learning process."
+    },
+    {
+      "start": 625.44,
+      "end": 629.36,
+      "text": "However, in practice, this numerical"
+    },
+    {
+      "start": 627.04,
+      "end": 630.56,
+      "text": "approach is computationally intensive."
+    },
+    {
+      "start": 629.36,
+      "end": 632.48,
+      "text": "since we have to recompute our"
+    },
+    {
+      "start": 630.56,
+      "end": 635.12,
+      "text": "outputs for each new parameter value we"
+    },
+    {
+      "start": 632.48,
+      "end": 638.24,
+      "text": "try and this approach can be inaccurate"
+    },
+    {
+      "start": 635.12,
+      "end": 640.0,
+      "text": "since we have to pick a fixed step size."
+    },
+    {
+      "start": 638.24,
+      "end": 642.0,
+      "text": "Remarkably, it turns out that we can do"
+    },
+    {
+      "start": 640.0,
+      "end": 644.24,
+      "text": "much better the numerical estimates for"
+    },
+    {
+      "start": 642.0,
+      "end": 646.32,
+      "text": "these slopes. As we'll see, it's"
+    },
+    {
+      "start": 644.24,
+      "end": 648.16,
+      "text": "possible to exactly solve for the slopes"
+    },
+    {
+      "start": 646.32,
+      "end": 650.16,
+      "text": "of the loss function with respect to all"
+    },
+    {
+      "start": 648.16,
+      "end": 652.24,
+      "text": "parameters. When we're done, we'll have"
+    },
+    {
+      "start": 650.16,
+      "end": 653.839,
+      "text": "simple equations that we can plug into"
+    },
+    {
+      "start": 652.24,
+      "end": 655.44,
+      "text": "directly."
+    },
+    {
+      "start": 653.839,
+      "end": 657.519,
+      "text": "The fact that you can do this is not"
+    },
+    {
+      "start": 655.44,
+      "end": 658.959,
+      "text": "immediately obvious even to those"
+    },
+    {
+      "start": 657.519,
+      "end": 660.72,
+      "text": "well-versed in calculus and"
+    },
+    {
+      "start": 658.959,
+      "end": 662.8,
+      "text": "optimization."
+    },
+    {
+      "start": 660.72,
+      "end": 664.32,
+      "text": "In the 1950s at Stanford, Bernard"
+    },
+    {
+      "start": 662.8,
+      "end": 666.079,
+      "text": "Widow's group trained single layer"
+    },
+    {
+      "start": 664.32,
+      "end": 668.64,
+      "text": "neural networks using this numerical"
+    },
+    {
+      "start": 666.079,
+      "end": 670.56,
+      "text": "estimate of the slope for years until"
+    },
+    {
+      "start": 668.64,
+      "end": 672.32,
+      "text": "Widow and his graduate student Ted Hoff"
+    },
+    {
+      "start": 670.56,
+      "end": 675.44,
+      "text": "stumbled onto an early version of back"
+    },
+    {
+      "start": 672.32,
+      "end": 677.76,
+      "text": "propagation one day in late 1959. Even"
+    },
+    {
+      "start": 675.44,
+      "end": 679.12,
+      "text": "then, Widow and Hoff failed to see how"
+    },
+    {
+      "start": 677.76,
+      "end": 681.44,
+      "text": "to extend their method to neural"
+    },
+    {
+      "start": 679.12,
+      "end": 683.12,
+      "text": "networks with more than one layer. We'll"
+    },
+    {
+      "start": 681.44,
+      "end": 685.76,
+      "text": "see precisely how to do this after we"
+    },
+    {
+      "start": 683.12,
+      "end": 687.6,
+      "text": "complete our single layer example. The"
+    },
+    {
+      "start": 685.76,
+      "end": 689.68,
+      "text": "central idea of backpropagation is to"
+    },
+    {
+      "start": 687.6,
+      "end": 691.36,
+      "text": "apply the rules of calculus to compute"
+    },
+    {
+      "start": 689.68,
+      "end": 694.079,
+      "text": "the equations for our slopes in a"
+    },
+    {
+      "start": 691.36,
+      "end": 697.2,
+      "text": "particularly efficient way. Let's start"
+    },
+    {
+      "start": 694.079,
+      "end": 698.72,
+      "text": "with our slope delta L over delta M2. In"
+    },
+    {
+      "start": 697.2,
+      "end": 701.68,
+      "text": "the language of calculus, this is the"
+    },
+    {
+      "start": 698.72,
+      "end": 703.36,
+      "text": "partial derivative DL DM2, the rate of"
+    },
+    {
+      "start": 701.68,
+      "end": 706.48,
+      "text": "change of our loss L with respect to our"
+    },
+    {
+      "start": 703.36,
+      "end": 708.24,
+      "text": "model parameter M2. Now, we already have"
+    },
+    {
+      "start": 706.48,
+      "end": 710.959,
+      "text": "some equations that relate the loss to"
+    },
+    {
+      "start": 708.24,
+      "end": 712.72,
+      "text": "our parameter M2. We know that our cross"
+    },
+    {
+      "start": 710.959,
+      "end": 714.32,
+      "text": "entropy loss is equal to the negative"
+    },
+    {
+      "start": 712.72,
+      "end": 716.959,
+      "text": "logarithm of our model's output"
+    },
+    {
+      "start": 714.32,
+      "end": 718.88,
+      "text": "probability of the correct answer yhat."
+    },
+    {
+      "start": 716.959,
+      "end": 721.519,
+      "text": "This would be yhat 2 in the case of our"
+    },
+    {
+      "start": 718.88,
+      "end": 724.64,
+      "text": "Paris example. We can plug in our"
+    },
+    {
+      "start": 721.519,
+      "end": 726.48,
+      "text": "softmax equation for yhat and even go"
+    },
+    {
+      "start": 724.64,
+      "end": 728.56,
+      "text": "one step further and plug in the"
+    },
+    {
+      "start": 726.48,
+      "end": 730.48,
+      "text": "equations for each of our neurons"
+    },
+    {
+      "start": 728.56,
+      "end": 732.88,
+      "text": "getting a complete equation for our loss"
+    },
+    {
+      "start": 730.48,
+      "end": 735.44,
+      "text": "l in terms of our input x and all six"
+    },
+    {
+      "start": 732.88,
+      "end": 737.279,
+      "text": "model parameters."
+    },
+    {
+      "start": 735.44,
+      "end": 738.959,
+      "text": "If you're familiar with calculus, an"
+    },
+    {
+      "start": 737.279,
+      "end": 740.399,
+      "text": "obvious approach from here might be to"
+    },
+    {
+      "start": 738.959,
+      "end": 743.36,
+      "text": "compute the partial derivative we're"
+    },
+    {
+      "start": 740.399,
+      "end": 746.32,
+      "text": "after or dlddm2 by differentiating our"
+    },
+    {
+      "start": 743.36,
+      "end": 748.16,
+      "text": "expression with respect to m2. This does"
+    },
+    {
+      "start": 746.32,
+      "end": 749.6,
+      "text": "work, but is complex and doesn't really"
+    },
+    {
+      "start": 748.16,
+      "end": 752.16,
+      "text": "make use of the underlying graph"
+    },
+    {
+      "start": 749.6,
+      "end": 753.6,
+      "text": "structure of neural networks. Instead,"
+    },
+    {
+      "start": 752.16,
+      "end": 754.72,
+      "text": "it turns out that we can consider the"
+    },
+    {
+      "start": 753.6,
+      "end": 757.04,
+      "text": "layers of our neural network"
+    },
+    {
+      "start": 754.72,
+      "end": 758.959,
+      "text": "independently, solve for the rate of"
+    },
+    {
+      "start": 757.04,
+      "end": 760.639,
+      "text": "change through each layer, and then"
+    },
+    {
+      "start": 758.959,
+      "end": 762.88,
+      "text": "compose these rates of change together"
+    },
+    {
+      "start": 760.639,
+      "end": 765.92,
+      "text": "to much more efficiently solve for DL"
+    },
+    {
+      "start": 762.88,
+      "end": 768.16,
+      "text": "DM2. Consider the simple example where"
+    },
+    {
+      "start": 765.92,
+      "end": 770.48,
+      "text": "we have two compute blocks. The first"
+    },
+    {
+      "start": 768.16,
+      "end": 773.279,
+      "text": "mapping some input x to an output y with"
+    },
+    {
+      "start": 770.48,
+      "end": 776.32,
+      "text": "the equation y= 2x and a second compute"
+    },
+    {
+      "start": 773.279,
+      "end": 779.279,
+      "text": "block mapping y to z with the equation z"
+    },
+    {
+      "start": 776.32,
+      "end": 780.88,
+      "text": "= 4 y. As we did with our neural"
+    },
+    {
+      "start": 779.279,
+      "end": 783.68,
+      "text": "network, we can put our equations"
+    },
+    {
+      "start": 780.88,
+      "end": 786.32,
+      "text": "together by substituting y = 2x into our"
+    },
+    {
+      "start": 783.68,
+      "end": 788.079,
+      "text": "second equation. Simplifying, we see"
+    },
+    {
+      "start": 786.32,
+      "end": 791.6,
+      "text": "that the equation for our full system is"
+    },
+    {
+      "start": 788.079,
+      "end": 794.639,
+      "text": "z= 8x. The slope or derivative of this"
+    },
+    {
+      "start": 791.6,
+      "end": 796.639,
+      "text": "overall system equation is 8. Now, a"
+    },
+    {
+      "start": 794.639,
+      "end": 798.639,
+      "text": "more modular way to reach the same"
+    },
+    {
+      "start": 796.639,
+      "end": 801.12,
+      "text": "answer is to compute the derivative of"
+    },
+    {
+      "start": 798.639,
+      "end": 803.76,
+      "text": "each block individually. Computing the"
+    },
+    {
+      "start": 801.12,
+      "end": 806.48,
+      "text": "slope of our first block dydx equals 2"
+    },
+    {
+      "start": 803.76,
+      "end": 809.279,
+      "text": "and the slope of our second block dzy ="
+    },
+    {
+      "start": 806.48,
+      "end": 811.279,
+      "text": "4. We can then multiply these rates of"
+    },
+    {
+      "start": 809.279,
+      "end": 817.44,
+      "text": "change together to get our overall rate"
+    },
+    {
+      "start": 811.279,
+      "end": 819.519,
+      "text": "of change. So, 2 * 4= 8 or dydx * dzy ="
+    },
+    {
+      "start": 817.44,
+      "end": 821.2,
+      "text": "dz dx."
+    },
+    {
+      "start": 819.519,
+      "end": 823.76,
+      "text": "This is known as the chain rule in"
+    },
+    {
+      "start": 821.2,
+      "end": 826.48,
+      "text": "calculus and scales much more cleanly to"
+    },
+    {
+      "start": 823.76,
+      "end": 828.399,
+      "text": "models with many layers like llama."
+    },
+    {
+      "start": 826.48,
+      "end": 831.12,
+      "text": "Applying the same process to our neural"
+    },
+    {
+      "start": 828.399,
+      "end": 833.76,
+      "text": "network, we can break apart dlddm into"
+    },
+    {
+      "start": 831.12,
+      "end": 835.279,
+      "text": "dhdm* dlddh."
+    },
+    {
+      "start": 833.76,
+      "end": 837.199,
+      "text": "Breaking apart the partial derivatives"
+    },
+    {
+      "start": 835.279,
+      "end": 840.32,
+      "text": "of our linear model and our loss and"
+    },
+    {
+      "start": 837.199,
+      "end": 842.24,
+      "text": "softmax function. Now calculating the"
+    },
+    {
+      "start": 840.32,
+      "end": 844.16,
+      "text": "partial derivative across our logarithm"
+    },
+    {
+      "start": 842.24,
+      "end": 846.48,
+      "text": "and softmax function is still a bit"
+    },
+    {
+      "start": 844.16,
+      "end": 847.839,
+      "text": "involved. I'll put the process on screen"
+    },
+    {
+      "start": 846.48,
+      "end": 849.04,
+      "text": "in case you're interested and want to"
+    },
+    {
+      "start": 847.839,
+      "end": 850.72,
+      "text": "pause."
+    },
+    {
+      "start": 849.04,
+      "end": 853.44,
+      "text": "However, the big exciting takeaway is"
+    },
+    {
+      "start": 850.72,
+      "end": 855.12,
+      "text": "that the result is very simple."
+    },
+    {
+      "start": 853.44,
+      "end": 857.279,
+      "text": "It turns out that the logarithm from our"
+    },
+    {
+      "start": 855.12,
+      "end": 859.279,
+      "text": "cross entropy loss and the exponentials"
+    },
+    {
+      "start": 857.279,
+      "end": 862.399,
+      "text": "from our softmax operation basically"
+    },
+    {
+      "start": 859.279,
+      "end": 865.92,
+      "text": "cancel out leaving us with dldh is equal"
+    },
+    {
+      "start": 862.399,
+      "end": 867.199,
+      "text": "to yhat minus y where yhat is a vector"
+    },
+    {
+      "start": 865.92,
+      "end": 869.44,
+      "text": "made up of our three output"
+    },
+    {
+      "start": 867.199,
+      "end": 871.44,
+      "text": "probabilities and y is a vector that"
+    },
+    {
+      "start": 869.44,
+      "end": 874.639,
+      "text": "equals one at the index of the correct"
+    },
+    {
+      "start": 871.44,
+      "end": 876.639,
+      "text": "answer and zero everywhere else."
+    },
+    {
+      "start": 874.639,
+      "end": 878.32,
+      "text": "As an example, when we plug in our Paris"
+    },
+    {
+      "start": 876.639,
+      "end": 881.6,
+      "text": "GPS point and compute our model's"
+    },
+    {
+      "start": 878.32,
+      "end": 885.6,
+      "text": "probabilities, we get yhat 1 equals 0.91"
+    },
+    {
+      "start": 881.6,
+      "end": 889.519,
+      "text": "for Madrid, yhat 2= 0.09 for Paris, and"
+    },
+    {
+      "start": 885.6,
+      "end": 892.0,
+      "text": "Yhat 3 rounds down to 0.00 for Berlin."
+    },
+    {
+      "start": 889.519,
+      "end": 895.68,
+      "text": "Since our ground truth label is Paris,"
+    },
+    {
+      "start": 892.0,
+      "end": 898.88,
+      "text": "this means that y1 equals 0, y2= 1, and"
+    },
+    {
+      "start": 895.68,
+      "end": 901.12,
+      "text": "y3 equals 0. This is known as one hot"
+    },
+    {
+      "start": 898.88,
+      "end": 903.76,
+      "text": "encoding."
+    },
+    {
+      "start": 901.12,
+      "end": 907.76,
+      "text": "So our partial derivative dlh1 from"
+    },
+    {
+      "start": 903.76,
+      "end": 910.8,
+      "text": "Madrid is equal to 0.91 minus 0 equals"
+    },
+    {
+      "start": 907.76,
+      "end": 913.92,
+      "text": "0.91. This large positive value for"
+    },
+    {
+      "start": 910.8,
+      "end": 916.16,
+      "text": "dldh1 means that if we increase h1 our"
+    },
+    {
+      "start": 913.92,
+      "end": 918.8,
+      "text": "loss will increase. The partial"
+    },
+    {
+      "start": 916.16,
+      "end": 923.199,
+      "text": "derivative for paris dldh is equal to"
+    },
+    {
+      "start": 918.8,
+      "end": 925.279,
+      "text": "0.09 -1 = -0.91."
+    },
+    {
+      "start": 923.199,
+      "end": 929.04,
+      "text": "This large negative value means that if"
+    },
+    {
+      "start": 925.279,
+      "end": 930.56,
+      "text": "we increase h2 our loss will go down."
+    },
+    {
+      "start": 929.04,
+      "end": 932.399,
+      "text": "Now remember that H is just an"
+    },
+    {
+      "start": 930.56,
+      "end": 934.48,
+      "text": "intermediate output of our model that"
+    },
+    {
+      "start": 932.399,
+      "end": 938.399,
+      "text": "depends both on our model parameters and"
+    },
+    {
+      "start": 934.48,
+      "end": 940.0,
+      "text": "data. We've solved for DLH. But to get a"
+    },
+    {
+      "start": 938.399,
+      "end": 942.639,
+      "text": "derivative we can actually use to train"
+    },
+    {
+      "start": 940.0,
+      "end": 945.12,
+      "text": "our model like dlddm2, we need to"
+    },
+    {
+      "start": 942.639,
+      "end": 948.079,
+      "text": "complete our chain rule math. Our"
+    },
+    {
+      "start": 945.12,
+      "end": 949.759,
+      "text": "remaining partial derivative dh2dm2"
+    },
+    {
+      "start": 948.079,
+      "end": 952.24,
+      "text": "is asking us to find the rate of change"
+    },
+    {
+      "start": 949.759,
+      "end": 955.279,
+      "text": "of our intermediate output h2 with"
+    },
+    {
+      "start": 952.24,
+      "end": 956.88,
+      "text": "respect to our model parameter m2. These"
+    },
+    {
+      "start": 955.279,
+      "end": 961.519,
+      "text": "variables are linked by our linear"
+    },
+    {
+      "start": 956.88,
+      "end": 963.6,
+      "text": "equation h2= m2 * x + b2. We typically"
+    },
+    {
+      "start": 961.519,
+      "end": 965.839,
+      "text": "think of this equation as a line with a"
+    },
+    {
+      "start": 963.6,
+      "end": 968.48,
+      "text": "fixed slope of m2 and a y intercept of"
+    },
+    {
+      "start": 965.839,
+      "end": 971.04,
+      "text": "b2. However, our partial derivative is"
+    },
+    {
+      "start": 968.48,
+      "end": 972.48,
+      "text": "asking us to think of m2 as a variable."
+    },
+    {
+      "start": 971.04,
+      "end": 974.48,
+      "text": "This makes sense because learning"
+    },
+    {
+      "start": 972.48,
+      "end": 976.24,
+      "text": "consists of changing our parameters m"
+    },
+    {
+      "start": 974.48,
+      "end": 978.32,
+      "text": "and b."
+    },
+    {
+      "start": 976.24,
+      "end": 981.92,
+      "text": "From this perspective, our input x is"
+    },
+    {
+      "start": 978.32,
+      "end": 983.519,
+      "text": "constant and m2 and h2 are variables."
+    },
+    {
+      "start": 981.92,
+      "end": 985.6,
+      "text": "This still looks like a straight line,"
+    },
+    {
+      "start": 983.519,
+      "end": 987.199,
+      "text": "but now its slope is equal to our input"
+    },
+    {
+      "start": 985.6,
+      "end": 989.04,
+      "text": "x."
+    },
+    {
+      "start": 987.199,
+      "end": 990.8,
+      "text": "So the partial derivative of the output"
+    },
+    {
+      "start": 989.04,
+      "end": 992.8,
+      "text": "of our neuron with respect to our model"
+    },
+    {
+      "start": 990.8,
+      "end": 996.16,
+      "text": "parameter m2 is just the slope of our"
+    },
+    {
+      "start": 992.8,
+      "end": 997.839,
+      "text": "line x."
+    },
+    {
+      "start": 996.16,
+      "end": 999.92,
+      "text": "Intuitively, this tells us that the"
+    },
+    {
+      "start": 997.839,
+      "end": 1002.0,
+      "text": "impact of our model parameter m2 on our"
+    },
+    {
+      "start": 999.92,
+      "end": 1005.36,
+      "text": "neurons output depends on the input"
+    },
+    {
+      "start": 1002.0,
+      "end": 1007.199,
+      "text": "value x. If the input value x to our"
+    },
+    {
+      "start": 1005.36,
+      "end": 1009.199,
+      "text": "model is small, then the value of our"
+    },
+    {
+      "start": 1007.199,
+      "end": 1011.199,
+      "text": "parameter m2 matters less in our"
+    },
+    {
+      "start": 1009.199,
+      "end": 1012.8,
+      "text": "derivative calculation. and this"
+    },
+    {
+      "start": 1011.199,
+      "end": 1014.88,
+      "text": "neuron's parameters do not need to be"
+    },
+    {
+      "start": 1012.8,
+      "end": 1017.6,
+      "text": "updated as much as the model learns from"
+    },
+    {
+      "start": 1014.88,
+      "end": 1019.92,
+      "text": "this example. Alternatively, if our"
+    },
+    {
+      "start": 1017.6,
+      "end": 1022.16,
+      "text": "neuron's input X is large, it has more"
+    },
+    {
+      "start": 1019.92,
+      "end": 1025.039,
+      "text": "of an impact on our final loss and needs"
+    },
+    {
+      "start": 1022.16,
+      "end": 1028.319,
+      "text": "a larger update. This intuition will be"
+    },
+    {
+      "start": 1025.039,
+      "end": 1031.36,
+      "text": "important as we expand to deeper models."
+    },
+    {
+      "start": 1028.319,
+      "end": 1032.959,
+      "text": "Replacing DHDM2 with our result X, we"
+    },
+    {
+      "start": 1031.36,
+      "end": 1034.88,
+      "text": "now have a complete expression for"
+    },
+    {
+      "start": 1032.959,
+      "end": 1037.439,
+      "text": "DLDDM2."
+    },
+    {
+      "start": 1034.88,
+      "end": 1040.64,
+      "text": "Computing DLDDM2 for our Paris example,"
+    },
+    {
+      "start": 1037.439,
+      "end": 1042.48,
+      "text": "we multiply our input longitude 2.314°"
+    },
+    {
+      "start": 1040.64,
+      "end": 1046.4,
+      "text": "by our model's output probability of"
+    },
+    {
+      "start": 1042.48,
+      "end": 1050.72,
+      "text": "Paris 0.9 minus one, computing a final"
+    },
+    {
+      "start": 1046.4,
+      "end": 1052.32,
+      "text": "partial derivative value of -2.140."
+    },
+    {
+      "start": 1050.72,
+      "end": 1054.4,
+      "text": "So all of this backpropagation"
+    },
+    {
+      "start": 1052.32,
+      "end": 1056.64,
+      "text": "mathematics is telling us that for this"
+    },
+    {
+      "start": 1054.4,
+      "end": 1059.2,
+      "text": "single pair training point, if we"
+    },
+    {
+      "start": 1056.64,
+      "end": 1063.679,
+      "text": "increase our parameter m2 by one, we"
+    },
+    {
+      "start": 1059.2,
+      "end": 1065.52,
+      "text": "expect our loss to decrease by 2.140."
+    },
+    {
+      "start": 1063.679,
+      "end": 1067.919,
+      "text": "Partial derivative values like this are"
+    },
+    {
+      "start": 1065.52,
+      "end": 1069.36,
+      "text": "the key result of backpropagation and"
+    },
+    {
+      "start": 1067.919,
+      "end": 1071.84,
+      "text": "are the components of the gradient"
+    },
+    {
+      "start": 1069.36,
+      "end": 1074.08,
+      "text": "vector which drives the entire learning"
+    },
+    {
+      "start": 1071.84,
+      "end": 1076.48,
+      "text": "process for virtually all modern AI"
+    },
+    {
+      "start": 1074.08,
+      "end": 1078.64,
+      "text": "models. To compute the full gradient"
+    },
+    {
+      "start": 1076.48,
+      "end": 1080.96,
+      "text": "vector for our tiny GPS model, we have"
+    },
+    {
+      "start": 1078.64,
+      "end": 1082.48,
+      "text": "to solve for five more equations, one"
+    },
+    {
+      "start": 1080.96,
+      "end": 1084.799,
+      "text": "for each remaining parameter in our"
+    },
+    {
+      "start": 1082.48,
+      "end": 1086.72,
+      "text": "model. This mathematics ends up being"
+    },
+    {
+      "start": 1084.799,
+      "end": 1089.52,
+      "text": "very similar to the process we already"
+    },
+    {
+      "start": 1086.72,
+      "end": 1091.2,
+      "text": "followed for solving for DLDDM2."
+    },
+    {
+      "start": 1089.52,
+      "end": 1092.64,
+      "text": "Typically, these individual equations"
+    },
+    {
+      "start": 1091.2,
+      "end": 1094.72,
+      "text": "are rolled up into equations that"
+    },
+    {
+      "start": 1092.64,
+      "end": 1096.799,
+      "text": "operate on vectors and matrices instead"
+    },
+    {
+      "start": 1094.72,
+      "end": 1098.4,
+      "text": "of individual numbers. So, we end up"
+    },
+    {
+      "start": 1096.799,
+      "end": 1100.08,
+      "text": "with a single equation to compute the"
+    },
+    {
+      "start": 1098.4,
+      "end": 1102.16,
+      "text": "partial derivatives with respect to all"
+    },
+    {
+      "start": 1100.08,
+      "end": 1105.2,
+      "text": "three M values and another single"
+    },
+    {
+      "start": 1102.16,
+      "end": 1107.12,
+      "text": "equation for all three B values. We can"
+    },
+    {
+      "start": 1105.2,
+      "end": 1108.96,
+      "text": "now use these equations to compute the"
+    },
+    {
+      "start": 1107.12,
+      "end": 1111.28,
+      "text": "partial derivatives for all six model"
+    },
+    {
+      "start": 1108.96,
+      "end": 1114.4,
+      "text": "parameters, giving us a full gradient"
+    },
+    {
+      "start": 1111.28,
+      "end": 1116.72,
+      "text": "vector. As we saw earlier, our DLDM2"
+    },
+    {
+      "start": 1114.4,
+      "end": 1119.36,
+      "text": "value is large and negative, meaning"
+    },
+    {
+      "start": 1116.72,
+      "end": 1121.76,
+      "text": "that if we increase M2, our loss on this"
+    },
+    {
+      "start": 1119.36,
+      "end": 1122.88,
+      "text": "training example will decrease. This"
+    },
+    {
+      "start": 1121.76,
+      "end": 1124.4,
+      "text": "makes sense because our model's"
+    },
+    {
+      "start": 1122.88,
+      "end": 1126.96,
+      "text": "predicted probability of the correct"
+    },
+    {
+      "start": 1124.4,
+      "end": 1128.88,
+      "text": "answer of Paris is low right now. And"
+    },
+    {
+      "start": 1126.96,
+      "end": 1132.08,
+      "text": "increasing M2 will increase the model's"
+    },
+    {
+      "start": 1128.88,
+      "end": 1134.32,
+      "text": "probability of Paris, lowering our loss."
+    },
+    {
+      "start": 1132.08,
+      "end": 1136.4,
+      "text": "DLDDM1, on the other hand, is large and"
+    },
+    {
+      "start": 1134.32,
+      "end": 1138.96,
+      "text": "positive. This means that if we increase"
+    },
+    {
+      "start": 1136.4,
+      "end": 1140.48,
+      "text": "M1, our loss will go up. This makes"
+    },
+    {
+      "start": 1138.96,
+      "end": 1142.24,
+      "text": "sense because our model's probability of"
+    },
+    {
+      "start": 1140.48,
+      "end": 1144.799,
+      "text": "the wrong answer Madrid is currently"
+    },
+    {
+      "start": 1142.24,
+      "end": 1147.039,
+      "text": "high and increasing M1 will further"
+    },
+    {
+      "start": 1144.799,
+      "end": 1149.76,
+      "text": "increase this probability increasing our"
+    },
+    {
+      "start": 1147.039,
+      "end": 1151.44,
+      "text": "loss. Since positive slopes like this"
+    },
+    {
+      "start": 1149.76,
+      "end": 1153.76,
+      "text": "mean that increasing our parameter will"
+    },
+    {
+      "start": 1151.44,
+      "end": 1155.919,
+      "text": "increase our loss. To train our model to"
+    },
+    {
+      "start": 1153.76,
+      "end": 1157.76,
+      "text": "reduce our loss, we want to adjust our"
+    },
+    {
+      "start": 1155.919,
+      "end": 1160.799,
+      "text": "parameters in the opposite direction of"
+    },
+    {
+      "start": 1157.76,
+      "end": 1163.44,
+      "text": "our gradient. We should reduce M1 to"
+    },
+    {
+      "start": 1160.799,
+      "end": 1166.0,
+      "text": "reduce loss and increase M2 to reduce"
+    },
+    {
+      "start": 1163.44,
+      "end": 1168.16,
+      "text": "loss. Mathematically, we can do this by"
+    },
+    {
+      "start": 1166.0,
+      "end": 1169.919,
+      "text": "taking our current model parameters,"
+    },
+    {
+      "start": 1168.16,
+      "end": 1172.0,
+      "text": "subtracting a scaled version of our"
+    },
+    {
+      "start": 1169.919,
+      "end": 1174.16,
+      "text": "gradients, and replacing our parameters"
+    },
+    {
+      "start": 1172.0,
+      "end": 1176.08,
+      "text": "with the result. This is the gradient"
+    },
+    {
+      "start": 1174.16,
+      "end": 1178.08,
+      "text": "descent process we visualized in part"
+    },
+    {
+      "start": 1176.08,
+      "end": 1180.32,
+      "text": "one as going downhill on the model's"
+    },
+    {
+      "start": 1178.08,
+      "end": 1181.919,
+      "text": "loss landscape. And thanks to back"
+    },
+    {
+      "start": 1180.32,
+      "end": 1184.72,
+      "text": "propagation, we now have an efficient"
+    },
+    {
+      "start": 1181.919,
+      "end": 1186.799,
+      "text": "way to compute our gradient vector. The"
+    },
+    {
+      "start": 1184.72,
+      "end": 1189.28,
+      "text": "scaling factor controls the size of step"
+    },
+    {
+      "start": 1186.799,
+      "end": 1191.679,
+      "text": "we take on our loss landscape and is"
+    },
+    {
+      "start": 1189.28,
+      "end": 1193.76,
+      "text": "known as the learning rate. We generally"
+    },
+    {
+      "start": 1191.679,
+      "end": 1196.72,
+      "text": "want it to be fairly small, something"
+    },
+    {
+      "start": 1193.76,
+      "end": 1198.4,
+      "text": "like 0.00001."
+    },
+    {
+      "start": 1196.72,
+      "end": 1200.0,
+      "text": "This is because our gradient only gives"
+    },
+    {
+      "start": 1198.4,
+      "end": 1202.24,
+      "text": "us the slope in a very local"
+    },
+    {
+      "start": 1200.0,
+      "end": 1204.0,
+      "text": "neighborhood. And as we saw in part one,"
+    },
+    {
+      "start": 1202.24,
+      "end": 1206.4,
+      "text": "our loss landscapes can be highly"
+    },
+    {
+      "start": 1204.0,
+      "end": 1209.36,
+      "text": "complex with slopes that quickly shift"
+    },
+    {
+      "start": 1206.4,
+      "end": 1211.44,
+      "text": "as we update our parameters."
+    },
+    {
+      "start": 1209.36,
+      "end": 1213.12,
+      "text": "We also saw in part one how visualizing"
+    },
+    {
+      "start": 1211.44,
+      "end": 1214.88,
+      "text": "gradient descent as going downhill in"
+    },
+    {
+      "start": 1213.12,
+      "end": 1216.96,
+      "text": "our loss landscape is a fairly"
+    },
+    {
+      "start": 1214.88,
+      "end": 1218.4,
+      "text": "incomplete picture of how our model"
+    },
+    {
+      "start": 1216.96,
+      "end": 1219.84,
+      "text": "learns."
+    },
+    {
+      "start": 1218.4,
+      "end": 1221.2,
+      "text": "Let's see if we can use our computed"
+    },
+    {
+      "start": 1219.84,
+      "end": 1223.6,
+      "text": "gradients to observe the learning"
+    },
+    {
+      "start": 1221.2,
+      "end": 1225.44,
+      "text": "process more directly."
+    },
+    {
+      "start": 1223.6,
+      "end": 1227.6,
+      "text": "We'll visualize our gradients as a bar"
+    },
+    {
+      "start": 1225.44,
+      "end": 1229.84,
+      "text": "around each connecting line in our model"
+    },
+    {
+      "start": 1227.6,
+      "end": 1231.919,
+      "text": "where thicker bars correspond to larger"
+    },
+    {
+      "start": 1229.84,
+      "end": 1233.44,
+      "text": "gradients. We'll use a similar approach"
+    },
+    {
+      "start": 1231.919,
+      "end": 1235.6,
+      "text": "when we visualize the gradients flowing"
+    },
+    {
+      "start": 1233.44,
+      "end": 1237.44,
+      "text": "through our full-size models later."
+    },
+    {
+      "start": 1235.6,
+      "end": 1239.76,
+      "text": "We'll also visualize the progress as our"
+    },
+    {
+      "start": 1237.44,
+      "end": 1241.44,
+      "text": "model learns on a map. We'll plot our"
+    },
+    {
+      "start": 1239.76,
+      "end": 1243.28,
+      "text": "current training example as a point on"
+    },
+    {
+      "start": 1241.44,
+      "end": 1246.0,
+      "text": "the map and visualize our model's"
+    },
+    {
+      "start": 1243.28,
+      "end": 1247.679,
+      "text": "outputs as a heat map on top of the map"
+    },
+    {
+      "start": 1246.0,
+      "end": 1249.76,
+      "text": "where the probability of Madrid is shown"
+    },
+    {
+      "start": 1247.679,
+      "end": 1251.52,
+      "text": "in cyan, the probability of Paris is"
+    },
+    {
+      "start": 1249.76,
+      "end": 1254.08,
+      "text": "shown in yellow and the probability of"
+    },
+    {
+      "start": 1251.52,
+      "end": 1256.88,
+      "text": "Berlin is green and brighter colors"
+    },
+    {
+      "start": 1254.08,
+      "end": 1259.6,
+      "text": "correspond to higher probabilities."
+    },
+    {
+      "start": 1256.88,
+      "end": 1261.12,
+      "text": "Our first training point is in Paris. As"
+    },
+    {
+      "start": 1259.6,
+      "end": 1262.96,
+      "text": "we saw earlier, the initial model"
+    },
+    {
+      "start": 1261.12,
+      "end": 1265.039,
+      "text": "parameters we chose result in a high"
+    },
+    {
+      "start": 1262.96,
+      "end": 1267.6,
+      "text": "output probability for Madrid for this"
+    },
+    {
+      "start": 1265.039,
+      "end": 1270.08,
+      "text": "input longitude. We can also see this on"
+    },
+    {
+      "start": 1267.6,
+      "end": 1271.76,
+      "text": "our map. Paris is in the blue region on"
+    },
+    {
+      "start": 1270.08,
+      "end": 1274.4,
+      "text": "our map where our model's top prediction"
+    },
+    {
+      "start": 1271.76,
+      "end": 1276.32,
+      "text": "is Madrid. This error results in high"
+    },
+    {
+      "start": 1274.4,
+      "end": 1279.36,
+      "text": "gradients for our Paris and Madrid"
+    },
+    {
+      "start": 1276.32,
+      "end": 1281.44,
+      "text": "neurons. Moving forward one step, these"
+    },
+    {
+      "start": 1279.36,
+      "end": 1283.84,
+      "text": "high gradients lead to a reduced value"
+    },
+    {
+      "start": 1281.44,
+      "end": 1286.08,
+      "text": "of our M1 parameter and an increase in"
+    },
+    {
+      "start": 1283.84,
+      "end": 1288.0,
+      "text": "our M2 parameter, which shifts the"
+    },
+    {
+      "start": 1286.08,
+      "end": 1290.08,
+      "text": "yellow Paris region on our map a little"
+    },
+    {
+      "start": 1288.0,
+      "end": 1293.039,
+      "text": "to the right, closer to the true"
+    },
+    {
+      "start": 1290.08,
+      "end": 1295.28,
+      "text": "location of Paris. Our next training"
+    },
+    {
+      "start": 1293.039,
+      "end": 1298.0,
+      "text": "example is from Madrid, which our model"
+    },
+    {
+      "start": 1295.28,
+      "end": 1300.32,
+      "text": "mclassifies as being in Berlin, leading"
+    },
+    {
+      "start": 1298.0,
+      "end": 1302.72,
+      "text": "to high gradient values for both Madrid"
+    },
+    {
+      "start": 1300.32,
+      "end": 1305.44,
+      "text": "and Berlin. Note that on our map, these"
+    },
+    {
+      "start": 1302.72,
+      "end": 1307.28,
+      "text": "regions need to completely switch sides."
+    },
+    {
+      "start": 1305.44,
+      "end": 1309.44,
+      "text": "Running gradient descent for about 40"
+    },
+    {
+      "start": 1307.28,
+      "end": 1311.76,
+      "text": "steps is enough for our gradient updates"
+    },
+    {
+      "start": 1309.44,
+      "end": 1314.48,
+      "text": "to accomplish this. Correctly"
+    },
+    {
+      "start": 1311.76,
+      "end": 1316.72,
+      "text": "classifying Madrid and Berlin and just"
+    },
+    {
+      "start": 1314.48,
+      "end": 1320.559,
+      "text": "leaving our Paris region not actually on"
+    },
+    {
+      "start": 1316.72,
+      "end": 1322.32,
+      "text": "top of Paris. Another 40 steps or so are"
+    },
+    {
+      "start": 1320.559,
+      "end": 1325.28,
+      "text": "enough for our gradients to slowly"
+    },
+    {
+      "start": 1322.32,
+      "end": 1327.12,
+      "text": "increase our M2 and B2 values, moving"
+    },
+    {
+      "start": 1325.28,
+      "end": 1329.679,
+      "text": "our model's predicted Paris region on"
+    },
+    {
+      "start": 1327.12,
+      "end": 1331.44,
+      "text": "top of the actual city. Note that our"
+    },
+    {
+      "start": 1329.679,
+      "end": 1334.559,
+      "text": "gradients become smaller as our model"
+    },
+    {
+      "start": 1331.44,
+      "end": 1336.08,
+      "text": "learns and makes smaller errors. We can"
+    },
+    {
+      "start": 1334.559,
+      "end": 1337.52,
+      "text": "see a little more under the hood of our"
+    },
+    {
+      "start": 1336.08,
+      "end": 1339.52,
+      "text": "model by running the same training"
+    },
+    {
+      "start": 1337.52,
+      "end": 1341.2,
+      "text": "process again, but this time while"
+    },
+    {
+      "start": 1339.52,
+      "end": 1343.919,
+      "text": "visualizing the little linear models"
+    },
+    {
+      "start": 1341.2,
+      "end": 1346.32,
+      "text": "learned by each neuron. Our initially"
+    },
+    {
+      "start": 1343.919,
+      "end": 1347.919,
+      "text": "chosen slopes of 1, 0, and minus one"
+    },
+    {
+      "start": 1346.32,
+      "end": 1351.2,
+      "text": "make our initial linear models go"
+    },
+    {
+      "start": 1347.919,
+      "end": 1352.96,
+      "text": "uphill, flat, and downhill. As our model"
+    },
+    {
+      "start": 1351.2,
+      "end": 1355.44,
+      "text": "learns, our Madrid neuron flips to"
+    },
+    {
+      "start": 1352.96,
+      "end": 1357.44,
+      "text": "pointing downhill. Our Paris neuron"
+    },
+    {
+      "start": 1355.44,
+      "end": 1359.679,
+      "text": "wobbles a bit and ends up going slightly"
+    },
+    {
+      "start": 1357.44,
+      "end": 1362.08,
+      "text": "uphill. And our Berlin neuron flips from"
+    },
+    {
+      "start": 1359.679,
+      "end": 1364.159,
+      "text": "going downhill to uphill. If we"
+    },
+    {
+      "start": 1362.08,
+      "end": 1366.48,
+      "text": "visualize all three neurons lines on the"
+    },
+    {
+      "start": 1364.159,
+      "end": 1367.919,
+      "text": "same axis, we can see how our model is"
+    },
+    {
+      "start": 1366.48,
+      "end": 1370.799,
+      "text": "learning to use these little linear"
+    },
+    {
+      "start": 1367.919,
+      "end": 1372.96,
+      "text": "models together. For a given input"
+    },
+    {
+      "start": 1370.799,
+      "end": 1374.799,
+      "text": "longitude, the output of each neuron is"
+    },
+    {
+      "start": 1372.96,
+      "end": 1377.28,
+      "text": "equal to the height of its line on this"
+    },
+    {
+      "start": 1374.799,
+      "end": 1380.32,
+      "text": "plot. So for the Paris example with a"
+    },
+    {
+      "start": 1377.28,
+      "end": 1382.32,
+      "text": "longitude of 2.3376°,"
+    },
+    {
+      "start": 1380.32,
+      "end": 1383.919,
+      "text": "the Madrid neurons line has a height of"
+    },
+    {
+      "start": 1382.32,
+      "end": 1385.919,
+      "text": "2.34."
+    },
+    {
+      "start": 1383.919,
+      "end": 1388.72,
+      "text": "This is equal to our H1 value for this"
+    },
+    {
+      "start": 1385.919,
+      "end": 1391.44,
+      "text": "input. Our softmax function just"
+    },
+    {
+      "start": 1388.72,
+      "end": 1393.28,
+      "text": "amplifies whichever input is largest. So"
+    },
+    {
+      "start": 1391.44,
+      "end": 1395.039,
+      "text": "whichever line is on top at a given"
+    },
+    {
+      "start": 1393.28,
+      "end": 1397.679,
+      "text": "longitude in our plot will lead to the"
+    },
+    {
+      "start": 1395.039,
+      "end": 1399.84,
+      "text": "model's highest output probability."
+    },
+    {
+      "start": 1397.679,
+      "end": 1401.52,
+      "text": "Running our training animation again, we"
+    },
+    {
+      "start": 1399.84,
+      "end": 1403.52,
+      "text": "see that our gradients push the Madrid"
+    },
+    {
+      "start": 1401.52,
+      "end": 1406.32,
+      "text": "line, so it has the largest values over"
+    },
+    {
+      "start": 1403.52,
+      "end": 1408.0,
+      "text": "our Madrid points. The Paris line, so it"
+    },
+    {
+      "start": 1406.32,
+      "end": 1409.919,
+      "text": "has its largest value over our Paris"
+    },
+    {
+      "start": 1408.0,
+      "end": 1411.44,
+      "text": "points, and our Berlin line, so it has"
+    },
+    {
+      "start": 1409.919,
+      "end": 1414.08,
+      "text": "the largest value over our Berlin"
+    },
+    {
+      "start": 1411.44,
+      "end": 1416.4,
+      "text": "points. In our full map view, these"
+    },
+    {
+      "start": 1414.08,
+      "end": 1418.0,
+      "text": "lines are equivalent to three planes."
+    },
+    {
+      "start": 1416.4,
+      "end": 1420.0,
+      "text": "And through backpropagation, our model"
+    },
+    {
+      "start": 1418.0,
+      "end": 1422.24,
+      "text": "learns to position each plane above the"
+    },
+    {
+      "start": 1420.0,
+      "end": 1424.08,
+      "text": "correct city."
+    },
+    {
+      "start": 1422.24,
+      "end": 1426.48,
+      "text": "When we apply our softmax function to"
+    },
+    {
+      "start": 1424.08,
+      "end": 1428.48,
+      "text": "the outputs of our neurons, softmax"
+    },
+    {
+      "start": 1426.48,
+      "end": 1430.799,
+      "text": "squishes and curves our planes, but"
+    },
+    {
+      "start": 1428.48,
+      "end": 1433.919,
+      "text": "retains the same general structure,"
+    },
+    {
+      "start": 1430.799,
+      "end": 1435.76,
+      "text": "resulting in our final heat map."
+    },
+    {
+      "start": 1433.919,
+      "end": 1437.76,
+      "text": "Now, what's really compelling about back"
+    },
+    {
+      "start": 1435.76,
+      "end": 1440.08,
+      "text": "propagation is how it's able to scale to"
+    },
+    {
+      "start": 1437.76,
+      "end": 1442.32,
+      "text": "larger problems and ultimately massive"
+    },
+    {
+      "start": 1440.08,
+      "end": 1443.919,
+      "text": "language models. Let's increase the"
+    },
+    {
+      "start": 1442.32,
+      "end": 1446.72,
+      "text": "complexity of our problem and see how"
+    },
+    {
+      "start": 1443.919,
+      "end": 1448.559,
+      "text": "our intuitions and mathematics hold up."
+    },
+    {
+      "start": 1446.72,
+      "end": 1451.44,
+      "text": "Let's begin by adding a fourth city to"
+    },
+    {
+      "start": 1448.559,
+      "end": 1453.919,
+      "text": "our training set, Barcelona. Barcelona"
+    },
+    {
+      "start": 1451.44,
+      "end": 1455.6,
+      "text": "has a very similar longitude to Paris."
+    },
+    {
+      "start": 1453.919,
+      "end": 1457.84,
+      "text": "So, our model now needs to take in both"
+    },
+    {
+      "start": 1455.6,
+      "end": 1460.88,
+      "text": "longitude and latitude, which we'll call"
+    },
+    {
+      "start": 1457.84,
+      "end": 1462.72,
+      "text": "X1 and X2. We now need to expand the"
+    },
+    {
+      "start": 1460.88,
+      "end": 1465.039,
+      "text": "little linear models in our neurons to"
+    },
+    {
+      "start": 1462.72,
+      "end": 1467.84,
+      "text": "include both inputs. Meaning, we now"
+    },
+    {
+      "start": 1465.039,
+      "end": 1470.0,
+      "text": "have two slope values M per neuron."
+    },
+    {
+      "start": 1467.84,
+      "end": 1472.159,
+      "text": "Visually, instead of a line, each neuron"
+    },
+    {
+      "start": 1470.0,
+      "end": 1473.919,
+      "text": "now looks like a little plane, where our"
+    },
+    {
+      "start": 1472.159,
+      "end": 1477.2,
+      "text": "two slope values control the steepness"
+    },
+    {
+      "start": 1473.919,
+      "end": 1478.88,
+      "text": "of the plane in each direction. Our back"
+    },
+    {
+      "start": 1477.2,
+      "end": 1481.2,
+      "text": "propagation math works out almost"
+    },
+    {
+      "start": 1478.88,
+      "end": 1483.76,
+      "text": "exactly the same. We just have more"
+    },
+    {
+      "start": 1481.2,
+      "end": 1485.76,
+      "text": "parameters. We now have four neurons,"
+    },
+    {
+      "start": 1483.76,
+      "end": 1488.48,
+      "text": "one for each city. Now with three"
+    },
+    {
+      "start": 1485.76,
+      "end": 1490.72,
+      "text": "parameters each with two M values that"
+    },
+    {
+      "start": 1488.48,
+      "end": 1493.52,
+      "text": "multiply each of our two inputs and a"
+    },
+    {
+      "start": 1490.72,
+      "end": 1495.52,
+      "text": "single bias value. This makes for 12"
+    },
+    {
+      "start": 1493.52,
+      "end": 1498.08,
+      "text": "total parameters. So we need 12"
+    },
+    {
+      "start": 1495.52,
+      "end": 1500.08,
+      "text": "derivatives to update our weights."
+    },
+    {
+      "start": 1498.08,
+      "end": 1501.84,
+      "text": "Training our new twoinput model, we see"
+    },
+    {
+      "start": 1500.08,
+      "end": 1504.0,
+      "text": "that it's quickly able to fit our four"
+    },
+    {
+      "start": 1501.84,
+      "end": 1506.32,
+      "text": "planes to our data and correctly divide"
+    },
+    {
+      "start": 1504.0,
+      "end": 1508.72,
+      "text": "our map into four regions. one for each"
+    },
+    {
+      "start": 1506.32,
+      "end": 1510.559,
+      "text": "city. Putting our planes together over"
+    },
+    {
+      "start": 1508.72,
+      "end": 1512.88,
+      "text": "our map, we can see how our model has"
+    },
+    {
+      "start": 1510.559,
+      "end": 1514.72,
+      "text": "fit our planes together. So, our Madrid"
+    },
+    {
+      "start": 1512.88,
+      "end": 1517.6,
+      "text": "plane is on top of all the other planes"
+    },
+    {
+      "start": 1514.72,
+      "end": 1520.88,
+      "text": "above Madrid. Our Barcelona plane is on"
+    },
+    {
+      "start": 1517.6,
+      "end": 1522.72,
+      "text": "top above Barcelona and so on. Of"
+    },
+    {
+      "start": 1520.88,
+      "end": 1525.52,
+      "text": "course, simple planes like this can only"
+    },
+    {
+      "start": 1522.72,
+      "end": 1527.2,
+      "text": "learn a very limited set of patterns. To"
+    },
+    {
+      "start": 1525.52,
+      "end": 1529.2,
+      "text": "see this issue more clearly, let's"
+    },
+    {
+      "start": 1527.2,
+      "end": 1530.96,
+      "text": "consider the most complex border in the"
+    },
+    {
+      "start": 1529.2,
+      "end": 1532.96,
+      "text": "world between Belgium and the"
+    },
+    {
+      "start": 1530.96,
+      "end": 1535.6,
+      "text": "Netherlands in the municipality of"
+    },
+    {
+      "start": 1532.96,
+      "end": 1537.2,
+      "text": "Barlay Hertok. These regions of the map"
+    },
+    {
+      "start": 1535.6,
+      "end": 1539.6,
+      "text": "are part of the Netherlands and these"
+    },
+    {
+      "start": 1537.2,
+      "end": 1541.2,
+      "text": "regions are part of Belgium. Given a"
+    },
+    {
+      "start": 1539.6,
+      "end": 1543.039,
+      "text": "single plane for Belgium and a single"
+    },
+    {
+      "start": 1541.2,
+      "end": 1544.96,
+      "text": "plane for the Netherlands, there's no"
+    },
+    {
+      "start": 1543.039,
+      "end": 1546.88,
+      "text": "way to cleanly divide these complex"
+    },
+    {
+      "start": 1544.96,
+      "end": 1549.039,
+      "text": "regions."
+    },
+    {
+      "start": 1546.88,
+      "end": 1550.559,
+      "text": "Now, it might seem a bit random to spend"
+    },
+    {
+      "start": 1549.039,
+      "end": 1553.36,
+      "text": "our time training a model to fit"
+    },
+    {
+      "start": 1550.559,
+      "end": 1554.88,
+      "text": "esoteric European borders. But this type"
+    },
+    {
+      "start": 1553.36,
+      "end": 1556.559,
+      "text": "of problem has more in common with"
+    },
+    {
+      "start": 1554.88,
+      "end": 1558.799,
+      "text": "training large language models than you"
+    },
+    {
+      "start": 1556.559,
+      "end": 1560.72,
+      "text": "may expect. Our llama model represents"
+    },
+    {
+      "start": 1558.799,
+      "end": 1563.919,
+      "text": "individual tokens like Madrid, Paris,"
+    },
+    {
+      "start": 1560.72,
+      "end": 1566.48,
+      "text": "and Berlin as vectors of48 floatingoint"
+    },
+    {
+      "start": 1563.919,
+      "end": 1568.72,
+      "text": "numbers. When we pass in some text like"
+    },
+    {
+      "start": 1566.48,
+      "end": 1571.039,
+      "text": "the capital of France is, there's a"
+    },
+    {
+      "start": 1568.72,
+      "end": 1572.96,
+      "text": "specific length 2048 vector in our"
+    },
+    {
+      "start": 1571.039,
+      "end": 1574.799,
+      "text": "model, specifically at the final"
+    },
+    {
+      "start": 1572.96,
+      "end": 1577.039,
+      "text": "position in the residual stream that is"
+    },
+    {
+      "start": 1574.799,
+      "end": 1579.44,
+      "text": "iteratively pushed by each layer towards"
+    },
+    {
+      "start": 1577.039,
+      "end": 1580.88,
+      "text": "the vector for Paris."
+    },
+    {
+      "start": 1579.44,
+      "end": 1582.48,
+      "text": "This gets really interesting when we"
+    },
+    {
+      "start": 1580.88,
+      "end": 1584.559,
+      "text": "consider all the different types of text"
+    },
+    {
+      "start": 1582.48,
+      "end": 1586.72,
+      "text": "that can lead to a next token of Paris,"
+    },
+    {
+      "start": 1584.559,
+      "end": 1588.799,
+      "text": "Madrid, or Berlin."
+    },
+    {
+      "start": 1586.72,
+      "end": 1590.88,
+      "text": "If we pass in a variety of training text"
+    },
+    {
+      "start": 1588.799,
+      "end": 1592.559,
+      "text": "examples from the wiki text data set"
+    },
+    {
+      "start": 1590.88,
+      "end": 1594.96,
+      "text": "that all lead up to next tokens of"
+    },
+    {
+      "start": 1592.559,
+      "end": 1596.88,
+      "text": "Paris, Madrid or Berlin and compute the"
+    },
+    {
+      "start": 1594.96,
+      "end": 1598.559,
+      "text": "predicted next token vectors for each"
+    },
+    {
+      "start": 1596.88,
+      "end": 1600.559,
+      "text": "training example for a layer in the"
+    },
+    {
+      "start": 1598.559,
+      "end": 1603.679,
+      "text": "middle of our model, we end up with a"
+    },
+    {
+      "start": 1600.559,
+      "end": 1605.76,
+      "text": "set of length 248 vectors each generated"
+    },
+    {
+      "start": 1603.679,
+      "end": 1609.2,
+      "text": "by examples with next tokens of Madrid,"
+    },
+    {
+      "start": 1605.76,
+      "end": 1611.44,
+      "text": "Paris, or Berlin in our training set."
+    },
+    {
+      "start": 1609.2,
+      "end": 1613.44,
+      "text": "One way to think of these vectors is as"
+    },
+    {
+      "start": 1611.44,
+      "end": 1615.679,
+      "text": "the coordinates of our examples in the"
+    },
+    {
+      "start": 1613.44,
+      "end": 1617.679,
+      "text": "high-dimensional map of language learned"
+    },
+    {
+      "start": 1615.679,
+      "end": 1619.44,
+      "text": "by our model."
+    },
+    {
+      "start": 1617.679,
+      "end": 1622.08,
+      "text": "We can get a sense of the geometry of"
+    },
+    {
+      "start": 1619.44,
+      "end": 1625.44,
+      "text": "this map by projecting down from 248"
+    },
+    {
+      "start": 1622.08,
+      "end": 1627.12,
+      "text": "dimensions to two using a umap algorithm"
+    },
+    {
+      "start": 1625.44,
+      "end": 1628.72,
+      "text": "which seeks to preserve the distances"
+    },
+    {
+      "start": 1627.12,
+      "end": 1630.48,
+      "text": "between points in the high-dimensional"
+    },
+    {
+      "start": 1628.72,
+      "end": 1631.84,
+      "text": "space."
+    },
+    {
+      "start": 1630.48,
+      "end": 1634.559,
+      "text": "We see some really interesting"
+    },
+    {
+      "start": 1631.84,
+      "end": 1636.4,
+      "text": "clustering in this space. For example,"
+    },
+    {
+      "start": 1634.559,
+      "end": 1638.08,
+      "text": "this little cluster of Paris examples"
+    },
+    {
+      "start": 1636.4,
+      "end": 1640.24,
+      "text": "are all different references to the"
+    },
+    {
+      "start": 1638.08,
+      "end": 1642.24,
+      "text": "Treaty of Paris. And this little cluster"
+    },
+    {
+      "start": 1640.24,
+      "end": 1644.72,
+      "text": "are all references to George Gershwin's"
+    },
+    {
+      "start": 1642.24,
+      "end": 1646.4,
+      "text": "an American in Paris."
+    },
+    {
+      "start": 1644.72,
+      "end": 1648.64,
+      "text": "Just as the disconnected parts of our"
+    },
+    {
+      "start": 1646.4,
+      "end": 1651.12,
+      "text": "municipality of Barlay Herto all need to"
+    },
+    {
+      "start": 1648.64,
+      "end": 1652.64,
+      "text": "map to the same country of Belgium, the"
+    },
+    {
+      "start": 1651.12,
+      "end": 1654.4,
+      "text": "disconnected regions in our space of"
+    },
+    {
+      "start": 1652.64,
+      "end": 1656.96,
+      "text": "language all need to map to the same"
+    },
+    {
+      "start": 1654.4,
+      "end": 1658.64,
+      "text": "next token of Paris. And it's up to our"
+    },
+    {
+      "start": 1656.96,
+      "end": 1662.48,
+      "text": "model to figure out how to partition and"
+    },
+    {
+      "start": 1658.64,
+      "end": 1664.159,
+      "text": "reshape our space to achieve this."
+    },
+    {
+      "start": 1662.48,
+      "end": 1666.72,
+      "text": "When Marvin Minsky rejected back"
+    },
+    {
+      "start": 1664.159,
+      "end": 1668.4,
+      "text": "propagation in the early 1970s, he"
+    },
+    {
+      "start": 1666.72,
+      "end": 1670.48,
+      "text": "dismissed the idea because it converged"
+    },
+    {
+      "start": 1668.4,
+      "end": 1672.32,
+      "text": "too slowly and because according to"
+    },
+    {
+      "start": 1670.48,
+      "end": 1674.799,
+      "text": "Minsky, it couldn't learn anything too"
+    },
+    {
+      "start": 1672.32,
+      "end": 1676.32,
+      "text": "difficult. Minsky was right that"
+    },
+    {
+      "start": 1674.799,
+      "end": 1678.72,
+      "text": "learning by gradient descent can take"
+    },
+    {
+      "start": 1676.32,
+      "end": 1681.52,
+      "text": "many steps. This mattered a lot given"
+    },
+    {
+      "start": 1678.72,
+      "end": 1683.679,
+      "text": "the compute power available at the time."
+    },
+    {
+      "start": 1681.52,
+      "end": 1685.12,
+      "text": "However, he enormously underestimated"
+    },
+    {
+      "start": 1683.679,
+      "end": 1687.279,
+      "text": "the ability of our simple back"
+    },
+    {
+      "start": 1685.12,
+      "end": 1690.0,
+      "text": "propagation algorithm to scale to solve"
+    },
+    {
+      "start": 1687.279,
+      "end": 1694.48,
+      "text": "incredibly complex problems."
+    },
+    {
+      "start": 1690.0,
+      "end": 1697.2,
+      "text": "Next time, we'll see what Minsky missed."
+    },
+    {
+      "start": 1694.48,
+      "end": 1699.679,
+      "text": "Back in 2019, I completely quit Welch"
+    },
+    {
+      "start": 1697.2,
+      "end": 1701.44,
+      "text": "Labs. I had just tried going full-time"
+    },
+    {
+      "start": 1699.679,
+      "end": 1703.6,
+      "text": "creating videos, but I wasn't able to"
+    },
+    {
+      "start": 1701.44,
+      "end": 1706.0,
+      "text": "earn enough money to make it work. I got"
+    },
+    {
+      "start": 1703.6,
+      "end": 1707.52,
+      "text": "frustrated and I quit. I went off and"
+    },
+    {
+      "start": 1706.0,
+      "end": 1709.36,
+      "text": "worked as a machine learning engineer,"
+    },
+    {
+      "start": 1707.52,
+      "end": 1710.96,
+      "text": "which was great, but I couldn't shake"
+    },
+    {
+      "start": 1709.36,
+      "end": 1714.399,
+      "text": "the feeling that I was really supposed"
+    },
+    {
+      "start": 1710.96,
+      "end": 1716.799,
+      "text": "to be making videos. Starting in 2022, I"
+    },
+    {
+      "start": 1714.399,
+      "end": 1718.32,
+      "text": "slowly eased back on Tik Tok and was"
+    },
+    {
+      "start": 1716.799,
+      "end": 1720.0,
+      "text": "able to gradually build enough momentum"
+    },
+    {
+      "start": 1718.32,
+      "end": 1723.36,
+      "text": "to take another crack at going full-time"
+    },
+    {
+      "start": 1720.0,
+      "end": 1724.799,
+      "text": "last year. When I quit in 2019, I had"
+    },
+    {
+      "start": 1723.36,
+      "end": 1727.919,
+      "text": "some time to really think about what"
+    },
+    {
+      "start": 1724.799,
+      "end": 1729.679,
+      "text": "kept pulling me back into making videos."
+    },
+    {
+      "start": 1727.919,
+      "end": 1731.919,
+      "text": "And I realized that deep down it was"
+    },
+    {
+      "start": 1729.679,
+      "end": 1734.32,
+      "text": "really about education."
+    },
+    {
+      "start": 1731.919,
+      "end": 1735.76,
+      "text": "I loved math and science as a kid, but I"
+    },
+    {
+      "start": 1734.32,
+      "end": 1738.24,
+      "text": "really disliked the way I had to learn"
+    },
+    {
+      "start": 1735.76,
+      "end": 1740.08,
+      "text": "it in school. After undergrad, I really"
+    },
+    {
+      "start": 1738.24,
+      "end": 1742.399,
+      "text": "found myself questioning if I even liked"
+    },
+    {
+      "start": 1740.08,
+      "end": 1744.08,
+      "text": "math at all. Only through my own work"
+    },
+    {
+      "start": 1742.399,
+      "end": 1746.72,
+      "text": "and study did I fall back into love with"
+    },
+    {
+      "start": 1744.08,
+      "end": 1748.88,
+      "text": "math and science years later. And now I"
+    },
+    {
+      "start": 1746.72,
+      "end": 1751.919,
+      "text": "want to use Welsh Labs to make education"
+    },
+    {
+      "start": 1748.88,
+      "end": 1754.0,
+      "text": "better. But I've realized for me to be"
+    },
+    {
+      "start": 1751.919,
+      "end": 1756.159,
+      "text": "able to do this, I have to first build a"
+    },
+    {
+      "start": 1754.0,
+      "end": 1757.919,
+      "text": "viable business. If I can't support"
+    },
+    {
+      "start": 1756.159,
+      "end": 1760.88,
+      "text": "myself and my family, I can't spend the"
+    },
+    {
+      "start": 1757.919,
+      "end": 1762.72,
+      "text": "time I need to make this work. Last"
+    },
+    {
+      "start": 1760.88,
+      "end": 1764.96,
+      "text": "year, through sponsorships, poster and"
+    },
+    {
+      "start": 1762.72,
+      "end": 1766.559,
+      "text": "book sales, and support on Patreon, I"
+    },
+    {
+      "start": 1764.96,
+      "end": 1769.36,
+      "text": "was able to make about half of what I"
+    },
+    {
+      "start": 1766.559,
+      "end": 1771.36,
+      "text": "made as a machine learning engineer. I'm"
+    },
+    {
+      "start": 1769.36,
+      "end": 1774.0,
+      "text": "not going to lie, so far this is a much"
+    },
+    {
+      "start": 1771.36,
+      "end": 1776.399,
+      "text": "harder way to earn a living. My goal"
+    },
+    {
+      "start": 1774.0,
+      "end": 1777.919,
+      "text": "this year is to replace my full income."
+    },
+    {
+      "start": 1776.399,
+      "end": 1780.08,
+      "text": "This will allow me to really reach"
+    },
+    {
+      "start": 1777.919,
+      "end": 1783.2,
+      "text": "escape velocity and continue full-time"
+    },
+    {
+      "start": 1780.08,
+      "end": 1785.36,
+      "text": "on Welch Labs. Sponsorships, posters,"
+    },
+    {
+      "start": 1783.2,
+      "end": 1786.88,
+      "text": "and book sales are going well this year,"
+    },
+    {
+      "start": 1785.36,
+      "end": 1789.52,
+      "text": "but to hit my goal, I need to grow"
+    },
+    {
+      "start": 1786.88,
+      "end": 1792.48,
+      "text": "Patreon as well. Your monthly support on"
+    },
+    {
+      "start": 1789.52,
+      "end": 1794.24,
+      "text": "Patreon would mean a lot. As a way to"
+    },
+    {
+      "start": 1792.48,
+      "end": 1796.88,
+      "text": "say thank you, today I'm launching a new"
+    },
+    {
+      "start": 1794.24,
+      "end": 1799.2,
+      "text": "reward. Starting at the $5 per month"
+    },
+    {
+      "start": 1796.88,
+      "end": 1801.919,
+      "text": "level, I'll send you a real paper cutout"
+    },
+    {
+      "start": 1799.2,
+      "end": 1803.44,
+      "text": "used in a Welch Labs video. It comes in"
+    },
+    {
+      "start": 1801.919,
+      "end": 1805.36,
+      "text": "a nice protective sleeve with the Welch"
+    },
+    {
+      "start": 1803.44,
+      "end": 1807.12,
+      "text": "Labs logo on the front. And on the back,"
+    },
+    {
+      "start": 1805.36,
+      "end": 1809.76,
+      "text": "it says the video it came from, the"
+    },
+    {
+      "start": 1807.12,
+      "end": 1811.52,
+      "text": "release date, and a signed by me. These"
+    },
+    {
+      "start": 1809.76,
+      "end": 1814.24,
+      "text": "are a lot of fun. I have them going all"
+    },
+    {
+      "start": 1811.52,
+      "end": 1815.679,
+      "text": "the way back to 2017. At the $5 per"
+    },
+    {
+      "start": 1814.24,
+      "end": 1818.32,
+      "text": "month level, you'll receive a smaller"
+    },
+    {
+      "start": 1815.679,
+      "end": 1820.399,
+      "text": "cutout and a larger cutout at the $10 or"
+    },
+    {
+      "start": 1818.32,
+      "end": 1822.24,
+      "text": "higher level. Cutouts ship after your"
+    },
+    {
+      "start": 1820.399,
+      "end": 1823.6,
+      "text": "first monthly payment goes through, and"
+    },
+    {
+      "start": 1822.24,
+      "end": 1826.159,
+      "text": "you'll find a link to the Watch Labs"
+    },
+    {
+      "start": 1823.6,
+      "end": 1827.52,
+      "text": "Patreon in the description below. Huge"
+    },
+    {
+      "start": 1826.159,
+      "end": 1829.84,
+      "text": "thank you to everyone who supported"
+    },
+    {
+      "start": 1827.52,
+      "end": 1832.48,
+      "text": "Watch Labs over the years. Thanks for"
+    },
+    {
+      "start": 1829.84,
+      "end": 1832.48,
+      "text": "watching."
+    }
+  ],
+  "segment_count": 815
+}

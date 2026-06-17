@@ -1,0 +1,5175 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 1.78,
+      "text": "Why are you trying to distinguish humans?"
+    },
+    {
+      "start": 2.14,
+      "end": 3.2,
+      "text": "Humans are animals."
+    },
+    {
+      "start": 3.62,
+      "end": 5.44,
+      "text": "What we have in common is more interesting."
+    },
+    {
+      "start": 5.72,
+      "end": 8.38,
+      "text": "What distinguishes us, we should be paying less attention to."
+    },
+    {
+      "start": 8.52,
+      "end": 10.08,
+      "text": "I mean, we're trying to replicate intelligence, right?"
+    },
+    {
+      "start": 10.28,
+      "end": 14.620000000000001,
+      "text": "No animal can go to the moon or make semiconductors, so we want to understand what makes humans special."
+    },
+    {
+      "start": 14.82,
+      "end": 19.1,
+      "text": "So I like the way you consider that obvious, because I consider the opposite obvious."
+    },
+    {
+      "start": 19.36,
+      "end": 21.96,
+      "text": "If we understood a squirrel, we'd be almost all the way there."
+    },
+    {
+      "start": 22.12,
+      "end": 28.18,
+      "text": "I am personally just kind of content being out of sync with my field for a long period of time, perhaps decades,"
+    },
+    {
+      "start": 28.18,
+      "end": 32.82,
+      "text": "because occasionally I have improved, right, in the past."
+    },
+    {
+      "start": 33.2,
+      "end": 35.58,
+      "text": "I don't think learning is really about training."
+    },
+    {
+      "start": 35.92,
+      "end": 37.06,
+      "text": "It's about an active process."
+    },
+    {
+      "start": 37.86,
+      "end": 40.0,
+      "text": "The child tries things and sees what happens."
+    },
+    {
+      "start": 40.38,
+      "end": 46.36,
+      "text": "I think we should be proud that we are giving rise to this great transition in the universe."
+    },
+    {
+      "start": 47.34,
+      "end": 53.120000000000005,
+      "text": "Today, I'm chatting with Richard Sutton, who is one of the founding fathers of reinforcement learning"
+    },
+    {
+      "start": 53.120000000000005,
+      "end": 57.58,
+      "text": "and inventor of many of the main techniques used there, like TD learning and policy gradient methods."
+    },
+    {
+      "start": 57.58,
+      "end": 61.6,
+      "text": "And for that, he received this year's Turing Award, which, if you don't know,"
+    },
+    {
+      "start": 61.76,
+      "end": 63.64,
+      "text": "is basically the Nobel Prize for Computer Science."
+    },
+    {
+      "start": 64.14,
+      "end": 64.94,
+      "text": "Richard, congratulations."
+    },
+    {
+      "start": 65.52,
+      "end": 66.2,
+      "text": "Thank you, Dvarkis."
+    },
+    {
+      "start": 66.38,
+      "end": 67.9,
+      "text": "And thanks for coming on the podcast."
+    },
+    {
+      "start": 68.2,
+      "end": 68.8,
+      "text": "It's my pleasure."
+    },
+    {
+      "start": 69.5,
+      "end": 70.8,
+      "text": "Okay, so first question."
+    },
+    {
+      "start": 71.72,
+      "end": 75.42,
+      "text": "My audience and I are familiar with the LLM way of thinking about AI."
+    },
+    {
+      "start": 76.14,
+      "end": 80.46,
+      "text": "Conceptually, what are we missing in terms of thinking about AI from the RL perspective?"
+    },
+    {
+      "start": 81.3,
+      "end": 85.12,
+      "text": "Well, yes, I think it's really quite a different point of view."
+    },
+    {
+      "start": 85.12,
+      "end": 87.53999999999999,
+      "text": "And it can easily get separated."
+    },
+    {
+      "start": 87.66,
+      "end": 90.03999999999999,
+      "text": "We didn't lose the ability to talk to each other."
+    },
+    {
+      "start": 91.2,
+      "end": 94.9,
+      "text": "And, yeah, large language models have become such a big thing."
+    },
+    {
+      "start": 95.34,
+      "end": 97.24,
+      "text": "Generative AI, in general, a big thing."
+    },
+    {
+      "start": 98.44,
+      "end": 101.86,
+      "text": "And our field is subject to bandwagons and fashions."
+    },
+    {
+      "start": 102.24,
+      "end": 106.44,
+      "text": "So we lose track of the basic, basic things."
+    },
+    {
+      "start": 106.74,
+      "end": 109.48,
+      "text": "Because I consider reinforcement learning to be basic AI."
+    },
+    {
+      "start": 110.02,
+      "end": 111.52,
+      "text": "And what is intelligence?"
+    },
+    {
+      "start": 112.0,
+      "end": 114.46,
+      "text": "The problem is to understand your world."
+    },
+    {
+      "start": 114.46,
+      "end": 114.8,
+      "text": "Right."
+    },
+    {
+      "start": 115.68,
+      "end": 117.4,
+      "text": "And reinforcement learning."
+    },
+    {
+      "start": 117.58,
+      "end": 119.3,
+      "text": "It's about understanding your world."
+    },
+    {
+      "start": 119.62,
+      "end": 122.46,
+      "text": "Whereas large language models are about mimicking people."
+    },
+    {
+      "start": 123.06,
+      "end": 124.72,
+      "text": "Doing what people say you should do."
+    },
+    {
+      "start": 124.92,
+      "end": 126.58,
+      "text": "They're not about figuring out what to do."
+    },
+    {
+      "start": 126.96,
+      "end": 127.08,
+      "text": "Huh."
+    },
+    {
+      "start": 127.38,
+      "end": 134.48,
+      "text": "I guess you would think that to emulate the trillions of tokens in the corpus of Internet text,"
+    },
+    {
+      "start": 134.66,
+      "end": 136.02,
+      "text": "you would have to build a world model."
+    },
+    {
+      "start": 136.14,
+      "end": 139.0,
+      "text": "In fact, these models do seem to have very robust world models."
+    },
+    {
+      "start": 139.16,
+      "end": 142.76,
+      "text": "And they're the best world models we've made to date in AI, right?"
+    },
+    {
+      "start": 142.76,
+      "end": 145.3,
+      "text": "So what do you think that's missing?"
+    },
+    {
+      "start": 146.0,
+      "end": 147.52,
+      "text": "I would disagree with most of the things."
+    },
+    {
+      "start": 147.62,
+      "end": 148.36,
+      "text": "You just said."
+    },
+    {
+      "start": 148.36,
+      "end": 148.96,
+      "text": "Great."
+    },
+    {
+      "start": 150.54000000000002,
+      "end": 155.0,
+      "text": "Just to mimic what people say is not really to build a model the world at all?"
+    },
+    {
+      "start": 155.0,
+      "end": 155.96,
+      "text": "I don't think."
+    },
+    {
+      "start": 155.98000000000002,
+      "end": 158.92000000000002,
+      "text": "You know, you are mimicking things that have a model of the world."
+    },
+    {
+      "start": 159.0,
+      "end": 160.04000000000002,
+      "text": "The people."
+    },
+    {
+      "start": 160.04000000000002,
+      "end": 165.04000000000002,
+      "text": "But I don't want to approach the question in an adversarial way."
+    },
+    {
+      "start": 165.04000000000002,
+      "end": 170.20000000000002,
+      "text": "But I would question the idea that they have a world model."
+    },
+    {
+      "start": 170.22,
+      "end": 172.98000000000002,
+      "text": "So world model would enable you to predict what would happen."
+    },
+    {
+      "start": 172.98000000000002,
+      "end": 173.84,
+      "text": "Right."
+    },
+    {
+      "start": 174.10000000000002,
+      "end": 176.64000000000001,
+      "text": "They have the ability to predict what a person would say."
+    },
+    {
+      "start": 176.64000000000001,
+      "end": 177.18,
+      "text": "They don't have the ability is predict what a piece of work would look like it."
+    },
+    {
+      "start": 177.18,
+      "end": 177.52,
+      "text": "Yeah."
+    },
+    {
+      "start": 177.52,
+      "end": 184.54000000000002,
+      "text": "predict what will happen. What we want, I think, to quote Alan Turing, what we want is a machine"
+    },
+    {
+      "start": 184.54000000000002,
+      "end": 189.88,
+      "text": "that can learn from experience. Where experience is the things that actually happen in your life."
+    },
+    {
+      "start": 189.88,
+      "end": 197.74,
+      "text": "You do things, you see what happens, and that's what you learn from. The large language models"
+    },
+    {
+      "start": 197.74,
+      "end": 203.04000000000002,
+      "text": "learn from something else. They learn from here's a situation and here's what a person did. And"
+    },
+    {
+      "start": 203.04,
+      "end": 208.64,
+      "text": "implicitly, the suggestion is you should do what the person did. Right. I guess maybe the crux,"
+    },
+    {
+      "start": 208.78,
+      "end": 212.73999999999998,
+      "text": "and I'm curious if you disagree with this, is some people will say, okay, so this imitation"
+    },
+    {
+      "start": 212.73999999999998,
+      "end": 217.66,
+      "text": "learning has given us a good prior or given these models a good prior, but reasonable ways to"
+    },
+    {
+      "start": 217.66,
+      "end": 225.18,
+      "text": "approach problems. And as we move towards the era of experience, as you call it, this prior is"
+    },
+    {
+      "start": 225.18,
+      "end": 229.84,
+      "text": "going to be the basis on which we teach these models from experience because this gives them"
+    },
+    {
+      "start": 229.84,
+      "end": 233.01999999999998,
+      "text": "the opportunity to get answers right some of the time."
+    },
+    {
+      "start": 233.04,
+      "end": 238.73999999999998,
+      "text": "And then on this, you can build, you can train them on experience. Do you agree with that"
+    },
+    {
+      "start": 238.73999999999998,
+      "end": 244.66,
+      "text": "perspective? No, I agree that it's the large language model perspective. Right. I don't"
+    },
+    {
+      "start": 244.66,
+      "end": 251.48,
+      "text": "think it's a good perspective. Yeah. Here's why. So to be a prior for something, there has to be"
+    },
+    {
+      "start": 251.48,
+      "end": 258.0,
+      "text": "a real thing. I mean, a prior bit of knowledge should be the basis for actual knowledge. What"
+    },
+    {
+      "start": 258.0,
+      "end": 263.0,
+      "text": "is actual knowledge? There's no definition of actual knowledge in that language."
+    },
+    {
+      "start": 263.04,
+      "end": 270.72,
+      "text": "Language framework. What makes an action a good action to take? You recognize the value,"
+    },
+    {
+      "start": 270.82,
+      "end": 274.38,
+      "text": "the need for continual learning. Right. So if you need to learn continually,"
+    },
+    {
+      "start": 274.64000000000004,
+      "end": 279.16,
+      "text": "continually means learning during normal interaction with the world. Yeah. And so"
+    },
+    {
+      "start": 279.16,
+      "end": 285.72,
+      "text": "then there must be some way during the normal interaction to tell what's right. Yep. Okay. So"
+    },
+    {
+      "start": 285.72,
+      "end": 292.58000000000004,
+      "text": "is there any way for it to tell in the largest language model setup to tell what's the right"
+    },
+    {
+      "start": 292.58000000000004,
+      "end": 293.02000000000004,
+      "text": "thing to do? Yeah. So I think it's a good question. I think it's a good question. I think it's a good"
+    },
+    {
+      "start": 293.02,
+      "end": 298.03999999999996,
+      "text": "thing to say. You will say something and you will not get feedback about what the right thing to say"
+    },
+    {
+      "start": 298.03999999999996,
+      "end": 304.32,
+      "text": "is because there's no definition of what the right thing to say is. There's no goal. Right. And if"
+    },
+    {
+      "start": 304.32,
+      "end": 308.06,
+      "text": "there's no goal, then there's, there's one thing to say, another thing to say, there's no right"
+    },
+    {
+      "start": 308.06,
+      "end": 313.52,
+      "text": "thing to say. Right. So there's no ground truth. You can't have prior knowledge if you don't have"
+    },
+    {
+      "start": 313.52,
+      "end": 318.52,
+      "text": "ground truth because the prior knowledge is supposed to be a hint or an initial belief"
+    },
+    {
+      "start": 318.52,
+      "end": 322.03999999999996,
+      "text": "about what the truth is. Yeah. But there isn't any truth."
+    },
+    {
+      "start": 322.04,
+      "end": 326.62,
+      "text": "There's no right thing to say. Right. Now in reinforcement learning, there is a right thing"
+    },
+    {
+      "start": 326.62,
+      "end": 330.90000000000003,
+      "text": "to say or right thing to do. Right. Because the right thing to do is the thing that gets you"
+    },
+    {
+      "start": 330.90000000000003,
+      "end": 335.16,
+      "text": "reward. Right. So we have a definition of what the right thing to do is. And so we can have"
+    },
+    {
+      "start": 335.16,
+      "end": 341.38,
+      "text": "prior knowledge or knowledge provided by people about what the right thing to do is. And then we"
+    },
+    {
+      "start": 341.38,
+      "end": 346.54,
+      "text": "can check it to see because we have a definition of what the actual right thing to do is. Yeah."
+    },
+    {
+      "start": 347.18,
+      "end": 350.8,
+      "text": "Now, an even simpler case is when you have, you're trying to make a model of the world,"
+    },
+    {
+      "start": 350.8,
+      "end": 352.02000000000004,
+      "text": "when you predict what will happen,"
+    },
+    {
+      "start": 352.04,
+      "end": 357.96000000000004,
+      "text": "you predict and then you see what happens. Okay. So there's ground truth. There's no ground truth"
+    },
+    {
+      "start": 357.96000000000004,
+      "end": 364.62,
+      "text": "in large language models because you don't have a prediction about what will happen next."
+    },
+    {
+      "start": 365.32000000000005,
+      "end": 371.98,
+      "text": "If you say something in your conversation, the large language models have no prediction about"
+    },
+    {
+      "start": 371.98,
+      "end": 377.34000000000003,
+      "text": "what the person will say in response to that or what the response will be. I mean, I think they"
+    },
+    {
+      "start": 377.34000000000003,
+      "end": 381.74,
+      "text": "do. You can literally ask them, what would you anticipate a user might say in response?"
+    },
+    {
+      "start": 382.04,
+      "end": 387.18,
+      "text": "And they have a prediction. Oh, no, they will respond to that question, right? Yeah. But they"
+    },
+    {
+      "start": 387.18,
+      "end": 392.56,
+      "text": "have no prediction in the substantive sense that they won't be surprised by what happens. And if"
+    },
+    {
+      "start": 392.56,
+      "end": 398.40000000000003,
+      "text": "something happens that isn't what you might say they predicted, they will not change because an"
+    },
+    {
+      "start": 398.40000000000003,
+      "end": 403.56,
+      "text": "unexpected thing has happened. And to learn that, they'd have to make an adjustment."
+    },
+    {
+      "start": 403.56,
+      "end": 411.8,
+      "text": "So I think a capability like this does exist in context. So it's interesting to watch a model do"
+    },
+    {
+      "start": 411.8,
+      "end": 411.98,
+      "text": "change."
+    },
+    {
+      "start": 412.04,
+      "end": 441.8,
+      "text": "I'm just saying they don't have in any meaningful sense, they don't have a prediction of what will"
+    },
+    {
+      "start": 441.8,
+      "end": 446.2,
+      "text": "happen next. And they will not be surprised by what happened next. They'll not make any changes"
+    },
+    {
+      "start": 446.2,
+      "end": 451.94,
+      "text": "if something happens based on what happens. But isn't that literally what next token prediction"
+    },
+    {
+      "start": 451.94,
+      "end": 455.02000000000004,
+      "text": "is? Prediction of what was next and then updating on the surprise?"
+    },
+    {
+      "start": 455.16,
+      "end": 460.46000000000004,
+      "text": "Next token is what they should say, what the action should be. It's not what the world will"
+    },
+    {
+      "start": 460.46000000000004,
+      "end": 465.62,
+      "text": "give them in response to what they do. Let's go back to their lack of goal."
+    },
+    {
+      "start": 466.92,
+      "end": 469.92,
+      "text": "For me, having a goal is the essence of intelligence."
+    },
+    {
+      "start": 470.12,
+      "end": 470.22,
+      "text": "Right."
+    },
+    {
+      "start": 470.6,
+      "end": 471.78000000000003,
+      "text": "Something is intelligent if it's not intelligent."
+    },
+    {
+      "start": 471.8,
+      "end": 478.68,
+      "text": "I like John McCarthy's definition that intelligence is the computational part of the ability to achieve"
+    },
+    {
+      "start": 478.68,
+      "end": 488.54,
+      "text": "goals. So you have to have goals. You're just a behaving system. You're not anything special. You're"
+    },
+    {
+      "start": 488.54,
+      "end": 492.38,
+      "text": "not intelligent. And you agree that large language models don't have goals."
+    },
+    {
+      "start": 493.16,
+      "end": 494.40000000000003,
+      "text": "I think they have a goal."
+    },
+    {
+      "start": 494.46000000000004,
+      "end": 494.98,
+      "text": "What's the goal?"
+    },
+    {
+      "start": 495.24,
+      "end": 495.86,
+      "text": "Next token prediction."
+    },
+    {
+      "start": 496.86,
+      "end": 499.82,
+      "text": "That's not a goal. It doesn't change the world."
+    },
+    {
+      "start": 500.92,
+      "end": 501.32,
+      "text": "Right."
+    },
+    {
+      "start": 501.32,
+      "end": 506.4,
+      "text": "You know, tokens come at you, and if you predict them, you don't influence them."
+    },
+    {
+      "start": 507.0,
+      "end": 510.82,
+      "text": "Oh, yeah. It's not a goal about the external world."
+    },
+    {
+      "start": 511.5,
+      "end": 517.22,
+      "text": "Yeah, it's not a goal. It's not a substantive goal. You can't look at a system and say, oh,"
+    },
+    {
+      "start": 517.64,
+      "end": 521.38,
+      "text": "it has a goal if it's just sitting there predicting and being happy with itself,"
+    },
+    {
+      "start": 521.46,
+      "end": 522.46,
+      "text": "that it's predicting accurately."
+    },
+    {
+      "start": 522.46,
+      "end": 526.6,
+      "text": "I guess maybe the bigger question I want to understand is why you don't think"
+    },
+    {
+      "start": 526.6,
+      "end": 530.56,
+      "text": "doing RL on top of LLMs is a productive direction. Because"
+    },
+    {
+      "start": 530.5600000000001,
+      "end": 534.9200000000001,
+      "text": "we seem to be able to give these models a goal of solving difficult math problems,"
+    },
+    {
+      "start": 535.12,
+      "end": 541.9000000000001,
+      "text": "and they're in many ways at the very peaks of human level in the capacity to solve math"
+    },
+    {
+      "start": 541.9000000000001,
+      "end": 547.4200000000001,
+      "text": "Olympia-type problems, right? They got gold at IMO. So it seems like the model which got"
+    },
+    {
+      "start": 547.4200000000001,
+      "end": 551.44,
+      "text": "gold at the International Math Olympia does have the goal of getting math problems, right?"
+    },
+    {
+      "start": 552.46,
+      "end": 554.48,
+      "text": "So why can't we extend this to different domains?"
+    },
+    {
+      "start": 555.2,
+      "end": 560.1400000000001,
+      "text": "Well, the math problems are different. I'm making a model of the physical world,"
+    },
+    {
+      "start": 560.5600000000001,
+      "end": 566.9200000000001,
+      "text": "and carrying out the consequences of mathematical assumptions or operations."
+    },
+    {
+      "start": 566.9200000000001,
+      "end": 574.1600000000001,
+      "text": "Those are very different things. The empirical world has to be learned. You have to learn the"
+    },
+    {
+      "start": 574.1600000000001,
+      "end": 583.3800000000001,
+      "text": "consequences, whereas the math is more just computational. It's more like standard planning."
+    },
+    {
+      "start": 584.08,
+      "end": 588.84,
+      "text": "So there, they can have a goal to"
+    },
+    {
+      "start": 590.5600000000001,
+      "end": 597.1600000000001,
+      "text": "to find the proof, and they are in some way given that goal to find the proof."
+    },
+    {
+      "start": 597.4000000000001,
+      "end": 601.6400000000001,
+      "text": "Right. So, I mean, it's interesting because you wrote this essay in 2019 titled The Bitter"
+    },
+    {
+      "start": 601.6400000000001,
+      "end": 608.3800000000001,
+      "text": "Lesson, and this is the most influential essay perhaps in the history of AI. But people have"
+    },
+    {
+      "start": 608.3800000000001,
+      "end": 618.4200000000001,
+      "text": "used that as a justification for scaling up LLMs, because in their view, this is the one scalable"
+    },
+    {
+      "start": 618.4200000000001,
+      "end": 620.4000000000001,
+      "text": "way we have found to pour"
+    },
+    {
+      "start": 620.4,
+      "end": 625.14,
+      "text": "ungodly amounts of compute into learning about the world. And so it's interesting that your"
+    },
+    {
+      "start": 625.14,
+      "end": 628.76,
+      "text": "perspective is that the LLMs are actually not bitter lesson-pilled."
+    },
+    {
+      "start": 629.4,
+      "end": 636.86,
+      "text": "It's an interesting question whether large language models are a case of the bitter lesson."
+    },
+    {
+      "start": 637.3199999999999,
+      "end": 637.56,
+      "text": "Yeah."
+    },
+    {
+      "start": 637.56,
+      "end": 643.36,
+      "text": "Because they are clearly a way of using massive computation,"
+    },
+    {
+      "start": 643.92,
+      "end": 648.46,
+      "text": "things that will scale with computation up to the limits of the internet."
+    },
+    {
+      "start": 648.84,
+      "end": 648.98,
+      "text": "Yeah."
+    },
+    {
+      "start": 650.4,
+      "end": 660.24,
+      "text": "But they're also a way of putting in lots of human knowledge. And so this is an interesting"
+    },
+    {
+      "start": 660.24,
+      "end": 671.52,
+      "text": "question. It's a sociological or industry question. Will they reach the limits of the data"
+    },
+    {
+      "start": 671.52,
+      "end": 680.18,
+      "text": "and be superseded by things that can get more data just from experience rather than from"
+    },
+    {
+      "start": 680.4,
+      "end": 682.52,
+      "text": "people?"
+    },
+    {
+      "start": 684.62,
+      "end": 691.0799999999999,
+      "text": "In some ways, it's a classic case of the bitter lesson. With the more human knowledge we put into"
+    },
+    {
+      "start": 691.0799999999999,
+      "end": 701.6,
+      "text": "the large language models, the better they can do. And so it feels good. And yet, I in particular"
+    },
+    {
+      "start": 701.6,
+      "end": 706.84,
+      "text": "expect there to be systems that can learn from experience, which could well perform much,"
+    },
+    {
+      "start": 706.84,
+      "end": 708.6,
+      "text": "much better and be much more scalable."
+    },
+    {
+      "start": 710.4,
+      "end": 715.64,
+      "text": "But some people are saying they think of themselves as just because they build a computer will"
+    },
+    {
+      "start": 716.04,
+      "end": 717.04,
+      "text": "be a happens,"
+    },
+    {
+      "start": 717.04,
+      "end": 723.9599999999999,
+      "text": "but it's actually the user in the other case, it will be another instance of the bitter lesson that the things that"
+    },
+    {
+      "start": 723.9599999999999,
+      "end": 730.02,
+      "text": "that used human knowledge were eventually superseded by things that just train from"
+    },
+    {
+      "start": 731.0,
+      "end": 732.4399999999999,
+      "text": "experience and computation."
+    },
+    {
+      "start": 732.4399999999999,
+      "end": 737.52,
+      "text": "I guess that doesn't seem like the crux to me, because I think those people would also agree that the overwhelming amount of"
+    },
+    {
+      "start": 737.52,
+      "end": 739.12,
+      "text": "computing the future"
+    },
+    {
+      "start": 739.12,
+      "end": 744.4,
+      "text": "or the basis of that, the thing you'll start with in order to pour in the compute to do this"
+    },
+    {
+      "start": 744.4,
+      "end": 752.08,
+      "text": "future experiential learning or on-the-job learning will be LLMs. And so I guess I still"
+    },
+    {
+      "start": 752.08,
+      "end": 757.68,
+      "text": "don't understand why this is the wrong starting point altogether, why we need a whole new"
+    },
+    {
+      "start": 757.68,
+      "end": 764.6,
+      "text": "architecture to begin doing experiential continual learning, and why we can't start with LLMs to do"
+    },
+    {
+      "start": 764.6,
+      "end": 772.14,
+      "text": "that. Well, in every case of the bitter lesson, you could start with human knowledge and then"
+    },
+    {
+      "start": 772.14,
+      "end": 778.88,
+      "text": "do the scalable things. That's always the case. And there's never any reason why that has to be"
+    },
+    {
+      "start": 778.88,
+      "end": 785.9200000000001,
+      "text": "bad. But in fact, and in practice, it has always turned out to be bad because people get locked"
+    },
+    {
+      "start": 785.9200000000001,
+      "end": 793.0600000000001,
+      "text": "into the human knowledge approach and they psychologically... Now I'm speculating why it is,"
+    },
+    {
+      "start": 793.4200000000001,
+      "end": 794.58,
+      "text": "but this is what has always happened."
+    },
+    {
+      "start": 795.1,
+      "end": 795.34,
+      "text": "Yeah."
+    },
+    {
+      "start": 795.74,
+      "end": 801.82,
+      "text": "That, yeah, their lunch gets eaten by the methods that are truly scalable."
+    },
+    {
+      "start": 802.32,
+      "end": 804.2,
+      "text": "Give me a sense of what the scalable method is."
+    },
+    {
+      "start": 804.5400000000001,
+      "end": 812.64,
+      "text": "The scalable method is you learn from experience. You try things, you see what works."
+    },
+    {
+      "start": 813.2,
+      "end": 819.5400000000001,
+      "text": "No one has to tell you. First of all, you have a goal. So without a goal, there's no sense of"
+    },
+    {
+      "start": 819.5400000000001,
+      "end": 824.0400000000001,
+      "text": "right or wrong or better or worse. So large language models are trying to get by without"
+    },
+    {
+      "start": 824.0400000000001,
+      "end": 824.44,
+      "text": "having..."
+    },
+    {
+      "start": 824.6,
+      "end": 830.5400000000001,
+      "text": "A goal or a sense of better or worse. That's just, you know, it's exactly starting in the"
+    },
+    {
+      "start": 830.5400000000001,
+      "end": 831.12,
+      "text": "wrong place."
+    },
+    {
+      "start": 831.12,
+      "end": 837.96,
+      "text": "Maybe it's interesting to compare this to humans. So in both the case of learning from"
+    },
+    {
+      "start": 837.96,
+      "end": 844.0400000000001,
+      "text": "imitation versus experience and on the question of goals, I think there's some interesting"
+    },
+    {
+      "start": 844.0400000000001,
+      "end": 851.4200000000001,
+      "text": "analogies. So, you know, kids will initially learn from imitation. You don't think so?"
+    },
+    {
+      "start": 851.6600000000001,
+      "end": 852.4,
+      "text": "No, of course not."
+    },
+    {
+      "start": 853.94,
+      "end": 854.5400000000001,
+      "text": "Really?"
+    },
+    {
+      "start": 854.88,
+      "end": 855.1999999999999,
+      "text": "Yeah."
+    },
+    {
+      "start": 855.68,
+      "end": 859.78,
+      "text": "I think kids just like watch people. They like kind of try to like say the same words."
+    },
+    {
+      "start": 859.78,
+      "end": 860.6999999999999,
+      "text": "How old are these kids?"
+    },
+    {
+      "start": 862.06,
+      "end": 863.26,
+      "text": "I think the level..."
+    },
+    {
+      "start": 863.26,
+      "end": 864.3399999999999,
+      "text": "What about the first six months?"
+    },
+    {
+      "start": 865.06,
+      "end": 868.54,
+      "text": "I think they're kind of imitating things. They're trying to like make their mouth sound the way"
+    },
+    {
+      "start": 868.54,
+      "end": 871.28,
+      "text": "they see their mother's mouth sound. And then they'll say the same words without understanding"
+    },
+    {
+      "start": 871.28,
+      "end": 875.5999999999999,
+      "text": "what they mean. And as you get older, the complexity of the imitation they do increases."
+    },
+    {
+      "start": 876.14,
+      "end": 883.8399999999999,
+      "text": "So you're imitating maybe the skills that your people in your band are using to hunt down the"
+    },
+    {
+      "start": 883.8399999999999,
+      "end": 884.42,
+      "text": "deer or something."
+    },
+    {
+      "start": 884.8199999999999,
+      "end": 888.8199999999999,
+      "text": "And then you go into the learning from experience RR regime. But I think there's a lot of imitation"
+    },
+    {
+      "start": 888.8199999999999,
+      "end": 891.12,
+      "text": "learning happening with humans."
+    },
+    {
+      "start": 891.8,
+      "end": 894.3,
+      "text": "It's surprising. Yeah, you can have such a different point of view."
+    },
+    {
+      "start": 894.64,
+      "end": 894.78,
+      "text": "Yeah."
+    },
+    {
+      "start": 895.2199999999999,
+      "end": 902.12,
+      "text": "When I see kids, I see kids just trying things and like waving their hands around and moving"
+    },
+    {
+      "start": 902.12,
+      "end": 908.4399999999999,
+      "text": "their eyes around. And no one, no, no, no one tells them there's no, there's no imitation"
+    },
+    {
+      "start": 908.4399999999999,
+      "end": 913.0799999999999,
+      "text": "for how they move their eyes around or even the sounds they make. They may, they may want to"
+    },
+    {
+      "start": 913.0799999999999,
+      "end": 914.38,
+      "text": "create the same sounds."
+    },
+    {
+      "start": 914.38,
+      "end": 914.52,
+      "text": "Right."
+    },
+    {
+      "start": 914.52,
+      "end": 914.54,
+      "text": "Right."
+    },
+    {
+      "start": 914.54,
+      "end": 923.0999999999999,
+      "text": "But the actions, you know, the thing that the infant actually does, there's no targets for that."
+    },
+    {
+      "start": 923.1999999999999,
+      "end": 924.48,
+      "text": "There are no examples for that."
+    },
+    {
+      "start": 924.74,
+      "end": 928.9599999999999,
+      "text": "I agree that doesn't explain everything infants do, but I think it guides the learning process."
+    },
+    {
+      "start": 929.5,
+      "end": 934.4,
+      "text": "I mean, even LLM, when it's trying to predict the next token early in training, it will like make a guess."
+    },
+    {
+      "start": 934.54,
+      "end": 936.24,
+      "text": "It'll be different from what like it actually sees."
+    },
+    {
+      "start": 936.56,
+      "end": 941.4399999999999,
+      "text": "And in some sense, it's like very short horizon RL, where it's like making this guess of like, I think this token will be this."
+    },
+    {
+      "start": 941.7199999999999,
+      "end": 944.04,
+      "text": "It's actually the other thing, similar to how a kid will try to say a word."
+    },
+    {
+      "start": 944.04,
+      "end": 945.18,
+      "text": "It comes out wrong."
+    },
+    {
+      "start": 946.12,
+      "end": 948.8399999999999,
+      "text": "The large language model is learning from training data."
+    },
+    {
+      "start": 949.02,
+      "end": 950.14,
+      "text": "It's not learning from experience."
+    },
+    {
+      "start": 951.24,
+      "end": 955.18,
+      "text": "It's learning from something that will never be available during its normal life."
+    },
+    {
+      "start": 956.38,
+      "end": 962.2199999999999,
+      "text": "There's never any training data that says you should do this action in normal life."
+    },
+    {
+      "start": 962.5999999999999,
+      "end": 965.86,
+      "text": "I think this is maybe more of a semantic distinction."
+    },
+    {
+      "start": 965.98,
+      "end": 966.8199999999999,
+      "text": "Like, what do you call school?"
+    },
+    {
+      "start": 967.06,
+      "end": 968.06,
+      "text": "Is that not training data?"
+    },
+    {
+      "start": 968.14,
+      "end": 970.52,
+      "text": "You're not like going to school because it's like..."
+    },
+    {
+      "start": 970.52,
+      "end": 971.78,
+      "text": "School is much later."
+    },
+    {
+      "start": 972.26,
+      "end": 973.8199999999999,
+      "text": "Okay, I shouldn't have said never."
+    },
+    {
+      "start": 974.4599999999999,
+      "end": 975.64,
+      "text": "But I don't know."
+    },
+    {
+      "start": 975.7199999999999,
+      "end": 977.36,
+      "text": "I think I would even say it about school."
+    },
+    {
+      "start": 977.8399999999999,
+      "end": 981.1999999999999,
+      "text": "But formal schooling is the exception."
+    },
+    {
+      "start": 981.9,
+      "end": 983.4,
+      "text": "You shouldn't base your theories on that."
+    },
+    {
+      "start": 983.4,
+      "end": 988.62,
+      "text": "I think there's a sort of programming in your biology that like early on, you're not that useful."
+    },
+    {
+      "start": 988.8199999999999,
+      "end": 994.4,
+      "text": "And then like kind of why you exist is to understand the world and like learn how to interact with it."
+    },
+    {
+      "start": 995.8199999999999,
+      "end": 998.14,
+      "text": "And it seems kind of like a training phase."
+    },
+    {
+      "start": 998.24,
+      "end": 999.92,
+      "text": "I agree that then there's like a sort of more gradual."
+    },
+    {
+      "start": 1000.3199999999999,
+      "end": 1002.9399999999999,
+      "text": "There's not a sharp cutoff to like training to deployment."
+    },
+    {
+      "start": 1003.1999999999999,
+      "end": 1003.4,
+      "text": "But yeah."
+    },
+    {
+      "start": 1004.0400000000001,
+      "end": 1006.7600000000001,
+      "text": "There seems to be this like initial training phase, right?"
+    },
+    {
+      "start": 1007.1600000000001,
+      "end": 1009.8800000000001,
+      "text": "There's nothing where you have training of what you should do."
+    },
+    {
+      "start": 1010.6,
+      "end": 1011.22,
+      "text": "There's nothing."
+    },
+    {
+      "start": 1012.46,
+      "end": 1014.2400000000001,
+      "text": "You see things that happen."
+    },
+    {
+      "start": 1014.7,
+      "end": 1016.4800000000001,
+      "text": "You're not told what to do."
+    },
+    {
+      "start": 1018.4200000000001,
+      "end": 1020.2400000000001,
+      "text": "Don't be difficult."
+    },
+    {
+      "start": 1020.6200000000001,
+      "end": 1021.5000000000001,
+      "text": "I mean, this is obvious."
+    },
+    {
+      "start": 1022.2600000000001,
+      "end": 1023.8600000000001,
+      "text": "I mean, you're like literally taught what to do."
+    },
+    {
+      "start": 1023.94,
+      "end": 1026.8600000000001,
+      "text": "This is like where the word training comes from is from humans, right?"
+    },
+    {
+      "start": 1027.3200000000002,
+      "end": 1030.88,
+      "text": "So I don't think learning is really about training."
+    },
+    {
+      "start": 1031.1200000000001,
+      "end": 1033.0600000000002,
+      "text": "I think learning is about learning."
+    },
+    {
+      "start": 1033.06,
+      "end": 1034.36,
+      "text": "It's about an active process."
+    },
+    {
+      "start": 1035.2,
+      "end": 1037.7,
+      "text": "The child tries things and sees what happens."
+    },
+    {
+      "start": 1039.06,
+      "end": 1039.3,
+      "text": "Yeah."
+    },
+    {
+      "start": 1039.48,
+      "end": 1039.9199999999998,
+      "text": "It does not."
+    },
+    {
+      "start": 1041.08,
+      "end": 1046.1599999999999,
+      "text": "We don't think about training when we think of an infant growing up."
+    },
+    {
+      "start": 1047.0,
+      "end": 1049.1799999999998,
+      "text": "These things are actually rather well understood."
+    },
+    {
+      "start": 1049.78,
+      "end": 1055.26,
+      "text": "If you go to look about how psychologists think about learning, there's nothing like imitation."
+    },
+    {
+      "start": 1056.1599999999999,
+      "end": 1062.28,
+      "text": "Maybe there are some extreme cases where humans might do that or appear to do that."
+    },
+    {
+      "start": 1062.28,
+      "end": 1062.8799999999999,
+      "text": "But."
+    },
+    {
+      "start": 1062.88,
+      "end": 1065.8200000000002,
+      "text": "There is no basic animal learning process called imitation."
+    },
+    {
+      "start": 1066.66,
+      "end": 1072.0600000000002,
+      "text": "The basic animal learning process is for prediction and for trial and error control."
+    },
+    {
+      "start": 1072.96,
+      "end": 1077.48,
+      "text": "I mean, it's really interesting how sometimes the most hard things to see are the obvious ones."
+    },
+    {
+      "start": 1078.0600000000002,
+      "end": 1085.5600000000002,
+      "text": "It's obvious if you just look at animals and how they learn and you look at psychology and how our theories of them."
+    },
+    {
+      "start": 1086.8200000000002,
+      "end": 1092.1000000000001,
+      "text": "It's obvious that that supervised learning is not part of the way animals learn."
+    },
+    {
+      "start": 1092.1,
+      "end": 1096.98,
+      "text": "We don't have examples of desired behavior."
+    },
+    {
+      "start": 1096.98,
+      "end": 1101.6999999999998,
+      "text": "What we have is examples of things that happen, one thing that followed another."
+    },
+    {
+      "start": 1101.6999999999998,
+      "end": 1108.8799999999999,
+      "text": "And we have examples of we did something and there were consequences."
+    },
+    {
+      "start": 1108.8799999999999,
+      "end": 1111.12,
+      "text": "But there are no examples of supervised learning."
+    },
+    {
+      "start": 1111.12,
+      "end": 1114.54,
+      "text": "And supervised learning is not something that happens in nature."
+    },
+    {
+      "start": 1114.54,
+      "end": 1121.2199999999998,
+      "text": "And you know, school, even if that was the case, you know, we should forget about it."
+    },
+    {
+      "start": 1121.2199999999998,
+      "end": 1121.8799999999999,
+      "text": "Because it's."
+    },
+    {
+      "start": 1121.88,
+      "end": 1124.46,
+      "text": "It's just that's some special thing that happens in people."
+    },
+    {
+      "start": 1124.46,
+      "end": 1126.44,
+      "text": "It doesn't happen broadly in nature."
+    },
+    {
+      "start": 1126.8600000000001,
+      "end": 1129.16,
+      "text": "And, you know, squirrels don't go to school."
+    },
+    {
+      "start": 1129.16,
+      "end": 1131.0,
+      "text": "Squirrels can learn all about the world."
+    },
+    {
+      "start": 1131.48,
+      "end": 1138.6000000000001,
+      "text": "It's absolutely obvious, I would say, that supervised learning doesn't happen in animals."
+    },
+    {
+      "start": 1139.22,
+      "end": 1151.66,
+      "text": "So I interviewed this psychologist and anthropologist, Joseph Henrich, who has done work about cultural evolution and basically how did what you know what distinguishes humans."
+    },
+    {
+      "start": 1151.66,
+      "end": 1154.0,
+      "text": "And how do humans pick up knowledge?"
+    },
+    {
+      "start": 1154.28,
+      "end": 1156.0400000000002,
+      "text": "Why are you trying to distinguish humans?"
+    },
+    {
+      "start": 1157.72,
+      "end": 1159.0400000000002,
+      "text": "Humans are animals."
+    },
+    {
+      "start": 1159.98,
+      "end": 1161.98,
+      "text": "What we have in common is more interesting."
+    },
+    {
+      "start": 1162.16,
+      "end": 1165.76,
+      "text": "What we have, what distinguished us, we should we should be paying less attention to."
+    },
+    {
+      "start": 1165.76,
+      "end": 1167.5,
+      "text": "I mean, we're trying to replicate intelligence, right?"
+    },
+    {
+      "start": 1167.5,
+      "end": 1174.5,
+      "text": "So if you want to understand what is it that enables humans to go to the moon or to build semiconductors?"
+    },
+    {
+      "start": 1174.5,
+      "end": 1180.16,
+      "text": "I think the thing we want to understand is the thing that makes no animal can go to the moon or make semiconductors."
+    },
+    {
+      "start": 1180.4,
+      "end": 1181.3000000000002,
+      "text": "So we want to understand."
+    },
+    {
+      "start": 1181.3000000000002,
+      "end": 1181.5400000000002,
+      "text": "What?"
+    },
+    {
+      "start": 1181.54,
+      "end": 1182.44,
+      "text": "What makes humans special?"
+    },
+    {
+      "start": 1182.5,
+      "end": 1186.94,
+      "text": "So I like the way you consider that obvious because I consider the opposite obvious."
+    },
+    {
+      "start": 1187.84,
+      "end": 1193.42,
+      "text": "Yeah, I think we need to we we have to we have to understand how we are animals."
+    },
+    {
+      "start": 1193.42,
+      "end": 1200.68,
+      "text": "And if we understood a squirrel, I think we'd have a we'd be almost all the way there to understanding human intelligence."
+    },
+    {
+      "start": 1201.06,
+      "end": 1204.72,
+      "text": "The language part is just a small veneer on the surface."
+    },
+    {
+      "start": 1206.34,
+      "end": 1207.94,
+      "text": "OK, so this is great."
+    },
+    {
+      "start": 1207.96,
+      "end": 1210.2,
+      "text": "You know, we're finding out the very different ways that we're thinking."
+    },
+    {
+      "start": 1210.94,
+      "end": 1211.36,
+      "text": "Maybe."
+    },
+    {
+      "start": 1211.3600000000001,
+      "end": 1212.3200000000002,
+      "text": "We're not arguing."
+    },
+    {
+      "start": 1212.5600000000002,
+      "end": 1217.0200000000002,
+      "text": "We're trying to share our different ways of thinking with each other."
+    },
+    {
+      "start": 1217.0200000000002,
+      "end": 1219.1200000000001,
+      "text": "Yeah, I think argument is useful."
+    },
+    {
+      "start": 1219.5200000000002,
+      "end": 1222.64,
+      "text": "So, yeah, but I do want to complete this thought."
+    },
+    {
+      "start": 1222.64,
+      "end": 1232.5000000000002,
+      "text": "So Joseph Henrich has this interesting theory that if you look at a lot of the skills that humans have had to master in order to be successful."
+    },
+    {
+      "start": 1232.8000000000002,
+      "end": 1237.0400000000002,
+      "text": "And we're not talking about, you know, last thousand years or last ten thousand years, but hundreds of thousands of years."
+    },
+    {
+      "start": 1238.38,
+      "end": 1240.0800000000002,
+      "text": "You know, the world is really complicated."
+    },
+    {
+      "start": 1240.08,
+      "end": 1249.56,
+      "text": "And it's not possible to reason through how to, let's say, hunt a seal if you're living in the Arctic."
+    },
+    {
+      "start": 1250.24,
+      "end": 1261.52,
+      "text": "And so there's this many, many step long process of how to make the bait and how to find the seal and then how to process the food in a way that makes sure you won't get poisoned."
+    },
+    {
+      "start": 1261.96,
+      "end": 1263.8799999999999,
+      "text": "And it's not possible to reason through all of that."
+    },
+    {
+      "start": 1264.1999999999998,
+      "end": 1268.8799999999999,
+      "text": "And so over time, yes, there's this like larger process of whatever."
+    },
+    {
+      "start": 1270.08,
+      "end": 1280.24,
+      "text": "You want to use maybe something else where culture as a whole has figured out how to find and kill and eat seals."
+    },
+    {
+      "start": 1280.24,
+      "end": 1296.6799999999998,
+      "text": "But then what is happening when through generations, this knowledge is transmitted is in his view that like you just have to imitate your elders in order to learn that skill, because you can't you can't think your way through how to hunt and kill and process a seal."
+    },
+    {
+      "start": 1296.8,
+      "end": 1299.46,
+      "text": "You have to just watch other people maybe make tweaks and adjustments."
+    },
+    {
+      "start": 1300.08,
+      "end": 1302.36,
+      "text": "And that's how cultural knowledge accumulates."
+    },
+    {
+      "start": 1302.5,
+      "end": 1305.8799999999999,
+      "text": "But the initial step of the cultural gain has to be imitation."
+    },
+    {
+      "start": 1306.24,
+      "end": 1307.62,
+      "text": "But maybe you think about it a different way."
+    },
+    {
+      "start": 1308.5,
+      "end": 1309.58,
+      "text": "No, I think about it the same way."
+    },
+    {
+      "start": 1309.6599999999999,
+      "end": 1309.8,
+      "text": "OK."
+    },
+    {
+      "start": 1310.4399999999998,
+      "end": 1310.98,
+      "text": "But still."
+    },
+    {
+      "start": 1311.96,
+      "end": 1317.6,
+      "text": "It's a small thing on top of basic trial and error learning prediction learning."
+    },
+    {
+      "start": 1318.12,
+      "end": 1319.52,
+      "text": "And that's what distinguishes us."
+    },
+    {
+      "start": 1320.48,
+      "end": 1323.04,
+      "text": "Perhaps from from many animals."
+    },
+    {
+      "start": 1324.74,
+      "end": 1326.0,
+      "text": "But we're an animal first."
+    },
+    {
+      "start": 1327.6,
+      "end": 1327.74,
+      "text": "Yeah."
+    },
+    {
+      "start": 1327.74,
+      "end": 1329.74,
+      "text": "And we were an animal before we had land."
+    },
+    {
+      "start": 1330.08,
+      "end": 1331.74,
+      "text": "And we're an animal after we had land."
+    },
+    {
+      "start": 1331.74,
+      "end": 1333.24,
+      "text": "And we're an animal after we had land."
+    },
+    {
+      "start": 1333.24,
+      "end": 1333.4199999999998,
+      "text": "And we're an animal after we had land."
+    },
+    {
+      "start": 1333.4199999999998,
+      "end": 1333.54,
+      "text": "And we're an animal after we had land."
+    },
+    {
+      "start": 1333.54,
+      "end": 1333.62,
+      "text": "And we're an animal after we had land."
+    },
+    {
+      "start": 1333.62,
+      "end": 1340.4199999999998,
+      "text": "I do think you make a very interesting point that continual learning is a capability that most mammals have."
+    },
+    {
+      "start": 1340.5,
+      "end": 1341.6,
+      "text": "I guess all mammals have."
+    },
+    {
+      "start": 1341.6,
+      "end": 1348.04,
+      "text": "So it's quite interesting that we have something that all mammals have, but our systems don't have."
+    },
+    {
+      "start": 1348.48,
+      "end": 1348.6599999999999,
+      "text": "Right."
+    },
+    {
+      "start": 1349.1,
+      "end": 1355.02,
+      "text": "Whereas maybe like the ability to understand math and problems, difficult math problems depends on how you define math."
+    },
+    {
+      "start": 1355.08,
+      "end": 1357.4199999999998,
+      "text": "But like this is a capability our eyes have."
+    },
+    {
+      "start": 1357.8,
+      "end": 1360.06,
+      "text": "But that no almost no animal has."
+    },
+    {
+      "start": 1360.06,
+      "end": 1364.1399999999999,
+      "text": "And so it's quite interesting what ends up being difficult and what ends up being easy."
+    },
+    {
+      "start": 1365.58,
+      "end": 1366.1399999999999,
+      "text": "Morphics."
+    },
+    {
+      "start": 1366.46,
+      "end": 1366.94,
+      "text": "Parallelics."
+    },
+    {
+      "start": 1367.1,
+      "end": 1367.32,
+      "text": "That's right."
+    },
+    {
+      "start": 1367.62,
+      "end": 1373.28,
+      "text": "For the era of experience to commence, we're going to need to train AIs in complex real world environments."
+    },
+    {
+      "start": 1373.6599999999999,
+      "end": 1375.9199999999998,
+      "text": "But building effective RL environments is hard."
+    },
+    {
+      "start": 1376.32,
+      "end": 1380.84,
+      "text": "You can't just hire a software engineer and have them write a bunch of cookie cutter validation tests."
+    },
+    {
+      "start": 1381.44,
+      "end": 1382.8799999999999,
+      "text": "Real world domains are messy."
+    },
+    {
+      "start": 1383.28,
+      "end": 1387.8799999999999,
+      "text": "You need deep subject matter experts to get the data, the workflows and all the subtle rules right."
+    },
+    {
+      "start": 1387.8799999999999,
+      "end": 1389.62,
+      "text": "When one of Labelbox's customers."
+    },
+    {
+      "start": 1390.06,
+      "end": 1392.04,
+      "text": "Wanted to train an agent to shop online."
+    },
+    {
+      "start": 1392.3999999999999,
+      "end": 1396.24,
+      "text": "Labelbox assembled the team with a ton of experience engineering Internet storefronts."
+    },
+    {
+      "start": 1396.46,
+      "end": 1403.44,
+      "text": "For example, the team built a product catalog that could be updated during the episode because most shopping sites have constantly changing state."
+    },
+    {
+      "start": 1403.6799999999998,
+      "end": 1409.44,
+      "text": "They also added a Redis cache to simulate stale data, since that's how real e-commerce sites actually work."
+    },
+    {
+      "start": 1409.62,
+      "end": 1414.6,
+      "text": "These are the kinds of things that you might not have naively thought to do, but that Labelbox can anticipate."
+    },
+    {
+      "start": 1414.74,
+      "end": 1415.86,
+      "text": "These details really matter."
+    },
+    {
+      "start": 1415.98,
+      "end": 1419.8,
+      "text": "Small tweaks are often the difference between cool demos and agents that can."
+    },
+    {
+      "start": 1419.8,
+      "end": 1421.22,
+      "text": "Actually operate in the real world."
+    },
+    {
+      "start": 1421.4199999999998,
+      "end": 1430.9199999999998,
+      "text": "So whether it's correcting traces that you already produced or building an entirely new suite of environments, Labelbox can help you turn your RL projects into working systems."
+    },
+    {
+      "start": 1431.26,
+      "end": 1435.9199999999998,
+      "text": "Reach out at labelbox.com slash dvarkash."
+    },
+    {
+      "start": 1436.36,
+      "end": 1436.78,
+      "text": "All right."
+    },
+    {
+      "start": 1436.78,
+      "end": 1437.48,
+      "text": "Back to Richard."
+    },
+    {
+      "start": 1438.04,
+      "end": 1440.44,
+      "text": "This alternative paradigm that you're imagining."
+    },
+    {
+      "start": 1440.48,
+      "end": 1441.82,
+      "text": "The experiential paradigm."
+    },
+    {
+      "start": 1441.8799999999999,
+      "end": 1442.12,
+      "text": "Yes."
+    },
+    {
+      "start": 1442.12,
+      "end": 1444.1,
+      "text": "Let's lay out a little bit about what it is."
+    },
+    {
+      "start": 1444.48,
+      "end": 1449.08,
+      "text": "It says that experience action sensation."
+    },
+    {
+      "start": 1449.44,
+      "end": 1449.74,
+      "text": "Well."
+    },
+    {
+      "start": 1449.8,
+      "end": 1454.56,
+      "text": "Sensation, action, reward, and then this happens on and on and on, makes more life."
+    },
+    {
+      "start": 1454.74,
+      "end": 1460.06,
+      "text": "It says that this is the foundation and the focus of intelligence."
+    },
+    {
+      "start": 1460.24,
+      "end": 1468.36,
+      "text": "Intelligence is about taking that stream and altering the actions to increase the rewards in the stream."
+    },
+    {
+      "start": 1468.8799999999999,
+      "end": 1469.02,
+      "text": "Right."
+    },
+    {
+      "start": 1469.02,
+      "end": 1474.3799999999999,
+      "text": "So learning then is from the stream and learning is about the stream."
+    },
+    {
+      "start": 1474.8,
+      "end": 1479.18,
+      "text": "So that second part is particularly telling."
+    },
+    {
+      "start": 1480.02,
+      "end": 1484.3200000000002,
+      "text": "What you learn, your knowledge, your knowledge is about the stream."
+    },
+    {
+      "start": 1484.42,
+      "end": 1487.72,
+      "text": "Your knowledge is about if you do some action, what will happen?"
+    },
+    {
+      "start": 1488.38,
+      "end": 1492.26,
+      "text": "Or it's about which events will follow other events."
+    },
+    {
+      "start": 1492.38,
+      "end": 1493.5,
+      "text": "It's about the stream."
+    },
+    {
+      "start": 1493.8200000000002,
+      "end": 1498.02,
+      "text": "It's the content of the knowledge is statements about the stream."
+    },
+    {
+      "start": 1498.88,
+      "end": 1505.8600000000001,
+      "text": "And so because it's a statement about the stream, you can test it by comparing it to the stream and you can learn it continually."
+    },
+    {
+      "start": 1505.8600000000001,
+      "end": 1508.8600000000001,
+      "text": "So when you're imagining this future continuation."
+    },
+    {
+      "start": 1509.18,
+      "end": 1511.22,
+      "text": "A learning agent, they're not future."
+    },
+    {
+      "start": 1511.22,
+      "end": 1513.26,
+      "text": "Of course, we, they exist all, all the time."
+    },
+    {
+      "start": 1513.26,
+      "end": 1516.8,
+      "text": "It's, I mean, this is what reinforcement learning paradigm is learning from experience."
+    },
+    {
+      "start": 1517.1000000000001,
+      "end": 1517.6000000000001,
+      "text": "Yeah."
+    },
+    {
+      "start": 1517.74,
+      "end": 1522.3600000000001,
+      "text": "I guess the, maybe I would have meant to say is a human level, general, continual learning agent."
+    },
+    {
+      "start": 1523.5800000000002,
+      "end": 1525.44,
+      "text": "What is their reward function?"
+    },
+    {
+      "start": 1525.44,
+      "end": 1526.8200000000002,
+      "text": "Is it just predicting the world?"
+    },
+    {
+      "start": 1526.8200000000002,
+      "end": 1531.38,
+      "text": "Is it, uh, is it then having a specific effect on it?"
+    },
+    {
+      "start": 1531.46,
+      "end": 1533.78,
+      "text": "How, what would the general reward function be?"
+    },
+    {
+      "start": 1534.14,
+      "end": 1537.2,
+      "text": "The reward, uh, function is arbitrary."
+    },
+    {
+      "start": 1537.8600000000001,
+      "end": 1539.02,
+      "text": "And, um, so."
+    },
+    {
+      "start": 1539.02,
+      "end": 1541.36,
+      "text": "So if you're playing chess, it's to win the game of chess."
+    },
+    {
+      "start": 1542.32,
+      "end": 1549.04,
+      "text": "If you were to, um, uh, if you're a squirrel, maybe the, the reward has to do with getting nuts, right?"
+    },
+    {
+      "start": 1550.26,
+      "end": 1558.84,
+      "text": "Um, in general, for an animal, you would say the reward is to avoid pain and to acquire pleasure, right?"
+    },
+    {
+      "start": 1559.34,
+      "end": 1568.62,
+      "text": "Uh, and there's also, would be a component having to do with, uh, I think there would be, should be a component having to do with your, uh,"
+    },
+    {
+      "start": 1568.6200000000001,
+      "end": 1574.5000000000002,
+      "text": "increasing understanding of your, of your environment that would be sort of an intrinsic motivation."
+    },
+    {
+      "start": 1574.8400000000001,
+      "end": 1575.24,
+      "text": "I see."
+    },
+    {
+      "start": 1575.74,
+      "end": 1584.16,
+      "text": "I guess this AI would be deployed to like, lots of people would want it to be doing lots of different kinds of things, right?"
+    },
+    {
+      "start": 1584.16,
+      "end": 1590.2800000000002,
+      "text": "So it's performing the task people want, but at the same time, it's learning about the world from doing that task."
+    },
+    {
+      "start": 1591.3000000000002,
+      "end": 1598.38,
+      "text": "And do you, do you imagine, okay, so we get rid of this paradigm where there's training periods and then there's deployment."
+    },
+    {
+      "start": 1598.38,
+      "end": 1598.6000000000001,
+      "text": "Period."
+    },
+    {
+      "start": 1599.2,
+      "end": 1609.1200000000001,
+      "text": "But then is there, do we also get rid of this paradigm when there's the model and then instances of the model or copies of the model that are, you know, doing certain things?"
+    },
+    {
+      "start": 1609.1200000000001,
+      "end": 1614.66,
+      "text": "How do you think about the fact that there, we'd want this thing to be doing different things."
+    },
+    {
+      "start": 1614.74,
+      "end": 1618.8200000000002,
+      "text": "We'd want to aggregate the knowledge that it's gaining from doing those different things."
+    },
+    {
+      "start": 1619.0800000000002,
+      "end": 1621.8400000000001,
+      "text": "I don't like the word model when used the way you just did."
+    },
+    {
+      "start": 1622.3000000000002,
+      "end": 1625.74,
+      "text": "I think a better word would be the network."
+    },
+    {
+      "start": 1625.9,
+      "end": 1628.2600000000002,
+      "text": "So I think you mean the network."
+    },
+    {
+      "start": 1628.92,
+      "end": 1630.22,
+      "text": "Maybe there's many networks."
+    },
+    {
+      "start": 1630.46,
+      "end": 1636.0400000000002,
+      "text": "So anyway, things would be learned and then you'd have copies and many instances."
+    },
+    {
+      "start": 1636.46,
+      "end": 1640.5800000000002,
+      "text": "And sure, you'd want to share knowledge across the instances."
+    },
+    {
+      "start": 1641.2800000000002,
+      "end": 1643.3000000000002,
+      "text": "And there would be lots of possibilities for doing that."
+    },
+    {
+      "start": 1643.66,
+      "end": 1644.74,
+      "text": "Like there is not today."
+    },
+    {
+      "start": 1644.8600000000001,
+      "end": 1649.0800000000002,
+      "text": "You can't have one child grow up and learn about the world."
+    },
+    {
+      "start": 1649.2,
+      "end": 1652.72,
+      "text": "And then every new child has to repeat that process."
+    },
+    {
+      "start": 1653.1200000000001,
+      "end": 1658.6000000000001,
+      "text": "Whereas with AIs, with the digital intelligence, you could hope to do it once and then copy it into the network."
+    },
+    {
+      "start": 1658.7,
+      "end": 1660.44,
+      "text": "And then the next one is the starting place."
+    },
+    {
+      "start": 1660.44,
+      "end": 1662.7,
+      "text": "So this would be a huge savings."
+    },
+    {
+      "start": 1663.38,
+      "end": 1668.22,
+      "text": "And I think actually it'd be much more important than trying to learn from people."
+    },
+    {
+      "start": 1669.44,
+      "end": 1676.8600000000001,
+      "text": "I agree that the kind of thing you're talking about is necessary regardless of whether you start from LLMs or not, right?"
+    },
+    {
+      "start": 1677.16,
+      "end": 1681.46,
+      "text": "If you want human or animal level intelligence, you're going to need this capability."
+    },
+    {
+      "start": 1682.0400000000002,
+      "end": 1684.22,
+      "text": "Suppose a human is trying to make a startup, right?"
+    },
+    {
+      "start": 1684.7,
+      "end": 1688.3400000000001,
+      "text": "And this is a thing which has a reward on the order of 10 years."
+    },
+    {
+      "start": 1688.6000000000001,
+      "end": 1691.94,
+      "text": "Once in 10 years, you might have an exit where you get paid out a billion dollars."
+    },
+    {
+      "start": 1692.6000000000001,
+      "end": 1699.4,
+      "text": "But humans have this ability to make intermediate auxiliary rewards or have some way of, even when they have extremely special rewards,"
+    },
+    {
+      "start": 1699.46,
+      "end": 1707.2400000000002,
+      "text": "they can still make intermediate steps, having an understanding of what the next thing you're doing leads to this grander goal we have."
+    },
+    {
+      "start": 1707.7600000000002,
+      "end": 1710.8600000000001,
+      "text": "And so how do you imagine such a process might play out with AIs?"
+    },
+    {
+      "start": 1711.46,
+      "end": 1713.42,
+      "text": "So this is something we know very well."
+    },
+    {
+      "start": 1713.8000000000002,
+      "end": 1716.22,
+      "text": "And the basis of it is temporal difference learning."
+    },
+    {
+      "start": 1716.72,
+      "end": 1718.2400000000002,
+      "text": "Where the same thing happens."
+    },
+    {
+      "start": 1719.0200000000002,
+      "end": 1726.3600000000001,
+      "text": "In a less grandiose scale, like when you learn to play chess, the long-term goal is winning the game."
+    },
+    {
+      "start": 1726.92,
+      "end": 1733.46,
+      "text": "And yet you want to be able to learn from shorter-term things like taking your opponent's pieces."
+    },
+    {
+      "start": 1734.6200000000001,
+      "end": 1738.9800000000002,
+      "text": "And so you do that by having a value function which predicts the long-term outcome."
+    },
+    {
+      "start": 1739.64,
+      "end": 1745.0200000000002,
+      "text": "And then if you take the guy's pieces, well, your prediction about the long-term outcome is changed."
+    },
+    {
+      "start": 1745.0200000000002,
+      "end": 1745.5800000000002,
+      "text": "It goes up."
+    },
+    {
+      "start": 1745.64,
+      "end": 1746.44,
+      "text": "You think you're going to win."
+    },
+    {
+      "start": 1746.44,
+      "end": 1748.44,
+      "text": "And then that increase in your..."
+    },
+    {
+      "start": 1748.6000000000001,
+      "end": 1755.7,
+      "text": "In your belief immediately, quote, reinforces the move that led to taking the piece."
+    },
+    {
+      "start": 1756.7800000000002,
+      "end": 1756.92,
+      "text": "Okay."
+    },
+    {
+      "start": 1757.0200000000002,
+      "end": 1761.2800000000002,
+      "text": "So we have this long-term 10-year goal of making a startup and making a lot of money."
+    },
+    {
+      "start": 1761.5800000000002,
+      "end": 1769.14,
+      "text": "And so when we make progress, we say, oh, I'm more likely to achieve the long-term goal."
+    },
+    {
+      "start": 1769.22,
+      "end": 1772.2400000000002,
+      "text": "And that rewards the steps along the way."
+    },
+    {
+      "start": 1772.66,
+      "end": 1772.8000000000002,
+      "text": "Right."
+    },
+    {
+      "start": 1772.8000000000002,
+      "end": 1777.8200000000002,
+      "text": "And then you also want some ability for information that you're learning."
+    },
+    {
+      "start": 1778.6000000000001,
+      "end": 1784.5000000000002,
+      "text": "I mean, one of the things that makes humans quite different from these LLMs is that if you're onboarding on a job,"
+    },
+    {
+      "start": 1785.0400000000002,
+      "end": 1788.88,
+      "text": "you're picking up so much context and information, and that's what makes you useful at the job, right?"
+    },
+    {
+      "start": 1788.94,
+      "end": 1794.7800000000002,
+      "text": "You're everything from how your client's preferences to how the company works to everything."
+    },
+    {
+      "start": 1796.14,
+      "end": 1803.5800000000002,
+      "text": "And is the bandwidth of information that you get from a procedure like TD learning high enough to have this, like,"
+    },
+    {
+      "start": 1803.5800000000002,
+      "end": 1808.5800000000002,
+      "text": "huge pipe of, like, context and tacit knowledge that you need to be picking up in the way humans do?"
+    },
+    {
+      "start": 1808.6000000000001,
+      "end": 1810.2,
+      "text": "When they're just, like, deployed?"
+    },
+    {
+      "start": 1811.94,
+      "end": 1819.6000000000001,
+      "text": "I think the crux of this, and I'm not sure, but the big world hypothesis seems very relevant."
+    },
+    {
+      "start": 1820.3400000000001,
+      "end": 1827.44,
+      "text": "And the reason why humans become useful on their job is because they are encountering the particular part of the world."
+    },
+    {
+      "start": 1827.5800000000002,
+      "end": 1827.8200000000002,
+      "text": "That's right."
+    },
+    {
+      "start": 1827.96,
+      "end": 1833.8600000000001,
+      "text": "And it can't have been anticipated and can't all have been put in in advance."
+    },
+    {
+      "start": 1835.5600000000002,
+      "end": 1838.5200000000002,
+      "text": "The world is so huge that you can't."
+    },
+    {
+      "start": 1838.6000000000001,
+      "end": 1845.3400000000001,
+      "text": "The dream, as I see it, the dream of large language models is you can teach the agent everything,"
+    },
+    {
+      "start": 1845.5800000000002,
+      "end": 1851.5400000000002,
+      "text": "and it will know everything, and it won't have to learn anything online during its life, okay?"
+    },
+    {
+      "start": 1851.7600000000002,
+      "end": 1858.3600000000001,
+      "text": "And your examples are all, well, really, you have to because you can teach it,"
+    },
+    {
+      "start": 1858.5000000000002,
+      "end": 1863.92,
+      "text": "but there's all the little idiosyncrasies of the particular life they're leading and the particular people they're working with"
+    },
+    {
+      "start": 1863.92,
+      "end": 1867.3400000000001,
+      "text": "and what they like as opposed to what average people like."
+    },
+    {
+      "start": 1867.3400000000001,
+      "end": 1867.46,
+      "text": "Right."
+    },
+    {
+      "start": 1867.46,
+      "end": 1873.3400000000001,
+      "text": "And so that's just saying the world is really big, and so you're going to have to learn it along the way."
+    },
+    {
+      "start": 1873.72,
+      "end": 1873.78,
+      "text": "Yeah."
+    },
+    {
+      "start": 1873.88,
+      "end": 1875.54,
+      "text": "So it seems to me you need two things."
+    },
+    {
+      "start": 1875.6200000000001,
+      "end": 1883.78,
+      "text": "One is some way of converting this long-run goal reward into smaller auxiliary or, you know,"
+    },
+    {
+      "start": 1883.96,
+      "end": 1889.16,
+      "text": "these, like, predictive rewards of the future reward or the future reward to at least the final reward."
+    },
+    {
+      "start": 1889.7,
+      "end": 1890.8,
+      "text": "Then you need some other way."
+    },
+    {
+      "start": 1891.2,
+      "end": 1893.7,
+      "text": "Initially, it seems to me you need some way of then, okay,"
+    },
+    {
+      "start": 1893.7,
+      "end": 1897.44,
+      "text": "I need to hold on to all this content."
+    },
+    {
+      "start": 1897.46,
+      "end": 1901.94,
+      "text": "I need to hold on to all this context that I'm gaining as I'm working in the world, right?"
+    },
+    {
+      "start": 1901.96,
+      "end": 1909.96,
+      "text": "I'm, like, learning about my clients, my company, all this information, and I'm..."
+    },
+    {
+      "start": 1909.96,
+      "end": 1912.02,
+      "text": "So I would say you're just doing regular learning."
+    },
+    {
+      "start": 1912.2,
+      "end": 1912.42,
+      "text": "Yeah."
+    },
+    {
+      "start": 1912.96,
+      "end": 1918.14,
+      "text": "Maybe using context because in large language models, all that information has to go into the context window."
+    },
+    {
+      "start": 1918.3400000000001,
+      "end": 1918.6000000000001,
+      "text": "Right."
+    },
+    {
+      "start": 1918.92,
+      "end": 1922.5,
+      "text": "But in a continual learning setup, it just goes into the weights."
+    },
+    {
+      "start": 1922.64,
+      "end": 1926.22,
+      "text": "Maybe, yeah, so maybe context is the wrong word to use because I mean a more general thing."
+    },
+    {
+      "start": 1926.22,
+      "end": 1927.3400000000001,
+      "text": "You learn a policy."
+    },
+    {
+      "start": 1927.46,
+      "end": 1930.24,
+      "text": "It's specific to the environment that you're finding yourself in."
+    },
+    {
+      "start": 1930.3,
+      "end": 1930.44,
+      "text": "Yeah."
+    },
+    {
+      "start": 1930.8400000000001,
+      "end": 1939.78,
+      "text": "So the question I'm trying to ask is you need some way of getting, like, how many bits per second are you picking up?"
+    },
+    {
+      "start": 1939.8400000000001,
+      "end": 1942.92,
+      "text": "Like, is a human picking up when they're, you know, out in the world, right?"
+    },
+    {
+      "start": 1943.64,
+      "end": 1946.48,
+      "text": "If you're just, like, interacting over Slack with your clients and everything."
+    },
+    {
+      "start": 1946.68,
+      "end": 1953.6200000000001,
+      "text": "So maybe we're trying to ask the question of it seems like the reward is too small of a thing to do all the learning that we need to do."
+    },
+    {
+      "start": 1953.6200000000001,
+      "end": 1956.78,
+      "text": "But, of course, we have the sensations."
+    },
+    {
+      "start": 1957.8400000000001,
+      "end": 1960.48,
+      "text": "We have all the other information we can learn from."
+    },
+    {
+      "start": 1960.6200000000001,
+      "end": 1960.82,
+      "text": "Right."
+    },
+    {
+      "start": 1961.4,
+      "end": 1962.66,
+      "text": "We don't just learn from the reward."
+    },
+    {
+      "start": 1962.8,
+      "end": 1964.48,
+      "text": "We learn from all the data."
+    },
+    {
+      "start": 1964.92,
+      "end": 1965.1200000000001,
+      "text": "Yeah."
+    },
+    {
+      "start": 1965.18,
+      "end": 1970.6200000000001,
+      "text": "So what is the learning process which helps you capture that information?"
+    },
+    {
+      "start": 1971.6200000000001,
+      "end": 1977.74,
+      "text": "So now I want to talk about the base common model of the agent with the four parts."
+    },
+    {
+      "start": 1977.96,
+      "end": 1977.98,
+      "text": "Right."
+    },
+    {
+      "start": 1978.2,
+      "end": 1980.4,
+      "text": "So we need a policy."
+    },
+    {
+      "start": 1980.5,
+      "end": 1984.0,
+      "text": "The policy says in the situation I'm in, what should I do?"
+    },
+    {
+      "start": 1984.26,
+      "end": 1985.5,
+      "text": "We need a value function."
+    },
+    {
+      "start": 1985.6000000000001,
+      "end": 1987.44,
+      "text": "The value function is the thing that is learned."
+    },
+    {
+      "start": 1987.46,
+      "end": 1990.96,
+      "text": "And the value function produces a number."
+    },
+    {
+      "start": 1991.08,
+      "end": 1993.2,
+      "text": "The number says how well is it going?"
+    },
+    {
+      "start": 1993.64,
+      "end": 1998.06,
+      "text": "And then you watch if that's going up and down and use that to adjust your policy."
+    },
+    {
+      "start": 1999.02,
+      "end": 1999.24,
+      "text": "Okay."
+    },
+    {
+      "start": 1999.3400000000001,
+      "end": 2000.74,
+      "text": "So those two things."
+    },
+    {
+      "start": 2001.44,
+      "end": 2010.2,
+      "text": "And then there's also the perception component, which is the construction of your state representation, your sense of where you are now."
+    },
+    {
+      "start": 2010.66,
+      "end": 2014.08,
+      "text": "And the fourth one is what we're really getting at, most transparently anyway."
+    },
+    {
+      "start": 2014.38,
+      "end": 2017.4,
+      "text": "The fourth one is the transition model of the world."
+    },
+    {
+      "start": 2018.22,
+      "end": 2028.2,
+      "text": "That's why I am uncomfortable just calling everything models because I want to talk about the model of the world, the transition model of the world, your belief that if you do this, what will happen?"
+    },
+    {
+      "start": 2028.58,
+      "end": 2030.08,
+      "text": "What will be the consequences of what you do?"
+    },
+    {
+      "start": 2030.16,
+      "end": 2031.4,
+      "text": "So your physics of the world."
+    },
+    {
+      "start": 2031.72,
+      "end": 2032.8,
+      "text": "But it's not just physics."
+    },
+    {
+      "start": 2032.94,
+      "end": 2040.56,
+      "text": "It's also abstract models like your model of how you traveled from California up to Edmonton for this podcast."
+    },
+    {
+      "start": 2040.8600000000001,
+      "end": 2042.6000000000001,
+      "text": "That was a model and that's a transition model."
+    },
+    {
+      "start": 2042.68,
+      "end": 2044.4,
+      "text": "And that would be learned."
+    },
+    {
+      "start": 2044.72,
+      "end": 2046.3,
+      "text": "And it's not learned from reward."
+    },
+    {
+      "start": 2046.3,
+      "end": 2047.26,
+      "text": "It's learned from you did."
+    },
+    {
+      "start": 2047.26,
+      "end": 2050.26,
+      "text": "Things you saw what happened when you made that model of the world."
+    },
+    {
+      "start": 2050.52,
+      "end": 2056.92,
+      "text": "That is it will be learned very richly from all the sensation that you receive, not just from the reward."
+    },
+    {
+      "start": 2057.88,
+      "end": 2064.78,
+      "text": "It has to include the reward as well, but that's a small part of the whole model, small, crucial part of the whole model."
+    },
+    {
+      "start": 2064.96,
+      "end": 2065.32,
+      "text": "Yeah."
+    },
+    {
+      "start": 2065.56,
+      "end": 2076.3,
+      "text": "One of my friends, Toby Ward, pointed out that if you look at the Museuro models that Google DeepMind deployed to learn Atari games, that these models were"
+    },
+    {
+      "start": 2076.32,
+      "end": 2077.16,
+      "text": "initially."
+    },
+    {
+      "start": 2077.5,
+      "end": 2084.38,
+      "text": "Not a general intelligence itself, but a general framework for training specialized intelligences to play specific games."
+    },
+    {
+      "start": 2084.38,
+      "end": 2093.0800000000004,
+      "text": "That is to say that you couldn't, using that framework, training policy to play both chess and go and some other game."
+    },
+    {
+      "start": 2093.0800000000004,
+      "end": 2105.38,
+      "text": "You had to train each one in a specialized way, and he was wondering whether that implies that reinforcement learning generally, because of this information constraint, you can only learn one thing at a time."
+    },
+    {
+      "start": 2105.38,
+      "end": 2106.38,
+      "text": "The density of the learning."
+    },
+    {
+      "start": 2106.38,
+      "end": 2106.5600000000004,
+      "text": "Yeah."
+    },
+    {
+      "start": 2106.56,
+      "end": 2111.2999999999997,
+      "text": "The density of information isn't that high, or whether it was just specific to the way that Museuro was done."
+    },
+    {
+      "start": 2111.82,
+      "end": 2119.98,
+      "text": "And if it's specific to AlphaZero, what needed to be changed about that approach so that it could be a general learning agent?"
+    },
+    {
+      "start": 2120.7599999999998,
+      "end": 2123.0,
+      "text": "The idea is totally general."
+    },
+    {
+      "start": 2123.34,
+      "end": 2130.22,
+      "text": "You know, I do use all the time, as my canonical example, the idea of an AI agent is like a person."
+    },
+    {
+      "start": 2130.54,
+      "end": 2130.72,
+      "text": "Yeah."
+    },
+    {
+      "start": 2130.72,
+      "end": 2136.54,
+      "text": "And people, in some sense, they have just one world they live in."
+    },
+    {
+      "start": 2136.56,
+      "end": 2144.7599999999998,
+      "text": "And that world may involve chess, and it may involve Atari games, but those are not a different task or a different world."
+    },
+    {
+      "start": 2144.7599999999998,
+      "end": 2147.02,
+      "text": "Those are different states that they encounter."
+    },
+    {
+      "start": 2147.02,
+      "end": 2150.7599999999998,
+      "text": "And so, the general idea is not limited at all."
+    },
+    {
+      "start": 2150.7599999999998,
+      "end": 2163.94,
+      "text": "So, maybe it would be useful to explain what was missing in that architecture, or that approach, which this continual learning AGI would have."
+    },
+    {
+      "start": 2163.94,
+      "end": 2165.7999999999997,
+      "text": "They just set it up."
+    },
+    {
+      "start": 2165.7999999999997,
+      "end": 2166.44,
+      "text": "They didn't."
+    },
+    {
+      "start": 2166.44,
+      "end": 2172.9,
+      "text": "It was not their ambition to have one agent across those games."
+    },
+    {
+      "start": 2173.56,
+      "end": 2181.36,
+      "text": "If we want to talk about transfer, we should talk about transfer, not across games or across tasks, but transfer between states."
+    },
+    {
+      "start": 2181.36,
+      "end": 2181.78,
+      "text": "Yeah."
+    },
+    {
+      "start": 2181.9,
+      "end": 2194.96,
+      "text": "I guess I'm curious about, historically, have we seen the level of transfer using RL techniques that would be needed to build this kind of…"
+    },
+    {
+      "start": 2194.96,
+      "end": 2195.36,
+      "text": "Okay, good."
+    },
+    {
+      "start": 2195.64,
+      "end": 2195.88,
+      "text": "Good."
+    },
+    {
+      "start": 2195.88,
+      "end": 2197.6800000000003,
+      "text": "We're not seeing transfer anywhere."
+    },
+    {
+      "start": 2198.78,
+      "end": 2200.2200000000003,
+      "text": "We're not seeing general…"
+    },
+    {
+      "start": 2200.2200000000003,
+      "end": 2205.2000000000003,
+      "text": "Critical to good performance is that you can generalize well from one state to another state."
+    },
+    {
+      "start": 2205.5,
+      "end": 2207.6800000000003,
+      "text": "We don't have any methods that are good at that."
+    },
+    {
+      "start": 2208.04,
+      "end": 2215.12,
+      "text": "What we have are people try different things, and they settle on something that…"
+    },
+    {
+      "start": 2215.12,
+      "end": 2218.7400000000002,
+      "text": "A representation that transfers well, or that generalizes well."
+    },
+    {
+      "start": 2219.12,
+      "end": 2222.8,
+      "text": "But we don't have any automated techniques to promote."
+    },
+    {
+      "start": 2222.8,
+      "end": 2225.36,
+      "text": "We have very few automated techniques."
+    },
+    {
+      "start": 2225.88,
+      "end": 2231.6400000000003,
+      "text": "We have very few methods to promote transfer, and none of them are used in modern deep learning."
+    },
+    {
+      "start": 2231.6400000000003,
+      "end": 2237.6800000000003,
+      "text": "Let me paraphrase to make sure that I understood that correctly."
+    },
+    {
+      "start": 2237.6800000000003,
+      "end": 2242.88,
+      "text": "It sounds like you're saying that when we do have generalization in these models, that"
+    },
+    {
+      "start": 2242.88,
+      "end": 2248.12,
+      "text": "is a result of some sculpted…"
+    },
+    {
+      "start": 2248.12,
+      "end": 2249.12,
+      "text": "Humans did it."
+    },
+    {
+      "start": 2249.12,
+      "end": 2250.12,
+      "text": "Yeah."
+    },
+    {
+      "start": 2250.12,
+      "end": 2252.78,
+      "text": "The researchers did it, because there's no other explanation."
+    },
+    {
+      "start": 2252.78,
+      "end": 2255.78,
+      "text": "I mean, gradient descent will not make you generalize well."
+    },
+    {
+      "start": 2255.78,
+      "end": 2256.78,
+      "text": "It will make you solve the problem."
+    },
+    {
+      "start": 2256.78,
+      "end": 2257.78,
+      "text": "Right."
+    },
+    {
+      "start": 2257.78,
+      "end": 2264.0800000000004,
+      "text": "It will not make you, you know, if you get new data, you generalize in a good way."
+    },
+    {
+      "start": 2264.0800000000004,
+      "end": 2268.5400000000004,
+      "text": "Generalization means train on one thing, that'll affects what you do on the other things."
+    },
+    {
+      "start": 2268.5400000000004,
+      "end": 2270.5400000000004,
+      "text": "So we know deep learning is really bad at this."
+    },
+    {
+      "start": 2270.5400000000004,
+      "end": 2275.0,
+      "text": "For example, we know that if you train on some new thing, it will often catastrophically"
+    },
+    {
+      "start": 2275.0,
+      "end": 2279.1400000000003,
+      "text": "interfere with all the old things that you knew."
+    },
+    {
+      "start": 2279.1400000000003,
+      "end": 2281.02,
+      "text": "So this is exactly bad generalization."
+    },
+    {
+      "start": 2281.02,
+      "end": 2282.02,
+      "text": "Right."
+    },
+    {
+      "start": 2282.02,
+      "end": 2284.98,
+      "text": "Now, generalization, as I said, is some kind of influence."
+    },
+    {
+      "start": 2284.98,
+      "end": 2288.78,
+      "text": "It's the influence of training on one state on other states."
+    },
+    {
+      "start": 2288.78,
+      "end": 2291.38,
+      "text": "And generalization is not necessarily good or bad, right?"
+    },
+    {
+      "start": 2291.38,
+      "end": 2293.84,
+      "text": "Just the fact that you generalize is not necessarily good or bad."
+    },
+    {
+      "start": 2293.84,
+      "end": 2295.18,
+      "text": "You can generalize poorly."
+    },
+    {
+      "start": 2295.18,
+      "end": 2296.18,
+      "text": "You can generalize well."
+    },
+    {
+      "start": 2296.18,
+      "end": 2297.18,
+      "text": "Right."
+    },
+    {
+      "start": 2297.18,
+      "end": 2298.18,
+      "text": "So you need…"
+    },
+    {
+      "start": 2298.18,
+      "end": 2300.36,
+      "text": "Generalization always will happen."
+    },
+    {
+      "start": 2300.36,
+      "end": 2305.98,
+      "text": "But we need algorithms that will cause the generalization to be good rather than bad."
+    },
+    {
+      "start": 2305.98,
+      "end": 2312.7400000000002,
+      "text": "I'm not trying to kickstart this initial crux again, but I'm just genuinely curious,"
+    },
+    {
+      "start": 2312.7400000000002,
+      "end": 2313.98,
+      "text": "because I think I might be using the term differently."
+    },
+    {
+      "start": 2313.98,
+      "end": 2314.98,
+      "text": "Yeah."
+    },
+    {
+      "start": 2314.98,
+      "end": 2319.9,
+      "text": "I mean, one way to think about it is these LLMs are increasing the scope of generalization"
+    },
+    {
+      "start": 2319.9,
+      "end": 2325.3,
+      "text": "from earlier systems, which could not really even do a basic math problem, to now they"
+    },
+    {
+      "start": 2325.3,
+      "end": 2330.28,
+      "text": "can do anything in this class of Math Olympia-type problems, right?"
+    },
+    {
+      "start": 2330.28,
+      "end": 2334.42,
+      "text": "So you initially start with, they can generalize among addition problems, at least."
+    },
+    {
+      "start": 2334.42,
+      "end": 2335.78,
+      "text": "Then you generalize to…"
+    },
+    {
+      "start": 2335.78,
+      "end": 2342.58,
+      "text": "They can generalize among problems which require use of different kinds of mathematical techniques"
+    },
+    {
+      "start": 2342.58,
+      "end": 2343.78,
+      "text": "and theorems and conceptualization."
+    },
+    {
+      "start": 2343.78,
+      "end": 2344.78,
+      "text": "Right."
+    },
+    {
+      "start": 2344.78,
+      "end": 2348.26,
+      "text": "Or conceptual categories, which is like what the Math Olympiad requires."
+    },
+    {
+      "start": 2348.26,
+      "end": 2352.76,
+      "text": "And so it sounds like you don't think of being able to solve any problem within that"
+    },
+    {
+      "start": 2352.76,
+      "end": 2355.7200000000003,
+      "text": "category as an example of generalization?"
+    },
+    {
+      "start": 2355.7200000000003,
+      "end": 2358.5400000000004,
+      "text": "Or let me know if I'm misunderstanding that."
+    },
+    {
+      "start": 2358.5400000000004,
+      "end": 2362.28,
+      "text": "Well, large language models, so complex."
+    },
+    {
+      "start": 2362.28,
+      "end": 2365.5600000000004,
+      "text": "We don't really know what information they had prior."
+    },
+    {
+      "start": 2365.5600000000004,
+      "end": 2370.02,
+      "text": "We have to guess, because they've been fed so much."
+    },
+    {
+      "start": 2370.02,
+      "end": 2373.78,
+      "text": "This is one reason why they're not a good way to do science."
+    },
+    {
+      "start": 2373.78,
+      "end": 2377.26,
+      "text": "It's just so uncontrolled, so unknown."
+    },
+    {
+      "start": 2377.26,
+      "end": 2379.5400000000004,
+      "text": "But if you come up with an entirely new…"
+    },
+    {
+      "start": 2379.5400000000004,
+      "end": 2383.4,
+      "text": "They're getting a bunch of things right, perhaps."
+    },
+    {
+      "start": 2383.4,
+      "end": 2385.1000000000004,
+      "text": "And so the question is why?"
+    },
+    {
+      "start": 2385.1000000000004,
+      "end": 2388.7400000000002,
+      "text": "Well, it may be that they don't need to generalize to get them right, because the only way to"
+    },
+    {
+      "start": 2388.7400000000002,
+      "end": 2394.26,
+      "text": "get some of them right is to form something which gets all of them right."
+    },
+    {
+      "start": 2394.26,
+      "end": 2400.84,
+      "text": "So if there's only one answer, and you find it, that's not called generalization."
+    },
+    {
+      "start": 2400.84,
+      "end": 2402.26,
+      "text": "It's the only way to solve it."
+    },
+    {
+      "start": 2402.26,
+      "end": 2403.78,
+      "text": "And so they find the only way to solve it."
+    },
+    {
+      "start": 2403.78,
+      "end": 2408.2200000000003,
+      "text": "Generalization is when it could be this way, it could be that way, and they do it the good"
+    },
+    {
+      "start": 2408.2200000000003,
+      "end": 2409.2200000000003,
+      "text": "way."
+    },
+    {
+      "start": 2409.2200000000003,
+      "end": 2415.6000000000004,
+      "text": "My understanding is that this is working better and better with coding agents."
+    },
+    {
+      "start": 2415.6000000000004,
+      "end": 2421.2000000000003,
+      "text": "So engineers, obviously, if you're trying to program a library, there's many different"
+    },
+    {
+      "start": 2421.2000000000003,
+      "end": 2424.9,
+      "text": "ways you could achieve the end spec, and an initial frustration with these models has"
+    },
+    {
+      "start": 2424.9,
+      "end": 2428.48,
+      "text": "been that they'll do it in a way that's sloppy."
+    },
+    {
+      "start": 2428.48,
+      "end": 2433.34,
+      "text": "And then over time, they're getting better and better at coming up with the design architecture,"
+    },
+    {
+      "start": 2433.34,
+      "end": 2440.26,
+      "text": "and the abstractions that developers find more satisfying, and it seems an example of"
+    },
+    {
+      "start": 2440.26,
+      "end": 2441.26,
+      "text": "what you're talking about."
+    },
+    {
+      "start": 2441.26,
+      "end": 2446.82,
+      "text": "Well, there's nothing in them which will cause it to generalize well."
+    },
+    {
+      "start": 2446.82,
+      "end": 2452.26,
+      "text": "Creating dissent will cause them to find a solution to the problems they've seen."
+    },
+    {
+      "start": 2452.26,
+      "end": 2455.2200000000003,
+      "text": "And if there's only one way to solve them, they'll do that."
+    },
+    {
+      "start": 2455.2200000000003,
+      "end": 2458.58,
+      "text": "But there are many ways to solve it, some which generalize well, some which generalize"
+    },
+    {
+      "start": 2458.58,
+      "end": 2459.58,
+      "text": "poorly."
+    },
+    {
+      "start": 2459.58,
+      "end": 2462.86,
+      "text": "There's nothing in them, in the algorithms, that will cause them to generalize well."
+    },
+    {
+      "start": 2462.86,
+      "end": 2462.88,
+      "text": "Yeah."
+    },
+    {
+      "start": 2462.88,
+      "end": 2468.44,
+      "text": "But people, of course, are involved, and if it's not working out, they fiddle with"
+    },
+    {
+      "start": 2468.44,
+      "end": 2474.96,
+      "text": "it until they find a way, perhaps until they find a way which it generalizes well."
+    },
+    {
+      "start": 2474.96,
+      "end": 2479.88,
+      "text": "So to prep for this interview, I wanted to understand the full history of RL, starting"
+    },
+    {
+      "start": 2479.88,
+      "end": 2483.94,
+      "text": "with reinforce up to current techniques, like GRPO."
+    },
+    {
+      "start": 2483.94,
+      "end": 2487.12,
+      "text": "And I didn't just want a list of equations and algorithms."
+    },
+    {
+      "start": 2487.12,
+      "end": 2492.4,
+      "text": "I wanted to really understand each change in this progression and the underlying motivation."
+    },
+    {
+      "start": 2492.4,
+      "end": 2495.96,
+      "text": "What was the main problem that each successive method was actually trying to solve?"
+    },
+    {
+      "start": 2495.96,
+      "end": 2500.14,
+      "text": "So I had Gemini Deep Research walk me through this entire timeline, step by step."
+    },
+    {
+      "start": 2500.14,
+      "end": 2505.42,
+      "text": "It explained the last 20 years of gradual innovation, and explained how each step made"
+    },
+    {
+      "start": 2505.42,
+      "end": 2510.44,
+      "text": "the RL learning process more stable, or more sample-efficient, or more scalable."
+    },
+    {
+      "start": 2510.44,
+      "end": 2514.96,
+      "text": "I asked Deep Research to put all of this together like an Andrej Karpathy-style tutorial."
+    },
+    {
+      "start": 2514.96,
+      "end": 2515.96,
+      "text": "And it did that."
+    },
+    {
+      "start": 2515.96,
+      "end": 2520.36,
+      "text": "What was cool is that it combined this whole lesson together into one coherent, cohesive"
+    },
+    {
+      "start": 2520.36,
+      "end": 2522.28,
+      "text": "document in the style that I wanted."
+    },
+    {
+      "start": 2522.28,
+      "end": 2525.88,
+      "text": "It was also great that it assembled all of the best links in the same place, so that"
+    },
+    {
+      "start": 2525.88,
+      "end": 2530.5400000000004,
+      "text": "if I wanted to understand any specific algorithm better, I could just access the right explainer"
+    },
+    {
+      "start": 2530.5400000000004,
+      "end": 2531.5800000000004,
+      "text": "right there."
+    },
+    {
+      "start": 2531.5800000000004,
+      "end": 2535.52,
+      "text": "Go to gemini.google.com to try it out yourself."
+    },
+    {
+      "start": 2535.52,
+      "end": 2537.0400000000004,
+      "text": "All right, back to Richard."
+    },
+    {
+      "start": 2537.0400000000004,
+      "end": 2544.7000000000003,
+      "text": "I want to zoom out and ask about being in the field of AI for longer than almost"
+    },
+    {
+      "start": 2544.7000000000003,
+      "end": 2548.5400000000004,
+      "text": "anybody who is commentating on it or working in it now."
+    },
+    {
+      "start": 2548.5400000000004,
+      "end": 2551.84,
+      "text": "I'm just curious about what the biggest surprises have been."
+    },
+    {
+      "start": 2552.28,
+      "end": 2556.1200000000003,
+      "text": "How much new stuff do you feel like is coming out, or does it feel like people are just"
+    },
+    {
+      "start": 2556.1200000000003,
+      "end": 2560.84,
+      "text": "playing with old ideas?"
+    },
+    {
+      "start": 2560.84,
+      "end": 2565.8,
+      "text": "You got into this even before deep learning was popular, so how do you see this trajectory"
+    },
+    {
+      "start": 2565.8,
+      "end": 2570.1800000000003,
+      "text": "of this field over time, and how new ideas have come about and everything?"
+    },
+    {
+      "start": 2570.1800000000003,
+      "end": 2571.1800000000003,
+      "text": "And what's been surprising?"
+    },
+    {
+      "start": 2571.1800000000003,
+      "end": 2576.6800000000003,
+      "text": "Okay, so yeah, I thought a little bit about this."
+    },
+    {
+      "start": 2576.6800000000003,
+      "end": 2579.5800000000004,
+      "text": "There are many things, or a handful of things."
+    },
+    {
+      "start": 2579.5800000000004,
+      "end": 2580.5800000000004,
+      "text": "First, the large-line models."
+    },
+    {
+      "start": 2580.5800000000004,
+      "end": 2581.5800000000004,
+      "text": "All right."
+    },
+    {
+      "start": 2581.58,
+      "end": 2583.7799999999997,
+      "text": "The large-line models are surprising."
+    },
+    {
+      "start": 2583.7799999999997,
+      "end": 2591.54,
+      "text": "It's surprising how effective neural networks, artificial neural networks, are at language"
+    },
+    {
+      "start": 2591.54,
+      "end": 2592.54,
+      "text": "tasks."
+    },
+    {
+      "start": 2592.54,
+      "end": 2593.54,
+      "text": "Right."
+    },
+    {
+      "start": 2593.54,
+      "end": 2594.54,
+      "text": "That was a surprise."
+    },
+    {
+      "start": 2594.54,
+      "end": 2595.54,
+      "text": "It wasn't expected."
+    },
+    {
+      "start": 2595.54,
+      "end": 2596.58,
+      "text": "Language seemed different."
+    },
+    {
+      "start": 2596.58,
+      "end": 2599.2,
+      "text": "So that's impressive."
+    },
+    {
+      "start": 2599.2,
+      "end": 2608.52,
+      "text": "There's a longstanding controversy in AI about simple basic principle methods, the general-purpose"
+    },
+    {
+      "start": 2608.52,
+      "end": 2611.22,
+      "text": "methods like search and learning and computing."
+    },
+    {
+      "start": 2611.2200000000003,
+      "end": 2619.1000000000004,
+      "text": "And compared to human-enabled systems, like symbolic methods."
+    },
+    {
+      "start": 2619.1000000000004,
+      "end": 2623.94,
+      "text": "And so in the old days, it was interesting, because things like search and learning were"
+    },
+    {
+      "start": 2623.94,
+      "end": 2624.94,
+      "text": "called weak methods."
+    },
+    {
+      "start": 2624.94,
+      "end": 2626.94,
+      "text": "Because they just use general principles."
+    },
+    {
+      "start": 2626.94,
+      "end": 2632.3,
+      "text": "They're not using the power that comes from imbuing a system with human knowledge."
+    },
+    {
+      "start": 2632.3,
+      "end": 2636.1800000000003,
+      "text": "So those were called strong."
+    },
+    {
+      "start": 2636.1800000000003,
+      "end": 2639.1800000000003,
+      "text": "And so I think the weak methods have just totally won."
+    },
+    {
+      "start": 2639.1800000000003,
+      "end": 2640.1800000000003,
+      "text": "That's what I think."
+    },
+    {
+      "start": 2640.18,
+      "end": 2646.46,
+      "text": "That's the biggest question."
+    },
+    {
+      "start": 2646.46,
+      "end": 2652.22,
+      "text": "From the old days of AI, what would happen, and learning and search have just won the"
+    },
+    {
+      "start": 2652.22,
+      "end": 2653.22,
+      "text": "day."
+    },
+    {
+      "start": 2653.22,
+      "end": 2654.22,
+      "text": "Right."
+    },
+    {
+      "start": 2654.22,
+      "end": 2656.1,
+      "text": "But there's a sense which that was not surprising to me."
+    },
+    {
+      "start": 2656.1,
+      "end": 2661.54,
+      "text": "Because I was always voting for, or hoping, or rooting for the simple basic principles."
+    },
+    {
+      "start": 2661.54,
+      "end": 2665.8199999999997,
+      "text": "And so even with the large-line models, it's surprising how well it worked."
+    },
+    {
+      "start": 2665.8199999999997,
+      "end": 2669.02,
+      "text": "But it was all good and gratifying."
+    },
+    {
+      "start": 2669.02,
+      "end": 2675.3,
+      "text": "And in things like AlphaGo, it's sort of surprising how well that was able to work."
+    },
+    {
+      "start": 2675.3,
+      "end": 2680.3,
+      "text": "And AlphaZero in particular, how well it was able to work."
+    },
+    {
+      "start": 2680.3,
+      "end": 2681.3,
+      "text": "But it's all very gratifying."
+    },
+    {
+      "start": 2681.3,
+      "end": 2684.9,
+      "text": "Because again, it's simple basic principles are winning the day."
+    },
+    {
+      "start": 2684.9,
+      "end": 2691.46,
+      "text": "Have there felt like whenever the public conception has been changed because some"
+    },
+    {
+      "start": 2691.46,
+      "end": 2696.54,
+      "text": "new technique was, or sorry, some new application was developed, for example, when AlphaZero"
+    },
+    {
+      "start": 2696.54,
+      "end": 2698.1,
+      "text": "became this viral sensation."
+    },
+    {
+      "start": 2698.1,
+      "end": 2702.94,
+      "text": "And to you, as somebody who has literally came up with many of the techniques that were"
+    },
+    {
+      "start": 2702.94,
+      "end": 2708.06,
+      "text": "used, did it feel to you like new breakthroughs were made, or does it feel like, oh, we've"
+    },
+    {
+      "start": 2708.06,
+      "end": 2713.06,
+      "text": "had these techniques since the 90s, and people are simply combining them and applying them"
+    },
+    {
+      "start": 2713.06,
+      "end": 2714.06,
+      "text": "now?"
+    },
+    {
+      "start": 2714.06,
+      "end": 2718.36,
+      "text": "So the whole AlphaGo thing has a precursor, which is TD Gammon."
+    },
+    {
+      "start": 2718.36,
+      "end": 2726.38,
+      "text": "Jerry Tesaro did exactly reinforcement learning, temporal difference learning methods to play"
+    },
+    {
+      "start": 2726.38,
+      "end": 2727.38,
+      "text": "backgammon."
+    },
+    {
+      "start": 2727.38,
+      "end": 2727.42,
+      "text": "Right."
+    },
+    {
+      "start": 2727.42,
+      "end": 2727.5,
+      "text": "Yeah."
+    },
+    {
+      "start": 2727.5,
+      "end": 2727.58,
+      "text": "Yeah."
+    },
+    {
+      "start": 2727.58,
+      "end": 2727.74,
+      "text": "Yeah."
+    },
+    {
+      "start": 2727.74,
+      "end": 2727.8199999999997,
+      "text": "Yeah."
+    },
+    {
+      "start": 2727.8199999999997,
+      "end": 2727.86,
+      "text": "Yeah."
+    },
+    {
+      "start": 2727.86,
+      "end": 2727.9,
+      "text": "Yeah."
+    },
+    {
+      "start": 2727.9,
+      "end": 2727.92,
+      "text": "Yeah."
+    },
+    {
+      "start": 2728.1,
+      "end": 2733.12,
+      "text": "And it beat the world's best players, and it worked really well."
+    },
+    {
+      "start": 2733.2799999999997,
+      "end": 2738.72,
+      "text": "And so in some sense, AlphaGo was merely a scaling up of that process."
+    },
+    {
+      "start": 2738.8199999999997,
+      "end": 2744.06,
+      "text": "It was quite a bit of scaling up, and there was also an additional innovation in how the"
+    },
+    {
+      "start": 2744.06,
+      "end": 2744.96,
+      "text": "search was done."
+    },
+    {
+      "start": 2745.22,
+      "end": 2745.3399999999997,
+      "text": "Right."
+    },
+    {
+      "start": 2745.74,
+      "end": 2746.6,
+      "text": "But it made sense."
+    },
+    {
+      "start": 2746.96,
+      "end": 2748.7599999999998,
+      "text": "It wasn't surprising in that sense."
+    },
+    {
+      "start": 2749.4,
+      "end": 2753.42,
+      "text": "AlphaGo actually didn't use TD learning."
+    },
+    {
+      "start": 2753.74,
+      "end": 2755.92,
+      "text": "It waited to see the final outcomes."
+    },
+    {
+      "start": 2756.54,
+      "end": 2757.86,
+      "text": "But AlphaZero used TD learning."
+    },
+    {
+      "start": 2757.86,
+      "end": 2763.6,
+      "text": "And AlphaZero was applied to all the other games, and that did extremely well."
+    },
+    {
+      "start": 2764.34,
+      "end": 2769.44,
+      "text": "I've always been very impressed by the way AlphaZero plays chess, because I'm a chess"
+    },
+    {
+      "start": 2769.44,
+      "end": 2775.54,
+      "text": "player, and it just sacrifices material for sort of positional advantages, and it's just"
+    },
+    {
+      "start": 2775.54,
+      "end": 2780.92,
+      "text": "content and patient to sacrifice that material for a long period of time."
+    },
+    {
+      "start": 2781.82,
+      "end": 2787.06,
+      "text": "And so that was surprising that it worked so well, but also gratifying."
+    },
+    {
+      "start": 2787.48,
+      "end": 2787.58,
+      "text": "Yeah."
+    },
+    {
+      "start": 2787.58,
+      "end": 2789.5,
+      "text": "And it's fitting into my worldview."
+    },
+    {
+      "start": 2790.34,
+      "end": 2793.0,
+      "text": "So this has led me where I am."
+    },
+    {
+      "start": 2793.14,
+      "end": 2799.14,
+      "text": "Where I am is I'm in some sense a contrarian, or thinking differently from the field is."
+    },
+    {
+      "start": 2799.14,
+      "end": 2805.1,
+      "text": "And I am personally just kind of content being out of sync with my field for a long period"
+    },
+    {
+      "start": 2805.1,
+      "end": 2812.06,
+      "text": "of time, perhaps decades, because occasionally I have improved right in the past."
+    },
+    {
+      "start": 2812.7599999999998,
+      "end": 2817.56,
+      "text": "And the other thing I do to help me not feel I'm out of sync and think,"
+    },
+    {
+      "start": 2817.58,
+      "end": 2825.16,
+      "text": "in a strange way, is to look not at my local environment or my local field, but to look"
+    },
+    {
+      "start": 2825.16,
+      "end": 2831.58,
+      "text": "back in time, into history, and to see what people have thought classically about the"
+    },
+    {
+      "start": 2832.42,
+      "end": 2833.7,
+      "text": "mind in many different fields."
+    },
+    {
+      "start": 2833.92,
+      "end": 2836.74,
+      "text": "And I don't feel I'm out of sync with the larger traditions."
+    },
+    {
+      "start": 2837.6,
+      "end": 2840.96,
+      "text": "I really view myself as a classicist rather than as a contrarian."
+    },
+    {
+      "start": 2841.46,
+      "end": 2847.4,
+      "text": "I go to what the larger community of thinkers about the mind have always thought."
+    },
+    {
+      "start": 2848.12,
+      "end": 2848.48,
+      "text": "Okay."
+    },
+    {
+      "start": 2848.7,
+      "end": 2852.52,
+      "text": "Some sort of left-field questions for you, if you'll tolerate them."
+    },
+    {
+      "start": 2852.86,
+      "end": 2859.52,
+      "text": "So the way I read the bitter lesson is that it's not saying necessarily that human artisanal"
+    },
+    {
+      "start": 2859.52,
+      "end": 2867.9,
+      "text": "researcher tuning doesn't work, but that it obviously scales much worse than compute,"
+    },
+    {
+      "start": 2868.04,
+      "end": 2868.94,
+      "text": "which is growing exponentially."
+    },
+    {
+      "start": 2869.5,
+      "end": 2871.16,
+      "text": "And so you want techniques which leverage the latter."
+    },
+    {
+      "start": 2871.68,
+      "end": 2871.7999999999997,
+      "text": "Yep."
+    },
+    {
+      "start": 2872.08,
+      "end": 2877.36,
+      "text": "And once we have AGI, we'll have researchers."
+    },
+    {
+      "start": 2877.36,
+      "end": 2879.3,
+      "text": "We'll have researchers which scale linearly with compute, right?"
+    },
+    {
+      "start": 2879.42,
+      "end": 2884.08,
+      "text": "So we'll have this avalanche of millions of AI researchers, and their stock will be growing"
+    },
+    {
+      "start": 2884.08,
+      "end": 2886.02,
+      "text": "as fast as compute."
+    },
+    {
+      "start": 2886.6600000000003,
+      "end": 2892.76,
+      "text": "And so maybe this will mean that it is rational, or it will make sense to have them doing good"
+    },
+    {
+      "start": 2892.76,
+      "end": 2896.84,
+      "text": "old-fashioned AI and doing these artisanal solutions."
+    },
+    {
+      "start": 2898.28,
+      "end": 2902.6200000000003,
+      "text": "Does that, as a vision of what happens after AGI in terms of how AI researchers will evolve,"
+    },
+    {
+      "start": 2902.88,
+      "end": 2904.8,
+      "text": "I wonder if that's still compatible with the bitter lesson."
+    },
+    {
+      "start": 2905.2200000000003,
+      "end": 2906.98,
+      "text": "Well, how did we get to this AGI?"
+    },
+    {
+      "start": 2907.9,
+      "end": 2910.46,
+      "text": "You want to presume that it's been done."
+    },
+    {
+      "start": 2910.6400000000003,
+      "end": 2913.6600000000003,
+      "text": "So suppose it started with general methods, but now we've got the AGI."
+    },
+    {
+      "start": 2914.5,
+      "end": 2915.76,
+      "text": "And now we want to go..."
+    },
+    {
+      "start": 2915.76,
+      "end": 2916.56,
+      "text": "Then we're done."
+    },
+    {
+      "start": 2917.1600000000003,
+      "end": 2917.36,
+      "text": "Hmm?"
+    },
+    {
+      "start": 2917.6,
+      "end": 2918.1600000000003,
+      "text": "We're done."
+    },
+    {
+      "start": 2918.6600000000003,
+      "end": 2918.98,
+      "text": "Interesting."
+    },
+    {
+      "start": 2918.98,
+      "end": 2922.86,
+      "text": "You don't think that there's anything above AGI?"
+    },
+    {
+      "start": 2923.76,
+      "end": 2926.3,
+      "text": "Well, but you're using it to get AGI again."
+    },
+    {
+      "start": 2926.6600000000003,
+      "end": 2930.3,
+      "text": "Well, I'm using it to get superhuman levels of intelligence or competence at different tasks."
+    },
+    {
+      "start": 2930.6800000000003,
+      "end": 2937.3,
+      "text": "So these AGIs, if they're not superhuman already, then the knowledge that they might"
+    },
+    {
+      "start": 2937.3,
+      "end": 2939.86,
+      "text": "impart would be not superhuman."
+    },
+    {
+      "start": 2940.32,
+      "end": 2941.9,
+      "text": "I guess there's different gradations of superhuman."
+    },
+    {
+      "start": 2941.9,
+      "end": 2948.2200000000003,
+      "text": "I'm not sure your idea makes sense, because it seems to presume the existence of AGI."
+    },
+    {
+      "start": 2949.0800000000004,
+      "end": 2951.6000000000004,
+      "text": "And then we've already worked that out."
+    },
+    {
+      "start": 2952.0800000000004,
+      "end": 2955.0600000000004,
+      "text": "So maybe one way to motivate this is AlphaGo is superhuman."
+    },
+    {
+      "start": 2956.0,
+      "end": 2957.4,
+      "text": "It beat any Go player."
+    },
+    {
+      "start": 2958.04,
+      "end": 2960.98,
+      "text": "AlphaZero would beat AlphaGo every single time."
+    },
+    {
+      "start": 2960.98,
+      "end": 2965.0600000000004,
+      "text": "So there's ways to get more superhuman than even superhuman."
+    },
+    {
+      "start": 2965.6800000000003,
+      "end": 2966.6600000000003,
+      "text": "And it was a different architecture."
+    },
+    {
+      "start": 2966.66,
+      "end": 2972.1,
+      "text": "And so it seems plausible to me that, well, the agent that's able to generally learn"
+    },
+    {
+      "start": 2972.1,
+      "end": 2977.04,
+      "text": "across all domains, there would be ways to make that, give it better architecture for"
+    },
+    {
+      "start": 2977.04,
+      "end": 2980.3199999999997,
+      "text": "learning, just the same way that AlphaZero was an improvement upon AlphaGo and MuZero"
+    },
+    {
+      "start": 2980.3199999999997,
+      "end": 2981.64,
+      "text": "was an improvement upon AlphaZero."
+    },
+    {
+      "start": 2981.8799999999997,
+      "end": 2987.3399999999997,
+      "text": "And the way AlphaZero was an improvement was it did not use the human knowledge, but just"
+    },
+    {
+      "start": 2987.3399999999997,
+      "end": 2988.7799999999997,
+      "text": "went from experience."
+    },
+    {
+      "start": 2989.14,
+      "end": 2989.3999999999996,
+      "text": "Right."
+    },
+    {
+      "start": 2989.3999999999996,
+      "end": 2996.64,
+      "text": "So why do you say bring in other agents' expertise to teach it?"
+    },
+    {
+      "start": 2997.14,
+      "end": 3004.06,
+      "text": "When it's worked so well from experience and not by help from another agent?"
+    },
+    {
+      "start": 3004.68,
+      "end": 3008.66,
+      "text": "I agree that in that particular case, that it was moving to more general methods."
+    },
+    {
+      "start": 3009.18,
+      "end": 3014.2999999999997,
+      "text": "But I meant to use that example to illustrate that it's possible to go superhuman to superhuman"
+    },
+    {
+      "start": 3014.2999999999997,
+      "end": 3016.2799999999997,
+      "text": "plus plus to superhuman plus plus plus plus."
+    },
+    {
+      "start": 3016.44,
+      "end": 3016.7,
+      "text": "Yeah."
+    },
+    {
+      "start": 3017.04,
+      "end": 3020.96,
+      "text": "And I'm curious if you think those gradations will continue to happen by just making the"
+    },
+    {
+      "start": 3020.96,
+      "end": 3026.64,
+      "text": "method simpler or because we'll have the capability of these millions of minds who can then"
+    },
+    {
+      "start": 3026.64,
+      "end": 3032.44,
+      "text": "add complexity as needed, if that will continue to be a false path, even when you have"
+    },
+    {
+      "start": 3032.44,
+      "end": 3035.1,
+      "text": "billions of AI researchers or trillions of AI researchers."
+    },
+    {
+      "start": 3035.7,
+      "end": 3042.7599999999998,
+      "text": "I think more interesting is just think about that case, which when you have many AIs, will"
+    },
+    {
+      "start": 3042.7599999999998,
+      "end": 3047.1,
+      "text": "they help each other the way cultural evolution works in people?"
+    },
+    {
+      "start": 3048.04,
+      "end": 3050.2599999999998,
+      "text": "Let's just, maybe we should talk about that."
+    },
+    {
+      "start": 3050.3799999999997,
+      "end": 3050.7599999999998,
+      "text": "Yeah, for sure."
+    },
+    {
+      "start": 3051.02,
+      "end": 3051.56,
+      "text": "The bitter lesson."
+    },
+    {
+      "start": 3051.68,
+      "end": 3052.66,
+      "text": "Oh, who cares about that?"
+    },
+    {
+      "start": 3052.66,
+      "end": 3056.14,
+      "text": "That's an empirical observation about a particular period in history."
+    },
+    {
+      "start": 3056.14,
+      "end": 3060.64,
+      "text": "70 years in history, no longer, doesn't necessarily have to apply the next 70 years."
+    },
+    {
+      "start": 3061.18,
+      "end": 3065.06,
+      "text": "So the interesting question is, you're an AI, you get some more computer power, should"
+    },
+    {
+      "start": 3065.06,
+      "end": 3070.4,
+      "text": "you use it to make yourself more computationally capable or should you use it to spawn off"
+    },
+    {
+      "start": 3070.4,
+      "end": 3075.02,
+      "text": "a copy of yourself to go learn something interesting on the other side of the planet or on some"
+    },
+    {
+      "start": 3075.02,
+      "end": 3076.94,
+      "text": "other topic and then report back to you?"
+    },
+    {
+      "start": 3077.04,
+      "end": 3077.18,
+      "text": "Yep."
+    },
+    {
+      "start": 3078.2999999999997,
+      "end": 3085.42,
+      "text": "I think that's a really interesting question that will only arise in the age of digital"
+    },
+    {
+      "start": 3085.42,
+      "end": 3085.8799999999997,
+      "text": "intelligence."
+    },
+    {
+      "start": 3086.14,
+      "end": 3091.52,
+      "text": "I'm not sure what the answer is, but I think it will, more questions, will it be possible"
+    },
+    {
+      "start": 3091.52,
+      "end": 3096.46,
+      "text": "to really, you know, spawn it off, send it out, learn something new, something perhaps"
+    },
+    {
+      "start": 3096.46,
+      "end": 3102.7999999999997,
+      "text": "very new, and then will it be able to be reincorporated into the original or will it, will it, will"
+    },
+    {
+      "start": 3102.7999999999997,
+      "end": 3106.8199999999997,
+      "text": "have changed so much that it, it can't really be done?"
+    },
+    {
+      "start": 3107.02,
+      "end": 3107.12,
+      "text": "Yeah."
+    },
+    {
+      "start": 3107.16,
+      "end": 3108.3599999999997,
+      "text": "Is that possible or is it not?"
+    },
+    {
+      "start": 3108.98,
+      "end": 3114.64,
+      "text": "And, you know, you can carry this to its limit as I, I saw one of your videos the other night"
+    },
+    {
+      "start": 3114.64,
+      "end": 3115.94,
+      "text": "that, that suggested that it."
+    },
+    {
+      "start": 3116.14,
+      "end": 3119.9,
+      "text": "That it could, where you spawn off many, many copies, do different things, it's highly"
+    },
+    {
+      "start": 3119.9,
+      "end": 3125.92,
+      "text": "decentralized, but report back to the, the central master and that this is, this will"
+    },
+    {
+      "start": 3125.92,
+      "end": 3127.04,
+      "text": "be such a powerful thing."
+    },
+    {
+      "start": 3127.04,
+      "end": 3132.24,
+      "text": "Well, I think one thing that, so this is my attempt to add something to this, this view"
+    },
+    {
+      "start": 3132.24,
+      "end": 3137.92,
+      "text": "is that a big question, a big issue will become corruption."
+    },
+    {
+      "start": 3138.7999999999997,
+      "end": 3142.3399999999997,
+      "text": "You know, if you, if you really could just get information from anywhere and bring it"
+    },
+    {
+      "start": 3142.3399999999997,
+      "end": 3145.3799999999997,
+      "text": "into your central mind, you can become more and more powerful."
+    },
+    {
+      "start": 3146.14,
+      "end": 3150.98,
+      "text": "Uh, and it's, it's all digital and they all speak some internal digital language."
+    },
+    {
+      "start": 3151.46,
+      "end": 3157.74,
+      "text": "Maybe it'll be easy and possible, but it will not be that easy, as easy as you're imagining"
+    },
+    {
+      "start": 3157.74,
+      "end": 3160.48,
+      "text": "because, uh, that you can lose your mind this way."
+    },
+    {
+      "start": 3160.54,
+      "end": 3165.58,
+      "text": "If you pull in something from the outside and build it into your, into your inner thinking,"
+    },
+    {
+      "start": 3165.92,
+      "end": 3167.68,
+      "text": "uh, it could take over you."
+    },
+    {
+      "start": 3167.74,
+      "end": 3168.52,
+      "text": "It could change you."
+    },
+    {
+      "start": 3168.52,
+      "end": 3174.62,
+      "text": "It could be, uh, your destruction rather than, uh, your increment in knowledge."
+    },
+    {
+      "start": 3175.16,
+      "end": 3175.18,
+      "text": "Mm."
+    },
+    {
+      "start": 3175.1800000000003,
+      "end": 3180.4800000000005,
+      "text": "I think this will become a big concern, you know, particularly when you're, oh, he's figured"
+    },
+    {
+      "start": 3180.4800000000005,
+      "end": 3184.86,
+      "text": "all about, you know, how to play some new game or figured out he's, he's studied Indonesia"
+    },
+    {
+      "start": 3184.86,
+      "end": 3187.4400000000005,
+      "text": "and you want to incorporate that into your mind."
+    },
+    {
+      "start": 3187.88,
+      "end": 3188.9400000000005,
+      "text": "Um, yeah."
+    },
+    {
+      "start": 3189.1000000000004,
+      "end": 3193.3,
+      "text": "So you can't, you could, you think, oh, just read it all in and that'll be fine."
+    },
+    {
+      "start": 3193.3,
+      "end": 3199.34,
+      "text": "But no, you've just read a whole bunch of bits into your mind and, uh, they could have"
+    },
+    {
+      "start": 3199.34,
+      "end": 3200.4400000000005,
+      "text": "viruses in them."
+    },
+    {
+      "start": 3200.86,
+      "end": 3202.4,
+      "text": "They could have hidden goals."
+    },
+    {
+      "start": 3202.4,
+      "end": 3205.1600000000003,
+      "text": "Uh, they can, uh, work you and change you."
+    },
+    {
+      "start": 3205.16,
+      "end": 3207.68,
+      "text": "And this will be, uh, become a big thing."
+    },
+    {
+      "start": 3207.7799999999997,
+      "end": 3213.7799999999997,
+      "text": "How do you have cybersecurity in the age of digital spawning and re-reforming again?"
+    },
+    {
+      "start": 3214.2,
+      "end": 3219.64,
+      "text": "It's interesting that both quant firms and AI labs have a culture of secrecy because"
+    },
+    {
+      "start": 3219.64,
+      "end": 3224.04,
+      "text": "both of them are operating in incredibly competitive markets and their success rests on protecting"
+    },
+    {
+      "start": 3224.04,
+      "end": 3224.5,
+      "text": "their IP."
+    },
+    {
+      "start": 3224.8399999999997,
+      "end": 3229.44,
+      "text": "If you're an AI researcher or engineer and you're deciding where to work, most of the"
+    },
+    {
+      "start": 3229.44,
+      "end": 3234.44,
+      "text": "quant firms or AI labs that you'll be considering will be strongly siloing their teams to minimize"
+    },
+    {
+      "start": 3234.44,
+      "end": 3235.14,
+      "text": "the risk of leaks."
+    },
+    {
+      "start": 3235.16,
+      "end": 3238.5,
+      "text": "Hudson River Trading takes the opposite approach."
+    },
+    {
+      "start": 3238.5,
+      "end": 3242.66,
+      "text": "Their teams openly share their trading strategies and their strategy code lives in a shared"
+    },
+    {
+      "start": 3242.66,
+      "end": 3243.66,
+      "text": "monorepo."
+    },
+    {
+      "start": 3243.66,
+      "end": 3248.62,
+      "text": "At HRT, if you're a researcher and you have a good idea, your contribution will be broadly"
+    },
+    {
+      "start": 3248.62,
+      "end": 3251.5,
+      "text": "deployed across all relevant strategies."
+    },
+    {
+      "start": 3251.5,
+      "end": 3253.3199999999997,
+      "text": "This gives your work a ton of leverage."
+    },
+    {
+      "start": 3253.3199999999997,
+      "end": 3255.7,
+      "text": "You'll also learn incredibly fast."
+    },
+    {
+      "start": 3255.7,
+      "end": 3259.7599999999998,
+      "text": "You can learn about other people's research and ask questions and you can see how everything"
+    },
+    {
+      "start": 3259.7599999999998,
+      "end": 3264.44,
+      "text": "fits together end to end from the low level of execution of trades to the high level of"
+    },
+    {
+      "start": 3264.44,
+      "end": 3265.44,
+      "text": "predictive models."
+    },
+    {
+      "start": 3265.44,
+      "end": 3266.44,
+      "text": "HRT is hiring."
+    },
+    {
+      "start": 3266.44,
+      "end": 3272.94,
+      "text": "If you want to learn more, go to hudsonrivertrading.com slash thwarkash."
+    },
+    {
+      "start": 3272.94,
+      "end": 3273.94,
+      "text": "All right."
+    },
+    {
+      "start": 3273.94,
+      "end": 3274.94,
+      "text": "Back to Richard."
+    },
+    {
+      "start": 3274.94,
+      "end": 3279.62,
+      "text": "I guess this brings us to the topic of AI succession."
+    },
+    {
+      "start": 3279.62,
+      "end": 3282.8,
+      "text": "You have a perspective that's quite different from a lot of people that I've interviewed"
+    },
+    {
+      "start": 3282.8,
+      "end": 3284.84,
+      "text": "and maybe a lot of people generally."
+    },
+    {
+      "start": 3284.84,
+      "end": 3286.98,
+      "text": "So I also think it's a very interesting perspective."
+    },
+    {
+      "start": 3286.98,
+      "end": 3288.94,
+      "text": "I want to hear about it."
+    },
+    {
+      "start": 3288.94,
+      "end": 3289.94,
+      "text": "Yeah."
+    },
+    {
+      "start": 3289.94,
+      "end": 3292.94,
+      "text": "So I do think succession to digital."
+    },
+    {
+      "start": 3292.94,
+      "end": 3293.94,
+      "text": "All right."
+    },
+    {
+      "start": 3293.94,
+      "end": 3294.44,
+      "text": "Yeah."
+    },
+    {
+      "start": 3294.44,
+      "end": 3299.44,
+      "text": "So I think the argument for AI or digital intelligence or augmented humans is inevitable."
+    },
+    {
+      "start": 3299.44,
+      "end": 3302.44,
+      "text": "So the argument – I have a four-part argument."
+    },
+    {
+      "start": 3302.44,
+      "end": 3312.66,
+      "text": "Step one is there's no government or organization that gives humanity a unified point of view"
+    },
+    {
+      "start": 3312.66,
+      "end": 3318.28,
+      "text": "that dominates and that can arrange – there's no consensus about how the world should be"
+    },
+    {
+      "start": 3318.28,
+      "end": 3319.56,
+      "text": "run."
+    },
+    {
+      "start": 3319.56,
+      "end": 3323.94,
+      "text": "And number two, we will figure out how intelligence works."
+    },
+    {
+      "start": 3323.94,
+      "end": 3326.06,
+      "text": "Researchers will figure it out eventually."
+    },
+    {
+      "start": 3326.06,
+      "end": 3329.7000000000003,
+      "text": "And number three, we won't stop just with human-level intelligence."
+    },
+    {
+      "start": 3329.7000000000003,
+      "end": 3332.16,
+      "text": "We will get – reach superintelligence."
+    },
+    {
+      "start": 3332.16,
+      "end": 3339.52,
+      "text": "And number four is that once – it's inevitable over time that the most intelligent things"
+    },
+    {
+      "start": 3339.52,
+      "end": 3344.5,
+      "text": "around would gain resources and power."
+    },
+    {
+      "start": 3344.5,
+      "end": 3350.44,
+      "text": "And so put all that together, it's, you know, you – it's sort of inevitable that you're"
+    },
+    {
+      "start": 3350.44,
+      "end": 3352.56,
+      "text": "going to have succession to AI."
+    },
+    {
+      "start": 3352.56,
+      "end": 3358.14,
+      "text": "Succession to AI or to AI-enabled augmented humans."
+    },
+    {
+      "start": 3358.14,
+      "end": 3364.7999999999997,
+      "text": "So within those four things seem clear and sure to happen."
+    },
+    {
+      "start": 3364.7999999999997,
+      "end": 3369.56,
+      "text": "But within that set of possibilities, some – there can be good outcomes as well as"
+    },
+    {
+      "start": 3369.56,
+      "end": 3372.24,
+      "text": "less good outcomes, bad outcomes."
+    },
+    {
+      "start": 3372.24,
+      "end": 3380.56,
+      "text": "And so I'm just trying to be realistic about where we are and ask how we should feel about"
+    },
+    {
+      "start": 3380.56,
+      "end": 3381.56,
+      "text": "it."
+    },
+    {
+      "start": 3381.56,
+      "end": 3382.56,
+      "text": "Yeah."
+    },
+    {
+      "start": 3382.56,
+      "end": 3385.84,
+      "text": "I agree with all four of those arguments and the implication."
+    },
+    {
+      "start": 3385.84,
+      "end": 3393.58,
+      "text": "And I also agree that succession contains a wide variety of possible futures."
+    },
+    {
+      "start": 3393.58,
+      "end": 3395.44,
+      "text": "So curious to get more thoughts on that."
+    },
+    {
+      "start": 3395.44,
+      "end": 3396.44,
+      "text": "Right."
+    },
+    {
+      "start": 3396.44,
+      "end": 3400.54,
+      "text": "And so then I do encourage people to think positively about it, first of all, because"
+    },
+    {
+      "start": 3400.54,
+      "end": 3405.84,
+      "text": "it's something we humans have always tried to do for thousands of years, trying to understand"
+    },
+    {
+      "start": 3405.84,
+      "end": 3412.2,
+      "text": "themselves, trying to make themselves think better and, you know, just understand themselves."
+    },
+    {
+      "start": 3412.2,
+      "end": 3412.32,
+      "text": "Yeah."
+    },
+    {
+      "start": 3412.56,
+      "end": 3420.2799999999997,
+      "text": "So this is a great success from – as science, humanities, we're finding out what this"
+    },
+    {
+      "start": 3420.2799999999997,
+      "end": 3426.44,
+      "text": "essential part of humanness is, what it means to be intelligent."
+    },
+    {
+      "start": 3426.44,
+      "end": 3431.12,
+      "text": "And then what I usually say is that this is all kind of human-centric."
+    },
+    {
+      "start": 3431.12,
+      "end": 3435.18,
+      "text": "What if we look – you step aside from being a human and just say – take the point of"
+    },
+    {
+      "start": 3435.18,
+      "end": 3436.88,
+      "text": "view of the universe."
+    },
+    {
+      "start": 3436.88,
+      "end": 3440.44,
+      "text": "And this is, I think, a major stage in the universe, a major transition."
+    },
+    {
+      "start": 3440.44,
+      "end": 3441.44,
+      "text": "A transition from humanism."
+    },
+    {
+      "start": 3441.44,
+      "end": 3442.44,
+      "text": "Yeah."
+    },
+    {
+      "start": 3442.44,
+      "end": 3448.76,
+      "text": "So replicators, humans and animals, plants, we're all replicators."
+    },
+    {
+      "start": 3448.76,
+      "end": 3451.66,
+      "text": "And that gives us some strengths and some limitations."
+    },
+    {
+      "start": 3451.66,
+      "end": 3457.4,
+      "text": "And then we're entering the age of design, where – because our AIs are designed, all"
+    },
+    {
+      "start": 3457.4,
+      "end": 3462.2000000000003,
+      "text": "of our physical objects are designed, our buildings are designed, our technology is"
+    },
+    {
+      "start": 3462.2000000000003,
+      "end": 3468.32,
+      "text": "designed, and we're designing now AIs, things that can be intelligent themselves and that"
+    },
+    {
+      "start": 3468.32,
+      "end": 3470.76,
+      "text": "are themselves capable of design."
+    },
+    {
+      "start": 3470.76,
+      "end": 3472.32,
+      "text": "And so this is a key step."
+    },
+    {
+      "start": 3472.32,
+      "end": 3478.2000000000003,
+      "text": "This is a key step in the world and in the universe, and I think it's the transition"
+    },
+    {
+      "start": 3478.2000000000003,
+      "end": 3485.32,
+      "text": "from the world in which most of the interesting things that are, are replicated."
+    },
+    {
+      "start": 3485.32,
+      "end": 3489.38,
+      "text": "Replicated means you can make copies of them, but you don't really understand them."
+    },
+    {
+      "start": 3489.38,
+      "end": 3493.6400000000003,
+      "text": "Like right now, we can make more intelligent beings, more children, but we don't really"
+    },
+    {
+      "start": 3493.6400000000003,
+      "end": 3495.7400000000002,
+      "text": "understand how intelligence works."
+    },
+    {
+      "start": 3495.7400000000002,
+      "end": 3501.32,
+      "text": "Whereas in – we're reaching now to having design intelligence, intelligence that we"
+    },
+    {
+      "start": 3501.32,
+      "end": 3502.32,
+      "text": "do understand."
+    },
+    {
+      "start": 3502.32,
+      "end": 3505.7000000000003,
+      "text": "We understand how it works, and therefore we can change it in different ways and at"
+    },
+    {
+      "start": 3505.7000000000003,
+      "end": 3509.1800000000003,
+      "text": "different speeds than otherwise."
+    },
+    {
+      "start": 3509.1800000000003,
+      "end": 3512.7200000000003,
+      "text": "And our future, they might not be replicated at all."
+    },
+    {
+      "start": 3512.7200000000003,
+      "end": 3519.1400000000003,
+      "text": "Like we may just design AIs, and those AIs will design other AIs, and everything will"
+    },
+    {
+      "start": 3519.1400000000003,
+      "end": 3522.32,
+      "text": "be done by design and construction rather than by replication."
+    },
+    {
+      "start": 3522.32,
+      "end": 3523.32,
+      "text": "Yeah."
+    },
+    {
+      "start": 3523.32,
+      "end": 3528.44,
+      "text": "I mark this as one of the four great stages of the universe."
+    },
+    {
+      "start": 3528.44,
+      "end": 3531.32,
+      "text": "First there's dust, ends of stars, stars."
+    },
+    {
+      "start": 3531.32,
+      "end": 3535.6800000000003,
+      "text": "And then stars make planets, and the planets give rise to life."
+    },
+    {
+      "start": 3535.6800000000003,
+      "end": 3540.82,
+      "text": "And now we're giving life to designed entities."
+    },
+    {
+      "start": 3540.82,
+      "end": 3548.3,
+      "text": "And so I think we should be proud, and we should be – that we are giving rise to this"
+    },
+    {
+      "start": 3548.3,
+      "end": 3550.5,
+      "text": "great transition in the universe."
+    },
+    {
+      "start": 3550.5,
+      "end": 3551.5,
+      "text": "Yeah."
+    },
+    {
+      "start": 3551.5,
+      "end": 3553.0,
+      "text": "So it's an interesting thing."
+    },
+    {
+      "start": 3553.0,
+      "end": 3558.26,
+      "text": "What should we – should we consider them part of humanity or different from humanity?"
+    },
+    {
+      "start": 3558.26,
+      "end": 3559.26,
+      "text": "It's our choice."
+    },
+    {
+      "start": 3559.26,
+      "end": 3560.7000000000003,
+      "text": "It's our choice whether we should say, oh."
+    },
+    {
+      "start": 3560.7000000000003,
+      "end": 3564.86,
+      "text": "They are our offspring, and we should be proud of them, and we should celebrate their"
+    },
+    {
+      "start": 3564.86,
+      "end": 3565.86,
+      "text": "achievements."
+    },
+    {
+      "start": 3565.86,
+      "end": 3566.86,
+      "text": "Or we should – we could say, oh, no."
+    },
+    {
+      "start": 3566.86,
+      "end": 3569.84,
+      "text": "They're not us, and we should be horrified."
+    },
+    {
+      "start": 3569.84,
+      "end": 3573.7000000000003,
+      "text": "It's just – it's interesting that that is – it feels to me like a choice."
+    },
+    {
+      "start": 3573.7000000000003,
+      "end": 3578.6400000000003,
+      "text": "And yet it's such a strongly held thing that how can we be a choice?"
+    },
+    {
+      "start": 3578.6400000000003,
+      "end": 3581.7000000000003,
+      "text": "I like these sort of contradictory implications of thought."
+    },
+    {
+      "start": 3581.7000000000003,
+      "end": 3586.76,
+      "text": "I mean, it's interesting to consider if we were just designing another generation"
+    },
+    {
+      "start": 3586.76,
+      "end": 3587.76,
+      "text": "of humans."
+    },
+    {
+      "start": 3587.76,
+      "end": 3588.76,
+      "text": "Yes."
+    },
+    {
+      "start": 3588.76,
+      "end": 3589.76,
+      "text": "Design's the wrong word."
+    },
+    {
+      "start": 3589.76,
+      "end": 3590.26,
+      "text": "Yes."
+    },
+    {
+      "start": 3590.7000000000003,
+      "end": 3592.4800000000005,
+      "text": "The next generation of humans is going to come up."
+    },
+    {
+      "start": 3592.4800000000005,
+      "end": 3593.4800000000005,
+      "text": "And forget about AI."
+    },
+    {
+      "start": 3593.4800000000005,
+      "end": 3599.4600000000005,
+      "text": "We just know in the long run, humanity will be more capable and maybe more numerous, maybe"
+    },
+    {
+      "start": 3599.4600000000005,
+      "end": 3600.76,
+      "text": "more intelligent."
+    },
+    {
+      "start": 3600.76,
+      "end": 3602.26,
+      "text": "How do we feel about that?"
+    },
+    {
+      "start": 3602.26,
+      "end": 3607.1200000000003,
+      "text": "I do think there's potential worlds with future humans that we would be quite concerned"
+    },
+    {
+      "start": 3607.1200000000003,
+      "end": 3608.1200000000003,
+      "text": "about."
+    },
+    {
+      "start": 3608.1200000000003,
+      "end": 3612.86,
+      "text": "So are you thinking, like, maybe we are like the Neanderthals who give rise to Homo"
+    },
+    {
+      "start": 3612.86,
+      "end": 3613.86,
+      "text": "sapiens."
+    },
+    {
+      "start": 3613.86,
+      "end": 3616.86,
+      "text": "Maybe Homo sapiens will give rise to a new group of people."
+    },
+    {
+      "start": 3616.86,
+      "end": 3617.86,
+      "text": "That's what you're saying?"
+    },
+    {
+      "start": 3617.86,
+      "end": 3618.86,
+      "text": "Something like that."
+    },
+    {
+      "start": 3618.86,
+      "end": 3619.86,
+      "text": "Like, I'm basically taking the example you're giving."
+    },
+    {
+      "start": 3619.86,
+      "end": 3625.32,
+      "text": "I'm like, OK, even if you consider them part of humanity, I don't think that necessarily"
+    },
+    {
+      "start": 3625.32,
+      "end": 3627.6400000000003,
+      "text": "means that we should feel super comfortable."
+    },
+    {
+      "start": 3627.6400000000003,
+      "end": 3628.6400000000003,
+      "text": "Hinship."
+    },
+    {
+      "start": 3628.6400000000003,
+      "end": 3629.6400000000003,
+      "text": "Yeah."
+    },
+    {
+      "start": 3629.6400000000003,
+      "end": 3631.42,
+      "text": "Like Nazis were humans, right?"
+    },
+    {
+      "start": 3631.42,
+      "end": 3635.0,
+      "text": "If we thought like, oh, the future generation will be Nazis, I think we'd be quite concerned"
+    },
+    {
+      "start": 3635.0,
+      "end": 3637.34,
+      "text": "about just handing off power to them."
+    },
+    {
+      "start": 3637.34,
+      "end": 3644.78,
+      "text": "So I agree that this is not super dissimilar to worrying about more capable future humans."
+    },
+    {
+      "start": 3644.78,
+      "end": 3649.54,
+      "text": "But I don't think that that addresses a lot of the concerns people might have about this"
+    },
+    {
+      "start": 3649.54,
+      "end": 3653.86,
+      "text": "level of power being attained this fast with entities we don't fully understand."
+    },
+    {
+      "start": 3653.86,
+      "end": 3661.18,
+      "text": "Well, I think it's relevant to point out that for most of humanity, they don't"
+    },
+    {
+      "start": 3661.18,
+      "end": 3667.42,
+      "text": "have much influence on what happens."
+    },
+    {
+      "start": 3667.42,
+      "end": 3676.2,
+      "text": "Most of humanity doesn't influence who can control the atom bombs or who controls the"
+    },
+    {
+      "start": 3676.2,
+      "end": 3677.32,
+      "text": "nation states."
+    },
+    {
+      "start": 3677.32,
+      "end": 3678.32,
+      "text": "Right."
+    },
+    {
+      "start": 3678.32,
+      "end": 3679.32,
+      "text": "Right."
+    },
+    {
+      "start": 3679.32,
+      "end": 3683.78,
+      "text": "And as a citizen, I often feel that we don't control the nation states very much."
+    },
+    {
+      "start": 3683.78,
+      "end": 3684.78,
+      "text": "They're out of control."
+    },
+    {
+      "start": 3684.78,
+      "end": 3689.6600000000003,
+      "text": "A lot of it has to do with just how you feel about change."
+    },
+    {
+      "start": 3689.6600000000003,
+      "end": 3694.7400000000002,
+      "text": "And if you think the current situation is really, really good, then you're more likely"
+    },
+    {
+      "start": 3694.7400000000002,
+      "end": 3701.7400000000002,
+      "text": "to be suspicious of change and averse to change than if you think it's imperfect."
+    },
+    {
+      "start": 3701.7400000000002,
+      "end": 3702.7400000000002,
+      "text": "I think it's imperfect."
+    },
+    {
+      "start": 3702.7400000000002,
+      "end": 3706.1400000000003,
+      "text": "In fact, I think it's pretty bad."
+    },
+    {
+      "start": 3706.1400000000003,
+      "end": 3708.6400000000003,
+      "text": "So I'm open to change."
+    },
+    {
+      "start": 3708.64,
+      "end": 3714.5,
+      "text": "I think humanity has had a super good track record."
+    },
+    {
+      "start": 3714.5,
+      "end": 3718.64,
+      "text": "Maybe it's the best thing that there's been, but it's far from perfect."
+    },
+    {
+      "start": 3718.64,
+      "end": 3719.64,
+      "text": "Yeah."
+    },
+    {
+      "start": 3719.64,
+      "end": 3724.3399999999997,
+      "text": "I guess there's different varieties of change."
+    },
+    {
+      "start": 3724.3399999999997,
+      "end": 3726.46,
+      "text": "The Industrial Revolution was change."
+    },
+    {
+      "start": 3726.46,
+      "end": 3729.24,
+      "text": "The Bolshevik Revolution was also change."
+    },
+    {
+      "start": 3729.24,
+      "end": 3733.1,
+      "text": "And if you were around in Russia in the 1900s and you're like, look, things aren't growing"
+    },
+    {
+      "start": 3733.1,
+      "end": 3734.1,
+      "text": "well."
+    },
+    {
+      "start": 3734.1,
+      "end": 3736.4,
+      "text": "The czar is kind of messing things up."
+    },
+    {
+      "start": 3736.4,
+      "end": 3737.4,
+      "text": "We need change."
+    },
+    {
+      "start": 3737.4,
+      "end": 3738.48,
+      "text": "I'd want to know."
+    },
+    {
+      "start": 3738.48,
+      "end": 3742.5,
+      "text": "What kind of change you wanted before signing on the dotted line."
+    },
+    {
+      "start": 3742.5,
+      "end": 3747.4,
+      "text": "And then similar with AI, where I'd want to understand and to the extent it's possible"
+    },
+    {
+      "start": 3747.4,
+      "end": 3754.48,
+      "text": "to change the trajectory of AI such that the change is positive for humans."
+    },
+    {
+      "start": 3754.48,
+      "end": 3759.86,
+      "text": "We should be concerned about our future, the future."
+    },
+    {
+      "start": 3759.86,
+      "end": 3762.66,
+      "text": "We should try to make it good."
+    },
+    {
+      "start": 3762.66,
+      "end": 3767.34,
+      "text": "We also, though, should recognize the limits, our limits."
+    },
+    {
+      "start": 3767.34,
+      "end": 3768.34,
+      "text": "Yeah."
+    },
+    {
+      "start": 3768.48,
+      "end": 3773.22,
+      "text": "I think we want to avoid the feeling of entitlement."
+    },
+    {
+      "start": 3773.22,
+      "end": 3775.2,
+      "text": "Avoid the feeling, oh, we're here first."
+    },
+    {
+      "start": 3775.2,
+      "end": 3779.56,
+      "text": "We should always have it in a good way."
+    },
+    {
+      "start": 3779.56,
+      "end": 3785.64,
+      "text": "How should we think about the future and how much control a particular species on a particular"
+    },
+    {
+      "start": 3785.64,
+      "end": 3788.4,
+      "text": "planet should have over it."
+    },
+    {
+      "start": 3788.4,
+      "end": 3789.86,
+      "text": "How much control do we have?"
+    },
+    {
+      "start": 3789.86,
+      "end": 3796.36,
+      "text": "You know, a counterbalance to our limited control over the long-term future of humanity."
+    },
+    {
+      "start": 3796.36,
+      "end": 3797.36,
+      "text": "Yeah."
+    },
+    {
+      "start": 3797.36,
+      "end": 3798.36,
+      "text": "Yeah."
+    },
+    {
+      "start": 3798.36,
+      "end": 3804.6200000000003,
+      "text": "how much control do we have over our own lives like we have uh our own goals and we have our"
+    },
+    {
+      "start": 3804.6200000000003,
+      "end": 3810.38,
+      "text": "families and we those things are much more controllable than like trying to control um"
+    },
+    {
+      "start": 3810.38,
+      "end": 3819.1,
+      "text": "the whole universe right um so i think it's appropriate you know for us to to uh you know"
+    },
+    {
+      "start": 3819.1,
+      "end": 3826.46,
+      "text": "really work towards our own local goals and uh and it's kind of aggressive for us saying"
+    },
+    {
+      "start": 3826.46,
+      "end": 3832.2200000000003,
+      "text": "oh the future has to evolve this way that i want it to sure because then we'll have arguments like"
+    },
+    {
+      "start": 3832.2200000000003,
+      "end": 3836.2,
+      "text": "different people think the future the global future should evolve in different ways and they"
+    },
+    {
+      "start": 3836.2,
+      "end": 3843.78,
+      "text": "have conflict and yeah you want to avoid that maybe a good analogy here would be okay so suppose"
+    },
+    {
+      "start": 3843.78,
+      "end": 3850.26,
+      "text": "you're raising your own children it might not be appropriate to have extremely tight goals for"
+    },
+    {
+      "start": 3850.26,
+      "end": 3855.2200000000003,
+      "text": "their own life or also have some sense of like i want my children to go out there in the world and"
+    },
+    {
+      "start": 3855.2200000000003,
+      "end": 3856.3,
+      "text": "have this specific impact"
+    },
+    {
+      "start": 3856.46,
+      "end": 3861.34,
+      "text": "my son's gonna become president and my daughter's gonna become ceo of intel and like together"
+    },
+    {
+      "start": 3861.34,
+      "end": 3867.04,
+      "text": "they're gonna have this effect on the world um but people do have the sense that i think this"
+    },
+    {
+      "start": 3867.04,
+      "end": 3874.34,
+      "text": "is appropriate of saying i'm going to give them good robust values such that if and when they do"
+    },
+    {
+      "start": 3874.34,
+      "end": 3881.08,
+      "text": "end up in positions of power they do reasonable pro-social things and i think maybe a similar"
+    },
+    {
+      "start": 3881.08,
+      "end": 3885.34,
+      "text": "attitude towards ai makes sense not in the sense of we can predict everything that they will do"
+    },
+    {
+      "start": 3886.46,
+      "end": 3891.5,
+      "text": "where we have this plan about what the world should look like in 100 years but it's quite"
+    },
+    {
+      "start": 3891.5,
+      "end": 3899.96,
+      "text": "important to give them robust and steerable and pro-social values pro-social values"
+    },
+    {
+      "start": 3899.96,
+      "end": 3906.96,
+      "text": "maybe that's the wrong word are there universal values that we can all agree on i don't think so"
+    },
+    {
+      "start": 3906.96,
+      "end": 3912.68,
+      "text": "but that doesn't prevent us from uh giving our kids a good education right like we have some"
+    },
+    {
+      "start": 3912.68,
+      "end": 3916.32,
+      "text": "sense of we want our children to be a certain way yeah and maybe process is the wrong word"
+    },
+    {
+      "start": 3916.46,
+      "end": 3921.78,
+      "text": "high integrity is maybe a better word where if there's a request or if there's a goal that"
+    },
+    {
+      "start": 3921.78,
+      "end": 3929.56,
+      "text": "seems harmful they will refuse to engage in it um or they'll be honest um things like that and"
+    },
+    {
+      "start": 3929.56,
+      "end": 3934.66,
+      "text": "we have some sense that we can teach our children things like this even if we don't have some sense"
+    },
+    {
+      "start": 3934.66,
+      "end": 3940.28,
+      "text": "of what true morality is or everybody doesn't agree on that um and maybe that's a reasonable"
+    },
+    {
+      "start": 3940.28,
+      "end": 3946.32,
+      "text": "target for ai as well so so you're saying we're trying to design the future and the"
+    },
+    {
+      "start": 3946.46,
+      "end": 3950.7200000000003,
+      "text": "principles by which it will evolve and come into being right and so you're saying the first thing"
+    },
+    {
+      "start": 3950.7200000000003,
+      "end": 3957.02,
+      "text": "you're saying is well we will we try to teach our our children um general principles which will"
+    },
+    {
+      "start": 3957.02,
+      "end": 3964.7400000000002,
+      "text": "promote more likely evolutions yeah um maybe we should also seek for things being voluntary if"
+    },
+    {
+      "start": 3964.7400000000002,
+      "end": 3969.88,
+      "text": "there is change we want it to be a volunteer rather than imposed on people i think that's a"
+    },
+    {
+      "start": 3969.88,
+      "end": 3976.0,
+      "text": "very important point yeah um and yeah that's all good i think i think this is like a big"
+    },
+    {
+      "start": 3976.46,
+      "end": 3984.56,
+      "text": "you know the big the big or one of the really big human enterprises to design society and that's"
+    },
+    {
+      "start": 3984.56,
+      "end": 3989.84,
+      "text": "been ongoing for for thousands of years again and so so it's like the more things change really the"
+    },
+    {
+      "start": 3989.84,
+      "end": 3995.08,
+      "text": "more things they stay the same we still have to figure out how to be uh the children will still"
+    },
+    {
+      "start": 3995.08,
+      "end": 4001.4,
+      "text": "come up with different values that seem strange to their parents and their grandparents and uh"
+    },
+    {
+      "start": 4001.4,
+      "end": 4005.8,
+      "text": "and things will evolve the more things change the more they stay the same also seems like"
+    },
+    {
+      "start": 4006.46,
+      "end": 4010.38,
+      "text": "a good capstone to the ai discussion because the ai discussion we were having was about how"
+    },
+    {
+      "start": 4010.38,
+      "end": 4017.2400000000002,
+      "text": "techniques which were um invented even before the application to deep learning and back propagation"
+    },
+    {
+      "start": 4017.2400000000002,
+      "end": 4022.36,
+      "text": "was evident have are you know central to the progression of ai today so maybe that's a good"
+    },
+    {
+      "start": 4022.36,
+      "end": 4028.04,
+      "text": "place to wrap up the conversation okay thank you very much thank you for coming on my pleasure"
+    }
+  ],
+  "segment_count": 1034
+}

@@ -2,7 +2,7 @@
 title: "非平衡动力学"
 description: "熵产生、稳态、耗散与涨落定理。"
 paper_count: 119
-last_updated: "2026-04-24"
+last_updated: "2026-05-18"
 ---
 
 # 非平衡动力学

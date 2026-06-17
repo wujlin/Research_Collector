@@ -1,0 +1,3010 @@
+{
+  "segments": [
+    {
+      "start": 0.08,
+      "end": 5.839,
+      "text": "In 1971, the US government agency ARPA"
+    },
+    {
+      "start": 3.679,
+      "end": 8.559,
+      "text": "launched a program to push the frontiers"
+    },
+    {
+      "start": 5.839,
+      "end": 11.2,
+      "text": "of speech recognition. ARPA set an"
+    },
+    {
+      "start": 8.559,
+      "end": 12.559,
+      "text": "ambitious 5-year goal, a system that"
+    },
+    {
+      "start": 11.2,
+      "end": 16.24,
+      "text": "could recognize a thousand different"
+    },
+    {
+      "start": 12.559,
+      "end": 18.16,
+      "text": "words with 90% accuracy. 5 years later,"
+    },
+    {
+      "start": 16.24,
+      "end": 20.64,
+      "text": "a team from Carnegie Melon demonstrated"
+    },
+    {
+      "start": 18.16,
+      "end": 23.279,
+      "text": "Harpy, an AI system capable of"
+    },
+    {
+      "start": 20.64,
+      "end": 26.88,
+      "text": "recognizing a,01 different words with"
+    },
+    {
+      "start": 23.279,
+      "end": 29.519,
+      "text": "95% accuracy. The ARPA program was a"
+    },
+    {
+      "start": 26.88,
+      "end": 31.519,
+      "text": "success, but over the next decade, the"
+    },
+    {
+      "start": 29.519,
+      "end": 33.6,
+      "text": "core of Harpy's intelligence, an"
+    },
+    {
+      "start": 31.519,
+      "end": 35.36,
+      "text": "enormous knowledge graph, would be"
+    },
+    {
+      "start": 33.6,
+      "end": 38.719,
+      "text": "replaced by something completely"
+    },
+    {
+      "start": 35.36,
+      "end": 40.719,
+      "text": "different. Each of the over 14,000 nodes"
+    },
+    {
+      "start": 38.719,
+      "end": 43.84,
+      "text": "in Harpy's knowledge graph represents a"
+    },
+    {
+      "start": 40.719,
+      "end": 45.92,
+      "text": "single phone. One of the 98 basic sounds"
+    },
+    {
+      "start": 43.84,
+      "end": 47.84,
+      "text": "the team used to break apart spoken"
+    },
+    {
+      "start": 45.92,
+      "end": 49.52,
+      "text": "American English."
+    },
+    {
+      "start": 47.84,
+      "end": 51.039,
+      "text": "The graph itself captures all the"
+    },
+    {
+      "start": 49.52,
+      "end": 53.199,
+      "text": "different ways these phones can be"
+    },
+    {
+      "start": 51.039,
+      "end": 55.84,
+      "text": "strung together to create sentences"
+    },
+    {
+      "start": 53.199,
+      "end": 57.44,
+      "text": "considered valid by Harpy."
+    },
+    {
+      "start": 55.84,
+      "end": 59.52,
+      "text": "In this part of the graph, we can see"
+    },
+    {
+      "start": 57.44,
+      "end": 62.239,
+      "text": "the pathway for the phrases, tell me"
+    },
+    {
+      "start": 59.52,
+      "end": 64.479,
+      "text": "about China, tell me about Nixon, and"
+    },
+    {
+      "start": 62.239,
+      "end": 66.56,
+      "text": "give me the headlines."
+    },
+    {
+      "start": 64.479,
+      "end": 69.04,
+      "text": "Each phone in Harpy's graph includes an"
+    },
+    {
+      "start": 66.56,
+      "end": 72.159,
+      "text": "expected frequency curve for the sound"
+    },
+    {
+      "start": 69.04,
+      "end": 75.36,
+      "text": "of the phone. These curves are tuned for"
+    },
+    {
+      "start": 72.159,
+      "end": 77.28,
+      "text": "the current speaker as audio comes in."
+    },
+    {
+      "start": 75.36,
+      "end": 79.92,
+      "text": "For example, if I say tell me about"
+    },
+    {
+      "start": 77.28,
+      "end": 82.56,
+      "text": "China, a signal processing algorithm"
+    },
+    {
+      "start": 79.92,
+      "end": 84.4,
+      "text": "chops the waveform into blocks and the"
+    },
+    {
+      "start": 82.56,
+      "end": 85.92,
+      "text": "frequency content of each block is"
+    },
+    {
+      "start": 84.4,
+      "end": 87.68,
+      "text": "computed."
+    },
+    {
+      "start": 85.92,
+      "end": 89.52,
+      "text": "From here, the frequency content of our"
+    },
+    {
+      "start": 87.68,
+      "end": 92.88,
+      "text": "first block is compared to the phones at"
+    },
+    {
+      "start": 89.52,
+      "end": 96.24,
+      "text": "the start of our graph. G in give and T"
+    },
+    {
+      "start": 92.88,
+      "end": 98.88,
+      "text": "in tell. T is a better match. So, we"
+    },
+    {
+      "start": 96.24,
+      "end": 100.4,
+      "text": "progress down this part of the tree. We"
+    },
+    {
+      "start": 98.88,
+      "end": 103.84,
+      "text": "then move to the second block in our"
+    },
+    {
+      "start": 100.4,
+      "end": 107.119,
+      "text": "waveform. This is the L intel and find"
+    },
+    {
+      "start": 103.84,
+      "end": 109.36,
+      "text": "its closest match. Block by block, we"
+    },
+    {
+      "start": 107.119,
+      "end": 111.28,
+      "text": "progress through our knowledge graph"
+    },
+    {
+      "start": 109.36,
+      "end": 114.0,
+      "text": "using a frequency matching score to"
+    },
+    {
+      "start": 111.28,
+      "end": 116.88,
+      "text": "guide our search, resulting in a final"
+    },
+    {
+      "start": 114.0,
+      "end": 118.56,
+      "text": "sentence. Note that the Harpy team also"
+    },
+    {
+      "start": 116.88,
+      "end": 120.88,
+      "text": "used a somewhat more sophisticated"
+    },
+    {
+      "start": 118.56,
+      "end": 122.719,
+      "text": "search method called beam search to help"
+    },
+    {
+      "start": 120.88,
+      "end": 125.04,
+      "text": "find the best overall path through the"
+    },
+    {
+      "start": 122.719,
+      "end": 128.0,
+      "text": "graph instead of just greedily choosing"
+    },
+    {
+      "start": 125.04,
+      "end": 129.599,
+      "text": "the best match at each step."
+    },
+    {
+      "start": 128.0,
+      "end": 131.44,
+      "text": "The way Harpy's knowledge graph is"
+    },
+    {
+      "start": 129.599,
+      "end": 132.959,
+      "text": "constructed is painstaking and"
+    },
+    {
+      "start": 131.44,
+      "end": 134.879,
+      "text": "fascinating."
+    },
+    {
+      "start": 132.959,
+      "end": 138.0,
+      "text": "First, a language design expert"
+    },
+    {
+      "start": 134.879,
+      "end": 140.72,
+      "text": "specifies a grammar. Harpy could not"
+    },
+    {
+      "start": 138.0,
+      "end": 142.319,
+      "text": "accept arbitrary sequences of words."
+    },
+    {
+      "start": 140.72,
+      "end": 144.08,
+      "text": "This would have significantly degraded"
+    },
+    {
+      "start": 142.319,
+      "end": 146.319,
+      "text": "performance."
+    },
+    {
+      "start": 144.08,
+      "end": 148.16,
+      "text": "Instead, a formal grammar was used to"
+    },
+    {
+      "start": 146.319,
+      "end": 150.239,
+      "text": "capture valid sentence structures for"
+    },
+    {
+      "start": 148.16,
+      "end": 151.76,
+      "text": "Harpy's intended use case of document"
+    },
+    {
+      "start": 150.239,
+      "end": 154.08,
+      "text": "retrieval."
+    },
+    {
+      "start": 151.76,
+      "end": 156.08,
+      "text": "This small example Harpy grammar tells"
+    },
+    {
+      "start": 154.08,
+      "end": 160.4,
+      "text": "us that the word tell can be followed by"
+    },
+    {
+      "start": 156.08,
+      "end": 161.92,
+      "text": "me or us and then by all or about."
+    },
+    {
+      "start": 160.4,
+      "end": 164.0,
+      "text": "From here, each word in Harpy's"
+    },
+    {
+      "start": 161.92,
+      "end": 166.959,
+      "text": "vocabulary is broken into individual"
+    },
+    {
+      "start": 164.0,
+      "end": 169.36,
+      "text": "phones. These breakdowns are themselves"
+    },
+    {
+      "start": 166.959,
+      "end": 171.36,
+      "text": "little graphs. Here's the pronunciation"
+    },
+    {
+      "start": 169.36,
+      "end": 174.48,
+      "text": "graph the Harpy team used for the word"
+    },
+    {
+      "start": 171.36,
+      "end": 176.48,
+      "text": "tell. Note that the graph branches due"
+    },
+    {
+      "start": 174.48,
+      "end": 178.8,
+      "text": "to the possibility of pronouncing tell"
+    },
+    {
+      "start": 176.48,
+      "end": 180.56,
+      "text": "in different ways. tell can be"
+    },
+    {
+      "start": 178.8,
+      "end": 183.2,
+      "text": "pronounced with an extra vowel sound in"
+    },
+    {
+      "start": 180.56,
+      "end": 185.44,
+      "text": "the middle. Replacing each word in our"
+    },
+    {
+      "start": 183.2,
+      "end": 187.76,
+      "text": "word graph with its phone breakdown, we"
+    },
+    {
+      "start": 185.44,
+      "end": 189.28,
+      "text": "get a larger graph. But we aren't done"
+    },
+    {
+      "start": 187.76,
+      "end": 191.12,
+      "text": "yet."
+    },
+    {
+      "start": 189.28,
+      "end": 192.879,
+      "text": "When we speak, we often change the way"
+    },
+    {
+      "start": 191.12,
+      "end": 194.879,
+      "text": "words sound depending on the words"
+    },
+    {
+      "start": 192.879,
+      "end": 197.28,
+      "text": "around them. This is known as a"
+    },
+    {
+      "start": 194.879,
+      "end": 200.56,
+      "text": "juncture. When saying a phrase like"
+    },
+    {
+      "start": 197.28,
+      "end": 203.92,
+      "text": "about China, the T in about is often"
+    },
+    {
+      "start": 200.56,
+      "end": 206.959,
+      "text": "dropped, leaving about China."
+    },
+    {
+      "start": 203.92,
+      "end": 209.44,
+      "text": "And in transitions like me all, a subtle"
+    },
+    {
+      "start": 206.959,
+      "end": 211.599,
+      "text": "extra Y sound known as a glide is added"
+    },
+    {
+      "start": 209.44,
+      "end": 213.44,
+      "text": "by some speakers to transition between"
+    },
+    {
+      "start": 211.599,
+      "end": 215.599,
+      "text": "vowels."
+    },
+    {
+      "start": 213.44,
+      "end": 217.68,
+      "text": "The Harpy team accounted for this by"
+    },
+    {
+      "start": 215.599,
+      "end": 220.08,
+      "text": "creating rules to manipulate the phone"
+    },
+    {
+      "start": 217.68,
+      "end": 222.799,
+      "text": "graph to allow for various junctures"
+    },
+    {
+      "start": 220.08,
+      "end": 224.64,
+      "text": "between phones."
+    },
+    {
+      "start": 222.799,
+      "end": 227.36,
+      "text": "Now, although Harpy achieved Arper's"
+    },
+    {
+      "start": 224.64,
+      "end": 229.599,
+      "text": "ambitious goal of 90% accuracy on a"
+    },
+    {
+      "start": 227.36,
+      "end": 231.36,
+      "text": "thousandword vocabulary,"
+    },
+    {
+      "start": 229.599,
+      "end": 234.0,
+      "text": "further scaling Harpy's performance"
+    },
+    {
+      "start": 231.36,
+      "end": 235.76,
+      "text": "proved difficult. And over the next"
+    },
+    {
+      "start": 234.0,
+      "end": 239.439,
+      "text": "decade, Harpy's knowledge graph was"
+    },
+    {
+      "start": 235.76,
+      "end": 240.959,
+      "text": "replaced by hidden markoff models. These"
+    },
+    {
+      "start": 239.439,
+      "end": 242.879,
+      "text": "models can still be understood as"
+    },
+    {
+      "start": 240.959,
+      "end": 245.519,
+      "text": "implementing a graph structure between"
+    },
+    {
+      "start": 242.879,
+      "end": 247.439,
+      "text": "phone nodes, but the edges of the graph"
+    },
+    {
+      "start": 245.519,
+      "end": 250.72,
+      "text": "are now probabilities that are learned"
+    },
+    {
+      "start": 247.439,
+      "end": 252.72,
+      "text": "from data. No language expert specified"
+    },
+    {
+      "start": 250.72,
+      "end": 255.439,
+      "text": "grammar and no linguistic expert"
+    },
+    {
+      "start": 252.72,
+      "end": 257.28,
+      "text": "specified juncture rules."
+    },
+    {
+      "start": 255.439,
+      "end": 260.16,
+      "text": "This was a controversial shift at the"
+    },
+    {
+      "start": 257.28,
+      "end": 262.24,
+      "text": "time. Building our knowledge into AI"
+    },
+    {
+      "start": 260.16,
+      "end": 264.24,
+      "text": "systems was considered critical by many"
+    },
+    {
+      "start": 262.24,
+      "end": 266.56,
+      "text": "researchers."
+    },
+    {
+      "start": 264.24,
+      "end": 269.44,
+      "text": "However, by the late 1980s and early"
+    },
+    {
+      "start": 266.56,
+      "end": 271.36,
+      "text": "1990s, virtually all speech recognition"
+    },
+    {
+      "start": 269.44,
+      "end": 273.84,
+      "text": "systems had moved to hidden markoff"
+    },
+    {
+      "start": 271.36,
+      "end": 276.0,
+      "text": "models. And these systems were able to"
+    },
+    {
+      "start": 273.84,
+      "end": 279.6,
+      "text": "scale to much larger vocabularies of"
+    },
+    {
+      "start": 276.0,
+      "end": 282.24,
+      "text": "5,000 and then 20,000 words."
+    },
+    {
+      "start": 279.6,
+      "end": 284.0,
+      "text": "Decades later, in 2019, the computer"
+    },
+    {
+      "start": 282.24,
+      "end": 285.759,
+      "text": "scientist Richard Sutton published a"
+    },
+    {
+      "start": 284.0,
+      "end": 288.56,
+      "text": "highly cited essay that he called the"
+    },
+    {
+      "start": 285.759,
+      "end": 290.56,
+      "text": "bitter lesson. In his essay, Sutton"
+    },
+    {
+      "start": 288.56,
+      "end": 293.12,
+      "text": "points out that Harpy's replacement with"
+    },
+    {
+      "start": 290.56,
+      "end": 296.08,
+      "text": "hidden Markoff model based approaches is"
+    },
+    {
+      "start": 293.12,
+      "end": 298.479,
+      "text": "part of a broader trend. A trend that"
+    },
+    {
+      "start": 296.08,
+      "end": 301.36,
+      "text": "Sutton calls the biggest lesson from 70"
+    },
+    {
+      "start": 298.479,
+      "end": 303.36,
+      "text": "years of AI research."
+    },
+    {
+      "start": 301.36,
+      "end": 305.44,
+      "text": "Specifically, that general methods that"
+    },
+    {
+      "start": 303.36,
+      "end": 309.039,
+      "text": "leverage computation are ultimately the"
+    },
+    {
+      "start": 305.44,
+      "end": 310.72,
+      "text": "most effective and by a large margin."
+    },
+    {
+      "start": 309.039,
+      "end": 313.52,
+      "text": "and that trying to build human knowledge"
+    },
+    {
+      "start": 310.72,
+      "end": 316.16,
+      "text": "into our systems as the Harpy team did"
+    },
+    {
+      "start": 313.52,
+      "end": 318.08,
+      "text": "helps initially but then becomes highly"
+    },
+    {
+      "start": 316.16,
+      "end": 320.0,
+      "text": "counterproductive."
+    },
+    {
+      "start": 318.08,
+      "end": 322.479,
+      "text": "The timing of Sutton's essay could not"
+    },
+    {
+      "start": 320.0,
+      "end": 325.12,
+      "text": "have been better. OpenAI had just"
+    },
+    {
+      "start": 322.479,
+      "end": 327.52,
+      "text": "released GPT2 a few weeks prior [music]"
+    },
+    {
+      "start": 325.12,
+      "end": 329.28,
+      "text": "and a new paradigm was just beginning to"
+    },
+    {
+      "start": 327.52,
+      "end": 331.84,
+      "text": "emerge."
+    },
+    {
+      "start": 329.28,
+      "end": 333.919,
+      "text": "A general architecture, the transformer,"
+    },
+    {
+      "start": 331.84,
+      "end": 336.24,
+      "text": "focused on a simple learning objective,"
+    },
+    {
+      "start": 333.919,
+      "end": 338.4,
+      "text": "next token prediction, and trained with"
+    },
+    {
+      "start": 336.24,
+      "end": 340.56,
+      "text": "massive amounts of compute, could"
+    },
+    {
+      "start": 338.4,
+      "end": 342.24,
+      "text": "produce shockingly intelligent language"
+    },
+    {
+      "start": 340.56,
+      "end": 344.8,
+      "text": "models."
+    },
+    {
+      "start": 342.24,
+      "end": 347.199,
+      "text": "For myself and many others, it seemed"
+    },
+    {
+      "start": 344.8,
+      "end": 349.12,
+      "text": "like we had learned the bitter lesson."
+    },
+    {
+      "start": 347.199,
+      "end": 351.44,
+      "text": "We had found a method of creating AI"
+    },
+    {
+      "start": 349.12,
+      "end": 354.08,
+      "text": "systems that leveraged massive amounts"
+    },
+    {
+      "start": 351.44,
+      "end": 356.32,
+      "text": "of compute and appeared to rely only"
+    },
+    {
+      "start": 354.08,
+      "end": 358.88,
+      "text": "minimally on human assumptions about how"
+    },
+    {
+      "start": 356.32,
+      "end": 361.52,
+      "text": "AI systems should work."
+    },
+    {
+      "start": 358.88,
+      "end": 364.319,
+      "text": "But then in 2025, something really"
+    },
+    {
+      "start": 361.52,
+      "end": 367.28,
+      "text": "surprising happened. Richard Sutton went"
+    },
+    {
+      "start": 364.319,
+      "end": 369.6,
+      "text": "on a podcast. In the first 10 minutes of"
+    },
+    {
+      "start": 367.28,
+      "end": 371.28,
+      "text": "Sutton's interview with Darkash Patel,"
+    },
+    {
+      "start": 369.6,
+      "end": 372.96,
+      "text": "it became clear that Sutton had a"
+    },
+    {
+      "start": 371.28,
+      "end": 375.44,
+      "text": "completely different take on large"
+    },
+    {
+      "start": 372.96,
+      "end": 377.36,
+      "text": "language models and the bitter lesson."
+    },
+    {
+      "start": 375.44,
+      "end": 379.199,
+      "text": "So, I mean, it's interesting because you"
+    },
+    {
+      "start": 377.36,
+      "end": 381.84,
+      "text": "wrote this essay in 2019 titled The"
+    },
+    {
+      "start": 379.199,
+      "end": 383.36,
+      "text": "Bitter Lesson, and this is the most"
+    },
+    {
+      "start": 381.84,
+      "end": 389.28,
+      "text": "influential essay perhaps in the history"
+    },
+    {
+      "start": 383.36,
+      "end": 390.88,
+      "text": "of AI, but people have used that as a"
+    },
+    {
+      "start": 389.28,
+      "end": 394.16,
+      "text": "justification"
+    },
+    {
+      "start": 390.88,
+      "end": 396.88,
+      "text": "for scaling up LLMs because in their"
+    },
+    {
+      "start": 394.16,
+      "end": 399.68,
+      "text": "view, this is the one scalable way we"
+    },
+    {
+      "start": 396.88,
+      "end": 401.68,
+      "text": "have found to pour ungodly amounts of"
+    },
+    {
+      "start": 399.68,
+      "end": 402.88,
+      "text": "compute into learning about the world."
+    },
+    {
+      "start": 401.68,
+      "end": 405.12,
+      "text": "And so it's interesting that your"
+    },
+    {
+      "start": 402.88,
+      "end": 407.12,
+      "text": "perspective is that the LLMs are"
+    },
+    {
+      "start": 405.12,
+      "end": 409.6,
+      "text": "actually not bitter lesson."
+    },
+    {
+      "start": 407.12,
+      "end": 413.44,
+      "text": ">> It's an interesting question whether uh"
+    },
+    {
+      "start": 409.6,
+      "end": 415.039,
+      "text": "large language models are are uh a case"
+    },
+    {
+      "start": 413.44,
+      "end": 415.36,
+      "text": "of the bitter lesson."
+    },
+    {
+      "start": 415.039,
+      "end": 419.84,
+      "text": ">> Yeah."
+    },
+    {
+      "start": 415.36,
+      "end": 422.08,
+      "text": ">> Because they are clearly um a a way of"
+    },
+    {
+      "start": 419.84,
+      "end": 425.28,
+      "text": "using massive computation things that"
+    },
+    {
+      "start": 422.08,
+      "end": 426.56,
+      "text": "will scale with computation up to up to"
+    },
+    {
+      "start": 425.28,
+      "end": 428.0,
+      "text": "the limits of the internet."
+    },
+    {
+      "start": 426.56,
+      "end": 431.44,
+      "text": ">> Yeah."
+    },
+    {
+      "start": 428.0,
+      "end": 437.199,
+      "text": "uh but they're also a way of putting in"
+    },
+    {
+      "start": 431.44,
+      "end": 439.919,
+      "text": "lots of um human knowledge and uh so so"
+    },
+    {
+      "start": 437.199,
+      "end": 444.56,
+      "text": "this is an interesting question um it's"
+    },
+    {
+      "start": 439.919,
+      "end": 448.96,
+      "text": "a sociological or industry question uh"
+    },
+    {
+      "start": 444.56,
+      "end": 452.72,
+      "text": "will they reach the limits of of of the"
+    },
+    {
+      "start": 448.96,
+      "end": 456.319,
+      "text": "data and and be superseded by things"
+    },
+    {
+      "start": 452.72,
+      "end": 460.0,
+      "text": "that that are can get more data just"
+    },
+    {
+      "start": 456.319,
+      "end": 463.84,
+      "text": "from experience rather than from uh from"
+    },
+    {
+      "start": 460.0,
+      "end": 466.319,
+      "text": "people. Uh in some ways it's a classic"
+    },
+    {
+      "start": 463.84,
+      "end": 468.24,
+      "text": "case of the of the of the bitter lesson"
+    },
+    {
+      "start": 466.319,
+      "end": 470.0,
+      "text": "with the more the more human knowledge"
+    },
+    {
+      "start": 468.24,
+      "end": 472.16,
+      "text": "we put into the large language models"
+    },
+    {
+      "start": 470.0,
+      "end": 474.8,
+      "text": "the better they can do and so it feels"
+    },
+    {
+      "start": 472.16,
+      "end": 479.44,
+      "text": "good. Um"
+    },
+    {
+      "start": 474.8,
+      "end": 481.36,
+      "text": "and yet uh one well I in particular"
+    },
+    {
+      "start": 479.44,
+      "end": 483.68,
+      "text": "expect there to be systems that can"
+    },
+    {
+      "start": 481.36,
+      "end": 485.84,
+      "text": "learn from experience which could well"
+    },
+    {
+      "start": 483.68,
+      "end": 489.36,
+      "text": "perform much much better and be much"
+    },
+    {
+      "start": 485.84,
+      "end": 491.44,
+      "text": "more scalable. In which uh case it will"
+    },
+    {
+      "start": 489.36,
+      "end": 494.319,
+      "text": "be another instance of the bitter lesson"
+    },
+    {
+      "start": 491.44,
+      "end": 497.36,
+      "text": "that the things that that used human"
+    },
+    {
+      "start": 494.319,
+      "end": 501.28,
+      "text": "knowledge were eventually superseded by"
+    },
+    {
+      "start": 497.36,
+      "end": 503.28,
+      "text": "things that just um trained from uh"
+    },
+    {
+      "start": 501.28,
+      "end": 506.479,
+      "text": "experience and computation."
+    },
+    {
+      "start": 503.28,
+      "end": 508.24,
+      "text": ">> This is such a remarkable moment. Sutton"
+    },
+    {
+      "start": 506.479,
+      "end": 509.84,
+      "text": "is basically telling us that much of the"
+    },
+    {
+      "start": 508.24,
+      "end": 512.399,
+      "text": "field has interpreted his essay in"
+    },
+    {
+      "start": 509.84,
+      "end": 514.159,
+      "text": "exactly the wrong way. that large"
+    },
+    {
+      "start": 512.399,
+      "end": 517.12,
+      "text": "language models are an example of the"
+    },
+    {
+      "start": 514.159,
+      "end": 519.2,
+      "text": "bitter lesson, but a negative example,"
+    },
+    {
+      "start": 517.12,
+      "end": 522.0,
+      "text": "one that like Harpy relies far too much"
+    },
+    {
+      "start": 519.2,
+      "end": 525.279,
+      "text": "on human knowledge since LLMs are"
+    },
+    {
+      "start": 522.0,
+      "end": 528.399,
+      "text": "trained on human generated text."
+    },
+    {
+      "start": 525.279,
+      "end": 530.08,
+      "text": "So, is Sutton right? Will LLMs hit a"
+    },
+    {
+      "start": 528.399,
+      "end": 532.8,
+      "text": "performance barrier due to their"
+    },
+    {
+      "start": 530.08,
+      "end": 534.48,
+      "text": "reliance on human knowledge and need to"
+    },
+    {
+      "start": 532.8,
+      "end": 537.44,
+      "text": "be replaced with very different types of"
+    },
+    {
+      "start": 534.48,
+      "end": 539.839,
+      "text": "AI systems? Sutton ends the bitter"
+    },
+    {
+      "start": 537.44,
+      "end": 542.24,
+      "text": "lesson with these lines."
+    },
+    {
+      "start": 539.839,
+      "end": 544.88,
+      "text": "We want AI agents that can discover like"
+    },
+    {
+      "start": 542.24,
+      "end": 547.279,
+      "text": "we can, not which contain what we have"
+    },
+    {
+      "start": 544.88,
+      "end": 549.279,
+      "text": "discovered."
+    },
+    {
+      "start": 547.279,
+      "end": 551.279,
+      "text": "Building in our discoveries only makes"
+    },
+    {
+      "start": 549.279,
+      "end": 554.56,
+      "text": "it harder to see how the discovering"
+    },
+    {
+      "start": 551.279,
+      "end": 556.56,
+      "text": "process can be done."
+    },
+    {
+      "start": 554.56,
+      "end": 559.519,
+      "text": "So what would an AI system look like"
+    },
+    {
+      "start": 556.56,
+      "end": 561.12,
+      "text": "that can discover like we can? The"
+    },
+    {
+      "start": 559.519,
+      "end": 562.64,
+      "text": "primary way large language models are"
+    },
+    {
+      "start": 561.12,
+      "end": 565.519,
+      "text": "trained today is through supervised"
+    },
+    {
+      "start": 562.64,
+      "end": 568.0,
+      "text": "learning. Given some training text, for"
+    },
+    {
+      "start": 565.519,
+      "end": 569.839,
+      "text": "example, the first line of Harry Potter,"
+    },
+    {
+      "start": 568.0,
+      "end": 572.0,
+      "text": "the text is broken into little pieces"
+    },
+    {
+      "start": 569.839,
+      "end": 574.32,
+      "text": "known as tokens, and the model is"
+    },
+    {
+      "start": 572.0,
+      "end": 576.88,
+      "text": "trained to predict the next token given"
+    },
+    {
+      "start": 574.32,
+      "end": 579.76,
+      "text": "all the tokens that come before. So"
+    },
+    {
+      "start": 576.88,
+      "end": 581.279,
+      "text": "given the input Mr. and Mrs. Dersley of,"
+    },
+    {
+      "start": 579.76,
+      "end": 583.76,
+      "text": "the model is trained to predict the"
+    },
+    {
+      "start": 581.279,
+      "end": 586.24,
+      "text": "token for the word number. And given the"
+    },
+    {
+      "start": 583.76,
+      "end": 587.68,
+      "text": "input Mr. and Mrs. Dersley of number,"
+    },
+    {
+      "start": 586.24,
+      "end": 591.12,
+      "text": "the model is trained to predict the"
+    },
+    {
+      "start": 587.68,
+      "end": 593.36,
+      "text": "token for the word for and so on."
+    },
+    {
+      "start": 591.12,
+      "end": 596.24,
+      "text": "Token by token, we're teaching the model"
+    },
+    {
+      "start": 593.36,
+      "end": 598.48,
+      "text": "what to say. And Sutton's criticism here"
+    },
+    {
+      "start": 596.24,
+      "end": 601.04,
+      "text": "is that like Harpy, this process relies"
+    },
+    {
+      "start": 598.48,
+      "end": 604.32,
+      "text": "too much on human knowledge since we're"
+    },
+    {
+      "start": 601.04,
+      "end": 608.32,
+      "text": "training our model to imitate humans."
+    },
+    {
+      "start": 604.32,
+      "end": 610.16,
+      "text": "So, how else might we train AI systems?"
+    },
+    {
+      "start": 608.32,
+      "end": 612.64,
+      "text": "Sutton is generally known as the father"
+    },
+    {
+      "start": 610.16,
+      "end": 614.56,
+      "text": "of reinforcement learning. One of the"
+    },
+    {
+      "start": 612.64,
+      "end": 616.32,
+      "text": "most compelling modern examples of AI"
+    },
+    {
+      "start": 614.56,
+      "end": 618.24,
+      "text": "systems trained using reinforcement"
+    },
+    {
+      "start": 616.32,
+      "end": 620.48,
+      "text": "learning instead of supervised learning"
+    },
+    {
+      "start": 618.24,
+      "end": 622.959,
+      "text": "are Google Deep Minds Alph Go and Alph"
+    },
+    {
+      "start": 620.48,
+      "end": 625.44,
+      "text": "Go Zero agents."
+    },
+    {
+      "start": 622.959,
+      "end": 627.6,
+      "text": "Now, Alph Go and Alph Go Zero are game"
+    },
+    {
+      "start": 625.44,
+      "end": 629.68,
+      "text": "playing agents, not large language"
+    },
+    {
+      "start": 627.6,
+      "end": 632.48,
+      "text": "models, but there are some really"
+    },
+    {
+      "start": 629.68,
+      "end": 634.079,
+      "text": "interesting parallels here."
+    },
+    {
+      "start": 632.48,
+      "end": 636.0,
+      "text": "Now, before we see exactly how"
+    },
+    {
+      "start": 634.079,
+      "end": 638.399,
+      "text": "reinforcement learning allows us to push"
+    },
+    {
+      "start": 636.0,
+      "end": 639.92,
+      "text": "beyond the limits of human knowledge, if"
+    },
+    {
+      "start": 638.399,
+      "end": 641.6,
+      "text": "you're someone who's obsessed with this"
+    },
+    {
+      "start": 639.92,
+      "end": 643.68,
+      "text": "stuff and looking for your next career"
+    },
+    {
+      "start": 641.6,
+      "end": 646.8,
+      "text": "move, check out this video sponsor,"
+    },
+    {
+      "start": 643.68,
+      "end": 649.92,
+      "text": "Tufalabs. Tufalabs recently won the ARC"
+    },
+    {
+      "start": 646.8,
+      "end": 651.68,
+      "text": "AGI3 preview competition, where AI"
+    },
+    {
+      "start": 649.92,
+      "end": 653.839,
+      "text": "agents must learn to play and win"
+    },
+    {
+      "start": 651.68,
+      "end": 657.2,
+      "text": "completely novel games that the agents"
+    },
+    {
+      "start": 653.839,
+      "end": 659.2,
+      "text": "developers have never seen before. Tufa"
+    },
+    {
+      "start": 657.2,
+      "end": 661.44,
+      "text": "Labs is an independent AI lab based in"
+    },
+    {
+      "start": 659.2,
+      "end": 663.6,
+      "text": "Zurich and puts out really interesting"
+    },
+    {
+      "start": 661.44,
+      "end": 665.92,
+      "text": "research on the frontiers of LLMs and"
+    },
+    {
+      "start": 663.6,
+      "end": 668.079,
+      "text": "reinforcement learning. In this recent"
+    },
+    {
+      "start": 665.92,
+      "end": 670.48,
+      "text": "paper, the team achieved very impressive"
+    },
+    {
+      "start": 668.079,
+      "end": 673.279,
+      "text": "performance on the MIT integration B"
+    },
+    {
+      "start": 670.48,
+      "end": 676.24,
+      "text": "challenge by creating a self-improvement"
+    },
+    {
+      "start": 673.279,
+      "end": 678.32,
+      "text": "loop where an LLM creates its own math"
+    },
+    {
+      "start": 676.24,
+      "end": 681.36,
+      "text": "practice problems and learns to solve"
+    },
+    {
+      "start": 678.32,
+      "end": 683.839,
+      "text": "them via reinforcement learning. Tufa"
+    },
+    {
+      "start": 681.36,
+      "end": 685.839,
+      "text": "Labs is serious about compute and is"
+    },
+    {
+      "start": 683.839,
+      "end": 690.64,
+      "text": "currently expanding their infrastructure"
+    },
+    {
+      "start": 685.839,
+      "end": 692.399,
+      "text": "with two Nvidia NVL72 GB300 racks which"
+    },
+    {
+      "start": 690.64,
+      "end": 695.44,
+      "text": "is a significant amount of compute given"
+    },
+    {
+      "start": 692.399,
+      "end": 698.0,
+      "text": "the relatively small team size. TUFALabs"
+    },
+    {
+      "start": 695.44,
+      "end": 700.399,
+      "text": "is fully self-funded by applying ML to"
+    },
+    {
+      "start": 698.0,
+      "end": 702.959,
+      "text": "quantitative finance. This funding"
+    },
+    {
+      "start": 700.399,
+      "end": 704.32,
+      "text": "structure is similar to deepseats. If"
+    },
+    {
+      "start": 702.959,
+      "end": 707.48,
+      "text": "this sounds interesting, you can apply"
+    },
+    {
+      "start": 704.32,
+      "end": 707.48,
+      "text": "at tufalabs.ai/join."
+    },
+    {
+      "start": 707.519,
+      "end": 712.959,
+      "text": "Now back to the bidder lesson. When"
+    },
+    {
+      "start": 710.56,
+      "end": 714.72,
+      "text": "building Alph Go, the first AI system"
+    },
+    {
+      "start": 712.959,
+      "end": 717.2,
+      "text": "that reached superhuman performance on"
+    },
+    {
+      "start": 714.72,
+      "end": 719.2,
+      "text": "the board game Go, the DeepMind team"
+    },
+    {
+      "start": 717.2,
+      "end": 721.92,
+      "text": "first trained a supervised policy"
+    },
+    {
+      "start": 719.2,
+      "end": 724.24,
+      "text": "network. In the jargon of reinforcement"
+    },
+    {
+      "start": 721.92,
+      "end": 726.24,
+      "text": "learning, an agent's policy determines"
+    },
+    {
+      "start": 724.24,
+      "end": 729.519,
+      "text": "what action an agent will take in a"
+    },
+    {
+      "start": 726.24,
+      "end": 732.079,
+      "text": "given state. In the game of Go, the"
+    },
+    {
+      "start": 729.519,
+      "end": 733.68,
+      "text": "current state is the board position, and"
+    },
+    {
+      "start": 732.079,
+      "end": 736.079,
+      "text": "the action is where the agent will place"
+    },
+    {
+      "start": 733.68,
+      "end": 738.24,
+      "text": "its next stone on the board. The"
+    },
+    {
+      "start": 736.079,
+      "end": 741.04,
+      "text": "DeepMind team used a deep neural network"
+    },
+    {
+      "start": 738.24,
+      "end": 742.88,
+      "text": "to learn this policy. This part of"
+    },
+    {
+      "start": 741.04,
+      "end": 744.72,
+      "text": "DeepMind's solution is strikingly"
+    },
+    {
+      "start": 742.88,
+      "end": 747.92,
+      "text": "similar to large language model"
+    },
+    {
+      "start": 744.72,
+      "end": 750.0,
+      "text": "training. Given some input text, large"
+    },
+    {
+      "start": 747.92,
+      "end": 752.8,
+      "text": "language models return a probability for"
+    },
+    {
+      "start": 750.0,
+      "end": 755.44,
+      "text": "each token the model could say next. And"
+    },
+    {
+      "start": 752.8,
+      "end": 757.44,
+      "text": "given an input board position, Alph Go's"
+    },
+    {
+      "start": 755.44,
+      "end": 759.68,
+      "text": "policy network returns a probability for"
+    },
+    {
+      "start": 757.44,
+      "end": 761.68,
+      "text": "each board position where Alph Go could"
+    },
+    {
+      "start": 759.68,
+      "end": 763.839,
+      "text": "place a stone."
+    },
+    {
+      "start": 761.68,
+      "end": 766.32,
+      "text": "Note that Alph Go used a convolutional"
+    },
+    {
+      "start": 763.839,
+      "end": 768.8,
+      "text": "architecture while LLMs generally use"
+    },
+    {
+      "start": 766.32,
+      "end": 770.56,
+      "text": "transformers. But this distinction isn't"
+    },
+    {
+      "start": 768.8,
+      "end": 772.079,
+      "text": "really significant for our comparison"
+    },
+    {
+      "start": 770.56,
+      "end": 774.8,
+      "text": "here."
+    },
+    {
+      "start": 772.079,
+      "end": 776.639,
+      "text": "Very similar to LLM training, Alph Go's"
+    },
+    {
+      "start": 774.8,
+      "end": 778.959,
+      "text": "policy network was first trained using"
+    },
+    {
+      "start": 776.639,
+      "end": 781.839,
+      "text": "supervised learning on human generated"
+    },
+    {
+      "start": 778.959,
+      "end": 785.04,
+      "text": "examples, learning to match expert human"
+    },
+    {
+      "start": 781.839,
+      "end": 786.88,
+      "text": "players moves in recorded games. The"
+    },
+    {
+      "start": 785.04,
+      "end": 789.2,
+      "text": "resulting supervised learning trained"
+    },
+    {
+      "start": 786.88,
+      "end": 791.76,
+      "text": "policy network is a fairly competent Go"
+    },
+    {
+      "start": 789.2,
+      "end": 793.92,
+      "text": "player. Evaluating the model in a"
+    },
+    {
+      "start": 791.76,
+      "end": 797.36,
+      "text": "tournament against other GO agents"
+    },
+    {
+      "start": 793.92,
+      "end": 799.2,
+      "text": "resulted in an ELO rating of 1517"
+    },
+    {
+      "start": 797.36,
+      "end": 801.04,
+      "text": "putting the network at mid amateur"
+    },
+    {
+      "start": 799.2,
+      "end": 802.639,
+      "text": "level."
+    },
+    {
+      "start": 801.04,
+      "end": 805.2,
+      "text": "Now in the reinforcement learning"
+    },
+    {
+      "start": 802.639,
+      "end": 807.2,
+      "text": "paradigm agents learn not from direct"
+    },
+    {
+      "start": 805.2,
+      "end": 809.92,
+      "text": "supervision but instead through"
+    },
+    {
+      "start": 807.2,
+      "end": 812.16,
+      "text": "interacting with their environments."
+    },
+    {
+      "start": 809.92,
+      "end": 814.16,
+      "text": "In the case of Alph Go, this just means"
+    },
+    {
+      "start": 812.16,
+      "end": 817.12,
+      "text": "taking the very natural approach of"
+    },
+    {
+      "start": 814.16,
+      "end": 819.12,
+      "text": "learning from actually playing the game."
+    },
+    {
+      "start": 817.12,
+      "end": 821.519,
+      "text": "The DeepMind team took their trained"
+    },
+    {
+      "start": 819.12,
+      "end": 824.639,
+      "text": "supervised policy network and had it"
+    },
+    {
+      "start": 821.519,
+      "end": 826.959,
+      "text": "play against various versions of itself."
+    },
+    {
+      "start": 824.639,
+      "end": 828.8,
+      "text": "After each game, the moves taken by the"
+    },
+    {
+      "start": 826.959,
+      "end": 831.36,
+      "text": "winning model were used as positive"
+    },
+    {
+      "start": 828.8,
+      "end": 833.839,
+      "text": "training examples to train the policy"
+    },
+    {
+      "start": 831.36,
+      "end": 835.519,
+      "text": "network. And the moves taken by the"
+    },
+    {
+      "start": 833.839,
+      "end": 838.24,
+      "text": "losing model were used as negative"
+    },
+    {
+      "start": 835.519,
+      "end": 840.079,
+      "text": "examples. This training process is very"
+    },
+    {
+      "start": 838.24,
+      "end": 841.519,
+      "text": "similar to learning from human expert"
+    },
+    {
+      "start": 840.079,
+      "end": 842.88,
+      "text": "moves."
+    },
+    {
+      "start": 841.519,
+      "end": 844.8,
+      "text": "The key difference here is that these"
+    },
+    {
+      "start": 842.88,
+      "end": 847.44,
+      "text": "moves are generated by two policy"
+    },
+    {
+      "start": 844.8,
+      "end": 849.279,
+      "text": "networks actually playing go and the"
+    },
+    {
+      "start": 847.44,
+      "end": 852.0,
+      "text": "underlying signal the model learns from"
+    },
+    {
+      "start": 849.279,
+      "end": 855.04,
+      "text": "is not the opinion of a human expert but"
+    },
+    {
+      "start": 852.0,
+      "end": 857.12,
+      "text": "instead the outcome of a real game. This"
+    },
+    {
+      "start": 855.04,
+      "end": 859.12,
+      "text": "approach is known as a policy gradient"
+    },
+    {
+      "start": 857.12,
+      "end": 861.199,
+      "text": "method and is a key technique in"
+    },
+    {
+      "start": 859.12,
+      "end": 862.88,
+      "text": "reinforcement learning initially"
+    },
+    {
+      "start": 861.199,
+      "end": 864.88,
+      "text": "developed by Sutton and others in the"
+    },
+    {
+      "start": 862.88,
+      "end": 866.72,
+      "text": "1990s."
+    },
+    {
+      "start": 864.88,
+      "end": 868.639,
+      "text": "Now, it turns out that the reinforcement"
+    },
+    {
+      "start": 866.72,
+      "end": 871.44,
+      "text": "learning trained policy network alone"
+    },
+    {
+      "start": 868.639,
+      "end": 873.04,
+      "text": "was not enough to deliver superhuman Go"
+    },
+    {
+      "start": 871.44,
+      "end": 875.12,
+      "text": "performance."
+    },
+    {
+      "start": 873.04,
+      "end": 879.04,
+      "text": "The DeepMind team needed one more big"
+    },
+    {
+      "start": 875.12,
+      "end": 880.639,
+      "text": "idea from reinforcement learning."
+    },
+    {
+      "start": 879.04,
+      "end": 882.959,
+      "text": "It turns out there's another way to set"
+    },
+    {
+      "start": 880.639,
+      "end": 884.72,
+      "text": "up our learning problem here, and it's"
+    },
+    {
+      "start": 882.959,
+      "end": 887.12,
+      "text": "actually an older and arguably more"
+    },
+    {
+      "start": 884.72,
+      "end": 890.639,
+      "text": "central reinforcement learning idea than"
+    },
+    {
+      "start": 887.12,
+      "end": 892.24,
+      "text": "the policy gradient method we've seen."
+    },
+    {
+      "start": 890.639,
+      "end": 894.639,
+      "text": "Instead of training a network to predict"
+    },
+    {
+      "start": 892.24,
+      "end": 896.24,
+      "text": "the move that should come next, what if"
+    },
+    {
+      "start": 894.639,
+      "end": 899.279,
+      "text": "we trained a network to measure the"
+    },
+    {
+      "start": 896.24,
+      "end": 901.36,
+      "text": "quality of a given board position"
+    },
+    {
+      "start": 899.279,
+      "end": 903.36,
+      "text": "or more concretely to estimate the"
+    },
+    {
+      "start": 901.36,
+      "end": 905.44,
+      "text": "probability of winning starting from a"
+    },
+    {
+      "start": 903.36,
+      "end": 906.88,
+      "text": "given board position."
+    },
+    {
+      "start": 905.44,
+      "end": 908.88,
+      "text": "This approach is broadly known in"
+    },
+    {
+      "start": 906.88,
+      "end": 911.6,
+      "text": "reinforcement learning as value function"
+    },
+    {
+      "start": 908.88,
+      "end": 914.72,
+      "text": "estimation where the term value refers"
+    },
+    {
+      "start": 911.6,
+      "end": 916.48,
+      "text": "to expected future rewards in this case"
+    },
+    {
+      "start": 914.72,
+      "end": 918.8,
+      "text": "winning the game."
+    },
+    {
+      "start": 916.48,
+      "end": 920.959,
+      "text": "Value functions play a central role in"
+    },
+    {
+      "start": 918.8,
+      "end": 923.68,
+      "text": "Sutton's canonical text on reinforcement"
+    },
+    {
+      "start": 920.959,
+      "end": 925.6,
+      "text": "learning. The most important component"
+    },
+    {
+      "start": 923.68,
+      "end": 928.0,
+      "text": "of almost all reinforcement learning"
+    },
+    {
+      "start": 925.6,
+      "end": 930.72,
+      "text": "algorithms we consider is a method for"
+    },
+    {
+      "start": 928.0,
+      "end": 932.88,
+      "text": "efficiently estimating values."
+    },
+    {
+      "start": 930.72,
+      "end": 935.199,
+      "text": "The central role of value estimation is"
+    },
+    {
+      "start": 932.88,
+      "end": 936.72,
+      "text": "arguably the most important thing that"
+    },
+    {
+      "start": 935.199,
+      "end": 939.92,
+      "text": "has been learned about reinforcement"
+    },
+    {
+      "start": 936.72,
+      "end": 941.519,
+      "text": "learning over the last six decades."
+    },
+    {
+      "start": 939.92,
+      "end": 944.16,
+      "text": "To make use of this reinforcement"
+    },
+    {
+      "start": 941.519,
+      "end": 945.76,
+      "text": "learning idea, the Google DeepMind team"
+    },
+    {
+      "start": 944.16,
+      "end": 948.399,
+      "text": "trained a second neural network that"
+    },
+    {
+      "start": 945.76,
+      "end": 950.32,
+      "text": "they called a value network. This"
+    },
+    {
+      "start": 948.399,
+      "end": 953.12,
+      "text": "network took in the same board position"
+    },
+    {
+      "start": 950.32,
+      "end": 954.8,
+      "text": "inputs as our policy network. But"
+    },
+    {
+      "start": 953.12,
+      "end": 957.04,
+      "text": "instead of predicting what move should"
+    },
+    {
+      "start": 954.8,
+      "end": 958.959,
+      "text": "come next, the value network predicts"
+    },
+    {
+      "start": 957.04,
+      "end": 961.519,
+      "text": "the probability of Alph Go winning the"
+    },
+    {
+      "start": 958.959,
+      "end": 963.199,
+      "text": "game from that position."
+    },
+    {
+      "start": 961.519,
+      "end": 965.04,
+      "text": "The DeepMind team trained their value"
+    },
+    {
+      "start": 963.199,
+      "end": 967.759,
+      "text": "network on board positions from games"
+    },
+    {
+      "start": 965.04,
+      "end": 969.44,
+      "text": "between different versions of Alph Go."
+    },
+    {
+      "start": 967.759,
+      "end": 970.959,
+      "text": "again avoiding learning from human"
+    },
+    {
+      "start": 969.44,
+      "end": 972.399,
+      "text": "gameplay."
+    },
+    {
+      "start": 970.959,
+      "end": 974.32,
+      "text": "Finally, the DeepMind team brought"
+    },
+    {
+      "start": 972.399,
+      "end": 976.399,
+      "text": "together their policy and value network"
+    },
+    {
+      "start": 974.32,
+      "end": 980.16,
+      "text": "with a method called Monte Carlo tree"
+    },
+    {
+      "start": 976.399,
+      "end": 982.32,
+      "text": "search to create a formidable Go agent."
+    },
+    {
+      "start": 980.16,
+      "end": 984.56,
+      "text": "The policy network allows Alph Go to"
+    },
+    {
+      "start": 982.32,
+      "end": 987.12,
+      "text": "narrow down the number of next possible"
+    },
+    {
+      "start": 984.56,
+      "end": 989.519,
+      "text": "moves, while the value network provides"
+    },
+    {
+      "start": 987.12,
+      "end": 991.759,
+      "text": "a strong estimate of the probability of"
+    },
+    {
+      "start": 989.519,
+      "end": 995.279,
+      "text": "winning if Alph Go continues playing"
+    },
+    {
+      "start": 991.759,
+      "end": 997.519,
+      "text": "down a given branch of the tree."
+    },
+    {
+      "start": 995.279,
+      "end": 1000.24,
+      "text": "Alph Go famously went on to defeat Lisa"
+    },
+    {
+      "start": 997.519,
+      "end": 1002.88,
+      "text": "Dole in 2016, the second ranked Go"
+    },
+    {
+      "start": 1000.24,
+      "end": 1004.48,
+      "text": "player in the world at the time. The"
+    },
+    {
+      "start": 1002.88,
+      "end": 1007.519,
+      "text": "following year, the DeepMind team"
+    },
+    {
+      "start": 1004.48,
+      "end": 1010.0,
+      "text": "revealed Alph Go Zero, an even stronger"
+    },
+    {
+      "start": 1007.519,
+      "end": 1012.959,
+      "text": "player than Alph Go that remarkably did"
+    },
+    {
+      "start": 1010.0,
+      "end": 1014.88,
+      "text": "not learn from any human games. Instead,"
+    },
+    {
+      "start": 1012.959,
+      "end": 1017.36,
+      "text": "relying only on reinforcement learning"
+    },
+    {
+      "start": 1014.88,
+      "end": 1019.12,
+      "text": "from real gameplay."
+    },
+    {
+      "start": 1017.36,
+      "end": 1021.6,
+      "text": "By learning from real interactions with"
+    },
+    {
+      "start": 1019.12,
+      "end": 1023.68,
+      "text": "their environments, Alph Go and Alph Go"
+    },
+    {
+      "start": 1021.6,
+      "end": 1026.24,
+      "text": "Zero dramatically outperformed agents"
+    },
+    {
+      "start": 1023.68,
+      "end": 1028.319,
+      "text": "trained to imitate human gameplay using"
+    },
+    {
+      "start": 1026.24,
+      "end": 1030.4,
+      "text": "supervised learning,"
+    },
+    {
+      "start": 1028.319,
+      "end": 1033.52,
+      "text": "discovering their own ways to play the"
+    },
+    {
+      "start": 1030.4,
+      "end": 1035.36,
+      "text": "game. Alph Go's playing style has been"
+    },
+    {
+      "start": 1033.52,
+      "end": 1037.36,
+      "text": "described by experts as playing against"
+    },
+    {
+      "start": 1035.36,
+      "end": 1039.439,
+      "text": "an alien and is from an alternate"
+    },
+    {
+      "start": 1037.36,
+      "end": 1041.199,
+      "text": "dimension."
+    },
+    {
+      "start": 1039.439,
+      "end": 1043.52,
+      "text": "These are the types of AI systems that"
+    },
+    {
+      "start": 1041.199,
+      "end": 1046.0,
+      "text": "Sutton is referring to when he says,"
+    },
+    {
+      "start": 1043.52,
+      "end": 1047.28,
+      "text": ">> \"Oh, well, I in particular expect there"
+    },
+    {
+      "start": 1046.0,
+      "end": 1049.919,
+      "text": "to be systems that can learn from"
+    },
+    {
+      "start": 1047.28,
+      "end": 1051.679,
+      "text": "experience and which could well perform"
+    },
+    {
+      "start": 1049.919,
+      "end": 1052.88,
+      "text": "much much better and be much more"
+    },
+    {
+      "start": 1051.679,
+      "end": 1055.12,
+      "text": "scalable.\""
+    },
+    {
+      "start": 1052.88,
+      "end": 1056.64,
+      "text": ">> This really makes me wonder if our"
+    },
+    {
+      "start": 1055.12,
+      "end": 1059.039,
+      "text": "current generation of language models"
+    },
+    {
+      "start": 1056.64,
+      "end": 1061.12,
+      "text": "are constrained in the same way as the"
+    },
+    {
+      "start": 1059.039,
+      "end": 1063.919,
+      "text": "AlphaGo policy network that was trained"
+    },
+    {
+      "start": 1061.12,
+      "end": 1065.84,
+      "text": "with supervised learning was unable to"
+    },
+    {
+      "start": 1063.919,
+      "end": 1067.36,
+      "text": "discover on their own limited to"
+    },
+    {
+      "start": 1065.84,
+      "end": 1069.2,
+      "text": "imitating human language and"
+    },
+    {
+      "start": 1067.36,
+      "end": 1070.72,
+      "text": "intelligence."
+    },
+    {
+      "start": 1069.2,
+      "end": 1072.559,
+      "text": "Now, it's important to note here that"
+    },
+    {
+      "start": 1070.72,
+      "end": 1074.32,
+      "text": "reinforcement learning does already play"
+    },
+    {
+      "start": 1072.559,
+      "end": 1076.4,
+      "text": "an important role in large language"
+    },
+    {
+      "start": 1074.32,
+      "end": 1078.48,
+      "text": "model training."
+    },
+    {
+      "start": 1076.4,
+      "end": 1080.559,
+      "text": "After LLMs are trained on next token"
+    },
+    {
+      "start": 1078.48,
+      "end": 1082.16,
+      "text": "prediction using supervised learning,"
+    },
+    {
+      "start": 1080.559,
+      "end": 1085.76,
+      "text": "reinforcement learning through human"
+    },
+    {
+      "start": 1082.16,
+      "end": 1087.919,
+      "text": "feedback or RLHF is used to align models"
+    },
+    {
+      "start": 1085.76,
+      "end": 1090.799,
+      "text": "to human preferences using reinforcement"
+    },
+    {
+      "start": 1087.919,
+      "end": 1093.44,
+      "text": "learning techniques. And a great deal of"
+    },
+    {
+      "start": 1090.799,
+      "end": 1095.52,
+      "text": "recent LLM progress has been driven by"
+    },
+    {
+      "start": 1093.44,
+      "end": 1097.52,
+      "text": "reasoning models that make use of"
+    },
+    {
+      "start": 1095.52,
+      "end": 1100.24,
+      "text": "reinforcement learning with verifiable"
+    },
+    {
+      "start": 1097.52,
+      "end": 1101.6,
+      "text": "rewards or RLVR"
+    },
+    {
+      "start": 1100.24,
+      "end": 1103.52,
+      "text": "where LLMs are trained with"
+    },
+    {
+      "start": 1101.6,
+      "end": 1105.6,
+      "text": "reinforcement learning to find their own"
+    },
+    {
+      "start": 1103.52,
+      "end": 1107.76,
+      "text": "paths to solving problems with known"
+    },
+    {
+      "start": 1105.6,
+      "end": 1110.88,
+      "text": "answers such as math problems and"
+    },
+    {
+      "start": 1107.76,
+      "end": 1112.799,
+      "text": "coding. Pre-training on human generated"
+    },
+    {
+      "start": 1110.88,
+      "end": 1114.64,
+      "text": "text and then using reinforcement"
+    },
+    {
+      "start": 1112.799,
+      "end": 1117.679,
+      "text": "learning to allow models to discover on"
+    },
+    {
+      "start": 1114.64,
+      "end": 1119.52,
+      "text": "their own is an exciting direction, but"
+    },
+    {
+      "start": 1117.679,
+      "end": 1122.24,
+      "text": "it remains to be seen how far this"
+    },
+    {
+      "start": 1119.52,
+      "end": 1125.12,
+      "text": "approach can take us."
+    },
+    {
+      "start": 1122.24,
+      "end": 1127.28,
+      "text": "In 2025, David Silver, the lead"
+    },
+    {
+      "start": 1125.12,
+      "end": 1128.88,
+      "text": "researcher of the AlphaGo project,"
+    },
+    {
+      "start": 1127.28,
+      "end": 1131.039,
+      "text": "teamed up with Richard Sutton to write"
+    },
+    {
+      "start": 1128.88,
+      "end": 1133.2,
+      "text": "an essay called Welcome to the Era of"
+    },
+    {
+      "start": 1131.039,
+      "end": 1135.6,
+      "text": "Experience."
+    },
+    {
+      "start": 1133.2,
+      "end": 1137.76,
+      "text": "Silver and Sutton argue that LLMs are"
+    },
+    {
+      "start": 1135.6,
+      "end": 1138.96,
+      "text": "currently limited by human knowledge,"
+    },
+    {
+      "start": 1137.76,
+      "end": 1141.44,
+      "text": "giving an interesting thought"
+    },
+    {
+      "start": 1138.96,
+      "end": 1144.16,
+      "text": "experiment. If we trained an LLM on"
+    },
+    {
+      "start": 1141.44,
+      "end": 1145.919,
+      "text": "human knowledge from 5,000 years ago, it"
+    },
+    {
+      "start": 1144.16,
+      "end": 1148.0,
+      "text": "would reason about the physical world in"
+    },
+    {
+      "start": 1145.919,
+      "end": 1149.6,
+      "text": "terms of animism."
+    },
+    {
+      "start": 1148.0,
+      "end": 1151.44,
+      "text": "If we trained on human knowledge from a"
+    },
+    {
+      "start": 1149.6,
+      "end": 1154.4,
+      "text": "thousand years ago, it would reason in"
+    },
+    {
+      "start": 1151.44,
+      "end": 1157.76,
+      "text": "theistic terms, 300 years ago in terms"
+    },
+    {
+      "start": 1154.4,
+      "end": 1160.88,
+      "text": "of Newtonian physics, and 50 years ago"
+    },
+    {
+      "start": 1157.76,
+      "end": 1162.88,
+      "text": "in terms of quantum physics."
+    },
+    {
+      "start": 1160.88,
+      "end": 1164.88,
+      "text": "Moving from one paradigm to the next"
+    },
+    {
+      "start": 1162.88,
+      "end": 1167.84,
+      "text": "requires actually interacting with the"
+    },
+    {
+      "start": 1164.88,
+      "end": 1170.16,
+      "text": "physical world as Silver and Sutton say"
+    },
+    {
+      "start": 1167.84,
+      "end": 1172.32,
+      "text": "in order to overturn facious methods of"
+    },
+    {
+      "start": 1170.16,
+      "end": 1174.0,
+      "text": "thought."
+    },
+    {
+      "start": 1172.32,
+      "end": 1176.08,
+      "text": "From here, Sutton and Silver argue that"
+    },
+    {
+      "start": 1174.0,
+      "end": 1179.12,
+      "text": "we're on the threshold of a new era of"
+    },
+    {
+      "start": 1176.08,
+      "end": 1181.679,
+      "text": "AI where agents will learn from real"
+    },
+    {
+      "start": 1179.12,
+      "end": 1184.24,
+      "text": "world reward signals instead of human"
+    },
+    {
+      "start": 1181.679,
+      "end": 1186.72,
+      "text": "knowledge, discovering new ways to"
+    },
+    {
+      "start": 1184.24,
+      "end": 1188.96,
+      "text": "optimize measures like cost, health"
+    },
+    {
+      "start": 1186.72,
+      "end": 1192.48,
+      "text": "metrics, climate metrics, profits,"
+    },
+    {
+      "start": 1188.96,
+      "end": 1194.16,
+      "text": "sales, and energy consumption."
+    },
+    {
+      "start": 1192.48,
+      "end": 1196.48,
+      "text": "Sutton and Silver give the example of"
+    },
+    {
+      "start": 1194.16,
+      "end": 1198.559,
+      "text": "DeepMind's alpha proof agent which"
+    },
+    {
+      "start": 1196.48,
+      "end": 1200.559,
+      "text": "combines LLMs and reinforcement learning"
+    },
+    {
+      "start": 1198.559,
+      "end": 1204.16,
+      "text": "to discover its own very impressive"
+    },
+    {
+      "start": 1200.559,
+      "end": 1206.559,
+      "text": "methods of mathematical reasoning."
+    },
+    {
+      "start": 1204.16,
+      "end": 1209.2,
+      "text": "So, have we learned the bitter lesson or"
+    },
+    {
+      "start": 1206.559,
+      "end": 1211.76,
+      "text": "are we just repeating it? When we look"
+    },
+    {
+      "start": 1209.2,
+      "end": 1215.2,
+      "text": "back on LLMs one day, will they feel"
+    },
+    {
+      "start": 1211.76,
+      "end": 1218.08,
+      "text": "like harpy so clearly limited by human"
+    },
+    {
+      "start": 1215.2,
+      "end": 1221.28,
+      "text": "knowledge? And if so, is reinforcement"
+    },
+    {
+      "start": 1218.08,
+      "end": 1223.039,
+      "text": "learning the answer? And can LLM serve"
+    },
+    {
+      "start": 1221.28,
+      "end": 1225.36,
+      "text": "as the scaffolding that unlocks this"
+    },
+    {
+      "start": 1223.039,
+      "end": 1227.84,
+      "text": "next frontier? Or do we need to try"
+    },
+    {
+      "start": 1225.36,
+      "end": 1230.24,
+      "text": "something totally different?"
+    },
+    {
+      "start": 1227.84,
+      "end": 1232.0,
+      "text": "My take here is that the bitter lesson"
+    },
+    {
+      "start": 1230.24,
+      "end": 1234.32,
+      "text": "in Sutton and Silver's reinforcement"
+    },
+    {
+      "start": 1232.0,
+      "end": 1237.12,
+      "text": "learning perspectives form a really"
+    },
+    {
+      "start": 1234.32,
+      "end": 1240.159,
+      "text": "helpful lens onto the limitations of our"
+    },
+    {
+      "start": 1237.12,
+      "end": 1242.08,
+      "text": "current generation of AI."
+    },
+    {
+      "start": 1240.159,
+      "end": 1243.76,
+      "text": "I'm more skeptical about a reinforcement"
+    },
+    {
+      "start": 1242.08,
+      "end": 1245.679,
+      "text": "learning renaissance being around the"
+    },
+    {
+      "start": 1243.76,
+      "end": 1247.2,
+      "text": "corner."
+    },
+    {
+      "start": 1245.679,
+      "end": 1248.48,
+      "text": "mostly because the domains we've seen"
+    },
+    {
+      "start": 1247.2,
+      "end": 1250.4,
+      "text": "reinforcement [music] learning perform"
+    },
+    {
+      "start": 1248.48,
+      "end": 1252.72,
+      "text": "really well in like playing games,"
+    },
+    {
+      "start": 1250.4,
+      "end": 1255.2,
+      "text": "mathematical proofs, and coding, still"
+    },
+    {
+      "start": 1252.72,
+      "end": 1258.159,
+      "text": "feel very removed to me from many of the"
+    },
+    {
+      "start": 1255.2,
+      "end": 1260.0,
+      "text": "real world problems that we care about."
+    },
+    {
+      "start": 1258.159,
+      "end": 1263.88,
+      "text": "Either way, it will be fascinating to"
+    },
+    {
+      "start": 1260.0,
+      "end": 1263.88,
+      "text": "see what happens next."
+    },
+    {
+      "start": 1265.84,
+      "end": 1270.72,
+      "text": "The Welsh Labs team and I have written a"
+    },
+    {
+      "start": 1267.76,
+      "end": 1272.64,
+      "text": "whole new book on AI. It's beautifully"
+    },
+    {
+      "start": 1270.72,
+      "end": 1274.48,
+      "text": "illustrated and is a great way to dig"
+    },
+    {
+      "start": 1272.64,
+      "end": 1277.28,
+      "text": "deeper into the topics we cover in these"
+    },
+    {
+      "start": 1274.48,
+      "end": 1279.6,
+      "text": "videos. This is the book I've always"
+    },
+    {
+      "start": 1277.28,
+      "end": 1282.08,
+      "text": "wanted to write. We've really leaned"
+    },
+    {
+      "start": 1279.6,
+      "end": 1284.799,
+      "text": "into the visuals. The book has hundreds"
+    },
+    {
+      "start": 1282.08,
+      "end": 1287.84,
+      "text": "of figures. I especially like these full"
+    },
+    {
+      "start": 1284.799,
+      "end": 1290.159,
+      "text": "page spreads. This one shows how lost"
+    },
+    {
+      "start": 1287.84,
+      "end": 1291.76,
+      "text": "landscapes are computed."
+    },
+    {
+      "start": 1290.159,
+      "end": 1294.24,
+      "text": "On the next page, we jump into this"
+    },
+    {
+      "start": 1291.76,
+      "end": 1296.48,
+      "text": "super highquality overhead contour plot"
+    },
+    {
+      "start": 1294.24,
+      "end": 1298.24,
+      "text": "view of our landscape."
+    },
+    {
+      "start": 1296.48,
+      "end": 1300.0,
+      "text": "and we show how we might expect our"
+    },
+    {
+      "start": 1298.24,
+      "end": 1302.48,
+      "text": "model to work its way through valleys to"
+    },
+    {
+      "start": 1300.0,
+      "end": 1304.32,
+      "text": "reach its global minimum, but it instead"
+    },
+    {
+      "start": 1302.48,
+      "end": 1306.48,
+      "text": "creates what looks like a wormhole on"
+    },
+    {
+      "start": 1304.32,
+      "end": 1308.0,
+      "text": "our loss landscape."
+    },
+    {
+      "start": 1306.48,
+      "end": 1310.32,
+      "text": "We're putting a huge amount of effort"
+    },
+    {
+      "start": 1308.0,
+      "end": 1313.12,
+      "text": "into each chapter to create these kinds"
+    },
+    {
+      "start": 1310.32,
+      "end": 1315.2,
+      "text": "of visuals and deep explanations, trying"
+    },
+    {
+      "start": 1313.12,
+      "end": 1318.08,
+      "text": "to give the most visceral feel we can"
+    },
+    {
+      "start": 1315.2,
+      "end": 1319.919,
+      "text": "for how this stuff really works."
+    },
+    {
+      "start": 1318.08,
+      "end": 1321.2,
+      "text": "Each chapter includes supporting Python"
+    },
+    {
+      "start": 1319.919,
+      "end": 1323.6,
+      "text": "code that walks [music] through the key"
+    },
+    {
+      "start": 1321.2,
+      "end": 1325.6,
+      "text": "results from that chapter. And there's"
+    },
+    {
+      "start": 1323.6,
+      "end": 1328.799,
+      "text": "also a supporting GitHub repo as well"
+    },
+    {
+      "start": 1325.6,
+      "end": 1330.799,
+      "text": "that's a bit more comprehensive."
+    },
+    {
+      "start": 1328.799,
+      "end": 1333.2,
+      "text": "At the end of each chapter, you'll also"
+    },
+    {
+      "start": 1330.799,
+      "end": 1336.0,
+      "text": "find exercises. We've put a ton of"
+    },
+    {
+      "start": 1333.2,
+      "end": 1338.24,
+      "text": "thought into these. Here's an exercise"
+    },
+    {
+      "start": 1336.0,
+      "end": 1339.84,
+      "text": "from the chapter on backpropagation"
+    },
+    {
+      "start": 1338.24,
+      "end": 1342.0,
+      "text": "where you're given a small complete"
+    },
+    {
+      "start": 1339.84,
+      "end": 1343.52,
+      "text": "neural network and asked to move some"
+    },
+    {
+      "start": 1342.0,
+      "end": 1345.039,
+      "text": "data through the network using a few"
+    },
+    {
+      "start": 1343.52,
+      "end": 1346.24,
+      "text": "equations."
+    },
+    {
+      "start": 1345.039,
+      "end": 1348.4,
+      "text": "Then you're asked to compute the"
+    },
+    {
+      "start": 1346.24,
+      "end": 1350.32,
+      "text": "network's gradients and use your"
+    },
+    {
+      "start": 1348.4,
+      "end": 1353.12,
+      "text": "computed gradients to fill in steps in"
+    },
+    {
+      "start": 1350.32,
+      "end": 1354.88,
+      "text": "the model's real learning process."
+    },
+    {
+      "start": 1353.12,
+      "end": 1357.52,
+      "text": "These exercises are designed to get you"
+    },
+    {
+      "start": 1354.88,
+      "end": 1359.12,
+      "text": "as hands-on as possible with modern AI"
+    },
+    {
+      "start": 1357.52,
+      "end": 1361.679,
+      "text": "and solutions are in the back of the"
+    },
+    {
+      "start": 1359.12,
+      "end": 1363.84,
+      "text": "book. Most of the exercises are written"
+    },
+    {
+      "start": 1361.679,
+      "end": 1365.2,
+      "text": "or programming, but my favorite is"
+    },
+    {
+      "start": 1363.84,
+      "end": 1366.96,
+      "text": "probably this spread that [music] gives"
+    },
+    {
+      "start": 1365.2,
+      "end": 1369.44,
+      "text": "you instructions for building your own"
+    },
+    {
+      "start": 1366.96,
+      "end": 1371.2,
+      "text": "perceptron machine."
+    },
+    {
+      "start": 1369.44,
+      "end": 1373.28,
+      "text": "The book starts with a fresh take on the"
+    },
+    {
+      "start": 1371.2,
+      "end": 1375.039,
+      "text": "fundamentals, the perceptron, gradient"
+    },
+    {
+      "start": 1373.28,
+      "end": 1377.2,
+      "text": "descent, [music] backpropagation, deep"
+    },
+    {
+      "start": 1375.039,
+      "end": 1379.12,
+      "text": "models, and alexet."
+    },
+    {
+      "start": 1377.2,
+      "end": 1381.2,
+      "text": "and then uses this foundation to dive"
+    },
+    {
+      "start": 1379.12,
+      "end": 1383.36,
+      "text": "into cutting edge topics including"
+    },
+    {
+      "start": 1381.2,
+      "end": 1386.0,
+      "text": "neural scaling laws, mechanistic"
+    },
+    {
+      "start": 1383.36,
+      "end": 1388.72,
+      "text": "interpretability, and AI image and video"
+    },
+    {
+      "start": 1386.0,
+      "end": 1390.4,
+      "text": "generation models like Sora."
+    },
+    {
+      "start": 1388.72,
+      "end": 1392.48,
+      "text": "Each chapter goes along with a Welch"
+    },
+    {
+      "start": 1390.4,
+      "end": 1395.36,
+      "text": "Labs video that came out over the last"
+    },
+    {
+      "start": 1392.48,
+      "end": 1397.44,
+      "text": "18 months. I really think that the book"
+    },
+    {
+      "start": 1395.36,
+      "end": 1399.84,
+      "text": "is the best way to get deeper into each"
+    },
+    {
+      "start": 1397.44,
+      "end": 1402.159,
+      "text": "video's topic."
+    },
+    {
+      "start": 1399.84,
+      "end": 1404.159,
+      "text": "The book is great for self-study, AI"
+    },
+    {
+      "start": 1402.159,
+      "end": 1407.48,
+      "text": "courses, or just looks great on your"
+    },
+    {
+      "start": 1404.159,
+      "end": 1407.48,
+      "text": "coffee table."
+    }
+  ],
+  "segment_count": 601
+}

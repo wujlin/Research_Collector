@@ -1,0 +1,12 @@
+{
+  "title": "Ben Eysenbach Designing Simpler and More Principled RL Algorithms",
+  "url": "https://www.youtube.com/watch?v=EXMjEQvyzs0",
+  "backend": "faster-whisper",
+  "model": "large-v3",
+  "requested_language": "en",
+  "detected_language": "en",
+  "generated_at": "2026-05-13T14:27:50",
+  "language": "en",
+  "language_probability": 1,
+  "duration": 6356.423
+}

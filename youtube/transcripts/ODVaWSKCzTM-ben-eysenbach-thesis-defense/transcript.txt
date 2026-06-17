@@ -1,0 +1,1002 @@
+Okay, let's get started.
+The past decade has been really, really exciting for machine learning, because we've gotten systems that can actually work, that can make predictions fairly reliably, fairly accurately, in a number of domains.
+I think the next frontier of AI is going to be systems that actually interact with the world, that can optimize sequences of actions.
+That's what reinforcement learning is all about.
+It's about choosing sequences of actions that lead to good outcomes. It's about improving through experience.
+The work that I've done throughout my PhD casts reinforcement learning as a sort of probabilistic machine learning problem.
+And in today's talk, I'm going to talk about why that's been useful.
+It's been useful because it's made it easier for users to use these reinforcement learning tools, to specify outcomes that can just give examples of those outcomes.
+But more than that, this idea has also led to better algorithms. Algorithms that not only outperform prior methods, but also can find patterns and structure in the solution to decision-making problems.
+And that's what I'm going to talk about today, the work that we've done with thesis.
+And
+how we've done that.
+How some of this work might enable certain potential applications of reinforcement learning.
+Reinforcement learning has the potential to unlock applications in nearly every aspect of our lives.
+A lot of the foundational work in reinforcement learning is in games. Games like Go or Atari or poker. But the potential applications are much, much broader.
+They include things like robotics. Robots that help patients in hospitals. Robots that safely drive our cars. Robots that make our warehouses safe.
+Robots that safely drive our cars. Robots that make our warehouses safe.
+Robots that safely drive our cars. Robots that make our warehouses safe.
+Problems like robotics are really hard. This robot here, it has twenty motors, one at each knuckle.
+How can you control those motors? What sequence of commands do you show them, so that you eventually solve this Rubik's Cube?
+There are potential applications in our built world, too.
+How can we optimize the sequence of traffic lights, so we spend less time sitting at intersections? And how can we do this, making use of large streams of data that flow into centralized centers?
+In healthcare, AI systems are already being used to help predict the outcomes-
+for certain patients. But maybe the next set of AI tools will actually assist physicians in making decisions.
+Applications in robotics and healthcare. They require learning from historical data. We don't want to be learning by trial and error.
+There are potential applications in education, too.
+We've seen the blossoming.
+We've seen the blossoming.
+How can we leverage that figure out what sequence of problems to show students, what those problems depend on students past experiences.
+And in the sciences conventionally learning tools might be able to predict the outcome of some experiment, but reinforcement learning tools, they may allow us to dynamically control those experiments.
+Of course, all these potential applications, there are not going to be solved with reinforcement learning people alone, but in collaboration with domain experts in concert with other areas of machine learning.
+But I think that reinforcement learning is a really important piece of this puzzle, because reinforcement learning unless it's optimized for the long term outcomes.
+Most of the successes that we've seen reinforcement learning have been in the context of games.
+And I think the reason why is that we know the rules of games.
+We know the rules of games.
+We can simulate games.
+We can generate lots and lots of data.
+But the progress of other applications has been a lot more measured.
+And I think the reason why is that it's a lot harder to get the data, and it's a lot harder to give feedback in these other applications.
+And so if we hope to make progress on these potential applications, we're going to need a way of developing reinforcement learning algorithms that can learn with less feedback.
+And in today's talk i'm going to talk about the work that we've done in the thesis.
+Towards this end.
+First, we've made it easier for users to give feedback by just giving examples of good outcomes.
+And second, about how we've developed algorithms like an infrastructure in the solution to decision making problems, breaking down hard problems into easier problems that we can learn with less feedback.
+So the start to make sure we're all on the same page.
+I want to briefly review how the reinforcement learning problem works on the left here.
+I'm feeling a robot task.
+And this is what I'll refer to as the environment.
+There's this robot here, and to control this robot we're going to take the action to respond to opening and closing the robot's hand, moving the robot hand to the left or to the right.
+And we observe observations.
+I'll see you guys.
+Observations in this setting are going to correspond to an image showing us the pixels what's happening in this environment.
+Right now.
+And the most important object is this policy down here that allows us to figure out what actions do we take, given the current observation, given this current state pass.
+And at the end of the day is this policy that we want to learn.
+And we're going to learn the policy by using these rewards here.
+The rewards say, Is this a good state, or is this a bad state?
+And we want to find the policy that takes us to states that are good not only now, but also lead us to good states in the future.
+So this reinforcement learning problem is really exciting because it's so general.
+All of those potential applications of reinforcement learning that we saw.
+Those are examples of this problem.
+But this generality also makes it really hard, and I want to review what I think is the main challenge in reinforcement learning.
+I think the main challenge is the lack of feedback.
+And I want to review what I mean by this.
+In reinforcement learning, maybe we have this robot here.
+We want to pick up this block, and it takes 1, 2, 3, 4, maybe 5 actions.
+And at the end they get some feedback saying, Okay, you've gotten some good state.
+You get this reward of this plus 5.
+But before then, the robot might not get any feedback.
+And this is very different from supervised learning, where, for every input you get the feedback, you get the label.
+And this problem is compounded by the fact that we want to solve reinforcement learning problems in high dimensional settings.
+Those observations, those images to computer.
+The guests look like a big block of numbers.
+And the reason why looking at high-dimensional problems is important is because it's precisely on these high-dimensional problems that we expect learning-based approaches to outperform classical approaches.
+And there's a third problem, too, with these with providing the feedback a practical challenge.
+Why should this state here get a reward of plus 5?
+Well, in practice, it was because a bunch of grad students spent too many hours writing.
+This big block of code here that says, Okay, when you're at this state, you get a reward of plus 5.
+But this big block of code, it serves as a barrier to enter.
+How many users would like to apply reinforcement learning to their problem, but don't know how to write a big block of code like that?
+And even experts might look at this and say, Is this correct?
+Will this result in the desired behavior?
+And as we move to real world problems, even running this piece of code is hard.
+Say this piece of code.
+It requires knowing the positions of every object in the sea.
+But even the best object detectors we have, they sometimes make errors.
+And so if you hold the building,
+And so if we hope to make progress and reinforcement learning, we're going to need a way of learning from less feedback.
+Now these problems of learning from limited feedback with high-dimensional data new to reinforcement learning.
+And in fact, we've seen similar problems.
+In other areas of machine learning and there and domains like computer vision and natural language processing.
+We've seen how self-supervised approaches have achieved really excellent results.
+And so I want to review how those methods work in computer vision.
+The methods that say, take an image and cover up pixels of that image or patches of that image, and try to predict what those missing pixels or patches are.
+And these are the techniques that underlie some of the generative Ai models that you may have seen over the last few years.
+Similarly, in natural language processing they're methods that take the words of that sentence, and then try to predict what are those missing words, or what is the next word of that sentence?
+And these are some of the techniques that underlie some of the large language models that you've probably seen over the last year.
+And they're another class of self-supervised methods.
+These are contrastive learning methods.
+Methods.
+Look at the inputs and try to learn the representations so that similar inputs have similar representations.
+And it's these last class of methods that we're going to build upon today.
+So these self-supervised methods and other domains that achieve really excellent results, learning from high dimensional data with limited.
+How can we realize those same games in the reinforcement learning setting?
+What does it even mean to self-supervised reinforcement learning?
+If I had to summarize my thesis in 5 words, it would probably be this that we've started just started to lay a foundation for self-supervised reinforcement learning.
+And in today's talk I hope to give you a taste of what this means.
+How we've developed practical algorithms, algorithms that we actually can implement and actually run in the real world.
+Theoretical guarantees for these methods that allow us to answer questions about when and where we expect.
+These methods to work, and also uncovering certain connections between these reinforcement learning methods and other areas of computer science, and even other areas of machine learning, too.
+For folks on zoom. If you wouldn't mind muting muting, that would be fantastic.
+Thanks. Okay, So here's what we're going to talk about in today's talk.
+I'm first going to talk about how we can learn goal reaching skills.
+These goal reaching skills are going to unlock a couple of capabilities.
+First, they're going to allow users to specify tasks by just giving an image of what they would like to happen.
+They no longer need to write that big block of code that we saw before.
+I'll talk about how we've deployed some of these methods in the real world collaboration with folks, and then we'll talk about some of the theoretical properties.
+We've proven about these methods connecting them to reward maximization.
+In a way that actually allows us to expand them and apply them to fully general reinforcement learning problems.
+Not only are these goal reaching skills useful in their own right, but they also will provide the right abstraction for planning.
+And by incorporating these skills into planning algorithms, we'll be able to extend their capabilities to over an order of magnitude.
+And doing this will allow us to apply these methods to this outdoor robot.
+Now, of course, when we want to apply reinforced learning to real world problems, ensuring that our methods are robust is really, really important.
+And we've studied robustness in a number of ways.
+We've looked at how regularization can provide a certain degree of robustness.
+We've looked at how to make use of approximate models, learning from them, or recognizing the errors.
+But I'm not going to talk about our work on robustness and generalization today.
+So to get started, I want to talk about this first part about learning these goal reaching skills.
+And I'm going to start by defining the problem statement.
+This problem of goal conditioned reinforcement learning.
+So let's say we have this robot that I started the talk with, and we want this robot to pick up the green object, move it into the blue bed.
+Well, we could write down that big, complicated reward function we saw before.
+But instead, we're going to ask the users to just provide an image of what we would like the robot to do.
+What is the desired outcome?
+So in this case, the desired outcome to get there, we would want to do the robot to go down and grasp the green objects.
+Pick it up, move it over a little bit to the blue bin, and drop it into the blue pen.
+This problem of goal conditioned reinforcement learning is actually a very old problem.
+And some of the early work in Ai, including work right over there from Nsa, was on this problem of learning goal reaching behaviors.
+Now we're going to study this problem in a particular setting, one where we're given as input a data set, and this set, and it'll be a data set of videos labeled with actions.
+And one thing to note that these videos they're not necessarily optimal.
+The actions in them are not necessarily good actions.
+But from this data we're going to find try to find skills that can reach goals as quickly as possible.
+So why is this problem useful? Well, practically it's going to make it easier for users to specify tasks.
+But.
+Mathematically, it's also going to build upon the prior work and allow us to apply these methods to settings that have continuous states and observations and actions as well as problems with stochastic dynamics while retaining certain theoretical
+properties. We'll show that this map is a well-defined objective.
+So how are we going to do this? How are we going to learn these goal reaching skills?
+Well, we're going to do this in 2 steps. The first step is going to entail.
+Learning representations from these data and learning representations is important whenever we're dealing with high dimensional data.
+And then the second step is going to be to learn these goal reaching skills from these representations.
+So that's the game plan and i'm gonna start by talking about how we learn these representations.
+So there are many prior approaches you could use for learning representations of high dimensional data.
+There's some methods that look at the frames in a video and try to predict what is the next frame in the video.
+There are other methods that say, look at the phrase individually in some video and try to learn some representation that tells you about the contents of that frame.
+What these methods typically don't do is they typically don't tell you about the actions they don't tell you.
+Well, if you wanted to get from point A to point B, what actions should you take?
+And so we're going to need a different way of learning the representations.
+Our method for doing this is going to build upon prior methods developed in the computer vision and natural language processing community.
+But we're going to extend it to the reinforcement learning setting.
+That's this idea of contrastive learning, and I want to walk you through how we apply this to the reinforcement learning setting.
+We're going to learn 2 representations, a representation of the states and the actions as well as a representation of the future states.
+And we're going to do this using the data set of the videos and the actions.
+So to start we're going to take a video, and we're going to take 2 images from that video and say these images should have similar representations.
+And precisely these 2 images are going to be sampled.
+So there are certain distance apart from each other, a distance governed by a certain geometric distribution.
+So they're most likely to be 1 or 2 steps apart, but they could be 3 or 4 or more steps apart.
+And that geometric distribution will be important for proving certain things.
+Theoretical properties of these methods.
+And then we're going to look at a second video, and we're going to say that images from different videos should have different representations.
+So what's the intuition here? The intuition is that these representations, once they're learned, they can tell you something about the difficulty of getting from one state to another state.
+If the states have similar representations, it's pretty likely you can get from one to the other.
+And importantly, these representations.
+They depend on the action, and that was the key property that was missing from some of the prior methods.
+So I want to give you an example of what these sorts of representations they learn.
+So we did this by applying these methods, the simulated manipulation task here.
+And in this task there's this robot arm there's this red object.
+You can move there's this drawer you could open if the red object moved, and we can think about these representations as points.
+But we're going to normalize these points.
+So they lie on a sphere. This is a common technique.
+And now the way that we were learning these representations was by looking at the distance between them precisely by looking at the dot product between these representations.
+And so one way of thinking about these representations is that they're encoding a sort of model of the world.
+But one that predicts not. What is the future observation going to look like?
+What is the representation of some future state going to look like?
+These are the representations. They also very strong connections with some classical ideas and reinforcement learning relating to successor teachers and successor representations.
+And I can talk more about that at the end. So if you look at these representations and look along this path here, we can visualize what our method learns.
+And I want to point out 2 things about these visualizations and these visualizations.
+They were created using a nearest neighbor retrieval.
+So the first thing to note is that all these images have the same contents as this observation and the final observation.
+They all have the red object and the green object.
+But more than that, they also seem to have captured some notion of physics.
+So if you notice this red object here, it only moves when it's being touched.
+And similarly, this drawer.
+It only moves when the robot arm goes down and touches it.
+And this is different from what prior methods would do.
+If we take a different method, a common deep learning method known as a variational autoencoder and visualize its representations.
+These representations, they capture the contents of the scene, but not the physics.
+You notice that the arm moves, but it never touches the objects, even though the objects are also within.
+And so these representations and these visualizations of them.
+They give us some hints that well, maybe these are the right representations to use for building those goal reaching skills.
+Because at the end of the day, these representations were motivated by learning these goal reaching skills.
+And so I want to walk you through how we then learn these goal reaching skills from these representations.
+And I'm going to use an example that same robot task I showed at the beginning.
+So.
+Let's consider two actions, one action that moves the block to the right one, moves it to the left.
+And if you recall, the really important property of our representations was that they depended on the action.
+And so actually one is one representation, and actually two has one representation.
+And we can look at the distances between these representations, and we both see and space just on these representations.
+Do you folks think we should take action one or action?
+Yeah. So we can see. Okay, action, too. It has a representation that's closer towards the goal, and so it's probably the action you should take.
+And that's exactly what we did. We define each skill as simply taking the actions whose representations are closest towards the goal representation.
+So just to summarize this, we started with this data set of the videos and the actions.
+We then learned these representations.
+And then we extracted the skills, those goal-reaching skills from these representations.
+Now, at this point, we can use these skills to solve certain tasks.
+We also could use these skills to go back and collect some more data, and we feel that these skills work in both settings.
+Now, to provide a bit of context here, I started the section by talking about why reinforcement learning is hard.
+It's hard because of the limited feedback and ordinarily.
+But reinforcement learning is requiring a fair number of rewards to learn.
+But we often think about goal-conditioned reinforcement learning as even more challenging problem, because if learning how to reach one goal required one reward function, maybe learning how to reach many goals requires many reward functions.
+But what we've seen here is that we can cast this problem of goal-conditioned reinforcement learning in an entirely self-supervised way.
+So that we can learn these goal-reaching skills.
+So, we can create a reward function without ever having to specify a reward function.
+No user had to come write that big block of red code that we saw before.
+And I think this can help explain why these methods can work well.
+And so, after showing these methods, they work well in simulation.
+Together with collaborators, we looked at applying these methods to a real-world manipulation task.
+This robot shown here is a WidowX robot.
+It's a small, low-cost robot.
+It's a small, low-cost robot.
+robot, which makes it pretty accessible but also
+pretty finicky to work with.
+And I want to show you the skill that we learned
+for trying to get to the skull state shown here.
+And the difference between the starting state and the skull
+state is that the red spoon has moved to the left.
+And from a robotics perspective, this task
+is fairly challenging because we're
+going to do the learning from suboptimal data.
+It's not going to all be demonstrations.
+We don't know the positions of all the objects.
+We're doing this directly from the images.
+And we're going to learn this without ever interacting
+with this environment.
+There's not going to be any trial and error.
+It's all learned from that pre-existing data set.
+And just to underscore the difficulty of this,
+I want to show you what a prior method does.
+The prior method moves the robot arm to the correct position
+but never goes down and grabs the red spoon.
+And in contrast, here's our method.
+We see that the robot arm.
+It goes out of its way to grab that red spoon,
+drop it on the left side, and then move the hand up.
+Now, one property of these goal-reaching skills
+is really important, is that they
+were learned without any particular goal in mind.
+They were learned just in that data set,
+which means that if we want to solve some different task,
+for example, if we wanted the robot
+to push a can across the table, the only thing we need to do
+is give it a new goal image.
+We don't need to do.
+Any more training.
+We don't need to do any more gradient updates
+or specify any more data.
+And so without using that exact same policy
+for giving it a different goal, we
+see that the method is able to push the can across the table.
+So I hope these results, they help
+underscore the practical utility of these sorts of methods.
+That we can learn purely from the historical data
+that no users had to specify those reward functions.
+And the way we can do that is by using the data set.
+And we can use the data set.
+And we can use the data set.
+And we can use the data set. And we can use the data set.
+And we can deal with it in the same fashion.
+We can use the data set.
+And we can use the data set.
+And we can use the data set.
+And we can use the data set.
+And we can use the data set.
+And we can use the data set.
+And we can use the data set.
+And we can use the data set.
+But how do we do that?
+Well, the way we did that was
+by first learning these representations
+and then using these representations
+to extract the skills.
+Now, from a theoretical perspective,
+there still remains a pretty important question,
+which is these skills,
+how do they relate to reward maximization?
+Reinforcement learning,
+it's built upon this foundation of maximizing rewards.
+But do there skills,
+those goal-reaching skills does actually maximize
+any sort of reward?
+reward we'll see that answering this question showing that these skills solve a certain type
+of reinforcement learning problem helps us extend these methods applying similar techniques to fully
+general reinforcement learning methods and to write a little bit more context here these
+self-supervised methods upon which we've built in other domains there's often a disconnect between
+whatever representations you're learning and whatever downstream task you're trying to solve
+but we'll see that in the reinforcement learning setting there ends up being a very close connection
+between the representations you've learned and how you use those representations in the setting
+to solve decision-making problems so here's our main theoretical result our main theoretical
+result is that these representations they tell you about the future returns precisely
+if you look at the dot product or the similarity between these representations
+this tells you that you can use these representations to solve decision-making problems
+this tells you about the rewards that you'll get in the future and precisely these rewards here
+are a very natural reward function one that says okay do you get to the goal at the next time step
+but importantly we never have to actually compute those rewards there one thing i should mention is
+that this this reinforcement learning objective on the right hand side has very close is about
+maximizing probabilities trying to get to the goal with the highest probability but it is very
+strong connections to a different objective trying to minimize the total number of steps
+required to get to the goal as we get to visualize this result when we were defining these skills we
+were looking at these representations and what this theoretical result says is that when we were
+looking at the distances between the representations that was not a heuristic that was a principled
+thing to do and similarly when we were accusing the actions based on which action got us closest
+towards the goal representation
+that too was a principled thing to do
+and i should also mention that we've extended these results so that we can reason about
+what representations you would learn if you had applied these methods to a different data set
+a data set that had been collected by a different policy and so what this theoretical result means
+is that those skills that we showed before those were solving a certain type of reinforcement
+learning problem reinforcement learning problems with these goal routine rewards
+but this connection
+it also has enabled us to extend these methods to apply them to fully general reinforcement learning
+problems and one way we've done this is by giving multiple examples of outcomes where the frequency
+the probability of an outcome corresponds to how much reward you would like to have
+so just to summarize the section here
+we started by talking about how users no longer need to specify these rewards they can instead
+just give examples of what they would like to have and this is a very important part of the study and
+of what the desired outcomes look like giving one goal state or many goal states
+and these skills that can be learned both in the interactive setting or in the setting where we're
+learning just from an existing data set and finally we've shown how there's certain connections
+between these goal reaching skills and reward maximization now one thing i should mention is
+that these goal reaching skills that we've learned they're not magic and so we tried applying these
+methods to this task shown here this is a 3d simulated house there's a robot that walks
+around this house it has a camera and we give the robot an image of where in the house we would like
+it to go and we see whether it gets there and what we see is that if that image if the goal is in the
+same room as the robot then the robot succeeds in reaching that image but if the image is in a
+different room then the robot typically fails reaching that image now on the one hand this is
+not that surprising if you think about the number of action sequences of length say 20 that number
+of sequences is astronomically large but it turns out the components we've learned so far these
+representations and these goal reaching skills they can allow us to solve even the most distant
+problem even the most distant goal if we incorporate them into a planning algorithm
+and that's the next thing i want to talk about today
+how these goal-reaching skills provide the right abstraction for planning
+so historically there have been two ways that people have thought about solving decision-making
+problems the first part of this talk focused on learning-based methods methods that learn
+directly from the raw data but there's another class of methods planning methods
+these methods are really powerful this is what a lot of the early work in ai was about
+and this is a lot of the technology that underlies the internet how the information
+is being stored in a laptop is getting to everyone's laptops on zoom
+now what planning methods require is they require a symbolic representation of the world
+now what they lack though is they don't have a way of taking raw high-dimensional
+data and converting that into symbols converting high-dimensional data into some graph
+and it turns out that these self-supervised reinforcement learning methods that we've seen
+they can provide the right abstractions for applying planning methods and
+planning methods to high-dimensional data and so i want to show you how that works
+in the earlier part of this talk we talked about how we can use data this data set of videos and
+actions and use that to learn these goal-reaching skills as well as these representations
+and so we're going to start by applying that method to a data set collected from that
+simulated 3d house that we failed to navigate before and now we're going to use these components
+to build a graph because a graph is what planning methods require we're going to build a graph in
+the following way the nodes of this graph are going to be frames of taken from these videos
+sampled uniformly at random and the edges of this graph are going to be built using these
+representations that we've learned and precise for visual clarity i'm going to ignore edges
+that would be too long for showing this graph
+and now that we have this graph we can apply planning methods to it
+so let's say we want to navigate from one image to another image on distant corners of this house
+well we can plug these images into this graph and then find the shortest path on this graph
+and now we can use those goal reaching skills that we've learned to traverse the edges of
+this graph so we take the first image along this path and we use these goal reaching skill
+to take a sequence of actions to get us to that first waypoint and then we repeat this process
+this method outlined here it also can be entirely reinterpreted in a probabilistic way
+where we're trying to infer what is the sequence of states you would visit
+if you navigated from one state to another state and i can talk more about that at the
+end if folks are interested i want to walk you through an example of how this works so we evaluated
+the method on a number of goals here's one example where the robot starts seeing this
+image and wants to navigate into this kitchen shown here and here are the sequence of images
+that the method inferred these are the images it thinks it can visit when it's navigating the house
+going closer towards this cupboard going into the kitchen and then going towards the stove
+up there and if we take a bird's eye view we can see that these images actually make a lot of sense
+they correspond to almost the shortest path through this house
+this bird's eye view is one something we use just for visualization the robot doesn't actually get
+this bird's eye view and quantitatively we see that while those goal working skills on their own
+fail to solve the distant tasks by incorporating them into a planning method they can successfully
+reach the most distant goals succeeding over 95 percent of the time
+after showing these results in simulation we worked with collaborators to apply these methods
+to this outdoor robot shown here we gave an image of where we wanted it to go
+my fantastic collaborator drew who led this effort put a pizza on top of the robot
+because you see this robot was given a picture of the customer's door and so it could autonomously
+and in a contact-free way drop off the pizza at the customer's door this is in the middle
+of covet so contact-free pizza delivery was a very pressing problem for grad students
+these methods
+of combining learning and planning there's since been a lot of follow-up work that's extended the
+capabilities and lifted the limitations of these methods making them more robust making them
+generalize more broadly and to provide a bit of context here in ai very broadly there's been a
+long discussion about could we prefer planning methods or should we the reason about symbols
+or learning methods that can learn directly from the raw data and one reason i'm excited
+about this effort here is that it provides one recipe
+for combining these two math components together
+and so the takeaway from the second part of this talk is that these skills that we've learned
+using these self-supervised methods they provide the right abstraction for doing planning
+now step taking a step even further back i started this talk by mentioning why reinforcement learning
+is hard it's hard because of the limited feedback but what we've seen today is that we can learn
+goal-reaching skills and learn to do it better
+and we can use these skills without any rewards without any feedback and we can compose these
+skills to solve challenging tasks so i hope this has given you at least a little taste of some of
+the work in the thesis which i would encourage folks to go read about how we've developed
+practical algorithms theoretical guarantees for those methods as well as uncovering certain
+connections between reinforcement learning methods and machine learning methods and
+some other areas of computer science and the work that i've done it informs a lot of the work i'm
+excited to do moving forward
+so
+practically the next step is i will be joining princeton in the fall
+and there are a lot of research questions that i'm really excited to study with students there
+first and foremost there are some really exciting questions at the intersection of
+reinforcement learning and natural language processing over the last few years and even
+over the last few months we've seen some really impressive results from big ai models that can
+reason about both images and language what these methods typically lack
+is a grounded understanding of the world
+in contrast the methods that i've developed they can reason about actions and interacting
+with the world and images but they don't yet have an understanding of language of semantics
+how can we combine these two components together getting the strengths of both of them
+well it turns out the theoretical foundations of both these methods are the same they're both built
+on top of contrastive learning methods so i think there might be some really elegant ways of bringing
+them together
+and in the same way that we've shown already how we can learn goal reaching skills that can navigate
+to a goal image maybe now we can learn language reaching skills they can infer the sequence of
+actions to get to some language in the future or in the same way that the second part of this talk
+looked at inferring a sequence of steps to get to some distant goal maybe now we can infer
+the sequence of language instructions required to solve some challenging tasks
+in the future or in the same way that the second part of this talk looked at
+second a lot of the work that we've done and the work i highlighted in the second part of this talk
+is about finding structure it's about breaking down challenging problems and easier problems
+now the second part of this talk i showed how we could say given two images infer the sequence
+of images that you would visit between those two images but can we take this a step further
+can we for example learn skills to interact with the representations
+or can we learn skills that interact with other skills the results i've shown already extend the
+capabilities of skill learning methods by about an order of magnitude and if build adding a layer to
+this hierarchy if every layer extends the capabilities by another order of magnitude
+maybe now we can start solving tasks that are well well beyond the capabilities of today's
+we have some preliminary work showing how this might be done and i think that we might also be
+able to build upon some preliminary work
+fantastic older work on hierarchical basic modeling and then there's certain theoretical
+reasons why these methods might be better suited to the reinforcement learning problem
+because in reinforcement learning you can dynamically change your data distribution
+third and finally the work that i've talked about today there's really strong connections
+with generative modeling generative models they too are learned just from raw data
+given in a sentence like a castle in the mountains they can give you an image what that castle looks
+like when we view reinforcement learning as a generative problem we now get the recipe for
+building that castle of course actually figuring out how you would solve a problem as challenging
+as this is a really really hard problem it likely is going to require learning from very large
+amounts of data it likely is going to require the right representations the right sort of abstractions
+but these are all problems we've started to make progress on
+i think this
+making progress here it may unlock certain applications in gaming and creativity but
+also in the physical sciences in the sciences today generative models are already widely used
+save optimizing molecules and when we view these problems as reinforcement learning problems
+now we might get the recipe for actually running those experiments of course this too is a very
+challenging problem but i think that some of the work we've done might be useful towards this end
+some of the work on robustness and generalization that i didn't talk about today
+it tells you how you can make use of approximate models which is really common in scientific
+applications the work that i did talk about about learning directly from the outcomes i think that
+might be directly applicable because now we might be able to provide just examples of
+what some desired what the outcome of some experiment might look like
+so i'm going to wrap up the future work right here and i want to take a second to thank the fantastic
+team of collaborators not just here at cmu but at berkeley and other schools throughout the
+u.s north america and even around the world thanks and i want to give an especial thank you to my
+advisors sergey and russ for reading through hundreds or thousands of pages of notes and
+half-brained papers that never ended up seeing the light of day for sitting through and critiquing
+giving feedback on hundreds of hair-brained ideas the vast majority of which didn't work out
+but a very very small fraction of which turned into the work that you saw today and of the
+hundreds or thousands of emails and slack messages for keeping the research on track thank you
+thanks ben so um we're going to start with the questions um and i guess uh
+we're probably going to go with the most remote right now that would be
+well technically serene but we'll go with leslie uh leslie uh do you have any questions
+um sure so thank you ben that was good and interesting nicely presented um
+yeah so let's see i have questions of the high level and low level let's let's take some
+high level ones right which is um one thing that you talked about that I thought was interesting
+is you know we we could it's it's exciting to be able to learn from offline gathered data and in
+particular you had I think combinations of of like images and then robot actions and I was thinking
+have you played around with trying to extract in some sense the robot actions from the videos in
+other cases you could mostly see the robot moving around so that would be latent but you'd have
+pretty good information about it is that something that you have thought about so to make sure I
+understand the problem setting will be one where we're given just the videos without the actions
+and try to learn from that but where the actions were kind of not totally hidden in the video so
+that you could probably recover that it's really funny you mentioned that because just yesterday I
+scribbled all over my whiteboard some proposals for how we could do that and so there's an ongoing
+slack discussion exactly about a very relative
+question about how we can take action-free videos and then infer skills from that that
+action-free video there's action-free videos I think that some of these techniques about inferring
+structure um might be useful there yeah yeah okay that's cool so one more thing is and and in your
+final you know kind of future work also touched on it but I have since we've begun talking and
+in particular talking about goals yeah um for me you know a goal is a set uh you know am I in my
+officer
+we're not kind of and so using images as goals it's interesting because it's both under and
+over specified in a way right it's a little too specific because here it is this particular image
+and it's a little too General maybe because there's some parts of what matters to me that
+I can't see yeah so what about broadening what you take to be a goal so one way we've done this
+we've done this already in one contacts and then I think there's some exciting directions
+looking at going forward when we've looked at this already
+is by this extension of the goal reaching problems where we gave multiple examples
+and the aim here is that each example each goal image individually is definitely over specified
+and that when we want a robot to pick up an object we might not care what color what shape that
+object is we just wanted to pick it up or when we want the robot to clean some bedroom we don't care
+the order in which it stacks the books on top of the coffee table we just care that they end up
+stacked there and the aims that by providing multiple examples of good outcomes in the same
+way that an image classifier can see multiple
+examples of cats and say okay this is what a cat is that our methods might be able to know okay this
+is what success looks like I'm curious then they're now a technical point which is if you're
+going to be goal conditioned how do you manage that if the goal is articulated in the set of a
+large set of images yeah great question so the work that I'm referring to here the policies
+that are learned are not goal conditioned but just a state and then take the actions to try
+to lead to these goals but the critic the way
+they're inferring whether the actions believes that good outcomes those look at okay the likelihood
+of getting to one outcome like to get to another outcome and you probably can imagine how you can
+use this to estimate likelihood of getting to any or at least one outcome sure yeah okay good I get
+it um all right I think I'll pass the baton so um maybe go with uh Sergey sure um so in the
+beginning or towards the beginning you have this nice illustration of how
+representations learned with uh contrast of RL compared to like VEs and things like that and made
+this point that if you interpolate you kind of get these nice in between frames um that seems
+interesting but um my question is why do you think it matters to have a representation that's metric
+in that way I don't think that linear interpolation is necessarily what we want but I think the
+property that we really want is we want to go to do planning and so when we looked at those
+representations and I'll try to pull up
+um the example of them the here planning if we wanted to figure out what intermediate images
+would look like if you wanted to get from one observation to another observation we just
+correspond to taking the average of these representations and this is really important
+because if we want to solve long Horizon tasks breaking them into easier smaller easier tasks
+would be useful but as long as there's some easy way to do planning using the representations I
+think that's sufficient so I don't think we necessarily need to
+have linear interpolation in fact I think it very likely will harm us
+well okay but just to push on this a little bit more like um if you want to do planning let's say
+you want to do some like tree-based thing all you really need is a way to um like propose successors
+or evaluate a potential state as a successor to a given state um like none of that really says
+anything about what the representation should be it just says well that there needs to be a good model
+um so do you think that there's some relationship between the representation of the model and does
+the um does the geometric structure of the represents in particular matter like I guess
+that's what I'm not seeing he's like well what's the link between geometric structure and and
+planning in this case that you're trying to articulate the geometric structure makes us
+allows us to solve planning gives us closed form solution for planning another way we could do
+planning is by actually learning a planner so if you're in a virtual network or something like that
+I'm thinking if I represent some sort of are they or applications are essentiallyesta describe typical
+it takes as input a state and a goal and predicts what some intermediate states look like or some
+next state looks like i think there's a spectrum of methods based on how much of the representation
+how much representation learning they do and then how much model learning they do and in some sense
+we've pushed really far to one extreme where all of the horsepower is going into learning the
+representations and then the model learning drops out immediately from that and we could imagine
+methods that spend more computation on doing the planning and a bit less on learning the
+representations what's the right trade-off i don't know i think there's very likely methods
+sort of more in the middle that we haven't explored yet um i think it's interesting to
+explore the extremes to see well to exploit these dreams because if we can do all of if we can solve
+the entire planning problem with the representations then that might provide a
+recipe that us as academics can really benefit from because now we could offload the big large
+representation learning problem to collaborative
+and industry and then we might be able to very easily use the representations learned to actually
+solve the planning problems okay yeah that makes sense um i guess my other question is um
+so you know if we think of these things as good representation learning methods and kind of the
+obvious question to ask is well can we do what people always do with representation learning
+methods and train them on the largest like internet data so that we can get our hands on
+um i know that's something you've thought about a lot but i guess my question is
+what do you think are the bottlenecks that you'd start to hit if you were to try to do that
+i think one bottleneck is that internet scale data is incredibly broad but perhaps not very deep
+and one way i sometimes think about the reinforcement learning problem is that
+it's sort of like solving a supervised learning in every separate situation so solving many of
+these problems and if we don't have that many examples for any individual problem setting
+then even though we might have data for millions or billions of problems if we don't have enough
+data for any of them that might be hard to make progress and so one of the things that i think
+would be really useful is trying to figure out how we can collect a similar quantity of data but in
+a much much more limited setting i know this very much goes against the grain of what uh a lot of
+folks are excited about in terms of learning just from youtube or just from the twitter reddit um
+but i think that for the reinforcement learning prop setting it might be really important for at
+least making some initial steps towards understanding how much data you need to
+solve to see certain emergent properties on even relatively restricted domains
+okay now yeah that makes sense um that's it for my questions thank you jeff great uh let's see
+i'll start maybe with a kind of a low level question can you go to slide 13.
+um i don't know let's see
+so i i think the idea here is that you want an encoding that will make a state and action pair
+end up with almost the same encoding as a as a future state i think by itself
+and then that's the basis of what what happens after that
+my question is doesn't this have a weird side effect with with very stochastic actions
+that uh actions that have two very different outcomes this will force two very different
+outcomes to actually end up with an almost identical encoding when in fact those two
+very different outcomes it might be important that they don't get the same encoding is is that a
+potential problem does that yeah are stochastic actions generally more of a challenge with this
+approach i haven't applied to stochastic action so i can't give an empirical answer i agree that
+from a theoretical perspective it seems like this will work better in settings with deterministic
+actions the theory holds regardless of whether it's stochastic or um deterministic we can show
+that the inner product corresponds to a value function um but i don't think you can imagine
+that sort of tackling that multi-modality um
+could increase sample efficiency for example in some sense what we're trying to do is we're trying
+to learn incredibly complex representation such that once you have these representations the
+prediction problem is trivial but the prediction problem is often not trivial if you have possible
+stochastic outcomes instead of having a bit more expressive model that says okay given the current
+representation for your future representation they might allow you one much simpler representations
+so so
+let me see all right uh i'm trying to understand are you arguing that
+um that you should try this algorithm on problems with stochastic actions and maybe good things
+happen anyway or are you arguing that well maybe we can make some adaptations to the
+algorithm that'll make it perform better with stochastic actions or are you arguing that if you
+have a problem with stochastic actions you haven't really formulated the problem correctly you
+should re-re-ask what your statement actually action space is and make it a deterministic
+problem i'm definitely not saying the third i think that many real world problems that
+are have stochastic actions and those fit very nicely into the mdp framework upon which we built
+so i think that's fine i think you definitely should try these methods on settings with
+stochastic actions i think they very likely will work the point i was trying to make is that if you
+have a problem with stochastic actions and those fit very nicely into the mdp framework upon which
+we built so i think that's fine i think you definitely should try these methods on settings
+with stochastic actions and those fit very nicely into the mdp framework upon which we built
+dynamics in the real world are very very non-linear what effectively this is saying is
+that the representations are there's a way of showing that this corresponds to learning a
+linear model of the world and so you sort of have to untangle the complexity of the world
+the fact that dynamics are not reversible the things that breaking things is not reversible
+such that you get representations where things are linear so it's a very very complicated math to
+you get representations where things are linear so it's a very very complicated mapping and if we
+don't have function approximators that could represent that complexity then part of the way
+of dealing with that limitation of existing function approximators would be to use a more
+expressive mapping from one representation to another okay okay um good i think i want to ask
+another version of the question wesley asked my version of the question is um what what about
+distractors so
+you know you have the picture of the moving the spoon to the other side but
+what if it's just a different colored table and you know it would it would be very hard to figure
+out how to swap out the table but presumably you'd still want it to realize it just needs to move the
+spoon to the other side how do you in practice how do you actually get that similarity right
+i think that's a really important question i brought up this slide
+because this slide shows a similar failure mode if you look very carefully you'll notice that
+the rotation of the can is actually different between the two images
+and so how do we learn representations that capture just what we want and what we don't want
+i haven't looked at this problem in particular i think there are techniques
+relating to compression that might be useful here so i want representations
+that not only predict the future but retain as few bits as possible about the inputs
+i think techniques relating to data augmentation might also be useful
+but i think it's still a largely open question yeah i guess compression you could certainly
+look at compression techniques but one thing that's missing in your training data
+you don't actually have any notion of which differences matter
+right i guess a lot of compression algorithms have some version of
+entropy or reconstruction or something that's kind of generic yeah but i guess you you would
+actually need that extra signal i guess absolutely yeah if someone gave us a bunch of images and said
+hey you should think about all these things is the same if you think about pushing a green can
+and a red can and a purple can those are all the same tasks collapse all those together and if we
+had data like that then i definitely think there would be many ways that we could incorporate it
+into these sorts of frameworks okay
+um and i have a question that may be related to that can you scroll back to maybe slide 23.
+uh so this one went kind of fast do you see an iql failed here yeah what what
+what what what's the setup here what what actually happened with so this is the the same setup you
+have each other a bunch of videos things moving around different places yeah so they're really
+interesting failure mode yeah uh and did gloss over this so the failure mode is that there are
+two things that are different between the initial image and the goal image the first thing that's
+different is the red spoon moves yeah and the second thing that's different is that the robot
+arm moves and what this baseline does is it solves one of those problems it moves the arm to the
+correct position and my hypothesis for why this happens is that the arm occupies more of the image
+than the spoon
+and so it's stuck in a bit of a local optima
+now why would our methods help avoid that well we can think about the training dynamics
+of these contrastive methods what they're doing is they say okay look at these representations
+look at the future the images in the future and say those have similar representations
+and then look at not one but many many other representations and push those away
+those standard contrastive learning does yeah but if you look at the gradients there
+what effectively is doing is finding the closest negative example and pushing that away
+and so the i don't think we're the first to observe this but the training dynamics
+of contrastive learning methods resembles a form of hard negative mining it induces sort
+of curriculum and we have some analysis showing how that happens but it can help explain why it
+fails because in the um in the learning there should um they should be able to find counter
+examples where the arm is there
+This is okay.
+That is not the state that you would reach
+if you wanted to pick up the spoon.
+Okay, okay.
+Maybe one more question.
+So I'm guessing in the work you've done so far,
+you're, I guess, assuming the exploration problem
+is kind of solved for you.
+Yeah.
+The training data covers what you needed to cover.
+Yeah.
+Have you thought at all about whether your methods
+say anything about better exploration
+or what you would do for those kinds of problems?
+Yeah.
+So the skill learning methods I talked about at the beginning
+were these goal-reaching skills.
+The mathematical foundation of them is based on
+these sort of contrastive learning
+and mutual information ideas.
+And we've actually applied, at the very start of my PhD,
+started using very similar ideas
+to actually derive in a method for exploration.
+So I can pull up one video of that,
+of using very similar mathematical tools for learning skills
+here that are not oriented towards any particular goal,
+but just trying to explore the environment.
+So this is definitely not the end-all, be-all solution.
+There's been a lot of great subsequent work
+that's extended these methods and so on.
+But I think that there might be some ways
+of using similar self-supervised methods
+to not only learn the representations,
+learn how to do the planning,
+but also help drive the exploration.
+Okay.
+Thank you.
+Good.
+I think I'm good.
+I just have one question,
+maybe just to follow up on Jess' question,
+is that when these methods fail,
+does it usually sort of come from,
+especially, you know, these representations,
+does it usually come from not enough coverage of the data?
+So for example, let's say you've never seen spoons
+in the training,
+but you've seen a lot of other things
+and you're learning those representations,
+would you be able to move spoons?
+Or do you think that there's, you know,
+just trying to see like how much,
+is there sort of a condition of the coverage
+that you need to run these representations
+and how well they would do on new objects
+and new things to generalize the data?
+In the simulated setting, we studied this a little bit.
+So we showed, for example, that the,
+if you train on one color table,
+but you evaluate on a different color table,
+then it will fail,
+but you can perturb things to a smaller extent,
+like change just the colors of objects.
+And then these methods tend to still work.
+In terms of evaluating on things
+that are entirely outside of the data distribution,
+we tried this for one task
+on that real world robotic manipulation task.
+I think I was picking up a plastic baguette
+and I believe that it failed on that task.
+So we just-
+Is it because of perception or is it like,
+is it because it just doesn't recognize what it is
+or is there something else going on?
+I'm not entirely sure.
+We haven't probed whether it's the representation learning
+or the choosing the actions based on the representations.
+I think that for a lot of these things,
+looking at bigger and bigger data sets will likely help,
+but developing high-fidelity simulators
+might be really important there
+because it will allow us,
+it will tell us how much data we need
+to expect certain sorts of results.
+The reason why I'm asking is that I think
+that most of these sort of foundation models
+for computer vision,
+like they're becoming really good
+at like segmenting things and such.
+And it seems to be, there's some cases, for example,
+that they're not really good at segmenting things and such. And it seems to be, there's some cases,
+that they're not really good at segmenting things and such. And it seems to be, there's some cases,
+where learning policies in the simulator
+while applying them in real world
+with some of these sort of perception models
+actually begin to work reasonably well.
+So, yeah.
+So that's why I was curious,
+like how well you can actually take these models
+and apply them in the real world
+in new sort of set ones.
+Is it, provided perception is actually doing the right thing?
+Yeah, that's a really good point.
+We haven't looked.
+I guess one thing that,
+talk about a bit, a bit about is,
+when we talked about the foundation models here
+when I was focusing on language,
+we could imagine using very similar methods
+for just leveraging like large video data sets.
+And we learned the representation of the large videos
+that would tell you not only about the contents of the videos,
+but also something about the dynamics of the videos.
+Like if we think about the,
+I think historically the thing that has made
+reinforcement learning benchmarks hard
+is that they have lots of visual complexity,
+but the actual control problem is often very easy.
+But I think that might change over the next five, 10 years.
+We might see benchmarks where solving the perception problem
+becomes relatively easy,
+but solving the planning problem
+becomes a lot more challenging.
+And to tackle that sort of problem,
+I think that learning from,
+what videos tell you is what could happen in the future.
+They don't tell you how to make that happen.
+That would require inferring the actions
+or reasoning about what would actually take you
+from one frame to the next frame.
+Getting back to Lesley's earlier question.
+But they might tell us one way of incorporating the large video
+or the foundation models
+into these sort of self-supervised methods.
+Any questions from the audience?
+If you know, William and...
+Yes.
+Could you go over the intuition as to why the VAE
+doesn't learn the physics of the scene,
+but the contrasted member does?
+So this has to do with how the representations are learned.
+So the VAE that's learned here is learning static images.
+And so the VAE has never seen what could happen
+from one image to the next image.
+So is there no way you could put in like temporal dependencies
+in the VAE, or to get it to learn the physics?
+Yeah, you could imagine applying a sequential version
+of the VAE as a sequential VAE.
+This isn't standard practice
+for reinforcement learning benchmarks,
+but there's been a little bit of work there
+and we could try doing that.
+Yeah. But isn't that what like, you know,
+it's basically like a sequential VAE.
+So I'm like, I'm just curious,
+like what the contrasted learning part
+gives you that sequential VAE?
+I think there are two parts that it gives us.
+One is that it aligns the model
+or the representation learning part
+with the downstream task.
+So if we think about just fitting a model of the world,
+something that predicts the next image
+or the next representation of the image,
+based on reconstruction,
+there's no guarantees that the bits that were useful there
+are the same bits that are gonna be useful
+for selecting the actions.
+Very likely the bits that are important,
+they're like, what are the colors of the object?
+But that might not matter
+for solving certain control problems.
+Okay. So I think that actually kind of gets a bit
+to Jeff's distractor question too,
+because it sounds like the contrasting method
+might be more of us to distractors.
+It will retain different bits of information.
+One, so bits of information,
+it will ignore our bits that have nothing to do with,
+that are uncontrollable,
+but are persistent across episodes.
+And so what's an example of this?
+If there's like,
+if the object just disappeared randomly across time,
+like there's like a noisy TV
+in the background or something,
+there's no temporal correlation,
+we would ignore that.
+But it's not perfect.
+And I don't wanna claim like,
+oh, this is the panacea that you all should be using,
+because this method will pay attention
+to things like the background color.
+If every episode is a different background color,
+because the way these representations are learned
+are saying, okay,
+are these two images nearby in the same video?
+But one easy cue for that would be,
+well, if different videos have different colors,
+then you could sort of keep by picking up on that.
+And so in theory, they still work in those sorts of settings,
+but in practice,
+I'm acting that you might need much more data
+to learn in those sorts of settings.
+Thanks.
+Any other questions from the audience?
+And I got a question from the Zoom audience.
+Oh yeah, okay.
+Well, I'll leave it there on Zoom,
+and then maybe just one more and then we'll...
+Yeah, go ahead.
+Cool, sweet.
+Oh, awesome.
+Yeah, cool.
+Okay, so great talk.
+I have a question around like,
+what are your thoughts on like this,
+you know, there are history like this trade-off
+between having feature-rich representations on the one hand,
+and then like interpretability and sample efficiency, right?
+So it's almost like these...
+There's like some trade-off there.
+So like you know, towards pushing,
+increasing sample efficiency,
+it seems like we might have
+to go for feature representations that aren't as interpretable,
+So, I mean, that's like a claim but like I just curious to get your thoughts on like those, those those three dimensions.
+Yeah, I'll talk about the interpretability part first.
+So I think the representations we learn, they give us a certain sort of interpretability, the interpretability they give us is the likelihood that you get from one state to another state.
+I think that interpretability might be useful in a number of ways. Already we've shown how it's useful for driving the selection of actions.
+So it's okay, these are the good actions to take. But you could imagine it would also be useful for understanding where methods are likely to fail.
+For example, if you have a bunch of observations that you know are bad, you can use these representations to figure out the likelihood that you would ever visit those bad representations.
+One thing that's kind of weird here is that very often when we think about interpretability, we think about the coordinates of the representations.
+So you might look at the representations learned by some deep neural network and say, Oh, this coordinate corresponds to class representing dogs, and this coordinate corresponds to tree leaves.
+But what the representations here are doing is it's the represent the coordinates individually might not be interpretable.
+But the inner product between representations is the scale or quantity that might become interpretable, because that tells you the likelihood that you might visit, say, a state that has a tree leaf in it.
+So I think there's a lot to learn here.
+So let's do a straight off.
+Oh, thanks.
+So maybe we can quickly go over the second round.
+Just let's see, do you have any more questions.
+Leslie, I think you might be muted.
+Yeah, a train was going by.
+Okay.
+I saw something tantalizing on slide 40 but I didn't get a chance to look at it something about generalization, which is one of my favorite things.
+Yes.
+Oh broader generalization right okay so okay I had just a tiny bit of a bad reaction to the idea that planning can only happen once you have a graph, because there's lots of work that happens planning that doesn't necessarily involve creating your graph.
+Yeah.
+But what I was really thinking about when I heard you talking about this which is super cool like I like the idea of kind of coming up with this structure and kind of understanding what you can do locally and then patching that together.
+So I'm really concerned about generalization, and in particular like, how could we take learning to navigate in this one house and use it to help navigate in another house so what are your thoughts about about that.
+We tried this.
+Okay.
+And there is a slide, we're talking about it. Okay, so we tried on setting, we said.
+Okay.
+So there's definitely no way that you would be able to navigate in different houses that's just unrealistic.
+But what if we try to learn the same two components that those representations or that value function, and the policy, and not one many many houses.
+But wait, can I ask a question first, like, it doesn't even make sense, I think, or maybe you're going to tell me it does if I take an image from your house and image from my house and ask about the dot product What is that, what is that about.
+Yeah, so the way we did this was, we made one assumption that's perhaps non standard. So the assumption we said is that when you're in a new house, you're given a small number of images from that house, not videos but images and build this graph.
+And then you use that value function, and the policy you've learned, and the training houses to build a graph on the small number of images from the new house and traverse between these images.
+Interesting.
+So do you have a sense of what has to be, I mean, this clearly kind of wouldn't work all the time but I can see how it works some of the time do you have a, do you have a kind of a concise way of describing when you think it would work and when it
+would.
+Yes, my understanding is that the for it to work we need that the value function to give us reasonable estimates between states and for the policy to give us reasonable estimates for the best actions like given the current state and goal state.
+And I think now we're looking at what looks to be.
+much more standard machine learning problem where if we think about viewing what these as a center machine learning problems, then it's just a question of what are the testing houses in the distribution of training houses.
+And as we make the data set of training houses and testing houses larger and larger and assume that the drawn ID from the same underlying distribution of houses, they think it might be reasonable to expect that sort of generalization.
+Let me just test my understanding for one second right so imagine that in my house, it's like I don't know the kitchen is right next to the front door, and in your house it's a giant mansion and the kitchen is miles away from the front door.
+Then the value function for kitchen to front door is going to be pretty different.
+And the more houses we average that over the kind of less good it's going to be in specific, or am I missing a way to condition on the house is a really good point.
+So, I think you're right that the performance is going to be a lot lower.
+So, I think you're right that the performance is going to be a lot lower.
+And we also found this in practice that the first the difficult tasks resolving half of them, not 100% of them.
+And I think it's, there was likely bias and how this distribution of our houses was created. And so there was off kitchens are often maybe next to bathrooms and fridges were in kitchens.
+I think that's to solve fully general problems we would actually want to incorporate exploration into this to think about well, given this graph, how do we visit every node on this graph also biasing us towards the high likelihood node.
+I think it's got suggest point earlier.
+Together with my collaborator drew for mentioned before we've explored this a little bit in the outdoor navigation setting.
+But these still lots of open questions. Yeah, I mean I think probably you want a hierarchical model in the end right you wanted to revert to what you know about houses in general, until you've explored this one a little more and then somehow let that take over,
+but yeah.
+Okay.
+Good. Next.
+Next.
+Do you have any more questions.
+Yeah, I actually wanted to push on some points that are maybe related to what Leslie brought up as I think that's something you're kind of sweeping under the rug with the sort of example and I think this to some degree is present the other task was especially visible
+here is that you're sort of shoehorning partially observed problems into a fully observed formulation.
+And I wonder if you have any thoughts like if you were to actually approach this properly as a partially observed problem.
+How do you think the methodology would need to change.
+There's the trivial answer, which is well if you incorporate all the past history than the personal observe problems become fully observed.
+But I think that's complicated by two things, practical things and are relating to architectures and stochasticity.
+So, the first is actually taking into account the whole past history is going to be really hard.
+In terms like how do we.
+We could shove that into whatever newest transformer we have, but that might require very very long contexts.
+So I think there might be certain ways of one we could imagine approaching this is by learning models that for varying lengths of context, and seeing at what context length to these methods actually start getting reasonable performance.
+And hopefully we'd see that okay performance is low for small context but then increases and at around the context length of 10.
+Then you're able to solve tasks reasonably well there's also this problem of stochasticity, which is a little bit subtle.
+But I think that when we think about partially observed tasks and map them on to Mdps by including history.
+They are going to likely be much more stochastic than the tasks we ordinarily think about solving.
+And I think it's possible that probabilistic methods might work a lot better in those sorts of settings.
+If we think about what because we need to exactly reason about, say, the likelihood or the probability of something happening in the future.
+But integrating out all of the intermediate outcomes.
+And we've seen exactly how ignoring that stochasticity can cause problems for other sorts of reinforcement learning methods, in particular ones based on conditional supervised learning.
+Yeah, that makes sense for what it's worth.
+I don't think it's going into a giant transformer and just using that that as your representation is that terrible.
+But yeah, good good answer. I don't have any other questions.
+I'm debating whether I have another question. I was just thinking about the new houses problem, and just trying to figure out whether when you go into a new house you need a fundamentally different strategy because you're not you're not really in the
+learning to navigate. You're just doing exploration.
+I don't know about whatever and you're just running an exploration algorithm.
+Maybe it's biased a little bit by where you usually see these things in other houses.
+I'm just trying to understand whether I believe the answer is you're just running a completely different policy, and maybe you shouldn't be training a completely different policy, or whether the answer is when you go in a new house you actually run your policy as if it were in
+the training data.
+You're adding the new data you collect as you go, and that works.
+It converges. I think there's a question there, but i'm just still thinking what I was thinking while you were talking.
+Yeah, that's really interesting. Exactly. I was going to mention seems related to Leslie's points about hierarchical designs being useful, because the low-level motor control problem is very likely going to be the same but the high level
+problem. It might not before I was talking about solving the shortest path problem on the scrap.
+But now you want to solve some sort of traveling sales in progress, and sort of vehicle routing problem on the scrap
+Maybe just one more question from the audience.
+Yeah, so
+maybe
+by discrete space of solutions. Are you thinking about the observation?
+Yeah, we've looked at discrete actions in a couple. I don't think I showed any results for here.
+But the mathematical tools end up being the same.
+The difference is that when you're extracting the skills
+You just consider a discrete number of skills.
+So I think this slide makes a lot more sense in the streets in the setting with discrete actions.
+So you can enumerate. So you have 4 actions. Look at the representations and choose the best one.
+Continuous actions. We actually did a form of amortized optimization for learning the corresponding policy here.
+Okay. So then maybe we should there are no more questions.
+Thank you, Ben.
+Everybody else, and everybody was doing as well.
+So.
+Okay.
+So,
+ask people to you have a way of keeping people out of the right.
+And i'm gonna stop the recording. Yeah, Yeah.

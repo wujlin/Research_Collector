@@ -2,7 +2,7 @@
 title: "信息几何"
 description: ""
 paper_count: 5
-last_updated: "2026-04-24"
+last_updated: "2026-05-18"
 ---
 
 # 信息几何

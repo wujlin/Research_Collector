@@ -1,0 +1,892 @@
+Yeah, I'm like, I'm annoyed at how much we rely on Zoom and how like, unintuitive the UI is. I've definitely, I had to learn a lot about Zoom because I was like, I was TAing for a class. So I was hosting office hours, and I was sharing my screen and I couldn't figure out how to like, go back to the chat to see like a link that one of them had sent. So I had to, like, I ended up just like, like kicking everyone out.
+I went out of the meeting so I could restart the stupid thing. So I could like, like, anyway, it was right. It was, it felt like a disaster.
+Yeah, yeah, I get it. And it's like that social pressure to that you're like, put on yourself that like, yeah, yeah, getting it done fast when you probably could just like relax and somehow.
+Yeah, yeah, yeah, no wonder you're like on the spot. It's like hard, also harder to like, like, be patient and think through things. And you're just like, I need to get this working.
+Exactly.
+Yeah.
+So we are super happy to have Amy Zhang here today to give a talk. Amy is currently in her final year of PhD at McGill University and the Mila, and she's co-supervised by Doina Prikap and Joelle Pinot.
+Prior to that, she was at MIT, where she did her, her, her, her master's in EECS.
+And a dual Bachelor of Science in EECS and Mathematics. She's currently working at Facebook AI Research. Her research interests are in reinforcement learning and generalization of reinforcement learning, focusing on sort of states-based, learning states-based abstractions and representations.
+Amy, welcome to OMEA.
+Thank you for the very nice introduction. Thank you all for being here.
+So today I'm going to be giving a talk.
+I'm going to be giving a talk on exploiting latent structure for better generalization.
+So in the last few years, Deep RL has had many successes.
+So, you know, there's been OpenAI StarCraft and Dota and DeepMind AlphaGo, and these are, have all been examples of, of these single games where we've been able to achieve better than human performance.
+Sort of like more on the research side in terms of benchmarks, we've also got Atari and we've been able to also get better than human performance in many of those games.
+On the flip side, there's also been many disappointing failures. And so on the left is, you know, have just like a pretty comical gif of like a robot from RoboCop failing to kick a ball.
+But again, sort of like more on the research side in the last few years, we've seen a few papers that basically
+kind of dive deeper into the kinds of failures that Deep RL algorithms are showing.
+And so here are just like a few examples and
+looking at Atari and Coin Run where these, in these papers, these authors have just changed.
+They basically created like a train test split. So in the typical RL setting, you know, we typically don't have like a separate train and evaluation that you do, like you do in supervised learning.
+You usually just have a single environment that you train and then evaluate it. And so in these papers, they've tried to create more of a split where you now have some differences in the observation space, like in this pixel space,
+where there are small pixel changes that don't affect the game, where a human, if it sees these pixel changes completely understands that it doesn't affect the underlying MDP and can play normally, but our RL agents completely fail.
+So why do we have this discrepancy? So as I've said, we've seen that Deep RL works really well in single task settings and simulation with millions of transitions.
+But we've seen that it works less well in visually complex and natural settings when you have rich observations, when you change some aspects of the data.
+And we're not seeing the same kind of generalization performance that we're getting in computer vision and NLP with deep learning.
+So the question that I want to ask is how can we achieve RL in the real world? And my hypothesis is that abstraction is the key to generalization. And I'm going to show how we can develop algorithms with theory-backed guarantees through the use of state abstractions.
+So this is just a quick overview of my contributions sort of throughout
+my PhD. So I initially started out with state abstractions, looking at state abstractions within the MDP formulation,
+learning representations geared towards transfer and planning and partial observability settings. From there, I kind of realized sort of like the limitations of deep RL algorithms and I took a deeper dive into looking at overfitting and generalization and continuous RL. And from there,
+developing like a very easy tweak
+to existing RL benchmarks in simulation that allow us to bring some of the natural visual complexity of the real world into simulation.
+And so then in the last couple of years I've been looking at state abstractions beyond the MDP formulation. So now focusing sort of like on this
+benchmark I proposed and sort of like how can we improve generalization of RL in more complex settings with like additional assumptions about the environment.
+So we're
+going to focus on sort of this last third of this work, and specifically I'm going to be talking about these two papers, learning invariant representations for RL without reconstruction and multitask RL as a hidden parameter MDP.
+So just to start, I'm going to
+go over again like what makes up the, what are the common assumptions in RL, right. So we typically assume that we are in a Markov decision process.
+We have a state space S, action space A, a transition probability distribution P, and a reward function R. And we also assume that these are all stationary, right.
+And so these assumptions are both incredibly broad and somewhat restrictive.
+And, and, you know, when we think about the real world, or it may be just some particular class of problems, there are often a lot of additional, there is often a lot of additional structure or just like information that we know.
+that isn't imparted in this, in this information, right. So the kind of question I'm really interested in is what kind of additional structure is reasonable to assume in MDPs. And if we assume this structure, can we get better generalization?
+So the focus of this talk, I'm going to look at a couple of additional assumptions that I think reflect sort of natural structure in the real world. And so the first is
+we're going to look at the block MDP setting, and then we'll look at hidden parameter MDPs, and I'll show how these additional assumptions allow for new theoretical results and better generalization performance compared to current state of the art deep RL methods.
+So, so with that, I'm just going to jump straight into the first paper, learning invariant representations for RL without reconstruction.
+And so in this paper, we're looking at a specific
+type of MDP that we're going to call block MDP. So a block MDP family can be described by, so you can see that these first four
+components are the same as in a typical MDP, but we're now going to add these two additional components. So the first is that we now have an observation space X
+and a rendering mapping Q
+that maps from our state space to our observation space. And the key assumption in a block MDP is
+that each observation X uniquely determines its generating state.
+And so the reason we call this a block MDP is that it basically is saying that if you think of your rendering mapping as a matrix,
+that matrix is going to be composed of disjoint blocks of of the mapping from from state to observation. So this gives us the Markov property and the observation space and is what separates this from the partial observability setting. So
+What you really want to take away from this definition is that you have a lower dimensional
+or more compact state space and what you're seeing is like a richer higher dimensional
+observation space like pixel space and there are many possible pixel observations that map
+to the same state and so we want to learn how to collapse all of those observations to that
+same underlying state so we can get generalization to unseen observations.
+This is through state abstractions and specifically a form of state abstraction
+called bisimulation. So bisimulation is is considered the strictest form of state
+abstraction because it basically describes an equivalence relation between states that
+that captures exact behavioral similarity in terms of the reward. So this is the formal definition
+for this equation.
+The first is that for any action in our action space the reward is the same for si and sj so if
+si and sj are equivalent under this bisimulation relation then this holds true and then we've also
+got this second requirement which makes this recursive. So this equation 2 is saying that
+our probability distribution our next step transition distribution is also the same for si
+and sj.
+For any action a but we're comparing these probability distributions in the abstract state
+in this abstract space these abstract states having been constructed using this equivalence
+relation. So these two components basically give us a state abstraction where two states are
+equivalent if conditioned on any possible action sequence you see the exact same reward sequence
+for these two states.
+But this is a very executive definition of this so I've been trying to think about
+how to do it and try to fit this into something that's the very point of this paper.
+And I'm yeah I'm happy to answer any questions if people are
+are not following or if you have any clarification questions.
+So what we wanted to do in this paper is learn a representation where l1 distance between any two
+states is a measure of their bisimilarity.
+because it's just clustering right it just tells us if two states are equivalent or not
+it doesn't tell us how far how similar two states are so instead we want to use instead
+this definition of a bisimulation metric and so this gives like a measure of similarity between
+states so it's just a relaxation of the previous definition into one where we now give a distance
+and so here it's demarked as d tilde and this distance between two states is going to be a
+measure of sort of the largest distance under any action of their reward and a Wasserstein distance
+of their next step transition distribution so now this tells us that if two states are not equivalent
+it tells us how similar they are so if two states are are not equivalent because they just have
+some
+like far into the future there is some action that sort of where they diverge where
+maybe their reward that you see is is slightly different this is going to give us information
+that those two states are closer than another pair of states where you know their reward
+diverges immediately in the next time step and so this lends itself to a representation learning
+objective so this is the objective that we proposed
+and so z here represents the representation that we're trying to construct
+and d here is the bisimulation metric so we can plug in the equation from the previous slide here
+and this now becomes our objective so you can see that we need this r hat and p hat for each
+each state here s i and s j and so we can't necessarily get that from the environment we can't
+you know we can't call up like every possible state and action pair so instead we have to
+learn a reward model and reward and latent transition model so that we can compute these
+two distances so this leads us to our algorithm deep by simulation for control so this this
+algorithm is has two parts the first is for learning this representation so we have to
+learn our reward model our latent transition model and we also
+and we train these two components on top of our frozen encoder
+and then our encoder is trained with our objective from the previous slide j and
+once all of those are updated then we can train our policy so now
+our representation is frozen again we don't need to use our dynamics and reward model and here we
+just chose to use soft doctor critic but this works with any rl optimization algorithm so now
+soft actor critic is just just sees the representation that we're learning this
+uh by simulation abstraction instead of the original rich observation space
+and uh so the way that we train this is you know we collect data with a random agent first so we
+can populate our replay buffer we select a random batch from the replay buffer we make a copy permute
+that copy so in order to train algorithm one so that we can get random pairs of states to compare
+for the encoder
+uh and so in that sense it's it's kind of similar to a contrastive loss
+and then we can use that same batch of data and then just update with the soft actor critic
+objectives um so in order to test this we we want to sort of we we want to evaluate
+how well this can do in different like visually complex um environments right
+and so based on that block mdp formulation we know that we want to test this using different
+rich observations that map to the same low dimensional state
+so here we just have some environments from deep mind control
+and on top we see the original environments um the original pixel environments the rendered ones
+and we've also introduced two additional levels of complexity so in the second one we have this
+um these balls just dancing in the background this like ideal gas uh and then in the in the sort of
+final most complex setting we actually take youtube videos from the deep mind kinetics data
+set and pipe that in as background and this is really easy to do because you can just use like
+simple image processing methods like what we did here is because the agent um you know it's like
+more of this tan color and the background is actually all sort of more blue you can just take
+the rgb like filter out the background and and pipe in this video instead um and so there's a
+wrapper uh available for this environment so you can sort of pipe in any video or image that you
+want to recreate this and so we compare against some state-of-the-art methods like deep mdp and
+stochastic latent actor critic as well as showing how well this performs compared to reconstruction
+and uh contrastive loss um for training the representation so we can see that
+um in the so the the top the different rows just correspond to each other but we can see that in
+the in the in the in the in the in the in the in the in the in the in the in the in the in the in the
+in the simplest setting um these uh state-of-the-art methods perform really well but as
+we increase the complexity of the rich observation space those methods start to crash whereas our
+method is able to achieve sort of the same performance across across all environments
+and just to take a deeper dive into like the properties of the representation that we learn
+so here we just show a t-sne of the representation that we learn on the left and
+uh representation from a trained vae on the same data and we can see that if we just sample um
+observations or you know data points from this representation that are near each other
+that we get uh we see that it basically just captures information about the agent position
+so we can see that every every pair of observations that are close to each other close to
+each other in this representation space like have the same configuration of the agent but the pixel
+background is completely different so the pixel distance between these observations is can is can
+be very far apart um because the agent only takes up a small percentage of the image but the agent
+itself looks pretty much the same across all of these and so this is just sort of like another
+visual test that what our representation is capturing is just the agent state and not the
+background um and in comparison with the vae so you know the vae
+uses a pixel wise reconstruction loss and so it has to capture all information in the image
+relevant and irrelevant and so we can see that those same images are mapping to very different
+parts of the of the t-sne representation constructed by the vae um so now i'm gonna
+proceed to some some theoretical results um and so uh one of the things is that the
+vae simulation state abstraction has connections to causal feature sets in in causal inference
+um and so what this theorem is saying is if we partition observations using using by simulation
+those clusters correspond to the causal feature set of the observation space with respect to current
+and future reward and what um what this result is really is really giving us is uh an expected
+form of task generalization
+so because we now know that what the what information the state abstraction is capturing
+is sort of like all of the causal ancestors of the reward um then we know that this representation can
+transfer to new tasks where the new task has a reward function that's constructed from the same
+causal ancestors um uh okay so so so these are sorry these are actually two different results so
+the first theorem tells us that we should be able to generalize to new observations that we haven't
+seen before and the second theorem tells us that we should be able to generalize to a specific class
+of reward functions so if we look at empirical results that sort of test these two results
+first we look at generalization to new observations so we only train we train dbc in this first setting
+the ideal gas
+elephant curve and then we freeze that representation and train a new soft doctor critic
+on this new rich observation space with the kinetics dataset and so here we can see some
+comparisons um is so in blue is the transfer that i just detailed where we had the frozen
+representation and and trained a new soft actor critic with the new rich observation space
+and we see that that performs as well as or you
+even a little bit better than DBC trained from scratch
+just on the kinetics dataset.
+And so this kind of tells us
+that it's actually a little bit easier
+to extract the correct representation
+for soft actor critic to perform well
+in this simpler rich observation setting
+compared to training from scratch on this kinetics one.
+And we also just compare against deep MDP
+also performing the same kind of transfer
+and we don't see the same performance.
+So the representation that it learns
+isn't as geared towards
+this kind of zero-shot generalization.
+So here we sort of validate that second result
+of generalization to new reward functions.
+So here we have DBC trained on walk or walk
+and we kind of know that the sort of components
+of the state space necessary to construct
+the reward function for walk or walk
+is gonna be the same as the ones to construct it
+for walk or stand
+and walk or walk.
+Or walk or run.
+So we just, so in orange is the thing that we're testing
+which is that we can train SAC
+on the frozen representation for walk or walk
+and that it'll perform well for stand and run.
+And we compare that with soft actor critic
+just trained on the pixel space
+for these two tasks trained from scratch
+as well as soft actor critic trained
+with the frozen deep MDP representation.
+And we again see that the representation that we learn,
+sort of is more amenable to this kind of generalization
+compared to other methods.
+So I'm just gonna really quickly also go through
+some additional results in this paper.
+So we also tried, we also ran our method on CARLA
+which is an autonomous driving simulation engine.
+And so here we just construct this task
+where the task for the vehicle is just in terms
+of highway progression and meters.
+And you get a penalty for colliding with, you know,
+the speed of the vehicle.
+And you get a penalty for colliding with the speed of the vehicle.
+And you get a penalty for colliding with other cars
+or other parts of the environment.
+You wanna go as fast as possible
+and brake as little as possible.
+So here again, we compare against the same baselines
+as in the D-MINT control setting.
+And we see that our method performs best.
+But I think what's really exciting here is again,
+this same, like we do the same t- SNY representation,
+t-SNY of our learned representation.
+And you can see that parts that are close
+to the- The meters that are near by now are totally transparent.
+So there's more of a separation in terms of detail.
+So sometimes the mostly decided healing starts
+exists in the same way.
+close in this representation space, like up here we have all of these representations
+that correspond to different objects, like different obstacles on the right-hand side.
+So the only thing that matters is that there's something blocking the agent on the right-hand
+side so it can't switch lanes into the right, but it doesn't matter what the object is.
+So that loss of that irrelevant information is shown here in this representation, which
+I think is really nice.
+So I just have some additional nice videos.
+So the one on the left is also just showing real-time what the latent encoding is for
+these three different settings, sunny, cloudy, and sunset.
+So these are the exact same policy, exact same low-dimensional state in terms of the
+location of the agent.
+It's just...
+Different weather conditions.
+So it's just different rich observation renderings of the same sequence of states.
+And we can see that the representation is able to capture that pretty well, that like
+all three of these states all stay together pretty much.
+And on the right-hand side, we just have a video of our agent just driving on the highway.
+So to conclude, our goal here was to learn lossy representations.
+That only capture relevant information.
+And this was also sort of in response to a lot of recent papers that had shown successfully
+that deep RL works with rich observations if you use a reconstruction loss.
+And the reason that reconstruction loss works so well is because it's a dense...
+It's like dense signal, right?
+Like you have a pixel-wise loss, and it's really easy to learn good features with convolutional
+layers with that.
+But the downside is that you're forcing your...
+I don't know.
+You're forcing your compressed representation to contain all of the information in that
+pixel space.
+And so we wanted to show that you can get better performance by learning a lossy representation
+that only captures what you really need to know, which is the reward function and future
+reward.
+And so we do this by learning a representation where L1 distance is the bisimilarity...
+Captures the bisimilarity between states.
+And we showed that policy optimization on this representation improves generalization.
+And more recently, we also just put out a paper that showed that this works when we apply
+it to the sim2real setting.
+And so we were able to show that DBC and an additional invariance-inducing objective can
+successfully perform zero-shot sim2real transfer through the right intervention design via
+data augmentation and domain randomization.
+Okay.
+So...
+Okay.
+There is a question.
+I have a general question.
+Could you decouple these issues?
+First figure out the observation problem independent of the dynamics and control issues, then just
+do RL.
+That's a really good question.
+So at least for the DBC paper and what we did here for sim2real, we did decouple these
+issues.
+If I'm understanding your question correctly.
+Okay.
+So we're not looking at changes in dynamics.
+That's actually what I'm about to talk about next.
+In these two papers, we are only looking at generalization to new observations.
+We're assuming that everything about the underlying MDP is the same.
+We're assuming a single task setting.
+It's just that the rendering from state to observation can change.
+And then we just do RL on top of that representation once we've solved that new observation problem.
+So I hope that answers your question.
+Another question.
+So any opinions on using a beta VAE and then a bottleneck?
+Could that help with getting a more separated state space and removing unnecessary information?
+Probably yeah.
+So I know that there has been work on information bottleneck and using beta VAE in order to
+learn a compressed representation that encourages it to sort of drop irrelevant information.
+My problem with that approach is that...
+That's something that you have to tune, right?
+Like you kind of have to tune this, the beta parameter of how much information is getting
+stored in the latent representation.
+And you have no way of knowing that what it's storing, that it's not losing crucial information
+for the downstream task.
+The nice thing about by simulation is that it is going to try to...
+So if you get zero training error.
+You know that.
+You learned it by simulation and it has exactly the information that you need to learn a task
+and nothing else.
+And we can actually get really nice theoretical results based on this because we can measure
+that learning error of our by simulation, like our reward and transition model error
+and use that to compute value bounds for the downstream policy.
+And I kind of didn't...
+I think we have those results in this paper, but we definitely have those results like
+in the next paper that I'm going to talk about.
+So I'll kind of, I'll try to show you like what we can do with state abstractions that,
+and you can't get those kinds of nice results with using beta VAE use in information bottlenecks.
+Okay.
+So in the next paper, we move beyond just looking at rich observation generalization
+to now also looking at generalization of the dynamics.
+And so this is just looking at rich observation generalization to now also looking at generalization
+of the dynamics.
+So in this paper, multitask reinforcement learning as a hidden parameter block MDP.
+So now we're looking at this additional assumption, right?
+So now we have this hidden parameter block MDP family, which is defined again by the
+same state action space reward function discount factor.
+We keep the components from the block MDP, the observation space and rendering mapping
+and the same block assumption.
+But we now have introduced some additional components.
+So now we assume that we have a hidden parameter space data, and now our dynamics are conditioned
+on that hidden parameter.
+And we have a probability stationary probability distribution over the hidden parameter.
+And so now we're looking at the multitask setting where dynamics changes across tasks.
+So previous multitask approaches, multitask RL approaches basically use this like shared
+representation to transfer information across tasks.
+And the idea is that if you have information in your representation from a previous task
+that is going to help you in a current task, then the you'll just automatically get that
+sort of positive transfer by using the same representation.
+And hopefully, if if there you won't get negative transfer.
+And so we're making some additional assumptions.
+So let's talk about the structure across these tasks by now assuming that that all of the
+dynamics across all of these tasks can be described by a single universal dynamics model
+T.
+It's just that T is now parameterized by theta and theta is the thing that changes across
+all of these tasks.
+So we're going to use the same sort of like state abstraction approach with that same
+objective from the DBC paper.
+But now we have to apply it.
+In two places, right?
+So now, because we're still in the rich observation setting to we still need to map from observation
+space to state space, like with the same objective that we had before.
+But we now also have to do the same thing on a task ID level.
+So we assume that we are given environment IDs.
+And so these are just going to be like one hot vectors.
+And we want to use that same by.
+Similarity definition.
+But now, instead of comparing states, we're going to compare tasks.
+And so that is captured by this theta learning error.
+So you can see that it looks really similar to the objective from DBC.
+But now now this is like a this is a task in the coder instead of our state encoder.
+And we are now comparing it to a Wasserstein between the transition models of two tasks.
+Okay.
+So this is going to be looking at the worst case transition distance between two tasks.
+So it'll basically look at the entire state space.
+And the measure of how far apart these tasks are is sort of like the worst case of which
+which equivalent states in these two tasks have the furthest distance Wasserstein distance
+in terms of their in terms of their dynamics.
+And so this.
+This allows us to do some nice theoretical analysis.
+And so first, in order to look at the next results, we're going to define some error
+terms.
+We are in effect learning and approximate by simulation abstraction.
+And so we can define these separate error terms for that.
+So we've got epsilon R, which just measures like there are worst case error in terms of
+reward for any to any two states.
+Epsilon T.
+Epsilon T.
+Epsilon T.
+Epsilon T.
+Which measures our error, which also measures our error, but now in terms of the latent transition model, and Epsilon Theta, which measures our error in inferring this Theta value.
+So highlighted in blue are just like the first two terms.
+So these ones are the same ones as we could have used in the DBC paper, where this just describes a new MDP, which is close to the original for a specific task, right.
+So these apply to the single test setting.
+But this.
+Third, error term.
+which looks at theta is now just a per task error.
+So the first thing that we can analyze is a value bound
+for the single task setting.
+So now that we've constructed this approximate by simulation
+both of the state space and of our task embedding theta
+we can build an approximate MDP.
+And so we're gonna just call this M bar
+which is on top of this representation that we've learned.
+And so if we learn an optimal policy in this constructed MDP
+we wanna know how far away from optimal it is
+if we were to apply that policy in our original MDP
+just for a single task.
+And so it turns out that we can bound that distance
+of the true optimal MDP and the one that we've learned
+in our constructed MDP.
+By the error terms introduced in the last slide
+and as well as the maximum reward.
+And it also depends on like your discount factor gamma.
+But what this means is like these errors can be reduced
+through just supervised learning, right?
+Like the objective that we have for learning this
+by simulation abstraction is just
+like a supervised learning task.
+And so if we reduce these, the more we can reduce
+these, the closer we get to the optimal policy
+for the original MDP.
+Okay.
+So next, the thing that we wanna look at is, okay
+we're in a multitask setting.
+Now we wanna look at transfer bounds.
+Given that we have a policy learned for one task
+we wanna know how would that policy perform on a new task
+if we know the difference in dynamics where like
+we've inferred this theta I for the, you know, the, you know,
+the original task and theta J for the new task.
+So what this is now measuring is, okay,
+now we have constructed, we'd constructed an approximate
+abstraction for the original task.
+We trained a policy for that task.
+How far away is that going to be?
+Let's see.
+Yes, how far away is that going to be from the optimal?
+If we just take that policy and apply it to task J,
+MDP J, how far away is that gonna be
+from the optimal policy for J?
+And so this bound looks very similar to the previous one.
+It now actually just incorporates this distance in theta.
+So this is also a very intuitive result that just says
+your policy is gonna work well for a new task
+if that new task is similar to your original.
+And we've defined a way of like measuring that similarity
+across tasks as this distance in theta.
+Okay.
+We can also extend existing sample complexity analyses
+from the single task setting
+and from learning approximate by simulations
+to this multitask setting.
+So this is again, going back to the sort of like looking
+at just a single task, but here,
+so this looks very similar, I think,
+to like the original sample complexity analysis results
+that you can get just for a generic MDP.
+But the main difference that I wanna point out
+is that these two terms, this ND,
+so this is the minimum number of samples
+that you have for a single state.
+And this is in the original sort of result
+for sample complexity analysis.
+Like you have the size of your state space
+and the size of your action space.
+So we've now been able to reduce this
+a more compact state space
+or like courses by simulation partition.
+So now this number will get bigger
+because we have samples from different rich observations
+that actually map to the same state.
+And this number gets smaller
+because our original observation space is much larger
+in terms of cardinality than the constructed
+by simulation partition that we're making.
+Which just means that our sample complexity goes down.
+So because we know this structure exists
+in this class of MDPs,
+we can improve sort of the sample complexity results.
+And the nice thing also is that we can now actually apply
+this sample complexity result to the multitask setting
+where previous sample complexity analysis
+for the multitask setting depends
+on the number of tasks that you have.
+Here, it actually only depends on the number of actions.
+Here, it actually only depends on the number of actions.
+Here, it actually only depends on the number of actions.
+So we have aggregate samples across tasks
+because we are assuming that all of these tasks
+can be described by a single MDP.
+So these are sort of some nice improvements
+in terms of theory.
+All right, so now we can move on to the empirical results
+in this multitask setting.
+So we just, again, took the DeepMind control suite
+and we modified some of the tasks
+to create these changes in dynamics.
+So these are just some examples.
+So here, like the half cheetah, the length of the torso,
+we sort of increase and that'll affect the dynamics.
+And in the bottom one, it's supposed to be the left foot
+of Walker gets bigger.
+It's a little bit hard to tell.
+We have additional environments as well,
+where we just change like the friction coefficient
+or the mass of some component of the agent's body.
+But I wanna emphasize that the changes in dynamics don't have
+to be visually apparent and it doesn't need to be
+because we give it a task ID, right?
+So you can infer what task you're in just from that ID.
+So we compare again to a bunch of state-of-the-art
+multitask methods, including Distrl,
+which Distrl learns like a sort of central policy,
+like a policy that captures all of the shared information
+across tasks.
+This GradNorm and PCGrad, which use like shared gradients
+in order to sort of share information across tasks.
+We also compare with DeepMDP,
+which is just a single test method that we adapted
+to the multitask setting with just by using
+the task embeddings or incorporating task ID.
+And then we also performed an embellition
+where we took our method and we removed,
+we removed that criteria that in Theta space,
+the L1 distance in Theta space has to correspond
+to the by similarity.
+And we just wanted to see like how much difference
+sort of that objective made.
+And so we can see in these four environments
+that we've created that our method that uses this
+by similarity and task space and state space performs best
+and that there is a gap.
+When we evaluate that embellition.
+We also evaluated our,
+so our method can also be applied to meta RL.
+And so here we just took Pearl and removed like their method
+for finding a task embedding and replaced it with ours.
+And we can see some marginal gains.
+We see smaller gains here, I think,
+because in the previous example, it's zero,
+in the multitask RL setting, it's zero shot transfer
+to new dynamics and here it's adaptation right.
+Because we're in the meta RL setting.
+So here the agent does get a chance to adapt
+with some samples from the new tests that it sees.
+And so we see like some faster learning with Hippy MDP,
+but the difference is smaller.
+We also just evaluate our model error.
+So, because we're training this universal dynamics model
+and the only thing that we need to anfer is Theta
+and plug in Theta.
+to our dynamics um we can evaluate how uh how quickly our our dynamics model can adapt and so
+we just compare our method again against that ablation where we don't have that
+by similarity objective and we can see that our method just adapts way way faster
+another question that we got about our paper was
+a lot of people think that the block mdp assumption is very strict
+um that you have to assume full observability like in your observation space and so we also
+ran an experiment here where we introduced partial observa partial observability where
+you're basically losing information um in your observation space and so what we do here is
+um p gives the probability that the current observation that you see is actually your
+previous observation instead of the current one um and so now we're in a pomdp cycle
+setting and we can see that our method does start to fail as p gets larger but this is to
+be expected because we're not incorporating history so we're applying like a method for
+mdps to pomdp but we can see that it fails gracefully and that when p is small our method
+still works quite well and you can just see it sort of like inch down as p gets larger
+so in conclusion um we've introduced this
+new framework to address the multitask rl setting by exploiting latent structure in the dynamics
+we can provide error and value bounds for this setting and show improvements in sample complexity
+some limitations are that we assume a stationary setting per task so and each task is clearly
+delineated and marked with an environment id so some nice future work would be to look at the
+continual learning setting where your dynamics can change slowly over time with no clear demarcation
+that we're in a new task
+and we no longer have access to like an environment id that tells us this
+i realized after working on this that we could have easily handled different reward functions
+so that's definitely some future work that we should acknowledge and it would be really nice
+to handle more realistic settings and you know we worked in toy simulated environments and only
+modify one factor at a time and it'd be nice to see how well this scales up to more complex changes
+so um just
+to now like look ahead to some future work that i'm i'm working on now um is the contextual mdp
+setting so so this is uh this is now looking at um um the setting where we don't have that task
+id anymore where you don't have a clear delineation across tasks and things are just like changing
+continuously and you know this is removing that stationarity assumption from our original
+definition of an mdp and uh i think this is really interesting to see that there's going to be we're going
+to use it in a couple of different ways it's going to be using the mdp settings and then we're going to
+And we wanna see what we can say here in terms of theory
+and like what we can design in terms of a representation
+in terms of an algorithm to be able to address this setting.
+So on top, I just have this definition of a contextual MDP
+where these things can change,
+where you have a context that modifies your reward function
+and your transition model, possibly even your state space.
+Oh, and actually on the bottom,
+I have the version where it can modify your state space
+or like you can think of like your observation space
+is changing over time.
+And one example of this is that your agent has a camera
+and the camera is just sort of panning over the world.
+And so this is a partial observability setting.
+But the idea is that we don't wanna look at
+the whole very intractable POMDP problem.
+We want to incorporate predictable non-stationarity.
+And so if we incorporate these constraints
+into the POMDP problem,
+like what can we do with that?
+So just in closing, I think like what I wanna impart
+is that state abstractions
+are a theoretically backed construct
+to learn representations for better generalization in RL.
+And we can design gradient based algorithms
+and compute tight bounds on the downstream policy
+that depend on how good these learned representations are.
+And we can leverage additional structural information
+about real environments
+to improve generalization of RL algorithms.
+And finally, none of this work would be possible
+without my collaborators.
+And so I just have here like the collaborators
+that worked with me on the three papers
+that I mentioned today,
+but there's many more collaborators
+who have worked on sort of like work leading up to this,
+who it's been a pleasure to work with.
+So thank you for listening
+and I'm happy to take any additional questions.
+Thank you very much.
+I think Angelos has a question in the Q&A,
+but I'm gonna ask it to Angelos.
+Okay.
+But it might've been from the last.
+Oh, oops.
+Yeah, hold on.
+Sorry, I see it.
+I just...
+Can you please comment
+on how the bi-symmetric preserves future rewards?
+Is this due to the W2 on the transitions
+for the abstractions?
+Yeah.
+Sorry that I, if I didn't explain that very clearly.
+Okay, all right.
+This is gonna take a while.
+Here we go, okay.
+So this is the definition for the,
+okay, for the bi-simulation metric, right?
+So the bi-simulation metric is very similar
+to the original definition for bi-simulation, right?
+So I hope it's clear how this is preserving future reward
+because of this second equation
+that is preserving equivalence.
+So what the second equation here is saying
+that your two states SI and SJ are only equivalent
+if they have the same probability distributions
+into next abstract states.
+So it has to have the same distribution into next states
+that also have the same reward.
+So now we're saying like,
+what this is saying is that this reward condition
+has to hold true for the next states
+that it transitions into, right?
+And so on and so forth.
+But like, into the future.
+So this is equation two is saying
+two states are only equivalent
+if there infinite future rewards
+or rewards into the end of the horizon are the same.
+So equation two is just taking the condition of equation one
+and saying, this always has to hold
+for every future time step.
+And so the bi-simulation metric uses that same condition.
+It's just that this now just captures more information.
+So the bisimulation metric says, okay,
+if you have two states that are equivalent
+under the bisimulation relation,
+then their similarity is zero, their distance is zero.
+But now I'm also saying, well,
+I also care about how close two states are
+if they're not exactly equivalent.
+And so this Wasserstein captures that.
+So if you have two states that have
+for several time steps, they're exactly the same
+in terms of like the reward that you see for any action,
+but then like 20 time steps into the future,
+their rewards are now slightly different
+for the same action.
+Then this Wasserstein is gonna capture that distance.
+And so then this bisimilarity,
+this is gonna have like a non-zero value
+for these two states, but it'll be a small value
+compared to the bisimilarity between two other states
+where, you know, like the,
+their immediate reward is different.
+Angelos, you're free to unmute yourself
+if you'd like to follow up on it, otherwise.
+No, that was clear.
+Thanks a lot.
+Very cool.
+I have a quick question.
+I'm just wondering, do you,
+do you see any potential risks,
+with this setup?
+So in sort of finding this like sort of very,
+like this task specific representation.
+So I mean, I see like the benefit obviously
+that you are eliminating irrelevant information
+that's guided by sort of the task that you're looking at.
+Is there, I don't know, are there any potential risks?
+Are there any, are you losing anything
+by getting rid of this sort of irrelevant information?
+Yeah, so it just, it does mean that if you're
+in a multitask setting or a continual RL setting
+where things are changing,
+that some of what was irrelevant
+could become relevant later and you've dropped it.
+And, you know, the way that I get around that
+is just by saying, we're gonna very strictly define
+this family of MDPs that this works for, right?
+Like this block MDP just defines like a,
+like a specific set of MDPs
+that this representation will work for
+in the hidden parameter setting
+that also just defines a very specific family
+that this will work for.
+And it's not going to work for anything outside of that.
+So I think what you're asking is like,
+how can we relax this?
+Like if we, maybe we don't,
+maybe we don't necessarily know
+that everything fits into this structure.
+That's a good question.
+And I currently don't have a good answer for it.
+I think it would be,
+like, it would be nice if you know
+that you have this distribution over MDPs.
+You don't know what the structure is.
+You know, hopefully there's something shared
+across these MDPs and you can learn something.
+You can, yeah, you can learn a representation such that
+any other MDPs, you know, you can learn a representation such that any other MDPs,
+that need to be used in the MDPs
+would be able to easily be sampled from that distribution.
+Like this representation would work well for that.
+I think if we just have something that broad,
+we basically if we default,
+so like original methods that
+don't use these state of attractions,
+then I think those might be the best you can do
+because we're not making any additional assumptions.
+Maybe we can do better,
+but I can't think of anything off the top of my head.
+But yeah I guess like before thinking about this thought.
+After chronic Lane sogar the backdrop of vida,
+how does static and unusual properties apply to be valid?
+Have we all got some assumptions you've made about
+it? I don't think there really are any options yet,
+The point, I think, of my work is that we can often make these structural assumptions,
+you know, like the laws of physics in the real world are invariant.
+And so that should be something that's incorporated into, like, into our definition of the environment.
+That's very interesting. So we still have five more minutes if anybody has any more questions.
+I guess I just have a soft one. So what is your motivation to sort of, like, get into this line of
+research? Yeah, I really like RL. I really like work that sort of interacts with the world and,
+like, learns from the interaction.
+And
+I mean, I think, like, I got into this, like, because sort of, like, there were starting to
+be these questions about the generalization of RL. And so that was something that I got in pretty
+early on. And from there, it was sort of, why doesn't deep RL work for robotics? Why doesn't
+deep RL work for all of these settings? Like, why is it that bandits have been so successful,
+and we haven't really been able to get deep RL to work? And so this, to me, is like a very structured
+theoretically backed way forward. I prefer, like, I'm much more excited about
+work that I can sort of, like, ground in theory. And I really like state abstractions,
+because it is a very concrete objective of what you're trying to learn. And hopefully,
+I, like, I'm hoping that this will be a way forward to, like, real, to RL in the real world.
+That's very cool.
+Yes, speaking of state abstractions.
+How, how does, why did you choose sort of the bisimulation metrics compared to, I don't know,
+homomorphisms or something?
+Like other forms of state abstraction?
+Yeah, yeah.
+Yeah. So yeah, there's, there's not. So these were the, so bisimulation is like the strictest
+form of state abstraction. I could talk about, like, other levels of state abstraction that are
+coarser in the sense that they drop even more.
+They're all
+necessarilyoire.
+Some other questions.
+I see.
+Yeah, justina, do you have a, could you just add something?
+under the optimal policy and so this is going to be a coarser form of state abstraction there are even coarser ones where you say I don't even care about the individual reward I just care about
+capturing like the difference between the difference in the optimal policy behavior between states so now you can't extract like the value from states anymore right because you can have two states where
+that have
+different optimal value but the policy behavior is the same right because all that you all that the policy cares about is like the ranking of of reward and and like the actions that it sees
+and so these are sort of like coarser versions that mean that mean that the representation that you learn is even more compact
+and hopefully we can get even better generalization than with like a more compact representation
+or better sample efficiency well yeah we know that we can get better sample efficiency with that so those are additional future directions to explore and I think those are those are exciting yeah
+cool I actually missed one question from Yaron in the chat how about stochastic rewards in equation one Yaron do you want to expand on that
+yeah sure so if you assume that the reward function
+if you assume that the reward that you get from the environment is stochastic do these what do these things
+the equation one is not properly defined anymore yeah so what will be an are there any extensions of biostimulation of these definitions to the sort of relaxations of the assumptions
+not yet that's also something that I'm currently working on I mean yeah that's a really good question so yeah this definition is assuming that
+your reward is just like a is just like a definite scalar that you see
+and
+it's it's pretty easy to change this definition to now just be like if you have a stochastic reward then you know your your reward model has to
+be able to model the distribution so that you can compute the distance and distribution but we can just replace this with the same thing that we have here right like we can just
+put the probability over your reward and now we can compute the Wasserstein distance like between those two probability distributions
+and we're actually I we're actually trying this for the VATRL setting
+so again
+so the other ways of replacing that so in equation two because these are discrete
+I'm not even sure if these are discrete objects but when you say okay
+okay let me ask a deeper question equation two when you say these are equal in probability
+do you mean
+you mean that they're equal in probability or equal in distribution so there are different like the
+three or four different levels of equality in probability or distribution or having being the same random variable and basically my question is
+which one of these do you need and why
+yeah
+so in this original definition which is
+taken from a paper by ferns that was like in the 90s he only looked at discrete MDPs
+so you can just use this exact equality and and you're just comparing exact probabilities for different abstract states
+this can be relaxed to the continuous setting and so
+the distance now that we're measuring between these probability distributions is the Wasserstein distance
+and so yeah so so now we can actually compare or like compute a distance between
+continuous probability distributions
+okay so like equation two is not precise then because it does sound like
+okay so do these things have to be equal up to a zero measure set do they have to be what does it mean for these two probabilities to be equal
+do you mean the densities have to be the same
+um
+so in the discrete MDP setting
+right like all of these things are discrete like well
+yeah exactly so my question is like when you transfer from that to the continuous case because that's basically what prompted my question about the reward function which will be continuous
+and like
+but that that's a bigger question about like also when you just have continuous states what
+I assume that equation two means something that is not necessarily what is written as p of g equals p of g condition s i equals p of g condition s j
+um so in the continuous setting like we want it to be matching exactly so we would be matching densities
+okay so even if you have a single g a zero measure set of g's for which this does not hold would that break your definition
+uh a zero measure set of g's
+um sorry or do you mean that like g is an empty set or
+uh so if s is a continuous
+space
+and which over which you define some measure that would give and you choose a single g in that s that will have because it's a singleton it will have
+it will have measure zero
+uh
+in setting basically almost all the time
+yeah no I understand okay yeah
+definition equation two does not have to hold but I don't see if that
+necessarily would break your definition
+um so it doesn't break it because this is for all g so um
+so I'm saying if what if that would if that were to be the case for all g apart from up to zero measure or for almost all g basically
+will that will definition still hold
+it'll still hold I mean so if for for almost all g like this is just effectively you know these are zero and so then they're all they're automatically equal
+but as long as there are any g for which these probabilities are different
+then like this has to hold for all g so we're checking this for all g
+uh these would not necessarily be zero so it could be as
+so okay that's fine I think like what I have in mind is like there could be a zero measure set of g's for which the quality would not hold
+for which the conditional density
+for one would not be the same as the other one but
+I'm not sure if
+okay
+reason why I'm asking that is basically I want to see what are the assumptions over here can be
+relaxed and I think that is one assumption that could be relaxed we don't need to require that to hold for all g I think you can require that to hold for almost all g for all g up to zero measure set basically
+and because of that
+I'm trying to figure out like what exactly is needed in this definition
+what what is what what or what of these assumptions actually needed for the definition
+interesting yeah I haven't really thought about relaxing this distance measure right and and for the continuous setting like the Wasserstein distance does make sense right because you're it's earthmover like you're just you're literally just comparing like the the if these distributions are exactly the same so
+I think I'm yeah I think it would be nice to discuss this with you further because I think I'm not like not quite understanding like what kind of relaxations that you have in mind
+but that is another limitation of our
+like of our implementation of this is that we are restricting our dynamics models to output Gaussian distribution so that we can compute the Wasserstein as a closed form
+or like the
+and it and and that's okay
+a latent representation space so we can sort of construct
+the distribution that even if the true transition distribution is not Gaussian you know we can construct it to be that way in the latent
+but
+I think there are limitations to that especially with given like the other constraints that we have on the latent representation that we learn
+so if there are other ways of like learning this
+of like measuring distance
+point yeah so the Gaussian constraint might be
+the question
+so the question of when is it actually justified that it makes sense to assume Gaussian dynamics under these assumptions one and two that's interesting
+okay
+yeah thank you
+cool
+well I think that probably makes sense to end on that point I don't think there's any further questions in the chat or the Q&A
+so I'd like to thank you again Amy for for your talk and the discussion
+and I guess we'll finish up there
+okay thank you
+thanks for watching
+you
+I hope that's
+that's
+that's
+that's
+be
+and
+the
+the
+the
+the
+the
+the
+the
+the
+the
+the

@@ -2,7 +2,7 @@
 title: "翻译层"
 description: "把路径动力学翻成密度演化，再接到热力学与生成建模。"
 paper_count: 37
-last_updated: "2026-04-24"
+last_updated: "2026-05-18"
 ---
 
 # 翻译层

@@ -1,0 +1,9 @@
+sources:
+  tabris:
+    platform: xiaohongshu
+    profile_url: "https://www.xiaohongshu.com/user/profile/60a72ded000000000101de6e"
+    purpose: "Track research-paper, blog, book, and video recommendations from Tabris posts."
+    collection_policy:
+      visibility: "Only collect content visible to the user's own logged-in account."
+      storage: "Store raw captured post text under ignored data/social/; keep only curated resource metadata in tracked notes."
+      rate_limit: "Use low-frequency browser automation; do not bypass CAPTCHA, login, or platform restrictions."

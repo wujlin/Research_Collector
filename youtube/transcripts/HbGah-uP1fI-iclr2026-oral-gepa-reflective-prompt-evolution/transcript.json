@@ -1,0 +1,850 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 19.0,
+      "text": "Hello, everyone. I am Lakshya A. Agarwal, a PhD student at UC Berkeley Skylab, advised by Professor Matej Zaharia and Professor Dan Klein, and I'm very excited to present to you GEPA, a sample efficient learning and optimization technique for agents and LLM-based systems."
+    },
+    {
+      "start": 19.0,
+      "end": 30.0,
+      "text": "How can we teach AI to perform new tasks? The standard way has been to perform weight updates with gradient descent, either during pre-training, supervised fine-tuning, or reinforcement learning."
+    },
+    {
+      "start": 30.0,
+      "end": 46.0,
+      "text": "This has proven to be very effective, but it requires a huge number of examples. Trillions of tokens for pre-training, tens of thousands of labeled examples for supervised fine-tuning, or hundreds of thousands of rollouts for reinforcement learning in domains like math, coding, etc."
+    },
+    {
+      "start": 46.0,
+      "end": 49.0,
+      "text": "However, as we tackle increasing needs for AI, we also need to think about how we can improve AI performance."
+    },
+    {
+      "start": 49.0,
+      "end": 59.0,
+      "text": "While AI is increasingly challenging problems with AI, while GPU flops are getting cheaper, progress is increasingly bottlenecked by sample efficiency. What do we mean by that?"
+    },
+    {
+      "start": 59.0,
+      "end": 77.0,
+      "text": "Two things. First, while AI performs great in domains with large amounts of data, a common challenge faced in solving real-world problems with AI is that there is low availability of domain-specific knowledge resources, making it hard to train models offline through methods like SFT."
+    },
+    {
+      "start": 77.0,
+      "end": 79.0,
+      "text": "Second, rollout is not easy."
+    },
+    {
+      "start": 79.0,
+      "end": 89.0,
+      "text": "Rollout itself can be slow or expensive. If the LLM workflow or the verification process takes a long time, collecting data becomes a huge hurdle, even for online learning."
+    },
+    {
+      "start": 89.0,
+      "end": 98.0,
+      "text": "Imagine training an AI that has to wait for a physical, real-world action to complete. No matter how fast your model is, the environment itself becomes the bottleneck."
+    },
+    {
+      "start": 98.0,
+      "end": 107.0,
+      "text": "In parallel, we are seeing increasing use of agents for real-world applications. While integrations raise the system capabilities, the integrated tools are often long-running,"
+    },
+    {
+      "start": 107.0,
+      "end": 108.0,
+      "text": "further exacerbating the sample's complexity."
+    },
+    {
+      "start": 108.0,
+      "end": 109.0,
+      "text": "In parallel, we are seeing increasing use of agents for real-world applications. While integrations raise the system capabilities, the integrated tools are often long-running, further exacerbating the sample's complexity."
+    },
+    {
+      "start": 109.0,
+      "end": 110.0,
+      "text": "In parallel, we are seeing increasing use of agents for real-world applications. While integrations raise the system capabilities, the integrated tools are often long-running, further exacerbating the sample's complexity."
+    },
+    {
+      "start": 110.0,
+      "end": 111.0,
+      "text": "In parallel, we are seeing increasing use of agents for real-world applications. While integrations raise the system capabilities, the integrated tools are often long-running, further exacerbating the sample's complexity."
+    },
+    {
+      "start": 111.0,
+      "end": 112.0,
+      "text": "In parallel, we are seeing increasing use of agents for real-world applications. While integrations raise the system capabilities, the integrated tools are often long-running, further exacerbating the sample's complexity."
+    },
+    {
+      "start": 112.0,
+      "end": 113.0,
+      "text": "In parallel, we are seeing increasing use of agents for real-world applications. While integrations raise the system capabilities, the integrated tools are often long-running, further exacerbating the sample's complexity."
+    },
+    {
+      "start": 113.0,
+      "end": 114.0,
+      "text": "In parallel, we are seeing increasing use of agents for real-world applications. While integrations raise the system capabilities, the integrated tools are often long-running, further exacerbating the sample's complexity."
+    },
+    {
+      "start": 114.0,
+      "end": 116.6,
+      "text": "running with verified rewards, where a model performs"
+    },
+    {
+      "start": 116.6,
+      "end": 120.14,
+      "text": "multiple rollouts in parallel, obtaining a reward at the end."
+    },
+    {
+      "start": 120.14,
+      "end": 122.86,
+      "text": "Then an algorithm like GRPO converts these"
+    },
+    {
+      "start": 122.86,
+      "end": 125.92,
+      "text": "into gradients that are back-propagated to the model."
+    },
+    {
+      "start": 125.92,
+      "end": 130.24,
+      "text": "But as we can see, each rollout contains a lot of information."
+    },
+    {
+      "start": 130.24,
+      "end": 132.16,
+      "text": "The model's own internal chains of thought,"
+    },
+    {
+      "start": 132.16,
+      "end": 134.68,
+      "text": "tool calls, environment responses to the tool calls,"
+    },
+    {
+      "start": 134.68,
+      "end": 136.6,
+      "text": "including any error messages that could provide"
+    },
+    {
+      "start": 136.6,
+      "end": 138.44,
+      "text": "diagnostic value, and so on."
+    },
+    {
+      "start": 138.44,
+      "end": 141.16,
+      "text": "Yet, RL only took a binary score and propagated"
+    },
+    {
+      "start": 141.16,
+      "end": 142.44,
+      "text": "that by gradient descent."
+    },
+    {
+      "start": 142.44,
+      "end": 145.16,
+      "text": "Can we make use of the other information?"
+    },
+    {
+      "start": 145.16,
+      "end": 148.72,
+      "text": "The key idea is to perform reflective optimization"
+    },
+    {
+      "start": 148.72,
+      "end": 150.02,
+      "text": "in text space."
+    },
+    {
+      "start": 150.02,
+      "end": 152.46,
+      "text": "Instead of only using the binary reward signal,"
+    },
+    {
+      "start": 152.46,
+      "end": 155.74,
+      "text": "we have an LM look at the traces of all the rollouts,"
+    },
+    {
+      "start": 155.74,
+      "end": 158.68,
+      "text": "reflect on what worked, and diagnose any failures."
+    },
+    {
+      "start": 158.68,
+      "end": 161.16,
+      "text": "For example, in a code generation pipeline,"
+    },
+    {
+      "start": 161.16,
+      "end": 164.32,
+      "text": "the compiler returns an error that a certain API"
+    },
+    {
+      "start": 164.32,
+      "end": 165.54,
+      "text": "is unavailable."
+    },
+    {
+      "start": 165.54,
+      "end": 167.52,
+      "text": "The model could then reflect on this"
+    },
+    {
+      "start": 167.52,
+      "end": 170.56,
+      "text": "and immediately learn to use a different API."
+    },
+    {
+      "start": 170.56,
+      "end": 172.3,
+      "text": "This reflection uses all"
+    },
+    {
+      "start": 172.3,
+      "end": 175.54000000000002,
+      "text": "intermediate outputs across different agent steps"
+    },
+    {
+      "start": 175.54000000000002,
+      "end": 178.94,
+      "text": "and potentially even other tools, such as retrieval."
+    },
+    {
+      "start": 178.94,
+      "end": 181.96,
+      "text": "Next, instead of updating only the weights of the model"
+    },
+    {
+      "start": 181.96,
+      "end": 185.24,
+      "text": "with small deltas, the model could update a prompt."
+    },
+    {
+      "start": 185.24,
+      "end": 189.02,
+      "text": "A single natural language change can give a large behavior shift."
+    },
+    {
+      "start": 189.02,
+      "end": 192.28,
+      "text": "Imagine changing generate a one-line summary"
+    },
+    {
+      "start": 192.28,
+      "end": 196.18,
+      "text": "to generate a 10-line summary in a summarization system,"
+    },
+    {
+      "start": 196.18,
+      "end": 198.78,
+      "text": "a one-word change that significantly alters"
+    },
+    {
+      "start": 198.78,
+      "end": 201.88000000000002,
+      "text": "the model behavior, something that would take thousands of weight"
+    },
+    {
+      "start": 201.88000000000002,
+      "end": 202.28,
+      "text": "updates."
+    },
+    {
+      "start": 202.3,
+      "end": 205.08,
+      "text": "To get combining these two ideas,"
+    },
+    {
+      "start": 205.08,
+      "end": 207.68,
+      "text": "the model can now learn from as few as one"
+    },
+    {
+      "start": 207.68,
+      "end": 211.52,
+      "text": "rollout by reflecting and updating its own prompt."
+    },
+    {
+      "start": 211.52,
+      "end": 214.20000000000002,
+      "text": "With this key insight, we propose the JEPA optimizer,"
+    },
+    {
+      "start": 214.20000000000002,
+      "end": 216.16000000000003,
+      "text": "which learns from textual feedback in addition"
+    },
+    {
+      "start": 216.16000000000003,
+      "end": 218.54000000000002,
+      "text": "to numeric rewards during training,"
+    },
+    {
+      "start": 218.54000000000002,
+      "end": 221.26000000000002,
+      "text": "akin to doing reinforcement learning in text space."
+    },
+    {
+      "start": 221.26000000000002,
+      "end": 223.58,
+      "text": "JEPA is a genetic algorithm treating prompts"
+    },
+    {
+      "start": 223.58,
+      "end": 227.56,
+      "text": "as its gene pool, mutating a prompt from its pool every step."
+    },
+    {
+      "start": 227.56,
+      "end": 228.98000000000002,
+      "text": "It has a multi-objective selection"
+    },
+    {
+      "start": 228.98000000000002,
+      "end": 232.06,
+      "text": "as its key ingredient, which we will come to next."
+    },
+    {
+      "start": 232.06,
+      "end": 235.24,
+      "text": "Here, we compare JEPA against GRPO,"
+    },
+    {
+      "start": 235.24,
+      "end": 238.12,
+      "text": "one of the leading RL with verified rewards method."
+    },
+    {
+      "start": 238.12,
+      "end": 240.46,
+      "text": "JEPA achieves twice the performance improvement"
+    },
+    {
+      "start": 240.46,
+      "end": 243.22,
+      "text": "that GRPO gets after 25,000 rollouts"
+    },
+    {
+      "start": 243.22,
+      "end": 246.24,
+      "text": "in just one round of reflection using as few as three data"
+    },
+    {
+      "start": 246.24,
+      "end": 247.12,
+      "text": "points."
+    },
+    {
+      "start": 247.12,
+      "end": 251.16,
+      "text": "Continuing, JEPA, for a few more iterations, doubles that gap."
+    },
+    {
+      "start": 251.16,
+      "end": 254.62,
+      "text": "Note that QEN 3.8b is optimizing itself here."
+    },
+    {
+      "start": 254.62,
+      "end": 257.4,
+      "text": "There is no external teacher involved."
+    },
+    {
+      "start": 257.4,
+      "end": 259.3,
+      "text": "And what does JEPA learn?"
+    },
+    {
+      "start": 259.3,
+      "end": 262.90000000000003,
+      "text": "JEPA, instead of leveraging model idiosyncrasies"
+    },
+    {
+      "start": 262.90000000000003,
+      "end": 265.18,
+      "text": "like some prior prompt optimizers did,"
+    },
+    {
+      "start": 265.18,
+      "end": 268.46000000000004,
+      "text": "JEPA instead generates a complete system specification."
+    },
+    {
+      "start": 268.46000000000004,
+      "end": 270.1,
+      "text": "Here, we see the prompt generated"
+    },
+    {
+      "start": 270.1,
+      "end": 272.76,
+      "text": "by JEPA for a multi-hop question-answer system."
+    },
+    {
+      "start": 272.76,
+      "end": 275.44,
+      "text": "Even with GPT 4.1 Mini, the generated prompt"
+    },
+    {
+      "start": 275.44,
+      "end": 277.48,
+      "text": "includes a full problem specification,"
+    },
+    {
+      "start": 277.48,
+      "end": 280.36,
+      "text": "latent requirements, a solution strategy, and output"
+    },
+    {
+      "start": 280.36,
+      "end": 281.62,
+      "text": "format details."
+    },
+    {
+      "start": 281.62,
+      "end": 284.90000000000003,
+      "text": "Each new generation of models has better instruction"
+    },
+    {
+      "start": 284.90000000000003,
+      "end": 288.58000000000004,
+      "text": "following capabilities, which means precise task specification"
+    },
+    {
+      "start": 288.58000000000004,
+      "end": 289.18,
+      "text": "enables."
+    },
+    {
+      "start": 289.18,
+      "end": 292.22,
+      "text": "Increasingly powerful models, too, perform better."
+    },
+    {
+      "start": 292.22,
+      "end": 295.04,
+      "text": "And that's exactly what JEPA discovers."
+    },
+    {
+      "start": 295.04,
+      "end": 297.88,
+      "text": "JEPA can also optimize proprietary black-box models"
+    },
+    {
+      "start": 297.88,
+      "end": 299.22,
+      "text": "to improve itself."
+    },
+    {
+      "start": 299.22,
+      "end": 302.26,
+      "text": "Here, JEPA optimizes GPT 4.1 Mini,"
+    },
+    {
+      "start": 302.26,
+      "end": 306.52,
+      "text": "which outperforms even the full GPT 4.1 on live bench math"
+    },
+    {
+      "start": 306.52,
+      "end": 308.7,
+      "text": "after just a few rounds of reflection."
+    },
+    {
+      "start": 308.7,
+      "end": 310.36,
+      "text": "Coming back to sample efficiency,"
+    },
+    {
+      "start": 310.36,
+      "end": 312.52,
+      "text": "JEPA is able to optimize LLMs to write code"
+    },
+    {
+      "start": 312.52,
+      "end": 315.88,
+      "text": "for novel hardware accelerators with almost no pre-training"
+    },
+    {
+      "start": 315.88,
+      "end": 318.46000000000004,
+      "text": "data available, starting from just 4.25 minutes."
+    },
+    {
+      "start": 318.46,
+      "end": 323.09999999999997,
+      "text": "4.25% with GPT 4.0, JEPA achieves 7x higher performance"
+    },
+    {
+      "start": 323.09999999999997,
+      "end": 325.02,
+      "text": "at 30.52%."
+    },
+    {
+      "start": 325.02,
+      "end": 326.73999999999995,
+      "text": "So how does it work?"
+    },
+    {
+      "start": 326.73999999999995,
+      "end": 328.5,
+      "text": "JEPA is a very simple algorithm, which"
+    },
+    {
+      "start": 328.5,
+      "end": 331.12,
+      "text": "receives a training set along with your agent,"
+    },
+    {
+      "start": 331.12,
+      "end": 334.24,
+      "text": "parameterized by some prompts and an evaluation metric."
+    },
+    {
+      "start": 334.24,
+      "end": 338.2,
+      "text": "We split the provided train set into a dev and val sets."
+    },
+    {
+      "start": 338.2,
+      "end": 339.9,
+      "text": "It also initializes a score matrix"
+    },
+    {
+      "start": 339.9,
+      "end": 343.34,
+      "text": "to track the performance of each candidate on each validation"
+    },
+    {
+      "start": 343.34,
+      "end": 346.58,
+      "text": "item, specifically noting the best candidate on each val"
+    },
+    {
+      "start": 346.58,
+      "end": 348.46,
+      "text": "item, forming the Pareto frontier."
+    },
+    {
+      "start": 348.46,
+      "end": 352.26,
+      "text": "Then, JEPA proceeds in iterations."
+    },
+    {
+      "start": 352.26,
+      "end": 355.53999999999996,
+      "text": "Every iteration, JEPA selects a prompt from the Pareto frontier"
+    },
+    {
+      "start": 355.53999999999996,
+      "end": 356.7,
+      "text": "to improve."
+    },
+    {
+      "start": 356.7,
+      "end": 359.85999999999996,
+      "text": "It runs this prompt on a mini batch of dev examples,"
+    },
+    {
+      "start": 359.85999999999996,
+      "end": 363.59999999999997,
+      "text": "noting any intermediate feedback, like error messages."
+    },
+    {
+      "start": 363.59999999999997,
+      "end": 367.79999999999995,
+      "text": "Then, it calls an LM to reflect and propose alternatives"
+    },
+    {
+      "start": 367.79999999999995,
+      "end": 370.38,
+      "text": "based on scores and the feedback."
+    },
+    {
+      "start": 370.38,
+      "end": 372.44,
+      "text": "Finally, it updates the pool based"
+    },
+    {
+      "start": 372.44,
+      "end": 374.67999999999995,
+      "text": "on how the candidate scored on the val set,"
+    },
+    {
+      "start": 374.67999999999995,
+      "end": 376.97999999999996,
+      "text": "updating the Pareto frontier if necessary."
+    },
+    {
+      "start": 376.97999999999996,
+      "end": 378.02,
+      "text": "But, JEPA is a very simple algorithm."
+    },
+    {
+      "start": 378.02,
+      "end": 378.29999999999995,
+      "text": "JEPA is a very simple algorithm. JEPA is a very simple algorithm."
+    },
+    {
+      "start": 378.29999999999995,
+      "end": 378.41999999999996,
+      "text": "JEPA is a very simple algorithm. JEPA is a very simple algorithm."
+    },
+    {
+      "start": 378.41999999999996,
+      "end": 378.46,
+      "text": "JEPA is a very simple algorithm. JEPA is a very simple algorithm."
+    },
+    {
+      "start": 378.46,
+      "end": 378.53999999999996,
+      "text": "JEPA is a very simple algorithm. JEPA is a very simple algorithm."
+    },
+    {
+      "start": 378.53999999999996,
+      "end": 380.84,
+      "text": "Why is the Pareto frontier important to select"
+    },
+    {
+      "start": 380.84,
+      "end": 383.21999999999997,
+      "text": "the prompt to mutate from?"
+    },
+    {
+      "start": 383.21999999999997,
+      "end": 386.52,
+      "text": "As you can see on the left, simple iterative reflection"
+    },
+    {
+      "start": 386.52,
+      "end": 388.97999999999996,
+      "text": "often gets trapped in a local optimum,"
+    },
+    {
+      "start": 388.97999999999996,
+      "end": 390.91999999999996,
+      "text": "finding one improvement and then wasting"
+    },
+    {
+      "start": 390.91999999999996,
+      "end": 392.85999999999996,
+      "text": "its budget trying to top it."
+    },
+    {
+      "start": 392.85999999999996,
+      "end": 395.5,
+      "text": "JEPA solves this using a Pareto based candidate selection"
+    },
+    {
+      "start": 395.5,
+      "end": 399.02,
+      "text": "strategy that balances exploration and exploitation"
+    },
+    {
+      "start": 399.02,
+      "end": 400.65999999999997,
+      "text": "to find much better solutions."
+    },
+    {
+      "start": 400.65999999999997,
+      "end": 403.21999999999997,
+      "text": "Across four benchmarks, our Pareto approach"
+    },
+    {
+      "start": 403.21999999999997,
+      "end": 406.46,
+      "text": "consistently beats both TechGrad's select strategy"
+    },
+    {
+      "start": 406.46,
+      "end": 408.29999999999995,
+      "text": "and Microsoft Trace OptoPrime's Beam"
+    },
+    {
+      "start": 408.3,
+      "end": 412.7,
+      "text": "search even men measured in the same evolution hardness with the same amount of information"
+    },
+    {
+      "start": 412.7,
+      "end": 418.78000000000003,
+      "text": "available jeba is not the first to explore optimization in tech space so what makes a"
+    },
+    {
+      "start": 418.78000000000003,
+      "end": 424.46000000000004,
+      "text": "difference first the per instance burrito pool keeps best for instance preserving and propagating"
+    },
+    {
+      "start": 424.46000000000004,
+      "end": 430.22,
+      "text": "rare unique insights we perform global llm reflection as opposed to doing a local back"
+    },
+    {
+      "start": 430.22,
+      "end": 435.90000000000003,
+      "text": "prop which uses all available diagnostic feedback at every step and finally we use an evolutionary"
+    },
+    {
+      "start": 435.90000000000003,
+      "end": 440.94000000000005,
+      "text": "tree plus system aware merge that crosses prompts across modules improving across generations"
+    },
+    {
+      "start": 440.94000000000005,
+      "end": 447.74,
+      "text": "instead of doing a single generation pass as me pro did earlier i will now switch gears to talking"
+    },
+    {
+      "start": 447.74,
+      "end": 454.22,
+      "text": "about how ai is transforming optimization itself jepa is a part of a broader wave of optimization"
+    },
+    {
+      "start": 454.22,
+      "end": 459.90000000000003,
+      "text": "techniques that use llms as smart proposers even when a function is non-differentiable additional"
+    },
+    {
+      "start": 459.90000000000003,
+      "end": 464.54,
+      "text": "site information can enable an llm to propose meaningful improvements for example when"
+    },
+    {
+      "start": 464.54,
+      "end": 465.82000000000005,
+      "text": "optimizing a cuda kernel"
+    },
+    {
+      "start": 465.90000000000003,
+      "end": 471.34000000000003,
+      "text": "compiler and profiler output lets a smart proposer reason about what changes would make it faster"
+    },
+    {
+      "start": 472.06000000000006,
+      "end": 478.3,
+      "text": "a broad class of problems can be expressed as a text optimization problem given an evaluator"
+    },
+    {
+      "start": 478.3,
+      "end": 482.70000000000005,
+      "text": "that can provide a score along with some actionable site information like compiler"
+    },
+    {
+      "start": 482.70000000000005,
+      "end": 488.62,
+      "text": "traces sla violations etc any such problem can now be optimized using jepa's universal"
+    },
+    {
+      "start": 488.62,
+      "end": 495.74,
+      "text": "api optimize anything the api to use jepa is very simple just provide an evaluator function"
+    },
+    {
+      "start": 495.74,
+      "end": 500.46000000000004,
+      "text": "and define the set of problems that need to be solved and jepa will then handle the rest"
+    },
+    {
+      "start": 501.1,
+      "end": 506.54,
+      "text": "extending jepa beyond prompts we cast agent architecture search as a text optimization"
+    },
+    {
+      "start": 506.54,
+      "end": 511.82,
+      "text": "problem starting from a simple one-step chain of thought agent jepa is able to discover a"
+    },
+    {
+      "start": 511.82,
+      "end": 519.1,
+      "text": "six-step agent architecture that boosts gemini 3 flashes performance from 32 percent to 89 percent"
+    },
+    {
+      "start": 519.1,
+      "end": 525.5,
+      "text": "and almost 3x jump it similarly boosts gpt 4.1 nano's performance by over 20 percent"
+    },
+    {
+      "start": 525.74,
+      "end": 532.78,
+      "text": "on the math data set jepa can also improve the performance of multi-modal vlms for example"
+    },
+    {
+      "start": 532.78,
+      "end": 539.34,
+      "text": "here jepa is cutting the ocr error rate by almost 35 percent across different model scales"
+    },
+    {
+      "start": 540.38,
+      "end": 547.66,
+      "text": "jepa works across model scales from 1 billion to the latest frontier models here jepa improves gpt"
+    },
+    {
+      "start": 547.66,
+      "end": 555.42,
+      "text": "os's 120 billion to outperform claude opus while being 90x cheaper notably the improvement from"
+    },
+    {
+      "start": 555.74,
+      "end": 562.22,
+      "text": "jepa on claude is larger than on weaker models as model capabilities improve they benefit more"
+    },
+    {
+      "start": 562.22,
+      "end": 567.1,
+      "text": "from precise task specification which is often difficult for humans to specify"
+    },
+    {
+      "start": 567.1,
+      "end": 573.5,
+      "text": "and that is exactly what jepa discovered here jepa is now used across various organizations"
+    },
+    {
+      "start": 573.5,
+      "end": 579.1,
+      "text": "including startups and enterprises in production here the ceos of dropbox and shopify highlight"
+    },
+    {
+      "start": 579.1,
+      "end": 585.26,
+      "text": "their jepa usage and open ai recently had a blog post about building self-evolving agents with jepa"
+    },
+    {
+      "start": 585.9,
+      "end": 592.46,
+      "text": "jepa is also used across these organizations and has been used as the main methodology in several"
+    },
+    {
+      "start": 592.46,
+      "end": 599.9,
+      "text": "of these papers so in summary jepa can optimize anything representable in text so don't be afraid"
+    },
+    {
+      "start": 599.9,
+      "end": 605.1,
+      "text": "to optimize in the tech space and bring actionable site information to your problems many problems"
+    },
+    {
+      "start": 605.1,
+      "end": 610.46,
+      "text": "can be framed as optimization and jepa can use a variety of actionable site information to"
+    },
+    {
+      "start": 610.46,
+      "end": 615.5,
+      "text": "optimize anything including prompts agent harnesses kernels numeric parameters"
+    },
+    {
+      "start": 615.74,
+      "end": 621.02,
+      "text": "algorithms and much more the project is fully open source so please check it out here"
+    },
+    {
+      "start": 621.02,
+      "end": 623.58,
+      "text": "and thank you so much for my listening to my talk"
+    }
+  ],
+  "segment_count": 169
+}

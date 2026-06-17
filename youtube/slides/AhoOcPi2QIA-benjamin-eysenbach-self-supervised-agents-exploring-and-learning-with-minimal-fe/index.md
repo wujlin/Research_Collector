@@ -1,0 +1,62 @@
+# Slides: Benjamin Eysenbach Self-Supervised Agents Exploring and Learning with Minimal Feedback
+
+- URL: local:/home/jinlin/projects/Research_Collector/youtube/video/ben-eysenbach-self-supervised-agents-minimal-feedback/source.mp4
+- Slide count: `55`
+
+## Frames
+
+- `slide-0001.jpg` @ `00:00:01`
+- `slide-0002.jpg` @ `00:06:48`
+- `slide-0003.jpg` @ `00:12:25`
+- `slide-0004.jpg` @ `00:13:30`
+- `slide-0005.jpg` @ `00:13:38`
+- `slide-0006.jpg` @ `00:14:33`
+- `slide-0007.jpg` @ `00:15:31`
+- `slide-0008.jpg` @ `00:19:28`
+- `slide-0009.jpg` @ `00:20:26`
+- `slide-0010.jpg` @ `00:24:42`
+- `slide-0011.jpg` @ `00:25:42`
+- `slide-0012.jpg` @ `00:28:18`
+- `slide-0013.jpg` @ `00:31:19`
+- `slide-0014.jpg` @ `00:32:19`
+- `slide-0015.jpg` @ `00:35:10`
+- `slide-0016.jpg` @ `00:37:22`
+- `slide-0017.jpg` @ `00:37:46`
+- `slide-0018.jpg` @ `00:38:00`
+- `slide-0019.jpg` @ `00:38:32`
+- `slide-0020.jpg` @ `00:39:41`
+- `slide-0021.jpg` @ `00:40:08`
+- `slide-0022.jpg` @ `00:42:15`
+- `slide-0023.jpg` @ `00:43:42`
+- `slide-0024.jpg` @ `00:45:03`
+- `slide-0025.jpg` @ `00:46:35`
+- `slide-0026.jpg` @ `00:46:55`
+- `slide-0027.jpg` @ `00:47:36`
+- `slide-0028.jpg` @ `00:48:08`
+- `slide-0029.jpg` @ `00:55:00`
+- `slide-0030.jpg` @ `00:57:57`
+- `slide-0031.jpg` @ `00:59:52`
+- `slide-0032.jpg` @ `01:03:36`
+- `slide-0033.jpg` @ `01:04:34`
+- `slide-0034.jpg` @ `01:05:02`
+- `slide-0035.jpg` @ `01:05:50`
+- `slide-0036.jpg` @ `01:06:14`
+- `slide-0037.jpg` @ `01:06:39`
+- `slide-0038.jpg` @ `01:07:00`
+- `slide-0039.jpg` @ `01:07:07`
+- `slide-0040.jpg` @ `01:08:16`
+- `slide-0041.jpg` @ `01:08:57`
+- `slide-0042.jpg` @ `01:09:26`
+- `slide-0043.jpg` @ `01:10:34`
+- `slide-0044.jpg` @ `01:11:44`
+- `slide-0045.jpg` @ `01:12:35`
+- `slide-0046.jpg` @ `01:12:42`
+- `slide-0047.jpg` @ `01:13:39`
+- `slide-0048.jpg` @ `01:16:33`
+- `slide-0049.jpg` @ `01:19:18`
+- `slide-0050.jpg` @ `01:21:15`
+- `slide-0051.jpg` @ `01:23:12`
+- `slide-0052.jpg` @ `01:23:30`
+- `slide-0053.jpg` @ `01:23:46`
+- `slide-0054.jpg` @ `01:24:37`
+- `slide-0055.jpg` @ `01:25:51`

@@ -1,0 +1,235 @@
+Thank you, Luke, for the amazing opening. So good morning and thanks for having me.
+My name is Jun Song. I'm from the University of Hong Kong and NVIDIA.
+It's really my great honor to present this work, SANA-Video, for our SANA team.
+So currently, generative AI is evolving rapidly, with model sizes growing larger and larger.
+At the same time, NVIDIA GPUs are becoming increasingly powerful.
+We can foresee that future visual generative models will demand even more computational resources.
+So actually, generating images and videos are significantly more computationally demanding than processing just text.
+For example, the inference FLOPS for FLUX or Coq VideoX exceed LAMA3.
+And in order for me to do that,
+I need to make the magnitude higher than the VIT models.
+So they are restricted to cloud deployment and remain impractical for consumer GPUs or edge devices.
+So actually, efficiency is a forever topic.
+So far, we have explored several directions for efficient video generation.
+First, in SANA, we tried to reduce input tokens by using our self-developed deep compression auto-encoder.
+We also tried to use linear attention to replace softmax-1,
+enhance the architectural efficiency of the model.
+And we also already explored inference step distillation in SANA Spring project.
+The fewer the inference steps, the faster the speed.
+So the last part is what we are going to talk about today,
+the hybrid AR plus diffusion for long video generation.
+Actually, we can generate video block by block causally and diffuse within the block.
+So video generation requires much more computation than images.
+SANA can generate one image within just one second.
+However, generating a five-second video with one model actually takes nearly 30 minutes.
+So to boost the video generation efficiency,
+we focus on three key technical areas.
+The high ratio VAEs and linear attention mechanisms,
+especially optimized for video tasks.
+Crucially, the block KV cache, based on linear attention,
+enables the generation of much longer videos.
+So to get a video generation model,
+actually, we have two ways to go, to choose.
+First, we can just train from scratch.
+But only when we have hundreds or thousands of GPUs,
+like H100 GPUs.
+And it will take you almost several months to train one model.
+And it's, of course, not affordable.
+Or actually, we can start from a semantic-aligned text-to-image model.
+Here we start from our SANA 1.5,
+which is a 1.6 billion parameter text-to-image model
+trained on our DCAE.
+Actually, since our video model is based on image model,
+so the linear attention DIT actually is almost the same as our SANA.
+But we're introducing two modules for temporal modeling.
+And we will talk about them later.
+And finally, on the left top,
+we implement block causal linear attention module
+to achieve constant KV cache memory.
+So for any length video generation.
+So first, let's talk about linear attention in video generation model.
+Actually, in video generation,
+in video tasks,
+linear attention provides even more significant acceleration than in images,
+as the video length and resolution are much larger.
+Our results show that for long videos,
+SANA video is 1.5 times faster than the one model.
+And additionally, at high resolution,
+our linear attention is four times faster than the flash attention.
+And these improvements make a long form.
+High resolution video generation is much more practical.
+However, we find that the linear attention map is far different from the softmax attention.
+As you can see in this figure,
+the linear attention is super dense,
+while the softmax attention is rather sparse.
+And this demonstrates that the local contacts captured by the linear attention
+is actually insufficient.
+To enhance the temporal modeling,
+we introduced two key improvements.
+First,
+the 3D rope for the linear attention and temporal convolutions,
+and both are highlighted in the orange box.
+While 3D rope doesn't solve the attention map sparsity problem entirely,
+it does help improve attention quality.
+Combined with our spatial temporal mixed FFN,
+it significantly boosts the overall performance.
+Here we have the training loss.
+The green line stands for the 3D rope and the additional temporal convolution.
+And to further support long video generation,
+we leverage the unique properties of linear attention
+to implement an efficient block KV cache.
+So let's quickly review how this works.
+In linear attention,
+we call it the attention map or the state.
+Actually, it has a fixed shape of D times D,
+regardless of the input sequence length.
+So when processing the first block here,
+we obtain the state as one.
+And for the second block,
+the state is updated additively,
+meaning that we only need to add the current block's contribution
+to the previous cache.
+And generally for any block I,
+actually the current state is updated as adding the current block contribution,
+the KV here,
+to the previous cache as.
+So now let's see how we enable long video generation
+with block causal linear attention.
+For the first block here,
+the green one,
+we compute the state as one,
+shown in the green box.
+And after we compute first block's state,
+we cache it,
+as shown in the red box.
+Then we calculate the KV for the next block
+and add it to the previous one.
+Here we take the cached state from block one
+in the red box
+and update it into the block two,
+which is in the green color.
+And the subsequent process follows the same logic.
+The new state is cached,
+and once the next block computation is finished,
+they are summed together.
+And so on.
+So token in linear attention will become larger,
+more and more,
+as the video length becomes larger and larger.
+While our causal linear attention maintains constant KV cache,
+potentially make minute length video generation possible.
+So here in conclusion,
+we can have two advantages of block linear attention.
+First, we have constant memory usage,
+regardless of the input sequence length.
+And second,
+we have the global history context.
+So one last question is how to achieve causal FFN
+with temporal conf.
+So let's take two block situation as example.
+During causal training,
+the block one cannot foresee block two.
+So we pad a zero token here between the two blocks.
+However, block two must see block one's token.
+So that is correct causal modeling.
+So here we cache the last step,
+the last token from block one,
+as the first token in block two.
+So finally the two blocks are separated
+by the zero padding token,
+which is subsequently removed
+to avoid affecting the final computation.
+And the block two used the last token from block one,
+making the causal modeling available.
+So here's some results
+compared to the current state of the art video models.
+So now video performs competitively on VBench,
+and it takes only 18 seconds
+to generate a 1K resolution video
+on a single H100 GPU.
+Here we show some examples.
+On the left,
+we have text-to-video examples.
+And on the right,
+we show the image-to-video examples.
+Using certain video as a base model,
+it can be applied to tasks like physical AI
+and real-world models.
+Actually, by fine-tuning SANA video
+on a small data site
+with just a few SFT steps,
+we enable it to generate videos
+for robotic manipulation and gameplay.
+We also combine with the post-training tech
+in Long Lab,
+which is a three-long test-long method.
+And this method is also accurate
+for poster and is also from our group.
+We also implement the DMD step distillation
+to further accelerate our model.
+And finally, SANA video can also generate
+minute-length video within just 36 seconds,
+achieving 27 FPS real-time generation.
+So finally, there is one more thing.
+Based on linear attention,
+we have much more potential applications to discover.
+We believe the efficiency of linear attention
+and deep compression auto-encoder
+will facilitate streaming video generation
+and also the development of long-form,
+like minute-length or even hour-length
+real-world models.
+And we are working on this project
+and we'll see if we can keep pushing
+the efficiency boundary.
+And all of our projects,
+including the code and checkpoints,
+are all open source to encourage further exploration
+in efficient generative AI system.
+So that's all for my talk today.
+And we will have a poster session
+right after this oral,
+maybe in the afternoon.
+Welcome everyone to discuss more.
+Thanks so much.
+Thank you.
+Time for a quick question, if any.
+Yeah, please go to the mic.
+Thank you for your speech.
+And I have a question.
+I think it's something similar
+to the auto-aggressive video diffusion models
+like causal vid,
+something similar to the block causal
+linear attention you introduced.
+So I wanted to ask what are the key differences
+and if we are thinking about
+infinite long video generation,
+which one do you think would be better choice?
+Thank you.
+Thank you for your question.
+Actually the causal vid,
+something like that,
+they actually perform on softmax attention.
+So as I talked before,
+the softmax attention has
+an open square computation complexity.
+So if you want to generate minute length
+or even hour length video,
+it's not possible to do it on softmax attention.
+So if you want to generate minute length video,
+so you have to keep the computation within
+like a sliding window or something like that.
+So the main difference here is
+our linear attention has the global context.
+It has memory from the first second
+to the final second.
+So if you want to do some project
+or task like world model,
+it has to be maintaining overall
+or the
+cache or the memory.
+So I think that's the main advantages
+of linear attention.
+Thank you.
+Thank you.

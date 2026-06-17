@@ -1,0 +1,12 @@
+{
+  "title": "Amy Zhang Explores Generalization in RL by Exploiting Latent Structure and Bisimulation Metrics",
+  "url": "https://www.youtube.com/watch?v=Sn8x2MS48xk",
+  "backend": "faster-whisper",
+  "model": "large-v3",
+  "requested_language": "en",
+  "detected_language": "en",
+  "generated_at": "2026-05-13T20:43:10",
+  "language": "en",
+  "language_probability": 1,
+  "duration": 3891.143
+}

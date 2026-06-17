@@ -137,9 +137,27 @@ $$
 
 Economic 和 social infrastructure 来自 OSM 衍生 critical infrastructure dataset。OSM 是 volunteered geographic information，全球覆盖不均衡。发展中地区可能有系统性缺失。如果直接使用 OSM 设施数量，容易把“没被记录”误读成“没有设施”。
 
-作者用 VIIRS night-time lights 作为 surrogate 来校准 economic/social infrastructure。逻辑是：夜间灯光强度与经济活动、电力消费、人口分布和城市化程度相关，可以帮助修正 OSM 记录不足。
+作者用 VIIRS night-time lights，简称 NTL，作为 surrogate 来校准 economic/social infrastructure。NTL 指卫星在夜间观测到的地表灯光辐射强度。城市道路照明、居民区、商业区、工业区、港口、机场和交通节点都会贡献夜间灯光，所以 NTL 常被当作 socio-economic activity 的遥感代理变量。
 
-他们选择 continental United States 作为 calibration site，因为美国 OSM 覆盖相对完整。然后在 global urban boundary 周边不同 buffer size 内，回归 NTL 和 infrastructure values。结果显示 5-km buffer 的 log-log 关系最强，随后用这个回归系数进行全球校准：
+这里需要注意，NTL 不是基础设施本身。它不直接告诉我们某个 grid cell 里有多少医院、学校、道路或电力设施。它的作用是提供一个外部参照：如果某个区域 OSM-derived infrastructure value 很低，但夜间灯光很强，那么它可能不是“真实基础设施很少”，而是 OSM 记录不完整。反过来，如果 OSM 值和 NTL 在统计上有稳定关系，就可以用 NTL 帮助校准 OSM 衍生的 economic/social infrastructure layers。
+
+作者选择 continental United States 作为 calibration site，因为美国 OSM 覆盖相对完整，更适合作为“OSM 记录较可信”的标定区域。校准的逻辑是先在美国建立关系：
+
+```text
+OSM-derived infrastructure value
+    <->
+VIIRS night-time light intensity
+```
+
+然后把这个关系迁移到全球，用来修正其他地区可能因 OSM 缺失而低估的 infrastructure value。
+
+接下来作者使用 global urban boundary，简称 GUB，来限制 calibration pixels。原因是 NTL 与经济、社会基础设施的关系主要发生在城市和城市边缘。如果把大量 rural 或 undeveloped pixels 放进回归，很多地方既没有灯光也没有基础设施，会让回归关系被“共同接近 0”的像素主导，反而削弱对城市基础设施的解释力。
+
+因此，他们在 GUB 周边设置不同 buffer sizes，从 0 到 25 km，分别取这些城市边界附近的 grid cells。buffer size 的含义是：以 global urban boundary 为基准，向外或周边扩展一定距离，保留这个范围内的像素做 NTL-infrastructure regression。buffer 太小，可能只看到核心建成区，漏掉城市边缘基础设施；buffer 太大，又会把太多非城市区域纳入，增加噪声。
+
+在每个 buffer setting 下，作者都在 $0.1^\circ\times0.1^\circ$ grid scale 上回归 NTL 和 infrastructure values。这里使用的是 log-log relationship，也就是比较 $\ln(\mathrm{NTL})$ 和 $\ln(I')$ 或 $\ln(I)$ 的线性关系。这样做的原因是夜间灯光和基础设施都高度偏态：少数城市格网值很高，大量区域值较低。取 log 后，极端高值不会完全主导拟合，也更接近 power-law scaling 的形式。
+
+结果显示，5-km buffer 中 NTL 与 economic infrastructure 的 log-log 关系最强，相关系数约为 $r=0.71$，且显著。因此作者采用 5-km model 的回归系数进行全球校准：
 
 $$
 \ln(I)

@@ -1,0 +1,109 @@
+# Curated Quality Slides: v_jDvpEGTIg-can-yann-lecun-reshape-ai-again
+
+This folder is quality-filtered for note drafting. It is not a final semantic slide selection.
+
+- Source frames: 94
+- Kept frames: 57
+- Excluded by machine quality flags: 12
+- Excluded by manual note-usability review: 25
+- Contact sheet: `contact_sheet.jpg`
+
+## Kept Frames
+
+- `001__slide-0001.jpg` <= `slide-0001.jpg`
+- `002__slide-0002.jpg` <= `slide-0002.jpg`
+- `003__slide-0004.jpg` <= `slide-0004.jpg`
+- `004__slide-0005.jpg` <= `slide-0005.jpg`
+- `005__slide-0008.jpg` <= `slide-0008.jpg`
+- `006__slide-0009.jpg` <= `slide-0009.jpg`
+- `007__slide-0010.jpg` <= `slide-0010.jpg`
+- `008__slide-0013.jpg` <= `slide-0013.jpg`
+- `009__slide-0014.jpg` <= `slide-0014.jpg`
+- `010__slide-0015.jpg` <= `slide-0015.jpg`
+- `011__slide-0016.jpg` <= `slide-0016.jpg`
+- `012__slide-0017.jpg` <= `slide-0017.jpg`
+- `013__slide-0018.jpg` <= `slide-0018.jpg`
+- `014__slide-0019.jpg` <= `slide-0019.jpg`
+- `015__slide-0020.jpg` <= `slide-0020.jpg`
+- `016__slide-0021.jpg` <= `slide-0021.jpg`
+- `017__slide-0022.jpg` <= `slide-0022.jpg`
+- `018__slide-0024.jpg` <= `slide-0024.jpg`
+- `019__slide-0025.jpg` <= `slide-0025.jpg`
+- `020__slide-0026.jpg` <= `slide-0026.jpg`
+- `021__slide-0028.jpg` <= `slide-0028.jpg`
+- `022__slide-0029.jpg` <= `slide-0029.jpg`
+- `023__slide-0031.jpg` <= `slide-0031.jpg`
+- `024__slide-0033.jpg` <= `slide-0033.jpg`
+- `025__slide-0034.jpg` <= `slide-0034.jpg`
+- `026__slide-0035.jpg` <= `slide-0035.jpg`
+- `027__slide-0036.jpg` <= `slide-0036.jpg`
+- `028__slide-0037.jpg` <= `slide-0037.jpg`
+- `029__slide-0038.jpg` <= `slide-0038.jpg`
+- `030__slide-0039.jpg` <= `slide-0039.jpg`
+- `031__slide-0040.jpg` <= `slide-0040.jpg`
+- `032__slide-0041.jpg` <= `slide-0041.jpg`
+- `033__slide-0042.jpg` <= `slide-0042.jpg`
+- `034__slide-0046.jpg` <= `slide-0046.jpg`
+- `035__slide-0047.jpg` <= `slide-0047.jpg`
+- `036__slide-0049.jpg` <= `slide-0049.jpg`
+- `037__slide-0051.jpg` <= `slide-0051.jpg`
+- `038__slide-0053.jpg` <= `slide-0053.jpg`
+- `039__slide-0055.jpg` <= `slide-0055.jpg`
+- `040__slide-0058.jpg` <= `slide-0058.jpg`
+- `041__slide-0059.jpg` <= `slide-0059.jpg`
+- `042__slide-0060.jpg` <= `slide-0060.jpg`
+- `043__slide-0062.jpg` <= `slide-0062.jpg`
+- `044__slide-0063.jpg` <= `slide-0063.jpg`
+- `045__slide-0066.jpg` <= `slide-0066.jpg`
+- `046__slide-0069.jpg` <= `slide-0069.jpg`
+- `047__slide-0071.jpg` <= `slide-0071.jpg`
+- `048__slide-0072.jpg` <= `slide-0072.jpg`
+- `049__slide-0073.jpg` <= `slide-0073.jpg`
+- `050__slide-0077.jpg` <= `slide-0077.jpg`
+- `051__slide-0079.jpg` <= `slide-0079.jpg`
+- `052__slide-0080.jpg` <= `slide-0080.jpg`
+- `053__slide-0082.jpg` <= `slide-0082.jpg`
+- `054__slide-0085.jpg` <= `slide-0085.jpg`
+- `055__slide-0086.jpg` <= `slide-0086.jpg`
+- `056__slide-0087.jpg` <= `slide-0087.jpg`
+- `057__slide-0088.jpg` <= `slide-0088.jpg`
+
+## Excluded Frames
+
+- `slide-0003.jpg`: manual-note-usability
+- `slide-0006.jpg`: manual-note-usability
+- `slide-0007.jpg`: machine-quality-flag
+- `slide-0011.jpg`: manual-note-usability
+- `slide-0012.jpg`: machine-quality-flag
+- `slide-0023.jpg`: machine-quality-flag
+- `slide-0027.jpg`: manual-note-usability
+- `slide-0030.jpg`: manual-note-usability
+- `slide-0032.jpg`: machine-quality-flag
+- `slide-0043.jpg`: manual-note-usability
+- `slide-0044.jpg`: manual-note-usability
+- `slide-0045.jpg`: manual-note-usability
+- `slide-0048.jpg`: manual-note-usability
+- `slide-0050.jpg`: manual-note-usability
+- `slide-0052.jpg`: manual-note-usability
+- `slide-0054.jpg`: manual-note-usability
+- `slide-0056.jpg`: manual-note-usability
+- `slide-0057.jpg`: machine-quality-flag
+- `slide-0061.jpg`: machine-quality-flag
+- `slide-0064.jpg`: manual-note-usability
+- `slide-0065.jpg`: manual-note-usability
+- `slide-0067.jpg`: manual-note-usability
+- `slide-0068.jpg`: machine-quality-flag
+- `slide-0070.jpg`: machine-quality-flag
+- `slide-0074.jpg`: machine-quality-flag
+- `slide-0075.jpg`: manual-note-usability
+- `slide-0076.jpg`: machine-quality-flag
+- `slide-0078.jpg`: manual-note-usability
+- `slide-0081.jpg`: machine-quality-flag
+- `slide-0083.jpg`: manual-note-usability
+- `slide-0084.jpg`: manual-note-usability
+- `slide-0089.jpg`: manual-note-usability
+- `slide-0090.jpg`: manual-note-usability
+- `slide-0091.jpg`: manual-note-usability
+- `slide-0092.jpg`: manual-note-usability
+- `slide-0093.jpg`: manual-note-usability
+- `slide-0094.jpg`: machine-quality-flag

@@ -1,0 +1,2882 @@
+Yeah, I'll talk about world models. Uh,
+Yeah, I'll talk about world models. Uh, possibly the enabler for the next AI
+possibly the enabler for the next AI
+possibly the enabler for the next AI revolution.
+revolution.
+revolution. So,
+So,
+So, there's a lot of machine learning people
+there's a lot of machine learning people
+there's a lot of machine learning people I think in the room perhaps. Uh, I have
+I think in the room perhaps. Uh, I have
+I think in the room perhaps. Uh, I have bad news for you. Machine learning
+bad news for you. Machine learning
+bad news for you. Machine learning sucks.
+uh you know basically if when we compare
+uh you know basically if when we compare the learning abilities of uh machines
+the learning abilities of uh machines
+the learning abilities of uh machines with humans and animals uh clearly there
+with humans and animals uh clearly there
+with humans and animals uh clearly there is a big gap um you know people and
+is a big gap um you know people and
+is a big gap um you know people and animals can learn new tasks extremely
+animals can learn new tasks extremely
+animals can learn new tasks extremely quickly and with very few trials very
+quickly and with very few trials very
+quickly and with very few trials very few samples uh people have common sense
+few samples uh people have common sense
+few samples uh people have common sense animals too physical common sense
+animals too physical common sense
+animals too physical common sense there's a lot of tasks that we can
+there's a lot of tasks that we can
+there's a lot of tasks that we can accomplish zero shot even if we've never
+accomplish zero shot even if we've never
+accomplish zero shot even if we've never faced them before um and
+faced them before um and
+faced them before um and how do we do this with machines? How and
+how do we do this with machines? How and
+how do we do this with machines? How and you know we have very powerful AI
+you know we have very powerful AI
+you know we have very powerful AI techniques that everybody is using but
+techniques that everybody is using but
+techniques that everybody is using but they don't really handle the real world.
+they don't really handle the real world.
+they don't really handle the real world. They don't handle continuous
+They don't handle continuous
+They don't handle continuous highdimensional noisy data. Language is
+highdimensional noisy data. Language is
+highdimensional noisy data. Language is easy by comparison. And so uh the real
+easy by comparison. And so uh the real
+easy by comparison. And so uh the real world is messy. Language is simple. that
+world is messy. Language is simple. that
+world is messy. Language is simple. that and and you know this connects with what
+and and you know this connects with what
+and and you know this connects with what you know Vladin said earlier and uh
+you know Vladin said earlier and uh
+you know Vladin said earlier and uh Gitandra as well. Uh the Marave paradox
+Gitandra as well. Uh the Marave paradox
+Gitandra as well. Uh the Marave paradox that you know things that are simple are
+that you know things that are simple are
+that you know things that are simple are difficult for computers and things that
+difficult for computers and things that
+difficult for computers and things that are complicated for humans turn out to
+are complicated for humans turn out to
+are complicated for humans turn out to not be that difficult for computers uh
+not be that difficult for computers uh
+not be that difficult for computers uh like playing chess, computing integrals
+like playing chess, computing integrals
+like playing chess, computing integrals symbolically and you know solving
+symbolically and you know solving
+symbolically and you know solving equations, proving math theorems etc. Uh
+equations, proving math theorems etc. Uh
+equations, proving math theorems etc. Uh so you know how is it that a 10-year-old
+so you know how is it that a 10-year-old
+so you know how is it that a 10-year-old can uh basically do what you would like
+can uh basically do what you would like
+can uh basically do what you would like a domestic robot to do and do most of
+a domestic robot to do and do most of
+a domestic robot to do and do most of those tasks without actually being
+those tasks without actually being
+those tasks without actually being trained to do them the first time you
+trained to do them the first time you
+trained to do them the first time you ask them they can do it. They may not
+ask them they can do it. They may not
+ask them they can do it. They may not want to do it but they can. Uh, how
+want to do it but they can. Uh, how
+want to do it but they can. Uh, how come, you know, any teenager can learn
+come, you know, any teenager can learn
+come, you know, any teenager can learn to drive a car in a few hours of
+to drive a car in a few hours of
+to drive a car in a few hours of practice, yet the self-driving car
+practice, yet the self-driving car
+practice, yet the self-driving car companies have literally millions of
+companies have literally millions of
+companies have literally millions of hours of training data. And despite
+hours of training data. And despite
+hours of training data. And despite that, they can't use those millions of
+that, they can't use those millions of
+that, they can't use those millions of hours of training data to get a machine
+hours of training data to get a machine
+hours of training data to get a machine to just imitating humans to uh to drive
+to just imitating humans to uh to drive
+to just imitating humans to uh to drive at the at the same level of reliability.
+at the at the same level of reliability.
+at the at the same level of reliability. Otherwise, we'll have level five
+Otherwise, we'll have level five
+Otherwise, we'll have level five self-driving cars and we don't we don't
+self-driving cars and we don't we don't
+self-driving cars and we don't we don't have them. At best in consumer car
+have them. At best in consumer car
+have them. At best in consumer car business, we have level two or three and
+business, we have level two or three and
+business, we have level two or three and uh the the robo taxi are engineered, you
+uh the the robo taxi are engineered, you
+uh the the robo taxi are engineered, you know, very heavily engineered with
+know, very heavily engineered with
+know, very heavily engineered with various uh sensors and other things. So,
+various uh sensors and other things. So,
+various uh sensors and other things. So, you know, we keep bumping into this
+you know, we keep bumping into this
+you know, we keep bumping into this moravic paradox and we really have to go
+moravic paradox and we really have to go
+moravic paradox and we really have to go beyond this. If you believe that a
+beyond this. If you believe that a
+beyond this. If you believe that a intelligence requires grounding of
+intelligence requires grounding of
+intelligence requires grounding of course some philosophers and certainly
+course some philosophers and certainly
+course some philosophers and certainly some language people don't believe
+some language people don't believe
+some language people don't believe that's necessary but I think it is uh so
+that's necessary but I think it is uh so
+that's necessary but I think it is uh so like Vladlin we're in Switzerland
+like Vladlin we're in Switzerland
+like Vladlin we're in Switzerland outside John Pia he was a big influence
+outside John Pia he was a big influence
+outside John Pia he was a big influence on me uh he had a debate with Nam Chsky
+on me uh he had a debate with Nam Chsky
+on me uh he had a debate with Nam Chsky uh in France in the late 1970s where um
+uh in France in the late 1970s where um
+uh in France in the late 1970s where um you know they were debating whether
+you know they were debating whether
+you know they were debating whether language was innate or learned and uh
+language was innate or learned and uh
+language was innate or learned and uh they you know, there was transcriptions
+they you know, there was transcriptions
+they you know, there was transcriptions of that debate with, you know, people
+of that debate with, you know, people
+of that debate with, you know, people participating in it. And one of them was
+participating in it. And one of them was
+participating in it. And one of them was Jeanh was uh um
+Jeanh was uh um
+Jeanh was uh um was uh
+was uh
+was uh a a guy who had worked with Jean P who
+a a guy who had worked with Jean P who
+a a guy who had worked with Jean P who was a professor at MIT and was talking
+was a professor at MIT and was talking
+was a professor at MIT and was talking about the perceptron uh kind of saying
+about the perceptron uh kind of saying
+about the perceptron uh kind of saying you know there's those simple machine
+you know there's those simple machine
+you know there's those simple machine learning models that are cap you know
+learning models that are cap you know
+learning models that are cap you know capable of learning surprisingly complex
+capable of learning surprisingly complex
+capable of learning surprisingly complex tasks and uh you know that may be kind
+tasks and uh you know that may be kind
+tasks and uh you know that may be kind of evidence for the fact that learning
+of evidence for the fact that learning
+of evidence for the fact that learning is possible. Contrary to what Chomsky
+is possible. Contrary to what Chomsky
+is possible. Contrary to what Chomsky was saying, um this guy was Seymour
+was saying, um this guy was Seymour
+was saying, um this guy was Seymour Papert. He was professor at MIT and 10
+Papert. He was professor at MIT and 10
+Papert. He was professor at MIT and 10 years before that he had written a book
+years before that he had written a book
+years before that he had written a book that basically killed the entire field
+that basically killed the entire field
+that basically killed the entire field of neural net including the bas
+of neural net including the bas
+of neural net including the bas basically pointing out the limitation of
+basically pointing out the limitation of
+basically pointing out the limitation of the perceptron. But here he was 10 years
+the perceptron. But here he was 10 years
+the perceptron. But here he was 10 years later arguing for the fact that those
+later arguing for the fact that those
+later arguing for the fact that those things were actually interesting to
+things were actually interesting to
+things were actually interesting to study. But anyway, so Jean P says
+study. But anyway, so Jean P says
+study. But anyway, so Jean P says intelligence is not what you know, it's
+intelligence is not what you know, it's
+intelligence is not what you know, it's what you do when you don't know. In
+what you do when you don't know. In
+what you do when you don't know. In fact, he never actually said this. This
+fact, he never actually said this. This
+fact, he never actually said this. This is apocryphal. Uh but there are other
+is apocryphal. Uh but there are other
+is apocryphal. Uh but there are other psychologists who basically kind of
+psychologists who basically kind of
+psychologists who basically kind of distilled his thinking into this
+distilled his thinking into this
+distilled his thinking into this sentence which he never said. Um so he's
+sentence which he never said. Um so he's
+sentence which he never said. Um so he's kind of quoted as as saying that. Uh so
+kind of quoted as as saying that. Uh so
+kind of quoted as as saying that. Uh so intelligence is not an accumulation of
+intelligence is not an accumulation of
+intelligence is not an accumulation of declarative knowledge. LM are an
+declarative knowledge. LM are an
+declarative knowledge. LM are an accumulation of declarative knowledge.
+accumulation of declarative knowledge.
+accumulation of declarative knowledge. not just but the main reason they're
+not just but the main reason they're
+not just but the main reason they're useful is because they can accumulate a
+useful is because they can accumulate a
+useful is because they can accumulate a lot of declarative knowledge. Uh
+lot of declarative knowledge. Uh
+lot of declarative knowledge. Uh intelligence is not a collection of
+intelligence is not a collection of
+intelligence is not a collection of skills. Uh
+skills. Uh
+skills. Uh you can probably build a machine to
+you can probably build a machine to
+you can probably build a machine to accomplish sort of any task if you spend
+accomplish sort of any task if you spend
+accomplish sort of any task if you spend enough resources on it including things
+enough resources on it including things
+enough resources on it including things like self-driving.
+like self-driving.
+like self-driving. But that's not really what intelligence
+But that's not really what intelligence
+But that's not really what intelligence is. Intelligence is the ability to
+is. Intelligence is the ability to
+is. Intelligence is the ability to launch a drive in about 20 hours
+launch a drive in about 20 hours
+launch a drive in about 20 hours or to you know learn any new task with
+or to you know learn any new task with
+or to you know learn any new task with very little training or accomplish new
+very little training or accomplish new
+very little training or accomplish new tot.
+tot.
+tot. uh that's really what intelligence is
+uh that's really what intelligence is
+uh that's really what intelligence is and that's really what Jeep means and
+and that's really what Jeep means and
+and that's really what Jeep means and what that means is that we're not going
+what that means is that we're not going
+what that means is that we're not going to have any simple measures uh of
+to have any simple measures uh of
+to have any simple measures uh of intelligence because uh because again
+intelligence because uh because again
+intelligence because uh because again any particular task you can always you
+any particular task you can always you
+any particular task you can always you know if you spend enough effort and and
+know if you spend enough effort and and
+know if you spend enough effort and and time you can always kind of crack it so
+time you can always kind of crack it so
+time you can always kind of crack it so it's more you know how adaptive you are
+it's more you know how adaptive you are
+it's more you know how adaptive you are um and you know this this connects to
+um and you know this this connects to
+um and you know this this connects to something Vladen said like the notion of
+something Vladen said like the notion of
+something Vladen said like the notion of AGI is complete nonsense Human
+AGI is complete nonsense Human
+AGI is complete nonsense Human intelligence is specialized. The
+intelligence is specialized. The
+intelligence is specialized. The characterization of human intelligence
+characterization of human intelligence
+characterization of human intelligence is that it's very quickly adaptive and
+is that it's very quickly adaptive and
+is that it's very quickly adaptive and we can learn new task. We all all of us
+we can learn new task. We all all of us
+we can learn new task. We all all of us know different sets of uh knowledge and
+know different sets of uh knowledge and
+know different sets of uh knowledge and have different skills.
+have different skills.
+have different skills. Um and so it's because we've been
+Um and so it's because we've been
+Um and so it's because we've been exposed to you know different
+exposed to you know different
+exposed to you know different environments and we we've had to solve
+environments and we we've had to solve
+environments and we we've had to solve different problems. Uh we're adaptive.
+different problems. Uh we're adaptive.
+different problems. Uh we're adaptive. That's really what intelligence is.
+That's really what intelligence is.
+That's really what intelligence is. Okay. So, how do uh how do humans learn
+Okay. So, how do uh how do humans learn
+Okay. So, how do uh how do humans learn and animals for that matter? There's a
+and animals for that matter? There's a
+and animals for that matter? There's a lot of uh learning that takes place in
+lot of uh learning that takes place in
+lot of uh learning that takes place in the early months of life mostly by
+the early months of life mostly by
+the early months of life mostly by observation. So, you know, two months
+observation. So, you know, two months
+observation. So, you know, two months old baby, you know, can justiculate. So,
+old baby, you know, can justiculate. So,
+old baby, you know, can justiculate. So, can develop a dynamical model of its own
+can develop a dynamical model of its own
+can develop a dynamical model of its own limbs, but basically cannot affect the
+limbs, but basically cannot affect the
+limbs, but basically cannot affect the world. It you know, it can't move an
+world. It you know, it can't move an
+world. It you know, it can't move an object or anything. Uh but it does it
+object or anything. Uh but it does it
+object or anything. Uh but it does it you know can learn a lot of things about
+you know can learn a lot of things about
+you know can learn a lot of things about the world. One thing a baby can learn
+the world. One thing a baby can learn
+the world. One thing a baby can learn really quickly is that the world is
+really quickly is that the world is
+really quickly is that the world is threedimensional.
+threedimensional.
+threedimensional. Why? Because
+Why? Because
+Why? Because the fact that an object has a distance
+the fact that an object has a distance
+the fact that an object has a distance every
+every
+every uh point in the world has a distance
+uh point in the world has a distance
+uh point in the world has a distance from us is the best way to explain how
+from us is the best way to explain how
+from us is the best way to explain how our view of the world changes when we
+our view of the world changes when we
+our view of the world changes when we move our head.
+move our head.
+move our head. And of course babies don't move
+And of course babies don't move
+And of course babies don't move necessarily their head but they are
+necessarily their head but they are
+necessarily their head but they are being moved. So they they they see
+being moved. So they they they see
+being moved. So they they they see paradox and sort of derive from this the
+paradox and sort of derive from this the
+paradox and sort of derive from this the fact that the world is threedimensional.
+fact that the world is threedimensional.
+fact that the world is threedimensional. We can do this with learning machines
+We can do this with learning machines
+We can do this with learning machines today. They learn that the world is
+today. They learn that the world is
+today. They learn that the world is threedimensional only by being exposed
+threedimensional only by being exposed
+threedimensional only by being exposed passively to uh videos. Um so that's
+passively to uh videos. Um so that's
+passively to uh videos. Um so that's that's an interesting uh uh thing.
+that's an interesting uh uh thing.
+that's an interesting uh uh thing. And I'm going to silence my phone
+And I'm going to silence my phone
+And I'm going to silence my phone because
+because
+because it's actually
+okay.
+okay. So um
+So um
+So um so basic concepts like object permanence
+so basic concepts like object permanence
+so basic concepts like object permanence is this is run really quickly. Uh
+is this is run really quickly. Uh
+is this is run really quickly. Uh notions of stability, rigidity and
+notions of stability, rigidity and
+notions of stability, rigidity and things like that. But then uh what we
+things like that. But then uh what we
+things like that. But then uh what we would consider intuitive physics things
+would consider intuitive physics things
+would consider intuitive physics things like uh inertia gravity
+like uh inertia gravity
+like uh inertia gravity that actually takes nine months for uh
+that actually takes nine months for uh
+that actually takes nine months for uh human infants
+human infants
+human infants shorter for most animals.
+shorter for most animals.
+shorter for most animals. And
+And
+And if you put a 8-month-old on a high chair
+if you put a 8-month-old on a high chair
+if you put a 8-month-old on a high chair and you put a bunch of toys,
+and you put a bunch of toys,
+and you put a bunch of toys, uh, eight or nine months old,
+uh, eight or nine months old,
+uh, eight or nine months old, the child would most likely
+the child would most likely
+the child would most likely systematically take all the toys and
+systematically take all the toys and
+systematically take all the toys and throw them on the floor and watch the
+throw them on the floor and watch the
+throw them on the floor and watch the result. They're doing the experiment
+result. They're doing the experiment
+result. They're doing the experiment that gravity actually applies to
+that gravity actually applies to
+that gravity actually applies to everything.
+everything.
+everything. Uh,
+Uh,
+Uh, so that takes a long time. How does that
+so that takes a long time. How does that
+so that takes a long time. How does that happen? What type of learning is taking
+happen? What type of learning is taking
+happen? What type of learning is taking place there? They're doing the
+place there? They're doing the
+place there? They're doing the experiment, but they can learn about
+experiment, but they can learn about
+experiment, but they can learn about gravity just by observation as well. Uh
+gravity just by observation as well. Uh
+gravity just by observation as well. Uh so if you if you show the the scenario
+so if you if you show the the scenario
+so if you if you show the the scenario here at the bottom where a car is on a
+here at the bottom where a car is on a
+here at the bottom where a car is on a platform, you push it off the platform,
+platform, you push it off the platform,
+platform, you push it off the platform, it appears to float in the air. Uh a six
+it appears to float in the air. Uh a six
+it appears to float in the air. Uh a six months old will barely pay attention,
+months old will barely pay attention,
+months old will barely pay attention, hasn't learned about gravity yet. Uh a
+hasn't learned about gravity yet. Uh a
+hasn't learned about gravity yet. Uh a 10month-old will go very surprised like
+10month-old will go very surprised like
+10month-old will go very surprised like the little girl. uh and that that's
+the little girl. uh and that that's
+the little girl. uh and that that's actually how psychologists measure uh
+actually how psychologists measure uh
+actually how psychologists measure uh whether a baby has learned a particular
+whether a baby has learned a particular
+whether a baby has learned a particular concept about the world which is the
+concept about the world which is the
+concept about the world which is the violation of expectation and we actually
+violation of expectation and we actually
+violation of expectation and we actually we can actually use those techniques to
+we can actually use those techniques to
+we can actually use those techniques to test whether machine learning system has
+test whether machine learning system has
+test whether machine learning system has have acquired some you know some notion
+have acquired some you know some notion
+have acquired some you know some notion of common sense uh so there there's a
+of common sense uh so there there's a
+of common sense uh so there there's a lot that can be said about this uh Genra
+lot that can be said about this uh Genra
+lot that can be said about this uh Genra and I collaborated on on a paper here
+and I collaborated on on a paper here
+and I collaborated on on a paper here mostly written by Emanuel Du actually
+mostly written by Emanuel Du actually
+mostly written by Emanuel Du actually and Genra had very little uh
+and Genra had very little uh
+and Genra had very little uh contributions to it on on on this this
+contributions to it on on on this this
+contributions to it on on on this this whole kind of set of questions.
+whole kind of set of questions.
+whole kind of set of questions. Okay. But what is really what is
+Okay. But what is really what is
+Okay. But what is really what is intelligence really if it's not an
+intelligence really if it's not an
+intelligence really if it's not an accumulation of uh of skills nor an
+accumulation of uh of skills nor an
+accumulation of uh of skills nor an accum accumulation of declarative
+accum accumulation of declarative
+accum accumulation of declarative knowledge. It's the ability to
+knowledge. It's the ability to
+knowledge. It's the ability to accomplish new task as I said solve new
+accomplish new task as I said solve new
+accomplish new task as I said solve new problems with with without prior
+problems with with without prior
+problems with with without prior training. Um and again agi has no makes
+training. Um and again agi has no makes
+training. Um and again agi has no makes no sense as a as a as a phrase. uh human
+no sense as a as a as a phrase. uh human
+no sense as a as a as a phrase. uh human intelligence is specialized and the the
+intelligence is specialized and the the
+intelligence is specialized and the the question is is not do you know how to do
+question is is not do you know how to do
+question is is not do you know how to do everything is it can you learn quickly
+everything is it can you learn quickly
+everything is it can you learn quickly how to do anything
+how to do anything
+how to do anything or a wide spectrum of of things. Uh this
+or a wide spectrum of of things. Uh this
+or a wide spectrum of of things. Uh this is a a little kind of somewhat
+is a a little kind of somewhat
+is a a little kind of somewhat philosophical paper here at the bottom
+philosophical paper here at the bottom
+philosophical paper here at the bottom uh
+uh
+uh written by some of my young colleagues.
+written by some of my young colleagues.
+written by some of my young colleagues. So um here is a simple calculation.
+So um here is a simple calculation.
+So um here is a simple calculation. There's still a lot of people
+There's still a lot of people
+There's still a lot of people particularly on the west coast of the US
+particularly on the west coast of the US
+particularly on the west coast of the US uh who believe that we're going to reach
+uh who believe that we're going to reach
+uh who believe that we're going to reach what they call AGI okay uh by by scaling
+what they call AGI okay uh by by scaling
+what they call AGI okay uh by by scaling up LLMs
+up LLMs
+up LLMs uh maybe training them on synthetic data
+uh maybe training them on synthetic data
+uh maybe training them on synthetic data maybe you know using a few tricks in
+maybe you know using a few tricks in
+maybe you know using a few tricks in post training and reinforcement learning
+post training and reinforcement learning
+post training and reinforcement learning and I think that's impossible uh I'm a
+and I think that's impossible uh I'm a
+and I think that's impossible uh I'm a believer in sort of grounded uh
+believer in sort of grounded uh
+believer in sort of grounded uh intelligence if you want but but you can
+intelligence if you want but but you can
+intelligence if you want but but you can do this simple calcul population an LLM
+do this simple calcul population an LLM
+do this simple calcul population an LLM you know typical LLM of today is trained
+you know typical LLM of today is trained
+you know typical LLM of today is trained on something like
+on something like
+on something like 20 trillion words that corresponds to
+20 trillion words that corresponds to
+20 trillion words that corresponds to about 30 trillion tokens and each token
+about 30 trillion tokens and each token
+about 30 trillion tokens and each token is three bytes something like that
+is three bytes something like that
+is three bytes something like that so the data volume is about 10^ 14 bytes
+so the data volume is about 10^ 14 bytes
+so the data volume is about 10^ 14 bytes this would take about 400,000 years for
+this would take about 400,000 years for
+this would take about 400,000 years for any human to read uh then compare this
+any human to read uh then compare this
+any human to read uh then compare this with what a a four-year-old has seen
+with what a a four-year-old has seen
+with what a a four-year-old has seen during his or her life that's about 16
+during his or her life that's about 16
+during his or her life that's about 16 hours of uh wake time
+hours of uh wake time
+hours of uh wake time and uh which by the way is a small
+and uh which by the way is a small
+and uh which by the way is a small amount of video. It's about 30 minutes
+amount of video. It's about 30 minutes
+amount of video. It's about 30 minutes of YouTube uploads and uh we have two
+of YouTube uploads and uh we have two
+of YouTube uploads and uh we have two million optic nerve fibers carrying
+million optic nerve fibers carrying
+million optic nerve fibers carrying about one bite per second each. So the
+about one bite per second each. So the
+about one bite per second each. So the data volume that a four-year-old has
+data volume that a four-year-old has
+data volume that a four-year-old has seen through vision and probably through
+seen through vision and probably through
+seen through vision and probably through touch as well is about 10^ the 14 bytes.
+touch as well is about 10^ the 14 bytes.
+touch as well is about 10^ the 14 bytes. So for your old world through vision,
+So for your old world through vision,
+So for your old world through vision, same amount of data as 400,000 years
+same amount of data as 400,000 years
+same amount of data as 400,000 years through text
+through text
+through text with all the human produced uh text
+with all the human produced uh text
+with all the human produced uh text available on publicly on the internet.
+available on publicly on the internet.
+available on publicly on the internet. Uh we're not going to get to anything
+Uh we're not going to get to anything
+Uh we're not going to get to anything like humanlike intelligence by just
+like humanlike intelligence by just
+like humanlike intelligence by just training on text. It's just not going to
+training on text. It's just not going to
+training on text. It's just not going to happen.
+happen.
+happen. Um,
+so
+so of course you're going to say, well,
+of course you're going to say, well,
+of course you're going to say, well, video is much more redundant than than
+video is much more redundant than than
+video is much more redundant than than text. But in fact, that's a feature, not
+text. But in fact, that's a feature, not
+text. But in fact, that's a feature, not a bug. If you want to train a system,
+a bug. If you want to train a system,
+a bug. If you want to train a system, particularly using self-supervised
+particularly using self-supervised
+particularly using self-supervised learning, you need redundancy in the in
+learning, you need redundancy in the in
+learning, you need redundancy in the in the data. If you don't have redundancy,
+the data. If you don't have redundancy,
+the data. If you don't have redundancy, you can learn anything.
+you can learn anything.
+you can learn anything. So redundancy is a good thing. You don't
+So redundancy is a good thing. You don't
+So redundancy is a good thing. You don't want too much of it though. Okay. So
+want too much of it though. Okay. So
+want too much of it though. Okay. So then there is another question about
+then there is another question about
+then there is another question about what are the right properties of
+what are the right properties of
+what are the right properties of intelligent systems and in my opinion an
+intelligent systems and in my opinion an
+intelligent systems and in my opinion an important property of an intelligent
+important property of an intelligent
+important property of an intelligent system is the mode of inference. Does it
+system is the mode of inference. Does it
+system is the mode of inference. Does it compute its output by propagating
+compute its output by propagating
+compute its output by propagating through a fixed number of layers of some
+through a fixed number of layers of some
+through a fixed number of layers of some neural net
+neural net
+neural net or consider the alternative. The
+or consider the alternative. The
+or consider the alternative. The alternative is computing the output of a
+alternative is computing the output of a
+alternative is computing the output of a system by searching for an output that
+system by searching for an output that
+system by searching for an output that is most compatible if you want with the
+is most compatible if you want with the
+is most compatible if you want with the input. Okay. So you observe a situation
+input. Okay. So you observe a situation
+input. Okay. So you observe a situation that runs through some perception module
+that runs through some perception module
+that runs through some perception module that produce some sort of representation
+that produce some sort of representation
+that produce some sort of representation of the current state of the world as you
+of the current state of the world as you
+of the current state of the world as you observe it. Uh you can directly produce
+observe it. Uh you can directly produce
+observe it. Uh you can directly produce an action. Okay, that's a reactive
+an action. Okay, that's a reactive
+an action. Okay, that's a reactive system if you want. Or you could imagine
+system if you want. Or you could imagine
+system if you want. Or you could imagine an action and then have an intelligent
+an action and then have an intelligent
+an action and then have an intelligent system, the intelligence system figure
+system, the intelligence system figure
+system, the intelligence system figure out is this a good action for this
+out is this a good action for this
+out is this a good action for this observation. Is this something that you
+observation. Is this something that you
+observation. Is this something that you know will accomplish the task I want? So
+know will accomplish the task I want? So
+know will accomplish the task I want? So the objective here characterizes whether
+the objective here characterizes whether
+the objective here characterizes whether the task the system wants to accomplish
+the task the system wants to accomplish
+the task the system wants to accomplish has been accomplished or not. Think of
+has been accomplished or not. Think of
+has been accomplished or not. Think of it as a cost function. It's not used for
+it as a cost function. It's not used for
+it as a cost function. It's not used for learning. It's used for inference. Think
+learning. It's used for inference. Think
+learning. It's used for inference. Think of it as you know negative likelihood in
+of it as you know negative likelihood in
+of it as you know negative likelihood in a probabilistic inference model or as I
+a probabilistic inference model or as I
+a probabilistic inference model or as I prefer to think of it an energy
+prefer to think of it an energy
+prefer to think of it an energy function. So basically there the
+function. So basically there the
+function. So basically there the inference
+inference
+inference is a process by which you search for an
+is a process by which you search for an
+is a process by which you search for an output that minimizes some energy
+output that minimizes some energy
+output that minimizes some energy function at inference time. Okay that's
+function at inference time. Okay that's
+function at inference time. Okay that's intrinsically more powerful
+intrinsically more powerful
+intrinsically more powerful computationally
+computationally
+computationally than just propagation through a fixed
+than just propagation through a fixed
+than just propagation through a fixed number of layers.
+And then contrast uh so the model on the
+And then contrast uh so the model on the on the left uh is sort of LLM like right
+on the left uh is sort of LLM like right
+on the left uh is sort of LLM like right take a window of of inputs run this
+take a window of of inputs run this
+take a window of of inputs run this through a fixed number of layers of some
+through a fixed number of layers of some
+through a fixed number of layers of some big neural net with a few hundred
+big neural net with a few hundred
+big neural net with a few hundred billion parameters produce one token
+billion parameters produce one token
+billion parameters produce one token okay then shift that token on the in the
+okay then shift that token on the in the
+okay then shift that token on the in the input and then produce the second token
+input and then produce the second token
+input and then produce the second token etc etc that's auto regressive
+etc etc that's auto regressive
+etc etc that's auto regressive prediction and every token involves the
+prediction and every token involves the
+prediction and every token involves the computation of you know a fixed amount
+computation of you know a fixed amount
+computation of you know a fixed amount of computation running through a fixed
+of computation running through a fixed
+of computation running through a fixed number of layers of some neural net. Uh
+number of layers of some neural net. Uh
+number of layers of some neural net. Uh this is not a good model. It's not a
+this is not a good model. It's not a
+this is not a good model. It's not a good model of reasoning. The way you
+good model of reasoning. The way you
+good model of reasoning. The way you coers an LLM to do reasoning is that you
+coers an LLM to do reasoning is that you
+coers an LLM to do reasoning is that you trick it into generating more tokens.
+trick it into generating more tokens.
+trick it into generating more tokens. But that's not the way we reason. We
+But that's not the way we reason. We
+But that's not the way we reason. We reason internally. We don't reason in
+reason internally. We don't reason in
+reason internally. We don't reason in token space in language even. Um, okay.
+token space in language even. Um, okay.
+token space in language even. Um, okay. Compare this with the model on the on
+Compare this with the model on the on
+Compare this with the model on the on the right. Uh, which is a a slight
+the right. Uh, which is a a slight
+the right. Uh, which is a a slight specialization of the the previous one.
+specialization of the the previous one.
+specialization of the the previous one. Uh, you perceive uh the world or your
+Uh, you perceive uh the world or your
+Uh, you perceive uh the world or your environment. You get some idea of the
+environment. You get some idea of the
+environment. You get some idea of the state, the current state of the of the
+state, the current state of the of the
+state, the current state of the of the world and then you imagine a sequence of
+world and then you imagine a sequence of
+world and then you imagine a sequence of actions, a proposal for an action. You
+actions, a proposal for an action. You
+actions, a proposal for an action. You feed it to an internal world model for
+feed it to an internal world model for
+feed it to an internal world model for the system and the world model predicts
+the system and the world model predicts
+the system and the world model predicts the outcome and then fix feeds this
+the outcome and then fix feeds this
+the outcome and then fix feeds this outcome to an objective that measures to
+outcome to an objective that measures to
+outcome to an objective that measures to what extent a task has been accomplished
+what extent a task has been accomplished
+what extent a task has been accomplished or not. Okay. Then by optimization you
+or not. Okay. Then by optimization you
+or not. Okay. Then by optimization you search for an action sequence that
+search for an action sequence that
+search for an action sequence that optimizes this objective minimizes this
+optimizes this objective minimizes this
+optimizes this objective minimizes this energy at inference time. I haven't
+energy at inference time. I haven't
+energy at inference time. I haven't talked about learning yet. Okay.
+talked about learning yet. Okay.
+talked about learning yet. Okay. In my opinion that's a much more
+In my opinion that's a much more
+In my opinion that's a much more powerful model. Um but you need a world
+powerful model. Um but you need a world
+powerful model. Um but you need a world model. Now if you do have so so I've
+model. Now if you do have so so I've
+model. Now if you do have so so I've I've sort of uh settled on this kind of
+I've sort of uh settled on this kind of
+I've sort of uh settled on this kind of uh
+uh
+uh idea or architecture uh about five years
+idea or architecture uh about five years
+idea or architecture uh about five years ago. I wrote a long paper about it u
+ago. I wrote a long paper about it u
+ago. I wrote a long paper about it u that I put online in 2022
+that I put online in 2022
+that I put online in 2022 uh with some general architecture etc.
+uh with some general architecture etc.
+uh with some general architecture etc. If you want to take pictures here are QR
+If you want to take pictures here are QR
+If you want to take pictures here are QR codes you can get to it. Um
+codes you can get to it. Um
+codes you can get to it. Um and uh
+and uh
+and uh it's you know relatively easy to read
+it's you know relatively easy to read
+it's you know relatively easy to read but kind of long
+but kind of long
+but kind of long and
+and
+and and it's really based on this idea that
+and it's really based on this idea that
+and it's really based on this idea that uh reasoning and planning are essential
+uh reasoning and planning are essential
+uh reasoning and planning are essential and they basically proceed by energy
+and they basically proceed by energy
+and they basically proceed by energy minimization rather than forward
+minimization rather than forward
+minimization rather than forward propagation and that for this to work
+propagation and that for this to work
+propagation and that for this to work you need some world model. Okay. So same
+you need some world model. Okay. So same
+you need some world model. Okay. So same process as I described before there is a
+process as I described before there is a
+process as I described before there is a a few additional tricks. You observe the
+a few additional tricks. You observe the
+a few additional tricks. You observe the environment perception module produce an
+environment perception module produce an
+environment perception module produce an representation of the initial state of
+representation of the initial state of
+representation of the initial state of the world but only a representation of
+the world but only a representation of
+the world but only a representation of what you currently perceive. So you may
+what you currently perceive. So you may
+what you currently perceive. So you may have to combine this with the content of
+have to combine this with the content of
+have to combine this with the content of a memory to get a complete complete idea
+a memory to get a complete complete idea
+a memory to get a complete complete idea of the state of the world or what you
+of the state of the world or what you
+of the state of the world or what you know about it at least. Then you feed
+know about it at least. Then you feed
+know about it at least. Then you feed this to your one model together with a
+this to your one model together with a
+this to your one model together with a proposal for an action sequence and and
+proposal for an action sequence and and
+proposal for an action sequence and and your one model predicts the outcome of
+your one model predicts the outcome of
+your one model predicts the outcome of that action sequence. You feed this to
+that action sequence. You feed this to
+that action sequence. You feed this to an objective an energy function that
+an objective an energy function that
+an objective an energy function that measures to what extent a t a particular
+measures to what extent a t a particular
+measures to what extent a t a particular task has been accomplished. So this uh
+task has been accomplished. So this uh
+task has been accomplished. So this uh function output zero if the task is
+function output zero if the task is
+function output zero if the task is accomplished and some you know positive
+accomplished and some you know positive
+accomplished and some you know positive number uh if the task is not not
+number uh if the task is not not
+number uh if the task is not not accomplished and perhaps measure some
+accomplished and perhaps measure some
+accomplished and perhaps measure some distance to the task being accomplished.
+distance to the task being accomplished.
+distance to the task being accomplished. So until you see you can have another
+So until you see you can have another
+So until you see you can have another set of objectives that are guard rails
+set of objectives that are guard rails
+set of objectives that are guard rails that would ensure that whatever
+that would ensure that whatever
+that would ensure that whatever state sequences the the system is going
+state sequences the the system is going
+state sequences the the system is going to take the world through is not going
+to take the world through is not going
+to take the world through is not going to kill anyone or hurt anyone or you
+to kill anyone or hurt anyone or you
+to kill anyone or hurt anyone or you know have any kind of uh delitterious
+know have any kind of uh delitterious
+know have any kind of uh delitterious effect. And so a system constructed this
+effect. And so a system constructed this
+effect. And so a system constructed this way can be made intrinsically safe
+way can be made intrinsically safe
+way can be made intrinsically safe because it has to obey and you know
+because it has to obey and you know
+because it has to obey and you know optimize the guardrail objective with
+optimize the guardrail objective with
+optimize the guardrail objective with every output it produces. This is not
+every output it produces. This is not
+every output it produces. This is not the case for an LLM. An LLM uh the only
+the case for an LLM. An LLM uh the only
+the case for an LLM. An LLM uh the only way an LLM can be made uh you know safe
+way an LLM can be made uh you know safe
+way an LLM can be made uh you know safe or non-toxic or whatever you want to
+or non-toxic or whatever you want to
+or non-toxic or whatever you want to call it is by fine-tuning it. And there
+call it is by fine-tuning it. And there
+call it is by fine-tuning it. And there is always a way to break the
+is always a way to break the
+is always a way to break the conditioning if you want to jailbreak
+conditioning if you want to jailbreak
+conditioning if you want to jailbreak the the system. Uh here this you can't
+the the system. Uh here this you can't
+the the system. Uh here this you can't jailbreak a system like this. It it can
+jailbreak a system like this. It it can
+jailbreak a system like this. It it can do nothing but optimize uh the guardrail
+do nothing but optimize uh the guardrail
+do nothing but optimize uh the guardrail objectives and and the task objective.
+objectives and and the task objective.
+objectives and and the task objective. Um of course if you have a world model
+Um of course if you have a world model
+Um of course if you have a world model uh there certainly a lot of roboticist
+uh there certainly a lot of roboticist
+uh there certainly a lot of roboticist and optimal control people in the room.
+and optimal control people in the room.
+and optimal control people in the room. uh you can apply this role model
+uh you can apply this role model
+uh you can apply this role model multiple time steps and you know each
+multiple time steps and you know each
+multiple time steps and you know each action an action sequence can be
+action an action sequence can be
+action an action sequence can be decomposed into a sequence uh the guide
+decomposed into a sequence uh the guide
+decomposed into a sequence uh the guide rails can be applied to all the the
+rails can be applied to all the the
+rails can be applied to all the the steps in the sequence okay that that's
+steps in the sequence okay that that's
+steps in the sequence okay that that's the way you would use a world model and
+the way you would use a world model and
+the way you would use a world model and the way you plan by optimization there
+the way you plan by optimization there
+the way you plan by optimization there is akin to model predictive control MPC
+is akin to model predictive control MPC
+is akin to model predictive control MPC very classical stuff in optimal control
+very classical stuff in optimal control
+very classical stuff in optimal control going back to 1960s
+going back to 1960s
+going back to 1960s ultimately what you want though is
+ultimately what you want though is
+ultimately what you want though is something that can do hierarchical
+something that can do hierarchical
+something that can do hierarchical planning all of us do hierarchical
+planning all of us do hierarchical
+planning all of us do hierarchical planning animals do hierarchical
+planning animals do hierarchical
+planning animals do hierarchical planning What is hierarchical planning?
+planning What is hierarchical planning?
+planning What is hierarchical planning? Let's say that uh I'm sitting in my
+Let's say that uh I'm sitting in my
+Let's say that uh I'm sitting in my office at NYU and I want to be in Paris
+office at NYU and I want to be in Paris
+office at NYU and I want to be in Paris tomorrow.
+tomorrow.
+tomorrow. There's no way I can plan my entire trip
+There's no way I can plan my entire trip
+There's no way I can plan my entire trip to Paris in terms of kind of muscle
+to Paris in terms of kind of muscle
+to Paris in terms of kind of muscle actions 10 millisecond by 10
+actions 10 millisecond by 10
+actions 10 millisecond by 10 millisecond. Uh which are the elementary
+millisecond. Uh which are the elementary
+millisecond. Uh which are the elementary actions that humans can uh can do. Uh, I
+actions that humans can uh can do. Uh, I
+actions that humans can uh can do. Uh, I can't do that because first of all, it's
+can't do that because first of all, it's
+can't do that because first of all, it's too long, but second of all, I don't
+too long, but second of all, I don't
+too long, but second of all, I don't have the information.
+have the information.
+have the information. I don't know if when I'm going down on
+I don't know if when I'm going down on
+I don't know if when I'm going down on the street, how long I'm going to have
+the street, how long I'm going to have
+the street, how long I'm going to have to wait before a taxi stops, right? So,
+to wait before a taxi stops, right? So,
+to wait before a taxi stops, right? So, there's no way I can plan the entire
+there's no way I can plan the entire
+there's no way I can plan the entire thing. I have to do hierarchical
+thing. I have to do hierarchical
+thing. I have to do hierarchical planning. So, what I have to do is at a
+planning. So, what I have to do is at a
+planning. So, what I have to do is at a high level, I have to say, well, I don't
+high level, I have to say, well, I don't
+high level, I have to say, well, I don't know how long it's going to take me to
+know how long it's going to take me to
+know how long it's going to take me to go to the airport, but, you know, maybe
+go to the airport, but, you know, maybe
+go to the airport, but, you know, maybe maybe roughly an hour, an hour and a
+maybe roughly an hour, an hour and a
+maybe roughly an hour, an hour and a half. So, um, I need to get to the
+half. So, um, I need to get to the
+half. So, um, I need to get to the airport and catch a plane. Okay, that's
+airport and catch a plane. Okay, that's
+airport and catch a plane. Okay, that's a two-step high level plan. I don't need
+a two-step high level plan. I don't need
+a two-step high level plan. I don't need to know many details uh to make that
+to know many details uh to make that
+to know many details uh to make that plan. And now I have a sub goal which is
+plan. And now I have a sub goal which is
+plan. And now I have a sub goal which is being at the airport. I'm in New York,
+being at the airport. I'm in New York,
+being at the airport. I'm in New York, so going to the airport involves going
+so going to the airport involves going
+so going to the airport involves going down on the street and catching hailing
+down on the street and catching hailing
+down on the street and catching hailing a taxi and go to the airport. Uh now I
+a taxi and go to the airport. Uh now I
+a taxi and go to the airport. Uh now I need to go down on the street. I'm in an
+need to go down on the street. I'm in an
+need to go down on the street. I'm in an NYU building that involves uh walking to
+NYU building that involves uh walking to
+NYU building that involves uh walking to the elevator, pushing the button,
+the elevator, pushing the button,
+the elevator, pushing the button, getting down and walking out the door.
+getting down and walking out the door.
+getting down and walking out the door. uh now have a sub goal getting to the
+uh now have a sub goal getting to the
+uh now have a sub goal getting to the elevator right etc. So you can sort of
+elevator right etc. So you can sort of
+elevator right etc. So you can sort of go down this entire hierarchy. And at
+go down this entire hierarchy. And at
+go down this entire hierarchy. And at some point you get to a point where the
+some point you get to a point where the
+some point you get to a point where the action you need to take. It's very
+action you need to take. It's very
+action you need to take. It's very simple. It's something that you are
+simple. It's something that you are
+simple. It's something that you are familiar with. You may not have to use
+familiar with. You may not have to use
+familiar with. You may not have to use your full mental power to kind of plan
+your full mental power to kind of plan
+your full mental power to kind of plan the action. You can probably stand up
+the action. You can probably stand up
+the action. You can probably stand up from your chair without having to think
+from your chair without having to think
+from your chair without having to think about it. That could be just a policy. U
+about it. That could be just a policy. U
+about it. That could be just a policy. U but essentially u ultimately we want
+but essentially u ultimately we want
+but essentially u ultimately we want systems to do hierarchical planning. How
+systems to do hierarchical planning. How
+systems to do hierarchical planning. How do we solve that? This is an unsolved
+do we solve that? This is an unsolved
+do we solve that? This is an unsolved problem. If you're a roboticist or an AI
+problem. If you're a roboticist or an AI
+problem. If you're a roboticist or an AI for robotics kind of person or agentic
+for robotics kind of person or agentic
+for robotics kind of person or agentic AI kind of person, if you're starting a
+AI kind of person, if you're starting a
+AI kind of person, if you're starting a PhD on this topic, this is a great
+PhD on this topic, this is a great
+PhD on this topic, this is a great topic. It's completely open. Nobody
+topic. It's completely open. Nobody
+topic. It's completely open. Nobody knows how to do this or nobody has
+knows how to do this or nobody has
+knows how to do this or nobody has proved that they know how to do this.
+proved that they know how to do this.
+proved that they know how to do this. Um, okay. So now the big question is how
+Um, okay. So now the big question is how
+Um, okay. So now the big question is how how are we going to train those uh those
+how are we going to train those uh those
+how are we going to train those uh those models?
+models?
+models? Um, okay. Hierarchical or not, let's say
+Um, okay. Hierarchical or not, let's say
+Um, okay. Hierarchical or not, let's say non- hierarchical to start. So first of
+non- hierarchical to start. So first of
+non- hierarchical to start. So first of all we have to figure out what
+all we have to figure out what
+all we have to figure out what architecture to give them and a natural
+architecture to give them and a natural
+architecture to give them and a natural instinct in these days there's an age is
+instinct in these days there's an age is
+instinct in these days there's an age is to train a generative model and in fact
+to train a generative model and in fact
+to train a generative model and in fact I've been working on sort of trying to
+I've been working on sort of trying to
+I've been working on sort of trying to train world model like things for about
+train world model like things for about
+train world model like things for about 15 years mostly failing for the first 10
+because I was trying to train gener
+because I was trying to train gener generative models okay what's a
+generative models okay what's a
+generative models okay what's a generative model so uh self-supervised
+generative model so uh self-supervised
+generative model so uh self-supervised learning has been incredibly
+learning has been incredibly
+learning has been incredibly successful, astonishingly successful in
+successful, astonishingly successful in
+successful, astonishingly successful in the context of language, right? You take
+the context of language, right? You take
+the context of language, right? You take a a string of words, you remove some of
+a a string of words, you remove some of
+a a string of words, you remove some of the words, um you corrupt the the input
+the words, um you corrupt the the input
+the words, um you corrupt the the input and then you run the corrupted input
+and then you run the corrupted input
+and then you run the corrupted input through some big neural net and you
+through some big neural net and you
+through some big neural net and you train it to recover the missing parts.
+train it to recover the missing parts.
+train it to recover the missing parts. Okay, that works amazingly well for
+Okay, that works amazingly well for
+Okay, that works amazingly well for text. So there are original models like
+text. So there are original models like
+text. So there are original models like BERT that that used to do this and LLM
+BERT that that used to do this and LLM
+BERT that that used to do this and LLM is a special case of this where the only
+is a special case of this where the only
+is a special case of this where the only word you remove is the last one. So that
+word you remove is the last one. So that
+word you remove is the last one. So that the entire system is trying to just
+the entire system is trying to just
+the entire system is trying to just produce the next word in a in a
+produce the next word in a in a
+produce the next word in a in a sequence. Okay, but it works amazingly
+sequence. Okay, but it works amazingly
+sequence. Okay, but it works amazingly well if you and and it it scales if you
+well if you and and it it scales if you
+well if you and and it it scales if you do it right. It doesn't work if you
+do it right. It doesn't work if you
+do it right. It doesn't work if you apply it to video. So if you take a a
+apply it to video. So if you take a a
+apply it to video. So if you take a a video and then you show the initial
+video and then you show the initial
+video and then you show the initial segment of the video to the system and
+segment of the video to the system and
+segment of the video to the system and you ask it to predict what's going to
+you ask it to predict what's going to
+you ask it to predict what's going to happen next at a pixel level, it doesn't
+happen next at a pixel level, it doesn't
+happen next at a pixel level, it doesn't really work. like the representations
+really work. like the representations
+really work. like the representations you get out of the system for your video
+you get out of the system for your video
+you get out of the system for your video are not particularly good. Um,
+are not particularly good. Um,
+are not particularly good. Um, and the reason is you simply cannot
+and the reason is you simply cannot
+and the reason is you simply cannot predict everything that takes place in a
+predict everything that takes place in a
+predict everything that takes place in a video. There's an infinite number of
+video. There's an infinite number of
+video. There's an infinite number of plausible things in text. It's easy
+plausible things in text. It's easy
+plausible things in text. It's easy because there is only a finite number of
+because there is only a finite number of
+because there is only a finite number of words and so you can get the system to
+words and so you can get the system to
+words and so you can get the system to produce a probability distribution over
+produce a probability distribution over
+produce a probability distribution over all possible words or tokens in your
+all possible words or tokens in your
+all possible words or tokens in your dictionary. But you can't do this with
+dictionary. But you can't do this with
+dictionary. But you can't do this with video, right? It's just a incredibly
+video, right? It's just a incredibly
+video, right? It's just a incredibly large number of possible video frames.
+large number of possible video frames.
+large number of possible video frames. Let me take an example. Uh if I take a
+Let me take an example. Uh if I take a
+Let me take an example. Uh if I take a video of this room, right? I start here
+video of this room, right? I start here
+video of this room, right? I start here and I kind of slowly rotate the camera.
+and I kind of slowly rotate the camera.
+and I kind of slowly rotate the camera. I stop here and ask the system continue
+I stop here and ask the system continue
+I stop here and ask the system continue the video. You know, it's probably going
+the video. You know, it's probably going
+the video. You know, it's probably going to predict, you know, we are in some
+to predict, you know, we are in some
+to predict, you know, we are in some sort of classroom uh auditorium and you
+sort of classroom uh auditorium and you
+sort of classroom uh auditorium and you know the room has a finite size. There
+know the room has a finite size. There
+know the room has a finite size. There might be windows on this side and things
+might be windows on this side and things
+might be windows on this side and things like that. There's absolutely no way the
+like that. There's absolutely no way the
+like that. There's absolutely no way the system can predict what all of you look
+system can predict what all of you look
+system can predict what all of you look like.
+like.
+like. or which you know chairs are unoccupied.
+or which you know chairs are unoccupied.
+or which you know chairs are unoccupied. Um it's just impossible. You just don't
+Um it's just impossible. You just don't
+Um it's just impossible. You just don't have the information. So when you train
+have the information. So when you train
+have the information. So when you train a system to make this kind of
+a system to make this kind of
+a system to make this kind of prediction, you kill it. Now of course
+prediction, you kill it. Now of course
+prediction, you kill it. Now of course you're going to tell me, oh but we can
+you're going to tell me, oh but we can
+you're going to tell me, oh but we can train system to produce cute videos,
+train system to produce cute videos,
+train system to produce cute videos, right? Video generation. Yes. But
+right? Video generation. Yes. But
+right? Video generation. Yes. But this prediction usually is done in
+this prediction usually is done in
+this prediction usually is done in representation space not in pixel space.
+representation space not in pixel space.
+representation space not in pixel space. It's only a second stage that actually
+It's only a second stage that actually
+It's only a second stage that actually turns the predictions into high
+turns the predictions into high
+turns the predictions into high resolution uh high frame rate videos and
+resolution uh high frame rate videos and
+resolution uh high frame rate videos and the system only needs to produce one
+the system only needs to produce one
+the system only needs to produce one cute looking video. It doesn't need to
+cute looking video. It doesn't need to
+cute looking video. It doesn't need to actually represent all plausible videos.
+actually represent all plausible videos.
+actually represent all plausible videos. U so which is a much simpler problem.
+U so which is a much simpler problem.
+U so which is a much simpler problem. Okay. And as I said I've been kind of
+Okay. And as I said I've been kind of
+Okay. And as I said I've been kind of attempting to work on this for better
+attempting to work on this for better
+attempting to work on this for better part of the last 15 years. So this is a
+part of the last 15 years. So this is a
+part of the last 15 years. So this is a a 10 years 10 years old paper where we
+a 10 years 10 years old paper where we
+a 10 years 10 years old paper where we try to train some uh neural net to
+try to train some uh neural net to
+try to train some uh neural net to predict you know short video clips you
+predict you know short video clips you
+predict you know short video clips you know two frames from from four frames of
+know two frames from from four frames of
+know two frames from from four frames of context you get blurry predictions why
+context you get blurry predictions why
+context you get blurry predictions why because the system predicts the average
+because the system predicts the average
+because the system predicts the average of everything that can happen of course
+of everything that can happen of course
+of everything that can happen of course you can correct that with latent
+you can correct that with latent
+you can correct that with latent variable models like diffusion models u
+variable models like diffusion models u
+variable models like diffusion models u but we which we didn't know at the time
+but we which we didn't know at the time
+but we which we didn't know at the time we tried to use GANs and stuff like that
+we tried to use GANs and stuff like that
+we tried to use GANs and stuff like that wasn't too successful
+wasn't too successful
+wasn't too successful uh but you know perhaps using latent
+uh but you know perhaps using latent
+uh but you know perhaps using latent variable models would uh would help
+variable models would uh would help
+variable models would uh would help diffusion models in particular
+diffusion models in particular
+diffusion models in particular um which of course produce cute videos.
+um which of course produce cute videos.
+um which of course produce cute videos. Do they actually understand the world?
+Do they actually understand the world?
+Do they actually understand the world? The evidence is no. Um so here's my
+The evidence is no. Um so here's my
+The evidence is no. Um so here's my solution. My solution is a architecture
+solution. My solution is a architecture
+solution. My solution is a architecture called uh joint embedding or more
+called uh joint embedding or more
+called uh joint embedding or more precisely joint embedding predictive
+precisely joint embedding predictive
+precisely joint embedding predictive architecture JPA which is shown uh on
+architecture JPA which is shown uh on
+architecture JPA which is shown uh on the right. Okay. On the left you have
+the right. Okay. On the left you have
+the right. Okay. On the left you have generative architecture. You observe X,
+generative architecture. You observe X,
+generative architecture. You observe X, maybe you observe A, an action that is
+maybe you observe A, an action that is
+maybe you observe A, an action that is taking place and you observe the result
+taking place and you observe the result
+taking place and you observe the result Y and the system is trying to
+Y and the system is trying to
+Y and the system is trying to reconstruct Y in its most minute
+reconstruct Y in its most minute
+reconstruct Y in its most minute details. Uh with Japa you observe X and
+details. Uh with Japa you observe X and
+details. Uh with Japa you observe X and Y and A but you encode both X and Y and
+Y and A but you encode both X and Y and
+Y and A but you encode both X and Y and the prediction takes place in that
+the prediction takes place in that
+the prediction takes place in that representation space.
+representation space.
+representation space. Okay, major difference. What the system
+Okay, major difference. What the system
+Okay, major difference. What the system can do is essentially eliminate from the
+can do is essentially eliminate from the
+can do is essentially eliminate from the input
+input
+input uh by constructing a representation of
+uh by constructing a representation of
+uh by constructing a representation of Y. It can eliminate all the information
+Y. It can eliminate all the information
+Y. It can eliminate all the information about about Y that is simply not
+about about Y that is simply not
+about about Y that is simply not predictable,
+predictable,
+predictable, right? And that makes the prediction
+right? And that makes the prediction
+right? And that makes the prediction more abstract with fewer details but
+more abstract with fewer details but
+more abstract with fewer details but more accurate in a way.
+more accurate in a way.
+more accurate in a way. Um so
+Um so
+Um so you know how do you train a generative
+you know how do you train a generative
+you know how do you train a generative model? It's easy to train a generative
+model? It's easy to train a generative
+model? It's easy to train a generative model because the cost is just a
+model because the cost is just a
+model because the cost is just a reconstruction cost. It's just going to,
+reconstruction cost. It's just going to,
+reconstruction cost. It's just going to, you know, you're just training it to
+you know, you're just training it to
+you know, you're just training it to reconstruct. You can train it as an
+reconstruct. You can train it as an
+reconstruct. You can train it as an autoenccoder, but then you need to
+autoenccoder, but then you need to
+autoenccoder, but then you need to restrict the information content in the
+restrict the information content in the
+restrict the information content in the code or as dnoising autoenccoder, which
+code or as dnoising autoenccoder, which
+code or as dnoising autoenccoder, which is what a lot of techniques have
+is what a lot of techniques have
+is what a lot of techniques have attempted to do like max autoenccoders
+attempted to do like max autoenccoders
+attempted to do like max autoenccoders and things like that. So that means
+and things like that. So that means
+and things like that. So that means taking an input corrupting it in some
+taking an input corrupting it in some
+taking an input corrupting it in some ways and then training an autoenccoder
+ways and then training an autoenccoder
+ways and then training an autoenccoder to recover the initial one. Uh and by
+to recover the initial one. Uh and by
+to recover the initial one. Uh and by the way, uh diffusion models are a bit
+the way, uh diffusion models are a bit
+the way, uh diffusion models are a bit of a special case of this of this sort
+of a special case of this of this sort
+of a special case of this of this sort of general general thing of denoising.
+of general general thing of denoising.
+of general general thing of denoising. Um so the bad news is when you train
+Um so the bad news is when you train
+Um so the bad news is when you train systems of this type to learn
+systems of this type to learn
+systems of this type to learn representations of images, you don't get
+representations of images, you don't get
+representations of images, you don't get good representations. If you use the
+good representations. If you use the
+good representations. If you use the representation of images obtained this
+representation of images obtained this
+representation of images obtained this way, you feed it to a downstream uh task
+way, you feed it to a downstream uh task
+way, you feed it to a downstream uh task that you train supervise. Okay, you
+that you train supervise. Okay, you
+that you train supervise. Okay, you train ahead supervised. the results you
+train ahead supervised. the results you
+train ahead supervised. the results you get are not great.
+get are not great.
+get are not great. To get good results, you have to use
+To get good results, you have to use
+To get good results, you have to use joint embedding architectures. All the
+joint embedding architectures. All the
+joint embedding architectures. All the best systems that use self-supervised
+best systems that use self-supervised
+best systems that use self-supervised learning to train an image or video
+learning to train an image or video
+learning to train an image or video representation systems system
+representation systems system
+representation systems system all use joint embedding. None of them
+all use joint embedding. None of them
+all use joint embedding. None of them uses reconstruction.
+uses reconstruction.
+uses reconstruction. Okay, all the best ones. And uh
+Okay, all the best ones. And uh
+Okay, all the best ones. And uh either you let's say you apply this to
+either you let's say you apply this to
+either you let's say you apply this to images. Uh either you have two views of
+images. Uh either you have two views of
+images. Uh either you have two views of the same scene and you train a neural
+the same scene and you train a neural
+the same scene and you train a neural net to produce representations and you
+net to produce representations and you
+net to produce representations and you tell the system I want those two
+tell the system I want those two
+tell the system I want those two representations to be identical.
+representations to be identical.
+representations to be identical. Um or you you use this uh corruption
+Um or you you use this uh corruption
+Um or you you use this uh corruption technique. You take a an input, you
+technique. You take a an input, you
+technique. You take a an input, you corrupt it or transform it in some ways
+corrupt it or transform it in some ways
+corrupt it or transform it in some ways and then uh you know train the this JPEA
+and then uh you know train the this JPEA
+and then uh you know train the this JPEA architecture to predict the
+architecture to predict the
+architecture to predict the representation of the original image
+representation of the original image
+representation of the original image from the representation of the uh
+from the representation of the uh
+from the representation of the uh corrupted uh version. Okay, there's a
+corrupted uh version. Okay, there's a
+corrupted uh version. Okay, there's a big issue with this which is that the
+big issue with this which is that the
+big issue with this which is that the system can collapse.
+system can collapse.
+system can collapse. Now the generative models can actually
+Now the generative models can actually
+Now the generative models can actually collapse to some extent like if you
+collapse to some extent like if you
+collapse to some extent like if you train an autoenccoder without a
+train an autoenccoder without a
+train an autoenccoder without a restricted
+restricted
+restricted you know restriction on the information
+you know restriction on the information
+you know restriction on the information content of the code your autoenccoder is
+content of the code your autoenccoder is
+content of the code your autoenccoder is just going to learn the identity
+just going to learn the identity
+just going to learn the identity function and that's a collapse. It's not
+function and that's a collapse. It's not
+function and that's a collapse. It's not going to learn anything useful. Um
+going to learn anything useful. Um
+going to learn anything useful. Um similarly a system like this can can
+similarly a system like this can can
+similarly a system like this can can collapse and how can it collapse? it can
+collapse and how can it collapse? it can
+collapse and how can it collapse? it can essentially completely ignore the inputs
+essentially completely ignore the inputs
+essentially completely ignore the inputs produce constant representations and now
+produce constant representations and now
+produce constant representations and now the prediction problem is trivial. So if
+the prediction problem is trivial. So if
+the prediction problem is trivial. So if you just train a system of this type to
+you just train a system of this type to
+you just train a system of this type to minimize the prediction error is going
+minimize the prediction error is going
+minimize the prediction error is going to collapse. It's not going to do
+to collapse. It's not going to do
+to collapse. It's not going to do anything useful for you. So the whole
+anything useful for you. So the whole
+anything useful for you. So the whole trick of how you do self-s supervised
+trick of how you do self-s supervised
+trick of how you do self-s supervised learning for joint embedding uh system
+learning for joint embedding uh system
+learning for joint embedding uh system is how you prevent collapse.
+And there is uh my favorite concept for
+And there is uh my favorite concept for this I'll talk about other ways to do
+this I'll talk about other ways to do
+this I'll talk about other ways to do this later but my favorite concept to
+this later but my favorite concept to
+this later but my favorite concept to prevent collapse is uh is information
+prevent collapse is uh is information
+prevent collapse is uh is information maximization. Okay. So you basically
+maximization. Okay. So you basically
+maximization. Okay. So you basically come up with some objective function
+come up with some objective function
+come up with some objective function that measures the some sort of
+that measures the some sort of
+that measures the some sort of information content of the
+information content of the
+information content of the representation that comes out of your
+representation that comes out of your
+representation that comes out of your encoders and you try to maximize that
+encoders and you try to maximize that
+encoders and you try to maximize that information content. Okay. So your cost
+information content. Okay. So your cost
+information content. Okay. So your cost function is minus the information or
+function is minus the information or
+function is minus the information or whatever.
+whatever.
+whatever. Uh so there's a bunch of uh uh
+Uh so there's a bunch of uh uh
+Uh so there's a bunch of uh uh techniques uh for this uh you know since
+techniques uh for this uh you know since
+techniques uh for this uh you know since like the last six or seven years with
+like the last six or seven years with
+like the last six or seven years with names like MNCR, NCR squared, WE cig,
+names like MNCR, NCR squared, WE cig,
+names like MNCR, NCR squared, WE cig, VCRG and B twins. Uh the B twins, VCR
+VCRG and B twins. Uh the B twins, VCR
+VCRG and B twins. Uh the B twins, VCR sigg come from uh people working with
+sigg come from uh people working with
+sigg come from uh people working with me. Uh the other ones from other groups
+me. Uh the other ones from other groups
+me. Uh the other ones from other groups MCR comes from uh uh Berkeley and MCR
+MCR comes from uh uh Berkeley and MCR
+MCR comes from uh uh Berkeley and MCR squared from uh a colleague at NYU in
+squared from uh a colleague at NYU in
+squared from uh a colleague at NYU in neuroscience. There was some chell uh so
+neuroscience. There was some chell uh so
+neuroscience. There was some chell uh so but this idea of JPAG is gaining
+but this idea of JPAG is gaining
+but this idea of JPAG is gaining popularity.
+popularity.
+popularity. There's about 1,700 papers that mention
+There's about 1,700 papers that mention
+There's about 1,700 papers that mention joint emitting productive architecture
+joint emitting productive architecture
+joint emitting productive architecture spelled out uh on Google Scholar. Okay.
+spelled out uh on Google Scholar. Okay.
+spelled out uh on Google Scholar. Okay. So how there's an issue with this type
+So how there's an issue with this type
+So how there's an issue with this type of method which is how do you measure
+of method which is how do you measure
+of method which is how do you measure information content? We need to have a
+information content? We need to have a
+information content? We need to have a cost function that is a differentiable
+cost function that is a differentiable
+cost function that is a differentiable measure of information content. So we
+measure of information content. So we
+measure of information content. So we can back propagate gradient and maximize
+can back propagate gradient and maximize
+can back propagate gradient and maximize it.
+it.
+it. And the bad news is first of all we
+And the bad news is first of all we
+And the bad news is first of all we don't actually have objective measures
+don't actually have objective measures
+don't actually have objective measures of information content because all the
+of information content because all the
+of information content because all the proper definitions are based on knowing
+proper definitions are based on knowing
+proper definitions are based on knowing the distribution
+the distribution
+the distribution of the the vectors or whatever that you
+of the the vectors or whatever that you
+of the the vectors or whatever that you want to measure the information content
+want to measure the information content
+want to measure the information content of and we don't know the distribution.
+of and we don't know the distribution.
+of and we don't know the distribution. We only have samples coming out of an
+We only have samples coming out of an
+We only have samples coming out of an encoder. So how do you how do you
+encoder. So how do you how do you
+encoder. So how do you how do you compute information content from a
+compute information content from a
+compute information content from a finite number of samples? Okay, that's
+finite number of samples? Okay, that's
+finite number of samples? Okay, that's the first problem. Second problem is to
+the first problem. Second problem is to
+the first problem. Second problem is to maximize something you would need a
+maximize something you would need a
+maximize something you would need a lower bound on information content. So
+lower bound on information content. So
+lower bound on information content. So that when you maximize you push the
+that when you maximize you push the
+that when you maximize you push the actual information content up.
+actual information content up.
+actual information content up. Problem is every empirical measure that
+Problem is every empirical measure that
+Problem is every empirical measure that we we have are all upper bounds. So what
+we we have are all upper bounds. So what
+we we have are all upper bounds. So what do we do? We come up with a good upper
+do we do? We come up with a good upper
+do we do? We come up with a good upper bound and we cross our fingers
+and we show some theoreans and whatever.
+and we show some theoreans and whatever. Okay. Uh so this technique uh and and
+Okay. Uh so this technique uh and and
+Okay. Uh so this technique uh and and many others on on like the way to
+many others on on like the way to
+many others on on like the way to properly explain how you you know how
+properly explain how you you know how
+properly explain how you you know how you can train self-s supervised learning
+you can train self-s supervised learning
+you can train self-s supervised learning systems and and every learning system
+systems and and every learning system
+systems and and every learning system really is a framework I call energy
+really is a framework I call energy
+really is a framework I call energy based models that I've been advocating
+based models that I've been advocating
+based models that I've been advocating for 20 years or so. Uh it's basically
+for 20 years or so. Uh it's basically
+for 20 years or so. Uh it's basically the basic idea is like this. If you want
+the basic idea is like this. If you want
+the basic idea is like this. If you want to capture the dependency between two
+to capture the dependency between two
+to capture the dependency between two variables X and Y and there is no real
+variables X and Y and there is no real
+variables X and Y and there is no real functional relationship between X and Y.
+functional relationship between X and Y.
+functional relationship between X and Y. So you cannot there's no single Y for a
+So you cannot there's no single Y for a
+So you cannot there's no single Y for a given X right it's just a dependency but
+given X right it's just a dependency but
+given X right it's just a dependency but it's not a function like it's a relation
+it's not a function like it's a relation
+it's not a function like it's a relation of some kind of mapping but not a
+of some kind of mapping but not a
+of some kind of mapping but not a function. Uh so indicated by the diagram
+function. Uh so indicated by the diagram
+function. Uh so indicated by the diagram on the right here you have a bunch of
+on the right here you have a bunch of
+on the right here you have a bunch of data points the black uh uh dots um and
+data points the black uh uh dots um and
+data points the black uh uh dots um and so they indicate some sort of dependency
+so they indicate some sort of dependency
+so they indicate some sort of dependency between X and Y. How do you capture this
+between X and Y. How do you capture this
+between X and Y. How do you capture this dependency
+dependency
+dependency given that you cannot run a function
+given that you cannot run a function
+given that you cannot run a function that that computes away y from x? So one
+that that computes away y from x? So one
+that that computes away y from x? So one way to do this is to uh
+way to do this is to uh
+way to do this is to uh learn or build a contrast function
+learn or build a contrast function
+learn or build a contrast function energy function that tells you
+energy function that tells you
+energy function that tells you a point in this xy space is near the the
+a point in this xy space is near the the
+a point in this xy space is near the the trading data or not. Okay. So think of
+trading data or not. Okay. So think of
+trading data or not. Okay. So think of it as some some sort of landscape um
+it as some some sort of landscape um
+it as some some sort of landscape um where the the black dots are in the
+where the the black dots are in the
+where the the black dots are in the valley. Okay, in Switzerland there would
+valley. Okay, in Switzerland there would
+valley. Okay, in Switzerland there would be a lake
+be a lake
+be a lake uh and then you know you get like you
+uh and then you know you get like you
+uh and then you know you get like you know level curves, right? As as you move
+know level curves, right? As as you move
+know level curves, right? As as you move out you know outside of those regions
+out you know outside of those regions
+out you know outside of those regions the altitude goes up. Okay, the energy
+the altitude goes up. Okay, the energy
+the altitude goes up. Okay, the energy goes up right now. If I give you a value
+goes up right now. If I give you a value
+goes up right now. If I give you a value for X you can infer you can give me a
+for X you can infer you can give me a
+for X you can infer you can give me a bunch of values for Y that are
+bunch of values for Y that are
+bunch of values for Y that are compatible with X. there are values of y
+compatible with X. there are values of y
+compatible with X. there are values of y that minimize the energy right so it's
+that minimize the energy right so it's
+that minimize the energy right so it's the kind of inference I was talking
+the kind of inference I was talking
+the kind of inference I was talking about earlier inference by optimization
+about earlier inference by optimization
+about earlier inference by optimization not by forward propagation
+not by forward propagation
+not by forward propagation um but you can also possibly do it the
+um but you can also possibly do it the
+um but you can also possibly do it the other way around if I give you a y you
+other way around if I give you a y you
+other way around if I give you a y you can infer x from y and you can give me
+can infer x from y and you can give me
+can infer x from y and you can give me multiple answers so in situations like
+multiple answers so in situations like
+multiple answers so in situations like like video prediction where there is
+like video prediction where there is
+like video prediction where there is basically an infinite number of possible
+basically an infinite number of possible
+basically an infinite number of possible answers the proper way to train a system
+answers the proper way to train a system
+answers the proper way to train a system of this type is to think of it in terms
+of this type is to think of it in terms
+of this type is to think of it in terms of energy based models
+of energy based models
+of energy based models uh and by the way probabilistic uh
+uh and by the way probabilistic uh
+uh and by the way probabilistic uh models are a special case where where
+models are a special case where where
+models are a special case where where your energy has particular form and the
+your energy has particular form and the
+your energy has particular form and the way you train it as particular loss
+way you train it as particular loss
+way you train it as particular loss function. Um so it's a slightly more
+function. Um so it's a slightly more
+function. Um so it's a slightly more general framework if you want than
+general framework if you want than
+general framework if you want than proistic uh inference and learning.
+proistic uh inference and learning.
+proistic uh inference and learning. [clears throat]
+[clears throat]
+[clears throat] Okay. So what to train an energy based
+Okay. So what to train an energy based
+Okay. So what to train an energy based model you have to prevent collapse. The
+model you have to prevent collapse. The
+model you have to prevent collapse. The collapse problem I was telling you about
+collapse problem I was telling you about
+collapse problem I was telling you about before would be manifested by the energy
+before would be manifested by the energy
+before would be manifested by the energy function being flat everywhere. You
+function being flat everywhere. You
+function being flat everywhere. You train the system to minimize the energy
+train the system to minimize the energy
+train the system to minimize the energy for a bunch of training samples and what
+for a bunch of training samples and what
+for a bunch of training samples and what the system gives you an energy function
+the system gives you an energy function
+the system gives you an energy function that is zero everywhere. That's what an
+that is zero everywhere. That's what an
+that is zero everywhere. That's what an autoenccoder that learns the identity
+autoenccoder that learns the identity
+autoenccoder that learns the identity function. That's what it it does to you.
+function. That's what it it does to you.
+function. That's what it it does to you. A jetpad that ignores the input and
+A jetpad that ignores the input and
+A jetpad that ignores the input and produces constant representation at zero
+produces constant representation at zero
+produces constant representation at zero prediction error for everything. So it's
+prediction error for everything. So it's
+prediction error for everything. So it's a collapse. To prevent collapse, you
+a collapse. To prevent collapse, you
+a collapse. To prevent collapse, you need to do one of two things. One is
+need to do one of two things. One is
+need to do one of two things. One is contrasting methods. You you generate
+contrasting methods. You you generate
+contrasting methods. You you generate points outside the region of data and
+points outside the region of data and
+points outside the region of data and you push the energy up. Okay, you come
+you push the energy up. Okay, you come
+you push the energy up. Okay, you come up with some cost function that makes
+up with some cost function that makes
+up with some cost function that makes sure the energy of the data points come
+sure the energy of the data points come
+sure the energy of the data points come down and and the energy of other points
+down and and the energy of other points
+down and and the energy of other points is is higher and there's a whole bunch
+is is higher and there's a whole bunch
+is is higher and there's a whole bunch of them. And there is another set of
+of them. And there is another set of
+of them. And there is another set of method which I have come to prefer
+method which I have come to prefer
+method which I have come to prefer regulariz method which work by
+regulariz method which work by
+regulariz method which work by minimizing the volume of space that can
+minimizing the volume of space that can
+minimizing the volume of space that can take low energy. Okay, so if you push
+take low energy. Okay, so if you push
+take low energy. Okay, so if you push down the energy of certain regions the
+down the energy of certain regions the
+down the energy of certain regions the rest has to go up because there is only
+rest has to go up because there is only
+rest has to go up because there is only a small amount of a small volume of
+a small amount of a small volume of
+a small amount of a small volume of energy to go around of low energy.
+energy to go around of low energy.
+energy to go around of low energy. Um so in practice
+Um so in practice
+Um so in practice h how do you sort of reduce this to
+h how do you sort of reduce this to
+h how do you sort of reduce this to practice? Okay, those one of those two
+practice? Okay, those one of those two
+practice? Okay, those one of those two methods. Okay. So um let's go back to
+methods. Okay. So um let's go back to
+methods. Okay. So um let's go back to this idea of information maximization.
+this idea of information maximization.
+this idea of information maximization. Uh so I want to train this uh this ja
+Uh so I want to train this uh this ja
+Uh so I want to train this uh this ja some measure of information. Uh let's
+some measure of information. Uh let's
+some measure of information. Uh let's say I run a batch of samples through uh
+say I run a batch of samples through uh
+say I run a batch of samples through uh through one of the encoders. I get a
+through one of the encoders. I get a
+through one of the encoders. I get a matrix where each row is the
+matrix where each row is the
+matrix where each row is the representation for one sample. Each
+representation for one sample. Each
+representation for one sample. Each column is the value of one variable in
+column is the value of one variable in
+column is the value of one variable in the representation for all samples.
+the representation for all samples.
+the representation for all samples. Okay,
+Okay,
+Okay, there's two ways to make that matrix
+there's two ways to make that matrix
+there's two ways to make that matrix informative.
+informative.
+informative. One way is to make sure all the rows are
+One way is to make sure all the rows are
+One way is to make sure all the rows are different.
+different.
+different. Another way is to make sure all the
+Another way is to make sure all the
+Another way is to make sure all the columns are different.
+columns are different.
+columns are different. You want to make sure the columns are
+You want to make sure the columns are
+You want to make sure the columns are different because if all the columns are
+different because if all the columns are
+different because if all the columns are the same that means every variable in
+the same that means every variable in
+the same that means every variable in the representation carries the same
+the representation carries the same
+the representation carries the same information and of course that's not
+information and of course that's not
+information and of course that's not very informative. So you want to you
+very informative. So you want to you
+very informative. So you want to you know each variable in the representation
+know each variable in the representation
+know each variable in the representation to be maximally disentangled from the
+to be maximally disentangled from the
+to be maximally disentangled from the other ones to give you an independent
+other ones to give you an independent
+other ones to give you an independent information from the other variables.
+information from the other variables.
+information from the other variables. Okay. Um so that would be an example of
+Okay. Um so that would be an example of
+Okay. Um so that would be an example of what we can call dimension contrastive
+what we can call dimension contrastive
+what we can call dimension contrastive methods which is a form of regularized
+methods which is a form of regularized
+methods which is a form of regularized method and then at the bottom um the the
+method and then at the bottom um the the
+method and then at the bottom um the the type of criterion that makes the the
+type of criterion that makes the the
+type of criterion that makes the the rows all different those are contrastive
+rows all different those are contrastive
+rows all different those are contrastive method or sample contrastive methods.
+method or sample contrastive methods.
+method or sample contrastive methods. Okay sample contrasting methods are very
+Okay sample contrasting methods are very
+Okay sample contrasting methods are very popular for certain applications. A lot
+popular for certain applications. A lot
+popular for certain applications. A lot of the perceptual pipelines in LLM are
+of the perceptual pipelines in LLM are
+of the perceptual pipelines in LLM are trained with a technique called clip
+trained with a technique called clip
+trained with a technique called clip which basically is contrasting method
+which basically is contrasting method
+which basically is contrasting method that does joint embedding between images
+that does joint embedding between images
+that does joint embedding between images and text.
+Uh but I prefer the other one. Um so
+Uh but I prefer the other one. Um so this idea that you need to find an
+this idea that you need to find an
+this idea that you need to find an abstract representation of an input to
+abstract representation of an input to
+abstract representation of an input to be able to make prediction is actually
+be able to make prediction is actually
+be able to make prediction is actually very natural. We do this all the time as
+very natural. We do this all the time as
+very natural. We do this all the time as humans. Uh we do this all the time as
+humans. Uh we do this all the time as
+humans. Uh we do this all the time as scientists and engineers. Uh animals do
+scientists and engineers. Uh animals do
+scientists and engineers. Uh animals do it too. Let me explain why. Uh in
+it too. Let me explain why. Uh in
+it too. Let me explain why. Uh in principle I could explain or simulate
+principle I could explain or simulate
+principle I could explain or simulate everything that takes place in this room
+everything that takes place in this room
+everything that takes place in this room at the moment at the level of quantum
+at the moment at the level of quantum
+at the moment at the level of quantum field theory or particle physics, right?
+field theory or particle physics, right?
+field theory or particle physics, right? Could simulate the trajectory of every
+Could simulate the trajectory of every
+Could simulate the trajectory of every particle in this room and that would go
+particle in this room and that would go
+particle in this room and that would go down to actually simulating all of our
+down to actually simulating all of our
+down to actually simulating all of our brain processes and everything. And so
+brain processes and everything. And so
+brain processes and everything. And so in principle uh running the simulation I
+in principle uh running the simulation I
+in principle uh running the simulation I could figure out if you know any of you
+could figure out if you know any of you
+could figure out if you know any of you actually understands the word I'm saying
+actually understands the word I'm saying
+actually understands the word I'm saying or not. Okay or if you are sleeping
+or not. Okay or if you are sleeping
+or not. Okay or if you are sleeping right now um or if you're like totally
+right now um or if you're like totally
+right now um or if you're like totally bored right uh okay but of course that's
+bored right uh okay but of course that's
+bored right uh okay but of course that's completely impractical.
+completely impractical.
+completely impractical. Uh and you know what we do in science is
+Uh and you know what we do in science is
+Uh and you know what we do in science is we invent abstractions to allow us to
+we invent abstractions to allow us to
+we invent abstractions to allow us to make predictions and those abstractions
+make predictions and those abstractions
+make predictions and those abstractions ignore a lot of details about the state
+ignore a lot of details about the state
+ignore a lot of details about the state the underlying state of the system. So
+the underlying state of the system. So
+the underlying state of the system. So we invent those abstractions you know
+we invent those abstractions you know
+we invent those abstractions you know from quantum field to particles atoms
+from quantum field to particles atoms
+from quantum field to particles atoms molecules proteins organ cells organisms
+molecules proteins organ cells organisms
+molecules proteins organ cells organisms individuals societies ecosystem
+individuals societies ecosystem
+individuals societies ecosystem every level in this hierarchy is a
+every level in this hierarchy is a
+every level in this hierarchy is a particular level of abstraction with
+particular level of abstraction with
+particular level of abstraction with which we describe uh the world which
+which we describe uh the world which
+which we describe uh the world which allows us to make
+allows us to make
+allows us to make longer range predictions if you want
+longer range predictions if you want
+longer range predictions if you want than the levels below
+than the levels below
+than the levels below by ignoring a lot of details about the
+by ignoring a lot of details about the
+by ignoring a lot of details about the level below Which is why
+level below Which is why
+level below Which is why the the way to understand what goes on
+the the way to understand what goes on
+the the way to understand what goes on in this room at the moment is more at
+in this room at the moment is more at
+in this room at the moment is more at the level of psychology than at the
+the level of psychology than at the
+the level of psychology than at the level of particle physics. Right? Now,
+level of particle physics. Right? Now,
+level of particle physics. Right? Now, of course, physicists always make fun of
+of course, physicists always make fun of
+of course, physicists always make fun of everyone saying like, you know, you just
+everyone saying like, you know, you just
+everyone saying like, you know, you just applied physics, right? Even
+applied physics, right? Even
+applied physics, right? Even psychologist applied physics to some
+psychologist applied physics to some
+psychologist applied physics to some extent. Uh but in fact, you know, there
+extent. Uh but in fact, you know, there
+extent. Uh but in fact, you know, there is uh you know, specific knowledge about
+is uh you know, specific knowledge about
+is uh you know, specific knowledge about chemistry that does not derive directly
+chemistry that does not derive directly
+chemistry that does not derive directly from physics, right? So, so this
+from physics, right? So, so this
+from physics, right? So, so this abstraction actually kind of contains uh
+abstraction actually kind of contains uh
+abstraction actually kind of contains uh new knowledge or information or
+new knowledge or information or
+new knowledge or information or structure if you want that was not
+structure if you want that was not
+structure if you want that was not apparent at the level below. So this
+apparent at the level below. So this
+apparent at the level below. So this idea of jetpack really kind of
+idea of jetpack really kind of
+idea of jetpack really kind of constructs on this concept that you need
+constructs on this concept that you need
+constructs on this concept that you need to find an abstraction to be able to
+to find an abstraction to be able to
+to find an abstraction to be able to make predictions. Uh let's say you you
+make predictions. Uh let's say you you
+make predictions. Uh let's say you you want to do um uh you want to design an
+want to do um uh you want to design an
+want to do um uh you want to design an airplane, you need to design the air
+airplane, you need to design the air
+airplane, you need to design the air force for the airplane, you do
+force for the airplane, you do
+force for the airplane, you do computational fluid dynamics, right? You
+computational fluid dynamics, right? You
+computational fluid dynamics, right? You simulate the flow of air around around
+simulate the flow of air around around
+simulate the flow of air around around the wing. U you you model the state of
+the wing. U you you model the state of
+the wing. U you you model the state of the air in every little cube around
+the air in every little cube around
+the air in every little cube around around the wing by basically the
+around the wing by basically the
+around the wing by basically the velocity and the density and things like
+velocity and the density and things like
+velocity and the density and things like that and and then you solve NTO's
+that and and then you solve NTO's
+that and and then you solve NTO's partial differential equations and that
+partial differential equations and that
+partial differential equations and that simulates the flow of air but in fact
+simulates the flow of air but in fact
+simulates the flow of air but in fact it's ignoring a huge amount of details
+it's ignoring a huge amount of details
+it's ignoring a huge amount of details in the underlying mechanism. The
+in the underlying mechanism. The
+in the underlying mechanism. The underlying mechanism is molecules of air
+underlying mechanism is molecules of air
+underlying mechanism is molecules of air bumping into each other and bumping on
+bumping into each other and bumping on
+bumping into each other and bumping on the plane. But you never simulate
+the plane. But you never simulate
+the plane. But you never simulate fluids at that level. It's just too
+fluids at that level. It's just too
+fluids at that level. It's just too complicated and also it would diverge
+complicated and also it would diverge
+complicated and also it would diverge from reality really quickly because it
+from reality really quickly because it
+from reality really quickly because it has too many details. So you have to
+has too many details. So you have to
+has too many details. So you have to ignore details to be able to make
+ignore details to be able to make
+ignore details to be able to make accurate long-term predictions.
+accurate long-term predictions.
+accurate long-term predictions. Um and so we do this in science all the
+Um and so we do this in science all the
+Um and so we do this in science all the time. And so world models should not be
+time. And so world models should not be
+time. And so world models should not be simulators, right? They should work in
+simulators, right? They should work in
+simulators, right? They should work in abstract space. You should not be
+abstract space. You should not be
+abstract space. You should not be digital twins, you know, that's a bus
+digital twins, you know, that's a bus
+digital twins, you know, that's a bus phrase. They should definitely not be
+phrase. They should definitely not be
+phrase. They should definitely not be generative models as I just explained.
+generative models as I just explained.
+generative models as I just explained. Uh, and they should not be video
+Uh, and they should not be video
+Uh, and they should not be video generation. So, a lot of people are
+generation. So, a lot of people are
+generation. So, a lot of people are working on video generation and they
+working on video generation and they
+working on video generation and they call this world models. It's they're not
+call this world models. It's they're not
+call this world models. It's they're not world models. They are video generation
+world models. They are video generation
+world models. They are video generation systems. Uh, so one one big message from
+systems. Uh, so one one big message from
+systems. Uh, so one one big message from my talk is that if if you want to use
+my talk is that if if you want to use
+my talk is that if if you want to use world models, do not work on video
+world models, do not work on video
+world models, do not work on video generation. This is a different problem.
+generation. This is a different problem.
+generation. This is a different problem. Okay. If you want to produce cute
+Okay. If you want to produce cute
+Okay. If you want to produce cute videos, work on video generation. But if
+videos, work on video generation. But if
+videos, work on video generation. But if you want to like control robots or
+you want to like control robots or
+you want to like control robots or industrial processes or understand the
+industrial processes or understand the
+industrial processes or understand the world, do not work on generation.
+Um,
+Um, you want models to control complex
+you want models to control complex
+you want models to control complex systems where you cannot model the
+systems where you cannot model the
+systems where you cannot model the dynamics of the system by writing a
+dynamics of the system by writing a
+dynamics of the system by writing a bunch of equations. Okay, if you have a
+bunch of equations. Okay, if you have a
+bunch of equations. Okay, if you have a humanoid robot or you know any kind of
+humanoid robot or you know any kind of
+humanoid robot or you know any kind of robot, you can just write down the
+robot, you can just write down the
+robot, you can just write down the dynamical equations and then simulate
+dynamical equations and then simulate
+dynamical equations and then simulate the dynamics of the robot and you can
+the dynamics of the robot and you can
+the dynamics of the robot and you can get your humanoid robot to do some
+get your humanoid robot to do some
+get your humanoid robot to do some assrults and and kung fu and whatever,
+assrults and and kung fu and whatever,
+assrults and and kung fu and whatever, right? That's simple. Uh as soon as a
+right? That's simple. Uh as soon as a
+right? That's simple. Uh as soon as a robot starts to interact with the real
+robot starts to interact with the real
+robot starts to interact with the real world, that's a lot more complicated. Um
+world, that's a lot more complicated. Um
+world, that's a lot more complicated. Um and and that is actually more difficult
+and and that is actually more difficult
+and and that is actually more difficult to reduce to simple equations. But then
+to reduce to simple equations. But then
+to reduce to simple equations. But then you know think about a complex system
+you know think about a complex system
+you know think about a complex system like say a turbo jet or I don't know a
+like say a turbo jet or I don't know a
+like say a turbo jet or I don't know a chemical plant or a patient uh or a
+chemical plant or a patient uh or a
+chemical plant or a patient uh or a robot but a robot that interacts with
+robot but a robot that interacts with
+robot but a robot that interacts with the real world in complex ways. You can
+the real world in complex ways. You can
+the real world in complex ways. You can now reduce this to a small number of
+now reduce this to a small number of
+now reduce this to a small number of equations. What you have to do is
+equations. What you have to do is
+equations. What you have to do is basically learn a phenomen
+basically learn a phenomen
+basically learn a phenomen phenomenological model of the whole
+phenomenological model of the whole
+phenomenological model of the whole system the system you control and its
+system the system you control and its
+system the system you control and its interaction with the environment uh so
+interaction with the environment uh so
+interaction with the environment uh so that you can make predictions and you
+that you can make predictions and you
+that you can make predictions and you can plan a sequence of actions to arrive
+can plan a sequence of actions to arrive
+can plan a sequence of actions to arrive at a particular uh outcome.
+at a particular uh outcome.
+at a particular uh outcome. So that's a world model. I mean the
+So that's a world model. I mean the
+So that's a world model. I mean the concept is very old. It goes back to the
+concept is very old. It goes back to the
+concept is very old. It goes back to the 1960s. It's the root of optimal control.
+1960s. It's the root of optimal control.
+1960s. It's the root of optimal control. Um and uh okay so now I come down to a
+Um and uh okay so now I come down to a
+Um and uh okay so now I come down to a particular technique that I'm very fond
+particular technique that I'm very fond
+particular technique that I'm very fond of which I think um we're going to
+of which I think um we're going to
+of which I think um we're going to expand over the next few months and
+expand over the next few months and
+expand over the next few months and years to do this information
+years to do this information
+years to do this information maximization uh that I was telling you
+maximization uh that I was telling you
+maximization uh that I was telling you about earlier and it's called sigg that
+about earlier and it's called sigg that
+about earlier and it's called sigg that means sketch isotropic gaussian
+means sketch isotropic gaussian
+means sketch isotropic gaussian regularization okay the trick here is
+regularization okay the trick here is
+regularization okay the trick here is the following you you run a batch of
+the following you you run a batch of
+the following you you run a batch of samples through your encoders and what
+samples through your encoders and what
+samples through your encoders and what you get is a bunch of points in the
+you get is a bunch of points in the
+you get is a bunch of points in the vector space of dimension whatever the
+vector space of dimension whatever the
+vector space of dimension whatever the dimension of your representation space
+dimension of your representation space
+dimension of your representation space is. We're going to try to make the
+is. We're going to try to make the
+is. We're going to try to make the distribution of those points isotropic
+distribution of those points isotropic
+distribution of those points isotropic Gaussian with the same u variance in all
+Gaussian with the same u variance in all
+Gaussian with the same u variance in all dimensions. Why? Because
+dimensions. Why? Because
+dimensions. Why? Because an isotropic gaussian is a distribution
+an isotropic gaussian is a distribution
+an isotropic gaussian is a distribution where all the variables are independent.
+where all the variables are independent.
+where all the variables are independent. Okay, so they're maximally informative
+Okay, so they're maximally informative
+Okay, so they're maximally informative individually.
+individually.
+individually. uh and it's also the distribution that
+uh and it's also the distribution that
+uh and it's also the distribution that has maximum entropy for a given variance
+has maximum entropy for a given variance
+has maximum entropy for a given variance but we don't really care about that. Um
+but we don't really care about that. Um
+but we don't really care about that. Um what's interesting is that it makes the
+what's interesting is that it makes the
+what's interesting is that it makes the variable independent of each other.
+variable independent of each other.
+variable independent of each other. Okay, so how do we do this? Now of
+Okay, so how do we do this? Now of
+Okay, so how do we do this? Now of course we don't have the distribution we
+course we don't have the distribution we
+course we don't have the distribution we just have a bunch of points uh in that
+just have a bunch of points uh in that
+just have a bunch of points uh in that space and it may be a high dimensional
+space and it may be a high dimensional
+space and it may be a high dimensional space like 2,000 dimensions and we may
+space like 2,000 dimensions and we may
+space like 2,000 dimensions and we may have you know a few hundred or a few
+have you know a few hundred or a few
+have you know a few hundred or a few thousand points like how how can we make
+thousand points like how how can we make
+thousand points like how how can we make sure this is uh this is a Gaussian. So
+sure this is uh this is a Gaussian. So
+sure this is uh this is a Gaussian. So here's a trick. Uh the trick is you
+here's a trick. Uh the trick is you
+here's a trick. Uh the trick is you project the individual points
+project the individual points
+project the individual points along a single direction and what you
+along a single direction and what you
+along a single direction and what you get is a marginal distribution. Okay.
+get is a marginal distribution. Okay.
+get is a marginal distribution. Okay. Now of course you still have discrete
+Now of course you still have discrete
+Now of course you still have discrete points. You don't have a distrib you
+points. You don't have a distrib you
+points. You don't have a distrib you have continuous density. You have
+have continuous density. You have
+have continuous density. You have discrete points. Okay. So one trick you
+discrete points. Okay. So one trick you
+discrete points. Okay. So one trick you can do is compute the cumulative
+can do is compute the cumulative
+can do is compute the cumulative distribution that those points give you.
+distribution that those points give you.
+distribution that those points give you. Right? So it's a staircase
+Right? So it's a staircase
+Right? So it's a staircase right? because you have discrete points
+right? because you have discrete points
+right? because you have discrete points in one dimension.
+in one dimension.
+in one dimension. And then what you can you can you can do
+And then what you can you can you can do
+And then what you can you can you can do is you can ask what is the distance
+is you can ask what is the distance
+is you can ask what is the distance between the staircase the cumulative
+between the staircase the cumulative
+between the staircase the cumulative empirical cumulative distribution of my
+empirical cumulative distribution of my
+empirical cumulative distribution of my points and the cumulative distribution
+points and the cumulative distribution
+points and the cumulative distribution of let's say a Gaussian. You can do that
+of let's say a Gaussian. You can do that
+of let's say a Gaussian. You can do that because you know what the Gaussian looks
+because you know what the Gaussian looks
+because you know what the Gaussian looks like and for every point you can tell on
+like and for every point you can tell on
+like and for every point you can tell on the staircase you can tell if it's to
+the staircase you can tell if it's to
+the staircase you can tell if it's to the left or to the right of the ideal
+the left or to the right of the ideal
+the left or to the right of the ideal Gaussian. And so that gives you a
+Gaussian. And so that gives you a
+Gaussian. And so that gives you a gradient like do I move the point this
+gradient like do I move the point this
+gradient like do I move the point this way or that way
+way or that way
+way or that way in that projection.
+in that projection.
+in that projection. Okay, it gives you a gradient now for
+Okay, it gives you a gradient now for
+Okay, it gives you a gradient now for every training sample uh in your in your
+every training sample uh in your in your
+every training sample uh in your in your batch. Okay, now if you make the
+batch. Okay, now if you make the
+batch. Okay, now if you make the distribution, you know, by gradient
+distribution, you know, by gradient
+distribution, you know, by gradient descent like optimizing this cost
+descent like optimizing this cost
+descent like optimizing this cost function, it's going to make the
+function, it's going to make the
+function, it's going to make the distribution Gaussian along the marginal
+distribution Gaussian along the marginal
+distribution Gaussian along the marginal uh of that distribution along this
+uh of that distribution along this
+uh of that distribution along this projection. But now there's a theorem
+projection. But now there's a theorem
+projection. But now there's a theorem that says if you do this along lots and
+that says if you do this along lots and
+that says if you do this along lots and lots and lots of directions in the limit
+lots and lots of directions in the limit
+lots and lots of directions in the limit your joint distribution is actually
+your joint distribution is actually
+your joint distribution is actually asotropic Gaussian.
+asotropic Gaussian.
+asotropic Gaussian. Okay. So what we need to do now is do
+Okay. So what we need to do now is do
+Okay. So what we need to do now is do many many projections for all of those
+many many projections for all of those
+many many projections for all of those projections. Compute those gradients uh
+projections. Compute those gradients uh
+projections. Compute those gradients uh you know move the points or back
+you know move the points or back
+you know move the points or back propagate through the network change the
+propagate through the network change the
+propagate through the network change the weight so that the points move so that
+weight so that the points move so that
+weight so that the points move so that the overall distribution gets more
+the overall distribution gets more
+the overall distribution gets more Gaussian. And
+Gaussian. And
+Gaussian. And uh if you apply this to a distribution
+uh if you apply this to a distribution
+uh if you apply this to a distribution like the one on the top left here like
+like the one on the top left here like
+like the one on the top left here like an x these are actually two dimen two
+an x these are actually two dimen two
+an x these are actually two dimen two dimensions among,24
+dimensions among,24
+dimensions among,24 and then you do gradient descent you
+and then you do gradient descent you
+and then you do gradient descent you just move the points here. you don't
+just move the points here. you don't
+just move the points here. you don't train a neuron net you uh so the
+train a neuron net you uh so the
+train a neuron net you uh so the technique I'm advocating for is on the
+technique I'm advocating for is on the
+technique I'm advocating for is on the left you get something that's sort of
+left you get something that's sort of
+left you get something that's sort of gausianish
+uh and this this really works in in
+uh and this this really works in in practice we've actually applied it to um
+practice we've actually applied it to um
+practice we've actually applied it to um training world models that are action
+training world models that are action
+training world models that are action condition and and we've used them for
+condition and and we've used them for
+condition and and we've used them for for planning and it uh works decently
+for planning and it uh works decently
+for planning and it uh works decently it's a very the the source code is
+it's a very the the source code is
+it's a very the the source code is available it's very simple you can train
+available it's very simple you can train
+available it's very simple you can train it on one GPU um And uh what we need to
+it on one GPU um And uh what we need to
+it on one GPU um And uh what we need to do with this technique is scale it up
+do with this technique is scale it up
+do with this technique is scale it up basically. There's a few other things
+basically. There's a few other things
+basically. There's a few other things that we need to do but that's the the
+that we need to do but that's the the
+that we need to do but that's the the main one. Uh and so in simple cases you
+main one. Uh and so in simple cases you
+main one. Uh and so in simple cases you can train this world model and you can
+can train this world model and you can
+can train this world model and you can use it to plan simple actions in like in
+use it to plan simple actions in like in
+use it to plan simple actions in like in a push t or like simple robotic
+a push t or like simple robotic
+a push t or like simple robotic situation in simulated environments. Um
+situation in simulated environments. Um
+situation in simulated environments. Um so that needs to be scaled up but it's
+so that needs to be scaled up but it's
+so that needs to be scaled up but it's it's sort of a good work. There is a
+it's sort of a good work. There is a
+it's sort of a good work. There is a theoretical paper that uh we put out
+theoretical paper that uh we put out
+theoretical paper that uh we put out just a few days ago where if you make
+just a few days ago where if you make
+just a few days ago where if you make the hypothesis that the underlying
+the hypothesis that the underlying
+the hypothesis that the underlying distribution of your data is actually an
+distribution of your data is actually an
+distribution of your data is actually an isotropic Gaussian
+isotropic Gaussian
+isotropic Gaussian and if you assume that the observation
+and if you assume that the observation
+and if you assume that the observation you get from the world are some sort of
+you get from the world are some sort of
+you get from the world are some sort of complicated nonlinear transformation of
+complicated nonlinear transformation of
+complicated nonlinear transformation of those points like in this case like some
+those points like in this case like some
+those points like in this case like some sort of spiral
+sort of spiral
+sort of spiral uh transformation
+uh transformation
+uh transformation you apply you train a neural with cigreg
+you apply you train a neural with cigreg
+you apply you train a neural with cigreg on it, it will recover the original
+on it, it will recover the original
+on it, it will recover the original Gaussian in the representation space.
+Gaussian in the representation space.
+Gaussian in the representation space. Okay, so it's not a general proof that
+Okay, so it's not a general proof that
+Okay, so it's not a general proof that it works in every case, but it's a proof
+it works in every case, but it's a proof
+it works in every case, but it's a proof that if your original explanatory
+that if your original explanatory
+that if your original explanatory variables are Gaussian, the system will
+variables are Gaussian, the system will
+variables are Gaussian, the system will recover those variables up to a
+recover those variables up to a
+recover those variables up to a rotation.
+Okay. uh so we we can use those
+Okay. uh so we we can use those techniques to uh you know in the context
+techniques to uh you know in the context
+techniques to uh you know in the context of self-s supervised learning to train
+of self-s supervised learning to train
+of self-s supervised learning to train an image recognition system uh and there
+an image recognition system uh and there
+an image recognition system uh and there is another set of technique which uh I
+is another set of technique which uh I
+is another set of technique which uh I should mention because they work really
+should mention because they work really
+should mention because they work really well and they are the ones that have
+well and they are the ones that have
+well and they are the ones that have been scaled up so far is conceptually my
+been scaled up so far is conceptually my
+been scaled up so far is conceptually my favorite method but it's very recent and
+favorite method but it's very recent and
+favorite method but it's very recent and we haven't scaled it up whereas uh those
+we haven't scaled it up whereas uh those
+we haven't scaled it up whereas uh those other methods that are b based on
+other methods that are b based on
+other methods that are b based on distillation we've scaled them up and we
+distillation we've scaled them up and we
+distillation we've scaled them up and we got really good results both for images
+got really good results both for images
+got really good results both for images and video uh with techniques like aa and
+and video uh with techniques like aa and
+and video uh with techniques like aa and VJ Japa. So what's the basic idea of
+VJ Japa. So what's the basic idea of
+VJ Japa. So what's the basic idea of those distillation methods? You you
+those distillation methods? You you
+those distillation methods? You you still have those two encoders. So it's a
+still have those two encoders. So it's a
+still have those two encoders. So it's a JA architecture. Um you take an input,
+JA architecture. Um you take an input,
+JA architecture. Um you take an input, you transform it or corrupt it or mask
+you transform it or corrupt it or mask
+you transform it or corrupt it or mask it or something and then you train the
+it or something and then you train the
+it or something and then you train the system uh you know to predict in
+system uh you know to predict in
+system uh you know to predict in representation space but you don't
+representation space but you don't
+representation space but you don't propagate gradient through the encoder
+propagate gradient through the encoder
+propagate gradient through the encoder on the right. Okay, those are two
+on the right. Okay, those are two
+on the right. Okay, those are two encoders with identical architectures
+encoders with identical architectures
+encoders with identical architectures and they kind of share the weights. But
+and they kind of share the weights. But
+and they kind of share the weights. But the funny thing is that the encoder on
+the funny thing is that the encoder on
+the funny thing is that the encoder on the right uh use a exponential moving
+the right uh use a exponential moving
+the right uh use a exponential moving average over time of the weights of the
+average over time of the weights of the
+average over time of the weights of the encoder on the left. The encoder on the
+encoder on the left. The encoder on the
+encoder on the left. The encoder on the left gets gradient and gets updated all
+left gets gradient and gets updated all
+left gets gradient and gets updated all the time. Uh the encoder on the right
+the time. Uh the encoder on the right
+the time. Uh the encoder on the right gets updated slower essentially and
+gets updated slower essentially and
+gets updated slower essentially and share the weights. Uh this is derived
+share the weights. Uh this is derived
+share the weights. Uh this is derived from some intuitive ideas of some people
+from some intuitive ideas of some people
+from some intuitive ideas of some people at at Google deepmind who are using
+at at Google deepmind who are using
+at at Google deepmind who are using techniques like this to stabilize the
+techniques like this to stabilize the
+techniques like this to stabilize the variance in reinforcement learning and
+variance in reinforcement learning and
+variance in reinforcement learning and they realize you could apply this to
+they realize you could apply this to
+they realize you could apply this to self-s supervised learning from images.
+self-s supervised learning from images.
+self-s supervised learning from images. They call this bol
+They call this bol
+They call this bol bootstrap your own latent. uh and there
+bootstrap your own latent. uh and there
+bootstrap your own latent. uh and there is like a whole bunch of methods from
+is like a whole bunch of methods from
+is like a whole bunch of methods from from meta in particular uh sinc etc that
+from meta in particular uh sinc etc that
+from meta in particular uh sinc etc that use this exponential moving average idea
+use this exponential moving average idea
+use this exponential moving average idea and a particular method called Japa
+and a particular method called Japa
+and a particular method called Japa which uh I I show here it produced
+which uh I I show here it produced
+which uh I I show here it produced really really good results and what
+really really good results and what
+really really good results and what we're able to do with Jeppa is compare
+we're able to do with Jeppa is compare
+we're able to do with Jeppa is compare the results of Jeppa with a generative
+the results of Jeppa with a generative
+the results of Jeppa with a generative approach called MAE max autoenccoder
+approach called MAE max autoenccoder
+approach called MAE max autoenccoder and it it it's not only better but it
+and it it it's not only better but it
+and it it it's not only better but it it's much faster to train. Um, another
+it's much faster to train. Um, another
+it's much faster to train. Um, another uh and another technique is is called
+uh and another technique is is called
+uh and another technique is is called Dino. Many of you, I'm sure, have heard
+Dino. Many of you, I'm sure, have heard
+Dino. Many of you, I'm sure, have heard of it. I I know some of you have used it
+of it. I I know some of you have used it
+of it. I I know some of you have used it because there were projects in the robot
+because there were projects in the robot
+because there were projects in the robot demos that actually use Dino. Uh, so
+demos that actually use Dino. Uh, so
+demos that actually use Dino. Uh, so this is uh done by some of our former
+this is uh done by some of our former
+this is uh done by some of our former colleagues at at Meta in Paris and uh
+colleagues at at Meta in Paris and uh
+colleagues at at Meta in Paris and uh it's completely self-s supervised. It's
+it's completely self-s supervised. It's
+it's completely self-s supervised. It's a joint embedding architecture. It's
+a joint embedding architecture. It's
+a joint embedding architecture. It's using distillation but with various
+using distillation but with various
+using distillation but with various tricks which I'm not going to explain.
+tricks which I'm not going to explain.
+tricks which I'm not going to explain. uh there's a lot of engineering that
+uh there's a lot of engineering that
+uh there's a lot of engineering that goes behind it and those systems
+goes behind it and those systems
+goes behind it and those systems basically at at this time produce the
+basically at at this time produce the
+basically at at this time produce the best generic representations of images.
+best generic representations of images.
+best generic representations of images. If you have any type of vision task that
+If you have any type of vision task that
+If you have any type of vision task that you want to to do that's probably the
+you want to to do that's probably the
+you want to to do that's probably the best the best uh the best technique to I
+best the best uh the best technique to I
+best the best uh the best technique to I mean the best encoder for images. Okay.
+mean the best encoder for images. Okay.
+mean the best encoder for images. Okay. But what we've done is uh among the
+But what we've done is uh among the
+But what we've done is uh among the things use dino as an encoder and then
+things use dino as an encoder and then
+things use dino as an encoder and then train a world model and do planning. Let
+train a world model and do planning. Let
+train a world model and do planning. Let me show you just a cute video on this if
+me show you just a cute video on this if
+me show you just a cute video on this if uh if I can. Okay. So you have a initial
+uh if I can. Okay. So you have a initial
+uh if I can. Okay. So you have a initial state here of a kind of simulated
+state here of a kind of simulated
+state here of a kind of simulated environment that has pretty complex
+environment that has pretty complex
+environment that has pretty complex dynamics and you have goals at the top
+dynamics and you have goals at the top
+dynamics and you have goals at the top and at the bottom what you see is the
+and at the bottom what you see is the
+and at the bottom what you see is the sequence of actions of a planner that
+sequence of actions of a planner that
+sequence of actions of a planner that uses this trained world model to get the
+uses this trained world model to get the
+uses this trained world model to get the world to a configuration as close as
+world to a configuration as close as
+world to a configuration as close as possible to the original one in less
+possible to the original one in less
+possible to the original one in less than 25 steps.
+than 25 steps.
+than 25 steps. Um and this uh
+Um and this uh
+Um and this uh has been applied to a number of
+has been applied to a number of
+has been applied to a number of different uh uh scenarios uh like double
+different uh uh scenarios uh like double
+different uh uh scenarios uh like double pendulum and and pushy and whatever. Um
+pendulum and and pushy and whatever. Um
+pendulum and and pushy and whatever. Um now works uh really well. So we
+now works uh really well. So we
+now works uh really well. So we recent more recently applied it to
+recent more recently applied it to
+recent more recently applied it to video. So there you take a video, you
+video. So there you take a video, you
+video. So there you take a video, you mask a big chunk of it and you train the
+mask a big chunk of it and you train the
+mask a big chunk of it and you train the JPEA to again produce a good
+JPEA to again produce a good
+JPEA to again produce a good representations so that you can predict
+representations so that you can predict
+representations so that you can predict the representation a full video from the
+the representation a full video from the
+the representation a full video from the representation a partially masked one.
+representation a partially masked one.
+representation a partially masked one. Once the system is trained, you use the
+Once the system is trained, you use the
+Once the system is trained, you use the encoder as a way to extract features
+encoder as a way to extract features
+encoder as a way to extract features from the video and you train a head on
+from the video and you train a head on
+from the video and you train a head on top of it to uh accomplish some task and
+top of it to uh accomplish some task and
+top of it to uh accomplish some task and it it it works like really well at
+it it it works like really well at
+it it it works like really well at state-of-the-art for a lot of
+state-of-the-art for a lot of
+state-of-the-art for a lot of traditional vision tasks particularly
+traditional vision tasks particularly
+traditional vision tasks particularly from video like action recognition,
+from video like action recognition,
+from video like action recognition, action prediction and stuff like that.
+action prediction and stuff like that.
+action prediction and stuff like that. But one interesting thing that I want to
+But one interesting thing that I want to
+But one interesting thing that I want to mention instead of boring you with a
+mention instead of boring you with a
+mention instead of boring you with a table of results is uh is that those
+table of results is uh is that those
+table of results is uh is that those systems vapa in particular has has
+systems vapa in particular has has
+systems vapa in particular has has learned some level of common sense. So
+learned some level of common sense. So
+learned some level of common sense. So one thing we can do with VJPA because we
+one thing we can do with VJPA because we
+one thing we can do with VJPA because we train it to predict what's going to
+train it to predict what's going to
+train it to predict what's going to happen next in a video. We can train a
+happen next in a video. We can train a
+happen next in a video. We can train a predictor to do that. Uh we can measure
+predictor to do that. Uh we can measure
+predictor to do that. Uh we can measure its internal prediction error. We can
+its internal prediction error. We can
+its internal prediction error. We can show it a video and monitor the internal
+show it a video and monitor the internal
+show it a video and monitor the internal prediction error at every every time
+prediction error at every every time
+prediction error at every every time step. Um this system takes a window of
+step. Um this system takes a window of
+step. Um this system takes a window of 16 frames. Um, so we we just slide those
+16 frames. Um, so we we just slide those
+16 frames. Um, so we we just slide those those frames right on a on a video and
+those frames right on a on a video and
+those frames right on a on a video and measure the prediction error with for
+measure the prediction error with for
+measure the prediction error with for the next 15 16 frames.
+the next 15 16 frames.
+the next 15 16 frames. And the cool thing is that if you show
+And the cool thing is that if you show
+And the cool thing is that if you show it a video where something impossible
+it a video where something impossible
+it a video where something impossible occurs, something unphysical, the
+occurs, something unphysical, the
+occurs, something unphysical, the prediction error shoots to the roof. So
+prediction error shoots to the roof. So
+prediction error shoots to the roof. So it's like the little girl in the one of
+it's like the little girl in the one of
+it's like the little girl in the one of the early slides that you know looks at
+the early slides that you know looks at
+the early slides that you know looks at the scene of the car not falling. Same
+the scene of the car not falling. Same
+the scene of the car not falling. Same thing. Um, you have a video of a a ball
+thing. Um, you have a video of a a ball
+thing. Um, you have a video of a a ball being thrown and the ball disappears.
+being thrown and the ball disappears.
+being thrown and the ball disappears. Prediction error shoots through the
+Prediction error shoots through the
+Prediction error shoots through the roof. Um, so that's interesting because
+roof. Um, so that's interesting because
+roof. Um, so that's interesting because it's the first time, at least from my
+it's the first time, at least from my
+it's the first time, at least from my point of view, that I've seen a
+point of view, that I've seen a
+point of view, that I've seen a completely self-supervised system
+completely self-supervised system
+completely self-supervised system acquire some level of common sense.
+acquire some level of common sense.
+acquire some level of common sense. Tell you what's possible, what's not
+Tell you what's possible, what's not
+Tell you what's possible, what's not possible. Um, let me skip this. It's
+possible. Um, let me skip this. It's
+possible. Um, let me skip this. It's cute but nah it's it just says VJPA can
+cute but nah it's it just says VJPA can
+cute but nah it's it just says VJPA can be used for planning and you know uh
+be used for planning and you know uh
+be used for planning and you know uh this like new versions of this that do a
+this like new versions of this that do a
+this like new versions of this that do a better job at planning and everything
+better job at planning and everything
+better job at planning and everything but here is an interesting thing
+but here is an interesting thing
+but here is an interesting thing remember I told you the way babies
+remember I told you the way babies
+remember I told you the way babies learned that the world is
+learned that the world is
+learned that the world is threedimensional is because it's the
+threedimensional is because it's the
+threedimensional is because it's the best way to explain how you view of the
+best way to explain how you view of the
+best way to explain how you view of the world changes when you move your head
+world changes when you move your head
+world changes when you move your head okay so we took the representation
+okay so we took the representation
+okay so we took the representation learned by some version of VJA called
+learned by some version of VJA called
+learned by some version of VJA called VJA 2.1 and then we train a head on top
+VJA 2.1 and then we train a head on top
+VJA 2.1 and then we train a head on top of it to predict depth from a single
+of it to predict depth from a single
+of it to predict depth from a single image and it does a really good job. Um
+image and it does a really good job. Um
+image and it does a really good job. Um it's it's
+it's it's
+it's it's produced really good results in fact
+produced really good results in fact
+produced really good results in fact better than Dinov3. Uh and
+better than Dinov3. Uh and
+better than Dinov3. Uh and what that shows is that this system by
+what that shows is that this system by
+what that shows is that this system by just being trained
+just being trained
+just being trained to predict to miss you know fill in the
+to predict to miss you know fill in the
+to predict to miss you know fill in the blanks in videos at a representation
+blanks in videos at a representation
+blanks in videos at a representation level basically understands that the
+level basically understands that the
+level basically understands that the world is threedimensional.
+world is threedimensional.
+world is threedimensional. I mean understands with double quotes
+I mean understands with double quotes
+I mean understands with double quotes understands the notion of object. If you
+understands the notion of object. If you
+understands the notion of object. If you use the representation as input to a
+use the representation as input to a
+use the representation as input to a segmentation system, it it works
+segmentation system, it it works
+segmentation system, it it works decently well. Uh and for you know
+decently well. Uh and for you know
+decently well. Uh and for you know various other things. Okay, let me
+various other things. Okay, let me
+various other things. Okay, let me conclude. So
+it's funny, huh?
+it's funny, huh? So abandon generative models.
+I mean if you work on LLM, of course,
+I mean if you work on LLM, of course, but you should not work on LLM.
+but you should not work on LLM.
+but you should not work on LLM. uh at least if you're in academia it
+uh at least if you're in academia it
+uh at least if you're in academia it should absolutely not work in LM there's
+should absolutely not work in LM there's
+should absolutely not work in LM there's nothing you can bring to the table uh so
+nothing you can bring to the table uh so
+nothing you can bring to the table uh so abandon generative model in favor of
+abandon generative model in favor of
+abandon generative model in favor of joint emitting architectures if you are
+joint emitting architectures if you are
+joint emitting architectures if you are interested in you know uh intelligence
+interested in you know uh intelligence
+interested in you know uh intelligence abandon proistic models in favor of
+abandon proistic models in favor of
+abandon proistic models in favor of those energy based models I didn't have
+those energy based models I didn't have
+those energy based models I didn't have time to really kind of explain why uh I
+time to really kind of explain why uh I
+time to really kind of explain why uh I you know I made an argument in favor of
+you know I made an argument in favor of
+you know I made an argument in favor of of those regularized methods or
+of those regularized methods or
+of those regularized methods or information maximiz maximization
+information maximiz maximization
+information maximiz maximization through through variables instead of
+through through variables instead of
+through through variables instead of samples. So I contract methods which
+samples. So I contract methods which
+samples. So I contract methods which again have a lot of practical
+again have a lot of practical
+again have a lot of practical applications. I've I've been saying for
+applications. I've I've been saying for
+applications. I've I've been saying for ever to abandon reinforcement learning.
+ever to abandon reinforcement learning.
+ever to abandon reinforcement learning. I don't really mean abandon. I I mean
+I don't really mean abandon. I I mean
+I don't really mean abandon. I I mean minimize its use because it's so so
+minimize its use because it's so so
+minimize its use because it's so so horribly inefficient in terms of sample
+horribly inefficient in terms of sample
+horribly inefficient in terms of sample efficiency. And I know there are people
+efficiency. And I know there are people
+efficiency. And I know there are people here who work on this but uh but like
+here who work on this but uh but like
+here who work on this but uh but like you know RL is like what you do when
+you know RL is like what you do when
+you know RL is like what you do when you're desperate and there is nothing
+you're desperate and there is nothing
+you're desperate and there is nothing else you can do. Okay, you like you have
+else you can do. Okay, you like you have
+else you can do. Okay, you like you have to do most of the learning you know in
+to do most of the learning you know in
+to do most of the learning you know in by observation
+by observation
+by observation uh you know learning role models blah
+uh you know learning role models blah
+uh you know learning role models blah blah blah and once you have good
+blah blah and once you have good
+blah blah and once you have good representations you know you can use RL
+representations you know you can use RL
+representations you know you can use RL on top of it because you already have
+on top of it because you already have
+on top of it because you already have the good representations
+the good representations
+the good representations uh you you won't require too many
+uh you you won't require too many
+uh you you won't require too many samples sometimes you can't you can
+samples sometimes you can't you can
+samples sometimes you can't you can avoid it uh and certainly if you're
+avoid it uh and certainly if you're
+avoid it uh and certainly if you're interested in making real progress in AI
+interested in making real progress in AI
+interested in making real progress in AI in sort of grounded you know AI for the
+in sort of grounded you know AI for the
+in sort of grounded you know AI for the real world if you want physical AI don't
+real world if you want physical AI don't
+real world if you want physical AI don't work on LLM don't work on generative
+work on LLM don't work on generative
+work on LLM don't work on generative models either. So as you can probably
+models either. So as you can probably
+models either. So as you can probably guess this does not make me very popular
+guess this does not make me very popular
+guess this does not make me very popular in Silicon Valley.
+Um and so I left Meta as many of you
+Um and so I left Meta as many of you probably know at the end of last year
+probably know at the end of last year
+probably know at the end of last year and formed a new company called Emmy
+and formed a new company called Emmy
+and formed a new company called Emmy Labs and the purpose of uh amabs is sort
+Labs and the purpose of uh amabs is sort
+Labs and the purpose of uh amabs is sort of AI for the real world like you know
+of AI for the real world like you know
+of AI for the real world like you know physical AI uh robotics is a use case
+physical AI uh robotics is a use case
+physical AI uh robotics is a use case but it's not just that it's control of
+but it's not just that it's control of
+but it's not just that it's control of industrial processes like anything that
+industrial processes like anything that
+industrial processes like anything that is highdimensional continuous and noisy
+is highdimensional continuous and noisy
+is highdimensional continuous and noisy for which LLMs are completely helpless
+for which LLMs are completely helpless
+for which LLMs are completely helpless um this is the kind of problems we're
+um this is the kind of problems we're
+um this is the kind of problems we're working on.
+working on.
+working on. And that's it. Thank you very much.
+And that's it. Thank you very much.
+And that's it. Thank you very much. [applause]
+Okay. So,
+Okay. So, I know there's many questions. Maybe
+I know there's many questions. Maybe
+I know there's many questions. Maybe we'll take, you know, one or two, but
+we'll take, you know, one or two, but
+we'll take, you know, one or two, but then we have to to wrap up. So, and
+then we have to to wrap up. So, and
+then we have to to wrap up. So, and please quick questions and quick
+please quick questions and quick
+please quick questions and quick answers.
+answers.
+answers. >> Thanks for the talk. Uh I wanted to ask
+>> Thanks for the talk. Uh I wanted to ask
+>> Thanks for the talk. Uh I wanted to ask about the guard rails that you mentioned
+about the guard rails that you mentioned
+about the guard rails that you mentioned on the one of the earlier slides where
+on the one of the earlier slides where
+on the one of the earlier slides where you also talked about MPC. Engineers
+you also talked about MPC. Engineers
+you also talked about MPC. Engineers love MPC because they can put in their
+love MPC because they can put in their
+love MPC because they can put in their constraints describe them in state space
+constraints describe them in state space
+constraints describe them in state space like 3D space. But from what I
+like 3D space. But from what I
+like 3D space. But from what I understand in your uh system everything
+understand in your uh system everything
+understand in your uh system everything works in representation space. How do I
+works in representation space. How do I
+works in representation space. How do I even get a constraint like don't bump
+even get a constraint like don't bump
+even get a constraint like don't bump into the wall into this representation
+into the wall into this representation
+into the wall into this representation space? Do you envision the system
+space? Do you envision the system
+space? Do you envision the system learning the constraints by itself or
+learning the constraints by itself or
+learning the constraints by itself or can engineers really put them in?
+can engineers really put them in?
+can engineers really put them in? >> No, you would have to learn uh a very
+>> No, you would have to learn uh a very
+>> No, you would have to learn uh a very small head on top of your representation
+small head on top of your representation
+small head on top of your representation that maps uh that to your you know the
+that maps uh that to your you know the
+that maps uh that to your you know the constraint that you're interested in. So
+constraint that you're interested in. So
+constraint that you're interested in. So that part has to be trained but you can
+that part has to be trained but you can
+that part has to be trained but you can train it with very small number of
+train it with very small number of
+train it with very small number of samples because it's a tiny basically
+samples because it's a tiny basically
+samples because it's a tiny basically just a projection
+just a projection
+just a projection >> but you need a different encoder for
+>> but you need a different encoder for
+>> but you need a different encoder for each kind of uh constraint that you
+each kind of uh constraint that you
+each kind of uh constraint that you might want to put in. Oh well, you need
+might want to put in. Oh well, you need
+might want to put in. Oh well, you need a different projector for for each
+a different projector for for each
+a different projector for for each conraint, right? So if if your task is
+conraint, right? So if if your task is
+conraint, right? So if if your task is to like open a door, I'm not talking
+to like open a door, I'm not talking
+to like open a door, I'm not talking about constraint. I'm talking about like
+about constraint. I'm talking about like
+about constraint. I'm talking about like a task objective. Uh you need some cost
+a task objective. Uh you need some cost
+a task objective. Uh you need some cost function to tell you like is the door
+function to tell you like is the door
+function to tell you like is the door open or not. Right? And so that might
+open or not. Right? And so that might
+open or not. Right? And so that might have to be trained when you train to
+have to be trained when you train to
+have to be trained when you train to accomplish the task. But basically that
+accomplish the task. But basically that
+accomplish the task. But basically that requires two samples.
+requires two samples.
+requires two samples. >> All right. Thanks.
+>> All right. Thanks.
+>> All right. Thanks. >> Okay. I think we'll have to leave it
+>> Okay. I think we'll have to leave it
+>> Okay. I think we'll have to leave it here. Thank you, Yan, very much.
+here. Thank you, Yan, very much.
+here. Thank you, Yan, very much. >> All right. Thank you. [applause]

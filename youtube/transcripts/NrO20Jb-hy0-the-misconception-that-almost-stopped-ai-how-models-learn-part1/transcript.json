@@ -1,0 +1,3160 @@
+{
+  "segments": [
+    {
+      "start": 0.16,
+      "end": 5.04,
+      "text": "This is the loss landscape of Meta's"
+    },
+    {
+      "start": 2.24,
+      "end": 7.359,
+      "text": "Llama 3.2 large language model."
+    },
+    {
+      "start": 5.04,
+      "end": 9.599,
+      "text": "Virtually all modern AI models learn by"
+    },
+    {
+      "start": 7.359,
+      "end": 11.28,
+      "text": "gradient descent. Visually, this looks"
+    },
+    {
+      "start": 9.599,
+      "end": 13.2,
+      "text": "like starting at a random location on"
+    },
+    {
+      "start": 11.28,
+      "end": 15.36,
+      "text": "our landscape and working our way"
+    },
+    {
+      "start": 13.2,
+      "end": 18.16,
+      "text": "downhill towards lower loss, higher"
+    },
+    {
+      "start": 15.36,
+      "end": 20.0,
+      "text": "performance solutions. But how does our"
+    },
+    {
+      "start": 18.16,
+      "end": 22.8,
+      "text": "model avoid getting stuck in local"
+    },
+    {
+      "start": 20.0,
+      "end": 25.039,
+      "text": "valleys like this one? This question"
+    },
+    {
+      "start": 22.8,
+      "end": 27.599,
+      "text": "stopped many early AI pioneers in their"
+    },
+    {
+      "start": 25.039,
+      "end": 29.92,
+      "text": "tracks. Jeff Hinton, who would go on to"
+    },
+    {
+      "start": 27.599,
+      "end": 32.719,
+      "text": "win the Nobel Prize in 2024 for his work"
+    },
+    {
+      "start": 29.92,
+      "end": 34.559,
+      "text": "in AI, initially entirely dismissed"
+    },
+    {
+      "start": 32.719,
+      "end": 37.0,
+      "text": "training neural networks like llama with"
+    },
+    {
+      "start": 34.559,
+      "end": 39.6,
+      "text": "gradient descent for exactly this"
+    },
+    {
+      "start": 37.0,
+      "end": 41.2,
+      "text": "reason. Of course, as we now know,"
+    },
+    {
+      "start": 39.6,
+      "end": 43.84,
+      "text": "gradient descent actually works"
+    },
+    {
+      "start": 41.2,
+      "end": 45.92,
+      "text": "unbelievably well. What understanding"
+    },
+    {
+      "start": 43.84,
+      "end": 48.879,
+      "text": "was Hinton missing? And what's wrong"
+    },
+    {
+      "start": 45.92,
+      "end": 50.719,
+      "text": "with our picture? In this series, we'll"
+    },
+    {
+      "start": 48.879,
+      "end": 53.0,
+      "text": "take a fresh look at how AI models"
+    },
+    {
+      "start": 50.719,
+      "end": 55.76,
+      "text": "learn. Starting with a visual first"
+    },
+    {
+      "start": 53.0,
+      "end": 57.719,
+      "text": "approach, we'll dig into how exactly our"
+    },
+    {
+      "start": 55.76,
+      "end": 60.16,
+      "text": "llama model learns from real training"
+    },
+    {
+      "start": 57.719,
+      "end": 62.559,
+      "text": "examples, what our loss landscape can"
+    },
+    {
+      "start": 60.16,
+      "end": 64.4,
+      "text": "and can't show us, and ultimately see"
+    },
+    {
+      "start": 62.559,
+      "end": 66.479,
+      "text": "why gradient descent for large models"
+    },
+    {
+      "start": 64.4,
+      "end": 69.2,
+      "text": "looks more like falling into a wormhole"
+    },
+    {
+      "start": 66.479,
+      "end": 70.56,
+      "text": "than it does simply heading downhill. In"
+    },
+    {
+      "start": 69.2,
+      "end": 72.72,
+      "text": "part two, we'll switch to a more"
+    },
+    {
+      "start": 70.56,
+      "end": 73.92,
+      "text": "math-driven approach, which will help us"
+    },
+    {
+      "start": 72.72,
+      "end": 75.92,
+      "text": "grapple with the incredibly"
+    },
+    {
+      "start": 73.92,
+      "end": 78.159,
+      "text": "high-dimensional spaces these models"
+    },
+    {
+      "start": 75.92,
+      "end": 79.759,
+      "text": "operate in."
+    },
+    {
+      "start": 78.159,
+      "end": 81.119,
+      "text": "Researching this series, I found some"
+    },
+    {
+      "start": 79.759,
+      "end": 83.439,
+      "text": "really interesting visualization"
+    },
+    {
+      "start": 81.119,
+      "end": 85.28,
+      "text": "techniques that required some deep focus"
+    },
+    {
+      "start": 83.439,
+      "end": 87.28,
+      "text": "time to get my head around, which this"
+    },
+    {
+      "start": 85.28,
+      "end": 89.439,
+      "text": "video sponsor, Incogn has really helped"
+    },
+    {
+      "start": 87.28,
+      "end": 91.68,
+      "text": "me with. I've been an Incogn customer"
+    },
+    {
+      "start": 89.439,
+      "end": 94.4,
+      "text": "for 6 months now and continue to be"
+    },
+    {
+      "start": 91.68,
+      "end": 96.799,
+      "text": "blown away by how many fewer spam texts,"
+    },
+    {
+      "start": 94.4,
+      "end": 99.28,
+      "text": "calls, and emails I get, giving me more"
+    },
+    {
+      "start": 96.799,
+      "end": 101.439,
+      "text": "quality focus time. The way Incogn does"
+    },
+    {
+      "start": 99.28,
+      "end": 103.2,
+      "text": "this is really impressive. After signing"
+    },
+    {
+      "start": 101.439,
+      "end": 104.72,
+      "text": "up for an account, you give Incogn"
+    },
+    {
+      "start": 103.2,
+      "end": 106.64,
+      "text": "permission to work on your behalf to"
+    },
+    {
+      "start": 104.72,
+      "end": 108.64,
+      "text": "contact data brokers to remove your"
+    },
+    {
+      "start": 106.64,
+      "end": 111.119,
+      "text": "data, which brokers are generally"
+    },
+    {
+      "start": 108.64,
+      "end": 112.88,
+      "text": "legally obligated to do upon request."
+    },
+    {
+      "start": 111.119,
+      "end": 115.04,
+      "text": "From here, you get this great dashboard"
+    },
+    {
+      "start": 112.88,
+      "end": 117.439,
+      "text": "that tracks all the removal requests in"
+    },
+    {
+      "start": 115.04,
+      "end": 119.6,
+      "text": "progress. It's really impressive and"
+    },
+    {
+      "start": 117.439,
+      "end": 121.2,
+      "text": "always working in the background. When I"
+    },
+    {
+      "start": 119.6,
+      "end": 123.6,
+      "text": "checked in at the end of last year, my"
+    },
+    {
+      "start": 121.2,
+      "end": 125.759,
+      "text": "data had been removed from 115 different"
+    },
+    {
+      "start": 123.6,
+      "end": 127.439,
+      "text": "data brokers, and the count is now up to"
+    },
+    {
+      "start": 125.759,
+      "end": 129.28,
+      "text": "220."
+    },
+    {
+      "start": 127.439,
+      "end": 131.44,
+      "text": "I really value the control over my"
+    },
+    {
+      "start": 129.28,
+      "end": 133.04,
+      "text": "personal data that Incogn gives me. In"
+    },
+    {
+      "start": 131.44,
+      "end": 135.28,
+      "text": "the United States, we have these people"
+    },
+    {
+      "start": 133.04,
+      "end": 137.44,
+      "text": "search sites where for a small fee,"
+    },
+    {
+      "start": 135.28,
+      "end": 139.599,
+      "text": "anyone can look up information about you"
+    },
+    {
+      "start": 137.44,
+      "end": 141.36,
+      "text": "like your address, email, phone number,"
+    },
+    {
+      "start": 139.599,
+      "end": 143.84,
+      "text": "education, employment history, court"
+    },
+    {
+      "start": 141.36,
+      "end": 145.68,
+      "text": "records, and social media accounts. This"
+    },
+    {
+      "start": 143.84,
+      "end": 147.64,
+      "text": "gives you an idea of all the information"
+    },
+    {
+      "start": 145.68,
+      "end": 150.0,
+      "text": "that data brokers are able to gather and"
+    },
+    {
+      "start": 147.64,
+      "end": 151.52,
+      "text": "sell. I signed up for an account on one"
+    },
+    {
+      "start": 150.0,
+      "end": 154.319,
+      "text": "of these people search sites after being"
+    },
+    {
+      "start": 151.52,
+      "end": 156.16,
+      "text": "an incogn for a couple of months. And"
+    },
+    {
+      "start": 154.319,
+      "end": 158.8,
+      "text": "impressively, I wasn't able to find any"
+    },
+    {
+      "start": 156.16,
+      "end": 161.76,
+      "text": "records of myself. You can get a great"
+    },
+    {
+      "start": 158.8,
+      "end": 163.76,
+      "text": "deal on Incogn 60% off an annual plan by"
+    },
+    {
+      "start": 161.76,
+      "end": 166.16,
+      "text": "using the code Welch Labs or following"
+    },
+    {
+      "start": 163.76,
+      "end": 167.599,
+      "text": "the link in the description below. It's"
+    },
+    {
+      "start": 166.16,
+      "end": 170.319,
+      "text": "been a while since I've made a"
+    },
+    {
+      "start": 167.599,
+      "end": 171.84,
+      "text": "multi-part series like this. Huge thank"
+    },
+    {
+      "start": 170.319,
+      "end": 174.08,
+      "text": "you to Incogn for helping make this"
+    },
+    {
+      "start": 171.84,
+      "end": 176.8,
+      "text": "series possible and helping me get more"
+    },
+    {
+      "start": 174.08,
+      "end": 179.12,
+      "text": "quality focus time as I work on it. Now,"
+    },
+    {
+      "start": 176.8,
+      "end": 181.76,
+      "text": "back to how AI models learn explained"
+    },
+    {
+      "start": 179.12,
+      "end": 184.4,
+      "text": "visually. Let's begin by experimenting"
+    },
+    {
+      "start": 181.76,
+      "end": 188.0,
+      "text": "with a real large language model. Meta's"
+    },
+    {
+      "start": 184.4,
+      "end": 190.159,
+      "text": "Llama 3.2 1.2 billion parameter model."
+    },
+    {
+      "start": 188.0,
+      "end": 192.4,
+      "text": "Given a sequence of text models like"
+    },
+    {
+      "start": 190.159,
+      "end": 194.159,
+      "text": "llama and chatgpt are trained to predict"
+    },
+    {
+      "start": 192.4,
+      "end": 196.72,
+      "text": "the word or word fragment known as a"
+    },
+    {
+      "start": 194.159,
+      "end": 198.959,
+      "text": "token that comes next. When training on"
+    },
+    {
+      "start": 196.72,
+      "end": 201.519,
+      "text": "the text the capital of Francis Paris,"
+    },
+    {
+      "start": 198.959,
+      "end": 204.159,
+      "text": "for example, this text is tokenized into"
+    },
+    {
+      "start": 201.519,
+      "end": 207.12,
+      "text": "six tokens, each represented by a single"
+    },
+    {
+      "start": 204.159,
+      "end": 208.959,
+      "text": "number and passed into our model. For"
+    },
+    {
+      "start": 207.12,
+      "end": 210.799,
+      "text": "each input token, our llama model"
+    },
+    {
+      "start": 208.959,
+      "end": 213.159,
+      "text": "returns a prediction of what token will"
+    },
+    {
+      "start": 210.799,
+      "end": 215.36,
+      "text": "come next in the form of a vector of"
+    },
+    {
+      "start": 213.159,
+      "end": 217.68,
+      "text": "probabilities. So when we pass in the"
+    },
+    {
+      "start": 215.36,
+      "end": 220.72,
+      "text": "six tokens for the capital of France's"
+    },
+    {
+      "start": 217.68,
+      "end": 223.4,
+      "text": "Paris, our model returns six vectors"
+    },
+    {
+      "start": 220.72,
+      "end": 225.92,
+      "text": "each of length"
+    },
+    {
+      "start": 223.4,
+      "end": 227.799,
+      "text": "128,256 with one predicted probability"
+    },
+    {
+      "start": 225.92,
+      "end": 230.799,
+      "text": "value for each of the"
+    },
+    {
+      "start": 227.799,
+      "end": 232.72,
+      "text": "128,256 tokens in Llama's vocabulary."
+    },
+    {
+      "start": 230.799,
+      "end": 234.04,
+      "text": "Our fifth vector has a maximum"
+    },
+    {
+      "start": 232.72,
+      "end": 236.92,
+      "text": "probability of"
+    },
+    {
+      "start": 234.04,
+      "end": 239.439,
+      "text": "0.39 at index"
+    },
+    {
+      "start": 236.92,
+      "end": 241.84,
+      "text": "12,366 which corresponds to the token"
+    },
+    {
+      "start": 239.439,
+      "end": 244.879,
+      "text": "for Paris. So our model is assigning a"
+    },
+    {
+      "start": 241.84,
+      "end": 248.08,
+      "text": "39% probability to Paris as the token"
+    },
+    {
+      "start": 244.879,
+      "end": 249.84,
+      "text": "that follows the capital of France is"
+    },
+    {
+      "start": 248.08,
+      "end": 251.68,
+      "text": "the next most likely token according to"
+    },
+    {
+      "start": 249.84,
+      "end": 253.08,
+      "text": "the model is the word a with a"
+    },
+    {
+      "start": 251.68,
+      "end": 255.439,
+      "text": "probability of"
+    },
+    {
+      "start": 253.08,
+      "end": 257.28,
+      "text": "8.4%. This could lead to sentences like"
+    },
+    {
+      "start": 255.439,
+      "end": 260.16,
+      "text": "the capital of France is a beautiful"
+    },
+    {
+      "start": 257.28,
+      "end": 261.759,
+      "text": "place to visit. During training, the"
+    },
+    {
+      "start": 260.16,
+      "end": 263.28,
+      "text": "model's predicted probabilities at each"
+    },
+    {
+      "start": 261.759,
+      "end": 266.4,
+      "text": "position are compared to the correct"
+    },
+    {
+      "start": 263.28,
+      "end": 268.16,
+      "text": "next token from the training text. So at"
+    },
+    {
+      "start": 266.4,
+      "end": 270.479,
+      "text": "the first position, our model is trained"
+    },
+    {
+      "start": 268.16,
+      "end": 272.0,
+      "text": "to predict the token for capital. And at"
+    },
+    {
+      "start": 270.479,
+      "end": 273.88,
+      "text": "our fifth position, the model is trained"
+    },
+    {
+      "start": 272.0,
+      "end": 276.16,
+      "text": "to predict the token for"
+    },
+    {
+      "start": 273.88,
+      "end": 278.24,
+      "text": "Paris. From here, we need some way to"
+    },
+    {
+      "start": 276.16,
+      "end": 280.0,
+      "text": "measure how well our model is working."
+    },
+    {
+      "start": 278.24,
+      "end": 282.4,
+      "text": "The metric we choose here will guide the"
+    },
+    {
+      "start": 280.0,
+      "end": 284.479,
+      "text": "learning process. One option is to"
+    },
+    {
+      "start": 282.4,
+      "end": 286.4,
+      "text": "directly measure the model's error by"
+    },
+    {
+      "start": 284.479,
+      "end": 288.96,
+      "text": "taking one minus the model's predicted"
+    },
+    {
+      "start": 286.4,
+      "end": 290.96,
+      "text": "probability of the correct next token."
+    },
+    {
+      "start": 288.96,
+      "end": 292.88,
+      "text": "In the fifth position, for example, if"
+    },
+    {
+      "start": 290.96,
+      "end": 294.24,
+      "text": "the model predicted the token of Paris"
+    },
+    {
+      "start": 292.88,
+      "end": 297.28,
+      "text": "completely confidently with a"
+    },
+    {
+      "start": 294.24,
+      "end": 300.08,
+      "text": "probability of 1.0, our error would be 1"
+    },
+    {
+      "start": 297.28,
+      "end": 302.479,
+      "text": "- 1 equals 0. If the model's predicted"
+    },
+    {
+      "start": 300.08,
+      "end": 306.16,
+      "text": "probability dropped to 0.9, our error"
+    },
+    {
+      "start": 302.479,
+      "end": 308.96,
+      "text": "would increase to 1 minus 0.9als 0.1 and"
+    },
+    {
+      "start": 306.16,
+      "end": 311.12,
+      "text": "so on. This metric is known as the L1"
+    },
+    {
+      "start": 308.96,
+      "end": 313.199,
+      "text": "loss. And as we'll see when we look at"
+    },
+    {
+      "start": 311.12,
+      "end": 315.32,
+      "text": "the mathematics of backpropagation, it"
+    },
+    {
+      "start": 313.199,
+      "end": 317.44,
+      "text": "has a very important role to play in"
+    },
+    {
+      "start": 315.32,
+      "end": 318.56,
+      "text": "learning. However, it turns out that"
+    },
+    {
+      "start": 317.44,
+      "end": 320.479,
+      "text": "models are able to learn more"
+    },
+    {
+      "start": 318.56,
+      "end": 323.6,
+      "text": "effectively if we instead use a function"
+    },
+    {
+      "start": 320.479,
+      "end": 325.6,
+      "text": "called cross entropy loss. To compute"
+    },
+    {
+      "start": 323.6,
+      "end": 327.52,
+      "text": "the cross entropy loss, instead of"
+    },
+    {
+      "start": 325.6,
+      "end": 329.759,
+      "text": "taking one minus the model's predicted"
+    },
+    {
+      "start": 327.52,
+      "end": 331.68,
+      "text": "probability of the correct next token,"
+    },
+    {
+      "start": 329.759,
+      "end": 333.759,
+      "text": "we instead take the negative logarithm"
+    },
+    {
+      "start": 331.68,
+      "end": 336.96,
+      "text": "of this probability. This ends up"
+    },
+    {
+      "start": 333.759,
+      "end": 338.56,
+      "text": "looking similar to our L1 loss. If the"
+    },
+    {
+      "start": 336.96,
+      "end": 340.8,
+      "text": "model's probability of the correct next"
+    },
+    {
+      "start": 338.56,
+      "end": 342.8,
+      "text": "token is one, our cross entropy loss"
+    },
+    {
+      "start": 340.8,
+      "end": 346.4,
+      "text": "equals minus the log of one, which"
+    },
+    {
+      "start": 342.8,
+      "end": 347.919,
+      "text": "equals 0, matching our L1 loss. If the"
+    },
+    {
+      "start": 346.4,
+      "end": 351.12,
+      "text": "model's probability of the correct next"
+    },
+    {
+      "start": 347.919,
+      "end": 354.52,
+      "text": "token drops to 0.9, our L1 loss equals"
+    },
+    {
+      "start": 351.12,
+      "end": 356.639,
+      "text": "0.1 and our cross entropy loss equals"
+    },
+    {
+      "start": 354.52,
+      "end": 360.32,
+      "text": "0.105. And if the model's probability"
+    },
+    {
+      "start": 356.639,
+      "end": 363.44,
+      "text": "drops to 0.8, our L1 loss equals 0.2 and"
+    },
+    {
+      "start": 360.32,
+      "end": 365.36,
+      "text": "our cross entropy loss equals 0.223."
+    },
+    {
+      "start": 363.44,
+      "end": 367.039,
+      "text": "The key difference here is that as our"
+    },
+    {
+      "start": 365.36,
+      "end": 369.199,
+      "text": "model becomes less and less confident in"
+    },
+    {
+      "start": 367.039,
+      "end": 372.4,
+      "text": "the right answer, our cross entropy loss"
+    },
+    {
+      "start": 369.199,
+      "end": 374.0,
+      "text": "shoots up, penalizing our model more."
+    },
+    {
+      "start": 372.4,
+      "end": 376.319,
+      "text": "Large language model training is"
+    },
+    {
+      "start": 374.0,
+      "end": 379.44,
+      "text": "entirely driven by reducing this cross"
+    },
+    {
+      "start": 376.319,
+      "end": 382.0,
+      "text": "entropy loss. Now, how do we actually"
+    },
+    {
+      "start": 379.44,
+      "end": 384.24,
+      "text": "use this loss to make our model better?"
+    },
+    {
+      "start": 382.0,
+      "end": 386.08,
+      "text": "And how can we visualize the process?"
+    },
+    {
+      "start": 384.24,
+      "end": 389.199,
+      "text": "Our model's current parameters give a"
+    },
+    {
+      "start": 386.08,
+      "end": 391.52,
+      "text": "probability of 0.39 for a next token of"
+    },
+    {
+      "start": 389.199,
+      "end": 392.759,
+      "text": "Paris, leading to a cross entropy loss"
+    },
+    {
+      "start": 391.52,
+      "end": 394.8,
+      "text": "of"
+    },
+    {
+      "start": 392.759,
+      "end": 396.96,
+      "text": "0.94. Note that we would typically"
+    },
+    {
+      "start": 394.8,
+      "end": 399.52,
+      "text": "compute our loss at each token position"
+    },
+    {
+      "start": 396.96,
+      "end": 401.199,
+      "text": "and average the results. But for now,"
+    },
+    {
+      "start": 399.52,
+      "end": 402.96,
+      "text": "let's focus exclusively on training our"
+    },
+    {
+      "start": 401.199,
+      "end": 405.52,
+      "text": "model to be more confident in a next"
+    },
+    {
+      "start": 402.96,
+      "end": 409.039,
+      "text": "token of Paris at the fifth position. So"
+    },
+    {
+      "start": 405.52,
+      "end": 410.72,
+      "text": "our total cross entropy loss is 0.94."
+    },
+    {
+      "start": 409.039,
+      "end": 412.72,
+      "text": "Now, how do we adjust our model"
+    },
+    {
+      "start": 410.72,
+      "end": 415.16,
+      "text": "parameters to increase the model's"
+    },
+    {
+      "start": 412.72,
+      "end": 418.0,
+      "text": "confidence in Paris and bring down this"
+    },
+    {
+      "start": 415.16,
+      "end": 420.479,
+      "text": "loss? Our llama model follows a fairly"
+    },
+    {
+      "start": 418.0,
+      "end": 422.8,
+      "text": "standard transformer architecture. It's"
+    },
+    {
+      "start": 420.479,
+      "end": 424.96,
+      "text": "composed of 16 layers, each containing"
+    },
+    {
+      "start": 422.8,
+      "end": 427.199,
+      "text": "an attention and multi-layer perceptron"
+    },
+    {
+      "start": 424.96,
+      "end": 428.88,
+      "text": "compute block. In this video, we won't"
+    },
+    {
+      "start": 427.199,
+      "end": 431.759,
+      "text": "be too concerned with how these layers"
+    },
+    {
+      "start": 428.88,
+      "end": 434.08,
+      "text": "work. A helpful and increasingly true"
+    },
+    {
+      "start": 431.759,
+      "end": 436.96,
+      "text": "mental model here is to think of our"
+    },
+    {
+      "start": 434.08,
+      "end": 439.599,
+      "text": "whole transformer as a single function f"
+    },
+    {
+      "start": 436.96,
+      "end": 441.919,
+      "text": "that takes in our input text x and uses"
+    },
+    {
+      "start": 439.599,
+      "end": 444.479,
+      "text": "its parameters theta to compute the next"
+    },
+    {
+      "start": 441.919,
+      "end": 446.319,
+      "text": "token probabilities. We'll explore how"
+    },
+    {
+      "start": 444.479,
+      "end": 448.639,
+      "text": "our model's output changes as we change"
+    },
+    {
+      "start": 446.319,
+      "end": 450.8,
+      "text": "our model's parameters. And as we'll"
+    },
+    {
+      "start": 448.639,
+      "end": 453.68,
+      "text": "see, doing this in a structured way is"
+    },
+    {
+      "start": 450.8,
+      "end": 455.599,
+      "text": "precisely how these models learn. Let's"
+    },
+    {
+      "start": 453.68,
+      "end": 457.52,
+      "text": "start by visualizing the impact of just"
+    },
+    {
+      "start": 455.599,
+      "end": 460.24,
+      "text": "one of our 1.2 2 billion model"
+    },
+    {
+      "start": 457.52,
+      "end": 462.24,
+      "text": "parameters on our model's output. The"
+    },
+    {
+      "start": 460.24,
+      "end": 464.4,
+      "text": "multi-layer perceptron compute block in"
+    },
+    {
+      "start": 462.24,
+      "end": 465.72,
+      "text": "the model's final layer has around 50"
+    },
+    {
+      "start": 464.4,
+      "end": 467.84,
+      "text": "million total"
+    },
+    {
+      "start": 465.72,
+      "end": 469.599,
+      "text": "parameters. We'll pick out one of these"
+    },
+    {
+      "start": 467.84,
+      "end": 472.0,
+      "text": "parameters and see how it impacts our"
+    },
+    {
+      "start": 469.599,
+      "end": 474.599,
+      "text": "model's final output. Our parameter's"
+    },
+    {
+      "start": 472.0,
+      "end": 477.039,
+      "text": "current value"
+    },
+    {
+      "start": 474.599,
+      "end": 478.36,
+      "text": "is0.007. Let's decrease this parameter's"
+    },
+    {
+      "start": 477.039,
+      "end": 480.8,
+      "text": "value by"
+    },
+    {
+      "start": 478.36,
+      "end": 482.72,
+      "text": "0.01. Rerun our input text through our"
+    },
+    {
+      "start": 480.8,
+      "end": 485.44,
+      "text": "model and see how our predictions and"
+    },
+    {
+      "start": 482.72,
+      "end": 487.599,
+      "text": "loss change. Our model's predicted"
+    },
+    {
+      "start": 485.44,
+      "end": 489.72,
+      "text": "probability of a final token of Paris"
+    },
+    {
+      "start": 487.599,
+      "end": 492.28,
+      "text": "moves down a little from"
+    },
+    {
+      "start": 489.72,
+      "end": 494.56,
+      "text": "0.3916 to"
+    },
+    {
+      "start": 492.28,
+      "end": 496.479,
+      "text": "0.3901. Testing a change in the other"
+    },
+    {
+      "start": 494.56,
+      "end": 499.199,
+      "text": "direction, increasing our parameters"
+    },
+    {
+      "start": 496.479,
+      "end": 501.16,
+      "text": "value by 0.01 moves up our model's"
+    },
+    {
+      "start": 499.199,
+      "end": 503.759,
+      "text": "confidence to"
+    },
+    {
+      "start": 501.16,
+      "end": 505.84,
+      "text": "0.3930. So for this single parameter and"
+    },
+    {
+      "start": 503.759,
+      "end": 507.44,
+      "text": "for this example text, we know that we"
+    },
+    {
+      "start": 505.84,
+      "end": 509.12,
+      "text": "can make our model more confident in the"
+    },
+    {
+      "start": 507.44,
+      "end": 511.84,
+      "text": "right answer by increasing this"
+    },
+    {
+      "start": 509.12,
+      "end": 514.159,
+      "text": "parameter's value. But by how much"
+    },
+    {
+      "start": 511.84,
+      "end": 515.919,
+      "text": "should we increase it? Can we make the"
+    },
+    {
+      "start": 514.159,
+      "end": 518.64,
+      "text": "model more confident in the right answer"
+    },
+    {
+      "start": 515.919,
+      "end": 521.12,
+      "text": "by further increasing this parameter?"
+    },
+    {
+      "start": 518.64,
+      "end": 522.959,
+      "text": "Extending and visualizing this idea, we"
+    },
+    {
+      "start": 521.12,
+      "end": 524.64,
+      "text": "can test more values and plot our"
+    },
+    {
+      "start": 522.959,
+      "end": 526.88,
+      "text": "model's output probability for a range"
+    },
+    {
+      "start": 524.64,
+      "end": 528.959,
+      "text": "of values of our parameter and see a"
+    },
+    {
+      "start": 526.88,
+      "end": 530.839,
+      "text": "nice parabola-ish looking curve as a"
+    },
+    {
+      "start": 528.959,
+      "end": 533.04,
+      "text": "function of the value of this single"
+    },
+    {
+      "start": 530.839,
+      "end": 535.2,
+      "text": "parameter. As we've seen, our cross"
+    },
+    {
+      "start": 533.04,
+      "end": 537.68,
+      "text": "entropy loss is the negative logarithm"
+    },
+    {
+      "start": 535.2,
+      "end": 539.36,
+      "text": "of these output probability values."
+    },
+    {
+      "start": 537.68,
+      "end": 541.36,
+      "text": "Computing and visualizing these loss"
+    },
+    {
+      "start": 539.36,
+      "end": 543.92,
+      "text": "values, we get a flipped version of our"
+    },
+    {
+      "start": 541.36,
+      "end": 545.44,
+      "text": "parabola. These results suggest that we"
+    },
+    {
+      "start": 543.92,
+      "end": 547.44,
+      "text": "can maximize our model's predicted"
+    },
+    {
+      "start": 545.44,
+      "end": 549.519,
+      "text": "probability of the correct answer and"
+    },
+    {
+      "start": 547.44,
+      "end": 551.24,
+      "text": "minimize our loss by setting our"
+    },
+    {
+      "start": 549.519,
+      "end": 553.44,
+      "text": "parameter to around"
+    },
+    {
+      "start": 551.24,
+      "end": 555.519,
+      "text": "1.61. We could then walk through each"
+    },
+    {
+      "start": 553.44,
+      "end": 557.839,
+      "text": "parameter one at a time, applying the"
+    },
+    {
+      "start": 555.519,
+      "end": 560.72,
+      "text": "same analysis and setting each parameter"
+    },
+    {
+      "start": 557.839,
+      "end": 563.519,
+      "text": "to minimize our output loss. Let's see"
+    },
+    {
+      "start": 560.72,
+      "end": 565.36,
+      "text": "visually why this idea does not work."
+    },
+    {
+      "start": 563.519,
+      "end": 568.24,
+      "text": "After setting our first parameter theta"
+    },
+    {
+      "start": 565.36,
+      "end": 569.92,
+      "text": "1 to a value of 1.61 61 to maximize our"
+    },
+    {
+      "start": 568.24,
+      "end": 572.48,
+      "text": "model's confidence in the Paris token"
+    },
+    {
+      "start": 569.92,
+      "end": 574.64,
+      "text": "and minimize our loss. If we move to a"
+    },
+    {
+      "start": 572.48,
+      "end": 576.88,
+      "text": "second parameter, we can again test a"
+    },
+    {
+      "start": 574.64,
+      "end": 578.48,
+      "text": "range of values and set the second"
+    },
+    {
+      "start": 576.88,
+      "end": 581.88,
+      "text": "parameter theta 2 to the value that"
+    },
+    {
+      "start": 578.48,
+      "end": 585.2,
+      "text": "minimizes our loss. In this case,"
+    },
+    {
+      "start": 581.88,
+      "end": 587.44,
+      "text": "1.76. Now, here's the problem. If we"
+    },
+    {
+      "start": 585.2,
+      "end": 589.399,
+      "text": "return to our first parameter, which we"
+    },
+    {
+      "start": 587.44,
+      "end": 592.72,
+      "text": "already tested and set to a value of"
+    },
+    {
+      "start": 589.399,
+      "end": 595.76,
+      "text": "1.61, and run the same analysis, the"
+    },
+    {
+      "start": 592.72,
+      "end": 598.0,
+      "text": "shape of our curve changes. It now looks"
+    },
+    {
+      "start": 595.76,
+      "end": 600.88,
+      "text": "like a value of 1.11 will actually"
+    },
+    {
+      "start": 598.0,
+      "end": 603.56,
+      "text": "minimize our loss. The impacts of each"
+    },
+    {
+      "start": 600.88,
+      "end": 605.6,
+      "text": "parameter on our model's output are not"
+    },
+    {
+      "start": 603.56,
+      "end": 607.36,
+      "text": "independent. Changing the value of our"
+    },
+    {
+      "start": 605.6,
+      "end": 610.24,
+      "text": "second parameter changes the shape of"
+    },
+    {
+      "start": 607.36,
+      "end": 611.519,
+      "text": "our first loss curve and vice versa. So,"
+    },
+    {
+      "start": 610.24,
+      "end": 613.68,
+      "text": "we aren't going to be able to learn"
+    },
+    {
+      "start": 611.519,
+      "end": 616.399,
+      "text": "effectively by tuning one parameter at a"
+    },
+    {
+      "start": 613.68,
+      "end": 618.16,
+      "text": "time like this. We can see this visually"
+    },
+    {
+      "start": 616.399,
+      "end": 620.48,
+      "text": "by testing how our loss changes as we"
+    },
+    {
+      "start": 618.16,
+      "end": 622.24,
+      "text": "vary our parameter values together."
+    },
+    {
+      "start": 620.48,
+      "end": 623.6,
+      "text": "testing a grid of values and plotting"
+    },
+    {
+      "start": 622.24,
+      "end": 626.399,
+      "text": "our loss for each combination of"
+    },
+    {
+      "start": 623.6,
+      "end": 627.92,
+      "text": "parameters as the height of a surface."
+    },
+    {
+      "start": 626.399,
+      "end": 630.56,
+      "text": "It's now straightforward to see what"
+    },
+    {
+      "start": 627.92,
+      "end": 632.959,
+      "text": "went wrong earlier. If we only consider"
+    },
+    {
+      "start": 630.56,
+      "end": 635.519,
+      "text": "our first parameter, we're effectively"
+    },
+    {
+      "start": 632.959,
+      "end": 637.6,
+      "text": "looking at a slice like this. Moving to"
+    },
+    {
+      "start": 635.519,
+      "end": 639.44,
+      "text": "the bottom of this curve and then tuning"
+    },
+    {
+      "start": 637.6,
+      "end": 641.839,
+      "text": "our second parameter, we're now looking"
+    },
+    {
+      "start": 639.44,
+      "end": 643.839,
+      "text": "at a slice like this. When we move to"
+    },
+    {
+      "start": 641.839,
+      "end": 645.6,
+      "text": "the bottom of this second curve, we"
+    },
+    {
+      "start": 643.839,
+      "end": 647.76,
+      "text": "reach a new location on our lost"
+    },
+    {
+      "start": 645.6,
+      "end": 649.279,
+      "text": "landscape where we're no longer at the"
+    },
+    {
+      "start": 647.76,
+      "end": 651.76,
+      "text": "bottom of a valley in the direction of"
+    },
+    {
+      "start": 649.279,
+      "end": 653.92,
+      "text": "our first parameter. In this two"
+    },
+    {
+      "start": 651.76,
+      "end": 655.44,
+      "text": "parameter visualization, it is easy to"
+    },
+    {
+      "start": 653.92,
+      "end": 658.32,
+      "text": "see which combination of parameter"
+    },
+    {
+      "start": 655.44,
+      "end": 659.839,
+      "text": "values minimize our overall loss. We"
+    },
+    {
+      "start": 658.32,
+      "end": 662.24,
+      "text": "just need to set our two parameters to"
+    },
+    {
+      "start": 659.839,
+      "end": 664.079,
+      "text": "the values at the bottom of the bowl. We"
+    },
+    {
+      "start": 662.24,
+      "end": 666.24,
+      "text": "now have an optimal solution in both"
+    },
+    {
+      "start": 664.079,
+      "end": 668.32,
+      "text": "directions with respect to these two"
+    },
+    {
+      "start": 666.24,
+      "end": 670.24,
+      "text": "parameters."
+    },
+    {
+      "start": 668.32,
+      "end": 671.92,
+      "text": "Now, of course, it's not just these two"
+    },
+    {
+      "start": 670.24,
+      "end": 674.24,
+      "text": "parameters that are coupled."
+    },
+    {
+      "start": 671.92,
+      "end": 676.959,
+      "text": "Effectively, all 1.2 billion parameters"
+    },
+    {
+      "start": 674.24,
+      "end": 679.36,
+      "text": "of our model R. Meaning that our loss"
+    },
+    {
+      "start": 676.959,
+      "end": 680.8,
+      "text": "landscape is actually 1.2 billion"
+    },
+    {
+      "start": 679.36,
+      "end": 682.959,
+      "text": "dimensional. And that it's"
+    },
+    {
+      "start": 680.8,
+      "end": 684.8,
+      "text": "computationally impossible to explore"
+    },
+    {
+      "start": 682.959,
+      "end": 687.76,
+      "text": "all combinations of parameters as we did"
+    },
+    {
+      "start": 684.8,
+      "end": 689.92,
+      "text": "with our two test parameters. If we test"
+    },
+    {
+      "start": 687.76,
+      "end": 692.079,
+      "text": "20 values for each parameter, testing"
+    },
+    {
+      "start": 689.92,
+      "end": 694.24,
+      "text": "two parameters, as we just did, requires"
+    },
+    {
+      "start": 692.079,
+      "end": 695.92,
+      "text": "400 evaluations."
+    },
+    {
+      "start": 694.24,
+      "end": 698.399,
+      "text": "Testing three parameters together is"
+    },
+    {
+      "start": 695.92,
+      "end": 701.92,
+      "text": "equivalent to testing all 8,000 values"
+    },
+    {
+      "start": 698.399,
+      "end": 704.48,
+      "text": "in a 20x 20x 20 cube. And testing all"
+    },
+    {
+      "start": 701.92,
+      "end": 706.959,
+      "text": "1.2 billion model parameters like this"
+    },
+    {
+      "start": 704.48,
+      "end": 709.24,
+      "text": "would require an astronomical 20 to the"
+    },
+    {
+      "start": 706.959,
+      "end": 711.68,
+      "text": "power of 1.2 billion"
+    },
+    {
+      "start": 709.24,
+      "end": 714.399,
+      "text": "calculations. We need a far more"
+    },
+    {
+      "start": 711.68,
+      "end": 716.64,
+      "text": "scalable approach. Returning to our"
+    },
+    {
+      "start": 714.399,
+      "end": 718.48,
+      "text": "two-dimensional loss landscape, is there"
+    },
+    {
+      "start": 716.64,
+      "end": 720.079,
+      "text": "a way to find the bottom of the valley"
+    },
+    {
+      "start": 718.48,
+      "end": 722.64,
+      "text": "without computing the height of every"
+    },
+    {
+      "start": 720.079,
+      "end": 724.399,
+      "text": "point in the landscape?"
+    },
+    {
+      "start": 722.64,
+      "end": 726.079,
+      "text": "If you were lost in a forest on a"
+    },
+    {
+      "start": 724.399,
+      "end": 728.48,
+      "text": "mountain trying to find your way to the"
+    },
+    {
+      "start": 726.079,
+      "end": 730.16,
+      "text": "valley below without a map, a pretty"
+    },
+    {
+      "start": 728.48,
+      "end": 732.56,
+      "text": "reasonable thing to do is to just keep"
+    },
+    {
+      "start": 730.16,
+      "end": 735.519,
+      "text": "heading downhill. Even if you can't see"
+    },
+    {
+      "start": 732.56,
+      "end": 738.399,
+      "text": "the valley below, we can effectively do"
+    },
+    {
+      "start": 735.519,
+      "end": 740.16,
+      "text": "this mathematically. For each parameter,"
+    },
+    {
+      "start": 738.399,
+      "end": 742.24,
+      "text": "instead of computing the loss across a"
+    },
+    {
+      "start": 740.16,
+      "end": 744.8,
+      "text": "range of values, we can compute the"
+    },
+    {
+      "start": 742.24,
+      "end": 746.8,
+      "text": "slope of the loss curve, telling us"
+    },
+    {
+      "start": 744.8,
+      "end": 749.68,
+      "text": "which way is downhill in each direction"
+    },
+    {
+      "start": 746.8,
+      "end": 751.68,
+      "text": "and how steep the descent is."
+    },
+    {
+      "start": 749.68,
+      "end": 753.8,
+      "text": "As we'll see in part two, it turns out"
+    },
+    {
+      "start": 751.68,
+      "end": 755.76,
+      "text": "that we can compute these slopes very"
+    },
+    {
+      "start": 753.8,
+      "end": 757.76,
+      "text": "efficiently. We won't even have to"
+    },
+    {
+      "start": 755.76,
+      "end": 760.24,
+      "text": "compute the actual values of our loss"
+    },
+    {
+      "start": 757.76,
+      "end": 762.32,
+      "text": "curve at all. From here, we can put our"
+    },
+    {
+      "start": 760.24,
+      "end": 764.399,
+      "text": "slopes together into a single vector"
+    },
+    {
+      "start": 762.32,
+      "end": 767.2,
+      "text": "called the gradient, which acts like a"
+    },
+    {
+      "start": 764.399,
+      "end": 768.56,
+      "text": "little compass that points us downhill."
+    },
+    {
+      "start": 767.2,
+      "end": 770.399,
+      "text": "Note that technically the gradient"
+    },
+    {
+      "start": 768.56,
+      "end": 772.639,
+      "text": "points uphill, and we move in the"
+    },
+    {
+      "start": 770.399,
+      "end": 774.88,
+      "text": "opposite direction to go downhill. We'll"
+    },
+    {
+      "start": 772.639,
+      "end": 777.2,
+      "text": "see why this is the case in part two."
+    },
+    {
+      "start": 774.88,
+      "end": 779.92,
+      "text": "The idea now is to take small iterative"
+    },
+    {
+      "start": 777.2,
+      "end": 781.68,
+      "text": "steps downhill where after each step we"
+    },
+    {
+      "start": 779.92,
+      "end": 783.76,
+      "text": "recomputee the gradient to guide our"
+    },
+    {
+      "start": 781.68,
+      "end": 786.24,
+      "text": "next step. This is known as gradient"
+    },
+    {
+      "start": 783.76,
+      "end": 789.12,
+      "text": "descent and is how virtually all modern"
+    },
+    {
+      "start": 786.24,
+      "end": 791.12,
+      "text": "AI models learn by taking small steps"
+    },
+    {
+      "start": 789.12,
+      "end": 794.0,
+      "text": "downhill. In practice, we're often able"
+    },
+    {
+      "start": 791.12,
+      "end": 796.32,
+      "text": "to find very good solutions even in very"
+    },
+    {
+      "start": 794.0,
+      "end": 798.2,
+      "text": "high-dimensional loss landscapes that we"
+    },
+    {
+      "start": 796.32,
+      "end": 800.16,
+      "text": "could never fully explore"
+    },
+    {
+      "start": 798.2,
+      "end": 802.48,
+      "text": "computationally. It's of course a little"
+    },
+    {
+      "start": 800.16,
+      "end": 804.48,
+      "text": "difficult to visualize the 1.2 two"
+    },
+    {
+      "start": 802.48,
+      "end": 806.48,
+      "text": "billiondimensional loss landscape of our"
+    },
+    {
+      "start": 804.48,
+      "end": 807.519,
+      "text": "language model and what going downhill"
+    },
+    {
+      "start": 806.48,
+      "end": 810.639,
+      "text": "really looks like in this"
+    },
+    {
+      "start": 807.519,
+      "end": 812.72,
+      "text": "high-dimensional space. One approach we"
+    },
+    {
+      "start": 810.639,
+      "end": 814.959,
+      "text": "can try here is to choose a random"
+    },
+    {
+      "start": 812.72,
+      "end": 816.88,
+      "text": "direction in our high-dimensional space"
+    },
+    {
+      "start": 814.959,
+      "end": 819.68,
+      "text": "and measure our loss as we take small"
+    },
+    {
+      "start": 816.88,
+      "end": 821.2,
+      "text": "steps in that direction. Note that here"
+    },
+    {
+      "start": 819.68,
+      "end": 824.16,
+      "text": "choosing a random direction means"
+    },
+    {
+      "start": 821.2,
+      "end": 826.72,
+      "text": "generating 1.2 billion random numbers,"
+    },
+    {
+      "start": 824.16,
+      "end": 828.639,
+      "text": "one for each model parameter. And taking"
+    },
+    {
+      "start": 826.72,
+      "end": 830.88,
+      "text": "a small step in this direction means"
+    },
+    {
+      "start": 828.639,
+      "end": 833.519,
+      "text": "multiplying these 1.2 to billion random"
+    },
+    {
+      "start": 830.88,
+      "end": 835.12,
+      "text": "numbers by a small scaling factor and"
+    },
+    {
+      "start": 833.519,
+      "end": 837.56,
+      "text": "adding these scaled random numbers to"
+    },
+    {
+      "start": 835.12,
+      "end": 840.16,
+      "text": "our weights and then recomputing our"
+    },
+    {
+      "start": 837.56,
+      "end": 841.839,
+      "text": "loss. As we move further in our random"
+    },
+    {
+      "start": 840.16,
+      "end": 844.16,
+      "text": "direction by increasing our scaling"
+    },
+    {
+      "start": 841.839,
+      "end": 846.32,
+      "text": "factor, we can compute our loss at each"
+    },
+    {
+      "start": 844.16,
+      "end": 849.519,
+      "text": "step and see how this combination of"
+    },
+    {
+      "start": 846.32,
+      "end": 851.199,
+      "text": "model weights impacts our loss. Note"
+    },
+    {
+      "start": 849.519,
+      "end": 852.72,
+      "text": "that this is almost exactly what we do"
+    },
+    {
+      "start": 851.199,
+      "end": 854.88,
+      "text": "when training our model with gradient"
+    },
+    {
+      "start": 852.72,
+      "end": 857.04,
+      "text": "descent, except here we're choosing our"
+    },
+    {
+      "start": 854.88,
+      "end": 858.839,
+      "text": "direction randomly instead of using the"
+    },
+    {
+      "start": 857.04,
+      "end": 861.04,
+      "text": "downhill direction from our gradient"
+    },
+    {
+      "start": 858.839,
+      "end": 862.56,
+      "text": "computation. Choosing a random direction"
+    },
+    {
+      "start": 861.04,
+      "end": 864.72,
+      "text": "like this will hopefully give us a"
+    },
+    {
+      "start": 862.56,
+      "end": 866.72,
+      "text": "broader feel for what our loss landscape"
+    },
+    {
+      "start": 864.72,
+      "end": 868.399,
+      "text": "looks like. Here's what the loss"
+    },
+    {
+      "start": 866.72,
+      "end": 870.079,
+      "text": "landscape for our llama model looks like"
+    },
+    {
+      "start": 868.399,
+      "end": 871.519,
+      "text": "as we move in a randomly chosen"
+    },
+    {
+      "start": 870.079,
+      "end": 873.199,
+      "text": "direction."
+    },
+    {
+      "start": 871.519,
+      "end": 874.639,
+      "text": "Exploring our high-dimensional lost"
+    },
+    {
+      "start": 873.199,
+      "end": 876.959,
+      "text": "landscape in this way reveals"
+    },
+    {
+      "start": 874.639,
+      "end": 878.839,
+      "text": "interesting structures with hills,"
+    },
+    {
+      "start": 876.959,
+      "end": 881.279,
+      "text": "valleys, cliffs, and"
+    },
+    {
+      "start": 878.839,
+      "end": 883.079,
+      "text": "plateaus. Here's the loss landscape in a"
+    },
+    {
+      "start": 881.279,
+      "end": 885.36,
+      "text": "second randomly chosen"
+    },
+    {
+      "start": 883.079,
+      "end": 887.32,
+      "text": "direction. These two plots are for a"
+    },
+    {
+      "start": 885.36,
+      "end": 889.68,
+      "text": "randomly initialized model before"
+    },
+    {
+      "start": 887.32,
+      "end": 891.079,
+      "text": "training. Here's two more plots for our"
+    },
+    {
+      "start": 889.68,
+      "end": 893.519,
+      "text": "model after"
+    },
+    {
+      "start": 891.079,
+      "end": 895.36,
+      "text": "training. With our trained model, we can"
+    },
+    {
+      "start": 893.519,
+      "end": 897.44,
+      "text": "clearly see the lower loss value the"
+    },
+    {
+      "start": 895.36,
+      "end": 899.279,
+      "text": "model has learned through training. Note"
+    },
+    {
+      "start": 897.44,
+      "end": 902.079,
+      "text": "that we're using positive and negative"
+    },
+    {
+      "start": 899.279,
+      "end": 903.839,
+      "text": "values for our step size alpha. So our"
+    },
+    {
+      "start": 902.079,
+      "end": 906.8,
+      "text": "unmodified model weights show up here at"
+    },
+    {
+      "start": 903.839,
+      "end": 908.32,
+      "text": "alpha equals zero on our plot. Finally,"
+    },
+    {
+      "start": 906.8,
+      "end": 910.8,
+      "text": "it can be interesting to confine our"
+    },
+    {
+      "start": 908.32,
+      "end": 912.32,
+      "text": "random directions to certain layers."
+    },
+    {
+      "start": 910.8,
+      "end": 914.399,
+      "text": "Here's what our loss landscape looks"
+    },
+    {
+      "start": 912.32,
+      "end": 916.72,
+      "text": "like as we explore two random directions"
+    },
+    {
+      "start": 914.399,
+      "end": 919.839,
+      "text": "in the first eight layers of our train"
+    },
+    {
+      "start": 916.72,
+      "end": 921.44,
+      "text": "models total 16 layers."
+    },
+    {
+      "start": 919.839,
+      "end": 923.12,
+      "text": "We can take this approach one step"
+    },
+    {
+      "start": 921.44,
+      "end": 925.76,
+      "text": "further by putting these two random"
+    },
+    {
+      "start": 923.12,
+      "end": 927.68,
+      "text": "directions together onto a 2D grid and"
+    },
+    {
+      "start": 925.76,
+      "end": 930.44,
+      "text": "computing our loss for combinations of"
+    },
+    {
+      "start": 927.68,
+      "end": 932.639,
+      "text": "steps in each of our two random"
+    },
+    {
+      "start": 930.44,
+      "end": 934.48,
+      "text": "directions. We can now visualize our"
+    },
+    {
+      "start": 932.639,
+      "end": 936.44,
+      "text": "loss landscape as we explore these two"
+    },
+    {
+      "start": 934.48,
+      "end": 939.04,
+      "text": "random directions"
+    },
+    {
+      "start": 936.44,
+      "end": 941.12,
+      "text": "together. Now imagine navigating this"
+    },
+    {
+      "start": 939.04,
+      "end": 942.68,
+      "text": "loss landscape from the perspective of"
+    },
+    {
+      "start": 941.12,
+      "end": 945.44,
+      "text": "our gradient descent"
+    },
+    {
+      "start": 942.68,
+      "end": 947.839,
+      "text": "algorithm. Before training, our model's"
+    },
+    {
+      "start": 945.44,
+      "end": 949.68,
+      "text": "parameters are randomly initialized,"
+    },
+    {
+      "start": 947.839,
+      "end": 952.399,
+      "text": "meaning we're effectively dropped into a"
+    },
+    {
+      "start": 949.68,
+      "end": 954.24,
+      "text": "random location in this landscape. From"
+    },
+    {
+      "start": 952.399,
+      "end": 956.24,
+      "text": "here, our job is to navigate our way to"
+    },
+    {
+      "start": 954.24,
+      "end": 958.88,
+      "text": "the bottom of the valley, ideally the"
+    },
+    {
+      "start": 956.24,
+      "end": 961.12,
+      "text": "global minimum here. But our only guide"
+    },
+    {
+      "start": 958.88,
+      "end": 963.199,
+      "text": "is the gradient, which only tells us"
+    },
+    {
+      "start": 961.12,
+      "end": 964.56,
+      "text": "which way is downhill in the tiny local"
+    },
+    {
+      "start": 963.199,
+      "end": 967.839,
+      "text": "part of the landscape that we're"
+    },
+    {
+      "start": 964.56,
+      "end": 970.16,
+      "text": "currently on. A baffling fact about"
+    },
+    {
+      "start": 967.839,
+      "end": 972.0,
+      "text": "modern AI and one of the reasons many"
+    },
+    {
+      "start": 970.16,
+      "end": 974.56,
+      "text": "early AI researchers dismiss this"
+    },
+    {
+      "start": 972.0,
+      "end": 976.399,
+      "text": "approach is that there's no guarantee"
+    },
+    {
+      "start": 974.56,
+      "end": 978.16,
+      "text": "that gradient descent will find the best"
+    },
+    {
+      "start": 976.399,
+      "end": 980.88,
+      "text": "or even a good solution in these"
+    },
+    {
+      "start": 978.16,
+      "end": 982.72,
+      "text": "high-dimensional loss landscapes. This"
+    },
+    {
+      "start": 980.88,
+      "end": 984.959,
+      "text": "view of our landscape has many local"
+    },
+    {
+      "start": 982.72,
+      "end": 986.279,
+      "text": "minima where gradient descent could"
+    },
+    {
+      "start": 984.959,
+      "end": 988.639,
+      "text": "potentially get"
+    },
+    {
+      "start": 986.279,
+      "end": 991.04,
+      "text": "stuck. But remember, even with our"
+    },
+    {
+      "start": 988.639,
+      "end": 992.72,
+      "text": "clever random direction probing trick,"
+    },
+    {
+      "start": 991.04,
+      "end": 996.279,
+      "text": "we're still looking at a two-dimensional"
+    },
+    {
+      "start": 992.72,
+      "end": 998.72,
+      "text": "shadow of a 1.2 two billiondimensional"
+    },
+    {
+      "start": 996.279,
+      "end": 1000.48,
+      "text": "landscape. If we actually run gradient"
+    },
+    {
+      "start": 998.72,
+      "end": 1002.56,
+      "text": "descent and train our model on our"
+    },
+    {
+      "start": 1000.48,
+      "end": 1004.16,
+      "text": "example text, we might imagine that"
+    },
+    {
+      "start": 1002.56,
+      "end": 1006.399,
+      "text": "learning looks like our parameters as a"
+    },
+    {
+      "start": 1004.16,
+      "end": 1008.399,
+      "text": "point working its way downhill in the"
+    },
+    {
+      "start": 1006.399,
+      "end": 1010.24,
+      "text": "landscape. And maybe the fact that the"
+    },
+    {
+      "start": 1008.399,
+      "end": 1012.32,
+      "text": "real optimization process is higher"
+    },
+    {
+      "start": 1010.24,
+      "end": 1014.24,
+      "text": "dimensional means that gradient descent"
+    },
+    {
+      "start": 1012.32,
+      "end": 1016.639,
+      "text": "can avoid getting stuck in local minima"
+    },
+    {
+      "start": 1014.24,
+      "end": 1018.24,
+      "text": "like this one. This was roughly the"
+    },
+    {
+      "start": 1016.639,
+      "end": 1020.72,
+      "text": "mental image I had in my head when I"
+    },
+    {
+      "start": 1018.24,
+      "end": 1022.8,
+      "text": "started working on this video. But after"
+    },
+    {
+      "start": 1020.72,
+      "end": 1025.48,
+      "text": "some experimentation, I realized this is"
+    },
+    {
+      "start": 1022.8,
+      "end": 1028.079,
+      "text": "really not what happens as our model"
+    },
+    {
+      "start": 1025.48,
+      "end": 1030.4,
+      "text": "learns. The reason is that as soon as we"
+    },
+    {
+      "start": 1028.079,
+      "end": 1032.079,
+      "text": "take even a small step in the full"
+    },
+    {
+      "start": 1030.4,
+      "end": 1033.919,
+      "text": "high-dimensional space of our model's"
+    },
+    {
+      "start": 1032.079,
+      "end": 1036.52,
+      "text": "parameters, our two-dimensional"
+    },
+    {
+      "start": 1033.919,
+      "end": 1038.48,
+      "text": "visualization of the landscape changes"
+    },
+    {
+      "start": 1036.52,
+      "end": 1040.559,
+      "text": "dramatically. Visually, as we run"
+    },
+    {
+      "start": 1038.48,
+      "end": 1042.799,
+      "text": "gradient descent, it almost looks like a"
+    },
+    {
+      "start": 1040.559,
+      "end": 1044.799,
+      "text": "wormhole opens up in our landscape,"
+    },
+    {
+      "start": 1042.799,
+      "end": 1047.439,
+      "text": "quickly landing our parameters in a very"
+    },
+    {
+      "start": 1044.799,
+      "end": 1049.919,
+      "text": "low loss valley that basically comes out"
+    },
+    {
+      "start": 1047.439,
+      "end": 1051.52,
+      "text": "of nowhere. And this all happens before"
+    },
+    {
+      "start": 1049.919,
+      "end": 1053.919,
+      "text": "our little dot even has a chance to"
+    },
+    {
+      "start": 1051.52,
+      "end": 1055.28,
+      "text": "really go anywhere on our landscape. It"
+    },
+    {
+      "start": 1053.919,
+      "end": 1057.039,
+      "text": "does move a little in the direction of"
+    },
+    {
+      "start": 1055.28,
+      "end": 1058.36,
+      "text": "the global minimum, but not enough to"
+    },
+    {
+      "start": 1057.039,
+      "end": 1060.84,
+      "text": "notice on our"
+    },
+    {
+      "start": 1058.36,
+      "end": 1062.96,
+      "text": "visualization. What exactly is going on"
+    },
+    {
+      "start": 1060.84,
+      "end": 1064.96,
+      "text": "here? Now, right now, we're just"
+    },
+    {
+      "start": 1062.96,
+      "end": 1067.679,
+      "text": "training on the single phrase. The"
+    },
+    {
+      "start": 1064.96,
+      "end": 1069.28,
+      "text": "capital of France is Paris. These new"
+    },
+    {
+      "start": 1067.679,
+      "end": 1071.12,
+      "text": "learned parameters quickly boost our"
+    },
+    {
+      "start": 1069.28,
+      "end": 1074.4,
+      "text": "model's probability for a next token of"
+    },
+    {
+      "start": 1071.12,
+      "end": 1077.28,
+      "text": "Paris close to a max value of 1.0 and"
+    },
+    {
+      "start": 1074.4,
+      "end": 1078.799,
+      "text": "bring down our loss close to zero. Of"
+    },
+    {
+      "start": 1077.28,
+      "end": 1080.72,
+      "text": "course, just training a large language"
+    },
+    {
+      "start": 1078.799,
+      "end": 1082.44,
+      "text": "model on a single short phrase is not"
+    },
+    {
+      "start": 1080.72,
+      "end": 1084.32,
+      "text": "how these models are trained in"
+    },
+    {
+      "start": 1082.44,
+      "end": 1086.24,
+      "text": "practice. Let's look at the same"
+    },
+    {
+      "start": 1084.32,
+      "end": 1087.679,
+      "text": "visualization, but where our model is"
+    },
+    {
+      "start": 1086.24,
+      "end": 1090.24,
+      "text": "instead trained on examples from the"
+    },
+    {
+      "start": 1087.679,
+      "end": 1092.08,
+      "text": "Wiki text data set. We'll use a batch"
+    },
+    {
+      "start": 1090.24,
+      "end": 1094.64,
+      "text": "size of four, meaning we're learning"
+    },
+    {
+      "start": 1092.08,
+      "end": 1096.64,
+      "text": "from four different examples at once."
+    },
+    {
+      "start": 1094.64,
+      "end": 1098.88,
+      "text": "Our loss landscape becomes smoother."
+    },
+    {
+      "start": 1096.64,
+      "end": 1101.12,
+      "text": "Now, this makes sense because our loss"
+    },
+    {
+      "start": 1098.88,
+      "end": 1103.039,
+      "text": "is now averaged across all of the tokens"
+    },
+    {
+      "start": 1101.12,
+      "end": 1105.36,
+      "text": "in our batch."
+    },
+    {
+      "start": 1103.039,
+      "end": 1107.6,
+      "text": "When we take a gradient descent step, we"
+    },
+    {
+      "start": 1105.36,
+      "end": 1109.84,
+      "text": "see our loss landscape move down around"
+    },
+    {
+      "start": 1107.6,
+      "end": 1112.32,
+      "text": "our starting point. Just as we saw in"
+    },
+    {
+      "start": 1109.84,
+      "end": 1114.16,
+      "text": "our Paris example, this shows our model"
+    },
+    {
+      "start": 1112.32,
+      "end": 1116.88,
+      "text": "reducing the loss and performing better"
+    },
+    {
+      "start": 1114.16,
+      "end": 1118.88,
+      "text": "on the examples in this batch. When we"
+    },
+    {
+      "start": 1116.88,
+      "end": 1121.36,
+      "text": "switch to the next batch of data, the"
+    },
+    {
+      "start": 1118.88,
+      "end": 1123.2,
+      "text": "shape of our loss landscape changes and"
+    },
+    {
+      "start": 1121.36,
+      "end": 1126.0,
+      "text": "the gains we made from the last batch"
+    },
+    {
+      "start": 1123.2,
+      "end": 1128.08,
+      "text": "partially disappear. Step by step like"
+    },
+    {
+      "start": 1126.0,
+      "end": 1129.679,
+      "text": "this, our gradient descent algorithm"
+    },
+    {
+      "start": 1128.08,
+      "end": 1132.0,
+      "text": "will work its way towards a good"
+    },
+    {
+      "start": 1129.679,
+      "end": 1134.72,
+      "text": "solution and our visualized landscape"
+    },
+    {
+      "start": 1132.0,
+      "end": 1137.44,
+      "text": "changes as the model learns. In both"
+    },
+    {
+      "start": 1134.72,
+      "end": 1139.36,
+      "text": "cases, our 2D visualized loss landscape"
+    },
+    {
+      "start": 1137.44,
+      "end": 1141.12,
+      "text": "changes as we learn because we're"
+    },
+    {
+      "start": 1139.36,
+      "end": 1143.12,
+      "text": "effectively looking out in our randomly"
+    },
+    {
+      "start": 1141.12,
+      "end": 1145.32,
+      "text": "chosen directions from a new vantage"
+    },
+    {
+      "start": 1143.12,
+      "end": 1147.52,
+      "text": "point in high-dimensional"
+    },
+    {
+      "start": 1145.32,
+      "end": 1149.44,
+      "text": "space. This is analogous to our"
+    },
+    {
+      "start": 1147.52,
+      "end": 1151.28,
+      "text": "exploration of our model's loss earlier"
+    },
+    {
+      "start": 1149.44,
+      "end": 1153.84,
+      "text": "as we varied a single parameter and then"
+    },
+    {
+      "start": 1151.28,
+      "end": 1155.44,
+      "text": "varied two parameters together. Let's"
+    },
+    {
+      "start": 1153.84,
+      "end": 1157.2,
+      "text": "imagine for a moment that we're only"
+    },
+    {
+      "start": 1155.44,
+      "end": 1160.0,
+      "text": "able to visualize our loss with respect"
+    },
+    {
+      "start": 1157.2,
+      "end": 1161.76,
+      "text": "to one of our two parameters. Our loss"
+    },
+    {
+      "start": 1160.0,
+      "end": 1163.32,
+      "text": "may look something like this curve with"
+    },
+    {
+      "start": 1161.76,
+      "end": 1165.44,
+      "text": "respect to our first"
+    },
+    {
+      "start": 1163.32,
+      "end": 1167.36,
+      "text": "parameter. Now, if we run gradient"
+    },
+    {
+      "start": 1165.44,
+      "end": 1170.16,
+      "text": "descent, where we're moving in the full"
+    },
+    {
+      "start": 1167.36,
+      "end": 1171.44,
+      "text": "2D space of both parameters, our entire"
+    },
+    {
+      "start": 1170.16,
+      "end": 1173.84,
+      "text": "curve with respect to the first"
+    },
+    {
+      "start": 1171.44,
+      "end": 1175.6,
+      "text": "parameter changes. We're effectively"
+    },
+    {
+      "start": 1173.84,
+      "end": 1178.559,
+      "text": "moving to a different slice of our full"
+    },
+    {
+      "start": 1175.6,
+      "end": 1181.039,
+      "text": "2D loss surface. If there happens to be"
+    },
+    {
+      "start": 1178.559,
+      "end": 1182.4,
+      "text": "a nice valley close to us, but the only"
+    },
+    {
+      "start": 1181.039,
+      "end": 1184.559,
+      "text": "way to get there is to move in the"
+    },
+    {
+      "start": 1182.4,
+      "end": 1186.48,
+      "text": "direction of our second parameter, we"
+    },
+    {
+      "start": 1184.559,
+      "end": 1188.4,
+      "text": "won't see it at all in our initial 1D"
+    },
+    {
+      "start": 1186.48,
+      "end": 1190.48,
+      "text": "visualization with respect to our first"
+    },
+    {
+      "start": 1188.4,
+      "end": 1192.08,
+      "text": "parameter. And when we do find it with"
+    },
+    {
+      "start": 1190.48,
+      "end": 1194.799,
+      "text": "gradient descent, it will appear to come"
+    },
+    {
+      "start": 1192.08,
+      "end": 1196.24,
+      "text": "out of nowhere in our 1D visualization,"
+    },
+    {
+      "start": 1194.799,
+      "end": 1199.52,
+      "text": "much like our wormhole came out of"
+    },
+    {
+      "start": 1196.24,
+      "end": 1201.84,
+      "text": "nowhere in our full visualization."
+    },
+    {
+      "start": 1199.52,
+      "end": 1203.44,
+      "text": "The wormhole example is a bit extreme"
+    },
+    {
+      "start": 1201.84,
+      "end": 1205.52,
+      "text": "because we're only training on a single"
+    },
+    {
+      "start": 1203.44,
+      "end": 1206.559,
+      "text": "short phrase, but it does tell us"
+    },
+    {
+      "start": 1205.52,
+      "end": 1208.32,
+      "text": "something interesting about the"
+    },
+    {
+      "start": 1206.559,
+      "end": 1211.039,
+      "text": "high-dimensional loss landscapes we're"
+    },
+    {
+      "start": 1208.32,
+      "end": 1212.96,
+      "text": "trying to visualize and understand. In"
+    },
+    {
+      "start": 1211.039,
+      "end": 1214.799,
+      "text": "this example, there are very good"
+    },
+    {
+      "start": 1212.96,
+      "end": 1217.52,
+      "text": "solutions very close to us in"
+    },
+    {
+      "start": 1214.799,
+      "end": 1219.039,
+      "text": "high-dimensional space. We just can't see"
+    },
+    {
+      "start": 1217.52,
+      "end": 1220.96,
+      "text": "them until we compute our full"
+    },
+    {
+      "start": 1219.039,
+      "end": 1223.679,
+      "text": "high-dimensional gradient and move in"
+    },
+    {
+      "start": 1220.96,
+      "end": 1225.6,
+      "text": "that direction. When Jeff Hinton did"
+    },
+    {
+      "start": 1223.679,
+      "end": 1226.96,
+      "text": "eventually try out gradient descent"
+    },
+    {
+      "start": 1225.6,
+      "end": 1229.039,
+      "text": "after getting stuck with another"
+    },
+    {
+      "start": 1226.96,
+      "end": 1230.799,
+      "text": "approach called Boltzmann machines, he"
+    },
+    {
+      "start": 1229.039,
+      "end": 1233.039,
+      "text": "tested it on a model with around 50"
+    },
+    {
+      "start": 1230.799,
+      "end": 1235.52,
+      "text": "parameters and was shocked by how well"
+    },
+    {
+      "start": 1233.039,
+      "end": 1237.679,
+      "text": "it worked. For gradient descent to"
+    },
+    {
+      "start": 1235.52,
+      "end": 1239.2,
+      "text": "become fully stuck in a local minimum,"
+    },
+    {
+      "start": 1237.679,
+      "end": 1241.52,
+      "text": "it would have to get stuck in every"
+    },
+    {
+      "start": 1239.2,
+      "end": 1243.039,
+      "text": "dimension at once. And the chances of"
+    },
+    {
+      "start": 1241.52,
+      "end": 1245.0,
+      "text": "this happening become smaller and"
+    },
+    {
+      "start": 1243.039,
+      "end": 1247.36,
+      "text": "smaller as we add more and more"
+    },
+    {
+      "start": 1245.0,
+      "end": 1249.039,
+      "text": "parameters. For simple two parameter"
+    },
+    {
+      "start": 1247.36,
+      "end": 1251.52,
+      "text": "models, as we see in problems like"
+    },
+    {
+      "start": 1249.039,
+      "end": 1253.84,
+      "text": "linear regression, loss landscapes give"
+    },
+    {
+      "start": 1251.52,
+      "end": 1256.039,
+      "text": "us a complete picture and can provide"
+    },
+    {
+      "start": 1253.84,
+      "end": 1258.4,
+      "text": "helpful intuition for how these models"
+    },
+    {
+      "start": 1256.039,
+      "end": 1260.36,
+      "text": "learn. However, as our models become"
+    },
+    {
+      "start": 1258.4,
+      "end": 1262.4,
+      "text": "more and more complex with more and more"
+    },
+    {
+      "start": 1260.36,
+      "end": 1264.24,
+      "text": "parameters, our loss landscape"
+    },
+    {
+      "start": 1262.4,
+      "end": 1266.559,
+      "text": "visualizations become a more and more"
+    },
+    {
+      "start": 1264.24,
+      "end": 1269.039,
+      "text": "distant shadow of the model's true"
+    },
+    {
+      "start": 1266.559,
+      "end": 1271.28,
+      "text": "learning process. As we'll see next"
+    },
+    {
+      "start": 1269.039,
+      "end": 1273.28,
+      "text": "time, although our ability to visualize"
+    },
+    {
+      "start": 1271.28,
+      "end": 1274.96,
+      "text": "these landscapes becomes more and more"
+    },
+    {
+      "start": 1273.28,
+      "end": 1277.36,
+      "text": "limited as we add more and more"
+    },
+    {
+      "start": 1274.96,
+      "end": 1279.36,
+      "text": "dimensions, our mathematics has no"
+    },
+    {
+      "start": 1277.36,
+      "end": 1282.24,
+      "text": "problem operating in these incredibly"
+    },
+    {
+      "start": 1279.36,
+      "end": 1282.24,
+      "text": "high-dimensional"
+    },
+    {
+      "start": 1282.84,
+      "end": 1287.039,
+      "text": "landscapes. If you're curious about lost"
+    },
+    {
+      "start": 1285.28,
+      "end": 1289.6,
+      "text": "landscapes, check out this video's"
+    },
+    {
+      "start": 1287.039,
+      "end": 1291.36,
+      "text": "poster. This is a new, larger format"
+    },
+    {
+      "start": 1289.6,
+      "end": 1293.6,
+      "text": "that I haven't been able to do before at"
+    },
+    {
+      "start": 1291.36,
+      "end": 1295.36,
+      "text": "this high level of print quality. And I"
+    },
+    {
+      "start": 1293.6,
+      "end": 1296.96,
+      "text": "spent way too much compute time"
+    },
+    {
+      "start": 1295.36,
+      "end": 1299.2,
+      "text": "exploring the landscapes of different"
+    },
+    {
+      "start": 1296.96,
+      "end": 1300.72,
+      "text": "models for the poster. Top and center,"
+    },
+    {
+      "start": 1299.2,
+      "end": 1302.4,
+      "text": "you'll find the llama 1 billion"
+    },
+    {
+      "start": 1300.72,
+      "end": 1304.48,
+      "text": "parameter landscape that we covered in"
+    },
+    {
+      "start": 1302.4,
+      "end": 1307.2,
+      "text": "this video. To the left, I have a"
+    },
+    {
+      "start": 1304.48,
+      "end": 1309.679,
+      "text": "simpler model, GPT2, which results in a"
+    },
+    {
+      "start": 1307.2,
+      "end": 1311.039,
+      "text": "smoother and simpler landscape. In the"
+    },
+    {
+      "start": 1309.679,
+      "end": 1313.36,
+      "text": "upper right, you'll find a distilled"
+    },
+    {
+      "start": 1311.039,
+      "end": 1315.44,
+      "text": "version of Deepseek R1, which"
+    },
+    {
+      "start": 1313.36,
+      "end": 1318.08,
+      "text": "interestingly has larger smooth areas"
+    },
+    {
+      "start": 1315.44,
+      "end": 1320.32,
+      "text": "than Llama. This may be because Deepseek"
+    },
+    {
+      "start": 1318.08,
+      "end": 1321.919,
+      "text": "has been instruction tuned. It also"
+    },
+    {
+      "start": 1320.32,
+      "end": 1324.159,
+      "text": "generates a much higher confidence out"
+    },
+    {
+      "start": 1321.919,
+      "end": 1327.039,
+      "text": "of the box for a next token of Paris"
+    },
+    {
+      "start": 1324.159,
+      "end": 1329.76,
+      "text": "around 70%. On the bottom row, you'll"
+    },
+    {
+      "start": 1327.039,
+      "end": 1331.919,
+      "text": "find GEMO 1B. This is a smaller open-"
+    },
+    {
+      "start": 1329.76,
+      "end": 1333.44,
+      "text": "source version of Google's Gemini model."
+    },
+    {
+      "start": 1331.919,
+      "end": 1335.2,
+      "text": "And on the bottom right, I've included a"
+    },
+    {
+      "start": 1333.44,
+      "end": 1337.52,
+      "text": "couple variants of the popular Quinn"
+    },
+    {
+      "start": 1335.2,
+      "end": 1339.96,
+      "text": "models. It's again interesting here to"
+    },
+    {
+      "start": 1337.52,
+      "end": 1341.76,
+      "text": "compare instruction tuning versus just"
+    },
+    {
+      "start": 1339.96,
+      "end": 1343.44,
+      "text": "pre-training. On the bottom of the"
+    },
+    {
+      "start": 1341.76,
+      "end": 1345.36,
+      "text": "poster, I've included some key figures"
+    },
+    {
+      "start": 1343.44,
+      "end": 1347.84,
+      "text": "from the video that explain how we're"
+    },
+    {
+      "start": 1345.36,
+      "end": 1349.44,
+      "text": "computing our loss landscapes. I'm"
+    },
+    {
+      "start": 1347.84,
+      "end": 1351.36,
+      "text": "really happy with how this poster came"
+    },
+    {
+      "start": 1349.44,
+      "end": 1354.48,
+      "text": "out, and I'm excited that I can offer"
+    },
+    {
+      "start": 1351.36,
+      "end": 1356.559,
+      "text": "this larger 17x 22 in size at very high"
+    },
+    {
+      "start": 1354.48,
+      "end": 1358.64,
+      "text": "quality. I've learned that with graphics"
+    },
+    {
+      "start": 1356.559,
+      "end": 1360.559,
+      "text": "like this, you really want to use photo"
+    },
+    {
+      "start": 1358.64,
+      "end": 1362.96,
+      "text": "printers to get all the fine details and"
+    },
+    {
+      "start": 1360.559,
+      "end": 1365.6,
+      "text": "colors right. You can pick up a physical"
+    },
+    {
+      "start": 1362.96,
+      "end": 1367.12,
+      "text": "or digital copy at welchlabs.com or"
+    },
+    {
+      "start": 1365.6,
+      "end": 1369.52,
+      "text": "purchase at a discounted rate when"
+    },
+    {
+      "start": 1367.12,
+      "end": 1370.799,
+      "text": "bundled with my Imaginary Numbers book."
+    },
+    {
+      "start": 1369.52,
+      "end": 1372.88,
+      "text": "Big thank you to everyone who's"
+    },
+    {
+      "start": 1370.799,
+      "end": 1375.12,
+      "text": "purchased from the store. Your purchases"
+    },
+    {
+      "start": 1372.88,
+      "end": 1377.44,
+      "text": "go a long way to helping me make more"
+    },
+    {
+      "start": 1375.12,
+      "end": 1377.44,
+      "text": "great"
+    }
+  ],
+  "segment_count": 631
+}
