@@ -76,36 +76,10 @@ category, tag, or author in a spreadsheet.
 
 ## Reading Lenses
 
-### Population Recovery, Disasters, and Reduced Dynamics
-
-These articles are useful for thinking about disaster-time population recovery as
-a macroscopic relaxation process, where a few summary variables can predict the
-post-peak trajectory.
-
-- [The New Math of How Large-Scale Order Emerges](../../digests/2026-05-13/quanta-the-new-math-of-how-large-scale-order-emerges.md)
-- [Simpler Math Predicts How Close Ecosystems Are to Collapse](https://www.quantamagazine.org/simpler-math-predicts-how-close-ecosystems-are-to-collapse-20230306/)
-- [The Math of Catastrophe](https://www.quantamagazine.org/the-math-of-climate-change-tipping-points-20250915/)
-- [The Climate Change Paradox](https://www.quantamagazine.org/the-climate-change-paradox-20250915/)
-- [When Coupled Volcanoes Talk, These Researchers Listen](https://www.quantamagazine.org/when-coupled-volcanoes-talk-these-researchers-listen-20260327/)
-- [Will We Ever Be Able To Forecast Volcanic Eruptions Like Weather?](https://www.quantamagazine.org/will-we-ever-be-able-to-forecast-volcanic-eruptions-like-weather-20260508/)
-- [A Burp or a Blast? Seismic Signals Reveal the Volcanic Eruption to Come](https://www.quantamagazine.org/seismic-data-helps-scientists-forecast-volcanic-explosions-20210601/)
-- [In Natural Networks, Strength in Loops](https://www.quantamagazine.org/in-natural-networks-strength-in-loops-20130814/)
-- [Complexity Scientist Beats Traffic Jams Through Adaptation](https://www.quantamagazine.org/complexity-scientist-beats-traffic-jams-through-adaptation-20200928/)
-- [How Swarming Insects Act Like Fluids](https://www.quantamagazine.org/how-swarming-insects-act-like-fluids-20190710/)
-
-The useful conceptual bridge is:
-
-```text
-local agents / local movements
-  -> coarse population field
-  -> center-weighted pressure state
-  -> post-peak relaxation rate
-```
-
 ### Flow, Transport, Networks, and Translation Layers
 
 These articles are helpful when translating between continuous fields, flows,
-networks, spectra, and reduced physical variables.
+networks, spectra, and mathematical representations.
 
 - [Networks Hold the Key to a Decades-Old Problem About Waves](../../digests/2026-06-05/quanta-networks-hold-the-key-to-a-decades-old-problem-about-waves.md)
 - [A Unified Theory of Randomness](../../digests/2026-06-05/quanta-a-unified-theory-of-randomness.md)
@@ -115,8 +89,8 @@ networks, spectra, and reduced physical variables.
 
 The recurring pattern is that hard systems become tractable after changing
 representation: a wave problem becomes a network problem, a random geometry
-problem becomes a growth/exploration problem, and a mobility field can become a
-pressure-release / conductance problem.
+problem becomes a growth/exploration problem, and a physical system can become
+more legible after choosing the right variables.
 
 ### Biological and Collective Systems
 
