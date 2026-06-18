@@ -5,7 +5,7 @@ Research Collector. It is a metadata-only index: article bodies are not mirrored
 
 ## What Is Here
 
-- [quanta_index.md](quanta_index.md): human-readable long index of 2,299 dated article URLs.
+- [quanta_index.md](quanta_index.md): human-readable long index of 2,300 dated article URLs.
 - [quanta_articles.csv](quanta_articles.csv): spreadsheet-friendly table for filtering.
 - [quanta_articles.json](quanta_articles.json): machine-readable records for scripts.
 - [quanta_collection_errors.json](quanta_collection_errors.json): collection error log.
@@ -17,14 +17,14 @@ inferred broad category, short description, and discovery metadata.
 
 ## Coverage
 
-- Total article-like dated URLs: 2,299
+- Total article-like dated URLs: 2,300
 - Time span: 2012-2026
 - Collection sources: Quanta's public sitemap and archive pages
 - Full-text mirroring: no
 
 Broad inferred categories:
 
-- Mathematics: 556
+- Mathematics: 557
 - Biology: 502
 - Physics: 493
 - Computer Science: 324

@@ -2,8 +2,8 @@
 title: "Quanta Magazine Article Index"
 source_type: "web_article_index"
 publisher: "Quanta Magazine"
-collected: "2026-06-16"
-count: 2299
+collected: "2026-06-18"
+count: 2300
 ---
 
 # Quanta Magazine Article Index
@@ -13,12 +13,12 @@ Full article text is not mirrored here.
 
 ## Summary
 
-- Total article-like dated URLs: 2299
+- Total article-like dated URLs: 2300
 - Records with local digest already present: 4
 
 ## By Year
 
-- 2026: 76
+- 2026: 77
 - 2025: 181
 - 2024: 211
 - 2023: 221
@@ -36,7 +36,7 @@ Full article text is not mirrored here.
 
 ## By Main Category
 
-- Mathematics: 556
+- Mathematics: 557
 - Biology: 502
 - Physics: 493
 - Uncategorized: 424
@@ -76,6 +76,15 @@ Full article text is not mirrored here.
 - computational complexity: 18
 
 ## Articles
+
+### Seven Perfect Shuffles Randomize a Deck of Cards. But How Many Sloppy Ones?
+
+- URL: https://www.quantamagazine.org/seven-perfect-shuffles-randomize-a-deck-of-cards-but-how-many-sloppy-ones-20260617/
+- Published: 2026-06-17
+- Author(s): John Pavlus
+- Category: Mathematics
+- Kicker: probability
+- Description: A decades-old proof showed that seven shuffles are enough to mix up a deck of cards. But it requires you to cut the deck with the precision of a professional magician. A new proof gets around that obstacle.
 
 ### How Many Elementary Particles Are There, Really?
 
