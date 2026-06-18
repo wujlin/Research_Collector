@@ -13,7 +13,7 @@
     "view_count": 4077,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 86.92,
+    "importance_score": 86.33,
     "importance_bucket": "keep"
   },
   {
@@ -30,7 +30,7 @@
     "view_count": 2354,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 85.88,
+    "importance_score": 85.3,
     "importance_bucket": "keep"
   },
   {
@@ -44,10 +44,10 @@
     "description": "In this episode recorded at NeurIPS 2025, Max Welling traces the intellectual thread connecting quantum gravity, equivariant neural networks, diffusion models, and climate-focused materials discovery.\n\nWe begin with a provocative framing: experiments as computation. Welling describes the idea of a “physics processing unit”—a world in which digital models and physical experiments work together, with nature itself acting as a kind of processor. It’s a grounded but ambitious vision of AI for science: not replacing chemists, but accelerating them.\n\nAlong the way, we discuss:\n- Why symmetry and equivariance matter in deep learning\n- The tradeoff between scale and inductive bias\n- The deep mathematical links between diffusion models and stochastic thermodynamics\n- Why materials—not software—may be the real bottleneck for AI and the energy transition\n- What it actually takes to build an AI-driven materials platform\n\nWelling reflects on moving from curiosity-driven theoretical physics (including work with Gerard 't Hooft) toward impact-driven research in climate and energy. The result is a conversation about convergence: physics and machine learning, digital models and laboratory experiments, long-term ambition and incremental progress.\n\nTimestamps\n00:00 Introduction to Max Welling and the concept of Physics Processing Units (PPUs)\n01:34 Max’s career evolution: From quantum gravity to climate-focused AI\n03:39 Physics as the \"thread\": Symmetries, gauge theory, and stochastic thermodynamics\n07:05 The explosion of \"AI for Science\" and the emerging investment bubble\n07:53 Successes in protein folding and machine learning inter-atomic potentials\n11:05 Why materials matter: The physical foundation of the AI software layer\n13:47 Transforming material discovery into a search engine problem\n14:47 The origin and mission of CuspAI: Solving carbon capture\n17:49 CuspAI’s platform architecture: Generative models, digital twins, and agents\n20:47 The role of humans in the loop: Moving from manual workflows to automation\n24:39 Strategy for breakthroughs: Lighthouse moonshots vs. incremental partnerships\n28:40 Technical Deep Dive: Explaining Equivariance and symmetry in neural networks\n31:07 The \"Bitter Lesson\" in the context of scientific inductive biases\n31:47 Preview of \"Generative AI and Stochastic Thermodynamics\" (Upcoming Book)",
     "published_at": "2026-02-25T17:19:37",
     "duration": "PT34M14S",
-    "view_count": 2260,
+    "view_count": 2322,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 83.32,
+    "importance_score": 82.76,
     "importance_bucket": "keep"
   },
   {
@@ -64,7 +64,7 @@
     "view_count": 551,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 81.65,
+    "importance_score": 81.07,
     "importance_bucket": "keep"
   },
   {
@@ -81,7 +81,7 @@
     "view_count": 256,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 81.11,
+    "importance_score": 80.51,
     "importance_bucket": "keep"
   },
   {
@@ -98,7 +98,7 @@
     "view_count": 27,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 80.99,
+    "importance_score": 80.42,
     "importance_bucket": "keep"
   },
   {
@@ -115,7 +115,7 @@
     "view_count": 204,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 80.62,
+    "importance_score": 80.04,
     "importance_bucket": "keep"
   },
   {
@@ -132,7 +132,7 @@
     "view_count": 11079,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 79.78,
+    "importance_score": 79.17,
     "importance_bucket": "keep"
   },
   {
@@ -166,7 +166,7 @@
     "view_count": 18477,
     "topic_key": "ai_for_physics/generative_dynamics/sde_generative",
     "resource_type": "video",
-    "importance_score": 73.6,
+    "importance_score": 73.03,
     "importance_bucket": "keep"
   },
   {
@@ -183,58 +183,7 @@
     "view_count": 94,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 73.55,
-    "importance_bucket": "keep"
-  },
-  {
-    "id": 81,
-    "title": "Stanford CME296 Diffusion & Large Vision Models | Spring 2026 | Lecture 1 - Diffusion",
-    "channel_name": "Diffusion and Free Energy Search",
-    "channel_id": "UCBa5G_ESCn8Yd4vw5U-gIcg",
-    "video_id": "tr-CUpw--ck",
-    "playlist_id": null,
-    "url": "https://www.youtube.com/watch?v=tr-CUpw--ck",
-    "description": "Learn more details about this course: https://online.stanford.edu/courses/cme296-diffusion-and-large-vision-models\n\nTo follow along with the course schedule and syllabus, visit: https://cme296.stanford.edu/syllabus/\n\nChapters:\n00:00:00 Introduction\n00:06:04 Class logistics\n00:12:23 Outline of the class\n00:17:47 Motivating example\n00:23:31 Intuition behind diffusion\n00:26:33 Image representation\n00:46:29 Variational formulation\n00:49:01 Joint probability distribution\n00:55:58 Strategy to derive a tractable loss\n00:57:39 ELBO derivation\n01:05:34 KL divergence\n01:10:10 Bayes' rule\n01:27:18 DDPM training\n01:28:11 Inference with DDPM\n01:29:49 Faster sampling with DDIM\n\nFor more information about Stanford’s graduate programs, visit: https://online.stanford.edu/graduate-education\n\nAfshine Amidi is an Adjunct Lecturer at Stanford University.\n\nShervine Amidi is an Adjunct Lecturer at Stanford University.\n\nView the course playlist: https://www.youtube.com/playlist?list=PLoROMvodv4rNdy8rt2rZ4T2xM0OjADnfu",
-    "published_at": "2026-04-10T22:27:20",
-    "duration": "PT1H46M26S",
-    "view_count": 60666,
-    "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
-    "resource_type": "video",
-    "importance_score": 72.67,
-    "importance_bucket": "keep"
-  },
-  {
-    "id": 26,
-    "title": "Max Welling: \"Nature is the fastest computer,\" arguing we should use Physics Processing Units (P...",
-    "channel_name": "Max Welling Talks",
-    "channel_id": "UCGF0eJ1EWGZh6mO3jf8nz9w",
-    "video_id": "qUyAe5cMRRo",
-    "playlist_id": null,
-    "url": "https://www.youtube.com/watch?v=qUyAe5cMRRo",
-    "description": "Episode Introduction:  \nIn this episode, we dive deep into the visionary ideas of Max Welling, a pioneer in deep learning who challenges conventional notions about computation and AI. Welling argues that while the tech world races to acquire more Nvidia GPUs, we overlook the fastest and most efficient computer in existence: nature itself. He introduces the concept of Physics Processing Units (PPUs)—wet lab experiments and materials science as a form of computation that can outperform digital chips. This perspective shifts the focus from pure software development to discovering and harnessing better materials, fundamentally redefining how we think about technology, AI, and the physical world.\n\nOriginal Video Link:  \nhttps://www.youtube.com/watch?v=V7_Ec2WFAWs  \nOriginal Video Title: 🔬Max Welling: Materials Underlie Everything\n\nKey Points:  \n• Nature performs computation at speeds and accuracies digital computers cannot match, positioning wet lab experiments as “Physics Processing Units” (PPUs).  \n• Materials, not software, are the foundational layer of all technology—from GPUs to solar panels—and hold the key to breakthrough innovations.  \n• The future of scientific discovery lies in AI-driven “Search Engines for Matter” that can design molecules and materials not yet known.  \n• The “dark lab” fully automated by AI is a myth; human intuition remains essential due to the complexity and messiness of real-world physical experimentation.  \n• Generative AI’s underlying mathematics aligns with non-equilibrium thermodynamics, revealing a profound connection between physics and artificial intelligence.  \n• Practical engineering often favors brute-force data-heavy methods over elegant theoretical models, illustrating the “bitter lesson” of deep learning.\n\nWhy Watch:  \nThis video offers a transformative lens on the future of AI and technology, breaking down entrenched ideas about computation and innovation. Max Welling’s insights not only connect cutting-edge AI research to fundamental physics but also challenge us to rethink the role of materials and nature in computing. For anyone passionate about AI, materials science, or the intersection of physical and digital worlds, this episode reveals how the next technological breakthroughs may come from leveraging nature itself as a processing unit. “AI Dispatch” provides a thorough analysis, but we highly recommend watching the original video to fully appreciate the depth and nuance of Welling’s groundbreaking vision.\n\n---\n\n\"AI Dispatch\" curates the world's most cutting-edge AI tech videos, providing deep analysis of the core insights behind the technology.  \nPowered by voieech.com",
-    "published_at": "2026-02-26T05:27:54",
-    "duration": "PT7M47S",
-    "view_count": 1,
-    "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
-    "resource_type": "video",
-    "importance_score": 72.63,
-    "importance_bucket": "keep"
-  },
-  {
-    "id": 52,
-    "title": "Learning Extreme Models with the Coupled Free Entropy",
-    "channel_name": "Diffusion and Free Energy Search",
-    "channel_id": "UC234mSlQD_elAf3URpsxMYA",
-    "video_id": "xRog_F4rWiw",
-    "playlist_id": null,
-    "url": "https://www.youtube.com/watch?v=xRog_F4rWiw",
-    "description": "In this presentation, Kenric Nelson briefs Johan Medrano, Karl Friston, and the Dynamic Causal Models group on advancements in machine learning derived from the unique properties of coupled entropy. The discussion covers the generalization of the coupled free energy function and its application to learning distributions with extreme heavy-tail shapes, as well as the use of Active Inference for systems with nonlinear fluctuations.",
-    "published_at": "2026-03-02T19:14:13",
-    "duration": "PT1H26M9S",
-    "view_count": 144,
-    "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
-    "resource_type": "video",
-    "importance_score": 72.26,
+    "importance_score": 72.95,
     "importance_bucket": "keep"
   },
   {
@@ -255,6 +204,74 @@
     "importance_bucket": "keep"
   },
   {
+    "id": 81,
+    "title": "Stanford CME296 Diffusion & Large Vision Models | Spring 2026 | Lecture 1 - Diffusion",
+    "channel_name": "Diffusion and Free Energy Search",
+    "channel_id": "UCBa5G_ESCn8Yd4vw5U-gIcg",
+    "video_id": "tr-CUpw--ck",
+    "playlist_id": null,
+    "url": "https://www.youtube.com/watch?v=tr-CUpw--ck",
+    "description": "Learn more details about this course: https://online.stanford.edu/courses/cme296-diffusion-and-large-vision-models\n\nTo follow along with the course schedule and syllabus, visit: https://cme296.stanford.edu/syllabus/\n\nChapters:\n00:00:00 Introduction\n00:06:04 Class logistics\n00:12:23 Outline of the class\n00:17:47 Motivating example\n00:23:31 Intuition behind diffusion\n00:26:33 Image representation\n00:46:29 Variational formulation\n00:49:01 Joint probability distribution\n00:55:58 Strategy to derive a tractable loss\n00:57:39 ELBO derivation\n01:05:34 KL divergence\n01:10:10 Bayes' rule\n01:27:18 DDPM training\n01:28:11 Inference with DDPM\n01:29:49 Faster sampling with DDIM\n\nFor more information about Stanford’s graduate programs, visit: https://online.stanford.edu/graduate-education\n\nAfshine Amidi is an Adjunct Lecturer at Stanford University.\n\nShervine Amidi is an Adjunct Lecturer at Stanford University.\n\nView the course playlist: https://www.youtube.com/playlist?list=PLoROMvodv4rNdy8rt2rZ4T2xM0OjADnfu",
+    "published_at": "2026-04-10T22:27:20",
+    "duration": "PT1H46M26S",
+    "view_count": 60666,
+    "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
+    "resource_type": "video",
+    "importance_score": 72.08,
+    "importance_bucket": "keep"
+  },
+  {
+    "id": 26,
+    "title": "Max Welling: \"Nature is the fastest computer,\" arguing we should use Physics Processing Units (P...",
+    "channel_name": "Max Welling Talks",
+    "channel_id": "UCGF0eJ1EWGZh6mO3jf8nz9w",
+    "video_id": "qUyAe5cMRRo",
+    "playlist_id": null,
+    "url": "https://www.youtube.com/watch?v=qUyAe5cMRRo",
+    "description": "Episode Introduction:  \nIn this episode, we dive deep into the visionary ideas of Max Welling, a pioneer in deep learning who challenges conventional notions about computation and AI. Welling argues that while the tech world races to acquire more Nvidia GPUs, we overlook the fastest and most efficient computer in existence: nature itself. He introduces the concept of Physics Processing Units (PPUs)—wet lab experiments and materials science as a form of computation that can outperform digital chips. This perspective shifts the focus from pure software development to discovering and harnessing better materials, fundamentally redefining how we think about technology, AI, and the physical world.\n\nOriginal Video Link:  \nhttps://www.youtube.com/watch?v=V7_Ec2WFAWs  \nOriginal Video Title: 🔬Max Welling: Materials Underlie Everything\n\nKey Points:  \n• Nature performs computation at speeds and accuracies digital computers cannot match, positioning wet lab experiments as “Physics Processing Units” (PPUs).  \n• Materials, not software, are the foundational layer of all technology—from GPUs to solar panels—and hold the key to breakthrough innovations.  \n• The future of scientific discovery lies in AI-driven “Search Engines for Matter” that can design molecules and materials not yet known.  \n• The “dark lab” fully automated by AI is a myth; human intuition remains essential due to the complexity and messiness of real-world physical experimentation.  \n• Generative AI’s underlying mathematics aligns with non-equilibrium thermodynamics, revealing a profound connection between physics and artificial intelligence.  \n• Practical engineering often favors brute-force data-heavy methods over elegant theoretical models, illustrating the “bitter lesson” of deep learning.\n\nWhy Watch:  \nThis video offers a transformative lens on the future of AI and technology, breaking down entrenched ideas about computation and innovation. Max Welling’s insights not only connect cutting-edge AI research to fundamental physics but also challenge us to rethink the role of materials and nature in computing. For anyone passionate about AI, materials science, or the intersection of physical and digital worlds, this episode reveals how the next technological breakthroughs may come from leveraging nature itself as a processing unit. “AI Dispatch” provides a thorough analysis, but we highly recommend watching the original video to fully appreciate the depth and nuance of Welling’s groundbreaking vision.\n\n---\n\n\"AI Dispatch\" curates the world's most cutting-edge AI tech videos, providing deep analysis of the core insights behind the technology.  \nPowered by voieech.com",
+    "published_at": "2026-02-26T05:27:54",
+    "duration": "PT7M47S",
+    "view_count": 1,
+    "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
+    "resource_type": "video",
+    "importance_score": 72.05,
+    "importance_bucket": "keep"
+  },
+  {
+    "id": 86,
+    "title": "Energy-Based Transformers explained | How EBTs and EBMs work",
+    "channel_name": "AI Coffee Break with Letitia",
+    "channel_id": "",
+    "video_id": "18Fn2m99X1k",
+    "playlist_id": null,
+    "url": "https://www.youtube.com/watch?v=18Fn2m99X1k",
+    "description": "",
+    "published_at": "2025-09-21T00:00:00",
+    "duration": "",
+    "view_count": 16052,
+    "topic_key": "ai_for_physics/generative_dynamics/energy_based_models",
+    "resource_type": "video",
+    "importance_score": 72.03,
+    "importance_bucket": "keep"
+  },
+  {
+    "id": 52,
+    "title": "Learning Extreme Models with the Coupled Free Entropy",
+    "channel_name": "Diffusion and Free Energy Search",
+    "channel_id": "UC234mSlQD_elAf3URpsxMYA",
+    "video_id": "xRog_F4rWiw",
+    "playlist_id": null,
+    "url": "https://www.youtube.com/watch?v=xRog_F4rWiw",
+    "description": "In this presentation, Kenric Nelson briefs Johan Medrano, Karl Friston, and the Dynamic Causal Models group on advancements in machine learning derived from the unique properties of coupled entropy. The discussion covers the generalization of the coupled free energy function and its application to learning distributions with extreme heavy-tail shapes, as well as the use of Active Inference for systems with nonlinear fluctuations.",
+    "published_at": "2026-03-02T19:14:13",
+    "duration": "PT1H26M9S",
+    "view_count": 144,
+    "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
+    "resource_type": "video",
+    "importance_score": 71.66,
+    "importance_bucket": "keep"
+  },
+  {
     "id": 37,
     "title": "MIT 6.S184: Flow Matching and Diffusion Models - Lecture 01 - Flow and Diffusion Models (2026)",
     "channel_name": "Generative Physics Search",
@@ -268,7 +285,24 @@
     "view_count": 20125,
     "topic_key": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
     "resource_type": "video",
-    "importance_score": 71.08,
+    "importance_score": 70.5,
+    "importance_bucket": "keep"
+  },
+  {
+    "id": 85,
+    "title": "Energy-Based Transformers are Scalable Learners and Thinkers (Paper Review)",
+    "channel_name": "Yannic Kilcher",
+    "channel_id": "",
+    "video_id": "RAEy3JZmIaA",
+    "playlist_id": null,
+    "url": "https://www.youtube.com/watch?v=RAEy3JZmIaA",
+    "description": "",
+    "published_at": "2025-07-19T00:00:00",
+    "duration": "",
+    "view_count": 31256,
+    "topic_key": "ai_for_physics/generative_dynamics/energy_based_models",
+    "resource_type": "video",
+    "importance_score": 70.42,
     "importance_bucket": "keep"
   },
   {
@@ -285,7 +319,7 @@
     "view_count": 11,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 69.75,
+    "importance_score": 69.15,
     "importance_bucket": "keep"
   },
   {
@@ -302,7 +336,7 @@
     "view_count": 333,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 67.83,
+    "importance_score": 67.23,
     "importance_bucket": "keep"
   },
   {
@@ -319,24 +353,7 @@
     "view_count": 5,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 67.42,
-    "importance_bucket": "keep"
-  },
-  {
-    "id": 73,
-    "title": "ep43 - Steve Brunton: DMD, Koopman, SINDy, Eigensteve Channel, HydroGym, Optimization, and much more",
-    "channel_name": "Steve Brunton",
-    "channel_id": "UCl83hwBSVRLYj2NWS08P9bg",
-    "video_id": "TcZEanVwBvk",
-    "playlist_id": null,
-    "url": "https://www.youtube.com/watch?v=TcZEanVwBvk",
-    "description": "Outline\n00:00 - Intro\n01:15 - Origin story: early path and the road to science \n04:20 - On graphical visualization and aphantasia \n08:08 - The interest in fluid dynamics \n12:00 - Caltech, Jerry Marsden, and the move to the Pacific time zone \n19:43 - Dynamic Mode Decomposition (DMD) and the Koopman operator \n27:15 - On teaching and the Eigensteve channel \n39:22 - SINDy: Sparse Identification of Nonlinear Dynamics \n45:45 - Automatic knowledge creation and Explainable AI \n54:31 - HydroGym: RL benchmarks for fluid flow control \n1:01:37 - Optimization boot camp \n1:05:31 - Collimator \n1:13:18 - Outro\n\nLinks\nSteve's website: https://www.eigensteve.com/\nEigensteve channel: https://www.youtube.com/c/eigensteve\nJerrold E. Marsden: https://en.wikipedia.org/wiki/Jerrold_E._Marsden\nAphantasia: https://en.wikipedia.org/wiki/Aphantasia\nJ. Nathan Kutz: https://amath.washington.edu/people/j-nathan-kutz\nClarence W. Rowley: https://cwrowley.princeton.edu/\nDMD: https://en.wikipedia.org/wiki/Dynamic_mode_decomposition\nKoopman operator: https://en.wikipedia.org/wiki/Koopman_operator\nDynamic Mode Decomposition book: https://epubs.siam.org/doi/book/10.1137/1.9781611974508\nOn Dynamic Mode Decomposition paper: https://doi.org/10.3934/jcd.2014.1.391\nDMD with control: https://arxiv.org/abs/1409.6358\nCompressed sensing and DMD: https://doi.org/10.3934/jcd.2015002\nModern Koopman Theory for Dynamical Systems: https://arxiv.org/abs/2102.12086\nDeep learning for universal linear embeddings of nonlinear dynamics: https://doi.org/10.1038/s41467-018-07210-0\nData-driven discovery of Koopman eigenfunctions for control: https://doi.org/10.1088/2632-2153/abf0f5\nPyDMD: https://github.com/PyDMD\nDiscovering governing equations from data by sparse identification of nonlinear dynamical systems: https://doi.org/10.1073/pnas.1517384113\nData-driven discovery of partial differential equations:\nhttps://doi.org/10.1126/sciadv.1602614\nSINDy for model predictive control in the low-data limit:\nhttps://doi.org/10.1098/rspa.2018.0335\nPySINDy: https://github.com/dynamicslab/pysindy\nSINDy with control: https://arxiv.org/abs/2108.13404\nSINDy review: https://doi.org/10.1146/annurev-control-030123-015238\nData-Driven Science and Engineering: Machine Learning, Dynamical Systems, and Control: http://www.databookuw.com\nExplainable AI: Learning from the Learners: https://arxiv.org/abs/2601.05525\nHydroGym: https://github.com/dynamicslab/hydrogym",
-    "published_at": "2026-04-15T06:15:01",
-    "duration": "PT1H14M23S",
-    "view_count": 505,
-    "topic_key": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
-    "resource_type": "video",
-    "importance_score": 67.24,
+    "importance_score": 66.85,
     "importance_bucket": "keep"
   },
   {
@@ -353,24 +370,41 @@
     "view_count": 2,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 67.24,
+    "importance_score": 66.67,
     "importance_bucket": "keep"
   },
   {
-    "id": 72,
-    "title": "Maximum Likelihood Estimation (MLE) with Examples",
+    "id": 73,
+    "title": "ep43 - Steve Brunton: DMD, Koopman, SINDy, Eigensteve Channel, HydroGym, Optimization, and much more",
     "channel_name": "Steve Brunton",
-    "channel_id": "UCm5mt-A4w61lknZ9lCsZtBw",
-    "video_id": "rCdxlN6Ph14",
+    "channel_id": "UCl83hwBSVRLYj2NWS08P9bg",
+    "video_id": "TcZEanVwBvk",
     "playlist_id": null,
-    "url": "https://www.youtube.com/watch?v=rCdxlN6Ph14",
-    "description": "This video introduces Maximum Likelihood Estimation (MLE), one of the most important methods in statistical parameter estimation.  MLE is the basis of the Bayesian extension, maximum a posteriori (MAP) estimation.  \n\nThis video was produced at the University of Washington, and we acknowledge funding support from the Boeing Company\n\n%%% CHAPTERS %%%\n00:00 Intro\n01:05 Problem Statement of MLE\n05:58 Deriving the Estimator\n12:20 Example: MLE of a Poisson\n19:00 Recap\n21:45 Note on Prior Knowledge & Outro",
-    "published_at": "2025-11-13T12:31:15",
-    "duration": "PT23M46S",
-    "view_count": 32641,
+    "url": "https://www.youtube.com/watch?v=TcZEanVwBvk",
+    "description": "Outline\n00:00 - Intro\n01:15 - Origin story: early path and the road to science \n04:20 - On graphical visualization and aphantasia \n08:08 - The interest in fluid dynamics \n12:00 - Caltech, Jerry Marsden, and the move to the Pacific time zone \n19:43 - Dynamic Mode Decomposition (DMD) and the Koopman operator \n27:15 - On teaching and the Eigensteve channel \n39:22 - SINDy: Sparse Identification of Nonlinear Dynamics \n45:45 - Automatic knowledge creation and Explainable AI \n54:31 - HydroGym: RL benchmarks for fluid flow control \n1:01:37 - Optimization boot camp \n1:05:31 - Collimator \n1:13:18 - Outro\n\nLinks\nSteve's website: https://www.eigensteve.com/\nEigensteve channel: https://www.youtube.com/c/eigensteve\nJerrold E. Marsden: https://en.wikipedia.org/wiki/Jerrold_E._Marsden\nAphantasia: https://en.wikipedia.org/wiki/Aphantasia\nJ. Nathan Kutz: https://amath.washington.edu/people/j-nathan-kutz\nClarence W. Rowley: https://cwrowley.princeton.edu/\nDMD: https://en.wikipedia.org/wiki/Dynamic_mode_decomposition\nKoopman operator: https://en.wikipedia.org/wiki/Koopman_operator\nDynamic Mode Decomposition book: https://epubs.siam.org/doi/book/10.1137/1.9781611974508\nOn Dynamic Mode Decomposition paper: https://doi.org/10.3934/jcd.2014.1.391\nDMD with control: https://arxiv.org/abs/1409.6358\nCompressed sensing and DMD: https://doi.org/10.3934/jcd.2015002\nModern Koopman Theory for Dynamical Systems: https://arxiv.org/abs/2102.12086\nDeep learning for universal linear embeddings of nonlinear dynamics: https://doi.org/10.1038/s41467-018-07210-0\nData-driven discovery of Koopman eigenfunctions for control: https://doi.org/10.1088/2632-2153/abf0f5\nPyDMD: https://github.com/PyDMD\nDiscovering governing equations from data by sparse identification of nonlinear dynamical systems: https://doi.org/10.1073/pnas.1517384113\nData-driven discovery of partial differential equations:\nhttps://doi.org/10.1126/sciadv.1602614\nSINDy for model predictive control in the low-data limit:\nhttps://doi.org/10.1098/rspa.2018.0335\nPySINDy: https://github.com/dynamicslab/pysindy\nSINDy with control: https://arxiv.org/abs/2108.13404\nSINDy review: https://doi.org/10.1146/annurev-control-030123-015238\nData-Driven Science and Engineering: Machine Learning, Dynamical Systems, and Control: http://www.databookuw.com\nExplainable AI: Learning from the Learners: https://arxiv.org/abs/2601.05525\nHydroGym: https://github.com/dynamicslab/hydrogym",
+    "published_at": "2026-04-15T06:15:01",
+    "duration": "PT1H14M23S",
+    "view_count": 505,
     "topic_key": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
     "resource_type": "video",
-    "importance_score": 65.95,
+    "importance_score": 66.66,
+    "importance_bucket": "keep"
+  },
+  {
+    "id": 97,
+    "title": "Latent Particle World Models: Self-supervised Object-centric Stochastic Dynamics Modeling",
+    "channel_name": "Heejeong Nam",
+    "channel_id": "",
+    "video_id": "b0ciW28HXI0",
+    "playlist_id": null,
+    "url": "https://www.youtube.com/watch?v=b0ciW28HXI0",
+    "description": "",
+    "published_at": "2026-02-23T00:00:00",
+    "duration": "",
+    "view_count": 193,
+    "topic_key": "ai_for_physics/generative_dynamics/sde_generative",
+    "resource_type": "video",
+    "importance_score": 65.91,
     "importance_bucket": "keep"
   },
   {
@@ -391,6 +425,23 @@
     "importance_bucket": "keep"
   },
   {
+    "id": 72,
+    "title": "Maximum Likelihood Estimation (MLE) with Examples",
+    "channel_name": "Steve Brunton",
+    "channel_id": "UCm5mt-A4w61lknZ9lCsZtBw",
+    "video_id": "rCdxlN6Ph14",
+    "playlist_id": null,
+    "url": "https://www.youtube.com/watch?v=rCdxlN6Ph14",
+    "description": "This video introduces Maximum Likelihood Estimation (MLE), one of the most important methods in statistical parameter estimation.  MLE is the basis of the Bayesian extension, maximum a posteriori (MAP) estimation.  \n\nThis video was produced at the University of Washington, and we acknowledge funding support from the Boeing Company\n\n%%% CHAPTERS %%%\n00:00 Intro\n01:05 Problem Statement of MLE\n05:58 Deriving the Estimator\n12:20 Example: MLE of a Poisson\n19:00 Recap\n21:45 Note on Prior Knowledge & Outro",
+    "published_at": "2025-11-13T12:31:15",
+    "duration": "PT23M46S",
+    "view_count": 32641,
+    "topic_key": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
+    "resource_type": "video",
+    "importance_score": 65.38,
+    "importance_bucket": "keep"
+  },
+  {
     "id": 5,
     "title": "Flow Matching for text2image models",
     "channel_name": "AI Coffee Break with Letitia",
@@ -404,7 +455,24 @@
     "view_count": 4606,
     "topic_key": "ai_for_physics",
     "resource_type": "video",
-    "importance_score": 64.5,
+    "importance_score": 63.92,
+    "importance_bucket": "keep"
+  },
+  {
+    "id": 99,
+    "title": "MIT 6.S184: Flow Matching and Diffusion Models - Lecture 02 - Constructing a Training Target",
+    "channel_name": "Peter Holderrieth",
+    "channel_id": "",
+    "video_id": "yFD-JSSG-D0",
+    "playlist_id": null,
+    "url": "https://www.youtube.com/watch?v=yFD-JSSG-D0",
+    "description": "",
+    "published_at": "2025-03-03T00:00:00",
+    "duration": "",
+    "view_count": 40440,
+    "topic_key": "ai_for_physics/generative_dynamics/flow_matching",
+    "resource_type": "video",
+    "importance_score": 63.88,
     "importance_bucket": "keep"
   },
   {
@@ -418,10 +486,27 @@
     "description": "We explain diffusion models and flow-matching models side by side to highlight the key differences between them. Flow-Matching Models are the new generation of AI image generators that are quickly replacing diffusion models — they take everything diffusion did well, but make it faster, smoother, and deterministic.\n\nAI Coffee Break Merch! 🛍️ https://aicoffeebreak.creator-spring.com/\n\nText to image diffusion models: https://youtu.be/J87hffSMB60\n\nUseful deeper reading:\n• 🌊 Lipman et al., “Flow Matching for Generative Modeling” (2023) — https://arxiv.org/abs/2210.02747\n• 🧮 Kingma and Gao, \"Understanding Diffusion Objectives as the ELBO with Simple Data Augmentation\" (2022) — https://arxiv.org/abs/2210.02747\n• ⚡ Esser et al, \"Scaling Rectified Flow Transformers for High-Resolution Image Synthesis\" (2024) — https://arxiv.org/abs/2403.03206\n\nThanks to our Patrons who support us in Tier 2, 3, 4: 🙏 \nVignesh Valliappan, Ivan Janov, Sunny Dhiana, Andy Ma\n\nOutline:\n00:00 Difference between Flow-matching and Diffusion\n01:07 Training Diffusion Models\n05:45 Inference for Diffusion Models\n09:03 Training Flow-Matching\n11:55 Inference with Flow-Matching\n14:02 Side-by-Side Comparison\n\n\n▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\n🔥 Optionally, pay us a coffee to help with our Coffee Bean production!  ☕\nPatreon: https://www.patreon.com/AICoffeeBreak\nKo-fi: https://ko-fi.com/aicoffeebreak\nJoin this channel as a Bean Member to get access to perks:\nhttps://www.youtube.com/channel/UCobqgqE4i5Kf7wrxRxhToQA/join\n▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\n\n🔗 Links:\nAICoffeeBreakQuiz: https://www.youtube.com/c/AICoffeeBreak/community\nTwitter / X: https://twitter.com/AICoffeeBreak\nLinkedIn: https://www.linkedin.com/in/letitia-parcalabescu/\nThreads: https://www.threads.net/@ai.coffee.break\nBluesky: https://bsky.app/profile/aicoffeebreak.bsky.social\nReddit: https://www.reddit.com/r/AICoffeeBreak/\nYouTube: https://www.youtube.com/AICoffeeBreak\nSubstack: https://aicoffeebreakwl.substack.com/\nWeb:      https://explanationmark.de/letitia\n               https://aicoffeebreak.com\n\n#AICoffeeBreak #MsCoffeeBean #MachineLearning #AI #research​\n\nVideo editing: Nils Trost",
     "published_at": "2025-10-19T12:13:37",
     "duration": "PT16M8S",
-    "view_count": 36946,
+    "view_count": 38069,
     "topic_key": "ai_for_physics",
     "resource_type": "video",
-    "importance_score": 64.33,
+    "importance_score": 63.75,
+    "importance_bucket": "keep"
+  },
+  {
+    "id": 96,
+    "title": "[ICLR 2026 Oral] Latent Particle World Models",
+    "channel_name": "Tal Daniel",
+    "channel_id": "",
+    "video_id": "aZeaCyXJjYI",
+    "playlist_id": null,
+    "url": "https://www.youtube.com/watch?v=aZeaCyXJjYI",
+    "description": "",
+    "published_at": "2026-02-25T00:00:00",
+    "duration": "",
+    "view_count": 491,
+    "topic_key": "ai_for_physics/generative_dynamics/sde_generative",
+    "resource_type": "video",
+    "importance_score": 63.37,
     "importance_bucket": "keep"
   },
   {
@@ -438,7 +523,7 @@
     "view_count": 27,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 63.77,
+    "importance_score": 63.19,
     "importance_bucket": "keep"
   },
   {
@@ -455,41 +540,24 @@
     "view_count": 9954,
     "topic_key": "stochastic_analysis",
     "resource_type": "video",
-    "importance_score": 63.48,
+    "importance_score": 62.88,
     "importance_bucket": "keep"
   },
   {
-    "id": 44,
-    "title": "An introduction to stochastic thermodynamics - Takahiro Sagawa / NEST",
-    "channel_name": "Stochastic Thermodynamics Search",
-    "channel_id": "UC9rHXgUE9pikzYcGrAujMXQ",
-    "video_id": "m023IrSLF-k",
+    "id": 87,
+    "title": "New AI Paradigm?! Energy-Based Transformers Explained",
+    "channel_name": "bycloud",
+    "channel_id": "",
+    "video_id": "LUQkWzjv2RM",
     "playlist_id": null,
-    "url": "https://www.youtube.com/watch?v=m023IrSLF-k",
-    "description": "Learn more, follow us on social media and check out our podcasts:\nhttps://linktr.ee/sfiscience",
-    "published_at": "2026-01-08T18:13:55",
-    "duration": "PT1H32M16S",
-    "view_count": 656,
-    "topic_key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+    "url": "https://www.youtube.com/watch?v=LUQkWzjv2RM",
+    "description": "",
+    "published_at": "2025-09-05T00:00:00",
+    "duration": "",
+    "view_count": 51171,
+    "topic_key": "ai_for_physics/generative_dynamics/energy_based_models",
     "resource_type": "video",
-    "importance_score": 61.24,
-    "importance_bucket": "keep"
-  },
-  {
-    "id": 68,
-    "title": "Meet The Neuroscientist Who Created The Best Universal Theory Of Brain Function",
-    "channel_name": "Diffusion and Free Energy Search",
-    "channel_id": "UCqg8kzLCb8EmQkbWFLUfDiQ",
-    "video_id": "R-IZOFs4qmY",
-    "playlist_id": null,
-    "url": "https://www.youtube.com/watch?v=R-IZOFs4qmY",
-    "description": "Get 1 Month Free of ConsensusAi: https://get.consensus.app/we00d2cmjpqe\nGet Professional High Quality Talk Therapy at BetterHelp. 10% off your first month of therapy with this link - https://betterhelp.com/giantsshoulder (Paid Partnership by BetterHelp)\n\nKarl Friston is one of the most influential neuroscientists alive and the creator of the Free Energy Principle, a unifying theory that aims to explain how brains perceive, act, learn, and remain alive in an uncertain world.\n\nThe brain is not a passive receiver of information. It is an active prediction machine, constantly generating expectations about the world and the body, updating those beliefs when they fail, and acting to make its predictions come true. Under this framework, perception is inference, action is prediction fulfilment, emotion is bodily forecasting, and the self is a model the brain uses to explain its own persistence.\n\nExpect to learn what the Free Energy Principle actually is, why living systems must minimise surprise, how predictive coding and active inference work, why perception is a controlled hallucination, how attention and precision shape experience, what interoceptive inference reveals about emotion and the self, how psychedelics relax beliefs, where consciousness might fit in a predictive hierarchy, and why this theory may be one of the deepest explanations of mind we currently have.\n\nTimestamps: \n00:00 Introduction to the Free Energy Principle\n02:54 Deflationary Nature of the Free Energy Principle\n05:48 Explaining the Free Energy Principle: High Road vs. Low Road\n09:02 Predictive Processing and Perception\n11:49 Active Inference and Its Implications\n15:07 Interoception and Emotional Inference\n18:02 Generative Models and Selfhood\n20:54 The Role of Emotions in Predictive Coding\n23:55 Transformative Experiences and Learning\n26:44 Conclusion: The Practical Applications of the Free Energy Principle\n48:58 Understanding the Role of Psychedelics in Therapy\n52:48 Mechanisms of False Inference and Precision in the Brain\n57:24 Relaxing Priors: The Impact of Psychedelics on Sense-Making\n01:01:03 Generative Models: Individual Differences and Shared Structures\n01:06:49 Cognitively Impenetrable Illusions and Prior Beliefs\n01:15:15 Sensory Attenuation and the Role of Attention\n01:19:03 The Free Energy Principle: Implications for Psychiatry\n01:25:48 The Future of Neuroscience Education and Research\n...\n\n❤️ Subscribe to our main channel - https://www.youtube.com/@thegiantsshoulder?sub_confirmation=1\n💚 Follow on Spotify - https://open.spotify.com/show/5m3Gta5MtIYdk59pb2GJ7M?si=Ka2rAQv7TyqiC9wvGwERpA\n💜 Follow on Apple Podcasts - https://podcasts.apple.com/ie/podcast/the-giants-shoulder/id1752486249\n\nDownload my FREE EBook 26 Neuroscience Books for 2026 HERE: https://thegiantsshoulder.com/",
-    "published_at": "2026-01-22T17:00:42",
-    "duration": "PT1H41M10S",
-    "view_count": 2180,
-    "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
-    "resource_type": "video",
-    "importance_score": 61.01,
+    "importance_score": 61.62,
     "importance_bucket": "keep"
   },
   {
@@ -544,6 +612,57 @@
     "importance_bucket": "keep"
   },
   {
+    "id": 44,
+    "title": "An introduction to stochastic thermodynamics - Takahiro Sagawa / NEST",
+    "channel_name": "Stochastic Thermodynamics Search",
+    "channel_id": "UC9rHXgUE9pikzYcGrAujMXQ",
+    "video_id": "m023IrSLF-k",
+    "playlist_id": null,
+    "url": "https://www.youtube.com/watch?v=m023IrSLF-k",
+    "description": "Learn more, follow us on social media and check out our podcasts:\nhttps://linktr.ee/sfiscience",
+    "published_at": "2026-01-08T18:13:55",
+    "duration": "PT1H32M16S",
+    "view_count": 656,
+    "topic_key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+    "resource_type": "video",
+    "importance_score": 60.64,
+    "importance_bucket": "keep"
+  },
+  {
+    "id": 68,
+    "title": "Meet The Neuroscientist Who Created The Best Universal Theory Of Brain Function",
+    "channel_name": "Diffusion and Free Energy Search",
+    "channel_id": "UCqg8kzLCb8EmQkbWFLUfDiQ",
+    "video_id": "R-IZOFs4qmY",
+    "playlist_id": null,
+    "url": "https://www.youtube.com/watch?v=R-IZOFs4qmY",
+    "description": "Get 1 Month Free of ConsensusAi: https://get.consensus.app/we00d2cmjpqe\nGet Professional High Quality Talk Therapy at BetterHelp. 10% off your first month of therapy with this link - https://betterhelp.com/giantsshoulder (Paid Partnership by BetterHelp)\n\nKarl Friston is one of the most influential neuroscientists alive and the creator of the Free Energy Principle, a unifying theory that aims to explain how brains perceive, act, learn, and remain alive in an uncertain world.\n\nThe brain is not a passive receiver of information. It is an active prediction machine, constantly generating expectations about the world and the body, updating those beliefs when they fail, and acting to make its predictions come true. Under this framework, perception is inference, action is prediction fulfilment, emotion is bodily forecasting, and the self is a model the brain uses to explain its own persistence.\n\nExpect to learn what the Free Energy Principle actually is, why living systems must minimise surprise, how predictive coding and active inference work, why perception is a controlled hallucination, how attention and precision shape experience, what interoceptive inference reveals about emotion and the self, how psychedelics relax beliefs, where consciousness might fit in a predictive hierarchy, and why this theory may be one of the deepest explanations of mind we currently have.\n\nTimestamps: \n00:00 Introduction to the Free Energy Principle\n02:54 Deflationary Nature of the Free Energy Principle\n05:48 Explaining the Free Energy Principle: High Road vs. Low Road\n09:02 Predictive Processing and Perception\n11:49 Active Inference and Its Implications\n15:07 Interoception and Emotional Inference\n18:02 Generative Models and Selfhood\n20:54 The Role of Emotions in Predictive Coding\n23:55 Transformative Experiences and Learning\n26:44 Conclusion: The Practical Applications of the Free Energy Principle\n48:58 Understanding the Role of Psychedelics in Therapy\n52:48 Mechanisms of False Inference and Precision in the Brain\n57:24 Relaxing Priors: The Impact of Psychedelics on Sense-Making\n01:01:03 Generative Models: Individual Differences and Shared Structures\n01:06:49 Cognitively Impenetrable Illusions and Prior Beliefs\n01:15:15 Sensory Attenuation and the Role of Attention\n01:19:03 The Free Energy Principle: Implications for Psychiatry\n01:25:48 The Future of Neuroscience Education and Research\n...\n\n❤️ Subscribe to our main channel - https://www.youtube.com/@thegiantsshoulder?sub_confirmation=1\n💚 Follow on Spotify - https://open.spotify.com/show/5m3Gta5MtIYdk59pb2GJ7M?si=Ka2rAQv7TyqiC9wvGwERpA\n💜 Follow on Apple Podcasts - https://podcasts.apple.com/ie/podcast/the-giants-shoulder/id1752486249\n\nDownload my FREE EBook 26 Neuroscience Books for 2026 HERE: https://thegiantsshoulder.com/",
+    "published_at": "2026-01-22T17:00:42",
+    "duration": "PT1H41M10S",
+    "view_count": 2180,
+    "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
+    "resource_type": "video",
+    "importance_score": 60.41,
+    "importance_bucket": "keep"
+  },
+  {
+    "id": 88,
+    "title": "Energy-Based Transformers are Scalable Learners and Thinkers",
+    "channel_name": "Gabriel Mongaras",
+    "channel_id": "",
+    "video_id": "uUE0x3iNX1U",
+    "playlist_id": null,
+    "url": "https://www.youtube.com/watch?v=uUE0x3iNX1U",
+    "description": "",
+    "published_at": "2025-07-14T00:00:00",
+    "duration": "",
+    "view_count": 2655,
+    "topic_key": "ai_for_physics/generative_dynamics/energy_based_models",
+    "resource_type": "video",
+    "importance_score": 60.28,
+    "importance_bucket": "keep"
+  },
+  {
     "id": 56,
     "title": "Machine Learning - Brunton & LeCun & Noe - September 2019",
     "channel_name": "Steve Brunton",
@@ -557,7 +676,24 @@
     "view_count": 359,
     "topic_key": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
     "resource_type": "video",
-    "importance_score": 60.67,
+    "importance_score": 60.07,
+    "importance_bucket": "keep"
+  },
+  {
+    "id": 94,
+    "title": "[ICLR 2026] Robust and Interpretable Adaptation of Equivariant Materials Foundation Models",
+    "channel_name": "Joonseok Lee",
+    "channel_id": "",
+    "video_id": "zXxhy4u4b_c",
+    "playlist_id": null,
+    "url": "https://www.youtube.com/watch?v=zXxhy4u4b_c",
+    "description": "",
+    "published_at": "2026-04-15T00:00:00",
+    "duration": "",
+    "view_count": 90,
+    "topic_key": "ai_for_physics/geometric_equivariant_learning/equivariant_materials_models",
+    "resource_type": "video",
+    "importance_score": 60.03,
     "importance_bucket": "keep"
   },
   {
@@ -574,7 +710,7 @@
     "view_count": 198,
     "topic_key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
     "resource_type": "video",
-    "importance_score": 60.62,
+    "importance_score": 60.02,
     "importance_bucket": "keep"
   },
   {
@@ -591,7 +727,7 @@
     "view_count": 99,
     "topic_key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
     "resource_type": "video",
-    "importance_score": 60.6,
+    "importance_score": 60.0,
     "importance_bucket": "keep"
   },
   {
@@ -608,7 +744,7 @@
     "view_count": 96,
     "topic_key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
     "resource_type": "video",
-    "importance_score": 60.55,
+    "importance_score": 59.98,
     "importance_bucket": "keep"
   },
   {
@@ -625,7 +761,7 @@
     "view_count": 171,
     "topic_key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
     "resource_type": "video",
-    "importance_score": 60.45,
+    "importance_score": 59.85,
     "importance_bucket": "keep"
   },
   {
@@ -642,7 +778,24 @@
     "view_count": 74,
     "topic_key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
     "resource_type": "video",
-    "importance_score": 60.16,
+    "importance_score": 59.56,
+    "importance_bucket": "keep"
+  },
+  {
+    "id": 98,
+    "title": "The physics behind diffusion models",
+    "channel_name": "Julia Turc",
+    "channel_id": "",
+    "video_id": "R0uMcXsfo2o",
+    "playlist_id": null,
+    "url": "https://www.youtube.com/watch?v=R0uMcXsfo2o",
+    "description": "",
+    "published_at": "2025-08-18T00:00:00",
+    "duration": "",
+    "view_count": 112206,
+    "topic_key": "ai_for_physics/generative_dynamics/ddpm",
+    "resource_type": "video",
+    "importance_score": 59.17,
     "importance_bucket": "keep"
   },
   {
@@ -693,7 +846,7 @@
     "view_count": 26,
     "topic_key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
     "resource_type": "video",
-    "importance_score": 58.61,
+    "importance_score": 58.03,
     "importance_bucket": "keep"
   },
   {
@@ -710,7 +863,7 @@
     "view_count": 72,
     "topic_key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
     "resource_type": "video",
-    "importance_score": 58.55,
+    "importance_score": 57.97,
     "importance_bucket": "keep"
   },
   {
@@ -727,7 +880,24 @@
     "view_count": 976,
     "topic_key": "urban_complex_systems/scaling_and_evolution/urban_scaling",
     "resource_type": "video",
-    "importance_score": 58.51,
+    "importance_score": 57.91,
+    "importance_bucket": "keep"
+  },
+  {
+    "id": 100,
+    "title": "Giulio Biroli - 1/3 Generative AI and Diffusion Models: a Statistical Physics Analysis",
+    "channel_name": "Institut des Hautes Etudes Scientifiques (IHES)",
+    "channel_id": "",
+    "video_id": "9b26lbsIt8c",
+    "playlist_id": null,
+    "url": "https://www.youtube.com/watch?v=9b26lbsIt8c",
+    "description": "",
+    "published_at": "2025-06-25T00:00:00",
+    "duration": "",
+    "view_count": 3206,
+    "topic_key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
+    "resource_type": "video",
+    "importance_score": 57.83,
     "importance_bucket": "keep"
   },
   {
@@ -744,7 +914,7 @@
     "view_count": 124491,
     "topic_key": "ai_for_physics",
     "resource_type": "video",
-    "importance_score": 58.33,
+    "importance_score": 57.75,
     "importance_bucket": "keep"
   },
   {
@@ -761,7 +931,7 @@
     "view_count": 39,
     "topic_key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
     "resource_type": "video",
-    "importance_score": 58.23,
+    "importance_score": 57.63,
     "importance_bucket": "keep"
   },
   {
@@ -778,7 +948,7 @@
     "view_count": 32,
     "topic_key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
     "resource_type": "video",
-    "importance_score": 58.06,
+    "importance_score": 57.46,
     "importance_bucket": "keep"
   },
   {
@@ -795,7 +965,7 @@
     "view_count": 49,
     "topic_key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
     "resource_type": "video",
-    "importance_score": 57.95,
+    "importance_score": 57.37,
     "importance_bucket": "keep"
   },
   {
@@ -812,7 +982,7 @@
     "view_count": 15,
     "topic_key": "statistical_physics/non_equilibrium_dynamics/nonequilibrium",
     "resource_type": "video",
-    "importance_score": 57.81,
+    "importance_score": 57.24,
     "importance_bucket": "keep"
   },
   {
@@ -829,7 +999,41 @@
     "view_count": 584,
     "topic_key": "urban_complex_systems/scaling_and_evolution/urban_scaling",
     "resource_type": "video",
-    "importance_score": 57.76,
+    "importance_score": 57.16,
+    "importance_bucket": "keep"
+  },
+  {
+    "id": 92,
+    "title": "Martin van den Brink in conversation with Max Welling",
+    "channel_name": "CuspAI",
+    "channel_id": "",
+    "video_id": "iPKlc7FePL8",
+    "playlist_id": null,
+    "url": "https://www.youtube.com/watch?v=iPKlc7FePL8",
+    "description": "",
+    "published_at": "2026-04-01T00:00:00",
+    "duration": "",
+    "view_count": 2450,
+    "topic_key": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
+    "resource_type": "video",
+    "importance_score": 56.69,
+    "importance_bucket": "keep"
+  },
+  {
+    "id": 93,
+    "title": "All-atom Diffusion Transformers - Chaitanya K. Joshi - ICLR 2025 AI4Mat Spotlight",
+    "channel_name": "Chaitanya K. Joshi",
+    "channel_id": "",
+    "video_id": "NiY4NLzemnU",
+    "playlist_id": null,
+    "url": "https://www.youtube.com/watch?v=NiY4NLzemnU",
+    "description": "",
+    "published_at": "2025-05-02T00:00:00",
+    "duration": "",
+    "view_count": 1475,
+    "topic_key": "ai_for_physics/geometric_equivariant_learning/equivariant_materials_models",
+    "resource_type": "video",
+    "importance_score": 55.97,
     "importance_bucket": "keep"
   },
   {
@@ -846,7 +1050,7 @@
     "view_count": 1686,
     "topic_key": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
     "resource_type": "video",
-    "importance_score": 56.22,
+    "importance_score": 55.62,
     "importance_bucket": "keep"
   },
   {
@@ -863,7 +1067,7 @@
     "view_count": 416,
     "topic_key": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
     "resource_type": "video",
-    "importance_score": 54.6,
+    "importance_score": 54.02,
     "importance_bucket": "review"
   },
   {
@@ -880,7 +1084,7 @@
     "view_count": 115,
     "topic_key": "urban_complex_systems/scaling_and_evolution/urban_scaling",
     "resource_type": "video",
-    "importance_score": 54.23,
+    "importance_score": 53.63,
     "importance_bucket": "review"
   },
   {
@@ -897,7 +1101,7 @@
     "view_count": 15652,
     "topic_key": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
     "resource_type": "video",
-    "importance_score": 54.12,
+    "importance_score": 53.55,
     "importance_bucket": "review"
   },
   {
@@ -914,7 +1118,7 @@
     "view_count": 4,
     "topic_key": "bridges/thermodynamic_inference/variational_free_energy",
     "resource_type": "video",
-    "importance_score": 53.57,
+    "importance_score": 53.0,
     "importance_bucket": "review"
   },
   {
@@ -931,7 +1135,7 @@
     "view_count": 88,
     "topic_key": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
     "resource_type": "video",
-    "importance_score": 52.12,
+    "importance_score": 51.52,
     "importance_bucket": "review"
   },
   {
@@ -948,7 +1152,24 @@
     "view_count": 3,
     "topic_key": "urban_complex_systems/scaling_and_evolution/urban_scaling",
     "resource_type": "video",
-    "importance_score": 51.71,
+    "importance_score": 51.13,
+    "importance_bucket": "review"
+  },
+  {
+    "id": 89,
+    "title": "Max Welling on AI for Materials Discovery | AI4Science Community Breakfast",
+    "channel_name": "Merantix AI Campus",
+    "channel_id": "",
+    "video_id": "1zwVjoWwHiI",
+    "playlist_id": null,
+    "url": "https://www.youtube.com/watch?v=1zwVjoWwHiI",
+    "description": "",
+    "published_at": "2025-10-22T00:00:00",
+    "duration": "",
+    "view_count": 793,
+    "topic_key": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
+    "resource_type": "video",
+    "importance_score": 50.95,
     "importance_bucket": "review"
   },
   {
@@ -965,7 +1186,24 @@
     "view_count": 148097,
     "topic_key": "ai_for_physics",
     "resource_type": "video",
-    "importance_score": 51.52,
+    "importance_score": 50.92,
+    "importance_bucket": "review"
+  },
+  {
+    "id": 91,
+    "title": "Keynote Talk: Max Welling - How AI Can Transform the Sciences by Max Welling",
+    "channel_name": "Deep Learning Indaba",
+    "channel_id": "",
+    "video_id": "HXOTCg7oIlU",
+    "playlist_id": null,
+    "url": "https://www.youtube.com/watch?v=HXOTCg7oIlU",
+    "description": "",
+    "published_at": "2025-11-18T00:00:00",
+    "duration": "",
+    "view_count": 472,
+    "topic_key": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
+    "resource_type": "video",
+    "importance_score": 50.84,
     "importance_bucket": "review"
   },
   {
@@ -982,7 +1220,7 @@
     "view_count": 43,
     "topic_key": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
     "resource_type": "video",
-    "importance_score": 51.38,
+    "importance_score": 50.8,
     "importance_bucket": "review"
   },
   {
@@ -999,24 +1237,7 @@
     "view_count": 2,
     "topic_key": "urban_complex_systems/scaling_and_evolution/urban_scaling",
     "resource_type": "video",
-    "importance_score": 51.19,
-    "importance_bucket": "review"
-  },
-  {
-    "id": 79,
-    "title": "Exploring Materials Physics with Shallow, Reinforcement, and Generative Machine Learning Models",
-    "channel_name": "Generative Physics Search",
-    "channel_id": "UCDIaLgyj2C5AUUmceHQ3puA",
-    "video_id": "UFP83GuV168",
-    "playlist_id": null,
-    "url": "https://www.youtube.com/watch?v=UFP83GuV168",
-    "description": "Kotak IISc AI-ML talk on 'Exploring Materials Physics with Shallow, Reinforcement, and Generative Machine Learning Models' by Sanghamitra Neogi.",
-    "published_at": "2026-04-09T08:15:02",
-    "duration": "PT1H14M21S",
-    "view_count": 9,
-    "topic_key": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
-    "resource_type": "video",
-    "importance_score": 49.12,
+    "importance_score": 50.59,
     "importance_bucket": "review"
   },
   {
@@ -1054,6 +1275,23 @@
     "importance_bucket": "review"
   },
   {
+    "id": 79,
+    "title": "Exploring Materials Physics with Shallow, Reinforcement, and Generative Machine Learning Models",
+    "channel_name": "Generative Physics Search",
+    "channel_id": "UCDIaLgyj2C5AUUmceHQ3puA",
+    "video_id": "UFP83GuV168",
+    "playlist_id": null,
+    "url": "https://www.youtube.com/watch?v=UFP83GuV168",
+    "description": "Kotak IISc AI-ML talk on 'Exploring Materials Physics with Shallow, Reinforcement, and Generative Machine Learning Models' by Sanghamitra Neogi.",
+    "published_at": "2026-04-09T08:15:02",
+    "duration": "PT1H14M21S",
+    "view_count": 9,
+    "topic_key": "ai_for_physics/physics_informed_modeling/physics_informed_generative",
+    "resource_type": "video",
+    "importance_score": 48.55,
+    "importance_bucket": "review"
+  },
+  {
     "id": 63,
     "title": "🏆First Thermal and Mechanical Experiment Class 11 Thermodynamics Joule's Experiment #neet #jeemains",
     "channel_name": "Generative Physics Search",
@@ -1071,6 +1309,40 @@
     "importance_bucket": "review"
   },
   {
+    "id": 90,
+    "title": "EWSC: Max Welling, Searching through Materials: Generate, Emulate, Simulate (2025)",
+    "channel_name": "Broad Institute",
+    "channel_id": "",
+    "video_id": "DS6x95GdZWI",
+    "playlist_id": null,
+    "url": "https://www.youtube.com/watch?v=DS6x95GdZWI",
+    "description": "",
+    "published_at": "2025-05-06T00:00:00",
+    "duration": "",
+    "view_count": 1149,
+    "topic_key": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
+    "resource_type": "video",
+    "importance_score": 47.59,
+    "importance_bucket": "review"
+  },
+  {
+    "id": 95,
+    "title": "Reinforcement Learning for Materials Discovery (ICLR 2025 AI4Mat)",
+    "channel_name": "AAGT",
+    "channel_id": "",
+    "video_id": "rCzDybwWkmg",
+    "playlist_id": null,
+    "url": "https://www.youtube.com/watch?v=rCzDybwWkmg",
+    "description": "",
+    "published_at": "2025-07-08T00:00:00",
+    "duration": "",
+    "view_count": 63,
+    "topic_key": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
+    "resource_type": "video",
+    "importance_score": 44.47,
+    "importance_bucket": "review"
+  },
+  {
     "id": 10,
     "title": "The Problem With Scale: What Growing Too Big Does to Work | Geoffrey West",
     "channel_name": "Dart Lindsley",
@@ -1084,7 +1356,7 @@
     "view_count": 39,
     "topic_key": "urban_scaling",
     "resource_type": "video",
-    "importance_score": 43.78,
+    "importance_score": 43.21,
     "importance_bucket": "review"
   }
 ]

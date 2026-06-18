@@ -1,0 +1,2410 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 10.78,
+      "text": "And I'm Ben Eysenbach."
+    },
+    {
+      "start": 10.9,
+      "end": 13.42,
+      "text": "I'm an assistant professor of computer science here at Princeton."
+    },
+    {
+      "start": 13.42,
+      "end": 19.0,
+      "text": "And this talk is largely about research that my students and I have been doing over the last year or so."
+    },
+    {
+      "start": 19.34,
+      "end": 27.84,
+      "text": "And it's largely about how my students have changed my mind, how I think about AI differently today than I did a couple years ago because of the research that we've done."
+    },
+    {
+      "start": 27.84,
+      "end": 32.32,
+      "text": "And it's about problems that I thought were supposed to be hard that turned out not to be so hard."
+    },
+    {
+      "start": 34.42,
+      "end": 41.120000000000005,
+      "text": "And as a bit of a preface, today's talk is going to be about AI agents, AI agents that make decisions."
+    },
+    {
+      "start": 41.78,
+      "end": 46.4,
+      "text": "And I think often when people think about AI agents today, they think about language models."
+    },
+    {
+      "start": 46.54,
+      "end": 50.44,
+      "text": "They think about Gemini, they think about chat, QPT, they think about other tools like this."
+    },
+    {
+      "start": 51.42,
+      "end": 53.74,
+      "text": "But I think that's just the current zeitgeist."
+    },
+    {
+      "start": 54.3,
+      "end": 57.66,
+      "text": "A couple years before this, people used to think about AI agents as reinforcement."
+    },
+    {
+      "start": 57.84,
+      "end": 62.36000000000001,
+      "text": "Things like AlphaGo, things that were really good at maximizing rewards."
+    },
+    {
+      "start": 63.6,
+      "end": 66.34,
+      "text": "And in today's talk, I want to argue that there's a third way."
+    },
+    {
+      "start": 66.62,
+      "end": 69.24000000000001,
+      "text": "There's a third way of building AI agents."
+    },
+    {
+      "start": 70.26,
+      "end": 71.64,
+      "text": "Self-supervised agents."
+    },
+    {
+      "start": 72.5,
+      "end": 75.06,
+      "text": "Agents that are not learned by reading text on the internet."
+    },
+    {
+      "start": 75.72,
+      "end": 79.54,
+      "text": "Agents that are not learned by trying to maximize the score in a game."
+    },
+    {
+      "start": 80.14,
+      "end": 84.22,
+      "text": "But agents, rather, that are trained by trying to find patterns in the physical world."
+    },
+    {
+      "start": 84.58000000000001,
+      "end": 86.02000000000001,
+      "text": "And then use those patterns for disinformation."
+    },
+    {
+      "start": 86.02000000000001,
+      "end": 86.16,
+      "text": "Okay."
+    },
+    {
+      "start": 87.84,
+      "end": 94.04,
+      "text": "So if you take away one thing from this talk is that when we think about agents, when we think about acting in the world,"
+    },
+    {
+      "start": 94.22,
+      "end": 98.30000000000001,
+      "text": "we don't necessarily need to say, we're going to take a giant language model and use that."
+    },
+    {
+      "start": 98.44,
+      "end": 100.74000000000001,
+      "text": "There are other compelling ways of building agents."
+    },
+    {
+      "start": 103.54,
+      "end": 105.22,
+      "text": "So I want to start with a thought experiment."
+    },
+    {
+      "start": 106.10000000000001,
+      "end": 107.68,
+      "text": "Why do we use deep learning?"
+    },
+    {
+      "start": 108.78,
+      "end": 109.34,
+      "text": "Why deep?"
+    },
+    {
+      "start": 111.58000000000001,
+      "end": 115.08000000000001,
+      "text": "I think often when we think about deep learning, we think about a sort of fuzzy magic."
+    },
+    {
+      "start": 115.92,
+      "end": 117.82000000000001,
+      "text": "Where if I give you an image."
+    },
+    {
+      "start": 118.42,
+      "end": 126.68,
+      "text": "And you learn to predict this in the cat and I give you a new image of a slightly different cat, you can still recognize that this is a cat."
+    },
+    {
+      "start": 127.36,
+      "end": 133.06,
+      "text": "You're not, you're sort of doing this sort of fuzzy night King saying this, this cat looks similar to a cat I've seen before."
+    },
+    {
+      "start": 133.06,
+      "end": 140.24,
+      "text": "And therefore as you label it, looking now under the plate, what's happening is a lot more powerful."
+    },
+    {
+      "start": 140.72,
+      "end": 145.16,
+      "text": "I keep learning about what they're doing is they're automatically finding patterns in your data."
+    },
+    {
+      "start": 145.8,
+      "end": 147.24,
+      "text": "It turns out, look at the layer."
+    },
+    {
+      "start": 147.24,
+      "end": 147.74,
+      "text": "It's your deep learning."
+    },
+    {
+      "start": 147.74,
+      "end": 156.06,
+      "text": "You find that they're automatically learning to identify edges in these images and objects in these images, entire scenes in these images."
+    },
+    {
+      "start": 158.62,
+      "end": 165.42000000000002,
+      "text": "And so I think I'd argue deep learning methods are, they're finding patterns in space, finding patterns in their training data."
+    },
+    {
+      "start": 168.64000000000001,
+      "end": 172.08,
+      "text": "I come from a reinforcement learning background and it's typically,"
+    },
+    {
+      "start": 175.86,
+      "end": 177.62,
+      "text": "typically when I think about reinforcement learning."
+    },
+    {
+      "start": 177.62,
+      "end": 188.5,
+      "text": "We're thinking about maximizing rewards about things like trading stock stock that plenty of video games to try to get a high score about educational outcomes."
+    },
+    {
+      "start": 188.5,
+      "end": 202.38,
+      "text": "How do I give different problems to students so that they, so that they master material by the end of the semester, but how standard yeah, what, uh, Daniel, would you mind muting your microphone?"
+    },
+    {
+      "start": 203.5,
+      "end": 203.8,
+      "text": "Okay."
+    },
+    {
+      "start": 203.8,
+      "end": 206.8,
+      "text": "I thought you want me to turn on, but I think I have to turn off."
+    },
+    {
+      "start": 206.8,
+      "end": 207.18,
+      "text": "Okay."
+    },
+    {
+      "start": 207.62,
+      "end": 210.62,
+      "text": "Great."
+    },
+    {
+      "start": 210.68,
+      "end": 211.02,
+      "text": "Cool."
+    },
+    {
+      "start": 211.38,
+      "end": 217.48000000000002,
+      "text": "Um, but how the standard, the standard reinforcement learning textbook defines reinforcement learning."
+    },
+    {
+      "start": 217.86,
+      "end": 220.18,
+      "text": "They argue that it's really not about finding patterns."
+    },
+    {
+      "start": 220.52,
+      "end": 226.72,
+      "text": "They say reinforcement learning is different from the self-supervised methods and that reinforcement learning is not trying to find hidden structure."
+    },
+    {
+      "start": 228.42000000000002,
+      "end": 237.58,
+      "text": "In today's talk, I want to argue that this isn't necessarily true, that it might be possible to find structure in the solutions to decision-making problems."
+    },
+    {
+      "start": 237.64000000000001,
+      "end": 245.78,
+      "text": "Why did you could find that sort of hidden structure, hidden structure and what you could see hidden structure and how you act in structure and how you plan."
+    },
+    {
+      "start": 246.16,
+      "end": 252.58,
+      "text": "What if there existed reinforcement learning algorithms that didn't find patterns in data, what sort of capabilities would that unlock?"
+    },
+    {
+      "start": 254.38,
+      "end": 262.94,
+      "text": "So in the same way that these image models, these deep learning image models can find patterns in images of cats, I'm going to talk about finding patterns in time."
+    },
+    {
+      "start": 263.94,
+      "end": 266.88,
+      "text": "We'll see how uncovering temporal patterns gives us new notions of generalization."
+    },
+    {
+      "start": 266.88,
+      "end": 267.6,
+      "text": "We'll see how uncovering temporal patterns gives us new notions of generalization."
+    },
+    {
+      "start": 267.6,
+      "end": 272.40000000000003,
+      "text": "allowing us to learn from lost data, and it will give rise to surprising sorts of exploration."
+    },
+    {
+      "start": 272.82000000000005,
+      "end": 276.58000000000004,
+      "text": "It will allow us to explore wide, open-world environments more effectively."
+    },
+    {
+      "start": 278.54,
+      "end": 282.12,
+      "text": "And so that first half of the talk, we'll talk about how we find about hunting for these patterns."
+    },
+    {
+      "start": 283.58000000000004,
+      "end": 285.58000000000004,
+      "text": "So what exactly is a temporal pattern?"
+    },
+    {
+      "start": 287.44,
+      "end": 292.12,
+      "text": "Well, one way of talking about a temporal pattern is that it's really a description of behavior."
+    },
+    {
+      "start": 293.02000000000004,
+      "end": 297.14000000000004,
+      "text": "If you see this woman here running through a city, you can describe what she's doing as"
+    },
+    {
+      "start": 297.14,
+      "end": 299.24,
+      "text": "jogging down a busy street."
+    },
+    {
+      "start": 300.08,
+      "end": 303.52,
+      "text": "And that's a relatively compact, short description of the scene."
+    },
+    {
+      "start": 305.3,
+      "end": 309.06,
+      "text": "Another way of describing a temporal pattern is that it's a form of temporal abstraction."
+    },
+    {
+      "start": 309.71999999999997,
+      "end": 311.58,
+      "text": "You might think of things like options or skills."
+    },
+    {
+      "start": 311.71999999999997,
+      "end": 313.12,
+      "text": "These have been well studied in the literature."
+    },
+    {
+      "start": 313.62,
+      "end": 315.44,
+      "text": "I'll talk more about the prior work in a couple slides."
+    },
+    {
+      "start": 316.5,
+      "end": 321.71999999999997,
+      "text": "Maybe a third definition of a temporal pattern is, I could introduce it by way of analogy."
+    },
+    {
+      "start": 322.47999999999996,
+      "end": 327.12,
+      "text": "A temporal pattern is akin to what computer vision models find in space."
+    },
+    {
+      "start": 327.7,
+      "end": 336.26,
+      "text": "And so when we think about patterns in this sort of image here, they really are two orthogonal axes."
+    },
+    {
+      "start": 336.84,
+      "end": 339.82,
+      "text": "There's this space axis, and there's this time axis."
+    },
+    {
+      "start": 340.71999999999997,
+      "end": 344.03999999999996,
+      "text": "And computer vision models, they try to find patterns along this space axis."
+    },
+    {
+      "start": 344.91999999999996,
+      "end": 350.74,
+      "text": "They might recognize that, say, this patch of a fence, this looks sort of similar to a patch of a fence I've seen before."
+    },
+    {
+      "start": 350.74,
+      "end": 356.8,
+      "text": "And so once they've learned to identify this fence near the top, I can also identify this fence near the bottom."
+    },
+    {
+      "start": 357.78,
+      "end": 361.3,
+      "text": "Temporal patterns are looking at this orthogonal axis, this axis of time."
+    },
+    {
+      "start": 362.02,
+      "end": 368.18,
+      "text": "And they're saying, hey, once I can identify this snippet of motion, I can also recognize this other snippet of motion."
+    },
+    {
+      "start": 370.91999999999996,
+      "end": 375.53999999999996,
+      "text": "In general, recognizing patterns in our data gives us a form of generalization."
+    },
+    {
+      "start": 375.7,
+      "end": 379.12,
+      "text": "It allows us to continue to make predictions on inputs we haven't seen before."
+    },
+    {
+      "start": 379.78,
+      "end": 383.21999999999997,
+      "text": "Identifying these patterns, identifying the structure, it allows for faster learning."
+    },
+    {
+      "start": 384.0,
+      "end": 386.74,
+      "text": "One way of thinking about this is a bit like Oregonic."
+    },
+    {
+      "start": 387.14,
+      "end": 392.68,
+      "text": "Where if you take this image, you can fold it up on top of itself, because the top half and bottom half look similar."
+    },
+    {
+      "start": 393.14,
+      "end": 395.74,
+      "text": "And this means that you now have half the number of pixels you have to look at."
+    },
+    {
+      "start": 396.5,
+      "end": 399.12,
+      "text": "You also can fold up the image along the time dimension."
+    },
+    {
+      "start": 400.14,
+      "end": 404.58,
+      "text": "And folding up the image along the time dimension allows you to solve decision-making problems much more quickly."
+    },
+    {
+      "start": 408.03999999999996,
+      "end": 411.26,
+      "text": "Okay, so how would we go about finding these sorts of temporal patterns?"
+    },
+    {
+      "start": 411.86,
+      "end": 414.53999999999996,
+      "text": "Finding these temporal patterns is a big open problem in the field."
+    },
+    {
+      "start": 414.88,
+      "end": 417.06,
+      "text": "And I want to talk about some details of this big open problem."
+    },
+    {
+      "start": 417.06,
+      "end": 417.12,
+      "text": "And I want to talk about some details of this big open problem."
+    },
+    {
+      "start": 417.14,
+      "end": 417.58,
+      "text": "So let's get to the question."
+    },
+    {
+      "start": 418.91999999999996,
+      "end": 424.8,
+      "text": "One aspect is, how can we learn temporal patterns directly via end-to-end learning?"
+    },
+    {
+      "start": 426.41999999999996,
+      "end": 430.52,
+      "text": "A second is, how can we learn very large numbers of these temporal patterns?"
+    },
+    {
+      "start": 431.56,
+      "end": 436.03999999999996,
+      "text": "The benefit of learning a large number of patterns is that they can facilitate generalization."
+    },
+    {
+      "start": 436.96,
+      "end": 440.47999999999996,
+      "text": "It means that after we've learned some number of patterns on our training data,"
+    },
+    {
+      "start": 440.78,
+      "end": 444.0,
+      "text": "we might be able to try new patterns or find new patterns in our testing data"
+    },
+    {
+      "start": 444.0,
+      "end": 446.41999999999996,
+      "text": "that we haven't explicitly seen before during training."
+    },
+    {
+      "start": 447.14,
+      "end": 451.38,
+      "text": "One way to see this is by way of analogy."
+    },
+    {
+      "start": 451.86,
+      "end": 456.2,
+      "text": "So I think the way that temporal patterns historically have been conceived"
+    },
+    {
+      "start": 456.2,
+      "end": 459.06,
+      "text": "is by saying that we're going to learn five or ten discrete patterns"
+    },
+    {
+      "start": 459.06,
+      "end": 461.9,
+      "text": "and use those to solve new tasks."
+    },
+    {
+      "start": 462.5,
+      "end": 465.5,
+      "text": "But if this is the case, what does it mean to try to use"
+    },
+    {
+      "start": 465.5,
+      "end": 469.82,
+      "text": "pattern number nine and three quarters to solve a new task?"
+    },
+    {
+      "start": 470.32,
+      "end": 470.84,
+      "text": "I don't know."
+    },
+    {
+      "start": 470.96,
+      "end": 471.91999999999996,
+      "text": "Like, this doesn't really compute."
+    },
+    {
+      "start": 472.46,
+      "end": 474.09999999999997,
+      "text": "So I think that when we're thinking about patterns,"
+    },
+    {
+      "start": 474.09999999999997,
+      "end": 476.52,
+      "text": "we should be thinking not about a finite number of patterns,"
+    },
+    {
+      "start": 476.52,
+      "end": 477.12,
+      "text": "but really,"
+    },
+    {
+      "start": 477.18,
+      "end": 478.6,
+      "text": "but an infinite number of patterns."
+    },
+    {
+      "start": 482.34000000000003,
+      "end": 485.0,
+      "text": "And then the last question that I want to focus on today is,"
+    },
+    {
+      "start": 485.3,
+      "end": 487.62,
+      "text": "how can finding these sorts of patterns accelerate learning?"
+    },
+    {
+      "start": 488.78000000000003,
+      "end": 492.94,
+      "text": "And there's the standard argument that the complexity of solving a decision-making problem,"
+    },
+    {
+      "start": 493.42,
+      "end": 498.92,
+      "text": "if you have to read over a long horizon, a horizon of length h,"
+    },
+    {
+      "start": 499.34000000000003,
+      "end": 502.78000000000003,
+      "text": "then the difficulty of doing that scales exponentially with a horizon."
+    },
+    {
+      "start": 502.78000000000003,
+      "end": 505.22,
+      "text": "But if you can find patterns in time,"
+    },
+    {
+      "start": 505.54,
+      "end": 507.1,
+      "text": "then this shrinks the length of it,"
+    },
+    {
+      "start": 507.26,
+      "end": 509.44,
+      "text": "and this is an effective horizon."
+    },
+    {
+      "start": 509.44,
+      "end": 512.24,
+      "text": "And so now the space you have to search for is much smaller."
+    },
+    {
+      "start": 515.34,
+      "end": 518.4,
+      "text": "There's also a perception argument that by finding these sorts of patterns,"
+    },
+    {
+      "start": 518.5600000000001,
+      "end": 522.52,
+      "text": "we now no longer need to explore states that look similar to states we've seen before."
+    },
+    {
+      "start": 522.88,
+      "end": 526.48,
+      "text": "This should significantly accelerate the exploration problem."
+    },
+    {
+      "start": 527.2,
+      "end": 529.5,
+      "text": "And there's also a planning aspect to this as well,"
+    },
+    {
+      "start": 529.5,
+      "end": 532.08,
+      "text": "namely, after we've learned how to solve some tasks,"
+    },
+    {
+      "start": 532.42,
+      "end": 537.0600000000001,
+      "text": "we don't need to go learn how to solve tasks that look similar to tasks we've seen before."
+    },
+    {
+      "start": 537.68,
+      "end": 539.6,
+      "text": "So if we would find these temporal patterns,"
+    },
+    {
+      "start": 539.68,
+      "end": 542.24,
+      "text": "it seems like they'd open up a number of important avenues."
+    },
+    {
+      "start": 544.94,
+      "end": 547.44,
+      "text": "There's several approaches for learning these sorts of temporal patterns."
+    },
+    {
+      "start": 547.98,
+      "end": 550.26,
+      "text": "For the sake of time, I'm going to gloss over most of the details now."
+    },
+    {
+      "start": 550.7,
+      "end": 553.34,
+      "text": "But needless to say, there's been a lot of study in the literature"
+    },
+    {
+      "start": 553.34,
+      "end": 555.2,
+      "text": "that we did see methods have certain limitations,"
+    },
+    {
+      "start": 555.44,
+      "end": 560.1,
+      "text": "such as having to learn lots of structure from a small amount of feedback."
+    },
+    {
+      "start": 561.7,
+      "end": 565.92,
+      "text": "Compression-based methods often require having lots of data to start with a priori."
+    },
+    {
+      "start": 567.12,
+      "end": 572.68,
+      "text": "But we'll see today how there's a really special piece of these compression-based methods,"
+    },
+    {
+      "start": 573.0,
+      "end": 575.0600000000001,
+      "text": "methods based on finding patterns in time,"
+    },
+    {
+      "start": 575.62,
+      "end": 581.5600000000001,
+      "text": "that fill up several limitations from these hierarchical methods,"
+    },
+    {
+      "start": 581.76,
+      "end": 584.5,
+      "text": "because they end up finding lots and lots of additional training data."
+    },
+    {
+      "start": 585.4,
+      "end": 588.26,
+      "text": "And it will turn out that there's a very close mathematical connection"
+    },
+    {
+      "start": 588.26,
+      "end": 590.92,
+      "text": "between these temporal contrast methods"
+    },
+    {
+      "start": 590.92,
+      "end": 594.6800000000001,
+      "text": "and perhaps the third class of approaches for finding patterns in time,"
+    },
+    {
+      "start": 594.94,
+      "end": 596.74,
+      "text": "those based on successor representations."
+    },
+    {
+      "start": 597.12,
+      "end": 600.9,
+      "text": "These successor representations have been well-studied in neuroscience."
+    },
+    {
+      "start": 602.4,
+      "end": 606.0,
+      "text": "Okay, so I want to start by going over what is this contrastive learning"
+    },
+    {
+      "start": 606.0,
+      "end": 607.16,
+      "text": "that I've been talking about."
+    },
+    {
+      "start": 607.5,
+      "end": 609.84,
+      "text": "And then I'll talk a little bit about how we can use it for decision-making."
+    },
+    {
+      "start": 610.9,
+      "end": 613.76,
+      "text": "We'll start by talking about how people have used contrastive learning"
+    },
+    {
+      "start": 613.76,
+      "end": 615.0600000000001,
+      "text": "for computer vision applications."
+    },
+    {
+      "start": 617.54,
+      "end": 619.96,
+      "text": "There, what we try to do is we try to take an image"
+    },
+    {
+      "start": 619.96,
+      "end": 621.88,
+      "text": "and learn a representation of that image."
+    },
+    {
+      "start": 623.02,
+      "end": 624.98,
+      "text": "And the goal is that if you have a similar image,"
+    },
+    {
+      "start": 624.98,
+      "end": 626.6,
+      "text": "say this other image of a cat,"
+    },
+    {
+      "start": 627.12,
+      "end": 628.92,
+      "text": "it has a similar representation."
+    },
+    {
+      "start": 629.7,
+      "end": 632.28,
+      "text": "And importantly, if you look at other images, say an image of a dog,"
+    },
+    {
+      "start": 633.0600000000001,
+      "end": 635.5,
+      "text": "the dog has a representation that's pretty different"
+    },
+    {
+      "start": 635.5,
+      "end": 637.08,
+      "text": "than the representations of cats."
+    },
+    {
+      "start": 638.22,
+      "end": 642.6,
+      "text": "Now, the key operation that makes this work is augmentation, data augmentation."
+    },
+    {
+      "start": 643.16,
+      "end": 646.78,
+      "text": "You should be able to take an image and then rotate that image or crop that image"
+    },
+    {
+      "start": 646.78,
+      "end": 650.96,
+      "text": "or change the brightness of that image to create some other similar image."
+    },
+    {
+      "start": 651.44,
+      "end": 652.82,
+      "text": "And that is what you use for training."
+    },
+    {
+      "start": 654.46,
+      "end": 656.9,
+      "text": "Now, the line of work that I do is in decision-making."
+    },
+    {
+      "start": 657.12,
+      "end": 660.62,
+      "text": "And so, we have to think carefully about what would be the right form of augmentation"
+    },
+    {
+      "start": 660.62,
+      "end": 662.74,
+      "text": "to do for decision-making."
+    },
+    {
+      "start": 663.74,
+      "end": 666.36,
+      "text": "And it turns out that in the context of decision-making,"
+    },
+    {
+      "start": 666.36,
+      "end": 669.88,
+      "text": "nature, physics, tells us how to do the augmentation."
+    },
+    {
+      "start": 671.02,
+      "end": 673.02,
+      "text": "So, let me walk you through how we do that."
+    },
+    {
+      "start": 674.94,
+      "end": 678.46,
+      "text": "So, we start with videos, say the sequence of images"
+    },
+    {
+      "start": 678.46,
+      "end": 680.0600000000001,
+      "text": "showing a robot picking up a block."
+    },
+    {
+      "start": 681.0600000000001,
+      "end": 683.34,
+      "text": "And again, we're going to learn representations,"
+    },
+    {
+      "start": 683.34,
+      "end": 686.16,
+      "text": "representations of each of the frames in this video."
+    },
+    {
+      "start": 687.12,
+      "end": 689.36,
+      "text": "And we're going to learn the representations."
+    },
+    {
+      "start": 689.36,
+      "end": 693.36,
+      "text": "So, the images that occur nearby in time have similar representations"
+    },
+    {
+      "start": 693.36,
+      "end": 696.54,
+      "text": "and images that occur far apart in time have dissimilar representations."
+    },
+    {
+      "start": 698.88,
+      "end": 701.92,
+      "text": "Now, as you'll recall, when we're doing this contrastive learning,"
+    },
+    {
+      "start": 701.92,
+      "end": 704.4,
+      "text": "the key operation was augmentation."
+    },
+    {
+      "start": 704.4,
+      "end": 706.98,
+      "text": "Given one image, you have to create another similar image."
+    },
+    {
+      "start": 707.96,
+      "end": 713.46,
+      "text": "But when we're dealing with videos, time or physics tells us how to do the augmentations."
+    },
+    {
+      "start": 713.46,
+      "end": 716.34,
+      "text": "Namely, just by looking at one image,"
+    },
+    {
+      "start": 717.12,
+      "end": 721.62,
+      "text": "I can generate another possible image that should have a similar representation,"
+    },
+    {
+      "start": 721.62,
+      "end": 723.62,
+      "text": "but I guess jumping forward in time."
+    },
+    {
+      "start": 723.62,
+      "end": 725.62,
+      "text": "Now, this is really powerful."
+    },
+    {
+      "start": 728.62,
+      "end": 731.62,
+      "text": "After we saw these methods, one of the questions we looked at was,"
+    },
+    {
+      "start": 731.62,
+      "end": 735.62,
+      "text": "how can we use these sorts of representations for decision-making for control?"
+    },
+    {
+      "start": 735.62,
+      "end": 740.12,
+      "text": "How can we use these sorts of representations, not for just understanding what a robot is doing,"
+    },
+    {
+      "start": 740.12,
+      "end": 742.12,
+      "text": "but actually for controlling that robot?"
+    },
+    {
+      "start": 744.12,
+      "end": 746.42,
+      "text": "And this gave rise to a method that I'll refer to as contrastive learning."
+    },
+    {
+      "start": 746.42,
+      "end": 746.8,
+      "text": "And this gave rise to a method that I'll refer to as contrastive learning."
+    },
+    {
+      "start": 746.8,
+      "end": 746.96,
+      "text": "And this gave rise to a method that I'll refer to as contrastive learning."
+    },
+    {
+      "start": 746.96,
+      "end": 748.22,
+      "text": "And this gave rise to a method that I'll refer to as contrastive reinforcement learning."
+    },
+    {
+      "start": 748.22,
+      "end": 750.4000000000001,
+      "text": "And this gave rise to a method that I'll refer to as contrastive reinforcement learning."
+    },
+    {
+      "start": 750.4000000000001,
+      "end": 753.02,
+      "text": "The approach here is very similar to what I described before,"
+    },
+    {
+      "start": 753.02,
+      "end": 756.5600000000001,
+      "text": "where we're learning representations for representations that now take as input"
+    },
+    {
+      "start": 756.5600000000001,
+      "end": 758.88,
+      "text": "both an image as well as an action."
+    },
+    {
+      "start": 760.0,
+      "end": 761.8000000000001,
+      "text": "And so, these representations here,"
+    },
+    {
+      "start": 761.8000000000001,
+      "end": 765.32,
+      "text": "they tell us both about the image that produced this representation,"
+    },
+    {
+      "start": 765.32,
+      "end": 766.96,
+      "text": "but also about the corresponding action."
+    },
+    {
+      "start": 767.64,
+      "end": 771.84,
+      "text": "And this dependence on actions is important because we'll be able to use these representations"
+    },
+    {
+      "start": 771.84,
+      "end": 776.64,
+      "text": "for figuring out what action we should use for figuring out how to get to some design."
+    },
+    {
+      "start": 776.64,
+      "end": 782.56,
+      "text": "some desired outcome. So I'll walk you through how that works. Let's say that the world looks"
+    },
+    {
+      "start": 782.56,
+      "end": 788.68,
+      "text": "like this. We have a robot. It has an object, maybe has several objects. And let's say that"
+    },
+    {
+      "start": 788.68,
+      "end": 793.8199999999999,
+      "text": "we would like the world to look like this. We would like the robot to figure out how do you"
+    },
+    {
+      "start": 793.8199999999999,
+      "end": 797.74,
+      "text": "go and pick up this object and pick it up and move it over and put it down and let go of it."
+    },
+    {
+      "start": 798.58,
+      "end": 800.68,
+      "text": "That's what we would like the robot to figure out how to do."
+    },
+    {
+      "start": 800.6800000000001,
+      "end": 807.6200000000001,
+      "text": "And for simplicity, let's imagine that we have just two actions, action one and action two."
+    },
+    {
+      "start": 808.6,
+      "end": 813.3000000000001,
+      "text": "And we can use these representations that we've learned to figure out which of these two actions"
+    },
+    {
+      "start": 813.3000000000001,
+      "end": 818.98,
+      "text": "would be better for getting to this eventual goal state. Namely, we can look at the representations"
+    },
+    {
+      "start": 818.98,
+      "end": 825.22,
+      "text": "and just based on these representations, we can predict would action A1 or action A2 would be"
+    },
+    {
+      "start": 825.22,
+      "end": 830.32,
+      "text": "more likely to get us to the goal state. So we can just look at the similarity between these"
+    },
+    {
+      "start": 830.32,
+      "end": 830.6600000000001,
+      "text": "representations and we can predict would action A1 or action A2 would be more likely to get us to"
+    },
+    {
+      "start": 830.66,
+      "end": 836.12,
+      "text": "the goal state. And based on this, it seems like action A2 was the one that would get us"
+    },
+    {
+      "start": 836.12,
+      "end": 841.4,
+      "text": "closer towards the goal. So that's the action that we'll take. And we do this over and over"
+    },
+    {
+      "start": 841.4,
+      "end": 846.24,
+      "text": "again, every kind of step, seeing which action would get us closer towards the goal and repeat"
+    },
+    {
+      "start": 846.24,
+      "end": 852.48,
+      "text": "this. Importantly, we do this from scratch. We don't need any demonstrations. We don't need to"
+    },
+    {
+      "start": 852.48,
+      "end": 857.3,
+      "text": "have a model of the world. We don't need a big VLN. We don't need a language model. We just have"
+    },
+    {
+      "start": 857.3,
+      "end": 860.3,
+      "text": "the robot. It takes some random actions. It learns from those representations. It learns from those"
+    },
+    {
+      "start": 860.3000000000001,
+      "end": 864.6800000000001,
+      "text": "representations. It takes some more random actions. It learns from those representations."
+    },
+    {
+      "start": 864.6800000000001,
+      "end": 872.84,
+      "text": "And so it's entirely good strapped from scratch. One way of interpreting what's happening here is"
+    },
+    {
+      "start": 872.84,
+      "end": 878.84,
+      "text": "that it's learning how to work the space of states. Rather than thinking in the space of images,"
+    },
+    {
+      "start": 878.84,
+      "end": 883.82,
+      "text": "it's thinking in the space of representations. So the space of representations is warped so"
+    },
+    {
+      "start": 883.82,
+      "end": 889.8800000000001,
+      "text": "that greedy planning is walking right directly from point A to point B in a straight line becomes"
+    },
+    {
+      "start": 890.3000000000001,
+      "end": 896.7,
+      "text": "more important. Importantly, this doesn't require any rewards. It doesn't require any"
+    },
+    {
+      "start": 896.7,
+      "end": 901.82,
+      "text": "demonstrations. It doesn't require any RLHF. And so compared to other reinforcement learning"
+    },
+    {
+      "start": 901.82,
+      "end": 905.6600000000001,
+      "text": "algorithms that you might consider or may have heard of before, this is likely much simpler."
+    },
+    {
+      "start": 908.1200000000001,
+      "end": 911.6,
+      "text": "So at this point, you might be wondering, okay, this seems nice. It seems like a nice heuristic."
+    },
+    {
+      "start": 911.6,
+      "end": 914.0000000000001,
+      "text": "Do you have any guarantees that this is going to work?"
+    },
+    {
+      "start": 915.44,
+      "end": 919.7600000000001,
+      "text": "And in fact, we can prove that this is a reasonable thing to do mathematically."
+    },
+    {
+      "start": 920.3000000000001,
+      "end": 924.2,
+      "text": "We can show that when you're looking at these representations and using them for decision"
+    },
+    {
+      "start": 924.2,
+      "end": 928.4000000000001,
+      "text": "making, this is grounded in the theory of reinforcement learning. And particularly,"
+    },
+    {
+      "start": 928.4000000000001,
+      "end": 931.82,
+      "text": "you can show that the similarity between these representations very"
+    },
+    {
+      "start": 931.82,
+      "end": 934.94,
+      "text": "closely corresponds to the sum of rewards that you'll get."
+    },
+    {
+      "start": 940.94,
+      "end": 943.94,
+      "text": "What this means is that acting greedily isn't a heuristic,"
+    },
+    {
+      "start": 943.94,
+      "end": 947.84,
+      "text": "but actually is a very reasonable thing to do. Is there a question there?"
+    },
+    {
+      "start": 950.3000000000001,
+      "end": 951.1400000000001,
+      "text": "Just raising your hand."
+    },
+    {
+      "start": 959.48,
+      "end": 965.48,
+      "text": "Oh, yeah, yeah. So no worries. I'm just sharing the screen so other people can also,"
+    },
+    {
+      "start": 965.48,
+      "end": 967.1,
+      "text": "you can see the other people here."
+    },
+    {
+      "start": 967.94,
+      "end": 971.72,
+      "text": "Great. Cool."
+    },
+    {
+      "start": 973.94,
+      "end": 979.4000000000001,
+      "text": "It turns out these representations have lots of really beautiful geometric properties. If folks"
+    },
+    {
+      "start": 979.4000000000001,
+      "end": 980.2800000000001,
+      "text": "remember from their"
+    },
+    {
+      "start": 980.3000000000001,
+      "end": 986.0600000000001,
+      "text": "geometry classes back in math classes, there's this notion of a triangle inequality. This"
+    },
+    {
+      "start": 986.0600000000001,
+      "end": 990.08,
+      "text": "triangle inequality is really, really beautiful and powerful. And in fact, basically underlies"
+    },
+    {
+      "start": 990.08,
+      "end": 994.1600000000001,
+      "text": "all of dynamic programming that we've learned in our computer science classes. And these"
+    },
+    {
+      "start": 994.1600000000001,
+      "end": 997.46,
+      "text": "representations, they obey the triangle inequality, and this gives rise to important"
+    },
+    {
+      "start": 997.46,
+      "end": 1003.6400000000001,
+      "text": "generalization properties. And in fact, these representations support a form of probabilistic"
+    },
+    {
+      "start": 1003.6400000000001,
+      "end": 1008.8000000000001,
+      "text": "inference. And so for folks familiar with graphical models, you inherit many of the"
+    },
+    {
+      "start": 1008.8000000000001,
+      "end": 1010.0000000000001,
+      "text": "nice properties that you get there."
+    },
+    {
+      "start": 1010.3000000000001,
+      "end": 1017.2,
+      "text": "Probably there are several ideas in the literature, and you can mathematically relate"
+    },
+    {
+      "start": 1017.2,
+      "end": 1022.2400000000001,
+      "text": "several of these ideas. And so I think for folks that are new to the reinforcement learning area,"
+    },
+    {
+      "start": 1022.2400000000001,
+      "end": 1026.92,
+      "text": "if you've heard things like successor representations or latent space models"
+    },
+    {
+      "start": 1026.92,
+      "end": 1031.1200000000001,
+      "text": "or forward-backward representations, I think all of these things are pointed in similar directions."
+    },
+    {
+      "start": 1031.78,
+      "end": 1036.28,
+      "text": "And so from a scientific perspective, this is really aesthetically pleasing because it means"
+    },
+    {
+      "start": 1036.28,
+      "end": 1040.1200000000001,
+      "text": "that they're really likely one grand unified theory that helps connect all these pieces."
+    },
+    {
+      "start": 1040.3,
+      "end": 1044.98,
+      "text": "I don't know what that theory is. All I know is that a lot of work is pointing in similar directions,"
+    },
+    {
+      "start": 1044.98,
+      "end": 1049.24,
+      "text": "and I'm really excited to run in that direction and see what's out there to really better understand"
+    },
+    {
+      "start": 1049.24,
+      "end": 1055.36,
+      "text": "the science of these decision-making algorithms. So just to summarize how this complete method works,"
+    },
+    {
+      "start": 1056.3799999999999,
+      "end": 1060.7,
+      "text": "we'll start with some data, maybe it's random data, a robot or other agent doing things."
+    },
+    {
+      "start": 1061.4199999999998,
+      "end": 1069.04,
+      "text": "We then learn these representations from these data, and then we select actions by just acting"
+    },
+    {
+      "start": 1069.04,
+      "end": 1069.7,
+      "text": "credibly."
+    },
+    {
+      "start": 1069.7,
+      "end": 1073.42,
+      "text": "It's as simple as possible if using the representations for decision-making."
+    },
+    {
+      "start": 1075.04,
+      "end": 1079.0,
+      "text": "You could use this policy and then go back and collect more data and repeat this loop."
+    },
+    {
+      "start": 1081.46,
+      "end": 1086.8,
+      "text": "One thing to emphasize here is this is the entire algorithm. We didn't start with a pre-trained"
+    },
+    {
+      "start": 1086.8,
+      "end": 1091.9,
+      "text": "language model. We didn't start with a whole bunch of demonstrations from having humans"
+    },
+    {
+      "start": 1091.9,
+      "end": 1098.44,
+      "text": "tele-operate robots. We're not doing R like Chef. We're not doing GRPO. This is the entire algorithm."
+    },
+    {
+      "start": 1098.44,
+      "end": 1099.64,
+      "text": "The entire algorithm that's taking care of this."
+    },
+    {
+      "start": 1099.7,
+      "end": 1103.06,
+      "text": "We have some of the same data, learned representations, act credibly to"
+    },
+    {
+      "start": 1103.06,
+      "end": 1104.0800000000002,
+      "text": "maybe collect some more data."
+    },
+    {
+      "start": 1104.0800000000002,
+      "end": 1106.8400000000001,
+      "text": "This is it and it turns out this algorithm is really"
+    },
+    {
+      "start": 1106.8400000000001,
+      "end": 1109.18,
+      "text": "powerful and it can be used to solve several problems."
+    },
+    {
+      "start": 1110.92,
+      "end": 1113.8600000000001,
+      "text": "There's an interesting semantic question about whether"
+    },
+    {
+      "start": 1113.8600000000001,
+      "end": 1115.24,
+      "text": "this is actually reinforcement learning."
+    },
+    {
+      "start": 1115.24,
+      "end": 1118.0,
+      "text": "Am I allowed to call The Work That Had a Reinforcement Learning?"
+    },
+    {
+      "start": 1118.6000000000001,
+      "end": 1124.6000000000001,
+      "text": "Often reinforcement learning, people think about reward maximization, but rewards never occur here."
+    },
+    {
+      "start": 1125.8400000000001,
+      "end": 1127.6000000000001,
+      "text": "Our code doesn't use the word reward in it. So I don't know whether to call this reward renewal in one of these cases nor the negativities it has towards that."
+    },
+    {
+      "start": 1127.6000000000001,
+      "end": 1132.2400000000002,
+      "text": "in it. So I don't know whether to call this reward maximization or not, but I know that it works."
+    },
+    {
+      "start": 1132.7,
+      "end": 1139.8400000000001,
+      "text": "And I want to show you some examples of that. Here's one example done by my student Changyi"
+    },
+    {
+      "start": 1139.8400000000001,
+      "end": 1144.64,
+      "text": "and a collaborator, Homer. What they wanted to do is get this robot to set the table."
+    },
+    {
+      "start": 1145.5800000000002,
+      "end": 1150.1000000000001,
+      "text": "And so they collected a bunch of data. They had a bunch of data of the robot doing other tasks."
+    },
+    {
+      "start": 1151.1200000000001,
+      "end": 1155.4,
+      "text": "They then took this data, they learned the representations, and then they gave the robot"
+    },
+    {
+      "start": 1155.4,
+      "end": 1161.3400000000001,
+      "text": "a picture where this table had been set how they want the table to be set. And just by giving the"
+    },
+    {
+      "start": 1161.3400000000001,
+      "end": 1166.5,
+      "text": "robot this picture, the robot had to figure out what sequence of actions to take to set the table"
+    },
+    {
+      "start": 1166.5,
+      "end": 1172.1000000000001,
+      "text": "in the desired configuration. From a robotics perspective, this is really appealing because"
+    },
+    {
+      "start": 1172.1000000000001,
+      "end": 1176.88,
+      "text": "it meant that for solving this task, we didn't have to have any humans demonstrate how to solve"
+    },
+    {
+      "start": 1176.88,
+      "end": 1182.38,
+      "text": "this task. It means that we didn't have to have any remote teleoperation. It means that we never"
+    },
+    {
+      "start": 1182.38,
+      "end": 1185.26,
+      "text": "had to handcraft reward function or do any complex"
+    },
+    {
+      "start": 1185.26,
+      "end": 1185.38,
+      "text": "tasks."
+    },
+    {
+      "start": 1185.4,
+      "end": 1193.22,
+      "text": "We could do this directly from raw, random data."
+    },
+    {
+      "start": 1196.3400000000001,
+      "end": 1200.7800000000002,
+      "text": "Another fun example of this is for solving the Rubik's cube. We took a bunch of random data from"
+    },
+    {
+      "start": 1200.7800000000002,
+      "end": 1206.14,
+      "text": "the Rubik's cube and learned these representations. And just by acting greedily with respect to these"
+    },
+    {
+      "start": 1206.14,
+      "end": 1211.1000000000001,
+      "text": "representations, you can solve the Rubik's cube. In fact, if you look at the video here, you'll"
+    },
+    {
+      "start": 1211.1000000000001,
+      "end": 1215.26,
+      "text": "see that the strategy that it ends up learning for solving the cube is not too dissimilar to"
+    },
+    {
+      "start": 1215.26,
+      "end": 1222.2,
+      "text": "the strategy that novice QNQ solvers use for solving the Rubik's cube."
+    },
+    {
+      "start": 1222.2,
+      "end": 1229.0,
+      "text": "And one last application that I think is sort of cool, this was done not by me, but by folks down"
+    },
+    {
+      "start": 1229.0,
+      "end": 1236.64,
+      "text": "the street at a healthcare company, is for figuring out how do you control esophageal ultrasound"
+    },
+    {
+      "start": 1236.64,
+      "end": 1241.2,
+      "text": "devices. These are devices that you put down someone's throat and you use to take pictures of"
+    },
+    {
+      "start": 1241.2,
+      "end": 1245.12,
+      "text": "their heart. These devices are really challenging to control, but by using these devices, you can"
+    },
+    {
+      "start": 1245.1200000000001,
+      "end": 1250.7,
+      "text": "use these self-supervised methods that are able to figure out how do you take exactly the right"
+    },
+    {
+      "start": 1250.7,
+      "end": 1257.5000000000002,
+      "text": "images of someone's heart. And so this first half of the talk, we've sort of gone over how we"
+    },
+    {
+      "start": 1257.5000000000002,
+      "end": 1262.5000000000002,
+      "text": "automatically find these sorts of temporal patterns. In the second half, I want to talk"
+    },
+    {
+      "start": 1262.5000000000002,
+      "end": 1267.48,
+      "text": "about some properties of these temporal patterns, how learning these representations, these patterns"
+    },
+    {
+      "start": 1267.48,
+      "end": 1272.0600000000002,
+      "text": "can automatically allow us to generalize and solve new tasks more quickly, but also can"
+    },
+    {
+      "start": 1272.0600000000002,
+      "end": 1275.1000000000001,
+      "text": "accelerate exploration and solve tasks that we didn't think were possible."
+    },
+    {
+      "start": 1275.1200000000001,
+      "end": 1289.24,
+      "text": "So I'm going to start with a hypothesis. If our goal is to find these temporal patterns, and in"
+    },
+    {
+      "start": 1289.24,
+      "end": 1294.94,
+      "text": "particular use deep learning methods to find temporal patterns, then deep learning, the deep"
+    },
+    {
+      "start": 1294.94,
+      "end": 1300.7600000000002,
+      "text": "part, is likely going to be important. And this gives us a testable prediction, namely that deeper"
+    },
+    {
+      "start": 1300.7600000000002,
+      "end": 1305.1000000000001,
+      "text": "networks should be better at finding temporal patterns. This sounds pretty obvious, but it's not"
+    },
+    {
+      "start": 1305.1200000000001,
+      "end": 1310.5600000000002,
+      "text": "the case. But in fact, it's contrary to be met with a list in the field. I just got back from a"
+    },
+    {
+      "start": 1310.5600000000002,
+      "end": 1314.5800000000002,
+      "text": "major machine learning conference a couple weeks ago. And there, most of the papers doing"
+    },
+    {
+      "start": 1314.5800000000002,
+      "end": 1318.38,
+      "text": "reinforcement learning used about two to five layers. We're about two to five layers deep."
+    },
+    {
+      "start": 1320.3200000000002,
+      "end": 1324.8400000000001,
+      "text": "Compared to models in computer vision and NLP, that's tiny. It's really, really small."
+    },
+    {
+      "start": 1325.96,
+      "end": 1330.1200000000001,
+      "text": "And the reason that people don't try bigger networks is that historically, it just hasn't"
+    },
+    {
+      "start": 1330.1200000000001,
+      "end": 1335.1000000000001,
+      "text": "worked. Lost papers have tried getting really big networks to work for reinforcement"
+    },
+    {
+      "start": 1335.1200000000001,
+      "end": 1339.88,
+      "text": "learning, but it hasn't worked. But in recent work, we've found that these self-supervised"
+    },
+    {
+      "start": 1339.88,
+      "end": 1343.7800000000002,
+      "text": "methods, these methods are just one of these representations, they do seem to benefit from"
+    },
+    {
+      "start": 1343.7800000000002,
+      "end": 1348.0000000000002,
+      "text": "really deep networks in ways that other reinforcement learning methods don't."
+    },
+    {
+      "start": 1349.5200000000002,
+      "end": 1353.7,
+      "text": "And so in one experiment, we looked at this humanoid robot that's on the left here."
+    },
+    {
+      "start": 1354.22,
+      "end": 1359.4,
+      "text": "This humanoid robot, we wanted to get it to run across the table, so it eventually reached this"
+    },
+    {
+      "start": 1359.4,
+      "end": 1365.1000000000001,
+      "text": "blue sphere. And when we ran this experiment with a small network, it basically failed,"
+    },
+    {
+      "start": 1365.1200000000001,
+      "end": 1368.64,
+      "text": "to solve this task. The amount of time it spent at the goal was then extremely small."
+    },
+    {
+      "start": 1370.64,
+      "end": 1375.2,
+      "text": "But when we used bigger networks, networks that were significantly, significantly larger than those"
+    },
+    {
+      "start": 1375.2,
+      "end": 1378.8000000000002,
+      "text": "used in prior work, we found that performance increased significantly."
+    },
+    {
+      "start": 1383.5200000000002,
+      "end": 1388.0000000000002,
+      "text": "Second hypothesis. When we're alerting these representations, we're actually capturing"
+    },
+    {
+      "start": 1388.0000000000002,
+      "end": 1393.92,
+      "text": "some sort of temporal pattern. To give a bit of context for this hypothesis, I want to show the"
+    },
+    {
+      "start": 1393.92,
+      "end": 1395.0400000000002,
+      "text": "representations that we're looking at right now. The first hypothesis is that we're looking at a"
+    },
+    {
+      "start": 1395.1200000000001,
+      "end": 1396.88,
+      "text": "scene, and then we want to tell you about the scene itself, but then we want to tell you about other"
+    },
+    {
+      "start": 1396.88,
+      "end": 1404.64,
+      "text": "machine learning methods as well. So a standard way of understanding representations is to learn an"
+    },
+    {
+      "start": 1404.64,
+      "end": 1410.0000000000002,
+      "text": "autoencoder, or a variational autoencoder. These are methods that seek an image and try to"
+    },
+    {
+      "start": 1410.0000000000002,
+      "end": 1413.5200000000002,
+      "text": "understand what are the parts of that image? What are the objects that are included in that image?"
+    },
+    {
+      "start": 1414.72,
+      "end": 1421.68,
+      "text": "And these methods, they typically find that the representations capture the contents of a scene."
+    },
+    {
+      "start": 1421.68,
+      "end": 1425.0400000000002,
+      "text": "But they don't tell you about how you would go about rearranging those objects. They don't tell you about time."
+    },
+    {
+      "start": 1425.1200000000001,
+      "end": 1432.5000000000002,
+      "text": "Now, in contrast with our methods, we find that the representations we learn not only"
+    },
+    {
+      "start": 1432.5000000000002,
+      "end": 1437.7800000000002,
+      "text": "tell us about the contents of the scene, but they also tell us something about time."
+    },
+    {
+      "start": 1437.7800000000002,
+      "end": 1441.44,
+      "text": "They seem to have captured some amount of spatial awareness."
+    },
+    {
+      "start": 1441.44,
+      "end": 1445.0400000000002,
+      "text": "So if you look at the representations from the left side of the screen to the right side"
+    },
+    {
+      "start": 1445.0400000000002,
+      "end": 1450.5400000000002,
+      "text": "of the screen, you see that the objects move, this red object here, it moves closer towards"
+    },
+    {
+      "start": 1450.5400000000002,
+      "end": 1454.6200000000001,
+      "text": "the camera, and the robot arm, it goes down, it touches the red object, it touches the"
+    },
+    {
+      "start": 1454.6200000000001,
+      "end": 1457.5800000000002,
+      "text": "drawer, and that moves again."
+    },
+    {
+      "start": 1457.5800000000002,
+      "end": 1462.3000000000002,
+      "text": "But the red object, it only moves when the arm is touching it, and the drawer, it only"
+    },
+    {
+      "start": 1462.3000000000002,
+      "end": 1464.8600000000001,
+      "text": "moves when the robot arm is touching it."
+    },
+    {
+      "start": 1464.8600000000001,
+      "end": 1468.9,
+      "text": "And I think this is really powerful, because it means that these representations are really"
+    },
+    {
+      "start": 1468.9,
+      "end": 1478.2800000000002,
+      "text": "telling us something about planning, they're really telling us something about time."
+    },
+    {
+      "start": 1478.2800000000002,
+      "end": 1482.38,
+      "text": "In fact, you can prove formally that this isn't just a fluke, but it should happen."
+    },
+    {
+      "start": 1482.38,
+      "end": 1484.6000000000001,
+      "text": "The theoretical reasons why we should expect that."
+    },
+    {
+      "start": 1484.6000000000001,
+      "end": 1489.7600000000002,
+      "text": "When you take the representations we've learned, and just draw a line between the two representations,"
+    },
+    {
+      "start": 1489.7600000000002,
+      "end": 1494.16,
+      "text": "this line should tell you how to solve a problem."
+    },
+    {
+      "start": 1494.16,
+      "end": 1497.3600000000001,
+      "text": "And for the sake of time, I'll skip over the math, but the math ends up being really beautiful,"
+    },
+    {
+      "start": 1497.3600000000001,
+      "end": 1504.38,
+      "text": "and I can talk about that afterwards if there are questions."
+    },
+    {
+      "start": 1504.38,
+      "end": 1508.64,
+      "text": "So these representations, they do seem to capture temporal patterns."
+    },
+    {
+      "start": 1508.64,
+      "end": 1513.3600000000001,
+      "text": "And it turns out that capturing these temporal patterns allows us to generalize in ways that"
+    },
+    {
+      "start": 1513.3600000000001,
+      "end": 1514.5600000000002,
+      "text": "seem really unique to the world."
+    },
+    {
+      "start": 1514.56,
+      "end": 1518.6599999999999,
+      "text": "They reinforce the learning problem setting, and they also give rise to certain exploration"
+    },
+    {
+      "start": 1518.6599999999999,
+      "end": 1519.6599999999999,
+      "text": "properties."
+    },
+    {
+      "start": 1519.6599999999999,
+      "end": 1523.58,
+      "text": "And I'll start by talking about generalization."
+    },
+    {
+      "start": 1523.58,
+      "end": 1528.86,
+      "text": "So very broadly in machine learning, finding patterns, finding learning and variances allows"
+    },
+    {
+      "start": 1528.86,
+      "end": 1531.5,
+      "text": "us to build models that generalize."
+    },
+    {
+      "start": 1531.5,
+      "end": 1535.52,
+      "text": "So to make an analogy to computer vision, let's say that you have a computer vision"
+    },
+    {
+      "start": 1535.52,
+      "end": 1542.04,
+      "text": "model that treats an image of a cat and a slightly different image of a cat identically."
+    },
+    {
+      "start": 1542.04,
+      "end": 1544.54,
+      "text": "Then if you build a model on top of these representations,"
+    },
+    {
+      "start": 1544.56,
+      "end": 1549.62,
+      "text": "that model will be invariant to these small changes, these small changes in brightness"
+    },
+    {
+      "start": 1549.62,
+      "end": 1553.94,
+      "text": "and rotation."
+    },
+    {
+      "start": 1553.94,
+      "end": 1558.1599999999999,
+      "text": "When we learn these representations with time, these temporal representations, what are the"
+    },
+    {
+      "start": 1558.1599999999999,
+      "end": 1561.56,
+      "text": "corresponding generalization properties?"
+    },
+    {
+      "start": 1561.56,
+      "end": 1568.84,
+      "text": "Well, it turns out that when you learn these temporal representations, the generalization"
+    },
+    {
+      "start": 1568.84,
+      "end": 1571.54,
+      "text": "properties you get are really powerful."
+    },
+    {
+      "start": 1571.54,
+      "end": 1574.36,
+      "text": "And I can explain this as follows."
+    },
+    {
+      "start": 1574.56,
+      "end": 1579.24,
+      "text": "When, let's say that you're this rabbit here, and you want to figure out how do you get"
+    },
+    {
+      "start": 1579.24,
+      "end": 1581.74,
+      "text": "to this purple star here."
+    },
+    {
+      "start": 1581.74,
+      "end": 1587.34,
+      "text": "Maybe the first action you take is to move down to this state here."
+    },
+    {
+      "start": 1587.34,
+      "end": 1591.3999999999999,
+      "text": "And maybe tomorrow, this rabbit has to solve a different navigation problem, going from"
+    },
+    {
+      "start": 1591.3999999999999,
+      "end": 1594.58,
+      "text": "this state here to this brown star here."
+    },
+    {
+      "start": 1594.58,
+      "end": 1597.32,
+      "text": "And the first action it takes is to go down."
+    },
+    {
+      "start": 1597.32,
+      "end": 1604.56,
+      "text": "Well, the, for both these tasks, the purple star task and the brown star task, the first"
+    },
+    {
+      "start": 1604.56,
+      "end": 1606.94,
+      "text": "action was the same."
+    },
+    {
+      "start": 1606.94,
+      "end": 1610.24,
+      "text": "In both cases, the action was the same."
+    },
+    {
+      "start": 1610.24,
+      "end": 1616.06,
+      "text": "And so we might say that this policy should be invariant to plan."
+    },
+    {
+      "start": 1616.06,
+      "end": 1620.46,
+      "text": "It should produce the same action for getting to the purple star as it should for getting"
+    },
+    {
+      "start": 1620.46,
+      "end": 1625.8,
+      "text": "to a waypoint on the route to the purple star."
+    },
+    {
+      "start": 1625.8,
+      "end": 1629.94,
+      "text": "I can visualize that as follows."
+    },
+    {
+      "start": 1629.94,
+      "end": 1634.44,
+      "text": "Now what this means is that if you can build policies that have this invariance process,"
+    },
+    {
+      "start": 1634.44,
+      "end": 1639.1200000000001,
+      "text": "then you can train them on short horizon tasks, like getting to the idea of a small"
+    },
+    {
+      "start": 1639.1200000000001,
+      "end": 1640.52,
+      "text": "circle here."
+    },
+    {
+      "start": 1640.52,
+      "end": 1646.24,
+      "text": "And without any more training, they'll generalize to reach more distant goals, like this outer"
+    },
+    {
+      "start": 1646.24,
+      "end": 1648.0800000000002,
+      "text": "circle shown here."
+    },
+    {
+      "start": 1648.0800000000002,
+      "end": 1655.8400000000001,
+      "text": "So in summary, with takes of generalization, they really seem unique to decision-making"
+    },
+    {
+      "start": 1655.8400000000001,
+      "end": 1656.8400000000001,
+      "text": "problems."
+    },
+    {
+      "start": 1656.8400000000001,
+      "end": 1662.46,
+      "text": "Very, very broadly, I think today, a lot of people, when they talk about agents and AI,"
+    },
+    {
+      "start": 1662.46,
+      "end": 1664.38,
+      "text": "they talk about building generalist agents."
+    },
+    {
+      "start": 1664.44,
+      "end": 1671.78,
+      "text": "But the next time you hear that term, I want you to ask, what specific notion of generalization"
+    },
+    {
+      "start": 1671.78,
+      "end": 1673.94,
+      "text": "are you talking about?"
+    },
+    {
+      "start": 1673.94,
+      "end": 1676.96,
+      "text": "Generalization is about training at one task and doing well in other tasks."
+    },
+    {
+      "start": 1676.96,
+      "end": 1681.1200000000001,
+      "text": "And there's some notions of generalization that are studied by computer vision models"
+    },
+    {
+      "start": 1681.1200000000001,
+      "end": 1682.68,
+      "text": "and language models."
+    },
+    {
+      "start": 1682.68,
+      "end": 1686.52,
+      "text": "But there are other notions of generalization that seem unique in making problems."
+    },
+    {
+      "start": 1686.52,
+      "end": 1692.52,
+      "text": "So the last few minutes of the talk, I want to talk a little bit about exploration."
+    },
+    {
+      "start": 1692.52,
+      "end": 1693.52,
+      "text": "I want to talk a little bit about generalization."
+    },
+    {
+      "start": 1693.52,
+      "end": 1694.3600000000001,
+      "text": "I want to talk a little bit about generalization."
+    },
+    {
+      "start": 1694.44,
+      "end": 1699.3600000000001,
+      "text": "And the problem setting here is one that's almost diabolically difficult."
+    },
+    {
+      "start": 1699.3600000000001,
+      "end": 1708.52,
+      "text": "It's one where we want to learn a policy for navigating from one state to some other very"
+    },
+    {
+      "start": 1708.52,
+      "end": 1711.52,
+      "text": "far away state."
+    },
+    {
+      "start": 1711.52,
+      "end": 1713.2,
+      "text": "And so you could think about solving a Rubik's cube."
+    },
+    {
+      "start": 1713.2,
+      "end": 1716.5,
+      "text": "If I give you a Rubik's cube, you want to figure out, how do you get from the current"
+    },
+    {
+      "start": 1716.5,
+      "end": 1722.2,
+      "text": "Rubik's cube configuration to the state where the Rubik's cube is solved?"
+    },
+    {
+      "start": 1722.2,
+      "end": 1723.44,
+      "text": "And here's how you might go about solving that problem."
+    },
+    {
+      "start": 1723.44,
+      "end": 1724.44,
+      "text": "And here's how you might go about solving that problem."
+    },
+    {
+      "start": 1724.44,
+      "end": 1729.44,
+      "text": "You take a random policy, because policies can be garbage to start."
+    },
+    {
+      "start": 1729.44,
+      "end": 1731.44,
+      "text": "And then you say, policy, try to get to this goal."
+    },
+    {
+      "start": 1731.44,
+      "end": 1734.44,
+      "text": "And you collect some data."
+    },
+    {
+      "start": 1734.44,
+      "end": 1737.44,
+      "text": "And then you use these data to learn some representations."
+    },
+    {
+      "start": 1737.44,
+      "end": 1739.44,
+      "text": "You learn a policy."
+    },
+    {
+      "start": 1739.44,
+      "end": 1741.44,
+      "text": "And then you go back and you collect some more data."
+    },
+    {
+      "start": 1741.44,
+      "end": 1746.44,
+      "text": "And you try to get to this one very difficult goal."
+    },
+    {
+      "start": 1746.44,
+      "end": 1749.44,
+      "text": "Now, intuitively, it seems like this shouldn't work."
+    },
+    {
+      "start": 1749.44,
+      "end": 1754.44,
+      "text": "It seems like if I tell you, try to navigate from one state to some very far away state,"
+    },
+    {
+      "start": 1754.44,
+      "end": 1758.44,
+      "text": "this should just be impossible."
+    },
+    {
+      "start": 1758.44,
+      "end": 1762.44,
+      "text": "It seems like you should need to, I don't know, put down some brain crumbs to tell you"
+    },
+    {
+      "start": 1762.44,
+      "end": 1764.44,
+      "text": "how to get to that goal."
+    },
+    {
+      "start": 1764.44,
+      "end": 1768.44,
+      "text": "But in recent work, we found that this really simple approach, this approach that seems"
+    },
+    {
+      "start": 1768.44,
+      "end": 1770.44,
+      "text": "like it shouldn't work."
+    },
+    {
+      "start": 1770.44,
+      "end": 1771.44,
+      "text": "In fact, it does work."
+    },
+    {
+      "start": 1771.44,
+      "end": 1779.44,
+      "text": "It does work if you learn a policy using the representations I showed before."
+    },
+    {
+      "start": 1779.44,
+      "end": 1782.44,
+      "text": "And I want to show you a video of what this exploration method looks like."
+    },
+    {
+      "start": 1782.44,
+      "end": 1783.44,
+      "text": "We've told the robot."
+    },
+    {
+      "start": 1783.44,
+      "end": 1787.44,
+      "text": "I want you to figure out how to pick up the green block and put it in the blue bin."
+    },
+    {
+      "start": 1787.44,
+      "end": 1789.44,
+      "text": "And I'm just showing you the robot train right now."
+    },
+    {
+      "start": 1789.44,
+      "end": 1794.44,
+      "text": "It's exploring the environment by itself, trying out different positions, exploring"
+    },
+    {
+      "start": 1794.44,
+      "end": 1797.44,
+      "text": "the space, tries touching different objects."
+    },
+    {
+      "start": 1797.44,
+      "end": 1799.44,
+      "text": "And we haven't programmed any of this."
+    },
+    {
+      "start": 1799.44,
+      "end": 1802.44,
+      "text": "We haven't told the robot to try touching objects."
+    },
+    {
+      "start": 1802.44,
+      "end": 1807.44,
+      "text": "It's just learned on its own that touching objects is an interesting thing to do."
+    },
+    {
+      "start": 1807.44,
+      "end": 1811.44,
+      "text": "And at this point, it's learned on its own that picking up objects is an interesting"
+    },
+    {
+      "start": 1811.44,
+      "end": 1812.44,
+      "text": "thing to do."
+    },
+    {
+      "start": 1812.44,
+      "end": 1817.44,
+      "text": "It's all emerged from scratch."
+    },
+    {
+      "start": 1817.44,
+      "end": 1820.44,
+      "text": "At some point, at about this point in training, it's learned that it actually can pick up"
+    },
+    {
+      "start": 1820.44,
+      "end": 1823.44,
+      "text": "the object."
+    },
+    {
+      "start": 1823.44,
+      "end": 1829.44,
+      "text": "And then it learns how to do this more and more quickly."
+    },
+    {
+      "start": 1829.44,
+      "end": 1833.44,
+      "text": "One reason why I really like this video is it helps highlight the capability of these"
+    },
+    {
+      "start": 1833.44,
+      "end": 1837.44,
+      "text": "methods that I think is really lacking in other areas of reinforcement learning and"
+    },
+    {
+      "start": 1837.44,
+      "end": 1842.44,
+      "text": "lacking especially in areas of computer graphics and language modeling."
+    },
+    {
+      "start": 1842.44,
+      "end": 1845.44,
+      "text": "Which is the capacity to discover something new."
+    },
+    {
+      "start": 1845.44,
+      "end": 1850.44,
+      "text": "The capacity to find solutions to a problem that haven't been written about on the internet"
+    },
+    {
+      "start": 1850.44,
+      "end": 1853.44,
+      "text": "that haven't been shown to you in any videos that you've seen before."
+    },
+    {
+      "start": 1853.44,
+      "end": 1855.44,
+      "text": "It's really about generating knowledge."
+    },
+    {
+      "start": 1855.44,
+      "end": 1859.44,
+      "text": "I think the power of reinforcement learning and these self-supervised methods is that"
+    },
+    {
+      "start": 1859.44,
+      "end": 1862.44,
+      "text": "they can generate their own knowledge."
+    },
+    {
+      "start": 1862.44,
+      "end": 1865.44,
+      "text": "Here we're seeing that play out in a rather simple block stacking environment."
+    },
+    {
+      "start": 1865.44,
+      "end": 1868.44,
+      "text": "But we could look at other much more complex tasks as well."
+    },
+    {
+      "start": 1872.44,
+      "end": 1882.44,
+      "text": "Here is one example of this demonstrated in a multi-agent setting."
+    },
+    {
+      "start": 1882.44,
+      "end": 1884.44,
+      "text": "So here we have teams of agents."
+    },
+    {
+      "start": 1884.44,
+      "end": 1888.44,
+      "text": "And the teams of agents have to automatically learn how to cooperate to reach some goal."
+    },
+    {
+      "start": 1888.44,
+      "end": 1892.44,
+      "text": "And the goal here is to make all of the opponents be dead."
+    },
+    {
+      "start": 1892.44,
+      "end": 1897.44,
+      "text": "One of the really cool things about this work is that we find that throughout the course"
+    },
+    {
+      "start": 1897.44,
+      "end": 1902.44,
+      "text": "of learning, before the agents have ever succeeded at the task, they automatically learn to try"
+    },
+    {
+      "start": 1902.44,
+      "end": 1909.44,
+      "text": "out different exploration strategies, different teamwork strategies."
+    },
+    {
+      "start": 1909.44,
+      "end": 1913.44,
+      "text": "And so finding these temporal patterns, they unlock certain forms of generalization."
+    },
+    {
+      "start": 1913.44,
+      "end": 1917.44,
+      "text": "And they unlock new forms of exploration."
+    },
+    {
+      "start": 1917.44,
+      "end": 1920.44,
+      "text": "I started this talk by talking about finding patterns in space."
+    },
+    {
+      "start": 1920.44,
+      "end": 1927.44,
+      "text": "How deep learning methods for computer vision automatically find these rich spatial patterns."
+    },
+    {
+      "start": 1927.44,
+      "end": 1932.44,
+      "text": "And I think my hope is to convey how finding patterns in time may unlock capabilities for"
+    },
+    {
+      "start": 1932.44,
+      "end": 1934.44,
+      "text": "decision-making and reinforcement learning."
+    },
+    {
+      "start": 1934.44,
+      "end": 1937.44,
+      "text": "For decision-making agents."
+    },
+    {
+      "start": 1937.44,
+      "end": 1943.44,
+      "text": "And in the last couple of minutes, I'm going to chart a path for what the future might look like."
+    },
+    {
+      "start": 1943.44,
+      "end": 1946.44,
+      "text": "Today, we have robots that can stack some blocks."
+    },
+    {
+      "start": 1946.44,
+      "end": 1950.44,
+      "text": "In a couple months, we probably could have robots that can build a Jenga tower."
+    },
+    {
+      "start": 1950.44,
+      "end": 1956.44,
+      "text": "But how long until we have robots that can build a tower like the one shown on the right?"
+    },
+    {
+      "start": 1956.44,
+      "end": 1960.44,
+      "text": "The tower shown on the right has 1,500 blocks."
+    },
+    {
+      "start": 1960.44,
+      "end": 1962.44,
+      "text": "All stacked on top of a single block."
+    },
+    {
+      "start": 1962.44,
+      "end": 1969.44,
+      "text": "If I show you this image, do you think it's a real image?"
+    },
+    {
+      "start": 1969.44,
+      "end": 1972.44,
+      "text": "Or was this just a generative AI image?"
+    },
+    {
+      "start": 1972.44,
+      "end": 1974.44,
+      "text": "How do you figure it out?"
+    },
+    {
+      "start": 1974.44,
+      "end": 1979.44,
+      "text": "How do you guess whether this was a real image or a generative AI image?"
+    },
+    {
+      "start": 1979.44,
+      "end": 1983.44,
+      "text": "If you're like me, you'd go get a bunch of blocks and try building it."
+    },
+    {
+      "start": 1983.44,
+      "end": 1989.44,
+      "text": "How do we make AI agents that do something similar, that automatically try little experiments"
+    },
+    {
+      "start": 1989.44,
+      "end": 1992.44,
+      "text": "to see whether it would be possible to build a tower like this?"
+    },
+    {
+      "start": 1992.44,
+      "end": 1995.44,
+      "text": "I don't know."
+    },
+    {
+      "start": 1995.44,
+      "end": 1998.44,
+      "text": "We recently put out a benchmark so that you can try it."
+    },
+    {
+      "start": 1998.44,
+      "end": 2003.44,
+      "text": "You can figure out how to design AI agents that can automatically become mini-scientists."
+    },
+    {
+      "start": 2003.44,
+      "end": 2009.44,
+      "text": "Learn how to perform these controlled experiments to really learn about the world and generate knowledge."
+    },
+    {
+      "start": 2009.44,
+      "end": 2019.44,
+      "text": "I want to note a couple other code repositories and papers for folks that want to get involved in the research."
+    },
+    {
+      "start": 2019.44,
+      "end": 2021.44,
+      "text": "For folks that really want to study AI."
+    },
+    {
+      "start": 2021.44,
+      "end": 2024.44,
+      "text": "For folks that really want to study scaling laws for reinforcement learning."
+    },
+    {
+      "start": 2024.44,
+      "end": 2029.44,
+      "text": "I'd recommend checking out the paper and codebase from here."
+    },
+    {
+      "start": 2029.44,
+      "end": 2036.44,
+      "text": "We've also spent a lot of time thinking about how do you build reinforcement learning experimental frameworks that are really, really fast."
+    },
+    {
+      "start": 2036.44,
+      "end": 2040.44,
+      "text": "We know that fast training is important for unlocking certain capabilities."
+    },
+    {
+      "start": 2040.44,
+      "end": 2048.44,
+      "text": "And this codebase here allows us to train in about a million frames in one minute."
+    },
+    {
+      "start": 2048.44,
+      "end": 2051.44,
+      "text": "There's also this important problem setting of learning from offline data."
+    },
+    {
+      "start": 2051.44,
+      "end": 2054.44,
+      "text": "We've built a new benchmark for studying this problem setting as well."
+    },
+    {
+      "start": 2060.44,
+      "end": 2065.44,
+      "text": "I should thank my amazing group of students and collaborators who have referred to most of the research I've talked about today."
+    },
+    {
+      "start": 2065.44,
+      "end": 2067.44,
+      "text": "And I'm happy to take any questions."
+    },
+    {
+      "start": 2067.44,
+      "end": 2069.44,
+      "text": "Thanks."
+    }
+  ],
+  "segment_count": 481
+}

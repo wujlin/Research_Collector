@@ -2,7 +2,7 @@
 title: "Ito积分与随机积分"
 description: ""
 paper_count: 1
-last_updated: "2026-04-24"
+last_updated: "2026-05-18"
 ---
 
 # Ito积分与随机积分

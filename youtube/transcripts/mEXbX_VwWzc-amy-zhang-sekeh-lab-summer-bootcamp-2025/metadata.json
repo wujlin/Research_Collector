@@ -1,0 +1,12 @@
+{
+  "title": "Amy Zhang, UT Austin @ Sekeh Lab x NSF x SDSU Summer Bootcamp 2025",
+  "url": "https://www.youtube.com/watch?v=mEXbX_VwWzc",
+  "backend": "faster-whisper",
+  "model": "large-v3",
+  "requested_language": "en",
+  "detected_language": "en",
+  "generated_at": "2026-05-13T20:01:45",
+  "language": "en",
+  "language_probability": 1,
+  "duration": 3727.9003125
+}

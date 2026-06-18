@@ -1,0 +1,5595 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 29.98,
+      "text": "Thank you."
+    },
+    {
+      "start": 30.0,
+      "end": 59.980000000000004,
+      "text": "Thank you."
+    },
+    {
+      "start": 60.0,
+      "end": 89.98,
+      "text": "Thank you."
+    },
+    {
+      "start": 90.0,
+      "end": 119.98,
+      "text": "Thank you."
+    },
+    {
+      "start": 120.0,
+      "end": 149.98,
+      "text": "Thank you."
+    },
+    {
+      "start": 150.0,
+      "end": 179.98,
+      "text": "Thank you."
+    },
+    {
+      "start": 180.0,
+      "end": 209.98,
+      "text": "Thank you."
+    },
+    {
+      "start": 210.0,
+      "end": 239.98,
+      "text": "Thank you."
+    },
+    {
+      "start": 240.0,
+      "end": 269.98,
+      "text": "Thank you."
+    },
+    {
+      "start": 270.0,
+      "end": 299.98,
+      "text": "Thank you."
+    },
+    {
+      "start": 300.0,
+      "end": 329.98,
+      "text": "Thank you."
+    },
+    {
+      "start": 330.0,
+      "end": 359.98,
+      "text": "Thank you."
+    },
+    {
+      "start": 360.0,
+      "end": 389.98,
+      "text": "Thank you."
+    },
+    {
+      "start": 390.0,
+      "end": 390.62,
+      "text": "you"
+    },
+    {
+      "start": 420.0,
+      "end": 420.62,
+      "text": "you"
+    },
+    {
+      "start": 450.0,
+      "end": 450.62,
+      "text": "you"
+    },
+    {
+      "start": 480.0,
+      "end": 480.62,
+      "text": "you"
+    },
+    {
+      "start": 510.0,
+      "end": 510.62,
+      "text": "you"
+    },
+    {
+      "start": 540.0,
+      "end": 540.62,
+      "text": "you"
+    },
+    {
+      "start": 570.0,
+      "end": 570.62,
+      "text": "you"
+    },
+    {
+      "start": 600.0,
+      "end": 600.62,
+      "text": "you"
+    },
+    {
+      "start": 630.0,
+      "end": 630.62,
+      "text": "you"
+    },
+    {
+      "start": 660.0,
+      "end": 660.62,
+      "text": "you"
+    },
+    {
+      "start": 690.0,
+      "end": 690.62,
+      "text": "you"
+    },
+    {
+      "start": 720.0,
+      "end": 734.48,
+      "text": "welcome professor"
+    },
+    {
+      "start": 734.48,
+      "end": 743.84,
+      "text": "good morning welcome professor good morning"
+    },
+    {
+      "start": 743.84,
+      "end": 749.98,
+      "text": "they're very happy to have you with us and we're very"
+    },
+    {
+      "start": 749.98,
+      "end": 753.16,
+      "text": "happy to that you accepted our invitation"
+    },
+    {
+      "start": 753.16,
+      "end": 761.52,
+      "text": "absolutely okay so without further ado i'm gonna hand it over to my dear professor i'm the head"
+    },
+    {
+      "start": 761.52,
+      "end": 766.8000000000001,
+      "text": "for the course and i'm gonna hand it over to my professor to welcome you on his side and then we"
+    },
+    {
+      "start": 766.8000000000001,
+      "end": 772.54,
+      "text": "can have your wonderful time before getting started uh i wonder if it makes sense uh i want"
+    },
+    {
+      "start": 772.54,
+      "end": 779.9200000000001,
+      "text": "to make sure you can figure out the slide sharing yeah sure sure on the top uh you can see i think"
+    },
+    {
+      "start": 779.9200000000001,
+      "end": 788.8000000000001,
+      "text": "there are force i can from the right you can share the screen with it beautiful let me try to"
+    },
+    {
+      "start": 788.8000000000001,
+      "end": 799.7600000000001,
+      "text": "figure out uh i apologize i haven't used this platform before yes yes it's new and i try to"
+    },
+    {
+      "start": 799.7600000000001,
+      "end": 807.7600000000001,
+      "text": "give some visuals and i don't know if they help yeah help me log on sweet i just looking for the"
+    },
+    {
+      "start": 807.7600000000001,
+      "end": 809.84,
+      "text": "screen share button great"
+    },
+    {
+      "start": 809.9200000000001,
+      "end": 815.7600000000001,
+      "text": "okay cool beautiful great okay cool cool so i'm gonna hand it over to my professor and then we"
+    },
+    {
+      "start": 815.7600000000001,
+      "end": 817.84,
+      "text": "can have your attack and thank you"
+    },
+    {
+      "start": 821.9200000000001,
+      "end": 824.2400000000001,
+      "text": "um hi benjamin can you hear me"
+    },
+    {
+      "start": 827.5200000000001,
+      "end": 832.08,
+      "text": "nice to have you and nice to meet you uh it's our pleasure to have you today"
+    },
+    {
+      "start": 833.1200000000001,
+      "end": 838.96,
+      "text": "my name is muhammad rofan i am the lecturer of this rl course"
+    },
+    {
+      "start": 839.9200000000001,
+      "end": 845.2,
+      "text": "and we have regular invited speakers"
+    },
+    {
+      "start": 845.2,
+      "end": 850.5600000000001,
+      "text": "from different topics that we teach every week so"
+    },
+    {
+      "start": 850.5600000000001,
+      "end": 855.6800000000001,
+      "text": "it's nice to have you today and we are looking forward to hear"
+    },
+    {
+      "start": 855.6800000000001,
+      "end": 862.8800000000001,
+      "text": "about your talk so please feel free to to start thank you for the kind introduction i'm super"
+    },
+    {
+      "start": 862.8800000000001,
+      "end": 867.3600000000001,
+      "text": "excited to be here and i'm really looking forward to all the questions next hour and then all the"
+    },
+    {
+      "start": 868.08,
+      "end": 869.6,
+      "text": "during the q a and the following"
+    },
+    {
+      "start": 869.9200000000001,
+      "end": 876.96,
+      "text": "um 30 minutes thank you so much so i'm benjamin eisenbach i'm an assistant professor of computer"
+    },
+    {
+      "start": 876.96,
+      "end": 881.1200000000001,
+      "text": "science here at princeton university and i'm super excited to share with you some of the work that me"
+    },
+    {
+      "start": 881.1200000000001,
+      "end": 887.0400000000001,
+      "text": "and my students have been working on over the last couple of years the the title of today's talk is"
+    },
+    {
+      "start": 887.0400000000001,
+      "end": 892.1600000000001,
+      "text": "self-supervised agents learning and exploring with minimal feedback and when i talk about self"
+    },
+    {
+      "start": 892.1600000000001,
+      "end": 897.44,
+      "text": "supervision i'm really going to be thinking about how we can learn from data from experience without"
+    },
+    {
+      "start": 897.44,
+      "end": 898.08,
+      "text": "needing rewards without needing benefits without needing benefits without needing benefits without"
+    },
+    {
+      "start": 898.08,
+      "end": 904.08,
+      "text": "rewards without needing demonstrations without needing optimal actions the huge challenge in"
+    },
+    {
+      "start": 904.08,
+      "end": 908.8000000000001,
+      "text": "generative ai today is how do we generate good data how do we generate good feedback"
+    },
+    {
+      "start": 909.5200000000001,
+      "end": 914.4000000000001,
+      "text": "and today's talk is going to give some specific algorithmic tools that we might use for lifting"
+    },
+    {
+      "start": 914.4000000000001,
+      "end": 919.12,
+      "text": "some of these limitations i think reinforcement learning is well positioned to give us ways of"
+    },
+    {
+      "start": 919.12,
+      "end": 923.6800000000001,
+      "text": "automatically generating data and we're going to see today how we can view reinforcement"
+    },
+    {
+      "start": 923.6800000000001,
+      "end": 927.9200000000001,
+      "text": "learning in a way that we can generate that data without expert feedback"
+    },
+    {
+      "start": 929.0400000000001,
+      "end": 934.1600000000001,
+      "text": "and so let's dive in i want to start with a thought experiment and this is intended to be"
+    },
+    {
+      "start": 934.1600000000001,
+      "end": 939.44,
+      "text": "interactive so i hope there's a way that people can uh react to the thumbs up or thumbs down on"
+    },
+    {
+      "start": 939.44,
+      "end": 945.6800000000001,
+      "text": "the platform here so um show of hands uh how many people think that a generative image model today"
+    },
+    {
+      "start": 945.6800000000001,
+      "end": 951.2800000000001,
+      "text": "in 2025 may can generate images different from those seen in this training data set"
+    },
+    {
+      "start": 955.2,
+      "end": 957.84,
+      "text": "is there a way people can raise their hand of some sort sweet okay"
+    },
+    {
+      "start": 958.08,
+      "end": 964.64,
+      "text": "uh yes yes they can raise their hand and if they raise their hand i'm gonna give them the microphone"
+    },
+    {
+      "start": 964.64,
+      "end": 972.88,
+      "text": "access so they can ask those cool okay so a couple hands there um"
+    },
+    {
+      "start": 976.0,
+      "end": 980.08,
+      "text": "okay what about language models can language models generate sentences"
+    },
+    {
+      "start": 980.08,
+      "end": 982.88,
+      "text": "different from those seen in their training data"
+    },
+    {
+      "start": 985.0400000000001,
+      "end": 987.84,
+      "text": "and now just raise your hand uh for a vote of yes"
+    },
+    {
+      "start": 988.5600000000001,
+      "end": 993.84,
+      "text": "not uh to ask a question he's like yes i think they can do this"
+    },
+    {
+      "start": 997.44,
+      "end": 998.64,
+      "text": "okay four out of fourteen"
+    },
+    {
+      "start": 1001.84,
+      "end": 1004.88,
+      "text": "what is the right analogy for reinforcement learning"
+    },
+    {
+      "start": 1006.0,
+      "end": 1011.2,
+      "text": "this is a rhetorical question but i like thinking about this question because it's not"
+    },
+    {
+      "start": 1011.2,
+      "end": 1015.5200000000001,
+      "text": "thinking about reinforcement learning in the context of the generalization capabilities of"
+    },
+    {
+      "start": 1015.5200000000001,
+      "end": 1018.0400000000001,
+      "text": "other models really helps has helped explain the concept of reinforcement learning and this is a"
+    },
+    {
+      "start": 1018.0400000000001,
+      "end": 1023.2600000000001,
+      "text": "expand my mind to what might be possible a priority I think generalization and reinforcement"
+    },
+    {
+      "start": 1023.2600000000001,
+      "end": 1028.3600000000001,
+      "text": "learning is typically thought of as sort of a dark art something like yeah maybe it would"
+    },
+    {
+      "start": 1028.3600000000001,
+      "end": 1033.14,
+      "text": "be nice to have but in the same way that we've seen wild generalization capabilities for"
+    },
+    {
+      "start": 1033.14,
+      "end": 1036.7,
+      "text": "image models they're able to generate images that are really really different than those"
+    },
+    {
+      "start": 1036.7,
+      "end": 1041.0600000000002,
+      "text": "seen in the training data set and then we've seen similar capabilities for language models"
+    },
+    {
+      "start": 1041.0600000000002,
+      "end": 1045.4,
+      "text": "they can generate sentences they're just massively different from those seen in the training"
+    },
+    {
+      "start": 1045.4,
+      "end": 1050.16,
+      "text": "data sets it gives me confidence that the same might be true for reinforcement learning"
+    },
+    {
+      "start": 1050.16,
+      "end": 1055.14,
+      "text": "that it might be possible to build some reinforcement learning agents that can solve tasks that"
+    },
+    {
+      "start": 1055.14,
+      "end": 1058.52,
+      "text": "are fundamentally different than those they were trained on if they're trained on enough"
+    },
+    {
+      "start": 1058.52,
+      "end": 1065.0,
+      "text": "tasks in today's talk I'm going to argue that one of the key ingredients to find this sort"
+    },
+    {
+      "start": 1065.0,
+      "end": 1070.16,
+      "text": "of generalization is to frame reinforcement learning in a self-supervised way that will"
+    },
+    {
+      "start": 1070.16,
+      "end": 1075.1200000000001,
+      "text": "allow us to learn on more tasks on more data and what today's talk will start to introduce"
+    },
+    {
+      "start": 1075.1200000000001,
+      "end": 1075.4,
+      "text": "some of these 맛있ies."
+    },
+    {
+      "start": 1075.4,
+      "end": 1080.2,
+      "text": "algorithms that allow us to do that to learn reinforcement to do reinforcement learning in"
+    },
+    {
+      "start": 1080.2,
+      "end": 1086.0400000000002,
+      "text": "a self-supervised way so here's where we're going to go today i'm going to start by introducing"
+    },
+    {
+      "start": 1086.0400000000002,
+      "end": 1091.0,
+      "text": "self-supervised reinforcement learning providing a formal definition but also giving an example"
+    },
+    {
+      "start": 1091.0,
+      "end": 1095.3200000000002,
+      "text": "algorithm and this will lay a foundation for thinking about how how is it even possible to"
+    },
+    {
+      "start": 1095.3200000000002,
+      "end": 1100.3600000000001,
+      "text": "think about reinforcement learning if you don't have reward functions i'll then talk a little"
+    },
+    {
+      "start": 1100.3600000000001,
+      "end": 1105.8000000000002,
+      "text": "bit about some really recent ongoing work in my lab that's started to observe how these"
+    },
+    {
+      "start": 1105.8000000000002,
+      "end": 1110.2800000000002,
+      "text": "self-supervised agents can really unlock new capabilities and i'll talk a little bit about"
+    },
+    {
+      "start": 1110.2800000000002,
+      "end": 1115.0800000000002,
+      "text": "some generalization properties and we'll talk about a new benchmark and part of the reason i"
+    },
+    {
+      "start": 1115.0800000000002,
+      "end": 1118.6000000000001,
+      "text": "want to introduce this new benchmark is that it provides a really good jumping off point"
+    },
+    {
+      "start": 1118.6000000000001,
+      "end": 1120.3600000000001,
+      "text": "for folks that want to get involved in the research"
+    },
+    {
+      "start": 1122.8400000000001,
+      "end": 1127.0800000000002,
+      "text": "so let's get started this is a deep reinforcement learning course so i think that the next couple"
+    },
+    {
+      "start": 1127.0800000000002,
+      "end": 1130.2800000000002,
+      "text": "slides will probably be very obvious to many of you so i'll go through them rather quickly"
+    },
+    {
+      "start": 1130.3600000000001,
+      "end": 1134.2,
+      "text": "but please raise your hand or post in the chat here if you have any questions"
+    },
+    {
+      "start": 1136.0400000000002,
+      "end": 1141.64,
+      "text": "so in the typical reinforcement learning problem we have an environment we have policy the policy"
+    },
+    {
+      "start": 1141.64,
+      "end": 1147.88,
+      "text": "outputs actions a in response to observations s throughout today's talk i'm going to assume that"
+    },
+    {
+      "start": 1147.88,
+      "end": 1153.4,
+      "text": "the environment that we're in a fully observed setting and so the dynamics are markov and so"
+    },
+    {
+      "start": 1153.4,
+      "end": 1159.0800000000002,
+      "text": "the policy is also markov in the standard reinforcement learning problem we also observe"
+    },
+    {
+      "start": 1159.0800000000002,
+      "end": 1159.8000000000002,
+      "text": "rewards s"
+    },
+    {
+      "start": 1160.44,
+      "end": 1164.44,
+      "text": "and without loss of generality we can assume the rewards only depend on the state"
+    },
+    {
+      "start": 1164.44,
+      "end": 1167.0800000000002,
+      "text": "we'll see this makes our lives easier in a couple slides"
+    },
+    {
+      "start": 1169.3200000000002,
+      "end": 1173.0800000000002,
+      "text": "so the reinforcement learning problem is really exciting because it's so general it can be used"
+    },
+    {
+      "start": 1173.0800000000002,
+      "end": 1179.16,
+      "text": "to model games to model chemical reactions to model nuclear fusion to model education yet"
+    },
+    {
+      "start": 1180.0400000000002,
+      "end": 1184.92,
+      "text": "part of that generality or what comes with that generality is that it's also a very very"
+    },
+    {
+      "start": 1184.92,
+      "end": 1190.0400000000002,
+      "text": "challenging problem and i think that the challenge of reinforcement learning largely stems from the"
+    },
+    {
+      "start": 1190.04,
+      "end": 1195.48,
+      "text": "rewards and there are a couple different ways of seeing this one way of seeing it is that unlike"
+    },
+    {
+      "start": 1195.48,
+      "end": 1200.52,
+      "text": "in supervised learning where you get a label for every input in reinforcement learning you"
+    },
+    {
+      "start": 1200.52,
+      "end": 1207.0,
+      "text": "only get a label you only get feedback after you take several actions so in this task here"
+    },
+    {
+      "start": 1207.0,
+      "end": 1210.84,
+      "text": "we have this robot hand and it might be that you want to get the robot hand to go and pick"
+    },
+    {
+      "start": 1210.84,
+      "end": 1214.68,
+      "text": "up this green block and move it over and then put it down then position it in the blue bin"
+    },
+    {
+      "start": 1215.3999999999999,
+      "end": 1219.0,
+      "text": "but you might only get the feedback after you've taken five ten actions"
+    },
+    {
+      "start": 1219.72,
+      "end": 1223.64,
+      "text": "this makes it really hard to figure out well which of those actions was the correct action to take"
+    },
+    {
+      "start": 1227.24,
+      "end": 1232.76,
+      "text": "confounding this is the fact that the observations we're dealing with are often very high dimensional"
+    },
+    {
+      "start": 1232.76,
+      "end": 1237.16,
+      "text": "and so this ratio of number of bits of feedback to number of bits of input"
+    },
+    {
+      "start": 1237.16,
+      "end": 1240.44,
+      "text": "is a very very bad ratio and it makes the learning really challenging"
+    },
+    {
+      "start": 1241.8,
+      "end": 1246.2,
+      "text": "now part of the reason why we have such limited feedback in the reinforcement learning problem"
+    },
+    {
+      "start": 1246.2,
+      "end": 1253.16,
+      "text": "is because it's practically specifying these rewards is really hard so in this"
+    },
+    {
+      "start": 1253.16,
+      "end": 1258.1200000000001,
+      "text": "manipulation task that i've been showing here where we have this robot hand why should this"
+    },
+    {
+      "start": 1258.1200000000001,
+      "end": 1265.96,
+      "text": "observation here get a reward of plus five that seems sort of arbitrary well in practice"
+    },
+    {
+      "start": 1265.96,
+      "end": 1270.6000000000001,
+      "text": "the reason the state gets a reward of plus five is because a couple graduate students"
+    },
+    {
+      "start": 1270.6000000000001,
+      "end": 1275.4,
+      "text": "spent a couple weeks writing this block of code that computes the reward for this observation"
+    },
+    {
+      "start": 1277.0,
+      "end": 1280.2,
+      "text": "however actually writing this block of code is really really frustrating there"
+    },
+    {
+      "start": 1280.2,
+      "end": 1286.6000000000001,
+      "text": "are all these hyper parameters in here you might notice this 50 and this 0.01"
+    },
+    {
+      "start": 1286.6000000000001,
+      "end": 1293.16,
+      "text": "all these if else cases is really non-trivial to design these rewards even for experts and this"
+    },
+    {
+      "start": 1293.16,
+      "end": 1298.3600000000001,
+      "text": "means that for applications where someone went out to apply reinforcement learning if you're not an"
+    },
+    {
+      "start": 1298.3600000000001,
+      "end": 1302.68,
+      "text": "expert it's basically impossible to apply existing reinforcement learning methods"
+    },
+    {
+      "start": 1304.68,
+      "end": 1306.2,
+      "text": "this becomes even more challenging"
+    },
+    {
+      "start": 1306.2,
+      "end": 1310.6000000000001,
+      "text": "when you want to look at real world problems this reward function here depends on the"
+    },
+    {
+      "start": 1310.6000000000001,
+      "end": 1315.48,
+      "text": "positions of all the objects but if you're doing reinforcement learning directly from say"
+    },
+    {
+      "start": 1315.48,
+      "end": 1320.2,
+      "text": "images you don't know the positions of all the objects so you would first have to install some"
+    },
+    {
+      "start": 1320.2,
+      "end": 1324.8400000000001,
+      "text": "sensors or do some computer vision to figure out the positions of all the objects even before"
+    },
+    {
+      "start": 1324.8400000000001,
+      "end": 1329.48,
+      "text": "you could compute your reward function and so defining these rewards is a really really"
+    },
+    {
+      "start": 1329.48,
+      "end": 1335.88,
+      "text": "challenging problem and it's challenging not just in robotics one application we've been playing"
+    },
+    {
+      "start": 1335.88,
+      "end": 1341.48,
+      "text": "around with is chemistry and there how do we define whether this is a good molecule or a bad"
+    },
+    {
+      "start": 1341.48,
+      "end": 1346.6000000000001,
+      "text": "molecule we might want to produce a molecule say that's non-toxic that's safe for humans"
+    },
+    {
+      "start": 1346.6000000000001,
+      "end": 1352.3600000000001,
+      "text": "but how do you write that in in code how do you say okay this molecule is toxic this molecule is"
+    },
+    {
+      "start": 1352.3600000000001,
+      "end": 1358.68,
+      "text": "non-toxic it seems very non-trivial to define that in code and so in today's talk we're going"
+    },
+    {
+      "start": 1358.68,
+      "end": 1364.68,
+      "text": "to be thinking about how we can start to get the benefits of reinforcement learning without having"
+    },
+    {
+      "start": 1364.68,
+      "end": 1365.88,
+      "text": "this massive challenge of learning reinforcement learning without having this massive challenge of"
+    },
+    {
+      "start": 1365.88,
+      "end": 1371.24,
+      "text": "reward engineering without having to write that big block of code can we still design"
+    },
+    {
+      "start": 1371.24,
+      "end": 1376.5200000000002,
+      "text": "reinforcement learning algorithms that can help us out so that's where we're going to go today"
+    },
+    {
+      "start": 1377.72,
+      "end": 1382.6000000000001,
+      "text": "and as a bit of motivation i want to start by thinking about in other areas of machine learning"
+    },
+    {
+      "start": 1382.6000000000001,
+      "end": 1386.92,
+      "text": "how have how have we figured out ways of learning without feedback"
+    },
+    {
+      "start": 1387.96,
+      "end": 1391.64,
+      "text": "so in other areas of machine learning there are these self-supervised techniques techniques that"
+    },
+    {
+      "start": 1391.64,
+      "end": 1395.88,
+      "text": "can just look at raw data with no labels and automatically extract useful"
+    },
+    {
+      "start": 1395.88,
+      "end": 1401.0,
+      "text": "patterns from those data so there are a lot of these techniques in computer vision"
+    },
+    {
+      "start": 1401.5600000000002,
+      "end": 1405.16,
+      "text": "some of these techniques are these sort of masked auto encoders or diffusion models"
+    },
+    {
+      "start": 1405.16,
+      "end": 1410.0400000000002,
+      "text": "methods just just take an image and cover up pixels of that image or patches of that image"
+    },
+    {
+      "start": 1410.0400000000002,
+      "end": 1413.24,
+      "text": "and they try to predict what are the missing pixels or what are the missing patches"
+    },
+    {
+      "start": 1414.2,
+      "end": 1418.3600000000001,
+      "text": "and these are the techniques that underlie the big diffusion models that i imagine many of you"
+    },
+    {
+      "start": 1418.3600000000001,
+      "end": 1425.5600000000002,
+      "text": "have used before and there's similar self-supervised learning techniques in"
+    },
+    {
+      "start": 1425.88,
+      "end": 1430.2,
+      "text": "other areas of machine learning so for example if you look at natural language processing"
+    },
+    {
+      "start": 1430.2,
+      "end": 1435.48,
+      "text": "there are methods that look at a sentence and cover up random words to that sentence and then"
+    },
+    {
+      "start": 1435.48,
+      "end": 1439.8000000000002,
+      "text": "you try to predict what are those missing words or you cover up the next word of a sentence and"
+    },
+    {
+      "start": 1439.8000000000002,
+      "end": 1446.2,
+      "text": "you try to predict what are the next words and in doing so you're these methods that predict the"
+    },
+    {
+      "start": 1446.2,
+      "end": 1451.0,
+      "text": "missing words are give us the foundation for the modern language models that we have today"
+    },
+    {
+      "start": 1452.0400000000002,
+      "end": 1455.5600000000002,
+      "text": "and so in fact one way of seeing modern generative tools both in vision and in language"
+    },
+    {
+      "start": 1456.2,
+      "end": 1461.4,
+      "text": "is that they rely really heavily on doing self-supervised learning on doing learning"
+    },
+    {
+      "start": 1461.4,
+      "end": 1467.0,
+      "text": "just on raw data on just big stacks of images or big stacks of sentences without any labels"
+    },
+    {
+      "start": 1467.0,
+      "end": 1472.44,
+      "text": "about whether those are good images or bad images and so seeing the massive success of"
+    },
+    {
+      "start": 1472.44,
+      "end": 1478.2800000000002,
+      "text": "self-supervised learning in these other domains vision and language has inspired us to think about"
+    },
+    {
+      "start": 1478.2800000000002,
+      "end": 1484.8400000000001,
+      "text": "how can we develop a foundation for self-supervised reinforcement learning how can we define define"
+    },
+    {
+      "start": 1484.8400000000001,
+      "end": 1485.88,
+      "text": "reinforcement learning"
+    },
+    {
+      "start": 1485.88,
+      "end": 1491.0800000000002,
+      "text": "algorithms that similarly don't require any feedback don't require any rewards"
+    },
+    {
+      "start": 1493.4,
+      "end": 1497.64,
+      "text": "so just to make sure we're all on the same page i want to introduce the definition of what i mean"
+    },
+    {
+      "start": 1497.64,
+      "end": 1504.1200000000001,
+      "text": "by self-supervised reinforcement learning at first pass self-supervised reinforcement learning might"
+    },
+    {
+      "start": 1504.1200000000001,
+      "end": 1507.96,
+      "text": "simply mean that we take the reinforcement learning problem and we delete the reward"
+    },
+    {
+      "start": 1507.96,
+      "end": 1515.4,
+      "text": "function we now have a formally a controlled markoff process maybe more formally i might say"
+    },
+    {
+      "start": 1515.88,
+      "end": 1521.72,
+      "text": "self that self-supervised reinforcement learning is the problem of learning policies or models or"
+    },
+    {
+      "start": 1521.72,
+      "end": 1527.96,
+      "text": "representations something that enables us to quickly solve downstream tasks but we want to"
+    },
+    {
+      "start": 1527.96,
+      "end": 1532.7600000000002,
+      "text": "learn this policy or model of representation with no rewards and with no demonstrations"
+    },
+    {
+      "start": 1535.24,
+      "end": 1540.92,
+      "text": "so to make this more concrete i'll talk about one particular type of self-supervised"
+    },
+    {
+      "start": 1540.92,
+      "end": 1545.4,
+      "text": "reinforcement learning problem which is this problem of goal reaching or goal conditioned"
+    },
+    {
+      "start": 1545.4,
+      "end": 1550.1200000000001,
+      "text": "reinforcement learning there the input here it could be"
+    },
+    {
+      "start": 1554.0400000000002,
+      "end": 1560.2800000000002,
+      "text": "an environment an environment without a reward function or it could just be a data set a data set"
+    },
+    {
+      "start": 1560.2800000000002,
+      "end": 1565.8000000000002,
+      "text": "of say videos labeled with actions these actions are not necessarily the optimal actions they're"
+    },
+    {
+      "start": 1565.8000000000002,
+      "end": 1573.0800000000002,
+      "text": "not necessarily demonstrations and we don't have rewards and the goal or are the at the end of the"
+    },
+    {
+      "start": 1573.0800000000002,
+      "end": 1575.24,
+      "text": "day we want to produce a goal conditioned learning model for self-supervised reinforcement learning"
+    },
+    {
+      "start": 1575.24,
+      "end": 1576.2,
+      "text": "so we want to create a goal conditioned learning model for self-supervised reinforcement learning"
+    },
+    {
+      "start": 1576.2,
+      "end": 1580.68,
+      "text": "that's what we have on the right hand side a policy that takes as input the current state of"
+    },
+    {
+      "start": 1580.68,
+      "end": 1586.1200000000001,
+      "text": "the world and some goal state and the goal is just an observation that shows what we would like the"
+    },
+    {
+      "start": 1586.1200000000001,
+      "end": 1591.24,
+      "text": "world to look like so maybe the state is an image and the goal is another image showing us what we"
+    },
+    {
+      "start": 1591.24,
+      "end": 1597.24,
+      "text": "want the world to look like and the policy should take actions so that eventually we get to this"
+    },
+    {
+      "start": 1597.24,
+      "end": 1604.92,
+      "text": "desired goal state okay i'm going to pause here uh can i how are there any questions about the problem"
+    },
+    {
+      "start": 1605.24,
+      "end": 1607.4,
+      "text": "at this point"
+    },
+    {
+      "start": 1618.6,
+      "end": 1622.6,
+      "text": "and so one quick question uh how the goal is specified is it"
+    },
+    {
+      "start": 1622.6,
+      "end": 1629.88,
+      "text": "specified through a particular state or do we have other means of doing it this is super good question"
+    },
+    {
+      "start": 1630.44,
+      "end": 1634.92,
+      "text": "so in the next couple slides i'm going to assume that the goal is given by"
+    },
+    {
+      "start": 1635.24,
+      "end": 1640.92,
+      "text": "a state observation and so for this robot manipulation task here the goal"
+    },
+    {
+      "start": 1641.72,
+      "end": 1648.36,
+      "text": "could just look like this image over here at the end of today's talk i'll talk a little bit about"
+    },
+    {
+      "start": 1648.36,
+      "end": 1652.92,
+      "text": "different ways of specifying goals one example is via language"
+    },
+    {
+      "start": 1654.92,
+      "end": 1662.68,
+      "text": "i see and so the learning should happen in a way that the algorithm is prepared to go to every"
+    },
+    {
+      "start": 1663.32,
+      "end": 1665.16,
+      "text": "possible goal is that true"
+    },
+    {
+      "start": 1665.24,
+      "end": 1669.88,
+      "text": "we would very much like that what we'll"
+    },
+    {
+      "start": 1669.88,
+      "end": 1671.4,
+      "text": "see today is an algorithm"
+    },
+    {
+      "start": 1673.96,
+      "end": 1679.88,
+      "text": "yes yeah that is where we're headed all right thank you it's a really good question"
+    },
+    {
+      "start": 1683.72,
+      "end": 1693.32,
+      "text": "are there any other questions"
+    },
+    {
+      "start": 1693.32,
+      "end": 1699.84,
+      "text": "great let's move on so i will now introduce"
+    },
+    {
+      "start": 1699.84,
+      "end": 1704.6799999999998,
+      "text": "an algorithm that we found pretty effective for solving some of these goal reaching tasks"
+    },
+    {
+      "start": 1704.6799999999998,
+      "end": 1710.12,
+      "text": "a algorithm we designed about three years ago but it's continued to surprise us by giving us new"
+    },
+    {
+      "start": 1710.9199999999998,
+      "end": 1716.2,
+      "text": "methods for new tasks and new interests and it keeps your the phenomenon we observe have"
+    },
+    {
+      "start": 1716.2,
+      "end": 1721.8,
+      "text": "also continued to surprise us and there's we just give one example of a goal conditioning algorithm"
+    },
+    {
+      "start": 1721.8,
+      "end": 1724.8,
+      "text": "algorithm, one way of learning the school conditioning policy"
+    },
+    {
+      "start": 1724.86,
+      "end": 1727.36,
+      "text": "without needing rewards. And there's several other algorithms"
+    },
+    {
+      "start": 1727.36,
+      "end": 1731.7,
+      "text": "that we could talk about later if folks are interested. So this"
+    },
+    {
+      "start": 1731.74,
+      "end": 1734.98,
+      "text": "algorithm works by using a form of contrastive learning."
+    },
+    {
+      "start": 1735.3,
+      "end": 1738.3,
+      "text": "Contrastive learning is a way of taking data and learning"
+    },
+    {
+      "start": 1738.3,
+      "end": 1742.24,
+      "text": "representations from those data. And we do this using a form of"
+    },
+    {
+      "start": 1742.3,
+      "end": 1744.8999999999999,
+      "text": "temporal contrastive learning. This is a tool that's been"
+    },
+    {
+      "start": 1744.8999999999999,
+      "end": 1748.58,
+      "text": "around for a long time, especially in other domains, we"
+    },
+    {
+      "start": 1748.58,
+      "end": 1751.9399999999998,
+      "text": "found a way of applying it to the reinforcement learning"
+    },
+    {
+      "start": 1751.9399999999998,
+      "end": 1757.32,
+      "text": "setting that allows us to get optimal policies. And so what"
+    },
+    {
+      "start": 1757.32,
+      "end": 1760.8,
+      "text": "we're going to do is we're going to learn two encoders. One"
+    },
+    {
+      "start": 1760.8,
+      "end": 1764.28,
+      "text": "encoder is an encoder of state action pairs that maps pairs of"
+    },
+    {
+      "start": 1764.28,
+      "end": 1768.1,
+      "text": "states and actions to a representation. And the other is"
+    },
+    {
+      "start": 1768.1,
+      "end": 1773.12,
+      "text": "a goal encoder that takes just a future state observation and"
+    },
+    {
+      "start": 1773.12,
+      "end": 1775.02,
+      "text": "maps it to a representation."
+    },
+    {
+      "start": 1775.02,
+      "end": 1784.1,
+      "text": "And we're going to learn these encoders using two terms. One"
+    },
+    {
+      "start": 1784.1,
+      "end": 1787.4,
+      "text": "term says that when we take our time series data, we take our"
+    },
+    {
+      "start": 1787.4,
+      "end": 1792.28,
+      "text": "video, we should look at a state and an action and sample some"
+    },
+    {
+      "start": 1792.28,
+      "end": 1795.66,
+      "text": "future state. And we want to optimize the encoders to give"
+    },
+    {
+      "start": 1795.66,
+      "end": 1799.68,
+      "text": "similar representations to states that occur nearby in time"
+    },
+    {
+      "start": 1800.3,
+      "end": 1801.46,
+      "text": "on the same video."
+    },
+    {
+      "start": 1804.12,
+      "end": 1804.9,
+      "text": "And then if we look at"
+    },
+    {
+      "start": 1805.02,
+      "end": 1809.1,
+      "text": "states from different videos, we should optimize these encoders"
+    },
+    {
+      "start": 1809.28,
+      "end": 1813.06,
+      "text": "so that observations from different videos have dissimilar"
+    },
+    {
+      "start": 1813.06,
+      "end": 1817.86,
+      "text": "representations. So the intuition here is that the"
+    },
+    {
+      "start": 1817.86,
+      "end": 1820.74,
+      "text": "similarity between the representations to tell us"
+    },
+    {
+      "start": 1820.74,
+      "end": 1823.92,
+      "text": "similarity in time, how likely is it that you could get from"
+    },
+    {
+      "start": 1824.1,
+      "end": 1828.18,
+      "text": "one state action pair to some other state over some time"
+    },
+    {
+      "start": 1828.18,
+      "end": 1832.2,
+      "text": "horizon. Now, one detail that will turn out to be important is"
+    },
+    {
+      "start": 1832.2,
+      "end": 1834.12,
+      "text": "that when we're sampling these"
+    },
+    {
+      "start": 1834.1200000000001,
+      "end": 1837.6200000000001,
+      "text": "positive examples, these future states, we're going to sample them"
+    },
+    {
+      "start": 1837.6200000000001,
+      "end": 1841.0200000000002,
+      "text": "from a certain geometric distribution. And so they're most"
+    },
+    {
+      "start": 1841.0200000000002,
+      "end": 1844.0000000000002,
+      "text": "likely going to be one or two or three steps in the future, but"
+    },
+    {
+      "start": 1844.0000000000002,
+      "end": 1847.1000000000001,
+      "text": "they could be four or five or more steps in the future. And"
+    },
+    {
+      "start": 1847.1000000000001,
+      "end": 1850.1200000000001,
+      "text": "this geometric distribution will allow us to prove some important"
+    },
+    {
+      "start": 1850.1200000000001,
+      "end": 1852.22,
+      "text": "theoretical properties about this method."
+    },
+    {
+      "start": 1854.7600000000002,
+      "end": 1857.64,
+      "text": "Now, one important detail here is that one of these encoders,"
+    },
+    {
+      "start": 1857.64,
+      "end": 1861.42,
+      "text": "the state action encoder, depends on the action. And what"
+    },
+    {
+      "start": 1861.42,
+      "end": 1863.46,
+      "text": "that means is that after we've learned these representations,"
+    },
+    {
+      "start": 1864.1200000000001,
+      "end": 1869.18,
+      "text": "we'll be able to directly use the representations for figuring out what is the best action to take"
+    },
+    {
+      "start": 1869.18,
+      "end": 1873.68,
+      "text": "if we want to get from one state to some future state. And remember, at the end of the day,"
+    },
+    {
+      "start": 1873.72,
+      "end": 1879.5400000000002,
+      "text": "that's these actions that we want to figure out. Now, for folks that have seen contrastive"
+    },
+    {
+      "start": 1879.5400000000002,
+      "end": 1885.18,
+      "text": "learning before, we can draw a certain analogy. So typically, when contrastive learning is"
+    },
+    {
+      "start": 1885.18,
+      "end": 1890.5000000000002,
+      "text": "introduced, say in a computer vision course, we think about applying it to images. You take an"
+    },
+    {
+      "start": 1890.5,
+      "end": 1896.14,
+      "text": "image, and then an augmented version of that same image, and then you optimize your representations"
+    },
+    {
+      "start": 1896.14,
+      "end": 1902.58,
+      "text": "to be similar for images of the same person, and dissimilar for images of different people."
+    },
+    {
+      "start": 1904.34,
+      "end": 1909.32,
+      "text": "Now, the main challenge in applying contrastive learning is defining what these augmentations are."
+    },
+    {
+      "start": 1909.74,
+      "end": 1913.04,
+      "text": "Are you going to rotate the image? Are you going to change the colors, the saturation?"
+    },
+    {
+      "start": 1914.68,
+      "end": 1920.28,
+      "text": "What we're doing is we're doing augmentation using dynamics, using"
+    },
+    {
+      "start": 1920.28,
+      "end": 1920.48,
+      "text": "time."
+    },
+    {
+      "start": 1920.5,
+      "end": 1927.22,
+      "text": "So what we're doing is we're saying, when we look at a video, if we take a frame of that"
+    },
+    {
+      "start": 1927.22,
+      "end": 1933.46,
+      "text": "video, we construct the augmented frame of that video by jumping forward in time. And that doesn't"
+    },
+    {
+      "start": 1933.46,
+      "end": 1936.64,
+      "text": "require any engineering, it simply requires data."
+    },
+    {
+      "start": 1938.72,
+      "end": 1943.94,
+      "text": "Another way of seeing what these representations are doing is viewing them as a sort of embedding,"
+    },
+    {
+      "start": 1944.32,
+      "end": 1950.26,
+      "text": "a way of embedding time series data, so that states that occur nearby in time are"
+    },
+    {
+      "start": 1950.26,
+      "end": 1950.48,
+      "text": "given"
+    },
+    {
+      "start": 1950.48,
+      "end": 1956.64,
+      "text": "similar representations, and states that occur more distantly in time are given more distant"
+    },
+    {
+      "start": 1956.64,
+      "end": 1957.64,
+      "text": "representations."
+    },
+    {
+      "start": 1957.64,
+      "end": 1962.6200000000001,
+      "text": "So the intuition here is that once we've learned these representations, we should be able to"
+    },
+    {
+      "start": 1962.6200000000001,
+      "end": 1967.14,
+      "text": "use them for figuring out what are the states I'm likely to visit when I want to go from"
+    },
+    {
+      "start": 1967.14,
+      "end": 1972.2,
+      "text": "one state to another state, and what are the best actions to take if I want to get from"
+    },
+    {
+      "start": 1972.2,
+      "end": 1976.3,
+      "text": "point A to point B."
+    },
+    {
+      "start": 1976.3,
+      "end": 1980.24,
+      "text": "So let's see how that works. As an example, let's go back to this manipulation task that"
+    },
+    {
+      "start": 1980.24,
+      "end": 1986.08,
+      "text": "we started today's talk with. We want, we have this robot arm here, this robot arm can move up,"
+    },
+    {
+      "start": 1986.08,
+      "end": 1992.08,
+      "text": "down, left, right, forward, backwards, and it has a grip where it can open and close. And let's say"
+    },
+    {
+      "start": 1992.08,
+      "end": 1997.04,
+      "text": "that we want to navigate from this current state to this goal state shown here, where the key"
+    },
+    {
+      "start": 1997.04,
+      "end": 2000.64,
+      "text": "difference is that the robot arm has gone down and picked up the block and moved it into the blue"
+    },
+    {
+      "start": 2000.64,
+      "end": 2007.4,
+      "text": "bin. And as a thought experiment, let's imagine we just have two actions, A1 and A2."
+    },
+    {
+      "start": 2007.4,
+      "end": 2009.4,
+      "text": "So let's imagine we just have two actions, A1 and A2."
+    },
+    {
+      "start": 2009.4,
+      "end": 2010.0,
+      "text": "So let's imagine we just have two actions, A1 and A2."
+    },
+    {
+      "start": 2010.0,
+      "end": 2015.92,
+      "text": "So we can think about these representations as points lying on a sphere. We'll assume for now"
+    },
+    {
+      "start": 2015.92,
+      "end": 2020.24,
+      "text": "the representations are normalized, so they lie on a sphere. It could be a very high-dimensional"
+    },
+    {
+      "start": 2020.24,
+      "end": 2027.6,
+      "text": "sphere. And because the state action representation depends on the action, for each of these actions,"
+    },
+    {
+      "start": 2027.6,
+      "end": 2034.0,
+      "text": "A1 and A2, we have different representations. And so if we just look at this picture here,"
+    },
+    {
+      "start": 2034.0,
+      "end": 2039.12,
+      "text": "we can compare the similarity between one state action representation and the goal representation,"
+    },
+    {
+      "start": 2039.1200000000001,
+      "end": 2042.88,
+      "text": "and another state action representation and the goal representation."
+    },
+    {
+      "start": 2044.0800000000002,
+      "end": 2048.7200000000003,
+      "text": "And so just based on this figure here, I want to see a show of hands for who thinks we should take"
+    },
+    {
+      "start": 2048.7200000000003,
+      "end": 2062.48,
+      "text": "action A1. And show of hands for who thinks we should take action A2. And who is confused?"
+    },
+    {
+      "start": 2062.48,
+      "end": 2068.96,
+      "text": "Great."
+    },
+    {
+      "start": 2069.52,
+      "end": 2076.08,
+      "text": "Okay. So yeah, after we've learned these representations, we can exactly look at their"
+    },
+    {
+      "start": 2076.08,
+      "end": 2081.2,
+      "text": "similarity to figure out what is the best action to take. And so here, it seems like A2 is the best"
+    },
+    {
+      "start": 2081.2,
+      "end": 2085.8399999999997,
+      "text": "action. So we will take action A2, and then we will get to some new state. And then based on"
+    },
+    {
+      "start": 2085.8399999999997,
+      "end": 2090.72,
+      "text": "this new state, we would do a similar computation, figuring out what is the best action to take here."
+    },
+    {
+      "start": 2092.4,
+      "end": 2098.24,
+      "text": "And that's exactly how the method works. We define the policy as selecting whichever action A"
+    },
+    {
+      "start": 2099.12,
+      "end": 2101.14,
+      "text": "has a state action representation"
+    },
+    {
+      "start": 2101.14,
+      "end": 2105.08,
+      "text": "with a most similar dot product to the goal representation."
+    },
+    {
+      "start": 2106.72,
+      "end": 2107.7599999999998,
+      "text": "So let's wrap this up."
+    },
+    {
+      "start": 2107.7599999999998,
+      "end": 2109.8599999999997,
+      "text": "Let's see how the complete algorithm works."
+    },
+    {
+      "start": 2111.3199999999997,
+      "end": 2115.06,
+      "text": "We start with data, a data set that's of not demonstration."
+    },
+    {
+      "start": 2115.06,
+      "end": 2117.54,
+      "text": "It could just be of random data,"
+    },
+    {
+      "start": 2117.54,
+      "end": 2120.66,
+      "text": "of random state action pairs with no rewards."
+    },
+    {
+      "start": 2120.66,
+      "end": 2123.68,
+      "text": "We then do this temporal contrastive learning"
+    },
+    {
+      "start": 2123.68,
+      "end": 2125.24,
+      "text": "to learn these representations,"
+    },
+    {
+      "start": 2125.24,
+      "end": 2128.56,
+      "text": "a state action representation and a goal representation."
+    },
+    {
+      "start": 2129.12,
+      "end": 2132.44,
+      "text": "And then we use these representations"
+    },
+    {
+      "start": 2132.44,
+      "end": 2135.04,
+      "text": "to extract a goal-reaching policy,"
+    },
+    {
+      "start": 2135.04,
+      "end": 2137.7,
+      "text": "a goal condition policy that selects the actions"
+    },
+    {
+      "start": 2137.7,
+      "end": 2139.7799999999997,
+      "text": "given the state and the goal."
+    },
+    {
+      "start": 2139.7799999999997,
+      "end": 2141.06,
+      "text": "Now, at this point, we can be done."
+    },
+    {
+      "start": 2141.06,
+      "end": 2143.54,
+      "text": "We can take this policy and go solve your task."
+    },
+    {
+      "start": 2144.7999999999997,
+      "end": 2146.48,
+      "text": "Or you could take this policy"
+    },
+    {
+      "start": 2146.48,
+      "end": 2148.44,
+      "text": "and go back and collect some more data."
+    },
+    {
+      "start": 2148.44,
+      "end": 2150.2799999999997,
+      "text": "And depending on the problem setting you're in,"
+    },
+    {
+      "start": 2150.2799999999997,
+      "end": 2151.7999999999997,
+      "text": "sometimes collecting more data"
+    },
+    {
+      "start": 2151.7999999999997,
+      "end": 2153.92,
+      "text": "can further improve performance."
+    },
+    {
+      "start": 2155.98,
+      "end": 2157.5,
+      "text": "Now, I think at this point,"
+    },
+    {
+      "start": 2157.5,
+      "end": 2158.56,
+      "text": "it's worth stepping back and providing"
+    },
+    {
+      "start": 2158.56,
+      "end": 2159.1,
+      "text": "a little bit of history."
+    },
+    {
+      "start": 2159.1,
+      "end": 2162.5,
+      "text": "So we started this talk by saying,"
+    },
+    {
+      "start": 2162.5,
+      "end": 2164.1,
+      "text": "designing rewards is really hard."
+    },
+    {
+      "start": 2164.1,
+      "end": 2166.44,
+      "text": "It's really frustrating for the graduate students"
+    },
+    {
+      "start": 2166.44,
+      "end": 2169.3399999999997,
+      "text": "to have to sit down and write those big blocks of red code."
+    },
+    {
+      "start": 2170.2599999999998,
+      "end": 2173.9,
+      "text": "And so ordinarily, reinforcement learning requires defining"
+    },
+    {
+      "start": 2173.9,
+      "end": 2176.18,
+      "text": "and learning from a lot of rewards."
+    },
+    {
+      "start": 2176.18,
+      "end": 2177.3199999999997,
+      "text": "And on the surface,"
+    },
+    {
+      "start": 2177.3199999999997,
+      "end": 2179.2799999999997,
+      "text": "it seems like these goal-conditioned"
+    },
+    {
+      "start": 2179.2799999999997,
+      "end": 2181.04,
+      "text": "reinforcement learning problems"
+    },
+    {
+      "start": 2181.04,
+      "end": 2183.14,
+      "text": "should require lots of rewards"
+    },
+    {
+      "start": 2183.14,
+      "end": 2186.1,
+      "text": "because now you're not solving one task, but many tasks."
+    },
+    {
+      "start": 2187.2599999999998,
+      "end": 2189.02,
+      "text": "And this is typically how prior work"
+    },
+    {
+      "start": 2189.02,
+      "end": 2193.08,
+      "text": "has viewed these goal-conditioned RL problems."
+    },
+    {
+      "start": 2193.08,
+      "end": 2194.84,
+      "text": "These goal-conditioned RL problems have been around"
+    },
+    {
+      "start": 2194.84,
+      "end": 2198.14,
+      "text": "for almost 60, 70 years."
+    },
+    {
+      "start": 2198.14,
+      "end": 2201.64,
+      "text": "In fact, some of the earliest work in AI in the 1950s and 60s"
+    },
+    {
+      "start": 2201.64,
+      "end": 2204.96,
+      "text": "was working on goal-conditioned reinforcement learning."
+    },
+    {
+      "start": 2204.96,
+      "end": 2206.78,
+      "text": "But typically, it's been viewed as a really,"
+    },
+    {
+      "start": 2206.78,
+      "end": 2208.38,
+      "text": "really challenging problem"
+    },
+    {
+      "start": 2208.38,
+      "end": 2211.08,
+      "text": "because you're solving not one problem, but many problems."
+    },
+    {
+      "start": 2212.68,
+      "end": 2214.72,
+      "text": "But what we've seen here in this talk is that"
+    },
+    {
+      "start": 2214.72,
+      "end": 2215.82,
+      "text": "there's a way of defining"
+    },
+    {
+      "start": 2215.82,
+      "end": 2218.46,
+      "text": "these goal-conditioned reinforcement learning problems."
+    },
+    {
+      "start": 2218.46,
+      "end": 2222.94,
+      "text": "In a way such that they don't require any rewards at all."
+    },
+    {
+      "start": 2222.94,
+      "end": 2224.54,
+      "text": "And from an engineering perspective,"
+    },
+    {
+      "start": 2224.54,
+      "end": 2226.7,
+      "text": "this is really appealing because it means that"
+    },
+    {
+      "start": 2226.7,
+      "end": 2228.7,
+      "text": "you no longer have to define these rewards,"
+    },
+    {
+      "start": 2228.7,
+      "end": 2230.76,
+      "text": "that big giant red block of code,"
+    },
+    {
+      "start": 2230.76,
+      "end": 2233.58,
+      "text": "when you want to go solve some new problem."
+    },
+    {
+      "start": 2233.58,
+      "end": 2235.44,
+      "text": "And aesthetically, we'll see how it draws"
+    },
+    {
+      "start": 2235.44,
+      "end": 2239.12,
+      "text": "some really nice connections to other areas of generative AI."
+    },
+    {
+      "start": 2239.12,
+      "end": 2241.12,
+      "text": "And we'll see that in a couple of slides."
+    },
+    {
+      "start": 2242.84,
+      "end": 2244.44,
+      "text": "So practically, this method,"
+    },
+    {
+      "start": 2244.44,
+      "end": 2248.38,
+      "text": "it ends up even outperforming methods that do use rewards."
+    },
+    {
+      "start": 2248.46,
+      "end": 2250.3,
+      "text": "So here, I'm showing a visualization"
+    },
+    {
+      "start": 2250.3,
+      "end": 2253.84,
+      "text": "of what our approach does on this manipulation task"
+    },
+    {
+      "start": 2253.84,
+      "end": 2256.12,
+      "text": "when we tell the policy to try to get"
+    },
+    {
+      "start": 2256.12,
+      "end": 2258.28,
+      "text": "to this goal state up here."
+    },
+    {
+      "start": 2258.28,
+      "end": 2260.46,
+      "text": "And a very good prior method"
+    },
+    {
+      "start": 2260.46,
+      "end": 2262.4,
+      "text": "completely fails to solve this task."
+    },
+    {
+      "start": 2268.0,
+      "end": 2269.3,
+      "text": "We've shown this method outperforms"
+    },
+    {
+      "start": 2269.3,
+      "end": 2272.1,
+      "text": "a number of prior methods,"
+    },
+    {
+      "start": 2272.1,
+      "end": 2273.58,
+      "text": "but I now want to jump forward and highlight"
+    },
+    {
+      "start": 2273.58,
+      "end": 2275.58,
+      "text": "two really interesting applications"
+    },
+    {
+      "start": 2275.58,
+      "end": 2278.46,
+      "text": "that we've seen of these self-supervised reinforcement"
+    },
+    {
+      "start": 2278.46,
+      "end": 2279.54,
+      "text": "and learning methods."
+    },
+    {
+      "start": 2280.78,
+      "end": 2282.38,
+      "text": "One is in robotic control."
+    },
+    {
+      "start": 2282.38,
+      "end": 2284.8,
+      "text": "This is a collaboration done with Chongyi Cheng"
+    },
+    {
+      "start": 2284.8,
+      "end": 2286.4,
+      "text": "and Homer Wok."
+    },
+    {
+      "start": 2286.4,
+      "end": 2288.48,
+      "text": "And so the problem that we were looking at"
+    },
+    {
+      "start": 2288.48,
+      "end": 2291.54,
+      "text": "was tabletop rearrangement."
+    },
+    {
+      "start": 2291.54,
+      "end": 2293.78,
+      "text": "We have a robot shown up here,"
+    },
+    {
+      "start": 2293.78,
+      "end": 2295.68,
+      "text": "is this Widow X robot."
+    },
+    {
+      "start": 2295.68,
+      "end": 2298.84,
+      "text": "It's a pretty low cost robot, it's a couple thousand dollars."
+    },
+    {
+      "start": 2298.84,
+      "end": 2301.06,
+      "text": "And that makes it really fairly accessible."
+    },
+    {
+      "start": 2301.06,
+      "end": 2303.26,
+      "text": "It's a couple of orders of magnitude cheaper"
+    },
+    {
+      "start": 2303.26,
+      "end": 2305.56,
+      "text": "than most robot arms today."
+    },
+    {
+      "start": 2305.56,
+      "end": 2307.46,
+      "text": "But it also means that it's really hard to control"
+    },
+    {
+      "start": 2307.46,
+      "end": 2308.38,
+      "text": "because the plastic parts,"
+    },
+    {
+      "start": 2308.38,
+      "end": 2310.94,
+      "text": "where down the motors are kind of shaky."
+    },
+    {
+      "start": 2313.44,
+      "end": 2316.78,
+      "text": "And we wanted to get the robot to rearrange the table."
+    },
+    {
+      "start": 2316.78,
+      "end": 2319.7000000000003,
+      "text": "So it looks like this goal on the right-hand side."
+    },
+    {
+      "start": 2319.7000000000003,
+      "end": 2322.04,
+      "text": "And there are two key differences between the image"
+    },
+    {
+      "start": 2322.04,
+      "end": 2324.08,
+      "text": "on the left and the image on the right."
+    },
+    {
+      "start": 2324.08,
+      "end": 2326.7400000000002,
+      "text": "The first one is that the robot hand has moved"
+    },
+    {
+      "start": 2326.7400000000002,
+      "end": 2330.08,
+      "text": "to the upper left-hand side of the image."
+    },
+    {
+      "start": 2330.08,
+      "end": 2332.6600000000003,
+      "text": "And the second is that this red spoon has moved"
+    },
+    {
+      "start": 2332.6600000000003,
+      "end": 2334.38,
+      "text": "to the left side of the image."
+    },
+    {
+      "start": 2336.38,
+      "end": 2337.76,
+      "text": "And from a robotics perspective,"
+    },
+    {
+      "start": 2337.76,
+      "end": 2339.3,
+      "text": "there are a lot of things"
+    },
+    {
+      "start": 2339.3,
+      "end": 2342.0200000000004,
+      "text": "that makes this problem really challenging."
+    },
+    {
+      "start": 2342.0200000000004,
+      "end": 2344.5800000000004,
+      "text": "First is that we're going to try to learn a policy"
+    },
+    {
+      "start": 2344.5800000000004,
+      "end": 2349.4,
+      "text": "that can do this manipulation problem from suboptimal data."
+    },
+    {
+      "start": 2349.4,
+      "end": 2351.0,
+      "text": "We don't have any demonstrations."
+    },
+    {
+      "start": 2351.0,
+      "end": 2353.86,
+      "text": "So we're going to be learning from a bunch of noisy data"
+    },
+    {
+      "start": 2353.86,
+      "end": 2356.3,
+      "text": "of the robot just doing random things."
+    },
+    {
+      "start": 2357.5,
+      "end": 2359.48,
+      "text": "A second thing is that we don't know the positions"
+    },
+    {
+      "start": 2359.48,
+      "end": 2360.5,
+      "text": "of all the objects."
+    },
+    {
+      "start": 2360.5,
+      "end": 2363.2200000000003,
+      "text": "We're doing this directly from pixels, from images."
+    },
+    {
+      "start": 2364.88,
+      "end": 2365.7400000000002,
+      "text": "And third, we're going to do this in the setting where we can't see the object."
+    },
+    {
+      "start": 2365.7400000000002,
+      "end": 2366.76,
+      "text": "And third, we're going to do this in the setting where we can't see the object."
+    },
+    {
+      "start": 2366.76,
+      "end": 2369.28,
+      "text": "And third, we're going to do this in the setting where we can't learn by trial and error."
+    },
+    {
+      "start": 2369.28,
+      "end": 2371.88,
+      "text": "But instead, we just have a fixed bucket of data."
+    },
+    {
+      "start": 2371.88,
+      "end": 2373.5200000000004,
+      "text": "And from that fixed bucket of data,"
+    },
+    {
+      "start": 2373.5200000000004,
+      "end": 2376.94,
+      "text": "we're trying to pull out this goal-reaching policy."
+    },
+    {
+      "start": 2378.0,
+      "end": 2378.84,
+      "text": "So there are a lot of things"
+    },
+    {
+      "start": 2378.84,
+      "end": 2381.1800000000003,
+      "text": "that make this problem really challenging."
+    },
+    {
+      "start": 2381.1800000000003,
+      "end": 2382.2200000000003,
+      "text": "And so it's not surprising"
+    },
+    {
+      "start": 2382.2200000000003,
+      "end": 2384.6800000000003,
+      "text": "that the best prior method we could find,"
+    },
+    {
+      "start": 2384.6800000000003,
+      "end": 2386.2400000000002,
+      "text": "it fails to solve this task."
+    },
+    {
+      "start": 2387.98,
+      "end": 2389.86,
+      "text": "And one thing you might notice is that this prior method,"
+    },
+    {
+      "start": 2389.86,
+      "end": 2392.3,
+      "text": "it fails in a sort of interesting way."
+    },
+    {
+      "start": 2392.3,
+      "end": 2394.76,
+      "text": "It successfully moves the robot arm"
+    },
+    {
+      "start": 2394.76,
+      "end": 2396.76,
+      "text": "to this position on the left side of the screen."
+    },
+    {
+      "start": 2396.76,
+      "end": 2399.4,
+      "text": "But it just ignores the spoon."
+    },
+    {
+      "start": 2400.36,
+      "end": 2402.0200000000004,
+      "text": "And maybe that sort of makes sense."
+    },
+    {
+      "start": 2402.0200000000004,
+      "end": 2404.5,
+      "text": "The spoon is only a small fraction of the image."
+    },
+    {
+      "start": 2408.34,
+      "end": 2411.1000000000004,
+      "text": "Now, in contrast, when we evaluated our method,"
+    },
+    {
+      "start": 2411.1000000000004,
+      "end": 2414.48,
+      "text": "we found that the robot arm successfully went out of its way"
+    },
+    {
+      "start": 2414.48,
+      "end": 2416.1400000000003,
+      "text": "to pick up this red spoon"
+    },
+    {
+      "start": 2416.1400000000003,
+      "end": 2419.5,
+      "text": "and move it to the left side of the table and place it there."
+    },
+    {
+      "start": 2419.5,
+      "end": 2421.76,
+      "text": "And then finally repositioned the robot arm"
+    },
+    {
+      "start": 2421.76,
+      "end": 2423.26,
+      "text": "in roughly the right position."
+    },
+    {
+      "start": 2423.26,
+      "end": 2427.5800000000004,
+      "text": "And one thing I want to emphasize here"
+    },
+    {
+      "start": 2427.5800000000004,
+      "end": 2429.6800000000003,
+      "text": "is that it was able to learn how to do this"
+    },
+    {
+      "start": 2429.6800000000003,
+      "end": 2431.4,
+      "text": "without needing anyone to define"
+    },
+    {
+      "start": 2431.4,
+      "end": 2433.42,
+      "text": "those complex reward functions."
+    },
+    {
+      "start": 2433.42,
+      "end": 2434.9,
+      "text": "The graduate students Changyi"
+    },
+    {
+      "start": 2434.9,
+      "end": 2436.6000000000004,
+      "text": "and Homer working on this project,"
+    },
+    {
+      "start": 2436.6000000000004,
+      "end": 2437.98,
+      "text": "they never had to sit down and write"
+    },
+    {
+      "start": 2437.98,
+      "end": 2440.6200000000003,
+      "text": "that big, giant, ugly block of red code."
+    },
+    {
+      "start": 2442.96,
+      "end": 2446.5200000000004,
+      "text": "And because of that, they could use the same policy"
+    },
+    {
+      "start": 2446.5200000000004,
+      "end": 2448.82,
+      "text": "with no more training, with no more data,"
+    },
+    {
+      "start": 2448.82,
+      "end": 2451.0,
+      "text": "with no more gradient updates to solve new tasks"
+    },
+    {
+      "start": 2451.0,
+      "end": 2452.86,
+      "text": "just by prompting it with a new goal."
+    },
+    {
+      "start": 2452.86,
+      "end": 2457.46,
+      "text": "So here we gave the robot a different goal,"
+    },
+    {
+      "start": 2457.46,
+      "end": 2462.46,
+      "text": "where now this can has been moved to the top of the table."
+    },
+    {
+      "start": 2463.0,
+      "end": 2466.5,
+      "text": "And with no more training, we can just evaluate the policy."
+    },
+    {
+      "start": 2470.9,
+      "end": 2472.1,
+      "text": "And we see that it roughly succeeds"
+    },
+    {
+      "start": 2472.1,
+      "end": 2473.5,
+      "text": "at solving this task as well."
+    },
+    {
+      "start": 2476.6200000000003,
+      "end": 2478.6600000000003,
+      "text": "I think it's sort of interesting now to pop back up"
+    },
+    {
+      "start": 2478.6600000000003,
+      "end": 2480.6800000000003,
+      "text": "and think about the motivation at the start of this talk,"
+    },
+    {
+      "start": 2480.6800000000003,
+      "end": 2481.2200000000003,
+      "text": "when we were thinking about the generalization capabilities."
+    },
+    {
+      "start": 2481.2200000000003,
+      "end": 2482.1800000000003,
+      "text": "I think it's sort of interesting now to pop back up and think about the motivation at the start of this talk, when we were thinking about the generalization capabilities."
+    },
+    {
+      "start": 2482.18,
+      "end": 2483.7799999999997,
+      "text": "I think it's sort of interesting now to pop back up and think about the motivation at the start of this talk, when we were thinking about the generalization capabilities"
+    },
+    {
+      "start": 2483.7799999999997,
+      "end": 2486.46,
+      "text": "of language models and the generalization capabilities"
+    },
+    {
+      "start": 2486.46,
+      "end": 2488.3799999999997,
+      "text": "of vision models."
+    },
+    {
+      "start": 2488.3799999999997,
+      "end": 2490.8399999999997,
+      "text": "The way we test the generalization capabilities there"
+    },
+    {
+      "start": 2490.8399999999997,
+      "end": 2492.5,
+      "text": "is by prompting those models"
+    },
+    {
+      "start": 2494.8999999999996,
+      "end": 2497.8799999999997,
+      "text": "with things that were not seen in the training data."
+    },
+    {
+      "start": 2497.8799999999997,
+      "end": 2499.98,
+      "text": "And so note that we can do the same thing here."
+    },
+    {
+      "start": 2499.98,
+      "end": 2502.54,
+      "text": "We can prompt this model with all sorts of images"
+    },
+    {
+      "start": 2502.54,
+      "end": 2505.2999999999997,
+      "text": "that it hasn't seen during training and see how well it does."
+    },
+    {
+      "start": 2506.2799999999997,
+      "end": 2509.56,
+      "text": "And like those models, this reinforcement learning model"
+    },
+    {
+      "start": 2509.56,
+      "end": 2510.3199999999997,
+      "text": "is trained primarily on unlabeled data."
+    },
+    {
+      "start": 2510.3199999999997,
+      "end": 2512.02,
+      "text": "is trained primarily on unlabeled data."
+    },
+    {
+      "start": 2512.02,
+      "end": 2514.2599999999998,
+      "text": "In fact, it's trained entirely on unlabeled data."
+    },
+    {
+      "start": 2515.32,
+      "end": 2517.14,
+      "text": "And so I think that these self-supervised methods"
+    },
+    {
+      "start": 2517.14,
+      "end": 2520.08,
+      "text": "are a really promising hint or promising approach"
+    },
+    {
+      "start": 2520.08,
+      "end": 2522.68,
+      "text": "for thinking about how we can develop"
+    },
+    {
+      "start": 2522.68,
+      "end": 2524.24,
+      "text": "reinforcement learning methods"
+    },
+    {
+      "start": 2524.24,
+      "end": 2526.46,
+      "text": "that exhibit the same sort of strong generalization"
+    },
+    {
+      "start": 2526.46,
+      "end": 2529.74,
+      "text": "capabilities that generative models in other domains do."
+    },
+    {
+      "start": 2531.6,
+      "end": 2532.56,
+      "text": "And I want to briefly talk about"
+    },
+    {
+      "start": 2532.56,
+      "end": 2534.92,
+      "text": "one other interesting application."
+    },
+    {
+      "start": 2534.92,
+      "end": 2538.3,
+      "text": "This one, we didn't take part in,"
+    },
+    {
+      "start": 2538.3,
+      "end": 2539.58,
+      "text": "but it is a really cool application"
+    },
+    {
+      "start": 2539.58,
+      "end": 2541.74,
+      "text": "of these contrastive reinforcement learning methods."
+    },
+    {
+      "start": 2541.7400000000002,
+      "end": 2544.0200000000004,
+      "text": "This is done by some folks"
+    },
+    {
+      "start": 2544.0200000000004,
+      "end": 2545.7400000000002,
+      "text": "at a healthcare company nearby."
+    },
+    {
+      "start": 2547.6200000000003,
+      "end": 2548.84,
+      "text": "They were controlling,"
+    },
+    {
+      "start": 2548.84,
+      "end": 2551.26,
+      "text": "they were looking at controlling ultrasound devices."
+    },
+    {
+      "start": 2551.26,
+      "end": 2553.1000000000004,
+      "text": "There's this certain type of ultrasound device"
+    },
+    {
+      "start": 2553.1000000000004,
+      "end": 2554.84,
+      "text": "that you put down someone's throat,"
+    },
+    {
+      "start": 2554.84,
+      "end": 2557.7400000000002,
+      "text": "and then you can use this ultrasound to take pictures,"
+    },
+    {
+      "start": 2557.7400000000002,
+      "end": 2559.9,
+      "text": "ultrasound pictures of someone's heart."
+    },
+    {
+      "start": 2560.8,
+      "end": 2563.26,
+      "text": "And this is a really challenging control problem."
+    },
+    {
+      "start": 2563.26,
+      "end": 2565.44,
+      "text": "You have to just, this camera down here"
+    },
+    {
+      "start": 2565.44,
+      "end": 2567.88,
+      "text": "has all these knobs that you can control"
+    },
+    {
+      "start": 2567.88,
+      "end": 2571.0400000000004,
+      "text": "to focus the camera and to turn the camera around."
+    },
+    {
+      "start": 2571.04,
+      "end": 2573.74,
+      "text": "And so the operators and the doctors"
+    },
+    {
+      "start": 2573.74,
+      "end": 2576.82,
+      "text": "controlling these cameras have a really hard time focusing"
+    },
+    {
+      "start": 2576.82,
+      "end": 2578.32,
+      "text": "and getting the correct images."
+    },
+    {
+      "start": 2579.38,
+      "end": 2581.14,
+      "text": "So what this team did was they used"
+    },
+    {
+      "start": 2581.14,
+      "end": 2584.56,
+      "text": "these contrastive reinforcement learning methods"
+    },
+    {
+      "start": 2584.56,
+      "end": 2586.98,
+      "text": "to treat this as a goal-reaching problem."
+    },
+    {
+      "start": 2586.98,
+      "end": 2591.0,
+      "text": "The goal here was a desired picture of someone's heart"
+    },
+    {
+      "start": 2591.0,
+      "end": 2593.74,
+      "text": "from a certain angle and a certain viewpoint."
+    },
+    {
+      "start": 2593.74,
+      "end": 2595.98,
+      "text": "And after training, they gave the system"
+    },
+    {
+      "start": 2595.98,
+      "end": 2598.3,
+      "text": "this desired picture, and then the system"
+    },
+    {
+      "start": 2598.3,
+      "end": 2600.92,
+      "text": "could automatically figure out how do you change,"
+    },
+    {
+      "start": 2600.92,
+      "end": 2602.7400000000002,
+      "text": "these control parameters,"
+    },
+    {
+      "start": 2602.7400000000002,
+      "end": 2606.36,
+      "text": "so to get the ultrasound to take the desired picture."
+    },
+    {
+      "start": 2607.64,
+      "end": 2609.2200000000003,
+      "text": "And I think this just emphasizes"
+    },
+    {
+      "start": 2609.2200000000003,
+      "end": 2610.7000000000003,
+      "text": "how these goal-reaching problems"
+    },
+    {
+      "start": 2610.7000000000003,
+      "end": 2613.42,
+      "text": "are potentially really widely applicable"
+    },
+    {
+      "start": 2613.42,
+      "end": 2615.54,
+      "text": "and how, because they don't need rewards,"
+    },
+    {
+      "start": 2615.54,
+      "end": 2618.62,
+      "text": "it makes it a lot easier for people in new domains"
+    },
+    {
+      "start": 2618.62,
+      "end": 2619.82,
+      "text": "to adopt these tools."
+    },
+    {
+      "start": 2622.7000000000003,
+      "end": 2624.58,
+      "text": "So popping back up one level,"
+    },
+    {
+      "start": 2624.58,
+      "end": 2626.2200000000003,
+      "text": "we started this talk by emphasizing"
+    },
+    {
+      "start": 2626.2200000000003,
+      "end": 2628.7200000000003,
+      "text": "the key challenge in reinforcement learning."
+    },
+    {
+      "start": 2628.7200000000003,
+      "end": 2630.58,
+      "text": "Typically when we talk about reinforcement learning,"
+    },
+    {
+      "start": 2630.58,
+      "end": 2631.98,
+      "text": "at least when I take reinforcement learning"
+    },
+    {
+      "start": 2631.98,
+      "end": 2634.02,
+      "text": "in my course here at Princeton,"
+    },
+    {
+      "start": 2634.02,
+      "end": 2635.72,
+      "text": "we assume that we're given the rewards."
+    },
+    {
+      "start": 2635.72,
+      "end": 2637.6,
+      "text": "We assume, okay, someone gives you a game"
+    },
+    {
+      "start": 2637.6,
+      "end": 2640.2799999999997,
+      "text": "and you can read the score on the top right-hand corner."
+    },
+    {
+      "start": 2641.18,
+      "end": 2643.3199999999997,
+      "text": "But a lot of practical problems"
+    },
+    {
+      "start": 2643.3199999999997,
+      "end": 2645.5,
+      "text": "don't have rewards readily accessible."
+    },
+    {
+      "start": 2645.5,
+      "end": 2648.24,
+      "text": "And defining the rewards is a big challenge."
+    },
+    {
+      "start": 2648.24,
+      "end": 2650.86,
+      "text": "And today we saw how by treating"
+    },
+    {
+      "start": 2650.86,
+      "end": 2652.98,
+      "text": "the reinforcement learning problem"
+    },
+    {
+      "start": 2652.98,
+      "end": 2653.9,
+      "text": "as a goal-reaching problem,"
+    },
+    {
+      "start": 2653.9,
+      "end": 2656.74,
+      "text": "we can avoid defining rewards."
+    },
+    {
+      "start": 2658.88,
+      "end": 2660.24,
+      "text": "One of the key tricks that we saw for doing this is如果你city is"
+    },
+    {
+      "start": 2660.2400000000002,
+      "end": 2663.92,
+      "text": "doing this was to think about self-supervised learning. We thought about self-supervised"
+    },
+    {
+      "start": 2663.92,
+      "end": 2668.5600000000004,
+      "text": "learning and vision and language and how that was a really useful tool for giving rise to the"
+    },
+    {
+      "start": 2668.5600000000004,
+      "end": 2674.5600000000004,
+      "text": "powerful generative AI methods that we have today. And this method that I introduced, this temporal"
+    },
+    {
+      "start": 2674.5600000000004,
+      "end": 2680.5600000000004,
+      "text": "contrastive learning method, gave us an example of how we can use self-supervised learning"
+    },
+    {
+      "start": 2680.5600000000004,
+      "end": 2685.0400000000004,
+      "text": "for reinforcement learning. Now, in the next couple of slides, I want to argue that"
+    },
+    {
+      "start": 2685.0400000000004,
+      "end": 2689.6000000000004,
+      "text": "reinforcement learning is not actually that different from generative AI. In fact,"
+    },
+    {
+      "start": 2689.6,
+      "end": 2694.64,
+      "text": "when we think about self-supervised reinforcement learning, there's a sense in which it is a generative"
+    },
+    {
+      "start": 2694.64,
+      "end": 2698.24,
+      "text": "model. And now I'm going to walk you through what I mean here, because I think it helps"
+    },
+    {
+      "start": 2698.24,
+      "end": 2701.36,
+      "text": "really reframe what reinforcement learning methods are capable of."
+    },
+    {
+      "start": 2703.36,
+      "end": 2708.7999999999997,
+      "text": "So let's think about what a generative model is. A generative model typically is trained on"
+    },
+    {
+      "start": 2708.7999999999997,
+      "end": 2715.36,
+      "text": "examples of images, say images of cats. And then to sample from that generative model,"
+    },
+    {
+      "start": 2715.36,
+      "end": 2719.52,
+      "text": "you perform some iterative procedure, typically going through some sequence of"
+    },
+    {
+      "start": 2719.52,
+      "end": 2724.96,
+      "text": "layers or iteratively denoising an image to produce a new sample."
+    },
+    {
+      "start": 2726.56,
+      "end": 2730.0,
+      "text": "Now, reinforcement learning methods can be seen as doing something very, very similar."
+    },
+    {
+      "start": 2731.04,
+      "end": 2737.2,
+      "text": "In particular, these goal-reaching methods were trained on a big dataset. And then"
+    },
+    {
+      "start": 2738.4,
+      "end": 2742.72,
+      "text": "to sample an outcome, we also performed iterative computation,"
+    },
+    {
+      "start": 2743.28,
+      "end": 2749.28,
+      "text": "where the policy would take an action and then the environment would give us some new observations."
+    },
+    {
+      "start": 2749.52,
+      "end": 2752.96,
+      "text": "The policy would take another action, the environment would give us new observation."
+    },
+    {
+      "start": 2753.44,
+      "end": 2757.6,
+      "text": "We would go around this loop many, many times iteratively. And then after doing this maybe"
+    },
+    {
+      "start": 2757.6,
+      "end": 2764.0,
+      "text": "a hundred times, we get some output. And so what reinforcement learning is it's just a different"
+    },
+    {
+      "start": 2764.0,
+      "end": 2771.84,
+      "text": "way of defining a way of sampling from a certain generative model. While our image generative models"
+    },
+    {
+      "start": 2772.8,
+      "end": 2779.44,
+      "text": "consist entirely of known parameters, this reinforcement learning generative model consists of"
+    },
+    {
+      "start": 2779.52,
+      "end": 2784.22,
+      "text": "of a combination of some policy parameters that we've trained"
+    },
+    {
+      "start": 2784.22,
+      "end": 2786.94,
+      "text": "and an environment that we don't even know."
+    },
+    {
+      "start": 2787.84,
+      "end": 2788.68,
+      "text": "But at the end of the day,"
+    },
+    {
+      "start": 2788.68,
+      "end": 2790.86,
+      "text": "it gives us a way of sampling outcomes."
+    },
+    {
+      "start": 2792.42,
+      "end": 2794.12,
+      "text": "Another way of seeing this is that"
+    },
+    {
+      "start": 2795.58,
+      "end": 2799.14,
+      "text": "when a lot of general image models today,"
+    },
+    {
+      "start": 2799.14,
+      "end": 2801.4,
+      "text": "you can prompt them, you give them a text description,"
+    },
+    {
+      "start": 2801.4,
+      "end": 2803.28,
+      "text": "such as a castle in the mountains,"
+    },
+    {
+      "start": 2803.28,
+      "end": 2805.2599999999998,
+      "text": "and they perform this iterative computation,"
+    },
+    {
+      "start": 2805.2599999999998,
+      "end": 2808.0,
+      "text": "iteratively denoising an image"
+    },
+    {
+      "start": 2808.0,
+      "end": 2810.54,
+      "text": "to eventually come to some desired outcome."
+    },
+    {
+      "start": 2814.2,
+      "end": 2816.82,
+      "text": "How might we build reinforcement learning methods"
+    },
+    {
+      "start": 2816.82,
+      "end": 2818.24,
+      "text": "that do something similar,"
+    },
+    {
+      "start": 2818.24,
+      "end": 2819.74,
+      "text": "where we give them a prompt,"
+    },
+    {
+      "start": 2819.74,
+      "end": 2821.66,
+      "text": "say an image or a text description"
+    },
+    {
+      "start": 2821.66,
+      "end": 2824.54,
+      "text": "of build a castle surrounded by mountains,"
+    },
+    {
+      "start": 2824.54,
+      "end": 2827.38,
+      "text": "and then the robot performs hundreds or thousands"
+    },
+    {
+      "start": 2827.38,
+      "end": 2831.1,
+      "text": "or millions of actions to actually build that castle"
+    },
+    {
+      "start": 2831.1,
+      "end": 2832.66,
+      "text": "by interacting with the world."
+    },
+    {
+      "start": 2833.82,
+      "end": 2837.98,
+      "text": "So again, we want to learn this mapping from an input prompt"
+    },
+    {
+      "start": 2838.0,
+      "end": 2839.58,
+      "text": "to an output state."
+    },
+    {
+      "start": 2839.58,
+      "end": 2843.16,
+      "text": "Maybe an image, maybe language to an output state."
+    },
+    {
+      "start": 2843.16,
+      "end": 2847.0,
+      "text": "But now we're thinking about mapping the inputs to the outputs"
+    },
+    {
+      "start": 2847.0,
+      "end": 2848.68,
+      "text": "by actually interacting with the environment."
+    },
+    {
+      "start": 2851.46,
+      "end": 2854.34,
+      "text": "So I think that we can think about reinforcement learning"
+    },
+    {
+      "start": 2854.34,
+      "end": 2855.98,
+      "text": "as a generative model."
+    },
+    {
+      "start": 2857.2,
+      "end": 2858.64,
+      "text": "And that's what I mean when I say that"
+    },
+    {
+      "start": 2858.64,
+      "end": 2860.42,
+      "text": "self-supervised reinforcement learning,"
+    },
+    {
+      "start": 2860.42,
+      "end": 2862.84,
+      "text": "it really is the sort of generative AI."
+    },
+    {
+      "start": 2862.84,
+      "end": 2864.2,
+      "text": "So I think moving forward,"
+    },
+    {
+      "start": 2865.14,
+      "end": 2867.2,
+      "text": "we might see that generative AI methods,"
+    },
+    {
+      "start": 2867.2000000000003,
+      "end": 2872.9600000000005,
+      "text": "more like reinforcement learning methods rather than the sort of vision and language methods"
+    },
+    {
+      "start": 2872.9600000000005,
+      "end": 2878.1600000000003,
+      "text": "that we've seen before. And in the remaining of the talk, I want to highlight a couple"
+    },
+    {
+      "start": 2878.1600000000003,
+      "end": 2882.0400000000004,
+      "text": "of ongoing research efforts where we've started to push in this direction, where we've started"
+    },
+    {
+      "start": 2882.0400000000004,
+      "end": 2885.94,
+      "text": "to see what really is possible with these self-supervised methods."
+    },
+    {
+      "start": 2887.84,
+      "end": 2892.6800000000003,
+      "text": "So I want to start with the elephant in the room. I've been primarily focusing on goal-reaching"
+    },
+    {
+      "start": 2892.68,
+      "end": 2898.18,
+      "text": "problems, but not every problem is a goal-reaching problem. How do you tackle problems beyond"
+    },
+    {
+      "start": 2898.18,
+      "end": 2904.2599999999998,
+      "text": "goal-reaching with self-supervised reinforcement learning? Well, to do that, we need to introduce"
+    },
+    {
+      "start": 2904.2599999999998,
+      "end": 2908.8999999999996,
+      "text": "a little bit of theory, trying to think about what mathematically are these representations"
+    },
+    {
+      "start": 2908.8999999999996,
+      "end": 2915.06,
+      "text": "learning. Before I said intuitively, they tell us the likelihood of getting from one"
+    },
+    {
+      "start": 2915.06,
+      "end": 2918.72,
+      "text": "state to some other state, but can we formalize that in math?"
+    },
+    {
+      "start": 2921.2599999999998,
+      "end": 2922.56,
+      "text": "Our key theoretical"
+    },
+    {
+      "start": 2922.56,
+      "end": 2922.66,
+      "text": "problem is that we don't have a goal-reaching problem. We don't have a goal-reaching problem"
+    },
+    {
+      "start": 2922.66,
+      "end": 2931.16,
+      "text": "as a result here is a relationship between these representations and Q values. In particular,"
+    },
+    {
+      "start": 2931.16,
+      "end": 2935.94,
+      "text": "you can prove that the dot product between these representations, the similarity between"
+    },
+    {
+      "start": 2935.94,
+      "end": 2943.02,
+      "text": "these representations, exactly correspond to a discounted sum of rewards. And this reward"
+    },
+    {
+      "start": 2943.02,
+      "end": 2947.06,
+      "text": "function here is a very natural one. It's the likelihood that your next state is equal"
+    },
+    {
+      "start": 2947.06,
+      "end": 2952.1,
+      "text": "to the goal. But conveniently, when we introduced this algorithm, we never actually computed"
+    },
+    {
+      "start": 2952.1,
+      "end": 2957.48,
+      "text": "this reward function. And so I'm introducing this reward function purely for analysis reasons."
+    },
+    {
+      "start": 2957.48,
+      "end": 2964.72,
+      "text": "You never actually have to compute this. And what this theory tells us, for one, is that"
+    },
+    {
+      "start": 2964.72,
+      "end": 2969.98,
+      "text": "when we're comparing the similarity between these representations, that's not just a heuristic,"
+    },
+    {
+      "start": 2969.98,
+      "end": 2975.2799999999997,
+      "text": "but rather as a principled thing to do. Comparing these representations exactly corresponds"
+    },
+    {
+      "start": 2975.2799999999997,
+      "end": 2979.9,
+      "text": "to selecting actions that maximize your Q value. And that's the same thing that you"
+    },
+    {
+      "start": 2979.9,
+      "end": 2981.98,
+      "text": "saw that you probably have seen already in this course."
+    },
+    {
+      "start": 2981.98,
+      "end": 2991.7400000000002,
+      "text": "And we'll see in a little bit how this same analysis gives us a way of solving problems"
+    },
+    {
+      "start": 2991.7400000000002,
+      "end": 2998.44,
+      "text": "beyond goal-reaching tasks. One small subtle note here is that up in this right-hand corner"
+    },
+    {
+      "start": 2998.44,
+      "end": 3004.26,
+      "text": "here, I have this beta. And what that means is that the algorithm I've introduced so far"
+    },
+    {
+      "start": 3004.26,
+      "end": 3011.72,
+      "text": "is estimating the Q value for the behavioral policy. The future expected rewards if you"
+    },
+    {
+      "start": 3011.98,
+      "end": 3017.26,
+      "text": "acted the same way that you did when you were collecting the data. Now, sometimes you"
+    },
+    {
+      "start": 3017.26,
+      "end": 3022.62,
+      "text": "might want to do a sort of Q-learning or SIRSA-style method, where you instead estimate the Q"
+    },
+    {
+      "start": 3022.62,
+      "end": 3028.12,
+      "text": "value that you would get if you were acting according to a different policy. And it turned"
+    },
+    {
+      "start": 3028.12,
+      "end": 3034.36,
+      "text": "out there's a way of adapting this contrastive learning procedure to do off-policy evaluation."
+    },
+    {
+      "start": 3034.36,
+      "end": 3040.46,
+      "text": "And I'm going to skip over the details now, but the key idea is that you can do bootstrapping"
+    },
+    {
+      "start": 3040.46,
+      "end": 3041.7400000000002,
+      "text": "using these contrastive features."
+    },
+    {
+      "start": 3041.98,
+      "end": 3047.22,
+      "text": "By comparing the similarities at one time step to the similarities at the next time"
+    },
+    {
+      "start": 3047.22,
+      "end": 3052.34,
+      "text": "step. It ends up closely resembling an idea known as the successor representation that's"
+    },
+    {
+      "start": 3052.34,
+      "end": 3061.26,
+      "text": "popular in neuroscience. So the key reason I bring up this theory is that by showing"
+    },
+    {
+      "start": 3061.26,
+      "end": 3066.1,
+      "text": "these representations encode probabilities, it gives us a way of solving problems beyond"
+    },
+    {
+      "start": 3066.1,
+      "end": 3071.42,
+      "text": "just goal-reaching problems. So for goal-reaching problems, we could use these representations"
+    },
+    {
+      "start": 3071.42,
+      "end": 3075.84,
+      "text": "to estimate the likelihood of getting to the desired goal state, and then for figuring"
+    },
+    {
+      "start": 3075.84,
+      "end": 3082.1800000000003,
+      "text": "out what is the best action to maximize that probability."
+    },
+    {
+      "start": 3082.1800000000003,
+      "end": 3085.56,
+      "text": "Now there's some problems where there are multiple outcomes that are all good. Maybe"
+    },
+    {
+      "start": 3085.56,
+      "end": 3089.92,
+      "text": "you want to clean your bedroom, but there are several different configurations of your"
+    },
+    {
+      "start": 3089.92,
+      "end": 3093.62,
+      "text": "bedroom that could be called clean. You might not care about the order of the books on your"
+    },
+    {
+      "start": 3093.62,
+      "end": 3099.82,
+      "text": "bookshelf or the order of the pillows on your couch. And so there, to solve problems where"
+    },
+    {
+      "start": 3099.82,
+      "end": 3100.78,
+      "text": "there are multiple good outcomes, you might want to use the probability of getting to"
+    },
+    {
+      "start": 3100.78,
+      "end": 3112.5400000000004,
+      "text": "any of these outcomes. You can estimate the likelihood of getting to any of these good"
+    },
+    {
+      "start": 3112.5400000000004,
+      "end": 3117.1200000000003,
+      "text": "outcomes, and then taking actions that maximize the likelihood of getting to any of these"
+    },
+    {
+      "start": 3117.1200000000003,
+      "end": 3123.76,
+      "text": "good outcomes. Similarly, you can extend this to the setting"
+    },
+    {
+      "start": 3123.76,
+      "end": 3129.1400000000003,
+      "text": "where… to the fully general setting where you have a small number of states labeled"
+    },
+    {
+      "start": 3129.1400000000003,
+      "end": 3130.28,
+      "text": "with rewards."
+    },
+    {
+      "start": 3130.78,
+      "end": 3135.1000000000004,
+      "text": "you know one state that has a reward of 8, one state that has a reward of 3, one state that has"
+    },
+    {
+      "start": 3135.1000000000004,
+      "end": 3140.2200000000003,
+      "text": "a reward of negative 10, another with a reward of negative 5. And given just these four states"
+    },
+    {
+      "start": 3140.2200000000003,
+      "end": 3144.46,
+      "text": "and the representations, you can estimate the likelihood of getting to the state with"
+    },
+    {
+      "start": 3144.46,
+      "end": 3150.2200000000003,
+      "text": "reward plus 8 and the likelihood of getting to the state with reward plus 3 and so on,"
+    },
+    {
+      "start": 3150.2200000000003,
+      "end": 3155.5,
+      "text": "and then select actions to maximize your future rewards, where your future rewards are just the"
+    },
+    {
+      "start": 3155.5,
+      "end": 3159.98,
+      "text": "likelihood of getting to each of these states times the reward at each of these four states."
+    },
+    {
+      "start": 3161.5,
+      "end": 3167.1000000000004,
+      "text": "And we've shown that these extensions work very effectively. So the key takeaway here is that"
+    },
+    {
+      "start": 3167.1000000000004,
+      "end": 3172.6200000000003,
+      "text": "these representations are useful not just for solving goal-reaching problems, but also for"
+    },
+    {
+      "start": 3172.6200000000003,
+      "end": 3177.82,
+      "text": "solving more general reinforcement learning problems. Before going on to talking about some"
+    },
+    {
+      "start": 3177.82,
+      "end": 3181.5800000000004,
+      "text": "of the most recent research, I want to pause to see if there are any questions at this point."
+    },
+    {
+      "start": 3190.78,
+      "end": 3198.7000000000003,
+      "text": "I have a quick question. Can you hear my voice?"
+    },
+    {
+      "start": 3198.7000000000003,
+      "end": 3201.02,
+      "text": "Yeah."
+    },
+    {
+      "start": 3201.02,
+      "end": 3207.5800000000004,
+      "text": "Yeah. So in contrastive learning, we know that if we apply the augmentation in the regular"
+    },
+    {
+      "start": 3208.86,
+      "end": 3215.9,
+      "text": "case of self-supervised learning like SimCLR and techniques like that, if you apply augmentations"
+    },
+    {
+      "start": 3215.9,
+      "end": 3220.6200000000003,
+      "text": "that totally apply the same type of augmentation you're saying, like, you're getting a product,"
+    },
+    {
+      "start": 3220.78,
+      "end": 3228.1600000000003,
+      "text": "change the image there is no hope to learn a meaningful representation and we"
+    },
+    {
+      "start": 3228.1600000000003,
+      "end": 3236.1400000000003,
+      "text": "have to keep a balance between how much we change the image and whether or not"
+    },
+    {
+      "start": 3236.1400000000003,
+      "end": 3242.6800000000003,
+      "text": "the task that we are asking the encoder to solve being something trivial so if"
+    },
+    {
+      "start": 3242.6800000000003,
+      "end": 3250.76,
+      "text": "you apply to a small augmentation that also doesn't work so here it sounds like"
+    },
+    {
+      "start": 3250.78,
+      "end": 3257.2400000000002,
+      "text": "you pick an action that reaches some some goal state in the future and you"
+    },
+    {
+      "start": 3257.2400000000002,
+      "end": 3264.9,
+      "text": "treat those two those two state actions and goal state as positive pairs how do"
+    },
+    {
+      "start": 3264.9,
+      "end": 3271.46,
+      "text": "you make sure that the same problem doesn't happen here do you do you"
+    },
+    {
+      "start": 3271.46,
+      "end": 3276.46,
+      "text": "enforce a threshold on the on the time horizon that you expect that action to"
+    },
+    {
+      "start": 3276.46,
+      "end": 3280.76,
+      "text": "result in the goal state or do you have other mechanisms to make sure that"
+    },
+    {
+      "start": 3280.78,
+      "end": 3287.6800000000003,
+      "text": "that problem doesn't happen in practice we haven't found this to be a huge"
+    },
+    {
+      "start": 3287.6800000000003,
+      "end": 3294.52,
+      "text": "problem the most important parameter we have is this parameter that tells us how"
+    },
+    {
+      "start": 3294.52,
+      "end": 3298.26,
+      "text": "far into the future are we going to look"
+    },
+    {
+      "start": 3302.1400000000003,
+      "end": 3305.98,
+      "text": "so when we sample the future state here we're sampling it according to a"
+    },
+    {
+      "start": 3305.98,
+      "end": 3310.7200000000003,
+      "text": "geometric distribution with probability with parameter one minus gamma"
+    },
+    {
+      "start": 3310.78,
+      "end": 3318.0400000000004,
+      "text": "and so if we select a very small value of gamma like gamma equals 0.5 then the"
+    },
+    {
+      "start": 3318.0400000000004,
+      "end": 3322.0,
+      "text": "future states are mostly going to be one or two steps in the future and so it's a"
+    },
+    {
+      "start": 3322.0,
+      "end": 3326.26,
+      "text": "very easy classification problem if you select a very large value of gamma like"
+    },
+    {
+      "start": 3326.26,
+      "end": 3331.1800000000003,
+      "text": "gamma equals 0.999 then the future states are on average are going to be a thousand"
+    },
+    {
+      "start": 3331.1800000000003,
+      "end": 3334.6000000000004,
+      "text": "time steps in the future and that's going to be a very very challenging problem"
+    },
+    {
+      "start": 3335.5,
+      "end": 3340.7200000000003,
+      "text": "we found that the algorithm is pretty robust to this choice of gamma in practice we end up using"
+    },
+    {
+      "start": 3340.78,
+      "end": 3346.78,
+      "text": "a value of 0.99 but that's mostly to be consistent with prior work with the literature not because"
+    },
+    {
+      "start": 3346.78,
+      "end": 3354.94,
+      "text": "it works much better or worse than other values there is a kind of um there is one setting where"
+    },
+    {
+      "start": 3354.94,
+      "end": 3361.84,
+      "text": "this issue is definitely does show up and that's in settings where every trajectory when it's really"
+    },
+    {
+      "start": 3361.84,
+      "end": 3368.44,
+      "text": "easy to distinguish one trajectory from another trajectory for example let's imagine that I take"
+    },
+    {
+      "start": 3368.44,
+      "end": 3370.0,
+      "text": "a couple pictures out my window"
+    },
+    {
+      "start": 3370.78,
+      "end": 3376.6600000000003,
+      "text": "and or let's I or let's say that I take a video outside my window here and"
+    },
+    {
+      "start": 3377.86,
+      "end": 3384.7000000000003,
+      "text": "um then I take another video in uh next month another video the month after that"
+    },
+    {
+      "start": 3385.2400000000002,
+      "end": 3390.1000000000004,
+      "text": "the trees outside my window they're gonna look different every month and so even though I want"
+    },
+    {
+      "start": 3390.1000000000004,
+      "end": 3396.76,
+      "text": "these features to pick up temporal information within a single video the representation would"
+    },
+    {
+      "start": 3396.76,
+      "end": 3400.7200000000003,
+      "text": "probably just pick up how each video looks different from the previous video because"
+    },
+    {
+      "start": 3400.78,
+      "end": 3404.92,
+      "text": "one video doesn't have leaves on the trees and the next video does have leaves on the trees"
+    },
+    {
+      "start": 3405.88,
+      "end": 3411.4,
+      "text": "and so there's a variant of this method where instead of sampling the negative examples from"
+    },
+    {
+      "start": 3411.4,
+      "end": 3416.7400000000002,
+      "text": "different videos we sample them from the same video but just much further away in time"
+    },
+    {
+      "start": 3417.4,
+      "end": 3422.86,
+      "text": "and that can that increases the difficulty of the classification problem but can result in learning"
+    },
+    {
+      "start": 3422.86,
+      "end": 3427.7200000000003,
+      "text": "better features so I hope that answers the question literally it's not an issue but when it"
+    },
+    {
+      "start": 3427.7200000000003,
+      "end": 3430.6600000000003,
+      "text": "is an issue there are ways of combating it by thinking about"
+    },
+    {
+      "start": 3430.78,
+      "end": 3432.6400000000003,
+      "text": "how do you sample the negative examples"
+    },
+    {
+      "start": 3436.42,
+      "end": 3439.48,
+      "text": "um may I ask a question too absolutely"
+    },
+    {
+      "start": 3441.34,
+      "end": 3447.7000000000003,
+      "text": "I have many questions but I ask just some of them and my first question is um are really"
+    },
+    {
+      "start": 3447.7000000000003,
+      "end": 3455.32,
+      "text": "temporarily far estate far semantically because for example the for example the mountain car"
+    },
+    {
+      "start": 3455.32,
+      "end": 3460.1800000000003,
+      "text": "uh example the classic one when a car goes up and then goes down"
+    },
+    {
+      "start": 3460.78,
+      "end": 3468.52,
+      "text": "can be in very similar state for example to its initial state how do you contrast these two it's"
+    },
+    {
+      "start": 3468.52,
+      "end": 3475.3,
+      "text": "they are not really semantically away from each other this is a really really good point um the"
+    },
+    {
+      "start": 3477.46,
+      "end": 3485.0800000000004,
+      "text": "um and so when I say that uh we're learning representation so that the distance between"
+    },
+    {
+      "start": 3485.0800000000004,
+      "end": 3490.0600000000004,
+      "text": "the representations corresponds to the distance in time I'm saying this in an average sense"
+    },
+    {
+      "start": 3490.78,
+      "end": 3497.1400000000003,
+      "text": "and so you're absolutely right that there can be examples where states that occur states that were"
+    },
+    {
+      "start": 3497.1400000000003,
+      "end": 3504.6400000000003,
+      "text": "far apart in time uh actually are often occur nearby in time as well but part of the reason"
+    },
+    {
+      "start": 3504.6400000000003,
+      "end": 3508.7200000000003,
+      "text": "why I wanted to introduce this theory is it actually gives us some theoretical grounding"
+    },
+    {
+      "start": 3508.7200000000003,
+      "end": 3515.32,
+      "text": "for confidently saying yes these representations are telling us the correct thing they are telling"
+    },
+    {
+      "start": 3515.32,
+      "end": 3519.46,
+      "text": "us the likelihood of getting from one state to some other state at some point in time"
+    },
+    {
+      "start": 3520.78,
+      "end": 3526.7200000000003,
+      "text": "one way of seeing this is that um in that example you mentioned where you have the mountain car and"
+    },
+    {
+      "start": 3526.7200000000003,
+      "end": 3532.42,
+      "text": "let's say that you're looking at one state and a nearby state in that nearby state uh you could"
+    },
+    {
+      "start": 3532.42,
+      "end": 3536.98,
+      "text": "have gotten to it if you first went up the mountain and then down the mountain well the"
+    },
+    {
+      "start": 3536.98,
+      "end": 3542.02,
+      "text": "likelihood of sampling that transition is going to be much lower than the likelihood of sampling"
+    },
+    {
+      "start": 3542.02,
+      "end": 3548.7400000000002,
+      "text": "the transition where you just go from this position to this position because this shorter path because"
+    },
+    {
+      "start": 3548.7400000000002,
+      "end": 3550.48,
+      "text": "this the likelihood of sampling"
+    },
+    {
+      "start": 3550.78,
+      "end": 3559.6600000000003,
+      "text": "uh a start goal pair is depends on Gamma to the number of time steps that have elapsed and so"
+    },
+    {
+      "start": 3559.6600000000003,
+      "end": 3566.6200000000003,
+      "text": "you're much much more likely to sample this uh state goal pair along this first path when you"
+    },
+    {
+      "start": 3566.6200000000003,
+      "end": 3570.5800000000004,
+      "text": "went from the state to the goal then along this longer path when you first went from the state up"
+    },
+    {
+      "start": 3570.5800000000004,
+      "end": 3575.02,
+      "text": "the mountain and then down again in fact it's exponentially more likely to sample a shorter path"
+    },
+    {
+      "start": 3575.6800000000003,
+      "end": 3578.0800000000004,
+      "text": "and that's part of the reason why this doesn't end up being a problem"
+    },
+    {
+      "start": 3580.1200000000003,
+      "end": 3580.48,
+      "text": "okay"
+    },
+    {
+      "start": 3580.78,
+      "end": 3586.96,
+      "text": "thank you and I have two other questions another one is how do you deal with continuous action"
+    },
+    {
+      "start": 3586.96,
+      "end": 3593.0800000000004,
+      "text": "space and because you use argmax there and for continuous action space the only thing that I"
+    },
+    {
+      "start": 3593.0800000000004,
+      "end": 3599.0800000000004,
+      "text": "have in mind right now is to take gradient with respect to action gradient of difference between"
+    },
+    {
+      "start": 3599.0800000000004,
+      "end": 3605.32,
+      "text": "current state and the gold estate is it the only possible way or is any other way wrong"
+    },
+    {
+      "start": 3605.32,
+      "end": 3610.1200000000003,
+      "text": "yeah so in practice what we do is we do have you seen algorithms"
+    },
+    {
+      "start": 3610.12,
+      "end": 3613.06,
+      "text": "like DDPG or TD3"
+    },
+    {
+      "start": 3614.8599999999997,
+      "end": 3622.54,
+      "text": "yes yes cool so we did exactly the same thing that those algorithms do so we learn a policy that"
+    },
+    {
+      "start": 3623.38,
+      "end": 3629.08,
+      "text": "you're the objective for the policy is to sample actions that maximize this inner product"
+    },
+    {
+      "start": 3631.42,
+      "end": 3631.96,
+      "text": "hmm"
+    },
+    {
+      "start": 3632.68,
+      "end": 3635.0,
+      "text": "right saw"
+    },
+    {
+      "start": 3635.0,
+      "end": 3639.46,
+      "text": "just this algorithm is actually very easy to implement on top of an implementation of Meeting or"
+    },
+    {
+      "start": 3639.46,
+      "end": 3644.46,
+      "text": "SAC or T3 or GDPG, you simply modify your actor loss"
+    },
+    {
+      "start": 3645.16,
+      "end": 3648.62,
+      "text": "to instead of using the Q value, use this inner product"
+    },
+    {
+      "start": 3648.62,
+      "end": 3650.02,
+      "text": "and you modify your critic loss"
+    },
+    {
+      "start": 3650.02,
+      "end": 3653.64,
+      "text": "to instead of using the regular TD loss"
+    },
+    {
+      "start": 3653.64,
+      "end": 3655.3,
+      "text": "to use this contrastive loss."
+    },
+    {
+      "start": 3656.96,
+      "end": 3658.5,
+      "text": "I see, I see, thank you."
+    },
+    {
+      "start": 3658.5,
+      "end": 3660.26,
+      "text": "And for the last question,"
+    },
+    {
+      "start": 3660.26,
+      "end": 3664.62,
+      "text": "how do you deal with partially observable environments?"
+    },
+    {
+      "start": 3664.62,
+      "end": 3668.42,
+      "text": "Because in those states you cannot contrast observation"
+    },
+    {
+      "start": 3668.42,
+      "end": 3669.52,
+      "text": "with each other."
+    },
+    {
+      "start": 3669.52,
+      "end": 3671.92,
+      "text": "They should be the full history or embedding of history"
+    },
+    {
+      "start": 3671.92,
+      "end": 3674.62,
+      "text": "and it is embedding on embedding, you know,"
+    },
+    {
+      "start": 3674.62,
+      "end": 3675.92,
+      "text": "it gets harder, I believe."
+    },
+    {
+      "start": 3677.2400000000002,
+      "end": 3678.16,
+      "text": "That is an open problem."
+    },
+    {
+      "start": 3678.16,
+      "end": 3679.46,
+      "text": "We haven't solved it yet."
+    },
+    {
+      "start": 3682.38,
+      "end": 3683.82,
+      "text": "Oh, okay, thank you."
+    },
+    {
+      "start": 3683.82,
+      "end": 3687.06,
+      "text": "I think the easiest way of doing it would be to do exactly"
+    },
+    {
+      "start": 3687.06,
+      "end": 3690.66,
+      "text": "like you suggested, to think about sequences of states"
+    },
+    {
+      "start": 3690.66,
+      "end": 3692.82,
+      "text": "and then use some sort of sequence model"
+    },
+    {
+      "start": 3692.82,
+      "end": 3697.06,
+      "text": "like an LSTM or a transformer, but we haven't tried that yet."
+    },
+    {
+      "start": 3698.42,
+      "end": 3700.92,
+      "text": "And a spoons parlar with Farmer,"
+    },
+    {
+      "start": 3700.92,
+      "end": 3702.8,
+      "text": "we haven't translated it anything yet."
+    },
+    {
+      "start": 3702.8,
+      "end": 3707.92,
+      "text": "Yeah, so is there any questions you want out of the talk?"
+    },
+    {
+      "start": 3707.92,
+      "end": 3708.7000000000003,
+      "text": "I see, thank you."
+    },
+    {
+      "start": 3708.7000000000003,
+      "end": 3709.48,
+      "text": "Thank you."
+    },
+    {
+      "start": 3712.5,
+      "end": 3714.36,
+      "text": "Any other questions before we move on?"
+    },
+    {
+      "start": 3717.34,
+      "end": 3718.16,
+      "text": "Yeah, go ahead."
+    },
+    {
+      "start": 3722.7200000000003,
+      "end": 3724.1,
+      "text": "Do you have my voice."
+    },
+    {
+      "start": 3724.1,
+      "end": 3727.7400000000002,
+      "text": "Perfect, I have a question about the goal condition RL."
+    },
+    {
+      "start": 3727.7400000000002,
+      "end": 3728.14,
+      "text": "In will that condition RL, for example in vision task,"
+    },
+    {
+      "start": 3728.14,
+      "end": 3728.3,
+      "text": "on a recommended project cheese-f妹e communicationяг средe"
+    },
+    {
+      "start": 3728.3,
+      "end": 3734.54,
+      "text": "between the goal state and the current state does this limit our exploration in the environment"
+    },
+    {
+      "start": 3734.54,
+      "end": 3740.38,
+      "text": "because in each state that i am i want to close as possible to the goal state and maybe there"
+    },
+    {
+      "start": 3740.38,
+      "end": 3745.1800000000003,
+      "text": "are some states that are not really similar to the goal state at least in our future space"
+    },
+    {
+      "start": 3745.1800000000003,
+      "end": 3749.5800000000004,
+      "text": "and those can lead us to the better states i think this exploration may be"
+    },
+    {
+      "start": 3749.5800000000004,
+      "end": 3752.7000000000003,
+      "text": "a bit limitation for goal condition or i'm wrong"
+    },
+    {
+      "start": 3752.7000000000003,
+      "end": 3760.2200000000003,
+      "text": "to the contrary we find that the exploration is much stronger than alternative methods"
+    },
+    {
+      "start": 3761.7400000000002,
+      "end": 3764.86,
+      "text": "and in a couple slides i'll talk a little bit about this"
+    },
+    {
+      "start": 3765.9800000000005,
+      "end": 3770.5400000000004,
+      "text": "i think part of the reason why is that when we think about these goal-riching tasks"
+    },
+    {
+      "start": 3770.5400000000004,
+      "end": 3777.42,
+      "text": "we're only saying what we want the agent to do not how we want it to do it and because we are"
+    },
+    {
+      "start": 3777.42,
+      "end": 3781.6600000000003,
+      "text": "telling the agent how it should do it it has to automatically try to figure out what is the best"
+    },
+    {
+      "start": 3781.6600000000003,
+      "end": 3782.6800000000003,
+      "text": "way of how to do it and that's what we're trying to do and that's what we're trying to do and that's"
+    },
+    {
+      "start": 3782.6800000000003,
+      "end": 3785.6200000000003,
+      "text": "what we're trying to do and that's what we're trying to do um of solving the task and so for"
+    },
+    {
+      "start": 3785.6200000000003,
+      "end": 3787.6200000000003,
+      "text": "um of solving the task and so for example when you look at mazes we end up seeing"
+    },
+    {
+      "start": 3787.6200000000003,
+      "end": 3790.34,
+      "text": "example when you look at mazes we end up seeing pretty effective exploration uh exploring lots"
+    },
+    {
+      "start": 3790.34,
+      "end": 3792.0200000000004,
+      "text": "pretty effective exploration uh exploring lots of different parts of the maze before it eventually"
+    },
+    {
+      "start": 3792.0200000000004,
+      "end": 3793.1000000000004,
+      "text": "of different parts of the maze before it eventually finds the shortest path"
+    },
+    {
+      "start": 3797.5000000000005,
+      "end": 3798.34,
+      "text": "i see thank you"
+    },
+    {
+      "start": 3805.7400000000002,
+      "end": 3809.1800000000003,
+      "text": "great in these last few minutes i want to talk about some of the most recent research"
+    },
+    {
+      "start": 3809.1800000000003,
+      "end": 3811.9400000000005,
+      "text": "we've been doing using these contrastive methods"
+    },
+    {
+      "start": 3812.6800000000003,
+      "end": 3818.9,
+      "text": "we've been doing using these contrastive methods"
+    },
+    {
+      "start": 3818.9,
+      "end": 3823.3,
+      "text": "cool so our goal that like we started the talk with was thinking about"
+    },
+    {
+      "start": 3823.3,
+      "end": 3827.9,
+      "text": "how do we build reinforcement learning methods that are like generative models that could be"
+    },
+    {
+      "start": 3827.9,
+      "end": 3833.4600000000005,
+      "text": "prompted to do nearly everything i want to highlight some recent work that's taking some"
+    },
+    {
+      "start": 3833.4600000000005,
+      "end": 3842.6200000000003,
+      "text": "steps towards this so if we think about what have been the successes or what has helped cause these"
+    },
+    {
+      "start": 3842.62,
+      "end": 3847.7599999999998,
+      "text": "other areas of generative ai to be so successful i think perhaps the most important component is"
+    },
+    {
+      "start": 3847.7599999999998,
+      "end": 3853.64,
+      "text": "self-supervised feedback we've already seen today how we can build reinforcement learning methods"
+    },
+    {
+      "start": 3853.64,
+      "end": 3859.16,
+      "text": "with self-supervised feedback i think there are a couple other important ingredients one is the"
+    },
+    {
+      "start": 3859.16,
+      "end": 3865.12,
+      "text": "capacity to train on lots and lots of data two is the ability to use lots of compute and three is"
+    },
+    {
+      "start": 3865.12,
+      "end": 3869.2,
+      "text": "having standardized benchmarks so we can compare different methods on a level playing field"
+    },
+    {
+      "start": 3870.3199999999997,
+      "end": 3872.12,
+      "text": "so to get these next three benefits"
+    },
+    {
+      "start": 3872.62,
+      "end": 3877.58,
+      "text": "Together with some collaborators, we designed a new benchmark that allows us to compare methods"
+    },
+    {
+      "start": 3877.58,
+      "end": 3882.8599999999997,
+      "text": "on a level playing field and to use lots more compute and data to see how leveraging more"
+    },
+    {
+      "start": 3882.8599999999997,
+      "end": 3888.7799999999997,
+      "text": "compute and data can improve performance. And so this is a new benchmark that we've been calling"
+    },
+    {
+      "start": 3888.7799999999997,
+      "end": 3895.9,
+      "text": "JAX-GCRL. JAX is the programming language and goal condition reinforcement learning. There's"
+    },
+    {
+      "start": 3895.9,
+      "end": 3899.74,
+      "text": "a link to the repo down here. And I want to highlight some of the key properties of this"
+    },
+    {
+      "start": 3899.7400000000002,
+      "end": 3905.82,
+      "text": "benchmark that has made it really fun to use. The most important property is that it's really fast."
+    },
+    {
+      "start": 3906.86,
+      "end": 3912.0600000000004,
+      "text": "When I was doing my PhD, it used to take several hours to a couple of days"
+    },
+    {
+      "start": 3912.0600000000004,
+      "end": 3918.86,
+      "text": "to run experiments that now just take a couple of minutes on one GPU. And so I think this has"
+    },
+    {
+      "start": 3918.86,
+      "end": 3923.5000000000005,
+      "text": "made the research process a lot more fun because now you can iterate on algorithms in a couple"
+    },
+    {
+      "start": 3923.5000000000005,
+      "end": 3929.1800000000003,
+      "text": "minutes. It makes the problem of algorithm design feel a lot more like data science."
+    },
+    {
+      "start": 3930.0600000000004,
+      "end": 3935.98,
+      "text": "It also makes it a lot easier to run experiments for millions or billions of time steps."
+    },
+    {
+      "start": 3936.5400000000004,
+      "end": 3940.46,
+      "text": "And previously, those experiments could only be done in industry with people that have lots and"
+    },
+    {
+      "start": 3940.46,
+      "end": 3946.78,
+      "text": "lots of GPUs. I want to highlight some of the tasks here. Some of them are pretty easy. Some"
+    },
+    {
+      "start": 3946.78,
+      "end": 3953.0200000000004,
+      "text": "of them are really hard and are still open problems. So one of the tasks is this embodied"
+    },
+    {
+      "start": 3953.0200000000004,
+      "end": 3959.6600000000003,
+      "text": "Sokoban problem where this quadruped is trying to run to a goal that's hidden back here in that first"
+    },
+    {
+      "start": 3959.7400000000002,
+      "end": 3967.42,
+      "text": "task to push this block out of the way to get there. Here we can see it. This next episode,"
+    },
+    {
+      "start": 3967.42,
+      "end": 3979.0200000000004,
+      "text": "I'm going to hide the goal over here. This next task is a football task where the ant"
+    },
+    {
+      "start": 3979.0200000000004,
+      "end": 3986.94,
+      "text": "has to dribble the soccer ball towards this location here. I see it's fairly good at football."
+    },
+    {
+      "start": 3989.7400000000002,
+      "end": 3995.5000000000005,
+      "text": "And so this gives you a sense of the source of problems that these contrasted algorithms can"
+    },
+    {
+      "start": 3995.5000000000005,
+      "end": 4003.34,
+      "text": "solve. We also have a new benchmark that looks at the offline setting. So if you want to see,"
+    },
+    {
+      "start": 4003.34,
+      "end": 4007.7400000000002,
+      "text": "okay, if you just are given a fixed data set, what are the sorts of policies you can learn?"
+    },
+    {
+      "start": 4007.7400000000002,
+      "end": 4012.46,
+      "text": "This benchmark is a really great way of doing that. Both these benchmarks have really good"
+    },
+    {
+      "start": 4012.46,
+      "end": 4016.6200000000003,
+      "text": "documentation. And so if you're looking to get involved in the research, I'd highly recommend"
+    },
+    {
+      "start": 4016.6200000000003,
+      "end": 4017.9,
+      "text": "looking at these two benchmarks."
+    },
+    {
+      "start": 4019.7400000000002,
+      "end": 4023.5800000000004,
+      "text": "The next thing I want to talk a little bit about is generalization."
+    },
+    {
+      "start": 4027.7400000000002,
+      "end": 4033.34,
+      "text": "And so when we think about generalization and machine learning broadly, often we're thinking"
+    },
+    {
+      "start": 4033.34,
+      "end": 4038.5400000000004,
+      "text": "about generalization across perceptual differences. Say we want a neural network to produce"
+    },
+    {
+      "start": 4038.5400000000004,
+      "end": 4046.46,
+      "text": "similar outputs for an image and an augmented version of that same image. In this project,"
+    },
+    {
+      "start": 4046.46,
+      "end": 4048.3,
+      "text": "we were thinking about a kind of wacky"
+    },
+    {
+      "start": 4048.3,
+      "end": 4052.94,
+      "text": "notion of generalization that's unique to the reinforcement learning problem."
+    },
+    {
+      "start": 4053.5800000000004,
+      "end": 4058.3,
+      "text": "This notion of generalization that we were calling horizon generalization."
+    },
+    {
+      "start": 4059.1800000000003,
+      "end": 4063.82,
+      "text": "And the idea is that when we have a goal condition policy,"
+    },
+    {
+      "start": 4063.82,
+      "end": 4068.94,
+      "text": "if we give it a state action pair, sorry, a state goal pair, and it produces some action,"
+    },
+    {
+      "start": 4070.3,
+      "end": 4075.1000000000004,
+      "text": "if instead of telling it to get to a goal, we tell it to get to a waypoint"
+    },
+    {
+      "start": 4075.1000000000004,
+      "end": 4078.2200000000003,
+      "text": "on the route to that goal. So instead of trying to get really"
+    },
+    {
+      "start": 4078.3,
+      "end": 4083.1800000000003,
+      "text": "far away, just try to get to a first intermediate waypoint, you could take a similar action."
+    },
+    {
+      "start": 4085.1000000000004,
+      "end": 4090.38,
+      "text": "And so this is a notion of invariance. You want your policy to produce similar actions"
+    },
+    {
+      "start": 4090.38,
+      "end": 4093.42,
+      "text": "for different inputs where or for transformed inputs."
+    },
+    {
+      "start": 4094.38,
+      "end": 4100.3,
+      "text": "And what Kathy and Vivek proved is that if you have this invariance property,"
+    },
+    {
+      "start": 4100.3,
+      "end": 4105.820000000001,
+      "text": "then your policy will generalize with respect to the horizon. And what I mean here is that"
+    },
+    {
+      "start": 4105.820000000001,
+      "end": 4106.3,
+      "text": "you can now, if your policy satisfies this property, you can do something about that."
+    },
+    {
+      "start": 4106.3,
+      "end": 4108.3,
+      "text": "And so there's a little"
+    },
+    {
+      "start": 4108.3,
+      "end": 4114.24,
+      "text": "property, you can train it on just easy tasks, say task reaching goals within the smaller"
+    },
+    {
+      "start": 4114.24,
+      "end": 4115.4400000000005,
+      "text": "circle."
+    },
+    {
+      "start": 4115.4400000000005,
+      "end": 4122.06,
+      "text": "And then the policy provably will generalize to be able to reach goals that are more further"
+    },
+    {
+      "start": 4122.06,
+      "end": 4123.06,
+      "text": "away."
+    },
+    {
+      "start": 4123.06,
+      "end": 4127.4800000000005,
+      "text": "And so I think this notion of generalization is really powerful for thinking about how"
+    },
+    {
+      "start": 4127.4800000000005,
+      "end": 4132.26,
+      "text": "do we build reinforcement learning agents that really can generalize new things that"
+    },
+    {
+      "start": 4132.26,
+      "end": 4136.6,
+      "text": "are radically different than those that they were trained on."
+    },
+    {
+      "start": 4136.6,
+      "end": 4146.54,
+      "text": "We also have found that data augmentation can be pretty useful for achieving this generalization."
+    },
+    {
+      "start": 4146.54,
+      "end": 4151.1,
+      "text": "So self-supervised reinforcement learning, it really can be seen as a form of generative"
+    },
+    {
+      "start": 4151.1,
+      "end": 4152.1,
+      "text": "AI."
+    },
+    {
+      "start": 4152.1,
+      "end": 4157.88,
+      "text": "And if you want to figure out how do we build agents that can do anything, there are a couple"
+    },
+    {
+      "start": 4157.88,
+      "end": 4162.8,
+      "text": "of hints that we've seen over the last couple of months that this really should be possible."
+    },
+    {
+      "start": 4162.8,
+      "end": 4166.400000000001,
+      "text": "And I want to briefly highlight some of those hints."
+    },
+    {
+      "start": 4166.4,
+      "end": 4171.82,
+      "text": "The first is that these representations seem to have really intriguing properties."
+    },
+    {
+      "start": 4171.82,
+      "end": 4176.0199999999995,
+      "text": "And so before, when we were looking at the similarity between these representations,"
+    },
+    {
+      "start": 4176.0199999999995,
+      "end": 4179.48,
+      "text": "we actually can think about what these intermediate points, what these intermediate representations"
+    },
+    {
+      "start": 4179.48,
+      "end": 4181.12,
+      "text": "look like."
+    },
+    {
+      "start": 4181.12,
+      "end": 4185.219999999999,
+      "text": "So we start with a prior method, an alternative method, a variational autoencoder."
+    },
+    {
+      "start": 4185.219999999999,
+      "end": 4189.66,
+      "text": "If you visualize these intermediate waypoints, you end up seeing that the representations"
+    },
+    {
+      "start": 4189.66,
+      "end": 4195.9,
+      "text": "have captured the contents of the scene, but not anything about time."
+    },
+    {
+      "start": 4195.9,
+      "end": 4203.04,
+      "text": "In contrast, with these temporal contrastive learning methods, these intermediate representations"
+    },
+    {
+      "start": 4203.04,
+      "end": 4208.46,
+      "text": "not only capture the contents of your image, but also how to solve the task."
+    },
+    {
+      "start": 4208.46,
+      "end": 4211.16,
+      "text": "They also capture the physics."
+    },
+    {
+      "start": 4211.16,
+      "end": 4216.96,
+      "text": "And so when you interpolate in representation space between this observation here and this"
+    },
+    {
+      "start": 4216.96,
+      "end": 4220.599999999999,
+      "text": "observation here, you end up generating a plan."
+    },
+    {
+      "start": 4220.599999999999,
+      "end": 4222.4,
+      "text": "And this was entirely unexpected."
+    },
+    {
+      "start": 4222.4,
+      "end": 4223.62,
+      "text": "We didn't expect this to happen."
+    },
+    {
+      "start": 4223.62,
+      "end": 4224.62,
+      "text": "So let's look at this."
+    },
+    {
+      "start": 4224.62,
+      "end": 4225.62,
+      "text": "So this is a very interesting example."
+    },
+    {
+      "start": 4225.62,
+      "end": 4229.12,
+      "text": "But I think that this gives us some hints that these representations really are capturing"
+    },
+    {
+      "start": 4229.12,
+      "end": 4232.36,
+      "text": "useful bits of information."
+    },
+    {
+      "start": 4232.36,
+      "end": 4239.24,
+      "text": "Since then, we've done some theory to actually prove why this interpolation should happen."
+    },
+    {
+      "start": 4239.24,
+      "end": 4242.86,
+      "text": "The second interesting property that we've seen gets back to the question that was asked"
+    },
+    {
+      "start": 4242.86,
+      "end": 4245.48,
+      "text": "earlier about exploration."
+    },
+    {
+      "start": 4245.48,
+      "end": 4250.72,
+      "text": "So typically, when we train these goal condition methods, we train them on goals of varying"
+    },
+    {
+      "start": 4250.72,
+      "end": 4252.26,
+      "text": "difficulties."
+    },
+    {
+      "start": 4252.26,
+      "end": 4254.34,
+      "text": "And so when we collect the data, when we say, OK."
+    },
+    {
+      "start": 4254.34,
+      "end": 4261.84,
+      "text": "Try to get to a very difficult goal, sometimes we say, try to get to an easier goal."
+    },
+    {
+      "start": 4261.84,
+      "end": 4265.38,
+      "text": "Often we only actually care about the performance on one difficult goal."
+    },
+    {
+      "start": 4265.38,
+      "end": 4270.08,
+      "text": "But our intuition, based on prior work, is that if you only collected data, if you only"
+    },
+    {
+      "start": 4270.08,
+      "end": 4276.52,
+      "text": "ever tried to get to a very, very distant goal, it would be very hard to do the exploration."
+    },
+    {
+      "start": 4276.52,
+      "end": 4282.76,
+      "text": "But to our surprise, when we're using these temporal contrastive learning methods, doing"
+    },
+    {
+      "start": 4282.76,
+      "end": 4283.7,
+      "text": "data collection."
+    },
+    {
+      "start": 4283.7,
+      "end": 4288.139999999999,
+      "text": "By always commanding one difficult goal actually works."
+    },
+    {
+      "start": 4288.139999999999,
+      "end": 4297.62,
+      "text": "In fact, it often works better than collecting data using these goals of varying difficulties."
+    },
+    {
+      "start": 4297.62,
+      "end": 4302.58,
+      "text": "And this actually pretty profoundly changed how I think about the exploration problem."
+    },
+    {
+      "start": 4302.58,
+      "end": 4310.98,
+      "text": "Previously, I used to think that exploration happened by first finding a route to the goal"
+    },
+    {
+      "start": 4310.98,
+      "end": 4313.7,
+      "text": "and then finding faster and faster routes to the goal."
+    },
+    {
+      "start": 4313.7,
+      "end": 4319.46,
+      "text": "But what this project showed is that even before these agents have ever found a path"
+    },
+    {
+      "start": 4319.46,
+      "end": 4324.46,
+      "text": "to the goal, the agent here is trying to move the green block to the blue bin."
+    },
+    {
+      "start": 4324.46,
+      "end": 4327.34,
+      "text": "The agent here is trying to put the lid on the box."
+    },
+    {
+      "start": 4327.34,
+      "end": 4332.7,
+      "text": "Even before these agents have ever successfully solved the task, they're starting to interesting"
+    },
+    {
+      "start": 4332.7,
+      "end": 4333.7,
+      "text": "exploration."
+    },
+    {
+      "start": 4333.7,
+      "end": 4337.42,
+      "text": "They're starting to knock the blocks around, push the objects around."
+    },
+    {
+      "start": 4337.42,
+      "end": 4342.099999999999,
+      "text": "And so I think what this shows is that there's something about these contrastive reinforcement"
+    },
+    {
+      "start": 4342.099999999999,
+      "end": 4343.099999999999,
+      "text": "learning methods."
+    },
+    {
+      "start": 4343.1,
+      "end": 4347.1,
+      "text": "That allows them to do really effective exploration even before they've ever solved the task for"
+    },
+    {
+      "start": 4347.1,
+      "end": 4348.1,
+      "text": "the first time."
+    },
+    {
+      "start": 4348.1,
+      "end": 4355.52,
+      "text": "So he's only here around 19,000 trials when they first solved the task."
+    },
+    {
+      "start": 4355.52,
+      "end": 4359.740000000001,
+      "text": "And we see that similar things happen in the multi-agent setting, that there's a similar"
+    },
+    {
+      "start": 4359.740000000001,
+      "end": 4362.76,
+      "text": "emergence of exploration here."
+    },
+    {
+      "start": 4362.76,
+      "end": 4368.160000000001,
+      "text": "And the last hint that we found pretty intriguing is that these methods benefit significantly"
+    },
+    {
+      "start": 4368.160000000001,
+      "end": 4369.4800000000005,
+      "text": "from scale."
+    },
+    {
+      "start": 4369.4800000000005,
+      "end": 4373.1,
+      "text": "So most reinforcement learning methods use architectures that are about four to five"
+    },
+    {
+      "start": 4373.1,
+      "end": 4375.02,
+      "text": "or four layers deep."
+    },
+    {
+      "start": 4375.02,
+      "end": 4379.56,
+      "text": "And prior work has found that making networks deeper don't seem to increase performance."
+    },
+    {
+      "start": 4379.56,
+      "end": 4384.14,
+      "text": "But with these self-supervised methods, we find that increasing the depth of networks"
+    },
+    {
+      "start": 4384.14,
+      "end": 4388.58,
+      "text": "can significantly, significantly improve performance."
+    },
+    {
+      "start": 4388.58,
+      "end": 4393.9400000000005,
+      "text": "And I think the key reason why gets back to the start of this talk, that we're doing self-supervised"
+    },
+    {
+      "start": 4393.9400000000005,
+      "end": 4395.200000000001,
+      "text": "learning."
+    },
+    {
+      "start": 4395.200000000001,
+      "end": 4398.38,
+      "text": "And because we're doing the self-supervised learning, what this means is that we're getting"
+    },
+    {
+      "start": 4398.38,
+      "end": 4400.1,
+      "text": "many bits of supervision for free."
+    },
+    {
+      "start": 4400.1,
+      "end": 4403.1,
+      "text": "We're just extracting bits from these raw, unlinked layers."
+    },
+    {
+      "start": 4403.1,
+      "end": 4404.1,
+      "text": "We're extracting multiple data."
+    },
+    {
+      "start": 4404.1,
+      "end": 4408.280000000001,
+      "text": "And because we're getting all of these extra bits for free, I think this helps explain"
+    },
+    {
+      "start": 4408.280000000001,
+      "end": 4411.22,
+      "text": "why we're able to train models that are much, much bigger."
+    },
+    {
+      "start": 4411.22,
+      "end": 4418.660000000001,
+      "text": "And this, in turn, results in learning behaviors that more effectively solve a number of tasks."
+    },
+    {
+      "start": 4418.660000000001,
+      "end": 4419.660000000001,
+      "text": "So I'm going to end there."
+    },
+    {
+      "start": 4419.660000000001,
+      "end": 4423.4800000000005,
+      "text": "I think that the key challenge in reinforcement learning today is rewards."
+    },
+    {
+      "start": 4423.4800000000005,
+      "end": 4428.14,
+      "text": "I think self-supervised learning is a really, really powerful tool for figuring out how"
+    },
+    {
+      "start": 4428.14,
+      "end": 4431.3,
+      "text": "do we get the benefits of reinforcement learning without the challenges of designing rewards."
+    },
+    {
+      "start": 4431.3,
+      "end": 4432.3,
+      "text": "And I think self-supervised learning is really, really powerful tool for figuring out how"
+    },
+    {
+      "start": 4432.3,
+      "end": 4433.0,
+      "text": "do we get the benefits of reinforcement learning without the challenges of designing rewards."
+    },
+    {
+      "start": 4433.0,
+      "end": 4434.0,
+      "text": "And I think self-supervised learning is really, really powerful tool for figuring out how to"
+    },
+    {
+      "start": 4434.0,
+      "end": 4441.9,
+      "text": "build reinforcement learning agents that truly will be able to do anything, including things"
+    },
+    {
+      "start": 4441.9,
+      "end": 4444.9,
+      "text": "that are far beyond what they were trained to do."
+    },
+    {
+      "start": 4444.9,
+      "end": 4449.0,
+      "text": "I'll end here, and I'm happy to take any questions for the remaining 30 minutes."
+    },
+    {
+      "start": 4449.0,
+      "end": 4450.0,
+      "text": "Thank you."
+    },
+    {
+      "start": 4450.0,
+      "end": 4454.18,
+      "text": "Oh, one last note."
+    },
+    {
+      "start": 4454.18,
+      "end": 4460.38,
+      "text": "If you want to get involved in the research, here is a link to the repository for the codebase"
+    },
+    {
+      "start": 4460.38,
+      "end": 4462.94,
+      "text": "that I talked about in the middle of the talk."
+    },
+    {
+      "start": 4463.0,
+      "end": 4465.94,
+      "text": "Thank you so much, Benjamin."
+    },
+    {
+      "start": 4465.94,
+      "end": 4468.24,
+      "text": "I have a quick question."
+    },
+    {
+      "start": 4468.24,
+      "end": 4478.1,
+      "text": "So in training LLMs, RL has recently been found to be a success story, like the deep"
+    },
+    {
+      "start": 4478.1,
+      "end": 4481.8,
+      "text": "secret story and other things."
+    },
+    {
+      "start": 4481.8,
+      "end": 4488.96,
+      "text": "So do you believe that these methods that you introduced in this talk, could they be"
+    },
+    {
+      "start": 4488.96,
+      "end": 4491.0,
+      "text": "useful in that context as well?"
+    },
+    {
+      "start": 4491.0,
+      "end": 4492.0,
+      "text": "What's your take on that?"
+    },
+    {
+      "start": 4492.0,
+      "end": 4493.0,
+      "text": "Absolutely."
+    },
+    {
+      "start": 4493.0,
+      "end": 4497.44,
+      "text": "In fact, we're currently working on it."
+    },
+    {
+      "start": 4497.44,
+      "end": 4503.36,
+      "text": "The methods like the deep seek R1 method are really, really powerful for certain types"
+    },
+    {
+      "start": 4503.36,
+      "end": 4507.4,
+      "text": "of problems, for problems where it's easy to define the rewards."
+    },
+    {
+      "start": 4507.4,
+      "end": 4512.18,
+      "text": "You might notice that most of the successes of reinforcement learning for language models"
+    },
+    {
+      "start": 4512.18,
+      "end": 4516.48,
+      "text": "are in settings where the rewards are easy to define, where you have these nice verifiable"
+    },
+    {
+      "start": 4516.48,
+      "end": 4517.48,
+      "text": "rewards."
+    },
+    {
+      "start": 4517.48,
+      "end": 4521.94,
+      "text": "Now, this explains why the language models are really effective at things like deep seek,"
+    },
+    {
+      "start": 4521.9400000000005,
+      "end": 4528.92,
+      "text": "where you can write test cases to check the correctness of code, and math, where we already"
+    },
+    {
+      "start": 4528.92,
+      "end": 4532.240000000001,
+      "text": "have proof checkers that can check whether your proof is correct."
+    },
+    {
+      "start": 4532.240000000001,
+      "end": 4538.56,
+      "text": "But in settings like dialogue, it's a lot harder to define a reward function for saying,"
+    },
+    {
+      "start": 4538.56,
+      "end": 4544.34,
+      "text": "did the chatbot convince the patient to take their medication every day."
+    },
+    {
+      "start": 4544.34,
+      "end": 4550.1,
+      "text": "And my hope is that there are all these potential applications of language modeling that will"
+    },
+    {
+      "start": 4550.1,
+      "end": 4551.3,
+      "text": "be unlocked by thinking about these first steps."
+    },
+    {
+      "start": 4551.3,
+      "end": 4554.06,
+      "text": "thinking about these problems as goal region problems."
+    },
+    {
+      "start": 4556.860000000001,
+      "end": 4558.3,
+      "text": "I see, thank you so much."
+    },
+    {
+      "start": 4565.0,
+      "end": 4567.16,
+      "text": "I also have a question."
+    },
+    {
+      "start": 4567.16,
+      "end": 4572.16,
+      "text": "My question is why doing greedy action is good here,"
+    },
+    {
+      "start": 4573.16,
+      "end": 4576.18,
+      "text": "but not good in RL itself, you know?"
+    },
+    {
+      "start": 4576.18,
+      "end": 4579.7,
+      "text": "What you're doing here is taking greedy action"
+    },
+    {
+      "start": 4579.7,
+      "end": 4584.3,
+      "text": "that makes you closer to the representation"
+    },
+    {
+      "start": 4584.3,
+      "end": 4586.0599999999995,
+      "text": "of goal state that you want to go."
+    },
+    {
+      "start": 4587.32,
+      "end": 4592.32,
+      "text": "I claim that there could be a path that is closer,"
+    },
+    {
+      "start": 4593.78,
+      "end": 4595.82,
+      "text": "but not in embedding the space."
+    },
+    {
+      "start": 4595.82,
+      "end": 4598.5599999999995,
+      "text": "I don't know how to phrase it correctly,"
+    },
+    {
+      "start": 4598.5599999999995,
+      "end": 4601.84,
+      "text": "but I just want to know why greedy action is good here."
+    },
+    {
+      "start": 4603.28,
+      "end": 4605.5199999999995,
+      "text": "I agree this is super counterintuitive."
+    },
+    {
+      "start": 4605.5199999999995,
+      "end": 4608.44,
+      "text": "If we think about solving a maze,"
+    },
+    {
+      "start": 4608.44,
+      "end": 4609.38,
+      "text": "greedy action selection"
+    },
+    {
+      "start": 4609.38,
+      "end": 4611.1,
+      "text": "is not a good idea."
+    },
+    {
+      "start": 4611.1,
+      "end": 4614.4800000000005,
+      "text": "My, another example, my office is on the second floor."
+    },
+    {
+      "start": 4614.4800000000005,
+      "end": 4616.96,
+      "text": "So if I want to get down to the road down there,"
+    },
+    {
+      "start": 4616.96,
+      "end": 4619.26,
+      "text": "I could try to jump out my window."
+    },
+    {
+      "start": 4619.26,
+      "end": 4622.24,
+      "text": "That is the, of course, greedy action selection,"
+    },
+    {
+      "start": 4622.24,
+      "end": 4624.04,
+      "text": "but it very obviously is not the best way"
+    },
+    {
+      "start": 4624.04,
+      "end": 4625.04,
+      "text": "of getting outside the building."
+    },
+    {
+      "start": 4625.04,
+      "end": 4627.64,
+      "text": "I should take the stairs, not jump out the window."
+    },
+    {
+      "start": 4628.9800000000005,
+      "end": 4631.9800000000005,
+      "text": "Part of the reason why the theory here is important"
+    },
+    {
+      "start": 4631.9800000000005,
+      "end": 4634.400000000001,
+      "text": "is that it helps explain why greedy selection,"
+    },
+    {
+      "start": 4634.400000000001,
+      "end": 4636.78,
+      "text": "greedy action selection is useful."
+    },
+    {
+      "start": 4636.78,
+      "end": 4639.0,
+      "text": "I assume you've probably seen the policy improvement theorem."
+    },
+    {
+      "start": 4639.0,
+      "end": 4641.46,
+      "text": "In your course."
+    },
+    {
+      "start": 4641.46,
+      "end": 4643.62,
+      "text": "And what that says is that choosing actions"
+    },
+    {
+      "start": 4643.62,
+      "end": 4646.6,
+      "text": "that maximize the Q value, that's the right thing to do."
+    },
+    {
+      "start": 4646.6,
+      "end": 4650.02,
+      "text": "If you repeat that, you'll eventually get awful policy."
+    },
+    {
+      "start": 4650.02,
+      "end": 4652.94,
+      "text": "And so showing that greedy action selection"
+    },
+    {
+      "start": 4653.82,
+      "end": 4657.1,
+      "text": "corresponds to selecting actions that maximize the Q value."
+    },
+    {
+      "start": 4657.1,
+      "end": 4658.72,
+      "text": "This helps give us some reassurance"
+    },
+    {
+      "start": 4658.72,
+      "end": 4661.74,
+      "text": "that greedy action selection is actually a good idea."
+    },
+    {
+      "start": 4664.48,
+      "end": 4665.32,
+      "text": "Oh, I see."
+    },
+    {
+      "start": 4665.32,
+      "end": 4666.16,
+      "text": "I see."
+    },
+    {
+      "start": 4666.16,
+      "end": 4667.0,
+      "text": "Now it makes sense."
+    },
+    {
+      "start": 4667.0,
+      "end": 4667.84,
+      "text": "Thank you."
+    },
+    {
+      "start": 4669.0,
+      "end": 4669.84,
+      "text": "Bye-bye."
+    },
+    {
+      "start": 4669.84,
+      "end": 4670.76,
+      "text": "Bye-bye."
+    },
+    {
+      "start": 4670.76,
+      "end": 4671.64,
+      "text": "Bye-bye."
+    },
+    {
+      "start": 4671.64,
+      "end": 4672.5,
+      "text": "Bye-bye."
+    },
+    {
+      "start": 4672.5,
+      "end": 4673.34,
+      "text": "Bye-bye."
+    },
+    {
+      "start": 4673.34,
+      "end": 4674.76,
+      "text": "Bye-bye."
+    },
+    {
+      "start": 4674.76,
+      "end": 4675.94,
+      "text": "Bye-bye."
+    },
+    {
+      "start": 4675.94,
+      "end": 4676.78,
+      "text": "Bye-bye."
+    },
+    {
+      "start": 4676.78,
+      "end": 4677.6,
+      "text": "Bye-bye."
+    },
+    {
+      "start": 4677.6,
+      "end": 4678.44,
+      "text": "Bye-bye."
+    },
+    {
+      "start": 4678.44,
+      "end": 4679.28,
+      "text": "Bye-bye."
+    },
+    {
+      "start": 4679.28,
+      "end": 4680.56,
+      "text": "Hi, do you have my voice?"
+    },
+    {
+      "start": 4680.56,
+      "end": 4682.82,
+      "text": "Perfect."
+    },
+    {
+      "start": 4682.82,
+      "end": 4684.76,
+      "text": "And thank you for awesome presentation."
+    },
+    {
+      "start": 4684.76,
+      "end": 4688.1,
+      "text": "I have a question about negative samples"
+    },
+    {
+      "start": 4688.1,
+      "end": 4690.32,
+      "text": "and how we choose them, actually."
+    },
+    {
+      "start": 4690.32,
+      "end": 4693.34,
+      "text": "This question comes to my mind from studies"
+    },
+    {
+      "start": 4693.34,
+      "end": 4697.36,
+      "text": "about debiasing contrastive learning in computer vision."
+    },
+    {
+      "start": 4697.36,
+      "end": 4698.5,
+      "text": "I see."
+    },
+    {
+      "start": 4698.5,
+      "end": 4704.98,
+      "text": "question is to what extent could that be important here are there any positive correlations that"
+    },
+    {
+      "start": 4704.98,
+      "end": 4714.02,
+      "text": "we punish in our contrasting loss can you elaborate a bit uh okay yeah actually i wonder"
+    },
+    {
+      "start": 4714.02,
+      "end": 4720.58,
+      "text": "um when we punish our negative samples within our batch could we have some positive correlations"
+    },
+    {
+      "start": 4720.58,
+      "end": 4726.34,
+      "text": "between the positive trajectory and the negative trajectory for example we could have um some"
+    },
+    {
+      "start": 4726.34,
+      "end": 4735.46,
+      "text": "certain robot movements in our trajectory but toward different goals so should we classify"
+    },
+    {
+      "start": 4735.46,
+      "end": 4743.78,
+      "text": "them as negative samples to each other or not i'm not entirely sure i understand the question"
+    },
+    {
+      "start": 4743.78,
+      "end": 4746.66,
+      "text": "i think one thing that definitely is true is that sometimes"
+    },
+    {
+      "start": 4747.22,
+      "end": 4753.46,
+      "text": "the the samples that you use as negatives i'll be able to go back to um"
+    },
+    {
+      "start": 4756.34,
+      "end": 4762.74,
+      "text": "the the negative samples here sometimes the negative examples are actually positive examples"
+    },
+    {
+      "start": 4762.74,
+      "end": 4767.54,
+      "text": "sometimes we get it wrong but that's actually okay because what's important for classification"
+    },
+    {
+      "start": 4768.26,
+      "end": 4774.1,
+      "text": "is the frequency with which something occurs as a positive example versus a negative example and the"
+    },
+    {
+      "start": 4774.1,
+      "end": 4778.9800000000005,
+      "text": "representations are basically encoding the relative frequency of positive examples versus"
+    },
+    {
+      "start": 4778.9800000000005,
+      "end": 4784.34,
+      "text": "negative examples formally this problem is solved by a positive example versus a negative example"
+    },
+    {
+      "start": 4784.34,
+      "end": 4786.1,
+      "text": "and that's what we're trying to do here"
+    },
+    {
+      "start": 4786.34,
+      "end": 4790.18,
+      "text": "and i think that's something that's something to really provide a better understanding of"
+    },
+    {
+      "start": 4790.18,
+      "end": 4795.7,
+      "text": "how we can use this information and learn how it can also be improved so what do we do"
+    },
+    {
+      "start": 4795.7,
+      "end": 4798.58,
+      "text": "so this is something that's sometimes known as positive unlabeled classification"
+    },
+    {
+      "start": 4800.5,
+      "end": 4802.66,
+      "text": "thank you thank you so much"
+    },
+    {
+      "start": 4816.34,
+      "end": 4833.34,
+      "text": "If folks also have questions about just like the research in general or reinforcement learning or graduate school or anything else feel free to ask those questions as well."
+    },
+    {
+      "start": 4833.34,
+      "end": 4853.34,
+      "text": "Why if you do a PhD in reinforcement learning."
+    },
+    {
+      "start": 4853.34,
+      "end": 4859.34,
+      "text": "I have another question since nobody asked question I have a lot of them, I can ask."
+    },
+    {
+      "start": 4859.34,
+      "end": 4861.34,
+      "text": "So more questions."
+    },
+    {
+      "start": 4861.34,
+      "end": 4863.34,
+      "text": "My question is, how do you define."
+    },
+    {
+      "start": 4863.34,
+      "end": 4873.34,
+      "text": "The reward in that program that you showed us that it is equivalent to maximizing the return, not the reward itself."
+    },
+    {
+      "start": 4873.34,
+      "end": 4887.34,
+      "text": "And what is the reward that how do you define the reward that is equal to achieving the goal."
+    },
+    {
+      "start": 4887.34,
+      "end": 4892.34,
+      "text": "So how is the reward here defined."
+    },
+    {
+      "start": 4892.34,
+      "end": 4893.34,
+      "text": "Yes, exactly."
+    },
+    {
+      "start": 4893.34,
+      "end": 4895.34,
+      "text": "So this is purely for analysis."
+    },
+    {
+      "start": 4895.34,
+      "end": 4903.34,
+      "text": "What you can prove is that the inner product here is equivalent to the discounted sum of rewards for the reward is the likelihood of getting to a state at the next time step."
+    },
+    {
+      "start": 4903.34,
+      "end": 4905.34,
+      "text": "In tabular settings."
+    },
+    {
+      "start": 4905.34,
+      "end": 4907.34,
+      "text": "This is just a one."
+    },
+    {
+      "start": 4907.34,
+      "end": 4910.34,
+      "text": "If you're at the goal and a 0, if you're not at the goal."
+    },
+    {
+      "start": 4910.34,
+      "end": 4914.34,
+      "text": "So, I think the tabular setting is a bit easier to think about."
+    },
+    {
+      "start": 4914.34,
+      "end": 4916.34,
+      "text": "Okay, I see."
+    },
+    {
+      "start": 4916.34,
+      "end": 4921.34,
+      "text": "Thank you."
+    },
+    {
+      "start": 4921.34,
+      "end": 4922.34,
+      "text": "Okay."
+    },
+    {
+      "start": 4922.34,
+      "end": 4932.34,
+      "text": "Thank you."
+    },
+    {
+      "start": 4932.34,
+      "end": 4934.34,
+      "text": "Another question from my site, Benjamin."
+    },
+    {
+      "start": 4934.34,
+      "end": 4946.34,
+      "text": "So you mentioned why taking a PhD be the thesis defined on RL and that is the question for many of my graduate students here at Sharif."
+    },
+    {
+      "start": 4946.34,
+      "end": 4947.34,
+      "text": "You're saying that."
+    },
+    {
+      "start": 4947.34,
+      "end": 4950.34,
+      "text": "So this is this mostly applies to the master students actually."
+    },
+    {
+      "start": 4950.34,
+      "end": 4955.34,
+      "text": "Where it takes like two years for the research to be completed."
+    },
+    {
+      "start": 4955.34,
+      "end": 4970.34,
+      "text": "So some of them asked why we should work on RL problems because, you know, it's quite unlikely to gain some significant achievements in such a short period of time."
+    },
+    {
+      "start": 4970.34,
+      "end": 4972.34,
+      "text": "So what is your take on that?"
+    },
+    {
+      "start": 4972.34,
+      "end": 4973.34,
+      "text": "Do you believe?"
+    },
+    {
+      "start": 4973.34,
+      "end": 4978.34,
+      "text": "Could we do quick researches on reinforcement learning in two years or so?"
+    },
+    {
+      "start": 4978.34,
+      "end": 4983.34,
+      "text": "Or it should be subject of a PhD studies."
+    },
+    {
+      "start": 4983.34,
+      "end": 4988.34,
+      "text": "I definitely think we can."
+    },
+    {
+      "start": 4988.34,
+      "end": 4990.34,
+      "text": "And as a couple of examples of this."
+    },
+    {
+      "start": 4990.34,
+      "end": 4994.34,
+      "text": "I used to talk about, like, the timeline for several of these things."
+    },
+    {
+      "start": 4994.34,
+      "end": 4999.34,
+      "text": "So, this project that Grayson Michael worked on grace was a master student."
+    },
+    {
+      "start": 4999.34,
+      "end": 5000.34,
+      "text": "Michael is an undergrad."
+    },
+    {
+      "start": 5000.34,
+      "end": 5005.34,
+      "text": "And they completed this project in about 6 months."
+    },
+    {
+      "start": 5005.34,
+      "end": 5006.34,
+      "text": "And so."
+    },
+    {
+      "start": 5006.34,
+      "end": 5007.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5007.34,
+      "end": 5010.34,
+      "text": "That's very doable."
+    },
+    {
+      "start": 5010.34,
+      "end": 5012.34,
+      "text": "Um."
+    },
+    {
+      "start": 5012.34,
+      "end": 5015.34,
+      "text": "This project that try you and look worked on."
+    },
+    {
+      "start": 5015.34,
+      "end": 5018.34,
+      "text": "Try you and look at with undergraduate students."
+    },
+    {
+      "start": 5018.34,
+      "end": 5021.34,
+      "text": "And they completed this project in less than 6 months."
+    },
+    {
+      "start": 5021.34,
+      "end": 5023.34,
+      "text": "On top of their coursework."
+    },
+    {
+      "start": 5023.34,
+      "end": 5026.34,
+      "text": "Um."
+    },
+    {
+      "start": 5026.34,
+      "end": 5030.34,
+      "text": "And similarly, this project that Kevin and Sean worked on."
+    },
+    {
+      "start": 5030.34,
+      "end": 5034.34,
+      "text": "Uh, honestly, it was probably."
+    },
+    {
+      "start": 5034.34,
+      "end": 5035.34,
+      "text": "Uh, October, February."
+    },
+    {
+      "start": 5035.34,
+      "end": 5036.34,
+      "text": "Like four or five months."
+    },
+    {
+      "start": 5036.34,
+      "end": 5037.34,
+      "text": "And so it's very, very possible to."
+    },
+    {
+      "start": 5037.34,
+      "end": 5038.34,
+      "text": "Amazing research in a short amount of time."
+    },
+    {
+      "start": 5038.34,
+      "end": 5039.34,
+      "text": "Cool."
+    },
+    {
+      "start": 5039.34,
+      "end": 5040.34,
+      "text": "Um, that's awesome."
+    },
+    {
+      "start": 5040.34,
+      "end": 5041.34,
+      "text": "So, uh, are these projects, uh, did these projects require some significant computational resources as well?"
+    },
+    {
+      "start": 5041.34,
+      "end": 5042.34,
+      "text": "Or."
+    },
+    {
+      "start": 5042.34,
+      "end": 5043.34,
+      "text": "Uh, it was just like conventional."
+    },
+    {
+      "start": 5043.34,
+      "end": 5044.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5044.34,
+      "end": 5045.34,
+      "text": "Amount of resources."
+    },
+    {
+      "start": 5045.34,
+      "end": 5046.34,
+      "text": "This."
+    },
+    {
+      "start": 5046.34,
+      "end": 5047.34,
+      "text": "The project that Kevin and Sean worked on did require a fair number of people."
+    },
+    {
+      "start": 5047.34,
+      "end": 5048.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5048.34,
+      "end": 5049.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5049.34,
+      "end": 5050.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5050.34,
+      "end": 5051.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5051.34,
+      "end": 5052.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5052.34,
+      "end": 5053.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5053.34,
+      "end": 5054.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5054.34,
+      "end": 5055.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5055.34,
+      "end": 5056.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5056.34,
+      "end": 5057.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5057.34,
+      "end": 5058.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5058.34,
+      "end": 5059.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5059.34,
+      "end": 5060.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5060.34,
+      "end": 5061.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5061.34,
+      "end": 5062.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5062.34,
+      "end": 5063.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5063.34,
+      "end": 5064.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5064.34,
+      "end": 5065.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5065.34,
+      "end": 5066.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5066.34,
+      "end": 5067.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5067.34,
+      "end": 5068.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5068.34,
+      "end": 5069.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5069.34,
+      "end": 5070.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5070.34,
+      "end": 5071.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5071.34,
+      "end": 5072.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5072.34,
+      "end": 5073.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5073.34,
+      "end": 5074.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5074.34,
+      "end": 5075.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5075.34,
+      "end": 5076.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5076.34,
+      "end": 5077.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5077.34,
+      "end": 5078.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5078.34,
+      "end": 5079.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5079.34,
+      "end": 5080.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5080.34,
+      "end": 5081.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5081.34,
+      "end": 5082.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5082.34,
+      "end": 5083.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5083.34,
+      "end": 5084.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5084.34,
+      "end": 5085.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5085.34,
+      "end": 5086.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5086.34,
+      "end": 5087.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5087.34,
+      "end": 5088.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5088.34,
+      "end": 5089.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5089.34,
+      "end": 5090.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5090.34,
+      "end": 5091.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5091.34,
+      "end": 5092.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5092.34,
+      "end": 5093.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5093.34,
+      "end": 5094.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5094.34,
+      "end": 5095.34,
+      "text": "Uh."
+    },
+    {
+      "start": 5095.34,
+      "end": 5100.34,
+      "text": "you'd be able to get by with one GPU per person."
+    },
+    {
+      "start": 5103.18,
+      "end": 5104.72,
+      "text": "I see, I see."
+    },
+    {
+      "start": 5104.72,
+      "end": 5105.66,
+      "text": "Thank you so much."
+    },
+    {
+      "start": 5108.34,
+      "end": 5111.02,
+      "text": "So Arash, is there any question left?"
+    },
+    {
+      "start": 5113.26,
+      "end": 5114.78,
+      "text": "I don't think so."
+    },
+    {
+      "start": 5114.78,
+      "end": 5117.02,
+      "text": "I don't see any question from the audience."
+    },
+    {
+      "start": 5119.66,
+      "end": 5124.66,
+      "text": "So I think we can finish the talk here."
+    },
+    {
+      "start": 5125.82,
+      "end": 5127.32,
+      "text": "If there's no other question."
+    },
+    {
+      "start": 5131.42,
+      "end": 5135.400000000001,
+      "text": "Okay, so thank you professor for accepting our invites"
+    },
+    {
+      "start": 5135.400000000001,
+      "end": 5140.400000000001,
+      "text": "and we had a wonderful time having you giving us the time."
+    },
+    {
+      "start": 5141.5,
+      "end": 5142.76,
+      "text": "Thank you again for the invite."
+    },
+    {
+      "start": 5142.76,
+      "end": 5145.24,
+      "text": "I really enjoyed all the questions."
+    },
+    {
+      "start": 5145.24,
+      "end": 5148.4800000000005,
+      "text": "Thank you and have a good rest of the day."
+    },
+    {
+      "start": 5148.4800000000005,
+      "end": 5149.66,
+      "text": "Thank you so much."
+    },
+    {
+      "start": 5149.66,
+      "end": 5150.52,
+      "text": "Have a nice day."
+    },
+    {
+      "start": 5155.34,
+      "end": 5156.18,
+      "text": "Thank you."
+    }
+  ],
+  "segment_count": 1118
+}

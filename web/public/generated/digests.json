@@ -10,14 +10,301 @@
     "word_count": 1063
   },
   {
-    "title": "Confirmed Deep-Read Map",
+    "title": "Confirmed Deep-Read Knowledge Map",
     "path": "shared/confirmed_deep_read_map.md",
     "created_at": "shared",
     "type": "shared",
     "authors": "",
     "venue": "",
     "topics": [],
-    "word_count": 1262
+    "word_count": 3390
+  },
+  {
+    "title": "Weekly Digest",
+    "path": "2026-05-18/workflow/weekly.md",
+    "created_at": "2026-05-18",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 153
+  },
+  {
+    "title": "Resource Queue",
+    "path": "2026-05-14/workflow/resource-queue.md",
+    "created_at": "2026-05-14",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 79
+  },
+  {
+    "title": "Software in the natural world: A computational approach to hierarchical emergence",
+    "path": "2026-05-14/software-in-the-natural-world-a-computational-approach-to-hierarchical-emergence.md",
+    "created_at": "2026-05-14",
+    "type": "reading_note",
+    "authors": "Fernando E. Rosas; Bernhard C. Geiger; Andrea I. Luppi; Anil K. Seth; Daniel Polani; Michael Gastpar; Pedro A. M. Mediano",
+    "venue": "",
+    "topics": [],
+    "word_count": 223
+  },
+  {
+    "title": "Resource Queue",
+    "path": "2026-05-13/workflow/resource-queue.md",
+    "created_at": "2026-05-13",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 57
+  },
+  {
+    "title": "The New Math of How Large-Scale Order Emerges",
+    "path": "2026-05-13/quanta-the-new-math-of-how-large-scale-order-emerges.md",
+    "created_at": "2026-05-13",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 279
+  },
+  {
+    "title": "Leibo-Baronchelli Paper Queue",
+    "path": "2026-05-05/workflow/leibo-baronchelli-paper-queue.md",
+    "created_at": "2026-05-05",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 362
+  },
+  {
+    "title": "Predicting human mobility flows in cities using deep learning on satellite imagery",
+    "path": "2026-05-01/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery.md",
+    "created_at": "2026-05-01",
+    "type": "reading_note",
+    "authors": "Yichen Xu, Song Gao, Qunying Huang, Aslıgül Göçmen, Qiang Zhu, Feng Zhang",
+    "venue": "Nature Communications",
+    "topics": [],
+    "word_count": 3741
+  },
+  {
+    "title": "Equation Map for Predicting human mobility flows in cities using deep learning on satellite imagery",
+    "path": "2026-05-01/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery-equation-map.md",
+    "created_at": "2026-05-01",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 667
+  },
+  {
+    "title": "Inequality in infrastructure access and its association with health disparities",
+    "path": "2026-05-01/inequality-in-infrastructure-access-and-its-association-with-health-disparities.md",
+    "created_at": "2026-05-01",
+    "type": "reading_note",
+    "authors": "Ying Tu, Bin Chen, Chuan Liao, Shengbiao Wu, Jiafu An, Chen Lin, Peng Gong, Bin Chen, Hong Wei, Bing Xu",
+    "venue": "Nature Human Behaviour",
+    "topics": [],
+    "word_count": 1881
+  },
+  {
+    "title": "Equation Map for Inequality in infrastructure access and its association with health disparities",
+    "path": "2026-05-01/inequality-in-infrastructure-access-and-its-association-with-health-disparities-equation-map.md",
+    "created_at": "2026-05-01",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 480
+  },
+  {
+    "title": "A network framework of cultural history",
+    "path": "2026-05-01/a-network-framework-of-cultural-history.md",
+    "created_at": "2026-05-01",
+    "type": "reading_note",
+    "authors": "Maximilian Schich, Chaoming Song, Yong-Yeol Ahn, Alexander Mirsky, Mauro Martino, Albert-László Barabási, Dirk Helbing",
+    "venue": "Science",
+    "topics": [],
+    "word_count": 1414
+  },
+  {
+    "title": "Evidence Map for A network framework of cultural history",
+    "path": "2026-05-01/a-network-framework-of-cultural-history-equation-map.md",
+    "created_at": "2026-05-01",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 473
+  },
+  {
+    "title": "Statistics and Dynamics of Urban Populations, Chapter 11: Outlook: Beyond Zipf's law",
+    "path": "2026-04-28/statistics-and-dynamics-of-urban-populations-ch11-outlook-beyond-zipfs-law.md",
+    "created_at": "2026-04-28",
+    "type": "reading_note",
+    "authors": "Marc Barthelemy, Vincent Verbavatz",
+    "venue": "Oxford University Press (2023)",
+    "topics": [
+      "urban dynamics",
+      "Zipf's law",
+      "migration shocks",
+      "spatial urban systems",
+      "urban sprawl",
+      "city hierarchy"
+    ],
+    "word_count": 1642
+  },
+  {
+    "title": "Statistics and Dynamics of Urban Populations, Chapter 10: About city dynamics",
+    "path": "2026-04-28/statistics-and-dynamics-of-urban-populations-ch10-about-city-dynamics.md",
+    "created_at": "2026-04-28",
+    "type": "reading_note",
+    "authors": "Marc Barthelemy, Vincent Verbavatz",
+    "venue": "Oxford University Press (2023)",
+    "topics": [
+      "urban dynamics",
+      "Levy noise",
+      "fractional Fokker-Planck equation",
+      "Fox H-functions",
+      "city-size distribution",
+      "rank dynamics",
+      "Gabaix model"
+    ],
+    "word_count": 3898
+  },
+  {
+    "title": "Speed-Accuracy Relations for Diffusion Models: Wisdom from Nonequilibrium Thermodynamics and Optimal Transport",
+    "path": "2026-04-28/speed-accuracy-relations-for-diffusion-models.md",
+    "created_at": "2026-04-28",
+    "type": "reading_note",
+    "authors": "Kotaro Ikeda, Tomoya Uda, Daisuke Okanohara, Sosuke Ito",
+    "venue": "Physical Review X 15, 031031 (2025); arXiv first posted 2024",
+    "topics": [
+      "diffusion models",
+      "stochastic thermodynamics",
+      "entropy production",
+      "optimal transport",
+      "Wasserstein geometry",
+      "noise schedules"
+    ],
+    "word_count": 17177
+  },
+  {
+    "title": "Equation Map for Speed-Accuracy Relations for Diffusion Models",
+    "path": "2026-04-28/speed-accuracy-relations-for-diffusion-models-equation-map.md",
+    "created_at": "2026-04-28",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 611
+  },
+  {
+    "title": "Statistics and Dynamics of Urban Populations, Chapter 9: From first principles to the growth equation",
+    "path": "2026-04-27/statistics-and-dynamics-of-urban-populations-ch09-from-first-principles-to-the-growth-equation.md",
+    "created_at": "2026-04-27",
+    "type": "reading_note",
+    "authors": "Marc Barthelemy, Vincent Verbavatz",
+    "venue": "Oxford University Press (2023)",
+    "topics": [
+      "urban growth",
+      "migration",
+      "bottom-up model",
+      "gravity model",
+      "Levy noise",
+      "generalized central limit theorem",
+      "stochastic growth equation"
+    ],
+    "word_count": 3596
+  },
+  {
+    "title": "Statistics and Dynamics of Urban Populations, Chapter 8: The generalized central limit theorem and Levy stable laws",
+    "path": "2026-04-27/statistics-and-dynamics-of-urban-populations-ch08-generalized-central-limit-theorem-and-levy-stable-laws.md",
+    "created_at": "2026-04-27",
+    "type": "reading_note",
+    "authors": "Marc Barthelemy, Vincent Verbavatz",
+    "venue": "Oxford University Press (2023)",
+    "topics": [
+      "urban growth",
+      "central limit theorem",
+      "generalized central limit theorem",
+      "Levy stable laws",
+      "heavy tails",
+      "migration shocks"
+    ],
+    "word_count": 4766
+  },
+  {
+    "title": "Statistics and Dynamics of Urban Populations, Chapter 7: Models with migration",
+    "path": "2026-04-27/statistics-and-dynamics-of-urban-populations-ch07-models-with-migration.md",
+    "created_at": "2026-04-27",
+    "type": "reading_note",
+    "authors": "Marc Barthelemy, Vincent Verbavatz",
+    "venue": "Oxford University Press (2023)",
+    "topics": [
+      "urban growth",
+      "migration",
+      "master equation",
+      "Bouchaud-Mezard model",
+      "mean-field",
+      "Zipf's law",
+      "power-law"
+    ],
+    "word_count": 3428
+  },
+  {
+    "title": "Statistics and Dynamics of Urban Populations, Chapter 6: Stochastic models of growth",
+    "path": "2026-04-26/statistics-and-dynamics-of-urban-populations-ch06-stochastic-models-of-growth.md",
+    "created_at": "2026-04-26",
+    "type": "reading_note",
+    "authors": "Marc Barthelemy, Vincent Verbavatz",
+    "venue": "Oxford University Press (2023)",
+    "topics": [
+      "urban growth",
+      "multiplicative growth",
+      "Yule-Simon model",
+      "Gibrat's law",
+      "geometric Brownian motion",
+      "Gabaix model",
+      "Zipf's law"
+    ],
+    "word_count": 5592
+  },
+  {
+    "title": "Statistics and Dynamics of Urban Populations, Chapter 5: Stochastic calculus",
+    "path": "2026-04-25/statistics-and-dynamics-of-urban-populations-ch05-stochastic-calculus-for-urban-growth.md",
+    "created_at": "2026-04-25",
+    "type": "reading_note",
+    "authors": "Marc Barthelemy, Vincent Verbavatz",
+    "venue": "Oxford University Press (2023)",
+    "topics": [
+      "urban growth",
+      "stochastic differential equations",
+      "Itô calculus",
+      "Stratonovich calculus",
+      "Fokker-Planck equation",
+      "multiplicative noise"
+    ],
+    "word_count": 2460
+  },
+  {
+    "title": "Statistics and Dynamics of Urban Populations, Chapter 2: Why does population matter?",
+    "path": "2026-04-25/statistics-and-dynamics-of-urban-populations-ch02-scaling-in-cities.md",
+    "created_at": "2026-04-25",
+    "type": "reading_note",
+    "authors": "Marc Barthelemy, Vincent Verbavatz",
+    "venue": "Oxford University Press (2023)",
+    "topics": [
+      "urban scaling",
+      "城市人口",
+      "scaling laws",
+      "local exponent",
+      "tomography plot",
+      "城市定义"
+    ],
+    "word_count": 1900
   },
   {
     "title": "Weekly Digest",
@@ -67,7 +354,7 @@
     "authors": "",
     "venue": "",
     "topics": [],
-    "word_count": 1513
+    "word_count": 1550
   },
   {
     "title": "Collection Review",
@@ -111,14 +398,26 @@
     "created_at": "2026-04-16",
     "type": "reading_note",
     "authors": "Yuki Yasuda, Tobias Bischoff",
-    "venue": "arXiv (2026)",
+    "venue": "arXiv preprint, April 2 2026",
     "topics": [
-      "时空生成",
-      "条件扩散",
-      "天气预测",
-      "自回归"
+      "spatiotemporal generation",
+      "predictor-driven diffusion",
+      "renormalization group",
+      "path probability",
+      "causal prediction",
+      "super-resolution"
     ],
-    "word_count": 1268
+    "word_count": 8976
+  },
+  {
+    "title": "Equation Map for Predictor-Driven Diffusion for Spatiotemporal Generation",
+    "path": "2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation-equation-map.md",
+    "created_at": "2026-04-16",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 866
   },
   {
     "title": "Nonequilibrium Physics of Generative Diffusion Models",
@@ -286,7 +585,7 @@
     "authors": "",
     "venue": "",
     "topics": [],
-    "word_count": 625
+    "word_count": 612
   },
   {
     "title": "Collection Review",
@@ -427,15 +726,5 @@
     "venue": "",
     "topics": [],
     "word_count": 1422
-  },
-  {
-    "title": "Weekly Digest",
-    "path": "2026-04-07/workflow/weekly.md",
-    "created_at": "2026-04-07",
-    "type": "workflow",
-    "authors": "",
-    "venue": "",
-    "topics": [],
-    "word_count": 776
   }
 ]

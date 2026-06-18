@@ -1,15 +1,15 @@
 ---
 title: "相变与临界现象"
 description: ""
-paper_count: 42
-last_updated: "2026-04-24"
+paper_count: 43
+last_updated: "2026-05-18"
 ---
 
 # 相变与临界现象
 
 
 
-## Papers (42)
+## Papers (43)
 
 
 - [Hydrodynamic noise in one dimension: Projected Kubo formula and how it vanishes in integrable models](hydrodynamic-noise-in-one-dimension-projected-kubo-formula-and-how-it-vanishes-i.md) (2026, SciPost Physics, 1 citations)
@@ -19,6 +19,8 @@ last_updated: "2026-04-24"
 - [Mean-field limit from general mixtures of experts to quantum neural networks](mean-field-limit-from-general-mixtures-of-experts-to-quantum-neural-networks.md) (2026, Letters in Mathematical Physics, 0 citations)
 
 - [Mean-field stochastic Volterra equations](mean-field-stochastic-volterra-equations.md) (2026, Journal of Applied Probability, 0 citations)
+
+- [Scaling Laws from Sequential Feature Recovery: A Solvable Hierarchical Model](scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model.md) (2026, arXiv, 0 citations)
 
 - [Hydrodynamic Limit and Large Deviations for Run-And-Tumble Particles with Mean-Field Switching Rates](hydrodynamic-limit-and-large-deviations-for-run-and-tumble-particles-with-mean-f.md) (2026, Journal of Statistical Physics, 0 citations)
 

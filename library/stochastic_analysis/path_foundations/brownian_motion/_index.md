@@ -2,7 +2,7 @@
 title: "布朗运动与Wiener过程"
 description: ""
 paper_count: 15
-last_updated: "2026-04-24"
+last_updated: "2026-05-18"
 ---
 
 # 布朗运动与Wiener过程

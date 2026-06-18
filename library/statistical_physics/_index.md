@@ -1,15 +1,15 @@
 ---
 title: "统计物理"
 description: "物理语义层：熵、自由能、涨落定理、稳态与不可逆性。"
-paper_count: 166
-last_updated: "2026-04-24"
+paper_count: 167
+last_updated: "2026-05-18"
 ---
 
 # 统计物理
 
 物理语义层：熵、自由能、涨落定理、稳态与不可逆性。
 
-## Papers (166)
+## Papers (167)
 
 
 - [Phase-Field DeepONet: Physics-informed deep operator neural network for fast simulations of pattern formation governed by gradient flows of free-energy functionals](phase-field-deeponet-physics-informed-deep-operator-neural-network-for-fast-simu.md) (2023, ArXiv, 68 citations)
@@ -67,6 +67,8 @@ last_updated: "2026-04-24"
 - [Non-Markovian rock-paper-scissors games](non-markovian-rock-paper-scissors-games.md) (2025, Physical Review Research, 0 citations)
 
 - [Decomposition of the entropy production rate and nonequilibrium thermodynamics of switching diffusion processes.](decomposition-of-the-entropy-production-rate-and-nonequilibrium-thermodynamics-o.md) (2018, Physical review. E, 5 citations)
+
+- [Scaling Laws from Sequential Feature Recovery: A Solvable Hierarchical Model](scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model.md) (2026, arXiv, 0 citations)
 
 - [Non-Markovian Entropy Dynamics in Living Systems from the Keldysh Formalism](non-markovian-entropy-dynamics-in-living-systems-from-the-keldysh-formalism.md) (2026, ArXiv.org, 0 citations)
 

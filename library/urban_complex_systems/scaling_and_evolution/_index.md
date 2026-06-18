@@ -2,7 +2,7 @@
 title: "标度与演化"
 description: "城市标度律、增长与长期动力学。"
 paper_count: 13
-last_updated: "2026-04-24"
+last_updated: "2026-05-18"
 ---
 
 # 标度与演化
@@ -36,4 +36,4 @@ last_updated: "2026-04-24"
 
 - [Growth, innovation, scaling, and the pace of life in cities](growth-innovation-scaling-and-the-pace-of-life-in-cities.md) (2007, PNAS, 0 citations)
 
-- [The growth equation of cities](the-growth-equation-of-cities.md) (2020, Nature, vol. 587, pages 397-401 (2020), 0 citations)
+- [The growth equation of cities](the-growth-equation-of-cities.md) (2020, Nature 587, 397-401 (2020), 0 citations)

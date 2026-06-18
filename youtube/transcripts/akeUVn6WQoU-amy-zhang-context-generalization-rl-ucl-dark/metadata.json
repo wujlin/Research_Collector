@@ -1,0 +1,12 @@
+{
+  "title": "Amy Zhang - Exploring Context for Better Generalization in Reinforcement Learning @ UCL DARK",
+  "url": "https://www.youtube.com/watch?v=akeUVn6WQoU",
+  "backend": "faster-whisper",
+  "model": "large-v3",
+  "requested_language": "en",
+  "detected_language": "en",
+  "generated_at": "2026-05-13T20:35:45",
+  "language": "en",
+  "language_probability": 1,
+  "duration": 2865.7776875
+}

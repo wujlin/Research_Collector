@@ -1,0 +1,20 @@
+{
+  "title": "The Misconception that Almost Stopped AI [How Models Learn Part 1]",
+  "url": "https://www.youtube.com/watch?v=NrO20Jb-hy0",
+  "backend": "youtube-json3-auto-caption",
+  "model": "youtube-auto-caption-json3",
+  "requested_language": "en-orig",
+  "detected_language": "en",
+  "generated_at": "2026-06-05T08:18:26",
+  "video_id": "NrO20Jb-hy0",
+  "uploader": "Welch Labs",
+  "channel_id": "UConVfxXodg78Tzh5nNu85Ew",
+  "upload_date": "20250509",
+  "duration": 1376,
+  "source_caption_file": "youtube/video/the-misconception-that-almost-stopped-ai-how-models-learn-part1/source.en-orig.json3",
+  "source_info_file": "youtube/video/the-misconception-that-almost-stopped-ai-how-models-learn-part1/source.info.json",
+  "source_thumbnail_file": "youtube/video/the-misconception-that-almost-stopped-ai-how-models-learn-part1/source.webp",
+  "refined_at": "2026-06-05T08:19:37",
+  "cleanup_rules": 28,
+  "paragraph_count": 58
+}

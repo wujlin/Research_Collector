@@ -1,14 +1,12 @@
 ---
 title: "Reading List"
-generated_at: "2026-04-24T13:39:19.134849"
+generated_at: "2026-05-18T01:04:39.787723"
 paper_count: 20
 ---
 
 # Reading List
 
 按 importance score 排序的当前优先阅读清单。
-
-> 2026-04-28 口径修正：这份清单是自动 importance ranking，不等同于当前下一篇精读顺序。`Score-Based Generative Modeling through Stochastic Differential Equations`、`Flow Matching for Generative Modeling` 和 `Denoising Diffusion Probabilistic Models` 保留为基础参考层；它们不是当前 `Synthetic_City` 主线的下一篇必读。当前阅读优先级以 `digests/shared/confirmed_deep_read_map.md` 和最新 `workflow/paper-queue.md` 的人工修订为准。
 
 ## 1. Score-Based Generative Modeling through Stochastic Differential Equations
 

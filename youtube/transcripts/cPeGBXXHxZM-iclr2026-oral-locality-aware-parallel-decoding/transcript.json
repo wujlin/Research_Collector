@@ -1,0 +1,1060 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 12.24,
+      "text": "Thanks, everyone, for coming here, and thanks for the introduction. My name is Lu Kuang."
+    },
+    {
+      "start": 12.24,
+      "end": 17.8,
+      "text": "I am an undergraduate at MIT right now, working with Professor Song Han's lab. Unfortunately,"
+    },
+    {
+      "start": 17.8,
+      "end": 22.34,
+      "text": "my co-first author, Joyang, could not be with us here today because of visa issues, but"
+    },
+    {
+      "start": 22.34,
+      "end": 27.96,
+      "text": "I'll be presenting our work, locality-aware parallel decoding."
+    },
+    {
+      "start": 27.96,
+      "end": 33.92,
+      "text": "So autoregressive models is the dominant paradigm in language, with autoregressive"
+    },
+    {
+      "start": 33.92,
+      "end": 40.02,
+      "text": "LLMs being able to scale to trillions of parameters and trillions of tokens trained. Autoregressive"
+    },
+    {
+      "start": 40.02,
+      "end": 44.480000000000004,
+      "text": "had its moments in image generation, however, starting with the release of the GPT-4O image"
+    },
+    {
+      "start": 44.480000000000004,
+      "end": 49.8,
+      "text": "generation model. So some of you probably remember that last year, everyone on X was"
+    },
+    {
+      "start": 49.8,
+      "end": 55.120000000000005,
+      "text": "trying to make their profile pic Ghibli-style, right? Even Sam Altman. And this was really"
+    },
+    {
+      "start": 55.120000000000005,
+      "end": 57.94,
+      "text": "the first time that autoregressive models really showed their"
+    },
+    {
+      "start": 57.94,
+      "end": 63.94,
+      "text": "potential in image generation. And as one of the co-creators, Lu Liu, said, said this"
+    },
+    {
+      "start": 63.94,
+      "end": 68.9,
+      "text": "at the CVPR conference last year, it was the first model that proves autoregressive model"
+    },
+    {
+      "start": 68.9,
+      "end": 76.25999999999999,
+      "text": "works better than diffusion for image gen. Today, unified multimodal systems basically"
+    },
+    {
+      "start": 76.25999999999999,
+      "end": 82.28,
+      "text": "use a unified autoregressive approach to combine vision and language modeling. Starting with"
+    },
+    {
+      "start": 82.28,
+      "end": 87.8,
+      "text": "works like Chameleon, and then VLOU, EMU3, Janus Pro, and more recently, LongHat Next,"
+    },
+    {
+      "start": 87.8,
+      "end": 92.1,
+      "text": "all of these adopt a unified autoregressive approach. The reason is simple. If you have"
+    },
+    {
+      "start": 92.1,
+      "end": 95.88,
+      "text": "autoregressive modeling approach to image generation, it's extremely compatible with the"
+    },
+    {
+      "start": 95.88,
+      "end": 102.12,
+      "text": "next token prediction paradigm in language. But right now, there's two paradigms of"
+    },
+    {
+      "start": 102.12,
+      "end": 106.97999999999999,
+      "text": "autoregressive image generation, each with their own tradeoffs. The first is what I call a flat"
+    },
+    {
+      "start": 106.97999999999999,
+      "end": 113.52,
+      "text": "token representation. This is very nihilist to language. First, we tokenize the image into a"
+    },
+    {
+      "start": 113.52,
+      "end": 117.8,
+      "text": "sequence of tokens in raster order, and then we perform next image token prediction."
+    },
+    {
+      "start": 117.8,
+      "end": 124.88,
+      "text": "The other paradigm is next scale or next resolution prediction, started by works like VAR."
+    },
+    {
+      "start": 124.88,
+      "end": 131.98,
+      "text": "Here, we protect all tokens in next scale in parallel. However, the first one is very slow"
+    },
+    {
+      "start": 131.98,
+      "end": 137.18,
+      "text": "because it's memory bound, as with most LLMs. This means the latency of generating a single"
+    },
+    {
+      "start": 137.18,
+      "end": 141.32,
+      "text": "image is proportional to the number of tokens in the image, which can get really high for high"
+    },
+    {
+      "start": 141.32,
+      "end": 146.56,
+      "text": "resolution images. VAR sidesteps this with parallel prediction at the next scale, but it's not"
+    },
+    {
+      "start": 146.56,
+      "end": 147.8,
+      "text": "compatible with the vision and code that we're using. So, we're going to use this paradigm to"
+    },
+    {
+      "start": 147.8,
+      "end": 158.38000000000002,
+      "text": "show you how to use this paradigm. So, how can we develop both fast and multimodal compatible"
+    },
+    {
+      "start": 158.38000000000002,
+      "end": 164.12,
+      "text": "autoregressive modeling for images? Our method, locality aware parallel decoding, solves this with"
+    },
+    {
+      "start": 164.12,
+      "end": 170.92000000000002,
+      "text": "two main methods. First, we introduce flexible parallelized autoregressive modeling. This is a"
+    },
+    {
+      "start": 170.92000000000002,
+      "end": 176.62,
+      "text": "new architecture for doing prediction on any set of tokens, in parallel, in any order, while"
+    },
+    {
+      "start": 176.62,
+      "end": 177.8,
+      "text": "maintaining KV caching of tokens. This is a new architecture for doing prediction on any set of"
+    },
+    {
+      "start": 177.8,
+      "end": 182.8,
+      "text": "token variables. The second is locality aware generation ordering. This is a novel scheduling"
+    },
+    {
+      "start": 182.8,
+      "end": 189.14000000000001,
+      "text": "strategy that maintains generation quality while scheduling tokens in parallel. So, let's go"
+    },
+    {
+      "start": 189.14000000000001,
+      "end": 194.82000000000002,
+      "text": "through each one of them one by one. In normal autoregressive generation, we usually start with a"
+    },
+    {
+      "start": 194.82000000000002,
+      "end": 199.68,
+      "text": "class token or some series of prompt embeddings, and then after the first forward pass, we get the"
+    },
+    {
+      "start": 199.68,
+      "end": 205.36,
+      "text": "logits for the first token and we sample it. We repeat this again. We pass in the first token we"
+    },
+    {
+      "start": 205.36,
+      "end": 207.46,
+      "text": "just generated and we get out the logits for the second token. The second generation, which is this"
+    },
+    {
+      "start": 207.46,
+      "end": 214.78,
+      "text": "token. And then so on. So note here there's actually two things going on. First, each"
+    },
+    {
+      "start": 214.78,
+      "end": 219.54000000000002,
+      "text": "token has to predict the next token in a fixed order. Whatever you train with the order,"
+    },
+    {
+      "start": 219.54000000000002,
+      "end": 224.64000000000001,
+      "text": "you must do inference with. Now, the second thing is that each token is actually doing"
+    },
+    {
+      "start": 224.64000000000001,
+      "end": 230.9,
+      "text": "two roles at the same time. What I call context and generation. Here, each token once it's"
+    },
+    {
+      "start": 230.9,
+      "end": 236.42000000000002,
+      "text": "generated has to be encoded via forward pass so that future tokens can see it via attention."
+    },
+    {
+      "start": 236.42000000000002,
+      "end": 241.32000000000002,
+      "text": "But it also serves as generation because once it's output is logits, it's used to sample"
+    },
+    {
+      "start": 241.32000000000002,
+      "end": 246.4,
+      "text": "the next token. This means that this is limited to a fixed input output structure. For every"
+    },
+    {
+      "start": 246.4,
+      "end": 252.26000000000002,
+      "text": "token you input, you get one output. So how can we break this to support parallel autoregressive"
+    },
+    {
+      "start": 252.26000000000002,
+      "end": 258.06,
+      "text": "modeling? In our approach, we continue to let the input tokens serve as context. However,"
+    },
+    {
+      "start": 258.06,
+      "end": 262.5,
+      "text": "we now delegate the role of generation to position query tokens. These position query"
+    },
+    {
+      "start": 262.5,
+      "end": 266.42,
+      "text": "tokens are a shared learnable embedding added on to the positional embedding of the target"
+    },
+    {
+      "start": 266.42,
+      "end": 271.52000000000004,
+      "text": "position you want to predict. For example, P4. After a forward pass, we get the logits"
+    },
+    {
+      "start": 271.52000000000004,
+      "end": 276.86,
+      "text": "for P4. And then for the next step, we have to put back the token we just generated. And"
+    },
+    {
+      "start": 276.86,
+      "end": 281.68,
+      "text": "now we can predict any set of tokens we want. Let's say three and five. And then so on."
+    },
+    {
+      "start": 281.68,
+      "end": 286.12,
+      "text": "We get the tokens for three and five. And then afterwards, we can predict three of them"
+    },
+    {
+      "start": 286.12,
+      "end": 288.92,
+      "text": "now, like one, two, and six."
+    },
+    {
+      "start": 288.92,
+      "end": 294.72,
+      "text": "So we notice that this method allows for a flexible input output structure with arbitrary"
+    },
+    {
+      "start": 294.72,
+      "end": 296.22,
+      "text": "order and parallelization."
+    },
+    {
+      "start": 296.42,
+      "end": 302.90000000000003,
+      "text": "Which we call our flexible parallelized autoregressive modeling."
+    },
+    {
+      "start": 302.90000000000003,
+      "end": 308.58000000000004,
+      "text": "So how do we actually train and do inference with flexible parallelized autoregressive modeling?"
+    },
+    {
+      "start": 308.58000000000004,
+      "end": 312.94,
+      "text": "Let's look at training first. We continue to adopt teacher forcing. So we interleave"
+    },
+    {
+      "start": 312.94,
+      "end": 318.32,
+      "text": "the ground truth tokens shown with the images here with the position query tokens that we"
+    },
+    {
+      "start": 318.32,
+      "end": 323.08000000000004,
+      "text": "want the model to learn how to transform into the actual ground truth tokens."
+    },
+    {
+      "start": 323.08000000000004,
+      "end": 326.12,
+      "text": "Let's look at a given position query token like P2."
+    },
+    {
+      "start": 326.12,
+      "end": 330.0,
+      "text": "So just like in normal autoregressive modeling, this position query token should attend to"
+    },
+    {
+      "start": 330.0,
+      "end": 335.32,
+      "text": "the previous ground truth tokens. This is what we call context attention in our model."
+    },
+    {
+      "start": 335.32,
+      "end": 339.24,
+      "text": "At the same time, a key design of ours is that the position query tokens should be able"
+    },
+    {
+      "start": 339.24,
+      "end": 345.26,
+      "text": "to see the same position query tokens that are being predicted in parallel with it. Why?"
+    },
+    {
+      "start": 345.26,
+      "end": 349.42,
+      "text": "Because when you predict stuff in parallel, they're likely, they're sampled independently."
+    },
+    {
+      "start": 349.42,
+      "end": 353.64,
+      "text": "So by sharing mutual information between them via attention, they're actually more likely"
+    },
+    {
+      "start": 353.64,
+      "end": 355.6,
+      "text": "to generate coherent images. And coherent tokens. And they're actually more likely to generate coherent images. And coherent tokens."
+    },
+    {
+      "start": 356.12,
+      "end": 361.36,
+      "text": "So we can actually encode this in a single attention mask shown on the right."
+    },
+    {
+      "start": 361.36,
+      "end": 365.6,
+      "text": "We have query attention between the position query tokens in yellow and the context attention"
+    },
+    {
+      "start": 365.6,
+      "end": 370.36,
+      "text": "between ground truth tokens and future tokens in green."
+    },
+    {
+      "start": 370.36,
+      "end": 375.76,
+      "text": "So how do we do inference? In inference, we have two steps, very analogous to context"
+    },
+    {
+      "start": 375.76,
+      "end": 381.18,
+      "text": "and decoding. We have encoding, which is where we take the generated tokens and we do a forward"
+    },
+    {
+      "start": 381.18,
+      "end": 386.12,
+      "text": "pass. This is stored in the KP cache so that future tokens can see it. And then to get"
+    },
+    {
+      "start": 386.12,
+      "end": 390.7,
+      "text": "the next tokens, we input the position query tokens and we decode what the future tokens"
+    },
+    {
+      "start": 390.7,
+      "end": 397.26,
+      "text": "are that we want. Naively, doing this separately gives you two forward passes, which makes"
+    },
+    {
+      "start": 397.26,
+      "end": 401.56,
+      "text": "our inference 2x slower because it's memory bound. We can actually mix this into a fused"
+    },
+    {
+      "start": 401.56,
+      "end": 406.0,
+      "text": "forward pass in a single inference step with a specialized attention mask shown below,"
+    },
+    {
+      "start": 406.0,
+      "end": 412.6,
+      "text": "where we have the encoding intention in the green and the decoding intention in yellow."
+    },
+    {
+      "start": 412.6,
+      "end": 416.12,
+      "text": "So now that I've explained that we have a architecture that can change the position"
+    },
+    {
+      "start": 416.12,
+      "end": 422.64,
+      "text": "and choose any order and any degree of parallelization, how do we actually choose this?"
+    },
+    {
+      "start": 422.64,
+      "end": 428.28000000000003,
+      "text": "So following previous works, we actually choose a cosine schedule for parallelization, where"
+    },
+    {
+      "start": 428.28000000000003,
+      "end": 435.06,
+      "text": "we decode less tokens at first and more and more tokens at the end. But for order, we"
+    },
+    {
+      "start": 435.06,
+      "end": 439.8,
+      "text": "actually took a look at the attention maps of previous autoressive models, and we found"
+    },
+    {
+      "start": 439.8,
+      "end": 444.62,
+      "text": "that the attention is strongly local. So you see in the main diagonal here, this is a token"
+    },
+    {
+      "start": 444.62,
+      "end": 445.62,
+      "text": "paying attention to the token that's in the middle. And this is a token that's in the"
+    },
+    {
+      "start": 445.62,
+      "end": 446.12,
+      "text": "middle. And this is a token that's in the middle. And this is a token that's in the middle."
+    },
+    {
+      "start": 446.12,
+      "end": 453.62,
+      "text": "The lower diagonals to its left and below is paying attention to the token right in"
+    },
+    {
+      "start": 453.62,
+      "end": 457.52,
+      "text": "the row right above it. And then there are fainter diagonals even below that which are"
+    },
+    {
+      "start": 457.52,
+      "end": 461.2,
+      "text": "paying attention to tokens in two rows above it."
+    },
+    {
+      "start": 461.2,
+      "end": 464.74,
+      "text": "So this strong spatial locality means that tokens that are close to each other strongly"
+    },
+    {
+      "start": 464.74,
+      "end": 468.92,
+      "text": "depend on each other in regular images. And this actually explains why current generation"
+    },
+    {
+      "start": 468.92,
+      "end": 475.62,
+      "text": "orders actually fail for parallel inference. So the first kind is raster order. Raster"
+    },
+    {
+      "start": 475.62,
+      "end": 479.26,
+      "text": "Raster order, you generate left to right, top down."
+    },
+    {
+      "start": 479.26,
+      "end": 481.22,
+      "text": "But the thing is is that adjacent tokens"
+    },
+    {
+      "start": 481.22,
+      "end": 482.88,
+      "text": "are generated in parallel."
+    },
+    {
+      "start": 482.88,
+      "end": 484.3,
+      "text": "Just like what I mentioned before,"
+    },
+    {
+      "start": 484.3,
+      "end": 486.96,
+      "text": "these tokens are heavily dependent on each other."
+    },
+    {
+      "start": 486.96,
+      "end": 488.6,
+      "text": "And when you sample them independently,"
+    },
+    {
+      "start": 488.6,
+      "end": 490.62,
+      "text": "it's very likely that you generate incoherent"
+    },
+    {
+      "start": 490.62,
+      "end": 493.4,
+      "text": "or inconsistent features in the images."
+    },
+    {
+      "start": 493.4,
+      "end": 496.12,
+      "text": "Random order was designed to avoid this"
+    },
+    {
+      "start": 496.12,
+      "end": 498.04,
+      "text": "because you spread out the tokens randomly."
+    },
+    {
+      "start": 498.04,
+      "end": 500.24,
+      "text": "And this way, all the tokens you generate in parallel"
+    },
+    {
+      "start": 500.24,
+      "end": 501.84000000000003,
+      "text": "are very far from each other."
+    },
+    {
+      "start": 501.84000000000003,
+      "end": 504.02,
+      "text": "But at the same time, they're very far"
+    },
+    {
+      "start": 504.02000000000004,
+      "end": 505.68000000000006,
+      "text": "from the previously generated tokens."
+    },
+    {
+      "start": 505.68000000000006,
+      "end": 507.56000000000006,
+      "text": "And the strength of autoregressive models"
+    },
+    {
+      "start": 507.56000000000006,
+      "end": 509.78000000000003,
+      "text": "is that provide a strong conditioning."
+    },
+    {
+      "start": 509.78000000000003,
+      "end": 512.62,
+      "text": "And if you're far away from the previous tokens,"
+    },
+    {
+      "start": 512.62,
+      "end": 514.24,
+      "text": "that means you have worse conditioning"
+    },
+    {
+      "start": 514.24,
+      "end": 516.14,
+      "text": "and leads to worse generation quality."
+    },
+    {
+      "start": 517.38,
+      "end": 521.36,
+      "text": "Our generation order, our locality-aware generation order,"
+    },
+    {
+      "start": 521.36,
+      "end": 522.76,
+      "text": "thinks about both of these ideas"
+    },
+    {
+      "start": 522.76,
+      "end": 524.88,
+      "text": "and condenses them into two principles."
+    },
+    {
+      "start": 524.88,
+      "end": 527.82,
+      "text": "The first is our order must have high proximity"
+    },
+    {
+      "start": 527.82,
+      "end": 529.8000000000001,
+      "text": "to previously generated tokens."
+    },
+    {
+      "start": 529.8000000000001,
+      "end": 531.88,
+      "text": "The second is that we must have low proximity"
+    },
+    {
+      "start": 531.88,
+      "end": 533.6800000000001,
+      "text": "among concurrently generated tokens."
+    },
+    {
+      "start": 534.02,
+      "end": 537.78,
+      "text": "Now, let's look at results."
+    },
+    {
+      "start": 537.78,
+      "end": 541.52,
+      "text": "So for fair comparison, we train a normal raster order"
+    },
+    {
+      "start": 541.52,
+      "end": 543.06,
+      "text": "next token prediction model"
+    },
+    {
+      "start": 543.06,
+      "end": 546.36,
+      "text": "with the same architectural components as LPD"
+    },
+    {
+      "start": 546.36,
+      "end": 549.4,
+      "text": "on ImageNet of the same epochs and everything else."
+    },
+    {
+      "start": 549.4,
+      "end": 553.14,
+      "text": "On 256 resolution, we can achieve 13x faster inference"
+    },
+    {
+      "start": 553.14,
+      "end": 555.54,
+      "text": "with same quality or 11x faster inference"
+    },
+    {
+      "start": 555.54,
+      "end": 557.24,
+      "text": "with the better quality."
+    },
+    {
+      "start": 557.24,
+      "end": 560.78,
+      "text": "On 512 resolution, we can achieve 21 times faster inference"
+    },
+    {
+      "start": 560.78,
+      "end": 562.16,
+      "text": "with the same quality."
+    },
+    {
+      "start": 562.16,
+      "end": 566.5799999999999,
+      "text": "And compared to previously parallel autoregressive models,"
+    },
+    {
+      "start": 566.5799999999999,
+      "end": 569.9399999999999,
+      "text": "we're 3.4x faster with better quality"
+    },
+    {
+      "start": 569.9399999999999,
+      "end": 572.4399999999999,
+      "text": "or 4.2x faster with the same quality."
+    },
+    {
+      "start": 575.36,
+      "end": 578.5,
+      "text": "We also train on text-to-image benchmarks like gen eval"
+    },
+    {
+      "start": 578.5,
+      "end": 581.56,
+      "text": "and we can achieve a 61 times faster inference"
+    },
+    {
+      "start": 581.56,
+      "end": 584.56,
+      "text": "than compared with regular raster order next token prediction."
+    },
+    {
+      "start": 587.5,
+      "end": 589.02,
+      "text": "So hopefully I've convinced you"
+    },
+    {
+      "start": 589.02,
+      "end": 592.16,
+      "text": "that locality-aware parallel prediction allows you to do this"
+    },
+    {
+      "start": 592.16,
+      "end": 594.3,
+      "text": "and allows you to reduce the number of steps"
+    },
+    {
+      "start": 594.3,
+      "end": 595.8399999999999,
+      "text": "and autoregressive modeling."
+    },
+    {
+      "start": 595.8399999999999,
+      "end": 598.06,
+      "text": "And here's some visualizations."
+    },
+    {
+      "start": 598.06,
+      "end": 600.88,
+      "text": "On the top left, we have our class conditional generation"
+    },
+    {
+      "start": 600.88,
+      "end": 603.7199999999999,
+      "text": "with editing, in-painting, out-painting."
+    },
+    {
+      "start": 603.7199999999999,
+      "end": 606.74,
+      "text": "On the bottom is our text-to-image generation."
+    },
+    {
+      "start": 606.74,
+      "end": 609.68,
+      "text": "And to our top right is a summary of our efficiency."
+    },
+    {
+      "start": 610.88,
+      "end": 611.8399999999999,
+      "text": "Thank you all for coming."
+    },
+    {
+      "start": 611.8399999999999,
+      "end": 613.4399999999999,
+      "text": "And just to summarize,"
+    },
+    {
+      "start": 613.4399999999999,
+      "end": 616.56,
+      "text": "locality-aware parallel decoding has two main methods."
+    },
+    {
+      "start": 616.56,
+      "end": 619.36,
+      "text": "The first is flexible parallelized autoregressive modeling."
+    },
+    {
+      "start": 619.36,
+      "end": 622.02,
+      "text": "Second is locality-aware generation order."
+    },
+    {
+      "start": 622.16,
+      "end": 623.98,
+      "text": "And if you're interested in talking more,"
+    },
+    {
+      "start": 623.98,
+      "end": 628.98,
+      "text": "please, oh, there's a demo that I."
+    },
+    {
+      "start": 637.14,
+      "end": 641.48,
+      "text": "Okay, yeah, so yeah, if you're interested in talking more,"
+    },
+    {
+      "start": 641.48,
+      "end": 644.4,
+      "text": "please drop by our poster today at 315 to 545"
+    },
+    {
+      "start": 644.4,
+      "end": 646.78,
+      "text": "in Pavilion 545."
+    },
+    {
+      "start": 647.72,
+      "end": 652.04,
+      "text": "Oh, you can see in the demo that for the time it takes, the,"
+    },
+    {
+      "start": 652.16,
+      "end": 655.52,
+      "text": "it's two of the normal autoregressive images."
+    },
+    {
+      "start": 655.52,
+      "end": 657.8,
+      "text": "This is the Lomogen XL on the top left."
+    },
+    {
+      "start": 657.8,
+      "end": 659.8,
+      "text": "We can basically generate over 60 images."
+    },
+    {
+      "start": 659.8,
+      "end": 661.8399999999999,
+      "text": "So it's quite fast."
+    },
+    {
+      "start": 661.8399999999999,
+      "end": 662.68,
+      "text": "Thank you."
+    },
+    {
+      "start": 669.26,
+      "end": 670.14,
+      "text": "Thank you so much."
+    },
+    {
+      "start": 670.14,
+      "end": 671.38,
+      "text": "Time for the question."
+    },
+    {
+      "start": 678.16,
+      "end": 679.86,
+      "text": "Okay, I have one question."
+    },
+    {
+      "start": 679.86,
+      "end": 681.68,
+      "text": "When you push the parallel decoding,"
+    },
+    {
+      "start": 681.6800000000001,
+      "end": 683.7600000000001,
+      "text": "what breaks first?"
+    },
+    {
+      "start": 683.7600000000001,
+      "end": 685.86,
+      "text": "Like, what is the failure mode of the model?"
+    },
+    {
+      "start": 685.86,
+      "end": 690.08,
+      "text": "Is it more visual coherency or temporal coherency?"
+    },
+    {
+      "start": 691.0400000000001,
+      "end": 692.8800000000001,
+      "text": "Are you saying what is the general failure modes"
+    },
+    {
+      "start": 692.8800000000001,
+      "end": 694.44,
+      "text": "of doing parallel inference?"
+    },
+    {
+      "start": 694.44,
+      "end": 698.6800000000001,
+      "text": "Yes, I think the main thing is that you generate"
+    },
+    {
+      "start": 698.6800000000001,
+      "end": 701.1800000000001,
+      "text": "incoherent features because you're still doing"
+    },
+    {
+      "start": 701.1800000000001,
+      "end": 702.46,
+      "text": "sampling independently."
+    },
+    {
+      "start": 702.46,
+      "end": 704.2600000000001,
+      "text": "So if you want to do joint sampling,"
+    },
+    {
+      "start": 704.2600000000001,
+      "end": 706.9000000000001,
+      "text": "you would have to, like, for, like, n tokens in once,"
+    },
+    {
+      "start": 706.9000000000001,
+      "end": 709.5400000000001,
+      "text": "you would have to somehow create a probability distribution"
+    },
+    {
+      "start": 709.5400000000001,
+      "end": 711.5000000000001,
+      "text": "over v to the n, which is basically impossible."
+    },
+    {
+      "start": 711.5,
+      "end": 714.12,
+      "text": "So yes, I think the main thing is that you get distorted"
+    },
+    {
+      "start": 714.12,
+      "end": 717.5,
+      "text": "features, and that's the main thing that, like,"
+    },
+    {
+      "start": 717.5,
+      "end": 721.06,
+      "text": "our locality where generation order tries to solve."
+    },
+    {
+      "start": 721.06,
+      "end": 722.92,
+      "text": "Thank you."
+    },
+    {
+      "start": 722.92,
+      "end": 727.9,
+      "text": "Yeah, you can go behind the mics and then ask your questions."
+    },
+    {
+      "start": 727.9,
+      "end": 729.52,
+      "text": "Does this work?"
+    },
+    {
+      "start": 729.52,
+      "end": 730.26,
+      "text": "Does it work?"
+    },
+    {
+      "start": 730.26,
+      "end": 731.14,
+      "text": "Yes."
+    },
+    {
+      "start": 731.14,
+      "end": 734.54,
+      "text": "Thank you for the great talk, really cool work."
+    },
+    {
+      "start": 734.54,
+      "end": 738.18,
+      "text": "So you said that the joint sampling doesn't work"
+    },
+    {
+      "start": 738.18,
+      "end": 739.9,
+      "text": "with the autoregressive transformer, but, I mean,"
+    },
+    {
+      "start": 739.9,
+      "end": 741.5,
+      "text": "you could technically also do autoregressive"
+    },
+    {
+      "start": 741.5,
+      "end": 743.16,
+      "text": "generation with diffusion models, right?"
+    },
+    {
+      "start": 743.16,
+      "end": 745.8,
+      "text": "So MAR, I just wonder, like, have you"
+    },
+    {
+      "start": 745.8,
+      "end": 749.38,
+      "text": "any intuition about how that would work in comparison,"
+    },
+    {
+      "start": 749.38,
+      "end": 752.12,
+      "text": "if you would use the same strategies,"
+    },
+    {
+      "start": 752.12,
+      "end": 756.14,
+      "text": "like the same orderings with a diffusion model?"
+    },
+    {
+      "start": 756.14,
+      "end": 758.12,
+      "text": "Because then you can essentially sample"
+    },
+    {
+      "start": 758.12,
+      "end": 760.04,
+      "text": "from the joint distribution of multiple tokens"
+    },
+    {
+      "start": 760.04,
+      "end": 761.2,
+      "text": "at the same time."
+    },
+    {
+      "start": 761.2,
+      "end": 762.4,
+      "text": "Yeah, that's a good point."
+    },
+    {
+      "start": 762.4,
+      "end": 763.78,
+      "text": "So I think with diffusion models,"
+    },
+    {
+      "start": 763.78,
+      "end": 765.72,
+      "text": "they're very heavily compute bound."
+    },
+    {
+      "start": 765.72,
+      "end": 768.5,
+      "text": "So at high batch sizes, they're actually pretty low throughput."
+    },
+    {
+      "start": 768.5,
+      "end": 771.5,
+      "text": "And I didn't put MAR in our efficiency benchmarks,"
+    },
+    {
+      "start": 771.5,
+      "end": 779.06,
+      "text": "but MAR itself is slower than the pure autoregressive approach,"
+    },
+    {
+      "start": 779.06,
+      "end": 780.72,
+      "text": "mainly because of the diffusion head."
+    },
+    {
+      "start": 780.72,
+      "end": 785.44,
+      "text": "So yes, you can sort of emulate this with diffusion,"
+    },
+    {
+      "start": 785.44,
+      "end": 788.22,
+      "text": "but you end up with a trade-off that's actually worse than not"
+    },
+    {
+      "start": 788.22,
+      "end": 789.62,
+      "text": "doing it in the first place."
+    },
+    {
+      "start": 789.62,
+      "end": 792.08,
+      "text": "And most of the latency in MAR, for example,"
+    },
+    {
+      "start": 792.08,
+      "end": 795.32,
+      "text": "is actually the diffusion head, and the autoregressive time"
+    },
+    {
+      "start": 795.32,
+      "end": 798.02,
+      "text": "actually doesn't take that much."
+    },
+    {
+      "start": 798.02,
+      "end": 798.8,
+      "text": "OK, thank you."
+    }
+  ],
+  "segment_count": 211
+}

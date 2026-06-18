@@ -1,0 +1,835 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 9.0,
+      "text": "Hi, my name is Tal, and in this video, I'll present our iCLEAR 2026 oral paper, Latent Particle World Models."
+    },
+    {
+      "start": 9.0,
+      "end": 23.0,
+      "text": "In this work, we introduce the latent particle world model, LPWM, the first self-supervised object-centric world model capable of end-to-end training on complex real-world video data."
+    },
+    {
+      "start": 23.0,
+      "end": 27.0,
+      "text": "What does self-supervised object-centric mean?"
+    },
+    {
+      "start": 27.0,
+      "end": 35.0,
+      "text": "LPWM autonomously discovers key points, bonding boxes, and object masks directly from video data."
+    },
+    {
+      "start": 35.0,
+      "end": 41.0,
+      "text": "This approach enables stochastic dynamics sampling and enables scalability to complex environments."
+    },
+    {
+      "start": 41.0,
+      "end": 51.0,
+      "text": "LPWM is trained exclusively from video observations and supports optional conditioning on actions, language, images, and multi-view inputs."
+    },
+    {
+      "start": 51.0,
+      "end": 57.0,
+      "text": "We demonstrate the applicability of our model to imitation learning on two complex multi-object environments,"
+    },
+    {
+      "start": 57.0,
+      "end": 62.0,
+      "text": "highlighting its utility for decision-making tasks."
+    },
+    {
+      "start": 62.0,
+      "end": 69.0,
+      "text": "I want to begin with asking, how do we learn stochastic dynamics in the absence of a conditioning signal?"
+    },
+    {
+      "start": 69.0,
+      "end": 76.0,
+      "text": "One way to do this would be to learn a dynamics model that is conditioned on latent signals that guide it toward the next state."
+    },
+    {
+      "start": 76.0,
+      "end": 82.0,
+      "text": "These signals are typically called latent actions, and they are the output of a latent inverse dynamics model."
+    },
+    {
+      "start": 82.0,
+      "end": 87.0,
+      "text": "Latent actions are latent variables representing transitions between consecutive observations."
+    },
+    {
+      "start": 87.0,
+      "end": 90.0,
+      "text": "The common scheme to learn these variables is auto-encoding."
+    },
+    {
+      "start": 90.0,
+      "end": 97.0,
+      "text": "An inverse model infers the latent action, and a decoder reconstructs the future frame given the latent action and the previous frame."
+    },
+    {
+      "start": 97.0,
+      "end": 102.0,
+      "text": "There are two fatal flaws in this design, representation collapse and global modeling."
+    },
+    {
+      "start": 102.0,
+      "end": 109.0,
+      "text": "To prevent the latent action encoder from memorizing the consecutive frame, leading to the decoder ignoring the previous frame,"
+    },
+    {
+      "start": 109.0,
+      "end": 115.0,
+      "text": "a stronger regularization is applied, either via vector quantization or KL regularization to a fixed prior."
+    },
+    {
+      "start": 115.0,
+      "end": 116.0,
+      "text": "Another flaw is that the decoder does not memorize the previous frame."
+    },
+    {
+      "start": 117.0,
+      "end": 124.0,
+      "text": "Another flaw is that latent actions are typically global, meaning that there is one latent vector representing the entire transition between frames."
+    },
+    {
+      "start": 124.0,
+      "end": 127.0,
+      "text": "There are limitations to using a global latent action vector."
+    },
+    {
+      "start": 127.0,
+      "end": 134.0,
+      "text": "In multi-entity scenes, for example, enemies in Mario, a single vector cannot naturally disentangle local interactions,"
+    },
+    {
+      "start": 134.0,
+      "end": 141.0,
+      "text": "and these methods typically rely on single-agent movements, like a gripper, but even a gripper can be composed of multiple joints."
+    },
+    {
+      "start": 141.0,
+      "end": 146.0,
+      "text": "Provided with a latent action model, we can now integrate these in a world model to model stochastic dynamics."
+    },
+    {
+      "start": 147.0,
+      "end": 157.0,
+      "text": "Another challenge we discussed is how to learn world models from high-dimensional observations."
+    },
+    {
+      "start": 157.0,
+      "end": 162.0,
+      "text": "Traditional approaches typically compress the input frame to a single vector."
+    },
+    {
+      "start": 162.0,
+      "end": 168.0,
+      "text": "This makes it hard to represent fine-grained details or scenes with a lot of objects."
+    },
+    {
+      "start": 168.0,
+      "end": 175.0,
+      "text": "Current approaches use patch-based representations, where each patch serves as an entity."
+    },
+    {
+      "start": 175.0,
+      "end": 176.0,
+      "text": "These are more fine-grained, but still not exactly the same."
+    },
+    {
+      "start": 177.0,
+      "end": 182.0,
+      "text": "But we can do what we want, especially when aligning with other modalities, such as language."
+    },
+    {
+      "start": 182.0,
+      "end": 191.0,
+      "text": "Both of these approaches are very different from how we represent language, where tokenization is usually semantic."
+    },
+    {
+      "start": 191.0,
+      "end": 197.0,
+      "text": "Consider this illustrative example, where the dynamics of two moving objects are described alongside a caption,"
+    },
+    {
+      "start": 197.0,
+      "end": 202.0,
+      "text": "the blue ball is moving diagonally towards the green square."
+    },
+    {
+      "start": 202.0,
+      "end": 205.0,
+      "text": "Text representations typically rely on semantic tokenization,"
+    },
+    {
+      "start": 205.0,
+      "end": 207.0,
+      "text": "into words or sub-words, and so on."
+    },
+    {
+      "start": 207.0,
+      "end": 211.0,
+      "text": "This underpins the success of large language models."
+    },
+    {
+      "start": 211.0,
+      "end": 216.0,
+      "text": "In contrast, image representations predominantly use patchifying,"
+    },
+    {
+      "start": 216.0,
+      "end": 222.0,
+      "text": "dividing the image into a fixed grid of patches without regard for semantic content."
+    },
+    {
+      "start": 222.0,
+      "end": 227.0,
+      "text": "If we were to do something like this for text, it would look very weird."
+    },
+    {
+      "start": 227.0,
+      "end": 232.0,
+      "text": "While this patch-based approach enables scalability and generality,"
+    },
+    {
+      "start": 232.0,
+      "end": 235.0,
+      "text": "it lacks the semantic intuitiveness of object-centric decompositions"
+    },
+    {
+      "start": 235.0,
+      "end": 241.0,
+      "text": "that can enhance the model's ability to capture meaningful object interactions and relationships,"
+    },
+    {
+      "start": 241.0,
+      "end": 247.0,
+      "text": "crucial for understanding complex things, and align more naturally with language representations."
+    },
+    {
+      "start": 247.0,
+      "end": 256.0,
+      "text": "So, how can we obtain an object-centric decomposition and do so without human supervision?"
+    },
+    {
+      "start": 256.0,
+      "end": 260.0,
+      "text": "People have studied object-centric representations for years."
+    },
+    {
+      "start": 260.0,
+      "end": 263.0,
+      "text": "In fact, some of the early theories from the 90s proposed that human vision,"
+    },
+    {
+      "start": 263.0,
+      "end": 270.0,
+      "text": "parses scenes into what and where, decomposing content and location."
+    },
+    {
+      "start": 270.0,
+      "end": 274.0,
+      "text": "However, these approaches were not adopted at a larger scale."
+    },
+    {
+      "start": 274.0,
+      "end": 279.0,
+      "text": "Inspired by the what-where pathway in the human visual system and recent neuroscience findings,"
+    },
+    {
+      "start": 279.0,
+      "end": 285.0,
+      "text": "which suggest human leverage internal visual spatial world models for planning and action,"
+    },
+    {
+      "start": 285.0,
+      "end": 290.0,
+      "text": "combining object-centric representations with world models is a promising direction"
+    },
+    {
+      "start": 290.0,
+      "end": 293.0,
+      "text": "toward more effective decision-making and vision language optimization."
+    },
+    {
+      "start": 293.0,
+      "end": 301.0,
+      "text": "We now continue to self-supervise object-centric representation learning,"
+    },
+    {
+      "start": 301.0,
+      "end": 305.0,
+      "text": "and specifically, deep latent particles, DLP."
+    },
+    {
+      "start": 305.0,
+      "end": 309.0,
+      "text": "DLP is a VAE where the latent space is a set of particles."
+    },
+    {
+      "start": 309.0,
+      "end": 315.0,
+      "text": "Each particle has several learned attributes, such as keypoint, bounding boxes, transparency,"
+    },
+    {
+      "start": 315.0,
+      "end": 319.0,
+      "text": "and of course, latent visual features to represent shape and appearance."
+    },
+    {
+      "start": 319.0,
+      "end": 322.0,
+      "text": "Every attribute is learned with respect to the optimization process,"
+    },
+    {
+      "start": 322.0,
+      "end": 325.0,
+      "text": "with respect to the optimization objective, the evidence-level bound,"
+    },
+    {
+      "start": 325.0,
+      "end": 330.0,
+      "text": "which is decomposed to the reconstruction error and KL divergence terms."
+    },
+    {
+      "start": 330.0,
+      "end": 336.0,
+      "text": "In this work, we also introduced DLP v3, which introduces several improvements."
+    },
+    {
+      "start": 336.0,
+      "end": 342.0,
+      "text": "Please refer to the paper for details."
+    },
+    {
+      "start": 342.0,
+      "end": 348.0,
+      "text": "Here we can see how DLP decomposes scenes, creating a self-supervised object-centric representation,"
+    },
+    {
+      "start": 348.0,
+      "end": 352.0,
+      "text": "which motivates its utilization in downstream tasks."
+    },
+    {
+      "start": 352.0,
+      "end": 360.0,
+      "text": "So, how do we build world models from latent particles?"
+    },
+    {
+      "start": 360.0,
+      "end": 365.0,
+      "text": "The main novel component added to the DLP framework is the context module,"
+    },
+    {
+      "start": 365.0,
+      "end": 370.0,
+      "text": "which is designed to model stochastic dynamics in actionless video."
+    },
+    {
+      "start": 370.0,
+      "end": 374.0,
+      "text": "The idea is to capture stochastic transitions of entities in the scene"
+    },
+    {
+      "start": 374.0,
+      "end": 379.0,
+      "text": "with per-particle latent actions as part of the dynamics modeling."
+    },
+    {
+      "start": 379.0,
+      "end": 381.0,
+      "text": "This formulation enables the representations of"
+    },
+    {
+      "start": 381.0,
+      "end": 387.0,
+      "text": "multiple simultaneous interactions and captures multi-modality."
+    },
+    {
+      "start": 387.0,
+      "end": 389.0,
+      "text": "Here is how it works."
+    },
+    {
+      "start": 389.0,
+      "end": 394.0,
+      "text": "The context model takes in a sequence of particle sets across T plus 1 frames."
+    },
+    {
+      "start": 394.0,
+      "end": 398.0,
+      "text": "The module is composed of two complementary heads,"
+    },
+    {
+      "start": 398.0,
+      "end": 405.0,
+      "text": "the latent inverse dynamics, which predicts the latent actions responsible for the transition between consecutive particle states,"
+    },
+    {
+      "start": 405.0,
+      "end": 410.0,
+      "text": "and the latent policy, which models the distribution of latent actions conditioned on the current states."
+    },
+    {
+      "start": 411.0,
+      "end": 415.0,
+      "text": "The module is implemented as a causal spatio-temporal transformer."
+    },
+    {
+      "start": 415.0,
+      "end": 420.0,
+      "text": "The latent policy serves as a prior that regularizes the inverse dynamics"
+    },
+    {
+      "start": 420.0,
+      "end": 424.0,
+      "text": "via a KL divergence penalty in the VAE objective."
+    },
+    {
+      "start": 424.0,
+      "end": 428.0,
+      "text": "This is in contrast to the fixed prior, or codebook regularization."
+    },
+    {
+      "start": 428.0,
+      "end": 432.0,
+      "text": "Here the regularization is learned and used at inference time as well."
+    },
+    {
+      "start": 432.0,
+      "end": 437.0,
+      "text": "At training time, latent actions are obtained through the inverse dynamics head,"
+    },
+    {
+      "start": 437.0,
+      "end": 440.0,
+      "text": "ensuring consistency with the observed transitions."
+    },
+    {
+      "start": 440.0,
+      "end": 446.0,
+      "text": "At inference time, latent actions can instead be sampled directly from the latent policy prior,"
+    },
+    {
+      "start": 446.0,
+      "end": 449.0,
+      "text": "enabling stochastic callouts of the whole model."
+    },
+    {
+      "start": 449.0,
+      "end": 456.0,
+      "text": "Conditioning on external signals, such as global actions, language instructions, or image-based goals,"
+    },
+    {
+      "start": 456.0,
+      "end": 458.0,
+      "text": "within the latent context module,"
+    },
+    {
+      "start": 458.0,
+      "end": 462.0,
+      "text": "maps global scene-level signals into per-particle latent actions."
+    },
+    {
+      "start": 462.0,
+      "end": 465.0,
+      "text": "For instance, given a language instruction,"
+    },
+    {
+      "start": 465.0,
+      "end": 468.0,
+      "text": "it learns to translate it into per-particle latent actions"
+    },
+    {
+      "start": 468.0,
+      "end": 472.0,
+      "text": "that drive the dynamics towards satisfying the instruction."
+    },
+    {
+      "start": 476.0,
+      "end": 478.0,
+      "text": "Putting it all together."
+    },
+    {
+      "start": 478.0,
+      "end": 481.0,
+      "text": "Input frames are encoded into particle sets by the encoder,"
+    },
+    {
+      "start": 481.0,
+      "end": 484.0,
+      "text": "and decoded back to images by the decoder."
+    },
+    {
+      "start": 484.0,
+      "end": 489.0,
+      "text": "The context model then processes the particles to sample latent actions,"
+    },
+    {
+      "start": 489.0,
+      "end": 492.0,
+      "text": "which are combined with the particles in the dynamics model"
+    },
+    {
+      "start": 492.0,
+      "end": 495.0,
+      "text": "to predict the next step particle states."
+    },
+    {
+      "start": 495.0,
+      "end": 498.0,
+      "text": "LPWM is trained by maximizing"
+    },
+    {
+      "start": 498.0,
+      "end": 500.0,
+      "text": "temporal evidence lower bound,"
+    },
+    {
+      "start": 500.0,
+      "end": 504.0,
+      "text": "or minimizing the sum of reconstruction errors and KLA vergences,"
+    },
+    {
+      "start": 504.0,
+      "end": 507.0,
+      "text": "decomposed into a static term for the first frame"
+    },
+    {
+      "start": 507.0,
+      "end": 509.0,
+      "text": "and a dynamic term for the subsequent frames."
+    },
+    {
+      "start": 512.0,
+      "end": 514.0,
+      "text": "Let's look at some results."
+    },
+    {
+      "start": 514.0,
+      "end": 518.0,
+      "text": "All models are on the scale of 150 million parameters,"
+    },
+    {
+      "start": 518.0,
+      "end": 521.0,
+      "text": "much smaller than the standard video generation models."
+    },
+    {
+      "start": 522.0,
+      "end": 526.0,
+      "text": "On the Mario video game, we have a moving camera and multiple enemies."
+    },
+    {
+      "start": 526.0,
+      "end": 529.0,
+      "text": "The first type of fallouts is latent action condition,"
+    },
+    {
+      "start": 529.0,
+      "end": 533.0,
+      "text": "meaning that we extract the latent actions from the ground truth video"
+    },
+    {
+      "start": 533.0,
+      "end": 537.0,
+      "text": "and then use them to condition the dynamics model from the first frame."
+    },
+    {
+      "start": 537.0,
+      "end": 540.0,
+      "text": "The baselines include DVAE,"
+    },
+    {
+      "start": 540.0,
+      "end": 543.0,
+      "text": "a patch-based non-object-centric dynamics VAE,"
+    },
+    {
+      "start": 543.0,
+      "end": 547.0,
+      "text": "and the object-centric slot attention-based play slot."
+    },
+    {
+      "start": 547.0,
+      "end": 550.0,
+      "text": "The second type is stochastic generation,"
+    },
+    {
+      "start": 550.0,
+      "end": 554.0,
+      "text": "where we sample latent actions to generate different future predictions."
+    },
+    {
+      "start": 554.0,
+      "end": 556.0,
+      "text": "For an analysis of the metrics,"
+    },
+    {
+      "start": 556.0,
+      "end": 558.0,
+      "text": "please refer to the paper."
+    },
+    {
+      "start": 561.0,
+      "end": 564.0,
+      "text": "BEAR is a real-world multi-object interaction dataset."
+    },
+    {
+      "start": 565.0,
+      "end": 568.0,
+      "text": "We can see the DVAE struggles with object permanence,"
+    },
+    {
+      "start": 568.0,
+      "end": 572.0,
+      "text": "while play slot is limited by the large number of objects."
+    },
+    {
+      "start": 573.0,
+      "end": 576.0,
+      "text": "Similarly, we can sample different interactions."
+    },
+    {
+      "start": 581.0,
+      "end": 584.0,
+      "text": "For action conditioning, on Sketchy,"
+    },
+    {
+      "start": 584.0,
+      "end": 587.0,
+      "text": "we see the DVAE again struggles with object permanence,"
+    },
+    {
+      "start": 587.0,
+      "end": 591.0,
+      "text": "and objects tend to deform and vanish in long-term prediction."
+    },
+    {
+      "start": 597.0,
+      "end": 600.0,
+      "text": "For language conditioning, on Language Table,"
+    },
+    {
+      "start": 600.0,
+      "end": 604.0,
+      "text": "the model must align language tokens that include object types, names,"
+    },
+    {
+      "start": 604.0,
+      "end": 608.0,
+      "text": "and special relationships, such as closer or diagonal,"
+    },
+    {
+      "start": 608.0,
+      "end": 610.0,
+      "text": "with the visual tokens."
+    },
+    {
+      "start": 610.0,
+      "end": 613.0,
+      "text": "We consider the object-centric particles naturally align better"
+    },
+    {
+      "start": 613.0,
+      "end": 616.0,
+      "text": "with language, allowing for language conditioning planning"
+    },
+    {
+      "start": 616.0,
+      "end": 618.0,
+      "text": "directly in the particle latent space."
+    },
+    {
+      "start": 630.0,
+      "end": 633.0,
+      "text": "We close this presentation with a practical application"
+    },
+    {
+      "start": 633.0,
+      "end": 635.0,
+      "text": "for imitation learning."
+    },
+    {
+      "start": 635.0,
+      "end": 639.0,
+      "text": "Pre-training LPWM on actionless video datasets"
+    },
+    {
+      "start": 639.0,
+      "end": 642.0,
+      "text": "enable you to predict video dynamics using latent actions."
+    },
+    {
+      "start": 642.0,
+      "end": 646.0,
+      "text": "Suggesting that these latent actions capture actionable information."
+    },
+    {
+      "start": 647.0,
+      "end": 649.0,
+      "text": "Assuming access to ground truth actions,"
+    },
+    {
+      "start": 649.0,
+      "end": 652.0,
+      "text": "and that the latent actions effectively encode dynamics,"
+    },
+    {
+      "start": 652.0,
+      "end": 655.0,
+      "text": "learning a simple mapping from latent actions to true actions"
+    },
+    {
+      "start": 655.0,
+      "end": 658.0,
+      "text": "may suffice to derive a policy."
+    },
+    {
+      "start": 659.0,
+      "end": 663.0,
+      "text": "We pre-train LPWM with image goal conditioning on actionless videos,"
+    },
+    {
+      "start": 663.0,
+      "end": 666.0,
+      "text": "then freeze and learn to map the latent actions"
+    },
+    {
+      "start": 666.0,
+      "end": 669.0,
+      "text": "to ground truth actions with a simple neural network."
+    },
+    {
+      "start": 669.0,
+      "end": 674.0,
+      "text": "At inference time, we sample rollouts from LPWM,"
+    },
+    {
+      "start": 674.0,
+      "end": 676.0,
+      "text": "map them to the environment actions,"
+    },
+    {
+      "start": 676.0,
+      "end": 679.0,
+      "text": "and execute in the environment in a closed-loop fashion."
+    },
+    {
+      "start": 683.0,
+      "end": 685.0,
+      "text": "On the challenging Panda push environment"
+    },
+    {
+      "start": 685.0,
+      "end": 687.0,
+      "text": "that involves multi-object manipulation,"
+    },
+    {
+      "start": 687.0,
+      "end": 691.0,
+      "text": "we pre-train an image condition LPWM on multi-view demonstrations,"
+    },
+    {
+      "start": 691.0,
+      "end": 695.0,
+      "text": "where LPWM jointly models the dynamics in both views."
+    },
+    {
+      "start": 695.0,
+      "end": 698.0,
+      "text": "As we show in our results, our simple policy mapping"
+    },
+    {
+      "start": 698.0,
+      "end": 700.0,
+      "text": "outperforms most baselines,"
+    },
+    {
+      "start": 700.0,
+      "end": 704.0,
+      "text": "demonstrating LPWM's potential to decision-making."
+    },
+    {
+      "start": 704.0,
+      "end": 707.0,
+      "text": "For results on OGBench, please refer to the paper."
+    },
+    {
+      "start": 709.0,
+      "end": 711.0,
+      "text": "We presented LPWM,"
+    },
+    {
+      "start": 711.0,
+      "end": 714.0,
+      "text": "the first end-to-end self-supervised object-centric model"
+    },
+    {
+      "start": 714.0,
+      "end": 717.0,
+      "text": "that supports multiple types of conditioning"
+    },
+    {
+      "start": 717.0,
+      "end": 720.0,
+      "text": "and demonstrating strong potential for decision-making."
+    },
+    {
+      "start": 720.0,
+      "end": 723.0,
+      "text": "We conclude with some limitations."
+    },
+    {
+      "start": 723.0,
+      "end": 725.0,
+      "text": "The self-supervised object-centric literature"
+    },
+    {
+      "start": 725.0,
+      "end": 728.0,
+      "text": "is yet to be scaled up properly to general purposes,"
+    },
+    {
+      "start": 728.0,
+      "end": 730.0,
+      "text": "in the wild video datasets."
+    },
+    {
+      "start": 730.0,
+      "end": 732.0,
+      "text": "In addition, the pixel fidelity"
+    },
+    {
+      "start": 732.0,
+      "end": 734.0,
+      "text": "of modern diffusion-based video generator"
+    },
+    {
+      "start": 734.0,
+      "end": 737.0,
+      "text": "is still ahead of the VAE-style dynamics model."
+    },
+    {
+      "start": 739.0,
+      "end": 740.0,
+      "text": "Thank you for watching,"
+    },
+    {
+      "start": 740.0,
+      "end": 742.0,
+      "text": "and be sure to visit the website for more videos,"
+    },
+    {
+      "start": 742.0,
+      "end": 744.0,
+      "text": "code, and tutorials."
+    }
+  ],
+  "segment_count": 166
+}

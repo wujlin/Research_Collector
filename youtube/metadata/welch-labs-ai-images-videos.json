@@ -1,0 +1,58 @@
+{
+  "id": "iv-5mZ_9CPY",
+  "title": "But how do AI images and videos actually work? | Guest video by Welch Labs",
+  "url": "https://www.youtube.com/watch?v=iv-5mZ_9CPY",
+  "channel": "3Blue1Brown",
+  "guest_creator": "Welch Labs",
+  "duration": "37:20",
+  "topic": [
+    "CLIP",
+    "diffusion models",
+    "DDPM",
+    "DDIM",
+    "classifier-free guidance",
+    "text-to-image generation",
+    "text-to-video generation"
+  ],
+  "network_check": {
+    "wsa_public_ip_region": "Hong Kong, HK",
+    "wsa_org": "AS9304 HGC Global Communications Limited",
+    "wsa_dns": "youtube.com, www.youtube.com, googlevideo.com, and i.ytimg.com resolved successfully",
+    "wsa_youtube_https": "https://www.youtube.com/watch?v=iv-5mZ_9CPY returned HTTP 200",
+    "wsa_ytdlp": "yt-dlp 2026.06.09 parsed the target video as public",
+    "mac_to_wsa_ssh": "SOCKS route works; direct SSH still closes during handshake"
+  },
+  "collection_status": {
+    "status": "complete",
+    "collected_on": "WSA",
+    "synced_to_local": true,
+    "wsa_tmux_session": "rc_welch_ai_images completed before inspection",
+    "transcript_backend": "faster-whisper",
+    "transcript_model": "large-v3",
+    "transcript_segments": 902,
+    "duration_seconds": 2239.9003125,
+    "slide_frames": 87
+  },
+  "artifacts": {
+    "caption_vtt": "youtube/captions/but-how-do-ai-images-and-videos-actually-work-guest-video-by-welch-labs/source.en.vtt",
+    "audio_metadata": "youtube/audio/but-how-do-ai-images-and-videos-actually-work-guest-video-by-welch-labs/metadata.json",
+    "audio_source": "youtube/audio/but-how-do-ai-images-and-videos-actually-work-guest-video-by-welch-labs/source.m4a",
+    "video_source": "youtube/video/but-how-do-ai-images-and-videos-actually-work-guest-video-by-welch-labs/source.mp4",
+    "transcript_dir": "youtube/transcripts/iv-5mZ_9CPY-but-how-do-ai-images-and-videos-actually-work-guest-video-by-welch-labs/",
+    "transcript_md": "youtube/transcripts/iv-5mZ_9CPY-but-how-do-ai-images-and-videos-actually-work-guest-video-by-welch-labs/transcript.md",
+    "slides_dir": "youtube/slides/iv-5mZ_9CPY-but-how-do-ai-images-and-videos-actually-work-guest-video-by-welch-labs/",
+    "slides_index": "youtube/slides/iv-5mZ_9CPY-but-how-do-ai-images-and-videos-actually-work-guest-video-by-welch-labs/index.md",
+    "curated_slides_dir": "youtube/slides/iv-5mZ_9CPY-but-how-do-ai-images-and-videos-actually-work-guest-video-by-welch-labs/curated/",
+    "curated_slides_index": "youtube/slides/iv-5mZ_9CPY-but-how-do-ai-images-and-videos-actually-work-guest-video-by-welch-labs/curated/index.md",
+    "curated_contact_sheet": "youtube/slides/iv-5mZ_9CPY-but-how-do-ai-images-and-videos-actually-work-guest-video-by-welch-labs/curated/contact_sheet.jpg"
+  },
+  "fallback_sources": [
+    {
+      "name": "Y2Doc structured transcript and notes",
+      "url": "https://y2doc.com/examples/1950203659121164288",
+      "use": "outline/reference only; do not treat as canonical raw transcript"
+    }
+  ],
+  "collected_at": "2026-06-16",
+  "notes": "WSA YouTube access is direct and functional from a Hong Kong HGC exit. The local macOS unauthenticated yt-dlp path still hit HTTP 429/bot-check, so canonical artifacts were collected on WSA and synced back."
+}

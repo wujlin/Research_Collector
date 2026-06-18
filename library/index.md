@@ -29,9 +29,13 @@
 - [生成动力学](ai_for_physics/generative_dynamics/_index.md)
   - [条件生成](ai_for_physics/generative_dynamics/conditional_generation/_index.md)
   - [扩散概率模型](ai_for_physics/generative_dynamics/ddpm/_index.md)
+  - [Energy-Based Models](ai_for_physics/generative_dynamics/energy_based_models/_index.md)
   - [Flow Matching](ai_for_physics/generative_dynamics/flow_matching/_index.md)
   - [分数匹配与估计](ai_for_physics/generative_dynamics/score_matching/_index.md)
   - [SDE生成模型](ai_for_physics/generative_dynamics/sde_generative/_index.md)
+- [几何与等变学习](ai_for_physics/geometric_equivariant_learning/_index.md)
+  - [等变材料与分子模型](ai_for_physics/geometric_equivariant_learning/equivariant_materials_models/_index.md)
+  - [Riemannian Generative Models](ai_for_physics/geometric_equivariant_learning/riemannian_generative_models/_index.md)
 - [物理约束建模](ai_for_physics/physics_informed_modeling/_index.md)
   - [Physics-Informed Generative Modelling](ai_for_physics/physics_informed_modeling/physics_informed_generative/_index.md)
   - [Scientific ML Applications](ai_for_physics/physics_informed_modeling/scientific_ml_applications/_index.md)
@@ -46,9 +50,6 @@
   - [城市标度律](urban_complex_systems/scaling_and_evolution/urban_scaling/_index.md)
 - [城市数据与生成](urban_complex_systems/urban_data_and_generation/_index.md)
   - [城市数据科学](urban_complex_systems/urban_data_and_generation/urban_data_science/_index.md)
-
-## [集体智能体系统](collective_agent_systems/_index.md)
-社会-技术层：研究多智能体、LLM populations、社会惯例、合作、竞争和 population-level dynamics。
 
 ## [桥接主题](bridges/_index.md)
 翻译层与桥接机制：把数学骨架、物理语义、生成建模和城市应用接起来。

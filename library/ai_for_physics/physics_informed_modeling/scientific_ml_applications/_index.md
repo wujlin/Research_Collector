@@ -2,7 +2,7 @@
 title: "Scientific ML Applications"
 description: ""
 paper_count: 21
-last_updated: "2026-04-24"
+last_updated: "2026-05-18"
 ---
 
 # Scientific ML Applications

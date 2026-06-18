@@ -1,0 +1,15 @@
+{
+  "title": "But how do AI images and videos actually work? | Guest video by Welch Labs",
+  "url": "https://www.youtube.com/watch?v=iv-5mZ_9CPY",
+  "backend": "faster-whisper",
+  "model": "large-v3",
+  "requested_language": "en",
+  "detected_language": "en",
+  "generated_at": "2026-06-16T17:59:45",
+  "language": "en",
+  "language_probability": 1,
+  "duration": 2239.9003125,
+  "refined_at": "2026-06-16T19:44:54",
+  "cleanup_rules": 25,
+  "paragraph_count": 98
+}

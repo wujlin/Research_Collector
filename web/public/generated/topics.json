@@ -53,6 +53,20 @@
     ]
   },
   {
+    "key": "ai_for_physics/generative_dynamics/energy_based_models",
+    "display_name": "Energy-Based Models",
+    "parent_key": "ai_for_physics/generative_dynamics",
+    "description": "",
+    "paper_count": 0,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "AI for Physics",
+      "生成动力学",
+      "Energy-Based Models"
+    ]
+  },
+  {
     "key": "ai_for_physics/generative_dynamics/flow_matching",
     "display_name": "Flow Matching",
     "parent_key": "ai_for_physics/generative_dynamics",
@@ -92,6 +106,47 @@
       "AI for Physics",
       "生成动力学",
       "SDE生成模型"
+    ]
+  },
+  {
+    "key": "ai_for_physics/geometric_equivariant_learning",
+    "display_name": "几何与等变学习",
+    "parent_key": "ai_for_physics",
+    "description": "把物理中的对称性、几何结构和流形约束转成模型架构与生成机制。",
+    "paper_count": 0,
+    "depth": 1,
+    "is_leaf": false,
+    "lineage": [
+      "AI for Physics",
+      "几何与等变学习"
+    ]
+  },
+  {
+    "key": "ai_for_physics/geometric_equivariant_learning/equivariant_materials_models",
+    "display_name": "等变材料与分子模型",
+    "parent_key": "ai_for_physics/geometric_equivariant_learning",
+    "description": "",
+    "paper_count": 0,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "AI for Physics",
+      "几何与等变学习",
+      "等变材料与分子模型"
+    ]
+  },
+  {
+    "key": "ai_for_physics/geometric_equivariant_learning/riemannian_generative_models",
+    "display_name": "Riemannian Generative Models",
+    "parent_key": "ai_for_physics/geometric_equivariant_learning",
+    "description": "",
+    "paper_count": 0,
+    "depth": 2,
+    "is_leaf": true,
+    "lineage": [
+      "AI for Physics",
+      "几何与等变学习",
+      "Riemannian Generative Models"
     ]
   },
   {
@@ -302,7 +357,7 @@
     "display_name": "统计物理",
     "parent_key": null,
     "description": "物理语义层：熵、自由能、涨落定理、稳态与不可逆性。",
-    "paper_count": 166,
+    "paper_count": 167,
     "depth": 0,
     "is_leaf": false,
     "lineage": [
@@ -314,7 +369,7 @@
     "display_name": "集体结构与临界性",
     "parent_key": "statistical_physics",
     "description": "相变、临界现象与普适结构。",
-    "paper_count": 46,
+    "paper_count": 47,
     "depth": 1,
     "is_leaf": false,
     "lineage": [
@@ -327,7 +382,7 @@
     "display_name": "相变与临界现象",
     "parent_key": "statistical_physics/collective_structure",
     "description": "",
-    "paper_count": 42,
+    "paper_count": 43,
     "depth": 2,
     "is_leaf": true,
     "lineage": [

@@ -1,0 +1,3305 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 3.12,
+      "text": "Thank you for the very kind introduction and for inviting me here to give a talk."
+    },
+    {
+      "start": 4.2,
+      "end": 13.24,
+      "text": "So yeah, a little bit about my journey. My journey has been a bit of a meandering one. I actually didn't start out in machine learning. I started out more on the electrical engineering side."
+    },
+    {
+      "start": 13.42,
+      "end": 28.84,
+      "text": "In my undergrad and master's, I was working more on information theory, communication protocols, and that sort of thing. And that area is a very mature field, which means that it's very hard to come up with new results and do research."
+    },
+    {
+      "start": 30.0,
+      "end": 39.78,
+      "text": "And so it's kind of a slog, and I'd actually started a PhD at UCSD, and in this area, in information theory, and I was like, I don't know what I'm doing here."
+    },
+    {
+      "start": 40.519999999999996,
+      "end": 53.620000000000005,
+      "text": "And so I actually ended up quitting after about nine months, moved back up to the Bay Area, and then I started working on computer vision, deep learning, and I was like, wow, it is so much easier to make to get results in machine learning."
+    },
+    {
+      "start": 53.620000000000005,
+      "end": 54.620000000000005,
+      "text": "This is so exciting."
+    },
+    {
+      "start": 55.480000000000004,
+      "end": 59.980000000000004,
+      "text": "And then I realized, okay, I'm not a good enough software engineer to get results in computer."
+    },
+    {
+      "start": 60.0,
+      "end": 64.7,
+      "text": "And so that's how I found myself in working on reinforcement learning."
+    },
+    {
+      "start": 66.08,
+      "end": 77.2,
+      "text": "I particularly liked the mathematical framework of reinforcement learning, and so I ended up going back to do a PhD again, this time at McGill University in Montreal."
+    },
+    {
+      "start": 78.2,
+      "end": 84.7,
+      "text": "After my PhD, I did a postdoc at Berkeley, and then I started at UT in the beginning of 2023."
+    },
+    {
+      "start": 84.7,
+      "end": 89.9,
+      "text": "All right, so today I'd like to talk about how generationality."
+    },
+    {
+      "start": 90.0,
+      "end": 93.62,
+      "text": "Genitive AI and reinforcement learning intersect."
+    },
+    {
+      "start": 94.2,
+      "end": 106.6,
+      "text": "Basically, you know, I think especially in the last few years, there's been a lot of excitement around generative modeling, around generative AI, foundation models, large language models, because of the recent, like, very widespread success of these methods."
+    },
+    {
+      "start": 107.4,
+      "end": 119.28,
+      "text": "And I really want to point out that, you know, I think reinforcement learning has kind of been a side note in all of this, but actually I think reinforcement learning is the way that we should be thinking about these problems."
+    },
+    {
+      "start": 119.28,
+      "end": 119.9,
+      "text": "And I think."
+    },
+    {
+      "start": 120.0,
+      "end": 128.9,
+      "text": "It's a way that we can move forward and continue to make progress in this space of generative modeling is is by looking at everything through a reinforcement learning lens."
+    },
+    {
+      "start": 128.9,
+      "end": 133.0,
+      "text": "And so I hope by at the end of this hour I will be able to convince you guys of that."
+    },
+    {
+      "start": 133.0,
+      "end": 137.0,
+      "text": "Okay, so I'm going to start with the story of chess."
+    },
+    {
+      "start": 137.0,
+      "end": 146.0,
+      "text": "Many of you are familiar with AlphaZero, which came out of DeepMind, which is DeepMind's chess playing agent that was developed in 2018."
+    },
+    {
+      "start": 146.0,
+      "end": 148.2,
+      "text": "You're probably also maybe familiar with DeepBlue, which is AlphaZero."
+    },
+    {
+      "start": 148.2,
+      "end": 149.0,
+      "text": "You're probably also maybe familiar with DeepBlue, which is AlphaZero."
+    },
+    {
+      "start": 149.0,
+      "end": 149.8,
+      "text": "You're probably also maybe familiar with DeepBlue, which is AlphaZero."
+    },
+    {
+      "start": 149.8,
+      "end": 154.8,
+      "text": "Which was IBM's chess playing agent, which was developed in 1995."
+    },
+    {
+      "start": 154.8,
+      "end": 161.8,
+      "text": "And this this machine famously beat Garry Kasparov, who was a chess grandmaster."
+    },
+    {
+      "start": 161.8,
+      "end": 167.8,
+      "text": "But these were not the first attempts at developing a chess playing agent."
+    },
+    {
+      "start": 167.8,
+      "end": 171.8,
+      "text": "So that actually started in the 70s in the 1770s."
+    },
+    {
+      "start": 171.8,
+      "end": 174.8,
+      "text": "And so this was the chess playing agent."
+    },
+    {
+      "start": 174.8,
+      "end": 176.8,
+      "text": "This was developed in Hungary."
+    },
+    {
+      "start": 176.8,
+      "end": 178.8,
+      "text": "And it performed well against a wide array of human opponents."
+    },
+    {
+      "start": 178.8,
+      "end": 185.8,
+      "text": "And won most of its games, including against Napoleon and Benjamin Franklin."
+    },
+    {
+      "start": 185.8,
+      "end": 194.8,
+      "text": "And so here's just a picture of that system, along with the internal cogs that worked it and how this story usually ends is that it turns out that these clogs are just a facade."
+    },
+    {
+      "start": 194.8,
+      "end": 196.8,
+      "text": "Literally."
+    },
+    {
+      "start": 196.8,
+      "end": 197.8,
+      "text": "Right?"
+    },
+    {
+      "start": 197.8,
+      "end": 200.8,
+      "text": "The way that the machine worked was it?"
+    },
+    {
+      "start": 200.8,
+      "end": 202.8,
+      "text": "Actually there was a human hiding inside who was actually making all of the moves."
+    },
+    {
+      "start": 202.8,
+      "end": 205.8,
+      "text": "And so there was an elaborate setup of mirrors so that you can open it up."
+    },
+    {
+      "start": 205.8,
+      "end": 206.8,
+      "text": "So there was an elaborate setup of mirrors so that you can open it up."
+    },
+    {
+      "start": 206.8,
+      "end": 207.8,
+      "text": "And you wouldn't be able to see the human hiding."
+    },
+    {
+      "start": 207.8,
+      "end": 213.98000000000002,
+      "text": "to see the human hiding inside. And so people are disappointed by this, because once the secret is"
+    },
+    {
+      "start": 213.98000000000002,
+      "end": 220.12,
+      "text": "revealed, it means that there's no magic, right? The machine is no better than the human inside of"
+    },
+    {
+      "start": 220.12,
+      "end": 228.96,
+      "text": "it. So when we now zoom forward to 250, almost 250 years to today, the analogy is clear, right,"
+    },
+    {
+      "start": 229.06,
+      "end": 233.04000000000002,
+      "text": "to generative models. This is a feat of engineering, and it's impressed many into"
+    },
+    {
+      "start": 233.04,
+      "end": 240.23999999999998,
+      "text": "thinking that we've truly gotten to, you know, AGI, artificial general intelligence. But it turns"
+    },
+    {
+      "start": 240.23999999999998,
+      "end": 244.66,
+      "text": "out that if we peel back the mirrors, these foundation models are still no smarter than the"
+    },
+    {
+      "start": 244.66,
+      "end": 250.14,
+      "text": "humans on which they were trained, right? So today we have the technology to memorize the human's"
+    },
+    {
+      "start": 250.14,
+      "end": 255.48,
+      "text": "moves and encode it into these cogs. Now they're tiny silicon cogs rather than these copper ones"
+    },
+    {
+      "start": 255.48,
+      "end": 261.76,
+      "text": "in this image. But most AI machines today are simply mimicking the human data that they're"
+    },
+    {
+      "start": 261.76,
+      "end": 263.02,
+      "text": "trained on, rather than trying to make it work. And so I think that's a great way to"
+    },
+    {
+      "start": 263.02,
+      "end": 267.62,
+      "text": "to do better, right? So these imitation-based methods that we use to train current foundation"
+    },
+    {
+      "start": 267.62,
+      "end": 272.12,
+      "text": "models, it means that we're only ever going to get machines that do as well as"
+    },
+    {
+      "start": 272.12,
+      "end": 279.2,
+      "text": "the humans used to collect those data sets. And so today I want to talk about how we can"
+    },
+    {
+      "start": 279.2,
+      "end": 284.38,
+      "text": "potentially do better than imitation, and how this is a key ingredient missing in today's"
+    },
+    {
+      "start": 284.38,
+      "end": 289.74,
+      "text": "generative models. And so we're going to see how, also how generative models will provide some key"
+    },
+    {
+      "start": 289.74,
+      "end": 292.12,
+      "text": "ingredients that are missing from reinforcement learning."
+    },
+    {
+      "start": 293.02,
+      "end": 298.24,
+      "text": "Okay. So for today, I just want to highlight the tight connections between GenAI and RL,"
+    },
+    {
+      "start": 298.71999999999997,
+      "end": 302.71999999999997,
+      "text": "and highlight how each provides a crucial tool for making progress in the other domain."
+    },
+    {
+      "start": 303.71999999999997,
+      "end": 308.68,
+      "text": "So as the plan for today, we're going to introduce the basic and necessary components"
+    },
+    {
+      "start": 308.68,
+      "end": 313.06,
+      "text": "of the reinforcement learning framework, because I think we haven't yet seen that today,"
+    },
+    {
+      "start": 313.14,
+      "end": 317.02,
+      "text": "and so I think it's useful to get a better understanding of what the reinforcement"
+    },
+    {
+      "start": 317.02,
+      "end": 321.76,
+      "text": "learning framework is. Then we're going to talk about how generative models can be used"
+    },
+    {
+      "start": 321.76,
+      "end": 322.97999999999996,
+      "text": "in reinforcement learning."
+    },
+    {
+      "start": 323.02,
+      "end": 328.06,
+      "text": "And then we'll describe how interaction can be framed as a generative model."
+    },
+    {
+      "start": 328.64,
+      "end": 331.68,
+      "text": "And we'll talk a little bit about goal-reaching tasks in particular."
+    },
+    {
+      "start": 333.24,
+      "end": 338.56,
+      "text": "And then we're going to talk about learning likelihoods and how we can use this"
+    },
+    {
+      "start": 338.56,
+      "end": 344.41999999999996,
+      "text": "in reinforcement learning. And finally, we'll just end on some future research"
+    },
+    {
+      "start": 344.41999999999996,
+      "end": 350.38,
+      "text": "directions that I'm particularly excited about. Okay, so let's now dive into this first part."
+    },
+    {
+      "start": 350.71999999999997,
+      "end": 352.64,
+      "text": "So first, we'll talk about,"
+    },
+    {
+      "start": 353.02,
+      "end": 357.85999999999996,
+      "text": "you know, what is reinforcement learning? We'll introduce the key concepts. We'll review RL."
+    },
+    {
+      "start": 358.15999999999997,
+      "end": 361.09999999999997,
+      "text": "And then we're going to talk about how generative models can be used as world models,"
+    },
+    {
+      "start": 361.09999999999997,
+      "end": 365.38,
+      "text": "how you can use it as a simulator, like how Ziad described in his talk."
+    },
+    {
+      "start": 367.0,
+      "end": 372.79999999999995,
+      "text": "Then we're going to talk about data, right? So in the standard supervised learning setup,"
+    },
+    {
+      "start": 372.96,
+      "end": 377.12,
+      "text": "what we've seen so far today, the typical assumption is that you already have some"
+    },
+    {
+      "start": 377.12,
+      "end": 382.9,
+      "text": "offline pot of data that you're training on, data and labels. But in reinforcement,"
+    },
+    {
+      "start": 383.02,
+      "end": 387.29999999999995,
+      "text": "learning, you're typically interacting with an environment, which means that you're trying to"
+    },
+    {
+      "start": 387.29999999999995,
+      "end": 393.02,
+      "text": "collect data using a policy that you're learning. And so where you get your data from now becomes a"
+    },
+    {
+      "start": 393.02,
+      "end": 398.35999999999996,
+      "text": "question in reinforcement learning. And then finally, we're going to talk about how we can"
+    },
+    {
+      "start": 398.35999999999996,
+      "end": 403.12,
+      "text": "use generative models as the policy. Okay, so how does reinforcement learning work?"
+    },
+    {
+      "start": 404.21999999999997,
+      "end": 408.28,
+      "text": "So typically, the standard set of assumptions is that we have a policy,"
+    },
+    {
+      "start": 408.28,
+      "end": 413.0,
+      "text": "um, pi a given s. All right,"
+    },
+    {
+      "start": 413.02,
+      "end": 416.56,
+      "text": "I'm not going to, I'm not sure I'm going to be able to do this, use the mouse, but, um,"
+    },
+    {
+      "start": 417.7,
+      "end": 426.94,
+      "text": "uh, this I think is, uh, we have a policy and we have an environment. And we are taking actions in"
+    },
+    {
+      "start": 426.94,
+      "end": 432.03999999999996,
+      "text": "this environment. And we're going to get back observations from the environment. So the policy"
+    },
+    {
+      "start": 432.03999999999996,
+      "end": 436.41999999999996,
+      "text": "now takes in these observations as input and outputs actions based on those observations. And"
+    },
+    {
+      "start": 436.41999999999996,
+      "end": 442.53999999999996,
+      "text": "we're just going to keep doing this in this cycle. And then we're also going to get rewards from the"
+    },
+    {
+      "start": 442.53999999999996,
+      "end": 442.96,
+      "text": "environment."
+    },
+    {
+      "start": 443.02,
+      "end": 448.65999999999997,
+      "text": "And so the policy is trying to visit states and actions that will give it high rewards. So for"
+    },
+    {
+      "start": 448.65999999999997,
+      "end": 456.03999999999996,
+      "text": "example, in a game, these rewards can correspond to points, such as in Tetris, maybe for an"
+    },
+    {
+      "start": 456.03999999999996,
+      "end": 461.32,
+      "text": "assistive robot. Rewards might be based on how well the robot enables a human to complete their tasks."
+    },
+    {
+      "start": 462.52,
+      "end": 467.2,
+      "text": "And then we're often also going to talk about trajectories of experience,"
+    },
+    {
+      "start": 467.2,
+      "end": 470.74,
+      "text": "which is just means this kind of sequence of states and actions."
+    },
+    {
+      "start": 472.24,
+      "end": 472.9,
+      "text": "And our goal,"
+    },
+    {
+      "start": 472.90000000000003,
+      "end": 477.52000000000004,
+      "text": "is, is to learn this policy, right? So, and so we're going to embed a machine learning model as"
+    },
+    {
+      "start": 477.52000000000004,
+      "end": 484.42,
+      "text": "this policy. All right. So the reinforcement learning objective basically consists of trying"
+    },
+    {
+      "start": 484.42,
+      "end": 489.40000000000003,
+      "text": "to, like we said, maximize the sum of future rewards that we're going to get back from the"
+    },
+    {
+      "start": 489.40000000000003,
+      "end": 494.32000000000005,
+      "text": "environment. So we're not just trying to maximize the rewards of today, but we'd also like to put"
+    },
+    {
+      "start": 494.32000000000005,
+      "end": 500.26000000000005,
+      "text": "ourselves in a position in a state that will allow us to get future, uh, high rewards tomorrow and"
+    },
+    {
+      "start": 500.26000000000005,
+      "end": 502.06000000000006,
+      "text": "the next day and so on and so forth. Right."
+    },
+    {
+      "start": 502.06,
+      "end": 507.28000000000003,
+      "text": "Um, as an example, eating vegetables today will make you happier tomorrow. And so we're"
+    },
+    {
+      "start": 507.28000000000003,
+      "end": 510.88,
+      "text": "not trying to just maximize our current happiness by eating candy all the time."
+    },
+    {
+      "start": 510.88,
+      "end": 518.92,
+      "text": "Uh, we typically also include this discount factor here, typically 0.9 or 0.99. And so what this"
+    },
+    {
+      "start": 518.92,
+      "end": 525.46,
+      "text": "discount factor does is basically all else things being, um, all else being equal, we would like to"
+    },
+    {
+      "start": 525.46,
+      "end": 530.2,
+      "text": "get rewards sooner rather than later, right? Um, if we only get one chocolate bar in our lives,"
+    },
+    {
+      "start": 530.2,
+      "end": 531.88,
+      "text": "we'd rather have that chocolate bar today,"
+    },
+    {
+      "start": 531.88,
+      "end": 537.58,
+      "text": "rather than, uh, in a year from now. And so we're going to also have this expectation."
+    },
+    {
+      "start": 539.02,
+      "end": 543.82,
+      "text": "Um, and so the point of this expectation is that, that again, like I always said before,"
+    },
+    {
+      "start": 543.82,
+      "end": 550.36,
+      "text": "this objective doesn't depend on a dataset, right? This objective depends, um, this expectation that"
+    },
+    {
+      "start": 550.36,
+      "end": 556.54,
+      "text": "we're computing is over trajectories that are being collected from the environment by our policy."
+    },
+    {
+      "start": 559.18,
+      "end": 559.72,
+      "text": "Okay."
+    },
+    {
+      "start": 561.88,
+      "end": 565.78,
+      "text": "That's how one trajectory gets sampled because we're going to return this to this many times,"
+    },
+    {
+      "start": 565.78,
+      "end": 570.28,
+      "text": "right? So we have this initial state. So, you know, when we come online in our environment,"
+    },
+    {
+      "start": 570.28,
+      "end": 575.86,
+      "text": "where we are right now is our initial state sampled from some initial distribution. Our"
+    },
+    {
+      "start": 575.86,
+      "end": 580.18,
+      "text": "policy takes in that initial state and decides on the first action that it wants to take."
+    },
+    {
+      "start": 581.68,
+      "end": 586.66,
+      "text": "The environment is going to react to that, that taken action, and it's going to change."
+    },
+    {
+      "start": 587.26,
+      "end": 591.82,
+      "text": "And so that means the next state that we get back as one is going to be the update,"
+    },
+    {
+      "start": 591.88,
+      "end": 597.9399999999999,
+      "text": "um, of now what has happened according to that action. And so then, uh, now we do it again. We,"
+    },
+    {
+      "start": 597.9399999999999,
+      "end": 604.84,
+      "text": "uh, put that state back into our policy and we get the next action, right? And so the nice thing"
+    },
+    {
+      "start": 604.84,
+      "end": 611.68,
+      "text": "about looking at all of these as these probability distributions is that now we can start to see"
+    },
+    {
+      "start": 611.68,
+      "end": 616.06,
+      "text": "what are the parts that we can replace with a generative model, right? We could replace the"
+    },
+    {
+      "start": 616.06,
+      "end": 621.1,
+      "text": "initial state, that initial state distribution. We could replace the policy. We could replace the"
+    },
+    {
+      "start": 621.1,
+      "end": 621.58,
+      "text": "dynamics."
+    },
+    {
+      "start": 621.88,
+      "end": 628.84,
+      "text": "Simulator. And so what also, what if, what if we think about this process as just layers of a"
+    },
+    {
+      "start": 628.84,
+      "end": 632.32,
+      "text": "deep neural network? And that's just a little bit of a teaser for later in this talk."
+    },
+    {
+      "start": 633.82,
+      "end": 639.46,
+      "text": "Okay. So reinforcement learning, just to kind of bring this point home, reinforcement learning is"
+    },
+    {
+      "start": 639.46,
+      "end": 643.42,
+      "text": "not supervised learning, right? And I want to highlight the key similarities and differences."
+    },
+    {
+      "start": 644.02,
+      "end": 649.84,
+      "text": "So for both RL and supervised learning, we have a model that's going to take in inputs and,"
+    },
+    {
+      "start": 649.84,
+      "end": 651.34,
+      "text": "and give out outputs, right?"
+    },
+    {
+      "start": 651.34,
+      "end": 651.82,
+      "text": "Right."
+    },
+    {
+      "start": 651.82,
+      "end": 655.6,
+      "text": "So in a supervised learning case, we're taking in observations from the world and we're outputting"
+    },
+    {
+      "start": 655.6,
+      "end": 661.24,
+      "text": "labels. Um, so as an example, if we're trying to play Tetris, if we're training a model to"
+    },
+    {
+      "start": 661.24,
+      "end": 666.7600000000001,
+      "text": "play Tetris, you're going to record moves from a human player and do supervised learning in order"
+    },
+    {
+      "start": 666.7600000000001,
+      "end": 673.7800000000001,
+      "text": "to mimic those moves, right? And so that means our policy is only going to be as good as the human"
+    },
+    {
+      "start": 673.7800000000001,
+      "end": 681.5200000000001,
+      "text": "that is collecting those labels. So RL uses different rewards. It's not mimicry, but reward,"
+    },
+    {
+      "start": 681.82,
+      "end": 686.98,
+      "text": "optimization. So instead, we're going to take the Tetris score and point the number of points that"
+    },
+    {
+      "start": 686.98,
+      "end": 691.3000000000001,
+      "text": "you're getting in Tetris and use that as the reward that we're trying to maximize, which means"
+    },
+    {
+      "start": 691.3000000000001,
+      "end": 696.46,
+      "text": "that potentially we can train a reinforcement learning agent to policy that can outperform any"
+    },
+    {
+      "start": 696.46,
+      "end": 705.46,
+      "text": "human at playing Tetris. Okay. Um, so how can we use generative models to do RL better?"
+    },
+    {
+      "start": 706.84,
+      "end": 711.22,
+      "text": "Let's now talk about, uh, generative models as a world model."
+    },
+    {
+      "start": 712.4200000000001,
+      "end": 719.08,
+      "text": "So the key challenge is that, uh, there are many tasks where data is going to be expensive"
+    },
+    {
+      "start": 719.08,
+      "end": 723.7,
+      "text": "or simulators are slow. We've already seen some examples of this in, in some previous talks,"
+    },
+    {
+      "start": 724.4200000000001,
+      "end": 730.48,
+      "text": "right? Um, so some examples of this are going to be nuclear fusion, right? How are we, we can't"
+    },
+    {
+      "start": 730.48,
+      "end": 736.1800000000001,
+      "text": "actually just do reinforcement learning from scratch, like on a fusion reactor, um, for in"
+    },
+    {
+      "start": 736.1800000000001,
+      "end": 739.96,
+      "text": "the atmospheric sciences, we can't just launch weather balloons and say, I don't know what's"
+    },
+    {
+      "start": 739.96,
+      "end": 741.7600000000001,
+      "text": "going to happen. Let's learn how to steer."
+    },
+    {
+      "start": 741.82,
+      "end": 745.9000000000001,
+      "text": "We can't do it. You know, this weather balloon same with education and healthcare, right?"
+    },
+    {
+      "start": 745.9000000000001,
+      "end": 750.7600000000001,
+      "text": "Settings where humans are involved. We can't just randomly try actions and learn how to do"
+    },
+    {
+      "start": 750.7600000000001,
+      "end": 754.36,
+      "text": "better, right? You, you, you hopefully don't want your doctor to be doing that with you."
+    },
+    {
+      "start": 755.36,
+      "end": 759.9200000000001,
+      "text": "And so there's a lot of these applications where we have no simulator. We, we, uh, we have no"
+    },
+    {
+      "start": 759.9200000000001,
+      "end": 764.5,
+      "text": "simulator. We only have a very slow simulator. And so what can we do? How can we learn good"
+    },
+    {
+      "start": 764.5,
+      "end": 771.22,
+      "text": "policies in these very safety critical or very expensive settings? So again, generative models,"
+    },
+    {
+      "start": 771.22,
+      "end": 777.6800000000001,
+      "text": "are may provide a key ingredient right so our solution is that we can use generative models"
+    },
+    {
+      "start": 777.6800000000001,
+      "end": 784.02,
+      "text": "as a simulator for learning and evaluating your policy so let's see how this would work let's say"
+    },
+    {
+      "start": 784.02,
+      "end": 790.1600000000001,
+      "text": "that we start with some data set we have a bunch of data corresponding to states actions and next"
+    },
+    {
+      "start": 790.1600000000001,
+      "end": 798.02,
+      "text": "states and so we're going to feed that into a world model generative model and so this is going"
+    },
+    {
+      "start": 798.02,
+      "end": 803.26,
+      "text": "to take in states and actions and output next state so we're just training the world model to"
+    },
+    {
+      "start": 803.26,
+      "end": 811.54,
+      "text": "mimic the data that we have so far right and so this world model can be it can you can take your"
+    },
+    {
+      "start": 811.54,
+      "end": 817.0799999999999,
+      "text": "pick of any kind of architecture it can be a generative adversarial network a gaussian process"
+    },
+    {
+      "start": 817.0799999999999,
+      "end": 821.96,
+      "text": "diffusion model and so on and so forth there are many possibilities that you can use here and so"
+    },
+    {
+      "start": 821.96,
+      "end": 827.22,
+      "text": "really your policy can now just practice on this simulator on this generative model"
+    },
+    {
+      "start": 827.22,
+      "end": 828.0,
+      "text": "you can take in states and actions and output next state so we're just training the world model to"
+    },
+    {
+      "start": 828.0,
+      "end": 831.14,
+      "text": "and then now we can use this policy and go back and collect more data"
+    },
+    {
+      "start": 831.14,
+      "end": 838.16,
+      "text": "and then use this to continue training your generative model and so this is one example"
+    },
+    {
+      "start": 838.16,
+      "end": 842.78,
+      "text": "of how you can use generative models in order to get better reinforcement learning algorithms"
+    },
+    {
+      "start": 842.78,
+      "end": 849.66,
+      "text": "all right so there are some opportunities and pitfalls with this approach right opportunities"
+    },
+    {
+      "start": 849.66,
+      "end": 854.0,
+      "text": "include you know if your generative model is very efficient where typically it's going to be a lot"
+    },
+    {
+      "start": 854.0,
+      "end": 857.98,
+      "text": "more efficient than the real world we're going to have very fast data collection you can now"
+    },
+    {
+      "start": 857.98,
+      "end": 862.52,
+      "text": "batch your data collection because you could just make multiple copies of your generative model and"
+    },
+    {
+      "start": 862.52,
+      "end": 868.02,
+      "text": "so now you can collect data even faster as long as you have enough compute data and training are"
+    },
+    {
+      "start": 868.02,
+      "end": 873.5600000000001,
+      "text": "now both going to be on gpu so that's very fast and efficient and we like that the problem with"
+    },
+    {
+      "start": 873.5600000000001,
+      "end": 878.64,
+      "text": "generative models with learning models as world models is that any errors are going to compound"
+    },
+    {
+      "start": 878.64,
+      "end": 883.14,
+      "text": "over time so let's just think about that a little bit right so if we pass in a state and action"
+    },
+    {
+      "start": 883.14,
+      "end": 887.96,
+      "text": "into our generative model and output and ask it to output next state they're probably just going to"
+    },
+    {
+      "start": 887.98,
+      "end": 892.0600000000001,
+      "text": "be a little bit of error there and so that next state is going to be a little bit off"
+    },
+    {
+      "start": 892.62,
+      "end": 896.38,
+      "text": "from the true next state that are the real environment would have given us"
+    },
+    {
+      "start": 897.1,
+      "end": 903.02,
+      "text": "but if we're now feeding that erroneous state back into our generative model"
+    },
+    {
+      "start": 903.82,
+      "end": 908.3000000000001,
+      "text": "then the next state that we that we get next the next output from that generative model is probably"
+    },
+    {
+      "start": 908.3000000000001,
+      "end": 912.14,
+      "text": "going to be even more wrong right and so that's what we mean when we say these errors are going"
+    },
+    {
+      "start": 912.14,
+      "end": 918.62,
+      "text": "to compound over time and so you know we also have a question of can i trust my model right"
+    },
+    {
+      "start": 918.62,
+      "end": 923.5,
+      "text": "if i've trained a policy using my model as a simulator and we know that our simulator has"
+    },
+    {
+      "start": 923.5,
+      "end": 929.34,
+      "text": "these errors am i going to feel comfortable deploying that policy out in the real world"
+    },
+    {
+      "start": 931.98,
+      "end": 938.46,
+      "text": "okay so we've talked about generative models as world models and some of the benefits and issues"
+    },
+    {
+      "start": 938.46,
+      "end": 942.06,
+      "text": "with using it as that and now i want to talk a little bit about jointly optimizing"
+    },
+    {
+      "start": 942.14,
+      "end": 947.02,
+      "text": "policy and data right so where does data come from in the supervised learning setting we"
+    },
+    {
+      "start": 947.02,
+      "end": 951.8199999999999,
+      "text": "typically just assume that there's already all of these nice curated data sets available for"
+    },
+    {
+      "start": 951.8199999999999,
+      "end": 956.62,
+      "text": "us which is generally true you know we have imagenet we have wikipedia we have reddit for"
+    },
+    {
+      "start": 956.62,
+      "end": 964.6999999999999,
+      "text": "language um in reinforcement learning the thing that you're learning is the parameters of your"
+    },
+    {
+      "start": 964.6999999999999,
+      "end": 967.9,
+      "text": "policy neural network right or the model of the world and so you're"
+    },
+    {
+      "start": 967.9,
+      "end": 972.06,
+      "text": "you don't have any data to start with right typically we're assuming"
+    },
+    {
+      "start": 972.14,
+      "end": 977.02,
+      "text": "that the policy is going to generate the data for us and then we can use that data to train"
+    },
+    {
+      "start": 977.02,
+      "end": 983.66,
+      "text": "our world model or to train our policy and so on and so forth right um but but now we so now"
+    },
+    {
+      "start": 983.66,
+      "end": 988.3,
+      "text": "in the reinforcement learning setup we have to think about data now as something that is also"
+    },
+    {
+      "start": 988.3,
+      "end": 996.3,
+      "text": "being optimized because we want a good policy in order to get good data right and so you can think"
+    },
+    {
+      "start": 996.3,
+      "end": 1001.5,
+      "text": "about in the reinforcement learning framework that we're really trying to do this joint optimization"
+    },
+    {
+      "start": 1002.14,
+      "end": 1007.26,
+      "text": "both the data and the policy rather rather than just the model in supervised learning"
+    },
+    {
+      "start": 1008.46,
+      "end": 1013.8199999999999,
+      "text": "right so this is a chicken and egg problem where we need a good data set in order to train a good"
+    },
+    {
+      "start": 1013.8199999999999,
+      "end": 1021.58,
+      "text": "policy but we also need a good policy in order to collect good data right uh and so"
+    },
+    {
+      "start": 1023.42,
+      "end": 1027.74,
+      "text": "um if we think about this data as a trajectory or sequence of actions"
+    },
+    {
+      "start": 1027.74,
+      "end": 1030.94,
+      "text": "it's going to be visualized like this right so we have this example"
+    },
+    {
+      "start": 1032.14,
+      "end": 1035.3400000000001,
+      "text": "navigation problem where we're trying to go from this initial state to the goal"
+    },
+    {
+      "start": 1037.0200000000002,
+      "end": 1041.3400000000001,
+      "text": "and if we think about rl from a probabilistic perspective which is has been very successful"
+    },
+    {
+      "start": 1041.3400000000001,
+      "end": 1047.26,
+      "text": "for generative modeling we want to get a policy that uh that gets high returns right but we don't"
+    },
+    {
+      "start": 1047.26,
+      "end": 1052.22,
+      "text": "know which of these trajectories are actually going to get those high returns and so now these"
+    },
+    {
+      "start": 1052.22,
+      "end": 1059.0200000000002,
+      "text": "trajectories you can think of as a latent variable and so the general the gen ai perspectives gives"
+    },
+    {
+      "start": 1059.0200000000002,
+      "end": 1061.98,
+      "text": "us important tools for how we can think about solving this problem"
+    },
+    {
+      "start": 1062.14,
+      "end": 1067.18,
+      "text": "right and so um before we proceed further i just want to now introduce some notation"
+    },
+    {
+      "start": 1068.5400000000002,
+      "end": 1074.5400000000002,
+      "text": "uh so we're going to typically talk about the policy or model here as pi theta which takes in"
+    },
+    {
+      "start": 1075.26,
+      "end": 1081.3400000000001,
+      "text": "some previous trajectory or data as tau and then q tau is going to be the data that we've gathered"
+    },
+    {
+      "start": 1081.3400000000001,
+      "end": 1091.5800000000002,
+      "text": "so far all right and so when we write out the reinforcement learning objective uh we can see that"
+    },
+    {
+      "start": 1091.5800000000002,
+      "end": 1091.8200000000002,
+      "text": "here and then we write out the reinforcement learning objective uh we can see that here"
+    },
+    {
+      "start": 1092.14,
+      "end": 1095.0200000000002,
+      "text": "right so we're just trying to maximize we've just added a log in there"
+    },
+    {
+      "start": 1096.0600000000002,
+      "end": 1100.5400000000002,
+      "text": "which you can you can disregard but we're just trying to maximize this objective we're trying"
+    },
+    {
+      "start": 1100.5400000000002,
+      "end": 1106.94,
+      "text": "to maximize the log of the expected return uh return and the big r here just corresponds to"
+    },
+    {
+      "start": 1106.94,
+      "end": 1113.42,
+      "text": "the sum over our future rewards right and so it turns out that in general modeling"
+    },
+    {
+      "start": 1113.42,
+      "end": 1117.5800000000002,
+      "text": "there's a nice trick for figuring out how to learn this latent variable how to learn"
+    },
+    {
+      "start": 1117.5800000000002,
+      "end": 1122.0600000000002,
+      "text": "what this uh what this trajectory should be what a good trajectory is that has gives a"
+    },
+    {
+      "start": 1122.06,
+      "end": 1129.5,
+      "text": "me high return and that's an evidence lower bound and so we can apply this trick this elbow trick"
+    },
+    {
+      "start": 1130.3,
+      "end": 1139.82,
+      "text": "to our rl maximizing objective and it turns out that now this expression that it gives us"
+    },
+    {
+      "start": 1140.7,
+      "end": 1146.94,
+      "text": "is now actually jointly optimizing both our policy both pi theta and the data q"
+    },
+    {
+      "start": 1150.22,
+      "end": 1150.54,
+      "text": "yes"
+    },
+    {
+      "start": 1152.06,
+      "end": 1166.3,
+      "text": "oh you're right there is a typo there um yes there is a typo uh oh no no sorry there um"
+    },
+    {
+      "start": 1169.1799999999998,
+      "end": 1171.58,
+      "text": "pi theta rt"
+    },
+    {
+      "start": 1173.82,
+      "end": 1181.1,
+      "text": "um so i think we're just missing a parentheses but we're just adding in uh q over tau q q tau over q tau"
+    },
+    {
+      "start": 1181.1,
+      "end": 1181.4199999999998,
+      "text": "q over tau q q tau over q tau"
+    },
+    {
+      "start": 1182.06,
+      "end": 1188.78,
+      "text": "because that just is one and so we're adding that in and then um yeah yeah"
+    },
+    {
+      "start": 1191.58,
+      "end": 1195.1799999999998,
+      "text": "yes but there is a typo and so i should correct that in the slide"
+    },
+    {
+      "start": 1196.86,
+      "end": 1204.7,
+      "text": "okay um and so right so usually we think about q tau as a bucket of trajectories each with a"
+    },
+    {
+      "start": 1204.7,
+      "end": 1209.8999999999999,
+      "text": "different weight and so we can now also think about this as learning a parametric world model"
+    },
+    {
+      "start": 1209.9,
+      "end": 1213.3400000000001,
+      "text": "and so now we can take this optimal"
+    },
+    {
+      "start": 1213.3400000000001,
+      "end": 1217.66,
+      "text": "distribution of our data and plug it back in and solve for pi right"
+    },
+    {
+      "start": 1221.02,
+      "end": 1224.0600000000002,
+      "text": "and so one way of thinking about this objective on the last line here"
+    },
+    {
+      "start": 1224.7,
+      "end": 1232.46,
+      "text": "is that we're multiplying these two quantities our higher our return by our uh probability of"
+    },
+    {
+      "start": 1232.46,
+      "end": 1237.98,
+      "text": "uh of the trajectory right so sorry let me say that again um we're multiplying the reward"
+    },
+    {
+      "start": 1238.94,
+      "end": 1245.02,
+      "text": "our summed reward for a trajectory by the likelihood of that trajectory under our"
+    },
+    {
+      "start": 1245.02,
+      "end": 1250.38,
+      "text": "current policy and so we can see that we want to the way to that we maximize this"
+    },
+    {
+      "start": 1251.1,
+      "end": 1256.8600000000001,
+      "text": "is by trying to increase the likelihood of trajectories that give us high returns"
+    },
+    {
+      "start": 1260.22,
+      "end": 1267.66,
+      "text": "all right and so uh with so with that intuition we now are trying to optimize for pi"
+    },
+    {
+      "start": 1267.98,
+      "end": 1275.18,
+      "text": "to make this true okay so the complete algorithm now looks as follows we're going to sample"
+    },
+    {
+      "start": 1275.18,
+      "end": 1281.5,
+      "text": "trajectories from your policy weight those trajectories by the return and then we're"
+    },
+    {
+      "start": 1281.5,
+      "end": 1286.78,
+      "text": "going to try to maximize the likelihood of the high return trajectories and so this method is"
+    },
+    {
+      "start": 1286.78,
+      "end": 1294.38,
+      "text": "called reward weighted regression because you're basically just regressing your policy"
+    },
+    {
+      "start": 1295.1,
+      "end": 1296.78,
+      "text": "onto the reward weighted trajectories"
+    },
+    {
+      "start": 1298.94,
+      "end": 1305.34,
+      "text": "okay and so this last expression actually looks the same as a very standard algorithm that we use"
+    },
+    {
+      "start": 1305.34,
+      "end": 1309.1,
+      "text": "in reinforcement learning which is called policy gradient so maybe some of you have already heard"
+    },
+    {
+      "start": 1309.1,
+      "end": 1314.54,
+      "text": "about policy gradient because it's also what's used to fine-tune large language models so in"
+    },
+    {
+      "start": 1314.54,
+      "end": 1319.74,
+      "text": "rlhf typically what people do is you learn a reward model based on human preferences"
+    },
+    {
+      "start": 1319.74,
+      "end": 1327.02,
+      "text": "and then you use policy gradient to maximize that reward with the llm right so now we're just trying"
+    },
+    {
+      "start": 1327.02,
+      "end": 1327.18,
+      "text": "to"
+    },
+    {
+      "start": 1327.98,
+      "end": 1332.38,
+      "text": "maximize the human preferences for responses by making those responses"
+    },
+    {
+      "start": 1332.38,
+      "end": 1335.18,
+      "text": "more likely for the large language model to output"
+    },
+    {
+      "start": 1337.34,
+      "end": 1341.26,
+      "text": "and so the nice thing is that typically in reinforcement learning we actually come to this"
+    },
+    {
+      "start": 1341.26,
+      "end": 1345.18,
+      "text": "policy gradient objective from a slightly different angle but here we've actually come"
+    },
+    {
+      "start": 1345.18,
+      "end": 1352.14,
+      "text": "to it from using this elbow this this evidence lower bound from a more probabilistic generative"
+    },
+    {
+      "start": 1352.14,
+      "end": 1356.54,
+      "text": "modeling perspective and so it's nice to kind of see that you can come to the same objective from"
+    },
+    {
+      "start": 1356.54,
+      "end": 1357.9,
+      "text": "two very different perspectives"
+    },
+    {
+      "start": 1357.98,
+      "end": 1364.94,
+      "text": "okay so the key takeaway is that this generative modeling perspective on reinforcement learning is"
+    },
+    {
+      "start": 1364.94,
+      "end": 1370.78,
+      "text": "is not new but it does provide some key insights into data right how we should collect it how we"
+    },
+    {
+      "start": 1370.78,
+      "end": 1376.7,
+      "text": "can learn from it and so while we've been discussing how to optimize all of this uh"
+    },
+    {
+      "start": 1376.7,
+      "end": 1380.06,
+      "text": "how to optimize both the data set of trajectories as well as well as the policy"
+    },
+    {
+      "start": 1382.06,
+      "end": 1385.74,
+      "text": "we can also think about this as optimizing a model of the world"
+    },
+    {
+      "start": 1387.74,
+      "end": 1387.98,
+      "text": "all right"
+    },
+    {
+      "start": 1387.98,
+      "end": 1393.98,
+      "text": "and so now i want to start talking about generative modeling as the policy so"
+    },
+    {
+      "start": 1394.8600000000001,
+      "end": 1399.42,
+      "text": "one of the simplest ways in which people have been using generative models as policies"
+    },
+    {
+      "start": 1399.42,
+      "end": 1405.42,
+      "text": "is uh one example work is this work called decision transformer where they're just training"
+    },
+    {
+      "start": 1405.42,
+      "end": 1411.42,
+      "text": "a transformer to uh with a supervised learning objective an auto-aggressive objective to mimic"
+    },
+    {
+      "start": 1411.42,
+      "end": 1417.1,
+      "text": "trajectories of data that we already have access to right so again it should be pretty obvious to us"
+    },
+    {
+      "start": 1417.1,
+      "end": 1417.74,
+      "text": "that if we are using generative models as policies we're going to be using generative models as policies"
+    },
+    {
+      "start": 1417.74,
+      "end": 1419.74,
+      "text": "as the only anys that we have available in that offline data set as opposed to just"
+    },
+    {
+      "start": 1419.74,
+      "end": 1422.22,
+      "text": "the auger of a single requirement on that so what we're trying to do is if we are assuming that we"
+    },
+    {
+      "start": 1422.22,
+      "end": 1427.58,
+      "text": "have this big bucket of data and we're training a transformer to just auto regress on that sequence"
+    },
+    {
+      "start": 1427.58,
+      "end": 1433.82,
+      "text": "of data that we're only going to get the same behavior as what's available in that offline"
+    },
+    {
+      "start": 1433.82,
+      "end": 1439.66,
+      "text": "data set but it turns out that you can actually take the reward achieved by each of those"
+    },
+    {
+      "start": 1439.66,
+      "end": 1445.74,
+      "text": "trajectories and train the transformer conditioned on that reward to go"
+    },
+    {
+      "start": 1445.74,
+      "end": 1447.58,
+      "text": "and now you can at test time you can actually pass an trickset and then at test time you can actually pass an outcomes to"
+    },
+    {
+      "start": 1447.58,
+      "end": 1453.52,
+      "text": "pass in a higher reward to go to that transformer and it can somewhat generalize and actually"
+    },
+    {
+      "start": 1453.52,
+      "end": 1460.0,
+      "text": "attempt to return trajectories that can achieve that higher score so it's a very simple somewhat"
+    },
+    {
+      "start": 1460.0,
+      "end": 1465.28,
+      "text": "naive method it turns out that we can do something a little bit nicer with diffusion policies"
+    },
+    {
+      "start": 1465.9399999999998,
+      "end": 1470.8,
+      "text": "so in this setting I want to train an optimal policy from an offline data set and I want to"
+    },
+    {
+      "start": 1470.8,
+      "end": 1477.52,
+      "text": "do it with a diffusion model and so I can first again just train this diffusion model to imitate"
+    },
+    {
+      "start": 1477.52,
+      "end": 1483.8799999999999,
+      "text": "my behavior policy but now I want to ask again how do I improve upon this behavior policy we"
+    },
+    {
+      "start": 1483.8799999999999,
+      "end": 1489.58,
+      "text": "can do the same thing we did last time we can condition the diffusion model on the return"
+    },
+    {
+      "start": 1489.58,
+      "end": 1495.8799999999999,
+      "text": "but it turns out that I can do something slightly better than that with diffusion models you can"
+    },
+    {
+      "start": 1495.8799999999999,
+      "end": 1502.9,
+      "text": "actually guide the diffusion model at sampling time to output better actions and you can do"
+    },
+    {
+      "start": 1502.9,
+      "end": 1507.46,
+      "text": "this by using a guidance term so some possible guides that you can use"
+    },
+    {
+      "start": 1507.52,
+      "end": 1513.46,
+      "text": "are going to be your reward function or your Q function so the Q function just outputs the"
+    },
+    {
+      "start": 1513.46,
+      "end": 1520.36,
+      "text": "predicted return for a specific reward function and it turns out that that um the way that I'm"
+    },
+    {
+      "start": 1520.36,
+      "end": 1528.4,
+      "text": "going to sample from my diffusion model is that uh the or the the policy that I end up learning from"
+    },
+    {
+      "start": 1528.4,
+      "end": 1534.82,
+      "text": "my diffusion model is going to look like follows I'm going to have this first oops this first term"
+    },
+    {
+      "start": 1536.26,
+      "end": 1536.3799999999999,
+      "text": "um"
+    },
+    {
+      "start": 1537.16,
+      "end": 1537.46,
+      "text": "which"
+    },
+    {
+      "start": 1537.52,
+      "end": 1542.26,
+      "text": "is just trying to maximize the likelihood of the action in my data set right so that's just"
+    },
+    {
+      "start": 1542.26,
+      "end": 1547.12,
+      "text": "the standard supervised learning loss but I also have a weighted guidance term that"
+    },
+    {
+      "start": 1547.12,
+      "end": 1556.24,
+      "text": "says I also want to try to maximize my Q function and so guide based methods basically uh can drift"
+    },
+    {
+      "start": 1556.24,
+      "end": 1562.0,
+      "text": "the generated actions to do better than what's in the data set and try to uh try"
+    },
+    {
+      "start": 1562.0,
+      "end": 1567.16,
+      "text": "to maximize the Q function and so I just want to note that this is happening not"
+    },
+    {
+      "start": 1567.16,
+      "end": 1570.46,
+      "text": "during training but at inference time when we're sampling from our diffusion model"
+    },
+    {
+      "start": 1572.8000000000002,
+      "end": 1575.74,
+      "text": "and so diffuser is just one example of a model that does this"
+    },
+    {
+      "start": 1577.3600000000001,
+      "end": 1580.72,
+      "text": "and here are just some examples"
+    },
+    {
+      "start": 1582.88,
+      "end": 1585.7,
+      "text": "let's try this again it was just very fast"
+    },
+    {
+      "start": 1589.48,
+      "end": 1596.8000000000002,
+      "text": "okay it won't play anymore uh okay but you basically saw in this maze task right that we can start with random noise"
+    },
+    {
+      "start": 1596.8,
+      "end": 1601.72,
+      "text": "with all of these states kind of like over the maze environment and the diffusion model is"
+    },
+    {
+      "start": 1601.72,
+      "end": 1606.52,
+      "text": "basically slowly denoising that trajectory to get the shortest path through the maze"
+    },
+    {
+      "start": 1608.2,
+      "end": 1614.44,
+      "text": "and so the guidance that we're using at sampling time will just correspond to the length of that"
+    },
+    {
+      "start": 1614.44,
+      "end": 1619.84,
+      "text": "path right and so the guidance term that we're using in this example is just saying I want to I"
+    },
+    {
+      "start": 1619.84,
+      "end": 1626.44,
+      "text": "want to minimize the length of the path and so I can now guide my diffusion model to output actions that correspond"
+    },
+    {
+      "start": 1626.44,
+      "end": 1633.46,
+      "text": "respond to a shorter path in this maze. And so I can have another example of block stacking."
+    },
+    {
+      "start": 1635.3200000000002,
+      "end": 1639.5800000000002,
+      "text": "And this is unconditional stacking. So here I'm just trying to maximize the height of this block"
+    },
+    {
+      "start": 1639.5800000000002,
+      "end": 1644.0800000000002,
+      "text": "tower with no other constraints. And so my guidance term just corresponds to what is the height of my"
+    },
+    {
+      "start": 1644.0800000000002,
+      "end": 1650.92,
+      "text": "block tower so far and I want to maximize it. I can also do this with conditional stacking and"
+    },
+    {
+      "start": 1650.92,
+      "end": 1656.0800000000002,
+      "text": "say that I have maybe some test time constraints. Maybe I don't want to put gray blocks on top of"
+    },
+    {
+      "start": 1656.08,
+      "end": 1661.72,
+      "text": "the blue ones. And so my guidance term is basically going to give me a penalty if I do that."
+    },
+    {
+      "start": 1661.72,
+      "end": 1667.78,
+      "text": "And I can now learn to stack blocks at test time as long as I have access to that guidance term."
+    },
+    {
+      "start": 1667.78,
+      "end": 1671.5,
+      "text": "And so I want to point out that that guidance term is something that I'm assuming is is probably"
+    },
+    {
+      "start": 1671.5,
+      "end": 1676.6599999999999,
+      "text": "going to be some learned function. But once I have it, I can swap in and out different score"
+    },
+    {
+      "start": 1676.6599999999999,
+      "end": 1686.02,
+      "text": "functions and just use that same pre-trained diffusion model to get policies. Okay so there"
+    },
+    {
+      "start": 1686.02,
+      "end": 1686.06,
+      "text": "are a lot of different ways to do this. There are a lot of different ways to do this. There are a"
+    },
+    {
+      "start": 1686.06,
+      "end": 1691.7,
+      "text": "also a slightly different type of approach that we can use to try to get better behavior out of a"
+    },
+    {
+      "start": 1691.7,
+      "end": 1696.02,
+      "text": "diffusion model. And so that's called a select based approach. So here we're just going to"
+    },
+    {
+      "start": 1696.02,
+      "end": 1699.74,
+      "text": "generate a bunch of candidate actions from our behavior policy. So we've trained this diffusion"
+    },
+    {
+      "start": 1699.74,
+      "end": 1704.8999999999999,
+      "text": "model to just mimic the behavior data set. We're going to sample a bunch of actions from it and"
+    },
+    {
+      "start": 1704.8999999999999,
+      "end": 1711.2,
+      "text": "then we're going to use again some criterion like a reward function or Q function to select out of"
+    },
+    {
+      "start": 1711.2,
+      "end": 1716.0,
+      "text": "that set of actions. Right and so I'm just going to want to select an action that has"
+    },
+    {
+      "start": 1716.0,
+      "end": 1722.9,
+      "text": "a high reward or a high Q function, a high Q value from that set of actions. And so one example"
+    },
+    {
+      "start": 1722.9,
+      "end": 1728.3,
+      "text": "method is called implicit diffusion Q learning. And so this is just a modification of an existing"
+    },
+    {
+      "start": 1728.3,
+      "end": 1733.34,
+      "text": "offline reinforcement learning method that I'm not going to get too much into. But we're basically"
+    },
+    {
+      "start": 1733.34,
+      "end": 1741.26,
+      "text": "just going to replace the standard more simplistic Gaussian policy learned from the original method"
+    },
+    {
+      "start": 1741.26,
+      "end": 1745.94,
+      "text": "with a diffusion model. We're going to train a Q function and I'm not going to get into how"
+    },
+    {
+      "start": 1745.94,
+      "end": 1752.6000000000001,
+      "text": "to do that. But we're going to weight samples from this diffusion policy using the Q function"
+    },
+    {
+      "start": 1752.6000000000001,
+      "end": 1756.14,
+      "text": "that we've learned. So we're going to use importance sampling to basically just pull"
+    },
+    {
+      "start": 1756.14,
+      "end": 1760.8200000000002,
+      "text": "out high value actions. And I just want to point out in this really simple example, so here I've"
+    },
+    {
+      "start": 1760.8200000000002,
+      "end": 1767.18,
+      "text": "just created, I just have a 2D bandit problem which just means I have these like 2D actions."
+    },
+    {
+      "start": 1767.18,
+      "end": 1774.92,
+      "text": "And so I have these clusters of actions on the left hand side and the color represents the reward"
+    },
+    {
+      "start": 1774.92,
+      "end": 1775.8200000000002,
+      "text": "that it gives me. Right."
+    },
+    {
+      "start": 1775.94,
+      "end": 1782.78,
+      "text": "So blue is low reward and red is high reward. And so I can see that I would like to select"
+    },
+    {
+      "start": 1782.78,
+      "end": 1790.16,
+      "text": "actions that correspond to that red cluster. So if I train a Gaussian policy based on this data,"
+    },
+    {
+      "start": 1790.16,
+      "end": 1796.8200000000002,
+      "text": "it kind of mixes up these clusters and doesn't do a really great job. And so I'm kind of getting all"
+    },
+    {
+      "start": 1796.8200000000002,
+      "end": 1803.3600000000001,
+      "text": "of these different erroneous clusters of actions from my Gaussian policy, whereas a diffusion"
+    },
+    {
+      "start": 1803.3600000000001,
+      "end": 1804.98,
+      "text": "policy is actually able to"
+    },
+    {
+      "start": 1805.94,
+      "end": 1811.16,
+      "text": "correctly model each of those clusters and select out the ones that have high value."
+    },
+    {
+      "start": 1813.5,
+      "end": 1820.28,
+      "text": "Okay. So it turns out that we can actually combine both of these steps. We can combine both the guide"
+    },
+    {
+      "start": 1820.28,
+      "end": 1830.78,
+      "text": "and select steps. And I also want to talk about, so using both guide and select can be error prone."
+    },
+    {
+      "start": 1830.78,
+      "end": 1834.3200000000002,
+      "text": "There are some issues with both of these approaches."
+    },
+    {
+      "start": 1835.94,
+      "end": 1841.28,
+      "text": "One is that your diffusion model can have approximation error in modeling this complicated"
+    },
+    {
+      "start": 1841.28,
+      "end": 1846.74,
+      "text": "policy distribution. And the other is that your critic, your Q function, can also have error"
+    },
+    {
+      "start": 1846.74,
+      "end": 1854.0,
+      "text": "in evaluating unseen actions. And so even though your diffusion model is trained on offline data,"
+    },
+    {
+      "start": 1854.0,
+      "end": 1858.8600000000001,
+      "text": "the more you sample from it, the more likely it is that you're accidentally going to sample an"
+    },
+    {
+      "start": 1858.8600000000001,
+      "end": 1864.3200000000002,
+      "text": "action that wasn't actually in your data set, which is just caused by an error in your diffusion model."
+    },
+    {
+      "start": 1865.94,
+      "end": 1871.3400000000001,
+      "text": "And if you pass in those OODI actions into your value function, your value function can also give"
+    },
+    {
+      "start": 1871.3400000000001,
+      "end": 1879.3200000000002,
+      "text": "you wrong estimated Q values. And because we're trying to take a max of that Q value, it's very"
+    },
+    {
+      "start": 1879.3200000000002,
+      "end": 1886.16,
+      "text": "likely that it's even more likely that the highest value in that set is going to be a mistake from"
+    },
+    {
+      "start": 1886.16,
+      "end": 1890.78,
+      "text": "their value function. And so, as a result, the generation of high quality actions with"
+    },
+    {
+      "start": 1890.78,
+      "end": 1894.3400000000001,
+      "text": "these existing methods is affected by this kind of error exploitation."
+    },
+    {
+      "start": 1895.94,
+      "end": 1909.94,
+      "text": "So in this in this method we're going to do something slightly different, which is instead of using as a guidance term the reward function or Q function which we've established the Q function can can have errors we're actually going"
+    },
+    {
+      "start": 1909.94,
+      "end": 1920.94,
+      "text": "to instead use the density ratio. So this density ratio just corresponds to the likelihood of the correct action."
+    },
+    {
+      "start": 1920.94,
+      "end": 1934.94,
+      "text": "So the density star here corresponds to the optimal policy, or our current policy in practice over the probability of us taking that action from our current state s present in the data set."
+    },
+    {
+      "start": 1934.94,
+      "end": 1944.94,
+      "text": "And i'm not going to talk about how we learn this density ratio, but there are a lot of existing approaches looking into how we learn this, and so those methods are called dice methods."
+    },
+    {
+      "start": 1944.94,
+      "end": 1950.94,
+      "text": "So, and then the select step is very standard so again we're just going to generate a few candidate actions and use the Q."
+    },
+    {
+      "start": 1950.94,
+      "end": 1956.94,
+      "text": "Step one with the highest value right and again I just want to show a very classic example."
+    },
+    {
+      "start": 1956.94,
+      "end": 1964.94,
+      "text": "Again of the of a 2d bandit problem. So on the upper left hand side we have our action distribution."
+    },
+    {
+      "start": 1964.94,
+      "end": 1971.94,
+      "text": "So yellow is where we have a lot of sampling of actions, and in dark blue we don't have a lot of actions."
+    },
+    {
+      "start": 1971.94,
+      "end": 1977.94,
+      "text": "Right. So we don't have a lot of actions in that very center dot, and we don't have a lot of actions in those corners."
+    },
+    {
+      "start": 1977.94,
+      "end": 1980.94,
+      "text": "So if we train a diffusion behavior policy on that data."
+    },
+    {
+      "start": 1980.94,
+      "end": 1987.94,
+      "text": "We see that in the center it's not it's not looking very accurate right because we have no data there."
+    },
+    {
+      "start": 1987.94,
+      "end": 1993.94,
+      "text": "And then our true reward function is, you can see, has these 2 rings, these annular rings."
+    },
+    {
+      "start": 1993.94,
+      "end": 2000.94,
+      "text": "And because I have no data in that center I don't expect my method to be able to select actions from that center."
+    },
+    {
+      "start": 2000.94,
+      "end": 2010.94,
+      "text": "So what i'm hoping to see is that my my my policy, my optimal policy at the end is going to try to select actions in that bigger yellow ring."
+    },
+    {
+      "start": 2010.94,
+      "end": 2021.94,
+      "text": "That's the dot side. And so again we can see that our learned reward function based on that data set has this error right because it doesn't see anything in the center."
+    },
+    {
+      "start": 2021.94,
+      "end": 2025.94,
+      "text": "It has erroneously predicted that there is going to be high reward in that center."
+    },
+    {
+      "start": 2025.94,
+      "end": 2028.94,
+      "text": "So let's look at what happens across some different methods."
+    },
+    {
+      "start": 2028.94,
+      "end": 2035.94,
+      "text": "So here we have a select only method and a guide only method first, and we'll look at them right."
+    },
+    {
+      "start": 2035.94,
+      "end": 2039.94,
+      "text": "So in the select only method it means that we're not doing a guidance step."
+    },
+    {
+      "start": 2039.94,
+      "end": 2047.94,
+      "text": "So all we're seeing is our diffusion model fitting to the behavior data set that action distribution that we saw in the last slide."
+    },
+    {
+      "start": 2047.94,
+      "end": 2054.94,
+      "text": "And because our diffusion model was inaccurate it's erroneously predicting these high actions in the center."
+    },
+    {
+      "start": 2054.94,
+      "end": 2063.94,
+      "text": "Right. And so when we sample from it we are getting actions in the center that we shouldn't same thing is happening with our guide only method."
+    },
+    {
+      "start": 2063.94,
+      "end": 2068.94,
+      "text": "Our guide only method. Our critic is erroneously thinking that there's high value actions in the center."
+    },
+    {
+      "start": 2068.94,
+      "end": 2076.94,
+      "text": "And so we're accidentally selecting for them, or we're so we're sampling from our diffusion model, there's no select steps so the bottom looks the same as the top."
+    },
+    {
+      "start": 2076.94,
+      "end": 2081.94,
+      "text": "And so again we're kind of we're doing not a very good job of selecting actions."
+    },
+    {
+      "start": 2081.94,
+      "end": 2089.94,
+      "text": "Whereas our method that is doing guide and then select right so we're guiding the diffusion model."
+    },
+    {
+      "start": 2089.94,
+      "end": 2096.94,
+      "text": "The the output the actions that are being output by the diffusion model using that density ratio as a guidance term."
+    },
+    {
+      "start": 2096.94,
+      "end": 2105.94,
+      "text": "We're actually only selecting the best ones out of those, and so we see that we can get this really nice ring of actions."
+    },
+    {
+      "start": 2105.94,
+      "end": 2107.94,
+      "text": "Okay."
+    },
+    {
+      "start": 2107.94,
+      "end": 2120.94,
+      "text": "So we've looked at a couple of different ways in which we can use transformers diffusion models generative models as policies, and some very toy examples. Right. So, a policy, we've established is a generative model."
+    },
+    {
+      "start": 2120.94,
+      "end": 2124.94,
+      "text": "And I want to just revisit policy gradient again right so we saw policy gradient."
+    },
+    {
+      "start": 2124.94,
+      "end": 2125.94,
+      "text": "Where we were computing."
+    },
+    {
+      "start": 2125.94,
+      "end": 2133.94,
+      "text": "The elbow of our objective of trying to maximize the expected return our expected sum over rewards."
+    },
+    {
+      "start": 2133.94,
+      "end": 2139.94,
+      "text": "Right. So the more standard way of deriving policy gradient is shown here."
+    },
+    {
+      "start": 2139.94,
+      "end": 2146.94,
+      "text": "So again, we're just taking our objective, which is trying to maximize our expected sum over rewards."
+    },
+    {
+      "start": 2146.94,
+      "end": 2154.94,
+      "text": "And we can actually just compute the derivative directly of this objective, and this is how we get typically how we get policy gradient."
+    },
+    {
+      "start": 2154.94,
+      "end": 2168.94,
+      "text": "And so it turns out that this thing that we have on the right hand side right the derivative of the log probability of our trajectory is also called our square function."
+    },
+    {
+      "start": 2168.94,
+      "end": 2177.94,
+      "text": "And so it turns out that we're also optimizing for a score function with policy gradient, which is exactly what we're doing with generative models."
+    },
+    {
+      "start": 2177.94,
+      "end": 2182.94,
+      "text": "And so now this leads us to a question which is, can we actually train diffusion models with reinforcement learning."
+    },
+    {
+      "start": 2182.94,
+      "end": 2186.94,
+      "text": "And it turns out that the answer is yes."
+    },
+    {
+      "start": 2186.94,
+      "end": 2194.94,
+      "text": "So let's step back a bit and just think about what does it mean to think about diffusion models from an oral perspective, right so let's formalize this."
+    },
+    {
+      "start": 2194.94,
+      "end": 2200.94,
+      "text": "Let's think about how diffusion can be cast as a Markov decision process as an MVP."
+    },
+    {
+      "start": 2200.94,
+      "end": 2206.94,
+      "text": "So our states can be the noisy image at each diffusion step."
+    },
+    {
+      "start": 2206.94,
+      "end": 2210.94,
+      "text": "Our actions correspond to how we do noise."
+    },
+    {
+      "start": 2210.94,
+      "end": 2212.94,
+      "text": "So what the prediction is."
+    },
+    {
+      "start": 2212.94,
+      "end": 2217.94,
+      "text": "What the predicted noise is which is the output of our diffusion model."
+    },
+    {
+      "start": 2217.94,
+      "end": 2226.94,
+      "text": "Our reward can be just some final utility function such as, you know, image aesthetics or compressibility."
+    },
+    {
+      "start": 2226.94,
+      "end": 2232.94,
+      "text": "And so, so here's how we can kind of like cast the diffusion model as an MVP."
+    },
+    {
+      "start": 2232.94,
+      "end": 2240.94,
+      "text": "And now it turns out that we can take that that framework, and just directly train diffusion models with policy gradient."
+    },
+    {
+      "start": 2240.94,
+      "end": 2249.94,
+      "text": "So we're going to fine tune diffusion models, using reinforcement learning over the denoising trajectory."
+    },
+    {
+      "start": 2249.94,
+      "end": 2258.94,
+      "text": "And I want to point out that this is different from how we typically train diffusion models right because typically we're doing something that looks more like supervised learning."
+    },
+    {
+      "start": 2258.94,
+      "end": 2265.94,
+      "text": "We're trying to maximize the likelihood that the diffusion model is going to output, something from the data set it was trained on."
+    },
+    {
+      "start": 2265.94,
+      "end": 2268.94,
+      "text": "But now we're going to apply policy gradient to maximize."
+    },
+    {
+      "start": 2268.94,
+      "end": 2271.94,
+      "text": "Some score function some reward."
+    },
+    {
+      "start": 2271.94,
+      "end": 2278.94,
+      "text": "So why would we want to do this, why would we want to do this instead of maximizing likelihood."
+    },
+    {
+      "start": 2278.94,
+      "end": 2283.94,
+      "text": "One example would be that we're trying to optimize for some qualitative metric."
+    },
+    {
+      "start": 2283.94,
+      "end": 2294.94,
+      "text": "That's not easily captured by likelihood and again some examples for this can be just sort of aesthetic score or compressibility or alignment with some prompt."
+    },
+    {
+      "start": 2294.94,
+      "end": 2297.94,
+      "text": "And so this is fundamentally different from what we've seen so far."
+    },
+    {
+      "start": 2297.94,
+      "end": 2305.94,
+      "text": "Because everything we've seen beforehand was about how we can sample better from a pre trained model generative model."
+    },
+    {
+      "start": 2305.94,
+      "end": 2312.94,
+      "text": "And here we're talking about how can we change the way that we train generative models by training them with reinforcement learning."
+    },
+    {
+      "start": 2312.94,
+      "end": 2317.94,
+      "text": "And so I just want to show a really cool example of what's possible when you train with reinforcement learning."
+    },
+    {
+      "start": 2317.94,
+      "end": 2326.94,
+      "text": "So here is a diffusion model that's being trained, so so the x axis here just corresponds to training over time."
+    },
+    {
+      "start": 2326.94,
+      "end": 2333.94,
+      "text": "And I want to just show this again, because each of these will just let me do it again."
+    },
+    {
+      "start": 2333.94,
+      "end": 2342.94,
+      "text": "Okay, each of these just corresponds to different score functions right compressibility aesthetic quality prompt image alignment according to some Vlm."
+    },
+    {
+      "start": 2342.94,
+      "end": 2349.94,
+      "text": "And so you can see how the diffusion model output changes over time according to the score functions right."
+    },
+    {
+      "start": 2349.94,
+      "end": 2354.94,
+      "text": "So again, I want to show that again, because a standard diffusion model."
+    },
+    {
+      "start": 2354.94,
+      "end": 2364.94,
+      "text": "Is typically just trying to, you know, recreate the original image, or there's some, you know, label of like of what you want the diffusion model to create."
+    },
+    {
+      "start": 2364.94,
+      "end": 2368.94,
+      "text": "But here it's completely open ended it's just trying to maximize for some score."
+    },
+    {
+      "start": 2368.94,
+      "end": 2378.94,
+      "text": "So that was pretty cool. Okay, so we've shown that generative models can be framed as Mdps that we can train generative models with Rl."
+    },
+    {
+      "start": 2378.94,
+      "end": 2383.94,
+      "text": "We've seen that we can incorporate generative models into Rl."
+    },
+    {
+      "start": 2383.94,
+      "end": 2389.94,
+      "text": "And train world models or policies using generative models."
+    },
+    {
+      "start": 2389.94,
+      "end": 2391.94,
+      "text": "And so in this next part."
+    },
+    {
+      "start": 2391.94,
+      "end": 2398.94,
+      "text": "I want to take this one step further, which is that in the same way that generative models today are trained with data as supervision."
+    },
+    {
+      "start": 2398.94,
+      "end": 2402.94,
+      "text": "Can we think about reinforcement learning from this data only perspective?"
+    },
+    {
+      "start": 2402.94,
+      "end": 2407.94,
+      "text": "Right."
+    },
+    {
+      "start": 2407.94,
+      "end": 2409.94,
+      "text": "So here."
+    },
+    {
+      "start": 2409.94,
+      "end": 2411.94,
+      "text": "So the key idea is that."
+    },
+    {
+      "start": 2411.94,
+      "end": 2412.94,
+      "text": "An agent."
+    },
+    {
+      "start": 2412.94,
+      "end": 2418.94,
+      "text": "Is iteratively interacting with an environment is a generative process."
+    },
+    {
+      "start": 2418.94,
+      "end": 2427.94,
+      "text": "Right. So if we can condition our policy, then our policy can generate for us different outputs, which just corresponds to different trajectories."
+    },
+    {
+      "start": 2427.94,
+      "end": 2433.94,
+      "text": "So generative models are trained on data to maximize likelihoods."
+    },
+    {
+      "start": 2433.94,
+      "end": 2437.94,
+      "text": "So where do rewards come in right there's one bit about this Rl."
+    },
+    {
+      "start": 2437.94,
+      "end": 2440.94,
+      "text": "As Jenny I story that doesn't really quite fit right which is still the reward function."
+    },
+    {
+      "start": 2440.94,
+      "end": 2443.94,
+      "text": "Right."
+    },
+    {
+      "start": 2443.94,
+      "end": 2446.94,
+      "text": "The problem with Rl."
+    },
+    {
+      "start": 2446.94,
+      "end": 2450.94,
+      "text": "Is that we're defining the problem in terms of this scalar reward."
+    },
+    {
+      "start": 2450.94,
+      "end": 2454.94,
+      "text": "When we want to teach an image classifier to identify cats and dogs, we give it data."
+    },
+    {
+      "start": 2454.94,
+      "end": 2459.94,
+      "text": "Right. We give it a bunch of images accompanied by labels, which is just more data."
+    },
+    {
+      "start": 2459.94,
+      "end": 2468.94,
+      "text": "But when we want to teach an Rl policy to play pong, we have to write a bunch of code describing that assign scalar values to each observation."
+    },
+    {
+      "start": 2468.94,
+      "end": 2476.94,
+      "text": "And so these reward functions make it really challenging to think about how Rl fits into this broader machine learning landscape."
+    },
+    {
+      "start": 2476.94,
+      "end": 2485.94,
+      "text": "And so it makes it really challenging for non-experts and even experts to use our own practice, because this reward design aspect can be really hard."
+    },
+    {
+      "start": 2485.94,
+      "end": 2496.94,
+      "text": "And so right now what we're hoping to do is we're going to try and remove this reward, or we're going to try and think about reinforcement learning from a perspective that that removes reward."
+    },
+    {
+      "start": 2496.94,
+      "end": 2501.94,
+      "text": "And so just to hammer this point home again."
+    },
+    {
+      "start": 2501.94,
+      "end": 2509.94,
+      "text": "I just have here some example code from a very common benchmark in reinforcement learning called Meta World."
+    },
+    {
+      "start": 2509.94,
+      "end": 2514.94,
+      "text": "And so Meta World just consists of these simulated manipulation tasks with a robot."
+    },
+    {
+      "start": 2514.94,
+      "end": 2519.94,
+      "text": "But this is an example of what a reward function looks like for one task in Meta World."
+    },
+    {
+      "start": 2519.94,
+      "end": 2524.94,
+      "text": "Right. And there's like a 100 tasks in Meta World. So you can see that this is something that hinders us from being able to create new tasks."
+    },
+    {
+      "start": 2524.94,
+      "end": 2525.94,
+      "text": "Right."
+    },
+    {
+      "start": 2525.94,
+      "end": 2526.94,
+      "text": "Right."
+    },
+    {
+      "start": 2526.94,
+      "end": 2530.94,
+      "text": "And this is something that hinders us from being able to create new generalist agents with reinforcement learning."
+    },
+    {
+      "start": 2530.94,
+      "end": 2533.94,
+      "text": "So reward design can be prohibitively difficult."
+    },
+    {
+      "start": 2533.94,
+      "end": 2537.94,
+      "text": "It often requires a lot of expert domain knowledge."
+    },
+    {
+      "start": 2537.94,
+      "end": 2543.94,
+      "text": "And so we'd like to ask the question, How can we actually define many tasks while avoiding this problem?"
+    },
+    {
+      "start": 2543.94,
+      "end": 2547.94,
+      "text": "And so one thing that we can look at is goal conditioned reinforcement learning."
+    },
+    {
+      "start": 2547.94,
+      "end": 2555.94,
+      "text": "So reaching goals is a classic pro problem dating back to the early days of machine learning and has many practical applications, including robot navigation."
+    },
+    {
+      "start": 2555.94,
+      "end": 2560.6,
+      "text": "path planning and route optimization, chemical synthesis, autonomous driving, and gains."
+    },
+    {
+      "start": 2563.02,
+      "end": 2569.2200000000003,
+      "text": "And so what is the goal? Ideally, we just want to reach the goal as quickly as possible,"
+    },
+    {
+      "start": 2569.2200000000003,
+      "end": 2574.2200000000003,
+      "text": "and we would like to stay there for as long as we can. And so the nice thing about this"
+    },
+    {
+      "start": 2574.2200000000003,
+      "end": 2579.7200000000003,
+      "text": "goal-reaching problem is that the reward function is often already defined for us, right? It looks"
+    },
+    {
+      "start": 2579.7200000000003,
+      "end": 2584.46,
+      "text": "as follows. You can define this as an indicator function that just says, I'm going to receive a"
+    },
+    {
+      "start": 2584.46,
+      "end": 2591.58,
+      "text": "reward of 1 when I've reached my goal, and 0 otherwise. So how can we actually think about"
+    },
+    {
+      "start": 2591.58,
+      "end": 2597.14,
+      "text": "this in terms of probabilities? Again, our objective is that we would like to learn a"
+    },
+    {
+      "start": 2597.14,
+      "end": 2603.68,
+      "text": "policy to maximize the expected cumulative discounted sum of rewards. So here's our"
+    },
+    {
+      "start": 2603.68,
+      "end": 2608.4,
+      "text": "objective. For goal-reaching, we can just plug in that indicator function as the reward."
+    },
+    {
+      "start": 2609.34,
+      "end": 2614.32,
+      "text": "But what happens to this objective in continuous settings? In continuous settings,"
+    },
+    {
+      "start": 2614.32,
+      "end": 2619.46,
+      "text": "it's very, very unlikely that we're going to reach the exact same state that we've specified"
+    },
+    {
+      "start": 2619.46,
+      "end": 2626.6600000000003,
+      "text": "as a goal, right? And so this probability goes to 0. And so this is what we call a measure 0 event."
+    },
+    {
+      "start": 2629.6600000000003,
+      "end": 2634.32,
+      "text": "OK. So in the coming sections, we're going to think about goal-reaching in a different way."
+    },
+    {
+      "start": 2634.44,
+      "end": 2639.02,
+      "text": "We're going to think about it in terms of probabilities. So instead of thinking about"
+    },
+    {
+      "start": 2639.02,
+      "end": 2643.86,
+      "text": "the time you spend at a goal, we want to think about the probability that you get to a goal."
+    },
+    {
+      "start": 2644.32,
+      "end": 2651.42,
+      "text": "Right? So what's the reward? We can now write this reward in terms of this probability."
+    },
+    {
+      "start": 2651.84,
+      "end": 2656.7400000000002,
+      "text": "And we just have this 1 minus gamma term in order to make sure that our probability sums to 1."
+    },
+    {
+      "start": 2658.2200000000003,
+      "end": 2662.7000000000003,
+      "text": "And so now our reward is defined in terms of probabilities over states,"
+    },
+    {
+      "start": 2662.78,
+      "end": 2668.1400000000003,
+      "text": "which is much better than reward. All right. So we're going to formalize this a little bit more."
+    },
+    {
+      "start": 2669.5,
+      "end": 2673.2200000000003,
+      "text": "In order to understand this a little bit better, we're going to introduce this term,"
+    },
+    {
+      "start": 2673.2200000000003,
+      "end": 2674.3,
+      "text": "which is called the discounted sum of rewards. So we're going to formalize this a little bit more."
+    },
+    {
+      "start": 2674.32,
+      "end": 2680.02,
+      "text": "So this is a discounted state occupancy measure. So imagine that you close your eyes and you're"
+    },
+    {
+      "start": 2680.02,
+      "end": 2684.6800000000003,
+      "text": "going to open them after some random number of time steps. And you want to know at that future"
+    },
+    {
+      "start": 2684.6800000000003,
+      "end": 2691.7200000000003,
+      "text": "point in time, what action, sorry, what state am I going to be at? So this discounted state"
+    },
+    {
+      "start": 2691.7200000000003,
+      "end": 2695.8,
+      "text": "occupancy measure basically gives us the probability that we're going to see some"
+    },
+    {
+      "start": 2695.8,
+      "end": 2703.84,
+      "text": "future state SF at some point. And we can also write this down in terms of in the form"
+    },
+    {
+      "start": 2704.32,
+      "end": 2716.26,
+      "text": "of a conditional probability. So we can write this in for other types of probabilities. So we can write this for, you know, probability of seeing some future state condition on the fact that I'm in a current state."
+    },
+    {
+      "start": 2716.82,
+      "end": 2725.82,
+      "text": "We can write this down in terms of a conditional probability, given that I'm in a current state, and I'm going to take some action A or some other latent variable."
+    },
+    {
+      "start": 2729.82,
+      "end": 2730.32,
+      "text": "And so"
+    },
+    {
+      "start": 2731.82,
+      "end": 2733.92,
+      "text": "when we've been talking about RL so far,"
+    },
+    {
+      "start": 2733.92,
+      "end": 2740.42,
+      "text": "we've been talking about the standard primal form of reinforcement learning, where we're trying to maximize this reward function."
+    },
+    {
+      "start": 2740.92,
+      "end": 2746.42,
+      "text": "It turns out that in optimization there's something that's also called the dual form of your problem."
+    },
+    {
+      "start": 2746.42,
+      "end": 2755.92,
+      "text": "So if in the primal form I'm trying to maximize some objective, there is an equivalent problem, the dual form, where I'm trying to minimize some objective."
+    },
+    {
+      "start": 2756.42,
+      "end": 2761.42,
+      "text": "And so it turns out that in dual reinforcement learning, we're actually going to switch out our optimization variables."
+    },
+    {
+      "start": 2761.42,
+      "end": 2763.42,
+      "text": "So if we want to turn this into a minimization problem,"
+    },
+    {
+      "start": 2763.42,
+      "end": 2779.92,
+      "text": "we're going to actually try to minimize the we're going to talk about this in terms of occupancy measures, and we're going to be trying to minimize the distance between the probability distribution under my current policy and some target distribution, which is my goal."
+    },
+    {
+      "start": 2781.92,
+      "end": 2790.92,
+      "text": "Alright, so we're going to start with a really simple method for using generative models to get to a goal, and that's just going to be goal-conditioned imitation learning."
+    },
+    {
+      "start": 2790.92,
+      "end": 2796.92,
+      "text": "And so this objective is again, we can think about this in terms of maximizing likelihood."
+    },
+    {
+      "start": 2797.42,
+      "end": 2806.92,
+      "text": "We're just trying to train a goal-conditioned policy that maximizes the likelihood of returning the action that is provided in my data set."
+    },
+    {
+      "start": 2807.42,
+      "end": 2810.92,
+      "text": "And it turns out that I can use Bayes' rule to expand this out."
+    },
+    {
+      "start": 2813.42,
+      "end": 2820.42,
+      "text": "And here beta just corresponds to my behavior policy or my data set distribution."
+    },
+    {
+      "start": 2820.92,
+      "end": 2824.92,
+      "text": "And this first term should look very familiar, right?"
+    },
+    {
+      "start": 2824.92,
+      "end": 2834.92,
+      "text": "So we're just trying to select actions that maximize your expected reward, while also staying close to the likelihood of the actions in the data as a form of regularization."
+    },
+    {
+      "start": 2834.92,
+      "end": 2843.42,
+      "text": "So this is really simple. This is very intuitive, and it turns out that this kind of method is actually very effective in practice in robot learning."
+    },
+    {
+      "start": 2843.42,
+      "end": 2849.42,
+      "text": "But again, this is relying on this assumption that we have some offline data set that's pretty good."
+    },
+    {
+      "start": 2849.42,
+      "end": 2851.42,
+      "text": "So what about the online setting?"
+    },
+    {
+      "start": 2852.92,
+      "end": 2860.42,
+      "text": "It turns out that we can actually think about training a goal-conditioned policy by minimizing a different kind of objective."
+    },
+    {
+      "start": 2860.42,
+      "end": 2876.42,
+      "text": "And so here we're just trying to minimize the F divergence between the probability distribution over states under my current policy, so that's this P theta, and our goal distribution policy, Pg of s."
+    },
+    {
+      "start": 2876.42,
+      "end": 2878.42,
+      "text": "So in the goal-conditioned setting, Pg is very similar."
+    },
+    {
+      "start": 2879.42,
+      "end": 2886.42,
+      "text": "It's pretty simple. It just corresponds to a direct distribution where all of the mass is at our goal state."
+    },
+    {
+      "start": 2886.42,
+      "end": 2894.42,
+      "text": "And so the intuition is that ideally we just want our agent to be in that goal state with high probability."
+    },
+    {
+      "start": 2894.42,
+      "end": 2900.42,
+      "text": "And so we want the probability to be high at the goal state and low everywhere else."
+    },
+    {
+      "start": 2900.42,
+      "end": 2904.42,
+      "text": "So I just want to give a little bit of intuition for what this F divergence is."
+    },
+    {
+      "start": 2904.42,
+      "end": 2908.42,
+      "text": "So there's several different F divergences."
+    },
+    {
+      "start": 2908.42,
+      "end": 2913.42,
+      "text": "All of these just correspond to different distance metrics over probability distributions."
+    },
+    {
+      "start": 2913.42,
+      "end": 2927.42,
+      "text": "And so if I have 2 distributions, P1 and P2, so P2 you can see here is my target distribution, and P1 is slowly over time moving closer and closer to P2 as they move closer together."
+    },
+    {
+      "start": 2927.42,
+      "end": 2934.42,
+      "text": "I can see that these different F divergences the the value is basically dropping right?"
+    },
+    {
+      "start": 2934.42,
+      "end": 2937.42,
+      "text": "So as we get closer together, this notion of distance is getting smaller."
+    },
+    {
+      "start": 2937.42,
+      "end": 2943.42,
+      "text": "So this is just to provide some intuition for what these different F divergences are doing."
+    },
+    {
+      "start": 2943.42,
+      "end": 2956.42,
+      "text": "So now one question that I can ask is if I maximize that objective, or sorry, if I optimize for that objective, right, which is minimizing this F divergence between these probability distributions."
+    },
+    {
+      "start": 2956.42,
+      "end": 2960.42,
+      "text": "The question that I want to ask is, does the policy that I get from that?"
+    },
+    {
+      "start": 2960.42,
+      "end": 2966.42,
+      "text": "Is that going to be the same policy as I get from maximizing my goal condition reward?"
+    },
+    {
+      "start": 2966.42,
+      "end": 2970.42,
+      "text": "And it turns out the answer is yes."
+    },
+    {
+      "start": 2970.42,
+      "end": 2974.42,
+      "text": "So how do I actually optimize this objective?"
+    },
+    {
+      "start": 2974.42,
+      "end": 2979.42,
+      "text": "It turns out we can just compute the derivative."
+    },
+    {
+      "start": 2979.42,
+      "end": 2986.42,
+      "text": "And if I look at this expression, it should look a lot like what we already saw before with policy gradient, right?"
+    },
+    {
+      "start": 2986.42,
+      "end": 2994.42,
+      "text": "I have this first term, which is computing the derivative of my log probability of my policy multiplied by."
+    },
+    {
+      "start": 2994.42,
+      "end": 2995.42,
+      "text": "And what we saw before is that that's the same policy gradient."
+    },
+    {
+      "start": 2995.42,
+      "end": 2999.42,
+      "text": "And what we saw before is that that second term is supposed to be your reward."
+    },
+    {
+      "start": 2999.42,
+      "end": 3003.42,
+      "text": "But here instead I have again this density ratio, right?"
+    },
+    {
+      "start": 3003.42,
+      "end": 3017.42,
+      "text": "This this ratio of my the probability of being in a state under my current policy over the probability of being in that state in my goal distribution."
+    },
+    {
+      "start": 3017.42,
+      "end": 3023.42,
+      "text": "Okay. So just to give some intuition for what different F divergences are doing."
+    },
+    {
+      "start": 3023.42,
+      "end": 3036.42,
+      "text": "With this objective, you can see that in this example our goal just corresponds to that red dot in the middle left hand side."
+    },
+    {
+      "start": 3036.42,
+      "end": 3049.42,
+      "text": "And so when I optimize for this objective before i've seen the goal, all of these methods basically are trying to spread out a uniform distribution over the entire state space."
+    },
+    {
+      "start": 3049.42,
+      "end": 3051.42,
+      "text": "And then, as soon as they find the goal."
+    },
+    {
+      "start": 3051.42,
+      "end": 3052.42,
+      "text": "It's going to try to."
+    },
+    {
+      "start": 3052.42,
+      "end": 3058.42,
+      "text": "It's going to try to concentrate all of that probability mass onto that goal."
+    },
+    {
+      "start": 3058.42,
+      "end": 3064.42,
+      "text": "And so you can see that across all of these different types of F divergences that they all basically do the same thing."
+    },
+    {
+      "start": 3064.42,
+      "end": 3069.42,
+      "text": "They all kind of like have different dynamics learning dynamics."
+    },
+    {
+      "start": 3069.42,
+      "end": 3072.42,
+      "text": "And so that's why they all look different at first."
+    },
+    {
+      "start": 3072.42,
+      "end": 3077.42,
+      "text": "But in the end they all end up concentrating into the same policy."
+    },
+    {
+      "start": 3077.42,
+      "end": 3081.42,
+      "text": "Okay. But what if my task can't be described by a goal?"
+    },
+    {
+      "start": 3081.42,
+      "end": 3088.42,
+      "text": "If I just want a robot to clean my apartment or pick a flight for me."
+    },
+    {
+      "start": 3088.42,
+      "end": 3099.42,
+      "text": "These are tasks that aren't necessarily just easily described by goals right like I don't want to have to give a robot a picture of my clean room and say match this exactly."
+    },
+    {
+      "start": 3099.42,
+      "end": 3103.42,
+      "text": "There are many possible ways in which my living room can be cleaned."
+    },
+    {
+      "start": 3103.42,
+      "end": 3107.42,
+      "text": "I don't necessarily care that it has to match one particular image."
+    },
+    {
+      "start": 3107.42,
+      "end": 3109.42,
+      "text": "Same with trying to reach somewhere."
+    },
+    {
+      "start": 3109.42,
+      "end": 3110.42,
+      "text": "If i'm trying to go to Vancouver."
+    },
+    {
+      "start": 3110.42,
+      "end": 3112.42,
+      "text": "If i'm trying to go to Vancouver for Icml."
+    },
+    {
+      "start": 3112.42,
+      "end": 3117.42,
+      "text": "I don't necessarily want to pick the shortest path to get to Vancouver, because I care about other things."
+    },
+    {
+      "start": 3117.42,
+      "end": 3123.42,
+      "text": "I care about what airline i'm taking what time of day i'm flying maybe where my layover is right."
+    },
+    {
+      "start": 3123.42,
+      "end": 3134.42,
+      "text": "And so most tasks that we care about have more complex target distributions than just a single direct distribution at a goal state."
+    },
+    {
+      "start": 3134.42,
+      "end": 3138.42,
+      "text": "Okay, So we thought about interaction."
+    },
+    {
+      "start": 3138.42,
+      "end": 3139.42,
+      "text": "Being a generative model."
+    },
+    {
+      "start": 3139.42,
+      "end": 3146.42,
+      "text": "This can be iterative denoising."
+    },
+    {
+      "start": 3146.42,
+      "end": 3154.42,
+      "text": "And here we're just doing iterative computation to arrive at some sample"
+    },
+    {
+      "start": 3154.42,
+      "end": 3165.42,
+      "text": "We've also talked about how our all can be seen as a generative model that the environment and policy together are acting as a generative model to output different trajectories."
+    },
+    {
+      "start": 3165.42,
+      "end": 3167.42,
+      "text": "And so if we want to think about."
+    },
+    {
+      "start": 3167.42,
+      "end": 3174.42,
+      "text": "Reinforcement learning from a generative modeling perspective."
+    },
+    {
+      "start": 3174.42,
+      "end": 3183.42,
+      "text": "We have to think about log likelihood, and we have to talk about how we can actually model estimate log likelihood both directly and indirectly."
+    },
+    {
+      "start": 3183.42,
+      "end": 3189.42,
+      "text": "And we're going to show how this connects to Q functions."
+    },
+    {
+      "start": 3189.42,
+      "end": 3194.42,
+      "text": "Okay, So we've talked about how reinforcement learning can be seen as sampling from a generative model, right?"
+    },
+    {
+      "start": 3194.42,
+      "end": 3196.42,
+      "text": "Because our policy is basically sampling from the environment."
+    },
+    {
+      "start": 3196.42,
+      "end": 3200.42,
+      "text": "But we need to talk about log likelihoods."
+    },
+    {
+      "start": 3200.42,
+      "end": 3203.42,
+      "text": "Sorry. Okay."
+    },
+    {
+      "start": 3203.42,
+      "end": 3208.42,
+      "text": "So how do we actually estimate the likelihood of a certain sample?"
+    },
+    {
+      "start": 3208.42,
+      "end": 3214.42,
+      "text": "All right. So let's start by formally defining the likelihood."
+    },
+    {
+      "start": 3214.42,
+      "end": 3220.42,
+      "text": "Let's see. Likelihood is exactly the same as that discounted state occupancy that we saw earlier."
+    },
+    {
+      "start": 3220.42,
+      "end": 3223.42,
+      "text": "Right. So this expression should look pretty familiar."
+    },
+    {
+      "start": 3223.42,
+      "end": 3225.42,
+      "text": "And again, I just want to note that this one minus gamma term."
+    },
+    {
+      "start": 3225.42,
+      "end": 3235.42,
+      "text": "Is just used to make sure that we're normalizing our probability to one."
+    },
+    {
+      "start": 3235.42,
+      "end": 3245.42,
+      "text": "So and and we want to estimate these types of likelihoods in order to train an interactive generative model which corresponds to our policy."
+    },
+    {
+      "start": 3245.42,
+      "end": 3251.42,
+      "text": "Okay. So how can we actually estimate these likelihoods either directly or via density ratios?"
+    },
+    {
+      "start": 3251.42,
+      "end": 3254.42,
+      "text": "And then we want to talk about how can we actually do off policy evaluation?"
+    },
+    {
+      "start": 3254.42,
+      "end": 3255.42,
+      "text": "Right?"
+    },
+    {
+      "start": 3255.42,
+      "end": 3262.42,
+      "text": "Because again, everything that we've talked about so far, or when we talk about estimating likelihoods, the assumption is that the data is already there, right?"
+    },
+    {
+      "start": 3262.42,
+      "end": 3267.42,
+      "text": "We're estimating likelihood for some good data that we already have."
+    },
+    {
+      "start": 3267.42,
+      "end": 3270.42,
+      "text": "But in reinforcement learning we have a chicken and egg problem."
+    },
+    {
+      "start": 3270.42,
+      "end": 3276.42,
+      "text": "And so we'd also like to be able to compute the likelihood of one policy using data from another."
+    },
+    {
+      "start": 3276.42,
+      "end": 3281.42,
+      "text": "We'd like to compute the likelihood of a better policy compared to the data that we have."
+    },
+    {
+      "start": 3281.42,
+      "end": 3286.42,
+      "text": "And then we're going to talk about how we can use this to maximize arbitrary rewards."
+    },
+    {
+      "start": 3286.42,
+      "end": 3298.42,
+      "text": "Okay, I think i'm pretty much out of time so i'm going to skip over this."
+    },
+    {
+      "start": 3298.42,
+      "end": 3302.42,
+      "text": "Okay, we're not going to talk about likelihoods."
+    },
+    {
+      "start": 3302.42,
+      "end": 3309.42,
+      "text": "I just want to point out one thing which is that it turns out that when we learn these likelihoods."
+    },
+    {
+      "start": 3309.42,
+      "end": 3317.42,
+      "text": "We can actually add rewards back in."
+    },
+    {
+      "start": 3317.42,
+      "end": 3323.42,
+      "text": "So if we multiply this likelihood by a reward, we get the optimal Q function."
+    },
+    {
+      "start": 3323.42,
+      "end": 3327.42,
+      "text": "We get we get the Q function for that likelihood for that policy."
+    },
+    {
+      "start": 3327.42,
+      "end": 3331.42,
+      "text": "And so we can now estimate our future return."
+    },
+    {
+      "start": 3331.42,
+      "end": 3337.42,
+      "text": "Okay, so sorry i'm just gonna wrap this up because I totally lost track of time."
+    },
+    {
+      "start": 3337.42,
+      "end": 3338.42,
+      "text": "Okay."
+    },
+    {
+      "start": 3338.42,
+      "end": 3339.42,
+      "text": "Okay."
+    },
+    {
+      "start": 3339.42,
+      "end": 3342.42,
+      "text": "So just as a takeaway."
+    },
+    {
+      "start": 3342.42,
+      "end": 3349.42,
+      "text": "I we've seen how sorry."
+    },
+    {
+      "start": 3349.42,
+      "end": 3353.42,
+      "text": "Okay, So we've seen how generative models and reinforcement learning can interact right?"
+    },
+    {
+      "start": 3353.42,
+      "end": 3362.42,
+      "text": "We can see how reinforcement learning can be used to train generative models to train generative models to do things beyond what is in the data that they we train them on."
+    },
+    {
+      "start": 3362.42,
+      "end": 3368.42,
+      "text": "We've seen how generative models can be used in reinforcement learning to act as simulators to act directly as policies."
+    },
+    {
+      "start": 3368.42,
+      "end": 3371.42,
+      "text": "We've seen that in reinforcement learning."
+    },
+    {
+      "start": 3371.42,
+      "end": 3379.42,
+      "text": "One of the issues, one of the things that's kind of holding us back is the use of reward, and we've looked at ways in which we can go beyond reward."
+    },
+    {
+      "start": 3379.42,
+      "end": 3389.42,
+      "text": "And some of the things that I didn't get a chance to talk about was actually how we can learn likelihoods, how we can optimize for arbitrary tasks using likelihood."
+    },
+    {
+      "start": 3389.42,
+      "end": 3395.42,
+      "text": "And so I just want to end to say that I think that we need more research on reinforcement learning methods."
+    },
+    {
+      "start": 3395.42,
+      "end": 3396.42,
+      "text": "And more specifically."
+    },
+    {
+      "start": 3396.42,
+      "end": 3407.42,
+      "text": "I think we need more research on the dual perspective of reinforcement learning, and this allows us to move away from these hand design rewards."
+    },
+    {
+      "start": 3407.42,
+      "end": 3413.42,
+      "text": "Actually, I thought it was pretty funny that in the earlier tutorial that you saw you."
+    },
+    {
+      "start": 3413.42,
+      "end": 3417.42,
+      "text": "We had this same comic for standard supervised learning."
+    },
+    {
+      "start": 3417.42,
+      "end": 3420.42,
+      "text": "But I think this applies to reinforcement learning as well, right?"
+    },
+    {
+      "start": 3420.42,
+      "end": 3425.42,
+      "text": "And it applies to how we train generative models, which is basically we're trying to just stir the pot."
+    },
+    {
+      "start": 3425.42,
+      "end": 3428.42,
+      "text": "Stir the data and hope for something better right?"
+    },
+    {
+      "start": 3428.42,
+      "end": 3431.42,
+      "text": "But I think with better reinforcement learning methods we can do better than this."
+    },
+    {
+      "start": 3431.42,
+      "end": 3438.42,
+      "text": "We can actually curate the kind of data that we get rather than rather than just kind of moving things around."
+    },
+    {
+      "start": 3438.42,
+      "end": 3448.42,
+      "text": "And I the other thing I wanted to point out is that the touring award last year was awarded to the fathers of reinforcement learning Sutton and Bardo."
+    },
+    {
+      "start": 3448.42,
+      "end": 3454.42,
+      "text": "And so I I think that kind of shows that the general community is starting to realize how important reinforcement learning is."
+    },
+    {
+      "start": 3454.42,
+      "end": 3458.42,
+      "text": "And you know, in this picture I just wanted to show that the capability is of Rl."
+    },
+    {
+      "start": 3458.42,
+      "end": 3467.42,
+      "text": "Today just kind of correspond to this like little peak of the iceberg that you can see over above the surface of the ocean."
+    },
+    {
+      "start": 3467.42,
+      "end": 3474.42,
+      "text": "But there's a lot of possible future capabilities there's a lot of future directions, especially in generative modeling that i'm really excited about."
+    },
+    {
+      "start": 3474.42,
+      "end": 3479.42,
+      "text": "And I hope that this talk has served as a bit of a teaser for that, and I apologies."
+    },
+    {
+      "start": 3479.42,
+      "end": 3482.42,
+      "text": "I apologies for totally going over time."
+    },
+    {
+      "start": 3482.42,
+      "end": 3483.42,
+      "text": "Okay."
+    },
+    {
+      "start": 3484.42,
+      "end": 3498.42,
+      "text": "And in the end I just want to thank my group"
+    },
+    {
+      "start": 3498.42,
+      "end": 3504.42,
+      "text": "Okay."
+    },
+    {
+      "start": 3504.42,
+      "end": 3510.42,
+      "text": "Any questions."
+    },
+    {
+      "start": 3510.42,
+      "end": 3512.42,
+      "text": "I have one question."
+    },
+    {
+      "start": 3512.42,
+      "end": 3514.42,
+      "text": "Which is, we're talking."
+    },
+    {
+      "start": 3514.42,
+      "end": 3516.42,
+      "text": "Do you see any new questions."
+    },
+    {
+      "start": 3516.42,
+      "end": 3517.42,
+      "text": "I think so."
+    },
+    {
+      "start": 3517.42,
+      "end": 3519.42,
+      "text": "No. Okay."
+    },
+    {
+      "start": 3519.42,
+      "end": 3521.42,
+      "text": "Okay."
+    },
+    {
+      "start": 3521.42,
+      "end": 3530.42,
+      "text": "So, like, as far as like reinforcement learning, like, do you think that it could be applied to like other like fields in Ai like that are like as traditional for machine learning?"
+    },
+    {
+      "start": 3530.42,
+      "end": 3538.42,
+      "text": "Like, for example, like something like computer vision like that somehow be integrated into, you know, feel like that."
+    },
+    {
+      "start": 3538.42,
+      "end": 3540.42,
+      "text": "Yeah. So if we look back at one of the things that I showed earlier."
+    },
+    {
+      "start": 3540.42,
+      "end": 3542.42,
+      "text": "Yeah. So if we look back at one of the things that I showed earlier."
+    },
+    {
+      "start": 3542.42,
+      "end": 3544.42,
+      "text": "Yeah. So if we look back at one of the things that I showed earlier."
+    },
+    {
+      "start": 3544.42,
+      "end": 3550.42,
+      "text": "So I one of the things I talked about right was that we could actually use reinforcement learning to train diffusion models."
+    },
+    {
+      "start": 3550.42,
+      "end": 3559.42,
+      "text": "And so one of the things I was hinting at was that we can use reinforcement learning to fine tune to train language models better compared to what we do today."
+    },
+    {
+      "start": 3559.42,
+      "end": 3564.42,
+      "text": "But one of the things that we can also do is use them for vision."
+    },
+    {
+      "start": 3564.42,
+      "end": 3570.42,
+      "text": "Right. And so one of the examples that I had was you could use reinforcement learning to steer."
+    },
+    {
+      "start": 3570.42,
+      "end": 3580.42,
+      "text": "So, for example, I have diffusion models."
+    },
+    {
+      "start": 3580.42,
+      "end": 3583.42,
+      "text": "I."
+    },
+    {
+      "start": 3583.42,
+      "end": 3587.42,
+      "text": "Did I."
+    },
+    {
+      "start": 3587.42,
+      "end": 3589.42,
+      "text": "After this."
+    },
+    {
+      "start": 3589.42,
+      "end": 3591.42,
+      "text": "Yeah, I think is after this."
+    },
+    {
+      "start": 3591.42,
+      "end": 3598.42,
+      "text": "You can train so diffusion models, you can use them for computer vision right to generate images or to generate video."
+    },
+    {
+      "start": 3598.42,
+      "end": 3600.42,
+      "text": "But we can train them with reinforcement learning to."
+    },
+    {
+      "start": 3600.42,
+      "end": 3607.42,
+      "text": "Optimize for different objectives right to train them to output things that don't exist in the data set."
+    },
+    {
+      "start": 3607.42,
+      "end": 3609.42,
+      "text": "And so here was just an example of that."
+    },
+    {
+      "start": 3609.42,
+      "end": 3618.42,
+      "text": "Right. And so the last one, I think, is particularly funny because this is using a Vlm to basically say, I want a picture of a raccoon washing dishes."
+    },
+    {
+      "start": 3618.42,
+      "end": 3623.42,
+      "text": "Start from a picture of a raccoon. Make it look more and more like that language description."
+    },
+    {
+      "start": 3623.42,
+      "end": 3627.42,
+      "text": "Right. So that's one example of how you could use Rl for for vision."
+    },
+    {
+      "start": 3627.42,
+      "end": 3629.42,
+      "text": "Yeah, thanks."
+    },
+    {
+      "start": 3629.42,
+      "end": 3646.42,
+      "text": "Yeah, that's a good question."
+    },
+    {
+      "start": 3646.42,
+      "end": 3652.42,
+      "text": "So the reinforcement learning example that we use for diffusion models was very specific to diffusion."
+    },
+    {
+      "start": 3652.42,
+      "end": 3657.42,
+      "text": "Right, because we were saying so that corresponding to this slide."
+    },
+    {
+      "start": 3657.42,
+      "end": 3658.42,
+      "text": "Right. Which is that?"
+    },
+    {
+      "start": 3658.42,
+      "end": 3662.42,
+      "text": "We can look at diffusion specifically as an Mdp."
+    },
+    {
+      "start": 3662.42,
+      "end": 3666.42,
+      "text": "Because diffusion has this iterative process of of denoising."
+    },
+    {
+      "start": 3666.42,
+      "end": 3672.42,
+      "text": "So if we were to use something like a generative adversarial network, it could look a little different."
+    },
+    {
+      "start": 3672.42,
+      "end": 3675.42,
+      "text": "But I think"
+    },
+    {
+      "start": 3675.42,
+      "end": 3679.42,
+      "text": "anything that has a recursive form."
+    },
+    {
+      "start": 3679.42,
+      "end": 3683.42,
+      "text": "Actually, in games you can kind of think of it as having a recursive form."
+    },
+    {
+      "start": 3683.42,
+      "end": 3686.42,
+      "text": "So I I think, like with any of these generative models like we can pose them as reinforcement."
+    },
+    {
+      "start": 3686.42,
+      "end": 3689.42,
+      "text": "Learning problems, right?"
+    },
+    {
+      "start": 3689.42,
+      "end": 3705.42,
+      "text": "Because another maybe like a another more general way of thinking about it is anything where your generative model is outputting sequential data, video or language."
+    },
+    {
+      "start": 3705.42,
+      "end": 3708.42,
+      "text": "That sequence is an Mdp right?"
+    },
+    {
+      "start": 3708.42,
+      "end": 3714.42,
+      "text": "Because the context everything you've seen that it's generated before all of the video frames before all the language before."
+    },
+    {
+      "start": 3714.42,
+      "end": 3722.42,
+      "text": "You can see that as your state what frame or what language token you generate next is your action."
+    },
+    {
+      "start": 3722.42,
+      "end": 3728.42,
+      "text": "So from that perspective, then you can frame any of these generative modeling problems as reinforcement learning."
+    }
+  ],
+  "segment_count": 660
+}

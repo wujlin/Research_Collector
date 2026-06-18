@@ -1,0 +1,12 @@
+{
+  "title": "[OOD Workshop@CoRL 2023] Amy Zhang - Leveraging Structure and Abstractions for OOD Generalization",
+  "url": "https://www.youtube.com/watch?v=KyURDq7rkuU",
+  "backend": "faster-whisper",
+  "model": "large-v3",
+  "requested_language": "en",
+  "detected_language": "en",
+  "generated_at": "2026-05-13T20:47:34",
+  "language": "en",
+  "language_probability": 1,
+  "duration": 2074.8443125
+}

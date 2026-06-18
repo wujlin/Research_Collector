@@ -1,0 +1,1118 @@
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+you
+you
+you
+you
+you
+you
+you
+you
+you
+you
+you
+welcome professor
+good morning welcome professor good morning
+they're very happy to have you with us and we're very
+happy to that you accepted our invitation
+absolutely okay so without further ado i'm gonna hand it over to my dear professor i'm the head
+for the course and i'm gonna hand it over to my professor to welcome you on his side and then we
+can have your wonderful time before getting started uh i wonder if it makes sense uh i want
+to make sure you can figure out the slide sharing yeah sure sure on the top uh you can see i think
+there are force i can from the right you can share the screen with it beautiful let me try to
+figure out uh i apologize i haven't used this platform before yes yes it's new and i try to
+give some visuals and i don't know if they help yeah help me log on sweet i just looking for the
+screen share button great
+okay cool beautiful great okay cool cool so i'm gonna hand it over to my professor and then we
+can have your attack and thank you
+um hi benjamin can you hear me
+nice to have you and nice to meet you uh it's our pleasure to have you today
+my name is muhammad rofan i am the lecturer of this rl course
+and we have regular invited speakers
+from different topics that we teach every week so
+it's nice to have you today and we are looking forward to hear
+about your talk so please feel free to to start thank you for the kind introduction i'm super
+excited to be here and i'm really looking forward to all the questions next hour and then all the
+during the q a and the following
+um 30 minutes thank you so much so i'm benjamin eisenbach i'm an assistant professor of computer
+science here at princeton university and i'm super excited to share with you some of the work that me
+and my students have been working on over the last couple of years the the title of today's talk is
+self-supervised agents learning and exploring with minimal feedback and when i talk about self
+supervision i'm really going to be thinking about how we can learn from data from experience without
+needing rewards without needing benefits without needing benefits without needing benefits without
+rewards without needing demonstrations without needing optimal actions the huge challenge in
+generative ai today is how do we generate good data how do we generate good feedback
+and today's talk is going to give some specific algorithmic tools that we might use for lifting
+some of these limitations i think reinforcement learning is well positioned to give us ways of
+automatically generating data and we're going to see today how we can view reinforcement
+learning in a way that we can generate that data without expert feedback
+and so let's dive in i want to start with a thought experiment and this is intended to be
+interactive so i hope there's a way that people can uh react to the thumbs up or thumbs down on
+the platform here so um show of hands uh how many people think that a generative image model today
+in 2025 may can generate images different from those seen in this training data set
+is there a way people can raise their hand of some sort sweet okay
+uh yes yes they can raise their hand and if they raise their hand i'm gonna give them the microphone
+access so they can ask those cool okay so a couple hands there um
+okay what about language models can language models generate sentences
+different from those seen in their training data
+and now just raise your hand uh for a vote of yes
+not uh to ask a question he's like yes i think they can do this
+okay four out of fourteen
+what is the right analogy for reinforcement learning
+this is a rhetorical question but i like thinking about this question because it's not
+thinking about reinforcement learning in the context of the generalization capabilities of
+other models really helps has helped explain the concept of reinforcement learning and this is a
+expand my mind to what might be possible a priority I think generalization and reinforcement
+learning is typically thought of as sort of a dark art something like yeah maybe it would
+be nice to have but in the same way that we've seen wild generalization capabilities for
+image models they're able to generate images that are really really different than those
+seen in the training data set and then we've seen similar capabilities for language models
+they can generate sentences they're just massively different from those seen in the training
+data sets it gives me confidence that the same might be true for reinforcement learning
+that it might be possible to build some reinforcement learning agents that can solve tasks that
+are fundamentally different than those they were trained on if they're trained on enough
+tasks in today's talk I'm going to argue that one of the key ingredients to find this sort
+of generalization is to frame reinforcement learning in a self-supervised way that will
+allow us to learn on more tasks on more data and what today's talk will start to introduce
+some of these 맛있ies.
+algorithms that allow us to do that to learn reinforcement to do reinforcement learning in
+a self-supervised way so here's where we're going to go today i'm going to start by introducing
+self-supervised reinforcement learning providing a formal definition but also giving an example
+algorithm and this will lay a foundation for thinking about how how is it even possible to
+think about reinforcement learning if you don't have reward functions i'll then talk a little
+bit about some really recent ongoing work in my lab that's started to observe how these
+self-supervised agents can really unlock new capabilities and i'll talk a little bit about
+some generalization properties and we'll talk about a new benchmark and part of the reason i
+want to introduce this new benchmark is that it provides a really good jumping off point
+for folks that want to get involved in the research
+so let's get started this is a deep reinforcement learning course so i think that the next couple
+slides will probably be very obvious to many of you so i'll go through them rather quickly
+but please raise your hand or post in the chat here if you have any questions
+so in the typical reinforcement learning problem we have an environment we have policy the policy
+outputs actions a in response to observations s throughout today's talk i'm going to assume that
+the environment that we're in a fully observed setting and so the dynamics are markov and so
+the policy is also markov in the standard reinforcement learning problem we also observe
+rewards s
+and without loss of generality we can assume the rewards only depend on the state
+we'll see this makes our lives easier in a couple slides
+so the reinforcement learning problem is really exciting because it's so general it can be used
+to model games to model chemical reactions to model nuclear fusion to model education yet
+part of that generality or what comes with that generality is that it's also a very very
+challenging problem and i think that the challenge of reinforcement learning largely stems from the
+rewards and there are a couple different ways of seeing this one way of seeing it is that unlike
+in supervised learning where you get a label for every input in reinforcement learning you
+only get a label you only get feedback after you take several actions so in this task here
+we have this robot hand and it might be that you want to get the robot hand to go and pick
+up this green block and move it over and then put it down then position it in the blue bin
+but you might only get the feedback after you've taken five ten actions
+this makes it really hard to figure out well which of those actions was the correct action to take
+confounding this is the fact that the observations we're dealing with are often very high dimensional
+and so this ratio of number of bits of feedback to number of bits of input
+is a very very bad ratio and it makes the learning really challenging
+now part of the reason why we have such limited feedback in the reinforcement learning problem
+is because it's practically specifying these rewards is really hard so in this
+manipulation task that i've been showing here where we have this robot hand why should this
+observation here get a reward of plus five that seems sort of arbitrary well in practice
+the reason the state gets a reward of plus five is because a couple graduate students
+spent a couple weeks writing this block of code that computes the reward for this observation
+however actually writing this block of code is really really frustrating there
+are all these hyper parameters in here you might notice this 50 and this 0.01
+all these if else cases is really non-trivial to design these rewards even for experts and this
+means that for applications where someone went out to apply reinforcement learning if you're not an
+expert it's basically impossible to apply existing reinforcement learning methods
+this becomes even more challenging
+when you want to look at real world problems this reward function here depends on the
+positions of all the objects but if you're doing reinforcement learning directly from say
+images you don't know the positions of all the objects so you would first have to install some
+sensors or do some computer vision to figure out the positions of all the objects even before
+you could compute your reward function and so defining these rewards is a really really
+challenging problem and it's challenging not just in robotics one application we've been playing
+around with is chemistry and there how do we define whether this is a good molecule or a bad
+molecule we might want to produce a molecule say that's non-toxic that's safe for humans
+but how do you write that in in code how do you say okay this molecule is toxic this molecule is
+non-toxic it seems very non-trivial to define that in code and so in today's talk we're going
+to be thinking about how we can start to get the benefits of reinforcement learning without having
+this massive challenge of learning reinforcement learning without having this massive challenge of
+reward engineering without having to write that big block of code can we still design
+reinforcement learning algorithms that can help us out so that's where we're going to go today
+and as a bit of motivation i want to start by thinking about in other areas of machine learning
+how have how have we figured out ways of learning without feedback
+so in other areas of machine learning there are these self-supervised techniques techniques that
+can just look at raw data with no labels and automatically extract useful
+patterns from those data so there are a lot of these techniques in computer vision
+some of these techniques are these sort of masked auto encoders or diffusion models
+methods just just take an image and cover up pixels of that image or patches of that image
+and they try to predict what are the missing pixels or what are the missing patches
+and these are the techniques that underlie the big diffusion models that i imagine many of you
+have used before and there's similar self-supervised learning techniques in
+other areas of machine learning so for example if you look at natural language processing
+there are methods that look at a sentence and cover up random words to that sentence and then
+you try to predict what are those missing words or you cover up the next word of a sentence and
+you try to predict what are the next words and in doing so you're these methods that predict the
+missing words are give us the foundation for the modern language models that we have today
+and so in fact one way of seeing modern generative tools both in vision and in language
+is that they rely really heavily on doing self-supervised learning on doing learning
+just on raw data on just big stacks of images or big stacks of sentences without any labels
+about whether those are good images or bad images and so seeing the massive success of
+self-supervised learning in these other domains vision and language has inspired us to think about
+how can we develop a foundation for self-supervised reinforcement learning how can we define define
+reinforcement learning
+algorithms that similarly don't require any feedback don't require any rewards
+so just to make sure we're all on the same page i want to introduce the definition of what i mean
+by self-supervised reinforcement learning at first pass self-supervised reinforcement learning might
+simply mean that we take the reinforcement learning problem and we delete the reward
+function we now have a formally a controlled markoff process maybe more formally i might say
+self that self-supervised reinforcement learning is the problem of learning policies or models or
+representations something that enables us to quickly solve downstream tasks but we want to
+learn this policy or model of representation with no rewards and with no demonstrations
+so to make this more concrete i'll talk about one particular type of self-supervised
+reinforcement learning problem which is this problem of goal reaching or goal conditioned
+reinforcement learning there the input here it could be
+an environment an environment without a reward function or it could just be a data set a data set
+of say videos labeled with actions these actions are not necessarily the optimal actions they're
+not necessarily demonstrations and we don't have rewards and the goal or are the at the end of the
+day we want to produce a goal conditioned learning model for self-supervised reinforcement learning
+so we want to create a goal conditioned learning model for self-supervised reinforcement learning
+that's what we have on the right hand side a policy that takes as input the current state of
+the world and some goal state and the goal is just an observation that shows what we would like the
+world to look like so maybe the state is an image and the goal is another image showing us what we
+want the world to look like and the policy should take actions so that eventually we get to this
+desired goal state okay i'm going to pause here uh can i how are there any questions about the problem
+at this point
+and so one quick question uh how the goal is specified is it
+specified through a particular state or do we have other means of doing it this is super good question
+so in the next couple slides i'm going to assume that the goal is given by
+a state observation and so for this robot manipulation task here the goal
+could just look like this image over here at the end of today's talk i'll talk a little bit about
+different ways of specifying goals one example is via language
+i see and so the learning should happen in a way that the algorithm is prepared to go to every
+possible goal is that true
+we would very much like that what we'll
+see today is an algorithm
+yes yeah that is where we're headed all right thank you it's a really good question
+are there any other questions
+great let's move on so i will now introduce
+an algorithm that we found pretty effective for solving some of these goal reaching tasks
+a algorithm we designed about three years ago but it's continued to surprise us by giving us new
+methods for new tasks and new interests and it keeps your the phenomenon we observe have
+also continued to surprise us and there's we just give one example of a goal conditioning algorithm
+algorithm, one way of learning the school conditioning policy
+without needing rewards. And there's several other algorithms
+that we could talk about later if folks are interested. So this
+algorithm works by using a form of contrastive learning.
+Contrastive learning is a way of taking data and learning
+representations from those data. And we do this using a form of
+temporal contrastive learning. This is a tool that's been
+around for a long time, especially in other domains, we
+found a way of applying it to the reinforcement learning
+setting that allows us to get optimal policies. And so what
+we're going to do is we're going to learn two encoders. One
+encoder is an encoder of state action pairs that maps pairs of
+states and actions to a representation. And the other is
+a goal encoder that takes just a future state observation and
+maps it to a representation.
+And we're going to learn these encoders using two terms. One
+term says that when we take our time series data, we take our
+video, we should look at a state and an action and sample some
+future state. And we want to optimize the encoders to give
+similar representations to states that occur nearby in time
+on the same video.
+And then if we look at
+states from different videos, we should optimize these encoders
+so that observations from different videos have dissimilar
+representations. So the intuition here is that the
+similarity between the representations to tell us
+similarity in time, how likely is it that you could get from
+one state action pair to some other state over some time
+horizon. Now, one detail that will turn out to be important is
+that when we're sampling these
+positive examples, these future states, we're going to sample them
+from a certain geometric distribution. And so they're most
+likely going to be one or two or three steps in the future, but
+they could be four or five or more steps in the future. And
+this geometric distribution will allow us to prove some important
+theoretical properties about this method.
+Now, one important detail here is that one of these encoders,
+the state action encoder, depends on the action. And what
+that means is that after we've learned these representations,
+we'll be able to directly use the representations for figuring out what is the best action to take
+if we want to get from one state to some future state. And remember, at the end of the day,
+that's these actions that we want to figure out. Now, for folks that have seen contrastive
+learning before, we can draw a certain analogy. So typically, when contrastive learning is
+introduced, say in a computer vision course, we think about applying it to images. You take an
+image, and then an augmented version of that same image, and then you optimize your representations
+to be similar for images of the same person, and dissimilar for images of different people.
+Now, the main challenge in applying contrastive learning is defining what these augmentations are.
+Are you going to rotate the image? Are you going to change the colors, the saturation?
+What we're doing is we're doing augmentation using dynamics, using
+time.
+So what we're doing is we're saying, when we look at a video, if we take a frame of that
+video, we construct the augmented frame of that video by jumping forward in time. And that doesn't
+require any engineering, it simply requires data.
+Another way of seeing what these representations are doing is viewing them as a sort of embedding,
+a way of embedding time series data, so that states that occur nearby in time are
+given
+similar representations, and states that occur more distantly in time are given more distant
+representations.
+So the intuition here is that once we've learned these representations, we should be able to
+use them for figuring out what are the states I'm likely to visit when I want to go from
+one state to another state, and what are the best actions to take if I want to get from
+point A to point B.
+So let's see how that works. As an example, let's go back to this manipulation task that
+we started today's talk with. We want, we have this robot arm here, this robot arm can move up,
+down, left, right, forward, backwards, and it has a grip where it can open and close. And let's say
+that we want to navigate from this current state to this goal state shown here, where the key
+difference is that the robot arm has gone down and picked up the block and moved it into the blue
+bin. And as a thought experiment, let's imagine we just have two actions, A1 and A2.
+So let's imagine we just have two actions, A1 and A2.
+So let's imagine we just have two actions, A1 and A2.
+So we can think about these representations as points lying on a sphere. We'll assume for now
+the representations are normalized, so they lie on a sphere. It could be a very high-dimensional
+sphere. And because the state action representation depends on the action, for each of these actions,
+A1 and A2, we have different representations. And so if we just look at this picture here,
+we can compare the similarity between one state action representation and the goal representation,
+and another state action representation and the goal representation.
+And so just based on this figure here, I want to see a show of hands for who thinks we should take
+action A1. And show of hands for who thinks we should take action A2. And who is confused?
+Great.
+Okay. So yeah, after we've learned these representations, we can exactly look at their
+similarity to figure out what is the best action to take. And so here, it seems like A2 is the best
+action. So we will take action A2, and then we will get to some new state. And then based on
+this new state, we would do a similar computation, figuring out what is the best action to take here.
+And that's exactly how the method works. We define the policy as selecting whichever action A
+has a state action representation
+with a most similar dot product to the goal representation.
+So let's wrap this up.
+Let's see how the complete algorithm works.
+We start with data, a data set that's of not demonstration.
+It could just be of random data,
+of random state action pairs with no rewards.
+We then do this temporal contrastive learning
+to learn these representations,
+a state action representation and a goal representation.
+And then we use these representations
+to extract a goal-reaching policy,
+a goal condition policy that selects the actions
+given the state and the goal.
+Now, at this point, we can be done.
+We can take this policy and go solve your task.
+Or you could take this policy
+and go back and collect some more data.
+And depending on the problem setting you're in,
+sometimes collecting more data
+can further improve performance.
+Now, I think at this point,
+it's worth stepping back and providing
+a little bit of history.
+So we started this talk by saying,
+designing rewards is really hard.
+It's really frustrating for the graduate students
+to have to sit down and write those big blocks of red code.
+And so ordinarily, reinforcement learning requires defining
+and learning from a lot of rewards.
+And on the surface,
+it seems like these goal-conditioned
+reinforcement learning problems
+should require lots of rewards
+because now you're not solving one task, but many tasks.
+And this is typically how prior work
+has viewed these goal-conditioned RL problems.
+These goal-conditioned RL problems have been around
+for almost 60, 70 years.
+In fact, some of the earliest work in AI in the 1950s and 60s
+was working on goal-conditioned reinforcement learning.
+But typically, it's been viewed as a really,
+really challenging problem
+because you're solving not one problem, but many problems.
+But what we've seen here in this talk is that
+there's a way of defining
+these goal-conditioned reinforcement learning problems.
+In a way such that they don't require any rewards at all.
+And from an engineering perspective,
+this is really appealing because it means that
+you no longer have to define these rewards,
+that big giant red block of code,
+when you want to go solve some new problem.
+And aesthetically, we'll see how it draws
+some really nice connections to other areas of generative AI.
+And we'll see that in a couple of slides.
+So practically, this method,
+it ends up even outperforming methods that do use rewards.
+So here, I'm showing a visualization
+of what our approach does on this manipulation task
+when we tell the policy to try to get
+to this goal state up here.
+And a very good prior method
+completely fails to solve this task.
+We've shown this method outperforms
+a number of prior methods,
+but I now want to jump forward and highlight
+two really interesting applications
+that we've seen of these self-supervised reinforcement
+and learning methods.
+One is in robotic control.
+This is a collaboration done with Chongyi Cheng
+and Homer Wok.
+And so the problem that we were looking at
+was tabletop rearrangement.
+We have a robot shown up here,
+is this Widow X robot.
+It's a pretty low cost robot, it's a couple thousand dollars.
+And that makes it really fairly accessible.
+It's a couple of orders of magnitude cheaper
+than most robot arms today.
+But it also means that it's really hard to control
+because the plastic parts,
+where down the motors are kind of shaky.
+And we wanted to get the robot to rearrange the table.
+So it looks like this goal on the right-hand side.
+And there are two key differences between the image
+on the left and the image on the right.
+The first one is that the robot hand has moved
+to the upper left-hand side of the image.
+And the second is that this red spoon has moved
+to the left side of the image.
+And from a robotics perspective,
+there are a lot of things
+that makes this problem really challenging.
+First is that we're going to try to learn a policy
+that can do this manipulation problem from suboptimal data.
+We don't have any demonstrations.
+So we're going to be learning from a bunch of noisy data
+of the robot just doing random things.
+A second thing is that we don't know the positions
+of all the objects.
+We're doing this directly from pixels, from images.
+And third, we're going to do this in the setting where we can't see the object.
+And third, we're going to do this in the setting where we can't see the object.
+And third, we're going to do this in the setting where we can't learn by trial and error.
+But instead, we just have a fixed bucket of data.
+And from that fixed bucket of data,
+we're trying to pull out this goal-reaching policy.
+So there are a lot of things
+that make this problem really challenging.
+And so it's not surprising
+that the best prior method we could find,
+it fails to solve this task.
+And one thing you might notice is that this prior method,
+it fails in a sort of interesting way.
+It successfully moves the robot arm
+to this position on the left side of the screen.
+But it just ignores the spoon.
+And maybe that sort of makes sense.
+The spoon is only a small fraction of the image.
+Now, in contrast, when we evaluated our method,
+we found that the robot arm successfully went out of its way
+to pick up this red spoon
+and move it to the left side of the table and place it there.
+And then finally repositioned the robot arm
+in roughly the right position.
+And one thing I want to emphasize here
+is that it was able to learn how to do this
+without needing anyone to define
+those complex reward functions.
+The graduate students Changyi
+and Homer working on this project,
+they never had to sit down and write
+that big, giant, ugly block of red code.
+And because of that, they could use the same policy
+with no more training, with no more data,
+with no more gradient updates to solve new tasks
+just by prompting it with a new goal.
+So here we gave the robot a different goal,
+where now this can has been moved to the top of the table.
+And with no more training, we can just evaluate the policy.
+And we see that it roughly succeeds
+at solving this task as well.
+I think it's sort of interesting now to pop back up
+and think about the motivation at the start of this talk,
+when we were thinking about the generalization capabilities.
+I think it's sort of interesting now to pop back up and think about the motivation at the start of this talk, when we were thinking about the generalization capabilities.
+I think it's sort of interesting now to pop back up and think about the motivation at the start of this talk, when we were thinking about the generalization capabilities
+of language models and the generalization capabilities
+of vision models.
+The way we test the generalization capabilities there
+is by prompting those models
+with things that were not seen in the training data.
+And so note that we can do the same thing here.
+We can prompt this model with all sorts of images
+that it hasn't seen during training and see how well it does.
+And like those models, this reinforcement learning model
+is trained primarily on unlabeled data.
+is trained primarily on unlabeled data.
+In fact, it's trained entirely on unlabeled data.
+And so I think that these self-supervised methods
+are a really promising hint or promising approach
+for thinking about how we can develop
+reinforcement learning methods
+that exhibit the same sort of strong generalization
+capabilities that generative models in other domains do.
+And I want to briefly talk about
+one other interesting application.
+This one, we didn't take part in,
+but it is a really cool application
+of these contrastive reinforcement learning methods.
+This is done by some folks
+at a healthcare company nearby.
+They were controlling,
+they were looking at controlling ultrasound devices.
+There's this certain type of ultrasound device
+that you put down someone's throat,
+and then you can use this ultrasound to take pictures,
+ultrasound pictures of someone's heart.
+And this is a really challenging control problem.
+You have to just, this camera down here
+has all these knobs that you can control
+to focus the camera and to turn the camera around.
+And so the operators and the doctors
+controlling these cameras have a really hard time focusing
+and getting the correct images.
+So what this team did was they used
+these contrastive reinforcement learning methods
+to treat this as a goal-reaching problem.
+The goal here was a desired picture of someone's heart
+from a certain angle and a certain viewpoint.
+And after training, they gave the system
+this desired picture, and then the system
+could automatically figure out how do you change,
+these control parameters,
+so to get the ultrasound to take the desired picture.
+And I think this just emphasizes
+how these goal-reaching problems
+are potentially really widely applicable
+and how, because they don't need rewards,
+it makes it a lot easier for people in new domains
+to adopt these tools.
+So popping back up one level,
+we started this talk by emphasizing
+the key challenge in reinforcement learning.
+Typically when we talk about reinforcement learning,
+at least when I take reinforcement learning
+in my course here at Princeton,
+we assume that we're given the rewards.
+We assume, okay, someone gives you a game
+and you can read the score on the top right-hand corner.
+But a lot of practical problems
+don't have rewards readily accessible.
+And defining the rewards is a big challenge.
+And today we saw how by treating
+the reinforcement learning problem
+as a goal-reaching problem,
+we can avoid defining rewards.
+One of the key tricks that we saw for doing this is如果你city is
+doing this was to think about self-supervised learning. We thought about self-supervised
+learning and vision and language and how that was a really useful tool for giving rise to the
+powerful generative AI methods that we have today. And this method that I introduced, this temporal
+contrastive learning method, gave us an example of how we can use self-supervised learning
+for reinforcement learning. Now, in the next couple of slides, I want to argue that
+reinforcement learning is not actually that different from generative AI. In fact,
+when we think about self-supervised reinforcement learning, there's a sense in which it is a generative
+model. And now I'm going to walk you through what I mean here, because I think it helps
+really reframe what reinforcement learning methods are capable of.
+So let's think about what a generative model is. A generative model typically is trained on
+examples of images, say images of cats. And then to sample from that generative model,
+you perform some iterative procedure, typically going through some sequence of
+layers or iteratively denoising an image to produce a new sample.
+Now, reinforcement learning methods can be seen as doing something very, very similar.
+In particular, these goal-reaching methods were trained on a big dataset. And then
+to sample an outcome, we also performed iterative computation,
+where the policy would take an action and then the environment would give us some new observations.
+The policy would take another action, the environment would give us new observation.
+We would go around this loop many, many times iteratively. And then after doing this maybe
+a hundred times, we get some output. And so what reinforcement learning is it's just a different
+way of defining a way of sampling from a certain generative model. While our image generative models
+consist entirely of known parameters, this reinforcement learning generative model consists of
+of a combination of some policy parameters that we've trained
+and an environment that we don't even know.
+But at the end of the day,
+it gives us a way of sampling outcomes.
+Another way of seeing this is that
+when a lot of general image models today,
+you can prompt them, you give them a text description,
+such as a castle in the mountains,
+and they perform this iterative computation,
+iteratively denoising an image
+to eventually come to some desired outcome.
+How might we build reinforcement learning methods
+that do something similar,
+where we give them a prompt,
+say an image or a text description
+of build a castle surrounded by mountains,
+and then the robot performs hundreds or thousands
+or millions of actions to actually build that castle
+by interacting with the world.
+So again, we want to learn this mapping from an input prompt
+to an output state.
+Maybe an image, maybe language to an output state.
+But now we're thinking about mapping the inputs to the outputs
+by actually interacting with the environment.
+So I think that we can think about reinforcement learning
+as a generative model.
+And that's what I mean when I say that
+self-supervised reinforcement learning,
+it really is the sort of generative AI.
+So I think moving forward,
+we might see that generative AI methods,
+more like reinforcement learning methods rather than the sort of vision and language methods
+that we've seen before. And in the remaining of the talk, I want to highlight a couple
+of ongoing research efforts where we've started to push in this direction, where we've started
+to see what really is possible with these self-supervised methods.
+So I want to start with the elephant in the room. I've been primarily focusing on goal-reaching
+problems, but not every problem is a goal-reaching problem. How do you tackle problems beyond
+goal-reaching with self-supervised reinforcement learning? Well, to do that, we need to introduce
+a little bit of theory, trying to think about what mathematically are these representations
+learning. Before I said intuitively, they tell us the likelihood of getting from one
+state to some other state, but can we formalize that in math?
+Our key theoretical
+problem is that we don't have a goal-reaching problem. We don't have a goal-reaching problem
+as a result here is a relationship between these representations and Q values. In particular,
+you can prove that the dot product between these representations, the similarity between
+these representations, exactly correspond to a discounted sum of rewards. And this reward
+function here is a very natural one. It's the likelihood that your next state is equal
+to the goal. But conveniently, when we introduced this algorithm, we never actually computed
+this reward function. And so I'm introducing this reward function purely for analysis reasons.
+You never actually have to compute this. And what this theory tells us, for one, is that
+when we're comparing the similarity between these representations, that's not just a heuristic,
+but rather as a principled thing to do. Comparing these representations exactly corresponds
+to selecting actions that maximize your Q value. And that's the same thing that you
+saw that you probably have seen already in this course.
+And we'll see in a little bit how this same analysis gives us a way of solving problems
+beyond goal-reaching tasks. One small subtle note here is that up in this right-hand corner
+here, I have this beta. And what that means is that the algorithm I've introduced so far
+is estimating the Q value for the behavioral policy. The future expected rewards if you
+acted the same way that you did when you were collecting the data. Now, sometimes you
+might want to do a sort of Q-learning or SIRSA-style method, where you instead estimate the Q
+value that you would get if you were acting according to a different policy. And it turned
+out there's a way of adapting this contrastive learning procedure to do off-policy evaluation.
+And I'm going to skip over the details now, but the key idea is that you can do bootstrapping
+using these contrastive features.
+By comparing the similarities at one time step to the similarities at the next time
+step. It ends up closely resembling an idea known as the successor representation that's
+popular in neuroscience. So the key reason I bring up this theory is that by showing
+these representations encode probabilities, it gives us a way of solving problems beyond
+just goal-reaching problems. So for goal-reaching problems, we could use these representations
+to estimate the likelihood of getting to the desired goal state, and then for figuring
+out what is the best action to maximize that probability.
+Now there's some problems where there are multiple outcomes that are all good. Maybe
+you want to clean your bedroom, but there are several different configurations of your
+bedroom that could be called clean. You might not care about the order of the books on your
+bookshelf or the order of the pillows on your couch. And so there, to solve problems where
+there are multiple good outcomes, you might want to use the probability of getting to
+any of these outcomes. You can estimate the likelihood of getting to any of these good
+outcomes, and then taking actions that maximize the likelihood of getting to any of these
+good outcomes. Similarly, you can extend this to the setting
+where… to the fully general setting where you have a small number of states labeled
+with rewards.
+you know one state that has a reward of 8, one state that has a reward of 3, one state that has
+a reward of negative 10, another with a reward of negative 5. And given just these four states
+and the representations, you can estimate the likelihood of getting to the state with
+reward plus 8 and the likelihood of getting to the state with reward plus 3 and so on,
+and then select actions to maximize your future rewards, where your future rewards are just the
+likelihood of getting to each of these states times the reward at each of these four states.
+And we've shown that these extensions work very effectively. So the key takeaway here is that
+these representations are useful not just for solving goal-reaching problems, but also for
+solving more general reinforcement learning problems. Before going on to talking about some
+of the most recent research, I want to pause to see if there are any questions at this point.
+I have a quick question. Can you hear my voice?
+Yeah.
+Yeah. So in contrastive learning, we know that if we apply the augmentation in the regular
+case of self-supervised learning like SimCLR and techniques like that, if you apply augmentations
+that totally apply the same type of augmentation you're saying, like, you're getting a product,
+change the image there is no hope to learn a meaningful representation and we
+have to keep a balance between how much we change the image and whether or not
+the task that we are asking the encoder to solve being something trivial so if
+you apply to a small augmentation that also doesn't work so here it sounds like
+you pick an action that reaches some some goal state in the future and you
+treat those two those two state actions and goal state as positive pairs how do
+you make sure that the same problem doesn't happen here do you do you
+enforce a threshold on the on the time horizon that you expect that action to
+result in the goal state or do you have other mechanisms to make sure that
+that problem doesn't happen in practice we haven't found this to be a huge
+problem the most important parameter we have is this parameter that tells us how
+far into the future are we going to look
+so when we sample the future state here we're sampling it according to a
+geometric distribution with probability with parameter one minus gamma
+and so if we select a very small value of gamma like gamma equals 0.5 then the
+future states are mostly going to be one or two steps in the future and so it's a
+very easy classification problem if you select a very large value of gamma like
+gamma equals 0.999 then the future states are on average are going to be a thousand
+time steps in the future and that's going to be a very very challenging problem
+we found that the algorithm is pretty robust to this choice of gamma in practice we end up using
+a value of 0.99 but that's mostly to be consistent with prior work with the literature not because
+it works much better or worse than other values there is a kind of um there is one setting where
+this issue is definitely does show up and that's in settings where every trajectory when it's really
+easy to distinguish one trajectory from another trajectory for example let's imagine that I take
+a couple pictures out my window
+and or let's I or let's say that I take a video outside my window here and
+um then I take another video in uh next month another video the month after that
+the trees outside my window they're gonna look different every month and so even though I want
+these features to pick up temporal information within a single video the representation would
+probably just pick up how each video looks different from the previous video because
+one video doesn't have leaves on the trees and the next video does have leaves on the trees
+and so there's a variant of this method where instead of sampling the negative examples from
+different videos we sample them from the same video but just much further away in time
+and that can that increases the difficulty of the classification problem but can result in learning
+better features so I hope that answers the question literally it's not an issue but when it
+is an issue there are ways of combating it by thinking about
+how do you sample the negative examples
+um may I ask a question too absolutely
+I have many questions but I ask just some of them and my first question is um are really
+temporarily far estate far semantically because for example the for example the mountain car
+uh example the classic one when a car goes up and then goes down
+can be in very similar state for example to its initial state how do you contrast these two it's
+they are not really semantically away from each other this is a really really good point um the
+um and so when I say that uh we're learning representation so that the distance between
+the representations corresponds to the distance in time I'm saying this in an average sense
+and so you're absolutely right that there can be examples where states that occur states that were
+far apart in time uh actually are often occur nearby in time as well but part of the reason
+why I wanted to introduce this theory is it actually gives us some theoretical grounding
+for confidently saying yes these representations are telling us the correct thing they are telling
+us the likelihood of getting from one state to some other state at some point in time
+one way of seeing this is that um in that example you mentioned where you have the mountain car and
+let's say that you're looking at one state and a nearby state in that nearby state uh you could
+have gotten to it if you first went up the mountain and then down the mountain well the
+likelihood of sampling that transition is going to be much lower than the likelihood of sampling
+the transition where you just go from this position to this position because this shorter path because
+this the likelihood of sampling
+uh a start goal pair is depends on Gamma to the number of time steps that have elapsed and so
+you're much much more likely to sample this uh state goal pair along this first path when you
+went from the state to the goal then along this longer path when you first went from the state up
+the mountain and then down again in fact it's exponentially more likely to sample a shorter path
+and that's part of the reason why this doesn't end up being a problem
+okay
+thank you and I have two other questions another one is how do you deal with continuous action
+space and because you use argmax there and for continuous action space the only thing that I
+have in mind right now is to take gradient with respect to action gradient of difference between
+current state and the gold estate is it the only possible way or is any other way wrong
+yeah so in practice what we do is we do have you seen algorithms
+like DDPG or TD3
+yes yes cool so we did exactly the same thing that those algorithms do so we learn a policy that
+you're the objective for the policy is to sample actions that maximize this inner product
+hmm
+right saw
+just this algorithm is actually very easy to implement on top of an implementation of Meeting or
+SAC or T3 or GDPG, you simply modify your actor loss
+to instead of using the Q value, use this inner product
+and you modify your critic loss
+to instead of using the regular TD loss
+to use this contrastive loss.
+I see, I see, thank you.
+And for the last question,
+how do you deal with partially observable environments?
+Because in those states you cannot contrast observation
+with each other.
+They should be the full history or embedding of history
+and it is embedding on embedding, you know,
+it gets harder, I believe.
+That is an open problem.
+We haven't solved it yet.
+Oh, okay, thank you.
+I think the easiest way of doing it would be to do exactly
+like you suggested, to think about sequences of states
+and then use some sort of sequence model
+like an LSTM or a transformer, but we haven't tried that yet.
+And a spoons parlar with Farmer,
+we haven't translated it anything yet.
+Yeah, so is there any questions you want out of the talk?
+I see, thank you.
+Thank you.
+Any other questions before we move on?
+Yeah, go ahead.
+Do you have my voice.
+Perfect, I have a question about the goal condition RL.
+In will that condition RL, for example in vision task,
+on a recommended project cheese-f妹e communicationяг средe
+between the goal state and the current state does this limit our exploration in the environment
+because in each state that i am i want to close as possible to the goal state and maybe there
+are some states that are not really similar to the goal state at least in our future space
+and those can lead us to the better states i think this exploration may be
+a bit limitation for goal condition or i'm wrong
+to the contrary we find that the exploration is much stronger than alternative methods
+and in a couple slides i'll talk a little bit about this
+i think part of the reason why is that when we think about these goal-riching tasks
+we're only saying what we want the agent to do not how we want it to do it and because we are
+telling the agent how it should do it it has to automatically try to figure out what is the best
+way of how to do it and that's what we're trying to do and that's what we're trying to do and that's
+what we're trying to do and that's what we're trying to do um of solving the task and so for
+um of solving the task and so for example when you look at mazes we end up seeing
+example when you look at mazes we end up seeing pretty effective exploration uh exploring lots
+pretty effective exploration uh exploring lots of different parts of the maze before it eventually
+of different parts of the maze before it eventually finds the shortest path
+i see thank you
+great in these last few minutes i want to talk about some of the most recent research
+we've been doing using these contrastive methods
+we've been doing using these contrastive methods
+cool so our goal that like we started the talk with was thinking about
+how do we build reinforcement learning methods that are like generative models that could be
+prompted to do nearly everything i want to highlight some recent work that's taking some
+steps towards this so if we think about what have been the successes or what has helped cause these
+other areas of generative ai to be so successful i think perhaps the most important component is
+self-supervised feedback we've already seen today how we can build reinforcement learning methods
+with self-supervised feedback i think there are a couple other important ingredients one is the
+capacity to train on lots and lots of data two is the ability to use lots of compute and three is
+having standardized benchmarks so we can compare different methods on a level playing field
+so to get these next three benefits
+Together with some collaborators, we designed a new benchmark that allows us to compare methods
+on a level playing field and to use lots more compute and data to see how leveraging more
+compute and data can improve performance. And so this is a new benchmark that we've been calling
+JAX-GCRL. JAX is the programming language and goal condition reinforcement learning. There's
+a link to the repo down here. And I want to highlight some of the key properties of this
+benchmark that has made it really fun to use. The most important property is that it's really fast.
+When I was doing my PhD, it used to take several hours to a couple of days
+to run experiments that now just take a couple of minutes on one GPU. And so I think this has
+made the research process a lot more fun because now you can iterate on algorithms in a couple
+minutes. It makes the problem of algorithm design feel a lot more like data science.
+It also makes it a lot easier to run experiments for millions or billions of time steps.
+And previously, those experiments could only be done in industry with people that have lots and
+lots of GPUs. I want to highlight some of the tasks here. Some of them are pretty easy. Some
+of them are really hard and are still open problems. So one of the tasks is this embodied
+Sokoban problem where this quadruped is trying to run to a goal that's hidden back here in that first
+task to push this block out of the way to get there. Here we can see it. This next episode,
+I'm going to hide the goal over here. This next task is a football task where the ant
+has to dribble the soccer ball towards this location here. I see it's fairly good at football.
+And so this gives you a sense of the source of problems that these contrasted algorithms can
+solve. We also have a new benchmark that looks at the offline setting. So if you want to see,
+okay, if you just are given a fixed data set, what are the sorts of policies you can learn?
+This benchmark is a really great way of doing that. Both these benchmarks have really good
+documentation. And so if you're looking to get involved in the research, I'd highly recommend
+looking at these two benchmarks.
+The next thing I want to talk a little bit about is generalization.
+And so when we think about generalization and machine learning broadly, often we're thinking
+about generalization across perceptual differences. Say we want a neural network to produce
+similar outputs for an image and an augmented version of that same image. In this project,
+we were thinking about a kind of wacky
+notion of generalization that's unique to the reinforcement learning problem.
+This notion of generalization that we were calling horizon generalization.
+And the idea is that when we have a goal condition policy,
+if we give it a state action pair, sorry, a state goal pair, and it produces some action,
+if instead of telling it to get to a goal, we tell it to get to a waypoint
+on the route to that goal. So instead of trying to get really
+far away, just try to get to a first intermediate waypoint, you could take a similar action.
+And so this is a notion of invariance. You want your policy to produce similar actions
+for different inputs where or for transformed inputs.
+And what Kathy and Vivek proved is that if you have this invariance property,
+then your policy will generalize with respect to the horizon. And what I mean here is that
+you can now, if your policy satisfies this property, you can do something about that.
+And so there's a little
+property, you can train it on just easy tasks, say task reaching goals within the smaller
+circle.
+And then the policy provably will generalize to be able to reach goals that are more further
+away.
+And so I think this notion of generalization is really powerful for thinking about how
+do we build reinforcement learning agents that really can generalize new things that
+are radically different than those that they were trained on.
+We also have found that data augmentation can be pretty useful for achieving this generalization.
+So self-supervised reinforcement learning, it really can be seen as a form of generative
+AI.
+And if you want to figure out how do we build agents that can do anything, there are a couple
+of hints that we've seen over the last couple of months that this really should be possible.
+And I want to briefly highlight some of those hints.
+The first is that these representations seem to have really intriguing properties.
+And so before, when we were looking at the similarity between these representations,
+we actually can think about what these intermediate points, what these intermediate representations
+look like.
+So we start with a prior method, an alternative method, a variational autoencoder.
+If you visualize these intermediate waypoints, you end up seeing that the representations
+have captured the contents of the scene, but not anything about time.
+In contrast, with these temporal contrastive learning methods, these intermediate representations
+not only capture the contents of your image, but also how to solve the task.
+They also capture the physics.
+And so when you interpolate in representation space between this observation here and this
+observation here, you end up generating a plan.
+And this was entirely unexpected.
+We didn't expect this to happen.
+So let's look at this.
+So this is a very interesting example.
+But I think that this gives us some hints that these representations really are capturing
+useful bits of information.
+Since then, we've done some theory to actually prove why this interpolation should happen.
+The second interesting property that we've seen gets back to the question that was asked
+earlier about exploration.
+So typically, when we train these goal condition methods, we train them on goals of varying
+difficulties.
+And so when we collect the data, when we say, OK.
+Try to get to a very difficult goal, sometimes we say, try to get to an easier goal.
+Often we only actually care about the performance on one difficult goal.
+But our intuition, based on prior work, is that if you only collected data, if you only
+ever tried to get to a very, very distant goal, it would be very hard to do the exploration.
+But to our surprise, when we're using these temporal contrastive learning methods, doing
+data collection.
+By always commanding one difficult goal actually works.
+In fact, it often works better than collecting data using these goals of varying difficulties.
+And this actually pretty profoundly changed how I think about the exploration problem.
+Previously, I used to think that exploration happened by first finding a route to the goal
+and then finding faster and faster routes to the goal.
+But what this project showed is that even before these agents have ever found a path
+to the goal, the agent here is trying to move the green block to the blue bin.
+The agent here is trying to put the lid on the box.
+Even before these agents have ever successfully solved the task, they're starting to interesting
+exploration.
+They're starting to knock the blocks around, push the objects around.
+And so I think what this shows is that there's something about these contrastive reinforcement
+learning methods.
+That allows them to do really effective exploration even before they've ever solved the task for
+the first time.
+So he's only here around 19,000 trials when they first solved the task.
+And we see that similar things happen in the multi-agent setting, that there's a similar
+emergence of exploration here.
+And the last hint that we found pretty intriguing is that these methods benefit significantly
+from scale.
+So most reinforcement learning methods use architectures that are about four to five
+or four layers deep.
+And prior work has found that making networks deeper don't seem to increase performance.
+But with these self-supervised methods, we find that increasing the depth of networks
+can significantly, significantly improve performance.
+And I think the key reason why gets back to the start of this talk, that we're doing self-supervised
+learning.
+And because we're doing the self-supervised learning, what this means is that we're getting
+many bits of supervision for free.
+We're just extracting bits from these raw, unlinked layers.
+We're extracting multiple data.
+And because we're getting all of these extra bits for free, I think this helps explain
+why we're able to train models that are much, much bigger.
+And this, in turn, results in learning behaviors that more effectively solve a number of tasks.
+So I'm going to end there.
+I think that the key challenge in reinforcement learning today is rewards.
+I think self-supervised learning is a really, really powerful tool for figuring out how
+do we get the benefits of reinforcement learning without the challenges of designing rewards.
+And I think self-supervised learning is really, really powerful tool for figuring out how
+do we get the benefits of reinforcement learning without the challenges of designing rewards.
+And I think self-supervised learning is really, really powerful tool for figuring out how to
+build reinforcement learning agents that truly will be able to do anything, including things
+that are far beyond what they were trained to do.
+I'll end here, and I'm happy to take any questions for the remaining 30 minutes.
+Thank you.
+Oh, one last note.
+If you want to get involved in the research, here is a link to the repository for the codebase
+that I talked about in the middle of the talk.
+Thank you so much, Benjamin.
+I have a quick question.
+So in training LLMs, RL has recently been found to be a success story, like the deep
+secret story and other things.
+So do you believe that these methods that you introduced in this talk, could they be
+useful in that context as well?
+What's your take on that?
+Absolutely.
+In fact, we're currently working on it.
+The methods like the deep seek R1 method are really, really powerful for certain types
+of problems, for problems where it's easy to define the rewards.
+You might notice that most of the successes of reinforcement learning for language models
+are in settings where the rewards are easy to define, where you have these nice verifiable
+rewards.
+Now, this explains why the language models are really effective at things like deep seek,
+where you can write test cases to check the correctness of code, and math, where we already
+have proof checkers that can check whether your proof is correct.
+But in settings like dialogue, it's a lot harder to define a reward function for saying,
+did the chatbot convince the patient to take their medication every day.
+And my hope is that there are all these potential applications of language modeling that will
+be unlocked by thinking about these first steps.
+thinking about these problems as goal region problems.
+I see, thank you so much.
+I also have a question.
+My question is why doing greedy action is good here,
+but not good in RL itself, you know?
+What you're doing here is taking greedy action
+that makes you closer to the representation
+of goal state that you want to go.
+I claim that there could be a path that is closer,
+but not in embedding the space.
+I don't know how to phrase it correctly,
+but I just want to know why greedy action is good here.
+I agree this is super counterintuitive.
+If we think about solving a maze,
+greedy action selection
+is not a good idea.
+My, another example, my office is on the second floor.
+So if I want to get down to the road down there,
+I could try to jump out my window.
+That is the, of course, greedy action selection,
+but it very obviously is not the best way
+of getting outside the building.
+I should take the stairs, not jump out the window.
+Part of the reason why the theory here is important
+is that it helps explain why greedy selection,
+greedy action selection is useful.
+I assume you've probably seen the policy improvement theorem.
+In your course.
+And what that says is that choosing actions
+that maximize the Q value, that's the right thing to do.
+If you repeat that, you'll eventually get awful policy.
+And so showing that greedy action selection
+corresponds to selecting actions that maximize the Q value.
+This helps give us some reassurance
+that greedy action selection is actually a good idea.
+Oh, I see.
+I see.
+Now it makes sense.
+Thank you.
+Bye-bye.
+Bye-bye.
+Bye-bye.
+Bye-bye.
+Bye-bye.
+Bye-bye.
+Bye-bye.
+Bye-bye.
+Bye-bye.
+Bye-bye.
+Bye-bye.
+Hi, do you have my voice?
+Perfect.
+And thank you for awesome presentation.
+I have a question about negative samples
+and how we choose them, actually.
+This question comes to my mind from studies
+about debiasing contrastive learning in computer vision.
+I see.
+question is to what extent could that be important here are there any positive correlations that
+we punish in our contrasting loss can you elaborate a bit uh okay yeah actually i wonder
+um when we punish our negative samples within our batch could we have some positive correlations
+between the positive trajectory and the negative trajectory for example we could have um some
+certain robot movements in our trajectory but toward different goals so should we classify
+them as negative samples to each other or not i'm not entirely sure i understand the question
+i think one thing that definitely is true is that sometimes
+the the samples that you use as negatives i'll be able to go back to um
+the the negative samples here sometimes the negative examples are actually positive examples
+sometimes we get it wrong but that's actually okay because what's important for classification
+is the frequency with which something occurs as a positive example versus a negative example and the
+representations are basically encoding the relative frequency of positive examples versus
+negative examples formally this problem is solved by a positive example versus a negative example
+and that's what we're trying to do here
+and i think that's something that's something to really provide a better understanding of
+how we can use this information and learn how it can also be improved so what do we do
+so this is something that's sometimes known as positive unlabeled classification
+thank you thank you so much
+If folks also have questions about just like the research in general or reinforcement learning or graduate school or anything else feel free to ask those questions as well.
+Why if you do a PhD in reinforcement learning.
+I have another question since nobody asked question I have a lot of them, I can ask.
+So more questions.
+My question is, how do you define.
+The reward in that program that you showed us that it is equivalent to maximizing the return, not the reward itself.
+And what is the reward that how do you define the reward that is equal to achieving the goal.
+So how is the reward here defined.
+Yes, exactly.
+So this is purely for analysis.
+What you can prove is that the inner product here is equivalent to the discounted sum of rewards for the reward is the likelihood of getting to a state at the next time step.
+In tabular settings.
+This is just a one.
+If you're at the goal and a 0, if you're not at the goal.
+So, I think the tabular setting is a bit easier to think about.
+Okay, I see.
+Thank you.
+Okay.
+Thank you.
+Another question from my site, Benjamin.
+So you mentioned why taking a PhD be the thesis defined on RL and that is the question for many of my graduate students here at Sharif.
+You're saying that.
+So this is this mostly applies to the master students actually.
+Where it takes like two years for the research to be completed.
+So some of them asked why we should work on RL problems because, you know, it's quite unlikely to gain some significant achievements in such a short period of time.
+So what is your take on that?
+Do you believe?
+Could we do quick researches on reinforcement learning in two years or so?
+Or it should be subject of a PhD studies.
+I definitely think we can.
+And as a couple of examples of this.
+I used to talk about, like, the timeline for several of these things.
+So, this project that Grayson Michael worked on grace was a master student.
+Michael is an undergrad.
+And they completed this project in about 6 months.
+And so.
+Uh.
+That's very doable.
+Um.
+This project that try you and look worked on.
+Try you and look at with undergraduate students.
+And they completed this project in less than 6 months.
+On top of their coursework.
+Um.
+And similarly, this project that Kevin and Sean worked on.
+Uh, honestly, it was probably.
+Uh, October, February.
+Like four or five months.
+And so it's very, very possible to.
+Amazing research in a short amount of time.
+Cool.
+Um, that's awesome.
+So, uh, are these projects, uh, did these projects require some significant computational resources as well?
+Or.
+Uh, it was just like conventional.
+Uh.
+Amount of resources.
+This.
+The project that Kevin and Sean worked on did require a fair number of people.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+you'd be able to get by with one GPU per person.
+I see, I see.
+Thank you so much.
+So Arash, is there any question left?
+I don't think so.
+I don't see any question from the audience.
+So I think we can finish the talk here.
+If there's no other question.
+Okay, so thank you professor for accepting our invites
+and we had a wonderful time having you giving us the time.
+Thank you again for the invite.
+I really enjoyed all the questions.
+Thank you and have a good rest of the day.
+Thank you so much.
+Have a nice day.
+Thank you.

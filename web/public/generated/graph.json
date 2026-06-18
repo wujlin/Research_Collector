@@ -193,6 +193,14 @@
       "is_leaf": true
     },
     {
+      "id": "ai_for_physics/generative_dynamics/energy_based_models",
+      "label": "Energy-Based Models",
+      "type": "topic",
+      "parent_key": "ai_for_physics/generative_dynamics",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
       "id": "ai_for_physics/generative_dynamics/conditional_generation",
       "label": "条件生成",
       "type": "topic",
@@ -221,6 +229,30 @@
       "label": "Scientific ML Applications",
       "type": "topic",
       "parent_key": "ai_for_physics/physics_informed_modeling",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "ai_for_physics/geometric_equivariant_learning",
+      "label": "几何与等变学习",
+      "type": "topic",
+      "parent_key": "ai_for_physics",
+      "depth": 1,
+      "is_leaf": false
+    },
+    {
+      "id": "ai_for_physics/geometric_equivariant_learning/equivariant_materials_models",
+      "label": "等变材料与分子模型",
+      "type": "topic",
+      "parent_key": "ai_for_physics/geometric_equivariant_learning",
+      "depth": 2,
+      "is_leaf": true
+    },
+    {
+      "id": "ai_for_physics/geometric_equivariant_learning/riemannian_generative_models",
+      "label": "Riemannian Generative Models",
+      "type": "topic",
+      "parent_key": "ai_for_physics/geometric_equivariant_learning",
       "depth": 2,
       "is_leaf": true
     },
@@ -498,7 +530,7 @@
       "type": "venue",
       "tier": 0,
       "reputation": "unreviewed",
-      "paper_count": 51
+      "paper_count": 52
     },
     {
       "id": "paper:314",
@@ -1750,6 +1782,56 @@
       "type": "venue",
       "tier": 3,
       "reputation": "cautious",
+      "paper_count": 1
+    },
+    {
+      "id": "paper:399",
+      "label": "Scaling Laws from Sequential Feature Recovery: A Solvable Hierarchical Model",
+      "type": "paper",
+      "year": 2026,
+      "relevance_score": 58.0,
+      "citation_count": 0,
+      "tier": 0,
+      "venue": "arXiv"
+    },
+    {
+      "id": "author:1475",
+      "label": "Arie Wortsman-Zurich",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1476",
+      "label": "Hugo Tabanelli",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1477",
+      "label": "Yatin Dandi",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1478",
+      "label": "Florent Krzakala",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1479",
+      "label": "Bruno Loureiro",
+      "type": "author",
+      "affiliation": "",
+      "h_index": 0,
       "paper_count": 1
     },
     {
@@ -3229,24 +3311,6 @@
       "affiliation": "",
       "h_index": 0,
       "paper_count": 1
-    },
-    {
-      "id": "paper:258",
-      "label": "Fokker-Planck Analysis and Invariant Laws for a Continuous-Time Stochastic Model of Adam-Type Dynamics",
-      "type": "paper",
-      "year": 2026,
-      "relevance_score": 54.0,
-      "citation_count": 0,
-      "tier": 0,
-      "venue": "ArXiv.org"
-    },
-    {
-      "id": "author:1034",
-      "label": "Kaj Nyström",
-      "type": "author",
-      "affiliation": "",
-      "h_index": 0,
-      "paper_count": 1
     }
   ],
   "edges": [
@@ -3357,6 +3421,11 @@
     },
     {
       "source": "ai_for_physics/generative_dynamics",
+      "target": "ai_for_physics/generative_dynamics/energy_based_models",
+      "type": "taxonomy"
+    },
+    {
+      "source": "ai_for_physics/generative_dynamics",
       "target": "ai_for_physics/generative_dynamics/conditional_generation",
       "type": "taxonomy"
     },
@@ -3373,6 +3442,21 @@
     {
       "source": "ai_for_physics/physics_informed_modeling",
       "target": "ai_for_physics/physics_informed_modeling/scientific_ml_applications",
+      "type": "taxonomy"
+    },
+    {
+      "source": "ai_for_physics",
+      "target": "ai_for_physics/geometric_equivariant_learning",
+      "type": "taxonomy"
+    },
+    {
+      "source": "ai_for_physics/geometric_equivariant_learning",
+      "target": "ai_for_physics/geometric_equivariant_learning/equivariant_materials_models",
+      "type": "taxonomy"
+    },
+    {
+      "source": "ai_for_physics/geometric_equivariant_learning",
+      "target": "ai_for_physics/geometric_equivariant_learning/riemannian_generative_models",
       "type": "taxonomy"
     },
     {
@@ -4708,6 +4792,51 @@
     {
       "source": "paper:325",
       "target": "venue:115",
+      "type": "published_in"
+    },
+    {
+      "source": "paper:399",
+      "target": "statistical_physics",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:399",
+      "target": "statistical_physics/collective_structure/phase_transitions",
+      "type": "belongs_to"
+    },
+    {
+      "source": "paper:399",
+      "target": "statistical_physics/collective_structure",
+      "type": "belongs_to"
+    },
+    {
+      "source": "author:1475",
+      "target": "paper:399",
+      "type": "authored"
+    },
+    {
+      "source": "author:1476",
+      "target": "paper:399",
+      "type": "authored"
+    },
+    {
+      "source": "author:1477",
+      "target": "paper:399",
+      "type": "authored"
+    },
+    {
+      "source": "author:1478",
+      "target": "paper:399",
+      "type": "authored"
+    },
+    {
+      "source": "author:1479",
+      "target": "paper:399",
+      "type": "authored"
+    },
+    {
+      "source": "paper:399",
+      "target": "venue:125",
       "type": "published_in"
     },
     {
@@ -6208,31 +6337,6 @@
     {
       "source": "paper:261",
       "target": "venue:127",
-      "type": "published_in"
-    },
-    {
-      "source": "paper:258",
-      "target": "stochastic_analysis",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:258",
-      "target": "bridges/translation_layers/fokker_planck_master",
-      "type": "belongs_to"
-    },
-    {
-      "source": "paper:258",
-      "target": "stochastic_analysis/stochastic_dynamics/sde_theory",
-      "type": "belongs_to"
-    },
-    {
-      "source": "author:1034",
-      "target": "paper:258",
-      "type": "authored"
-    },
-    {
-      "source": "paper:258",
-      "target": "venue:126",
       "type": "published_in"
     },
     {
@@ -8124,13 +8228,73 @@
       "target": "author:1467",
       "type": "coauthor",
       "weight": 3
+    },
+    {
+      "source": "author:1475",
+      "target": "author:1476",
+      "type": "coauthor",
+      "weight": 1
+    },
+    {
+      "source": "author:1475",
+      "target": "author:1477",
+      "type": "coauthor",
+      "weight": 1
+    },
+    {
+      "source": "author:1475",
+      "target": "author:1478",
+      "type": "coauthor",
+      "weight": 1
+    },
+    {
+      "source": "author:1475",
+      "target": "author:1479",
+      "type": "coauthor",
+      "weight": 1
+    },
+    {
+      "source": "author:1476",
+      "target": "author:1477",
+      "type": "coauthor",
+      "weight": 1
+    },
+    {
+      "source": "author:1476",
+      "target": "author:1478",
+      "type": "coauthor",
+      "weight": 1
+    },
+    {
+      "source": "author:1476",
+      "target": "author:1479",
+      "type": "coauthor",
+      "weight": 1
+    },
+    {
+      "source": "author:1477",
+      "target": "author:1478",
+      "type": "coauthor",
+      "weight": 1
+    },
+    {
+      "source": "author:1477",
+      "target": "author:1479",
+      "type": "coauthor",
+      "weight": 1
+    },
+    {
+      "source": "author:1478",
+      "target": "author:1479",
+      "type": "coauthor",
+      "weight": 1
     }
   ],
   "stats": {
-    "topics": 49,
+    "topics": 53,
     "papers": 80,
-    "authors": 232,
+    "authors": 236,
     "venues": 25,
-    "coauthor_edges": 315
+    "coauthor_edges": 325
   }
 }

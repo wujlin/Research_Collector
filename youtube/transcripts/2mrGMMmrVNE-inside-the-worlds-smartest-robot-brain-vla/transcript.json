@@ -1,0 +1,4910 @@
+{
+  "segments": [
+    {
+      "start": 0.32,
+      "end": 4.36,
+      "text": "This may be the most significant moment"
+    },
+    {
+      "start": 2.4,
+      "end": 7.16,
+      "text": "in modern robotics."
+    },
+    {
+      "start": 4.36,
+      "end": 9.32,
+      "text": "In 2023, a researcher at Google set up a"
+    },
+    {
+      "start": 7.16,
+      "end": 11.84,
+      "text": "table with a Coke can, pictures of Tom"
+    },
+    {
+      "start": 9.32,
+      "end": 13.6,
+      "text": "Cruise, Snoop Dogg, and Taylor Swift,"
+    },
+    {
+      "start": 11.84,
+      "end": 16.44,
+      "text": "and asked Google's newest robot brain,"
+    },
+    {
+      "start": 13.6,
+      "end": 17.76,
+      "text": "RT2, to move the Coke can to Taylor"
+    },
+    {
+      "start": 16.44,
+      "end": 19.84,
+      "text": "Swift."
+    },
+    {
+      "start": 17.76,
+      "end": 21.08,
+      "text": "RT2 was too large to run on the robot"
+    },
+    {
+      "start": 19.84,
+      "end": 22.8,
+      "text": "itself."
+    },
+    {
+      "start": 21.08,
+      "end": 25.96,
+      "text": "The robot sent one image at a time from"
+    },
+    {
+      "start": 22.8,
+      "end": 28.56,
+      "text": "its onboard camera to a TPU cluster,"
+    },
+    {
+      "start": 25.96,
+      "end": 31.2,
+      "text": "which sent back control signals."
+    },
+    {
+      "start": 28.56,
+      "end": 33.2,
+      "text": "The robot controlled by RT2 slowly"
+    },
+    {
+      "start": 31.2,
+      "end": 34.8,
+      "text": "picked up the Coke can and awkwardly"
+    },
+    {
+      "start": 33.2,
+      "end": 36.68,
+      "text": "placed it on the edge of the picture of"
+    },
+    {
+      "start": 34.8,
+      "end": 39.2,
+      "text": "Taylor Swift."
+    },
+    {
+      "start": 36.68,
+      "end": 40.64,
+      "text": "A couple years later, in 2025, one of"
+    },
+    {
+      "start": 39.2,
+      "end": 41.8,
+      "text": "the researchers on the team, Carol"
+    },
+    {
+      "start": 40.64,
+      "end": 43.68,
+      "text": "Hausman,"
+    },
+    {
+      "start": 41.8,
+      "end": 45.76,
+      "text": "would describe this scene as the moment"
+    },
+    {
+      "start": 43.68,
+      "end": 47.64,
+      "text": "it became clear to him that this was"
+    },
+    {
+      "start": 45.76,
+      "end": 50.44,
+      "text": "going to work."
+    },
+    {
+      "start": 47.64,
+      "end": 52.2,
+      "text": "Within a year of the 2023 Coke can demo,"
+    },
+    {
+      "start": 50.44,
+      "end": 54.72,
+      "text": "Hausman and many of the key members of"
+    },
+    {
+      "start": 52.2,
+      "end": 56.36,
+      "text": "the RT2 team had left Google,"
+    },
+    {
+      "start": 54.72,
+      "end": 58.56,
+      "text": "and reassembled to form a startup called"
+    },
+    {
+      "start": 56.36,
+      "end": 60.64,
+      "text": "Physical Intelligence."
+    },
+    {
+      "start": 58.56,
+      "end": 62.28,
+      "text": "And their robots have gotten better, a"
+    },
+    {
+      "start": 60.64,
+      "end": 63.8,
+      "text": "lot better."
+    },
+    {
+      "start": 62.28,
+      "end": 66.32,
+      "text": "The latest robot brains from Physical"
+    },
+    {
+      "start": 63.8,
+      "end": 68.96,
+      "text": "Intelligence can open padlocks, fold"
+    },
+    {
+      "start": 66.32,
+      "end": 71.48,
+      "text": "your laundry, peel an orange, make a"
+    },
+    {
+      "start": 68.96,
+      "end": 73.12,
+      "text": "grilled cheese sandwich, make coffee,"
+    },
+    {
+      "start": 71.48,
+      "end": 75.32,
+      "text": "and clean up bedrooms and kitchens that"
+    },
+    {
+      "start": 73.12,
+      "end": 77.48,
+      "text": "it's never seen before."
+    },
+    {
+      "start": 75.32,
+      "end": 79.32,
+      "text": "Why was this unimpressive Coke can demo"
+    },
+    {
+      "start": 77.48,
+      "end": 80.64,
+      "text": "such a breakthrough?"
+    },
+    {
+      "start": 79.32,
+      "end": 82.76,
+      "text": "And how did it enable Physical"
+    },
+    {
+      "start": 80.64,
+      "end": 84.52,
+      "text": "Intelligence to improve their robots so"
+    },
+    {
+      "start": 82.76,
+      "end": 86.44,
+      "text": "rapidly?"
+    },
+    {
+      "start": 84.52,
+      "end": 89.56,
+      "text": "In this video, we'll first explore the"
+    },
+    {
+      "start": 86.44,
+      "end": 91.4,
+      "text": "fascinating build-up to RT2 at Google."
+    },
+    {
+      "start": 89.56,
+      "end": 93.12,
+      "text": "From here, we'll take a deep dive into"
+    },
+    {
+      "start": 91.4,
+      "end": 95.04,
+      "text": "the Physical Intelligence Robotics"
+    },
+    {
+      "start": 93.12,
+      "end": 96.48,
+      "text": "Foundation Models,"
+    },
+    {
+      "start": 95.04,
+      "end": 100.36,
+      "text": "and see what makes these incredibly"
+    },
+    {
+      "start": 96.48,
+      "end": 100.36,
+      "text": "impressive robot brains tick."
+    },
+    {
+      "start": 101.12,
+      "end": 106.16,
+      "text": "In 2022, the year ChatGPT was released,"
+    },
+    {
+      "start": 104.48,
+      "end": 108.08,
+      "text": "researchers at Google began exploring"
+    },
+    {
+      "start": 106.16,
+      "end": 110.28,
+      "text": "what role large language models might"
+    },
+    {
+      "start": 108.08,
+      "end": 112.32,
+      "text": "play in robotics."
+    },
+    {
+      "start": 110.28,
+      "end": 114.76,
+      "text": "Their first notable result, a system"
+    },
+    {
+      "start": 112.32,
+      "end": 117.0,
+      "text": "known as SayCan, used a large language"
+    },
+    {
+      "start": 114.76,
+      "end": 120.16,
+      "text": "model as a planning system to break down"
+    },
+    {
+      "start": 117.0,
+      "end": 121.84,
+      "text": "complex tasks into subtasks."
+    },
+    {
+      "start": 120.16,
+      "end": 124.24,
+      "text": "In this demo, SayCan breaks down"
+    },
+    {
+      "start": 121.84,
+      "end": 126.72,
+      "text": "cleaning up a spill into the subtasks of"
+    },
+    {
+      "start": 124.24,
+      "end": 129.64,
+      "text": "finding a sponge, picking up the sponge,"
+    },
+    {
+      "start": 126.72,
+      "end": 131.28,
+      "text": "going to the spill, and so on."
+    },
+    {
+      "start": 129.64,
+      "end": 133.52,
+      "text": "From here, the team expanded on this"
+    },
+    {
+      "start": 131.28,
+      "end": 136.12,
+      "text": "work, creating a more capable iteration"
+    },
+    {
+      "start": 133.52,
+      "end": 138.0,
+      "text": "of the idea called inner monologue, and"
+    },
+    {
+      "start": 136.12,
+      "end": 140.16,
+      "text": "another interesting variant where the"
+    },
+    {
+      "start": 138.0,
+      "end": 143.08,
+      "text": "team used an LLM to write code to"
+    },
+    {
+      "start": 140.16,
+      "end": 144.6,
+      "text": "control the robot on the fly."
+    },
+    {
+      "start": 143.08,
+      "end": 146.44,
+      "text": "However, these early efforts were"
+    },
+    {
+      "start": 144.6,
+      "end": 150.04,
+      "text": "effectively bottlenecked by the"
+    },
+    {
+      "start": 146.44,
+      "end": 152.0,
+      "text": "available robot controls algorithms."
+    },
+    {
+      "start": 150.04,
+      "end": 154.24,
+      "text": "Once the LLM in SayCan decided to pick"
+    },
+    {
+      "start": 152.0,
+      "end": 156.12,
+      "text": "up a sponge, a completely separate"
+    },
+    {
+      "start": 154.24,
+      "end": 158.08,
+      "text": "neural network that had been trained to"
+    },
+    {
+      "start": 156.12,
+      "end": 160.8,
+      "text": "imitate humans controlling robots to"
+    },
+    {
+      "start": 158.08,
+      "end": 162.52,
+      "text": "perform various small tasks, was used to"
+    },
+    {
+      "start": 160.8,
+      "end": 164.08,
+      "text": "compute the actual robot control"
+    },
+    {
+      "start": 162.52,
+      "end": 165.64,
+      "text": "signals."
+    },
+    {
+      "start": 164.08,
+      "end": 168.16,
+      "text": "This meant that SayCan was effectively"
+    },
+    {
+      "start": 165.64,
+      "end": 170.04,
+      "text": "limited to a menu of actions the LLM"
+    },
+    {
+      "start": 168.16,
+      "end": 171.88,
+      "text": "could choose from."
+    },
+    {
+      "start": 170.04,
+      "end": 174.04,
+      "text": "To get SayCan to place a Coke can on an"
+    },
+    {
+      "start": 171.88,
+      "end": 175.92,
+      "text": "image of Taylor Swift, behaviors"
+    },
+    {
+      "start": 174.04,
+      "end": 179.28,
+      "text": "involving Coke cans and Taylor Swift"
+    },
+    {
+      "start": 175.92,
+      "end": 181.52,
+      "text": "would have to be explicitly trained."
+    },
+    {
+      "start": 179.28,
+      "end": 183.36,
+      "text": "At the end of 2022, the team made a"
+    },
+    {
+      "start": 181.52,
+      "end": 186.6,
+      "text": "significant improvement to their control"
+    },
+    {
+      "start": 183.36,
+      "end": 188.8,
+      "text": "layer, introducing Robot Transformer 1,"
+    },
+    {
+      "start": 186.6,
+      "end": 190.16,
+      "text": "or RT1."
+    },
+    {
+      "start": 188.8,
+      "end": 192.72,
+      "text": "Like the team's previous control"
+    },
+    {
+      "start": 190.16,
+      "end": 195.4,
+      "text": "algorithms, RT1 was trained to imitate"
+    },
+    {
+      "start": 192.72,
+      "end": 198.28,
+      "text": "humans, but used a significantly larger"
+    },
+    {
+      "start": 195.4,
+      "end": 200.76,
+      "text": "dataset, with over 130,000 human"
+    },
+    {
+      "start": 198.28,
+      "end": 203.4,
+      "text": "demonstrations, and used a larger"
+    },
+    {
+      "start": 200.76,
+      "end": 205.24,
+      "text": "transformer-based architecture."
+    },
+    {
+      "start": 203.4,
+      "end": 207.0,
+      "text": "RT1 was able to perform a significantly"
+    },
+    {
+      "start": 205.24,
+      "end": 208.88,
+      "text": "broader range of actions than its"
+    },
+    {
+      "start": 207.0,
+      "end": 210.56,
+      "text": "predecessors."
+    },
+    {
+      "start": 208.88,
+      "end": 213.2,
+      "text": "This effectively gave the planning layer"
+    },
+    {
+      "start": 210.56,
+      "end": 214.36,
+      "text": "a much larger menu of actions to choose"
+    },
+    {
+      "start": 213.2,
+      "end": 216.16,
+      "text": "from."
+    },
+    {
+      "start": 214.36,
+      "end": 218.68,
+      "text": "The RT1 team showed that using the"
+    },
+    {
+      "start": 216.16,
+      "end": 221.6,
+      "text": "planning LLM from SayCan, coupled with"
+    },
+    {
+      "start": 218.68,
+      "end": 223.68,
+      "text": "RT1 to control the robot, significantly"
+    },
+    {
+      "start": 221.6,
+      "end": 226.12,
+      "text": "improved performance on long-horizon"
+    },
+    {
+      "start": 223.68,
+      "end": 227.84,
+      "text": "tasks, like finding certain items in"
+    },
+    {
+      "start": 226.12,
+      "end": 230.32,
+      "text": "kitchens that the robot hadn't seen"
+    },
+    {
+      "start": 227.84,
+      "end": 231.96,
+      "text": "before."
+    },
+    {
+      "start": 230.32,
+      "end": 234.56,
+      "text": "As Google incrementally improved their"
+    },
+    {
+      "start": 231.96,
+      "end": 237.44,
+      "text": "robot brains, large language models were"
+    },
+    {
+      "start": 234.56,
+      "end": 239.52,
+      "text": "also rapidly advancing."
+    },
+    {
+      "start": 237.44,
+      "end": 242.44,
+      "text": "The LLM used for planning in the SayCan"
+    },
+    {
+      "start": 239.52,
+      "end": 246.76,
+      "text": "and RT1 systems was the text-only Palm"
+    },
+    {
+      "start": 242.44,
+      "end": 248.08,
+      "text": "540B model, trained in early 2022."
+    },
+    {
+      "start": 246.76,
+      "end": 251.28,
+      "text": "This meant that the robot's planning"
+    },
+    {
+      "start": 248.08,
+      "end": 253.08,
+      "text": "layer couldn't actually see the world."
+    },
+    {
+      "start": 251.28,
+      "end": 255.84,
+      "text": "After breaking down a task like helping"
+    },
+    {
+      "start": 253.08,
+      "end": 257.6,
+      "text": "clean up the kitchen into text subtasks,"
+    },
+    {
+      "start": 255.84,
+      "end": 259.92,
+      "text": "Google's robots relied on the RT1"
+    },
+    {
+      "start": 257.6,
+      "end": 262.16,
+      "text": "control layer to take in images from the"
+    },
+    {
+      "start": 259.92,
+      "end": 263.68,
+      "text": "robot's camera, and iteratively send"
+    },
+    {
+      "start": 262.16,
+      "end": 266.12,
+      "text": "control signals to the robot's"
+    },
+    {
+      "start": 263.68,
+      "end": 267.88,
+      "text": "actuators, until each subtask was"
+    },
+    {
+      "start": 266.12,
+      "end": 269.48,
+      "text": "complete."
+    },
+    {
+      "start": 267.88,
+      "end": 271.64,
+      "text": "This approach worked fine for some"
+    },
+    {
+      "start": 269.48,
+      "end": 273.84,
+      "text": "tasks, but having a planning layer that"
+    },
+    {
+      "start": 271.64,
+      "end": 275.84,
+      "text": "was effectively blind was clearly not"
+    },
+    {
+      "start": 273.84,
+      "end": 278.52,
+      "text": "ideal."
+    },
+    {
+      "start": 275.84,
+      "end": 280.64,
+      "text": "On March 6th, 2023, about a week before"
+    },
+    {
+      "start": 278.52,
+      "end": 283.52,
+      "text": "the release of GPT-4,"
+    },
+    {
+      "start": 280.64,
+      "end": 285.32,
+      "text": "Google researchers demonstrated Palm-E,"
+    },
+    {
+      "start": 283.52,
+      "end": 287.6,
+      "text": "a variant of the Palm large language"
+    },
+    {
+      "start": 285.32,
+      "end": 289.92,
+      "text": "model that directly incorporated images"
+    },
+    {
+      "start": 287.6,
+      "end": 292.44,
+      "text": "and other data sources."
+    },
+    {
+      "start": 289.92,
+      "end": 294.76,
+      "text": "Using the multimodal Palm-E instead of"
+    },
+    {
+      "start": 292.44,
+      "end": 298.32,
+      "text": "the purely text-based Palm LLM as a"
+    },
+    {
+      "start": 294.76,
+      "end": 299.8,
+      "text": "planner, with RT1 as the control layer,"
+    },
+    {
+      "start": 298.32,
+      "end": 302.4,
+      "text": "the team demonstrated a significant"
+    },
+    {
+      "start": 299.8,
+      "end": 303.92,
+      "text": "expansion in capabilities."
+    },
+    {
+      "start": 302.4,
+      "end": 306.16,
+      "text": "Now that the planning layer had access"
+    },
+    {
+      "start": 303.92,
+      "end": 308.8,
+      "text": "to vision information, the robot could"
+    },
+    {
+      "start": 306.16,
+      "end": 310.84,
+      "text": "perform more complex tasks that require"
+    },
+    {
+      "start": 308.8,
+      "end": 312.56,
+      "text": "adaptive planning,"
+    },
+    {
+      "start": 310.84,
+      "end": 315.04,
+      "text": "like moving objects out of the way to"
+    },
+    {
+      "start": 312.56,
+      "end": 317.76,
+      "text": "reach a desired object, and fully"
+    },
+    {
+      "start": 315.04,
+      "end": 319.52,
+      "text": "autonomously recovering from setbacks."
+    },
+    {
+      "start": 317.76,
+      "end": 321.76,
+      "text": "Here, a robot using Palm-E as its"
+    },
+    {
+      "start": 319.52,
+      "end": 323.88,
+      "text": "planning layer and RT1 as its control"
+    },
+    {
+      "start": 321.76,
+      "end": 325.16,
+      "text": "layer, is asked to retrieve a bag of"
+    },
+    {
+      "start": 323.88,
+      "end": 326.8,
+      "text": "chips."
+    },
+    {
+      "start": 325.16,
+      "end": 329.08,
+      "text": "And when a researcher repeatedly puts"
+    },
+    {
+      "start": 326.8,
+      "end": 330.76,
+      "text": "the chips back in the drawer, Palm-E is"
+    },
+    {
+      "start": 329.08,
+      "end": 332.84,
+      "text": "remarkably able to recognize that"
+    },
+    {
+      "start": 330.76,
+      "end": 334.08,
+      "text": "something has changed and adapt its"
+    },
+    {
+      "start": 332.84,
+      "end": 336.04,
+      "text": "plan."
+    },
+    {
+      "start": 334.08,
+      "end": 339.2,
+      "text": "Now, let's zoom out a little and"
+    },
+    {
+      "start": 336.04,
+      "end": 340.52,
+      "text": "consider the full Palm-E plus RT1 robot"
+    },
+    {
+      "start": 339.2,
+      "end": 342.68,
+      "text": "brain."
+    },
+    {
+      "start": 340.52,
+      "end": 344.84,
+      "text": "Although Palm-E and RT1 were designed to"
+    },
+    {
+      "start": 342.68,
+      "end": 346.2,
+      "text": "work at different levels of the stack,"
+    },
+    {
+      "start": 344.84,
+      "end": 348.24,
+      "text": "they have some really interesting"
+    },
+    {
+      "start": 346.2,
+      "end": 349.88,
+      "text": "similarities."
+    },
+    {
+      "start": 348.24,
+      "end": 352.4,
+      "text": "Both models take in images from the"
+    },
+    {
+      "start": 349.88,
+      "end": 355.64,
+      "text": "robot's camera, and use a vision encoder"
+    },
+    {
+      "start": 352.4,
+      "end": 358.08,
+      "text": "neural network to process the images."
+    },
+    {
+      "start": 355.64,
+      "end": 360.0,
+      "text": "From here, in both models, these encoded"
+    },
+    {
+      "start": 358.08,
+      "end": 361.76,
+      "text": "image representations are passed into a"
+    },
+    {
+      "start": 360.0,
+      "end": 363.48,
+      "text": "transformer."
+    },
+    {
+      "start": 361.76,
+      "end": 365.28,
+      "text": "This is the same type of compute block"
+    },
+    {
+      "start": 363.48,
+      "end": 367.28,
+      "text": "used fairly universally in large"
+    },
+    {
+      "start": 365.28,
+      "end": 369.0,
+      "text": "language models."
+    },
+    {
+      "start": 367.28,
+      "end": 371.6,
+      "text": "The big difference here is what these"
+    },
+    {
+      "start": 369.0,
+      "end": 373.44,
+      "text": "transformers are trained to do."
+    },
+    {
+      "start": 371.6,
+      "end": 376.24,
+      "text": "The RT1 transformer was trained to"
+    },
+    {
+      "start": 373.44,
+      "end": 378.24,
+      "text": "directly output robot control signals by"
+    },
+    {
+      "start": 376.24,
+      "end": 380.52,
+      "text": "imitating humans controlling robots to"
+    },
+    {
+      "start": 378.24,
+      "end": 382.24,
+      "text": "solve various tasks."
+    },
+    {
+      "start": 380.52,
+      "end": 385.0,
+      "text": "While the Palm-E transformer is trained"
+    },
+    {
+      "start": 382.24,
+      "end": 386.44,
+      "text": "to output text across a wide variety of"
+    },
+    {
+      "start": 385.0,
+      "end": 388.4,
+      "text": "tasks,"
+    },
+    {
+      "start": 386.44,
+      "end": 390.8,
+      "text": "including simple next token prediction"
+    },
+    {
+      "start": 388.4,
+      "end": 392.72,
+      "text": "on internet text, as we see in standard"
+    },
+    {
+      "start": 390.8,
+      "end": 395.08,
+      "text": "LLM pretraining,"
+    },
+    {
+      "start": 392.72,
+      "end": 397.08,
+      "text": "but also language-vision tasks, like"
+    },
+    {
+      "start": 395.08,
+      "end": 399.16,
+      "text": "image captioning. And importantly,"
+    },
+    {
+      "start": 397.08,
+      "end": 403.32,
+      "text": "Palm-E was also trained to break apart"
+    },
+    {
+      "start": 399.16,
+      "end": 406.4,
+      "text": "robotics tasks into smaller subtasks."
+    },
+    {
+      "start": 403.32,
+      "end": 407.8,
+      "text": "The similarities between Palm-E and RT1,"
+    },
+    {
+      "start": 406.4,
+      "end": 410.44,
+      "text": "and the fact that the team was able to"
+    },
+    {
+      "start": 407.8,
+      "end": 412.04,
+      "text": "expand the Palm language-only model to"
+    },
+    {
+      "start": 410.44,
+      "end": 413.12,
+      "text": "effectively make use of other types of"
+    },
+    {
+      "start": 412.04,
+      "end": 415.04,
+      "text": "data,"
+    },
+    {
+      "start": 413.12,
+      "end": 417.12,
+      "text": "all beg the question,"
+    },
+    {
+      "start": 415.04,
+      "end": 418.88,
+      "text": "do we really need two separate models"
+    },
+    {
+      "start": 417.12,
+      "end": 421.0,
+      "text": "here?"
+    },
+    {
+      "start": 418.88,
+      "end": 423.64,
+      "text": "Why not just continue expanding the Palm"
+    },
+    {
+      "start": 421.0,
+      "end": 426.44,
+      "text": "language model to not only take in image"
+    },
+    {
+      "start": 423.64,
+      "end": 428.24,
+      "text": "data, but also to directly output robot"
+    },
+    {
+      "start": 426.44,
+      "end": 430.76,
+      "text": "control data,"
+    },
+    {
+      "start": 428.24,
+      "end": 434.08,
+      "text": "effectively absorbing RT1 into a single"
+    },
+    {
+      "start": 430.76,
+      "end": 436.28,
+      "text": "powerful end-to-end model?"
+    },
+    {
+      "start": 434.08,
+      "end": 438.8,
+      "text": "Said differently, can large language"
+    },
+    {
+      "start": 436.28,
+      "end": 440.92,
+      "text": "models, by far the most powerful AI"
+    },
+    {
+      "start": 438.8,
+      "end": 445.28,
+      "text": "systems we trained so far,"
+    },
+    {
+      "start": 440.92,
+      "end": 447.0,
+      "text": "be trained to become robot brains?"
+    },
+    {
+      "start": 445.28,
+      "end": 448.44,
+      "text": "This brings us to Taylor Swift and the"
+    },
+    {
+      "start": 447.0,
+      "end": 451.16,
+      "text": "Coke can."
+    },
+    {
+      "start": 448.44,
+      "end": 453.28,
+      "text": "In July 2023, a few months after the"
+    },
+    {
+      "start": 451.16,
+      "end": 454.92,
+      "text": "Palm-E paper came out,"
+    },
+    {
+      "start": 453.28,
+      "end": 456.68,
+      "text": "the Google Robotics team demonstrated"
+    },
+    {
+      "start": 454.92,
+      "end": 459.56,
+      "text": "RT2."
+    },
+    {
+      "start": 456.68,
+      "end": 462.48,
+      "text": "Taking Palm-E and another multimodal LLM"
+    },
+    {
+      "start": 459.56,
+      "end": 464.32,
+      "text": "known as PaLI-X as starting points,"
+    },
+    {
+      "start": 462.48,
+      "end": 467.76,
+      "text": "the Google team trained these LLMs to"
+    },
+    {
+      "start": 464.32,
+      "end": 469.48,
+      "text": "directly output robot control signals,"
+    },
+    {
+      "start": 467.76,
+      "end": 471.08,
+      "text": "training on the same human control"
+    },
+    {
+      "start": 469.48,
+      "end": 474.24,
+      "text": "demonstration data they had used to"
+    },
+    {
+      "start": 471.08,
+      "end": 477.04,
+      "text": "train RT1 6 months earlier."
+    },
+    {
+      "start": 474.24,
+      "end": 479.52,
+      "text": "And incredibly, it worked."
+    },
+    {
+      "start": 477.04,
+      "end": 481.84,
+      "text": "RT2 was able to generalize shockingly"
+    },
+    {
+      "start": 479.52,
+      "end": 483.92,
+      "text": "well to objects, environments, and tasks"
+    },
+    {
+      "start": 481.84,
+      "end": 485.4,
+      "text": "that were not in the human demonstration"
+    },
+    {
+      "start": 483.92,
+      "end": 487.2,
+      "text": "data."
+    },
+    {
+      "start": 485.4,
+      "end": 489.28,
+      "text": "This is what makes the Taylor Swift demo"
+    },
+    {
+      "start": 487.2,
+      "end": 491.04,
+      "text": "so impressive."
+    },
+    {
+      "start": 489.28,
+      "end": 494.48,
+      "text": "The robot control training data"
+    },
+    {
+      "start": 491.04,
+      "end": 497.36,
+      "text": "definitely did not include Taylor Swift."
+    },
+    {
+      "start": 494.48,
+      "end": 499.56,
+      "text": "So, for RT2 to solve this task, it had"
+    },
+    {
+      "start": 497.36,
+      "end": 500.92,
+      "text": "to learn how to bring together abstract"
+    },
+    {
+      "start": 499.56,
+      "end": 503.44,
+      "text": "concepts it had learned in its"
+    },
+    {
+      "start": 500.92,
+      "end": 505.8,
+      "text": "internet-scale pretraining with the"
+    },
+    {
+      "start": 503.44,
+      "end": 507.36,
+      "text": "robot control episodes."
+    },
+    {
+      "start": 505.8,
+      "end": 509.64,
+      "text": "This means that these models can learn"
+    },
+    {
+      "start": 507.36,
+      "end": 511.92,
+      "text": "to connect the vast amounts of image,"
+    },
+    {
+      "start": 509.64,
+      "end": 514.159,
+      "text": "video, and text data on the internet"
+    },
+    {
+      "start": 511.92,
+      "end": 515.64,
+      "text": "with real-world actions,"
+    },
+    {
+      "start": 514.159,
+      "end": 517.8,
+      "text": "potentially harnessing the full"
+    },
+    {
+      "start": 515.64,
+      "end": 519.919,
+      "text": "knowledge of the internet into robot"
+    },
+    {
+      "start": 517.8,
+      "end": 521.599,
+      "text": "brains."
+    },
+    {
+      "start": 519.919,
+      "end": 522.8,
+      "text": "This is why this demo is such a big"
+    },
+    {
+      "start": 521.599,
+      "end": 524.8,
+      "text": "deal."
+    },
+    {
+      "start": 522.8,
+      "end": 526.92,
+      "text": "It answers the question, can large"
+    },
+    {
+      "start": 524.8,
+      "end": 529.68,
+      "text": "language models be trained to be robot"
+    },
+    {
+      "start": 526.92,
+      "end": 531.72,
+      "text": "brains? With a shaky, but definitive,"
+    },
+    {
+      "start": 529.68,
+      "end": 534.04,
+      "text": "yes."
+    },
+    {
+      "start": 531.72,
+      "end": 536.96,
+      "text": "The RT2 team coined a new name for this"
+    },
+    {
+      "start": 534.04,
+      "end": 538.64,
+      "text": "type of model, vision-language-action,"
+    },
+    {
+      "start": 536.96,
+      "end": 540.4,
+      "text": "or VLA,"
+    },
+    {
+      "start": 538.64,
+      "end": 543.96,
+      "text": "linking together vision, language, and"
+    },
+    {
+      "start": 540.4,
+      "end": 546.72,
+      "text": "action into a single unified model."
+    },
+    {
+      "start": 543.96,
+      "end": 548.36,
+      "text": "This video is about to get technical."
+    },
+    {
+      "start": 546.72,
+      "end": 550.52,
+      "text": "To see how language models can learn to"
+    },
+    {
+      "start": 548.36,
+      "end": 552.24,
+      "text": "become robot brains, we're going to"
+    },
+    {
+      "start": 550.52,
+      "end": 554.16,
+      "text": "reference transformers, embedding"
+    },
+    {
+      "start": 552.24,
+      "end": 556.92,
+      "text": "vectors, diffusion models, attention"
+    },
+    {
+      "start": 554.16,
+      "end": 558.56,
+      "text": "heads, softmax, and more."
+    },
+    {
+      "start": 556.92,
+      "end": 560.6,
+      "text": "The required context for all these"
+    },
+    {
+      "start": 558.56,
+      "end": 563.0,
+      "text": "concepts is way more than we can fit"
+    },
+    {
+      "start": 560.6,
+      "end": 564.76,
+      "text": "into a single video, which is why I"
+    },
+    {
+      "start": 563.0,
+      "end": 567.24,
+      "text": "wrote this book."
+    },
+    {
+      "start": 564.76,
+      "end": 569.48,
+      "text": "The Welch Labs Illustrated Guide to AI"
+    },
+    {
+      "start": 567.24,
+      "end": 570.96,
+      "text": "breaks down all of these concepts using"
+    },
+    {
+      "start": 569.48,
+      "end": 573.36,
+      "text": "hundreds of figures, detailed"
+    },
+    {
+      "start": 570.96,
+      "end": 575.96,
+      "text": "descriptions, and exercises."
+    },
+    {
+      "start": 573.36,
+      "end": 577.68,
+      "text": "You can pick up a copy at welchlabs.com."
+    },
+    {
+      "start": 575.96,
+      "end": 579.28,
+      "text": "And we're very excited to announce that"
+    },
+    {
+      "start": 577.68,
+      "end": 580.52,
+      "text": "we're beginning to offer international"
+    },
+    {
+      "start": 579.28,
+      "end": 582.12,
+      "text": "shipping."
+    },
+    {
+      "start": 580.52,
+      "end": 584.4,
+      "text": "Stay tuned to the end of the video for"
+    },
+    {
+      "start": 582.12,
+      "end": 586.76,
+      "text": "more updates on the book, and to see the"
+    },
+    {
+      "start": 584.4,
+      "end": 588.24,
+      "text": "poster that goes along with this video"
+    },
+    {
+      "start": 586.76,
+      "end": 589.64,
+      "text": "that nicely breaks down the"
+    },
+    {
+      "start": 588.24,
+      "end": 592.32,
+      "text": "vision-language-action model"
+    },
+    {
+      "start": 589.64,
+      "end": 592.32,
+      "text": "architecture."
+    },
+    {
+      "start": 592.64,
+      "end": 598.12,
+      "text": "By early 2024, a number of key members"
+    },
+    {
+      "start": 595.32,
+      "end": 600.0,
+      "text": "of the RT2 team had left Google and"
+    },
+    {
+      "start": 598.12,
+      "end": 601.76,
+      "text": "reassembled to form the startup physical"
+    },
+    {
+      "start": 600.0,
+      "end": 604.12,
+      "text": "intelligence."
+    },
+    {
+      "start": 601.76,
+      "end": 607.92,
+      "text": "In October of that year, the team demoed"
+    },
+    {
+      "start": 604.12,
+      "end": 609.96,
+      "text": "their first robot brain, Pi Zero."
+    },
+    {
+      "start": 607.92,
+      "end": 612.76,
+      "text": "Compared to the RT2 Coke can Taylor"
+    },
+    {
+      "start": 609.96,
+      "end": 615.2,
+      "text": "Swift demo 15 months before at Google,"
+    },
+    {
+      "start": 612.76,
+      "end": 617.0,
+      "text": "Pi Zero is remarkable."
+    },
+    {
+      "start": 615.2,
+      "end": 619.2,
+      "text": "It starts to really feel like a robot"
+    },
+    {
+      "start": 617.0,
+      "end": 620.8,
+      "text": "that could help you around the house,"
+    },
+    {
+      "start": 619.2,
+      "end": 622.6,
+      "text": "performing tasks like getting laundry"
+    },
+    {
+      "start": 620.8,
+      "end": 624.88,
+      "text": "out of the dryer, folding the laundry,"
+    },
+    {
+      "start": 622.6,
+      "end": 626.68,
+      "text": "and cleaning up tables."
+    },
+    {
+      "start": 624.88,
+      "end": 629.28,
+      "text": "How was the Physical Intelligence team"
+    },
+    {
+      "start": 626.68,
+      "end": 631.64,
+      "text": "able to improve on RT2 so significantly"
+    },
+    {
+      "start": 629.28,
+      "end": 634.64,
+      "text": "and so quickly?"
+    },
+    {
+      "start": 631.64,
+      "end": 636.8,
+      "text": "Like RT2, Pi Zero is a vision language"
+    },
+    {
+      "start": 634.64,
+      "end": 640.44,
+      "text": "action model built on top of a"
+    },
+    {
+      "start": 636.8,
+      "end": 643.0,
+      "text": "pre-trained multimodal LLM."
+    },
+    {
+      "start": 640.44,
+      "end": 644.16,
+      "text": "Based on Pi Zero's strong performance,"
+    },
+    {
+      "start": 643.0,
+      "end": 646.24,
+      "text": "you might guess that the physical"
+    },
+    {
+      "start": 644.16,
+      "end": 649.2,
+      "text": "intelligence team increased the model"
+    },
+    {
+      "start": 646.24,
+      "end": 651.36,
+      "text": "size relative to RT2, but Pi Zero is"
+    },
+    {
+      "start": 649.2,
+      "end": 654.56,
+      "text": "actually smaller."
+    },
+    {
+      "start": 651.36,
+      "end": 657.12,
+      "text": "The RT2 model family ranged from 5 to 55"
+    },
+    {
+      "start": 654.56,
+      "end": 659.4,
+      "text": "billion parameters, and Pi Zero"
+    },
+    {
+      "start": 657.12,
+      "end": 661.12,
+      "text": "remarkably only uses 3.3 billion"
+    },
+    {
+      "start": 659.4,
+      "end": 662.64,
+      "text": "parameters,"
+    },
+    {
+      "start": 661.12,
+      "end": 665.64,
+      "text": "allowing the model to run on the robot"
+    },
+    {
+      "start": 662.64,
+      "end": 668.64,
+      "text": "itself using a consumer-grade Nvidia RTX"
+    },
+    {
+      "start": 665.64,
+      "end": 671.6,
+      "text": "4090 GPU at a very respectable"
+    },
+    {
+      "start": 668.64,
+      "end": 673.36,
+      "text": "73-millisecond inference time."
+    },
+    {
+      "start": 671.6,
+      "end": 676.6,
+      "text": "Here's what Pi Zero looks like hooked up"
+    },
+    {
+      "start": 673.36,
+      "end": 679.64,
+      "text": "to a two-arm robot platform called ALOHA"
+    },
+    {
+      "start": 676.6,
+      "end": 681.48,
+      "text": "and tasked with uncapping a pen."
+    },
+    {
+      "start": 679.64,
+      "end": 683.839,
+      "text": "Pi Zero takes images from an overhead"
+    },
+    {
+      "start": 681.48,
+      "end": 687.6,
+      "text": "camera and from one camera on the wrist"
+    },
+    {
+      "start": 683.839,
+      "end": 690.28,
+      "text": "of each robot arm and a text prompt."
+    },
+    {
+      "start": 687.6,
+      "end": 692.76,
+      "text": "At each time step, Pi Zero returns 14"
+    },
+    {
+      "start": 690.28,
+      "end": 695.68,
+      "text": "numbers. One number for the position of"
+    },
+    {
+      "start": 692.76,
+      "end": 697.16,
+      "text": "each of the seven actuators on each arm."
+    },
+    {
+      "start": 695.68,
+      "end": 698.72,
+      "text": "Here we're plotting these outputs as a"
+    },
+    {
+      "start": 697.16,
+      "end": 701.16,
+      "text": "time series."
+    },
+    {
+      "start": 698.72,
+      "end": 702.92,
+      "text": "This movement in our pink curve here"
+    },
+    {
+      "start": 701.16,
+      "end": 707.24,
+      "text": "shows us where Pi is telling the left"
+    },
+    {
+      "start": 702.92,
+      "end": 707.24,
+      "text": "gripper to grab onto the pen cap."
+    },
+    {
+      "start": 708.64,
+      "end": 713.56,
+      "text": "Pi Zero is built on top of PaliGemma,"
+    },
+    {
+      "start": 711.52,
+      "end": 715.08,
+      "text": "an open-weight multimodal LLM from"
+    },
+    {
+      "start": 713.56,
+      "end": 716.72,
+      "text": "Google."
+    },
+    {
+      "start": 715.08,
+      "end": 719.2,
+      "text": "PaliGemma is built from two other"
+    },
+    {
+      "start": 716.72,
+      "end": 721.6,
+      "text": "open-weight models, the SigLIP image"
+    },
+    {
+      "start": 719.2,
+      "end": 722.68,
+      "text": "encoder and the Gemma large language"
+    },
+    {
+      "start": 721.6,
+      "end": 724.08,
+      "text": "model,"
+    },
+    {
+      "start": 722.68,
+      "end": 725.76,
+      "text": "that are trained together to solve"
+    },
+    {
+      "start": 724.08,
+      "end": 727.8,
+      "text": "vision language tasks like image"
+    },
+    {
+      "start": 725.76,
+      "end": 730.44,
+      "text": "captioning."
+    },
+    {
+      "start": 727.8,
+      "end": 732.6,
+      "text": "Now, following the RT2 approach, the"
+    },
+    {
+      "start": 730.44,
+      "end": 734.04,
+      "text": "underlying language model, in this case"
+    },
+    {
+      "start": 732.6,
+      "end": 735.52,
+      "text": "PaliGemma,"
+    },
+    {
+      "start": 734.04,
+      "end": 737.72,
+      "text": "would be trained to directly output"
+    },
+    {
+      "start": 735.52,
+      "end": 739.72,
+      "text": "control values."
+    },
+    {
+      "start": 737.72,
+      "end": 741.72,
+      "text": "However, the Physical Intelligence team"
+    },
+    {
+      "start": 739.72,
+      "end": 743.8,
+      "text": "made a clever improvement here that"
+    },
+    {
+      "start": 741.72,
+      "end": 745.72,
+      "text": "makes Pi Zero significantly better at"
+    },
+    {
+      "start": 743.8,
+      "end": 747.36,
+      "text": "dexterous manipulation. Instead of"
+    },
+    {
+      "start": 745.72,
+      "end": 749.92,
+      "text": "having the underlying language model"
+    },
+    {
+      "start": 747.36,
+      "end": 751.68,
+      "text": "directly output control values,"
+    },
+    {
+      "start": 749.92,
+      "end": 755.04,
+      "text": "Pi Zero introduces a second neural"
+    },
+    {
+      "start": 751.68,
+      "end": 757.16,
+      "text": "network the team calls an action expert."
+    },
+    {
+      "start": 755.04,
+      "end": 760.04,
+      "text": "Interestingly, the Pi Zero action expert"
+    },
+    {
+      "start": 757.16,
+      "end": 762.32,
+      "text": "uses the same architecture as Gemma."
+    },
+    {
+      "start": 760.04,
+      "end": 764.8,
+      "text": "In fact, in the Pi Zero code base, the"
+    },
+    {
+      "start": 762.32,
+      "end": 766.6,
+      "text": "action expert is instantiated as a Gemma"
+    },
+    {
+      "start": 764.8,
+      "end": 768.52,
+      "text": "model."
+    },
+    {
+      "start": 766.6,
+      "end": 770.64,
+      "text": "The only differences are that the action"
+    },
+    {
+      "start": 768.52,
+      "end": 772.4,
+      "text": "expert is randomly initialized instead"
+    },
+    {
+      "start": 770.64,
+      "end": 774.4,
+      "text": "of pre-trained,"
+    },
+    {
+      "start": 772.4,
+      "end": 775.44,
+      "text": "and the action expert is not as wide as"
+    },
+    {
+      "start": 774.4,
+      "end": 777.0,
+      "text": "Gemma,"
+    },
+    {
+      "start": 775.44,
+      "end": 778.44,
+      "text": "using fewer parameters within each"
+    },
+    {
+      "start": 777.0,
+      "end": 779.92,
+      "text": "layer."
+    },
+    {
+      "start": 778.44,
+      "end": 782.72,
+      "text": "Now, this may sound like we're going"
+    },
+    {
+      "start": 779.92,
+      "end": 784.48,
+      "text": "back to the earlier SayCan system,"
+    },
+    {
+      "start": 782.72,
+      "end": 785.64,
+      "text": "where a high-level LLM performed"
+    },
+    {
+      "start": 784.48,
+      "end": 787.4,
+      "text": "planning"
+    },
+    {
+      "start": 785.64,
+      "end": 789.0,
+      "text": "and a lower-level network handled robot"
+    },
+    {
+      "start": 787.4,
+      "end": 790.839,
+      "text": "control."
+    },
+    {
+      "start": 789.0,
+      "end": 793.36,
+      "text": "The key distinction here is that in the"
+    },
+    {
+      "start": 790.839,
+      "end": 796.08,
+      "text": "SayCan system, the interface between"
+    },
+    {
+      "start": 793.36,
+      "end": 797.8,
+      "text": "models was natural language."
+    },
+    {
+      "start": 796.08,
+      "end": 799.72,
+      "text": "The planning LLM told the control"
+    },
+    {
+      "start": 797.8,
+      "end": 802.4,
+      "text": "network what to do using predetermined"
+    },
+    {
+      "start": 799.72,
+      "end": 805.08,
+      "text": "text instructions."
+    },
+    {
+      "start": 802.4,
+      "end": 807.88,
+      "text": "Pi Zero, in contrast, uses a much richer"
+    },
+    {
+      "start": 805.08,
+      "end": 809.8,
+      "text": "interface between the two models."
+    },
+    {
+      "start": 807.88,
+      "end": 812.4,
+      "text": "Since the Gemma LLM and action expert"
+    },
+    {
+      "start": 809.8,
+      "end": 814.4,
+      "text": "effectively share the same architecture,"
+    },
+    {
+      "start": 812.4,
+      "end": 816.04,
+      "text": "it's possible for these models to almost"
+    },
+    {
+      "start": 814.4,
+      "end": 817.44,
+      "text": "think as one"
+    },
+    {
+      "start": 816.04,
+      "end": 819.8,
+      "text": "while retaining some really nice"
+    },
+    {
+      "start": 817.44,
+      "end": 821.24,
+      "text": "benefits of modularity."
+    },
+    {
+      "start": 819.8,
+      "end": 823.68,
+      "text": "Let's have a closer look at how our"
+    },
+    {
+      "start": 821.24,
+      "end": 824.839,
+      "text": "Gemma LLM learns to act as a robot"
+    },
+    {
+      "start": 823.68,
+      "end": 826.32,
+      "text": "brain."
+    },
+    {
+      "start": 824.839,
+      "end": 827.96,
+      "text": "Then we'll have a closer look at how the"
+    },
+    {
+      "start": 826.32,
+      "end": 829.04,
+      "text": "interface between these two models"
+    },
+    {
+      "start": 827.96,
+      "end": 831.72,
+      "text": "works."
+    },
+    {
+      "start": 829.04,
+      "end": 834.64,
+      "text": "The Gemma LLM processes both the images"
+    },
+    {
+      "start": 831.72,
+      "end": 836.28,
+      "text": "and text prompts that come into Pi Zero."
+    },
+    {
+      "start": 834.64,
+      "end": 839.68,
+      "text": "Each image is broken into a grid of"
+    },
+    {
+      "start": 836.28,
+      "end": 843.92,
+      "text": "patches, resulting in 256 image patches"
+    },
+    {
+      "start": 839.68,
+      "end": 845.48,
+      "text": "per image and 768 total patches."
+    },
+    {
+      "start": 843.92,
+      "end": 847.92,
+      "text": "The patches from each image are passed"
+    },
+    {
+      "start": 845.48,
+      "end": 851.56,
+      "text": "into an image encoder model,"
+    },
+    {
+      "start": 847.92,
+      "end": 854.2,
+      "text": "resulting in 768 embedding vectors, each"
+    },
+    {
+      "start": 851.56,
+      "end": 855.88,
+      "text": "of length 2048."
+    },
+    {
+      "start": 854.2,
+      "end": 858.2,
+      "text": "These vectors are sometimes referred to"
+    },
+    {
+      "start": 855.88,
+      "end": 859.6,
+      "text": "as soft tokens."
+    },
+    {
+      "start": 858.2,
+      "end": 861.32,
+      "text": "Here we're coloring each embedding"
+    },
+    {
+      "start": 859.6,
+      "end": 863.76,
+      "text": "vector to approximately match its"
+    },
+    {
+      "start": 861.32,
+      "end": 865.36,
+      "text": "corresponding image patch."
+    },
+    {
+      "start": 863.76,
+      "end": 867.8,
+      "text": "This will help us keep track of our data"
+    },
+    {
+      "start": 865.36,
+      "end": 869.2,
+      "text": "as it flows through our model."
+    },
+    {
+      "start": 867.8,
+      "end": 872.44,
+      "text": "These embedding vectors live in a"
+    },
+    {
+      "start": 869.2,
+      "end": 873.88,
+      "text": "semantically rich embedding space,"
+    },
+    {
+      "start": 872.44,
+      "end": 875.8,
+      "text": "meaning they should contain lots of"
+    },
+    {
+      "start": 873.88,
+      "end": 877.28,
+      "text": "easily accessible information about our"
+    },
+    {
+      "start": 875.8,
+      "end": 878.8,
+      "text": "images,"
+    },
+    {
+      "start": 877.28,
+      "end": 881.04,
+      "text": "like whether a given image patch"
+    },
+    {
+      "start": 878.8,
+      "end": 882.88,
+      "text": "contains a pen."
+    },
+    {
+      "start": 881.04,
+      "end": 885.28,
+      "text": "For more on embedding spaces and image"
+    },
+    {
+      "start": 882.88,
+      "end": 888.0,
+      "text": "encoders, check out the Welch Labs video"
+    },
+    {
+      "start": 885.28,
+      "end": 890.16,
+      "text": "on AlexNet, the AI image generation"
+    },
+    {
+      "start": 888.0,
+      "end": 891.839,
+      "text": "video we did with Three Blue One Brown,"
+    },
+    {
+      "start": 890.16,
+      "end": 893.52,
+      "text": "or the Welch Labs illustrated guide to"
+    },
+    {
+      "start": 891.839,
+      "end": 896.04,
+      "text": "AI."
+    },
+    {
+      "start": 893.52,
+      "end": 898.4,
+      "text": "The text prompt we give Pi Zero, in this"
+    },
+    {
+      "start": 896.04,
+      "end": 900.88,
+      "text": "case uncap the pen,"
+    },
+    {
+      "start": 898.4,
+      "end": 902.64,
+      "text": "is broken into four tokens, and each"
+    },
+    {
+      "start": 900.88,
+      "end": 904.68,
+      "text": "token is mapped to an embedding vector"
+    },
+    {
+      "start": 902.64,
+      "end": 907.68,
+      "text": "of the same length as our image patch"
+    },
+    {
+      "start": 904.68,
+      "end": 910.56,
+      "text": "embedding vectors."
+    },
+    {
+      "start": 907.68,
+      "end": 912.04,
+      "text": "So, we now have 772 total embedding"
+    },
+    {
+      "start": 910.56,
+      "end": 915.12,
+      "text": "vectors,"
+    },
+    {
+      "start": 912.04,
+      "end": 916.959,
+      "text": "768 from our images and four from our"
+    },
+    {
+      "start": 915.12,
+      "end": 918.28,
+      "text": "text prompt."
+    },
+    {
+      "start": 916.959,
+      "end": 921.16,
+      "text": "From here, these embedding vectors are"
+    },
+    {
+      "start": 918.28,
+      "end": 923.4,
+      "text": "passed into our Gemma LLM."
+    },
+    {
+      "start": 921.16,
+      "end": 925.959,
+      "text": "Gemma is composed of 18 transformer"
+    },
+    {
+      "start": 923.4,
+      "end": 929.28,
+      "text": "blocks, each containing an attention and"
+    },
+    {
+      "start": 925.959,
+      "end": 931.04,
+      "text": "multi-layer perceptron compute block."
+    },
+    {
+      "start": 929.28,
+      "end": 933.04,
+      "text": "Each attention block contains eight"
+    },
+    {
+      "start": 931.04,
+      "end": 934.64,
+      "text": "attention heads."
+    },
+    {
+      "start": 933.04,
+      "end": 936.44,
+      "text": "These attention heads are arguably the"
+    },
+    {
+      "start": 934.64,
+      "end": 937.959,
+      "text": "most critical part of the transformer"
+    },
+    {
+      "start": 936.44,
+      "end": 940.0,
+      "text": "architecture"
+    },
+    {
+      "start": 937.959,
+      "end": 942.839,
+      "text": "and are the key to the tight integration"
+    },
+    {
+      "start": 940.0,
+      "end": 945.64,
+      "text": "between Pi Zero's underlying LLM Gemma"
+    },
+    {
+      "start": 942.839,
+      "end": 947.88,
+      "text": "and Pi Zero's action expert."
+    },
+    {
+      "start": 945.64,
+      "end": 950.04,
+      "text": "In a given attention head, the incoming"
+    },
+    {
+      "start": 947.88,
+      "end": 951.92,
+      "text": "embedding vectors are multiplied by"
+    },
+    {
+      "start": 950.04,
+      "end": 953.24,
+      "text": "three separate matrices of learnable"
+    },
+    {
+      "start": 951.92,
+      "end": 955.839,
+      "text": "weights,"
+    },
+    {
+      "start": 953.24,
+      "end": 959.44,
+      "text": "producing three new matrices known as"
+    },
+    {
+      "start": 955.839,
+      "end": 963.16,
+      "text": "queries, keys, and values."
+    },
+    {
+      "start": 959.44,
+      "end": 966.32,
+      "text": "Each of these matrices has 772 rows, one"
+    },
+    {
+      "start": 963.16,
+      "end": 968.0,
+      "text": "for each input to our transformer."
+    },
+    {
+      "start": 966.32,
+      "end": 971.44,
+      "text": "We don't have enough space to visualize"
+    },
+    {
+      "start": 968.0,
+      "end": 973.32,
+      "text": "all 772 rows of our matrix."
+    },
+    {
+      "start": 971.44,
+      "end": 975.24,
+      "text": "Here we're showing the first row, which"
+    },
+    {
+      "start": 973.32,
+      "end": 977.839,
+      "text": "corresponds to the upper left patch of"
+    },
+    {
+      "start": 975.24,
+      "end": 982.48,
+      "text": "our overhead image."
+    },
+    {
+      "start": 977.839,
+      "end": 984.32,
+      "text": "Next, we're showing rows 373 to 376,"
+    },
+    {
+      "start": 982.48,
+      "end": 987.2,
+      "text": "which correspond to these four patches"
+    },
+    {
+      "start": 984.32,
+      "end": 989.24,
+      "text": "of our left wrist image."
+    },
+    {
+      "start": 987.2,
+      "end": 990.92,
+      "text": "This will be important shortly as we see"
+    },
+    {
+      "start": 989.24,
+      "end": 993.32,
+      "text": "how Gemma figures out how to connect the"
+    },
+    {
+      "start": 990.92,
+      "end": 995.64,
+      "text": "word for pen to the parts of the images"
+    },
+    {
+      "start": 993.32,
+      "end": 997.72,
+      "text": "that contain the pen."
+    },
+    {
+      "start": 995.64,
+      "end": 999.56,
+      "text": "As we did with our embedding vectors,"
+    },
+    {
+      "start": 997.72,
+      "end": 1001.64,
+      "text": "we'll color each row of our matrix with"
+    },
+    {
+      "start": 999.56,
+      "end": 1004.24,
+      "text": "the approximately average color from its"
+    },
+    {
+      "start": 1001.64,
+      "end": 1005.959,
+      "text": "corresponding image patch."
+    },
+    {
+      "start": 1004.24,
+      "end": 1008.24,
+      "text": "Our two patches that contain the orange"
+    },
+    {
+      "start": 1005.959,
+      "end": 1010.12,
+      "text": "pen get colored orange."
+    },
+    {
+      "start": 1008.24,
+      "end": 1011.92,
+      "text": "And finally, the light and dark parts of"
+    },
+    {
+      "start": 1010.12,
+      "end": 1014.76,
+      "text": "each vector correspond to the actual"
+    },
+    {
+      "start": 1011.92,
+      "end": 1016.56,
+      "text": "numerical values of the vector."
+    },
+    {
+      "start": 1014.76,
+      "end": 1018.6,
+      "text": "Dark regions are lower numbers and light"
+    },
+    {
+      "start": 1016.56,
+      "end": 1020.68,
+      "text": "regions are higher numbers."
+    },
+    {
+      "start": 1018.6,
+      "end": 1023.44,
+      "text": "Finishing out our matrix, these last"
+    },
+    {
+      "start": 1020.68,
+      "end": 1025.48,
+      "text": "four rows come from our input text with"
+    },
+    {
+      "start": 1023.44,
+      "end": 1028.48,
+      "text": "one row for each token,"
+    },
+    {
+      "start": 1025.48,
+      "end": 1030.16,
+      "text": "and we'll color all our text rows blue."
+    },
+    {
+      "start": 1028.48,
+      "end": 1032.199,
+      "text": "From here, Gemma's attention head"
+    },
+    {
+      "start": 1030.16,
+      "end": 1034.48,
+      "text": "searches for similar query and key"
+    },
+    {
+      "start": 1032.199,
+      "end": 1035.88,
+      "text": "matrix rows."
+    },
+    {
+      "start": 1034.48,
+      "end": 1038.199,
+      "text": "This attention head may have learned,"
+    },
+    {
+      "start": 1035.88,
+      "end": 1040.199,
+      "text": "for example, to specialize in searching"
+    },
+    {
+      "start": 1038.199,
+      "end": 1043.16,
+      "text": "the incoming images for objects that"
+    },
+    {
+      "start": 1040.199,
+      "end": 1044.8,
+      "text": "match words that appear in the prompt."
+    },
+    {
+      "start": 1043.16,
+      "end": 1047.52,
+      "text": "After all, if our robot brain is going"
+    },
+    {
+      "start": 1044.8,
+      "end": 1050.52,
+      "text": "to uncap the pen, it needs to know where"
+    },
+    {
+      "start": 1047.52,
+      "end": 1052.44,
+      "text": "the pen is in our images."
+    },
+    {
+      "start": 1050.52,
+      "end": 1054.36,
+      "text": "The word pen shows up at our very last"
+    },
+    {
+      "start": 1052.44,
+      "end": 1057.52,
+      "text": "token input position,"
+    },
+    {
+      "start": 1054.36,
+      "end": 1059.0,
+      "text": "and its query vector looks like this."
+    },
+    {
+      "start": 1057.52,
+      "end": 1061.4,
+      "text": "The attention head computes the dot"
+    },
+    {
+      "start": 1059.0,
+      "end": 1063.76,
+      "text": "product between this row and every row"
+    },
+    {
+      "start": 1061.4,
+      "end": 1065.8,
+      "text": "in our key matrix,"
+    },
+    {
+      "start": 1063.76,
+      "end": 1069.52,
+      "text": "and larger dot products indicate closer"
+    },
+    {
+      "start": 1065.8,
+      "end": 1071.36,
+      "text": "matches between queries and keys."
+    },
+    {
+      "start": 1069.52,
+      "end": 1074.04,
+      "text": "Interestingly, our highest dot products"
+    },
+    {
+      "start": 1071.36,
+      "end": 1077.56,
+      "text": "in this sample by far occurred at two"
+    },
+    {
+      "start": 1074.04,
+      "end": 1079.32,
+      "text": "image patches that contain the pen."
+    },
+    {
+      "start": 1077.56,
+      "end": 1081.44,
+      "text": "From here, our attention head normalizes"
+    },
+    {
+      "start": 1079.32,
+      "end": 1082.84,
+      "text": "these dot product values using a softmax"
+    },
+    {
+      "start": 1081.44,
+      "end": 1084.64,
+      "text": "operation."
+    },
+    {
+      "start": 1082.84,
+      "end": 1086.84,
+      "text": "We can take our visualization one step"
+    },
+    {
+      "start": 1084.64,
+      "end": 1089.08,
+      "text": "further here and show these attention"
+    },
+    {
+      "start": 1086.84,
+      "end": 1090.64,
+      "text": "values as a heat map on top of our"
+    },
+    {
+      "start": 1089.08,
+      "end": 1092.12,
+      "text": "images,"
+    },
+    {
+      "start": 1090.64,
+      "end": 1095.96,
+      "text": "where brighter shades of magenta"
+    },
+    {
+      "start": 1092.12,
+      "end": 1097.72,
+      "text": "correspond to larger attention values."
+    },
+    {
+      "start": 1095.96,
+      "end": 1100.28,
+      "text": "So, the two orange rows of our key"
+    },
+    {
+      "start": 1097.72,
+      "end": 1102.16,
+      "text": "matrix with high attention values that"
+    },
+    {
+      "start": 1100.28,
+      "end": 1104.6,
+      "text": "correspond to these two image patches"
+    },
+    {
+      "start": 1102.16,
+      "end": 1105.96,
+      "text": "get colored bright magenta,"
+    },
+    {
+      "start": 1104.6,
+      "end": 1108.08,
+      "text": "and their neighboring patches with low"
+    },
+    {
+      "start": 1105.96,
+      "end": 1109.88,
+      "text": "attention scores do not."
+    },
+    {
+      "start": 1108.08,
+      "end": 1112.4,
+      "text": "So, the idea here is that our heat map"
+    },
+    {
+      "start": 1109.88,
+      "end": 1114.919,
+      "text": "visualization shows us the strongest"
+    },
+    {
+      "start": 1112.4,
+      "end": 1118.48,
+      "text": "matches in our images to our query"
+    },
+    {
+      "start": 1114.919,
+      "end": 1120.52,
+      "text": "vector for the word pen in our prompt."
+    },
+    {
+      "start": 1118.48,
+      "end": 1122.679,
+      "text": "And remarkably, our best matches occur"
+    },
+    {
+      "start": 1120.52,
+      "end": 1124.84,
+      "text": "at the patches in all three images that"
+    },
+    {
+      "start": 1122.679,
+      "end": 1126.12,
+      "text": "show the pen."
+    },
+    {
+      "start": 1124.84,
+      "end": 1128.0,
+      "text": "Playing our video and running this"
+    },
+    {
+      "start": 1126.12,
+      "end": 1132.04,
+      "text": "analysis at each frame, we see"
+    },
+    {
+      "start": 1128.0,
+      "end": 1133.48,
+      "text": "impressive pen tracking results."
+    },
+    {
+      "start": 1132.04,
+      "end": 1135.32,
+      "text": "Our model is clearly using this"
+    },
+    {
+      "start": 1133.48,
+      "end": 1137.64,
+      "text": "attention head to connect the word pen"
+    },
+    {
+      "start": 1135.32,
+      "end": 1140.84,
+      "text": "in our prompt to the parts of our images"
+    },
+    {
+      "start": 1137.64,
+      "end": 1140.84,
+      "text": "that contain the pen."
+    },
+    {
+      "start": 1141.679,
+      "end": 1146.36,
+      "text": "Now, our attention head doesn't just"
+    },
+    {
+      "start": 1143.44,
+      "end": 1150.0,
+      "text": "search for matches to our pen query."
+    },
+    {
+      "start": 1146.36,
+      "end": 1152.84,
+      "text": "All 772 query vectors, corresponding to"
+    },
+    {
+      "start": 1150.0,
+      "end": 1156.88,
+      "text": "all input images and prompt tokens, are"
+    },
+    {
+      "start": 1152.84,
+      "end": 1158.8,
+      "text": "compared to all 772 key vectors."
+    },
+    {
+      "start": 1156.88,
+      "end": 1161.72,
+      "text": "The resulting attention values from all"
+    },
+    {
+      "start": 1158.8,
+      "end": 1165.679,
+      "text": "these comparisons are collected in a 772"
+    },
+    {
+      "start": 1161.72,
+      "end": 1167.04,
+      "text": "by 772 attention pattern matrix."
+    },
+    {
+      "start": 1165.679,
+      "end": 1170.12,
+      "text": "Each row of the attention pattern"
+    },
+    {
+      "start": 1167.04,
+      "end": 1172.159,
+      "text": "corresponds to a single query."
+    },
+    {
+      "start": 1170.12,
+      "end": 1173.96,
+      "text": "The final query row corresponds to the"
+    },
+    {
+      "start": 1172.159,
+      "end": 1175.56,
+      "text": "pen token in the prompt that we've been"
+    },
+    {
+      "start": 1173.96,
+      "end": 1177.4,
+      "text": "visualizing."
+    },
+    {
+      "start": 1175.56,
+      "end": 1180.679,
+      "text": "So, our heat map values end up in the"
+    },
+    {
+      "start": 1177.4,
+      "end": 1182.6,
+      "text": "bottom row of our attention pattern."
+    },
+    {
+      "start": 1180.679,
+      "end": 1185.28,
+      "text": "At the beginning of our attention head,"
+    },
+    {
+      "start": 1182.6,
+      "end": 1187.679,
+      "text": "we computed three matrices, our queries,"
+    },
+    {
+      "start": 1185.28,
+      "end": 1189.08,
+      "text": "keys, and values."
+    },
+    {
+      "start": 1187.679,
+      "end": 1191.04,
+      "text": "We've used our queries and keys to"
+    },
+    {
+      "start": 1189.08,
+      "end": 1192.84,
+      "text": "create our attention pattern,"
+    },
+    {
+      "start": 1191.04,
+      "end": 1195.44,
+      "text": "and now our attention pattern is"
+    },
+    {
+      "start": 1192.84,
+      "end": 1197.6,
+      "text": "multiplied by our value matrix,"
+    },
+    {
+      "start": 1195.44,
+      "end": 1201.28,
+      "text": "creating this attention heads output, a"
+    },
+    {
+      "start": 1197.6,
+      "end": 1203.0,
+      "text": "new 772 by 256 matrix."
+    },
+    {
+      "start": 1201.28,
+      "end": 1204.88,
+      "text": "Multiplying our value matrix by our"
+    },
+    {
+      "start": 1203.0,
+      "end": 1208.48,
+      "text": "attention pattern effectively moves"
+    },
+    {
+      "start": 1204.88,
+      "end": 1210.04,
+      "text": "information between token positions."
+    },
+    {
+      "start": 1208.48,
+      "end": 1212.28,
+      "text": "The large attention values we see"
+    },
+    {
+      "start": 1210.04,
+      "end": 1213.68,
+      "text": "between our pen query and pen image"
+    },
+    {
+      "start": 1212.28,
+      "end": 1215.44,
+      "text": "patches"
+    },
+    {
+      "start": 1213.68,
+      "end": 1217.72,
+      "text": "mean that these image patch rows are"
+    },
+    {
+      "start": 1215.44,
+      "end": 1219.84,
+      "text": "copied and added to the pen position in"
+    },
+    {
+      "start": 1217.72,
+      "end": 1221.92,
+      "text": "our final output."
+    },
+    {
+      "start": 1219.84,
+      "end": 1223.36,
+      "text": "One way to think about this operation is"
+    },
+    {
+      "start": 1221.92,
+      "end": 1226.16,
+      "text": "that our attention head is forming a"
+    },
+    {
+      "start": 1223.36,
+      "end": 1228.0,
+      "text": "unified representation of the text for"
+    },
+    {
+      "start": 1226.16,
+      "end": 1230.44,
+      "text": "pen and the parts of our images that"
+    },
+    {
+      "start": 1228.0,
+      "end": 1232.44,
+      "text": "contain pens."
+    },
+    {
+      "start": 1230.44,
+      "end": 1236.16,
+      "text": "Now, this is just a single head in a"
+    },
+    {
+      "start": 1232.44,
+      "end": 1237.64,
+      "text": "single layer of our 18-layer Gemma LLM."
+    },
+    {
+      "start": 1236.16,
+      "end": 1238.96,
+      "text": "And we expect different heads to learn"
+    },
+    {
+      "start": 1237.64,
+      "end": 1241.24,
+      "text": "to pick up on different types of"
+    },
+    {
+      "start": 1238.96,
+      "end": 1243.64,
+      "text": "patterns. And remember that our Gemma"
+    },
+    {
+      "start": 1241.24,
+      "end": 1245.08,
+      "text": "LLM is just one part of the Pi Zero"
+    },
+    {
+      "start": 1243.64,
+      "end": 1247.12,
+      "text": "system."
+    },
+    {
+      "start": 1245.08,
+      "end": 1249.44,
+      "text": "Let's now turn to Pi Zero's action"
+    },
+    {
+      "start": 1247.12,
+      "end": 1251.2,
+      "text": "expert model and see how the physical"
+    },
+    {
+      "start": 1249.44,
+      "end": 1254.52,
+      "text": "intelligence team was able to get these"
+    },
+    {
+      "start": 1251.2,
+      "end": 1256.44,
+      "text": "models to work together so seamlessly."
+    },
+    {
+      "start": 1254.52,
+      "end": 1259.4,
+      "text": "While the PaliGemma portion of Pi Zero"
+    },
+    {
+      "start": 1256.44,
+      "end": 1260.96,
+      "text": "takes in our 772 image and text prompt"
+    },
+    {
+      "start": 1259.4,
+      "end": 1262.72,
+      "text": "tokens,"
+    },
+    {
+      "start": 1260.96,
+      "end": 1264.88,
+      "text": "the action expert takes in information"
+    },
+    {
+      "start": 1262.72,
+      "end": 1266.4,
+      "text": "about our robot state."
+    },
+    {
+      "start": 1264.88,
+      "end": 1268.36,
+      "text": "That is the position of all of its"
+    },
+    {
+      "start": 1266.4,
+      "end": 1269.72,
+      "text": "joints."
+    },
+    {
+      "start": 1268.36,
+      "end": 1272.0,
+      "text": "On the ALOHA platform we've been"
+    },
+    {
+      "start": 1269.72,
+      "end": 1275.12,
+      "text": "experimenting with, each arm has a"
+    },
+    {
+      "start": 1272.0,
+      "end": 1277.84,
+      "text": "movable waist, shoulder, elbow, forearm"
+    },
+    {
+      "start": 1275.12,
+      "end": 1279.88,
+      "text": "rotation, wrist, wrist rotation, and"
+    },
+    {
+      "start": 1277.84,
+      "end": 1282.48,
+      "text": "gripper."
+    },
+    {
+      "start": 1279.88,
+      "end": 1284.8,
+      "text": "This makes for seven joints per arm or"
+    },
+    {
+      "start": 1282.48,
+      "end": 1287.4,
+      "text": "14 total numerical values that we need"
+    },
+    {
+      "start": 1284.8,
+      "end": 1289.36,
+      "text": "to control our robot."
+    },
+    {
+      "start": 1287.4,
+      "end": 1291.56,
+      "text": "Just as our text prompt and input images"
+    },
+    {
+      "start": 1289.36,
+      "end": 1293.96,
+      "text": "are mapped to embedding vectors, our"
+    },
+    {
+      "start": 1291.56,
+      "end": 1296.08,
+      "text": "vector of 14 joint positions is also"
+    },
+    {
+      "start": 1293.96,
+      "end": 1297.8,
+      "text": "mapped to an embedding vector."
+    },
+    {
+      "start": 1296.08,
+      "end": 1301.28,
+      "text": "This mapping is done by multiplying our"
+    },
+    {
+      "start": 1297.8,
+      "end": 1303.56,
+      "text": "joint vector by a 14 by 1024 matrix of"
+    },
+    {
+      "start": 1301.28,
+      "end": 1305.6,
+      "text": "learned weights."
+    },
+    {
+      "start": 1303.56,
+      "end": 1308.72,
+      "text": "Note that while the Gemma LLM in Pi Zero"
+    },
+    {
+      "start": 1305.6,
+      "end": 1310.44,
+      "text": "uses an embedding vector of length 2048,"
+    },
+    {
+      "start": 1308.72,
+      "end": 1312.84,
+      "text": "the action expert uses embedding vectors"
+    },
+    {
+      "start": 1310.44,
+      "end": 1314.6,
+      "text": "of length 1024."
+    },
+    {
+      "start": 1312.84,
+      "end": 1316.48,
+      "text": "This reduces the compute requirements"
+    },
+    {
+      "start": 1314.6,
+      "end": 1317.72,
+      "text": "and inference time of the action expert"
+    },
+    {
+      "start": 1316.48,
+      "end": 1319.64,
+      "text": "model."
+    },
+    {
+      "start": 1317.72,
+      "end": 1322.92,
+      "text": "So the robot's current state fits into a"
+    },
+    {
+      "start": 1319.64,
+      "end": 1324.8,
+      "text": "single embedding vector or soft token."
+    },
+    {
+      "start": 1322.92,
+      "end": 1326.2,
+      "text": "This is one of the inputs to our action"
+    },
+    {
+      "start": 1324.8,
+      "end": 1327.96,
+      "text": "expert."
+    },
+    {
+      "start": 1326.2,
+      "end": 1329.24,
+      "text": "The action expert has one more set of"
+    },
+    {
+      "start": 1327.96,
+      "end": 1330.92,
+      "text": "inputs,"
+    },
+    {
+      "start": 1329.24,
+      "end": 1333.52,
+      "text": "the joint positions of the robot over"
+    },
+    {
+      "start": 1330.92,
+      "end": 1336.52,
+      "text": "the next 50 time steps,"
+    },
+    {
+      "start": 1333.52,
+      "end": 1338.88,
+      "text": "generally referred to as actions."
+    },
+    {
+      "start": 1336.52,
+      "end": 1340.88,
+      "text": "Now, this might seem backwards. The"
+    },
+    {
+      "start": 1338.88,
+      "end": 1343.8,
+      "text": "whole point of the action expert is to"
+    },
+    {
+      "start": 1340.88,
+      "end": 1345.04,
+      "text": "predict the future robot actions."
+    },
+    {
+      "start": 1343.8,
+      "end": 1347.88,
+      "text": "How could the model take predicted"
+    },
+    {
+      "start": 1345.04,
+      "end": 1350.12,
+      "text": "actions as an input?"
+    },
+    {
+      "start": 1347.88,
+      "end": 1352.679,
+      "text": "In a fascinating transfer of ideas from"
+    },
+    {
+      "start": 1350.12,
+      "end": 1354.64,
+      "text": "AI video and image generation,"
+    },
+    {
+      "start": 1352.679,
+      "end": 1356.84,
+      "text": "Pi Zero's action expert uses a method"
+    },
+    {
+      "start": 1354.64,
+      "end": 1358.48,
+      "text": "called flow matching."
+    },
+    {
+      "start": 1356.84,
+      "end": 1361.12,
+      "text": "The idea is that instead of outputting"
+    },
+    {
+      "start": 1358.48,
+      "end": 1363.16,
+      "text": "robot actions in one go, the model"
+    },
+    {
+      "start": 1361.12,
+      "end": 1366.44,
+      "text": "iteratively shapes completely random"
+    },
+    {
+      "start": 1363.16,
+      "end": 1368.6,
+      "text": "actions into a final trajectory."
+    },
+    {
+      "start": 1366.44,
+      "end": 1370.36,
+      "text": "The comparison to AI image generation is"
+    },
+    {
+      "start": 1368.6,
+      "end": 1372.12,
+      "text": "really interesting here."
+    },
+    {
+      "start": 1370.36,
+      "end": 1374.48,
+      "text": "A final set of actions produced by our"
+    },
+    {
+      "start": 1372.12,
+      "end": 1376.08,
+      "text": "action expert will be of dimension 14 by"
+    },
+    {
+      "start": 1374.48,
+      "end": 1379.04,
+      "text": "50,"
+    },
+    {
+      "start": 1376.08,
+      "end": 1380.84,
+      "text": "with one row to control each robot joint"
+    },
+    {
+      "start": 1379.04,
+      "end": 1382.64,
+      "text": "and one column for each of the next 50"
+    },
+    {
+      "start": 1380.84,
+      "end": 1384.28,
+      "text": "time steps."
+    },
+    {
+      "start": 1382.64,
+      "end": 1386.76,
+      "text": "We can visualize this matrix as an"
+    },
+    {
+      "start": 1384.28,
+      "end": 1388.28,
+      "text": "image, as we have with other matrices in"
+    },
+    {
+      "start": 1386.76,
+      "end": 1389.92,
+      "text": "our model."
+    },
+    {
+      "start": 1388.28,
+      "end": 1393.12,
+      "text": "In this set of actions, we see an"
+    },
+    {
+      "start": 1389.92,
+      "end": 1394.72,
+      "text": "increase in the values in our ninth row."
+    },
+    {
+      "start": 1393.12,
+      "end": 1396.36,
+      "text": "We can plot these values as a time"
+    },
+    {
+      "start": 1394.72,
+      "end": 1398.24,
+      "text": "series."
+    },
+    {
+      "start": 1396.36,
+      "end": 1400.16,
+      "text": "This set of actions is telling our robot"
+    },
+    {
+      "start": 1398.24,
+      "end": 1401.64,
+      "text": "to move its right shoulder,"
+    },
+    {
+      "start": 1400.16,
+      "end": 1403.16,
+      "text": "reaching its right gripper towards the"
+    },
+    {
+      "start": 1401.64,
+      "end": 1405.56,
+      "text": "pen."
+    },
+    {
+      "start": 1403.16,
+      "end": 1407.76,
+      "text": "In AI image generation, we can create an"
+    },
+    {
+      "start": 1405.56,
+      "end": 1410.6,
+      "text": "image of a cat by iteratively refining a"
+    },
+    {
+      "start": 1407.76,
+      "end": 1412.16,
+      "text": "pure noise image into a detailed cat"
+    },
+    {
+      "start": 1410.6,
+      "end": 1414.08,
+      "text": "image."
+    },
+    {
+      "start": 1412.16,
+      "end": 1415.28,
+      "text": "Pi Zero's action expert does the same"
+    },
+    {
+      "start": 1414.08,
+      "end": 1417.88,
+      "text": "thing,"
+    },
+    {
+      "start": 1415.28,
+      "end": 1420.76,
+      "text": "refining a 14 by 50 random image of"
+    },
+    {
+      "start": 1417.88,
+      "end": 1424.28,
+      "text": "joint trajectories into a detailed plan"
+    },
+    {
+      "start": 1420.76,
+      "end": 1425.679,
+      "text": "for how to move each robot joint."
+    },
+    {
+      "start": 1424.28,
+      "end": 1427.72,
+      "text": "One reason this flow matching or"
+    },
+    {
+      "start": 1425.679,
+      "end": 1429.88,
+      "text": "diffusion process works so well for"
+    },
+    {
+      "start": 1427.72,
+      "end": 1431.36,
+      "text": "generating natural images"
+    },
+    {
+      "start": 1429.88,
+      "end": 1433.679,
+      "text": "is that the distribution of natural"
+    },
+    {
+      "start": 1431.36,
+      "end": 1435.16,
+      "text": "images is multimodal."
+    },
+    {
+      "start": 1433.679,
+      "end": 1436.48,
+      "text": "There are many ways to create an image"
+    },
+    {
+      "start": 1435.16,
+      "end": 1438.24,
+      "text": "of a cat."
+    },
+    {
+      "start": 1436.48,
+      "end": 1443.0,
+      "text": "Analogously, there are many ways we can"
+    },
+    {
+      "start": 1438.24,
+      "end": 1443.0,
+      "text": "move our 14 robot joints to uncap a pen."
+    },
+    {
+      "start": 1443.28,
+      "end": 1447.16,
+      "text": "So to generate a set of actions, the"
+    },
+    {
+      "start": 1445.36,
+      "end": 1448.88,
+      "text": "action expert starts with completely"
+    },
+    {
+      "start": 1447.16,
+      "end": 1450.48,
+      "text": "random actions"
+    },
+    {
+      "start": 1448.88,
+      "end": 1452.28,
+      "text": "and predicts how these actions should be"
+    },
+    {
+      "start": 1450.48,
+      "end": 1453.96,
+      "text": "updated to produce a slightly more"
+    },
+    {
+      "start": 1452.28,
+      "end": 1455.6,
+      "text": "realistic and accurate set of"
+    },
+    {
+      "start": 1453.96,
+      "end": 1457.24,
+      "text": "trajectories."
+    },
+    {
+      "start": 1455.6,
+      "end": 1459.76,
+      "text": "These trajectories are added to the"
+    },
+    {
+      "start": 1457.24,
+      "end": 1462.04,
+      "text": "input actions and then passed back into"
+    },
+    {
+      "start": 1459.76,
+      "end": 1463.679,
+      "text": "the model, which then computes a new set"
+    },
+    {
+      "start": 1462.04,
+      "end": 1465.8,
+      "text": "of updates."
+    },
+    {
+      "start": 1463.679,
+      "end": 1468.0,
+      "text": "This process is repeated 10 times in Pi"
+    },
+    {
+      "start": 1465.8,
+      "end": 1470.16,
+      "text": "Zero until we have a nice set of"
+    },
+    {
+      "start": 1468.0,
+      "end": 1471.76,
+      "text": "trajectories."
+    },
+    {
+      "start": 1470.16,
+      "end": 1474.04,
+      "text": "The fact that we can use the same exact"
+    },
+    {
+      "start": 1471.76,
+      "end": 1477.04,
+      "text": "flow matching process to generate images"
+    },
+    {
+      "start": 1474.04,
+      "end": 1478.72,
+      "text": "and videos and control robots is so"
+    },
+    {
+      "start": 1477.04,
+      "end": 1480.28,
+      "text": "interesting to me."
+    },
+    {
+      "start": 1478.72,
+      "end": 1482.48,
+      "text": "It's such a surprisingly effective"
+    },
+    {
+      "start": 1480.28,
+      "end": 1486.32,
+      "text": "abstraction on top of what feel like"
+    },
+    {
+      "start": 1482.48,
+      "end": 1487.84,
+      "text": "very different applications of AI."
+    },
+    {
+      "start": 1486.32,
+      "end": 1490.12,
+      "text": "So our action expert model can"
+    },
+    {
+      "start": 1487.84,
+      "end": 1492.04,
+      "text": "iteratively shape pure noise into robot"
+    },
+    {
+      "start": 1490.12,
+      "end": 1493.52,
+      "text": "trajectories."
+    },
+    {
+      "start": 1492.04,
+      "end": 1494.84,
+      "text": "But how does it know what trajectory is"
+    },
+    {
+      "start": 1493.52,
+      "end": 1496.32,
+      "text": "to generate?"
+    },
+    {
+      "start": 1494.84,
+      "end": 1498.679,
+      "text": "The action expert needs to know what the"
+    },
+    {
+      "start": 1496.32,
+      "end": 1500.48,
+      "text": "goal is, in the case of our example,"
+    },
+    {
+      "start": 1498.679,
+      "end": 1501.72,
+      "text": "uncapping the pen."
+    },
+    {
+      "start": 1500.48,
+      "end": 1503.8,
+      "text": "And of course, it needs lots of"
+    },
+    {
+      "start": 1501.72,
+      "end": 1506.12,
+      "text": "information about the scene, like where"
+    },
+    {
+      "start": 1503.8,
+      "end": 1508.44,
+      "text": "the pen is in space."
+    },
+    {
+      "start": 1506.12,
+      "end": 1510.76,
+      "text": "As we saw earlier, this is exactly the"
+    },
+    {
+      "start": 1508.44,
+      "end": 1512.56,
+      "text": "type of information our Gemma LLM is"
+    },
+    {
+      "start": 1510.76,
+      "end": 1514.44,
+      "text": "already processing in its attention"
+    },
+    {
+      "start": 1512.56,
+      "end": 1516.48,
+      "text": "heads."
+    },
+    {
+      "start": 1514.44,
+      "end": 1518.679,
+      "text": "The question from here is, how do we"
+    },
+    {
+      "start": 1516.48,
+      "end": 1520.6,
+      "text": "best give our action expert access to"
+    },
+    {
+      "start": 1518.679,
+      "end": 1522.36,
+      "text": "this information?"
+    },
+    {
+      "start": 1520.6,
+      "end": 1524.36,
+      "text": "As we saw earlier, the action expert"
+    },
+    {
+      "start": 1522.36,
+      "end": 1526.12,
+      "text": "uses the same architecture as our Gemma"
+    },
+    {
+      "start": 1524.36,
+      "end": 1528.08,
+      "text": "LLM."
+    },
+    {
+      "start": 1526.12,
+      "end": 1530.24,
+      "text": "This means that like Gemma, our action"
+    },
+    {
+      "start": 1528.08,
+      "end": 1533.2,
+      "text": "expert has 18 attention blocks with"
+    },
+    {
+      "start": 1530.24,
+      "end": 1535.48,
+      "text": "eight attention heads each."
+    },
+    {
+      "start": 1533.2,
+      "end": 1537.72,
+      "text": "As we saw earlier, each Gemma attention"
+    },
+    {
+      "start": 1535.48,
+      "end": 1540.2,
+      "text": "head computes a separate query, key, and"
+    },
+    {
+      "start": 1537.72,
+      "end": 1541.76,
+      "text": "value matrix."
+    },
+    {
+      "start": 1540.2,
+      "end": 1544.28,
+      "text": "Our action expert attention heads"
+    },
+    {
+      "start": 1541.76,
+      "end": 1546.44,
+      "text": "perform the same operations, but with"
+    },
+    {
+      "start": 1544.28,
+      "end": 1549.679,
+      "text": "different inputs."
+    },
+    {
+      "start": 1546.44,
+      "end": 1552.24,
+      "text": "Our action expert has 51 inputs, one for"
+    },
+    {
+      "start": 1549.679,
+      "end": 1553.76,
+      "text": "the robot's current state, and 50 for"
+    },
+    {
+      "start": 1552.24,
+      "end": 1556.52,
+      "text": "the robot's predicted actions over the"
+    },
+    {
+      "start": 1553.76,
+      "end": 1558.56,
+      "text": "next 50 time steps."
+    },
+    {
+      "start": 1556.52,
+      "end": 1560.4,
+      "text": "So within each attention head, our"
+    },
+    {
+      "start": 1558.56,
+      "end": 1562.28,
+      "text": "action expert's query matrix will have"
+    },
+    {
+      "start": 1560.4,
+      "end": 1564.88,
+      "text": "51 rows,"
+    },
+    {
+      "start": 1562.28,
+      "end": 1566.36,
+      "text": "one for each model input."
+    },
+    {
+      "start": 1564.88,
+      "end": 1568.8,
+      "text": "Now, using the standard attention"
+    },
+    {
+      "start": 1566.36,
+      "end": 1570.96,
+      "text": "mechanism, each query is able to search"
+    },
+    {
+      "start": 1568.8,
+      "end": 1572.36,
+      "text": "for matches in the keys."
+    },
+    {
+      "start": 1570.96,
+      "end": 1574.92,
+      "text": "This could allow, for example, our"
+    },
+    {
+      "start": 1572.36,
+      "end": 1577.24,
+      "text": "second action step to use information"
+    },
+    {
+      "start": 1574.92,
+      "end": 1578.8,
+      "text": "from our first action step,"
+    },
+    {
+      "start": 1577.24,
+      "end": 1581.12,
+      "text": "which would help our model create a nice"
+    },
+    {
+      "start": 1578.8,
+      "end": 1582.679,
+      "text": "smooth trajectory from time step to time"
+    },
+    {
+      "start": 1581.12,
+      "end": 1583.92,
+      "text": "step."
+    },
+    {
+      "start": 1582.679,
+      "end": 1585.88,
+      "text": "Of course, to figure out where these"
+    },
+    {
+      "start": 1583.92,
+      "end": 1588.24,
+      "text": "trajectories should go at all, our"
+    },
+    {
+      "start": 1585.88,
+      "end": 1589.84,
+      "text": "action expert's queries ideally need"
+    },
+    {
+      "start": 1588.24,
+      "end": 1592.92,
+      "text": "access to the prompt and image"
+    },
+    {
+      "start": 1589.84,
+      "end": 1594.44,
+      "text": "information from our Gemma LLM."
+    },
+    {
+      "start": 1592.92,
+      "end": 1596.4,
+      "text": "This is where the team's decision to use"
+    },
+    {
+      "start": 1594.44,
+      "end": 1599.16,
+      "text": "the same architecture for the LLM and"
+    },
+    {
+      "start": 1596.4,
+      "end": 1601.04,
+      "text": "action expert really pays off."
+    },
+    {
+      "start": 1599.16,
+      "end": 1602.6,
+      "text": "All we have to do at this stage is take"
+    },
+    {
+      "start": 1601.04,
+      "end": 1604.28,
+      "text": "the keys and values from the"
+    },
+    {
+      "start": 1602.6,
+      "end": 1607.12,
+      "text": "corresponding attention head of our"
+    },
+    {
+      "start": 1604.28,
+      "end": 1610.04,
+      "text": "Gemma LLM and append them to the keys"
+    },
+    {
+      "start": 1607.12,
+      "end": 1613.32,
+      "text": "and values from our action expert."
+    },
+    {
+      "start": 1610.04,
+      "end": 1616.2,
+      "text": "So we now have 51 plus 772,"
+    },
+    {
+      "start": 1613.32,
+      "end": 1618.679,
+      "text": "making for a total of 823 keys that our"
+    },
+    {
+      "start": 1616.2,
+      "end": 1620.679,
+      "text": "action expert can query."
+    },
+    {
+      "start": 1618.679,
+      "end": 1623.32,
+      "text": "These keys contain all the information"
+    },
+    {
+      "start": 1620.679,
+      "end": 1626.2,
+      "text": "the action expert needs, the text"
+    },
+    {
+      "start": 1623.32,
+      "end": 1628.44,
+      "text": "prompt, the encoded images, the robot"
+    },
+    {
+      "start": 1626.2,
+      "end": 1630.52,
+      "text": "state, and other time steps in the"
+    },
+    {
+      "start": 1628.44,
+      "end": 1632.12,
+      "text": "planning process."
+    },
+    {
+      "start": 1630.52,
+      "end": 1634.52,
+      "text": "This gives the attention heads in our"
+    },
+    {
+      "start": 1632.12,
+      "end": 1637.48,
+      "text": "action expert an immediately available,"
+    },
+    {
+      "start": 1634.52,
+      "end": 1640.52,
+      "text": "incredibly rich information source."
+    },
+    {
+      "start": 1637.48,
+      "end": 1642.16,
+      "text": "It's a really clever design."
+    },
+    {
+      "start": 1640.52,
+      "end": 1645.0,
+      "text": "This modular design allows for some"
+    },
+    {
+      "start": 1642.16,
+      "end": 1646.72,
+      "text": "impressive efficiency gains."
+    },
+    {
+      "start": 1645.0,
+      "end": 1649.16,
+      "text": "After the images and prompt are passed"
+    },
+    {
+      "start": 1646.72,
+      "end": 1650.6,
+      "text": "into PaliGemma, the computed keys and"
+    },
+    {
+      "start": 1649.16,
+      "end": 1652.08,
+      "text": "values in each attention head are"
+    },
+    {
+      "start": 1650.6,
+      "end": 1655.08,
+      "text": "cached."
+    },
+    {
+      "start": 1652.08,
+      "end": 1656.8,
+      "text": "This is a common step in LLM inference,"
+    },
+    {
+      "start": 1655.08,
+      "end": 1659.04,
+      "text": "preventing redundant computation as new"
+    },
+    {
+      "start": 1656.8,
+      "end": 1661.16,
+      "text": "tokens come along."
+    },
+    {
+      "start": 1659.04,
+      "end": 1663.679,
+      "text": "However, in this case, the physical"
+    },
+    {
+      "start": 1661.16,
+      "end": 1666.48,
+      "text": "intelligence team uses PaliGemma's KV"
+    },
+    {
+      "start": 1663.679,
+      "end": 1669.44,
+      "text": "cache to feed into each action expert's"
+    },
+    {
+      "start": 1666.48,
+      "end": 1671.12,
+      "text": "attention head."
+    },
+    {
+      "start": 1669.44,
+      "end": 1672.92,
+      "text": "Since the action expert uses a flow"
+    },
+    {
+      "start": 1671.12,
+      "end": 1674.48,
+      "text": "matching process,"
+    },
+    {
+      "start": 1672.92,
+      "end": 1677.0,
+      "text": "it needs to run multiple times to"
+    },
+    {
+      "start": 1674.48,
+      "end": 1679.0,
+      "text": "produce final smooth trajectories, but"
+    },
+    {
+      "start": 1677.0,
+      "end": 1681.44,
+      "text": "is able to use the same KV cache each"
+    },
+    {
+      "start": 1679.0,
+      "end": 1684.64,
+      "text": "time because the input images don't"
+    },
+    {
+      "start": 1681.44,
+      "end": 1686.16,
+      "text": "change until the next time step."
+    },
+    {
+      "start": 1684.64,
+      "end": 1688.16,
+      "text": "The fact that all these components can"
+    },
+    {
+      "start": 1686.16,
+      "end": 1690.48,
+      "text": "be trained to work together so well is"
+    },
+    {
+      "start": 1688.16,
+      "end": 1692.16,
+      "text": "absolutely incredible."
+    },
+    {
+      "start": 1690.48,
+      "end": 1694.4,
+      "text": "At each step, Pi Zero takes in its"
+    },
+    {
+      "start": 1692.16,
+      "end": 1697.12,
+      "text": "prompt and images, runs them through"
+    },
+    {
+      "start": 1694.4,
+      "end": 1698.52,
+      "text": "PaliGemma, caches all the key and value"
+    },
+    {
+      "start": 1697.12,
+      "end": 1700.16,
+      "text": "matrices,"
+    },
+    {
+      "start": 1698.52,
+      "end": 1702.4,
+      "text": "and then runs the action expert to"
+    },
+    {
+      "start": 1700.16,
+      "end": 1705.12,
+      "text": "iteratively denoise random trajectories"
+    },
+    {
+      "start": 1702.4,
+      "end": 1707.12,
+      "text": "into final paths."
+    },
+    {
+      "start": 1705.12,
+      "end": 1710.32,
+      "text": "The robot then follows these paths for a"
+    },
+    {
+      "start": 1707.12,
+      "end": 1711.88,
+      "text": "few steps, and the process is repeated,"
+    },
+    {
+      "start": 1710.32,
+      "end": 1714.12,
+      "text": "controlling the robot to achieve the"
+    },
+    {
+      "start": 1711.88,
+      "end": 1715.679,
+      "text": "task at hand."
+    },
+    {
+      "start": 1714.12,
+      "end": 1717.72,
+      "text": "Since Pi Zero was first demoed in"
+    },
+    {
+      "start": 1715.679,
+      "end": 1719.2,
+      "text": "October of 2024,"
+    },
+    {
+      "start": 1717.72,
+      "end": 1720.96,
+      "text": "the Physical Intelligence team has made"
+    },
+    {
+      "start": 1719.2,
+      "end": 1723.04,
+      "text": "various improvements to their models and"
+    },
+    {
+      "start": 1720.96,
+      "end": 1725.76,
+      "text": "training approach,"
+    },
+    {
+      "start": 1723.04,
+      "end": 1727.88,
+      "text": "but their core VLA architecture, using a"
+    },
+    {
+      "start": 1725.76,
+      "end": 1729.48,
+      "text": "tightly coupled multimodal LLM with a"
+    },
+    {
+      "start": 1727.88,
+      "end": 1732.24,
+      "text": "flow matching action expert, has"
+    },
+    {
+      "start": 1729.48,
+      "end": 1734.24,
+      "text": "remained unchanged."
+    },
+    {
+      "start": 1732.24,
+      "end": 1736.8,
+      "text": "Looking back on the RT-2 Taylor Swift"
+    },
+    {
+      "start": 1734.24,
+      "end": 1739.0,
+      "text": "Coke can demo in 2023,"
+    },
+    {
+      "start": 1736.8,
+      "end": 1740.919,
+      "text": "it's incredible to see how far VLA"
+    },
+    {
+      "start": 1739.0,
+      "end": 1742.4,
+      "text": "models have come."
+    },
+    {
+      "start": 1740.919,
+      "end": 1743.56,
+      "text": "And what's perhaps even more impressive"
+    },
+    {
+      "start": 1742.4,
+      "end": 1745.159,
+      "text": "to me"
+    },
+    {
+      "start": 1743.56,
+      "end": 1746.84,
+      "text": "is that the Physical Intelligence team"
+    },
+    {
+      "start": 1745.159,
+      "end": 1748.679,
+      "text": "had the foresight"
+    },
+    {
+      "start": 1746.84,
+      "end": 1750.36,
+      "text": "to realize what this unimpressive demo"
+    },
+    {
+      "start": 1748.679,
+      "end": 1751.679,
+      "text": "really meant,"
+    },
+    {
+      "start": 1750.36,
+      "end": 1754.28,
+      "text": "that large language models could be"
+    },
+    {
+      "start": 1751.679,
+      "end": 1755.679,
+      "text": "trained to be robots,"
+    },
+    {
+      "start": 1754.28,
+      "end": 1757.72,
+      "text": "potentially leveraging the full"
+    },
+    {
+      "start": 1755.679,
+      "end": 1760.0,
+      "text": "knowledge of the internet into robot"
+    },
+    {
+      "start": 1757.72,
+      "end": 1762.44,
+      "text": "brains."
+    },
+    {
+      "start": 1760.0,
+      "end": 1764.56,
+      "text": "Now, as impressive as these demos are,"
+    },
+    {
+      "start": 1762.44,
+      "end": 1766.6,
+      "text": "they're still demos."
+    },
+    {
+      "start": 1764.56,
+      "end": 1768.4,
+      "text": "In 1995, a team from Carnegie Mellon"
+    },
+    {
+      "start": 1766.6,
+      "end": 1772.159,
+      "text": "demonstrated a self-driving system,"
+    },
+    {
+      "start": 1768.4,
+      "end": 1774.36,
+      "text": "Ralph, that drove across the US at 98.2%"
+    },
+    {
+      "start": 1772.159,
+      "end": 1775.679,
+      "text": "autonomously."
+    },
+    {
+      "start": 1774.36,
+      "end": 1776.96,
+      "text": "This clearly did not mean that"
+    },
+    {
+      "start": 1775.679,
+      "end": 1777.69,
+      "text": "self-driving cars were around the"
+    },
+    {
+      "start": 1776.96,
+      "end": 1778.159,
+      "text": "corner."
+    },
+    {
+      "start": 1777.69,
+      "end": 1779.76,
+      "text": ">> [music]"
+    },
+    {
+      "start": 1778.159,
+      "end": 1782.919,
+      "text": ">> And the generation of self-driving cars"
+    },
+    {
+      "start": 1779.76,
+      "end": 1784.28,
+      "text": "we have today works very differently."
+    },
+    {
+      "start": 1782.919,
+      "end": 1786.28,
+      "text": "And interestingly, there's a different"
+    },
+    {
+      "start": 1784.28,
+      "end": 1790.16,
+      "text": "paradigm emerging for building robot"
+    },
+    {
+      "start": 1786.28,
+      "end": 1792.04,
+      "text": "brains, broadly known as world models,"
+    },
+    {
+      "start": 1790.16,
+      "end": 1794.24,
+      "text": "that actually do not use large language"
+    },
+    {
+      "start": 1792.04,
+      "end": 1796.96,
+      "text": "models as a backbone."
+    },
+    {
+      "start": 1794.24,
+      "end": 1799.52,
+      "text": "Yann LeCun, AI pioneer and long-time"
+    },
+    {
+      "start": 1796.96,
+      "end": 1801.16,
+      "text": "chief AI scientist at Meta, recently"
+    },
+    {
+      "start": 1799.52,
+      "end": 1804.72,
+      "text": "left his role at Meta to start a new"
+    },
+    {
+      "start": 1801.16,
+      "end": 1806.24,
+      "text": "venture focused on world models."
+    },
+    {
+      "start": 1804.72,
+      "end": 1808.68,
+      "text": "Yann was kind enough to chat with us"
+    },
+    {
+      "start": 1806.24,
+      "end": 1811.08,
+      "text": "about it and wasn't shy about giving his"
+    },
+    {
+      "start": 1808.68,
+      "end": 1812.4,
+      "text": "opinion on VLA models."
+    },
+    {
+      "start": 1811.08,
+      "end": 1813.96,
+      "text": "What's your expectation here? Do you"
+    },
+    {
+      "start": 1812.4,
+      "end": 1816.32,
+      "text": "think JEPA-based approaches will"
+    },
+    {
+      "start": 1813.96,
+      "end": 1818.36,
+      "text": "eventually overtake VLA approaches? Oh,"
+    },
+    {
+      "start": 1816.32,
+      "end": 1820.16,
+      "text": "absolutely. Yeah, VLA are doomed. I"
+    },
+    {
+      "start": 1818.36,
+      "end": 1823.36,
+      "text": "mean, they they basically don't work"
+    },
+    {
+      "start": 1820.16,
+      "end": 1824.88,
+      "text": "really well. Okay. I mean,"
+    },
+    {
+      "start": 1823.36,
+      "end": 1827.48,
+      "text": "Next time, we'll dig into Yann's"
+    },
+    {
+      "start": 1824.88,
+      "end": 1827.48,
+      "text": "approach."
+    },
+    {
+      "start": 1827.68,
+      "end": 1831.4,
+      "text": "If you enjoyed this video, check out the"
+    },
+    {
+      "start": 1829.52,
+      "end": 1832.88,
+      "text": "companion poster."
+    },
+    {
+      "start": 1831.4,
+      "end": 1834.52,
+      "text": "The poster walks through the full Pi"
+    },
+    {
+      "start": 1832.88,
+      "end": 1836.52,
+      "text": "Zero architecture with helpful"
+    },
+    {
+      "start": 1834.52,
+      "end": 1838.4,
+      "text": "descriptions along the way."
+    },
+    {
+      "start": 1836.52,
+      "end": 1840.76,
+      "text": "Fitting everything on screen was a huge"
+    },
+    {
+      "start": 1838.4,
+      "end": 1842.36,
+      "text": "challenge when animating this video."
+    },
+    {
+      "start": 1840.76,
+      "end": 1844.24,
+      "text": "And the large format of the poster is"
+    },
+    {
+      "start": 1842.36,
+      "end": 1845.84,
+      "text": "perfect for getting everything into one"
+    },
+    {
+      "start": 1844.24,
+      "end": 1847.56,
+      "text": "place."
+    },
+    {
+      "start": 1845.84,
+      "end": 1849.68,
+      "text": "The poster is printed on high-quality"
+    },
+    {
+      "start": 1847.56,
+      "end": 1851.6,
+      "text": "large format photo paper with genuine"
+    },
+    {
+      "start": 1849.68,
+      "end": 1853.04,
+      "text": "Canon inks for excellent colors and"
+    },
+    {
+      "start": 1851.6,
+      "end": 1854.48,
+      "text": "details."
+    },
+    {
+      "start": 1853.04,
+      "end": 1856.16,
+      "text": "For a limited time, you can get a"
+    },
+    {
+      "start": 1854.48,
+      "end": 1858.52,
+      "text": "discount on the poster when bundled with"
+    },
+    {
+      "start": 1856.16,
+      "end": 1861.0,
+      "text": "the Welch Labs' Illustrated Guide to AI"
+    },
+    {
+      "start": 1858.52,
+      "end": 1862.4,
+      "text": "using code VLA."
+    },
+    {
+      "start": 1861.0,
+      "end": 1864.64,
+      "text": "Speaking of the Welch Labs' Illustrated"
+    },
+    {
+      "start": 1862.4,
+      "end": 1866.12,
+      "text": "Guide to AI, I'm very excited to"
+    },
+    {
+      "start": 1864.64,
+      "end": 1868.84,
+      "text": "announce that international shipping is"
+    },
+    {
+      "start": 1866.12,
+      "end": 1870.4,
+      "text": "now available in these nine countries."
+    },
+    {
+      "start": 1868.84,
+      "end": 1872.44,
+      "text": "And we're planning to expand to these"
+    },
+    {
+      "start": 1870.4,
+      "end": 1874.04,
+      "text": "countries next."
+    },
+    {
+      "start": 1872.44,
+      "end": 1876.76,
+      "text": "I know this has taken a really long"
+    },
+    {
+      "start": 1874.04,
+      "end": 1878.2,
+      "text": "time. Thank you for your patience. A ton"
+    },
+    {
+      "start": 1876.76,
+      "end": 1880.88,
+      "text": "of you have emailed us and joined our"
+    },
+    {
+      "start": 1878.2,
+      "end": 1882.52,
+      "text": "international shipping waitlist."
+    },
+    {
+      "start": 1880.88,
+      "end": 1884.84,
+      "text": "Today, all of our books are printed in"
+    },
+    {
+      "start": 1882.52,
+      "end": 1886.28,
+      "text": "the US. We have a great relationship"
+    },
+    {
+      "start": 1884.84,
+      "end": 1887.88,
+      "text": "with our printer and the quality is"
+    },
+    {
+      "start": 1886.28,
+      "end": 1889.44,
+      "text": "outstanding."
+    },
+    {
+      "start": 1887.88,
+      "end": 1891.44,
+      "text": "We've received a bunch of nice feedback"
+    },
+    {
+      "start": 1889.44,
+      "end": 1893.08,
+      "text": "about this. This viewer told us that the"
+    },
+    {
+      "start": 1891.44,
+      "end": 1895.0,
+      "text": "construction quality is the best they've"
+    },
+    {
+      "start": 1893.08,
+      "end": 1897.6,
+      "text": "ever seen."
+    },
+    {
+      "start": 1895.0,
+      "end": 1898.92,
+      "text": "However, our print costs are fairly high"
+    },
+    {
+      "start": 1897.6,
+      "end": 1900.28,
+      "text": "and being self-published makes"
+    },
+    {
+      "start": 1898.92,
+      "end": 1901.72,
+      "text": "international logistics a real"
+    },
+    {
+      "start": 1900.28,
+      "end": 1903.8,
+      "text": "challenge."
+    },
+    {
+      "start": 1901.72,
+      "end": 1906.16,
+      "text": "Until very recently, my family and I"
+    },
+    {
+      "start": 1903.8,
+      "end": 1908.36,
+      "text": "packed all the books ourselves."
+    },
+    {
+      "start": 1906.16,
+      "end": 1909.8,
+      "text": "Here's 7,000 lbs of books getting"
+    },
+    {
+      "start": 1908.36,
+      "end": 1911.76,
+      "text": "dropped off on the street in front of my"
+    },
+    {
+      "start": 1909.8,
+      "end": 1913.679,
+      "text": "house late last year. We use"
+    },
+    {
+      "start": 1911.76,
+      "end": 1914.96,
+      "text": "high-quality boxes and corner protectors"
+    },
+    {
+      "start": 1913.679,
+      "end": 1916.96,
+      "text": "to make sure your book arrives in"
+    },
+    {
+      "start": 1914.96,
+      "end": 1918.56,
+      "text": "pristine condition."
+    },
+    {
+      "start": 1916.96,
+      "end": 1920.16,
+      "text": "The other packaging options we've tried"
+    },
+    {
+      "start": 1918.56,
+      "end": 1921.48,
+      "text": "it just don't protect this heavy book"
+    },
+    {
+      "start": 1920.16,
+      "end": 1923.72,
+      "text": "very well."
+    },
+    {
+      "start": 1921.48,
+      "end": 1926.56,
+      "text": "Here's some outgoing shipments and a van"
+    },
+    {
+      "start": 1923.72,
+      "end": 1927.84,
+      "text": "we rent sometimes for post office runs."
+    },
+    {
+      "start": 1926.56,
+      "end": 1930.16,
+      "text": "Here's part of another shipment that was"
+    },
+    {
+      "start": 1927.84,
+      "end": 1931.36,
+      "text": "delivered during a snowstorm this year."
+    },
+    {
+      "start": 1930.16,
+      "end": 1934.08,
+      "text": "And here's some more books heading to"
+    },
+    {
+      "start": 1931.36,
+      "end": 1936.36,
+      "text": "the post office in my family's SUV."
+    },
+    {
+      "start": 1934.08,
+      "end": 1937.64,
+      "text": "It's definitely been an adventure."
+    },
+    {
+      "start": 1936.36,
+      "end": 1940.8,
+      "text": "Early this year, we started looking at"
+    },
+    {
+      "start": 1937.64,
+      "end": 1942.08,
+      "text": "ways to improve and scale our process."
+    },
+    {
+      "start": 1940.8,
+      "end": 1944.36,
+      "text": "We've had some interesting calls with"
+    },
+    {
+      "start": 1942.08,
+      "end": 1946.2,
+      "text": "publishers, but the deals we've seen so"
+    },
+    {
+      "start": 1944.36,
+      "end": 1948.32,
+      "text": "far either significantly reduce print"
+    },
+    {
+      "start": 1946.2,
+      "end": 1950.96,
+      "text": "quality or cut too deeply into our"
+    },
+    {
+      "start": 1948.32,
+      "end": 1952.88,
+      "text": "margins, effectively introducing one or"
+    },
+    {
+      "start": 1950.96,
+      "end": 1954.08,
+      "text": "two layers of middlemen to our supply"
+    },
+    {
+      "start": 1952.88,
+      "end": 1955.88,
+      "text": "chain."
+    },
+    {
+      "start": 1954.08,
+      "end": 1957.2,
+      "text": "So, we've decided to stay self-published"
+    },
+    {
+      "start": 1955.88,
+      "end": 1958.96,
+      "text": "for now."
+    },
+    {
+      "start": 1957.2,
+      "end": 1961.04,
+      "text": "We did find a great local packing"
+    },
+    {
+      "start": 1958.96,
+      "end": 1963.04,
+      "text": "logistics partner who now, thankfully,"
+    },
+    {
+      "start": 1961.04,
+      "end": 1964.76,
+      "text": "is handling fulfillment."
+    },
+    {
+      "start": 1963.04,
+      "end": 1967.4,
+      "text": "They also ship enough volume to get some"
+    },
+    {
+      "start": 1964.76,
+      "end": 1968.72,
+      "text": "nice international rate discounts."
+    },
+    {
+      "start": 1967.4,
+      "end": 1971.04,
+      "text": "This is what has allowed us to start to"
+    },
+    {
+      "start": 1968.72,
+      "end": 1972.92,
+      "text": "tackle international shipping."
+    },
+    {
+      "start": 1971.04,
+      "end": 1975.6,
+      "text": "Starting today, we're offering flat rate"
+    },
+    {
+      "start": 1972.92,
+      "end": 1977.48,
+      "text": "shipping to Canada, Mexico, the UK,"
+    },
+    {
+      "start": 1975.6,
+      "end": 1979.88,
+      "text": "Ireland, Germany, France, the"
+    },
+    {
+      "start": 1977.48,
+      "end": 1981.84,
+      "text": "Netherlands, Italy, and Belgium. And the"
+    },
+    {
+      "start": 1979.88,
+      "end": 1984.08,
+      "text": "flat rate includes all relevant VAT,"
+    },
+    {
+      "start": 1981.84,
+      "end": 1985.2,
+      "text": "GST, and duties."
+    },
+    {
+      "start": 1984.08,
+      "end": 1986.679,
+      "text": "We chose these countries by"
+    },
+    {
+      "start": 1985.2,
+      "end": 1988.96,
+      "text": "cross-referencing the countries with the"
+    },
+    {
+      "start": 1986.679,
+      "end": 1990.52,
+      "text": "highest demand on our waitlist and where"
+    },
+    {
+      "start": 1988.96,
+      "end": 1992.96,
+      "text": "we're able to ship without exorbitant"
+    },
+    {
+      "start": 1990.52,
+      "end": 1994.28,
+      "text": "shipping costs."
+    },
+    {
+      "start": 1992.96,
+      "end": 1996.2,
+      "text": "Next, we're looking at expanding to"
+    },
+    {
+      "start": 1994.28,
+      "end": 1998.6,
+      "text": "India, Australia, New Zealand,"
+    },
+    {
+      "start": 1996.2,
+      "end": 2001.24,
+      "text": "Singapore, Japan, South Korea, Hong"
+    },
+    {
+      "start": 1998.6,
+      "end": 2002.96,
+      "text": "Kong, Thailand, and Malaysia."
+    },
+    {
+      "start": 2001.24,
+      "end": 2005.12,
+      "text": "Although higher shipping costs due to a"
+    },
+    {
+      "start": 2002.96,
+      "end": 2006.48,
+      "text": "global increase in fuel prices is making"
+    },
+    {
+      "start": 2005.12,
+      "end": 2008.16,
+      "text": "this a bit more challenging than we"
+    },
+    {
+      "start": 2006.48,
+      "end": 2009.84,
+      "text": "expected."
+    },
+    {
+      "start": 2008.16,
+      "end": 2012.2,
+      "text": "I'm really happy that we now have some"
+    },
+    {
+      "start": 2009.84,
+      "end": 2013.72,
+      "text": "international options, but the price we"
+    },
+    {
+      "start": 2012.2,
+      "end": 2015.32,
+      "text": "need to charge to cover printing and"
+    },
+    {
+      "start": 2013.72,
+      "end": 2016.679,
+      "text": "shipping is still higher than I would"
+    },
+    {
+      "start": 2015.32,
+      "end": 2018.72,
+      "text": "like."
+    },
+    {
+      "start": 2016.679,
+      "end": 2020.6,
+      "text": "If we continue to see strong demand,"
+    },
+    {
+      "start": 2018.72,
+      "end": 2023.8,
+      "text": "this will allow us to invest in larger"
+    },
+    {
+      "start": 2020.6,
+      "end": 2025.0,
+      "text": "print runs, bringing down printing cost."
+    },
+    {
+      "start": 2023.8,
+      "end": 2026.84,
+      "text": "And we're even looking at doing some of"
+    },
+    {
+      "start": 2025.0,
+      "end": 2027.96,
+      "text": "our printing regionally, starting in"
+    },
+    {
+      "start": 2026.84,
+      "end": 2029.4,
+      "text": "Europe."
+    },
+    {
+      "start": 2027.96,
+      "end": 2031.64,
+      "text": "This would significantly bring down our"
+    },
+    {
+      "start": 2029.4,
+      "end": 2033.12,
+      "text": "European shipping costs and allow for"
+    },
+    {
+      "start": 2031.64,
+      "end": 2034.88,
+      "text": "lower prices."
+    },
+    {
+      "start": 2033.12,
+      "end": 2037.12,
+      "text": "Sometimes, I really question if this is"
+    },
+    {
+      "start": 2034.88,
+      "end": 2038.84,
+      "text": "all just crazy and really a distraction"
+    },
+    {
+      "start": 2037.12,
+      "end": 2041.0,
+      "text": "from making videos,"
+    },
+    {
+      "start": 2038.84,
+      "end": 2043.44,
+      "text": "especially on days when 7,000 lbs of"
+    },
+    {
+      "start": 2041.0,
+      "end": 2044.8,
+      "text": "books show up at my house."
+    },
+    {
+      "start": 2043.44,
+      "end": 2046.24,
+      "text": "However, at the end of the day, the"
+    },
+    {
+      "start": 2044.8,
+      "end": 2048.24,
+      "text": "mission of Welch Labs is to make these"
+    },
+    {
+      "start": 2046.24,
+      "end": 2050.679,
+      "text": "complex topics as understandable as"
+    },
+    {
+      "start": 2048.24,
+      "end": 2052.44,
+      "text": "possible, and books are a big part of"
+    },
+    {
+      "start": 2050.679,
+      "end": 2054.76,
+      "text": "that mission."
+    },
+    {
+      "start": 2052.44,
+      "end": 2056.24,
+      "text": "One supporter on Patreon, Lauren Steely,"
+    },
+    {
+      "start": 2054.76,
+      "end": 2057.879,
+      "text": "put this really nicely when talking"
+    },
+    {
+      "start": 2056.24,
+      "end": 2059.6,
+      "text": "about the book."
+    },
+    {
+      "start": 2057.879,
+      "end": 2062.24,
+      "text": "It's not just a condensed version of the"
+    },
+    {
+      "start": 2059.6,
+      "end": 2064.08,
+      "text": "videos. The book actually adds so much"
+    },
+    {
+      "start": 2062.24,
+      "end": 2066.52,
+      "text": "more detail that the videos couldn't"
+    },
+    {
+      "start": 2064.08,
+      "end": 2068.08,
+      "text": "possibly contain."
+    },
+    {
+      "start": 2066.52,
+      "end": 2069.879,
+      "text": "Finally, a big thank you to all the"
+    },
+    {
+      "start": 2068.08,
+      "end": 2072.399,
+      "text": "readers who have helped find errors and"
+    },
+    {
+      "start": 2069.879,
+      "end": 2073.96,
+      "text": "made suggestions for improvements."
+    },
+    {
+      "start": 2072.399,
+      "end": 2076.2,
+      "text": "These readers are listed on the credits"
+    },
+    {
+      "start": 2073.96,
+      "end": 2077.6,
+      "text": "page of the latest version of the book."
+    },
+    {
+      "start": 2076.2,
+      "end": 2080.6,
+      "text": "And we published an errata at"
+    },
+    {
+      "start": 2077.6,
+      "end": 2080.6,
+      "text": "welchlabs.com/ai-book."
+    },
+    {
+      "start": 2081.76,
+      "end": 2084.399,
+      "text": "I especially want to thank Robert"
+    },
+    {
+      "start": 2083.159,
+      "end": 2086.0,
+      "text": "Blumoff."
+    },
+    {
+      "start": 2084.399,
+      "end": 2088.28,
+      "text": "He's been incredibly meticulous at"
+    },
+    {
+      "start": 2086.0,
+      "end": 2089.8,
+      "text": "rooting out little issues in the book"
+    },
+    {
+      "start": 2088.28,
+      "end": 2092.12,
+      "text": "and has even made his own perceptron"
+    },
+    {
+      "start": 2089.8,
+      "end": 2094.6,
+      "text": "machine and build guide. I'll include a"
+    },
+    {
+      "start": 2092.12,
+      "end": 2095.919,
+      "text": "link in the description below."
+    },
+    {
+      "start": 2094.6,
+      "end": 2097.4,
+      "text": "Thank you so much for your patience and"
+    },
+    {
+      "start": 2095.919,
+      "end": 2099.24,
+      "text": "to everyone who's bought a book. It"
+    },
+    {
+      "start": 2097.4,
+      "end": 2102.64,
+      "text": "really helps the business work and means"
+    },
+    {
+      "start": 2099.24,
+      "end": 2102.64,
+      "text": "a lot to us. Thank you."
+    }
+  ],
+  "segment_count": 981
+}

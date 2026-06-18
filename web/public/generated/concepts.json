@@ -1,108 +1,5 @@
 [
   {
-    "id": "fokker-planck",
-    "display_name": "Fokker-Planck 方程",
-    "category": "equation",
-    "short_description": "描述概率密度在随机动力学下的时间演化。",
-    "aliases": [
-      "Fokker-Planck",
-      "Fokker–Planck",
-      "FP equation",
-      "FP 方程",
-      "Kolmogorov forward",
-      "密度演化方程"
-    ],
-    "total_occurrences": 40,
-    "note_count": 8,
-    "occurrences": [
-      {
-        "note_path": "2026-04-16/hj-sampler.md",
-        "note_title": "HJ-sampler: Bayesian Sampler via Hamilton-Jacobi PDEs and Score-Based Generative Models",
-        "note_date": "2026-04-16",
-        "hit_count": 15,
-        "snippets": [
-          "### 1.3 为什么会出现 log 变换 原文接下来不是先讲算法，而是先讲这条联系从哪里来。这里的核心工具是 **log 变换**。在布朗运动语境下，这个变换更常被叫作 **Cole-Hopf 变换**。 这一步的作用，不是单纯做代数整理，而是把原本分属两个世界的问题接到一起。 先看第一边。在线性一侧，你处理的是 Kolmogorov forward / backward equations。它们描述的是概率密度怎样前向演化，或者某个条件期望怎样后向传播。这类方程的好处是：它们在线性框架里，很多理论和数值工具都已经很成熟。 再看第二边。控制和采样真正关心的，通常不是“某个线性方程怎么解…",
-          "这类方程的好处是：它们在线性框架里，很多理论和数值工具都已经很成熟。 再看第二边。控制和采样真正关心的，通常不是“某个线性方程怎么解”，而是： - 当前状态往哪个方向推最合适； - 一条路径累计起来的代价是多少； - 概率质量在控制下会怎样重新分布。 这些问题写出来以后，更自然地落到 Hamilton-Jacobi 方程和 Fokker-Planck 方程的耦合系统上。但这类方程是非线性的，直接处理通常更难。 log 变换的关键作用就在这里：它告诉你，后面这个非线性耦合系统，不是凭空冒出来的；它可以从前面那组更容易处理的线性方程重新编码出来。也就是说： - 线性方程那一边更适合分析和求解…",
-          "$$ $$ \\partial_t S+\\epsilon e^{-S/\\epsilon}\\mathcal{A}_{\\epsilon,t}e^{S/\\epsilon}=0. \\tag{4} $$ 原文把第二条叫作广义 Hamilton-Jacobi 方程，把第一条叫作广义 Fokker-Planck 方程。 这里的“代回去”其实有两步，而且每一步都对应一条方程。 先看 $S$ 的方程。由逆变换 `(3)`， $$ \\mu(x,T-t)=e^{S(x,t)/\\epsilon}. $$ 现在对这个式子对时间求导。左边因为是 $T-t$，会先带出一个负号；再利用线性方程 `(1)` 里 $\\mu$…"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.md",
-        "note_title": "Generative Optimal Transport via Forward-Backward HJB Matching",
-        "note_date": "2026-04-16",
-        "hit_count": 8,
-        "snippets": [
-          "第二步，这里说的“对偶形式”，不是另一个无关的新问题，而是**把同一个最优控制问题换一种变量来写**。原始写法里，你要同时处理两样东西： - 控制场 $\\mathbf{u}_t$； - 在这个控制下随时间演化的概率密度 $\\rho(t,\\mathbf{x})$。 而且这两样东西还不能随便选，它们必须一起满足 Fokker-Planck 方程，也就是“控制怎么推着整团概率质量往前走”的动力学约束。直接在这两个对象上同时做优化，会很笨重。 对偶化做的事情是：引入一个标量函数 $U(t,\\mathbf{x})$ 作为 Lagrange 乘子，把 Fokker-Planck 约束先乘上这个函数，…",
-          "而且这两样东西还不能随便选，它们必须一起满足 Fokker-Planck 方程，也就是“控制怎么推着整团概率质量往前走”的动力学约束。直接在这两个对象上同时做优化，会很笨重。 对偶化做的事情是：引入一个标量函数 $U(t,\\mathbf{x})$ 作为 Lagrange 乘子，把 Fokker-Planck 约束先乘上这个函数，再和原始路径代价一起写进同一个积分里。这样一来，动力学约束就不再是“额外写在旁边、必须另外满足的一条方程”，而是直接变成优化目标的一部分。于是原来那个“同时优化控制场和概率密度、并且还要单独检查它们是否满足动力学约束”的问题，就可以改写成一个更统一的变分问题。再往…",
-          "这就是“重”的意思：参数化对象本身维度高、结构复杂。 这也是“不透明”的意思：即使学到了一个控制场，你也很难直接读出“为什么这里要往这个方向推、它对应的剩余任务代价是什么”。 2. 控制场和概率密度 $\\rho(t,\\mathbf{x})$ 不是分开选的；它们必须一起满足动力学约束。 这里的动力学约束就是 Fokker-Planck 方程： $$ \\frac{\\partial \\rho}{\\partial t} + \\nabla \\cdot (\\mathbf{u}\\rho) = D\\Delta\\rho. $$ 这条方程的意思是：如果你给系统施加某个控制场 $\\mathbf{u}$，那么整…"
-        ]
-      },
-      {
-        "note_path": "2026-04-13/mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-particle-data.md",
-        "note_title": "MVNN: A Measure-Valued Neural Network for Learning McKean-Vlasov Dynamics from Particle Data",
-        "note_date": "2026-04-13",
-        "hit_count": 4,
-        "snippets": [
-          "$$ 以及对应的 mean-field limit： $$ dX_t^\\theta = b_\\theta(X_t^\\theta,f_t^\\theta)\\,dt+\\sigma\\,dB_t. $$ 所以这篇方法的目标不是“拟合瞬时速度”，而是学一个能够真正生成： - 有限粒子系统； - mean-field SDE； - 以及对应 Fokker-Planck 动力学 的 drift law。 第七步，这里还要把原文的方程 6 读清楚，因为它说明 learned drift 不只定义了粒子系统，也定义了连续分布层面的演化规律。作者写的是 $$ \\frac{d}{dt}\\langle f_t^\\…",
-          "= \\left\\langle f_t^\\theta,\\, b_\\theta(x,f_t^\\theta)\\cdot\\nabla\\psi+\\frac12\\sigma^2\\Delta\\psi \\right\\rangle. $$ 这条式子是 learned McKean-Vlasov SDE 对应的 Fokker-Planck 方程的弱形式。这里 $$ \\langle f_t^\\theta,\\psi\\rangle = \\int \\psi(x)\\,f_t^\\theta(x)\\,dx $$ 表示分布 $f_t^\\theta$ 对测试函数 $\\psi$ 的平均值，所以左边 $$ \\frac{d}{dt…",
-          "\\left( x,\\int \\varphi_{\\mathrm{emb}}(y)\\,f_t^\\theta(y)\\,dy \\right), $$ 其中积分变量最好写成 $y$，以免和外层的粒子位置 $x$ 混淆。这样方程 6 真正表达的就是： `MVNN 不只是一个离散粒子回归器；它还诱导出一个连续分布层面的 nonlinear Fokker-Planck dynamics。` 第八步，这也解释了为什么这一节后半段紧接着就是理论保证。作者不希望 MVNN 只是一个经验模型，而是要证明这套 learned dynamics 是数学上站得住的。他们依次给出四层结果： 1. `well-posed…"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/diffusion-models-a-mathematical-introduction.md",
-        "note_title": "Diffusion Models: A Mathematical Introduction",
-        "note_date": "2026-04-16",
-        "hit_count": 4,
-        "snippets": [
-          "$$ 所有数学结构——前向闭式边缘、真后验、逆过程参数化——在 $\\mathbf{x} \\mapsto \\mathbf{z}$ 替换后完全保持。潜空间维度 $d = hwc \\ll HWC$ 带来大幅加速，且不改变底层数学。 --- ## 七、连续时间视角：SDE、Fokker-Planck 与概率流 ODE 这是本文将离散扩散模型与连续分析工具对接的关键章节。 ### 7.1 连续前向 SDE DDPM 的连续时间极限是方差保持（VP）SDE： $$ d\\mathbf{X}_t = -\\frac{1}{2}\\beta(t)\\mathbf{X}_t\\,dt + \\sqrt{\\beta(t…",
-          "取期望、对 $\\mathbf{x}$ 分部积分，将梯度从 $\\varphi$ 转移到 $p_t\\mathbf{v}$ 上，由测试函数的任意性得到 PDE。 ### 7.3 Fokker-Planck 方程 **Lemma 5.3**：SDE $d\\mathbf{X}_t = \\mathbf{f}\\,dt + g(t)\\,d\\mathbf{W}_t$ 的密度满足 $$ \\partial_t p_t = -\\nabla \\cdot (\\mathbf{f}\\,p_t) + \\frac{g(t)^2}{2}\\Delta p_t $",
-          "$$ **结论**：ODE $\\dot{\\mathbf{Y}}_t = \\mathbf{v}(\\mathbf{Y}_t, t)$ 与原始 SDE 具有**相同的时间边缘分布** $p_t$。 **证明核心**：利用恒等式 $\\Delta p_t = \\nabla \\cdot (p_t \\nabla \\log p_t)$，将 Fokker-Planck 中的扩散项（二阶 Laplacian）改写为保守输运项： $$ \\partial_t p_t = -\\nabla \\cdot \\left(\\mathbf{f}\\,p_t - \\frac{g^2}{2}p_t\\nabla\\log p_t\\ri…"
-        ]
-      },
-      {
-        "note_path": "2026-04-10/learning-stochastic-thermodynamics-directly-from-correlation-and-trajectory-fluctuation-currents.md",
-        "note_title": "Learning stochastic thermodynamics directly from correlation and trajectory-fluctuation currents",
-        "note_date": "2026-04-10",
-        "hit_count": 3,
-        "snippets": [
-          "6. 你真正该带走的是：先构造可学习的局域场，再由这些局域场重建热力学量。 ## Paper Info - 为什么先读： 这篇最直接接你这两天刚整理好的主线：`Sagawa -> fluctuation theorem -> entropy production -> Fokker-Planck -> trajectory current`。 - 论文链接： https://arxiv.org/abs/2504.19007 #### 1. 问题 这篇的问题不是“再做一个生成模型”，而是： `能不能直接从相关函数和轨迹涨落电流里学习随机热力学量，尤其是 entropy production…",
-          "- `trajectory-fluctuation currents` - `correlation functions` 需要确认：作者到底是在路径层操作，还是在密度层操作，还是在两层之间来回翻译。 #### 3. 演化 这里优先找这几个骨架： - `stochastic process` - `path probability` - `Fokker-Planck` 或其等价的路径表述 - `forward / reverse-time structure` 如果文中没有直接把 `Fokker-Planck` 写成主角，也要看它是不是在隐含地通过路径概率或 current struct…",
-          "#### 3. 演化 这里优先找这几个骨架： - `stochastic process` - `path probability` - `Fokker-Planck` 或其等价的路径表述 - `forward / reverse-time structure` 如果文中没有直接把 `Fokker-Planck` 写成主角，也要看它是不是在隐含地通过路径概率或 current structure 使用同一套动力学。 #### 4. 量 优先盯住以下量： - `entropy production` - 可能出现的 `irreversibility measure` - correlati…"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.md",
-        "note_title": "Nonequilibrium Physics of Generative Diffusion Models",
-        "note_date": "2026-04-16",
-        "hit_count": 3,
-        "snippets": [
-          "系统熵变以零为中心近似对称分布；环境熵变偏正值；总熵变以正值为主但存在负值涨落（个别轨迹熵减少）；$e^{-\\Delta S_{\\text{tot}}}$ 的分布在 1 附近聚集，与积分涨落定理一致。负熵轨迹的存在是涨落定理的本质体现——热力学第二定律是统计律而非绝对律。 ### 2.5 系综熵产生率 这一节分成三层： 1. 先从 Fokker-Planck 方程写出概率流； 2. 再定义单条轨迹上的随机熵率和总熵产生率； 3. 最后对这些轨迹级对象做系综平均，得到 $$ \\frac{dS(t)}{dt}=\\pi-\\phi. $$ #### 第一步：Fokker-Planck 方程先告诉…",
-          "### 2.5 系综熵产生率 这一节分成三层： 1. 先从 Fokker-Planck 方程写出概率流； 2. 再定义单条轨迹上的随机熵率和总熵产生率； 3. 最后对这些轨迹级对象做系综平均，得到 $$ \\frac{dS(t)}{dt}=\\pi-\\phi. $$ #### 第一步：Fokker-Planck 方程先告诉你概率密度怎样流动 对前向 OU 过程，原文先写 Fokker-Planck 方程 $$ \\frac{\\partial p(\\mathbf{X}_t,t)}{\\partial t} = -\\nabla\\cdot\\!\\big[f(\\mathbf{X}_t,t)p(\\mathb…",
-          "这一节分成三层： 1. 先从 Fokker-Planck 方程写出概率流； 2. 再定义单条轨迹上的随机熵率和总熵产生率； 3. 最后对这些轨迹级对象做系综平均，得到 $$ \\frac{dS(t)}{dt}=\\pi-\\phi. $$ #### 第一步：Fokker-Planck 方程先告诉你概率密度怎样流动 对前向 OU 过程，原文先写 Fokker-Planck 方程 $$ \\frac{\\partial p(\\mathbf{X}_t,t)}{\\partial t} = -\\nabla\\cdot\\!\\big[f(\\mathbf{X}_t,t)p(\\mathbf{X}_t,t)\\big] …"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/a-framework-for-generative-modelling-in-non-equilibrium-statistical-mechanics.md",
-        "note_title": "A Framework for the Use of Generative Modelling in Non-Equilibrium Statistical Mechanics",
-        "note_date": "2026-04-16",
-        "hit_count": 2,
-        "snippets": [
-          "### 3.1 从 SDE 到梯度流 考虑具有非平衡稳态密度（non-equilibrium steady state density, NESS）$p^*(x)$ 的随机微分方程（SDE）： $$\\mathrm{d}X_t = f(X_t)\\,\\mathrm{d}t + D(X_t)\\,\\mathrm{d}W_t$$ 这个 SDE 对应的 Fokker-Planck 方程（描述概率密度 $p(x,t)$ 的演化）为： $$\\frac{\\partial p}{\\partial t} = -\\nabla \\cdot (f \\, p) + \\frac{1}{2}\\nabla \\cdot (\\…",
-          "将上式代入 SDE： $$\\mathrm{d}X_t = -(Q(X_t) + \\Gamma(X_t))\\nabla_x \\log p^*(X_t)\\,\\mathrm{d}t + D(X_t)\\,\\mathrm{d}W_t$$ 可以验证这种分解是自洽的：将它代回 Fokker-Planck 方程，$\\Gamma$ 项产生扩散和梯度漂移的精确平衡（详细平衡条件），而 $Q$ 项因为反对称性在散度算子下正好产生不改变 $p^*$ 的循环流（$\\nabla \\cdot (Q \\, p^* \\nabla \\log p^*) = 0$ 当 $Q$ 反对称时）。 **关键物理图像**：系统的动力学可…"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.md",
-        "note_title": "Predictor-Driven Diffusion for Spatiotemporal Generation",
-        "note_date": "2026-04-16",
-        "hit_count": 1,
-        "snippets": [
-          "随着 $\\lambda$ 增大，$u_\\lambda$ 变得越来越粗糙，截止波数约为 $k_{\\mathrm{cut}} \\sim 1/\\sqrt{\\alpha\\lambda}$。 **噪声项不可省略**：没有噪声（$\\beta = 0$），Laplacian 只做确定性平滑，简单地抹掉小尺度成分。有噪声时，对应的 Fokker–Planck 方程表明前向过程将场分布与 Gaussian 核做卷积——等价于对小尺度自由度的**边缘化（marginalization）**。这保留了被消除成分对大尺度成分的统计影响，区别于简单的低通滤波。 ### 2.2 闭式解与条件密度 前向过程在每个 $…"
-        ]
-      }
-    ]
-  },
-  {
     "id": "langevin",
     "display_name": "Langevin 方程",
     "category": "equation",
@@ -112,8 +9,8 @@
       "Langevin",
       "朗之万方程"
     ],
-    "total_occurrences": 25,
-    "note_count": 8,
+    "total_occurrences": 39,
+    "note_count": 15,
     "occurrences": [
       {
         "note_path": "2026-04-16/denoising-diffusion-probabilistic-models.md",
@@ -138,6 +35,17 @@
         ]
       },
       {
+        "note_path": "2026-04-28/speed-accuracy-relations-for-diffusion-models.md",
+        "note_title": "Speed-Accuracy Relations for Diffusion Models: Wisdom from Nonequilibrium Thermodynamics and Optimal Transport",
+        "note_date": "2026-04-28",
+        "hit_count": 5,
+        "snippets": [
+          "它决定概率质量被系统性地往哪里推。 $T_t\\nabla\\ln\\mathcal{P}_t$ 来自 diffusion/noise。$T_t$ 是 noise intensity，在热力学语言里对应 temperature；在 diffusion model 语言里对应 noise schedule 的强度。 同一个过程也可以写成 Langevin SDE： $$ d\\boldsymbol{x}_t = \\boldsymbol{f}_t(\\boldsymbol{x}_t)dt + \\sqrt{2T_t}\\,dB_t. \\tag{2} $$ 接下来原文转向 reverse process。令…",
+          "\\right] \\bar{\\mathcal{P}}_t(\\bar{\\boldsymbol{x}}) \\right]. \\tag{34} $$ 这条式子看起来复杂，但核心是：原来 VP dynamics 里的 shrink drift 被坐标变换消掉了，剩下的是 rescaled coordinate 中的 diffusion。对应 Langevin equation 是： $$ d\\bar{\\boldsymbol{x}}_t = \\sqrt{ \\frac{2T_t}{m_t^2} } dB_t. \\tag{35} $$ 所以 DDIM-style 读法是：在原始 $\\boldsymbol…",
+          "$$ d\\boldsymbol{x}_t = \\boldsymbol{f}_t(\\boldsymbol{x}_t)dt - 2\\boldsymbol{\\nu}^{\\mathcal{P}}_t(\\boldsymbol{x}_t)dt + \\sqrt{2T_t}\\,dB_t. \\tag{41} $$ 这个式子和 forward Langevin SDE 的区别只在 drift。forward dynamics 的 drift 是 $\\boldsymbol{f}_t$，这里变成 $$ \\boldsymbol{f}_t - 2\\boldsymbol{\\nu}^{\\mathcal{P}}_t. $…"
+        ]
+      },
+      {
         "note_path": "2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.md",
         "note_title": "Generative Optimal Transport via Forward-Backward HJB Matching",
         "note_date": "2026-04-16",
@@ -146,6 +54,17 @@
           "这一小节依次完成四件事： 1. 用 Cole-Hopf 变换把非线性的 forward HJB 改写成线性的 PDE； 2. 用 Feynman-Kac 公式把这个线性 PDE 改写成正向轨迹上的条件路径平均； 3. 说明实践里为什么不用纯 Brownian 轨迹，而改用带漂移的 Langevin / OU 参考过程； 4. 说明一旦训练时改用了这类参考过程，生成时就必须把对应的漂移修正补回 backward drift。 #### 2.6.1 Eq. (5)：先把 forward HJB 线性化 前面已经得到 forward HJB，它的难点在于含有非线性的梯度平方项 $\\|\\nabl…",
           "\\qquad \\mathbf{x}_0\\sim p_{\\text{data}}. $$ 这一步先把参考过程从“无漂移的纯 Brownian motion”换成了“带回复漂移的扩散过程”。 只要漂移项能写成某个势函数的负梯度 $-\\nabla V(\\mathbf{x})$，这种过程就属于 Langevin 过程。 论文实验里又进一步选了一个最简单、最标准的特例：令势函数 $V(\\mathbf{x})$ 是二次函数。 这时回复漂移就会变成线性的 $-\\lambda \\mathbf{x}$，对应的参考过程正是 Ornstein-Uhlenbeck（OU）过程。 这样做的实际好处是： - for…",
           "- 条件采样和数值实现也更方便。 所以 `Eq. (7)` 不是在改原问题，而是在改**训练时使用的参考轨迹生成方式**。 #### 2.6.4 Eq. (8)：为什么换了 forward 参考过程，生成时就必须补回一项漂移 这里是原文这一小节最容易折叠的一步。 如果训练时 forward 轨迹用的不是纯 Brownian，而是带漂移的 Langevin 过程，那么你学到的 $W$ 对应的，其实已经不是“纯 Brownian 参考下的值函数估计”，而是“在这个 drifted reference process 上做出来的估计”。 这意味着： **到了 backward 生成阶段，你不能…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.md",
+        "note_title": "Predictor-Driven Diffusion for Spatiotemporal Generation",
+        "note_date": "2026-04-16",
+        "hit_count": 4,
+        "snippets": [
+          "Appendix B.6 的处理是：不显式建模 $r_\\lambda$，而是在每次 predictor step 和 Langevin corrector step 后，直接覆盖起始边界值。按 linear extrapolation 的含义，写成： $$ u_{\\lambda-\\Delta\\lambda}(\\boldsymbol{x},t^{(0)}) \\leftarrow 2u_{\\lambda-\\Delta\\lambda}(\\boldsymbol{x},t^{(1)",
+          "### 10.7 Eq. (65)-Eq. (66)：predictor-corrector 和 ETD reverse-$\\lambda$ sampling 使用 predictor-corrector。corrector 是 Langevin step： $$ u_\\lambda' = u_\\lambda + \\chi s_\\lambda + \\sqrt{2\\chi}z. \\tag{65} $$ 其中 $$ \\chi = 2\\left( \\kappa\\frac{\\|z\\|_2}{\\|s_\\lambda\\|_2} \\right)^2, \\quad z\\sim\\mathcal{",
+          "1. 计算 $s_\\lambda=\\nabla_{u_\\lambda}\\ln p_\\lambda(\\{u_\\lambda\\}_t)$。 2. 用 Eq. (66) 做 predictor update。 3. 对 $t^{(0)}$ 做 boundary extrapolation。 4. 做 3 次 Langevin corrector Eq. (65)。 这里 boundary extrapolation 是为了绕开 $r_\\lambda$ 的 score。训练和 simulation 不需要 $r_\\lambda$，但 reverse sampling 的 path score 在…"
         ]
       },
       {
@@ -187,72 +106,185 @@
         ]
       },
       {
-        "note_path": "2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.md",
-        "note_title": "Predictor-Driven Diffusion for Spatiotemporal Generation",
+        "note_path": "2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation-equation-map.md",
+        "note_title": "Equation Map for Predictor-Driven Diffusion for Spatiotemporal Generation",
         "note_date": "2026-04-16",
         "hit_count": 1,
         "snippets": [
-          "其中 $\\varphi(z) = (e^z - 1)/z$。此外配合 predictor-corrector 采样（Langevin 校正步），进一步提高生成质量。 --- ## 六、实验验证 ### 6.1 实验设置 论文在两个代表性混沌系统上验证框架： | 系统 | 空间维度 | 通道 | 空间网格 | 时间步 | 训练样本 | |------|---------|------|---------|--------|---------| | Lorenz-9"
+          "| Eq. (63)-Eq. (64) | relative $L^2$ and spectral error | 已展开 | 解释 short-term vs long-run statistical metric | | Eq. (65) | Langevin corrector step | 已展开 | 解释 predictor-corrector sampling | | Eq. (66) | ETD reverse-$\\lambda$ update | 已展开 | 解释 anti-diffusion stiffness and noise treatment | | Algor…"
+        ]
+      },
+      {
+        "note_path": "2026-04-25/statistics-and-dynamics-of-urban-populations-ch05-stochastic-calculus-for-urban-growth.md",
+        "note_title": "Statistics and Dynamics of Urban Populations, Chapter 5: Stochastic calculus",
+        "note_date": "2026-04-25",
+        "hit_count": 1,
+        "snippets": [
+          "尤其在 Fokker-Planck 推导里，$(dW)^2$ 是 $O(dt)$，不是 $O(dt^2)$。 --- ## 三、为什么 white noise 会制造积分歧义 Wiener process with drift 可以写成： $$ x(t)=\\mu t+\\sigma W(t). \\tag{5.7} $$ 形式上对时间求导，就得到 Langevin equation： $$ \\frac{dx(t)}{dt} = \\mu+\\sigma\\frac{dW(t)}{dt} \\equiv \\mu+\\sigma\\eta(t). \\tag{5.8} $$ 这里 $\\eta(t)$ 被称为 …"
+        ]
+      },
+      {
+        "note_path": "2026-04-26/statistics-and-dynamics-of-urban-populations-ch06-stochastic-models-of-growth.md",
+        "note_title": "Statistics and Dynamics of Urban Populations, Chapter 6: Stochastic models of growth",
+        "note_date": "2026-04-26",
+        "hit_count": 1,
+        "snippets": [
+          "$$ dS(t)=mS(t)dt+\\sigma S(t)dB(t). \\tag{6.62} $$ 这里 $mS(t)dt$ 是比例 drift，$\\sigma S(t)dB(t)$ 是 multiplicative Gaussian noise。 也可以写成 Langevin 形式： $$ \\partial_t S(t)=mS(t)+\\eta(t)S(t), \\tag{6.63} $$ 其中 $\\eta(t)$ 是 Gaussian white noise。 按 Chapter 5 的 Itô convention，对应 Fokker-Planck equation 是 $$ \\part…"
+        ]
+      },
+      {
+        "note_path": "2026-04-27/statistics-and-dynamics-of-urban-populations-ch07-models-with-migration.md",
+        "note_title": "Statistics and Dynamics of Urban Populations, Chapter 7: Models with migration",
+        "note_date": "2026-04-27",
+        "hit_count": 1,
+        "snippets": [
+          "这个归一化把问题从 $$ \\text{absolute population growth} $$ 转成 $$ \\text{relative city size distribution}. $$ Zipf/Pareto 问的本质上也是相对分布尾部，而不是总人口指数增长本身。 ### 8.2 Eq. 7.15：归一化变量的 Langevin equation 从 $$ w_i=\\frac{S_i}{\\bar{S}} $$ 出发。为了看清楚求导，先把它写成乘积形式： $$ w_i = S_i\\bar{S}^{-1}. $$ 对时间求导，用 product rule： $$ \\frac{dw…"
+        ]
+      },
+      {
+        "note_path": "2026-04-27/statistics-and-dynamics-of-urban-populations-ch09-from-first-principles-to-the-growth-equation.md",
+        "note_title": "Statistics and Dynamics of Urban Populations, Chapter 9: From first principles to the growth equation",
+        "note_date": "2026-04-27",
+        "hit_count": 1,
+        "snippets": [
+          "jpg) Fig. 9.1 的作用是支撑这个建模选择。France 和 US 的 out-of-system growth histogram 都围绕 0 附近集中，并用 normal law 做近似。US panel 的分布更宽，France panel 更尖，但作者的建模结论是相同的：这一项可以用 Gaussian Langevin noise 表示。 这一步和后面的 migration noise 形成对比： $$ \\text{out-of-system growth} \\rightarrow \\text{Gaussian noise}, $$ 而 $$ \\text{interur…"
+        ]
+      },
+      {
+        "note_path": "2026-04-28/speed-accuracy-relations-for-diffusion-models-equation-map.md",
+        "note_title": "Equation Map for Speed-Accuracy Relations for Diffusion Models",
+        "note_date": "2026-04-28",
+        "hit_count": 1,
+        "snippets": [
+          "(n) 推出”。 第三，如果某个公式只被口头概括，没有展示推导，要在状态里标成“待展开”，避免误以为已经读完。 ## 主文公式覆盖 | 原文公式 | 作用 | 当前笔记状态 | 后续动作 | |---|---|---|---| | Eq. (1)-Eq. (4) | forward Fokker--Planck、Langevin SDE、真实 reverse process、estimated reverse continuity equation | 已展开 | 已补 reverse-time notation 和 estimated reverse continuity equati…"
         ]
       }
     ]
   },
   {
-    "id": "score-function",
-    "display_name": "Score Function",
-    "category": "method",
-    "short_description": "对数概率密度的梯度，扩散模型中的核心对象。",
+    "id": "fokker-planck",
+    "display_name": "Fokker-Planck 方程",
+    "category": "equation",
+    "short_description": "描述概率密度在随机动力学下的时间演化。",
     "aliases": [
-      "score function",
-      "分数函数",
-      "∇ log p",
-      "score-based"
+      "Fokker-Planck",
+      "Fokker–Planck",
+      "FP equation",
+      "FP 方程",
+      "Kolmogorov forward",
+      "密度演化方程"
     ],
-    "total_occurrences": 90,
-    "note_count": 7,
+    "total_occurrences": 94,
+    "note_count": 12,
     "occurrences": [
+      {
+        "note_path": "2026-04-28/statistics-and-dynamics-of-urban-populations-ch10-about-city-dynamics.md",
+        "note_title": "Statistics and Dynamics of Urban Populations, Chapter 10: About city dynamics",
+        "note_date": "2026-04-28",
+        "hit_count": 21,
+        "snippets": [
+          "\\quad \\Longrightarrow \\quad rS + D S^\\beta\\zeta_\\alpha. $$ 第二，简化后的方程对应什么样的 probability distribution？ $$ \\text{Levy SDE} \\quad \\Longrightarrow \\quad \\text{fractional Fokker-Planck equation}. $$ 第三，这个解能否解释真实城市系统的两个现象？ $$ \\text{city-size distribution scaling} \\quad \\text{and} \\quad \\text{rank turbul…",
+          "$$ 这一章的主线可以写成： $$ \\begin{aligned} &\\text{Chapter 9 growth equation}\\\\ &\\rightarrow \\text{reduce Gaussian noise to drift}\\\\ &\\rightarrow \\text{derive fractional Fokker-Planck}\\\\ &\\rightarrow \\text{solve through Fox-function asymptotics}\\\\ &\\rightarrow \\text{large-}S\\text{ expansion}\\\\ &\\rightarrow…",
+          "### 1.1 本章符号口径 Chapter 10 会在城市变量和通用 stochastic-process 变量之间切换。为了避免混淆，先固定读法。 $S$ 表示城市 population size，$P(S,t)$ 表示城市人口分布的 density。推导 fractional Fokker-Planck 时，作者暂时用 $x$ 表示 generic state variable，并用 $p(x,t)$ 表示 generic density。读回城市问题时，对应关系是： $$ x\\leftrightarrow S, \\qquad p(x,t)\\leftrightarrow P(S,t…"
+        ]
+      },
+      {
+        "note_path": "2026-04-25/statistics-and-dynamics-of-urban-populations-ch05-stochastic-calculus-for-urban-growth.md",
+        "note_title": "Statistics and Dynamics of Urban Populations, Chapter 5: Stochastic calculus",
+        "note_date": "2026-04-25",
+        "hit_count": 17,
+        "snippets": [
+          "3. white noise 的导数是奇异对象，因此 stochastic integral 需要 convention； 4. Itô 和 Stratonovich 对乘性噪声给出不同结果； 5. Itô 和 Stratonovich 的选择对应不同的噪声物理语义； 6. 对 SDE 的另一种读法是概率密度演化，也就是 Fokker-Planck equation； 7. 推导 Fokker-Planck equation 时，Eq. 5.38 到 Eq. 5.40 是关键阶数展开，决定了 extra drift 如何出现。 所以这一章不是单纯数学附录，而是后面城市增长方程的语法。特别…",
+          "4. Itô 和 Stratonovich 对乘性噪声给出不同结果； 5. Itô 和 Stratonovich 的选择对应不同的噪声物理语义； 6. 对 SDE 的另一种读法是概率密度演化，也就是 Fokker-Planck equation； 7. 推导 Fokker-Planck equation 时，Eq. 5.38 到 Eq. 5.40 是关键阶数展开，决定了 extra drift 如何出现。 所以这一章不是单纯数学附录，而是后面城市增长方程的语法。特别是如果人口方程里出现 multiplicative noise，例如噪声项依赖城市规模 $S_i(t)$，那么选择 Itô …",
+          "\\equiv \\int_0^t d\\xi(t'). \\tag{5.6} $$ 这里最关键的尺度关系是：Wiener 增量不是 $O(dt)$，而是 $O(\\sqrt{dt})$。也就是说， $$ dW \\sim \\sqrt{dt}. $$ 这条尺度关系会贯穿后面的推导。它解释了为什么某些看似高阶的小量不能直接丢掉。尤其在 Fokker-Planck 推导里，$(dW)^2$ 是 $O(dt)$，不是 $O(dt^2)$。 --- ## 三、为什么 white noise 会制造积分歧义 Wiener process with drift 可以写成： $$ x(t)=\\mu t+\\sigm…"
+        ]
+      },
       {
         "note_path": "2026-04-16/hj-sampler.md",
         "note_title": "HJ-sampler: Bayesian Sampler via Hamilton-Jacobi PDEs and Score-Based Generative Models",
         "note_date": "2026-04-16",
-        "hit_count": 71,
+        "hit_count": 15,
         "snippets": [
-          "# HJ-sampler: 利用 Hamilton-Jacobi PDE 与 Score-Based 生成模型的贝叶斯采样器 ## 精读笔记 --- ## 一、Introduction：这篇文章到底想解决什么 ### 1.1 起点：不确定性量化里有两条原本分开的研究线 原文一开始先把背景放在**不确定性量化**里。这里的不确定性量化，不只是给一个预测值，而是要回答：模型里有哪些不确定性，它们会怎样影响最终结论。 作者说，这",
-          "作者说，这个大背景里有两条原本很活跃、但平时不太一起讨论的研究线。 第一条线是**贝叶斯推断**。它关心的是：如果你已经有了先验信息，又拿到了观测数据，那么怎样把这两部分信息合起来，得到参数或状态的后验分布。这里最难的地方通常不是“后验怎么定义”，而是“后验怎么采样”。 第二条线是**生成模型**，尤其是扩散模型和更一般的 score-based 方法。它们最初在机器学习里主要用来从复杂高维分布中生成样本，但最近已经被大量带入科学计算，拿来做采样、逆问题、控制、偏微分方程、Schrödinger bridge 等问题。 原文的第一层意思就是：这两条线虽然来自不同社群，但它们背后其实都在处…",
-          "在上面的理论联系基础上，原文提出了 `HJ-sampler`。它的结构很简单，但背后的逻辑非常清楚：把后验采样拆成两步。 第一步，先解一个粘性 Hamilton-Jacobi PDE，得到控制函数。 第二步，再利用这个控制去采样对应的随机最优控制过程，从而生成后验轨迹样本。 原文在引言里强调，这种做法和 diffusion / score-based 方法长得很像，尤其是其中一个版本 `SGM-HJ-sampler` 明确借用了 score-based generative model 的技术；但它的目标不是无条件生成数据，而是**解决一个有终端观测约束的贝叶斯逆问题**。 ### 1.…"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/denoising-diffusion-probabilistic-models.md",
-        "note_title": "Denoising Diffusion Probabilistic Models",
-        "note_date": "2026-04-16",
-        "hit_count": 6,
-        "snippets": [
-          "其中 $\\delta_{\\pm}$ 在边界处扩展到 $\\pm\\infty$，在内部取 $x_0^i \\pm \\frac{1}{255}$。这确保了变分下界是离散数据的无损编码长度。 --- ## 八、与 Score Matching 的等价关系 ### 8.1 去噪 Score Matching 回顾 **Score function** 定义为数据分布对数密度的梯度：$\\nabla_{\\mathbf{x}} \\log p(\\mathbf{x})$。Score matching 的目标是训练一个网络 $s_\\theta(\\mathbf{x})$ 来估计这个梯度。 **去噪 score m…",
-          "**去噪 score matching**（Vincent, 2011）的关键结果是：对于被噪声 $\\sigma$ 扰动的数据 $\\tilde{\\mathbf{x}} = \\mathbf{x} + \\sigma \\boldsymbol{\\epsilon}$，score function 为： $$\\nabla_{\\tilde{\\mathbf{x}}} \\log q_\\sigma(\\tilde{\\mathbf{x}} \\mid \\mathbf{x}) = -\\frac{\\boldsymbol{\\epsilon}}{\\sigma}$$ 因此，训练网络预测噪声 $\\boldsymbol{\\ep…",
-          "$$\\nabla_{\\tilde{\\mathbf{x}}} \\log q_\\sigma(\\tilde{\\mathbf{x}} \\mid \\mathbf{x}) = -\\frac{\\boldsymbol{\\epsilon}}{\\sigma}$$ 因此，训练网络预测噪声 $\\boldsymbol{\\epsilon}$ 等价于估计 score function（差一个缩放因子）。 **NCSN**（Song & Ermon, 2019）将此推广到多个噪声尺度 $\\sigma_1 > \\cdots > \\sigma_L$，训练一个共享的 score 网络，采样时使用**退火 Langevin 动…"
+          "### 1.3 为什么会出现 log 变换 原文接下来不是先讲算法，而是先讲这条联系从哪里来。这里的核心工具是 **log 变换**。在布朗运动语境下，这个变换更常被叫作 **Cole-Hopf 变换**。 这一步的作用，不是单纯做代数整理，而是把原本分属两个世界的问题接到一起。 先看第一边。在线性一侧，你处理的是 Kolmogorov forward / backward equations。它们描述的是概率密度怎样前向演化，或者某个条件期望怎样后向传播。这类方程的好处是：它们在线性框架里，很多理论和数值工具都已经很成熟。 再看第二边。控制和采样真正关心的，通常不是“某个线性方程怎么解…",
+          "这类方程的好处是：它们在线性框架里，很多理论和数值工具都已经很成熟。 再看第二边。控制和采样真正关心的，通常不是“某个线性方程怎么解”，而是： - 当前状态往哪个方向推最合适； - 一条路径累计起来的代价是多少； - 概率质量在控制下会怎样重新分布。 这些问题写出来以后，更自然地落到 Hamilton-Jacobi 方程和 Fokker-Planck 方程的耦合系统上。但这类方程是非线性的，直接处理通常更难。 log 变换的关键作用就在这里：它告诉你，后面这个非线性耦合系统，不是凭空冒出来的；它可以从前面那组更容易处理的线性方程重新编码出来。也就是说： - 线性方程那一边更适合分析和求解…",
+          "$$ $$ \\partial_t S+\\epsilon e^{-S/\\epsilon}\\mathcal{A}_{\\epsilon,t}e^{S/\\epsilon}=0. \\tag{4} $$ 原文把第二条叫作广义 Hamilton-Jacobi 方程，把第一条叫作广义 Fokker-Planck 方程。 这里的“代回去”其实有两步，而且每一步都对应一条方程。 先看 $S$ 的方程。由逆变换 `(3)`， $$ \\mu(x,T-t)=e^{S(x,t)/\\epsilon}. $$ 现在对这个式子对时间求导。左边因为是 $T-t$，会先带出一个负号；再利用线性方程 `(1)` 里 $\\mu$…"
         ]
       },
       {
         "note_path": "2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.md",
         "note_title": "Generative Optimal Transport via Forward-Backward HJB Matching",
         "note_date": "2026-04-16",
-        "hit_count": 5,
+        "hit_count": 8,
         "snippets": [
-          "所以这篇文章的起点，不是“再做一个生成模型”，而是： **生成本身就是一个受控的概率输运问题，而最自然的问题是寻找最优输运路径。** ### 1.2 为什么作者觉得现有生成方法还不够 接下来文章不是简单回顾文献，而是把现有方法按“它们到底优化了什么”重新摆了一遍。 第一类是 score-based / score-matching 路线。它们擅长做的是：学习一个逆向漂移场，让系统能够从噪声逐步回到数据分布。但作者这里的批评不是说这条路不行，而是说：它主要是在学习**局部逆向向量场**，并没有把“整条轨迹的全局代价最小”直接写进目标。 第二类是 flow matching。它做的是：先指定…",
-          "换句话说，一旦 $W$ 确定，正向 HJB、对应的 forward 过程以及它的边际演化就一起被钉死了，$\\nabla \\log q$ 只是这个同一最优传输结构里随之出现的密度梯度项。 所以这里“无需独立估计 score”的意思不是说 score 项消失了，而是说： - 你不需要像 score-based diffusion 那样，再额外训练一个专门输出 $\\nabla \\log q$ 的模型； - 在这篇方法里，需要学习的主角只有标量势 $W$； - score correction 是从同一个 forward controlled process 里伴随出现的，而不是一套独立参数化对…",
-          "这样做带来两个直接后果： - 搜索空间从“所有可能的向量场”收紧到“由某个标量势生成的梯度场”； - 学到的对象也更容易解释，因为它本身表示的是剩余最小代价，而不是单纯的局部推动方向。 第二个方法论变化，是训练信号的来源被彻底改写了。文章没有沿着 score-based diffusion 那条线去估计 `score`，也没有直接在 backward SDE 上做监督，而是把所有训练信号都放在了 forward 参考轨迹上。这样一来，训练阶段真正用到的是： - 全局 Feynman-Kac 轨迹监督； - 局部一步半群一致性； - 以及对偶边界条件。 也就是说，模型学到的不是“如何直接模…"
+          "第二步，这里说的“对偶形式”，不是另一个无关的新问题，而是**把同一个最优控制问题换一种变量来写**。原始写法里，你要同时处理两样东西： - 控制场 $\\mathbf{u}_t$； - 在这个控制下随时间演化的概率密度 $\\rho(t,\\mathbf{x})$。 而且这两样东西还不能随便选，它们必须一起满足 Fokker-Planck 方程，也就是“控制怎么推着整团概率质量往前走”的动力学约束。直接在这两个对象上同时做优化，会很笨重。 对偶化做的事情是：引入一个标量函数 $U(t,\\mathbf{x})$ 作为 Lagrange 乘子，把 Fokker-Planck 约束先乘上这个函数，…",
+          "而且这两样东西还不能随便选，它们必须一起满足 Fokker-Planck 方程，也就是“控制怎么推着整团概率质量往前走”的动力学约束。直接在这两个对象上同时做优化，会很笨重。 对偶化做的事情是：引入一个标量函数 $U(t,\\mathbf{x})$ 作为 Lagrange 乘子，把 Fokker-Planck 约束先乘上这个函数，再和原始路径代价一起写进同一个积分里。这样一来，动力学约束就不再是“额外写在旁边、必须另外满足的一条方程”，而是直接变成优化目标的一部分。于是原来那个“同时优化控制场和概率密度、并且还要单独检查它们是否满足动力学约束”的问题，就可以改写成一个更统一的变分问题。再往…",
+          "这就是“重”的意思：参数化对象本身维度高、结构复杂。 这也是“不透明”的意思：即使学到了一个控制场，你也很难直接读出“为什么这里要往这个方向推、它对应的剩余任务代价是什么”。 2. 控制场和概率密度 $\\rho(t,\\mathbf{x})$ 不是分开选的；它们必须一起满足动力学约束。 这里的动力学约束就是 Fokker-Planck 方程： $$ \\frac{\\partial \\rho}{\\partial t} + \\nabla \\cdot (\\mathbf{u}\\rho) = D\\Delta\\rho. $$ 这条方程的意思是：如果你给系统施加某个控制场 $\\mathbf{u}$，那么整…"
+        ]
+      },
+      {
+        "note_path": "2026-04-26/statistics-and-dynamics-of-urban-populations-ch06-stochastic-models-of-growth.md",
+        "note_title": "Statistics and Dynamics of Urban Populations, Chapter 6: Stochastic models of growth",
+        "note_date": "2026-04-26",
+        "hit_count": 7,
+        "snippets": [
+          "# Statistics and Dynamics of Urban Populations, Chapter 6：Stochastic Models of Growth ## 精读笔记 --- ## 一、这一章在动力学模块里的位置 Chapter 5 先建立了 SDE、Itô/Stratonovich、Fokker-Planck equation 的技术语言。Chapter 6 开始把这些语言放回城市增长模型。 这一章的问题不是“城市为什么增长”，而是一个更窄的数学问题：如果城市人口按比例随机增长，什么条件下城市规模分布会变成 power-law，尤其会不会变成 Zipf's law？…",
+          "也可以写成 Langevin 形式： $$ \\partial_t S(t)=mS(t)+\\eta(t)S(t), \\tag{6.63} $$ 其中 $\\eta(t)$ 是 Gaussian white noise。 按 Chapter 5 的 Itô convention，对应 Fokker-Planck equation 是 $$ \\partial_t p(S,t) = -m\\partial_S[Sp(S,t)] + \\frac{\\sigma_0^2}{2} \\partial_S^2[S^2p(S,t)]. \\tag{6.64} $$ 这条方程的结构和 Ch5 的一般公式一致： $$ …",
+          "动态写成 $$ S(t+dt) = \\max\\left( S(t)+mS(t)dt+\\sigma S(t)dB(t), S_{\\min} \\right). \\tag{6.65} $$ 这表示如果随机更新会把城市推到 $S_{\\min}$ 以下，就把它反射/截断在 $S_{\\min}$。 在稳态下，Fokker-Planck 方程变成 $$ m\\partial_S[Sp(S)] = \\frac{\\sigma_0^2}{2} \\partial_S^2[S^2p(S)]. \\tag{6.66} $$ 现在展开求解。设 power-law ansatz： $$ p(S)=C S^{-1-\\mu}…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.md",
+        "note_title": "Predictor-Driven Diffusion for Spatiotemporal Generation",
+        "note_date": "2026-04-16",
+        "hit_count": 6,
+        "snippets": [
+          "\\partial_\\lambda u_\\lambda = \\alpha \\nabla_x^2 u_\\lambda - \\beta^2\\nabla_{u_\\lambda}\\ln q_\\lambda(\\{u_\\lambda\\}_t) + \\beta\\eta_\\lambda . \\tag{2} $$ 这里要先纠正一个容易混淆的口径：Eq. (2) 本身不是 Fokker-Planck equation。它是 sample-level 的 reverse stochastic equation，也就是用来生成某一条具体 trajectory 的随机微分方程。它右边出现 $\\beta\\eta_\\l…",
+          "(2) 本身不是 Fokker-Planck equation。它是 sample-level 的 reverse stochastic equation，也就是用来生成某一条具体 trajectory 的随机微分方程。它右边出现 $\\beta\\eta_\\lambda$ 是正常的，因为 sample path 的演化需要随机噪声。 Fokker-Planck equation 描述的是 density-level evolution。为了看清两者关系，可以把整条 path 简写成一个高维变量： $$ U_\\lambda := \\{u_\\lambda\\}_t. $$ 再把 forward …",
+          "于是 Eq. (1) 可以读成 path space 里的 SDE： $$ dU_\\lambda = b(U_\\lambda)d\\lambda + \\beta dW_\\lambda. $$ 这个 SDE 对应的 density $q_\\lambda(U)$ 满足 Fokker-Planck equation： $$ \\partial_\\lambda q_\\lambda(U) = -\\nabla_U\\cdot\\left[b(U)q_\\lambda(U)\\right] + \\frac{\\beta^2}{2}\\Delta_U q_\\lambda(U). $$ 这里 $\\nabla_U$ 和 $…"
+        ]
+      },
+      {
+        "note_path": "2026-04-13/mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-particle-data.md",
+        "note_title": "MVNN: A Measure-Valued Neural Network for Learning McKean-Vlasov Dynamics from Particle Data",
+        "note_date": "2026-04-13",
+        "hit_count": 4,
+        "snippets": [
+          "$$ 以及对应的 mean-field limit： $$ dX_t^\\theta = b_\\theta(X_t^\\theta,f_t^\\theta)\\,dt+\\sigma\\,dB_t. $$ 所以这篇方法的目标不是“拟合瞬时速度”，而是学一个能够真正生成： - 有限粒子系统； - mean-field SDE； - 以及对应 Fokker-Planck 动力学 的 drift law。 第七步，这里还要把原文的方程 6 读清楚，因为它说明 learned drift 不只定义了粒子系统，也定义了连续分布层面的演化规律。作者写的是 $$ \\frac{d}{dt}\\langle f_t^\\…",
+          "= \\left\\langle f_t^\\theta,\\, b_\\theta(x,f_t^\\theta)\\cdot\\nabla\\psi+\\frac12\\sigma^2\\Delta\\psi \\right\\rangle. $$ 这条式子是 learned McKean-Vlasov SDE 对应的 Fokker-Planck 方程的弱形式。这里 $$ \\langle f_t^\\theta,\\psi\\rangle = \\int \\psi(x)\\,f_t^\\theta(x)\\,dx $$ 表示分布 $f_t^\\theta$ 对测试函数 $\\psi$ 的平均值，所以左边 $$ \\frac{d}{dt…",
+          "\\left( x,\\int \\varphi_{\\mathrm{emb}}(y)\\,f_t^\\theta(y)\\,dy \\right), $$ 其中积分变量最好写成 $y$，以免和外层的粒子位置 $x$ 混淆。这样方程 6 真正表达的就是： `MVNN 不只是一个离散粒子回归器；它还诱导出一个连续分布层面的 nonlinear Fokker-Planck dynamics。` 第八步，这也解释了为什么这一节后半段紧接着就是理论保证。作者不希望 MVNN 只是一个经验模型，而是要证明这套 learned dynamics 是数学上站得住的。他们依次给出四层结果： 1. `well-posed…"
         ]
       },
       {
         "note_path": "2026-04-16/diffusion-models-a-mathematical-introduction.md",
         "note_title": "Diffusion Models: A Mathematical Introduction",
         "note_date": "2026-04-16",
+        "hit_count": 4,
+        "snippets": [
+          "$$ 所有数学结构——前向闭式边缘、真后验、逆过程参数化——在 $\\mathbf{x} \\mapsto \\mathbf{z}$ 替换后完全保持。潜空间维度 $d = hwc \\ll HWC$ 带来大幅加速，且不改变底层数学。 --- ## 七、连续时间视角：SDE、Fokker-Planck 与概率流 ODE 这是本文将离散扩散模型与连续分析工具对接的关键章节。 ### 7.1 连续前向 SDE DDPM 的连续时间极限是方差保持（VP）SDE： $$ d\\mathbf{X}_t = -\\frac{1}{2}\\beta(t)\\mathbf{X}_t\\,dt + \\sqrt{\\beta(t…",
+          "取期望、对 $\\mathbf{x}$ 分部积分，将梯度从 $\\varphi$ 转移到 $p_t\\mathbf{v}$ 上，由测试函数的任意性得到 PDE。 ### 7.3 Fokker-Planck 方程 **Lemma 5.3**：SDE $d\\mathbf{X}_t = \\mathbf{f}\\,dt + g(t)\\,d\\mathbf{W}_t$ 的密度满足 $$ \\partial_t p_t = -\\nabla \\cdot (\\mathbf{f}\\,p_t) + \\frac{g(t)^2}{2}\\Delta p_t $",
+          "$$ **结论**：ODE $\\dot{\\mathbf{Y}}_t = \\mathbf{v}(\\mathbf{Y}_t, t)$ 与原始 SDE 具有**相同的时间边缘分布** $p_t$。 **证明核心**：利用恒等式 $\\Delta p_t = \\nabla \\cdot (p_t \\nabla \\log p_t)$，将 Fokker-Planck 中的扩散项（二阶 Laplacian）改写为保守输运项： $$ \\partial_t p_t = -\\nabla \\cdot \\left(\\mathbf{f}\\,p_t - \\frac{g^2}{2}p_t\\nabla\\log p_t\\ri…"
+        ]
+      },
+      {
+        "note_path": "2026-04-27/statistics-and-dynamics-of-urban-populations-ch07-models-with-migration.md",
+        "note_title": "Statistics and Dynamics of Urban Populations, Chapter 7: Models with migration",
+        "note_date": "2026-04-27",
+        "hit_count": 4,
+        "snippets": [
+          "反过来，负向冲击也是按当前 $w$ 的大小放大或缩小。 因此，$g(w)=w$ 不是一个任意设定，而是从“噪声作用在增长率上”推出的。它把城市增长中的随机性写成 proportional fluctuation：规模越大，绝对随机波动越大；但冲击本身仍然是增长率层面的随机性。 --- ## 九、Fokker-Planck equation 和 stationary distribution ### 9.1 Eq. 7.16：为什么要指定 Stratonovich Eq. 7.15 中噪声项是 $$ g(w)\\delta\\eta(t)=w\\delta\\eta(t). $$ 它依赖当前状态 …",
+          "### 9.1 Eq. 7.16：为什么要指定 Stratonovich Eq. 7.15 中噪声项是 $$ g(w)\\delta\\eta(t)=w\\delta\\eta(t). $$ 它依赖当前状态 $w$，因此是 multiplicative noise。Chapter 5 已经说明：multiplicative noise 的 Fokker-Planck equation 会依赖 stochastic prescription。 Bouchaud-Mezard 使用 Stratonovich prescription。于是 $\\rho(w,t)$ 的 Fokker-Planck eq…",
+          "Chapter 5 已经说明：multiplicative noise 的 Fokker-Planck equation 会依赖 stochastic prescription。 Bouchaud-Mezard 使用 Stratonovich prescription。于是 $\\rho(w,t)$ 的 Fokker-Planck equation 写成 $$ \\frac{\\partial\\rho}{\\partial t} = - \\frac{\\partial}{\\partial w}[f\\rho] + \\sigma^2 \\frac{\\partial}{\\partial w} \\left[…"
+        ]
+      },
+      {
+        "note_path": "2026-04-10/learning-stochastic-thermodynamics-directly-from-correlation-and-trajectory-fluctuation-currents.md",
+        "note_title": "Learning stochastic thermodynamics directly from correlation and trajectory-fluctuation currents",
+        "note_date": "2026-04-10",
         "hit_count": 3,
         "snippets": [
-          "| $\\hat{\\epsilon}_\\theta(\\mathbf{x}_t, t)$ | 噪声预测网络 | | $s_t(\\mathbf{x}) := \\nabla_{\\mathbf{x}} \\log p_t(\\mathbf{x})$ | score function | --- ## 二、高斯预备知识 本文的推导策略是：**先固定高斯的五个核心工具，后面所有推导不过是反复调用**。 ### 2.1 各向同性高斯密度 ![各向同性高斯密度公式](../../pdfs/2026-04-16/diffusion-models-a-mathematical-introduction.min",
-          "$$ \\mathbb{E}[\\mathbf{U} \\mid \\mathbf{Y} = \\mathbf{y}] = \\mathbf{y} + \\sigma^2\\nabla_{\\mathbf{y}}\\log p_{\\mathbf{Y}}(\\mathbf{y}) $$ 这与 score function 直接挂钩：score 编码了对\"去噪后信号\"的最优估计。 **整流（Rectification）**：速度场中的标量因子 $\\kappa(t) = \\dot{\\rho}/(1-\\rho)$ 在 $\\rho \\to 1$ 时会发散。**Lemma 5.12** 证明：用正函数 $\\kappa(t…",
-          "2. 未涉及 SDE 反向（Anderson 反向 SDE）的完整推导 3. 连续时间讨论集中在 VP（方差保持），未系统处理 VE（方差爆炸）和 sub-VP 变体 4. 没有实验或数值示例 ### 11.3 延伸阅读 - **Score-based SDE 框架**：Song et al., ICLR 2021 [12]——Anderson 反向 SDE 的完整推导 - **EDM（Elucidating Design Space）**：Karras et al., NeurIPS 2022 [4]——统一预条件和采样器设计 - **Consistency Models**：So"
+          "6. 你真正该带走的是：先构造可学习的局域场，再由这些局域场重建热力学量。 ## Paper Info - 为什么先读： 这篇最直接接你这两天刚整理好的主线：`Sagawa -> fluctuation theorem -> entropy production -> Fokker-Planck -> trajectory current`。 - 论文链接： https://arxiv.org/abs/2504.19007 #### 1. 问题 这篇的问题不是“再做一个生成模型”，而是： `能不能直接从相关函数和轨迹涨落电流里学习随机热力学量，尤其是 entropy production…",
+          "- `trajectory-fluctuation currents` - `correlation functions` 需要确认：作者到底是在路径层操作，还是在密度层操作，还是在两层之间来回翻译。 #### 3. 演化 这里优先找这几个骨架： - `stochastic process` - `path probability` - `Fokker-Planck` 或其等价的路径表述 - `forward / reverse-time structure` 如果文中没有直接把 `Fokker-Planck` 写成主角，也要看它是不是在隐含地通过路径概率或 current struct…",
+          "#### 3. 演化 这里优先找这几个骨架： - `stochastic process` - `path probability` - `Fokker-Planck` 或其等价的路径表述 - `forward / reverse-time structure` 如果文中没有直接把 `Fokker-Planck` 写成主角，也要看它是不是在隐含地通过路径概率或 current structure 使用同一套动力学。 #### 4. 量 优先盯住以下量： - `entropy production` - 可能出现的 `irreversibility measure` - correlati…"
         ]
       },
       {
@@ -261,119 +293,19 @@
         "note_date": "2026-04-16",
         "hit_count": 3,
         "snippets": [
-          "其核心流程分两步：**正向扩散**（forward diffusion）将真实数据样本（如图像）逐步加噪为高斯白噪声；**反向生成**（reverse generative process）从白噪声出发，由对数似然的梯度（即 score function）驱动，将噪声逆转恢复为符合真实数据分布的样本。 尽管 GDMs 在工程上取得了巨大成功（DALL-E、Sora 等），但对其内在物理机制的完整理解仍然缺乏。此前的物理研究主要集中在对称性破缺、Bayes 最优去噪、平衡统计力学重构、路径积分表示等方面，但这些角度各自独立，缺少统一图景。 **本文的核心目标**：在一个解析可处",
-          "| Franz-Parisi 势 | 构型空间碎片化 → 坍缩转变 | ### 7.2 核心物理洞察 1. **涨落定理是生成扩散模型的基本物理定律**：无论正向加噪还是反向去噪，均严格满足详细涨落定理和积分涨落定理，随机热力学第二定律成立。 2. **反向生成 = 最小化广义自由能**：score function 是自由能的梯度（差一个预因子），反向 Langevin 动力学在势能/自由能景观中下坡运动，生成样本对应自由能最小值。 3. **分化转变 = 自发对称性破缺**：在反向过程中，自由能景观从单阱变为双阱（或多阱），类比铁磁 Ising 模型降温时的相变。临界时间 $t_S$…",
-          "| 状态分布 | $p(\\mathbf{X}_t, t) = \\frac{1}{2}\\mathcal{N}(\\boldsymbol{\\mu}e^{-t}, \\mathbf{I}_d) + \\frac{1}{2}\\mathcal{N}(-\\boldsymbol{\\mu}e^{-t}, \\mathbf{I}_d)$ | | Score function | $\\nabla\\ln p = \\tanh(\\boldsymbol{\\mu}_t^\\top \\mathbf{X}_t)\\boldsymbol{\\mu}_t - \\mathbf{X}_t$ | | 反向 SDE | $\\dot{\\mathbf…"
+          "系统熵变以零为中心近似对称分布；环境熵变偏正值；总熵变以正值为主但存在负值涨落（个别轨迹熵减少）；$e^{-\\Delta S_{\\text{tot}}}$ 的分布在 1 附近聚集，与积分涨落定理一致。负熵轨迹的存在是涨落定理的本质体现——热力学第二定律是统计律而非绝对律。 ### 2.5 系综熵产生率 这一节分成三层： 1. 先从 Fokker-Planck 方程写出概率流； 2. 再定义单条轨迹上的随机熵率和总熵产生率； 3. 最后对这些轨迹级对象做系综平均，得到 $$ \\frac{dS(t)}{dt}=\\pi-\\phi. $$ #### 第一步：Fokker-Planck 方程先告诉…",
+          "### 2.5 系综熵产生率 这一节分成三层： 1. 先从 Fokker-Planck 方程写出概率流； 2. 再定义单条轨迹上的随机熵率和总熵产生率； 3. 最后对这些轨迹级对象做系综平均，得到 $$ \\frac{dS(t)}{dt}=\\pi-\\phi. $$ #### 第一步：Fokker-Planck 方程先告诉你概率密度怎样流动 对前向 OU 过程，原文先写 Fokker-Planck 方程 $$ \\frac{\\partial p(\\mathbf{X}_t,t)}{\\partial t} = -\\nabla\\cdot\\!\\big[f(\\mathbf{X}_t,t)p(\\mathb…",
+          "这一节分成三层： 1. 先从 Fokker-Planck 方程写出概率流； 2. 再定义单条轨迹上的随机熵率和总熵产生率； 3. 最后对这些轨迹级对象做系综平均，得到 $$ \\frac{dS(t)}{dt}=\\pi-\\phi. $$ #### 第一步：Fokker-Planck 方程先告诉你概率密度怎样流动 对前向 OU 过程，原文先写 Fokker-Planck 方程 $$ \\frac{\\partial p(\\mathbf{X}_t,t)}{\\partial t} = -\\nabla\\cdot\\!\\big[f(\\mathbf{X}_t,t)p(\\mathbf{X}_t,t)\\big] …"
         ]
       },
-      {
-        "note_path": "2026-04-10/learning-stochastic-thermodynamics-directly-from-correlation-and-trajectory-fluctuation-currents.md",
-        "note_title": "Learning stochastic thermodynamics directly from correlation and trajectory-fluctuation currents",
-        "note_date": "2026-04-10",
-        "hit_count": 1,
-        "snippets": [
-          "= \\int_{\\Gamma} \\left[ u(x,t)\\circ dx + \\partial_t \\log f(x,t)\\,dt \\right] $$ 这里的 `temporal score` 是： $$ \\partial_t \\log f(x,t) $$ 它表示在固定位置 $x$ 上，概率密度 $f(x,t)$ 随时间变化得有多快。这和 score-based diffusion 里常见的 $\\partial_x \\log f$ 不同： - $\\partial_x \\log f$ 是空间方向上的 score - $\\partial_t \\log f$ 是时间方向上的 score 在…"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/flow-matching-for-generative-modeling.md",
-        "note_title": "Flow Matching for Generative Modeling",
-        "note_date": "2026-04-16",
-        "hit_count": 1,
-        "snippets": [
-          "### 7.4 条件向量场的方向恒定性 ![](../../pdfs/2026-04-16/flow-matching-for-generative-modeling.mineru/hybrid_auto/images/page-05-figure-05.jpg) **Figure 2 上半部分**（扩散条件 Score Function）：扩散路径的条件得分函数 $\\nabla \\log p_t(x|x_1)$ 随时间 $t$ 变化剧烈——$t=0$ 时在全空间均匀指向 $x_1$（幅度大），$t=1$ 时退化为集中在 $x_1$ 附近的尖锐梯度。蓝色表示大幅值，红色表示小幅值。 ![…"
-        ]
-      }
-    ]
-  },
-  {
-    "id": "reverse-kl",
-    "display_name": "KL 散度",
-    "category": "framework",
-    "short_description": "衡量两个概率分布差异的非对称信息论距离。",
-    "aliases": [
-      "KL divergence",
-      "KL 散度",
-      "Kullback-Leibler",
-      "relative entropy"
-    ],
-    "total_occurrences": 34,
-    "note_count": 7,
-    "occurrences": [
       {
         "note_path": "2026-04-16/a-framework-for-generative-modelling-in-non-equilibrium-statistical-mechanics.md",
         "note_title": "A Framework for the Use of Generative Modelling in Non-Equilibrium Statistical Mechanics",
         "note_date": "2026-04-16",
-        "hit_count": 7,
-        "snippets": [
-          "第一项是 ELBO（记为 $-F$），第二项是 KL 散度 $D_{\\mathrm{KL}}(q \\| p(\\eta \\mid \\mu, b))$。利用 Markov 毯的条件独立性 $p(\\eta \\mid \\mu, b) = p(\\eta \\mid b)$，我们有： $$\\log p(\\mu, b) = -F(\\mu, b) + D_{\\mathrm{KL}}(q(\\eta; \\sigma(\\mu)",
-          "移项得到**变分自由能**的定义： $$F(\\mu, b) = D_{\\mathrm{KL}}(q(\\eta; \\sigma(\\mu)) \\| p(\\eta \\mid b)) - \\log p(\\mu, b)$$ 因为 KL 散度 $\\geq 0$，立刻得到关键不等式： $$F(\\mu, b) \\geq -\\log p(\\mu, b) = \\mathfrak{I}(\\mu, b)$$ 其中 $\\mathfrak{I}$ 是 surprisal。等号成立当且仅当 $q = p(\\eta \\mid b)$，即变分密度精确等于真实后验。 **这意味着什么**：变分自由能是",
-          "因此，原始的 surprisal 梯度流可以被替换为自由能梯度流： $$\\mathrm{d}\\mu_t = -(Q_\\mu + \\Gamma_\\mu)\\nabla_\\mu F(\\mu, b)\\,\\mathrm{d}t + D_\\mu\\,\\mathrm{d}W_t$$ 这个替换做了什么？它在原始的 surprisal 梯度上额外叠加了一个 KL 散度梯度——后者驱动系统的内部状态去\"更好地推断\"外部状态。也就是说： > 原始动力学 = surprisal 梯度下降 + 噪声 + 旋转 > > 自由能动力学 = 原始动力学 + \"推断误差修正\" **为什么自由能是 Lyapunov 函数**…"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/denoising-diffusion-probabilistic-models.md",
-        "note_title": "Denoising Diffusion Probabilistic Models",
-        "note_date": "2026-04-16",
-        "hit_count": 6,
-        "snippets": [
-          "### 4.6 识别 KL 散度 利用 KL 散度的定义 $D_{\\mathrm{KL}}(q \\| p) = \\mathbb{E}_q\\left[\\log \\frac{q}{p}\\right]$，将上式中的每项识别为 KL 散度或对数似然： $$\\boxed{L = \\mathbb{E}_q\\left[\\underbrace{D_{\\mathrm{KL}}\\left(q(\\",
-          "### 4.6 识别 KL 散度 利用 KL 散度的定义 $D_{\\mathrm{KL}}(q \\| p) = \\mathbb{E}_q\\left[\\log \\frac{q}{p}\\right]$，将上式中的每项识别为 KL 散度或对数似然： $$\\boxed{L = \\mathbb{E}_q\\left[\\underbrace{D_{\\mathrm{KL}}\\left(q(\\mathbf{x}_",
-          "### 4.6 识别 KL 散度 利用 KL 散度的定义 $D_{\\mathrm{KL}}(q \\| p) = \\mathbb{E}_q\\left[\\log \\frac{q}{p}\\right]$，将上式中的每项识别为 KL 散度或对数似然： $$\\boxed{L = \\mathbb{E}_q\\left[\\underbrace{D_{\\mathrm{KL}}\\left(q(\\mathbf{x}_T \\mid \\mathbf{x}_0) \\,\\|\\, p(\\mathbf{x}_T)\\right)}_{L_T} + \\sum_{t > 1} \\underbrace{D_{\\m"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.md",
-        "note_title": "Predictor-Driven Diffusion for Spatiotemporal Generation",
-        "note_date": "2026-04-16",
-        "hit_count": 6,
-        "snippets": [
-          "jpg) *Figure 1 — 框架示意图。横轴为扩散尺度 $\\lambda$（粗粒化程度），纵轴为物理时间 $t$。蓝色框：在固定 $\\lambda$ 下沿 $t$ 方向做前向仿真；红色框：沿 $\\lambda$ 方向做逆向积分，实现从噪声生成和超分辨率。一个 predictor 通过最小化路径密度间的 KL 散度训练，同时支持仿真、生成、超分辨率三个任务。* - **沿 $t$ 轴**（蓝色箭头）：predictor 在任意固定 $\\lambda$ 下模拟时间演化，仅使用过去信息，保证因果性 - **沿 $\\lambda$ 轴**（红色箭头）：逆向 $\\lambda$ 积分实现空间…",
-          "2. **归一化常数 $Z_\\lambda$ 与 $f_\\lambda^\\theta$ 无关**：$Z_\\lambda$ 仅依赖 $\\sigma_\\lambda$、$\\Delta t$ 和网格维度，简化了训练 ### 3.3 训练目标：路径密度间的 KL 散度 训练 predictor $f_\\lambda^\\theta$ 的目标是最小化数据路径密度 $q_\\lambda$ 与 predictor 诱导的代理路径密度 $p_\\lambda$ 之间的 KL 散度： $$D_{\\mathrm{KL}}(q_\\lambda \\| p_\\lambda) = \\frac{1}{2\\sigma_\\l…",
-          "### 3.3 训练目标：路径密度间的 KL 散度 训练 predictor $f_\\lambda^\\theta$ 的目标是最小化数据路径密度 $q_\\lambda$ 与 predictor 诱导的代理路径密度 $p_\\lambda$ 之间的 KL 散度： $$D_{\\mathrm{KL}}(q_\\lambda \\| p_\\lambda) = \\frac{1}{2\\sigma_\\lambda^2}\\mathbb{E}_{q_\\lambda}\\left[\\int_{\\mathrm{x,t}} \\|\\partial_t u_\\lambda - f_\\lambda^\\theta(u_\\lamb…"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/stochastic-thermodynamics-for-autoregressive-generative-models.md",
-        "note_title": "Stochastic Thermodynamics for Autoregressive Generative Models",
-        "note_date": "2026-04-16",
-        "hit_count": 6,
-        "snippets": [
-          "这里一个容易误会的点是：即使某条后向样本恰好满足 $\\tilde y_s = y_{T-s+1}$，一般也**不能**推出 $\\tilde h_s = h_{T-s+1}$。原因很直接：同一个确定性映射作用在正向前缀和反向前缀上，得到的内部状态一般不同。 ### 2.2 熵产生的定义：前向和后向路径测度之间的 KL 散度 有了前向路径概率 $P_\\rightarrow$ 和后向路径概率 $P_\\leftarrow$，作者就把观测序列的熵产生定义成两者之间的 KL 散度： $$ \\mathcal S_y = D_{\\mathrm{KL}}\\!\\left(P_\\rightarrow(y_{1…",
-          "原因很直接：同一个确定性映射作用在正向前缀和反向前缀上，得到的内部状态一般不同。 ### 2.2 熵产生的定义：前向和后向路径测度之间的 KL 散度 有了前向路径概率 $P_\\rightarrow$ 和后向路径概率 $P_\\leftarrow$，作者就把观测序列的熵产生定义成两者之间的 KL 散度： $$ \\mathcal S_y = D_{\\mathrm{KL}}\\!\\left(P_\\rightarrow(y_{1:T}) \\,\\|\\, P_\\leftarrow(y_{T:1})\\right) = \\mathbb E_{P_\\rightarrow}\\!\\left[ \\ln \\frac{…",
-          "换句话说，一条联合路径即使在前向中可实现，把它机械地反过来之后，也往往不是后向联合过程可实现的路径。 第三，这就导致前向和后向联合路径测度的支撑集可能不重合。这里“支撑集不重合”的具体意思是： - 某些联合路径在前向下有正概率； - 但在后向下对应概率严格等于零。 而 KL 散度 $$ D_{\\mathrm{KL}}(P_\\rightarrow\\|P_\\leftarrow) = \\sum P_\\rightarrow \\ln\\frac{P_\\rightarrow}{P_\\leftarrow} $$ 一旦出现 “$P_\\rightarrow>0$ 但 $P_\\leftarrow=0$” 的路…"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/a-primer-on-variational-inference-for-physics-informed-deep-generative-modelling.md",
-        "note_title": "A Primer on Variational Inference for Physics-Informed Deep Generative Modelling",
-        "note_date": "2026-04-16",
-        "hit_count": 4,
-        "snippets": [
-          "$$ p(\\mathbf{z}|\\mathbf{y}) $$ 在概念上是明确定义的；问题只是它太难直接计算。于是最自然的想法就是：不要再发明一个新目标，而是直接让变分近似 $q_\\phi(\\mathbf{z})$ 去逼近真实后验本身。原文这里选择的距离就是 KL 散度： $$ D_{\\mathrm{KL}}(q(\\mathbf{z})\\|p(\\mathbf{z})) = \\mathbb{E}_{q(\\mathbf{z})} \\left[ \\log \\frac{q(\\mathbf{z})}{p(\\mathbf{z})} \\right]. \\tag{10} $$ 在 Bayes VI 里，真…",
-          "这正好对应逆问题里最想同时得到的两样东西： - 一方面，你希望能从后验里抽样，看看给定观测之后参数还有哪些不确定性； - 另一方面，你又希望这个近似后验的密度本身是可计算的，这样它才能被放回 KL 散度、ELBO 或其他变分目标里，作为一个真正可优化的对象。 所以条件 NF 在物理逆问题里的价值，不只是“它能生成复杂后验”，而是：**它把后验近似同时做成了一个可采样对象和一个可计算密度对象。** 前者让你能做不确定性分析，后者让你能把它稳当地纳入变分推断框架。 --- ## 3. Physics-Informed Generative Mo",
-          "文章虽然反复强调 VI 和 surrogate 的计算优势，但这并不自动意味着“训练一个代理模型总比直接跑经典求解器便宜”。如果问题维度不高、查询次数不多，或者训练代价本身极大，那么代理路线未必划算。所以这里真正要比较的不是方法标签，而是总成本：训练一次的代价、后续查询的频率，以及误差是否可接受。 第三，KL 散度本身在函数空间里并不总是一个稳定、好用的对象。前面所有 VI 推导都大量依赖 KL，但当随机对象变成函数、场或者无限维表示时，KL 的适定性会变得微妙，甚至可能失效。也正因为这一点，文章最后特别提到 Wasserstein 距离、Sliced Wasserstein 和最大平均…"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/diffusion-models-a-mathematical-introduction.md",
-        "note_title": "Diffusion Models: A Mathematical Introduction",
-        "note_date": "2026-04-16",
-        "hit_count": 3,
-        "snippets": [
-          "这个恒等式将在 KL 散度推导和 ELBO 分解中反复出现。 ### 2.3 重参数化 **核心命题**：若 $\\mathbf{z} \\sim \\mathcal{N}(\\mathbf{0}, \\mathbf{I}_d)$，则 $\\mathbf{x} = \\boldsymbol{\\mu} + \\mathbf{A}\\mathbf{z} \\sim \\mathcal{N}(\\b",
-          "$$ **证明思路**：将两个高斯写成自然参数（精度矩阵）形式，合并指数中的二次项和线性项，通过 completing the square（Lemma 2.10）识别出新的高斯参数。 物理直觉：**精度相加，均值取精度加权平均**。这正是 Bayesian 融合两个信息源的标准操作——DDPM 后验推导的关键。 ### 2.5 高斯 KL 散度 **Proposition 2.13**： ![KL散度闭式表达](../../pdfs/2026-04-16/diffusion-models-a-mathematical-introduction.mineru/hybrid_auto/im…",
-          "$$ 此时可以在**任意子网格** $\\{\\tau_k\\}$ 上执行采样，通常只需 10–50 步。 ### 6.3 DDGAN：对抗式加速 思路不同：不用 KL 散度匹配逆向转移，而是用判别器区分真实对 $(\\mathbf{x}_{t-1}, \\mathbf{x}_t) \\sim q_t^{\\mathrm{pair}}$ 与生成对 $(\\hat{\\mathbf{x}}_{t-1}, \\mathbf{x}_t)$。 **Proposition 4.3** 证明：在最优判别器 $D_t^* = \\frac{q_t"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/real-world-robot-control-by-deep-active-inference-with-a-temporally-hierarchical-world-model.md",
-        "note_title": "Real-World Robot Control by Deep Active Inference With a Temporally Hierarchical World Model",
-        "note_date": "2026-04-16",
         "hit_count": 2,
         "snippets": [
-          "$$ \\log p(o_t) = \\mathbb{E}_{q(z_t)} \\big[ \\log p(o_t, z_t) - \\log q(z_t) \\big] + \\mathbb{E}_{q(z_t)} \\big[ \\log q(z_t) - \\log p(z_t \\mid o_t) \\big] . $$ 第二项正好就是 KL 散度： $$ D_{\\mathrm{KL}} \\big( q(z_t)\\,\\|\\,p(z_t \\mid o_t) \\big) = \\mathbb{E}_{q(z_t)} \\big[ \\log q(z_t) - \\log p(z_t \\mid o_t) \\big] …",
-          "\\big) . $$ 这里要特别强调：这一步还是**恒等式**，不是近似，也不是下界。下界是下一步才出现的。 这里的 $$ \\mathcal{L}(q) = \\mathbb{E}_{q(z_t)} \\big[ \\log p(o_t, z_t) - \\log q(z_t) \\big] $$ 就叫 `ELBO`。因为后面那项 KL 散度总是非负的，所以必然有： $$ \\mathcal{L}(q) \\le \\log p(o_t) . $$ 也就是说，`ELBO` 是对 `log evidence` 的一个下界。 而 `variational free energy` 则正好定义成它的相反数： …"
+          "### 3.1 从 SDE 到梯度流 考虑具有非平衡稳态密度（non-equilibrium steady state density, NESS）$p^*(x)$ 的随机微分方程（SDE）： $$\\mathrm{d}X_t = f(X_t)\\,\\mathrm{d}t + D(X_t)\\,\\mathrm{d}W_t$$ 这个 SDE 对应的 Fokker-Planck 方程（描述概率密度 $p(x,t)$ 的演化）为： $$\\frac{\\partial p}{\\partial t} = -\\nabla \\cdot (f \\, p) + \\frac{1}{2}\\nabla \\cdot (\\…",
+          "将上式代入 SDE： $$\\mathrm{d}X_t = -(Q(X_t) + \\Gamma(X_t))\\nabla_x \\log p^*(X_t)\\,\\mathrm{d}t + D(X_t)\\,\\mathrm{d}W_t$$ 可以验证这种分解是自洽的：将它代回 Fokker-Planck 方程，$\\Gamma$ 项产生扩散和梯度漂移的精确平衡（详细平衡条件），而 $Q$ 项因为反对称性在散度算子下正好产生不改变 $p^*$ 的循环流（$\\nabla \\cdot (Q \\, p^* \\nabla \\log p^*) = 0$ 当 $Q$ 反对称时）。 **关键物理图像**：系统的动力学可…"
         ]
       }
     ]
@@ -388,8 +320,8 @@
       "熵产生",
       "熵产生率"
     ],
-    "total_occurrences": 196,
-    "note_count": 6,
+    "total_occurrences": 269,
+    "note_count": 10,
     "occurrences": [
       {
         "note_path": "2026-04-16/stochastic-thermodynamics-for-autoregressive-generative-models.md",
@@ -400,6 +332,17 @@
           "> **日期**：2026-04-10 --- ## 0 一句话总结 本文为所有 **自回归生成模型**（Transformer / RNN / Kalman filter / SSM / Mamba）建立了统一的 **随机热力学（stochastic thermodynamics）** 框架：定义了非马尔可夫观测序列的 **熵产生（entropy production）**，证明其可从单条采样轨迹高效计算，并在 GPT-2 实验与 Kalman 滤波解析案例中进行了验证和分解。 --- ## 1 问题设定：为什么这篇文章要从非马尔可夫过程出发 ### 1.1 经典随机热力学最顺手的对象…",
           "> **日期**：2026-04-10 --- ## 0 一句话总结 本文为所有 **自回归生成模型**（Transformer / RNN / Kalman filter / SSM / Mamba）建立了统一的 **随机热力学（stochastic thermodynamics）** 框架：定义了非马尔可夫观测序列的 **熵产生（entropy production）**，证明其可从单条采样轨迹高效计算，并在 GPT-2 实验与 Kalman 滤波解析案例中进行了验证和分解。 --- ## 1 问题设定：为什么这篇文章要从非马尔可夫过程出发 ### 1.1 经典随机热力学最顺手的对象…",
           "--- ## 1 问题设定：为什么这篇文章要从非马尔可夫过程出发 ### 1.1 经典随机热力学最顺手的对象是马尔可夫过程 随机热力学最常见的对象是马尔可夫过程。原因很简单：一旦动力学只依赖当前状态，前向和后向路径概率都可以逐步写成局部转移核的乘积，于是熵产生就能被写成一串局部对数比。最熟悉的形式是 Crooks 型时间反演： $$ \\sigma(y_{1:T}) = \\sum_t \\ln \\frac{p_t(y_{t+1}\\mid y_t)}{p_t(y_t\\mid y_{t+1})}. $$ 这条式子默认了一个强条件：当前一步的统计规律只由前一步决定。可现代生成模型里的观测序列往往不…"
+        ]
+      },
+      {
+        "note_path": "2026-04-28/speed-accuracy-relations-for-diffusion-models.md",
+        "note_title": "Speed-Accuracy Relations for Diffusion Models: Wisdom from Nonequilibrium Thermodynamics and Optimal Transport",
+        "note_date": "2026-04-28",
+        "hit_count": 69,
+        "snippets": [
+          "作者先提醒读者：扩散不是一个中性的“加噪操作”，而是一类不可逆过程。Brownian motion 这类 stochastic process 会让系统从有结构状态走向更混合、更无序的状态；在 stochastic thermodynamics 里，这种不可逆性用 entropy production 来度量。 这里的逻辑是： $$ \\begin{aligned} &\\text{diffusion process}\\\\ &\\rightarrow \\text{irreversibility}\\\\ &\\rightarrow \\text{thermodynamic dissipation}\\\\…",
+          "这里的逻辑是： $$ \\begin{aligned} &\\text{diffusion process}\\\\ &\\rightarrow \\text{irreversibility}\\\\ &\\rightarrow \\text{thermodynamic dissipation}\\\\ &\\rightarrow \\text{entropy production}. \\end{aligned} $$ 所以，当作者后面讨论 diffusion model 的 forward noising process 时，他不是把 “noise schedule” 当作一个纯工程超参数，而是把它看成一个会产生…",
+          "第二步，作者补上 stochastic thermodynamics 这条线已经发展出的理论工具。过去的研究已经讨论了 information processing 和 thermodynamic dissipation 之间的关系，也已经用 optimal transport 描述 finite-time diffusion 的 minimum entropy production。更具体地说，如果一个系统必须在有限时间内从一个分布移动到另一个分布，那么这件事通常不可能零耗散完成；移动得越快、越绕路、越不可逆，就越会产生 dissipation。这类结果在物理里被写成 speed、ac…"
         ]
       },
       {
@@ -446,12 +389,270 @@
         ]
       },
       {
+        "note_path": "2026-04-28/speed-accuracy-relations-for-diffusion-models-equation-map.md",
+        "note_title": "Equation Map for Speed-Accuracy Relations for Diffusion Models",
+        "note_date": "2026-04-28",
+        "hit_count": 2,
+        "snippets": [
+          "| Eq. (26)-Eq. (35) | VE、VP/DDPM、rescaled variable 与 schedule geometry | 已展开 | 已补 VE、VP、cosine、DDIM-style rescaled variable Eq. (33)-Eq. (35) | | Eq. (36)-Eq. (40) | entropy production、system entropy、bath entropy、total entropy | 已展开 | Eq. (36)-Eq. (40) 已补编号 | | Eq. (41)-Eq. (51) | path probabilit…",
+          "| Eq. (C1)-Eq. (C6) | rescaled variable 下的 Fokker--Planck 推导 | 已展开 | 已补 Jacobian、chain rule、drift cancellation、effective diffusion | | Eq. (D1)-Eq. (D11) | path KL 与 entropy production 的证明 | 已展开 | 已补 dual backward path、ordinary backward path、system/bath split | | Eq. (E1) | Pearson $\\chi^2$ diver…"
+        ]
+      },
+      {
         "note_path": "2026-04-13/mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-particle-data.md",
         "note_title": "MVNN: A Measure-Valued Neural Network for Learning McKean-Vlasov Dynamics from Particle Data",
         "note_date": "2026-04-13",
         "hit_count": 1,
         "snippets": [
           "2. `distribution as state` 3. `mean-field limit and learned dynamics` 4. `AI methods for stochastic interacting systems` 也就是说，这篇文章更像是你当前主线中的“方法侧分支”，不是熵产生那条线的直接延伸，但对 `AI for physics` 里如何学习 distribution-dependent dynamics 非常关键。 ## 6. How To Read The Introduction Linearly 这篇 `Introduction` 的逻辑其实很完整，…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.md",
+        "note_title": "Predictor-Driven Diffusion for Spatiotemporal Generation",
+        "note_date": "2026-04-16",
+        "hit_count": 1,
+        "snippets": [
+          "\\end{aligned} $$ 差异在于，各框架对 path 的解释不同。VI 偏向 posterior approximation，HJB 偏向 optimal control，PRX diffusion thermodynamics 偏向 entropy production and OT，Predictor-Driven Diffusion 偏向 causal temporal prediction plus spatial RG. --- ## 十四、最终记忆版 这篇文章可以记成一句话： Predictor-Driven Diffusion 把 physical time $t$"
+        ]
+      },
+      {
+        "note_path": "2026-04-27/statistics-and-dynamics-of-urban-populations-ch09-from-first-principles-to-the-growth-equation.md",
+        "note_title": "Statistics and Dynamics of Urban Populations, Chapter 9: From first principles to the growth equation",
+        "note_date": "2026-04-27",
+        "hit_count": 1,
+        "snippets": [
+          "$$ 如果只停在这里，很容易误解为 migration term 可以忽略。因为平均流入和平均流出相等，似乎： $$ \\sum_j(J_{j\\to i}-J_{i\\to j}) \\approx 0. $$ 但作者强调：这只在 average 上成立，真实 fluctuations 非常大。（**这里能否联系上熵产生的不等式？**） 换句话说，migration 的核心不是 mean，而是 deviation from mean。城市增长真正受到冲击的部分是： $$ \\text{actual flow} - \\text{average flow}. $$ 这也是 Chapter 9 的关键…"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "reverse-kl",
+    "display_name": "KL 散度",
+    "category": "framework",
+    "short_description": "衡量两个概率分布差异的非对称信息论距离。",
+    "aliases": [
+      "KL divergence",
+      "KL 散度",
+      "Kullback-Leibler",
+      "relative entropy"
+    ],
+    "total_occurrences": 46,
+    "note_count": 10,
+    "occurrences": [
+      {
+        "note_path": "2026-04-28/speed-accuracy-relations-for-diffusion-models.md",
+        "note_title": "Speed-Accuracy Relations for Diffusion Models: Wisdom from Nonequilibrium Thermodynamics and Optimal Transport",
+        "note_date": "2026-04-28",
+        "hit_count": 13,
+        "snippets": [
+          "\\qquad \\boldsymbol{x}^{(n)}\\in\\mathbb{R}^{n_d}, $$ 作者假设这些样本来自真实数据分布 $q(\\boldsymbol{x})$。生成模型的任务是构造另一个分布 $p(\\boldsymbol{x})$，并从 $p$ 中采样，使 $p$ 尽量接近 $q$。这里的 estimation error 可以用 KL divergence、Wasserstein distance 或其他 distribution distance 度量。也就是说，本文讨论的 “accuracy” 从一开始就不是单张图片好不好看，而是 $p$ 和 $q$ 的分布差异。 …",
+          "$$ S_\\tau^{\\mathrm{tot}} = \\int_0^\\tau dt\\, \\dot{S}^{\\mathrm{tot}}_t. \\tag{40} $$ 作者接着把 entropy production 写成 path probability 的 KL divergence。这一段原文公式很多，但逻辑只有一条：先给 forward path 定义概率，再构造一个 thermodynamic backward / dual path probability，最后用两条 path ensemble 的 KL divergence 表示 entropy production。 第一步…",
+          "作者接着把 entropy production 写成 path probability 的 KL divergence。这一段原文公式很多，但逻辑只有一条：先给 forward path 定义概率，再构造一个 thermodynamic backward / dual path probability，最后用两条 path ensemble 的 KL divergence 表示 entropy production。 第一步，作者先引入一个 auxiliary dynamics： $$ d\\boldsymbol{x}_t = \\boldsymbol{f}_t(\\boldsymbol{x…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/a-framework-for-generative-modelling-in-non-equilibrium-statistical-mechanics.md",
+        "note_title": "A Framework for the Use of Generative Modelling in Non-Equilibrium Statistical Mechanics",
+        "note_date": "2026-04-16",
+        "hit_count": 7,
+        "snippets": [
+          "第一项是 ELBO（记为 $-F$），第二项是 KL 散度 $D_{\\mathrm{KL}}(q \\| p(\\eta \\mid \\mu, b))$。利用 Markov 毯的条件独立性 $p(\\eta \\mid \\mu, b) = p(\\eta \\mid b)$，我们有： $$\\log p(\\mu, b) = -F(\\mu, b) + D_{\\mathrm{KL}}(q(\\eta; \\sigma(\\mu)",
+          "移项得到**变分自由能**的定义： $$F(\\mu, b) = D_{\\mathrm{KL}}(q(\\eta; \\sigma(\\mu)) \\| p(\\eta \\mid b)) - \\log p(\\mu, b)$$ 因为 KL 散度 $\\geq 0$，立刻得到关键不等式： $$F(\\mu, b) \\geq -\\log p(\\mu, b) = \\mathfrak{I}(\\mu, b)$$ 其中 $\\mathfrak{I}$ 是 surprisal。等号成立当且仅当 $q = p(\\eta \\mid b)$，即变分密度精确等于真实后验。 **这意味着什么**：变分自由能是",
+          "因此，原始的 surprisal 梯度流可以被替换为自由能梯度流： $$\\mathrm{d}\\mu_t = -(Q_\\mu + \\Gamma_\\mu)\\nabla_\\mu F(\\mu, b)\\,\\mathrm{d}t + D_\\mu\\,\\mathrm{d}W_t$$ 这个替换做了什么？它在原始的 surprisal 梯度上额外叠加了一个 KL 散度梯度——后者驱动系统的内部状态去\"更好地推断\"外部状态。也就是说： > 原始动力学 = surprisal 梯度下降 + 噪声 + 旋转 > > 自由能动力学 = 原始动力学 + \"推断误差修正\" **为什么自由能是 Lyapunov 函数**…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/denoising-diffusion-probabilistic-models.md",
+        "note_title": "Denoising Diffusion Probabilistic Models",
+        "note_date": "2026-04-16",
+        "hit_count": 6,
+        "snippets": [
+          "### 4.6 识别 KL 散度 利用 KL 散度的定义 $D_{\\mathrm{KL}}(q \\| p) = \\mathbb{E}_q\\left[\\log \\frac{q}{p}\\right]$，将上式中的每项识别为 KL 散度或对数似然： $$\\boxed{L = \\mathbb{E}_q\\left[\\underbrace{D_{\\mathrm{KL}}\\left(q(\\",
+          "### 4.6 识别 KL 散度 利用 KL 散度的定义 $D_{\\mathrm{KL}}(q \\| p) = \\mathbb{E}_q\\left[\\log \\frac{q}{p}\\right]$，将上式中的每项识别为 KL 散度或对数似然： $$\\boxed{L = \\mathbb{E}_q\\left[\\underbrace{D_{\\mathrm{KL}}\\left(q(\\mathbf{x}_",
+          "### 4.6 识别 KL 散度 利用 KL 散度的定义 $D_{\\mathrm{KL}}(q \\| p) = \\mathbb{E}_q\\left[\\log \\frac{q}{p}\\right]$，将上式中的每项识别为 KL 散度或对数似然： $$\\boxed{L = \\mathbb{E}_q\\left[\\underbrace{D_{\\mathrm{KL}}\\left(q(\\mathbf{x}_T \\mid \\mathbf{x}_0) \\,\\|\\, p(\\mathbf{x}_T)\\right)}_{L_T} + \\sum_{t > 1} \\underbrace{D_{\\m"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/stochastic-thermodynamics-for-autoregressive-generative-models.md",
+        "note_title": "Stochastic Thermodynamics for Autoregressive Generative Models",
+        "note_date": "2026-04-16",
+        "hit_count": 6,
+        "snippets": [
+          "这里一个容易误会的点是：即使某条后向样本恰好满足 $\\tilde y_s = y_{T-s+1}$，一般也**不能**推出 $\\tilde h_s = h_{T-s+1}$。原因很直接：同一个确定性映射作用在正向前缀和反向前缀上，得到的内部状态一般不同。 ### 2.2 熵产生的定义：前向和后向路径测度之间的 KL 散度 有了前向路径概率 $P_\\rightarrow$ 和后向路径概率 $P_\\leftarrow$，作者就把观测序列的熵产生定义成两者之间的 KL 散度： $$ \\mathcal S_y = D_{\\mathrm{KL}}\\!\\left(P_\\rightarrow(y_{1…",
+          "原因很直接：同一个确定性映射作用在正向前缀和反向前缀上，得到的内部状态一般不同。 ### 2.2 熵产生的定义：前向和后向路径测度之间的 KL 散度 有了前向路径概率 $P_\\rightarrow$ 和后向路径概率 $P_\\leftarrow$，作者就把观测序列的熵产生定义成两者之间的 KL 散度： $$ \\mathcal S_y = D_{\\mathrm{KL}}\\!\\left(P_\\rightarrow(y_{1:T}) \\,\\|\\, P_\\leftarrow(y_{T:1})\\right) = \\mathbb E_{P_\\rightarrow}\\!\\left[ \\ln \\frac{…",
+          "换句话说，一条联合路径即使在前向中可实现，把它机械地反过来之后，也往往不是后向联合过程可实现的路径。 第三，这就导致前向和后向联合路径测度的支撑集可能不重合。这里“支撑集不重合”的具体意思是： - 某些联合路径在前向下有正概率； - 但在后向下对应概率严格等于零。 而 KL 散度 $$ D_{\\mathrm{KL}}(P_\\rightarrow\\|P_\\leftarrow) = \\sum P_\\rightarrow \\ln\\frac{P_\\rightarrow}{P_\\leftarrow} $$ 一旦出现 “$P_\\rightarrow>0$ 但 $P_\\leftarrow=0$” 的路…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/a-primer-on-variational-inference-for-physics-informed-deep-generative-modelling.md",
+        "note_title": "A Primer on Variational Inference for Physics-Informed Deep Generative Modelling",
+        "note_date": "2026-04-16",
+        "hit_count": 4,
+        "snippets": [
+          "$$ p(\\mathbf{z}|\\mathbf{y}) $$ 在概念上是明确定义的；问题只是它太难直接计算。于是最自然的想法就是：不要再发明一个新目标，而是直接让变分近似 $q_\\phi(\\mathbf{z})$ 去逼近真实后验本身。原文这里选择的距离就是 KL 散度： $$ D_{\\mathrm{KL}}(q(\\mathbf{z})\\|p(\\mathbf{z})) = \\mathbb{E}_{q(\\mathbf{z})} \\left[ \\log \\frac{q(\\mathbf{z})}{p(\\mathbf{z})} \\right]. \\tag{10} $$ 在 Bayes VI 里，真…",
+          "这正好对应逆问题里最想同时得到的两样东西： - 一方面，你希望能从后验里抽样，看看给定观测之后参数还有哪些不确定性； - 另一方面，你又希望这个近似后验的密度本身是可计算的，这样它才能被放回 KL 散度、ELBO 或其他变分目标里，作为一个真正可优化的对象。 所以条件 NF 在物理逆问题里的价值，不只是“它能生成复杂后验”，而是：**它把后验近似同时做成了一个可采样对象和一个可计算密度对象。** 前者让你能做不确定性分析，后者让你能把它稳当地纳入变分推断框架。 --- ## 3. Physics-Informed Generative Mo",
+          "文章虽然反复强调 VI 和 surrogate 的计算优势，但这并不自动意味着“训练一个代理模型总比直接跑经典求解器便宜”。如果问题维度不高、查询次数不多，或者训练代价本身极大，那么代理路线未必划算。所以这里真正要比较的不是方法标签，而是总成本：训练一次的代价、后续查询的频率，以及误差是否可接受。 第三，KL 散度本身在函数空间里并不总是一个稳定、好用的对象。前面所有 VI 推导都大量依赖 KL，但当随机对象变成函数、场或者无限维表示时，KL 的适定性会变得微妙，甚至可能失效。也正因为这一点，文章最后特别提到 Wasserstein 距离、Sliced Wasserstein 和最大平均…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/diffusion-models-a-mathematical-introduction.md",
+        "note_title": "Diffusion Models: A Mathematical Introduction",
+        "note_date": "2026-04-16",
+        "hit_count": 3,
+        "snippets": [
+          "这个恒等式将在 KL 散度推导和 ELBO 分解中反复出现。 ### 2.3 重参数化 **核心命题**：若 $\\mathbf{z} \\sim \\mathcal{N}(\\mathbf{0}, \\mathbf{I}_d)$，则 $\\mathbf{x} = \\boldsymbol{\\mu} + \\mathbf{A}\\mathbf{z} \\sim \\mathcal{N}(\\b",
+          "$$ **证明思路**：将两个高斯写成自然参数（精度矩阵）形式，合并指数中的二次项和线性项，通过 completing the square（Lemma 2.10）识别出新的高斯参数。 物理直觉：**精度相加，均值取精度加权平均**。这正是 Bayesian 融合两个信息源的标准操作——DDPM 后验推导的关键。 ### 2.5 高斯 KL 散度 **Proposition 2.13**： ![KL散度闭式表达](../../pdfs/2026-04-16/diffusion-models-a-mathematical-introduction.mineru/hybrid_auto/im…",
+          "$$ 此时可以在**任意子网格** $\\{\\tau_k\\}$ 上执行采样，通常只需 10–50 步。 ### 6.3 DDGAN：对抗式加速 思路不同：不用 KL 散度匹配逆向转移，而是用判别器区分真实对 $(\\mathbf{x}_{t-1}, \\mathbf{x}_t) \\sim q_t^{\\mathrm{pair}}$ 与生成对 $(\\hat{\\mathbf{x}}_{t-1}, \\mathbf{x}_t)$。 **Proposition 4.3** 证明：在最优判别器 $D_t^* = \\frac{q_t"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.md",
+        "note_title": "Predictor-Driven Diffusion for Spatiotemporal Generation",
+        "note_date": "2026-04-16",
+        "hit_count": 3,
+        "snippets": [
+          "Laplacian damping 让高波数小尺度成分快速衰减；additive noise 不是无关扰动，而是 RG 意义下对被消除小尺度自由度的统计积分。这样就得到一族按 diffusion scale $\\lambda$ 索引的 coarse-grained fields。 第五步，训练目标是 KL divergence between data-induced and predictor-induced path densities。这个 KL 最后变成对 temporal derivatives 的简单 regression loss。这里是全文的关键：模型不是先训练 scor…",
+          "底部训练框解释为什么同一个 predictor 能支撑这三类任务。作者不是单独训练一个 score network，而是训练 predictor-induced path density $p_\\lambda$ 去贴近 data-induced path density $q_\\lambda$。训练目标是最小化两条 path densities 的 KL divergence。 这一步的逻辑是： $$ \\begin{aligned} f_\\lambda^\\theta &\\Rightarrow p_\\lambda(\\{u_\\lambda\\}_t),\\\\ p_\\lambda(\\{u_\\lam…",
+          "$$ s_\\lambda := \\nabla_{u_\\lambda}\\ln p_\\lambda(\\{u_\\lambda\\}_t). $$ 因为 Eq. (7) 显式可微，作者可以通过 automatic differentiation 得到 $s_\\lambda$，不需要单独训练 score network。 ### 4.7 Eq. (8)：KL divergence 如何变成 regression loss 训练目标是让 predictor-induced path density $p_\\lambda$ 逼近 coarse-grained data path density $q_\\…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/real-world-robot-control-by-deep-active-inference-with-a-temporally-hierarchical-world-model.md",
+        "note_title": "Real-World Robot Control by Deep Active Inference With a Temporally Hierarchical World Model",
+        "note_date": "2026-04-16",
+        "hit_count": 2,
+        "snippets": [
+          "$$ \\log p(o_t) = \\mathbb{E}_{q(z_t)} \\big[ \\log p(o_t, z_t) - \\log q(z_t) \\big] + \\mathbb{E}_{q(z_t)} \\big[ \\log q(z_t) - \\log p(z_t \\mid o_t) \\big] . $$ 第二项正好就是 KL 散度： $$ D_{\\mathrm{KL}} \\big( q(z_t)\\,\\|\\,p(z_t \\mid o_t) \\big) = \\mathbb{E}_{q(z_t)} \\big[ \\log q(z_t) - \\log p(z_t \\mid o_t) \\big] …",
+          "\\big) . $$ 这里要特别强调：这一步还是**恒等式**，不是近似，也不是下界。下界是下一步才出现的。 这里的 $$ \\mathcal{L}(q) = \\mathbb{E}_{q(z_t)} \\big[ \\log p(o_t, z_t) - \\log q(z_t) \\big] $$ 就叫 `ELBO`。因为后面那项 KL 散度总是非负的，所以必然有： $$ \\mathcal{L}(q) \\le \\log p(o_t) . $$ 也就是说，`ELBO` 是对 `log evidence` 的一个下界。 而 `variational free energy` 则正好定义成它的相反数： …"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation-equation-map.md",
+        "note_title": "Equation Map for Predictor-Driven Diffusion for Spatiotemporal Generation",
+        "note_date": "2026-04-16",
+        "hit_count": 1,
+        "snippets": [
+          "| Eq. (7) | predictor-induced path density | 已展开 | 解释 path energy、$r_\\lambda$、$Z_\\lambda$、path score | | Eq. (8) | KL divergence to regression loss | 已展开 | 展开代入 Eq. (7) 后哪些项与 $\\theta$ 无关 | | Eq. (9) | final scale-averaged training objective | 已展开 | 解释 $\\lambda$ sampling 与 $1/\\sigma_\\lambda^2$ w"
+        ]
+      },
+      {
+        "note_path": "2026-05-01/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery.md",
+        "note_title": "Predicting human mobility flows in cities using deep learning on satellite imagery",
+        "note_date": "2026-05-01",
+        "hit_count": 1,
+        "snippets": [
+          "因此作者认为 CPC 更能代表 predicted mobility flow patterns 是否接近真实 patterns。 ## 17. 补充材料在主文论证中的作用 补充材料不是额外故事，而是支撑主文三个关键判断。 第一，Supplementary Note 2 支撑 distance decay 结论。它用 KL divergence 和 JS divergence 比较 observed 与 predicted distance distributions，并用 Akaike weights 比较 exponential、power law、truncated power l…"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "score-function",
+    "display_name": "Score Function",
+    "category": "method",
+    "short_description": "对数概率密度的梯度，扩散模型中的核心对象。",
+    "aliases": [
+      "score function",
+      "分数函数",
+      "∇ log p",
+      "score-based"
+    ],
+    "total_occurrences": 96,
+    "note_count": 9,
+    "occurrences": [
+      {
+        "note_path": "2026-04-16/hj-sampler.md",
+        "note_title": "HJ-sampler: Bayesian Sampler via Hamilton-Jacobi PDEs and Score-Based Generative Models",
+        "note_date": "2026-04-16",
+        "hit_count": 71,
+        "snippets": [
+          "# HJ-sampler: 利用 Hamilton-Jacobi PDE 与 Score-Based 生成模型的贝叶斯采样器 ## 精读笔记 --- ## 一、Introduction：这篇文章到底想解决什么 ### 1.1 起点：不确定性量化里有两条原本分开的研究线 原文一开始先把背景放在**不确定性量化**里。这里的不确定性量化，不只是给一个预测值，而是要回答：模型里有哪些不确定性，它们会怎样影响最终结论。 作者说，这",
+          "作者说，这个大背景里有两条原本很活跃、但平时不太一起讨论的研究线。 第一条线是**贝叶斯推断**。它关心的是：如果你已经有了先验信息，又拿到了观测数据，那么怎样把这两部分信息合起来，得到参数或状态的后验分布。这里最难的地方通常不是“后验怎么定义”，而是“后验怎么采样”。 第二条线是**生成模型**，尤其是扩散模型和更一般的 score-based 方法。它们最初在机器学习里主要用来从复杂高维分布中生成样本，但最近已经被大量带入科学计算，拿来做采样、逆问题、控制、偏微分方程、Schrödinger bridge 等问题。 原文的第一层意思就是：这两条线虽然来自不同社群，但它们背后其实都在处…",
+          "在上面的理论联系基础上，原文提出了 `HJ-sampler`。它的结构很简单，但背后的逻辑非常清楚：把后验采样拆成两步。 第一步，先解一个粘性 Hamilton-Jacobi PDE，得到控制函数。 第二步，再利用这个控制去采样对应的随机最优控制过程，从而生成后验轨迹样本。 原文在引言里强调，这种做法和 diffusion / score-based 方法长得很像，尤其是其中一个版本 `SGM-HJ-sampler` 明确借用了 score-based generative model 的技术；但它的目标不是无条件生成数据，而是**解决一个有终端观测约束的贝叶斯逆问题**。 ### 1.…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/denoising-diffusion-probabilistic-models.md",
+        "note_title": "Denoising Diffusion Probabilistic Models",
+        "note_date": "2026-04-16",
+        "hit_count": 6,
+        "snippets": [
+          "其中 $\\delta_{\\pm}$ 在边界处扩展到 $\\pm\\infty$，在内部取 $x_0^i \\pm \\frac{1}{255}$。这确保了变分下界是离散数据的无损编码长度。 --- ## 八、与 Score Matching 的等价关系 ### 8.1 去噪 Score Matching 回顾 **Score function** 定义为数据分布对数密度的梯度：$\\nabla_{\\mathbf{x}} \\log p(\\mathbf{x})$。Score matching 的目标是训练一个网络 $s_\\theta(\\mathbf{x})$ 来估计这个梯度。 **去噪 score m…",
+          "**去噪 score matching**（Vincent, 2011）的关键结果是：对于被噪声 $\\sigma$ 扰动的数据 $\\tilde{\\mathbf{x}} = \\mathbf{x} + \\sigma \\boldsymbol{\\epsilon}$，score function 为： $$\\nabla_{\\tilde{\\mathbf{x}}} \\log q_\\sigma(\\tilde{\\mathbf{x}} \\mid \\mathbf{x}) = -\\frac{\\boldsymbol{\\epsilon}}{\\sigma}$$ 因此，训练网络预测噪声 $\\boldsymbol{\\ep…",
+          "$$\\nabla_{\\tilde{\\mathbf{x}}} \\log q_\\sigma(\\tilde{\\mathbf{x}} \\mid \\mathbf{x}) = -\\frac{\\boldsymbol{\\epsilon}}{\\sigma}$$ 因此，训练网络预测噪声 $\\boldsymbol{\\epsilon}$ 等价于估计 score function（差一个缩放因子）。 **NCSN**（Song & Ermon, 2019）将此推广到多个噪声尺度 $\\sigma_1 > \\cdots > \\sigma_L$，训练一个共享的 score 网络，采样时使用**退火 Langevin 动…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.md",
+        "note_title": "Generative Optimal Transport via Forward-Backward HJB Matching",
+        "note_date": "2026-04-16",
+        "hit_count": 5,
+        "snippets": [
+          "所以这篇文章的起点，不是“再做一个生成模型”，而是： **生成本身就是一个受控的概率输运问题，而最自然的问题是寻找最优输运路径。** ### 1.2 为什么作者觉得现有生成方法还不够 接下来文章不是简单回顾文献，而是把现有方法按“它们到底优化了什么”重新摆了一遍。 第一类是 score-based / score-matching 路线。它们擅长做的是：学习一个逆向漂移场，让系统能够从噪声逐步回到数据分布。但作者这里的批评不是说这条路不行，而是说：它主要是在学习**局部逆向向量场**，并没有把“整条轨迹的全局代价最小”直接写进目标。 第二类是 flow matching。它做的是：先指定…",
+          "换句话说，一旦 $W$ 确定，正向 HJB、对应的 forward 过程以及它的边际演化就一起被钉死了，$\\nabla \\log q$ 只是这个同一最优传输结构里随之出现的密度梯度项。 所以这里“无需独立估计 score”的意思不是说 score 项消失了，而是说： - 你不需要像 score-based diffusion 那样，再额外训练一个专门输出 $\\nabla \\log q$ 的模型； - 在这篇方法里，需要学习的主角只有标量势 $W$； - score correction 是从同一个 forward controlled process 里伴随出现的，而不是一套独立参数化对…",
+          "这样做带来两个直接后果： - 搜索空间从“所有可能的向量场”收紧到“由某个标量势生成的梯度场”； - 学到的对象也更容易解释，因为它本身表示的是剩余最小代价，而不是单纯的局部推动方向。 第二个方法论变化，是训练信号的来源被彻底改写了。文章没有沿着 score-based diffusion 那条线去估计 `score`，也没有直接在 backward SDE 上做监督，而是把所有训练信号都放在了 forward 参考轨迹上。这样一来，训练阶段真正用到的是： - 全局 Feynman-Kac 轨迹监督； - 局部一步半群一致性； - 以及对偶边界条件。 也就是说，模型学到的不是“如何直接模…"
+        ]
+      },
+      {
+        "note_path": "2026-04-28/speed-accuracy-relations-for-diffusion-models.md",
+        "note_title": "Speed-Accuracy Relations for Diffusion Models: Wisdom from Nonequilibrium Thermodynamics and Optimal Transport",
+        "note_date": "2026-04-28",
+        "hit_count": 5,
+        "snippets": [
+          "$$ 这不是说 diffusion model 的每个实现细节都来自热力学，而是说它的基本结构天然适合用热力学语言描述。 第四步，作者指出一个反差：虽然 diffusion models 起源上和 nonequilibrium thermodynamics 有关系，但现代 diffusion model 的发展已经基本可以不依赖热力学来理解。score-based generative modeling 可以被解释成 score estimation；probability flow ODE 和 flow matching 可以被解释成连续 normalizing flow 或 velo…",
+          "原文接着解释 estimated reverse process 怎样由学习得到。这里有三种常见实现，它们共享同一个目标：估计 forward dynamics，然后反向使用它。 第一种是 score-based generative modeling。它学习 score function： $$ \\nabla \\ln \\mathcal{P}_t(\\boldsymbol{x}). $$ 训练目标是让 neural score $s_t^\\theta(\\boldsymbol{x})$ 逼近真实 score： $$ L_{\\mathrm{SM",
+          "原文接着解释 estimated reverse process 怎样由学习得到。这里有三种常见实现，它们共享同一个目标：估计 forward dynamics，然后反向使用它。 第一种是 score-based generative modeling。它学习 score function： $$ \\nabla \\ln \\mathcal{P}_t(\\boldsymbol{x}). $$ 训练目标是让 neural score $s_t^\\theta(\\boldsymbol{x})$ 逼近真实 score： $$ L_{\\mathrm{SM}}(\\theta) = \\mathbb{E}_{…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/diffusion-models-a-mathematical-introduction.md",
+        "note_title": "Diffusion Models: A Mathematical Introduction",
+        "note_date": "2026-04-16",
+        "hit_count": 3,
+        "snippets": [
+          "| $\\hat{\\epsilon}_\\theta(\\mathbf{x}_t, t)$ | 噪声预测网络 | | $s_t(\\mathbf{x}) := \\nabla_{\\mathbf{x}} \\log p_t(\\mathbf{x})$ | score function | --- ## 二、高斯预备知识 本文的推导策略是：**先固定高斯的五个核心工具，后面所有推导不过是反复调用**。 ### 2.1 各向同性高斯密度 ![各向同性高斯密度公式](../../pdfs/2026-04-16/diffusion-models-a-mathematical-introduction.min",
+          "$$ \\mathbb{E}[\\mathbf{U} \\mid \\mathbf{Y} = \\mathbf{y}] = \\mathbf{y} + \\sigma^2\\nabla_{\\mathbf{y}}\\log p_{\\mathbf{Y}}(\\mathbf{y}) $$ 这与 score function 直接挂钩：score 编码了对\"去噪后信号\"的最优估计。 **整流（Rectification）**：速度场中的标量因子 $\\kappa(t) = \\dot{\\rho}/(1-\\rho)$ 在 $\\rho \\to 1$ 时会发散。**Lemma 5.12** 证明：用正函数 $\\kappa(t…",
+          "2. 未涉及 SDE 反向（Anderson 反向 SDE）的完整推导 3. 连续时间讨论集中在 VP（方差保持），未系统处理 VE（方差爆炸）和 sub-VP 变体 4. 没有实验或数值示例 ### 11.3 延伸阅读 - **Score-based SDE 框架**：Song et al., ICLR 2021 [12]——Anderson 反向 SDE 的完整推导 - **EDM（Elucidating Design Space）**：Karras et al., NeurIPS 2022 [4]——统一预条件和采样器设计 - **Consistency Models**：So"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.md",
+        "note_title": "Nonequilibrium Physics of Generative Diffusion Models",
+        "note_date": "2026-04-16",
+        "hit_count": 3,
+        "snippets": [
+          "其核心流程分两步：**正向扩散**（forward diffusion）将真实数据样本（如图像）逐步加噪为高斯白噪声；**反向生成**（reverse generative process）从白噪声出发，由对数似然的梯度（即 score function）驱动，将噪声逆转恢复为符合真实数据分布的样本。 尽管 GDMs 在工程上取得了巨大成功（DALL-E、Sora 等），但对其内在物理机制的完整理解仍然缺乏。此前的物理研究主要集中在对称性破缺、Bayes 最优去噪、平衡统计力学重构、路径积分表示等方面，但这些角度各自独立，缺少统一图景。 **本文的核心目标**：在一个解析可处",
+          "| Franz-Parisi 势 | 构型空间碎片化 → 坍缩转变 | ### 7.2 核心物理洞察 1. **涨落定理是生成扩散模型的基本物理定律**：无论正向加噪还是反向去噪，均严格满足详细涨落定理和积分涨落定理，随机热力学第二定律成立。 2. **反向生成 = 最小化广义自由能**：score function 是自由能的梯度（差一个预因子），反向 Langevin 动力学在势能/自由能景观中下坡运动，生成样本对应自由能最小值。 3. **分化转变 = 自发对称性破缺**：在反向过程中，自由能景观从单阱变为双阱（或多阱），类比铁磁 Ising 模型降温时的相变。临界时间 $t_S$…",
+          "| 状态分布 | $p(\\mathbf{X}_t, t) = \\frac{1}{2}\\mathcal{N}(\\boldsymbol{\\mu}e^{-t}, \\mathbf{I}_d) + \\frac{1}{2}\\mathcal{N}(-\\boldsymbol{\\mu}e^{-t}, \\mathbf{I}_d)$ | | Score function | $\\nabla\\ln p = \\tanh(\\boldsymbol{\\mu}_t^\\top \\mathbf{X}_t)\\boldsymbol{\\mu}_t - \\mathbf{X}_t$ | | 反向 SDE | $\\dot{\\mathbf…"
+        ]
+      },
+      {
+        "note_path": "2026-04-10/learning-stochastic-thermodynamics-directly-from-correlation-and-trajectory-fluctuation-currents.md",
+        "note_title": "Learning stochastic thermodynamics directly from correlation and trajectory-fluctuation currents",
+        "note_date": "2026-04-10",
+        "hit_count": 1,
+        "snippets": [
+          "= \\int_{\\Gamma} \\left[ u(x,t)\\circ dx + \\partial_t \\log f(x,t)\\,dt \\right] $$ 这里的 `temporal score` 是： $$ \\partial_t \\log f(x,t) $$ 它表示在固定位置 $x$ 上，概率密度 $f(x,t)$ 随时间变化得有多快。这和 score-based diffusion 里常见的 $\\partial_x \\log f$ 不同： - $\\partial_x \\log f$ 是空间方向上的 score - $\\partial_t \\log f$ 是时间方向上的 score 在…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/flow-matching-for-generative-modeling.md",
+        "note_title": "Flow Matching for Generative Modeling",
+        "note_date": "2026-04-16",
+        "hit_count": 1,
+        "snippets": [
+          "### 7.4 条件向量场的方向恒定性 ![](../../pdfs/2026-04-16/flow-matching-for-generative-modeling.mineru/hybrid_auto/images/page-05-figure-05.jpg) **Figure 2 上半部分**（扩散条件 Score Function）：扩散路径的条件得分函数 $\\nabla \\log p_t(x|x_1)$ 随时间 $t$ 变化剧烈——$t=0$ 时在全空间均匀指向 $x_1$（幅度大），$t=1$ 时退化为集中在 $x_1$ 附近的尖锐梯度。蓝色表示大幅值，红色表示小幅值。 ![…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.md",
+        "note_title": "Predictor-Driven Diffusion for Spatiotemporal Generation",
+        "note_date": "2026-04-16",
+        "hit_count": 1,
+        "snippets": [
+          "换句话说，如果 predictor-induced path density 已经把训练数据中的 temporal dynamics、coarse-scale uncertainty 和 path-level correlations 拟合得足够好，那么它的 score 就可以作为真实 reverse score 的有效近似。 这也是本文区别于普通 score-based diffusion 的关键点。普通做法通常直接训练 score network： $$ s_\\theta(u_\\lambda,\\lambda) \\approx \\nabla_{u_\\lambda}\\ln q_\\lamb…"
         ]
       }
     ]
@@ -468,8 +669,8 @@
       "denoising score matching",
       "DSM"
     ],
-    "total_occurrences": 34,
-    "note_count": 6,
+    "total_occurrences": 52,
+    "note_count": 9,
     "occurrences": [
       {
         "note_path": "2026-04-16/denoising-diffusion-probabilistic-models.md",
@@ -480,6 +681,17 @@
           "### 1.2 本文核心贡献 Jonathan Ho 等人在本文中解决了扩散模型\"原理优美但效果不佳\"的关键矛盾。核心贡献包括： 1. **首次证明扩散模型能生成高质量图像**，在 CIFAR10 上取得 FID 3.17（当时无条件生成 SOTA） 2. **发现 ε-prediction 参数化**，揭示扩散模型训练与多噪声尺度下的去噪 score matching 之间的等价关系 3. **提出简化训练目标** $L_{\\text{simple}}$，去除变分下界中的权重系数，实质上让模型更关注困难的高噪声去噪任务 4. **渐进式有损压缩**解释——采样过程可视为广义的自回归解码…",
           "其中 $\\delta_{\\pm}$ 在边界处扩展到 $\\pm\\infty$，在内部取 $x_0^i \\pm \\frac{1}{255}$。这确保了变分下界是离散数据的无损编码长度。 --- ## 八、与 Score Matching 的等价关系 ### 8.1 去噪 Score Matching 回顾 **Score function** 定义为数据分布对数密度的梯度：$\\nabla_{\\mathbf{x}} \\log p(\\mathbf{x})$。Score matching 的目标是训练一个网络 $s_\\theta(\\mathbf{x})$ 来估计这",
           "其中 $\\delta_{\\pm}$ 在边界处扩展到 $\\pm\\infty$，在内部取 $x_0^i \\pm \\frac{1}{255}$。这确保了变分下界是离散数据的无损编码长度。 --- ## 八、与 Score Matching 的等价关系 ### 8.1 去噪 Score Matching 回顾 **Score function** 定义为数据分布对数密度的梯度：$\\nabla_{\\mathbf{x}} \\log p(\\mathbf{x})$。Score matching 的目标是训练一个网络 $s_\\theta(\\mathbf{x})$ 来估计这个梯度。 **去噪 score m…"
+        ]
+      },
+      {
+        "note_path": "2026-04-28/speed-accuracy-relations-for-diffusion-models.md",
+        "note_title": "Speed-Accuracy Relations for Diffusion Models: Wisdom from Nonequilibrium Thermodynamics and Optimal Transport",
+        "note_date": "2026-04-28",
+        "hit_count": 11,
+        "snippets": [
+          "conditional score matching objective 是： $$ L_{\\mathrm{SM}}^{\\mathrm c}(\\theta) = \\mathbb{E}_{\\mathcal{P}^{\\mathrm c}_t,q,\\mathcal{U}} \\left[ \\left\\| \\boldsymbol{s}^{\\theta}_t(\\boldsymbol{x})",
+          "L_{\\mathrm{SM}}^{\\mathrm c}(\\theta), \\tag{20} $$ 以及 $$ \\theta_{\\mathrm{FM}}^* \\in \\operatorname*{argmin}_{\\theta} L_{\\mathrm{FM}}^{\\mathrm c}(\\theta). \\tag{21} $$ 这一步把训练问题转成 denoising score matching 或 conditional flow matching：我们从真实数据 $\\boldsymbol{y}$ 和时间 $t$ 采样，再从 $\\mathcal{P}_t^{\\mathrm{c}}(\\bo…",
+          "\\tag{20} $$ 以及 $$ \\theta_{\\mathrm{FM}}^* \\in \\operatorname*{argmin}_{\\theta} L_{\\mathrm{FM}}^{\\mathrm c}(\\theta). \\tag{21} $$ 这一步把训练问题转成 denoising score matching 或 conditional flow matching：我们从真实数据 $\\boldsymbol{y}$ 和时间 $t$ 采样，再从 $\\mathcal{P}_t^{\\mathrm{c}}(\\boldsymbol{x}\\mid\\boldsymbol{y})$ 得到 no…"
         ]
       },
       {
@@ -505,6 +717,17 @@
         ]
       },
       {
+        "note_path": "2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.md",
+        "note_title": "Predictor-Driven Diffusion for Spatiotemporal Generation",
+        "note_date": "2026-04-16",
+        "hit_count": 5,
+        "snippets": [
+          "所以第二项 $$ -\\beta^2\\nabla_{u_\\lambda}\\ln q_\\lambda(\\{u_\\lambda\\}_t) $$ 是整个 reverse process 的核心。它把样本推向在 scale $\\lambda$ 上高概率的 path。 已有 RG diffusion 可以通过 denoising score matching 直接学习这个 score。但本文的创新是：不单独训练 score network。作者先训练 temporal predictor $f_\\lambda^\\theta$，让它定义一个 predictor-induced path density…",
+          "所以第二项 $$ -\\beta^2\\nabla_{u_\\lambda}\\ln q_\\lambda(\\{u_\\lambda\\}_t) $$ 是整个 reverse process 的核心。它把样本推向在 scale $\\lambda$ 上高概率的 path。 已有 RG diffusion 可以通过 denoising score matching 直接学习这个 score。但本文的创新是：不单独训练 score network。作者先训练 temporal predictor $f_\\lambda^\\theta$，让它定义一个 predictor-induced path density…",
+          "因此，关于 $\\theta$ 的训练目标只剩下 weighted squared residual。 所以这篇文章的训练不是 rollout loss，也不是 score matching loss，而是： $$ \\text{local temporal derivative regression at randomly sampled scale } \\lambda. $$ ### 4.8 Eq. (9)：最终训练目标 作者对 $\\lambda\\in[0,1]$ 取均匀采样，得到最终 objective："
+        ]
+      },
+      {
         "note_path": "2026-04-16/diffusion-models-a-mathematical-introduction.md",
         "note_title": "Diffusion Models: A Mathematical Introduction",
         "note_date": "2026-04-16",
@@ -513,6 +736,16 @@
           "2. **中间步骤不省略**：从 completing the square 到伸缩和的每一步都有显式展示 3. **统一视角**：Flow Matching 不是作为独立范式引入，而是作为概率流 ODE 的直接推论，再通过 Theorem 5.16 与 DDIM 建立精确等价 ### 11.2 局限 1. 缺乏 score matching 训练的显式推导（denoising score matching、sliced score matching 等） 2. 未涉及 SDE 反向（Anderson 反向 SDE）的完整推导 3. 连续时间讨论集中在 VP（方差保持），未系统处理 VE…",
           "3. **统一视角**：Flow Matching 不是作为独立范式引入，而是作为概率流 ODE 的直接推论，再通过 Theorem 5.16 与 DDIM 建立精确等价 ### 11.2 局限 1. 缺乏 score matching 训练的显式推导（denoising score matching、sliced score matching 等） 2. 未涉及 SDE 反向（Anderson 反向 SDE）的完整推导 3. 连续时间讨论集中在 VP（方差保持），未系统处理 VE（方差爆炸）和 sub-VP 变体 4. 没有实验或数值示例 ### 11.3 延伸阅读 - **Score…",
           "3. **统一视角**：Flow Matching 不是作为独立范式引入，而是作为概率流 ODE 的直接推论，再通过 Theorem 5.16 与 DDIM 建立精确等价 ### 11.2 局限 1. 缺乏 score matching 训练的显式推导（denoising score matching、sliced score matching 等） 2. 未涉及 SDE 反向（Anderson 反向 SDE）的完整推导 3. 连续时间讨论集中在 VP（方差保持），未系统处理 VE（方差爆炸）和 sub-VP 变体 4. 没有实验或数值示例 ### 11.3 延伸阅读 - **Score…"
+        ]
+      },
+      {
+        "note_path": "2026-04-28/speed-accuracy-relations-for-diffusion-models-equation-map.md",
+        "note_title": "Equation Map for Speed-Accuracy Relations for Diffusion Models",
+        "note_date": "2026-04-28",
+        "hit_count": 2,
+        "snippets": [
+          "| Eq. (5)-Eq. (15) | score matching、probability flow ODE、flow matching、estimated reverse generation | 已展开 | 已补 optimization、SDE reverse velocity、probability-flow velocity、flow-matching reverse velocity",
+          "## Appendix 公式覆盖 | Appendix 公式 | 作用 | 当前笔记状态 | 后续动作 | |---|---|---|---| | Eq. (A1)-Eq. (A7) | conditional objective 与 marginal objective 的梯度等价 | 已展开 | 已补 score matching / flow matching 两条梯度等价链 | | Eq. (B1)-Eq. (B11) | conditional Gaussian 的 $\\mu_t$、$\\Sigma_t$ 与 schedule 参数化 | 已展开 | 已补 mean/covari…"
         ]
       },
       {
@@ -536,6 +769,194 @@
     ]
   },
   {
+    "id": "optimal-transport",
+    "display_name": "最优传输",
+    "category": "framework",
+    "short_description": "在两个概率分布之间寻找最小代价的输运方案。",
+    "aliases": [
+      "optimal transport",
+      "Wasserstein",
+      "Kantorovich",
+      "Monge",
+      "OT",
+      "最优输运"
+    ],
+    "total_occurrences": 201,
+    "note_count": 8,
+    "occurrences": [
+      {
+        "note_path": "2026-04-28/speed-accuracy-relations-for-diffusion-models.md",
+        "note_title": "Speed-Accuracy Relations for Diffusion Models: Wisdom from Nonequilibrium Thermodynamics and Optimal Transport",
+        "note_date": "2026-04-28",
+        "hit_count": 141,
+        "snippets": [
+          "第二步，作者补上 stochastic thermodynamics 这条线已经发展出的理论工具。过去的研究已经讨论了 information processing 和 thermodynamic dissipation 之间的关系，也已经用 optimal transport 描述 finite-time diffusion 的 minimum entropy production。更具体地说，如果一个系统必须在有限时间内从一个分布移动到另一个分布，那么这件事通常不可能零耗散完成；移动得越快、越绕路、越不可逆，就越会产生 dissipation。这类结果在物理里被写成 speed、ac…",
+          "这类结果在物理里被写成 speed、accuracy 和 dissipation 之间的 trade-off relation，可以看作第二定律的细化版本。 这一步为全文埋下两个关键词。 第一，entropy production 不是后来强行加进去的概念，而是扩散过程本身的不可逆代价。 第二，optimal transport 不是一个只属于机器学习的距离工具，它在 stochastic thermodynamics 里也刻画 finite-time diffusion 的最小耗散路径。 第三步，作者才转向 machine learning。diffusion models 也是 di…",
+          "是，热力学里关于 minimum entropy production、thermodynamic speed limit、speed-accuracy-dissipation trade-off 的结果，本来就很适合分析 diffusion process；但 diffusion model 的 noise schedule 设计多数仍然偏经验，或者只从 optimal transport / flow matching 的机器学习角度解释。 第五步，作者把 gap 收窄到一个具体问题：noise schedule 和 generation accuracy 之间到底有没有定量关系？已…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/flow-matching-for-generative-modeling.md",
+        "note_title": "Flow Matching for Generative Modeling",
+        "note_date": "2026-04-16",
+        "hit_count": 33,
+        "snippets": [
+          "### 1.3 主要贡献 1. 提出 **Flow Matching（FM）** 目标：直接回归生成目标概率路径的向量场 2. 证明 **条件流匹配（Conditional Flow Matching, CFM）** 与 FM 在梯度上等价，使训练变得可解 3. 定义一族通用的**高斯条件概率路径**，将扩散路径纳入为特例 4. 引入**最优传输（OT）条件路径**：直线轨迹、更快训练、更高效采样 5. 在 ImageNet 上实现了 CNF 在似然和样本质量上的 SOTA 表现 --- ## 二、预备知识：连续正则化流 ### 2.1 核心数学对象 本文围绕两个核心对象展开： **概率…",
+          "--- ## 七、特例二：最优传输条件向量场 ### 7.1 线性插值路径 一个更自然的选择是让均值和标准差随时间**线性变化**： $$\\mu_t(x_1) = t x_1, \\quad \\sigma_t(x_1) = 1 - (1 - \\sigma_{\\min})t$$ 代入定理 3，得到 OT 条件向量场： $$u_t(x|x_1) = \\frac{x_1 - (1 - \\sigma_{\\min})x}{1 - (1 - \\sigma_{\\min})t}$$ 对应的条件流为： $$\\psi_t(x) = (1 - (1 - \\sigma_{\\min})t) x + t x_1$$ …",
+          "条件流 $\\psi_t(x) = (1-t)x + t \\cdot \\psi(x)$（忽略 $\\sigma_{\\min}$ 修正项）正是两个高斯分布 $p_0(x|x_1) = \\mathcal{N}(0, I)$ 和 $p_1(x|x_1) = \\mathcal{N}(x_1, \\sigma_{\\min}^2 I)$ 之间的 **Wasserstein-2 最优传输位移映射（OT displacement map）**。McCann (1997) 定义的 OT 插值概率路径为： $$p_t = [(1-t)\\text{id} + t\\psi]_* p_0$$ 其中 $\\psi$ 是将 …"
+        ]
+      },
+      {
+        "note_path": "2026-04-28/speed-accuracy-relations-for-diffusion-models-equation-map.md",
+        "note_title": "Equation Map for Speed-Accuracy Relations for Diffusion Models",
+        "note_date": "2026-04-28",
+        "hit_count": 8,
+        "snippets": [
+          "| Eq. (52)-Eq. (58) | Wasserstein distance、coupling、metric properties、Kantorovich--Rubinstein duality | 已展开 | 已补 coupling、metric properties、Kantorovich duality | | Eq. (59)-Eq. (62) | Gaussian case 的 $W",
+          "| Eq. (52)-Eq. (58) | Wasserstein distance、coupling、metric properties、Kantorovich--Rubinstein duality | 已展开 | 已补 coupling、metric properties、Kantorovich duality | | Eq. (59)-Eq. (62) | Gaussian case 的 $W_2$ closed form 与 Benamou--Brenier endpoint setu",
+          "| Eq. (52)-Eq. (58) | Wasserstein distance、coupling、metric properties、Kantorovich--Rubinstein duality | 已展开 | 已补 coupling、metric properties、Kantorovich duality | | Eq. (59)-Eq. (62) | Gaussian case 的 $W_2$ closed form 与 Benamou--Brenier endpoint setup | 已展开 | 已补 Gaussian $W_2$、isotropic simplific…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.md",
+        "note_title": "Generative Optimal Transport via Forward-Backward HJB Matching",
+        "note_date": "2026-04-16",
+        "hit_count": 7,
+        "snippets": [
+          "# Generative Optimal Transport via Forward-Backward HJB Matching — 精读笔记 > **一句话总结**：本文将生成模型问题严格还原为随机最优控制（stochastic optimal control），通过建立前向-后向 HJB 方程的时间反转对偶（time-reversal duality），将难以求解的逆向控制问题",
+          "第三，作者把这个问题同时放在两条传统里： - 非平衡统计力学：系统自然弛豫到无序，逆转这个弛豫需要做功； - 随机最优控制：在带噪动力学里，怎样以最小总代价把分布从起点运到终点。 所以这篇文章的起点，不是“再做一个生成模型”，而是： **生成本身就是一个受控的概率输运问题，而最自然的问题是寻找最优输运路径。** ### 1.2 为什么作者觉得现有生成方法还不够 接下来文章不是简单回顾文献，而是把现有方法按“它们到底优化了什么”重新摆了一遍。 第一类是 score-based / score-matching 路线。它们擅长做的是：学习一个逆向漂移场，让系统能够从噪声逐步回到数据分布。但作…",
+          "这样做有两个立刻的好处。 第一，表示更紧。高维向量场学习被压成了标量势学习，结构更清楚，也更接近最优控制和 Hamilton-Jacobi-Bellman 理论的经典形式。 第二，物理意义更强。因为一旦最优控制是某个势函数的梯度，整个生成过程就不再只是“一个学出来的 drift”，而更像“沿着 value landscape 做最优输运”。 但这里马上会出现作者自己强调的难点。下面分成三步。 第一步，backward problem 对应的正是我们真正想要的生成过程：从参考分布出发，在控制下逐步走到目标分布。表面上看，这正是应该直接求解的方向。 第二步，一旦你真的沿这个方向往下写，很多关…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/hj-sampler.md",
+        "note_title": "HJ-sampler: Bayesian Sampler via Hamilton-Jacobi PDEs and Score-Based Generative Models",
+        "note_date": "2026-04-16",
+        "hit_count": 5,
+        "snippets": [
+          "这时问题的意思就变了： - 现在不只是“从哪里出发”给定了； - 连“最后必须到哪一团概率质量”也一起给定了； - 因此控制的任务不再主要是最小化某个终端代价函数，而是要在两端分布都固定的前提下，找到一条最合理的概率流连接它们。 这时同一套 HJ + Fokker-Planck 结构就会自然落到随机最优输运或 Schrödinger bridge 问题上。两者都在问：如何把一团初始分布变成另一团终端分布，只是代价解释和随机性处理方式不同。 所以这里真正成熟的经验不是“某个方程只属于某个学科”，而是： - 方程给出的是统一的动力学骨架； - 边界条件决定你是在做控制、输运，还是桥接。 所以…",
+          "右图的作用，就是把“抽象算子 $\\to$ 具体 PDE” 这一步显式展示出来，让读者看到：前面那条一般桥接链，在最经典的 Brownian 情形下，确实会落回文献里早已熟悉的 Cole-Hopf 图景。 图注里还专门提醒了时间方向。这里采用的时间取向，不是纯概率论里最顺手的画法，而是故意对齐随机最优控制和随机最优输运里的时间约定。这样做的结果是：右图里的粘性 HJ 方程会带着一个和某些教材写法不同的时间方向约定。作者之所以坚持这样画，是因为后面一旦进入控制、输运和桥接问题，这个时间方向会更自然。 ![Log 变换在生成元情形下的结构示意，左侧为一般过程，右侧为布朗运动特例](../../…",
+          "也就是说，控制语言和概率传播语言之间，本来就存在一座一般性的桥。 第二步，作者再把这座桥放回一个大家已经熟悉的场景里：当线性算子来自某个随机过程的生成元时，这组线性方程就读成 Kolmogorov forward / backward equations，而经过 log 变换得到的非线性系统，则会自然落到随机最优控制、随机最优输运和 Schrödinger bridge 的语言里。这一步的作用，是先把“生成元 $\\to$ 线性传播 $\\to$ 控制/输运解释”这条已知路线钉死，让读者知道前半段不是本文的新发明，而是一个成熟背景。 第三步，作者才做出本文真正的新转向：把进入线性系统的算子从…"
+        ]
+      },
+      {
+        "note_path": "2026-04-13/mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-particle-data.md",
+        "note_title": "MVNN: A Measure-Valued Neural Network for Learning McKean-Vlasov Dynamics from Particle Data",
+        "note_date": "2026-04-13",
+        "hit_count": 4,
+        "snippets": [
+          "$$ X_t^{1,N},\\dots,X_t^{N,N}. $$ 这些点的特点是： 1. 没有天然顺序； 2. 没有规则网格； 3. 粒子重排不应改变输入含义； 4. 粒子数还可能变化。 所以它更像一个 `unordered point cloud`，而不是定义在结构化域上的函数。 第五步，这就是为什么作者说现有方法“不天然适合 Wasserstein setting”。因为这类方法通常默认输入是： - 有网格的； - 有顺序的； - 可以直接写成固定尺寸张量的； 而经验 measure 则是： - 无序的； - 粒子数可变的； - 真正的对象是分布，而不是点的排列方式。 第六步，把两类…",
+          "\\int \\varphi_{\\mathrm{emb}}(y)\\,\\mu(dy) - \\int \\varphi_{\\mathrm{emb}}(y)\\,\\mu'(dy) \\right| \\le C_e \\left( \\int |y-y'|^2\\,\\pi(dy,dy') \\right)^{1/2}. $$ 最后对所有 coupling 取最优，就得到 Wasserstein 距离： $$ \\left| b_\\theta(x,\\mu)-b_\\theta(x,\\mu') \\right| \\le C_i C_e\\, W_2(\\mu,\\mu'). $$ 把这两部分合起来，就得到作者要的联合 Lipsc…",
+          "对第一部分，作者直接调用 Proposition 2.1 已经得到的联合 Lipschitz 估计。状态变量的差给出 $|e_t^i|$，measure 变量的差给出 $$ W_2(\\mu_t^{\\theta,N},\\bar\\mu_t^{\\theta,N}), $$ 而这个 Wasserstein 距离又可以用同一个耦合下所有粒子误差的平均来控制。因此第一部分最终被压到“当前粒子误差的平均量级”上。 对第二部分，逻辑不同。这里的 $\\bar X_t^{\\theta,i,N}$ 是独立同分布的 mean-field 样本，所以 $$ \\bar\\mu_t^{\\theta,N}=\\frac1N…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/a-primer-on-variational-inference-for-physics-informed-deep-generative-modelling.md",
+        "note_title": "A Primer on Variational Inference for Physics-Informed Deep Generative Modelling",
+        "note_date": "2026-04-16",
+        "hit_count": 2,
+        "snippets": [
+          "所以这里真正要比较的不是方法标签，而是总成本：训练一次的代价、后续查询的频率，以及误差是否可接受。 第三，KL 散度本身在函数空间里并不总是一个稳定、好用的对象。前面所有 VI 推导都大量依赖 KL，但当随机对象变成函数、场或者无限维表示时，KL 的适定性会变得微妙，甚至可能失效。也正因为这一点，文章最后特别提到 Wasserstein 距离、Sliced Wasserstein 和最大平均差异（maximum mean discrepancy, MMD）等替代散度，说明这条路线的基础度量本身仍在被重新审视。 第四，先验学习依然是决定上限的关键。前面已经看到，无论是 deep gener…",
+          "第三，KL 散度本身在函数空间里并不总是一个稳定、好用的对象。前面所有 VI 推导都大量依赖 KL，但当随机对象变成函数、场或者无限维表示时，KL 的适定性会变得微妙，甚至可能失效。也正因为这一点，文章最后特别提到 Wasserstein 距离、Sliced Wasserstein 和最大平均差异（maximum mean discrepancy, MMD）等替代散度，说明这条路线的基础度量本身仍在被重新审视。 第四，先验学习依然是决定上限的关键。前面已经看到，无论是 deep generative prior 还是更一般的 physics-informed latent represe…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.md",
+        "note_title": "Predictor-Driven Diffusion for Spatiotemporal Generation",
+        "note_date": "2026-04-16",
+        "hit_count": 1,
+        "snippets": [
+          "\\end{aligned} $$ 差异在于，各框架对 path 的解释不同。VI 偏向 posterior approximation，HJB 偏向 optimal control，PRX diffusion thermodynamics 偏向 entropy production and OT，Predictor-Driven Diffusion 偏向 causal temporal prediction plus spatial RG. --- ## 十四、最终记忆版 这篇文章可以记成一句话： Predictor-Driven Diffusion 把 physical time $t…"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "variational-inference",
+    "display_name": "变分推断",
+    "category": "framework",
+    "short_description": "用参数化分布族近似复杂后验的推断方法。",
+    "aliases": [
+      "variational inference",
+      "变分推断",
+      "VI"
+    ],
+    "total_occurrences": 89,
+    "note_count": 7,
+    "occurrences": [
+      {
+        "note_path": "2026-04-16/a-primer-on-variational-inference-for-physics-informed-deep-generative-modelling.md",
+        "note_title": "A Primer on Variational Inference for Physics-Informed Deep Generative Modelling",
+        "note_date": "2026-04-16",
+        "hit_count": 76,
+        "snippets": [
+          "# A Primer on Variational Inference for Physics-Informed Deep Generative Modelling ## 1. Introduction 引言真正要回答的问题是：如果研究对象是受物理规律约束的系统，为什么变分推断会成为一条自然的方法主线。作者没有一上来写 ELBO，而是先把物理建模、逆问题和不确定性量化放回同一条问题",
+          "# A Primer on Variational Inference for Physics-Informed Deep Generative Modelling ## 1. Introduction 引言真正要回答的问题是：如果研究对象是受物理规律约束的系统，为什么变分推断会成为一条自然的方法主线。作者没有一上来写 ELBO，而是先把物理建模、逆问题和不确定性量化放回同一条问题链里。 ### 1.1 文章先把自己的角色说清楚 这篇文章不是提出一个单独的新模型，而是一篇 tutorial + review。它要做的事情，是把 physics-informed deep generati…",
+          "作者没有一上来写 ELBO，而是先把物理建模、逆问题和不确定性量化放回同一条问题链里。 ### 1.1 文章先把自己的角色说清楚 这篇文章不是提出一个单独的新模型，而是一篇 tutorial + review。它要做的事情，是把 physics-informed deep generative modelling 中最常见的几类 VI 思路，放回统一的数学框架里重新组织。因此引言的任务也不是“先给结论”，而是先搭一条阅读顺序：为什么先讲 forward problem，再讲 inverse problem，再讲 VI，最后才去综述具体方法。 ### 1.2 第一层背景：forward p…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/denoising-diffusion-probabilistic-models.md",
+        "note_title": "Denoising Diffusion Probabilistic Models",
+        "note_date": "2026-04-16",
+        "hit_count": 5,
+        "snippets": [
+          "这正是**Langevin 动力学**的离散化形式——$\\boldsymbol{\\epsilon}_\\theta$ 可被视为学到的数据密度梯度。 ### 8.3 等价关系的意义 | 视角 | 训练 | 采样 | |------|------|------| | **DDPM（变分推断）** | 最小化变分下界 $L$ | 反向 Markov 链 | | **Score Matching** | 多尺度去噪 score matching | 退火 Langevin 动力学 | 两者在数学上**等价**，但各有优势： - DDPM 提供了**严格的变分推断框架**，可以直接计算对数似然 - …",
+          "|------|------|------| | **DDPM（变分推断）** | 最小化变分下界 $L$ | 反向 Markov 链 | | **Score Matching** | 多尺度去噪 score matching | 退火 Langevin 动力学 | 两者在数学上**等价**，但各有优势： - DDPM 提供了**严格的变分推断框架**，可以直接计算对数似然 - DDPM 的训练过程**直接优化采样器的质量**（通过变分推断训练 Langevin 采样器），而非像 NCSN 那样先训练 score network 再 post-hoc 设定采样系数 --- ## 九、网络…",
+          "| **Score Matching** | 多尺度去噪 score matching | 退火 Langevin 动力学 | 两者在数学上**等价**，但各有优势： - DDPM 提供了**严格的变分推断框架**，可以直接计算对数似然 - DDPM 的训练过程**直接优化采样器的质量**（通过变分推断训练 Langevin 采样器），而非像 NCSN 那样先训练 score network 再 post-hoc 设定采样系数 --- ## 九、网络架构 作者使用 **U-Net** 骨干网络（基于 PixelCNN++ 的设计）： - 残差块使用 **Group Normalizati…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/real-world-robot-control-by-deep-active-inference-with-a-temporally-hierarchical-world-model.md",
+        "note_title": "Real-World Robot Control by Deep Active Inference With a Temporally Hierarchical World Model",
+        "note_date": "2026-04-16",
+        "hit_count": 3,
+        "snippets": [
+          "这一点可以从“系统 + 热浴”的总熵来线性推出。固定温度的情形下，真正被优化的不是系统单独的 $U$，而是系统与热浴合起来的总熵： $$ S_{\\mathrm{tot}} = S_{\\mathrm{sys}} + S_{\\mathrm{bath}} . $$ 这里要特别说明符号，避免和前面变分推断里的小写 $q(\\cdot)$ 混淆： - 大写 $Q$ 表示热量，也就是系统与热浴之间通过热交换传递的能量 - 小写 $q(\\cdot)$ 表示概率分布，是前面变分推断里的近似后验 如果系统从热浴吸收一点能量 $\\delta U$，那么热浴就损失同样多的能量。对一个温度固定、足够大的热浴来说，…",
+          "$$ S_{\\mathrm{tot}} = S_{\\mathrm{sys}} + S_{\\mathrm{bath}} . $$ 这里要特别说明符号，避免和前面变分推断里的小写 $q(\\cdot)$ 混淆： - 大写 $Q$ 表示热量，也就是系统与热浴之间通过热交换传递的能量 - 小写 $q(\\cdot)$ 表示概率分布，是前面变分推断里的近似后验 如果系统从热浴吸收一点能量 $\\delta U$，那么热浴就损失同样多的能量。对一个温度固定、足够大的热浴来说，可逆热交换满足 $$ \\delta S_{\\mathrm{bath}} = \\frac{\\delta Q_{\\mathrm{bath…",
+          "$$ \\mathcal{F}[q] = \\mathbb{E}_q[E(x)] - T S[q] . $$ 把熵写成 $$ S[q] = -k_B \\sum_x q(x)\\log q(x) $$ 之后，这个式子就会变成“能量项 + 一个由 $\\log q$ 给出的熵项”的结构。 变分推断里发生的事非常类似，只不过这里的“能量”不再是真实物理能量，而是负对数概率。更具体地说，可以把 $$ E(z) \\;\\longleftrightarrow\\; -\\log p(o_t, z_t) $$ 看成一个对应关系。于是 $$ \\mathbb{E}_{q(z_t)}[-\\log p(o_t, z_t)]…"
+        ]
+      },
+      {
+        "note_path": "2026-04-28/speed-accuracy-relations-for-diffusion-models.md",
+        "note_title": "Speed-Accuracy Relations for Diffusion Models: Wisdom from Nonequilibrium Thermodynamics and Optimal Transport",
+        "note_date": "2026-04-28",
+        "hit_count": 2,
+        "snippets": [
+          "差异在于，本文没有直接解 HJB PDE，而是用 stochastic thermodynamics 和 OT geometry 给出 bound 和 protocol criterion。 ### 17.3 和 variational inference / free energy 线 VI 通常最小化 distribution mismatch，例如 KL divergence 或 ELBO。 本文关注的是 path-level mismatch 和 irreversible cost。entropy production 可以写成 path probabil",
+          "差异在于，本文没有直接解 HJB PDE，而是用 stochastic thermodynamics 和 OT geometry 给出 bound 和 protocol criterion。 ### 17.3 和 variational inference / free energy 线 VI 通常最小化 distribution mismatch，例如 KL divergence 或 ELBO。 本文关注的是 path-level mismatch 和 irreversible cost。entropy production 可以写成 path probability 的 KL div…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/hj-sampler.md",
+        "note_title": "HJ-sampler: Bayesian Sampler via Hamilton-Jacobi PDEs and Score-Based Generative Models",
+        "note_date": "2026-04-16",
+        "hit_count": 1,
+        "snippets": [
+          "### 1.6 它和常见采样方法的区别 原文还专门补了一层边界，说明这篇工作和一些常见思路并不一样。 像 Hamiltonian Monte Carlo、Langevin Monte Carlo、普通变分推断，或者一些基于 log transform 的已有采样算法，通常都要求你能直接写出目标密度，或者至少能显式评估它。 但这篇的设定不是这样。这里你手里更自然拥有的是： - 先验分布； - 以及一个通过随机过程给出的 likelihood 机制。 也就是说，**likelihood 是嵌在随机过程里的，而不是提前给你一个现成的闭式密度公式。**"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.md",
+        "note_title": "Predictor-Driven Diffusion for Spatiotemporal Generation",
+        "note_date": "2026-04-16",
+        "hit_count": 1,
+        "snippets": [
+          "&\\rightarrow \\text{define a cost or density on the path}\\\\ &\\rightarrow \\text{derive a flow / score / control to move along the path}. \\end{aligned} $$ 差异在于，各框架对 path 的解释不同。VI 偏向 posterior approximation，HJB 偏向 optimal control，PRX diffusion thermodynamics 偏向 entropy production and OT，Predictor-Dri…"
+        ]
+      },
+      {
+        "note_path": "2026-05-14/software-in-the-natural-world-a-computational-approach-to-hierarchical-emergence.md",
+        "note_title": "Software in the natural world: A computational approach to hierarchical emergence",
+        "note_date": "2026-05-14",
+        "hit_count": 1,
+        "snippets": [
+          "- `interventional closure`：宏观变量是否足以支持宏观层面的干预； - `computational closure`：宏观层级是否能形成自洽的计算过程； - `nested self-contained processes`：不同层级之间如何嵌套，而不是彼此孤立。 这里最需要和我们之前读过的 HJB / HJ-sampler、VI primer、Amy Zhang / Eysenbach 的 RL 表示学习放在一起比较：这些工作虽然领域不同，但都在问同一个底层问题，即怎样找到足以预测、控制或生成系统行为的有效变量。"
+        ]
+      }
+    ]
+  },
+  {
     "id": "stochastic-thermodynamics",
     "display_name": "随机热力学",
     "category": "framework",
@@ -544,9 +965,20 @@
       "stochastic thermodynamics",
       "随机热力学"
     ],
-    "total_occurrences": 32,
-    "note_count": 6,
+    "total_occurrences": 49,
+    "note_count": 7,
     "occurrences": [
+      {
+        "note_path": "2026-04-28/speed-accuracy-relations-for-diffusion-models.md",
+        "note_title": "Speed-Accuracy Relations for Diffusion Models: Wisdom from Nonequilibrium Thermodynamics and Optimal Transport",
+        "note_date": "2026-04-28",
+        "hit_count": 17,
+        "snippets": [
+          "原文 Introduction 的第一步不是讲机器学习，而是从物理里的 diffusion process 讲起。作者先提醒读者：扩散不是一个中性的“加噪操作”，而是一类不可逆过程。Brownian motion 这类 stochastic process 会让系统从有结构状态走向更混合、更无序的状态；在 stochastic thermodynamics 里，这种不可逆性用 entropy production 来度量。 这里的逻辑是： $$ \\begin{aligned} &\\text{diffusion process}\\\\ &\\rightarrow \\text{irreversi…",
+          "\\end{aligned} $$ 所以，当作者后面讨论 diffusion model 的 forward noising process 时，他不是把 “noise schedule” 当作一个纯工程超参数，而是把它看成一个会产生 thermodynamic cost 的 nonequilibrium protocol。 第二步，作者补上 stochastic thermodynamics 这条线已经发展出的理论工具。过去的研究已经讨论了 information processing 和 thermodynamic dissipation 之间的关系，也已经用 optimal tran…",
+          "这一步为全文埋下两个关键词。 第一，entropy production 不是后来强行加进去的概念，而是扩散过程本身的不可逆代价。 第二，optimal transport 不是一个只属于机器学习的距离工具，它在 stochastic thermodynamics 里也刻画 finite-time diffusion 的最小耗散路径。 第三步，作者才转向 machine learning。diffusion models 也是 diffusion process，只是它们被用于 generative modeling。forward process 从有空间结构的数"
+        ]
+      },
       {
         "note_path": "2026-04-16/stochastic-thermodynamics-for-autoregressive-generative-models.md",
         "note_title": "Stochastic Thermodynamics for Autoregressive Generative Models",
@@ -612,6 +1044,259 @@
     ]
   },
   {
+    "id": "brownian-motion",
+    "display_name": "布朗运动",
+    "category": "framework",
+    "short_description": "最基本的连续时间随机过程，SDE 的驱动噪声。",
+    "aliases": [
+      "Brownian motion",
+      "布朗运动",
+      "Wiener process",
+      "Wiener 过程"
+    ],
+    "total_occurrences": 47,
+    "note_count": 7,
+    "occurrences": [
+      {
+        "note_path": "2026-04-16/hj-sampler.md",
+        "note_title": "HJ-sampler: Bayesian Sampler via Hamilton-Jacobi PDEs and Score-Based Generative Models",
+        "note_date": "2026-04-16",
+        "hit_count": 20,
+        "snippets": [
+          "- 先求一个 Hamilton-Jacobi 型 PDE； - 再利用对应的最优控制来采样后验轨迹。 这就是原文所谓 `HJ-sampler` 的思想来源。 ### 1.3 为什么会出现 log 变换 原文接下来不是先讲算法，而是先讲这条联系从哪里来。这里的核心工具是 **log 变换**。在布朗运动语境下，这个变换更常被叫作 **Cole-Hopf 变换**。 这一步的作用，不是单纯做代数整理，而是把原本分属两个世界的问题接到一起。 先看第一边。在线性一侧，你处理的是 Kolmogorov forward / backward equations。它们描述的是概率密度怎样前向演化，或者…",
+          "所以这一步真正完成的事是： 1. 先在线性框架里写出一对更容易处理的传播方程； 2. 再通过 log 变换，把它们改写成更适合控制和采样解释的非线性系统； 3. 从而在“容易求解”与“容易解释”之间架起桥。 这也是为什么作者一开始故意把框架写得这么抽象：他不是只想解释某一个 Brownian motion 的技巧，而是想先给出一个统一母结构，后面再往里面代入不同类型的随机过程。 ### 2.2 已知方向：当算子来自某个随机过程的生成元 原文接下来先回顾一条文献里已经比较成熟的方向，也就是 Section 2.1 里的内容。 这里的设定是：把 $\\mathcal{A}_{\\epsilon,…",
+          "4. 再通过不同边界条件，把它解释成控制、输运或桥接问题。 原文在这里的目的不是证明一条全新的定理，而是先提醒读者： **log / Cole-Hopf 变换本来就有一条“生成元 $\\rightarrow$ 线性传播 $\\rightarrow$ 控制/输运”的已知解释链。** 在最经典的 Brownian motion 情形里， $$ X_t=\\sqrt{\\epsilon}\\,W_t, $$ 它的生成元就是 $$ \\mathcal{A}_{\\epsilon,t}=\\frac{\\epsilon}{2}\\Delta_x. $$ 这里有一个很容易混淆的点。抽象方程 `(1)` 写成 $$ \\p…"
+        ]
+      },
+      {
+        "note_path": "2026-04-25/statistics-and-dynamics-of-urban-populations-ch05-stochastic-calculus-for-urban-growth.md",
+        "note_title": "Statistics and Dynamics of Urban Populations, Chapter 5: Stochastic calculus",
+        "note_date": "2026-04-25",
+        "hit_count": 10,
+        "snippets": [
+          "城市人口增长不是一个纯确定性过程。出生、死亡、迁移、经济冲击、政策变化和历史事件都会让城市人口在短时间内出现不可预测的波动。作者因此把城市增长放入 stochastic differential equations 的语言里：确定性部分写成 drift，无法逐项解释的随机扰动写成 noise。 这一章最重要的线性逻辑是： 1. 从离散随机游走进入 Brownian motion； 2. 从 Brownian motion 引出 Wiener process 和 white noise； 3. white noise 的导数是奇异对象，因此 stochastic integral 需要 c…",
+          "作者因此把城市增长放入 stochastic differential equations 的语言里：确定性部分写成 drift，无法逐项解释的随机扰动写成 noise。 这一章最重要的线性逻辑是： 1. 从离散随机游走进入 Brownian motion； 2. 从 Brownian motion 引出 Wiener process 和 white noise； 3. white noise 的导数是奇异对象，因此 stochastic integral 需要 convention； 4. Itô 和 Stratonovich 对乘性噪声给出不同结果； 5. Itô 和 Straton…",
+          "作者因此把城市增长放入 stochastic differential equations 的语言里：确定性部分写成 drift，无法逐项解释的随机扰动写成 noise。 这一章最重要的线性逻辑是： 1. 从离散随机游走进入 Brownian motion； 2. 从 Brownian motion 引出 Wiener process 和 white noise； 3. white noise 的导数是奇异对象，因此 stochastic integral 需要 convention； 4. Itô 和 Stratonovich 对乘性噪声给出不同结果； 5. Itô 和 Straton…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.md",
+        "note_title": "Generative Optimal Transport via Forward-Backward HJB Matching",
+        "note_date": "2026-04-16",
+        "hit_count": 5,
+        "snippets": [
+          "$$ d\\mathbf{x}_t = \\mathbf{u}_t\\,dt + \\sqrt{2D}\\,d\\mathbf{B}_t. $$ 这里： - $\\mathbf{x}_t$ 是系统状态； - $\\mathbf{u}_t$ 是控制输入； - $D$ 是扩散系数； - $\\mathbf{B}_t$ 是 Brownian motion。 边界条件是： - 初始分布来自无序参考态 $p_{\\mathrm{ref}}$； - 终点分布要到达结构化目标态 $p_{\\mathrm{data}}$。 然后作者给这个受控过程配上了一个路径代价泛函： $$ \\min_{\\mathbf{u}_t}\\; \\m…",
+          "$$d\\mathbf{x}_s = \\left[-\\mathbf{b}(1-s,\\mathbf{x}_s) + 2D\\nabla\\log\\rho(1-s,\\mathbf{x}_s)\\right]ds + \\sqrt{2D}\\,d\\tilde{\\mathbf{B}}_s$$ 其中 $\\tilde{\\mathbf{B}}_s$ 是逆向 Brownian motion。关键观察：时间反转除了翻转漂移 $\\mathbf{b}$ 的符号外，还额外引入了一个 **score 修正项** $2D\\nabla\\log\\rho$——这正是 $\\nabla\\log q$ 项的物理来源。 **Step 2 —…",
+          "** #### 2.6.3 Eq. (7)：为什么实践中不直接用纯 Brownian 轨迹 到这里，一个自然问题就出现了： 既然 `Eq. (6)` 里参考测度 $\\mathbb{P}_0$ 对应的是纯 Brownian motion，为什么不直接按它采样？ 作者的回答是：**当数据分布离参考分布很远时，纯 Brownian 轨迹太低效。** 原因很直接： - 纯 Brownian motion 只会盲目扩散； - 而训练时有用的，是那些能把数据端逐渐带向参考端的 forward 轨迹； - Feynman-Kac 估计本质上是在做一类带权路径平均：每"
+        ]
+      },
+      {
+        "note_path": "2026-04-13/mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-particle-data.md",
+        "note_title": "MVNN: A Measure-Valued Neural Network for Learning McKean-Vlasov Dynamics from Particle Data",
+        "note_date": "2026-04-13",
+        "hit_count": 4,
+        "snippets": [
+          "对这篇来说，它的作用是保证 learned drift 不会在远离训练区域时突然变得过于陡峭，从而避免动力学在有限时间内失控。第二，`唯一强解` 是粒子路径层面的结论：在同一个概率空间、同一条布朗运动和同一个初值下，这条 SDE 产生的轨道几乎处处唯一，所以随机性只来自噪声本身，而不会额外出现“同样噪声对应多条轨道”的不确定性。第三，`唯一弱解` 在这里说的是分布演化层面：对应的 Fokker-Planck 方程在 law 的意义下只有一个演化结果，也就是只有一个随时间变化的概率分布族与这条 SDE 相匹配。 证明的线性逻辑其实很集中，并没有同",
+          "所以作者接着证明 `propagation of chaos`。这一步回答的问题是：`你用 learned drift 定义的 N 粒子系统，随着 N 变大，会不会真的逼近刚才那个 mean-field model？` 证明的逻辑和前面的 well-posedness 一样，也是先抓住真正需要控制的量，而不是一开始就谈抽象极限。作者构造了两套由同一组布朗运动驱动的过程：一套是真正相互作用的 learned N 粒子系统 $$ X_t^{\\theta,i,N}, $$ 另一套是 $N$ 个彼此独立的“理想” mean-field 过程 $$ \\bar X_t^{\\theta,i,N}, $…",
+          "这一步叫 `synchronous coupling`，它的作用是把“有限粒子系统”和“mean-field 极限”放到同一个概率空间里逐路径比较。 有了这个耦合以后，作者定义误差 $$ e_t^i:=X_t^{\\theta,i,N}-\\bar X_t^{\\theta,i,N}. $$ 因为两套系统使用的是同一条布朗运动，做差时随机噪声会直接抵消，所以误差演化只剩下 drift 之间的差。这就是整个证明的关键转折：问题从“比较两套带噪 SDE”变成了“比较两个 drift 有多不一样”。 接下来作者对 $|e_t^i|^2$ 用 Itô 公式，再取时间上确界和期望，得到误差满足一个积分不…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.md",
+        "note_title": "Nonequilibrium Physics of Generative Diffusion Models",
+        "note_date": "2026-04-16",
+        "hit_count": 4,
+        "snippets": [
+          "这一解析可控的模型是全文推导的基础。 ### 2.2 路径积分框架 这一小节从方程 `(6)` 一直铺到方程 `(16)`。如果直接跳到最后那个结果式，Wiener 过程、$\\lambda$-离散化和 Jacobian 修正项都会悬空。下面按原文顺序展开。 #### 第一步：先把白噪声改写成 Wiener 过程 原文先定义 Wiener 过程 $$ \\mathbf{W}(t)=\\int_{t_0}^{t}dt'\\,\\boldsymbol{\\xi}(t')=\\int_{t_0}^{t} d\\mathbf",
+          "这一解析可控的模型是全文推导的基础。 ### 2.2 路径积分框架 这一小节从方程 `(6)` 一直铺到方程 `(16)`。如果直接跳到最后那个结果式，Wiener 过程、$\\lambda$-离散化和 Jacobian 修正项都会悬空。下面按原文顺序展开。 #### 第一步：先把白噪声改写成 Wiener 过程 原文先定义 Wiener 过程 $$ \\mathbf{W}(t)=\\int_{t_0}^{t}dt'\\,\\boldsymbol{\\xi}(t')=\\int_{t_0}^{t} d\\mathbf{W}. \\tag{6} $$ 白噪声 $\\boldsymbol{\\xi}(t)$ 本身…",
+          "这一解析可控的模型是全文推导的基础。 ### 2.2 路径积分框架 这一小节从方程 `(6)` 一直铺到方程 `(16)`。如果直接跳到最后那个结果式，Wiener 过程、$\\lambda$-离散化和 Jacobian 修正项都会悬空。下面按原文顺序展开。 #### 第一步：先把白噪声改写成 Wiener 过程 原文先定义 Wiener 过程 $$ \\mathbf{W}(t)=\\int_{t_0}^{t}dt'\\,\\boldsymbol{\\xi}(t')=\\int_{t_0}^{t} d\\mathbf{W}. \\tag{6} $$ 白噪声 $\\boldsymbol{\\xi}(t)$ 本身…"
+        ]
+      },
+      {
+        "note_path": "2026-04-26/statistics-and-dynamics-of-urban-populations-ch06-stochastic-models-of-growth.md",
+        "note_title": "Statistics and Dynamics of Urban Populations, Chapter 6: Stochastic models of growth",
+        "note_date": "2026-04-26",
+        "hit_count": 3,
+        "snippets": [
+          "这就是 friction 的真正功能：它不是随便加一个边界，而是为了把 log-space 的 diffusive process 变成有稳态的过程。 --- ## 十二、Geometric Brownian motion：Gibrat 的连续时间形式 连续时间下，strong Gibrat 变成 geometric Brownian motion： $$ dS(t)=mS(t)dt+\\sigma S(t)dB(t). \\tag{6.62} $$ 这里 $mS(t)dt$ 是比例 drift，$\\sigma S(t)dB(t)$ 是 mul",
+          "这就是 friction 的真正功能：它不是随便加一个边界，而是为了把 log-space 的 diffusive process 变成有稳态的过程。 --- ## 十二、Geometric Brownian motion：Gibrat 的连续时间形式 连续时间下，strong Gibrat 变成 geometric Brownian motion： $$ dS(t)=mS(t)dt+\\sigma S(t)dB(t). \\tag{6.62} $$ 这里 $mS(t)dt$ 是比例 drift，$\\sigma S(t)dB(t)$ 是 multiplicative Gaussian noi…",
+          "--- ## 十三、Gabaix model：把 frictional GBM 用到城市 Gabaix 在 1990s 提出城市增长模型，试图解决 Simon 的问题。他综合了三件事： 1. Gibrat law：城市按比例随机增长。 2. Geometric Brownian motion：连续时间 multiplicative noise。 3. Champernowne/Levy-Solomon friction：加入 reflective lower barrier。 模型写成 $$ S(t+dt) = \\max\\left(S(t)+dS(t),S_{\\min}\\right), …"
+        ]
+      },
+      {
+        "note_path": "2026-04-28/speed-accuracy-relations-for-diffusion-models.md",
+        "note_title": "Speed-Accuracy Relations for Diffusion Models: Wisdom from Nonequilibrium Thermodynamics and Optimal Transport",
+        "note_date": "2026-04-28",
+        "hit_count": 1,
+        "snippets": [
+          "(100)。后续补笔记时优先按这些编号回填。 --- ## 一、Introduction 的线性展开：为什么要把 diffusion model 重新放回热力学 原文 Introduction 的第一步不是讲机器学习，而是从物理里的 diffusion process 讲起。作者先提醒读者：扩散不是一个中性的“加噪操作”，而是一类不可逆过程。Brownian motion 这类 stochastic process 会让系统从有结构状态走向更混合、更无序的状态；在 stochastic thermodynamics 里，这种不可逆性用 entropy production 来度量。 这里…"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hjb",
+    "display_name": "Hamilton-Jacobi-Bellman",
+    "category": "equation",
+    "short_description": "最优控制问题值函数满足的偏微分方程。",
+    "aliases": [
+      "Hamilton-Jacobi-Bellman",
+      "HJB",
+      "HJ-Bellman",
+      "Hamilton-Jacobi",
+      "最优控制方程"
+    ],
+    "total_occurrences": 144,
+    "note_count": 6,
+    "occurrences": [
+      {
+        "note_path": "2026-04-16/hj-sampler.md",
+        "note_title": "HJ-sampler: Bayesian Sampler via Hamilton-Jacobi PDEs and Score-Based Generative Models",
+        "note_date": "2026-04-16",
+        "hit_count": 69,
+        "snippets": [
+          "# HJ-sampler: 利用 Hamilton-Jacobi PDE 与 Score-Based 生成模型的贝叶斯采样器 ## 精读笔记 --- ## 一、Introduction：这篇文章到底想解决什么 ### 1.1 起点：不确定性量化里有两条原本分开的研究线 原文一开始先把背景放在**不确定性量化**里。这里的不确定性量化，不只是给一个预测值，而是要回答：模型里有哪些不确",
+          "** 这一步非常关键，因为它把原来像是三件不同的事放进了同一条链里： 1. 贝叶斯后验； 2. 偏微分方程； 3. 随机最优控制。 一旦这条链成立，你要做后验采样时，就不一定只能从传统的 MCMC 或变分近似出发，也可以改成： - 先求一个 Hamilton-Jacobi 型 PDE； - 再利用对应的最优控制来采样后验轨迹。 这就是原文所谓 `HJ-sampler` 的思想来源。 ### 1.3 为什么会出现 log 变换 原文接下来不是先讲算法，而是先讲这条联系从哪里来。这里的核心工具是 **log 变换**。在布朗运动语境下，这个变换更常被叫作 **Cole-Hopf 变换**。",
+          "它们描述的是概率密度怎样前向演化，或者某个条件期望怎样后向传播。这类方程的好处是：它们在线性框架里，很多理论和数值工具都已经很成熟。 再看第二边。控制和采样真正关心的，通常不是“某个线性方程怎么解”，而是： - 当前状态往哪个方向推最合适； - 一条路径累计起来的代价是多少； - 概率质量在控制下会怎样重新分布。 这些问题写出来以后，更自然地落到 Hamilton-Jacobi 方程和 Fokker-Planck 方程的耦合系统上。但这类方程是非线性的，直接处理通常更难。 log 变换的关键作用就在这里：它告诉你，后面这个非线性耦合系统，不是凭空冒出来的；它可以从前面那组更容易处理的线性…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.md",
+        "note_title": "Generative Optimal Transport via Forward-Backward HJB Matching",
+        "note_date": "2026-04-16",
+        "hit_count": 67,
+        "snippets": [
+          "# Generative Optimal Transport via Forward-Backward HJB Matching — 精读笔记 > **一句话总结**：本文将生成模型问题严格还原为随机最优控制（stochastic optimal control），通过建立前向-后向 HJB 方程的时间反转对偶（time-reversal duality），将难以求解的逆向控制问题转化为沿正向扩散轨迹的 Feynman-Kac 路径积分估计，从而在无需 sc",
+          "# Generative Optimal Transport via Forward-Backward HJB Matching — 精读笔记 > **一句话总结**：本文将生成模型问题严格还原为随机最优控制（stochastic optimal control），通过建立前向-后向 HJB 方程的时间反转对偶（time-reversal duality），将难以求解的逆向控制问题转化为沿正向扩散轨迹的 Feynman-Kac 路径积分估计，从而在无需 score estimation 或逆向 SDE 模拟的情况下学习一个标量势函数（scalar potential）来驱动最优生成传输。…",
+          "也就是说，当前控制不是回头去重算过去，而是在利用 $U(t,\\mathbf{x})$ 这种 `cost-to-go` 对象，把“从这一点往后最少还要付出多少代价”压缩进当前决策里。 第三步，一旦把问题写成这种对偶形式，控制场就不再需要被单独学习了。这里的 HJB 是 **Hamilton-Jacobi-Bellman** 的缩写，它描述的是：如果系统现在位于某个状态，那么从现在到数据端的最小剩余代价满足什么偏微分方程。这个理论里最核心的对象就是 value function，也就是上面说的“最小剩余代价函数”。 原始代价里，控制 $\\mathbf{u}_t$ 一方面要付出二次做功代价，另…"
+        ]
+      },
+      {
+        "note_path": "2026-04-28/speed-accuracy-relations-for-diffusion-models.md",
+        "note_title": "Speed-Accuracy Relations for Diffusion Models: Wisdom from Nonequilibrium Thermodynamics and Optimal Transport",
+        "note_date": "2026-04-28",
+        "hit_count": 4,
+        "snippets": [
+          "&\\Longrightarrow \\text{choose entropy production and Wasserstein speed cost}. \\end{aligned} $$ 所以它不是替代 score matching 或 flow matching，而是给这些方法加了一个上层几何准则。 ### 17.2 和 HJB / sampler 线 HJB 和 stochastic control 关心的是：在给定 cost 和 dynamics 下，最优控制如何推动 distribution 或 particle system。 本文的 optimal protocol 也是一…",
+          "\\end{aligned} $$ 所以它不是替代 score matching 或 flow matching，而是给这些方法加了一个上层几何准则。 ### 17.2 和 HJB / sampler 线 HJB 和 stochastic control 关心的是：在给定 cost 和 dynamics 下，最优控制如何推动 distribution 或 particle system。 本文的 optimal protocol 也是一个控制问题，只是 cost 被写成： $$ \\int_0^\\tau dt\\,[v_2(t)]^2 $$ 或： $$ \\",
+          "本文的 optimal protocol 也是一个控制问题，只是 cost 被写成： $$ \\int_0^\\tau dt\\,[v_2(t)]^2 $$ 或： $$ \\int_0^\\tau dt\\,T_t\\dot{S}^{\\mathrm{tot}}_t. $$ 因此，HJB 线和本文的共同点是：生成不是一次性拟合目标分布，而是设计一条从 base distribution 到 data distribution 的动态路径。 差异在于，本文没有直接解 HJB PDE，而是用 stochastic thermodynamics 和 OT geometry 给出 bound 和 protoco…"
+        ]
+      },
+      {
+        "note_path": "2026-05-13/quanta-the-new-math-of-how-large-scale-order-emerges.md",
+        "note_title": "The New Math of How Large-Scale Order Emerges",
+        "note_date": "2026-05-13",
+        "hit_count": 2,
+        "snippets": [
+          "Naming Game、social convention、tipping point 都是在问：局部互动怎样形成宏观层面的共享结构。Quanta 这篇提供的是更一般的数学语言：当宏观结构具备 closure，它就不只是统计平均，而是一个可预测、可干预的有效层级。 第二，它和 HJB / HJ-sampler 里的 coarse-grained potential language 有间接关系。HJB 那条线把高维控制场压缩成标量势函数；这里的 emergence 框架则把微观状态空间压缩成 causal states。两者都在做一件事：寻找足以控制或预测系统的低维有效变量。 第三，它和…",
+          "Quanta 这篇提供的是更一般的数学语言：当宏观结构具备 closure，它就不只是统计平均，而是一个可预测、可干预的有效层级。 第二，它和 HJB / HJ-sampler 里的 coarse-grained potential language 有间接关系。HJB 那条线把高维控制场压缩成标量势函数；这里的 emergence 框架则把微观状态空间压缩成 causal states。两者都在做一件事：寻找足以控制或预测系统的低维有效变量。 第三，它和 synthetic city 项目的 amortized inverse problem 有关系。我们面对的 census summ…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.md",
+        "note_title": "Predictor-Driven Diffusion for Spatiotemporal Generation",
+        "note_date": "2026-04-16",
+        "hit_count": 1,
+        "snippets": [
+          "&\\rightarrow \\text{derive a flow / score / control to move along the path}. \\end{aligned} $$ 差异在于，各框架对 path 的解释不同。VI 偏向 posterior approximation，HJB 偏向 optimal control，PRX diffusion thermodynamics 偏向 entropy production and OT，Predictor-Driven Diffusion 偏向 causal temporal prediction plus spatial RG…"
+        ]
+      },
+      {
+        "note_path": "2026-05-14/software-in-the-natural-world-a-computational-approach-to-hierarchical-emergence.md",
+        "note_title": "Software in the natural world: A computational approach to hierarchical emergence",
+        "note_date": "2026-05-14",
+        "hit_count": 1,
+        "snippets": [
+          "- `interventional closure`：宏观变量是否足以支持宏观层面的干预； - `computational closure`：宏观层级是否能形成自洽的计算过程； - `nested self-contained processes`：不同层级之间如何嵌套，而不是彼此孤立。 这里最需要和我们之前读过的 HJB / HJ-sampler、VI primer、Amy Zhang / Eysenbach 的 RL 表示学习放在一起比较：这些工作虽然领域不同，但都在问同一个底层问题，即怎样找到足以预测、控制或生成系统行为的有效变量。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "flow-matching",
+    "display_name": "Flow Matching",
+    "category": "method",
+    "short_description": "直接对向量场做回归训练的连续正则化流方法。",
+    "aliases": [
+      "Flow Matching",
+      "flow matching",
+      "flow-matching",
+      "流匹配",
+      "continuous normalizing flow",
+      "CNF"
+    ],
+    "total_occurrences": 84,
+    "note_count": 6,
+    "occurrences": [
+      {
+        "note_path": "2026-04-16/flow-matching-for-generative-modeling.md",
+        "note_title": "Flow Matching for Generative Modeling",
+        "note_date": "2026-04-16",
+        "hit_count": 47,
+        "snippets": [
+          "# Flow Matching for Generative Modeling ## 精读笔记 --- ## 一、问题背景与动机 ### 1.1 作者与论文定位 本文第一作者 **Yaron Lipman** 来自 Meta AI（FAIR）与 Weizmann Institute of Science，是计算几何与深度生成模型领域的领军人物。合作者",
+          "合作者 **Ricky T. Q. Chen** 是 Neural ODE 的提出者之一，**Heli Ben-Hamu** 和 **Maximilian Nickel** 同在 Meta AI，分别专注于流形上的概率路径匹配和图表示学习。 本文发表于 ICLR 2023，是 **Flow Matching** 范式的奠基性工作。它为训练连续正则化流（Continuous Normalizing Flows, CNFs）提供了一种**无需模拟（simulation-free）** 的高效方法，并在此框架下统一了扩散模型路径和最优传输路径，彻底改变了生成模型的训练方式。 ### 1.2 核…",
+          "合作者 **Ricky T. Q. Chen** 是 Neural ODE 的提出者之一，**Heli Ben-Hamu** 和 **Maximilian Nickel** 同在 Meta AI，分别专注于流形上的概率路径匹配和图表示学习。 本文发表于 ICLR 2023，是 **Flow Matching** 范式的奠基性工作。它为训练连续正则化流（Continuous Normalizing Flows, CNFs）提供了一种**无需模拟（simulation-free）** 的高效方法，并在此框架下统一了扩散模型路径和最优传输路径，彻底改变了生成模型的训练方式。 ### 1.2 核…"
+        ]
+      },
+      {
+        "note_path": "2026-04-28/speed-accuracy-relations-for-diffusion-models.md",
+        "note_title": "Speed-Accuracy Relations for Diffusion Models: Wisdom from Nonequilibrium Thermodynamics and Optimal Transport",
+        "note_date": "2026-04-28",
+        "hit_count": 23,
+        "snippets": [
+          "score-based generative modeling 可以被解释成 score estimation；probability flow ODE 和 flow matching 可以被解释成连续 normalizing flow 或 velocity-field learning。也就是说，diffusion models 已经被机器学习社区重新吸收到自己的语言里。 这带来一个问题：模型越来越强，但 stochastic thermodynamics 的理论洞见并没有被充分利用。尤其是，热力学里关于 m",
+          "ropy production、thermodynamic speed limit、speed-accuracy-dissipation trade-off 的结果，本来就很适合分析 diffusion process；但 diffusion model 的 noise schedule 设计多数仍然偏经验，或者只从 optimal transport / flow matching 的机器学习角度解释。 第五步，作者把 gap 收窄到一个具体问题：noise schedule 和 generation accuracy 之间到底有没有定量关系？已有研究已经开始讨论 optimal tr…",
+          "\\tag{11} $$ 这里 score 前面的系数变成 $T$，因为 ODE 已经没有额外 Brownian noise；它直接运输 probability density，使 marginal distribution 和对应 SDE 保持一致。这个区别后面很重要：本文的主证明主要在 probability flow ODE / flow matching 这种 continuity-equation 形式下展开。 第二种是 flow-based generative modeling，也就是 flow matching。它不先估计 score，而是直接估计 forward velo…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/diffusion-models-a-mathematical-introduction.md",
+        "note_title": "Diffusion Models: A Mathematical Introduction",
+        "note_date": "2026-04-16",
+        "hit_count": 4,
+        "snippets": [
+          "tarrow{\\text{Bayes}} \\text{真后验} \\xrightarrow{\\text{ELBO}} \\text{训练目标} \\xrightarrow{\\text{加速}} \\text{DDIM / 潜空间} \\xrightarrow{\\text{连续}} \\text{概率流ODE} \\xrightarrow{\\text{统一}} \\text{Flow Matching} \\xrightarrow{\\text{控制}} \\text{引导生成} $$ ### 1.3 核心记号 | 符号 | 含义 | |------|------| | $\\alpha_t := 1 - \\be…",
+          "$$ 用学习到的 score 近似 $\\nabla\\log p_t \\approx -\\hat{\\boldsymbol{\\epsilon}}_\\theta/\\sqrt{1-\\bar{\\alpha}_t}$，就得到 DDIM 的概率流 ODE。 --- ## 八、Flow Matching ### 8.1 从 SDE 到 ODE 的范式转换 Flow matching 的核心思想：既然概率流 ODE 已经能产生正确的边缘分布，不如**直接学习速度场**，完全绕过随机过程。 ### 8.2 随机插值与目标速度 **Definition 5.6**：给定端点 $\\mathbf{X}_0 \\si…",
+          "$$ 用学习到的 score 近似 $\\nabla\\log p_t \\approx -\\hat{\\boldsymbol{\\epsilon}}_\\theta/\\sqrt{1-\\bar{\\alpha}_t}$，就得到 DDIM 的概率流 ODE。 --- ## 八、Flow Matching ### 8.1 从 SDE 到 ODE 的范式转换 Flow matching 的核心思想：既然概率流 ODE 已经能产生正确的边缘分布，不如**直接学习速度场**，完全绕过随机过程。 ### 8.2 随机插值与目标速度 **Definition 5.6**：给定端点 $\\mathbf{X}_0 \\si…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.md",
+        "note_title": "Generative Optimal Transport via Forward-Backward HJB Matching",
+        "note_date": "2026-04-16",
+        "hit_count": 4,
+        "snippets": [
+          "第一类是 score-based / score-matching 路线。它们擅长做的是：学习一个逆向漂移场，让系统能够从噪声逐步回到数据分布。但作者这里的批评不是说这条路不行，而是说：它主要是在学习**局部逆向向量场**，并没有把“整条轨迹的全局代价最小”直接写进目标。 第二类是 flow matching。它做的是：先指定一条随时间变化的中间分布路径，然后学习一个速度场，使得系统在每一个时间切片上都能把样本推到对应的那一层分布。它主要检查的是： - 在时间 $t$，样本分布是不是到了应该到的位置； - 在时间 $t+\\Delta t$，分布是不是又被推到了下一层目标边际。 所以它的监…",
+          "也正因为这样，它通常比直接解完整的随机最优控制问题更容易训练。你学的是“这一时刻局部应该往哪里流”，而不是“一整条连续时间轨迹怎样同时兼顾做功最小、空间约束最小和终点匹配”。所以在作者看来，flow matching 虽然在分布演化层面很自然，但它优化的仍然是“各个时刻的局部输运方向”，而不是“整条随机路径的动作代价和空间代价如何同时最优”。 第三类是 Schrödinger bridge。它已经比前两类更接近作者想要的东西，因为它确实在做带噪的分布输运，也和随机控制、最优传输、路径测度联系很深。原文这里进一步区分的是问题的起点。 Schr",
+          "第二，高维可扩展性目前还只验证到了“值函数结构仍然能学出来”这一步。MNIST 附录已经说明这套方法在 784 维像素空间里仍然可训练、并能在测试轨迹上产生连贯的 cost-to-go 脉冲；但这还不是严格意义上的高维生成 benchmark。文章目前没有在 FID、IS 等标准指标上和主流 score-based 或 flow matching 方法做系统对比，所以关于大规模高维生成质量的结论仍然要保守。 第三，这个框架天然还在往两个方向打开。一个方向是更物理的：把单粒子扩散推广到多粒子相互作用系统，例如分子动力学、活性物质或更一般的相互作用随机系统。另一个方向是更方法学的：把空间代价…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/a-primer-on-variational-inference-for-physics-informed-deep-generative-modelling.md",
+        "note_title": "A Primer on Variational Inference for Physics-Informed Deep Generative Modelling",
+        "note_date": "2026-04-16",
+        "hit_count": 3,
+        "snippets": [
+          "- 物理知识是通过正向模型、动力学结构、生成先验还是残差进入的； - 手里到底有多少数据； - 最后要学的是后验、正向 surrogate，还是两者一起。 顺着这三条线，全文的方法可以按更清楚的五类来读。 第一类，是**有监督条件下直接学习逆向后验**。这里最典型的是 Supervised CNF [60] 和物理解码器 VAE [20]。这一路线最好按三步来理解。 第一步，先假设训练数据是充足的。也就是说，你不只是拿到少量真实观测，而是可以反复从先验采样参数 $\\mathbf{z}$，再通过真实正向模型生成对应观测 $\\mathbf{y}$，从而得到大量监督样本对 $(\\mathbf{…",
+          "第二步，在有了这些监督样本对以后，任务就不再是“先解一个 forward problem 再慢慢倒推”，而是直接变成一个条件分布学习问题：面对一个观测 $\\mathbf{y}$，怎样直接输出参数后验近似 $q_\\phi(\\mathbf{z}|\\mathbf{y})$。 第三步，Supervised CNF 和物理解码器 VAE 的区别，主要不在任务本身，而在“这个后验近似用什么分布族表示”和“物理模型嵌在哪里”。 - **Supervised CNF [60]**：后验近似由 conditional normalizing flow 表示。它的重点是给 $q_\\phi(\\mathbf{z…",
+          "第三步，Supervised CNF 和物理解码器 VAE 的区别，主要不在任务本身，而在“这个后验近似用什么分布族表示”和“物理模型嵌在哪里”。 - **Supervised CNF [60]**：后验近似由 conditional normalizing flow 表示。它的重点是给 $q_\\phi(\\mathbf{z}|\\mathbf{y})$ 一个足够灵活、又能精确写密度的分布族；真实正向模型主要用来生成监督训练对，本身并不深嵌进 decoder 结构里。 - **物理解码器 VAE [20]**：这里的 **encod"
+        ]
+      },
+      {
+        "note_path": "2026-04-28/speed-accuracy-relations-for-diffusion-models-equation-map.md",
+        "note_title": "Equation Map for Speed-Accuracy Relations for Diffusion Models",
+        "note_date": "2026-04-28",
+        "hit_count": 3,
+        "snippets": [
+          "| Eq. (5)-Eq. (15) | score matching、probability flow ODE、flow matching、estimated reverse generation | 已展开 | 已补 optimization、SDE reverse velocity、probability-flow velocity、flow-matching reverse velocity | | Eq. (16)-Eq. (25) | linear forc",
+          "| Eq. (5)-Eq. (15) | score matching、probability flow ODE、flow matching、estimated reverse generation | 已展开 | 已补 optimization、SDE reverse velocity、probability-flow velocity、flow-matching reverse velocity | | Eq. (16)-Eq. (25) | linear force、conditional Gaussian transition、conditional objectives、$T_…",
+          "## Appendix 公式覆盖 | Appendix 公式 | 作用 | 当前笔记状态 | 后续动作 | |---|---|---|---| | Eq. (A1)-Eq. (A7) | conditional objective 与 marginal objective 的梯度等价 | 已展开 | 已补 score matching / flow matching 两条梯度等价链 | | Eq. (B1)-Eq. (B11) | conditional Gaussian 的 $\\mu_t$、$\\Sigma_t$ 与 schedule 参数化 | 已展开 | 已补 mean/covari…"
+        ]
+      }
+    ]
+  },
+  {
     "id": "elbo",
     "display_name": "Evidence Lower Bound",
     "category": "framework",
@@ -623,8 +1308,8 @@
       "变分下界",
       "variational lower bound"
     ],
-    "total_occurrences": 71,
-    "note_count": 5,
+    "total_occurrences": 72,
+    "note_count": 6,
     "occurrences": [
       {
         "note_path": "2026-04-16/a-primer-on-variational-inference-for-physics-informed-deep-generative-modelling.md",
@@ -680,261 +1365,14 @@
           "这个恒等式将在 KL 散度推导和 ELBO 分解中反复出现。 ### 2.3 重参数化 **核心命题**：若 $\\mathbf{z} \\sim \\mathcal{N}(\\mathbf{0}, \\mathbf{I}_d)$，则 $\\mathbf{x} = \\boldsymbol{\\mu} + \\mathbf{A}\\mathbf{z} \\sim \\mathcal{N}(\\boldsymbol",
           "$$ 这个形式直接暗示了实践中的参数化方案：用神经网络预测噪声 $\\hat{\\boldsymbol{\\epsilon}}_\\theta(\\mathbf{x}_t, t)$，然后代入上式作为逆过程的均值。 --- ## 五、变分目标与噪声预测损失 ### 5.1 ELBO 推导 目标：最大化 $\\log p_\\theta(\\mathbf{x}_0)$（等价于最小化 $\\mathrm{KL}(q(\\mathbf{x}_0)\\|p_\\theta(\\mathbf{x}_0))$）。 由于 $\\log p_\\theta(\\mathbf{x}_0)$ 不可计算，引入前向过程 $q(\\mathbf{x…"
         ]
-      }
-    ]
-  },
-  {
-    "id": "flow-matching",
-    "display_name": "Flow Matching",
-    "category": "method",
-    "short_description": "直接对向量场做回归训练的连续正则化流方法。",
-    "aliases": [
-      "Flow Matching",
-      "flow matching",
-      "flow-matching",
-      "流匹配",
-      "continuous normalizing flow",
-      "CNF"
-    ],
-    "total_occurrences": 59,
-    "note_count": 5,
-    "occurrences": [
-      {
-        "note_path": "2026-04-16/flow-matching-for-generative-modeling.md",
-        "note_title": "Flow Matching for Generative Modeling",
-        "note_date": "2026-04-16",
-        "hit_count": 47,
-        "snippets": [
-          "# Flow Matching for Generative Modeling ## 精读笔记 --- ## 一、问题背景与动机 ### 1.1 作者与论文定位 本文第一作者 **Yaron Lipman** 来自 Meta AI（FAIR）与 Weizmann Institute of Science，是计算几何与深度生成模型领域的领军人物。合作者",
-          "合作者 **Ricky T. Q. Chen** 是 Neural ODE 的提出者之一，**Heli Ben-Hamu** 和 **Maximilian Nickel** 同在 Meta AI，分别专注于流形上的概率路径匹配和图表示学习。 本文发表于 ICLR 2023，是 **Flow Matching** 范式的奠基性工作。它为训练连续正则化流（Continuous Normalizing Flows, CNFs）提供了一种**无需模拟（simulation-free）** 的高效方法，并在此框架下统一了扩散模型路径和最优传输路径，彻底改变了生成模型的训练方式。 ### 1.2 核…",
-          "合作者 **Ricky T. Q. Chen** 是 Neural ODE 的提出者之一，**Heli Ben-Hamu** 和 **Maximilian Nickel** 同在 Meta AI，分别专注于流形上的概率路径匹配和图表示学习。 本文发表于 ICLR 2023，是 **Flow Matching** 范式的奠基性工作。它为训练连续正则化流（Continuous Normalizing Flows, CNFs）提供了一种**无需模拟（simulation-free）** 的高效方法，并在此框架下统一了扩散模型路径和最优传输路径，彻底改变了生成模型的训练方式。 ### 1.2 核…"
-        ]
       },
       {
-        "note_path": "2026-04-16/diffusion-models-a-mathematical-introduction.md",
-        "note_title": "Diffusion Models: A Mathematical Introduction",
-        "note_date": "2026-04-16",
-        "hit_count": 4,
-        "snippets": [
-          "tarrow{\\text{Bayes}} \\text{真后验} \\xrightarrow{\\text{ELBO}} \\text{训练目标} \\xrightarrow{\\text{加速}} \\text{DDIM / 潜空间} \\xrightarrow{\\text{连续}} \\text{概率流ODE} \\xrightarrow{\\text{统一}} \\text{Flow Matching} \\xrightarrow{\\text{控制}} \\text{引导生成} $$ ### 1.3 核心记号 | 符号 | 含义 | |------|------| | $\\alpha_t := 1 - \\be…",
-          "$$ 用学习到的 score 近似 $\\nabla\\log p_t \\approx -\\hat{\\boldsymbol{\\epsilon}}_\\theta/\\sqrt{1-\\bar{\\alpha}_t}$，就得到 DDIM 的概率流 ODE。 --- ## 八、Flow Matching ### 8.1 从 SDE 到 ODE 的范式转换 Flow matching 的核心思想：既然概率流 ODE 已经能产生正确的边缘分布，不如**直接学习速度场**，完全绕过随机过程。 ### 8.2 随机插值与目标速度 **Definition 5.6**：给定端点 $\\mathbf{X}_0 \\si…",
-          "$$ 用学习到的 score 近似 $\\nabla\\log p_t \\approx -\\hat{\\boldsymbol{\\epsilon}}_\\theta/\\sqrt{1-\\bar{\\alpha}_t}$，就得到 DDIM 的概率流 ODE。 --- ## 八、Flow Matching ### 8.1 从 SDE 到 ODE 的范式转换 Flow matching 的核心思想：既然概率流 ODE 已经能产生正确的边缘分布，不如**直接学习速度场**，完全绕过随机过程。 ### 8.2 随机插值与目标速度 **Definition 5.6**：给定端点 $\\mathbf{X}_0 \\si…"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.md",
-        "note_title": "Generative Optimal Transport via Forward-Backward HJB Matching",
-        "note_date": "2026-04-16",
-        "hit_count": 4,
-        "snippets": [
-          "第一类是 score-based / score-matching 路线。它们擅长做的是：学习一个逆向漂移场，让系统能够从噪声逐步回到数据分布。但作者这里的批评不是说这条路不行，而是说：它主要是在学习**局部逆向向量场**，并没有把“整条轨迹的全局代价最小”直接写进目标。 第二类是 flow matching。它做的是：先指定一条随时间变化的中间分布路径，然后学习一个速度场，使得系统在每一个时间切片上都能把样本推到对应的那一层分布。它主要检查的是： - 在时间 $t$，样本分布是不是到了应该到的位置； - 在时间 $t+\\Delta t$，分布是不是又被推到了下一层目标边际。 所以它的监…",
-          "也正因为这样，它通常比直接解完整的随机最优控制问题更容易训练。你学的是“这一时刻局部应该往哪里流”，而不是“一整条连续时间轨迹怎样同时兼顾做功最小、空间约束最小和终点匹配”。所以在作者看来，flow matching 虽然在分布演化层面很自然，但它优化的仍然是“各个时刻的局部输运方向”，而不是“整条随机路径的动作代价和空间代价如何同时最优”。 第三类是 Schrödinger bridge。它已经比前两类更接近作者想要的东西，因为它确实在做带噪的分布输运，也和随机控制、最优传输、路径测度联系很深。原文这里进一步区分的是问题的起点。 Schr",
-          "第二，高维可扩展性目前还只验证到了“值函数结构仍然能学出来”这一步。MNIST 附录已经说明这套方法在 784 维像素空间里仍然可训练、并能在测试轨迹上产生连贯的 cost-to-go 脉冲；但这还不是严格意义上的高维生成 benchmark。文章目前没有在 FID、IS 等标准指标上和主流 score-based 或 flow matching 方法做系统对比，所以关于大规模高维生成质量的结论仍然要保守。 第三，这个框架天然还在往两个方向打开。一个方向是更物理的：把单粒子扩散推广到多粒子相互作用系统，例如分子动力学、活性物质或更一般的相互作用随机系统。另一个方向是更方法学的：把空间代价…"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/a-primer-on-variational-inference-for-physics-informed-deep-generative-modelling.md",
-        "note_title": "A Primer on Variational Inference for Physics-Informed Deep Generative Modelling",
-        "note_date": "2026-04-16",
-        "hit_count": 3,
-        "snippets": [
-          "- 物理知识是通过正向模型、动力学结构、生成先验还是残差进入的； - 手里到底有多少数据； - 最后要学的是后验、正向 surrogate，还是两者一起。 顺着这三条线，全文的方法可以按更清楚的五类来读。 第一类，是**有监督条件下直接学习逆向后验**。这里最典型的是 Supervised CNF [60] 和物理解码器 VAE [20]。这一路线最好按三步来理解。 第一步，先假设训练数据是充足的。也就是说，你不只是拿到少量真实观测，而是可以反复从先验采样参数 $\\mathbf{z}$，再通过真实正向模型生成对应观测 $\\mathbf{y}$，从而得到大量监督样本对 $(\\mathbf{…",
-          "第二步，在有了这些监督样本对以后，任务就不再是“先解一个 forward problem 再慢慢倒推”，而是直接变成一个条件分布学习问题：面对一个观测 $\\mathbf{y}$，怎样直接输出参数后验近似 $q_\\phi(\\mathbf{z}|\\mathbf{y})$。 第三步，Supervised CNF 和物理解码器 VAE 的区别，主要不在任务本身，而在“这个后验近似用什么分布族表示”和“物理模型嵌在哪里”。 - **Supervised CNF [60]**：后验近似由 conditional normalizing flow 表示。它的重点是给 $q_\\phi(\\mathbf{z…",
-          "第三步，Supervised CNF 和物理解码器 VAE 的区别，主要不在任务本身，而在“这个后验近似用什么分布族表示”和“物理模型嵌在哪里”。 - **Supervised CNF [60]**：后验近似由 conditional normalizing flow 表示。它的重点是给 $q_\\phi(\\mathbf{z}|\\mathbf{y})$ 一个足够灵活、又能精确写密度的分布族；真实正向模型主要用来生成监督训练对，本身并不深嵌进 decoder 结构里。 - **物理解码器 VAE [20]**：这里的 **encod"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.md",
-        "note_title": "Predictor-Driven Diffusion for Spatiotemporal Generation",
-        "note_date": "2026-04-16",
+        "note_path": "2026-04-28/speed-accuracy-relations-for-diffusion-models.md",
+        "note_title": "Speed-Accuracy Relations for Diffusion Models: Wisdom from Nonequilibrium Thermodynamics and Optimal Transport",
+        "note_date": "2026-04-28",
         "hit_count": 1,
         "snippets": [
-          "### 7.3 架构鲁棒性 用 FNO（Fourier Neural Operator）替换 U-Net，在仿真、生成和超分辨率上均获得可比的结果，表明框架对网络架构不敏感。 --- ## 八、与相关工作的定位 | 方法类别 | 代表工作 | 与本文的区别 | |---------|---------|------------| | 标准扩散/流匹配 | Ho et al., Song et al. | 沿扩散时间建模 score/drift；中间状态无明确物理含义 | | RG 扩散 | Cotler & Rezchikov, 2023 | 仅处理静态数据，未考虑时间演化 | | Ne…"
-        ]
-      }
-    ]
-  },
-  {
-    "id": "optimal-transport",
-    "display_name": "最优传输",
-    "category": "framework",
-    "short_description": "在两个概率分布之间寻找最小代价的输运方案。",
-    "aliases": [
-      "optimal transport",
-      "Wasserstein",
-      "Kantorovich",
-      "Monge",
-      "OT",
-      "最优输运"
-    ],
-    "total_occurrences": 51,
-    "note_count": 5,
-    "occurrences": [
-      {
-        "note_path": "2026-04-16/flow-matching-for-generative-modeling.md",
-        "note_title": "Flow Matching for Generative Modeling",
-        "note_date": "2026-04-16",
-        "hit_count": 33,
-        "snippets": [
-          "### 1.3 主要贡献 1. 提出 **Flow Matching（FM）** 目标：直接回归生成目标概率路径的向量场 2. 证明 **条件流匹配（Conditional Flow Matching, CFM）** 与 FM 在梯度上等价，使训练变得可解 3. 定义一族通用的**高斯条件概率路径**，将扩散路径纳入为特例 4. 引入**最优传输（OT）条件路径**：直线轨迹、更快训练、更高效采样 5. 在 ImageNet 上实现了 CNF 在似然和样本质量上的 SOTA 表现 --- ## 二、预备知识：连续正则化流 ### 2.1 核心数学对象 本文围绕两个核心对象展开： **概率…",
-          "--- ## 七、特例二：最优传输条件向量场 ### 7.1 线性插值路径 一个更自然的选择是让均值和标准差随时间**线性变化**： $$\\mu_t(x_1) = t x_1, \\quad \\sigma_t(x_1) = 1 - (1 - \\sigma_{\\min})t$$ 代入定理 3，得到 OT 条件向量场： $$u_t(x|x_1) = \\frac{x_1 - (1 - \\sigma_{\\min})x}{1 - (1 - \\sigma_{\\min})t}$$ 对应的条件流为： $$\\psi_t(x) = (1 - (1 - \\sigma_{\\min})t) x + t x_1$$ …",
-          "条件流 $\\psi_t(x) = (1-t)x + t \\cdot \\psi(x)$（忽略 $\\sigma_{\\min}$ 修正项）正是两个高斯分布 $p_0(x|x_1) = \\mathcal{N}(0, I)$ 和 $p_1(x|x_1) = \\mathcal{N}(x_1, \\sigma_{\\min}^2 I)$ 之间的 **Wasserstein-2 最优传输位移映射（OT displacement map）**。McCann (1997) 定义的 OT 插值概率路径为： $$p_t = [(1-t)\\text{id} + t\\psi]_* p_0$$ 其中 $\\psi$ 是将 …"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.md",
-        "note_title": "Generative Optimal Transport via Forward-Backward HJB Matching",
-        "note_date": "2026-04-16",
-        "hit_count": 7,
-        "snippets": [
-          "# Generative Optimal Transport via Forward-Backward HJB Matching — 精读笔记 > **一句话总结**：本文将生成模型问题严格还原为随机最优控制（stochastic optimal control），通过建立前向-后向 HJB 方程的时间反转对偶（time-reversal duality），将难以求解的逆向控制问题",
-          "第三，作者把这个问题同时放在两条传统里： - 非平衡统计力学：系统自然弛豫到无序，逆转这个弛豫需要做功； - 随机最优控制：在带噪动力学里，怎样以最小总代价把分布从起点运到终点。 所以这篇文章的起点，不是“再做一个生成模型”，而是： **生成本身就是一个受控的概率输运问题，而最自然的问题是寻找最优输运路径。** ### 1.2 为什么作者觉得现有生成方法还不够 接下来文章不是简单回顾文献，而是把现有方法按“它们到底优化了什么”重新摆了一遍。 第一类是 score-based / score-matching 路线。它们擅长做的是：学习一个逆向漂移场，让系统能够从噪声逐步回到数据分布。但作…",
-          "这样做有两个立刻的好处。 第一，表示更紧。高维向量场学习被压成了标量势学习，结构更清楚，也更接近最优控制和 Hamilton-Jacobi-Bellman 理论的经典形式。 第二，物理意义更强。因为一旦最优控制是某个势函数的梯度，整个生成过程就不再只是“一个学出来的 drift”，而更像“沿着 value landscape 做最优输运”。 但这里马上会出现作者自己强调的难点。下面分成三步。 第一步，backward problem 对应的正是我们真正想要的生成过程：从参考分布出发，在控制下逐步走到目标分布。表面上看，这正是应该直接求解的方向。 第二步，一旦你真的沿这个方向往下写，很多关…"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/hj-sampler.md",
-        "note_title": "HJ-sampler: Bayesian Sampler via Hamilton-Jacobi PDEs and Score-Based Generative Models",
-        "note_date": "2026-04-16",
-        "hit_count": 5,
-        "snippets": [
-          "这时问题的意思就变了： - 现在不只是“从哪里出发”给定了； - 连“最后必须到哪一团概率质量”也一起给定了； - 因此控制的任务不再主要是最小化某个终端代价函数，而是要在两端分布都固定的前提下，找到一条最合理的概率流连接它们。 这时同一套 HJ + Fokker-Planck 结构就会自然落到随机最优输运或 Schrödinger bridge 问题上。两者都在问：如何把一团初始分布变成另一团终端分布，只是代价解释和随机性处理方式不同。 所以这里真正成熟的经验不是“某个方程只属于某个学科”，而是： - 方程给出的是统一的动力学骨架； - 边界条件决定你是在做控制、输运，还是桥接。 所以…",
-          "右图的作用，就是把“抽象算子 $\\to$ 具体 PDE” 这一步显式展示出来，让读者看到：前面那条一般桥接链，在最经典的 Brownian 情形下，确实会落回文献里早已熟悉的 Cole-Hopf 图景。 图注里还专门提醒了时间方向。这里采用的时间取向，不是纯概率论里最顺手的画法，而是故意对齐随机最优控制和随机最优输运里的时间约定。这样做的结果是：右图里的粘性 HJ 方程会带着一个和某些教材写法不同的时间方向约定。作者之所以坚持这样画，是因为后面一旦进入控制、输运和桥接问题，这个时间方向会更自然。 ![Log 变换在生成元情形下的结构示意，左侧为一般过程，右侧为布朗运动特例](../../…",
-          "也就是说，控制语言和概率传播语言之间，本来就存在一座一般性的桥。 第二步，作者再把这座桥放回一个大家已经熟悉的场景里：当线性算子来自某个随机过程的生成元时，这组线性方程就读成 Kolmogorov forward / backward equations，而经过 log 变换得到的非线性系统，则会自然落到随机最优控制、随机最优输运和 Schrödinger bridge 的语言里。这一步的作用，是先把“生成元 $\\to$ 线性传播 $\\to$ 控制/输运解释”这条已知路线钉死，让读者知道前半段不是本文的新发明，而是一个成熟背景。 第三步，作者才做出本文真正的新转向：把进入线性系统的算子从…"
-        ]
-      },
-      {
-        "note_path": "2026-04-13/mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-particle-data.md",
-        "note_title": "MVNN: A Measure-Valued Neural Network for Learning McKean-Vlasov Dynamics from Particle Data",
-        "note_date": "2026-04-13",
-        "hit_count": 4,
-        "snippets": [
-          "$$ X_t^{1,N},\\dots,X_t^{N,N}. $$ 这些点的特点是： 1. 没有天然顺序； 2. 没有规则网格； 3. 粒子重排不应改变输入含义； 4. 粒子数还可能变化。 所以它更像一个 `unordered point cloud`，而不是定义在结构化域上的函数。 第五步，这就是为什么作者说现有方法“不天然适合 Wasserstein setting”。因为这类方法通常默认输入是： - 有网格的； - 有顺序的； - 可以直接写成固定尺寸张量的； 而经验 measure 则是： - 无序的； - 粒子数可变的； - 真正的对象是分布，而不是点的排列方式。 第六步，把两类…",
-          "\\int \\varphi_{\\mathrm{emb}}(y)\\,\\mu(dy) - \\int \\varphi_{\\mathrm{emb}}(y)\\,\\mu'(dy) \\right| \\le C_e \\left( \\int |y-y'|^2\\,\\pi(dy,dy') \\right)^{1/2}. $$ 最后对所有 coupling 取最优，就得到 Wasserstein 距离： $$ \\left| b_\\theta(x,\\mu)-b_\\theta(x,\\mu') \\right| \\le C_i C_e\\, W_2(\\mu,\\mu'). $$ 把这两部分合起来，就得到作者要的联合 Lipsc…",
-          "对第一部分，作者直接调用 Proposition 2.1 已经得到的联合 Lipschitz 估计。状态变量的差给出 $|e_t^i|$，measure 变量的差给出 $$ W_2(\\mu_t^{\\theta,N},\\bar\\mu_t^{\\theta,N}), $$ 而这个 Wasserstein 距离又可以用同一个耦合下所有粒子误差的平均来控制。因此第一部分最终被压到“当前粒子误差的平均量级”上。 对第二部分，逻辑不同。这里的 $\\bar X_t^{\\theta,i,N}$ 是独立同分布的 mean-field 样本，所以 $$ \\bar\\mu_t^{\\theta,N}=\\frac1N…"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/a-primer-on-variational-inference-for-physics-informed-deep-generative-modelling.md",
-        "note_title": "A Primer on Variational Inference for Physics-Informed Deep Generative Modelling",
-        "note_date": "2026-04-16",
-        "hit_count": 2,
-        "snippets": [
-          "所以这里真正要比较的不是方法标签，而是总成本：训练一次的代价、后续查询的频率，以及误差是否可接受。 第三，KL 散度本身在函数空间里并不总是一个稳定、好用的对象。前面所有 VI 推导都大量依赖 KL，但当随机对象变成函数、场或者无限维表示时，KL 的适定性会变得微妙，甚至可能失效。也正因为这一点，文章最后特别提到 Wasserstein 距离、Sliced Wasserstein 和最大平均差异（maximum mean discrepancy, MMD）等替代散度，说明这条路线的基础度量本身仍在被重新审视。 第四，先验学习依然是决定上限的关键。前面已经看到，无论是 deep gener…",
-          "第三，KL 散度本身在函数空间里并不总是一个稳定、好用的对象。前面所有 VI 推导都大量依赖 KL，但当随机对象变成函数、场或者无限维表示时，KL 的适定性会变得微妙，甚至可能失效。也正因为这一点，文章最后特别提到 Wasserstein 距离、Sliced Wasserstein 和最大平均差异（maximum mean discrepancy, MMD）等替代散度，说明这条路线的基础度量本身仍在被重新审视。 第四，先验学习依然是决定上限的关键。前面已经看到，无论是 deep generative prior 还是更一般的 physics-informed latent represe…"
-        ]
-      }
-    ]
-  },
-  {
-    "id": "variational-inference",
-    "display_name": "变分推断",
-    "category": "framework",
-    "short_description": "用参数化分布族近似复杂后验的推断方法。",
-    "aliases": [
-      "variational inference",
-      "变分推断",
-      "VI"
-    ],
-    "total_occurrences": 85,
-    "note_count": 4,
-    "occurrences": [
-      {
-        "note_path": "2026-04-16/a-primer-on-variational-inference-for-physics-informed-deep-generative-modelling.md",
-        "note_title": "A Primer on Variational Inference for Physics-Informed Deep Generative Modelling",
-        "note_date": "2026-04-16",
-        "hit_count": 76,
-        "snippets": [
-          "# A Primer on Variational Inference for Physics-Informed Deep Generative Modelling ## 1. Introduction 引言真正要回答的问题是：如果研究对象是受物理规律约束的系统，为什么变分推断会成为一条自然的方法主线。作者没有一上来写 ELBO，而是先把物理建模、逆问题和不确定性量化放回同一条问题",
-          "# A Primer on Variational Inference for Physics-Informed Deep Generative Modelling ## 1. Introduction 引言真正要回答的问题是：如果研究对象是受物理规律约束的系统，为什么变分推断会成为一条自然的方法主线。作者没有一上来写 ELBO，而是先把物理建模、逆问题和不确定性量化放回同一条问题链里。 ### 1.1 文章先把自己的角色说清楚 这篇文章不是提出一个单独的新模型，而是一篇 tutorial + review。它要做的事情，是把 physics-informed deep generati…",
-          "作者没有一上来写 ELBO，而是先把物理建模、逆问题和不确定性量化放回同一条问题链里。 ### 1.1 文章先把自己的角色说清楚 这篇文章不是提出一个单独的新模型，而是一篇 tutorial + review。它要做的事情，是把 physics-informed deep generative modelling 中最常见的几类 VI 思路，放回统一的数学框架里重新组织。因此引言的任务也不是“先给结论”，而是先搭一条阅读顺序：为什么先讲 forward problem，再讲 inverse problem，再讲 VI，最后才去综述具体方法。 ### 1.2 第一层背景：forward p…"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/denoising-diffusion-probabilistic-models.md",
-        "note_title": "Denoising Diffusion Probabilistic Models",
-        "note_date": "2026-04-16",
-        "hit_count": 5,
-        "snippets": [
-          "这正是**Langevin 动力学**的离散化形式——$\\boldsymbol{\\epsilon}_\\theta$ 可被视为学到的数据密度梯度。 ### 8.3 等价关系的意义 | 视角 | 训练 | 采样 | |------|------|------| | **DDPM（变分推断）** | 最小化变分下界 $L$ | 反向 Markov 链 | | **Score Matching** | 多尺度去噪 score matching | 退火 Langevin 动力学 | 两者在数学上**等价**，但各有优势： - DDPM 提供了**严格的变分推断框架**，可以直接计算对数似然 - …",
-          "|------|------|------| | **DDPM（变分推断）** | 最小化变分下界 $L$ | 反向 Markov 链 | | **Score Matching** | 多尺度去噪 score matching | 退火 Langevin 动力学 | 两者在数学上**等价**，但各有优势： - DDPM 提供了**严格的变分推断框架**，可以直接计算对数似然 - DDPM 的训练过程**直接优化采样器的质量**（通过变分推断训练 Langevin 采样器），而非像 NCSN 那样先训练 score network 再 post-hoc 设定采样系数 --- ## 九、网络…",
-          "| **Score Matching** | 多尺度去噪 score matching | 退火 Langevin 动力学 | 两者在数学上**等价**，但各有优势： - DDPM 提供了**严格的变分推断框架**，可以直接计算对数似然 - DDPM 的训练过程**直接优化采样器的质量**（通过变分推断训练 Langevin 采样器），而非像 NCSN 那样先训练 score network 再 post-hoc 设定采样系数 --- ## 九、网络架构 作者使用 **U-Net** 骨干网络（基于 PixelCNN++ 的设计）： - 残差块使用 **Group Normalizati…"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/real-world-robot-control-by-deep-active-inference-with-a-temporally-hierarchical-world-model.md",
-        "note_title": "Real-World Robot Control by Deep Active Inference With a Temporally Hierarchical World Model",
-        "note_date": "2026-04-16",
-        "hit_count": 3,
-        "snippets": [
-          "这一点可以从“系统 + 热浴”的总熵来线性推出。固定温度的情形下，真正被优化的不是系统单独的 $U$，而是系统与热浴合起来的总熵： $$ S_{\\mathrm{tot}} = S_{\\mathrm{sys}} + S_{\\mathrm{bath}} . $$ 这里要特别说明符号，避免和前面变分推断里的小写 $q(\\cdot)$ 混淆： - 大写 $Q$ 表示热量，也就是系统与热浴之间通过热交换传递的能量 - 小写 $q(\\cdot)$ 表示概率分布，是前面变分推断里的近似后验 如果系统从热浴吸收一点能量 $\\delta U$，那么热浴就损失同样多的能量。对一个温度固定、足够大的热浴来说，…",
-          "$$ S_{\\mathrm{tot}} = S_{\\mathrm{sys}} + S_{\\mathrm{bath}} . $$ 这里要特别说明符号，避免和前面变分推断里的小写 $q(\\cdot)$ 混淆： - 大写 $Q$ 表示热量，也就是系统与热浴之间通过热交换传递的能量 - 小写 $q(\\cdot)$ 表示概率分布，是前面变分推断里的近似后验 如果系统从热浴吸收一点能量 $\\delta U$，那么热浴就损失同样多的能量。对一个温度固定、足够大的热浴来说，可逆热交换满足 $$ \\delta S_{\\mathrm{bath}} = \\frac{\\delta Q_{\\mathrm{bath…",
-          "$$ \\mathcal{F}[q] = \\mathbb{E}_q[E(x)] - T S[q] . $$ 把熵写成 $$ S[q] = -k_B \\sum_x q(x)\\log q(x) $$ 之后，这个式子就会变成“能量项 + 一个由 $\\log q$ 给出的熵项”的结构。 变分推断里发生的事非常类似，只不过这里的“能量”不再是真实物理能量，而是负对数概率。更具体地说，可以把 $$ E(z) \\;\\longleftrightarrow\\; -\\log p(o_t, z_t) $$ 看成一个对应关系。于是 $$ \\mathbb{E}_{q(z_t)}[-\\log p(o_t, z_t)]…"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/hj-sampler.md",
-        "note_title": "HJ-sampler: Bayesian Sampler via Hamilton-Jacobi PDEs and Score-Based Generative Models",
-        "note_date": "2026-04-16",
-        "hit_count": 1,
-        "snippets": [
-          "### 1.6 它和常见采样方法的区别 原文还专门补了一层边界，说明这篇工作和一些常见思路并不一样。 像 Hamiltonian Monte Carlo、Langevin Monte Carlo、普通变分推断，或者一些基于 log transform 的已有采样算法，通常都要求你能直接写出目标密度，或者至少能显式评估它。 但这篇的设定不是这样。这里你手里更自然拥有的是： - 先验分布； - 以及一个通过随机过程给出的 likelihood 机制。 也就是说，**likelihood 是嵌在随机过程里的，而不是提前给你一个现成的闭式密度公式。**"
-        ]
-      }
-    ]
-  },
-  {
-    "id": "variational-free-energy",
-    "display_name": "变分自由能",
-    "category": "framework",
-    "short_description": "自由能原理的核心量，是 surprisal 的可处理上界。",
-    "aliases": [
-      "variational free energy",
-      "变分自由能",
-      "free energy"
-    ],
-    "total_occurrences": 50,
-    "note_count": 4,
-    "occurrences": [
-      {
-        "note_path": "2026-04-16/real-world-robot-control-by-deep-active-inference-with-a-temporally-hierarchical-world-model.md",
-        "note_title": "Real-World Robot Control by Deep Active Inference With a Temporally Hierarchical World Model",
-        "note_date": "2026-04-16",
-        "hit_count": 27,
-        "snippets": [
-          "更准确的读法是：它把机器人控制拆成两个连续步骤。 第一步是 `perception`，也就是：给定当前观测，机器人怎样推断“我现在处在什么隐藏状态”。 第二步是 `action`，也就是：在已经形成当前状态信念之后，我应该执行哪条未来动作序列。 原文对应这两步，先给出方程 `(1)` 的 `variational free energy`，再给出方程 `(2)` 的 `expected free energy`。 ### 2.1 The Shared Generative Setup 两条方程共享同一个起点：观测 $o_t$ 不是世界本身，而是由隐藏状态 $z_t$ 生成出来的；而隐藏状…",
-          "更准确的读法是：它把机器人控制拆成两个连续步骤。 第一步是 `perception`，也就是：给定当前观测，机器人怎样推断“我现在处在什么隐藏状态”。 第二步是 `action`，也就是：在已经形成当前状态信念之后，我应该执行哪条未来动作序列。 原文对应这两步，先给出方程 `(1)` 的 `variational free energy`，再给出方程 `(2)` 的 `expected free energy`。 ### 2.1 The Shared Generative Setup 两条方程共享同一个起点：观测 $o_t$ 不是世界本身，而是由隐藏状态 $z_t$ 生成出来的；而隐藏状…",
-          "第一步是 `perception`，也就是：给定当前观测，机器人怎样推断“我现在处在什么隐藏状态”。 第二步是 `action`，也就是：在已经形成当前状态信念之后，我应该执行哪条未来动作序列。 原文对应这两步，先给出方程 `(1)` 的 `variational free energy`，再给出方程 `(2)` 的 `expected free energy`。 ### 2.1 The Shared Generative Setup 两条方程共享同一个起点：观测 $o_t$ 不是世界本身，而是由隐藏状态 $z_t$ 生成出来的；而隐藏状态又会在动作作用下演化。也就是说，这里的基本对象不…"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/a-framework-for-generative-modelling-in-non-equilibrium-statistical-mechanics.md",
-        "note_title": "A Framework for the Use of Generative Modelling in Non-Equilibrium Statistical Mechanics",
-        "note_date": "2026-04-16",
-        "hit_count": 20,
-        "snippets": [
-          "## 精读笔记 --- ## 一、问题背景与动机 ### 1.1 作者学术地位 本文第一作者 **Karl J. Friston** 是伦敦大学学院（UCL）Queen Square 神经学研究所教授，是**自由能原理（Free Energy Principle, FEP）** 的创始人和核心推动者。Friston 是神经影像学领域的奠基者之一，其开发的 SPM（Statistical Parametric Mapping）软件被全球神经科学界广泛使用。他长期位列全球被引用次数最多的神经科学家之首，其学术影响力跨越神经科学、理论物理、人工智能与哲学多个领域。合作者 **Ma",
-          "** ### 1.3 本文定位 本文并非 FEP 的首次提出，而是对 FEP 的一次**回归基础（back to basics）** 的系统阐述，重点强调： 1. FEP 在非平衡统计力学中的**一般性**（而非仅限于神经科学或认知科学） 2. 变分自由能（variational free energy）作为 Lyapunov 函数的技术基础 3. \"推断（inference）\"解释的**虚构性（as-if）** 特征——澄清地图与疆域（map vs. territory）的关系 --- ## 二、生成模型表示子系统间的依赖关系 ### 2.1 从统计学到物理学：生成模型的角色 在统计学中，",
-          "** ### 1.3 本文定位 本文并非 FEP 的首次提出，而是对 FEP 的一次**回归基础（back to basics）** 的系统阐述，重点强调： 1. FEP 在非平衡统计力学中的**一般性**（而非仅限于神经科学或认知科学） 2. 变分自由能（variational free energy）作为 Lyapunov 函数的技术基础 3. \"推断（inference）\"解释的**虚构性（as-if）** 特征——澄清地图与疆域（map vs. territory）的关系 --- ## 二、生成模型表示子系统间的依赖关系 ### 2.1 从统计学到物理学：生成模型的角色 在统计学…"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.md",
-        "note_title": "Generative Optimal Transport via Forward-Backward HJB Matching",
-        "note_date": "2026-04-16",
-        "hit_count": 2,
-        "snippets": [
-          "2. 在这个 forward 过程中学习标量 value function； 3. 再通过时间反转对偶，把这个 value function 变回生成时需要的 backward control。 接下来会用到： - HJB 方程； - Cole-Hopf 变换； - Feynman-Kac 表示； - path-space free energy。 但 introduction 在这里已经把整篇文章的主线交代清楚了： **训练时走正向、生成时走反向；正向之所以可学，是因为它是自然弛豫；反向之所以可得，是因为前后两个 HJB 通过时间反转对偶联系起来。** ### 1.6 原文在引言里想 …",
-          "第三，他们引入了显式的**空间代价函数** $\\nu(\\mathbf{x})$。这意味着生成路径不只受端点约束，还会被中间路径的几何和可行性塑形；原文甚至用类似 Fermat 原理的语言去解释这种“折射式”输运几何。 第四，他们把整个框架解释成一种**path-space free energy** 视角下的生成建模。这篇文章不是单纯想做更好的 sampler，而是想把： - stochastic control - optimal transport - Schrödinger bridge - non-equilibrium statistical mechanics 放进同一个解释…"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.md",
-        "note_title": "Nonequilibrium Physics of Generative Diffusion Models",
-        "note_date": "2026-04-16",
-        "hit_count": 1,
-        "snippets": [
-          "**本文的核心目标**：在一个解析可处理的高斯混合数据模型（Gaussian Mixture Model）上，用非平衡统计物理的完整工具箱——路径积分（path integral）、涨落定理（fluctuation theorem）、熵产生（entropy production）、自由能（free energy）、Franz-Parisi 势（Franz-Parisi potential）——来剖析 GDMs 的正向与反向动力学，统一非平衡热力学、统计推断和几何分析三个视角。 **三项主要贡献**： 1. 从熵产生的角度分析反向生成过程，推导并验证正向和反向过程的涨落定理； 2. 将去噪…"
+          "### 17.3 和 variational inference / free energy 线 VI 通常最小化 distribution mismatch，例如 KL divergence 或 ELBO。 本文关注的是 path-level mismatch 和 irreversible cost。entropy production 可以写成 path probability 的 KL divergence： $$ S_\\tau^{\\mathrm{tot}} = D_{\\mathrm{KL}}(\\mathbb{P}_{\\mathrm{F}}\\"
         ]
       }
     ]
@@ -950,8 +1388,8 @@
       "去噪扩散",
       "diffusion probabilistic"
     ],
-    "total_occurrences": 38,
-    "note_count": 4,
+    "total_occurrences": 51,
+    "note_count": 6,
     "occurrences": [
       {
         "note_path": "2026-04-16/denoising-diffusion-probabilistic-models.md",
@@ -962,6 +1400,17 @@
           "# Denoising Diffusion Probabilistic Models ## 精读笔记 --- ## 一、问题背景与动机 ### 1.1 生成模型的发展脉络 2020 年之前，深度生成模型领域由以下几大范式主导： - **GAN**（Generative Adversarial Networks）：样本质量极高，但训练不稳定（模式坍塌）",
           "# Denoising Diffusion Probabilistic Models ## 精读笔记 --- ## 一、问题背景与动机 ### 1.1 生成模型的发展脉络 2020 年之前，深度生成模型领域由以下几大范式主导： - **GAN**（Generative Adversarial Networks）：样本质量极高，但训练不稳定（模式坍塌），且不提供似然估计",
           "- **VAE**（Variational Autoencoders）：原理清晰、训练稳定，但生成样本通常较为模糊 - **Flow 模型**（Normalizing Flows）：精确似然计算，但架构设计受可逆约束限制 - **自回归模型**：精确似然、高质量样本，但采样速度极慢（逐像素生成） **扩散概率模型**（diffusion probabilistic models）最早由 Sohl-Dickstein et al. (2015) 提出，灵感来源于非平衡热力学：通过逐步添加噪声破坏数据结构（前向扩散），再学习逐步去噪（反向过程）来生成样本。然而在 DDPM 之前，这类模型从未…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.md",
+        "note_title": "Predictor-Driven Diffusion for Spatiotemporal Generation",
+        "note_date": "2026-04-16",
+        "hit_count": 15,
+        "snippets": [
+          "U-Net 是主网络。输入是当前状态加前四个时间步，沿 channel 维拼接。输出是当前 time derivative 的 finite-difference approximation。$\\lambda$ 通过 FiLM conditioning 注入。 DDPM baseline 用同样 U-Net，但 simulation 和 generation 分别训练模型。由于 DDPM baseline 没有 spatial coarse-graining hierarchy，它不能在 $\\lambda>0$ 评估 simulation，只能在 $\\lambda=0$ 比较。 ### …",
+          "输出是当前 time derivative 的 finite-difference approximation。$\\lambda$ 通过 FiLM conditioning 注入。 DDPM baseline 用同样 U-Net，但 simulation 和 generation 分别训练模型。由于 DDPM baseline 没有 spatial coarse-graining hierarchy，它不能在 $\\lambda>0$ 评估 simulation，只能在 $\\lambda=0$ 比较。 ### 6.2 Figure 2：Lorenz-96 simulation ![Figu…",
+          "第二，在 $\\lambda=0.2$，同一个模型仍能模拟 coarse-grained dynamics，说明这个框架的 $\\lambda$ 轴不是纯粹的图像模糊参数，而是可以定义不同 spatial scale 上的 temporal dynamics。 这个结论也有边界。Figure 2 本身没有和 DDPM baseline 比较，也没有证明 generation 成功；它只验证 forward-$t$ simulation。DDPM baseline 和定量误差要到 Table 1 / Appendix Figure 5 再比较，generation 要到 Figure 8-9 …"
         ]
       },
       {
@@ -976,14 +1425,14 @@
         ]
       },
       {
-        "note_path": "2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.md",
-        "note_title": "Predictor-Driven Diffusion for Spatiotemporal Generation",
-        "note_date": "2026-04-16",
-        "hit_count": 7,
+        "note_path": "2026-04-28/speed-accuracy-relations-for-diffusion-models.md",
+        "note_title": "Speed-Accuracy Relations for Diffusion Models: Wisdom from Nonequilibrium Thermodynamics and Optimal Transport",
+        "note_date": "2026-04-28",
+        "hit_count": 4,
         "snippets": [
-          "3. 解析计算粗粒化场：$u_\\lambda = \\mathcal{C}_\\lambda u_0 + \\sqrt{\\Sigma_\\lambda}\\,\\epsilon$ 4. 计算局部时间导数上的回归损失 5. 更新网络参数 训练**不涉及时间方向上的 rollout**——损失仅在每个时间步的局部导数上计算。这与 DDPM 的逐步去噪训练在计算开销上相当。 ### 5.2 噪声幅度 $\\sigma_\\lambda$ 的设定 通过匹配代理模型与数据分布的条件协方差，得到： $$\\sigma_\\lambda^2 = \\frac{1}{\\Delta t \\cdot D}\\mathrm{tr}(…",
-          "**Kolmogorov flow** 是二维不可压驱动流，广泛用于湍流研究和 ML 基准。 网络架构为 U-Net（Saharia et al., 2022a），输入当前状态和前 4 个时间步，输出时间导数的有限差分近似。$\\lambda$ 通过 FiLM 条件化注入网络。基线模型为使用相同架构的 DDPM。 ### 6.2 仿真结果 ![Figure 2 — Lorenz-96 仿真结果](../../pdfs/2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.mineru/hybrid_auto/…",
-          "jpg) *Figure 3 — Kolmogorov flow 的仿真结果。上排：$\\lambda = 0$；下排：$\\lambda = 0.2$。左：第 6 时间步的涡度场快照；右：时间平均 PSD。粗粒化移除了小尺度结构但保留了大尺度动力学。* 在 $\\lambda = 0$ 处与 DDPM 基线对比（Table 1）： | 指标 | Predictor-Driven | DDPM (Baseline) | |------|-----------------|-----------------| | L96 $L^2$ error | **0.503** (±0.011) | 0.…"
+          "/figures/ve-vp-cond-ot-schedule-geometry.png) 这张示意图把三种 schedule 放到同一个 $(\\sigma_t,m_t)$ 平面里读。VE diffusion 是 $m_t=1$ 的竖直路径：signal 系数不变，只扩大噪声方差。VP / DDPM 是单位圆弧：$m_t$ 下降、$\\sigma_t$ 上升，但二者满足 $m_t^2+\\sigma_t^2=1$，总尺度被控制。conditional OT schedule 是从 $(0,1)$ 到 $(1,0)$ 的直线：它把 signal 减少和 noise 增加写成一个直接的 disp…",
+          "从分布形状看，VE diffusion 不是把数据点往原点拉，而是在每个数据点周围不断扩大 Gaussian cloud。随着 $\\sigma_t$ 增大，不同数据点周围的 cloud 逐渐重叠，数据结构被噪声淹没，整体 variance 变大，所以叫 variance exploding。 VP diffusion / DDPM 中有收缩 drift： $$ d\\boldsymbol{x}_t = -T_t\\boldsymbol{x}_tdt + \\sqrt{2T_t}\\,dB_t, \\tag{29} $$ 这个 SDE 对应的 schedule 满足： $$ \\partial_t \\…",
+          "好的 schedule 必须同时让 distribution path 低耗散，并且让 score / velocity learning 不难。 第四，作者重新解释传统 noise schedules。cosine schedule 和 cond-OT schedule 以前主要是经验上好用：cosine 在 VP / DDPM constraint 下效果强，cond-OT 在 flow matching 中采样效率好。本文给它们一个统一解释：它们都是在简化 schedule space 中接近 constant-speed short path 的 suboptimal proto…"
         ]
       },
       {
@@ -996,65 +1445,92 @@
           "关键数据点（ImageNet 64×64）： | 方法 | NLL (BPD)↓ | FID↓ | NFE↓ | |-----|-----------|------|------| | DDPM | 3.32 | 17.36 | 264 | | Score Matching | 3.40 | 19.74 | 441 | | FM w/ Diffusion | 3.33 | 16.88 | 187 | | **FM w/ OT** | **3.31** | **14.45** | **138** | FM-OT 的 NFE（138）仅为 D",
           "32 | 17.36 | 264 | | Score Matching | 3.40 | 19.74 | 441 | | FM w/ Diffusion | 3.33 | 16.88 | 187 | | **FM w/ OT** | **3.31** | **14.45** | **138** | FM-OT 的 NFE（138）仅为 DDPM（264）的 52%，且 FID 降低了 17%。 ### 8.3 采样路径可视化 ![](../../pdfs/2026-04-16/flow-matching-for-generative-modeling.mineru/hybrid_auto…"
         ]
+      },
+      {
+        "note_path": "2026-04-28/speed-accuracy-relations-for-diffusion-models-equation-map.md",
+        "note_title": "Equation Map for Speed-Accuracy Relations for Diffusion Models",
+        "note_date": "2026-04-28",
+        "hit_count": 1,
+        "snippets": [
+          "(22)-Eq. (23)、temperature condition、Gaussian mean/covariance | | Eq. (26)-Eq. (35) | VE、VP/DDPM、rescaled variable 与 schedule geometry | 已展开 | 已补 VE、VP、cosine、DDIM-style rescaled variable Eq. (33)-Eq. (35) | | Eq. (36)-Eq. (40) | entropy production、system entropy、bath ent"
+        ]
       }
     ]
   },
   {
-    "id": "brownian-motion",
-    "display_name": "布朗运动",
-    "category": "framework",
-    "short_description": "最基本的连续时间随机过程，SDE 的驱动噪声。",
+    "id": "ornstein-uhlenbeck",
+    "display_name": "Ornstein-Uhlenbeck 过程",
+    "category": "equation",
+    "short_description": "具有线性均值回归漂移的高斯 SDE。",
     "aliases": [
-      "Brownian motion",
-      "布朗运动",
-      "Wiener process",
-      "Wiener 过程"
+      "Ornstein-Uhlenbeck",
+      "Ornstein–Uhlenbeck",
+      "OU process",
+      "OU 过程"
     ],
-    "total_occurrences": 33,
-    "note_count": 4,
+    "total_occurrences": 28,
+    "note_count": 6,
     "occurrences": [
       {
-        "note_path": "2026-04-16/hj-sampler.md",
-        "note_title": "HJ-sampler: Bayesian Sampler via Hamilton-Jacobi PDEs and Score-Based Generative Models",
+        "note_path": "2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.md",
+        "note_title": "Nonequilibrium Physics of Generative Diffusion Models",
         "note_date": "2026-04-16",
-        "hit_count": 20,
+        "hit_count": 10,
         "snippets": [
-          "- 先求一个 Hamilton-Jacobi 型 PDE； - 再利用对应的最优控制来采样后验轨迹。 这就是原文所谓 `HJ-sampler` 的思想来源。 ### 1.3 为什么会出现 log 变换 原文接下来不是先讲算法，而是先讲这条联系从哪里来。这里的核心工具是 **log 变换**。在布朗运动语境下，这个变换更常被叫作 **Cole-Hopf 变换**。 这一步的作用，不是单纯做代数整理，而是把原本分属两个世界的问题接到一起。 先看第一边。在线性一侧，你处理的是 Kolmogorov forward / backward equations。它们描述的是概率密度怎样前向演化，或者…",
-          "所以这一步真正完成的事是： 1. 先在线性框架里写出一对更容易处理的传播方程； 2. 再通过 log 变换，把它们改写成更适合控制和采样解释的非线性系统； 3. 从而在“容易求解”与“容易解释”之间架起桥。 这也是为什么作者一开始故意把框架写得这么抽象：他不是只想解释某一个 Brownian motion 的技巧，而是想先给出一个统一母结构，后面再往里面代入不同类型的随机过程。 ### 2.2 已知方向：当算子来自某个随机过程的生成元 原文接下来先回顾一条文献里已经比较成熟的方向，也就是 Section 2.1 里的内容。 这里的设定是：把 $\\mathcal{A}_{\\epsilon,…",
-          "4. 再通过不同边界条件，把它解释成控制、输运或桥接问题。 原文在这里的目的不是证明一条全新的定理，而是先提醒读者： **log / Cole-Hopf 变换本来就有一条“生成元 $\\rightarrow$ 线性传播 $\\rightarrow$ 控制/输运”的已知解释链。** 在最经典的 Brownian motion 情形里， $$ X_t=\\sqrt{\\epsilon}\\,W_t, $$ 它的生成元就是 $$ \\mathcal{A}_{\\epsilon,t}=\\frac{\\epsilon}{2}\\Delta_x. $$ 这里有一个很容易混淆的点。抽象方程 `(1)` 写成 $$ \\p…"
+          "正向过程中两个分离的数据簇逐渐混合为单一高斯分布，反向过程则从无结构的噪声中重新\"分化\"出两个数据簇。 --- ## 2. 正向扩散的非平衡物理 ### 2.1 Ornstein-Uhlenbeck 过程 正向扩散采用标准的 Ornstein-Uhlenbeck（OU）过程： $$\\dot{\\mathbf{X}} = -\\mathbf{X} + \\sqrt{2}\\,\\boldsymbol{\\xi}$$ 其中 $\\mathbf{X} \\in \\mathbb{R}^d$ 为状态变量，$\\boldsymbol{\\xi",
+          "正向过程中两个分离的数据簇逐渐混合为单一高斯分布，反向过程则从无结构的噪声中重新\"分化\"出两个数据簇。 --- ## 2. 正向扩散的非平衡物理 ### 2.1 Ornstein-Uhlenbeck 过程 正向扩散采用标准的 Ornstein-Uhlenbeck（OU）过程： $$\\dot{\\mathbf{X}} = -\\mathbf{X} + \\sqrt{2}\\,\\boldsymbol{\\xi}$$ 其中 $\\mathbf{X} \\in \\mathbb{R}^d$ 为状态变量，$\\boldsymbol{\\xi}$ 为标准高斯白噪声。给定初始条件 $\\mathbf{X}_0$",
+          "#### 第三步：把 SDE 改写成单步更新公式 原文把前向 SDE 先写成一般形式 $$ d\\mathbf{X}_t = f(\\mathbf{X}_t,t)\\,dt + \\sqrt{2}\\,d\\mathbf{W}, \\tag{9} $$ 对于本文的 OU 过程，最后再代入 $$ f(\\mathbf{X}_t,t)=-\\mathbf{X}_t. $$ 在一般的 $\\lambda$-离散化下，单步更新变成 $$ \\frac{\\mathbf{X}_{t+dt}-\\mathbf{X}_t}{dt} = f\\!\\left((1-\\lambda)\\mathbf{X}_t+\\lambda\\mathb…"
         ]
       },
       {
         "note_path": "2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.md",
         "note_title": "Generative Optimal Transport via Forward-Backward HJB Matching",
         "note_date": "2026-04-16",
-        "hit_count": 5,
+        "hit_count": 7,
         "snippets": [
-          "$$ d\\mathbf{x}_t = \\mathbf{u}_t\\,dt + \\sqrt{2D}\\,d\\mathbf{B}_t. $$ 这里： - $\\mathbf{x}_t$ 是系统状态； - $\\mathbf{u}_t$ 是控制输入； - $D$ 是扩散系数； - $\\mathbf{B}_t$ 是 Brownian motion。 边界条件是： - 初始分布来自无序参考态 $p_{\\mathrm{ref}}$； - 终点分布要到达结构化目标态 $p_{\\mathrm{data}}$。 然后作者给这个受控过程配上了一个路径代价泛函： $$ \\min_{\\mathbf{u}_t}\\; \\m…",
-          "$$d\\mathbf{x}_s = \\left[-\\mathbf{b}(1-s,\\mathbf{x}_s) + 2D\\nabla\\log\\rho(1-s,\\mathbf{x}_s)\\right]ds + \\sqrt{2D}\\,d\\tilde{\\mathbf{B}}_s$$ 其中 $\\tilde{\\mathbf{B}}_s$ 是逆向 Brownian motion。关键观察：时间反转除了翻转漂移 $\\mathbf{b}$ 的符号外，还额外引入了一个 **score 修正项** $2D\\nabla\\log\\rho$——这正是 $\\nabla\\log q$ 项的物理来源。 **Step 2 —…",
-          "** #### 2.6.3 Eq. (7)：为什么实践中不直接用纯 Brownian 轨迹 到这里，一个自然问题就出现了： 既然 `Eq. (6)` 里参考测度 $\\mathbb{P}_0$ 对应的是纯 Brownian motion，为什么不直接按它采样？ 作者的回答是：**当数据分布离参考分布很远时，纯 Brownian 轨迹太低效。** 原因很直接： - 纯 Brownian motion 只会盲目扩散； - 而训练时有用的，是那些能把数据端逐渐带向参考端的 forward 轨迹； - Feynman-Kac 估计本质上是在做一类带权路径平均：每"
+          "只要漂移项能写成某个势函数的负梯度 $-\\nabla V(\\mathbf{x})$，这种过程就属于 Langevin 过程。 论文实验里又进一步选了一个最简单、最标准的特例：令势函数 $V(\\mathbf{x})$ 是二次函数。 这时回复漂移就会变成线性的 $-\\lambda \\mathbf{x}$，对应的参考过程正是 Ornstein-Uhlenbeck（OU）过程。 这样做的实际好处是： - forward 轨迹更容易从数据端自然弛豫到参考端； - 路径采样更稳定； - 条件采样和数值实现也更方便。 所以 `Eq. (7)` 不是在改原问题，而是在改**训练时使用的参考轨迹生成方式*…",
+          "2. 再把 Feynman-Kac 表示改写成沿这些轨迹的监督目标； 3. 再把监督目标拆成全局、一阶局部和边界三类损失； 4. 最后说明训练完的 $W_\\theta$ 怎样回到 backward controlled diffusion 中生成样本。 ### 3.1 Eq. (9)：先把训练用的 forward 轨迹具体化成 OU 过程 `Section 2` 里已经说明：训练阶段真正能稳定采样的，是从数据端朝参考端弛豫的 forward reference process。 到这一节，作者把这个参考过程固定成一个最简单的特例：Ornstein-Uhlenbeck（OU）过程。 原文写…",
+          "### 3.1 Eq. (9)：先把训练用的 forward 轨迹具体化成 OU 过程 `Section 2` 里已经说明：训练阶段真正能稳定采样的，是从数据端朝参考端弛豫的 forward reference process。 到这一节，作者把这个参考过程固定成一个最简单的特例：Ornstein-Uhlenbeck（OU）过程。 原文写成离散时间就是 $$ \\mathbf{x}_{k+1} = (1-\\theta \\Delta s)\\mathbf{x}_k + \\sqrt{2D\\Delta s}\\,\\xi_k, \\qquad \\xi_k \\sim \\mathcal{N}(0,I). \\…"
         ]
       },
       {
-        "note_path": "2026-04-13/mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-particle-data.md",
-        "note_title": "MVNN: A Measure-Valued Neural Network for Learning McKean-Vlasov Dynamics from Particle Data",
-        "note_date": "2026-04-13",
-        "hit_count": 4,
-        "snippets": [
-          "对这篇来说，它的作用是保证 learned drift 不会在远离训练区域时突然变得过于陡峭，从而避免动力学在有限时间内失控。第二，`唯一强解` 是粒子路径层面的结论：在同一个概率空间、同一条布朗运动和同一个初值下，这条 SDE 产生的轨道几乎处处唯一，所以随机性只来自噪声本身，而不会额外出现“同样噪声对应多条轨道”的不确定性。第三，`唯一弱解` 在这里说的是分布演化层面：对应的 Fokker-Planck 方程在 law 的意义下只有一个演化结果，也就是只有一个随时间变化的概率分布族与这条 SDE 相匹配。 证明的线性逻辑其实很集中，并没有同",
-          "所以作者接着证明 `propagation of chaos`。这一步回答的问题是：`你用 learned drift 定义的 N 粒子系统，随着 N 变大，会不会真的逼近刚才那个 mean-field model？` 证明的逻辑和前面的 well-posedness 一样，也是先抓住真正需要控制的量，而不是一开始就谈抽象极限。作者构造了两套由同一组布朗运动驱动的过程：一套是真正相互作用的 learned N 粒子系统 $$ X_t^{\\theta,i,N}, $$ 另一套是 $N$ 个彼此独立的“理想” mean-field 过程 $$ \\bar X_t^{\\theta,i,N}, $…",
-          "这一步叫 `synchronous coupling`，它的作用是把“有限粒子系统”和“mean-field 极限”放到同一个概率空间里逐路径比较。 有了这个耦合以后，作者定义误差 $$ e_t^i:=X_t^{\\theta,i,N}-\\bar X_t^{\\theta,i,N}. $$ 因为两套系统使用的是同一条布朗运动，做差时随机噪声会直接抵消，所以误差演化只剩下 drift 之间的差。这就是整个证明的关键转折：问题从“比较两套带噪 SDE”变成了“比较两个 drift 有多不一样”。 接下来作者对 $|e_t^i|^2$ 用 Itô 公式，再取时间上确界和期望，得到误差满足一个积分不…"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.md",
-        "note_title": "Nonequilibrium Physics of Generative Diffusion Models",
+        "note_path": "2026-04-16/hj-sampler.md",
+        "note_title": "HJ-sampler: Bayesian Sampler via Hamilton-Jacobi PDEs and Score-Based Generative Models",
         "note_date": "2026-04-16",
-        "hit_count": 4,
+        "hit_count": 6,
         "snippets": [
-          "这一解析可控的模型是全文推导的基础。 ### 2.2 路径积分框架 这一小节从方程 `(6)` 一直铺到方程 `(16)`。如果直接跳到最后那个结果式，Wiener 过程、$\\lambda$-离散化和 Jacobian 修正项都会悬空。下面按原文顺序展开。 #### 第一步：先把白噪声改写成 Wiener 过程 原文先定义 Wiener 过程 $$ \\mathbf{W}(t)=\\int_{t_0}^{t}dt'\\,\\boldsymbol{\\xi}(t')=\\int_{t_0}^{t} d\\mathbf",
-          "这一解析可控的模型是全文推导的基础。 ### 2.2 路径积分框架 这一小节从方程 `(6)` 一直铺到方程 `(16)`。如果直接跳到最后那个结果式，Wiener 过程、$\\lambda$-离散化和 Jacobian 修正项都会悬空。下面按原文顺序展开。 #### 第一步：先把白噪声改写成 Wiener 过程 原文先定义 Wiener 过程 $$ \\mathbf{W}(t)=\\int_{t_0}^{t}dt'\\,\\boldsymbol{\\xi}(t')=\\int_{t_0}^{t} d\\mathbf{W}. \\tag{6} $$ 白噪声 $\\boldsymbol{\\xi}(t)$ 本身…",
-          "这一解析可控的模型是全文推导的基础。 ### 2.2 路径积分框架 这一小节从方程 `(6)` 一直铺到方程 `(16)`。如果直接跳到最后那个结果式，Wiener 过程、$\\lambda$-离散化和 Jacobian 修正项都会悬空。下面按原文顺序展开。 #### 第一步：先把白噪声改写成 Wiener 过程 原文先定义 Wiener 过程 $$ \\mathbf{W}(t)=\\int_{t_0}^{t}dt'\\,\\boldsymbol{\\xi}(t')=\\int_{t_0}^{t} d\\mathbf{W}. \\tag{6} $$ 白噪声 $\\boldsymbol{\\xi}(t)$ 本身…"
+          "mineru/hybrid_auto/images/page-18-figure-08.jpg\" width=\"24%\" /> </p> ### 5.2 Ornstein-Uhlenbeck 过程：从正确性验证转向模型不确定性 布朗运动之后，原文把底层过程换成 OU process： $$ dY_t=-BY_t\\,dt+\\sqrt{\\epsilon}\\,dW_t. $$ 这一节的重点发生了变化。布朗运动实验主要问采样器是否准确；OU 实验开始问，当动力学本身带有不确定性或模型误设时，HJ-sampler",
+          "mineru/hybrid_auto/images/page-18-figure-08.jpg\" width=\"24%\" /> </p> ### 5.2 Ornstein-Uhlenbeck 过程：从正确性验证转向模型不确定性 布朗运动之后，原文把底层过程换成 OU process： $$ dY_t=-BY_t\\,dt+\\sqrt{\\epsilon}\\,dW_t. $$ 这一节的重点发生了变化。布朗运动实验主要问采样器是否准确；OU 实验开始问，当动力学本身带有不确定性或模型误设时，HJ-sampler 能不能把这种不确定性显式转成后验分布。这里 $\\epsilon$ 因此不再只是数值扩…",
+          "Table 5 的均值误差表明，三种方法都能稳定采到正确后验；SGM-HJ-sampler 仍略差，原因仍是第一阶段近似。这个实验在叙事上的作用是把“OU 过程下方法本身可用”先确认下来，避免后面的模型误设实验把算法误差和建模不确定性混在一起。 #### 5.2.2 第一种情形：一阶线性 ODE 系统中的模型不确定性 接下来作者考虑线性 ODE 系统 $$ \\frac{dy_1}{dt}=y_2,\\qquad \\frac{dy_2}{dt}=-y_1-y_2, $$ 这本来是一个完全确定性的二阶阻"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.md",
+        "note_title": "Predictor-Driven Diffusion for Spatiotemporal Generation",
+        "note_date": "2026-04-16",
+        "hit_count": 3,
+        "snippets": [
+          "$$ Eq. (1) 在 Fourier space 中变成： $$ \\partial_\\lambda \\widetilde{u}_\\lambda = -\\alpha\\|k\\|^2\\widetilde{u}_\\lambda + \\beta\\widetilde{\\eta}_\\lambda. \\tag{14} $$ 对每个 $k\\neq0$，这是一个 Ornstein-Uhlenbeck process。解为： $$ \\widetilde{u}_\\lambda = e^{-\\alpha\\|k\\|^2\\lambda}\\widetilde{u}_0 + \\beta \\int_0^\\lambda …",
+          "\\tag{17} $$ $$ \\widetilde{\\Sigma}_\\lambda(k) = \\beta^2 \\frac{ 1-e^{-2\\alpha\\|k\\|^2\\lambda} }{ 2\\alpha\\|k\\|^2 }. \\tag{18} $$ Eq. (17) 是 scale-selective damping。Eq. (18) 是 OU process 的 accumulated noise variance。$\\lambda\\to0$ 时，$\\widetilde{\\Sigma}_\\lambda(k)\\to0$；$\\lambda$ 变大时，variance 接近 $\\beta^2/…",
+          "(18) 的 Gaussian noise。 零波数 $k=0$ 被排除，因为数据预处理已经做了 zero mean standardization，constant Fourier mode 被去掉。如果保留 $k=0$，Laplacian damping 消失，Eq. (14) 不再是 mean-reverting OU process，而是沿 $\\lambda$ 的 pure Brownian accumulation。虽然 Eq. (18) 对 $k\\to0$ 有可取极限 $\\beta^2\\lambda$，但这个 mode 不会饱和到 stationary variance，会让…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation-equation-map.md",
+        "note_title": "Equation Map for Predictor-Driven Diffusion for Spatiotemporal Generation",
+        "note_date": "2026-04-16",
+        "hit_count": 1,
+        "snippets": [
+          "|---|---|---|---| | Eq. (12)-Eq. (13) | Fourier transform and inverse transform | 已展开 | 作为 Laplacian diagonalization 的准备 | | Eq. (14)-Eq. (15) | Fourier-space OU process and solution | 已展开 | 解释每个 mode 独立演化 | | Eq. (16) | Fourier-space conditional Gaussian density | 已展开 | 由 OU 解读 mean / variance |…"
+        ]
+      },
+      {
+        "note_path": "2026-04-25/statistics-and-dynamics-of-urban-populations-ch05-stochastic-calculus-for-urban-growth.md",
+        "note_title": "Statistics and Dynamics of Urban Populations, Chapter 5: Stochastic calculus",
+        "note_date": "2026-04-25",
+        "hit_count": 1,
+        "snippets": [
+          "\\exp\\left[ -\\frac{1}{2} \\int_0^T dt\\,\\eta(t)^2 \\right]. \\tag{5.25} $$ 这对应 white noise 的理想化图像：不同时间点之间没有记忆。每一个瞬间的噪声都像重新抽样出来的独立冲击。 但原文随后考虑另一种更物理的情况：噪声有有限相关时间 $\\tau_c$。典型例子是 Ornstein-Uhlenbeck noise，它的相关函数是 $$ G(t,t') = \\frac{1}{2\\tau_c} \\exp\\left(-\\frac{|t-t'|}{\\tau_c}\\right). \\tag{5.26} $$ 这里 $\\tau…"
         ]
       }
     ]
@@ -1070,8 +1546,8 @@
       "path measure",
       "Onsager-Machlup"
     ],
-    "total_occurrences": 17,
-    "note_count": 4,
+    "total_occurrences": 18,
+    "note_count": 6,
     "occurrences": [
       {
         "note_path": "2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.md",
@@ -1099,11 +1575,10 @@
         "note_path": "2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.md",
         "note_title": "Predictor-Driven Diffusion for Spatiotemporal Generation",
         "note_date": "2026-04-16",
-        "hit_count": 3,
+        "hit_count": 2,
         "snippets": [
-          "这个路径积分形式有两个关键性质： 1. **可微**：对数密度关于 $u_\\lambda$ 的梯度可通过自动微分计算，直接给出 path score $\\nabla_{u_\\lambda}\\ln p_\\lambda$ 2. **归一化常数 $Z_\\lambda$ 与 $f_\\lambda^\\theta$ 无关**：$Z_\\lambda$ 仅依赖 $\\sigma_",
-          "| 能量模型 | Gao et al., 2021 | 目标为静态数据分布 | | **本文** | — | 物理时间 $t$ 的漂移 + 扩散尺度 $\\lambda$ 的 RG 层次，单网络统一三任务 | 本文的独特贡献在于将 $t$ 和 $\\lambda$ 作为两个独立轴，通过路径积分将时间演化的 predictor 与空间多尺度的 RG 扩散桥接起来。 --- ## 九、局限性与未来方向 ### 9.1 作者自述局限 1. 框架面向受物理方程支配的时空场；对缺乏显式控制方程的通用视频数据，适用性未经探索 2. 初始密度 $r_\\lambda$ 被视为经验给定，适用于平稳系统但需扩展…",
-          "- **学习初始密度 $r_\\lambda$**：当前通过线性外推处理时间边界，显式建模 $r_\\lambda$ 可能提升非平稳场景的性能 - **向真实地球系统扩展**：论文第一作者来自 JAMSTEC（日本海洋研究开发机构），框架天然适合气候模拟的降尺度应用 --- ## 十、核心结论 1. **空间 RG + 时间路径积分 = 因果且多尺度的生成框架**：通过将空间粗粒化（$\\lambda$ 轴）与因果时间演化（$t$ 轴）解耦，避免了时间方向粗粒化带来的因果性问题。 2. **训练目标等价于加权时间导数回归**：KL 散度的极小化归结为一个简单的回归损失，无需训练 score 网…"
+          "粗粒化后的 path density $q_\\lambda$ 等于：先从真实数据分布抽 fine path，再经过 stochastic coarse-graining kernel 得到 coarse path。 这里 $\\mathcal{D}u_0$ 是离散 path measure，也就是对所有空间点、时间点和通道上的 $u_0$ 积分。 Eq. (5) 的因果意义是：因为 kernel $q_\\lambda(\\{u_\\lambda\\}_t\\mid\\{u_0\\}_t)$ 只沿空间 coarse-grain，所以 temporal correlations 只从 $q_{\\mathr…",
+          "= \\frac{1}{2\\sigma_\\lambda^2} \\int dt\\, \\|\\partial_t u_\\lambda-f_\\lambda^\\theta(u_\\lambda)\\|^2. \\tag{31} $$ 因此 Eq. (7) 的 path density 不是拍脑袋写的，而是 transition density 连乘后的 Onsager-Machlup / path-integral 形式。 当 $\\sigma_\\lambda\\to0$ 时，transition density 变成 delta distribution，path density 集中在 determini…"
         ]
       },
       {
@@ -1114,62 +1589,90 @@
         "snippets": [
           "$$ \\mathcal S_y = D_{\\mathrm{KL}}\\!\\big(P_\\rightarrow(y_{1:T})\\,\\|\\,P_\\leftarrow(y_{T:1})\\big). $$ 这里的前向和后向不是在 latent 层硬做时间反转，而是直接在可见输出序列上比较 forward / backward path measures。这样做的关键好处是：即使内部 latent 更新在时间反演下不兼容，观测序列层面的不可逆性仍然可以定义。 第三步，说明这个量是可算的，而且代价没有因为 non-Markov 性而爆炸。对一条采样轨迹，只需要： 1. 算一次前向整序列 log-li…"
         ]
+      },
+      {
+        "note_path": "2026-04-25/statistics-and-dynamics-of-urban-populations-ch05-stochastic-calculus-for-urban-growth.md",
+        "note_title": "Statistics and Dynamics of Urban Populations, Chapter 5: Stochastic calculus",
+        "note_date": "2026-04-25",
+        "hit_count": 1,
+        "snippets": [
+          "$$ \\mathbb{P}(\\{\\eta(t)\\}) \\propto \\exp\\left[ -\\frac{1}{2} \\int_0^T\\int_0^T dt\\,dt'\\, \\eta(t)G^{-1}(t,t')\\eta(t') \\right]. \\tag{5.23} $$ 这条公式不需要在这里深挖 path integral 技术。它的作用是说明：噪声不是只有“均值为 0、方差为 1”这么简单；噪声在时间上的相关结构也属于模型假设。改变 $G(t,t')$，就是改变我们允许哪些噪声路径更可能出现。 如果没有时间相关性，$G(t,t')=\\delta(t-t')$，那么路径权重简化为： $…"
+        ]
+      },
+      {
+        "note_path": "2026-04-28/speed-accuracy-relations-for-diffusion-models-equation-map.md",
+        "note_title": "Equation Map for Speed-Accuracy Relations for Diffusion Models",
+        "note_date": "2026-04-28",
+        "hit_count": 1,
+        "snippets": [
+          "(36)-Eq. (40) 已补编号 | | Eq. (41)-Eq. (51) | path probability、forward/backward path KL、fluctuation-theorem framing、estimated path measure | 已展开 | 已补 dual dynamics、transition kernels、path products、path KL、fluctuation theorem、estimated reverse path | | Eq. (52)-Eq. (58) | Wasserstein distance、couplin…"
+        ]
       }
     ]
   },
   {
-    "id": "reverse-sde",
-    "display_name": "Reverse-Time SDE",
-    "category": "method",
-    "short_description": "将前向扩散过程反演得到的随机微分方程。",
+    "id": "variational-free-energy",
+    "display_name": "变分自由能",
+    "category": "framework",
+    "short_description": "自由能原理的核心量，是 surprisal 的可处理上界。",
     "aliases": [
-      "reverse SDE",
-      "reverse-time SDE",
-      "反向 SDE",
-      "Anderson 反转"
+      "variational free energy",
+      "变分自由能",
+      "free energy"
     ],
-    "total_occurrences": 15,
-    "note_count": 4,
+    "total_occurrences": 53,
+    "note_count": 5,
     "occurrences": [
+      {
+        "note_path": "2026-04-16/real-world-robot-control-by-deep-active-inference-with-a-temporally-hierarchical-world-model.md",
+        "note_title": "Real-World Robot Control by Deep Active Inference With a Temporally Hierarchical World Model",
+        "note_date": "2026-04-16",
+        "hit_count": 27,
+        "snippets": [
+          "更准确的读法是：它把机器人控制拆成两个连续步骤。 第一步是 `perception`，也就是：给定当前观测，机器人怎样推断“我现在处在什么隐藏状态”。 第二步是 `action`，也就是：在已经形成当前状态信念之后，我应该执行哪条未来动作序列。 原文对应这两步，先给出方程 `(1)` 的 `variational free energy`，再给出方程 `(2)` 的 `expected free energy`。 ### 2.1 The Shared Generative Setup 两条方程共享同一个起点：观测 $o_t$ 不是世界本身，而是由隐藏状态 $z_t$ 生成出来的；而隐藏状…",
+          "更准确的读法是：它把机器人控制拆成两个连续步骤。 第一步是 `perception`，也就是：给定当前观测，机器人怎样推断“我现在处在什么隐藏状态”。 第二步是 `action`，也就是：在已经形成当前状态信念之后，我应该执行哪条未来动作序列。 原文对应这两步，先给出方程 `(1)` 的 `variational free energy`，再给出方程 `(2)` 的 `expected free energy`。 ### 2.1 The Shared Generative Setup 两条方程共享同一个起点：观测 $o_t$ 不是世界本身，而是由隐藏状态 $z_t$ 生成出来的；而隐藏状…",
+          "第一步是 `perception`，也就是：给定当前观测，机器人怎样推断“我现在处在什么隐藏状态”。 第二步是 `action`，也就是：在已经形成当前状态信念之后，我应该执行哪条未来动作序列。 原文对应这两步，先给出方程 `(1)` 的 `variational free energy`，再给出方程 `(2)` 的 `expected free energy`。 ### 2.1 The Shared Generative Setup 两条方程共享同一个起点：观测 $o_t$ 不是世界本身，而是由隐藏状态 $z_t$ 生成出来的；而隐藏状态又会在动作作用下演化。也就是说，这里的基本对象不…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/a-framework-for-generative-modelling-in-non-equilibrium-statistical-mechanics.md",
+        "note_title": "A Framework for the Use of Generative Modelling in Non-Equilibrium Statistical Mechanics",
+        "note_date": "2026-04-16",
+        "hit_count": 20,
+        "snippets": [
+          "## 精读笔记 --- ## 一、问题背景与动机 ### 1.1 作者学术地位 本文第一作者 **Karl J. Friston** 是伦敦大学学院（UCL）Queen Square 神经学研究所教授，是**自由能原理（Free Energy Principle, FEP）** 的创始人和核心推动者。Friston 是神经影像学领域的奠基者之一，其开发的 SPM（Statistical Parametric Mapping）软件被全球神经科学界广泛使用。他长期位列全球被引用次数最多的神经科学家之首，其学术影响力跨越神经科学、理论物理、人工智能与哲学多个领域。合作者 **Ma",
+          "** ### 1.3 本文定位 本文并非 FEP 的首次提出，而是对 FEP 的一次**回归基础（back to basics）** 的系统阐述，重点强调： 1. FEP 在非平衡统计力学中的**一般性**（而非仅限于神经科学或认知科学） 2. 变分自由能（variational free energy）作为 Lyapunov 函数的技术基础 3. \"推断（inference）\"解释的**虚构性（as-if）** 特征——澄清地图与疆域（map vs. territory）的关系 --- ## 二、生成模型表示子系统间的依赖关系 ### 2.1 从统计学到物理学：生成模型的角色 在统计学中，",
+          "** ### 1.3 本文定位 本文并非 FEP 的首次提出，而是对 FEP 的一次**回归基础（back to basics）** 的系统阐述，重点强调： 1. FEP 在非平衡统计力学中的**一般性**（而非仅限于神经科学或认知科学） 2. 变分自由能（variational free energy）作为 Lyapunov 函数的技术基础 3. \"推断（inference）\"解释的**虚构性（as-if）** 特征——澄清地图与疆域（map vs. territory）的关系 --- ## 二、生成模型表示子系统间的依赖关系 ### 2.1 从统计学到物理学：生成模型的角色 在统计学…"
+        ]
+      },
+      {
+        "note_path": "2026-04-28/speed-accuracy-relations-for-diffusion-models.md",
+        "note_title": "Speed-Accuracy Relations for Diffusion Models: Wisdom from Nonequilibrium Thermodynamics and Optimal Transport",
+        "note_date": "2026-04-28",
+        "hit_count": 3,
+        "snippets": [
+          "第五，作者讨论 entropy production 和 energy-based models 的关系。Hopfield networks、Boltzmann machines 和很多 energy-based models 都依赖 energy 或 free energy。它们通常隐含 detailed balance 或 equilibrium-like structure。diffusion model 更一般，因为 forward process 可以有 non-conservative force，系统不一定满足 detailed balance。在这种情况下，energy …",
+          "在这种情况下，energy function 未必有清晰物理定义，但 entropy production rate 仍然可以定义。 这就是作者强调 entropy production 的原因：它比 energy/free energy 更适合描述 nonequilibrium generative dynamics。没有 non-conservative force 时，entropy production 可以退化到 potential / free-energy-like language；有 non-conservative force 时，entropy p",
+          "差异在于，本文没有直接解 HJB PDE，而是用 stochastic thermodynamics 和 OT geometry 给出 bound 和 protocol criterion。 ### 17.3 和 variational inference / free energy 线 VI 通常最小化 distribution mismatch，例如 KL divergence 或 ELBO。 本文关注的是 path-level mismatch 和 irreversible cost。entropy production 可以写成 path probability 的 KL div…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.md",
+        "note_title": "Generative Optimal Transport via Forward-Backward HJB Matching",
+        "note_date": "2026-04-16",
+        "hit_count": 2,
+        "snippets": [
+          "2. 在这个 forward 过程中学习标量 value function； 3. 再通过时间反转对偶，把这个 value function 变回生成时需要的 backward control。 接下来会用到： - HJB 方程； - Cole-Hopf 变换； - Feynman-Kac 表示； - path-space free energy。 但 introduction 在这里已经把整篇文章的主线交代清楚了： **训练时走正向、生成时走反向；正向之所以可学，是因为它是自然弛豫；反向之所以可得，是因为前后两个 HJB 通过时间反转对偶联系起来。** ### 1.6 原文在引言里想 …",
+          "第三，他们引入了显式的**空间代价函数** $\\nu(\\mathbf{x})$。这意味着生成路径不只受端点约束，还会被中间路径的几何和可行性塑形；原文甚至用类似 Fermat 原理的语言去解释这种“折射式”输运几何。 第四，他们把整个框架解释成一种**path-space free energy** 视角下的生成建模。这篇文章不是单纯想做更好的 sampler，而是想把： - stochastic control - optimal transport - Schrödinger bridge - non-equilibrium statistical mechanics 放进同一个解释…"
+        ]
+      },
       {
         "note_path": "2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.md",
         "note_title": "Nonequilibrium Physics of Generative Diffusion Models",
         "note_date": "2026-04-16",
-        "hit_count": 8,
-        "snippets": [
-          "\\right]. $$ 本文的优势在于，所选高斯混合模型足够简单，score 可以解析写出，因此后面关于相变、自由能和熵产生的讨论都不需要再经过数值拟合。 ### 3.2 从反向漂移到广义自由能 把反向时间记成 $$ s=T-t, $$ 则反向 SDE 的漂移项 $$ 2\\nabla\\ln p(\\tilde{\\mathbf{X}}_s,T-s)-f(\\tilde{\\mathbf{X}}_s,T-s) $$ 可以写成某个势能的负梯度。作者在这里定义 $$ -\\nabla U(\\tilde{\\mathbf{X}}_s,T-s) = 2\\nabla\\ln p(\\tilde{\\mathbf{X}",
-          "$$ 可以写成某个势能的负梯度。作者在这里定义 $$ -\\nabla U(\\tilde{\\mathbf{X}}_s,T-s) = 2\\nabla\\ln p(\\tilde{\\mathbf{X}}_s,T-s)-f(\\tilde{\\mathbf{X}}_s,T-s), $$ 于是反向 SDE 被改写成标准 Langevin 形式 $$ d\\tilde{\\mathbf{X}}_s = -\\nabla U(\\tilde{\\mathbf{X}}_s,T-s)\\,ds +\\sqrt{2}\\,d\\mathbf{W}. $$ 这里突然出现的 $U$ 不是另加的新对象，而是把反向漂移场重新表达成势能景观之…",
-          "= -\\frac{1}{\\beta}\\nabla\\ln p(\\mathbf{X}_t,t). $$ 这说明普通自由能 $F$ 只抓住了 score 那一部分驱动力，因为 $$ \\nabla(2\\beta F)=-2\\nabla\\ln p(\\mathbf{X}_t,t). $$ 而反向 SDE 的完整漂移是 $$ 2\\nabla\\ln p(\\mathbf{X}_t,t)-f(\\mathbf{X}_t,t). $$ 所以如果想把整条反向动力学都写成某个标量函数的负梯度形式，就不能只用 $F$，还要把漂移场 $f$ 对应的那一部分也并进去。原文因此定义广义自由能 $$ \\tilde F = 2…"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/hj-sampler.md",
-        "note_title": "HJ-sampler: Bayesian Sampler via Hamilton-Jacobi PDEs and Score-Based Generative Models",
-        "note_date": "2026-04-16",
-        "hit_count": 4,
-        "snippets": [
-          "- 人为设计一条前向过程，把数据逐渐推向一个更简单、容易采样的分布，这对应 $\\mu(\\cdot,T)$； - 然后再沿反向过程，把简单噪声分布拉回数据分布。 所以在标准 SGM 里，训练和推断天然是一对 forward / reverse 过程。训练时用数据样本去学 score；推断时从简单噪声先验出发，再沿反向 SDE 或概率流 ODE 生成数据样本。 再看**SGM-HJ-sampler**。它要解决的不是“从数据分布生成样本”，而是“给定终端观测以后，从后验条件路径分布里采样”。这时整套对象的角色都变了： - $\\mu(\\cdot,0)$ 不再是未知数据分布，而是已知的 prio…",
-          "** ### 4.2 Remark 3.2：为什么很多 diffusion acceleration 技巧在这里不能直接搬 有了上面这层区别，下面这点就不难理解了：虽然 `SGM-HJ-sampler` 的推断公式看上去和 diffusion reverse SDE 很像，但这里的两条过程 - $Y_t$ - $Z_\\tau$ 并不是一对真正的 forward / reverse process。原文说它们“相差一个因子 $\\nu$”，意思就是：`HJ-sampler` 的条件化并不是通过构造一条严格的反向过程来完成的，而是通过 Section 2 里的那套 log transform 和边界",
-          "$$ 也就是把终端观测直接塞进边界条件；这时 $\\mu(\\cdot,0)$ 读成 prior distribution。 所以这两类方法都可以被看成“同一个 log-transform 框架在不同边界条件下的不同读法”。 第二层统一，是 **从 diffusion model 视角反过来看 HJ-sampler**。原文在这里给出标准反向 SDE： $$ d\\tilde Y_\\tau = \\bigl(\\epsilon s_W(\\tilde Y_\\tau,T-\\tau)-b(\\tilde Y_\\tau,T-\\tau)\\bigr)\\,d\\tau + \\sqrt{\\epsilon}\\,dW_\\…"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/diffusion-models-a-mathematical-introduction.md",
-        "note_title": "Diffusion Models: A Mathematical Introduction",
-        "note_date": "2026-04-16",
-        "hit_count": 2,
-        "snippets": [
-          "16 与 DDIM 建立精确等价 ### 11.2 局限 1. 缺乏 score matching 训练的显式推导（denoising score matching、sliced score matching 等） 2. 未涉及 SDE 反向（Anderson 反向 SDE）的完整推导 3. 连续时间讨论集中在 VP（方差保持），未系统处理 VE（方差爆炸）和 sub-VP 变体 4. 没有实验或数值示例 ### 11.3 延伸阅读 - **Score-based SDE 框架**：Song et al., ICLR 2021 [12]——Anderson 反向 SDE 的完整推导 - …",
-          "2. 未涉及 SDE 反向（Anderson 反向 SDE）的完整推导 3. 连续时间讨论集中在 VP（方差保持），未系统处理 VE（方差爆炸）和 sub-VP 变体 4. 没有实验或数值示例 ### 11.3 延伸阅读 - **Score-based SDE 框架**：Song et al., ICLR 2021 [12]——Anderson 反向 SDE 的完整推导 - **EDM（Elucidating Design Space）**：Karras et al., NeurIPS 2022 [4]——统一预条件和采样器设计 - **Consistency Models**：Song…"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/flow-matching-for-generative-modeling.md",
-        "note_title": "Flow Matching for Generative Modeling",
-        "note_date": "2026-04-16",
         "hit_count": 1,
         "snippets": [
-          "因此**扩散模型的 Score Matching 训练可被视为 Flow Matching 的一个特例**。 ### 9.2 FM 的概念优势 FM 框架的核心优势在于**直接与概率路径和向量场打交道**，绕开了随机微分方程的构造： - 不需要推导前向/反向 SDE - 不需要选择噪声调度函数 $\\beta(t)$ 来隐式定义概率路径 - 可以自由设计任意 $\\mu_t$ 和 $\\sigma_t$，甚至非高斯路径 - 天然支持有限时间构造（$t \\in [0,1]$），无需截断近似 --- ## 十、并行工作与后续影响 本文与 **Rectified Flow**（Liu et al.,…"
+          "**本文的核心目标**：在一个解析可处理的高斯混合数据模型（Gaussian Mixture Model）上，用非平衡统计物理的完整工具箱——路径积分（path integral）、涨落定理（fluctuation theorem）、熵产生（entropy production）、自由能（free energy）、Franz-Parisi 势（Franz-Parisi potential）——来剖析 GDMs 的正向与反向动力学，统一非平衡热力学、统计推断和几何分析三个视角。 **三项主要贡献**： 1. 从熵产生的角度分析反向生成过程，推导并验证正向和反向过程的涨落定理； 2. 将去噪…"
         ]
       }
     ]
@@ -1185,8 +1688,8 @@
       "Jarzynski",
       "Crooks"
     ],
-    "total_occurrences": 38,
-    "note_count": 3,
+    "total_occurrences": 45,
+    "note_count": 5,
     "occurrences": [
       {
         "note_path": "2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.md",
@@ -1211,12 +1714,100 @@
         ]
       },
       {
+        "note_path": "2026-04-28/speed-accuracy-relations-for-diffusion-models.md",
+        "note_title": "Speed-Accuracy Relations for Diffusion Models: Wisdom from Nonequilibrium Thermodynamics and Optimal Transport",
+        "note_date": "2026-04-28",
+        "hit_count": 6,
+        "snippets": [
+          "forward process 从有空间结构的数据开始，不断加噪，最后得到接近无结构的噪声分布；reverse process 则试图从噪声中恢复数据结构。原始 diffusion model 本来就受到 nonequilibrium thermodynamics 启发，尤其是 time-reversed dynamics、fluctuation theorem 和 Jarzynski equality 这些关于路径反演的思想。 这里作者要建立的对应关系是： $$ \\text{physical diffusion} \\quad\\longleftrightarrow\\quad \\text{…",
+          "原始 diffusion model 本来就受到 nonequilibrium thermodynamics 启发，尤其是 time-reversed dynamics、fluctuation theorem 和 Jarzynski equality 这些关于路径反演的思想。 这里作者要建立的对应关系是： $$ \\text{physical diffusion} \\quad\\longleftrightarrow\\quad \\text{forward noising process}, $$ 以及： $$ \\text{time-reversed stochast",
+          "这次的构造方式不同。它从 endpoint distribution $\\mathcal{P}_{\\tau}$ 开始，并把 forward transition $\\mathcal{T}$ 的方向反过来读：从 $\\boldsymbol{x}_{(N+1)\\Delta t}$ 回到 $\\boldsymbol{x}_{N\\Delta t}$。这更接近 fluctuation theorem 里常见的 backward trajectory 写法。 同样有： $$ S_\\tau^{\\mathrm{tot}} = D_{\\mathrm{KL}} \\left( \\mathbb{P}_{\\mathr…"
+        ]
+      },
+      {
         "note_path": "2026-04-10/learning-stochastic-thermodynamics-directly-from-correlation-and-trajectory-fluctuation-currents.md",
         "note_title": "Learning stochastic thermodynamics directly from correlation and trajectory-fluctuation currents",
         "note_date": "2026-04-10",
         "hit_count": 1,
         "snippets": [
           "5. 它最有说服力的证据是：不仅平均量能恢复，trajectory-level stochastic entropy production 的涨落结构也能被学出来。 6. 你真正该带走的是：先构造可学习的局域场，再由这些局域场重建热力学量。 ## Paper Info - 为什么先读： 这篇最直接接你这两天刚整理好的主线：`Sagawa -> fluctuation theorem -> entropy production -> Fokker-Planck -> trajectory current`。 - 论文链接： https://arxiv.org/abs/2504.19007 …"
+        ]
+      },
+      {
+        "note_path": "2026-04-28/speed-accuracy-relations-for-diffusion-models-equation-map.md",
+        "note_title": "Equation Map for Speed-Accuracy Relations for Diffusion Models",
+        "note_date": "2026-04-28",
+        "hit_count": 1,
+        "snippets": [
+          "(41)-Eq. (51) | path probability、forward/backward path KL、fluctuation-theorem framing、estimated path measure | 已展开 | 已补 dual dynamics、transition kernels、path products、path KL、fluctuation theorem、estimated reverse path | | Eq. (52)-Eq. (58) | Wasserstein distance、coupling、metric properties、Kantoro…"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "reverse-sde",
+    "display_name": "Reverse-Time SDE",
+    "category": "method",
+    "short_description": "将前向扩散过程反演得到的随机微分方程。",
+    "aliases": [
+      "reverse SDE",
+      "reverse-time SDE",
+      "反向 SDE",
+      "Anderson 反转"
+    ],
+    "total_occurrences": 18,
+    "note_count": 5,
+    "occurrences": [
+      {
+        "note_path": "2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.md",
+        "note_title": "Nonequilibrium Physics of Generative Diffusion Models",
+        "note_date": "2026-04-16",
+        "hit_count": 8,
+        "snippets": [
+          "\\right]. $$ 本文的优势在于，所选高斯混合模型足够简单，score 可以解析写出，因此后面关于相变、自由能和熵产生的讨论都不需要再经过数值拟合。 ### 3.2 从反向漂移到广义自由能 把反向时间记成 $$ s=T-t, $$ 则反向 SDE 的漂移项 $$ 2\\nabla\\ln p(\\tilde{\\mathbf{X}}_s,T-s)-f(\\tilde{\\mathbf{X}}_s,T-s) $$ 可以写成某个势能的负梯度。作者在这里定义 $$ -\\nabla U(\\tilde{\\mathbf{X}}_s,T-s) = 2\\nabla\\ln p(\\tilde{\\mathbf{X}",
+          "$$ 可以写成某个势能的负梯度。作者在这里定义 $$ -\\nabla U(\\tilde{\\mathbf{X}}_s,T-s) = 2\\nabla\\ln p(\\tilde{\\mathbf{X}}_s,T-s)-f(\\tilde{\\mathbf{X}}_s,T-s), $$ 于是反向 SDE 被改写成标准 Langevin 形式 $$ d\\tilde{\\mathbf{X}}_s = -\\nabla U(\\tilde{\\mathbf{X}}_s,T-s)\\,ds +\\sqrt{2}\\,d\\mathbf{W}. $$ 这里突然出现的 $U$ 不是另加的新对象，而是把反向漂移场重新表达成势能景观之…",
+          "= -\\frac{1}{\\beta}\\nabla\\ln p(\\mathbf{X}_t,t). $$ 这说明普通自由能 $F$ 只抓住了 score 那一部分驱动力，因为 $$ \\nabla(2\\beta F)=-2\\nabla\\ln p(\\mathbf{X}_t,t). $$ 而反向 SDE 的完整漂移是 $$ 2\\nabla\\ln p(\\mathbf{X}_t,t)-f(\\mathbf{X}_t,t). $$ 所以如果想把整条反向动力学都写成某个标量函数的负梯度形式，就不能只用 $F$，还要把漂移场 $f$ 对应的那一部分也并进去。原文因此定义广义自由能 $$ \\tilde F = 2…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/hj-sampler.md",
+        "note_title": "HJ-sampler: Bayesian Sampler via Hamilton-Jacobi PDEs and Score-Based Generative Models",
+        "note_date": "2026-04-16",
+        "hit_count": 4,
+        "snippets": [
+          "- 人为设计一条前向过程，把数据逐渐推向一个更简单、容易采样的分布，这对应 $\\mu(\\cdot,T)$； - 然后再沿反向过程，把简单噪声分布拉回数据分布。 所以在标准 SGM 里，训练和推断天然是一对 forward / reverse 过程。训练时用数据样本去学 score；推断时从简单噪声先验出发，再沿反向 SDE 或概率流 ODE 生成数据样本。 再看**SGM-HJ-sampler**。它要解决的不是“从数据分布生成样本”，而是“给定终端观测以后，从后验条件路径分布里采样”。这时整套对象的角色都变了： - $\\mu(\\cdot,0)$ 不再是未知数据分布，而是已知的 prio…",
+          "** ### 4.2 Remark 3.2：为什么很多 diffusion acceleration 技巧在这里不能直接搬 有了上面这层区别，下面这点就不难理解了：虽然 `SGM-HJ-sampler` 的推断公式看上去和 diffusion reverse SDE 很像，但这里的两条过程 - $Y_t$ - $Z_\\tau$ 并不是一对真正的 forward / reverse process。原文说它们“相差一个因子 $\\nu$”，意思就是：`HJ-sampler` 的条件化并不是通过构造一条严格的反向过程来完成的，而是通过 Section 2 里的那套 log transform 和边界",
+          "$$ 也就是把终端观测直接塞进边界条件；这时 $\\mu(\\cdot,0)$ 读成 prior distribution。 所以这两类方法都可以被看成“同一个 log-transform 框架在不同边界条件下的不同读法”。 第二层统一，是 **从 diffusion model 视角反过来看 HJ-sampler**。原文在这里给出标准反向 SDE： $$ d\\tilde Y_\\tau = \\bigl(\\epsilon s_W(\\tilde Y_\\tau,T-\\tau)-b(\\tilde Y_\\tau,T-\\tau)\\bigr)\\,d\\tau + \\sqrt{\\epsilon}\\,dW_\\…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.md",
+        "note_title": "Predictor-Driven Diffusion for Spatiotemporal Generation",
+        "note_date": "2026-04-16",
+        "hit_count": 3,
+        "snippets": [
+          "continuity equation 里的 current velocity 是： $$ \\nu_\\lambda(U) = \\frac{J_\\lambda(U)}{q_\\lambda(U)} = b(U) - \\frac{\\beta^2}{2}\\nabla_U\\ln q_\\lambda(U). $$ 而 reverse SDE 写成 Eq. (2) 时，显式 drift 是： $$ b(U_\\lambda) - \\beta^2\\nabla_U\\ln q_\\lambda(U_\\lambda). $$ 这里系数从 $\\frac{\\beta^2}{2}$ 变成 $\\beta^2$，不是笔误。…",
+          "$$ 而 reverse SDE 写成 Eq. (2) 时，显式 drift 是： $$ b(U_\\lambda) - \\beta^2\\nabla_U\\ln q_\\lambda(U_\\lambda). $$ 这里系数从 $\\frac{\\beta^2}{2}$ 变成 $\\beta^2$，不是笔误。原因是 reverse SDE 仍然带有自己的噪声项；当这个噪声项在 density-level 再贡献一次 diffusion current 后，整体 probability current 才能对应 forward process 的时间反向。换句话说，sample-level revers…",
+          "\\text{sample-level forward SDE} &: dU=b\\,d\\lambda+\\beta dW,\\\\ \\text{density-level FP/continuity equation} &: \\partial_\\lambda q=-\\nabla_U\\cdot J,\\\\ \\text{sample-level reverse SDE} &: dU=(b-\\beta^2\\nabla_U\\ln q)\\,d\\lambda+\\beta d\\bar W. \\end{aligned} $$ 这里先把对象拆开。 $\\{u_\\lambda\\}_t$ 表示一整条 spatiotemp…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/diffusion-models-a-mathematical-introduction.md",
+        "note_title": "Diffusion Models: A Mathematical Introduction",
+        "note_date": "2026-04-16",
+        "hit_count": 2,
+        "snippets": [
+          "16 与 DDIM 建立精确等价 ### 11.2 局限 1. 缺乏 score matching 训练的显式推导（denoising score matching、sliced score matching 等） 2. 未涉及 SDE 反向（Anderson 反向 SDE）的完整推导 3. 连续时间讨论集中在 VP（方差保持），未系统处理 VE（方差爆炸）和 sub-VP 变体 4. 没有实验或数值示例 ### 11.3 延伸阅读 - **Score-based SDE 框架**：Song et al., ICLR 2021 [12]——Anderson 反向 SDE 的完整推导 - …",
+          "2. 未涉及 SDE 反向（Anderson 反向 SDE）的完整推导 3. 连续时间讨论集中在 VP（方差保持），未系统处理 VE（方差爆炸）和 sub-VP 变体 4. 没有实验或数值示例 ### 11.3 延伸阅读 - **Score-based SDE 框架**：Song et al., ICLR 2021 [12]——Anderson 反向 SDE 的完整推导 - **EDM（Elucidating Design Space）**：Karras et al., NeurIPS 2022 [4]——统一预条件和采样器设计 - **Consistency Models**：Song…"
+        ]
+      },
+      {
+        "note_path": "2026-04-16/flow-matching-for-generative-modeling.md",
+        "note_title": "Flow Matching for Generative Modeling",
+        "note_date": "2026-04-16",
+        "hit_count": 1,
+        "snippets": [
+          "因此**扩散模型的 Score Matching 训练可被视为 Flow Matching 的一个特例**。 ### 9.2 FM 的概念优势 FM 框架的核心优势在于**直接与概率路径和向量场打交道**，绕开了随机微分方程的构造： - 不需要推导前向/反向 SDE - 不需要选择噪声调度函数 $\\beta(t)$ 来隐式定义概率路径 - 可以自由设计任意 $\\mu_t$ 和 $\\sigma_t$，甚至非高斯路径 - 天然支持有限时间构造（$t \\in [0,1]$），无需截断近似 --- ## 十、并行工作与后续影响 本文与 **Rectified Flow**（Liu et al.,…"
         ]
       }
     ]
@@ -1270,55 +1861,6 @@
     ]
   },
   {
-    "id": "ornstein-uhlenbeck",
-    "display_name": "Ornstein-Uhlenbeck 过程",
-    "category": "equation",
-    "short_description": "具有线性均值回归漂移的高斯 SDE。",
-    "aliases": [
-      "Ornstein-Uhlenbeck",
-      "Ornstein–Uhlenbeck",
-      "OU process",
-      "OU 过程"
-    ],
-    "total_occurrences": 23,
-    "note_count": 3,
-    "occurrences": [
-      {
-        "note_path": "2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.md",
-        "note_title": "Nonequilibrium Physics of Generative Diffusion Models",
-        "note_date": "2026-04-16",
-        "hit_count": 10,
-        "snippets": [
-          "正向过程中两个分离的数据簇逐渐混合为单一高斯分布，反向过程则从无结构的噪声中重新\"分化\"出两个数据簇。 --- ## 2. 正向扩散的非平衡物理 ### 2.1 Ornstein-Uhlenbeck 过程 正向扩散采用标准的 Ornstein-Uhlenbeck（OU）过程： $$\\dot{\\mathbf{X}} = -\\mathbf{X} + \\sqrt{2}\\,\\boldsymbol{\\xi}$$ 其中 $\\mathbf{X} \\in \\mathbb{R}^d$ 为状态变量，$\\boldsymbol{\\xi",
-          "正向过程中两个分离的数据簇逐渐混合为单一高斯分布，反向过程则从无结构的噪声中重新\"分化\"出两个数据簇。 --- ## 2. 正向扩散的非平衡物理 ### 2.1 Ornstein-Uhlenbeck 过程 正向扩散采用标准的 Ornstein-Uhlenbeck（OU）过程： $$\\dot{\\mathbf{X}} = -\\mathbf{X} + \\sqrt{2}\\,\\boldsymbol{\\xi}$$ 其中 $\\mathbf{X} \\in \\mathbb{R}^d$ 为状态变量，$\\boldsymbol{\\xi}$ 为标准高斯白噪声。给定初始条件 $\\mathbf{X}_0$",
-          "#### 第三步：把 SDE 改写成单步更新公式 原文把前向 SDE 先写成一般形式 $$ d\\mathbf{X}_t = f(\\mathbf{X}_t,t)\\,dt + \\sqrt{2}\\,d\\mathbf{W}, \\tag{9} $$ 对于本文的 OU 过程，最后再代入 $$ f(\\mathbf{X}_t,t)=-\\mathbf{X}_t. $$ 在一般的 $\\lambda$-离散化下，单步更新变成 $$ \\frac{\\mathbf{X}_{t+dt}-\\mathbf{X}_t}{dt} = f\\!\\left((1-\\lambda)\\mathbf{X}_t+\\lambda\\mathb…"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.md",
-        "note_title": "Generative Optimal Transport via Forward-Backward HJB Matching",
-        "note_date": "2026-04-16",
-        "hit_count": 7,
-        "snippets": [
-          "只要漂移项能写成某个势函数的负梯度 $-\\nabla V(\\mathbf{x})$，这种过程就属于 Langevin 过程。 论文实验里又进一步选了一个最简单、最标准的特例：令势函数 $V(\\mathbf{x})$ 是二次函数。 这时回复漂移就会变成线性的 $-\\lambda \\mathbf{x}$，对应的参考过程正是 Ornstein-Uhlenbeck（OU）过程。 这样做的实际好处是： - forward 轨迹更容易从数据端自然弛豫到参考端； - 路径采样更稳定； - 条件采样和数值实现也更方便。 所以 `Eq. (7)` 不是在改原问题，而是在改**训练时使用的参考轨迹生成方式*…",
-          "2. 再把 Feynman-Kac 表示改写成沿这些轨迹的监督目标； 3. 再把监督目标拆成全局、一阶局部和边界三类损失； 4. 最后说明训练完的 $W_\\theta$ 怎样回到 backward controlled diffusion 中生成样本。 ### 3.1 Eq. (9)：先把训练用的 forward 轨迹具体化成 OU 过程 `Section 2` 里已经说明：训练阶段真正能稳定采样的，是从数据端朝参考端弛豫的 forward reference process。 到这一节，作者把这个参考过程固定成一个最简单的特例：Ornstein-Uhlenbeck（OU）过程。 原文写…",
-          "### 3.1 Eq. (9)：先把训练用的 forward 轨迹具体化成 OU 过程 `Section 2` 里已经说明：训练阶段真正能稳定采样的，是从数据端朝参考端弛豫的 forward reference process。 到这一节，作者把这个参考过程固定成一个最简单的特例：Ornstein-Uhlenbeck（OU）过程。 原文写成离散时间就是 $$ \\mathbf{x}_{k+1} = (1-\\theta \\Delta s)\\mathbf{x}_k + \\sqrt{2D\\Delta s}\\,\\xi_k, \\qquad \\xi_k \\sim \\mathcal{N}(0,I). \\…"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/hj-sampler.md",
-        "note_title": "HJ-sampler: Bayesian Sampler via Hamilton-Jacobi PDEs and Score-Based Generative Models",
-        "note_date": "2026-04-16",
-        "hit_count": 6,
-        "snippets": [
-          "mineru/hybrid_auto/images/page-18-figure-08.jpg\" width=\"24%\" /> </p> ### 5.2 Ornstein-Uhlenbeck 过程：从正确性验证转向模型不确定性 布朗运动之后，原文把底层过程换成 OU process： $$ dY_t=-BY_t\\,dt+\\sqrt{\\epsilon}\\,dW_t. $$ 这一节的重点发生了变化。布朗运动实验主要问采样器是否准确；OU 实验开始问，当动力学本身带有不确定性或模型误设时，HJ-sampler",
-          "mineru/hybrid_auto/images/page-18-figure-08.jpg\" width=\"24%\" /> </p> ### 5.2 Ornstein-Uhlenbeck 过程：从正确性验证转向模型不确定性 布朗运动之后，原文把底层过程换成 OU process： $$ dY_t=-BY_t\\,dt+\\sqrt{\\epsilon}\\,dW_t. $$ 这一节的重点发生了变化。布朗运动实验主要问采样器是否准确；OU 实验开始问，当动力学本身带有不确定性或模型误设时，HJ-sampler 能不能把这种不确定性显式转成后验分布。这里 $\\epsilon$ 因此不再只是数值扩…",
-          "Table 5 的均值误差表明，三种方法都能稳定采到正确后验；SGM-HJ-sampler 仍略差，原因仍是第一阶段近似。这个实验在叙事上的作用是把“OU 过程下方法本身可用”先确认下来，避免后面的模型误设实验把算法误差和建模不确定性混在一起。 #### 5.2.2 第一种情形：一阶线性 ODE 系统中的模型不确定性 接下来作者考虑线性 ODE 系统 $$ \\frac{dy_1}{dt}=y_2,\\qquad \\frac{dy_2}{dt}=-y_1-y_2, $$ 这本来是一个完全确定性的二阶阻"
-        ]
-      }
-    ]
-  },
-  {
     "id": "large-deviations",
     "display_name": "大偏差理论",
     "category": "framework",
@@ -1359,45 +1901,6 @@
         "hit_count": 1,
         "snippets": [
           "mineru/hybrid_auto/images/page-24-figure-01.jpg) 在标准圆形夹杂体基准上，PDCO 预测的应力场 \\(\\sigma_{xx}, \\sigma_{yy}, \\sigma_{xy}\\) 与 MLP 参考解的全场相对误差仅为 **0.02%**。最大偏差集中在夹杂体/基体界面附近——这与高对比度界面处导数表征的复杂性直接相关。 **分布外泛化**： ![Fig. 3 — 多夹杂体外推预测](../../pdfs/2026-04-16/attaining-physics-driven-convolutional-operators-by-archi…"
-        ]
-      }
-    ]
-  },
-  {
-    "id": "hjb",
-    "display_name": "Hamilton-Jacobi-Bellman",
-    "category": "equation",
-    "short_description": "最优控制问题值函数满足的偏微分方程。",
-    "aliases": [
-      "Hamilton-Jacobi-Bellman",
-      "HJB",
-      "HJ-Bellman",
-      "Hamilton-Jacobi",
-      "最优控制方程"
-    ],
-    "total_occurrences": 136,
-    "note_count": 2,
-    "occurrences": [
-      {
-        "note_path": "2026-04-16/hj-sampler.md",
-        "note_title": "HJ-sampler: Bayesian Sampler via Hamilton-Jacobi PDEs and Score-Based Generative Models",
-        "note_date": "2026-04-16",
-        "hit_count": 69,
-        "snippets": [
-          "# HJ-sampler: 利用 Hamilton-Jacobi PDE 与 Score-Based 生成模型的贝叶斯采样器 ## 精读笔记 --- ## 一、Introduction：这篇文章到底想解决什么 ### 1.1 起点：不确定性量化里有两条原本分开的研究线 原文一开始先把背景放在**不确定性量化**里。这里的不确定性量化，不只是给一个预测值，而是要回答：模型里有哪些不确",
-          "** 这一步非常关键，因为它把原来像是三件不同的事放进了同一条链里： 1. 贝叶斯后验； 2. 偏微分方程； 3. 随机最优控制。 一旦这条链成立，你要做后验采样时，就不一定只能从传统的 MCMC 或变分近似出发，也可以改成： - 先求一个 Hamilton-Jacobi 型 PDE； - 再利用对应的最优控制来采样后验轨迹。 这就是原文所谓 `HJ-sampler` 的思想来源。 ### 1.3 为什么会出现 log 变换 原文接下来不是先讲算法，而是先讲这条联系从哪里来。这里的核心工具是 **log 变换**。在布朗运动语境下，这个变换更常被叫作 **Cole-Hopf 变换**。",
-          "它们描述的是概率密度怎样前向演化，或者某个条件期望怎样后向传播。这类方程的好处是：它们在线性框架里，很多理论和数值工具都已经很成熟。 再看第二边。控制和采样真正关心的，通常不是“某个线性方程怎么解”，而是： - 当前状态往哪个方向推最合适； - 一条路径累计起来的代价是多少； - 概率质量在控制下会怎样重新分布。 这些问题写出来以后，更自然地落到 Hamilton-Jacobi 方程和 Fokker-Planck 方程的耦合系统上。但这类方程是非线性的，直接处理通常更难。 log 变换的关键作用就在这里：它告诉你，后面这个非线性耦合系统，不是凭空冒出来的；它可以从前面那组更容易处理的线性…"
-        ]
-      },
-      {
-        "note_path": "2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.md",
-        "note_title": "Generative Optimal Transport via Forward-Backward HJB Matching",
-        "note_date": "2026-04-16",
-        "hit_count": 67,
-        "snippets": [
-          "# Generative Optimal Transport via Forward-Backward HJB Matching — 精读笔记 > **一句话总结**：本文将生成模型问题严格还原为随机最优控制（stochastic optimal control），通过建立前向-后向 HJB 方程的时间反转对偶（time-reversal duality），将难以求解的逆向控制问题转化为沿正向扩散轨迹的 Feynman-Kac 路径积分估计，从而在无需 sc",
-          "# Generative Optimal Transport via Forward-Backward HJB Matching — 精读笔记 > **一句话总结**：本文将生成模型问题严格还原为随机最优控制（stochastic optimal control），通过建立前向-后向 HJB 方程的时间反转对偶（time-reversal duality），将难以求解的逆向控制问题转化为沿正向扩散轨迹的 Feynman-Kac 路径积分估计，从而在无需 score estimation 或逆向 SDE 模拟的情况下学习一个标量势函数（scalar potential）来驱动最优生成传输。…",
-          "也就是说，当前控制不是回头去重算过去，而是在利用 $U(t,\\mathbf{x})$ 这种 `cost-to-go` 对象，把“从这一点往后最少还要付出多少代价”压缩进当前决策里。 第三步，一旦把问题写成这种对偶形式，控制场就不再需要被单独学习了。这里的 HJB 是 **Hamilton-Jacobi-Bellman** 的缩写，它描述的是：如果系统现在位于某个状态，那么从现在到数据端的最小剩余代价满足什么偏微分方程。这个理论里最核心的对象就是 value function，也就是上面说的“最小剩余代价函数”。 原始代价里，控制 $\\mathbf{u}_t$ 一方面要付出二次做功代价，另…"
         ]
       }
     ]

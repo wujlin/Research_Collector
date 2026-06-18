@@ -1,0 +1,166 @@
+Hi, my name is Tal, and in this video, I'll present our iCLEAR 2026 oral paper, Latent Particle World Models.
+In this work, we introduce the latent particle world model, LPWM, the first self-supervised object-centric world model capable of end-to-end training on complex real-world video data.
+What does self-supervised object-centric mean?
+LPWM autonomously discovers key points, bonding boxes, and object masks directly from video data.
+This approach enables stochastic dynamics sampling and enables scalability to complex environments.
+LPWM is trained exclusively from video observations and supports optional conditioning on actions, language, images, and multi-view inputs.
+We demonstrate the applicability of our model to imitation learning on two complex multi-object environments,
+highlighting its utility for decision-making tasks.
+I want to begin with asking, how do we learn stochastic dynamics in the absence of a conditioning signal?
+One way to do this would be to learn a dynamics model that is conditioned on latent signals that guide it toward the next state.
+These signals are typically called latent actions, and they are the output of a latent inverse dynamics model.
+Latent actions are latent variables representing transitions between consecutive observations.
+The common scheme to learn these variables is auto-encoding.
+An inverse model infers the latent action, and a decoder reconstructs the future frame given the latent action and the previous frame.
+There are two fatal flaws in this design, representation collapse and global modeling.
+To prevent the latent action encoder from memorizing the consecutive frame, leading to the decoder ignoring the previous frame,
+a stronger regularization is applied, either via vector quantization or KL regularization to a fixed prior.
+Another flaw is that the decoder does not memorize the previous frame.
+Another flaw is that latent actions are typically global, meaning that there is one latent vector representing the entire transition between frames.
+There are limitations to using a global latent action vector.
+In multi-entity scenes, for example, enemies in Mario, a single vector cannot naturally disentangle local interactions,
+and these methods typically rely on single-agent movements, like a gripper, but even a gripper can be composed of multiple joints.
+Provided with a latent action model, we can now integrate these in a world model to model stochastic dynamics.
+Another challenge we discussed is how to learn world models from high-dimensional observations.
+Traditional approaches typically compress the input frame to a single vector.
+This makes it hard to represent fine-grained details or scenes with a lot of objects.
+Current approaches use patch-based representations, where each patch serves as an entity.
+These are more fine-grained, but still not exactly the same.
+But we can do what we want, especially when aligning with other modalities, such as language.
+Both of these approaches are very different from how we represent language, where tokenization is usually semantic.
+Consider this illustrative example, where the dynamics of two moving objects are described alongside a caption,
+the blue ball is moving diagonally towards the green square.
+Text representations typically rely on semantic tokenization,
+into words or sub-words, and so on.
+This underpins the success of large language models.
+In contrast, image representations predominantly use patchifying,
+dividing the image into a fixed grid of patches without regard for semantic content.
+If we were to do something like this for text, it would look very weird.
+While this patch-based approach enables scalability and generality,
+it lacks the semantic intuitiveness of object-centric decompositions
+that can enhance the model's ability to capture meaningful object interactions and relationships,
+crucial for understanding complex things, and align more naturally with language representations.
+So, how can we obtain an object-centric decomposition and do so without human supervision?
+People have studied object-centric representations for years.
+In fact, some of the early theories from the 90s proposed that human vision,
+parses scenes into what and where, decomposing content and location.
+However, these approaches were not adopted at a larger scale.
+Inspired by the what-where pathway in the human visual system and recent neuroscience findings,
+which suggest human leverage internal visual spatial world models for planning and action,
+combining object-centric representations with world models is a promising direction
+toward more effective decision-making and vision language optimization.
+We now continue to self-supervise object-centric representation learning,
+and specifically, deep latent particles, DLP.
+DLP is a VAE where the latent space is a set of particles.
+Each particle has several learned attributes, such as keypoint, bounding boxes, transparency,
+and of course, latent visual features to represent shape and appearance.
+Every attribute is learned with respect to the optimization process,
+with respect to the optimization objective, the evidence-level bound,
+which is decomposed to the reconstruction error and KL divergence terms.
+In this work, we also introduced DLP v3, which introduces several improvements.
+Please refer to the paper for details.
+Here we can see how DLP decomposes scenes, creating a self-supervised object-centric representation,
+which motivates its utilization in downstream tasks.
+So, how do we build world models from latent particles?
+The main novel component added to the DLP framework is the context module,
+which is designed to model stochastic dynamics in actionless video.
+The idea is to capture stochastic transitions of entities in the scene
+with per-particle latent actions as part of the dynamics modeling.
+This formulation enables the representations of
+multiple simultaneous interactions and captures multi-modality.
+Here is how it works.
+The context model takes in a sequence of particle sets across T plus 1 frames.
+The module is composed of two complementary heads,
+the latent inverse dynamics, which predicts the latent actions responsible for the transition between consecutive particle states,
+and the latent policy, which models the distribution of latent actions conditioned on the current states.
+The module is implemented as a causal spatio-temporal transformer.
+The latent policy serves as a prior that regularizes the inverse dynamics
+via a KL divergence penalty in the VAE objective.
+This is in contrast to the fixed prior, or codebook regularization.
+Here the regularization is learned and used at inference time as well.
+At training time, latent actions are obtained through the inverse dynamics head,
+ensuring consistency with the observed transitions.
+At inference time, latent actions can instead be sampled directly from the latent policy prior,
+enabling stochastic callouts of the whole model.
+Conditioning on external signals, such as global actions, language instructions, or image-based goals,
+within the latent context module,
+maps global scene-level signals into per-particle latent actions.
+For instance, given a language instruction,
+it learns to translate it into per-particle latent actions
+that drive the dynamics towards satisfying the instruction.
+Putting it all together.
+Input frames are encoded into particle sets by the encoder,
+and decoded back to images by the decoder.
+The context model then processes the particles to sample latent actions,
+which are combined with the particles in the dynamics model
+to predict the next step particle states.
+LPWM is trained by maximizing
+temporal evidence lower bound,
+or minimizing the sum of reconstruction errors and KLA vergences,
+decomposed into a static term for the first frame
+and a dynamic term for the subsequent frames.
+Let's look at some results.
+All models are on the scale of 150 million parameters,
+much smaller than the standard video generation models.
+On the Mario video game, we have a moving camera and multiple enemies.
+The first type of fallouts is latent action condition,
+meaning that we extract the latent actions from the ground truth video
+and then use them to condition the dynamics model from the first frame.
+The baselines include DVAE,
+a patch-based non-object-centric dynamics VAE,
+and the object-centric slot attention-based play slot.
+The second type is stochastic generation,
+where we sample latent actions to generate different future predictions.
+For an analysis of the metrics,
+please refer to the paper.
+BEAR is a real-world multi-object interaction dataset.
+We can see the DVAE struggles with object permanence,
+while play slot is limited by the large number of objects.
+Similarly, we can sample different interactions.
+For action conditioning, on Sketchy,
+we see the DVAE again struggles with object permanence,
+and objects tend to deform and vanish in long-term prediction.
+For language conditioning, on Language Table,
+the model must align language tokens that include object types, names,
+and special relationships, such as closer or diagonal,
+with the visual tokens.
+We consider the object-centric particles naturally align better
+with language, allowing for language conditioning planning
+directly in the particle latent space.
+We close this presentation with a practical application
+for imitation learning.
+Pre-training LPWM on actionless video datasets
+enable you to predict video dynamics using latent actions.
+Suggesting that these latent actions capture actionable information.
+Assuming access to ground truth actions,
+and that the latent actions effectively encode dynamics,
+learning a simple mapping from latent actions to true actions
+may suffice to derive a policy.
+We pre-train LPWM with image goal conditioning on actionless videos,
+then freeze and learn to map the latent actions
+to ground truth actions with a simple neural network.
+At inference time, we sample rollouts from LPWM,
+map them to the environment actions,
+and execute in the environment in a closed-loop fashion.
+On the challenging Panda push environment
+that involves multi-object manipulation,
+we pre-train an image condition LPWM on multi-view demonstrations,
+where LPWM jointly models the dynamics in both views.
+As we show in our results, our simple policy mapping
+outperforms most baselines,
+demonstrating LPWM's potential to decision-making.
+For results on OGBench, please refer to the paper.
+We presented LPWM,
+the first end-to-end self-supervised object-centric model
+that supports multiple types of conditioning
+and demonstrating strong potential for decision-making.
+We conclude with some limitations.
+The self-supervised object-centric literature
+is yet to be scaled up properly to general purposes,
+in the wild video datasets.
+In addition, the pixel fidelity
+of modern diffusion-based video generator
+is still ahead of the VAE-style dynamics model.
+Thank you for watching,
+and be sure to visit the website for more videos,
+code, and tutorials.

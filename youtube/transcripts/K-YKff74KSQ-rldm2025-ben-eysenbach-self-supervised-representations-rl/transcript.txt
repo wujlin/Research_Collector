@@ -1,0 +1,875 @@
+So next, we've got Ben Eysenbach from Princeton University for the second of our advanced tutorials. He's going to talk about self-supervised reinforcement learning. Thanks, Ben.
+Can you focus in the back of your meal, all right? Perfect.
+Excellent. It is a great honor to be here. I am Ben Eysenbach from Princeton University, and the second tutorial today is about self-supervised reinforcement learning.
+This is going to be very much on the AI side of things, and so let's get started.
+So the tutorial today is going to be about AI methods that can discover small reusable skills on their own.
+And importantly,
+these skills are not going to be programmed in advanced,
+but rather they're going to be discovered through exploration, through experimentation, without needing demonstrations, without needing rewards.
+We'll talk about how we can learn these skills and then how we can use them to rapidly solve new tasks.
+So machine learning today, we often think about machine learning models that are taught by giving them examples of what humans would do.
+So the big language models,
+they're trained by
+the AI to predict the next word that they see trained primarily on the Internet, on text written by humans, and then they're largely fine-tuned on expert responses by trying to mimic how experts would respond to certain prompts.
+The robots that we have today, the successes that we hear about are primarily driven by imitation.
+And the same is true for autonomous driving.
+I think the reason why a lot of us are really excited about reinforcement learning methods is that they give us tools to solve problems.
+And so,
+I think the reason why a lot of us are really excited about reinforcement learning methods is that they give us tools to solve problems.
+And so,
+I think the reason why a lot of us are really excited about reinforcement learning methods is that they give us tools to solve problems that we humans currently don't know how to solve, or they might give us better solutions than the ones that we humans have come up with so far.
+So just this past year, the touring award was given for reinforcement learning.
+But I think that we're only still seeing the tip of the iceberg.
+I think that there's a whole slew of other capabilities that reinforcement learning methods might be able to unlock.
+But I think that realizing that is going to require addressing a couple of key challenges.
+I think that there's a whole slew of other capabilities that reinforcement learning methods might be able to unlock.
+But I think that realizing that is going to require addressing a couple of key challenges trying to do things that reinforcement learning methods really should be able to do.
+But I think that realizing that is going to require addressing a couple of key challenges trying to do things that reinforcement learning methods really should be able to do.
+But I think that realizing that is going to require addressing a couple of key challenges trying to do things that reinforcement learning methods really should be able to do.
+One of those is reasoning over long horizons.
+One salient difference between reinforcement learning methods and supervised learning methods is that reinforcement learning methods care not just about good outcomes today, but about good outcomes tomorrow and the next day.
+One of those is reasoning over long horizons.
+One salient difference between reinforcement learning methods and supervised learning methods is that reinforcement learning methods care not just about good outcomes today, but about good outcomes tomorrow and the next day.
+One of those is reasoning over long horizons.
+reasons. One salient difference between reinforcement learning methods and supervised learning methods
+is that reinforcement learning methods care not just about good outcomes today, but about
+good outcomes tomorrow and the next day. But it turns out that planning really far into
+the future is just really hard. And closely related to this is that reinforcement learning
+methods are supposed to be able to learn from sparse rewards. If we want reinforcement learning
+methods to solve tasks we don't know how to solve, I can't write down a nice, dense
+reward function because I don't know how the task will be solved.
+Now, conceptually, one way of thinking about these challenges of long horizons, sparse
+rewards, is by thinking about building a tower of cards like that guy up there is doing.
+You can imagine how difficult it would be to learn how to build a tower of cards like
+that if you didn't get any rewards along the way. And only at the end of the day, you
+place the last card into place, would you get any rewards saying you had successfully
+built a tower of cards like this. How could you even learn how to stack two cards on top
+of each other if you only got rewards at the end of the day?
+So these two challenges of long horizons and sparse rewards, they're typically conceptualized
+as the problem of exploration, one of these key challenges in reinforcement learning.
+But I think this term exploration, it doesn't quite do it justice.
+I think, zooming out for a second, the real challenge here is that reinforcement learning
+is a problem of searching over this big space of behaviors, this huge space of behaviors
+that we need to explore and discover, and then we need to organize.
+And maybe I guess as a cartoon, we can think about this big space of behaviors as this
+kind of ugly drawing here. How do we discover all of the things that an agent can do in
+an environment?
+And then how can we make sense of it so that we can quickly solve a reinforcement learning
+problem?
+For example, let's think about solving this manipulation problem here.
+You have this robot, there's this block here, and there are many, many things that this
+robot can do.
+You can think about the behavior it's executing right now as just a certain point on this
+big space of behaviors.
+But there are a lot of other things that this robot could do.
+Here's another example of behavior that this robot can do.
+This robot can move his arm in different ways.
+It could throw the block around, it could start juggling the block, start balancing
+the block on the corner of one of these drawers.
+So fundamentally, this space of behaviors is really, really complex.
+Now, functionally, when we're applying reinforcement learning methods today, we often describe
+behavior with a neural network.
+So we're going to use a neural network.
+We're going to use a neural network.
+We're going to use a neural network.
+We're going to use a neural network.
+We're going to use a neural network.
+We're going to use a neural network with a whole lot of parameters.
+And the questions we think about are, how do we update the neural network parameters
+to get the sorts of behaviors that we care about?
+So if I look at one individual parameter in this neural network, I might think about,
+how does changing this one parameter change the behavior of this policy?
+But of course, this is a really, really hard problem to reason about.
+There might be millions of parameters here.
+Changing some parameters may have no effect on the behavior.
+Changing other parameters may have a huge effect on the behavior.
+So two parameters may have the same effect on behavior.
+So today, I want you to imagine a knob, a small dial, such that when you turn that dial,
+you get different behaviors.
+For another task, maybe this quadrupedal robot like this, setting the knob to one value gives
+you a behavior like this.
+Setting the knob to a different value gives a behavior like this.
+Hopefully you can see how having a knob like this would be really valuable.
+You might solve new problems by just turning this knob to different values.
+Maybe some problems require two knobs, but it'd be very easy to simply tune these knobs
+rather than having to search over this enormous complex space of behaviors.
+Formally, we might think about these knobs as sweeping over this big, complex space of
+behaviors.
+So today's goal is to figure out how do we take this big space of behaviors and compress
+it, compress it in a way so that we can easily search over it to solve new tasks.
+And we'll see that this involves a couple pieces.
+One is we have to discover what are all of the behaviors that are possible in an environment.
+And second, how do we compress these behaviors so that we can quickly search over it to solve
+some new downstream problem?
+One way of thinking about this is that this knob here is a pre-training task.
+It's a form of self-supervised learning, a form of learning that doesn't require demonstrations,
+it doesn't require rewards.
+One thing to note is that there are lots of other ways that people have conceptualized
+free training for reinforcement learning.
+But I really like this analogy of this knob here because it suggests that the benefits
+that we get from reinforcement learning are not necessarily the same as the benefits we're
+learning are about interaction. So it makes sense that for pre-training, we also care about
+interaction. So here's the goal for today. How do we compress big spaces of behavior?
+Now, as you start to think about this, one frame of reference that might come into mind
+is intrinsic motivation. This really rich line of work on thinking about rewards coming from
+surprise, from novelty, from curiosity. This line of work is really important, and we'll see that
+there's strong connections between intrinsic motivation and learning these behaviors that
+we talk about today. What I want to focus on today is a lens of, or a way of thinking about
+intrinsic motivation that allows us to quickly solve new tasks. And so we're going to focus on
+intrinsic motivation methods that give us this knob, this knob which will then give us many
+candidate solutions.
+For quickly solving new tasks.
+So the goal for today is to figure out how do we compress this big, large space of behaviors?
+How do we discover it? And then how do we make it easy to search over?
+And so here's what we're going to do in the tutorial today. I want to start by describing a
+game, a game that you and I might play out on the soccer pitch outside. And we'll see how this game
+describes how we can go about learning these behaviors or these skills.
+We'll then talk about how you can formalize this into an algorithm that you actually can run
+on your laptop or on your computer cluster. I'll then show several examples from a variety of labs
+that these skill learning algorithms, they actually work. I'll then talk a little bit
+about mathematically what's going on to try to give us some shared language for describing
+what's happening. And we'll see it actually closely mirror some of the probabilistic language
+from the first tutorial today.
+We'll then talk about how you can use these skills to quickly solve downstream tasks.
+Both practically, how do you use the skills, but also theoretically, can you prove that
+these skills might be useful for solving new tasks?
+And then at the end, I'm going to talk a little bit about what I see as the frontier of skill
+learning.
+How do we unlock this next generation of skill learning algorithms?
+How do we hopefully see the underside of this big iceberg?
+Now, before I keep diving into this, I should note, there are many, many different ways
+of thinking about self-supervised reinforcement learning, or thinking about trying to learn
+some behavioral foundation model.
+There's some folks that think about the exploration facet of this.
+How do you go and explore big, complex environments?
+And there are other folks that think about the representation learning problem, and yet
+other folks that think about skill learning.
+And there are yet other perspectives, too.
+I hope that this tutorial will highlight that.
+A lot of these.
+Perspectives on self-supervised reinforcement learning are really different perspectives
+on the same underlying object, but it's also worth noting that I'm sure there are lots
+of perspectives that I don't know about.
+And one of the reasons I'm very excited to be here at RLDM is to learn from all of you.
+So I hope that we can continue the conversations throughout the week.
+Okay, let's get started.
+A couple of definitions so that we're all on the same page.
+I'm going to think about.
+A Markov decision process where we have states or observations.
+S the subscript T denotes time, time goes one, two, three, four, five.
+We'll have actions A. They're taken by an agent.
+And we'll have a skill representation Z. Z here, this could be discrete, just number
+one, two, three, four, five, or maybe five behaviors that you're learning, or it could
+be continuous, some vector.
+And the user is going to choose.
+Okay.
+Use some prior distribution T of Z. This could just be uniform over the numbers one,
+two, three, four, five.
+The policy selects actions given the current state of the world.
+And we'll also talk about policies that are conditioned on a skill representation Z.
+One thing to clarify here is that when I say a skill, I'm really referring to a combination
+of this policy.
+It's conditioned on a skill representation.
+So skill depends both on this skill representation, a number together with this set of policy
+parameters.
+And one object that will be useful for today is the discounted state occupancy measure.
+One way of thinking about this is that imagine you close your eyes, then you run around and
+you open your eyes at a random point in time.
+You want to know, where will you be?
+Where will you be?
+And the answer is described by this probability distribution.
+Us the one minus gamma here simply ensures that this probability distribution songs are
+integrates to one.
+Another way of thinking about this is you want to know the probability that you end
+up in state SF.
+At some point in the teacher, maybe you'd one step, maybe in two steps, maybe in five
+steps.
+You can visualize this as saying, if you're.
+2021.
+arme.
+agent is in this state here its distribution over future states might look something like this
+sampling one of these states with a higher probability on the short horizon states
+for another robot it might look something like this we'll also talk about versions of the
+discounted state occupancy measure that are conditioned on your initial state say where
+will you go if you start here or where will you go if you start here and take this action
+or if you're using skill z where are you likely to go okay so with this notation in place i want
+you to imagine a game a game that if you want you can play this evening on the soccer pitch
+so this game involves two players a red player and a blue player
+and the players stand on either end of a football field the blue player has some message and they
+want to convey that message to the red player who's standing on the either end of the field
+and on the opposite end of the field and so to do this the blue player is going to perform some
+behavior maybe walking and looking down and then the red player has to guess what message is the
+blue player trying to send me if the blue player is trying to send a different message
+they might do a different behavior
+they're trying to send a different message might do a different behavior and so on and so forth
+one thing to note is that this is a cooperative game the two players are on the same team they're
+trying to both effectively send messages and i want you to think for a moment how would you play
+this game if you were the blue player and you had one six different messages you wanted to send
+what would be the six behaviors that you learned would they be similar to one another would be
+different to one another would you just use your left hand or would you use both of your hands
+and jump up and down one thing to note here is that if you just look at one of these behaviors
+in isolation it's kind of hard to say whether this one behavior is good or not you really have
+to think about this collective set of behaviors to say whether this is a good strategy for playing
+this game and throughout today's tutorial i'll refer to one of these behaviors as a skill
+so what sorts of skills would you expect to emerge
+between two players who were pretty adept at playing this game
+well you'd probably expect that the blue player would end up exploring a lot of different
+behaviors they would end up learning different skills that cover different states because
+doing so allows them to effectively convey different messages but you would also expect
+that the blue player will act predictably when they're sending a certain message they'll always
+do the same behavior because this will make it easier for the red player to guess what are they
+trying to do what message are they trying to send to start and build some intuition into what's
+happening here you can think about player a really as sending a message a coded message
+the player to the other player the red player when the blue player wants to send the message
+a they'll do a certain behavior when they want to send the message b they'll do a different behavior
+and we can actually measure how many bits of information the blue player is sending to
+the red player by looking at how effectively the red player can guess the message that the blue
+player was trying to send we see here we're looking at when the blue player does this
+how what is the probability that the red player assigns to message b
+and so this is the game that you and i could play
+and the game results in the blue player learning a set of behaviors
+that was exactly what we started this tutorial by trying to figure out how to do
+so let's now walk through how we can translate this game into a practical algorithm that we
+actually can run on our computers so we'll and just for context here i'm thinking about
+a setting where we have some environment that we can interact with but it won't give us any rewards
+so we'll start each round of the algorithm by sampling a skill
+representation one of these zeds maybe gets a number from one to five
+we then have a skill that will select actions
+and get observations and select next actions and get next observations executing some behavior
+and this is exactly the role that the blue player was performing in this game that we talked about
+we then have this discriminator this red player that looks
+at the observations and tries to guess what message was the blue player trying to send
+now importantly at the end of the game the red and the blue player they can come together
+and say okay blue player what message were you actually trying to send and the red player could
+update its beliefs so we can get even better at guessing what the blue player was trying to send
+what they were trying to say
+and conversely the blue player can update their behaviors so they're easier to guess
+so it's easier for the red player to guess what they're trying to do in particular they are
+rewarded for going to states where the red player successfully guesses their intention z
+now one thing to emphasize here is that in this entire algorithm
+these rewards are entirely
+intrinsic in the sense that no human had to write down this reward function here
+but rather is just computed in the course of this algorithm without needing any demonstrations
+or any reward definitions and this general prototype of an algorithm
+describes a large number of papers that study how do you learn skills
+so we have this game that we've now translated into an algorithm and perhaps the big overarching
+question is, does this work? Can you actually use this for learning different sorts of behaviors?
+I want to give a couple examples of papers that have used this effectively. One of the ones that
+we worked on several years ago looked at controlling this two-legged dog and using
+this algorithm, we were able to learn different strategies for running forwards and running
+backwards and walking forwards. A couple things to note here. Collectively, these sorts of behaviors
+do effective exploration to cover all sorts of behaviors that you might do in this environment.
+The second thing that you might notice is that if I just showed you one of these videos,
+you probably could guess whether this corresponded to behavior one behavior for
+behavior three, or so on. The behavior's predictable. And one of the reasons this
+is useful is you might now think about how you could use these behaviors to solve a new task.
+If I say,
+you want to get this dog to run and jump over hurdles, you can think about ways of sequencing
+or composing these sorts of behaviors to solve tasks that are longer horizon or have sparse
+rewards. Folks at Google developed a similar skill learning algorithm for controlling this
+quadrupedal robot. And just to emphasize, they're doing this without any demonstrations,
+without any reward shaping.
+Other folks have developed skill learning algorithms for manipulation. So this means
+that now when you want to solve a manipulation problem, you already have this rich basis
+of behaviors to start with. And making use of some demonstrations, you can use skill
+learning methods to automatically learn a wide variety of here animated behaviors.
+Folks have even developed skill learning algorithms for controlling wireless networks. We're
+thinking about how do you assign packets to different cell towers.
+And so the goal for this tutorial is to try to talk about how do you compress this enormous
+space of behaviors? How do you discover what's possible and then organize it? And hopefully
+this game.
+That we've translated into an algorithm makes sense and gives you some intuition for how
+you can automatically discover a large space of behaviors, but then represent it compactly.
+We've seen some examples of how this works so far. At this point, you might be wondering,
+okay, this is great, but open-ended learning is great. But does this actually do anything
+practical? Does this actually, can we actually use this for maximizing rewards? And so in
+the next part of this tutorial,
+I want to talk about mathematically, what is happening under the hood.
+And then we'll talk about using the skills for reward maximization and some future directions.
+So mathematically, what's happening is that these two players are maximizing mutual information.
+That's the tldr. But I can't unpack that. I want to take a step back and talk about
+what mutual information even is. Mutual information takes back to Shannon's paper from 1948. And
+one way of thinking about what mutual information relates to is about thinking about two people
+that are talking on the phone or are communicating over a wire. One player is trying to send a
+message over the wire, and the other player hears a noisy version of that message and
+tries to make out what is the other human trying to say. If this player is able to perfectly
+make out what this player is saying, then the other player is able to make out what
+this player is saying. Then the mutual information between what this player hears and what this
+player says is going to be quite large. In contrast, if this person has no idea what
+this person is saying, if the message gets entirely garbled when it gets sent over this
+wire, then the mutual information will be zero. And formally, the mutual information
+is defined as the difference between two entropies. And the mutual information is symmetric. And
+when the mutual information is
+indicated in the식, then the mutual information iseducated between the two entropies. But
+in this role, one player uses the mutual information as a magnet, and the other player uses it
+as a set of pincers, in the sense that they're soities. And this is easy to understand because
+the neutral information comes from one or more of the two entropies. And so, the rule
+that we have here is that mutual information can be translated over the entire set of entropies.
+Tau here denotes one trajectory of behavior, a sequence of states and actions.
+And Zed here corresponds to these knobs that we want to be able to learn.
+And so what's happening when we're maximizing mutual information is we're trying to learn
+knobs that exert a high degree of influence over the behavior that results.
+Now to unpack this a little bit, we can think about defining this mutual information, rewriting
+it in terms of entropies.
+If we go back and think about when we were playing this game, the sorts of behaviors
+that we thought would emerge, we said that there are two properties.
+One property was exploration.
+We thought that the blue player was going to learn behaviors that effectively cover
+the space of possible behaviors.
+And we can see that maps nicely onto the first term of this mutual information, maximizing
+the.
+Entropy of the trajectories corresponds to trying to do as broad behavior as possible.
+And the second thing that we predicted would emerge from this game is that the blue player
+would perform behaviors that were predictable, so it would be easy for the red player to
+guess what they were trying to do.
+And we see that maps nicely onto the second term in this mutual information, which says
+that for a given message, the blue player could always perform the same behavior.
+Now we can use the fact that the mutual information is symmetric to understand what the algorithm
+I described is doing as well.
+So the algorithm corresponds to maximizing the second equation, which is mathematically
+equivalent to the first.
+Where the second entropy term here says, if you look at the behavior, can you guess what
+message the blue player was trying to send?
+And that's exactly.
+This discriminator was taking.
+And the first term is just a constant, and so we can ignore that.
+So to unpack this a little bit, we can get a lower bound on the mutual information that
+depends on two terms.
+One is the policy, and the second is this discriminator here.
+And the algorithm I described alternates between updating your skills and updating your discriminator.
+And I want to walk through how this works.
+So the policy optimization looks as follows, for simply applying reinforcement learning
+to this reward function that depends on the discriminator.
+One thing to note here is that when I've written the equation like this, I say we want to learn
+a skill that goes to states where it's easy to guess what behavior is being done at that
+state.
+And.
+This.
+What you're going to hear is this discounted state occupancy measure, this distribution
+over states that you visit.
+So this can equivalently be written as the standard sum of discounted rewards that we're
+used to seeing in reinforcement learning, where reward is the probability assigned to
+this skill.
+So for optimizing the policy, you can apply any reinforcement learning algorithm you want.
+You could apply DQN or PPO.
+Here's your favorite algorithm.
+But for a reward.
+You use this reward here.
+Now the discriminator is trained with maximum likelihood.
+So for example, if the skill representations are discreet, a number 12345, then we're simply
+doing classification.
+The discriminator is going to optimize some standard cross-entropy loss.
+If your skill representations are continuous, then you're simply doing regression, maybe
+minimizing a mean squared error.
+There's a special case here that's sort of fun and fairly widely used in practice, which
+is to think about Z as a normalized vector, a vector that lies on the unit sphere.
+And in this case, you can think about what the discriminator is doing is trying to learn
+a representation of behaviors that's closely aligned with your skill here.
+And so hopefully this gives you some sense of under the hood.
+How did this?
+How does this algorithm actually work?
+One thing to note is that there are several choices for which mutual information you might
+decide to optimize.
+So far, I've been talking about a mutual information between skill representations and entire trajectories.
+And this is really useful when you even care about the order in which states are visited.
+But in practice, we often only care about the frequency with which you visit states,
+not the order in which you visit states.
+And in those settings.
+It's a simpler mutual information that only depends on your state instead of your trajectory.
+You might be tempted to say, well, does including the actions have really improved performance?
+In practice, the answer is no.
+But there are several settings where including your initial state can improve performance.
+And the intuition here is that if you want to describe the space of behaviors, not as
+going to absolute positions.
+But rather as performing a bunch of relative motions or relative behaviors, then a mutual
+information that looks at the change in states starting at your initial state to some current
+state can be highly effective.
+Okay, so this is the objective that's being optimized secretly when you play this game.
+It's worth taking a step back to note for a second that there are several alternative
+ways of learning these skills.
+A lot of prior work has looked at using alternative objectives for measuring the distance between
+two skills, and these methods can be highly effective when you, a user, knows how you
+want to compare the skills in advance.
+There are also methods for learning skills using hierarchical reinforcement learning,
+and this can be most effective in settings where you're given a certain reward function
+and you want to learn a bunch of primitive skills directed towards maximizing your skills.
+But in practice, there's a lot of prior work that's looked at using alternative objectives
+for measuring the distance between two skills, and these methods can be highly effective
+towards maximizing that reward function. Yet hierarchical reinforcement learning methods
+requires that you know this reward function in advance. There are also meta reinforcement
+learning methods, or methods for learning to learn. And these methods can be highly effective
+if I tell you in advance, here are 20 behaviors, learn how to solve these 20 behaviors, or learn
+how to quickly solve these 20 behaviors. But again, this requires knowing these rewards in
+advance. So one of the benefits of looking at mutual information is that allows us to
+learn behaviors before any rewards have been given. One other piece of context I want to
+provide here is that there's a really close connection between these skill learning methods
+and rich prior work on empowerment. So empowerment is this classic idea in reinforcement learning,
+thinking about the mutual information between
+the action,
+that you take now and the states that you visit in the future. The idea of empowerment maximization
+is that you want to take actions that exert a high degree of influence over your futures.
+Now we can think about these skill learning methods as a sort of hierarchical form
+of empowerment in the sense that we want to learn skills so that the skill representation
+Zed exerts a high degree of influence over the future states.
+Whereas before we were thinking about, whereas empowerment thinks about taking actions that exert
+influence, now we're thinking about choosing skills that exert a high degree of influence.
+So you can think about these skills really as a sort of temporally abstracted action.
+And one way of reinterpreting what these skill learning methods are doing
+is that they're trying to learn skills so that if you randomly select
+these Zed's, this corresponds to having a very empowered policy.
+And you can imagine that if selecting these Zed's randomly gives you highly empowered behavior,
+this gives you a strong starting point for being able to quickly solve new tasks.
+Okay, so zooming out for a moment, the overarching goal of this tutorial is to figure out
+how do we compress this enormous space of behaviors so that we can search over it more easily. And now we,
+we have an algorithm for doing this, as well as the mathematical theory for describing
+what this algorithm is doing. But at the end of the day, what we care about is not just learning
+cool behaviors, but actually using these behaviors to quickly solve new tasks. And so I now want to
+talk about relating these skills to reward maximization. I'll start by talking about,
+in practice, how is this done? How are a wide variety of fireworks doing this? And then I'll
+talk a little bit about, um, some theoretical connections between the.
+Skills and maximizing downstream rewards.
+Okay. So I'm going to talk about three primary methods for using skills to solve downstream
+tasks. The first approach is the easiest, which is after you've learned this big library of skills,
+you can simply use one of these skills for solving, um, as your solution to a new
+reinforcement learning problem. So let's say that you have this, uh, quadrupedal ant here.
+And you've learned a couple of different skills. Me, the user there can simply change,
+tune this knob to different values and see which of these behaviors I like the most.
+I'll take the behavior I like the most and use that as my solution.
+Um, one of my favorite applications of this is to the game Montezuma's Revenge. This is work done in
+2018 out of DeepMind. Um, I'm going to talk a little bit about this. I'm going to talk a little bit about this.
+And what they were looking at is learning an enormous space of behaviors and then using
+them to control this little character up here. In this game, there are various ladders that
+you can climb. Uh, there's a rope that you can go up and down. And Montezuma's Revenge
+is considered one of the very difficult exploration benchmarks in the field.
+Now, one of the cool things about how this prior, uh, how this method was learning these skills,
+is that they were using the actual images from the environment as the description of the behavior.
+So their Z, their skill representation was an image itself. And so what I'm showing you here
+in this really blurry image is superimposing the current state of the world with this goal state.
+And so you can see if you only need to focus on this red blob here,
+that's where the character currently is. And this darker blob here is the character's goal location.
+And so I'm now going to, uh, show you a couple of behaviors, where the,
+of different skills that have been learned. So here's another behavior corresponding
+to jumping over here. Here's another behavior for getting over here.
+Another behavior for jumping up there.
+And one thing to note is that all of these behaviors are learned from scratch with no
+reward functions with no reward functions.
+demonstrations. And you can imagine how having a library of behaviors like this might enable you
+to solve a game like this much more rapidly. Okay, so this was the first approach for using
+skills to solve downstream tasks, but I guess taking one of these skills and directly using it.
+But there's another set of approaches for using the skills, which is to think about
+combining or sequencing these skills. For example, let's say that we've learned skills for
+walking forwards and jumping. Now, if I want to solve some hurdling task,
+I can't directly use one of these skills to solve the hurdling task,
+but I can solve the hurdling task by alternating between
+walking and then jumping, and then walking and then jumping. And here's what that looks like.
+One way of thinking about this is to think about a game like this.
+And one way of thinking about this is that throughout the course of one episode,
+I'm tuning the style, this knob of skills. So first I tune it to one behavior for a little bit,
+and then another behavior for a little bit, then another behavior for a little bit.
+And you can use corresponds to a different skill representation.
+This can be done in advance. I can say, okay, I'm going to do skill one, then skill two,
+then skill three. It also can be done in a reactive or closed loop fashion where you learn
+a policy that you're going to use to solve a game. And then you can use it to solve a game that you're
+going to use to solve a policy that selects the skills given your current state.
+So this is now another reinforcement learning problem where you treat each of your skills
+as a temporally abstracted action. And because each of these skills is executed for maybe
+10 or 100 time steps, this dramatically shrinks the horizon of your task.
+And one of my favorite examples of this is this paper back from 2019 that looked at sequencing
+behaviors to get this humanoid robot to run through a sequence of waypoints here.
+Each of these waypoints corresponds to a different skill.
+And one more example of how these skills can be sequenced together
+is in this bimanual manipulation task from a lab out of USC.
+If you, these, what happened here is at first, the skills were sequenced together.
+The first set of skills was learned for these self-supervised skill learning methods.
+And then they learned a high-level policy to sequence these skills.
+And they were effectively able to solve tasks like this.
+And note that if you don't learn skills and you directly try to solve tasks like this
+from scratch, the exploration problem and the long horizon reasoning problem
+are too difficult to make any progress.
+Okay.
+So these methods for sequencing behaviors,
+these methods for sequencing behaviors,
+methods for sequencing skills are probably the most common way that people use skills
+for solving downstream tasks.
+But there's a third approach that I want to briefly mention,
+which is using skills as a way of practicing.
+This can take a couple of different forms.
+One form is for meta reinforcement learning.
+I mentioned earlier that one way that people have learned skills and an alternative way
+of learning skills is to first define a set of tasks and then learn how to quickly adapt
+to these tasks.
+One way of using these skills is to provide a way of automatically generating tasks that
+you can use for practicing.
+Another way that these skills have been used is in multi-agent settings.
+One of the key challenges in multi-agent reinforcement learning is learning how to
+adapt or cooperate with different opponents.
+And you can use these skills to automatically synthesize many different behaviors.
+And so you can practice playing with these different sorts of players.
+Quick show of hands, who has played the game Hanabi before?
+Great.
+Everyone else raise your hand.
+You are going to learn how to play Hanabi.
+It's an amazing game.
+And for folks that have played Hanabi before,
+you probably recognize that playing with your friends,
+with people you've played with,
+is way easier than playing with a stranger,
+even an expert stranger.
+And so this goal of being able to play with your friends,
+being able to cooperate with different players that you're cooperating with,
+is really, really hard.
+And I think that these skills can provide an effective way of practicing,
+how do I adapt to different sorts of players that I'm cooperating with?
+OK.
+So practically, there are these three primary ways that we can use skills
+for solving downstream tasks, for rapidly maximizing rewards.
+But you might be wondering, theoretically,
+is there anything we can say?
+Are these skills, are they all real?
+Do you have any guarantees that they're going to be useful?
+Is this just wishful thinking?
+And thinking about this requires formally defining what we mean by optimal.
+Perhaps the most natural notion of optimality is that these skills,
+we've learned skills for every possible behavior.
+But I don't think this is actually a particularly effective way of thinking about what it means
+for skills to be optimal, because an untrained policy would be optimal in this sense.
+What I mean is that if you have a policy with a set of weights,
+or if you have a neural network with a set of weights,
+you can set these weights to whatever you want to induce any sort of behavior.
+But if you directly think about searching in the space of weights,
+the search problem is going to be way too hard.
+You may have millions and millions of weights that you have to search over.
+It's like saying, if I give you a million knobs,
+you can define any behavior that you want.
+But how can you possibly find the right configuration of a million knobs?
+So I think that the right notion of optimality is one that thinks about,
+how do we adapt to new tasks?
+How do we quickly learn new tasks?
+So in the next couple of slides, I want to walk through a sense in which these skills
+are provably optimal for adapting to new tasks under some assumptions.
+And to do this, we're going to think about skills not as some sort of animated behavior,
+but rather as skills as a distribution over states
+defined using the same discounted state occupancy measure we looked at before.
+So as a running example, I want you to think about a three-state MDP.
+And so every skill corresponds to visiting a certain distribution over these three states.
+State one, state two, state three.
+Probability distributions are positive, they integrate to one.
+And so we can think about this set of probability distributions as lying on a triangle,
+sometimes called the probability simplex.
+And so one skill might correspond to visiting state one pretty frequently,
+and state three pretty frequently, and never visiting state two.
+Another skill might correspond to visiting each of these three states with roughly equal frequency.
+So we're going to think about a three-state MDP,
+and one thing to note is that there are some limits on the state distributions
+that is possible to visit.
+I cannot spend 100% of my time in midair.
+I can spend at most 20% of my time in midair because of constraints imposed by physics.
+And so this region here defines the set of state visitation distributions that are actually
+possible because of the physics, because of the dynamics.
+And formally, we might refer to this polygon here as the state marginal polytope.
+And one reason why I like this image is that it allows us to think about
+learning skills as throwing darts into this orange region.
+When we're learning the skills, we want to know where are the darts going to land?
+Or where are the skills going to land?
+Are they going to be on the inside?
+Are they going to be on the corners?
+Are they going to be on the edges?
+This provides a geometric picture of what these skill learning methods do.
+In the case of information technology, on these ridges,
+and we had mulheres be seen on the edge,
+and which could be in different parts of the labor climate chance at higher risk.
+So to start, we can think about what a standard reward maximization did.
+Reward maximization we can think about as
+trying to learn a policy so that your expected return is high.
+That corresponds to looking at the probability of visiting each of these three states
+times the reward of visiting each of these three states.
+We actually can think about the reward here as a vector.
+would have a state visitation distribution
+at this corner here, saying you're
+going to try to spend as much time as possible
+at this state here and as little time as possible
+at this state and the state down here.
+And so based on this picture, you
+can reason that the solutions to any reward maximization
+problem, they're always going to lie at vertices of this poly
+token.
+And so one way of thinking about whether a skill learning
+method is optimal or not is by thinking about, well,
+are the skills lying at vertices?
+Are they going to lie at every vertice?
+And what you can prove is that the skills learned
+by skill learning methods, they always
+lie at vertices, meaning that every skill you learn
+is going to be optimal for some reward function.
+But it turns out that they're going
+to be some reward functions where you don't learn
+any skill.
+They're going to be skills.
+But there are alternative methods
+for learning how to uncover every vertice.
+And so the general patterns here are that skills end up
+lying at vertices, which means every skill
+is optimal for some downstream reward function.
+But there's a limit on how many distinct skills you'll learn.
+And so this motivates some of those alternative methods
+for using the skills, like just sequencing them.
+Now, this simply says, are your skills
+optimal for solving certain reward functions?
+But they don't say anything about the speed of adaptation.
+And so I now want to talk a little bit
+about the speed of adaptation.
+And so, I've got a really interesting question,
+and one I think is really interesting.
+And it's, I'm going to go ahead and read it.
+So when we're thinking about these skill learning methods,
+we can think about them as learning
+several different vertices on this polytope.
+And we can think about, on average,
+where does this average of the skills end up lying?
+And you can think about the difficulty
+of solving a new problem as the distance
+between this average of skills to the furthest vertex.
+Recall that the solution that you're trying to find
+is always going to be at one of these vertices.
+Formally, we will measure distances
+using a KL divergence.
+And it turns out you can prove that maximizing
+mutual information corresponds to finding
+this average of skills that's as close as possible
+to the furthest vertex.
+This is analogous to saying, if you have a big city,
+where do you put the fire department
+so that the fire engines can get to any point in the city
+with minimal distance?
+And it turns out that optimization here
+corresponds to picking out those points in the city that
+take the longest to visit.
+And why this is useful is that it suggests that when we're
+learning these skills, what we end up doing
+is we're finding an average distribution over states
+that's not a uniform distribution over states,
+but rather that minimizes the number of time steps
+it takes to find the furthest vertex.
+OK?
+It takes to reach the furthest vertex, the number of time
+steps it would take to maximize the most difficult reward
+function.
+And so what this analysis does is
+it provides a formal connection between learning these skills
+and solving new tasks quickly.
+Analysis like this always rests on certain assumptions.
+And so there are definitely some gaps still
+to be made between the theory here and the results
+that we see in practice.
+OK.
+So the overarching goal for today
+was to figure out, how do we discover
+this enormous space of behaviors?
+And then how do we compress it and represent it
+so we can quickly solve new tasks?
+And in the last couple of minutes here,
+I want to talk a little bit about what
+I see as the next frontier of skill learning methods.
+To start, I want to think about this compression perspective
+on machine learning to try to motivate, why should we
+care about skills at all in this era of big foundation models?
+Can I just go ask chat QPT to solve my problem for me?
+Well, I think what these big foundation models are doing
+is they're doing compression.
+You can formally show that maximum likelihood corresponds
+to compression.
+They're trying to look at a big data set,
+like this data set of images, and trying
+to find patterns in those images.
+And language models are doing something similar.
+They're looking at these big corpora, purposes of text,
+and trying to figure out.
+OK.
+OK.
+OK.
+How do you compress all of this text?
+And we can think about reinforcement learning
+as doing something similar, trying
+to take this big space of behaviors
+and compress it into some similar foundation model,
+or what we might call a behavioral foundation model.
+But there's a key difference here,
+which is that this set of all behaviors
+is not provided as an input to the learning algorithm,
+but rather it has to be discovered.
+So you can think about what these skill learning methods
+are doing is really a thing of joint optimization.
+They are simultaneously trying to discover
+the set of behaviors while also trying to compress
+this set of behaviors.
+And one of the reasons why I think this perspective is
+useful is that data is a huge bottleneck today
+in training big AI models.
+We've trained on, effectively, the entire internet
+of images and the entire internet of text.
+We've run out of data.
+But if we have AI systems, maybe reinforcement learning systems,
+that can generate their own data,
+this gives a way of automatically generating
+lots and lots of new data.
+One other salient difference that I want to highlight here
+is that the reinforcement learning models are really
+thinking about interaction.
+If we want to, if the key benefits of reinforcement
+learning are going to be about exploring and discovering
+new behaviors, then it makes sense that when
+we're doing free training for reinforcement learning,
+it involves automatically discovering
+the set of behaviors.
+It involves exploration.
+But as we think about learning all of these behaviors,
+I think the current set of algorithms
+we have might not be sufficient because I
+think there's a concept that currently
+deserves a bit more focus.
+And that is thinking about generalization.
+So papers today, when they talk about learning skills, they
+really look at the coverage of states
+that your skills have covered during training.
+And so when, say, you have some robot
+and you want it to run around, you
+might learn skills for running in lots
+of different directions.
+You might put a paper like this, a figure like this in your paper,
+saying, hey, look, my skills are great.
+They've covered the entire state space.
+You can count how many different states
+they have visited during training.
+One thing to note is that in other areas of machine learning,
+we don't actually have to train on literally
+every possible example.
+In other areas of machine learning,
+I can hold out some of the training data,
+and the models will still make good predictions.
+So how could I develop something like that for these skill
+learning methods?
+How could I learn skills that enable
+me to do lots of things, even if I haven't practiced doing them?
+For example, imagine I want to build
+some reinforcement learning agent for cooking.
+There are lots of different skills
+that that agent might need to practice.
+It might need to learn how to make soups and salads and chicken.
+But at some point, you've practiced enough,
+and now you have the requisite skills
+to go on and make a whole number of other dishes,
+including many dishes that you haven't made before.
+We know that this sort of generalization
+is possible in other areas of machine learning.
+Language models can prove sentences and paragraphs
+that are very different than those seen in the training
+data.
+So how do we do that?
+Well, first of all, we need to know
+the training data.
+Big generative image models are very good at generating images
+like astronauts riding a horse on the moon that have never
+been seen in the training data.
+And so it seems plausible that there
+is some yet-to-be-invented skill learning algorithm that
+might exhibit similar generalization properties.
+I guess to ground this a little bit to give you
+a sense of why it's not so crazy,
+I flew here from New York City.
+If you look at New York City as a big grid,
+there are 17 paths from one corner of New York City
+to the other corner of New York City.
+No one has ever taken every possible path from one corner
+of the city to the other.
+But most people living in New York City
+can navigate effectively.
+Navigating in New York City is actually really easy
+because the streets are all numbered.
+And so you could learn.
+In theory, we know that it's possible to learn skills
+that would allow you to express the 10
+to the 17 different behaviors even without practicing
+all 10 to the 17 behaviors.
+Another concern you might have is, well,
+that's a large number of behaviors.
+10 to the 17 is a big number.
+But it turns out that vectors are very
+good at expressing big numbers.
+Even if you represent skills with a binary vector,
+you can represent as many skills as there
+are grains of sand on Earth with a vector that's only length 60.
+And so the representation problem, I think,
+is also fairly solvable.
+In addition to developing algorithms that
+enable us to generalization, I think that one component
+that I would also like to see more research on
+is thinking about simulation and digital twins.
+I think this is important both for driving advances
+in the field.
+I think we need higher fidelity simulators,
+but also simulators that allow us to really focus
+on the problems that we as a community think
+are the most important problems.
+Maybe simulated robotics isn't the most important application.
+I don't know.
+I don't know.
+I don't know.
+So what does success look like?
+I want to leave you by thinking about an agent that
+can build sandcastles.
+The design of a sandcastle might be encoded in a vector.
+This is similar to how a picture can be encoded in a vector.
+But this skill vector is now going
+to be decoded by interacting with the environment.
+This robot, let's say, is going to interact
+with the sand maybe for dozens of hours
+until it eventually builds a sandcastle like this.
+Being able to build sandcastles like this
+is going to require practice of different sorts of skills,
+maybe practicing building a sandcastle like this
+and another one like this.
+But you certainly don't have to build every possible sandcastle
+to have the skills to be able to build lots
+of different types of sandcastles.
+And we can think about similar things in the virtual world.
+You can describe virtual worlds by a vector.
+And then agents decode those vectors
+by interacting with the world to build it.
+I think the capacity to explore this big space of behaviors
+and to organize it remains a fundamental open problem
+in reinforcement learning and even perhaps AI.
+But figuring out how to do this I think
+will allow us to use reinforcement learning
+methods to tackle problems that require
+really long horizon reasoning and problems
+that we humans don't even know how to solve today.
+I think the current generation of today's current generative models,
+they're really good at painting pixels on a screen.
+They're really good at painting tokens on a screen.
+But I think tomorrow's generative models
+built with reinforcement learning methods,
+they might be able to actually build this world
+that today's generative models can only paint pictures of.
+And I think that these self-supervised techniques
+might be an important technique for enabling this.
+So I'm going to end there.
+A huge thank you to all of my students and collaborators
+who have contributed to some of the work I talked about today.
+There is a link to a website where
+I have an enormous list of references
+of all of the huge body of work that's
+been done in this really exciting area.
+The slides are live.
+The full list of references in the written version
+of the tutorial will be posted.
+Within the rest of the week.
+One thing to note is that I am sure
+I've missed some important prior work in this area.
+This area is huge.
+And I can't possibly cover it in 60, 70 minutes.
+And so please come talk to me.
+Shoot me an email.
+Let me know things I've missed.
+I'd love to learn more about perspectives
+that I have accidentally omitted.
+And I'm happy to take questions at this point.

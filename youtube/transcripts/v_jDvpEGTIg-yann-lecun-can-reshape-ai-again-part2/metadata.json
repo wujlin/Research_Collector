@@ -1,0 +1,20 @@
+{
+  "title": "Can Yann LeCun Reshape AI (again)?",
+  "url": "https://www.youtube.com/watch?v=v_jDvpEGTIg",
+  "backend": "youtube-json3-auto-caption",
+  "model": "youtube-auto-caption-json3",
+  "requested_language": "en-orig",
+  "detected_language": "en",
+  "generated_at": "2026-06-05T08:18:26",
+  "video_id": "v_jDvpEGTIg",
+  "uploader": "Welch Labs",
+  "channel_id": "UConVfxXodg78Tzh5nNu85Ew",
+  "upload_date": "20260530",
+  "duration": 2457,
+  "source_caption_file": "youtube/video/yann-lecun-can-reshape-ai-again-part2-hd/source.en-orig.json3",
+  "source_info_file": "youtube/video/yann-lecun-can-reshape-ai-again-part2-hd/source.info.json",
+  "source_thumbnail_file": "youtube/video/yann-lecun-can-reshape-ai-again-part2-hd/source.webp",
+  "refined_at": "2026-06-05T08:19:37",
+  "cleanup_rules": 38,
+  "paragraph_count": 95
+}

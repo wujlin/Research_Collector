@@ -1,0 +1,12 @@
+{
+  "title": "[ICLR 2026 Oral] Latent Particle World Models",
+  "url": "https://www.youtube.com/watch?v=aZeaCyXJjYI",
+  "backend": "faster-whisper",
+  "model": "large-v3",
+  "requested_language": "en",
+  "detected_language": "en",
+  "generated_at": "2026-05-12T00:43:50",
+  "language": "en",
+  "language_probability": 1,
+  "duration": 745.7776875
+}

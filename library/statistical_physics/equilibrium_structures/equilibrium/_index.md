@@ -2,7 +2,7 @@
 title: "平衡统计力学"
 description: ""
 paper_count: 10
-last_updated: "2026-04-24"
+last_updated: "2026-05-18"
 ---
 
 # 平衡统计力学

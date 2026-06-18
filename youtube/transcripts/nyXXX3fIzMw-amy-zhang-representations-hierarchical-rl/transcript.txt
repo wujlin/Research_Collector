@@ -1,0 +1,1036 @@
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Let's see, let me just try to share my screen.
+On the top right, the fourth icon.
+Yeah, okay.
+I think this one.
+Yeah.
+Great.
+And then, oops, that's not what I wanted to do.
+There, okay.
+Great.
+All right.
+People are coming and we can start on time.
+Okay.
+So, it looks like I can't, you know, if when I'm presenting, oh, actually, I guess, so,
+okay, I see, I can see the slides on.
+Yeah.
+If you have two screens, you can have this window on the one and the presentation on
+the other.
+Okay.
+Yeah.
+I am not currently set up with two screens, so I don't think I'll be able to do that.
+Maybe, yeah.
+No problem.
+I'll manage the session with you.
+If anyone wants to ask question, I give them microphone access and if the question was
+on the chat, I would read it.
+Okay.
+Sounds great.
+Yeah.
+And then, I'm also happy to take questions during the talk.
+So, feel free to just interrupt me.
+Sure.
+Sure.
+Okay.
+Okay.
+Okay.
+Okay.
+Okay.
+Okay.
+Okay.
+Okay.
+Okay.
+Okay.
+Okay.
+Okay.
+Okay.
+Okay.
+Okay.
+Okay.
+Okay.
+Okay.
+Just sending a message to everyone.
+Okay.
+I think we can start up.
+Hi.
+Okay.
+Welcome everyone and thank you, professor, for accepting our invitation.
+We are very honored to have you today for this wonderful talk and I think we can't have
+your attention.
+Okay.
+Awesome.
+Hi, everybody.
+So yeah, my name is Amy Zhang.
+Okay.
+in the ECE department at UT Austin. My work centers around reinforcement learning, learning
+abstractions for reinforcement learning, representation learning. And so today I wanted to talk about
+learning state in action abstractions and representations specifically for hierarchical
+reinforcement learning. So before we dive in, I just wanted to present a roadmap of what I want
+to talk about today. So first is why hierarchy, right? Why should we care about hierarchical
+reinforcement learning as opposed to just flat reinforcement learning where we're just
+learning a monolithic policy that tries to solve any specified task? Then I want to introduce some
+existing hierarchical methods and just talk a little bit about what are the different kinds
+of approaches that have been studied over the last few decades. And there is a bit
+of a divide or difference between kind of like the first methods that came about when people
+first started thinking about hierarchical reinforcement learning and then more modern
+methods, you know, when we started to do deep reinforcement learning and incorporate neural
+networks and gradient-based methods, there was a pretty drastic shift in terms of the type of
+hierarchical methods that people use. And I want to talk a little bit about the problems in some of
+those existing methods.
+And kind of the direction that I think we should be going in. Then I'm going to start to talk about
+some of our own work. We're going to dive deeper into a specific type of problem that hierarchy
+works really well in, which is relational MDPs or settings where you can assume that there's some
+set of common factors underlying the environment where we can hope to achieve compositional
+generalization. So compositionality and relational MDPs, a class of problems where
+hierarchy is well defined. Next, we're going to leverage this kind of factorized structure in
+relational MDPs with a hand-designed relational abstraction. So this is some work that I did
+pretty a while ago now, so in 2018. And so I just wanted to show how with a hand-designed
+abstraction, what is the kind of generalization that we can achieve, the kind of performance that
+we can achieve that is not possible with other learned hierarchical methods. So previous
+hierarchical methods as well as flat methods. But that relies on a very hand-designed
+abstraction, this kind of like relational abstraction. And so the next step is how can we
+relax that assumption that this nice abstraction is provided to us? So then I want to focus on how
+can we learn a factored abstraction and leverage it for hierarchical reinforcement learning?
+And then I want to end with what can we do if we can't assume factorized structure? So kind of
+this relational MDP setting, this setting where we can assume that there are these common underlying
+factors of the environment and talk about, you know, for just the very general setting where we
+have no assumptions about the environment, you know, what's possible? What can we do with
+hierarchical RL? Like why would we expect hierarchy to achieve better performance compared to just
+flat methods? And so before I get started, you know, I'm happy to take questions. I'm not really
+the background that the audience has on reinforcement learning. So, you know, if there's
+any kind of clarifying questions or if you're lost at all, if you just want to ask about something,
+you know, please feel free to interrupt me. Okay. And so with that, let's dive right in.
+So why hierarchy, right? So the problems that we want to focus on
+when we think about hierarchical reinforcement learning are long horizon problems.
+Typically that have sparse reward, which just means that there's no learning signal
+until we actually reach our goal, at which time we're being told, okay, great, you achieved,
+you solved this task, right? So long horizon tasks are very hard to solve because there's
+very sparse learning signal for the agent. And so the idea behind hierarchy is that there may
+be skills that can get reused, right? And so if we have these temporal skills, instead of just these
+abstractions, the task can be easier to solve when it's split up into different levels of
+abstraction. So just as like a very simple example, right? If I'm an agent and I'm on UT campus,
+and UT campus is pretty large because it's a pretty big school, and I'm told I want to go to,
+I want to go to this tower that's on UT campus. So how do I think about, how do I, how I,
+will I be able to do that? So you need very good tools and I mean the tools that you're
+looking for in the class are a lot of stuff. Also it's very important to understand that
+you won't, you know, the first tool in class, it's going to be the right tool for you,
+and it's going to be a good tool for you as well. So give it some time to look at it,
+because you're going to need to look at it for new ideas that you might want to be working on.
+Yeah.
+Do you, do you have any topics that you at UT have that you're really interested in,
+or one topic you want to talk about?
+Yeah, no problem.
+Thanks.
+I don't know what happened. Okay. Um did it just happen? I guess about five or ten
+seconds ago. Just let me start explaining this slide. Okay. Okay. Great. Uh that's okay. Yeah.
+Sorry. I noticed that the it seemed like the video had cut off. So I realized pretty quickly. Um
+all right. So hopefully that doesn't happen again. Um so what I was saying about this slide
+right is that if I'm given some I was providing an example of a long horizon problem
+where I'm an agent trying to navigate this big UT campus and I'm being told that I want to
+go to this tower that's in the middle of campus. And so in order to figure out like how should I
+get there maybe I can think of different waypoints along the route. One example is the CS building
+GDC. So maybe I can think about let me first get to the CS building and from there I can see the
+tower and then it becomes much easier to navigate there. Right. So this is an example of hierarchy
+where I can use this midpoint as it as a sub goal as as a first task to solve
+before I solve my overarching task which is to go to the tower. Okay. So um
+when I think about hierarchical reinforcement learning the underlying concept uh that I want
+to introduce is skills. These skill hierarchies. Right. So this base hierarchical control is on
+skills. So skills are a component of behavior. We're going to assume that they are performing
+continuous low level control.
+And we can think of each skill. We can just treat it as a discrete action. Each skill
+is the same thing as an action. And so we're basically replacing our continuous low level
+action space with this higher level action space corresponding to skills.
+And we want these skills to have the characteristics of being modular and compositional.
+Right. The idea is that we can compose these skills to
+work together in some order and that will give us a high level policy that allows us to complete our
+task. So in order to think about skills and creating hierarchies of skills we have to use
+abstractions. And so when we talk about hierarchical RL we need two different types of
+abstraction. We need a state abstraction which is just a mapping from the state space that's provided
+to us.
+In that previous example of the agent or robot on UT campus, the state space is very likely going to
+just be the pixel images that the robot sees. We're assuming that the robot has just a camera
+that it's using to perceive the world. And so the state space corresponds to those pixel images that
+it's receiving about the world. And the action space for the robot, it can vary in robotics. But
+it's a very simple example. It could just be like low level actuators. So the actual forces
+being applied to each joint in order for the robot to be able to move. And so what we would like to
+do is abstract that action space into some higher level run, into a higher level one. Right. So now
+we have some discrete action space that is composed of skills. And so one example of this higher level
+action space could be being able to take steps.
+Right. So if we have a humanoid robot, instead of thinking of the action space as just
+forces on the joints, we can instead think of it as like, I want to go 10 steps north or 10 steps
+south or 10 steps east or west. Right. So now this problem can contain subproblems. And each
+of these subproblems is now also an RL problem. So it is an RL problem to figure out how do I
+actually walk 10 steps to the north or to the south. But then the higher level
+problem is also still an RL problem. If I know how to walk 10 steps in each direction,
+how do I get to the bell tower? Right. So in 1999, Sutton introduced the options framework.
+And the key idea is just options. So this is just another way to define skills. And these are
+so options have a very concrete definition. Right. Whereas like skill is something that we kind of
+sense of, but we don't necessarily have a concrete definition for. So options are temporally
+extended actions that consist of a policy, a termination condition, and an initiation set.
+So it has these three components. And so I have just this example problem on the bottom right
+hand here. Right. Where I have this two room environment, this grid world environment.
+And my goal is just this dot in the bottom
+right hand corner in the second room. And I would like to go through this hallway
+in order to get to this goal. So that's my high level problem. That's the task
+as it's been specified for my agent. So one example of a skill is can be shown here on top.
+So maybe instead of trying to reach this bottom corner,
+I just want to try to reach this hallway first. Right. So this is now an example of a midpoint
+that can be used to define a skill. And so these arrows just represent the action that my policy
+would take at every state. So here in every state in this one room,
+we have actions that have been assigned to each state. And so you can see if my agent
+were in any one of these states, it's basically being herded to go into this hallway. And there are
+no arrows on the room on the right side because the skill is only defined for this one room.
+Right. So if I think about that skill, under the options framework,
+and an option is just one formal model of a skill, my initiation set consists of,
+so it's this green circle here, all of the states in this room on the left. My termination condition
+is just reaching this hallway state. And my option policy corresponds to those arrows,
+telling me what action I should take when I'm in any of those states on this left-hand side.
+So our low-level actions can also be defined as options. A primitive action can be represented
+as an option. And it can be as follows. Right. So our
+initiation set is just at every state, right, we can take that action. So it's always one.
+Our termination happens after just that one step is taken. So our termination condition
+is also always one. And our policy is just to always take that one action, A.
+Right. So a primitive action, so what this is saying is a primitive action can be executed
+anywhere, lasts exactly one, eight years. Right. So a primitive action can be executed anywhere,
+lasts exactly one, eight years. And so on, eight years, it can be executed anywhere, lasts exactly
+one time step and always chooses action a so that's how i can convert our low level actions
+into options so let's look at another example so now we have this four room environment
+our low level actions consists of these four stochastic primitive actions up down left right
+and i'm going to fail 33 of the time so so that's uh that's what introduces the stochasticity of
+the dynamics and for this four room environment i'm also going to define eight multi-step options
+and those consist of reaching any of the two hallways from uh the two hallways from any room
+right so here's one two three four five six seven eight right so those are my eight options is to
+reach the hallways and so this is an example of one of those options to reach
+a target hallway so my primitive options would just correspond to
+those four stochastic one-step actions right so if my goal corresponds to reaching this hallway point
+this is an example of what my initial values are so my initial value function says i know
+that i'm going to receive high value if i can reach this goal and i don't know anything anywhere
+else i don't know what my values are for any other state at my first iteration i've taken i can take
+one step in any direction from the goal and propagate those values so now i know that these
+two values are also high because my actions are only up down left right i couldn't go left right
+here so it's only up down um and so at my iteration two i can go one step further right and
+so you can see that the value function uh the values that we can learn propagate very slowly
+if our options only correspond to those low-level actions so now let's look at an example where our
+option set only consists of those hallway options right and so it's nice that our goal is actually
+in a hallway because now we can see that if our our options correspond to um every room that's
+reachable from that hallway i can propagate my values much more quickly right so after one
+iteration i've assigned values to my options
+all of the states in these two rooms and at iteration two i've basically solved my entire
+problem because i've assigned values to now all four rooms but we were lucky because our goal
+corresponded to a hallway which was already a termination condition of one of the options
+so what would happen if our goal was instead in the middle of one of these rooms
+then if our options if our action space only consists of those
+eight hallway options
+we actually can't solve this problem because we can never end up in the middle of the room
+we always end up we always terminate in a hallway
+so the solution is to combine both our low-level actions and our hallway uh options
+into our set of options into our into our new high-level abstract action space
+right so now if my goal is just the middle of the groom the
+sorry the middle of the room i can still use my low-level actions to explore
+around that goal to to propagate my value estimates around that goal
+so at iteration one i'm just going to use my low-level actions because i can't
+use my high-level ones yet and at iteration two i've reached a hallway
+so now i can start using my options and explore much more quickly and now i can again solve this
+problem in just a few acts so looking at this example here i'm able to solve this problem with
+lps architectingand here's how i can solve this problem in slightly faster and more application decisions rather than do it in just a few times so be rich Play run model tool actually can see if there's change in
+in just a few iterations and so I just want to provide one more example right
+so if I have this option a which is just starting its initiation set only
+consists of this one state sorry two states these two states and it's going
+to go it's going to this this hallway at the top and I have another option that
+starts from these three states and goes to the hallway on the right I can
+combine these into a policy right so this policy basically says I'm going to
+take option a first and then option B I want to note that policies made up of
+options are not necessarily Markovian right because they may use history in
+order to or basically to replicate this policy using just low-level actions we
+may need history and that's something that gets talked
+about a lot of the time and I think that's something that's really important
+about actually in Sutton's paper so he calls this setting the semi-MDP setting
+because it's only semi-Markovian but we're not going to get into that all
+right so now I just want to jump into modern hierarchical RL methods right so
+in 2017 Pierre-Luc Bacon introduced option critic so this learns both intra
+option policies and termination conditions so what option critic is
+doing is it takes a
+flat after critic method and propagates those gradients for learning the high
+level task to an architecture that is going to also learn these intermediate
+options so the problem with that is that we're still the learning signal all
+comes from the original task right which is can be long Horizon sparse reward and
+very difficult which means that most of the time there's very little learning
+signal that is actually going to
+come from learning those options so it turns out that this method is actually
+pretty unstable and tends to collapse to single action options so it just reverts
+back to trying to solve it as a flat problem they get around this with a follow-up work
+where they actually add in a regularization term to try to encourage these options to be longer
+but it's still not getting around the problem that all of the learning signal is still coming
+from the original task right and that means that most of the time you're not actually receiving any
+reward hierarchical dqn does something very similar but it's just combining that options
+framework now with dqn instead of actor critic but here we have a high level policy that's
+choosing sub goals and a low level policy that is trying to achieve those sub goals
+so what's missing these methods still use the environment reward to learn options so like I
+said this is still a very um very difficult task because long Horizon problems are hard
+to figure out so methods are learning another problem is that these methods are learning both
+high-level and low-level policies simultaneously but the problem with hierarchical RL is that your
+high-level policy depends on what your low-level policies are so with these methods that are passing
+gradients back through both the low level and high-level policies at the same time and are
+training them at the same time is that your high-level policy can never converge while your
+low-level policies have not converged in our society at that we are actually learning things very slow and
+still updating right because if your low-level actions are constantly changing over time
+you can't figure out what your high-level policy should be
+so one solution to this problem is to try to separate out learning the low-level policies
+from the high-level ones so instead of defining low-level policies based on the high-level task
+and the high-level policy instead we can pre-define low-level policies so one example of how to define
+these low-level policies is as just goal condition policies that can be trained separately
+so goal conditioned RL is a type of self-supervised reinforcement learning where
+the agent is being trained to solve a number of tasks or just which just means reach various
+state goals within the same environment so we can always just sample the goal at the beginning
+of the episode and it's sampled as just some state from our state space
+and our reward can be predefined to be the sparse reward where we get a zero when we reach the goal
+and negative one otherwise so you can see that with this reward function we're trying to learn
+policies that try to reach the goal in the shortest number of steps possible okay so based
+on this idea that we want to learn goal conditioned low-level tasks there have been other
+modern hierarchical RL methods
+so one is hero which is hierarchical reinforcement learning with off policy correction
+so this is just learning off policy it's training the low-level goal condition policies
+with off policy training and goal relabeling so goal relabeling is just a way to introduce
+additional learning signal to make that goal condition problem a little bit easier
+so we are collecting our experience we're training our low-level goal condition policy
+but also some ELL for example where you're already learning the low-level goal condition
+and now we have a predefined reward for our low-level policies
+where this reward is not the high-level task reward so it's not that really difficult sparse
+reward anymore we now have this goal conditioned reward that's defined as follows and then once we
+train these low-level goal condition policies we can train a high-level policy that provides goals
+level policy to reach. So that's what hero is doing. Diane is another method also from 2018
+that doesn't rely on goal condition policies, but it also has another way of learning low level
+policies or skills independently of the high level policy. So here, instead of doing goal
+condition RL, they're actually using an objective by maximizing mutual information between latent
+variables, those skills and state transitions. So what that means is from any state,
+they want there to be a specific skill that is tied to that state.
+They also have another objective that is minimizing the mutual information between those
+skills and actions, right? So with these two mutual information based objectives
+and also incorporating diversity, so they try to learn these skills to minimize mutual information
+between each other. So they're trying to minimize the mutual information between each other.
+other between each of these skills they can learn several unique skills that span the entire state
+space so this so this algorithm diane and diversity is all you need is basically a way of
+using mutual information to learn several low-level skills that are diverse and span the entire state
+space and once you have these skills you can freeze them and then train a high-level policy
+on top to for any kind of downstream task right so these are task agnostic options right because
+we have we've defined some other self-supervised objective that's not task dependent
+to learn these low-level policies to learn these options
+either through a k-step goal condition policy which is what hero is doing or some other
+self-supervised objective based on mutual information which is what diane is doing
+so this is better right because now we don't have that instability we don't have uh this issue where
+the high-level policy has to wait for low-level policies to stabilize we've decoupled learning
+these two levels of hierarchy but we have another problem which is that these methods do not promote
+skill reuse right each of these skills corresponds to a specific goal or a specific state we don't
+know how to do that
+so let's look at how to use the the same skill many times from different states
+so as just an example of what we would like to achieve let's go back to this four-room example
+right um so okay sorry this example is maybe not great because each of these rooms is a slightly
+different shape but let's imagine that all the rooms are the same size are identical to each
+other but we just have these four rooms in that case navigating within each room
+or to the hallways from within each room is exactly the same we would like to be able
+to reuse those two hallway options right of of going to each of these hallways from any room
+uh we we would like for there to only be two options and the idea is that we can reuse those
+options from within any room right that would be an example of skill reuse that should be possible
+so now let's talk about skill reuse professor lrupal will teach us about skill reuse and skill reuse and skill reuse against renewable energy bags and kissing as it points into navigation and yet another thing we're looking forward to is the world of lockouts in the future or wasесть poor consumption of roofs housing day之前 we don't have access to access to jobs and lights even though this system is clean during the continuity or even if the interidor is open it's thisiendo by them low
+So now let's talk about a broader setting where this type of reuse is expected, right?
+So it's pretty clear from that one example of this four-room grid world where we can
+expect reuse, but what is a broader class of environments where we can define these
+kinds of reusable options?
+So it turns out that there's a whole class of problems based around compositionality,
+which just means that there's a type of generalization that we should expect in these kinds of compositional
+environments.
+And compositionality comes from this idea that you have these low-level factors, right?
+So in this example, it's these blocks.
+All of these blocks behave in the same way.
+The physics is the same for each block, but it can always create more and more new environments
+with different combinations.
+Same with driving, right?
+I can kind of simplify the autonomous driving problem by thinking of each car as basically
+the same in terms of its dynamics.
+And it turns out that there are benchmarks for that create these procedurally generated
+environments to test compositional generalization.
+So all of these games are ones where we can create an almost infinite number of different
+levels or different environments.
+By creating.
+Different layouts.
+But the underlying rules of these games are always still the same, right?
+So all of these correspond to these real-world problems, which is why we should care about
+compositionality.
+So a way to achieve compositional generalization is I've kind of already hinted at is factorization
+is how can we recognize that in these environments, there are these common factors and each factor,
+the dynamics of each factor behave the same, which is how we can achieve this generalization.
+Okay.
+So there's actually this really nice paper and on compositionality decomposed, how do
+neural networks generalize that tries to define different types of compositional generalization
+that we should strive to achieve.
+And actually this paper was focused on generalization in the language setting for natural language
+processing.
+But I think a lot of these ideas actually apply really well to reinforcement learning
+or robotics.
+Okay.
+So the first of these is systematicity.
+Okay.
+So the first of these is systematicity, which is generalization by recombining known parts
+and rules, right?
+So if I have these four rules, I can take these two rules and combine them and achieve
+and design some new rule.
+Productivity, the ability to extend predictions beyond the length seen in training data, right?
+So here, if I've seen these two components, this length two trajectory, let's say, or
+this length three trajectory, I can combine them together and still understand what this
+means.
+Substitutivity, which is generalization to replace components with synonyms.
+So if I know that these two things are equivalent, I can replace one with the other and know
+that it still means the same thing in this combination.
+Localism, if model composition operations are local versus global.
+And overgeneralization, which is if models pay attention to or are robust to exceptions.
+So this, I think, is maybe more applicable in language where in the language setting,
+you know, we have, like, rules of grammar and they don't and sometimes those rules
+get broken in colloquial language.
+Maybe doesn't apply as much to physics in the real world.
+All right.
+So one way to define this kind of factored structure in an MDP is with a relational MDP.
+So this is a subset of the general MDP definition where we now are defining a set of classes
+that denote different object types.
+So here we have an example of these trucks that are trying to navigate around the city
+and deliver boxes from one place to another.
+All right.
+So we have classes that denote the different types of objects that belong in this MDP.
+So box, truck, or city.
+We have schemata that take these objects as input.
+So maybe we can bin together box and city or we can put a box on a truck.
+Okay.
+A set of action schemata that operate on those objects.
+So we want to unload the box from this truck in this city, load, drive, et cetera.
+And then within every environment, we have a set of domain objects where each object
+is comprised of a single type from C. And then otherwise we still have our standard
+components from our MDP, which is our transition function in our reward model.
+All right.
+So this is a definition of a relational MDP where we can see that, you know, from one
+city to a next.
+Even though there are things that change, all of these things stay the same.
+The rules over them stay the same.
+And we should be able to generalize to different cities.
+Okay.
+So with that, now that we're kind of focusing on this factored setting and we're trying
+to focus on compositional generalization, I want to talk about a way in which we can
+use hierarchical learning in order to get this type of generalization.
+So in this work, the inspiration was.
+It was about stacking blocks.
+So this is one example where it's very easy to see that the factors correspond to these
+blocks and we can have very difficult tasks that correspond to moving these objects, these
+blocks around in specific orders.
+And so we'd like to be able to reach any goal.
+So this is a huge task space with combinatorially many possible goals.
+And so some real world examples of this are being able to build Lego structures or performing
+tasks.
+Any kind of real time strategy game.
+And so where we'd like to start out is that you may not know at training time, which goals
+are important.
+Right.
+And we also already established in hierarchical reinforcement learning, why this is important,
+why we would like to separate the low level policy learning from the high level task.
+Okay.
+So the standard RL approach would be to just learn a flat policy.
+So being given a representation of the goal space, we want to be able to train a policy
+to reach any goal.
+Using RL instead, we want to learn how to make local transitions in goal space and then
+plan over the transition graph.
+And so being able to do this planning over a graph, and by this, I just mean do graph
+search like Dijkstra or A star.
+This allows us to get zero shot generalization from short to long tasks and is a way for
+us to naturally define a hierarchy where our low level tasks just course our low level
+policies correspond to.
+These local transitions and the high level policies performing this kind of longer term
+search.
+So in order to achieve this, instead of operating from low level states and actions, we want
+to provide a better state abstraction that allows us to predefine these low level skills.
+We want to provide the attributes of the environment that we care about to promote skill reuse.
+And then our agent can use unsupervised exploration to learn how to modify these attributes in
+the environment.
+And then it'll use these attributes or this state abstraction to specify a goal and a
+space for planning.
+So what is this abstraction that we want?
+What are the traits of this abstraction that will allow us to have skill reuse?
+So these are going to be a high level set of high level features or properties of the
+state that users care about.
+Right?
+And so one of.
+One example.
+One property that we care about for the block stacking task is which block is which.
+And so here we're going to distinguish that based on color.
+It can be on color.
+It can be on shape or texture, depending on what kind of variations you have in your environment.
+In this very simple example, it's just going to be color.
+And so each property is going to be a binary function of the state, right?
+So red is stacked on blue.
+Green is not stacked on blue.
+The yellow is to the right of blue.
+So these are all examples of attributes about the environment that we care about.
+So we have predefined this set of attributes, these relational attributes, that basically
+tell us what block is to the so between every two blocks, we have information about if it's
+to the left of, to the right of, on top of, or below each other.
+Right?
+So these are our relational attributes.
+So we're going to define.
+We're going to train a neural net that can detect these attributes.
+Detect these attributes from these pixel images, right?
+So it's going to take in a pixel image and give us those nice attributes that we've predefined.
+We can then build a graph of reachable attributes and edges between them.
+So we're going to take every transition that we see in our data set, you know, of, of these
+blocks moving around and build a graph based on those attributes.
+And then we also need to train a neural network.
+This low-level policy that knows how to reach nearby attribute sets, right?
+So now this, this attribute space and building this graph from our data set allows us to
+predefine a set of skills or options or these low-level policies, right?
+So this is how we've kind of now defined our hierarchy.
+So given a current state and goal attributes.
+Okay.
+This goal attributes is being specified as I want my red block to be above my blue block
+to be above my yellow block to be above my green block, right?
+I can now predict the current attributes row zero.
+So I'm going to take that this, this learned attribute detector F and I'm going to predict
+my current attributes from my initial pixel state.
+I'm going to take that graph that I've built.
+And find the sequence of transitions that allow me to match my goal attributes, right?
+And so you can think of this as the high-level policy or a high-level policy is being found
+just through search.
+And now I can use my low-level policy to try to reach each of these sub goals.
+So each step in this high-level path that I've found through graph search.
+Okay.
+I can now use my low-level policy to reach each of these, right?
+So this is how my hierarchy is defined.
+Once I executed the first step in the path with my low-level policy, I'm going to go
+back to one.
+I'm going to replan because I can't always guarantee that I've actually achieved this
+next sub goal, right?
+So once I, whatever state that I end up at, I'm going to go back to one and I'm going
+to research in my graph again.
+And basically, call my high-level policy again.
+Okay.
+So all of these components can just be trained with supervised learning.
+So the attribute detector, we just train on a small number of labeled examples.
+This graph, once we have those attributes, we just take actions with an exploratory policy.
+And then add to our graph as we explore more of the environment.
+And then our low-level policy, we actually train with this.
+With inverse training.
+Although this part, I would say, doesn't really matter.
+You can use goal condition reinforcement learning.
+You can use an inverse model.
+It doesn't matter how we train the low-level policy.
+It's just the interesting thing here is how it's been defined, right?
+So in these block stacking experiments, so we have our method, the attribute planner.
+And we first compare against just flat reinforcement learning methods.
+So here we have A3C.
+And we train it with various types of training data.
+So we train it on just one-step data.
+We train it on multi-step trajectories.
+And then we also try to provide a curriculum where we gradually increase the difficulty
+and length of the tasks that we train with A3C.
+So when we try to generalize from just, like, one-step tasks to multi-step, we only get
+8% success rate.
+When we try to train on multi-step directly.
+And then evaluate on multi-step.
+We actually get 0%.
+And so this is because flat RL on this kind of long horizon sparse reward problem is just
+too hard.
+And so it's just not able to achieve any learning signal.
+And so that's why it doesn't get any good performance.
+We actually see much better performance, relatively good performance with a curriculum, right?
+So where we gradually go from one step to multi-step.
+And we are able to achieve 17% success on multi-step problems.
+But with our method.
+By using this kind of graph search and this hierarchy and this abstraction, we're able
+to achieve 66% success rate.
+So we also compare against other hierarchical methods.
+So if you remember, option critic is still learning options using the original task learning
+signal.
+Which is why we see that we get still very low success rates, right?
+Because that problem is basically just as hard as learning flat RL.
+Right?
+From multi-step tasks.
+So option critic doesn't perform well.
+And then here, inverse is just an inverse model trained with supervised learning.
+Which means that we don't expect this to be able to outperform the behavior of the training
+policy.
+But we're still able to get decent performance here.
+But nothing compared to our attribute planner.
+We also perform an ablation.
+So this is an attribute planner.
+Without our graph transition table.
+So I kind of skipped over this.
+But our graph, we're assuming that that graph doesn't have 100% success rate across each
+transition.
+Right?
+Because it depends on the performance of the low-level policy.
+So we are taking that the performance of the low-level policy into account with our method.
+And if we don't, we achieve much lower performance.
+But you can still see that we're still achieving much better performance with our table.
+Type of hierarchical method compared to all these other methods before.
+Okay.
+So multi-step is just kind of randomly generated goals.
+Four stack is a much harder problem.
+Where we're trying to create a stack of four blocks.
+One on top of another.
+And then underspecified is another interesting setting where we're saying we don't necessarily
+care where all the blocks are.
+We're only going to specify some subset of the blocks.
+Right?
+And we're still able to achieve much better performance in that setting as well.
+We have additional experiments in grid world.
+So I'm going to skip over these because I still have quite a bit I want to talk about.
+And StarCraft.
+Right?
+So the StarCraft is, again, an example of a game where there's a lot of procedural generation.
+And so, again, we see that standard reinforcement learning methods.
+So here we're just using reinforce.
+Achieve much lower performance in our method.
+Okay.
+Okay.
+Okay.
+So just to recap, the right abstraction leads to compositional generalization.
+So by introducing this relational attribute, we are able to achieve better generalization
+compared to standard RL methods.
+This relational abstraction naturally breaks down these problems into hierarchical ones.
+But this is still relying on an assumption that this nice relational attributes is predefined.
+So what do we do?
+We're not being given these relational attributes.
+Or maybe we just can't predefine them for some problem space.
+So here's one relaxation of the previous problem.
+Where instead of assuming that those relational attributes are provided, we'd like to discover
+them from pixels directly.
+Right?
+So now we have this set of problems that we'd like to solve.
+First, we'd like to extract factors from the environment.
+First, we'd like to extract factors from the environment.
+Assuming that we're not given them ahead of time.
+But we're assuming that these factors still exist.
+The correspondence problem, which is how do we assign identities to factors that persist
+over trajectories?
+So what that means is once we've identified factors in a single state, how do we make
+sure that we track the identity of the same object from state to state within a trajectory?
+And then the combinatorial problem, how do we actually leverage this factored structure
+to generalize with hierarchy?
+Okay?
+So it turns out that for the factorization problem, it helps to try to split that factor
+entity into two sets of features.
+One set is action invariant features, which is its type.
+So if you remember when I introduced relational MDPs, there was this notion of an object type.
+Right?
+So those are action invariant features.
+And then there's also action dependent features.
+Which is its state.
+So these two sets of features matter because action invariant features are still needed
+by the reward because their task can be specified based on each of those factors.
+Right?
+I want this factor.
+I want the red block to be in a specific position and a blue block to be in a different position.
+And those are types.
+The red versus blue blocks.
+But then there are other features about objects that affect their dynamics.
+Right?
+That affect the low-level policy.
+And so those are things that we need to keep track of.
+So how do we actually leverage that factorization?
+So this becomes the combinatorial problem.
+Right?
+Which is that the same transition, the same dynamics that I've seen in my training data
+for one object.
+So here in this example, the observed transition is of this pink block moving from here to
+here.
+And all our other objects stay the same.
+Right?
+They're stationary.
+So nothing happens to the other ones.
+I'd like to be able to generalize that to some other object.
+So if I were to replace that pink block with this blue block instead, I want to be able
+to generalize that I can move it in the same way as the pink block.
+Right?
+So this is how we can leverage factorization to achieve combinatorial generalization.
+So how do we actually implement this?
+So our method is called neural constraint satisfaction, NCS.
+And here we define a two-level hierarchy.
+So first we're going to take our let's assume that we have a bunch of offline data of these
+blocks moving around.
+We want to abstract that data set into a graph, again, over state transitions of individual
+entities, of each of those factors.
+And then we can solve new rearrangement processes.
+Right?
+So what we're going to do is we're going to do a search over those graphs in order to
+compose sequences of transitions.
+Right?
+So that search, again, corresponds to our high-level policy that's trying to solve various
+specific tasks.
+And our low-level policy is just moving different objects around.
+And that low-level policy is the one where we'd like to exhibit skill reuse, where our
+skill of being able to move one object from one place to another continues.
+Right?
+So these are our two components.
+So with NCS, there are two broad components.
+So one is modeling and one is control.
+And within modeling, we again have this broken down into two steps, representation learning
+and graph construction.
+So this looks a lot like the attribute planner from the previous work.
+But now, instead of the representation learning being very straightforward because in the
+previous work, we assumed that these attributes are given.
+We just have to do supervised learning.
+order to map from pixels to those attributes now we actually have to discover what these attributes
+are so it turns out that we can use slot attention which is a self-supervised method for extracting
+out factors we can then train a transformer that is basically a one-step dynamics model
+over each of those factors and this is allows us to extract out uh representations of factors
+that take into account types uh and then also like the dynamic specific features
+right so once we now have those factors that we can now track over time within a trajectory
+we can now construct our graph so in the first work our graph was being constructed over those
+attributes but an entire trajectory was being mapped as a as as a path within our graph
+now instead of instead of constructing a graph over the monolithic states we are going to
+construct graph that only correspond to each entity transition so just that one factor right
+so the assumption is um that in this example most of our my objects are stationary and only one
+object is getting moved at a time so when i when i put this this transition into my graph i want to
+these other factors because i don't care about them because they haven't moved i just want to
+learn i just want to put into my graph this one object that has done this one move all right so
+that's how i'm going to perform my graph construction is that it's going to be on the
+factor level on a per object basis all right so i'm going to skip over this so my planning and
+control now consists of these four steps first is to take my original pixel observation of this
+entire state take out each factor discover which factor is the one that's actually moving which
+is the one that the action is being applied to build a graph um i need to align those objects
+right so i need to be able to map that this object is the same as this object here and this red
+circle is the same as this red circle here
+uh i'm going to select out the object that is moved and then bind it into a graph
+and then i'm going to build my graph of these per factor transitions
+okay so when i look at these kinds of block rearrangement tasks across these different
+environments um ncs we find that we're able to achieve very high success rates and this is
+generalizing across different numbers of blocks right so we have four five six seven
+so our performance does deteriorate a little bit as we get to more blocks but this is mainly due to
+the fact that
+uh more blocks is
+is just a naturally harder task right you have more more um pinpoints more points of failure
+right because you can fail on on the movement of each block uh we compare against random
+performance so this is just a random policy and how often can it accidentally you know uh actually
+achieve the goal and so here we get six percent around six to eight percent uh success rate with
+just a random policy we have mpc so this is just a planning based method um and we're able to
+achieve anywhere from 10 to 16 percent performance uh nf is um non-factorized graphs so here we're
+still building a graph but it's not per factor so we're just building a graph based on the entire
+state and that doesn't work well because we're not really able to reuse any skills
+and then iql is just a flat offline reinforcement learning method
+so again that doesn't perform well on these kind of long horizon sparse reward tasks
+and then behavior cloning also performs very poorly right and so then um
+we have a couple of different environments and then also complete versus partial specification
+all right so going beyond the factored setting what do we actually want in an abstraction so
+so in the two works that i've talked about today both of these are in a setting where we assume
+that
+the environment has this structure that it can be broken down into factors and this is how we
+can achieve generalization this is how we can achieve skill reuse right so if we can't assume
+that we have factors how can we still achieve skill reuse so one thing that we want from an
+abstraction is that we want it to not necessarily contain all of the information from the original
+state space
+so one problem with the original state space corresponds to something that's called the
+noisy tv problem so this is uh this is a i guess a toy problem that's studied a lot in exploration
+which is the idea that if you're trying to explore an environment you're going to use
+some type of intrinsic motivation right so the the reward that you're going to use to
+train an agent to explore is to say i want to discover new states i want to discover new
+things that i've never seen before but the problem is if i have a noisy tv in my environment
+right if it's just always flashing different kind of like salt and pepper noise
+if i just stand there and stare at the tv at every time step i'm seeing a new state
+because they're this noise distribution is so large there are so many different types of noise
+that i can see i can stay here forever and just stare at this tv and continue to see new states
+right and so the problem here is that if you tie a skill to every state in your state space
+but you have an infinite number of state spaces uh sorry infinite number of states in your state
+space then you can you can never have any type of skill reuse so we'd like to be able to ignore this
+tv to recognize that this tv is not something that we can control in the environment and so i
+shouldn't be interested in it
+right so if i can ignore this tv if i can drop information from my state space about this tv
+then my state space becomes much smaller i i've learned this like abstraction and i can
+try to learn skills in this smaller state space and now i can reuse those skills even
+when that tv gets dropped into my environment again because i've learned to ignore it
+the other thing that we want in a low level an abstraction for learning
+low level policies that is that we only need to capture locally controllable components right
+so when we go back to this four room example all our options were defined on a per room basis
+which means that if i'm in this room and i'm trying to learn options for navigating
+around in this room to maybe to go into each of these two hallways
+i don't care what's going on in any of the other rooms so i would like to be able to reduce my
+state space just to things that are close around me right and this is actually incorporated into
+existing hierarchical methods by limiting your goal condition policy to only go for k steps
+so another way of thinking about it is that i only care about things that are case steps away from me
+so we'd like to learn an abstraction that basically ignores everything that's more than k steps away
+so these previous methods don't do this and if we were to do this
+then we would be able to exhibit much more skill reuse
+so it turns out that capturing controllability um is actually a fairly tricky problem but it turns
+out that you can just you can capture controllability and drop things like noisy tv
+by just using a multi-step inverse prediction multi-step inverse model with a latent forward
+model so we have a couple of papers
+so we have a couple of papers that show that you can capture controllability
+by just using a multi-step inverse prediction multi-step inverse is not all you need and
+learning a fast mixing exogenous block mdp using a single trajectory so these kind of uh are methods
+that are actually have theoretical backing saying that these will provably find only the
+controllable aspects of my environment okay so i kind of just brushed over that because this is
+things that we're currently working on so we have these methods for learning controllable states
+things that are local to the agent and we're going to combine these to develop better hierarchical
+methods that work in the general environments not just factored settings that allow for skill reuse
+so just to summarize we've talked about why hierarchy why we should care about hierarchical
+rl we've talked about existing hierarchical methods and their problems we've dived deeper
+into factored mdps and relational mdps and focused on compositional generalization as
+a thing that we want to be able to achieve with hierarchy we talked about how we can do this with
+a provided nice state abstraction and then how we can actually learn this type of a nice state
+abstraction assuming this underlying factorized structure and then we've talked very briefly
+about what we can do if we can't assume factorized structure okay and with that
+we've come to the end of my talk and i'm happy to take any questions
+and thank you so much professor for a great presentation and now i open it up for questions
+hi can you hear me yeah uh thanks for your talk uh and it was very amazing uh i had actually two
+questions first about your the first book you introduced uh i think uh one of the other problems
+of the methods like option critic is that in these kinds of methods we need to define the number of
+options without having for example any information about environment yeah and i wanted to know if
+you have uh i mean uh if you have for example do something like that for example for defining the
+depth of the graph that you are creating uh for defining the number of sub goals or i mean uh to
+define how many options or skills skills we need in the environments yeah that's a good question
+so the first part of your question um which i think is interesting and i didn't really
+talk about in this talk is multiple levels of hierarchy right so if your problem is extremely
+long horizon you can imagine that having more than two levels can actually will help right
+because you need to break down this very very long horizon problem into smaller and smaller horizons
+so in this talk i i actually only considered um two levels of hierarchy we have a low level
+policy and a high level one and that's it and um so in the factored environments
+uh in in in these types of factored environments the idea is that the
+level policy the the the space of the low level policy is predefined it's just moving a single
+object to different locations um and so in that case so um yeah i'd have to think a little bit
+more about settings where multiple levels of hierarchy make sense i don't think it makes
+sense necessarily in in this environment but you know if i go back to um the initial example
+i think like i think navigation the navigation examples even these ones right like these are
+simple enough that it's still two levels like one level is within a room and then another level
+is outside of this room but you can imagine maybe if i were to like say take all of these
+these grid worlds and combine them together right so now i have uh four times six 24 rooms
+that i want one level to be within a room another level to be for the four uh
+neighboring rooms and then next level would be all six of these rooms right um
+so that would be one example where multiple levels of hierarchy make sense
+uh so the second part of your question is how can i determine the number of options
+that i need right because you as you said um one problem with option critic is that
+you have to pre-define the number of options that you're training ahead of time so um goal
+hierarchical methods get around this problem sort of because instead of pre-defining a number
+of options you've you've actually instead predefined options to be
+any goal reaching task within my environment which means technically the number of options
+corresponds to the number of goals that i have in my environment which kind of more
+simply just corresponds to the number of states that i have so you could have a huge
+number of options in that case, which is maybe not ideal. Let's see. Diane, so this method that
+I kind of talked about near the beginning where they learn a set of skills using mutual information,
+this is also like option critic in that you have to predefine the number of skills.
+But those are kind of sampled from a z-space. So again, technically there's an infinite number
+of them because z is continuous. So I would say that none of these methods have very good
+solutions to that problem. And of the things that I've discussed, I would say like, so at the very
+end, right when I was talking about what we want out of an abstraction for learning low-level
+skills. Oops. Sorry. Let's see.
+Can I go back to my... I just exited out of the... Go back into presenter view.
+Just share that screen again.
+Right. So controllability and capturing local controllable components. Here, still the idea is
+that if there's only one function that we learn that defines the goals of our low-level policy,
+it would still be a continuous space. So technically, there's an infinite number of goals.
+So in that sense, we're still not really getting around this problem of like how do we actually
+specify the... So sorry, I should say it gets around the problem of having to specify a number
+of options. I would say it's still not ideal because technically there's an infinite number of options.
+And so I think it is an interesting
+research problem of how can we also reduce the number of options so that we want a minimal
+number of options that we can use to solve our downstream tasks, right?
+Because the more options that you have, the harder the problem is for the high-level policy.
+Because now the high-level policy's action space is getting larger and larger.
+So I think it's an important problem.
+And I guess the only way that we have to get around it, of specifying the number of options,
+is to move to the continuous setting where we have potentially an infinite number of
+options.
+But I think it's an interesting problem to figure out how can we reduce that in some
+way.
+I hope that answered your question.
+Yes, sure.
+Thank you.
+I had another question about the role of, I mean, compositionality in continual learning
+from your perspective.
+I think here if we want to use compositionality in continual learning, there will be, again,
+a trade-off between using or reusing the skills or learning the new skills in the new environments.
+Yeah.
+So how promising do you think the compositionality may be in continual learning?
+So I think it's going to be...
+I think it's something that will help in continual learning, because if we're assuming that in
+the continual learning setting...
+Yeah.
+You know, we're constantly seeing new things.
+But maybe some of those new things that we're seeing are just like a slight modification
+of things that we've seen before, then we should be able to generalize to those new
+settings without actually having to learn about them continually, right?
+So there's going to be two types of new environments in the continual learning setting.
+Ones that are just a recombination of things we've seen before, and then truly new things.
+Truly new things we still will have to learn continually, so then this kind of compositional
+generalization won't be helpful.
+But if there are going to be things that we're seeing that are new, that are just recombinations
+of old things, then we shouldn't waste, you know, memory and computation learning again.
+We should just try to generalize from things that we've seen before.
+So leveraging metrics, for example, like by simulation metrics, I mean, I know you
+have used it for representation learning, to, I mean, measure the similarity of new
+task or environment to the tasks we learned.
+Can it be an effective way?
+Yeah, I think so.
+I think that can, that would be one way of deciding whether you need to learn or whether
+you can reuse, right?
+Mm-hmm.
+So if your task metric...
+Mm-hmm.
+If your new task compared to your old tasks is small, then you can say, okay, maybe
+I want to reuse some policies that I've already learned from before.
+If your task metric says, actually, the distance is really far, this new task is very different
+from everything I've seen before, then I know that I need to learn.
+And so that kind of decision-making, that high-level decision-making is something that
+you could use in the continual learning setting to decide, can I reuse or do I have to learn
+again?
+Mm-hmm.
+Yeah.
+Thank you.
+So that's a great question.
+Thanks.
+Thanks.
+Thank you very much.
+Hi.
+Do you have my voice?
+Yes.
+I can hear you.
+Thank you for awesome presentation.
+My question is about using large language models as the high-level policy.
+I wanted to know your opinion on the benefits or character limitations as a high-level policy.
+And my second question is, do you think that using large language models as a high-level
+policy is a good idea?
+Yes.
+Yes.
+Yes.
+Yes.
+Yes.
+Yes.
+Yes.
+Yes.
+Yes.
+Yes.
+Yes.
+Yes.
+Yes.
+Yes.
+Yes.
+Yes.
+Yes.
+Yes.
+Yes.
+Yes.
+Yes.
+Yes.
+Yes.
+Yes.
+Yes.
+Yes.
+Yes.
+Yes.
+Yes.
+Yes.
+Yes.
+Thank you.
+That's a great question.
+Yeah.
+I think with large language models, a lot of this prior work, I would say for a lot of
+settings, a lot of these prior works, maybe, are less relevant.
+Right?
+So, let's think about, what are the attributes that we want from a high-level policy?
+Yeah.
+So, let's say, as an example, let's think about robotics.
+The high-level policy often needs to use a lot of knowledge about the world, right?
+So, if I'm trying to plan a trip to Japan, right, like, actually using an LLM for this
+is going to be very productive, right?
+Rather than assuming that I'm an agent that knows nothing about the world, I need to know
+that I can how to book tickets on a plane, right?
+I need to know how to get to the airport.
+I need to know how to get off my plane and go to my hotel on the other side, right?
+So, there are all of these ideas, these high-level ideas that LLMs have from distilling the entire
+internet that make it a very good high-level policy.
+And, kind of, like, naturally, it can even you can even use the LLM to define different
+levels of abstraction of, like, okay, if I want to go to Japan, what should I think about
+first?
+Okay.
+So, you know, if I need to book tickets, how do I book tickets?
+What website should I go to?
+How do I check prices?
+How do I decide which flight is best?
+Right?
+So, there's, like, all of these levels of decisions that need to get made, and you can
+even use the LLM to define what those levels should be.
+So, I would say that's very important.
+That there are a lot of tasks that LLMs are would be very good as a high-level policy.
+But of course, this also means that this is only true for tasks that LLMs have knowledge
+about.
+Right?
+We can also define we can also think of tasks and environments that LLMs don't have a lot
+of knowledge about.
+Right?
+So, you know, today's LLMs are mainly only trained on language on the internet.
+Which means that they're not necessarily going to be good at, say, like, deciding how, you
+know, how to do things.
+Right?
+Right?
+Like, how to, like, what's something that's that where there's not a lot of information
+on the internet for?
+Like, maybe, like, how to deep sea dive.
+Right?
+You know?
+Like, there are things that where there are environments where there's not a lot of information
+about them in language, and it actually requires exploring the environment and kind of, like,
+more physical hands on.
+knowledge in order to make decisions.
+And so then those are going to be examples where an LLM doesn't necessarily work well.
+Did that answer your question?
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+students raising their hand so okay so for the final question i can i ask for a what is your
+advice for the students who just starting their research career and wants to tackle some interesting
+problem what do you think is the proper way to do research in 2025 if they want to start their
+career that's a great question um so you know i i think it's great that you have like invited you
+know researchers to present their research and and present kind of like the things that they're
+excited about i think that's a really great way to start out when you're first starting out you
+don't have um a lot of experience or knowledge about what have people already studied right like
+you haven't developed a taste for what problems are interesting or important but more senior
+researchers have and so asking more senior researchers what do you think is an important
+problem what are you excited about right now is a really great way to learn more about what are
+interesting problems that you can dive deeper into right so i think that's like an uh an
+official
+um way to start out um so i think that's a really great way to start out um so i think that's like an
+official um way to start out um so i think that's like an efficient way to search for a problem
+um so so you know what i'm really saying is try to talk to people you know like reading papers is
+good but at some point talking to people and learning about how they think how they read papers
+is a much more efficient way to uh to make progress
+and to try andミル your brain to get done with it and you know you can say don't do one thing
+right once you try to use a big paper and the other one might not work but then you can just
+reach out to people through email so if you've read some paper and you're like this is a really
+nice paper i really like the way that they've like thought about the problem the way they've
+designed the experiments like how they write i just i love all the aspects of this paper
+you should just reach out to the first author um you know you can tell them that you really like
+the paper you can ask any questions that you had um from the paper or just ask them what are they
+So I guess I would say as a person first starting out, right, the most important problems are how do I pick a research direction?
+And so talking to lots of more senior researchers to figure out what they think is important is a good way to make those decisions.
+And the other is to try to start collaborations with those people or and just kind of try to expand your network.
+And so reaching out to people whose papers you like is a really good way of doing that.
+Often people are very happy to talk about their work and talk about potential future directions and explore collaborations.
+Thank you for your great answers, professors. Thank you for having me.
+Again, thank you for accepting our invite and being with us today.
+I think if there is no more questions, we can end the session.
+OK. All right. Thank you very much. Thank you so much.
+Thank you. Bye bye.
+Bye bye.
+Bye bye.

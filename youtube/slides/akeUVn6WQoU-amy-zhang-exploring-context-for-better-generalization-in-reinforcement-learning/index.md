@@ -1,0 +1,51 @@
+# Slides: Amy Zhang - Exploring Context for Better Generalization in Reinforcement Learning @ UCL DARK
+
+- URL: local:/home/jinlin/projects/Research_Collector/youtube/video/amy-zhang-context-generalization-rl-ucl-dark/source.mp4
+- Slide count: `44`
+
+## Frames
+
+- `slide-0001.jpg` @ `00:01:14`
+- `slide-0002.jpg` @ `00:02:01`
+- `slide-0003.jpg` @ `00:02:23`
+- `slide-0004.jpg` @ `00:02:29`
+- `slide-0005.jpg` @ `00:02:59`
+- `slide-0006.jpg` @ `00:04:00`
+- `slide-0007.jpg` @ `00:04:39`
+- `slide-0008.jpg` @ `00:07:19`
+- `slide-0009.jpg` @ `00:10:15`
+- `slide-0010.jpg` @ `00:11:57`
+- `slide-0011.jpg` @ `00:13:18`
+- `slide-0012.jpg` @ `00:14:06`
+- `slide-0013.jpg` @ `00:15:59`
+- `slide-0014.jpg` @ `00:17:49`
+- `slide-0015.jpg` @ `00:18:49`
+- `slide-0016.jpg` @ `00:20:14`
+- `slide-0017.jpg` @ `00:20:47`
+- `slide-0018.jpg` @ `00:21:57`
+- `slide-0019.jpg` @ `00:22:30`
+- `slide-0020.jpg` @ `00:23:38`
+- `slide-0021.jpg` @ `00:23:55`
+- `slide-0022.jpg` @ `00:24:30`
+- `slide-0023.jpg` @ `00:25:30`
+- `slide-0024.jpg` @ `00:25:52`
+- `slide-0025.jpg` @ `00:26:21`
+- `slide-0026.jpg` @ `00:28:06`
+- `slide-0027.jpg` @ `00:28:34`
+- `slide-0028.jpg` @ `00:29:21`
+- `slide-0029.jpg` @ `00:30:22`
+- `slide-0030.jpg` @ `00:31:26`
+- `slide-0031.jpg` @ `00:33:18`
+- `slide-0032.jpg` @ `00:35:33`
+- `slide-0033.jpg` @ `00:36:32`
+- `slide-0034.jpg` @ `00:37:33`
+- `slide-0035.jpg` @ `00:38:05`
+- `slide-0036.jpg` @ `00:38:28`
+- `slide-0037.jpg` @ `00:39:26`
+- `slide-0038.jpg` @ `00:41:00`
+- `slide-0039.jpg` @ `00:41:48`
+- `slide-0040.jpg` @ `00:43:57`
+- `slide-0041.jpg` @ `00:45:21`
+- `slide-0042.jpg` @ `00:45:56`
+- `slide-0043.jpg` @ `00:46:28`
+- `slide-0044.jpg` @ `00:46:39`

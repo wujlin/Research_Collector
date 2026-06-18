@@ -2,7 +2,7 @@
 title: "物理约束建模"
 description: "把物理先验、变分自由能与科学逆问题嵌入模型训练。"
 paper_count: 47
-last_updated: "2026-04-24"
+last_updated: "2026-05-18"
 ---
 
 # 物理约束建模

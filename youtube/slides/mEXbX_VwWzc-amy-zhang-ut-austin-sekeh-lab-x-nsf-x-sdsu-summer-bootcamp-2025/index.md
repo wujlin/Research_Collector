@@ -1,0 +1,62 @@
+# Slides: Amy Zhang, UT Austin @ Sekeh Lab x NSF x SDSU Summer Bootcamp 2025
+
+- URL: local:/home/jinlin/projects/Research_Collector/youtube/video/amy-zhang-sekeh-lab-summer-bootcamp-2025/source.mp4
+- Slide count: `55`
+
+## Frames
+
+- `slide-0001.jpg` @ `00:02:13`
+- `slide-0002.jpg` @ `00:02:52`
+- `slide-0003.jpg` @ `00:04:51`
+- `slide-0004.jpg` @ `00:06:40`
+- `slide-0005.jpg` @ `00:07:59`
+- `slide-0006.jpg` @ `00:12:04`
+- `slide-0007.jpg` @ `00:12:48`
+- `slide-0008.jpg` @ `00:15:42`
+- `slide-0009.jpg` @ `00:25:32`
+- `slide-0010.jpg` @ `00:26:10`
+- `slide-0011.jpg` @ `00:26:20`
+- `slide-0012.jpg` @ `00:26:27`
+- `slide-0013.jpg` @ `00:27:08`
+- `slide-0014.jpg` @ `00:27:21`
+- `slide-0015.jpg` @ `00:27:28`
+- `slide-0016.jpg` @ `00:27:38`
+- `slide-0017.jpg` @ `00:28:03`
+- `slide-0018.jpg` @ `00:32:32`
+- `slide-0019.jpg` @ `00:33:46`
+- `slide-0020.jpg` @ `00:35:04`
+- `slide-0021.jpg` @ `00:38:32`
+- `slide-0022.jpg` @ `00:38:45`
+- `slide-0023.jpg` @ `00:38:52`
+- `slide-0024.jpg` @ `00:39:04`
+- `slide-0025.jpg` @ `00:39:11`
+- `slide-0026.jpg` @ `00:39:27`
+- `slide-0027.jpg` @ `00:41:38`
+- `slide-0028.jpg` @ `00:42:26`
+- `slide-0029.jpg` @ `00:42:42`
+- `slide-0030.jpg` @ `00:43:11`
+- `slide-0031.jpg` @ `00:44:45`
+- `slide-0032.jpg` @ `00:45:00`
+- `slide-0033.jpg` @ `00:45:27`
+- `slide-0034.jpg` @ `00:47:30`
+- `slide-0035.jpg` @ `00:50:17`
+- `slide-0036.jpg` @ `00:51:15`
+- `slide-0037.jpg` @ `00:52:10`
+- `slide-0038.jpg` @ `00:53:29`
+- `slide-0039.jpg` @ `00:53:52`
+- `slide-0040.jpg` @ `00:54:55`
+- `slide-0041.jpg` @ `00:55:31`
+- `slide-0042.jpg` @ `00:55:45`
+- `slide-0043.jpg` @ `00:57:17`
+- `slide-0044.jpg` @ `00:58:02`
+- `slide-0045.jpg` @ `00:59:02`
+- `slide-0046.jpg` @ `00:59:08`
+- `slide-0047.jpg` @ `00:59:20`
+- `slide-0048.jpg` @ `00:59:26`
+- `slide-0049.jpg` @ `00:59:36`
+- `slide-0050.jpg` @ `00:59:42`
+- `slide-0051.jpg` @ `00:59:48`
+- `slide-0052.jpg` @ `00:59:54`
+- `slide-0053.jpg` @ `01:00:05`
+- `slide-0054.jpg` @ `01:00:19`
+- `slide-0055.jpg` @ `01:00:50`

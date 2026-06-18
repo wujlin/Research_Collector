@@ -2,7 +2,7 @@
 title: "Physics-Informed Generative Modelling"
 description: ""
 paper_count: 9
-last_updated: "2026-04-24"
+last_updated: "2026-05-18"
 ---
 
 # Physics-Informed Generative Modelling

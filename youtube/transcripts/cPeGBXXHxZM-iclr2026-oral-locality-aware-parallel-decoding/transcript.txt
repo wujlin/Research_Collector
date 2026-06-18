@@ -1,0 +1,211 @@
+Thanks, everyone, for coming here, and thanks for the introduction. My name is Lu Kuang.
+I am an undergraduate at MIT right now, working with Professor Song Han's lab. Unfortunately,
+my co-first author, Joyang, could not be with us here today because of visa issues, but
+I'll be presenting our work, locality-aware parallel decoding.
+So autoregressive models is the dominant paradigm in language, with autoregressive
+LLMs being able to scale to trillions of parameters and trillions of tokens trained. Autoregressive
+had its moments in image generation, however, starting with the release of the GPT-4O image
+generation model. So some of you probably remember that last year, everyone on X was
+trying to make their profile pic Ghibli-style, right? Even Sam Altman. And this was really
+the first time that autoregressive models really showed their
+potential in image generation. And as one of the co-creators, Lu Liu, said, said this
+at the CVPR conference last year, it was the first model that proves autoregressive model
+works better than diffusion for image gen. Today, unified multimodal systems basically
+use a unified autoregressive approach to combine vision and language modeling. Starting with
+works like Chameleon, and then VLOU, EMU3, Janus Pro, and more recently, LongHat Next,
+all of these adopt a unified autoregressive approach. The reason is simple. If you have
+autoregressive modeling approach to image generation, it's extremely compatible with the
+next token prediction paradigm in language. But right now, there's two paradigms of
+autoregressive image generation, each with their own tradeoffs. The first is what I call a flat
+token representation. This is very nihilist to language. First, we tokenize the image into a
+sequence of tokens in raster order, and then we perform next image token prediction.
+The other paradigm is next scale or next resolution prediction, started by works like VAR.
+Here, we protect all tokens in next scale in parallel. However, the first one is very slow
+because it's memory bound, as with most LLMs. This means the latency of generating a single
+image is proportional to the number of tokens in the image, which can get really high for high
+resolution images. VAR sidesteps this with parallel prediction at the next scale, but it's not
+compatible with the vision and code that we're using. So, we're going to use this paradigm to
+show you how to use this paradigm. So, how can we develop both fast and multimodal compatible
+autoregressive modeling for images? Our method, locality aware parallel decoding, solves this with
+two main methods. First, we introduce flexible parallelized autoregressive modeling. This is a
+new architecture for doing prediction on any set of tokens, in parallel, in any order, while
+maintaining KV caching of tokens. This is a new architecture for doing prediction on any set of
+token variables. The second is locality aware generation ordering. This is a novel scheduling
+strategy that maintains generation quality while scheduling tokens in parallel. So, let's go
+through each one of them one by one. In normal autoregressive generation, we usually start with a
+class token or some series of prompt embeddings, and then after the first forward pass, we get the
+logits for the first token and we sample it. We repeat this again. We pass in the first token we
+just generated and we get out the logits for the second token. The second generation, which is this
+token. And then so on. So note here there's actually two things going on. First, each
+token has to predict the next token in a fixed order. Whatever you train with the order,
+you must do inference with. Now, the second thing is that each token is actually doing
+two roles at the same time. What I call context and generation. Here, each token once it's
+generated has to be encoded via forward pass so that future tokens can see it via attention.
+But it also serves as generation because once it's output is logits, it's used to sample
+the next token. This means that this is limited to a fixed input output structure. For every
+token you input, you get one output. So how can we break this to support parallel autoregressive
+modeling? In our approach, we continue to let the input tokens serve as context. However,
+we now delegate the role of generation to position query tokens. These position query
+tokens are a shared learnable embedding added on to the positional embedding of the target
+position you want to predict. For example, P4. After a forward pass, we get the logits
+for P4. And then for the next step, we have to put back the token we just generated. And
+now we can predict any set of tokens we want. Let's say three and five. And then so on.
+We get the tokens for three and five. And then afterwards, we can predict three of them
+now, like one, two, and six.
+So we notice that this method allows for a flexible input output structure with arbitrary
+order and parallelization.
+Which we call our flexible parallelized autoregressive modeling.
+So how do we actually train and do inference with flexible parallelized autoregressive modeling?
+Let's look at training first. We continue to adopt teacher forcing. So we interleave
+the ground truth tokens shown with the images here with the position query tokens that we
+want the model to learn how to transform into the actual ground truth tokens.
+Let's look at a given position query token like P2.
+So just like in normal autoregressive modeling, this position query token should attend to
+the previous ground truth tokens. This is what we call context attention in our model.
+At the same time, a key design of ours is that the position query tokens should be able
+to see the same position query tokens that are being predicted in parallel with it. Why?
+Because when you predict stuff in parallel, they're likely, they're sampled independently.
+So by sharing mutual information between them via attention, they're actually more likely
+to generate coherent images. And coherent tokens. And they're actually more likely to generate coherent images. And coherent tokens.
+So we can actually encode this in a single attention mask shown on the right.
+We have query attention between the position query tokens in yellow and the context attention
+between ground truth tokens and future tokens in green.
+So how do we do inference? In inference, we have two steps, very analogous to context
+and decoding. We have encoding, which is where we take the generated tokens and we do a forward
+pass. This is stored in the KP cache so that future tokens can see it. And then to get
+the next tokens, we input the position query tokens and we decode what the future tokens
+are that we want. Naively, doing this separately gives you two forward passes, which makes
+our inference 2x slower because it's memory bound. We can actually mix this into a fused
+forward pass in a single inference step with a specialized attention mask shown below,
+where we have the encoding intention in the green and the decoding intention in yellow.
+So now that I've explained that we have a architecture that can change the position
+and choose any order and any degree of parallelization, how do we actually choose this?
+So following previous works, we actually choose a cosine schedule for parallelization, where
+we decode less tokens at first and more and more tokens at the end. But for order, we
+actually took a look at the attention maps of previous autoressive models, and we found
+that the attention is strongly local. So you see in the main diagonal here, this is a token
+paying attention to the token that's in the middle. And this is a token that's in the
+middle. And this is a token that's in the middle. And this is a token that's in the middle.
+The lower diagonals to its left and below is paying attention to the token right in
+the row right above it. And then there are fainter diagonals even below that which are
+paying attention to tokens in two rows above it.
+So this strong spatial locality means that tokens that are close to each other strongly
+depend on each other in regular images. And this actually explains why current generation
+orders actually fail for parallel inference. So the first kind is raster order. Raster
+Raster order, you generate left to right, top down.
+But the thing is is that adjacent tokens
+are generated in parallel.
+Just like what I mentioned before,
+these tokens are heavily dependent on each other.
+And when you sample them independently,
+it's very likely that you generate incoherent
+or inconsistent features in the images.
+Random order was designed to avoid this
+because you spread out the tokens randomly.
+And this way, all the tokens you generate in parallel
+are very far from each other.
+But at the same time, they're very far
+from the previously generated tokens.
+And the strength of autoregressive models
+is that provide a strong conditioning.
+And if you're far away from the previous tokens,
+that means you have worse conditioning
+and leads to worse generation quality.
+Our generation order, our locality-aware generation order,
+thinks about both of these ideas
+and condenses them into two principles.
+The first is our order must have high proximity
+to previously generated tokens.
+The second is that we must have low proximity
+among concurrently generated tokens.
+Now, let's look at results.
+So for fair comparison, we train a normal raster order
+next token prediction model
+with the same architectural components as LPD
+on ImageNet of the same epochs and everything else.
+On 256 resolution, we can achieve 13x faster inference
+with same quality or 11x faster inference
+with the better quality.
+On 512 resolution, we can achieve 21 times faster inference
+with the same quality.
+And compared to previously parallel autoregressive models,
+we're 3.4x faster with better quality
+or 4.2x faster with the same quality.
+We also train on text-to-image benchmarks like gen eval
+and we can achieve a 61 times faster inference
+than compared with regular raster order next token prediction.
+So hopefully I've convinced you
+that locality-aware parallel prediction allows you to do this
+and allows you to reduce the number of steps
+and autoregressive modeling.
+And here's some visualizations.
+On the top left, we have our class conditional generation
+with editing, in-painting, out-painting.
+On the bottom is our text-to-image generation.
+And to our top right is a summary of our efficiency.
+Thank you all for coming.
+And just to summarize,
+locality-aware parallel decoding has two main methods.
+The first is flexible parallelized autoregressive modeling.
+Second is locality-aware generation order.
+And if you're interested in talking more,
+please, oh, there's a demo that I.
+Okay, yeah, so yeah, if you're interested in talking more,
+please drop by our poster today at 315 to 545
+in Pavilion 545.
+Oh, you can see in the demo that for the time it takes, the,
+it's two of the normal autoregressive images.
+This is the Lomogen XL on the top left.
+We can basically generate over 60 images.
+So it's quite fast.
+Thank you.
+Thank you so much.
+Time for the question.
+Okay, I have one question.
+When you push the parallel decoding,
+what breaks first?
+Like, what is the failure mode of the model?
+Is it more visual coherency or temporal coherency?
+Are you saying what is the general failure modes
+of doing parallel inference?
+Yes, I think the main thing is that you generate
+incoherent features because you're still doing
+sampling independently.
+So if you want to do joint sampling,
+you would have to, like, for, like, n tokens in once,
+you would have to somehow create a probability distribution
+over v to the n, which is basically impossible.
+So yes, I think the main thing is that you get distorted
+features, and that's the main thing that, like,
+our locality where generation order tries to solve.
+Thank you.
+Yeah, you can go behind the mics and then ask your questions.
+Does this work?
+Does it work?
+Yes.
+Thank you for the great talk, really cool work.
+So you said that the joint sampling doesn't work
+with the autoregressive transformer, but, I mean,
+you could technically also do autoregressive
+generation with diffusion models, right?
+So MAR, I just wonder, like, have you
+any intuition about how that would work in comparison,
+if you would use the same strategies,
+like the same orderings with a diffusion model?
+Because then you can essentially sample
+from the joint distribution of multiple tokens
+at the same time.
+Yeah, that's a good point.
+So I think with diffusion models,
+they're very heavily compute bound.
+So at high batch sizes, they're actually pretty low throughput.
+And I didn't put MAR in our efficiency benchmarks,
+but MAR itself is slower than the pure autoregressive approach,
+mainly because of the diffusion head.
+So yes, you can sort of emulate this with diffusion,
+but you end up with a trade-off that's actually worse than not
+doing it in the first place.
+And most of the latency in MAR, for example,
+is actually the diffusion head, and the autoregressive time
+actually doesn't take that much.
+OK, thank you.

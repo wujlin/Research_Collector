@@ -1,0 +1,130 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 6.9,
+      "text": "I'm Ben Eysenbach. I'm presenting our work entitled C-Learning, Learning to Achieve Goals by a Recursive Classification. This is joint work with Sergey and Ross."
+    },
+    {
+      "start": 7.84,
+      "end": 12.74,
+      "text": "Typically, reinforcement learning is viewed as the process of transforming a reward function into useful behavior."
+    },
+    {
+      "start": 13.4,
+      "end": 21.14,
+      "text": "Designing reward functions can be quite tedious. So in this work, we consider how can we learn useful behaviors directly from data without reward functions?"
+    },
+    {
+      "start": 22.0,
+      "end": 27.32,
+      "text": "To this end, we'll reframe the problem of goal-conditioned RL as one of predicting and controlling the future."
+    },
+    {
+      "start": 27.32,
+      "end": 33.14,
+      "text": "For example, looking at this ant-like robot here, we want to predict where will this robot be in the future."
+    },
+    {
+      "start": 33.64,
+      "end": 38.0,
+      "text": "In particular, we want to estimate the density over time-discounted future states."
+    },
+    {
+      "start": 39.16,
+      "end": 43.84,
+      "text": "Prior methods such as C-Learning and successive features don't solve this paper, as we discussed in the paper."
+    },
+    {
+      "start": 45.54,
+      "end": 50.5,
+      "text": "So how are we going to learn this density function? Our main idea is to learn a future state classifier."
+    },
+    {
+      "start": 50.760000000000005,
+      "end": 56.480000000000004,
+      "text": "This classifier takes as input the current state in action, as well as some other state, and tries to guess,"
+    },
+    {
+      "start": 56.480000000000004,
+      "end": 60.540000000000006,
+      "text": "does this other state come from the future, or is it just some random state?"
+    },
+    {
+      "start": 60.92,
+      "end": 66.14,
+      "text": "And it turns out that we can use Bayes' rule to transform this classifier into a density function."
+    },
+    {
+      "start": 67.10000000000001,
+      "end": 69.52000000000001,
+      "text": "We call this algorithm Monte Carlo C-Learning."
+    },
+    {
+      "start": 70.4,
+      "end": 76.42,
+      "text": "Here's some visualizations showing that C-Learning accurately predicts where the agent will be in the time-discounted future."
+    },
+    {
+      "start": 78.72,
+      "end": 85.86,
+      "text": "We extended this to a variant called Temporal Different C-Learning that allows us to learn a classifier from off-policy experience."
+    },
+    {
+      "start": 86.48,
+      "end": 91.94,
+      "text": "I'm not going to go into the details, but the resulting algorithm ends up looking similar to Q-Learning, with a couple of differences."
+    },
+    {
+      "start": 92.38000000000001,
+      "end": 99.92,
+      "text": "For one, things like hindsight relabeling emerge automatically from our derivation, and our derivation even tells us how to optimally sample goals for relabeling."
+    },
+    {
+      "start": 102.80000000000001,
+      "end": 114.14,
+      "text": "We can also use C-Learning to control the future. In particular, if there's some goal state we want to reach, we can ask our classifier, what action should we choose now, such that this goal state is likely a future state?"
+    },
+    {
+      "start": 116.48,
+      "end": 119.96000000000001,
+      "text": "Let's look at some experiments of using C-Learning for goal-conditioned RL."
+    },
+    {
+      "start": 120.36,
+      "end": 123.80000000000001,
+      "text": "On this task, the robot is trying to move the red puck to the green region."
+    },
+    {
+      "start": 124.64,
+      "end": 129.96,
+      "text": "We compared our method to prior methods based on Q-Learning, and these prior methods relabel experience in different ways."
+    },
+    {
+      "start": 130.64000000000001,
+      "end": 140.52,
+      "text": "We observe that none of these prior methods make any progress on this task. And it's not surprising. We don't have any reward function, we don't have any reward shaping, and there's no notion of an epsilon ball or distance metric."
+    },
+    {
+      "start": 141.44,
+      "end": 143.92000000000002,
+      "text": "In contrast, our method performs quite well on this task."
+    },
+    {
+      "start": 146.48,
+      "end": 157.28,
+      "text": "We also compared our method to prior methods on a wide range of tasks, and observed that on the easier tasks, our method performs as well as the best prior methods, and on the more complex tasks, our method was quite a bit better."
+    },
+    {
+      "start": 159.2,
+      "end": 170.92,
+      "text": "One of the most surprising observations from this project was that C-Learning has learned fairly complex behaviors. These are failure cases when the robot has failed to reach the goal, but has learned to automatically retry."
+    },
+    {
+      "start": 170.92000000000002,
+      "end": 181.72000000000003,
+      "text": "In short, we've presented C-Learning. There are a number of things I didn't get a chance to talk about, so I guess how C-Learning satisfies certain Bellman equations. Check out the paper for more information."
+    }
+  ],
+  "segment_count": 25
+}

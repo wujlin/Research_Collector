@@ -1,0 +1,20 @@
+{
+  "title": "Inside the World's Smartest Robot Brain [VLA]",
+  "url": "https://www.youtube.com/watch?v=2mrGMMmrVNE",
+  "backend": "youtube-json3-auto-caption",
+  "model": "youtube-auto-caption-json3",
+  "requested_language": "en-orig",
+  "detected_language": "en",
+  "generated_at": "2026-06-05T08:18:26",
+  "video_id": "2mrGMMmrVNE",
+  "uploader": "Welch Labs",
+  "channel_id": "UConVfxXodg78Tzh5nNu85Ew",
+  "upload_date": "20260404",
+  "duration": 2102,
+  "source_caption_file": "youtube/video/inside-the-worlds-smartest-robot-brain-vla/source.en-orig.json3",
+  "source_info_file": "youtube/video/inside-the-worlds-smartest-robot-brain-vla/source.info.json",
+  "source_thumbnail_file": "youtube/video/inside-the-worlds-smartest-robot-brain-vla/source.webp",
+  "refined_at": "2026-06-05T08:19:37",
+  "cleanup_rules": 30,
+  "paragraph_count": 79
+}

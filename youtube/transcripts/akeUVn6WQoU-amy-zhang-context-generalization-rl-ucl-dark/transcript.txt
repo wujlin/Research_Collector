@@ -1,0 +1,559 @@
+Hi everyone, thanks for coming and welcome to the next installment of the UCL Dark invited speaker series. Today we're going to hear from Amy Zhang on the topic of exploring context for better generalization in reinforcement learning.
+Amy has just graduated, I hear, from a PhD at McGill University and is now doing a postdoctoral fellowship, I guess, at Berkeley.
+During her PhD she was co-supervised by Joelle Pinot and Dorina Precup and was a member of Facebook AI Research.
+She works on state abstractions, model-based reinforcement learning, representation learning, and, of course, generalization in reinforcement learning. Amy, really excited to hear what you have to say.
+Thank you, thank you for the very nice introduction. Like you said, today I'll be talking
+more about exploring context for better generalization and reinforcement learning and
+this works, builds on top of, you know, the work I'd done previously on
+bisimulation and state abstractions, but those topics I'm going to skip over a bit, but please feel free to stop me and ask clarifying questions.
+Or if you want to talk a little bit more about about state abstractions for the single test setting, we can also talk more about that.
+But yeah, with that I'll just get started. So I'm really excited about the potential of reinforcement learning to be applied to the real world and so
+a lot of my work on generalization on trying to get better sample efficiency is very much geared towards thinking about these applications.
+And so, specifically, the kinds of applications that I like thinking about that are natural for me are to think about personalized household robots,
+having robots that can perform a variety of tasks within a single home and generalize to new homes, learned autonomous driving, having
+autonomous cars that can generalize to new terrain that they weren't trained on,
+and personalized healthcare. Healthcare where we can train on a on a data set of patients and obviously be able to extrapolate to new patients.
+So there's been a lot of exciting recent success in deep reinforcement learning, in particular in the last few years.
+And some examples of this that have been in sort of like the wider media are OpenAI, StarCraft, and Dota, DeepMind, AlphaGo, AlphaZero, and Atari. And so these are all examples where
+deep RL algorithms have been able to achieve beyond
+human performance. But I think we're all aware that there's still a lot of disappointing failures and we're still not really seeing reinforcement learning in the wild yet.
+So why is there this discrepancy? We're seeing that deep RL works really well in these single task settings in simulation when you have access to millions of transitions, but it works less well in visually complex, natural, and multitask settings.
+And specifically what I mean by this is that we're not seeing the same kind of generalization progress.
+So what you can see here in the box for example, as we would supposeída s we can know this is the same type of learning performance that we've been getting out of deep learning in computer vision and natural language processing.
+And so what I'm really interested in is structure.
+And what kind of additional inductive biases can be leveraged from the environments that we care about.
+So before I jump into that, you know, I think it's good to just go over what is the typical setting that we assume in reinforcement learning.
+So we assume that the
+environment
+just means that we have a state space s an action space a a transition probability distribution p
+reward function r and the agency states from the environment st takes an action based on that
+based on that state um that that action taken in the environment steps it and updates it and so uh
+then the agent receives the next reward and next state and the goal of the agent is to maximize
+this reward signal and so an interesting question i think to we can ask here is what kind of
+additional structure is reasonable to assume in mdps in in the environments that we care about
+and so the focus of this talk is about context as structure and so there are a couple of different
+additional assumptions that define these um new types of mdp families that i'm going to focus on
+so the first two are just these uh block mdp and hidden parameter mdp and so we're
+going to talk a little bit more about that and then we're going to talk a little bit more about
+both of these assumptions which i'll describe in more detail later in this talk
+for this paper on learning robust state abstractions for hidden parameter block mdps and
+later i'm going to talk about two papers that leverage contextual mdps and also the block
+assumption on that block contextual mdps so let's dive right in into this first paper which
+is presented at iclair this year um so the hidden parameter block mdp uh family can be
+described by all the same components as what we have in the typical mvp but we're adding on a
+couple of additional um assumptions so the first is that instead of seeing our latents uh our state
+space s we're going to assume that this is latent and instead all we have access to is this
+observation space x um and i think like a natural way to think about this setting is is that we
+don't necessarily always have the most um minimal sufficient amount of information that we have to
+get to the point where we can actually get a more efficient statistic of the future dynamics and
+reward as the state space that we're given typically we're given access to something that
+is much noisier or just like much higher dimensional because we don't necessarily know
+what information is necessary um and so one example of this in robotics is is just cameras
+rgb cameras are a very cheap way to gather a lot of information about the world um but what you can
+have in this setting is that there are many possible
+images that can map to the same low dimensional state and so you have this one-to-many mapping
+from states to observations which can make the problem much more complex
+but but knowing that we have this structure means that we can leverage it and get better
+guarantees and and possibly better algorithms so that's the block uh component that's this
+observation space x and this one-to-many rendering mapping q from s to x another
+function that we can make is is this this one about hidden parameter mdps so here we're
+assuming that we have multiple environments that have different dynamics but all of the
+different dynamics can be described by a single universal dynamics model t and
+there's really just this latent variable or this hidden parameter space theta that can explain the
+variations in dynamics across these different environments that we have access to and so t is
+an example of this latent parameter theta and so this again maps to some real-world applications
+um so we can think of of uh the laws of physics the universal dynamics of the world as t uh but
+depending on on what task you're focusing on um like as an example different objects have
+different dynamics and that that can be explained by friction coefficients and like mass and so
+those would be examples of this hidden this this latent parameter theta
+so for this hip bmdp setting and we sort of conflate the term and also use it to name our
+method as hip bmdp um we our goal is to learn uh so we're we're in this multitask setting
+a constrained multitask setting where we assume that we have the same reward function it's the
+same task we're just trying to perform it in these different environments that have different
+dynamics and because we're assuming this a multitask setting we assume that we have access to
+this
+we want l2 distance in this task embedding space to correspond to some notion of the distance between
+these two environments. And we can define that distance between these environments to be the
+Wasserstein. And so the Wasserstein is just a distance between probability distributions.
+So this will be a distance between the probability distributions into next state of these different
+tasks. So another way to think about this is the distance in terms of the L2 distance between task
+embeddings for different tasks corresponds to how different the dynamics between those two tasks
+are. And so in order to train this component, it requires that we have to train a dynamics model
+over all of these different environments. And so we train a universal dynamics model
+that is conditioned on the theta produced by this environment encoder.
+And we use this to also measure distance between tasks in order to train this environment encoder.
+And so this, so that's how we train the environment encoder. And we train the state
+encoder in a very similar way using bisimulation metrics. And so the state encoder we train so that
+so that it's just like a compressed version of the pixel observation space as well.
+And so then this produces these two representation spaces, our task embedding space,
+our state embedding space.
+And now we can just train any policy optimization method on top. And so here we're just using
+software critic. But you can think of all of these components as being trained online together,
+but they are separate optimization steps. So with every step that the agent takes in the
+environment, we train our dynamics model and reward model. We train our state representation
+space, our environment representation space, and we train our actor and critic.
+Sandra
+So before we dive into empirical results, I wanted to talk a little bit about the kind of theoretical
+analysis that we can do. So because in effect we're learning this approximate bisimulation
+abstraction we can measure our error in terms of how far that so by learning this abstraction,
+we're constructing a new MDP and we are doing our policy optimization on top of this MDP as opposed to the original.
+The reason that we want to do this is that because we're learning an abstraction of the
+original environment, we can construct it to be more amenable to learning, it can be
+a much smaller MDP because of this assumption of this like latent block structure.
+So in order to measure sort of how far off this MDP is from the original and therefore
+how suboptimal is a Q function learned on this new MDP going to be compared to the true
+optimal Q on top of the ground truth MDP, we want to use these error terms.
+So we have epsilon r, epsilon t, and epsilon theta, and these just correspond to the worst
+case error for any possible state action from our ground truth MDP and where it maps to
+in terms of this abstract MDP.
+And we can just measure this.
+This is like empirically as the training error.
+So these two components really just describe a new MDP, which is close to the original
+for a specific task.
+And this epsilon theta is now, you can think of this as a per task error because we're
+now in a multitask setting.
+So the first question that we want to ask is how does the error in theta prediction
+and the learned by simulation representation affect the learned optimal policy?
+And so the bound that we really want to compute here is this.
+And so I'm going to explain this notation.
+So this is saying that through our learned representations, we've constructed this approximate
+new MDP M bar.
+We're learning an optimal Q function on M bar, and so that can be denoted as Q star
+M bar.
+And now we want to take the policy informed by this Q function and apply it back to the
+true environment.
+And so we're basically lifting it.
+Okay.
+To this M theta.
+And we want to know what is the difference between Q star learned on M bar and the true
+Q star of our ground truth environment.
+And so then we can see that this very simply that this difference is upper bounded by those
+terms that we had introduced in the last slide.
+And then this component is something that you can't really change.
+So our max is the maximum reward in your environment, and we know that the largest value that you
+can see in this environment is going to scale with with respect to our max over one minus
+gamma our discount factor.
+So a very related result that we can also compute is how well is a policy trained in
+one task going to do when it's applied to another task.
+So moving from task theta i to task theta j.
+So this is the exact same thing.
+We've trained a Q star on our approximate version of theta i.
+We're going to apply it to theta j.
+And that bound also depends on the same sorts of things, but it actually now has a term
+that lends itself really nicely to that task embedding space that we're learning.
+So here now we're seeing that this notion of distance between tasks is incorporated
+in this bound as the L1 distance between theta i and theta j.
+So this is very similar now to that distance metric in our task embedding space.
+So I think.
+One final nice thing to look at is the sample complexity analysis.
+This analysis doesn't really apply to our algorithm because it's really only relevant
+for the tabular setting, but I think it's still useful to look at because it shows you
+exactly the kinds of gains that you get from making these additional assumptions of structure
+in your MDP.
+So we get.
+We get a speed up or improvement in sample complexity in two places.
+So the first is here.
+So because of the block assumption.
+We know that our true state space is much smaller than the state space that we're given or what we're calling it the observation space.
+So we can sort of denote these two separate spaces.
+So typically, if we don't use the block assumption, then this sample complexity analysis is going to depend on the cardinality of the space that you're that you're taking as input.
+So if it's high dimensional pixels.
+space and this is going to be huge because we know that we have the block assumption we're
+learning the state abstraction that corresponds to like a much smaller equivalent mdp we get this
+gain another gain that we get because we're operating in this multi-task setting most sample
+complexity bounds for the multi-task setting depend on the number of tasks that you see at
+training time because we're making this hidden parameter mdp assumption which says that we're
+really in a single mdp and the variation across tasks can be described by just the single latent
+variable it means that we can instead rely on the number of samples that you see in aggregate over
+all of your tasks which is a pretty significant improvement and that's sort of denoted by this
+n5d here so now we can move to the empirical results so we've just modified some basic
+basic
+benchmarks that we typically use in reinforcement learning so here we're just looking at deep mind
+control and we we're modifying just specific factors in each of these environments in order
+to create this this range of different dynamics across these tasks so here we examine four
+environments but only two of them have differences in dynamics that are visually observable so those
+ones i have here so on the top we have half cheetah where the length of the torso changes and
+so one is the length of his arms this is the size of his head so we've got about 16 feet almost
+of any of the other elements and on the bottom it's harder to see but we have walker and the size
+of the left foot also changes and so these are two examples of two things that change the dynamics
+we also change things like the friction coefficient and um for finger spin i think
+yeah for fingerspin we change the friction coefficient that the the component like spins in
+and i think for walk or run we change the friction coefficient with the floor to also change the
+dynamics
+new unseen environments on environments with different dynamics than what the agent saw at
+training time. So we compare against other multitask methods like distro, grad norm, and PC
+grad. And the component that I really want to highlight is the difference between our method
+hit BMDP and the sublation hit BMDP node by sim. So this in orange is really just the exact same
+thing as our method, but without the constraint in the task embedding space to incorporate this
+like smoothness with respect to the changes in dynamics. And so we can see that the difference
+in performance here is entirely just because of that objective that we have in the task embedding
+space. We also have results for the meta reinforcement learning setting. So the main
+difference here is that instead of showing zero shot generalization, we're showing performance
+when the agent can
+update for a few cycles on the new unseen environment at evaluation time. So here we can see
+that the differences in performance are much smaller because both hit BMDP and PERL are able
+to update based on the new samples from the new evaluation time. Another thing that we can look
+at in the meta reinforcement learning setting is just model error. And so again, we're just
+looking at our method compared to the ablation without that context, without that task embedding
+objective. And we can see that our learned dynamics model can generalize much more quickly
+to the new environment compared to the version without that objective.
+Another thing we can look at is just relaxing the block MDP assumption. So I kind of glossed
+over this, but a key component of the block MDP assumption is that we're assuming we've
+got the probability P, and that we have the Markov property and the observation space.
+And so this is the only thing really that separates it from the POMDP setting. This is a pretty
+stringent assumption to make in a lot of real world settings. And so what we did here is we wanted
+to see how gracefully does our method degrade compared to other baselines if we were to relax
+the Markov assumption. So in fingerspin, what we did is, for some probability P, the probability P,
+the agent's not going to see the current observation. It's going to get dropped,
+and it just gets a copy of the previous observation again. I want to highlight that
+in this example, the agent is not using history. And so it won't be able to achieve sort of the
+best performance it can because it is losing information. So we can see here on the right
+hand side that performance degrades as P gets larger, which is not a surprise.
+But on the left hand side, I think this is interesting, which is that when we compare
+for a small P against the other baselines, it seems like our method is still able to perform
+better in this setting than the other baselines do.
+So to conclude from this work, I think really the main contribution is that we highlight that we
+should be using different types of frameworks to address multitask reinforcement learning and really,
+we're exploiting here is just the slate and structure and the dynamics.
+We show that you can provide error and value bounds for both state space and rich observation
+space settings, and show these improvements in sample complexity. And our code is also
+publicly available. I just want to talk a little bit about some of the limitations of this work.
+So here, the multitask setting, after working on this, I kind of decided I really didn't like it,
+because we have...
+We have access to something that I think you can think of as privileged information,
+the fact that each task is clearly delineated, we're given access to this environment ID.
+I think a much more realistic and interesting setting is the continual learning setting,
+where things like dynamics and reward can possibly change slowly over time.
+After working on this, after being really excited about this HIP MDP setting,
+I realized that we could have very easily handled different reward functions,
+as well, that could have been incorporated as part of a notion of distance between tasks.
+And I think it would be really interesting to be able to handle more realistic settings.
+And specifically, I mean, settings where more than one factor varies at a time.
+And I think the interesting thing to look at there is if you can learn
+this task embedding space that decomposes nicely and can also generalize to new compositions
+of those factors.
+So in order to address some of these limitations,
+I think the contextual MDP framework is actually a little bit more universal and
+more useful than the hidden parameter MDP one.
+And so the contextual MDP setting, you can think of as you having all of these similar tasks that
+potentially even have different state spaces, different dynamics, and different reward.
+And they're described by this different context.
+And so now the question is, how do we leverage shared structure across these tasks?
+So I think it's useful to look at the formal definitions of these things.
+So the contextual MDP, we now have this C, this context space.
+Typically, you assume that you have the same state and action space across these different MDPs.
+But here, your reward and dynamics are now conditioned on C.
+So we're just going to update this a little bit because I think this is still a little bit
+restrictive.
+So we're defining a block contextual MDP where the only difference is that we now assume
+your state space can change across different tasks.
+And this makes sense, right?
+Like in the real world, if your state space is the entire world, if your attention shifts
+to different tasks, then that's fine.
+Your dynamics are different, but your state space has to be the same.
+But in actuality, what we do is we try to constrain the state space to only pay attention
+to what matters for a specific task, which means that your state space will change depending
+on what your task is because you want to attend to different things.
+So I think of this as sort of just a continuation of that first paper on BMPs that kind of fixes
+a lot of the issues that I had raised at the end.
+So now we're looking at the non-stationary setting.
+We care about continual learning.
+And I think the motivation for this work
+just looking at adaptive control so i think adaptive control is really nice because the
+goal there is to just and you you know what you don't know um you we can call this known unknowns
+where you know what the variable is that you're trying to infer you just don't know what the
+value of that is in in different states um and i we want to extend this idea to the setting where
+we have unknown unknowns we don't know what we don't know and we need to infer it to try and
+get good performance in these new unseen environments um i want to define an additional
+thing that i i think is really useful so so um one property that i think that we want to have in
+order to get good generalization is smoothness is is the lipshits property so we can define a
+lipshits block contextual mdp as one in which your dynamics and your reward are lipshits with respect
+to this context um
+this seems like a limitation but i'm going to show how because we are not given this context space
+um so i can you can think of like if you're given the context space then you're and you're just
+trying to infer what the context is for different environments then that's the known unknown setting
+if we're not given the context space and we have to construct it ourselves we're in the unknown
+unknown unknowns setting um and so if we don't have the context space then we can actually
+construct one that obeys this property
+um which is why i'm putting this here uh so this is the more formal definition of the task metric
+that we've kind of defined previously in the hip bmdp setting it just now also incorporates report
+so we can define a notion of distance between tasks that just depends on the difference in
+the reward and the difference in the dynamics between uh for those tasks so i think that's
+pretty straightforward um and if we learn a task embedding space
+that obeys this distance metric this d task then we have the property that the optimal universal
+value function conditioned on c is lipschitz with respect to this task metric and so this
+is a property that we want to have that we're we're going to try and construct like with our
+method uh another assumption that we have to make for this setting is identifiability so
+now because we're in this non-stationary continual learning setting it means like
+because we don't have it we're not um i mean the the main relaxation here right from the
+multitask setting is that we no longer assume access to a task id so if we don't have the
+task id it actually puts us in the partial observability setting so what this assumption
+is saying is really that um given a sufficient history or given some amount of history
+we can it is possible to infer what the context is and so i think another way of thinking about
+this is that we're really just making an assumption that we're in a k order mdp as
+opposed to like a true plumb dp where sort of like worst case is unboundedly bad um another
+nice result that comes from um older work is just this generalization via lipschitz continuity so
+basically if you have the
+if your learning algorithm has the property of being lipshits
+then um even if you're collecting data in the reinforcement learning way even
+even if you don't have the iid assumption um we can bound sort of the the generalization gap
+of this algorithm um and so this is a result that we can actually apply to our setting and so i and
+and uh we can only apply this to
+our setting because we are trying to um form a representation space that has the slipshots property
+another type of generalization bound which is now much more relevant for the reinforcement
+learning setting is is just again something that looks very similar to the kinds of bounds that
+we had in the hip bmdp setting um here just focusing on uh transfer across different
+contexts and so this looks the same as before it's just that we've now replaced theta with this kind
+context c and the c incorporates both differences in dynamics and reward
+so this gives rise to our our algorithm and i think like again if you were following along
+with the hip bmdp paper this looks very similar and the main difference is that instead of
+assuming access to task ids we are using the the the history uh in from our environment um
+and so we're using the interaction history in place of the task id
+um and yellow we're using the context industry um in place of that last us button
+and so i'm just a little joking but we're using that this is much more explicit this is in the
+contribution context but we're also exploring how to utilize um merge tool to find meaningful
+data and so along with the a hit bmdp transmission setup we're also swallow up that set so here
+is a sample of a sample of uh data for us to characterize um skip here to the h help me
+for email this is the context letters mais context by prefix where we can draw Deadland to
+feed into our context encoder we still have a very similar kind of context loss as we had in the hip bmdp setting um it just now uses the task metric which depends on dynamics and reward. We still need those same components of training like a dynamics loss and reward loss so that we can compute what this task metric is and then we can apply即 eractive critical on topic
+different types of settings. So one is non stationary dynamics.
+So this is the same set of environments that we had in hit
+the MDP setting, we now we're comparing against other sort of,
+like other kind of system identification methods that also
+don't assume access to the task ID. And we again, perform the
+same ablation here where our method Zeus. We also have Zeus
+no context loss. So we don't have that context objective in
+our context embedding space that we're constructing. And so
+we can see that our method performs much better than any of
+these other baselines and this ablation in red. And this also
+we don't have hit the MDP in here because it's not really a
+fair comparison because hippie MDP needs access to the task ID.
+But these do get much better generalization performance than
+hippie MDP as well. We can also now look at non stationary
+reward.
+And so we look at two environments here. This cheater
+run is different from the one on the previous slide. So this one,
+we just have different target velocities. And so here in both
+of these examples, in all of these experiments here, what
+we're looking at in terms of validation is is generalization
+to new unseen environments. So same baselines, same ablations,
+just now looking at non stationary reward. The other
+environment
+is just this Sawyer peg. And so it's just a Sawyer arm that has
+to insert this key into or this peg into into, into different
+holes. And so it's asked to at training time, it is training to
+insert this peg into a different hole at training time than a new
+unseen hole at test time. So we can see again, that Zeus is
+performs much better than all of these other environments. And
+you know, I think these are all like very standard type of
+like main result experiments. But I like this experiment a lot
+better. So we want to be able to interpret what kind of context
+embedding we've learned. And these kinds of more toy
+environments, because we know, because we've designed the
+environments, we do actually know what is the true latent
+variable, what is the thing that we're varying across these
+different tasks. So this is looking at that, that half cheetah
+the torso length changes. And these indices just represent the
+order of the torso length. So these task IDs really do have
+some structure in it in that task IDs that are closer
+together represent tasks that are also closer together in
+terms of names. So we see, so here, we're just plotting cosine
+similarity,
+in terms of the
+context embedding that we're learning. And so we can see this,
+this really nice, this is normalized, which is why it looks
+so nice between like zero and one. But we can see that the,
+the context space that we've learned, perfectly captures the
+true ordering of tasks, the true, the sort of like true
+ordering of the actual latent variable, which is the cheetah
+torso length. And we see that if we don't have that context loss,
+so this corresponds to that Zeus, no context, like the
+Zeus, no context loss ablation, there's some structure there,
+but it like the ordering is not preserved. And so I really like
+this, because it shows that we are able to in an unsupervised
+way, capture sort of meaningful information about the true
+context. So I think the takeaways from this paper are that
+we're now tackling the non stationary setting, the continual
+learning setting with this block contextual DP framework. And so
+this framework allows us to take RL algorithms that do that rely
+on this stationarity assumption, which I think of as like a very
+limiting one, and apply them to this new setting, we've proposed
+a method that can adapt to new unseen environments with zero
+shot generalization. And a nice thing about this method is that
+it doesn't require learning updates.
+In fact, just learning like an inference module that learns to
+detect what how things have changed, in comparison to
+environments that it has seen before. And it makes this method
+very amenable to safety critical settings where you can train a
+model, you can verify it, and then you can deploy it on new
+unseen environments and trust that it'll adapt in an expected
+ways. And so I think that that's sort of a crucial difference
+between this method and meta learning methods that do rely that
+do rely on having access to optimization updates at test
+time. So one major, I think, not surprising limitation is that we
+do still see that generalization degrades as we move further away
+from the training distribution. And so in this plot, we're just
+seeing that
+this is now on the half cheetah task where the reward is changing,
+so different target velocities. So we can see that as the target
+velocity gets higher moves further away from what it saw at
+training time, the performance of all methods, all these
+methods do degrade. But we're still able to obtain better
+performance than the other designs. But obviously, ideally,
+we want this to be flat, like we really want to have a method
+that truly can generalize, because we know that it should
+be capable of it.
+Okay, so final piece of work that I wanted to talk about, was
+still looking at this multitask setting, and still looking at
+context. But now looking at a different type of context, like
+what if you have useful site information? Examples of this are
+are like, what if you have access to instructions, right?
+Like you, you could have a command that's, that's, you
+know, like, go pour me coffee. But you can have a more
+informative version of that.
+Which is like, you know, you need to put the coffee pot in the
+coffee maker, you know, put in water, put in coffee grounds,
+etc. So and I think this is well, yeah, I have a slide later
+that talks about a little bit about NetHack. But I know that
+you guys are all very familiar with that setting. So I think
+NetHack is also sort of like a very intuitive example of of
+context aside information, right? Like the wiki is not needed in
+order to
+agent to explore the environment and to get reward. But it's it's
+very useful, and I think actually necessary. So the problem
+setting that we're focusing on in this paper is meta world. And
+I and I think it's useful to show this, because it'll give some
+intuition for the method. So meta world is the multitask
+benchmark, and it has MT 10 with just these 10 environments, and
+MT 50 with 50 environments.
+So it's a multitask setting. So they assume that you have access
+to a task ID. What they also give you are these short sentence
+descriptions of the tasks. These sentences were not meant to be
+part of the MVP. So it's never it's not supposed to be
+something that was given to the agent. The sentences were just
+provided for human consumption so that we could read these
+sentences and then exactly understand like what this task
+is without having to play around with the environment.
+And so if this if these short sentences can be useful for us,
+then it makes sense that they can also be useful for the agent.
+And so our method contextual attention based representation
+learning care.
+We just, this is just a way for us to incorporate the information
+in those sentences in a multitask pipeline.
+And the way we do that is we are training a mixture of K encoders.
+And I think like,
+a way to interpret what this is doing is that we want each of
+these K encoders to correspond to something interpretable that's
+shared across tasks. So in this meta world setting, you know, we
+can see that there are objects and skills that are shared
+across these tasks. There are multiple tasks with a puck that
+you're trying to push around to a goal, multiple tasks with a
+drawer and multiple tasks with a window.
+And also skills across these that are the same like open versus
+close versus push. And so I think like we can think of this mixture
+of K encoders, where each encoder corresponds to one of those
+objects or skills.
+So we have this mixture of representations, and we want to
+now learn a universal representation that's useful across all of our
+tasks. But the way that we combine these representations into this
+universal one will depend on the context. So we take our metadata
+here,
+which is just those natural language sentences, we use Roberta as a
+pre trained language model to turn those into an embedding.
+And we train a context encoding from that embedding. And we use
+that context encoding, that context encoding is used as input
+into an attention mechanism that dictates how these different
+representations are combined together. And so now we have a
+universal representation for which we can use a universal
+policy.
+So we can use a multi test algorithm in this multi test setting.
+And we basically find that we get state of the art results on
+meta world, we get better performance than any existing method on
+this benchmark, just from incorporating this metadata.
+So we have the baseline
+comparisons with multitask, sack, multitask sack with the task encoder,
+multi head sack.
+also other multitask methods again pc grad soft modularization which takes the same policy network
+and does different routing depending on the task to create different policies and we also
+incorporated film so film is like a general conditioning method for natural language
+and it's not was not meant for the reinforcement learning setting but we thought of this as sort
+of like a a useful baseline and so we just incorporated film with soft actor credit to
+see how well it performs in the reinforcement learning setting um and then we also have an
+upper bound so if we just train a single sack agent per task this is its performance and so
+we can see that there's still a small gap so there's still room for improvement but this
+could also have to do with um um parameterization right the fact that this given that
+we're training one sack agent per task this will have a lot more parameters than any of these other
+methods and so we have results for mt10 and mt50 um and we can see that we get better performance
+in all of these other baselines so an important question to ask here is because we have all of
+these like new components um is you know what is actually contributing to this better performance
+so we just look at these ablations on on both settings um
+we have soft actor credit soft actor critic with just the mixture of encoders so no metadata so it
+just gets passed in like a task id instead we have software critic with metadata but without the
+mixture of encoders and then the whole combination which is our method and so we can see that
+the metadata is definitely more important than the mixture of encoders but both
+things together is still better than everything else
+and and i you know it's the same kind of visualization as the last paper but i really
+like this um so here again we're looking at cosine similarity across like all of the tasks
+um the task embeddings um what we are showing here so in this first image we just have the
+pre-trained task embeddings or actually really what sorry i shouldn't have written task embeddings
+this is confusing this is just the embeddings out of roberta so this is just out of the
+language model and so we can see you don't even need to use roberta i think if you just treated
+the words as tokens you would see this same kind of similarity it's just that how many words in
+common do these different sentences have this corresponds to the cosine some of the like these
+tasks having more similarity but we see that when we use these language embedded these um
+this language embedding as
+input into our method and now we can look at our context embeddings at the end of training
+we can see that that structure persists and actually um for some of these tasks it actually
+gets even stronger so these areas in yellow that differ between these two are between 9 10 and 4 5 6
+so we can see that the things that these have in common are opening and closing doors and drawers
+and windows
+and so i think the really nice thing here is that
+our agent has discovered that opening and closing a door versus a drawer versus a window is very
+similar and even more similar than the sentences would have you could tell from the sentences
+and so we can see that this this similarity is leveraged
+in comparison if we just train care but without using the metadata as those embeddings we no
+similarity is found
+and so it means that having access to that metadata is really important for finding this similar
+structure across tasks
+um another experiment that we wanted to try was to see if we can get zero shot
+generalization to new unseen environments there's some hope that we can do this because of the
+compositional aspect um of of this environment you know the fact that like different objects
+and different skills like if you've learned these things separately maybe we can combine them
+together
+try this with mt10 we were very careful about picking like which which of the environments
+we train on and which were the two environments we test on so we're evaluating on drawer open
+and window open with the idea that it has learned how to open thing other things in the training
+tasks and it understands the dynamics of drawers and windows also from the training tasks
+um performance is pretty abysmal it's better than the other methods but obviously there's still a
+lot of room for improvement so i'm really excited about sort of trying to improve uh performance in
+in this aspect in terms of this kind of compositional generalization but i'm not
+sure yet how to do this so uh to conclude from this paper which is getting presented at icml
+this year i i think the main takeaways are site information is important if we can incorporate it
+in the right way we can dramatically improve performance we show that one way of doing this
+is through use of the tools that are available to us and the tools that are available to us and
+one way of doing this is through using this mixture of encoders that allows for positive transfer
+and i think a key question to ask is like how can we scale this up and so this is where net
+hack comes in um you know net hack has this wiki that that uh i think the thing that tim likes to
+say right is that no human has been able to solve net hack without reading the wiki uh without using
+the wiki um and so i i think there's huge problems um open problems here of how we can take something
+like care, which we show works in this very toy setting with just these very simple
+sentences, how we can apply something like that to NetHack. And for me, I guess like the things
+that I'm excited about, again, sort of tying these things back into applications, personalizing
+healthcare, treating each patient, you can treat each patient and patient information as context.
+And so through this, we can get, we can expect generalization to new patients, maybe who have,
+who have, who have different metadata or different information about their lives and their health.
+But we should be able to get compositional generalization to these patients. Same thing
+with household robots. We should be able to generalize to new environments and layouts.
+We should be able to generalize to new tasks just through like simple language instruction.
+And yeah, so in, in conclusion, I think sort of like the, the takeaways from this talk from,
+from these three papers is that I think leveraging structure will improve generalization. Context
+is a way to convey the structure that exists in the environment, both either as metadata or learned
+from just like the dynamics and context comes in different forms. It can be just like the history
+and the environment. It can be,
+natural language. It can be video, video demonstrations. And yeah, so I think this
+is something that would be really interesting to sort of, to discuss and learn also from the
+things that you guys are working on, sort of like what are other forms of context? What are
+interesting applications of these kinds of works? And then obviously I, none of this work would be
+possible without my collaborators. So these are just the people that I worked with on these three
+papers. And yeah, so now I'm,
+I'm really happy to take any questions or comments from people.

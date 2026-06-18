@@ -1,0 +1,20 @@
+{
+  "title": "Can humans make AI any better?",
+  "url": "https://www.youtube.com/watch?v=2hcsmtkSzIw",
+  "backend": "youtube-json3-auto-caption",
+  "model": "youtube-auto-caption-json3",
+  "requested_language": "en-orig",
+  "detected_language": "en",
+  "generated_at": "2026-06-05T08:18:26",
+  "video_id": "2hcsmtkSzIw",
+  "uploader": "Welch Labs",
+  "channel_id": "UConVfxXodg78Tzh5nNu85Ew",
+  "upload_date": "20260131",
+  "duration": 1419,
+  "source_caption_file": "youtube/video/can-humans-make-ai-any-better/source.en-orig.json3",
+  "source_info_file": "youtube/video/can-humans-make-ai-any-better/source.info.json",
+  "source_thumbnail_file": "youtube/video/can-humans-make-ai-any-better/source.webp",
+  "refined_at": "2026-06-05T08:19:37",
+  "cleanup_rules": 25,
+  "paragraph_count": 54
+}

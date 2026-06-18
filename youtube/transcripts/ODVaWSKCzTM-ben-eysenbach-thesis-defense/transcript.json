@@ -1,0 +1,5015 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 6.6000000000000005,
+      "text": "Okay, let's get started."
+    },
+    {
+      "start": 10.86,
+      "end": 22.56,
+      "text": "The past decade has been really, really exciting for machine learning, because we've gotten systems that can actually work, that can make predictions fairly reliably, fairly accurately, in a number of domains."
+    },
+    {
+      "start": 22.56,
+      "end": 31.259999999999998,
+      "text": "I think the next frontier of AI is going to be systems that actually interact with the world, that can optimize sequences of actions."
+    },
+    {
+      "start": 32.519999999999996,
+      "end": 34.879999999999995,
+      "text": "That's what reinforcement learning is all about."
+    },
+    {
+      "start": 37.62,
+      "end": 42.2,
+      "text": "It's about choosing sequences of actions that lead to good outcomes. It's about improving through experience."
+    },
+    {
+      "start": 43.92,
+      "end": 50.44,
+      "text": "The work that I've done throughout my PhD casts reinforcement learning as a sort of probabilistic machine learning problem."
+    },
+    {
+      "start": 50.44,
+      "end": 54.48,
+      "text": "And in today's talk, I'm going to talk about why that's been useful."
+    },
+    {
+      "start": 55.04,
+      "end": 62.66,
+      "text": "It's been useful because it's made it easier for users to use these reinforcement learning tools, to specify outcomes that can just give examples of those outcomes."
+    },
+    {
+      "start": 63.26,
+      "end": 75.47999999999999,
+      "text": "But more than that, this idea has also led to better algorithms. Algorithms that not only outperform prior methods, but also can find patterns and structure in the solution to decision-making problems."
+    },
+    {
+      "start": 76.52,
+      "end": 79.52,
+      "text": "And that's what I'm going to talk about today, the work that we've done with thesis."
+    },
+    {
+      "start": 79.84,
+      "end": 80.25999999999999,
+      "text": "And"
+    },
+    {
+      "start": 80.32,
+      "end": 80.38,
+      "text": "how we've done that."
+    },
+    {
+      "start": 80.44,
+      "end": 85.42,
+      "text": "How some of this work might enable certain potential applications of reinforcement learning."
+    },
+    {
+      "start": 87.94,
+      "end": 92.86,
+      "text": "Reinforcement learning has the potential to unlock applications in nearly every aspect of our lives."
+    },
+    {
+      "start": 93.52,
+      "end": 101.38,
+      "text": "A lot of the foundational work in reinforcement learning is in games. Games like Go or Atari or poker. But the potential applications are much, much broader."
+    },
+    {
+      "start": 102.64,
+      "end": 109.18,
+      "text": "They include things like robotics. Robots that help patients in hospitals. Robots that safely drive our cars. Robots that make our warehouses safe."
+    },
+    {
+      "start": 109.52,
+      "end": 110.4,
+      "text": "Robots that safely drive our cars. Robots that make our warehouses safe."
+    },
+    {
+      "start": 110.44,
+      "end": 111.16,
+      "text": "Robots that safely drive our cars. Robots that make our warehouses safe."
+    },
+    {
+      "start": 111.82,
+      "end": 117.6,
+      "text": "Problems like robotics are really hard. This robot here, it has twenty motors, one at each knuckle."
+    },
+    {
+      "start": 118.24,
+      "end": 124.36,
+      "text": "How can you control those motors? What sequence of commands do you show them, so that you eventually solve this Rubik's Cube?"
+    },
+    {
+      "start": 126.34,
+      "end": 129.16,
+      "text": "There are potential applications in our built world, too."
+    },
+    {
+      "start": 129.57999999999998,
+      "end": 140.32,
+      "text": "How can we optimize the sequence of traffic lights, so we spend less time sitting at intersections? And how can we do this, making use of large streams of data that flow into centralized centers?"
+    },
+    {
+      "start": 140.32,
+      "end": 149.57999999999998,
+      "text": "In healthcare, AI systems are already being used to help predict the outcomes-"
+    },
+    {
+      "start": 150.14,
+      "end": 157.42,
+      "text": "for certain patients. But maybe the next set of AI tools will actually assist physicians in making decisions."
+    },
+    {
+      "start": 158.42,
+      "end": 164.38,
+      "text": "Applications in robotics and healthcare. They require learning from historical data. We don't want to be learning by trial and error."
+    },
+    {
+      "start": 165.68,
+      "end": 169.0,
+      "text": "There are potential applications in education, too."
+    },
+    {
+      "start": 169.0,
+      "end": 169.62,
+      "text": "We've seen the blossoming."
+    },
+    {
+      "start": 169.62,
+      "end": 170.01999999999998,
+      "text": "We've seen the blossoming."
+    },
+    {
+      "start": 170.02,
+      "end": 179.02,
+      "text": "How can we leverage that figure out what sequence of problems to show students, what those problems depend on students past experiences."
+    },
+    {
+      "start": 179.02,
+      "end": 193.02,
+      "text": "And in the sciences conventionally learning tools might be able to predict the outcome of some experiment, but reinforcement learning tools, they may allow us to dynamically control those experiments."
+    },
+    {
+      "start": 193.02,
+      "end": 203.02,
+      "text": "Of course, all these potential applications, there are not going to be solved with reinforcement learning people alone, but in collaboration with domain experts in concert with other areas of machine learning."
+    },
+    {
+      "start": 203.02,
+      "end": 213.02,
+      "text": "But I think that reinforcement learning is a really important piece of this puzzle, because reinforcement learning unless it's optimized for the long term outcomes."
+    },
+    {
+      "start": 213.02,
+      "end": 219.02,
+      "text": "Most of the successes that we've seen reinforcement learning have been in the context of games."
+    },
+    {
+      "start": 219.02,
+      "end": 222.02,
+      "text": "And I think the reason why is that we know the rules of games."
+    },
+    {
+      "start": 222.02,
+      "end": 223.02,
+      "text": "We know the rules of games."
+    },
+    {
+      "start": 223.02,
+      "end": 224.02,
+      "text": "We can simulate games."
+    },
+    {
+      "start": 224.02,
+      "end": 227.02,
+      "text": "We can generate lots and lots of data."
+    },
+    {
+      "start": 227.02,
+      "end": 231.02,
+      "text": "But the progress of other applications has been a lot more measured."
+    },
+    {
+      "start": 231.02,
+      "end": 239.02,
+      "text": "And I think the reason why is that it's a lot harder to get the data, and it's a lot harder to give feedback in these other applications."
+    },
+    {
+      "start": 239.02,
+      "end": 249.02,
+      "text": "And so if we hope to make progress on these potential applications, we're going to need a way of developing reinforcement learning algorithms that can learn with less feedback."
+    },
+    {
+      "start": 249.02,
+      "end": 253.02,
+      "text": "And in today's talk i'm going to talk about the work that we've done in the thesis."
+    },
+    {
+      "start": 253.02,
+      "end": 254.02,
+      "text": "Towards this end."
+    },
+    {
+      "start": 254.02,
+      "end": 260.02,
+      "text": "First, we've made it easier for users to give feedback by just giving examples of good outcomes."
+    },
+    {
+      "start": 260.02,
+      "end": 273.02,
+      "text": "And second, about how we've developed algorithms like an infrastructure in the solution to decision making problems, breaking down hard problems into easier problems that we can learn with less feedback."
+    },
+    {
+      "start": 273.02,
+      "end": 276.02,
+      "text": "So the start to make sure we're all on the same page."
+    },
+    {
+      "start": 276.02,
+      "end": 280.02,
+      "text": "I want to briefly review how the reinforcement learning problem works on the left here."
+    },
+    {
+      "start": 280.02,
+      "end": 282.02,
+      "text": "I'm feeling a robot task."
+    },
+    {
+      "start": 282.02,
+      "end": 285.02,
+      "text": "And this is what I'll refer to as the environment."
+    },
+    {
+      "start": 285.02,
+      "end": 299.02,
+      "text": "There's this robot here, and to control this robot we're going to take the action to respond to opening and closing the robot's hand, moving the robot hand to the left or to the right."
+    },
+    {
+      "start": 299.02,
+      "end": 302.02,
+      "text": "And we observe observations."
+    },
+    {
+      "start": 302.02,
+      "end": 305.02,
+      "text": "I'll see you guys."
+    },
+    {
+      "start": 305.02,
+      "end": 311.02,
+      "text": "Observations in this setting are going to correspond to an image showing us the pixels what's happening in this environment."
+    },
+    {
+      "start": 311.02,
+      "end": 312.02,
+      "text": "Right now."
+    },
+    {
+      "start": 312.02,
+      "end": 322.02,
+      "text": "And the most important object is this policy down here that allows us to figure out what actions do we take, given the current observation, given this current state pass."
+    },
+    {
+      "start": 322.02,
+      "end": 325.02,
+      "text": "And at the end of the day is this policy that we want to learn."
+    },
+    {
+      "start": 325.02,
+      "end": 329.02,
+      "text": "And we're going to learn the policy by using these rewards here."
+    },
+    {
+      "start": 329.02,
+      "end": 333.02,
+      "text": "The rewards say, Is this a good state, or is this a bad state?"
+    },
+    {
+      "start": 333.02,
+      "end": 341.02,
+      "text": "And we want to find the policy that takes us to states that are good not only now, but also lead us to good states in the future."
+    },
+    {
+      "start": 341.02,
+      "end": 345.02,
+      "text": "So this reinforcement learning problem is really exciting because it's so general."
+    },
+    {
+      "start": 345.02,
+      "end": 349.02,
+      "text": "All of those potential applications of reinforcement learning that we saw."
+    },
+    {
+      "start": 349.02,
+      "end": 351.02,
+      "text": "Those are examples of this problem."
+    },
+    {
+      "start": 351.02,
+      "end": 359.02,
+      "text": "But this generality also makes it really hard, and I want to review what I think is the main challenge in reinforcement learning."
+    },
+    {
+      "start": 359.02,
+      "end": 362.02,
+      "text": "I think the main challenge is the lack of feedback."
+    },
+    {
+      "start": 362.02,
+      "end": 364.02,
+      "text": "And I want to review what I mean by this."
+    },
+    {
+      "start": 364.02,
+      "end": 367.02,
+      "text": "In reinforcement learning, maybe we have this robot here."
+    },
+    {
+      "start": 367.02,
+      "end": 370.02,
+      "text": "We want to pick up this block, and it takes 1, 2, 3, 4, maybe 5 actions."
+    },
+    {
+      "start": 370.02,
+      "end": 374.02,
+      "text": "And at the end they get some feedback saying, Okay, you've gotten some good state."
+    },
+    {
+      "start": 374.02,
+      "end": 377.02,
+      "text": "You get this reward of this plus 5."
+    },
+    {
+      "start": 377.02,
+      "end": 381.02,
+      "text": "But before then, the robot might not get any feedback."
+    },
+    {
+      "start": 381.02,
+      "end": 387.02,
+      "text": "And this is very different from supervised learning, where, for every input you get the feedback, you get the label."
+    },
+    {
+      "start": 387.02,
+      "end": 395.02,
+      "text": "And this problem is compounded by the fact that we want to solve reinforcement learning problems in high dimensional settings."
+    },
+    {
+      "start": 395.02,
+      "end": 398.02,
+      "text": "Those observations, those images to computer."
+    },
+    {
+      "start": 398.02,
+      "end": 400.02,
+      "text": "The guests look like a big block of numbers."
+    },
+    {
+      "start": 400.02,
+      "end": 414.02,
+      "text": "And the reason why looking at high-dimensional problems is important is because it's precisely on these high-dimensional problems that we expect learning-based approaches to outperform classical approaches."
+    },
+    {
+      "start": 414.02,
+      "end": 420.02,
+      "text": "And there's a third problem, too, with these with providing the feedback a practical challenge."
+    },
+    {
+      "start": 420.02,
+      "end": 424.02,
+      "text": "Why should this state here get a reward of plus 5?"
+    },
+    {
+      "start": 424.02,
+      "end": 429.02,
+      "text": "Well, in practice, it was because a bunch of grad students spent too many hours writing."
+    },
+    {
+      "start": 429.02,
+      "end": 434.02,
+      "text": "This big block of code here that says, Okay, when you're at this state, you get a reward of plus 5."
+    },
+    {
+      "start": 434.02,
+      "end": 438.02,
+      "text": "But this big block of code, it serves as a barrier to enter."
+    },
+    {
+      "start": 438.02,
+      "end": 445.02,
+      "text": "How many users would like to apply reinforcement learning to their problem, but don't know how to write a big block of code like that?"
+    },
+    {
+      "start": 445.02,
+      "end": 448.02,
+      "text": "And even experts might look at this and say, Is this correct?"
+    },
+    {
+      "start": 448.02,
+      "end": 451.02,
+      "text": "Will this result in the desired behavior?"
+    },
+    {
+      "start": 451.02,
+      "end": 457.02,
+      "text": "And as we move to real world problems, even running this piece of code is hard."
+    },
+    {
+      "start": 457.02,
+      "end": 459.02,
+      "text": "Say this piece of code."
+    },
+    {
+      "start": 459.02,
+      "end": 463.02,
+      "text": "It requires knowing the positions of every object in the sea."
+    },
+    {
+      "start": 463.02,
+      "end": 468.02,
+      "text": "But even the best object detectors we have, they sometimes make errors."
+    },
+    {
+      "start": 468.02,
+      "end": 474.02,
+      "text": "And so if you hold the building,"
+    },
+    {
+      "start": 474.02,
+      "end": 481.02,
+      "text": "And so if we hope to make progress and reinforcement learning, we're going to need a way of learning from less feedback."
+    },
+    {
+      "start": 481.02,
+      "end": 487.02,
+      "text": "Now these problems of learning from limited feedback with high-dimensional data new to reinforcement learning."
+    },
+    {
+      "start": 487.02,
+      "end": 488.02,
+      "text": "And in fact, we've seen similar problems."
+    },
+    {
+      "start": 488.02,
+      "end": 495.02,
+      "text": "In other areas of machine learning and there and domains like computer vision and natural language processing."
+    },
+    {
+      "start": 495.02,
+      "end": 500.02,
+      "text": "We've seen how self-supervised approaches have achieved really excellent results."
+    },
+    {
+      "start": 500.02,
+      "end": 504.02,
+      "text": "And so I want to review how those methods work in computer vision."
+    },
+    {
+      "start": 504.02,
+      "end": 513.02,
+      "text": "The methods that say, take an image and cover up pixels of that image or patches of that image, and try to predict what those missing pixels or patches are."
+    },
+    {
+      "start": 513.02,
+      "end": 516.02,
+      "text": "And these are the techniques that underlie some of the generative Ai models that you may have seen over the last few years."
+    },
+    {
+      "start": 516.02,
+      "end": 532.02,
+      "text": "Similarly, in natural language processing they're methods that take the words of that sentence, and then try to predict what are those missing words, or what is the next word of that sentence?"
+    },
+    {
+      "start": 532.02,
+      "end": 539.02,
+      "text": "And these are some of the techniques that underlie some of the large language models that you've probably seen over the last year."
+    },
+    {
+      "start": 539.02,
+      "end": 542.02,
+      "text": "And they're another class of self-supervised methods."
+    },
+    {
+      "start": 542.02,
+      "end": 544.02,
+      "text": "These are contrastive learning methods."
+    },
+    {
+      "start": 544.02,
+      "end": 545.02,
+      "text": "Methods."
+    },
+    {
+      "start": 545.02,
+      "end": 552.02,
+      "text": "Look at the inputs and try to learn the representations so that similar inputs have similar representations."
+    },
+    {
+      "start": 552.02,
+      "end": 557.02,
+      "text": "And it's these last class of methods that we're going to build upon today."
+    },
+    {
+      "start": 557.02,
+      "end": 564.02,
+      "text": "So these self-supervised methods and other domains that achieve really excellent results, learning from high dimensional data with limited."
+    },
+    {
+      "start": 564.02,
+      "end": 568.02,
+      "text": "How can we realize those same games in the reinforcement learning setting?"
+    },
+    {
+      "start": 568.02,
+      "end": 574.02,
+      "text": "What does it even mean to self-supervised reinforcement learning?"
+    },
+    {
+      "start": 575.02,
+      "end": 587.02,
+      "text": "If I had to summarize my thesis in 5 words, it would probably be this that we've started just started to lay a foundation for self-supervised reinforcement learning."
+    },
+    {
+      "start": 587.02,
+      "end": 591.02,
+      "text": "And in today's talk I hope to give you a taste of what this means."
+    },
+    {
+      "start": 591.02,
+      "end": 599.02,
+      "text": "How we've developed practical algorithms, algorithms that we actually can implement and actually run in the real world."
+    },
+    {
+      "start": 599.02,
+      "end": 603.02,
+      "text": "Theoretical guarantees for these methods that allow us to answer questions about when and where we expect."
+    },
+    {
+      "start": 603.02,
+      "end": 619.02,
+      "text": "These methods to work, and also uncovering certain connections between these reinforcement learning methods and other areas of computer science, and even other areas of machine learning, too."
+    },
+    {
+      "start": 619.02,
+      "end": 623.02,
+      "text": "For folks on zoom. If you wouldn't mind muting muting, that would be fantastic."
+    },
+    {
+      "start": 623.02,
+      "end": 629.02,
+      "text": "Thanks. Okay, So here's what we're going to talk about in today's talk."
+    },
+    {
+      "start": 629.02,
+      "end": 632.02,
+      "text": "I'm first going to talk about how we can learn goal reaching skills."
+    },
+    {
+      "start": 632.02,
+      "end": 638.02,
+      "text": "These goal reaching skills are going to unlock a couple of capabilities."
+    },
+    {
+      "start": 638.02,
+      "end": 645.02,
+      "text": "First, they're going to allow users to specify tasks by just giving an image of what they would like to happen."
+    },
+    {
+      "start": 645.02,
+      "end": 649.02,
+      "text": "They no longer need to write that big block of code that we saw before."
+    },
+    {
+      "start": 649.02,
+      "end": 658.02,
+      "text": "I'll talk about how we've deployed some of these methods in the real world collaboration with folks, and then we'll talk about some of the theoretical properties."
+    },
+    {
+      "start": 658.02,
+      "end": 661.02,
+      "text": "We've proven about these methods connecting them to reward maximization."
+    },
+    {
+      "start": 661.02,
+      "end": 669.02,
+      "text": "In a way that actually allows us to expand them and apply them to fully general reinforcement learning problems."
+    },
+    {
+      "start": 669.02,
+      "end": 677.02,
+      "text": "Not only are these goal reaching skills useful in their own right, but they also will provide the right abstraction for planning."
+    },
+    {
+      "start": 677.02,
+      "end": 685.02,
+      "text": "And by incorporating these skills into planning algorithms, we'll be able to extend their capabilities to over an order of magnitude."
+    },
+    {
+      "start": 685.02,
+      "end": 690.02,
+      "text": "And doing this will allow us to apply these methods to this outdoor robot."
+    },
+    {
+      "start": 691.02,
+      "end": 699.02,
+      "text": "Now, of course, when we want to apply reinforced learning to real world problems, ensuring that our methods are robust is really, really important."
+    },
+    {
+      "start": 699.02,
+      "end": 702.02,
+      "text": "And we've studied robustness in a number of ways."
+    },
+    {
+      "start": 702.02,
+      "end": 706.02,
+      "text": "We've looked at how regularization can provide a certain degree of robustness."
+    },
+    {
+      "start": 706.02,
+      "end": 711.02,
+      "text": "We've looked at how to make use of approximate models, learning from them, or recognizing the errors."
+    },
+    {
+      "start": 711.02,
+      "end": 716.02,
+      "text": "But I'm not going to talk about our work on robustness and generalization today."
+    },
+    {
+      "start": 716.02,
+      "end": 721.02,
+      "text": "So to get started, I want to talk about this first part about learning these goal reaching skills."
+    },
+    {
+      "start": 721.02,
+      "end": 725.02,
+      "text": "And I'm going to start by defining the problem statement."
+    },
+    {
+      "start": 725.02,
+      "end": 729.02,
+      "text": "This problem of goal conditioned reinforcement learning."
+    },
+    {
+      "start": 729.02,
+      "end": 736.02,
+      "text": "So let's say we have this robot that I started the talk with, and we want this robot to pick up the green object, move it into the blue bed."
+    },
+    {
+      "start": 736.02,
+      "end": 741.02,
+      "text": "Well, we could write down that big, complicated reward function we saw before."
+    },
+    {
+      "start": 741.02,
+      "end": 748.02,
+      "text": "But instead, we're going to ask the users to just provide an image of what we would like the robot to do."
+    },
+    {
+      "start": 748.02,
+      "end": 750.02,
+      "text": "What is the desired outcome?"
+    },
+    {
+      "start": 751.02,
+      "end": 758.02,
+      "text": "So in this case, the desired outcome to get there, we would want to do the robot to go down and grasp the green objects."
+    },
+    {
+      "start": 758.02,
+      "end": 763.02,
+      "text": "Pick it up, move it over a little bit to the blue bin, and drop it into the blue pen."
+    },
+    {
+      "start": 763.02,
+      "end": 768.02,
+      "text": "This problem of goal conditioned reinforcement learning is actually a very old problem."
+    },
+    {
+      "start": 768.02,
+      "end": 780.02,
+      "text": "And some of the early work in Ai, including work right over there from Nsa, was on this problem of learning goal reaching behaviors."
+    },
+    {
+      "start": 780.02,
+      "end": 791.02,
+      "text": "Now we're going to study this problem in a particular setting, one where we're given as input a data set, and this set, and it'll be a data set of videos labeled with actions."
+    },
+    {
+      "start": 791.02,
+      "end": 795.02,
+      "text": "And one thing to note that these videos they're not necessarily optimal."
+    },
+    {
+      "start": 795.02,
+      "end": 798.02,
+      "text": "The actions in them are not necessarily good actions."
+    },
+    {
+      "start": 798.02,
+      "end": 804.02,
+      "text": "But from this data we're going to find try to find skills that can reach goals as quickly as possible."
+    },
+    {
+      "start": 804.02,
+      "end": 809.02,
+      "text": "So why is this problem useful? Well, practically it's going to make it easier for users to specify tasks."
+    },
+    {
+      "start": 809.02,
+      "end": 810.02,
+      "text": "But."
+    },
+    {
+      "start": 810.02,
+      "end": 823.02,
+      "text": "Mathematically, it's also going to build upon the prior work and allow us to apply these methods to settings that have continuous states and observations and actions as well as problems with stochastic dynamics while retaining certain theoretical"
+    },
+    {
+      "start": 823.02,
+      "end": 829.02,
+      "text": "properties. We'll show that this map is a well-defined objective."
+    },
+    {
+      "start": 829.02,
+      "end": 835.02,
+      "text": "So how are we going to do this? How are we going to learn these goal reaching skills?"
+    },
+    {
+      "start": 835.02,
+      "end": 839.02,
+      "text": "Well, we're going to do this in 2 steps. The first step is going to entail."
+    },
+    {
+      "start": 839.02,
+      "end": 847.02,
+      "text": "Learning representations from these data and learning representations is important whenever we're dealing with high dimensional data."
+    },
+    {
+      "start": 847.02,
+      "end": 854.02,
+      "text": "And then the second step is going to be to learn these goal reaching skills from these representations."
+    },
+    {
+      "start": 854.02,
+      "end": 861.02,
+      "text": "So that's the game plan and i'm gonna start by talking about how we learn these representations."
+    },
+    {
+      "start": 861.02,
+      "end": 868.02,
+      "text": "So there are many prior approaches you could use for learning representations of high dimensional data."
+    },
+    {
+      "start": 868.02,
+      "end": 874.02,
+      "text": "There's some methods that look at the frames in a video and try to predict what is the next frame in the video."
+    },
+    {
+      "start": 874.02,
+      "end": 883.02,
+      "text": "There are other methods that say, look at the phrase individually in some video and try to learn some representation that tells you about the contents of that frame."
+    },
+    {
+      "start": 883.02,
+      "end": 888.02,
+      "text": "What these methods typically don't do is they typically don't tell you about the actions they don't tell you."
+    },
+    {
+      "start": 888.02,
+      "end": 893.02,
+      "text": "Well, if you wanted to get from point A to point B, what actions should you take?"
+    },
+    {
+      "start": 893.02,
+      "end": 897.02,
+      "text": "And so we're going to need a different way of learning the representations."
+    },
+    {
+      "start": 898.02,
+      "end": 904.02,
+      "text": "Our method for doing this is going to build upon prior methods developed in the computer vision and natural language processing community."
+    },
+    {
+      "start": 904.02,
+      "end": 907.02,
+      "text": "But we're going to extend it to the reinforcement learning setting."
+    },
+    {
+      "start": 907.02,
+      "end": 914.02,
+      "text": "That's this idea of contrastive learning, and I want to walk you through how we apply this to the reinforcement learning setting."
+    },
+    {
+      "start": 914.02,
+      "end": 923.02,
+      "text": "We're going to learn 2 representations, a representation of the states and the actions as well as a representation of the future states."
+    },
+    {
+      "start": 923.02,
+      "end": 927.02,
+      "text": "And we're going to do this using the data set of the videos and the actions."
+    },
+    {
+      "start": 927.02,
+      "end": 939.02,
+      "text": "So to start we're going to take a video, and we're going to take 2 images from that video and say these images should have similar representations."
+    },
+    {
+      "start": 939.02,
+      "end": 943.02,
+      "text": "And precisely these 2 images are going to be sampled."
+    },
+    {
+      "start": 943.02,
+      "end": 948.02,
+      "text": "So there are certain distance apart from each other, a distance governed by a certain geometric distribution."
+    },
+    {
+      "start": 948.02,
+      "end": 953.02,
+      "text": "So they're most likely to be 1 or 2 steps apart, but they could be 3 or 4 or more steps apart."
+    },
+    {
+      "start": 953.02,
+      "end": 957.02,
+      "text": "And that geometric distribution will be important for proving certain things."
+    },
+    {
+      "start": 957.02,
+      "end": 960.02,
+      "text": "Theoretical properties of these methods."
+    },
+    {
+      "start": 960.02,
+      "end": 969.02,
+      "text": "And then we're going to look at a second video, and we're going to say that images from different videos should have different representations."
+    },
+    {
+      "start": 969.02,
+      "end": 980.02,
+      "text": "So what's the intuition here? The intuition is that these representations, once they're learned, they can tell you something about the difficulty of getting from one state to another state."
+    },
+    {
+      "start": 980.02,
+      "end": 985.02,
+      "text": "If the states have similar representations, it's pretty likely you can get from one to the other."
+    },
+    {
+      "start": 985.02,
+      "end": 987.02,
+      "text": "And importantly, these representations."
+    },
+    {
+      "start": 987.02,
+      "end": 993.02,
+      "text": "They depend on the action, and that was the key property that was missing from some of the prior methods."
+    },
+    {
+      "start": 993.02,
+      "end": 999.02,
+      "text": "So I want to give you an example of what these sorts of representations they learn."
+    },
+    {
+      "start": 999.02,
+      "end": 1005.02,
+      "text": "So we did this by applying these methods, the simulated manipulation task here."
+    },
+    {
+      "start": 1005.02,
+      "end": 1009.02,
+      "text": "And in this task there's this robot arm there's this red object."
+    },
+    {
+      "start": 1009.02,
+      "end": 1016.02,
+      "text": "You can move there's this drawer you could open if the red object moved, and we can think about these representations as points."
+    },
+    {
+      "start": 1016.02,
+      "end": 1021.02,
+      "text": "But we're going to normalize these points."
+    },
+    {
+      "start": 1021.02,
+      "end": 1024.02,
+      "text": "So they lie on a sphere. This is a common technique."
+    },
+    {
+      "start": 1024.02,
+      "end": 1035.02,
+      "text": "And now the way that we were learning these representations was by looking at the distance between them precisely by looking at the dot product between these representations."
+    },
+    {
+      "start": 1035.02,
+      "end": 1041.02,
+      "text": "And so one way of thinking about these representations is that they're encoding a sort of model of the world."
+    },
+    {
+      "start": 1041.02,
+      "end": 1045.02,
+      "text": "But one that predicts not. What is the future observation going to look like?"
+    },
+    {
+      "start": 1045.02,
+      "end": 1051.02,
+      "text": "What is the representation of some future state going to look like?"
+    },
+    {
+      "start": 1051.02,
+      "end": 1059.02,
+      "text": "These are the representations. They also very strong connections with some classical ideas and reinforcement learning relating to successor teachers and successor representations."
+    },
+    {
+      "start": 1059.02,
+      "end": 1070.02,
+      "text": "And I can talk more about that at the end. So if you look at these representations and look along this path here, we can visualize what our method learns."
+    },
+    {
+      "start": 1070.02,
+      "end": 1075.02,
+      "text": "And I want to point out 2 things about these visualizations and these visualizations."
+    },
+    {
+      "start": 1075.02,
+      "end": 1079.02,
+      "text": "They were created using a nearest neighbor retrieval."
+    },
+    {
+      "start": 1079.02,
+      "end": 1086.02,
+      "text": "So the first thing to note is that all these images have the same contents as this observation and the final observation."
+    },
+    {
+      "start": 1086.02,
+      "end": 1090.02,
+      "text": "They all have the red object and the green object."
+    },
+    {
+      "start": 1090.02,
+      "end": 1095.02,
+      "text": "But more than that, they also seem to have captured some notion of physics."
+    },
+    {
+      "start": 1095.02,
+      "end": 1101.02,
+      "text": "So if you notice this red object here, it only moves when it's being touched."
+    },
+    {
+      "start": 1101.02,
+      "end": 1103.02,
+      "text": "And similarly, this drawer."
+    },
+    {
+      "start": 1103.02,
+      "end": 1107.02,
+      "text": "It only moves when the robot arm goes down and touches it."
+    },
+    {
+      "start": 1107.02,
+      "end": 1110.02,
+      "text": "And this is different from what prior methods would do."
+    },
+    {
+      "start": 1110.02,
+      "end": 1118.02,
+      "text": "If we take a different method, a common deep learning method known as a variational autoencoder and visualize its representations."
+    },
+    {
+      "start": 1118.02,
+      "end": 1122.02,
+      "text": "These representations, they capture the contents of the scene, but not the physics."
+    },
+    {
+      "start": 1122.02,
+      "end": 1129.02,
+      "text": "You notice that the arm moves, but it never touches the objects, even though the objects are also within."
+    },
+    {
+      "start": 1129.02,
+      "end": 1132.02,
+      "text": "And so these representations and these visualizations of them."
+    },
+    {
+      "start": 1132.02,
+      "end": 1141.02,
+      "text": "They give us some hints that well, maybe these are the right representations to use for building those goal reaching skills."
+    },
+    {
+      "start": 1141.02,
+      "end": 1148.02,
+      "text": "Because at the end of the day, these representations were motivated by learning these goal reaching skills."
+    },
+    {
+      "start": 1148.02,
+      "end": 1155.02,
+      "text": "And so I want to walk you through how we then learn these goal reaching skills from these representations."
+    },
+    {
+      "start": 1155.02,
+      "end": 1161.02,
+      "text": "And I'm going to use an example that same robot task I showed at the beginning."
+    },
+    {
+      "start": 1161.02,
+      "end": 1162.02,
+      "text": "So."
+    },
+    {
+      "start": 1162.02,
+      "end": 1168.02,
+      "text": "Let's consider two actions, one action that moves the block to the right one, moves it to the left."
+    },
+    {
+      "start": 1168.02,
+      "end": 1175.02,
+      "text": "And if you recall, the really important property of our representations was that they depended on the action."
+    },
+    {
+      "start": 1175.02,
+      "end": 1180.02,
+      "text": "And so actually one is one representation, and actually two has one representation."
+    },
+    {
+      "start": 1180.02,
+      "end": 1188.02,
+      "text": "And we can look at the distances between these representations, and we both see and space just on these representations."
+    },
+    {
+      "start": 1188.02,
+      "end": 1191.02,
+      "text": "Do you folks think we should take action one or action?"
+    },
+    {
+      "start": 1192.02,
+      "end": 1201.02,
+      "text": "Yeah. So we can see. Okay, action, too. It has a representation that's closer towards the goal, and so it's probably the action you should take."
+    },
+    {
+      "start": 1201.02,
+      "end": 1212.02,
+      "text": "And that's exactly what we did. We define each skill as simply taking the actions whose representations are closest towards the goal representation."
+    },
+    {
+      "start": 1212.02,
+      "end": 1218.02,
+      "text": "So just to summarize this, we started with this data set of the videos and the actions."
+    },
+    {
+      "start": 1218.02,
+      "end": 1221.02,
+      "text": "We then learned these representations."
+    },
+    {
+      "start": 1221.02,
+      "end": 1227.02,
+      "text": "And then we extracted the skills, those goal-reaching skills from these representations."
+    },
+    {
+      "start": 1227.02,
+      "end": 1231.02,
+      "text": "Now, at this point, we can use these skills to solve certain tasks."
+    },
+    {
+      "start": 1231.02,
+      "end": 1240.02,
+      "text": "We also could use these skills to go back and collect some more data, and we feel that these skills work in both settings."
+    },
+    {
+      "start": 1240.02,
+      "end": 1245.02,
+      "text": "Now, to provide a bit of context here, I started the section by talking about why reinforcement learning is hard."
+    },
+    {
+      "start": 1245.02,
+      "end": 1250.02,
+      "text": "It's hard because of the limited feedback and ordinarily."
+    },
+    {
+      "start": 1250.02,
+      "end": 1254.02,
+      "text": "But reinforcement learning is requiring a fair number of rewards to learn."
+    },
+    {
+      "start": 1254.02,
+      "end": 1268.02,
+      "text": "But we often think about goal-conditioned reinforcement learning as even more challenging problem, because if learning how to reach one goal required one reward function, maybe learning how to reach many goals requires many reward functions."
+    },
+    {
+      "start": 1268.02,
+      "end": 1278.02,
+      "text": "But what we've seen here is that we can cast this problem of goal-conditioned reinforcement learning in an entirely self-supervised way."
+    },
+    {
+      "start": 1278.02,
+      "end": 1280.02,
+      "text": "So that we can learn these goal-reaching skills."
+    },
+    {
+      "start": 1280.02,
+      "end": 1284.02,
+      "text": "So, we can create a reward function without ever having to specify a reward function."
+    },
+    {
+      "start": 1284.02,
+      "end": 1288.02,
+      "text": "No user had to come write that big block of red code that we saw before."
+    },
+    {
+      "start": 1288.02,
+      "end": 1297.02,
+      "text": "And I think this can help explain why these methods can work well."
+    },
+    {
+      "start": 1297.02,
+      "end": 1300.02,
+      "text": "And so, after showing these methods, they work well in simulation."
+    },
+    {
+      "start": 1300.02,
+      "end": 1306.02,
+      "text": "Together with collaborators, we looked at applying these methods to a real-world manipulation task."
+    },
+    {
+      "start": 1306.02,
+      "end": 1308.02,
+      "text": "This robot shown here is a WidowX robot."
+    },
+    {
+      "start": 1308.02,
+      "end": 1309.02,
+      "text": "It's a small, low-cost robot."
+    },
+    {
+      "start": 1309.02,
+      "end": 1310.02,
+      "text": "It's a small, low-cost robot."
+    },
+    {
+      "start": 1310.02,
+      "end": 1312.66,
+      "text": "robot, which makes it pretty accessible but also"
+    },
+    {
+      "start": 1312.66,
+      "end": 1315.18,
+      "text": "pretty finicky to work with."
+    },
+    {
+      "start": 1315.18,
+      "end": 1317.86,
+      "text": "And I want to show you the skill that we learned"
+    },
+    {
+      "start": 1317.86,
+      "end": 1320.7,
+      "text": "for trying to get to the skull state shown here."
+    },
+    {
+      "start": 1320.7,
+      "end": 1323.12,
+      "text": "And the difference between the starting state and the skull"
+    },
+    {
+      "start": 1323.12,
+      "end": 1327.2,
+      "text": "state is that the red spoon has moved to the left."
+    },
+    {
+      "start": 1327.2,
+      "end": 1330.0,
+      "text": "And from a robotics perspective, this task"
+    },
+    {
+      "start": 1330.0,
+      "end": 1332.74,
+      "text": "is fairly challenging because we're"
+    },
+    {
+      "start": 1332.74,
+      "end": 1335.28,
+      "text": "going to do the learning from suboptimal data."
+    },
+    {
+      "start": 1335.28,
+      "end": 1337.72,
+      "text": "It's not going to all be demonstrations."
+    },
+    {
+      "start": 1337.72,
+      "end": 1339.68,
+      "text": "We don't know the positions of all the objects."
+    },
+    {
+      "start": 1339.68,
+      "end": 1342.72,
+      "text": "We're doing this directly from the images."
+    },
+    {
+      "start": 1342.72,
+      "end": 1345.96,
+      "text": "And we're going to learn this without ever interacting"
+    },
+    {
+      "start": 1345.96,
+      "end": 1346.92,
+      "text": "with this environment."
+    },
+    {
+      "start": 1346.92,
+      "end": 1348.76,
+      "text": "There's not going to be any trial and error."
+    },
+    {
+      "start": 1348.76,
+      "end": 1352.1200000000001,
+      "text": "It's all learned from that pre-existing data set."
+    },
+    {
+      "start": 1352.1200000000001,
+      "end": 1354.6000000000001,
+      "text": "And just to underscore the difficulty of this,"
+    },
+    {
+      "start": 1354.6000000000001,
+      "end": 1357.0,
+      "text": "I want to show you what a prior method does."
+    },
+    {
+      "start": 1357.0,
+      "end": 1360.3,
+      "text": "The prior method moves the robot arm to the correct position"
+    },
+    {
+      "start": 1360.3,
+      "end": 1365.02,
+      "text": "but never goes down and grabs the red spoon."
+    },
+    {
+      "start": 1365.02,
+      "end": 1367.5800000000002,
+      "text": "And in contrast, here's our method."
+    },
+    {
+      "start": 1367.5800000000002,
+      "end": 1369.5800000000002,
+      "text": "We see that the robot arm."
+    },
+    {
+      "start": 1369.58,
+      "end": 1372.34,
+      "text": "It goes out of its way to grab that red spoon,"
+    },
+    {
+      "start": 1372.34,
+      "end": 1375.6999999999998,
+      "text": "drop it on the left side, and then move the hand up."
+    },
+    {
+      "start": 1378.58,
+      "end": 1382.4199999999998,
+      "text": "Now, one property of these goal-reaching skills"
+    },
+    {
+      "start": 1382.4199999999998,
+      "end": 1383.8999999999999,
+      "text": "is really important, is that they"
+    },
+    {
+      "start": 1383.8999999999999,
+      "end": 1386.6999999999998,
+      "text": "were learned without any particular goal in mind."
+    },
+    {
+      "start": 1386.6999999999998,
+      "end": 1388.8999999999999,
+      "text": "They were learned just in that data set,"
+    },
+    {
+      "start": 1388.8999999999999,
+      "end": 1391.4399999999998,
+      "text": "which means that if we want to solve some different task,"
+    },
+    {
+      "start": 1391.4399999999998,
+      "end": 1392.98,
+      "text": "for example, if we wanted the robot"
+    },
+    {
+      "start": 1392.98,
+      "end": 1396.1,
+      "text": "to push a can across the table, the only thing we need to do"
+    },
+    {
+      "start": 1396.1,
+      "end": 1397.86,
+      "text": "is give it a new goal image."
+    },
+    {
+      "start": 1397.86,
+      "end": 1399.06,
+      "text": "We don't need to do."
+    },
+    {
+      "start": 1399.06,
+      "end": 1399.94,
+      "text": "Any more training."
+    },
+    {
+      "start": 1399.94,
+      "end": 1401.94,
+      "text": "We don't need to do any more gradient updates"
+    },
+    {
+      "start": 1401.94,
+      "end": 1403.78,
+      "text": "or specify any more data."
+    },
+    {
+      "start": 1403.78,
+      "end": 1406.56,
+      "text": "And so without using that exact same policy"
+    },
+    {
+      "start": 1406.56,
+      "end": 1408.72,
+      "text": "for giving it a different goal, we"
+    },
+    {
+      "start": 1408.72,
+      "end": 1412.3,
+      "text": "see that the method is able to push the can across the table."
+    },
+    {
+      "start": 1415.3799999999999,
+      "end": 1416.82,
+      "text": "So I hope these results, they help"
+    },
+    {
+      "start": 1416.82,
+      "end": 1419.7,
+      "text": "underscore the practical utility of these sorts of methods."
+    },
+    {
+      "start": 1419.7,
+      "end": 1422.1599999999999,
+      "text": "That we can learn purely from the historical data"
+    },
+    {
+      "start": 1422.1599999999999,
+      "end": 1425.06,
+      "text": "that no users had to specify those reward functions."
+    },
+    {
+      "start": 1425.06,
+      "end": 1426.06,
+      "text": "And the way we can do that is by using the data set."
+    },
+    {
+      "start": 1426.06,
+      "end": 1427.06,
+      "text": "And we can use the data set."
+    },
+    {
+      "start": 1427.06,
+      "end": 1428.06,
+      "text": "And we can use the data set."
+    },
+    {
+      "start": 1428.06,
+      "end": 1429.06,
+      "text": "And we can use the data set. And we can use the data set."
+    },
+    {
+      "start": 1429.06,
+      "end": 1430.06,
+      "text": "And we can deal with it in the same fashion."
+    },
+    {
+      "start": 1430.06,
+      "end": 1431.06,
+      "text": "We can use the data set."
+    },
+    {
+      "start": 1431.06,
+      "end": 1432.06,
+      "text": "And we can use the data set."
+    },
+    {
+      "start": 1432.06,
+      "end": 1433.06,
+      "text": "And we can use the data set."
+    },
+    {
+      "start": 1433.06,
+      "end": 1434.06,
+      "text": "And we can use the data set."
+    },
+    {
+      "start": 1434.06,
+      "end": 1435.06,
+      "text": "And we can use the data set."
+    },
+    {
+      "start": 1435.06,
+      "end": 1436.06,
+      "text": "And we can use the data set."
+    },
+    {
+      "start": 1436.06,
+      "end": 1437.06,
+      "text": "And we can use the data set."
+    },
+    {
+      "start": 1437.06,
+      "end": 1438.06,
+      "text": "And we can use the data set."
+    },
+    {
+      "start": 1438.06,
+      "end": 1439.06,
+      "text": "But how do we do that?"
+    },
+    {
+      "start": 1439.06,
+      "end": 1440.06,
+      "text": "Well, the way we did that was"
+    },
+    {
+      "start": 1440.06,
+      "end": 1441.06,
+      "text": "by first learning these representations"
+    },
+    {
+      "start": 1441.06,
+      "end": 1442.06,
+      "text": "and then using these representations"
+    },
+    {
+      "start": 1442.06,
+      "end": 1443.06,
+      "text": "to extract the skills."
+    },
+    {
+      "start": 1443.06,
+      "end": 1444.06,
+      "text": "Now, from a theoretical perspective,"
+    },
+    {
+      "start": 1444.06,
+      "end": 1445.06,
+      "text": "there still remains a pretty important question,"
+    },
+    {
+      "start": 1445.06,
+      "end": 1446.06,
+      "text": "which is these skills,"
+    },
+    {
+      "start": 1446.06,
+      "end": 1447.06,
+      "text": "how do they relate to reward maximization?"
+    },
+    {
+      "start": 1447.06,
+      "end": 1448.06,
+      "text": "Reinforcement learning,"
+    },
+    {
+      "start": 1448.06,
+      "end": 1449.06,
+      "text": "it's built upon this foundation of maximizing rewards."
+    },
+    {
+      "start": 1449.06,
+      "end": 1450.1,
+      "text": "But do there skills,"
+    },
+    {
+      "start": 1450.1,
+      "end": 1451.06,
+      "text": "those goal-reaching skills does actually maximize"
+    },
+    {
+      "start": 1451.06,
+      "end": 1452.06,
+      "text": "any sort of reward?"
+    },
+    {
+      "start": 1452.06,
+      "end": 1457.82,
+      "text": "reward we'll see that answering this question showing that these skills solve a certain type"
+    },
+    {
+      "start": 1457.82,
+      "end": 1463.34,
+      "text": "of reinforcement learning problem helps us extend these methods applying similar techniques to fully"
+    },
+    {
+      "start": 1463.34,
+      "end": 1469.58,
+      "text": "general reinforcement learning methods and to write a little bit more context here these"
+    },
+    {
+      "start": 1469.58,
+      "end": 1475.6599999999999,
+      "text": "self-supervised methods upon which we've built in other domains there's often a disconnect between"
+    },
+    {
+      "start": 1475.6599999999999,
+      "end": 1480.62,
+      "text": "whatever representations you're learning and whatever downstream task you're trying to solve"
+    },
+    {
+      "start": 1480.6200000000001,
+      "end": 1486.0600000000002,
+      "text": "but we'll see that in the reinforcement learning setting there ends up being a very close connection"
+    },
+    {
+      "start": 1486.0600000000002,
+      "end": 1491.2600000000002,
+      "text": "between the representations you've learned and how you use those representations in the setting"
+    },
+    {
+      "start": 1491.2600000000002,
+      "end": 1499.18,
+      "text": "to solve decision-making problems so here's our main theoretical result our main theoretical"
+    },
+    {
+      "start": 1499.18,
+      "end": 1505.5000000000002,
+      "text": "result is that these representations they tell you about the future returns precisely"
+    },
+    {
+      "start": 1505.5000000000002,
+      "end": 1509.3400000000001,
+      "text": "if you look at the dot product or the similarity between these representations"
+    },
+    {
+      "start": 1510.0600000000002,
+      "end": 1510.6200000000001,
+      "text": "this tells you that you can use these representations to solve decision-making problems"
+    },
+    {
+      "start": 1510.6200000000001,
+      "end": 1516.7,
+      "text": "this tells you about the rewards that you'll get in the future and precisely these rewards here"
+    },
+    {
+      "start": 1516.7,
+      "end": 1521.8200000000002,
+      "text": "are a very natural reward function one that says okay do you get to the goal at the next time step"
+    },
+    {
+      "start": 1523.0200000000002,
+      "end": 1529.0200000000002,
+      "text": "but importantly we never have to actually compute those rewards there one thing i should mention is"
+    },
+    {
+      "start": 1529.0200000000002,
+      "end": 1535.5000000000002,
+      "text": "that this this reinforcement learning objective on the right hand side has very close is about"
+    },
+    {
+      "start": 1535.5000000000002,
+      "end": 1540.0600000000002,
+      "text": "maximizing probabilities trying to get to the goal with the highest probability but it is very"
+    },
+    {
+      "start": 1540.06,
+      "end": 1545.02,
+      "text": "strong connections to a different objective trying to minimize the total number of steps"
+    },
+    {
+      "start": 1545.02,
+      "end": 1552.7,
+      "text": "required to get to the goal as we get to visualize this result when we were defining these skills we"
+    },
+    {
+      "start": 1552.7,
+      "end": 1557.5,
+      "text": "were looking at these representations and what this theoretical result says is that when we were"
+    },
+    {
+      "start": 1557.5,
+      "end": 1562.06,
+      "text": "looking at the distances between the representations that was not a heuristic that was a principled"
+    },
+    {
+      "start": 1562.06,
+      "end": 1568.54,
+      "text": "thing to do and similarly when we were accusing the actions based on which action got us closest"
+    },
+    {
+      "start": 1568.54,
+      "end": 1569.5,
+      "text": "towards the goal representation"
+    },
+    {
+      "start": 1570.06,
+      "end": 1571.8999999999999,
+      "text": "that too was a principled thing to do"
+    },
+    {
+      "start": 1573.74,
+      "end": 1578.3,
+      "text": "and i should also mention that we've extended these results so that we can reason about"
+    },
+    {
+      "start": 1578.3,
+      "end": 1582.94,
+      "text": "what representations you would learn if you had applied these methods to a different data set"
+    },
+    {
+      "start": 1582.94,
+      "end": 1589.5,
+      "text": "a data set that had been collected by a different policy and so what this theoretical result means"
+    },
+    {
+      "start": 1589.5,
+      "end": 1594.3799999999999,
+      "text": "is that those skills that we showed before those were solving a certain type of reinforcement"
+    },
+    {
+      "start": 1594.3799999999999,
+      "end": 1598.3,
+      "text": "learning problem reinforcement learning problems with these goal routine rewards"
+    },
+    {
+      "start": 1599.26,
+      "end": 1600.06,
+      "text": "but this connection"
+    },
+    {
+      "start": 1600.06,
+      "end": 1605.1799999999998,
+      "text": "it also has enabled us to extend these methods to apply them to fully general reinforcement learning"
+    },
+    {
+      "start": 1605.1799999999998,
+      "end": 1612.94,
+      "text": "problems and one way we've done this is by giving multiple examples of outcomes where the frequency"
+    },
+    {
+      "start": 1612.94,
+      "end": 1616.3,
+      "text": "the probability of an outcome corresponds to how much reward you would like to have"
+    },
+    {
+      "start": 1619.98,
+      "end": 1621.8999999999999,
+      "text": "so just to summarize the section here"
+    },
+    {
+      "start": 1623.58,
+      "end": 1628.54,
+      "text": "we started by talking about how users no longer need to specify these rewards they can instead"
+    },
+    {
+      "start": 1628.54,
+      "end": 1629.74,
+      "text": "just give examples of what they would like to have and this is a very important part of the study and"
+    },
+    {
+      "start": 1629.74,
+      "end": 1633.42,
+      "text": "of what the desired outcomes look like giving one goal state or many goal states"
+    },
+    {
+      "start": 1634.3,
+      "end": 1639.42,
+      "text": "and these skills that can be learned both in the interactive setting or in the setting where we're"
+    },
+    {
+      "start": 1639.42,
+      "end": 1645.26,
+      "text": "learning just from an existing data set and finally we've shown how there's certain connections"
+    },
+    {
+      "start": 1645.26,
+      "end": 1653.02,
+      "text": "between these goal reaching skills and reward maximization now one thing i should mention is"
+    },
+    {
+      "start": 1653.02,
+      "end": 1659.26,
+      "text": "that these goal reaching skills that we've learned they're not magic and so we tried applying these"
+    },
+    {
+      "start": 1659.26,
+      "end": 1666.7,
+      "text": "methods to this task shown here this is a 3d simulated house there's a robot that walks"
+    },
+    {
+      "start": 1666.7,
+      "end": 1671.26,
+      "text": "around this house it has a camera and we give the robot an image of where in the house we would like"
+    },
+    {
+      "start": 1671.26,
+      "end": 1676.78,
+      "text": "it to go and we see whether it gets there and what we see is that if that image if the goal is in the"
+    },
+    {
+      "start": 1676.78,
+      "end": 1682.7,
+      "text": "same room as the robot then the robot succeeds in reaching that image but if the image is in a"
+    },
+    {
+      "start": 1682.7,
+      "end": 1688.7,
+      "text": "different room then the robot typically fails reaching that image now on the one hand this is"
+    },
+    {
+      "start": 1688.7,
+      "end": 1695.82,
+      "text": "not that surprising if you think about the number of action sequences of length say 20 that number"
+    },
+    {
+      "start": 1695.82,
+      "end": 1703.5,
+      "text": "of sequences is astronomically large but it turns out the components we've learned so far these"
+    },
+    {
+      "start": 1703.5,
+      "end": 1709.18,
+      "text": "representations and these goal reaching skills they can allow us to solve even the most distant"
+    },
+    {
+      "start": 1709.18,
+      "end": 1715.3400000000001,
+      "text": "problem even the most distant goal if we incorporate them into a planning algorithm"
+    },
+    {
+      "start": 1716.6200000000001,
+      "end": 1718.54,
+      "text": "and that's the next thing i want to talk about today"
+    },
+    {
+      "start": 1718.94,
+      "end": 1722.8600000000001,
+      "text": "how these goal-reaching skills provide the right abstraction for planning"
+    },
+    {
+      "start": 1725.98,
+      "end": 1730.54,
+      "text": "so historically there have been two ways that people have thought about solving decision-making"
+    },
+    {
+      "start": 1730.54,
+      "end": 1735.18,
+      "text": "problems the first part of this talk focused on learning-based methods methods that learn"
+    },
+    {
+      "start": 1735.18,
+      "end": 1739.26,
+      "text": "directly from the raw data but there's another class of methods planning methods"
+    },
+    {
+      "start": 1739.26,
+      "end": 1743.26,
+      "text": "these methods are really powerful this is what a lot of the early work in ai was about"
+    },
+    {
+      "start": 1743.82,
+      "end": 1748.22,
+      "text": "and this is a lot of the technology that underlies the internet how the information"
+    },
+    {
+      "start": 1748.7,
+      "end": 1751.42,
+      "text": "is being stored in a laptop is getting to everyone's laptops on zoom"
+    },
+    {
+      "start": 1752.8600000000001,
+      "end": 1758.3,
+      "text": "now what planning methods require is they require a symbolic representation of the world"
+    },
+    {
+      "start": 1760.3,
+      "end": 1764.22,
+      "text": "now what they lack though is they don't have a way of taking raw high-dimensional"
+    },
+    {
+      "start": 1764.22,
+      "end": 1768.6200000000001,
+      "text": "data and converting that into symbols converting high-dimensional data into some graph"
+    },
+    {
+      "start": 1771.26,
+      "end": 1775.02,
+      "text": "and it turns out that these self-supervised reinforcement learning methods that we've seen"
+    },
+    {
+      "start": 1775.02,
+      "end": 1777.82,
+      "text": "they can provide the right abstractions for applying planning methods and"
+    },
+    {
+      "start": 1777.82,
+      "end": 1782.06,
+      "text": "planning methods to high-dimensional data and so i want to show you how that works"
+    },
+    {
+      "start": 1784.9399999999998,
+      "end": 1790.46,
+      "text": "in the earlier part of this talk we talked about how we can use data this data set of videos and"
+    },
+    {
+      "start": 1790.46,
+      "end": 1795.02,
+      "text": "actions and use that to learn these goal-reaching skills as well as these representations"
+    },
+    {
+      "start": 1795.58,
+      "end": 1800.78,
+      "text": "and so we're going to start by applying that method to a data set collected from that"
+    },
+    {
+      "start": 1800.78,
+      "end": 1807.34,
+      "text": "simulated 3d house that we failed to navigate before and now we're going to use these components"
+    },
+    {
+      "start": 1807.3400000000001,
+      "end": 1813.9,
+      "text": "to build a graph because a graph is what planning methods require we're going to build a graph in"
+    },
+    {
+      "start": 1813.9,
+      "end": 1821.0200000000002,
+      "text": "the following way the nodes of this graph are going to be frames of taken from these videos"
+    },
+    {
+      "start": 1821.0200000000002,
+      "end": 1827.18,
+      "text": "sampled uniformly at random and the edges of this graph are going to be built using these"
+    },
+    {
+      "start": 1827.18,
+      "end": 1834.38,
+      "text": "representations that we've learned and precise for visual clarity i'm going to ignore edges"
+    },
+    {
+      "start": 1834.38,
+      "end": 1836.5400000000002,
+      "text": "that would be too long for showing this graph"
+    },
+    {
+      "start": 1837.9,
+      "end": 1841.0200000000002,
+      "text": "and now that we have this graph we can apply planning methods to it"
+    },
+    {
+      "start": 1841.66,
+      "end": 1846.6200000000001,
+      "text": "so let's say we want to navigate from one image to another image on distant corners of this house"
+    },
+    {
+      "start": 1847.5000000000002,
+      "end": 1853.42,
+      "text": "well we can plug these images into this graph and then find the shortest path on this graph"
+    },
+    {
+      "start": 1856.2200000000003,
+      "end": 1860.94,
+      "text": "and now we can use those goal reaching skills that we've learned to traverse the edges of"
+    },
+    {
+      "start": 1860.94,
+      "end": 1866.7800000000002,
+      "text": "this graph so we take the first image along this path and we use these goal reaching skill"
+    },
+    {
+      "start": 1867.5000000000002,
+      "end": 1872.2200000000003,
+      "text": "to take a sequence of actions to get us to that first waypoint and then we repeat this process"
+    },
+    {
+      "start": 1874.8600000000001,
+      "end": 1879.9800000000002,
+      "text": "this method outlined here it also can be entirely reinterpreted in a probabilistic way"
+    },
+    {
+      "start": 1880.6200000000001,
+      "end": 1884.7,
+      "text": "where we're trying to infer what is the sequence of states you would visit"
+    },
+    {
+      "start": 1884.7,
+      "end": 1889.1000000000001,
+      "text": "if you navigated from one state to another state and i can talk more about that at the"
+    },
+    {
+      "start": 1889.1000000000001,
+      "end": 1896.94,
+      "text": "end if folks are interested i want to walk you through an example of how this works so we evaluated"
+    },
+    {
+      "start": 1896.94,
+      "end": 1902.06,
+      "text": "the method on a number of goals here's one example where the robot starts seeing this"
+    },
+    {
+      "start": 1902.06,
+      "end": 1907.74,
+      "text": "image and wants to navigate into this kitchen shown here and here are the sequence of images"
+    },
+    {
+      "start": 1907.74,
+      "end": 1912.8600000000001,
+      "text": "that the method inferred these are the images it thinks it can visit when it's navigating the house"
+    },
+    {
+      "start": 1912.8600000000001,
+      "end": 1917.26,
+      "text": "going closer towards this cupboard going into the kitchen and then going towards the stove"
+    },
+    {
+      "start": 1917.26,
+      "end": 1923.02,
+      "text": "up there and if we take a bird's eye view we can see that these images actually make a lot of sense"
+    },
+    {
+      "start": 1923.9,
+      "end": 1926.78,
+      "text": "they correspond to almost the shortest path through this house"
+    },
+    {
+      "start": 1926.94,
+      "end": 1932.38,
+      "text": "this bird's eye view is one something we use just for visualization the robot doesn't actually get"
+    },
+    {
+      "start": 1932.38,
+      "end": 1940.06,
+      "text": "this bird's eye view and quantitatively we see that while those goal working skills on their own"
+    },
+    {
+      "start": 1940.06,
+      "end": 1946.54,
+      "text": "fail to solve the distant tasks by incorporating them into a planning method they can successfully"
+    },
+    {
+      "start": 1946.54,
+      "end": 1950.06,
+      "text": "reach the most distant goals succeeding over 95 percent of the time"
+    },
+    {
+      "start": 1952.78,
+      "end": 1956.8600000000001,
+      "text": "after showing these results in simulation we worked with collaborators to apply these methods"
+    },
+    {
+      "start": 1956.8600000000001,
+      "end": 1961.5800000000002,
+      "text": "to this outdoor robot shown here we gave an image of where we wanted it to go"
+    },
+    {
+      "start": 1963.5000000000002,
+      "end": 1967.66,
+      "text": "my fantastic collaborator drew who led this effort put a pizza on top of the robot"
+    },
+    {
+      "start": 1968.38,
+      "end": 1973.98,
+      "text": "because you see this robot was given a picture of the customer's door and so it could autonomously"
+    },
+    {
+      "start": 1973.98,
+      "end": 1980.14,
+      "text": "and in a contact-free way drop off the pizza at the customer's door this is in the middle"
+    },
+    {
+      "start": 1980.14,
+      "end": 1983.98,
+      "text": "of covet so contact-free pizza delivery was a very pressing problem for grad students"
+    },
+    {
+      "start": 1986.3000000000002,
+      "end": 1986.8600000000001,
+      "text": "these methods"
+    },
+    {
+      "start": 1986.8600000000001,
+      "end": 1991.18,
+      "text": "of combining learning and planning there's since been a lot of follow-up work that's extended the"
+    },
+    {
+      "start": 1991.18,
+      "end": 1995.5000000000002,
+      "text": "capabilities and lifted the limitations of these methods making them more robust making them"
+    },
+    {
+      "start": 1995.5000000000002,
+      "end": 2004.3000000000002,
+      "text": "generalize more broadly and to provide a bit of context here in ai very broadly there's been a"
+    },
+    {
+      "start": 2004.3000000000002,
+      "end": 2008.7,
+      "text": "long discussion about could we prefer planning methods or should we the reason about symbols"
+    },
+    {
+      "start": 2008.7,
+      "end": 2013.5000000000002,
+      "text": "or learning methods that can learn directly from the raw data and one reason i'm excited"
+    },
+    {
+      "start": 2013.5000000000002,
+      "end": 2016.3000000000002,
+      "text": "about this effort here is that it provides one recipe"
+    },
+    {
+      "start": 2016.3,
+      "end": 2018.46,
+      "text": "for combining these two math components together"
+    },
+    {
+      "start": 2021.4199999999998,
+      "end": 2025.6599999999999,
+      "text": "and so the takeaway from the second part of this talk is that these skills that we've learned"
+    },
+    {
+      "start": 2025.6599999999999,
+      "end": 2029.5,
+      "text": "using these self-supervised methods they provide the right abstraction for doing planning"
+    },
+    {
+      "start": 2031.82,
+      "end": 2037.8999999999999,
+      "text": "now step taking a step even further back i started this talk by mentioning why reinforcement learning"
+    },
+    {
+      "start": 2037.8999999999999,
+      "end": 2044.22,
+      "text": "is hard it's hard because of the limited feedback but what we've seen today is that we can learn"
+    },
+    {
+      "start": 2044.22,
+      "end": 2046.1399999999999,
+      "text": "goal-reaching skills and learn to do it better"
+    },
+    {
+      "start": 2046.3,
+      "end": 2051.18,
+      "text": "and we can use these skills without any rewards without any feedback and we can compose these"
+    },
+    {
+      "start": 2051.18,
+      "end": 2056.7799999999997,
+      "text": "skills to solve challenging tasks so i hope this has given you at least a little taste of some of"
+    },
+    {
+      "start": 2056.7799999999997,
+      "end": 2060.22,
+      "text": "the work in the thesis which i would encourage folks to go read about how we've developed"
+    },
+    {
+      "start": 2060.22,
+      "end": 2064.3,
+      "text": "practical algorithms theoretical guarantees for those methods as well as uncovering certain"
+    },
+    {
+      "start": 2064.3,
+      "end": 2067.34,
+      "text": "connections between reinforcement learning methods and machine learning methods and"
+    },
+    {
+      "start": 2067.34,
+      "end": 2073.82,
+      "text": "some other areas of computer science and the work that i've done it informs a lot of the work i'm"
+    },
+    {
+      "start": 2073.82,
+      "end": 2075.34,
+      "text": "excited to do moving forward"
+    },
+    {
+      "start": 2075.34,
+      "end": 2075.74,
+      "text": "so"
+    },
+    {
+      "start": 2075.7400000000002,
+      "end": 2078.86,
+      "text": "practically the next step is i will be joining princeton in the fall"
+    },
+    {
+      "start": 2079.7400000000002,
+      "end": 2083.98,
+      "text": "and there are a lot of research questions that i'm really excited to study with students there"
+    },
+    {
+      "start": 2086.46,
+      "end": 2090.46,
+      "text": "first and foremost there are some really exciting questions at the intersection of"
+    },
+    {
+      "start": 2090.46,
+      "end": 2094.94,
+      "text": "reinforcement learning and natural language processing over the last few years and even"
+    },
+    {
+      "start": 2094.94,
+      "end": 2100.78,
+      "text": "over the last few months we've seen some really impressive results from big ai models that can"
+    },
+    {
+      "start": 2100.78,
+      "end": 2105.6600000000003,
+      "text": "reason about both images and language what these methods typically lack"
+    },
+    {
+      "start": 2105.7400000000002,
+      "end": 2107.82,
+      "text": "is a grounded understanding of the world"
+    },
+    {
+      "start": 2110.5400000000004,
+      "end": 2114.7000000000003,
+      "text": "in contrast the methods that i've developed they can reason about actions and interacting"
+    },
+    {
+      "start": 2114.7000000000003,
+      "end": 2120.1400000000003,
+      "text": "with the world and images but they don't yet have an understanding of language of semantics"
+    },
+    {
+      "start": 2121.34,
+      "end": 2124.7000000000003,
+      "text": "how can we combine these two components together getting the strengths of both of them"
+    },
+    {
+      "start": 2126.78,
+      "end": 2130.78,
+      "text": "well it turns out the theoretical foundations of both these methods are the same they're both built"
+    },
+    {
+      "start": 2130.78,
+      "end": 2135.1000000000004,
+      "text": "on top of contrastive learning methods so i think there might be some really elegant ways of bringing"
+    },
+    {
+      "start": 2135.1000000000004,
+      "end": 2135.5800000000004,
+      "text": "them together"
+    },
+    {
+      "start": 2135.7400000000002,
+      "end": 2142.6200000000003,
+      "text": "and in the same way that we've shown already how we can learn goal reaching skills that can navigate"
+    },
+    {
+      "start": 2142.6200000000003,
+      "end": 2148.3,
+      "text": "to a goal image maybe now we can learn language reaching skills they can infer the sequence of"
+    },
+    {
+      "start": 2148.3,
+      "end": 2154.38,
+      "text": "actions to get to some language in the future or in the same way that the second part of this talk"
+    },
+    {
+      "start": 2154.38,
+      "end": 2160.0600000000004,
+      "text": "looked at inferring a sequence of steps to get to some distant goal maybe now we can infer"
+    },
+    {
+      "start": 2160.0600000000004,
+      "end": 2164.94,
+      "text": "the sequence of language instructions required to solve some challenging tasks"
+    },
+    {
+      "start": 2165.7400000000002,
+      "end": 2169.42,
+      "text": "in the future or in the same way that the second part of this talk looked at"
+    },
+    {
+      "start": 2169.42,
+      "end": 2173.98,
+      "text": "second a lot of the work that we've done and the work i highlighted in the second part of this talk"
+    },
+    {
+      "start": 2173.98,
+      "end": 2178.1400000000003,
+      "text": "is about finding structure it's about breaking down challenging problems and easier problems"
+    },
+    {
+      "start": 2180.94,
+      "end": 2185.7400000000002,
+      "text": "now the second part of this talk i showed how we could say given two images infer the sequence"
+    },
+    {
+      "start": 2185.7400000000002,
+      "end": 2190.6200000000003,
+      "text": "of images that you would visit between those two images but can we take this a step further"
+    },
+    {
+      "start": 2191.34,
+      "end": 2195.5800000000004,
+      "text": "can we for example learn skills to interact with the representations"
+    },
+    {
+      "start": 2195.7400000000002,
+      "end": 2201.34,
+      "text": "or can we learn skills that interact with other skills the results i've shown already extend the"
+    },
+    {
+      "start": 2201.34,
+      "end": 2206.86,
+      "text": "capabilities of skill learning methods by about an order of magnitude and if build adding a layer to"
+    },
+    {
+      "start": 2206.86,
+      "end": 2211.34,
+      "text": "this hierarchy if every layer extends the capabilities by another order of magnitude"
+    },
+    {
+      "start": 2211.9,
+      "end": 2215.34,
+      "text": "maybe now we can start solving tasks that are well well beyond the capabilities of today's"
+    },
+    {
+      "start": 2217.34,
+      "end": 2222.78,
+      "text": "we have some preliminary work showing how this might be done and i think that we might also be"
+    },
+    {
+      "start": 2222.78,
+      "end": 2225.0200000000004,
+      "text": "able to build upon some preliminary work"
+    },
+    {
+      "start": 2225.7400000000002,
+      "end": 2230.94,
+      "text": "fantastic older work on hierarchical basic modeling and then there's certain theoretical"
+    },
+    {
+      "start": 2230.94,
+      "end": 2234.6200000000003,
+      "text": "reasons why these methods might be better suited to the reinforcement learning problem"
+    },
+    {
+      "start": 2235.34,
+      "end": 2238.7000000000003,
+      "text": "because in reinforcement learning you can dynamically change your data distribution"
+    },
+    {
+      "start": 2242.2200000000003,
+      "end": 2246.38,
+      "text": "third and finally the work that i've talked about today there's really strong connections"
+    },
+    {
+      "start": 2246.38,
+      "end": 2251.1000000000004,
+      "text": "with generative modeling generative models they too are learned just from raw data"
+    },
+    {
+      "start": 2251.82,
+      "end": 2255.6600000000003,
+      "text": "given in a sentence like a castle in the mountains they can give you an image what that castle looks"
+    },
+    {
+      "start": 2255.66,
+      "end": 2263.1,
+      "text": "like when we view reinforcement learning as a generative problem we now get the recipe for"
+    },
+    {
+      "start": 2263.1,
+      "end": 2270.2999999999997,
+      "text": "building that castle of course actually figuring out how you would solve a problem as challenging"
+    },
+    {
+      "start": 2270.2999999999997,
+      "end": 2274.62,
+      "text": "as this is a really really hard problem it likely is going to require learning from very large"
+    },
+    {
+      "start": 2274.62,
+      "end": 2279.58,
+      "text": "amounts of data it likely is going to require the right representations the right sort of abstractions"
+    },
+    {
+      "start": 2280.3799999999997,
+      "end": 2282.7,
+      "text": "but these are all problems we've started to make progress on"
+    },
+    {
+      "start": 2284.7799999999997,
+      "end": 2285.2599999999998,
+      "text": "i think this"
+    },
+    {
+      "start": 2285.74,
+      "end": 2291.8199999999997,
+      "text": "making progress here it may unlock certain applications in gaming and creativity but"
+    },
+    {
+      "start": 2291.8199999999997,
+      "end": 2297.74,
+      "text": "also in the physical sciences in the sciences today generative models are already widely used"
+    },
+    {
+      "start": 2297.74,
+      "end": 2303.2599999999998,
+      "text": "save optimizing molecules and when we view these problems as reinforcement learning problems"
+    },
+    {
+      "start": 2304.14,
+      "end": 2310.14,
+      "text": "now we might get the recipe for actually running those experiments of course this too is a very"
+    },
+    {
+      "start": 2310.14,
+      "end": 2314.62,
+      "text": "challenging problem but i think that some of the work we've done might be useful towards this end"
+    },
+    {
+      "start": 2315.8199999999997,
+      "end": 2319.18,
+      "text": "some of the work on robustness and generalization that i didn't talk about today"
+    },
+    {
+      "start": 2319.18,
+      "end": 2323.58,
+      "text": "it tells you how you can make use of approximate models which is really common in scientific"
+    },
+    {
+      "start": 2323.58,
+      "end": 2329.02,
+      "text": "applications the work that i did talk about about learning directly from the outcomes i think that"
+    },
+    {
+      "start": 2329.02,
+      "end": 2333.2599999999998,
+      "text": "might be directly applicable because now we might be able to provide just examples of"
+    },
+    {
+      "start": 2333.2599999999998,
+      "end": 2336.06,
+      "text": "what some desired what the outcome of some experiment might look like"
+    },
+    {
+      "start": 2339.1,
+      "end": 2345.1,
+      "text": "so i'm going to wrap up the future work right here and i want to take a second to thank the fantastic"
+    },
+    {
+      "start": 2345.1,
+      "end": 2351.5,
+      "text": "team of collaborators not just here at cmu but at berkeley and other schools throughout the"
+    },
+    {
+      "start": 2351.5,
+      "end": 2366.94,
+      "text": "u.s north america and even around the world thanks and i want to give an especial thank you to my"
+    },
+    {
+      "start": 2366.94,
+      "end": 2375.1,
+      "text": "advisors sergey and russ for reading through hundreds or thousands of pages of notes and"
+    },
+    {
+      "start": 2375.1,
+      "end": 2382.38,
+      "text": "half-brained papers that never ended up seeing the light of day for sitting through and critiquing"
+    },
+    {
+      "start": 2382.38,
+      "end": 2388.46,
+      "text": "giving feedback on hundreds of hair-brained ideas the vast majority of which didn't work out"
+    },
+    {
+      "start": 2389.02,
+      "end": 2395.02,
+      "text": "but a very very small fraction of which turned into the work that you saw today and of the"
+    },
+    {
+      "start": 2395.02,
+      "end": 2402.2999999999997,
+      "text": "hundreds or thousands of emails and slack messages for keeping the research on track thank you"
+    },
+    {
+      "start": 2405.9,
+      "end": 2412.2999999999997,
+      "text": "thanks ben so um we're going to start with the questions um and i guess uh"
+    },
+    {
+      "start": 2412.2999999999997,
+      "end": 2415.58,
+      "text": "we're probably going to go with the most remote right now that would be"
+    },
+    {
+      "start": 2415.58,
+      "end": 2420.54,
+      "text": "well technically serene but we'll go with leslie uh leslie uh do you have any questions"
+    },
+    {
+      "start": 2421.98,
+      "end": 2428.46,
+      "text": "um sure so thank you ben that was good and interesting nicely presented um"
+    },
+    {
+      "start": 2430.2999999999997,
+      "end": 2434.86,
+      "text": "yeah so let's see i have questions of the high level and low level let's let's take some"
+    },
+    {
+      "start": 2435.1,
+      "end": 2441.1,
+      "text": "high level ones right which is um one thing that you talked about that I thought was interesting"
+    },
+    {
+      "start": 2441.1,
+      "end": 2448.96,
+      "text": "is you know we we could it's it's exciting to be able to learn from offline gathered data and in"
+    },
+    {
+      "start": 2448.96,
+      "end": 2457.12,
+      "text": "particular you had I think combinations of of like images and then robot actions and I was thinking"
+    },
+    {
+      "start": 2457.12,
+      "end": 2462.58,
+      "text": "have you played around with trying to extract in some sense the robot actions from the videos in"
+    },
+    {
+      "start": 2462.58,
+      "end": 2467.3199999999997,
+      "text": "other cases you could mostly see the robot moving around so that would be latent but you'd have"
+    },
+    {
+      "start": 2467.3199999999997,
+      "end": 2471.64,
+      "text": "pretty good information about it is that something that you have thought about so to make sure I"
+    },
+    {
+      "start": 2471.64,
+      "end": 2475.54,
+      "text": "understand the problem setting will be one where we're given just the videos without the actions"
+    },
+    {
+      "start": 2475.54,
+      "end": 2480.7,
+      "text": "and try to learn from that but where the actions were kind of not totally hidden in the video so"
+    },
+    {
+      "start": 2480.7,
+      "end": 2485.98,
+      "text": "that you could probably recover that it's really funny you mentioned that because just yesterday I"
+    },
+    {
+      "start": 2485.98,
+      "end": 2489.7,
+      "text": "scribbled all over my whiteboard some proposals for how we could do that and so there's an ongoing"
+    },
+    {
+      "start": 2489.7,
+      "end": 2492.52,
+      "text": "slack discussion exactly about a very relative"
+    },
+    {
+      "start": 2492.58,
+      "end": 2498.1,
+      "text": "question about how we can take action-free videos and then infer skills from that that"
+    },
+    {
+      "start": 2498.1,
+      "end": 2501.7,
+      "text": "action-free video there's action-free videos I think that some of these techniques about inferring"
+    },
+    {
+      "start": 2501.7,
+      "end": 2509.2599999999998,
+      "text": "structure um might be useful there yeah yeah okay that's cool so one more thing is and and in your"
+    },
+    {
+      "start": 2509.2599999999998,
+      "end": 2514.06,
+      "text": "final you know kind of future work also touched on it but I have since we've begun talking and"
+    },
+    {
+      "start": 2514.06,
+      "end": 2522.4,
+      "text": "in particular talking about goals yeah um for me you know a goal is a set uh you know am I in my"
+    },
+    {
+      "start": 2522.4,
+      "end": 2522.56,
+      "text": "officer"
+    },
+    {
+      "start": 2522.58,
+      "end": 2528.34,
+      "text": "we're not kind of and so using images as goals it's interesting because it's both under and"
+    },
+    {
+      "start": 2528.34,
+      "end": 2532.7799999999997,
+      "text": "over specified in a way right it's a little too specific because here it is this particular image"
+    },
+    {
+      "start": 2532.7799999999997,
+      "end": 2536.74,
+      "text": "and it's a little too General maybe because there's some parts of what matters to me that"
+    },
+    {
+      "start": 2536.74,
+      "end": 2545.68,
+      "text": "I can't see yeah so what about broadening what you take to be a goal so one way we've done this"
+    },
+    {
+      "start": 2545.68,
+      "end": 2549.7,
+      "text": "we've done this already in one contacts and then I think there's some exciting directions"
+    },
+    {
+      "start": 2549.7,
+      "end": 2552.4,
+      "text": "looking at going forward when we've looked at this already"
+    },
+    {
+      "start": 2552.4,
+      "end": 2556.36,
+      "text": "is by this extension of the goal reaching problems where we gave multiple examples"
+    },
+    {
+      "start": 2556.36,
+      "end": 2562.3,
+      "text": "and the aim here is that each example each goal image individually is definitely over specified"
+    },
+    {
+      "start": 2562.3,
+      "end": 2567.7000000000003,
+      "text": "and that when we want a robot to pick up an object we might not care what color what shape that"
+    },
+    {
+      "start": 2567.7000000000003,
+      "end": 2572.32,
+      "text": "object is we just wanted to pick it up or when we want the robot to clean some bedroom we don't care"
+    },
+    {
+      "start": 2572.32,
+      "end": 2575.7400000000002,
+      "text": "the order in which it stacks the books on top of the coffee table we just care that they end up"
+    },
+    {
+      "start": 2575.7400000000002,
+      "end": 2580.6600000000003,
+      "text": "stacked there and the aims that by providing multiple examples of good outcomes in the same"
+    },
+    {
+      "start": 2580.6600000000003,
+      "end": 2582.2200000000003,
+      "text": "way that an image classifier can see multiple"
+    },
+    {
+      "start": 2582.4,
+      "end": 2586.6,
+      "text": "examples of cats and say okay this is what a cat is that our methods might be able to know okay this"
+    },
+    {
+      "start": 2586.6,
+      "end": 2592.84,
+      "text": "is what success looks like I'm curious then they're now a technical point which is if you're"
+    },
+    {
+      "start": 2592.84,
+      "end": 2599.2000000000003,
+      "text": "going to be goal conditioned how do you manage that if the goal is articulated in the set of a"
+    },
+    {
+      "start": 2599.2000000000003,
+      "end": 2605.02,
+      "text": "large set of images yeah great question so the work that I'm referring to here the policies"
+    },
+    {
+      "start": 2605.02,
+      "end": 2610.12,
+      "text": "that are learned are not goal conditioned but just a state and then take the actions to try"
+    },
+    {
+      "start": 2610.12,
+      "end": 2612.34,
+      "text": "to lead to these goals but the critic the way"
+    },
+    {
+      "start": 2612.4,
+      "end": 2616.2400000000002,
+      "text": "they're inferring whether the actions believes that good outcomes those look at okay the likelihood"
+    },
+    {
+      "start": 2616.2400000000002,
+      "end": 2619.84,
+      "text": "of getting to one outcome like to get to another outcome and you probably can imagine how you can"
+    },
+    {
+      "start": 2619.84,
+      "end": 2625.36,
+      "text": "use this to estimate likelihood of getting to any or at least one outcome sure yeah okay good I get"
+    },
+    {
+      "start": 2625.36,
+      "end": 2638.44,
+      "text": "it um all right I think I'll pass the baton so um maybe go with uh Sergey sure um so in the"
+    },
+    {
+      "start": 2638.44,
+      "end": 2641.7400000000002,
+      "text": "beginning or towards the beginning you have this nice illustration of how"
+    },
+    {
+      "start": 2642.4,
+      "end": 2646.78,
+      "text": "representations learned with uh contrast of RL compared to like VEs and things like that and made"
+    },
+    {
+      "start": 2646.78,
+      "end": 2652.36,
+      "text": "this point that if you interpolate you kind of get these nice in between frames um that seems"
+    },
+    {
+      "start": 2652.36,
+      "end": 2658.1800000000003,
+      "text": "interesting but um my question is why do you think it matters to have a representation that's metric"
+    },
+    {
+      "start": 2658.1800000000003,
+      "end": 2664.7200000000003,
+      "text": "in that way I don't think that linear interpolation is necessarily what we want but I think the"
+    },
+    {
+      "start": 2664.7200000000003,
+      "end": 2670.3,
+      "text": "property that we really want is we want to go to do planning and so when we looked at those"
+    },
+    {
+      "start": 2670.3,
+      "end": 2672.34,
+      "text": "representations and I'll try to pull up"
+    },
+    {
+      "start": 2672.4,
+      "end": 2681.52,
+      "text": "um the example of them the here planning if we wanted to figure out what intermediate images"
+    },
+    {
+      "start": 2681.52,
+      "end": 2685.7200000000003,
+      "text": "would look like if you wanted to get from one observation to another observation we just"
+    },
+    {
+      "start": 2685.7200000000003,
+      "end": 2689.98,
+      "text": "correspond to taking the average of these representations and this is really important"
+    },
+    {
+      "start": 2689.98,
+      "end": 2694.1800000000003,
+      "text": "because if we want to solve long Horizon tasks breaking them into easier smaller easier tasks"
+    },
+    {
+      "start": 2694.1800000000003,
+      "end": 2699.82,
+      "text": "would be useful but as long as there's some easy way to do planning using the representations I"
+    },
+    {
+      "start": 2699.82,
+      "end": 2702.34,
+      "text": "think that's sufficient so I don't think we necessarily need to"
+    },
+    {
+      "start": 2702.4,
+      "end": 2705.88,
+      "text": "have linear interpolation in fact I think it very likely will harm us"
+    },
+    {
+      "start": 2707.2000000000003,
+      "end": 2713.26,
+      "text": "well okay but just to push on this a little bit more like um if you want to do planning let's say"
+    },
+    {
+      "start": 2713.26,
+      "end": 2719.98,
+      "text": "you want to do some like tree-based thing all you really need is a way to um like propose successors"
+    },
+    {
+      "start": 2719.98,
+      "end": 2727.06,
+      "text": "or evaluate a potential state as a successor to a given state um like none of that really says"
+    },
+    {
+      "start": 2727.06,
+      "end": 2730.78,
+      "text": "anything about what the representation should be it just says well that there needs to be a good model"
+    },
+    {
+      "start": 2732.4,
+      "end": 2738.28,
+      "text": "um so do you think that there's some relationship between the representation of the model and does"
+    },
+    {
+      "start": 2738.28,
+      "end": 2742.84,
+      "text": "the um does the geometric structure of the represents in particular matter like I guess"
+    },
+    {
+      "start": 2742.84,
+      "end": 2746.8,
+      "text": "that's what I'm not seeing he's like well what's the link between geometric structure and and"
+    },
+    {
+      "start": 2746.8,
+      "end": 2754.3,
+      "text": "planning in this case that you're trying to articulate the geometric structure makes us"
+    },
+    {
+      "start": 2754.3,
+      "end": 2759.76,
+      "text": "allows us to solve planning gives us closed form solution for planning another way we could do"
+    },
+    {
+      "start": 2759.76,
+      "end": 2761.2000000000003,
+      "text": "planning is by actually learning a planner so if you're in a virtual network or something like that"
+    },
+    {
+      "start": 2761.2000000000003,
+      "end": 2762.1800000000003,
+      "text": "I'm thinking if I represent some sort of are they or applications are essentiallyesta describe typical"
+    },
+    {
+      "start": 2762.4,
+      "end": 2765.84,
+      "text": "it takes as input a state and a goal and predicts what some intermediate states look like or some"
+    },
+    {
+      "start": 2765.84,
+      "end": 2771.44,
+      "text": "next state looks like i think there's a spectrum of methods based on how much of the representation"
+    },
+    {
+      "start": 2771.44,
+      "end": 2775.92,
+      "text": "how much representation learning they do and then how much model learning they do and in some sense"
+    },
+    {
+      "start": 2775.92,
+      "end": 2781.92,
+      "text": "we've pushed really far to one extreme where all of the horsepower is going into learning the"
+    },
+    {
+      "start": 2781.92,
+      "end": 2786.7200000000003,
+      "text": "representations and then the model learning drops out immediately from that and we could imagine"
+    },
+    {
+      "start": 2786.7200000000003,
+      "end": 2791.2000000000003,
+      "text": "methods that spend more computation on doing the planning and a bit less on learning the"
+    },
+    {
+      "start": 2791.2000000000003,
+      "end": 2795.2000000000003,
+      "text": "representations what's the right trade-off i don't know i think there's very likely methods"
+    },
+    {
+      "start": 2795.2000000000003,
+      "end": 2799.5200000000004,
+      "text": "sort of more in the middle that we haven't explored yet um i think it's interesting to"
+    },
+    {
+      "start": 2799.5200000000004,
+      "end": 2806.9600000000005,
+      "text": "explore the extremes to see well to exploit these dreams because if we can do all of if we can solve"
+    },
+    {
+      "start": 2806.9600000000005,
+      "end": 2810.8,
+      "text": "the entire planning problem with the representations then that might provide a"
+    },
+    {
+      "start": 2810.8,
+      "end": 2817.36,
+      "text": "recipe that us as academics can really benefit from because now we could offload the big large"
+    },
+    {
+      "start": 2817.36,
+      "end": 2821.2000000000003,
+      "text": "representation learning problem to collaborative"
+    },
+    {
+      "start": 2821.2000000000003,
+      "end": 2826.0800000000004,
+      "text": "and industry and then we might be able to very easily use the representations learned to actually"
+    },
+    {
+      "start": 2826.0800000000004,
+      "end": 2832.32,
+      "text": "solve the planning problems okay yeah that makes sense um i guess my other question is um"
+    },
+    {
+      "start": 2833.6800000000003,
+      "end": 2839.5200000000004,
+      "text": "so you know if we think of these things as good representation learning methods and kind of the"
+    },
+    {
+      "start": 2839.5200000000004,
+      "end": 2844.2400000000002,
+      "text": "obvious question to ask is well can we do what people always do with representation learning"
+    },
+    {
+      "start": 2844.2400000000002,
+      "end": 2848.32,
+      "text": "methods and train them on the largest like internet data so that we can get our hands on"
+    },
+    {
+      "start": 2848.32,
+      "end": 2850.9600000000005,
+      "text": "um i know that's something you've thought about a lot but i guess my question is"
+    },
+    {
+      "start": 2851.6800000000003,
+      "end": 2855.44,
+      "text": "what do you think are the bottlenecks that you'd start to hit if you were to try to do that"
+    },
+    {
+      "start": 2860.5600000000004,
+      "end": 2866.5600000000004,
+      "text": "i think one bottleneck is that internet scale data is incredibly broad but perhaps not very deep"
+    },
+    {
+      "start": 2867.5200000000004,
+      "end": 2870.4,
+      "text": "and one way i sometimes think about the reinforcement learning problem is that"
+    },
+    {
+      "start": 2870.4,
+      "end": 2875.44,
+      "text": "it's sort of like solving a supervised learning in every separate situation so solving many of"
+    },
+    {
+      "start": 2875.44,
+      "end": 2880.8,
+      "text": "these problems and if we don't have that many examples for any individual problem setting"
+    },
+    {
+      "start": 2880.8,
+      "end": 2885.36,
+      "text": "then even though we might have data for millions or billions of problems if we don't have enough"
+    },
+    {
+      "start": 2885.36,
+      "end": 2890.6400000000003,
+      "text": "data for any of them that might be hard to make progress and so one of the things that i think"
+    },
+    {
+      "start": 2890.6400000000003,
+      "end": 2895.28,
+      "text": "would be really useful is trying to figure out how we can collect a similar quantity of data but in"
+    },
+    {
+      "start": 2895.28,
+      "end": 2900.6400000000003,
+      "text": "a much much more limited setting i know this very much goes against the grain of what uh a lot of"
+    },
+    {
+      "start": 2900.6400000000003,
+      "end": 2907.6000000000004,
+      "text": "folks are excited about in terms of learning just from youtube or just from the twitter reddit um"
+    },
+    {
+      "start": 2907.6,
+      "end": 2910.96,
+      "text": "but i think that for the reinforcement learning prop setting it might be really important for at"
+    },
+    {
+      "start": 2910.96,
+      "end": 2914.56,
+      "text": "least making some initial steps towards understanding how much data you need to"
+    },
+    {
+      "start": 2914.56,
+      "end": 2918.72,
+      "text": "solve to see certain emergent properties on even relatively restricted domains"
+    },
+    {
+      "start": 2920.88,
+      "end": 2929.6,
+      "text": "okay now yeah that makes sense um that's it for my questions thank you jeff great uh let's see"
+    },
+    {
+      "start": 2931.2799999999997,
+      "end": 2935.2799999999997,
+      "text": "i'll start maybe with a kind of a low level question can you go to slide 13."
+    },
+    {
+      "start": 2937.6,
+      "end": 2942.08,
+      "text": "um i don't know let's see"
+    },
+    {
+      "start": 2944.96,
+      "end": 2955.2,
+      "text": "so i i think the idea here is that you want an encoding that will make a state and action pair"
+    },
+    {
+      "start": 2955.2,
+      "end": 2963.2799999999997,
+      "text": "end up with almost the same encoding as a as a future state i think by itself"
+    },
+    {
+      "start": 2964.72,
+      "end": 2967.52,
+      "text": "and then that's the basis of what what happens after that"
+    },
+    {
+      "start": 2968.48,
+      "end": 2976.64,
+      "text": "my question is doesn't this have a weird side effect with with very stochastic actions"
+    },
+    {
+      "start": 2977.44,
+      "end": 2984.96,
+      "text": "that uh actions that have two very different outcomes this will force two very different"
+    },
+    {
+      "start": 2984.96,
+      "end": 2991.2,
+      "text": "outcomes to actually end up with an almost identical encoding when in fact those two"
+    },
+    {
+      "start": 2991.2,
+      "end": 2997.2,
+      "text": "very different outcomes it might be important that they don't get the same encoding is is that a"
+    },
+    {
+      "start": 2997.6,
+      "end": 3003.2799999999997,
+      "text": "potential problem does that yeah are stochastic actions generally more of a challenge with this"
+    },
+    {
+      "start": 3003.2799999999997,
+      "end": 3009.2799999999997,
+      "text": "approach i haven't applied to stochastic action so i can't give an empirical answer i agree that"
+    },
+    {
+      "start": 3009.2799999999997,
+      "end": 3013.6,
+      "text": "from a theoretical perspective it seems like this will work better in settings with deterministic"
+    },
+    {
+      "start": 3013.6,
+      "end": 3020.4,
+      "text": "actions the theory holds regardless of whether it's stochastic or um deterministic we can show"
+    },
+    {
+      "start": 3020.4,
+      "end": 3024.96,
+      "text": "that the inner product corresponds to a value function um but i don't think you can imagine"
+    },
+    {
+      "start": 3024.96,
+      "end": 3027.44,
+      "text": "that sort of tackling that multi-modality um"
+    },
+    {
+      "start": 3027.6,
+      "end": 3032.3199999999997,
+      "text": "could increase sample efficiency for example in some sense what we're trying to do is we're trying"
+    },
+    {
+      "start": 3032.3199999999997,
+      "end": 3038.96,
+      "text": "to learn incredibly complex representation such that once you have these representations the"
+    },
+    {
+      "start": 3038.96,
+      "end": 3045.52,
+      "text": "prediction problem is trivial but the prediction problem is often not trivial if you have possible"
+    },
+    {
+      "start": 3045.52,
+      "end": 3051.2,
+      "text": "stochastic outcomes instead of having a bit more expressive model that says okay given the current"
+    },
+    {
+      "start": 3051.2,
+      "end": 3055.6,
+      "text": "representation for your future representation they might allow you one much simpler representations"
+    },
+    {
+      "start": 3056.88,
+      "end": 3057.52,
+      "text": "so so"
+    },
+    {
+      "start": 3057.6,
+      "end": 3062.0,
+      "text": "let me see all right uh i'm trying to understand are you arguing that"
+    },
+    {
+      "start": 3063.36,
+      "end": 3072.7999999999997,
+      "text": "um that you should try this algorithm on problems with stochastic actions and maybe good things"
+    },
+    {
+      "start": 3072.7999999999997,
+      "end": 3080.3199999999997,
+      "text": "happen anyway or are you arguing that well maybe we can make some adaptations to the"
+    },
+    {
+      "start": 3080.3199999999997,
+      "end": 3087.44,
+      "text": "algorithm that'll make it perform better with stochastic actions or are you arguing that if you"
+    },
+    {
+      "start": 3087.6,
+      "end": 3092.64,
+      "text": "have a problem with stochastic actions you haven't really formulated the problem correctly you"
+    },
+    {
+      "start": 3092.64,
+      "end": 3097.8399999999997,
+      "text": "should re-re-ask what your statement actually action space is and make it a deterministic"
+    },
+    {
+      "start": 3097.8399999999997,
+      "end": 3102.7999999999997,
+      "text": "problem i'm definitely not saying the third i think that many real world problems that"
+    },
+    {
+      "start": 3102.7999999999997,
+      "end": 3108.16,
+      "text": "are have stochastic actions and those fit very nicely into the mdp framework upon which we built"
+    },
+    {
+      "start": 3108.16,
+      "end": 3112.56,
+      "text": "so i think that's fine i think you definitely should try these methods on settings with"
+    },
+    {
+      "start": 3112.56,
+      "end": 3117.36,
+      "text": "stochastic actions i think they very likely will work the point i was trying to make is that if you"
+    },
+    {
+      "start": 3117.6,
+      "end": 3120.48,
+      "text": "have a problem with stochastic actions and those fit very nicely into the mdp framework upon which"
+    },
+    {
+      "start": 3120.48,
+      "end": 3123.2799999999997,
+      "text": "we built so i think that's fine i think you definitely should try these methods on settings"
+    },
+    {
+      "start": 3123.2799999999997,
+      "end": 3125.52,
+      "text": "with stochastic actions and those fit very nicely into the mdp framework upon which we built"
+    },
+    {
+      "start": 3125.52,
+      "end": 3129.12,
+      "text": "dynamics in the real world are very very non-linear what effectively this is saying is"
+    },
+    {
+      "start": 3129.12,
+      "end": 3134.4,
+      "text": "that the representations are there's a way of showing that this corresponds to learning a"
+    },
+    {
+      "start": 3134.4,
+      "end": 3140.0,
+      "text": "linear model of the world and so you sort of have to untangle the complexity of the world"
+    },
+    {
+      "start": 3140.0,
+      "end": 3144.0,
+      "text": "the fact that dynamics are not reversible the things that breaking things is not reversible"
+    },
+    {
+      "start": 3144.0,
+      "end": 3146.88,
+      "text": "such that you get representations where things are linear so it's a very very complicated math to"
+    },
+    {
+      "start": 3146.88,
+      "end": 3148.2400000000002,
+      "text": "you get representations where things are linear so it's a very very complicated mapping and if we"
+    },
+    {
+      "start": 3148.2400000000002,
+      "end": 3152.6400000000003,
+      "text": "don't have function approximators that could represent that complexity then part of the way"
+    },
+    {
+      "start": 3152.6400000000003,
+      "end": 3157.52,
+      "text": "of dealing with that limitation of existing function approximators would be to use a more"
+    },
+    {
+      "start": 3157.52,
+      "end": 3165.28,
+      "text": "expressive mapping from one representation to another okay okay um good i think i want to ask"
+    },
+    {
+      "start": 3165.28,
+      "end": 3175.12,
+      "text": "another version of the question wesley asked my version of the question is um what what about"
+    },
+    {
+      "start": 3175.12,
+      "end": 3176.1600000000003,
+      "text": "distractors so"
+    },
+    {
+      "start": 3177.04,
+      "end": 3180.7200000000003,
+      "text": "you know you have the picture of the moving the spoon to the other side but"
+    },
+    {
+      "start": 3181.6800000000003,
+      "end": 3188.32,
+      "text": "what if it's just a different colored table and you know it would it would be very hard to figure"
+    },
+    {
+      "start": 3188.32,
+      "end": 3193.44,
+      "text": "out how to swap out the table but presumably you'd still want it to realize it just needs to move the"
+    },
+    {
+      "start": 3194.0,
+      "end": 3203.04,
+      "text": "spoon to the other side how do you in practice how do you actually get that similarity right"
+    },
+    {
+      "start": 3204.0,
+      "end": 3206.7200000000003,
+      "text": "i think that's a really important question i brought up this slide"
+    },
+    {
+      "start": 3206.88,
+      "end": 3212.56,
+      "text": "because this slide shows a similar failure mode if you look very carefully you'll notice that"
+    },
+    {
+      "start": 3213.2000000000003,
+      "end": 3217.36,
+      "text": "the rotation of the can is actually different between the two images"
+    },
+    {
+      "start": 3219.6800000000003,
+      "end": 3223.28,
+      "text": "and so how do we learn representations that capture just what we want and what we don't want"
+    },
+    {
+      "start": 3225.44,
+      "end": 3228.4,
+      "text": "i haven't looked at this problem in particular i think there are techniques"
+    },
+    {
+      "start": 3228.4,
+      "end": 3231.6800000000003,
+      "text": "relating to compression that might be useful here so i want representations"
+    },
+    {
+      "start": 3231.6800000000003,
+      "end": 3235.44,
+      "text": "that not only predict the future but retain as few bits as possible about the inputs"
+    },
+    {
+      "start": 3236.08,
+      "end": 3240.0,
+      "text": "i think techniques relating to data augmentation might also be useful"
+    },
+    {
+      "start": 3242.32,
+      "end": 3247.28,
+      "text": "but i think it's still a largely open question yeah i guess compression you could certainly"
+    },
+    {
+      "start": 3247.28,
+      "end": 3251.6,
+      "text": "look at compression techniques but one thing that's missing in your training data"
+    },
+    {
+      "start": 3253.6,
+      "end": 3256.8,
+      "text": "you don't actually have any notion of which differences matter"
+    },
+    {
+      "start": 3258.0,
+      "end": 3264.64,
+      "text": "right i guess a lot of compression algorithms have some version of"
+    },
+    {
+      "start": 3265.44,
+      "end": 3272.8,
+      "text": "entropy or reconstruction or something that's kind of generic yeah but i guess you you would"
+    },
+    {
+      "start": 3272.8,
+      "end": 3279.28,
+      "text": "actually need that extra signal i guess absolutely yeah if someone gave us a bunch of images and said"
+    },
+    {
+      "start": 3279.28,
+      "end": 3283.84,
+      "text": "hey you should think about all these things is the same if you think about pushing a green can"
+    },
+    {
+      "start": 3283.84,
+      "end": 3288.48,
+      "text": "and a red can and a purple can those are all the same tasks collapse all those together and if we"
+    },
+    {
+      "start": 3288.48,
+      "end": 3292.48,
+      "text": "had data like that then i definitely think there would be many ways that we could incorporate it"
+    },
+    {
+      "start": 3292.48,
+      "end": 3295.12,
+      "text": "into these sorts of frameworks okay"
+    },
+    {
+      "start": 3295.76,
+      "end": 3303.44,
+      "text": "um and i have a question that may be related to that can you scroll back to maybe slide 23."
+    },
+    {
+      "start": 3306.16,
+      "end": 3312.2400000000002,
+      "text": "uh so this one went kind of fast do you see an iql failed here yeah what what"
+    },
+    {
+      "start": 3313.04,
+      "end": 3319.36,
+      "text": "what what what's the setup here what what actually happened with so this is the the same setup you"
+    },
+    {
+      "start": 3319.36,
+      "end": 3324.88,
+      "text": "have each other a bunch of videos things moving around different places yeah so they're really"
+    },
+    {
+      "start": 3324.88,
+      "end": 3330.08,
+      "text": "interesting failure mode yeah uh and did gloss over this so the failure mode is that there are"
+    },
+    {
+      "start": 3330.08,
+      "end": 3334.32,
+      "text": "two things that are different between the initial image and the goal image the first thing that's"
+    },
+    {
+      "start": 3334.32,
+      "end": 3338.32,
+      "text": "different is the red spoon moves yeah and the second thing that's different is that the robot"
+    },
+    {
+      "start": 3338.32,
+      "end": 3345.36,
+      "text": "arm moves and what this baseline does is it solves one of those problems it moves the arm to the"
+    },
+    {
+      "start": 3345.36,
+      "end": 3352.2400000000002,
+      "text": "correct position and my hypothesis for why this happens is that the arm occupies more of the image"
+    },
+    {
+      "start": 3352.2400000000002,
+      "end": 3352.8,
+      "text": "than the spoon"
+    },
+    {
+      "start": 3354.88,
+      "end": 3356.8,
+      "text": "and so it's stuck in a bit of a local optima"
+    },
+    {
+      "start": 3359.92,
+      "end": 3364.7200000000003,
+      "text": "now why would our methods help avoid that well we can think about the training dynamics"
+    },
+    {
+      "start": 3364.7200000000003,
+      "end": 3369.52,
+      "text": "of these contrastive methods what they're doing is they say okay look at these representations"
+    },
+    {
+      "start": 3370.6400000000003,
+      "end": 3375.04,
+      "text": "look at the future the images in the future and say those have similar representations"
+    },
+    {
+      "start": 3376.0,
+      "end": 3380.4,
+      "text": "and then look at not one but many many other representations and push those away"
+    },
+    {
+      "start": 3381.28,
+      "end": 3384.8,
+      "text": "those standard contrastive learning does yeah but if you look at the gradients there"
+    },
+    {
+      "start": 3385.52,
+      "end": 3390.6400000000003,
+      "text": "what effectively is doing is finding the closest negative example and pushing that away"
+    },
+    {
+      "start": 3394.8,
+      "end": 3398.96,
+      "text": "and so the i don't think we're the first to observe this but the training dynamics"
+    },
+    {
+      "start": 3398.96,
+      "end": 3403.28,
+      "text": "of contrastive learning methods resembles a form of hard negative mining it induces sort"
+    },
+    {
+      "start": 3403.28,
+      "end": 3407.52,
+      "text": "of curriculum and we have some analysis showing how that happens but it can help explain why it"
+    },
+    {
+      "start": 3407.52,
+      "end": 3413.36,
+      "text": "fails because in the um in the learning there should um they should be able to find counter"
+    },
+    {
+      "start": 3413.36,
+      "end": 3414.8,
+      "text": "examples where the arm is there"
+    },
+    {
+      "start": 3414.88,
+      "end": 3415.7200000000003,
+      "text": "This is okay."
+    },
+    {
+      "start": 3415.7200000000003,
+      "end": 3417.1600000000003,
+      "text": "That is not the state that you would reach"
+    },
+    {
+      "start": 3417.1600000000003,
+      "end": 3418.92,
+      "text": "if you wanted to pick up the spoon."
+    },
+    {
+      "start": 3421.84,
+      "end": 3422.9,
+      "text": "Okay, okay."
+    },
+    {
+      "start": 3424.6400000000003,
+      "end": 3428.6,
+      "text": "Maybe one more question."
+    },
+    {
+      "start": 3428.6,
+      "end": 3431.92,
+      "text": "So I'm guessing in the work you've done so far,"
+    },
+    {
+      "start": 3431.92,
+      "end": 3436.92,
+      "text": "you're, I guess, assuming the exploration problem"
+    },
+    {
+      "start": 3438.26,
+      "end": 3440.08,
+      "text": "is kind of solved for you."
+    },
+    {
+      "start": 3440.08,
+      "end": 3440.92,
+      "text": "Yeah."
+    },
+    {
+      "start": 3440.92,
+      "end": 3444.6,
+      "text": "The training data covers what you needed to cover."
+    },
+    {
+      "start": 3444.6,
+      "end": 3445.98,
+      "text": "Yeah."
+    },
+    {
+      "start": 3445.98,
+      "end": 3450.44,
+      "text": "Have you thought at all about whether your methods"
+    },
+    {
+      "start": 3450.44,
+      "end": 3452.7,
+      "text": "say anything about better exploration"
+    },
+    {
+      "start": 3452.7,
+      "end": 3455.6,
+      "text": "or what you would do for those kinds of problems?"
+    },
+    {
+      "start": 3455.6,
+      "end": 3456.44,
+      "text": "Yeah."
+    },
+    {
+      "start": 3456.44,
+      "end": 3459.68,
+      "text": "So the skill learning methods I talked about at the beginning"
+    },
+    {
+      "start": 3459.68,
+      "end": 3461.2799999999997,
+      "text": "were these goal-reaching skills."
+    },
+    {
+      "start": 3462.58,
+      "end": 3465.12,
+      "text": "The mathematical foundation of them is based on"
+    },
+    {
+      "start": 3465.12,
+      "end": 3466.12,
+      "text": "these sort of contrastive learning"
+    },
+    {
+      "start": 3466.12,
+      "end": 3468.0,
+      "text": "and mutual information ideas."
+    },
+    {
+      "start": 3468.0,
+      "end": 3470.4,
+      "text": "And we've actually applied, at the very start of my PhD,"
+    },
+    {
+      "start": 3470.4,
+      "end": 3471.86,
+      "text": "started using very similar ideas"
+    },
+    {
+      "start": 3471.86,
+      "end": 3474.38,
+      "text": "to actually derive in a method for exploration."
+    },
+    {
+      "start": 3474.38,
+      "end": 3477.6400000000003,
+      "text": "So I can pull up one video of that,"
+    },
+    {
+      "start": 3477.6400000000003,
+      "end": 3482.02,
+      "text": "of using very similar mathematical tools for learning skills"
+    },
+    {
+      "start": 3482.02,
+      "end": 3484.44,
+      "text": "here that are not oriented towards any particular goal,"
+    },
+    {
+      "start": 3484.44,
+      "end": 3487.32,
+      "text": "but just trying to explore the environment."
+    },
+    {
+      "start": 3487.32,
+      "end": 3490.06,
+      "text": "So this is definitely not the end-all, be-all solution."
+    },
+    {
+      "start": 3490.06,
+      "end": 3491.48,
+      "text": "There's been a lot of great subsequent work"
+    },
+    {
+      "start": 3491.48,
+      "end": 3493.44,
+      "text": "that's extended these methods and so on."
+    },
+    {
+      "start": 3493.44,
+      "end": 3496.2000000000003,
+      "text": "But I think that there might be some ways"
+    },
+    {
+      "start": 3496.2000000000003,
+      "end": 3498.2400000000002,
+      "text": "of using similar self-supervised methods"
+    },
+    {
+      "start": 3498.2400000000002,
+      "end": 3499.82,
+      "text": "to not only learn the representations,"
+    },
+    {
+      "start": 3499.82,
+      "end": 3501.1,
+      "text": "learn how to do the planning,"
+    },
+    {
+      "start": 3501.1,
+      "end": 3502.94,
+      "text": "but also help drive the exploration."
+    },
+    {
+      "start": 3502.94,
+      "end": 3504.2000000000003,
+      "text": "Okay."
+    },
+    {
+      "start": 3504.38,
+      "end": 3505.2200000000003,
+      "text": "Thank you."
+    },
+    {
+      "start": 3505.2200000000003,
+      "end": 3506.04,
+      "text": "Good."
+    },
+    {
+      "start": 3506.04,
+      "end": 3506.88,
+      "text": "I think I'm good."
+    },
+    {
+      "start": 3506.88,
+      "end": 3508.26,
+      "text": "I just have one question,"
+    },
+    {
+      "start": 3508.26,
+      "end": 3509.56,
+      "text": "maybe just to follow up on Jess' question,"
+    },
+    {
+      "start": 3509.56,
+      "end": 3515.56,
+      "text": "is that when these methods fail,"
+    },
+    {
+      "start": 3515.56,
+      "end": 3517.46,
+      "text": "does it usually sort of come from,"
+    },
+    {
+      "start": 3517.46,
+      "end": 3518.98,
+      "text": "especially, you know, these representations,"
+    },
+    {
+      "start": 3518.98,
+      "end": 3523.1400000000003,
+      "text": "does it usually come from not enough coverage of the data?"
+    },
+    {
+      "start": 3523.1400000000003,
+      "end": 3525.42,
+      "text": "So for example, let's say you've never seen spoons"
+    },
+    {
+      "start": 3525.42,
+      "end": 3526.88,
+      "text": "in the training,"
+    },
+    {
+      "start": 3526.88,
+      "end": 3528.6,
+      "text": "but you've seen a lot of other things"
+    },
+    {
+      "start": 3528.6,
+      "end": 3530.8,
+      "text": "and you're learning those representations,"
+    },
+    {
+      "start": 3530.8,
+      "end": 3533.32,
+      "text": "would you be able to move spoons?"
+    },
+    {
+      "start": 3534.38,
+      "end": 3536.6600000000003,
+      "text": "Or do you think that there's, you know,"
+    },
+    {
+      "start": 3536.6600000000003,
+      "end": 3538.2200000000003,
+      "text": "just trying to see like how much,"
+    },
+    {
+      "start": 3538.2200000000003,
+      "end": 3539.92,
+      "text": "is there sort of a condition of the coverage"
+    },
+    {
+      "start": 3539.92,
+      "end": 3544.36,
+      "text": "that you need to run these representations"
+    },
+    {
+      "start": 3544.36,
+      "end": 3547.0,
+      "text": "and how well they would do on new objects"
+    },
+    {
+      "start": 3547.0,
+      "end": 3550.08,
+      "text": "and new things to generalize the data?"
+    },
+    {
+      "start": 3550.08,
+      "end": 3552.54,
+      "text": "In the simulated setting, we studied this a little bit."
+    },
+    {
+      "start": 3552.54,
+      "end": 3555.2200000000003,
+      "text": "So we showed, for example, that the,"
+    },
+    {
+      "start": 3555.2200000000003,
+      "end": 3557.0,
+      "text": "if you train on one color table,"
+    },
+    {
+      "start": 3557.0,
+      "end": 3558.6800000000003,
+      "text": "but you evaluate on a different color table,"
+    },
+    {
+      "start": 3558.6800000000003,
+      "end": 3560.1800000000003,
+      "text": "then it will fail,"
+    },
+    {
+      "start": 3560.1800000000003,
+      "end": 3562.0,
+      "text": "but you can perturb things to a smaller extent,"
+    },
+    {
+      "start": 3562.0,
+      "end": 3563.9,
+      "text": "like change just the colors of objects."
+    },
+    {
+      "start": 3563.9,
+      "end": 3566.0,
+      "text": "And then these methods tend to still work."
+    },
+    {
+      "start": 3567.38,
+      "end": 3569.7000000000003,
+      "text": "In terms of evaluating on things"
+    },
+    {
+      "start": 3569.7000000000003,
+      "end": 3571.86,
+      "text": "that are entirely outside of the data distribution,"
+    },
+    {
+      "start": 3571.86,
+      "end": 3573.9,
+      "text": "we tried this for one task"
+    },
+    {
+      "start": 3575.2400000000002,
+      "end": 3577.2400000000002,
+      "text": "on that real world robotic manipulation task."
+    },
+    {
+      "start": 3577.2400000000002,
+      "end": 3579.36,
+      "text": "I think I was picking up a plastic baguette"
+    },
+    {
+      "start": 3579.36,
+      "end": 3581.88,
+      "text": "and I believe that it failed on that task."
+    },
+    {
+      "start": 3581.88,
+      "end": 3582.7200000000003,
+      "text": "So we just-"
+    },
+    {
+      "start": 3582.7200000000003,
+      "end": 3585.56,
+      "text": "Is it because of perception or is it like,"
+    },
+    {
+      "start": 3585.56,
+      "end": 3587.8,
+      "text": "is it because it just doesn't recognize what it is"
+    },
+    {
+      "start": 3587.8,
+      "end": 3592.3,
+      "text": "or is there something else going on?"
+    },
+    {
+      "start": 3592.3,
+      "end": 3593.2400000000002,
+      "text": "I'm not entirely sure."
+    },
+    {
+      "start": 3593.2400000000002,
+      "end": 3595.6800000000003,
+      "text": "We haven't probed whether it's the representation learning"
+    },
+    {
+      "start": 3595.6800000000003,
+      "end": 3600.5200000000004,
+      "text": "or the choosing the actions based on the representations."
+    },
+    {
+      "start": 3601.82,
+      "end": 3603.3,
+      "text": "I think that for a lot of these things,"
+    },
+    {
+      "start": 3603.3,
+      "end": 3606.3,
+      "text": "looking at bigger and bigger data sets will likely help,"
+    },
+    {
+      "start": 3606.3,
+      "end": 3607.6800000000003,
+      "text": "but developing high-fidelity simulators"
+    },
+    {
+      "start": 3607.6800000000003,
+      "end": 3608.7200000000003,
+      "text": "might be really important there"
+    },
+    {
+      "start": 3608.7200000000003,
+      "end": 3609.7200000000003,
+      "text": "because it will allow us,"
+    },
+    {
+      "start": 3609.7200000000003,
+      "end": 3611.76,
+      "text": "it will tell us how much data we need"
+    },
+    {
+      "start": 3611.76,
+      "end": 3613.7400000000002,
+      "text": "to expect certain sorts of results."
+    },
+    {
+      "start": 3613.7400000000002,
+      "end": 3614.5800000000004,
+      "text": "The reason why I'm asking is that I think"
+    },
+    {
+      "start": 3614.5800000000004,
+      "end": 3616.7400000000002,
+      "text": "that most of these sort of foundation models"
+    },
+    {
+      "start": 3616.7400000000002,
+      "end": 3618.0200000000004,
+      "text": "for computer vision,"
+    },
+    {
+      "start": 3618.0200000000004,
+      "end": 3619.6400000000003,
+      "text": "like they're becoming really good"
+    },
+    {
+      "start": 3619.6400000000003,
+      "end": 3621.92,
+      "text": "at like segmenting things and such."
+    },
+    {
+      "start": 3621.92,
+      "end": 3622.5600000000004,
+      "text": "And it seems to be, there's some cases, for example,"
+    },
+    {
+      "start": 3622.5600000000004,
+      "end": 3622.5800000000004,
+      "text": "that they're not really good at segmenting things and such. And it seems to be, there's some cases,"
+    },
+    {
+      "start": 3622.58,
+      "end": 3623.2799999999997,
+      "text": "that they're not really good at segmenting things and such. And it seems to be, there's some cases,"
+    },
+    {
+      "start": 3623.2799999999997,
+      "end": 3625.68,
+      "text": "where learning policies in the simulator"
+    },
+    {
+      "start": 3625.68,
+      "end": 3627.02,
+      "text": "while applying them in real world"
+    },
+    {
+      "start": 3627.02,
+      "end": 3629.3199999999997,
+      "text": "with some of these sort of perception models"
+    },
+    {
+      "start": 3629.3199999999997,
+      "end": 3632.48,
+      "text": "actually begin to work reasonably well."
+    },
+    {
+      "start": 3632.48,
+      "end": 3634.1,
+      "text": "So, yeah."
+    },
+    {
+      "start": 3634.1,
+      "end": 3635.04,
+      "text": "So that's why I was curious,"
+    },
+    {
+      "start": 3635.04,
+      "end": 3637.54,
+      "text": "like how well you can actually take these models"
+    },
+    {
+      "start": 3637.54,
+      "end": 3639.1,
+      "text": "and apply them in the real world"
+    },
+    {
+      "start": 3639.1,
+      "end": 3641.16,
+      "text": "in new sort of set ones."
+    },
+    {
+      "start": 3641.16,
+      "end": 3644.92,
+      "text": "Is it, provided perception is actually doing the right thing?"
+    },
+    {
+      "start": 3644.92,
+      "end": 3645.98,
+      "text": "Yeah, that's a really good point."
+    },
+    {
+      "start": 3645.98,
+      "end": 3647.4,
+      "text": "We haven't looked."
+    },
+    {
+      "start": 3647.4,
+      "end": 3648.86,
+      "text": "I guess one thing that,"
+    },
+    {
+      "start": 3650.38,
+      "end": 3652.56,
+      "text": "talk about a bit, a bit about is,"
+    },
+    {
+      "start": 3652.58,
+      "end": 3656.52,
+      "text": "when we talked about the foundation models here"
+    },
+    {
+      "start": 3656.52,
+      "end": 3658.12,
+      "text": "when I was focusing on language,"
+    },
+    {
+      "start": 3658.12,
+      "end": 3660.04,
+      "text": "we could imagine using very similar methods"
+    },
+    {
+      "start": 3660.04,
+      "end": 3662.6,
+      "text": "for just leveraging like large video data sets."
+    },
+    {
+      "start": 3662.6,
+      "end": 3664.7,
+      "text": "And we learned the representation of the large videos"
+    },
+    {
+      "start": 3664.7,
+      "end": 3667.02,
+      "text": "that would tell you not only about the contents of the videos,"
+    },
+    {
+      "start": 3667.02,
+      "end": 3669.92,
+      "text": "but also something about the dynamics of the videos."
+    },
+    {
+      "start": 3669.92,
+      "end": 3671.68,
+      "text": "Like if we think about the,"
+    },
+    {
+      "start": 3672.56,
+      "end": 3674.2599999999998,
+      "text": "I think historically the thing that has made"
+    },
+    {
+      "start": 3674.2599999999998,
+      "end": 3676.34,
+      "text": "reinforcement learning benchmarks hard"
+    },
+    {
+      "start": 3676.34,
+      "end": 3680.34,
+      "text": "is that they have lots of visual complexity,"
+    },
+    {
+      "start": 3680.34,
+      "end": 3682.54,
+      "text": "but the actual control problem is often very easy."
+    },
+    {
+      "start": 3682.58,
+      "end": 3686.56,
+      "text": "But I think that might change over the next five, 10 years."
+    },
+    {
+      "start": 3686.56,
+      "end": 3689.14,
+      "text": "We might see benchmarks where solving the perception problem"
+    },
+    {
+      "start": 3689.14,
+      "end": 3690.08,
+      "text": "becomes relatively easy,"
+    },
+    {
+      "start": 3690.08,
+      "end": 3691.98,
+      "text": "but solving the planning problem"
+    },
+    {
+      "start": 3691.98,
+      "end": 3693.48,
+      "text": "becomes a lot more challenging."
+    },
+    {
+      "start": 3695.0,
+      "end": 3696.62,
+      "text": "And to tackle that sort of problem,"
+    },
+    {
+      "start": 3696.62,
+      "end": 3698.38,
+      "text": "I think that learning from,"
+    },
+    {
+      "start": 3698.38,
+      "end": 3700.98,
+      "text": "what videos tell you is what could happen in the future."
+    },
+    {
+      "start": 3700.98,
+      "end": 3702.66,
+      "text": "They don't tell you how to make that happen."
+    },
+    {
+      "start": 3702.66,
+      "end": 3704.7999999999997,
+      "text": "That would require inferring the actions"
+    },
+    {
+      "start": 3704.7999999999997,
+      "end": 3706.74,
+      "text": "or reasoning about what would actually take you"
+    },
+    {
+      "start": 3706.74,
+      "end": 3708.16,
+      "text": "from one frame to the next frame."
+    },
+    {
+      "start": 3708.16,
+      "end": 3710.74,
+      "text": "Getting back to Lesley's earlier question."
+    },
+    {
+      "start": 3710.74,
+      "end": 3712.56,
+      "text": "But they might tell us one way of incorporating the large video"
+    },
+    {
+      "start": 3712.58,
+      "end": 3713.94,
+      "text": "or the foundation models"
+    },
+    {
+      "start": 3713.94,
+      "end": 3716.1,
+      "text": "into these sort of self-supervised methods."
+    },
+    {
+      "start": 3719.04,
+      "end": 3720.74,
+      "text": "Any questions from the audience?"
+    },
+    {
+      "start": 3722.2599999999998,
+      "end": 3723.7799999999997,
+      "text": "If you know, William and..."
+    },
+    {
+      "start": 3723.7799999999997,
+      "end": 3725.1,
+      "text": "Yes."
+    },
+    {
+      "start": 3725.1,
+      "end": 3728.34,
+      "text": "Could you go over the intuition as to why the VAE"
+    },
+    {
+      "start": 3728.34,
+      "end": 3731.7599999999998,
+      "text": "doesn't learn the physics of the scene,"
+    },
+    {
+      "start": 3731.7599999999998,
+      "end": 3734.02,
+      "text": "but the contrasted member does?"
+    },
+    {
+      "start": 3734.02,
+      "end": 3737.02,
+      "text": "So this has to do with how the representations are learned."
+    },
+    {
+      "start": 3737.02,
+      "end": 3745.4,
+      "text": "So the VAE that's learned here is learning static images."
+    },
+    {
+      "start": 3745.4,
+      "end": 3747.68,
+      "text": "And so the VAE has never seen what could happen"
+    },
+    {
+      "start": 3747.68,
+      "end": 3749.5,
+      "text": "from one image to the next image."
+    },
+    {
+      "start": 3749.5,
+      "end": 3752.86,
+      "text": "So is there no way you could put in like temporal dependencies"
+    },
+    {
+      "start": 3752.86,
+      "end": 3755.82,
+      "text": "in the VAE, or to get it to learn the physics?"
+    },
+    {
+      "start": 3755.82,
+      "end": 3757.7599999999998,
+      "text": "Yeah, you could imagine applying a sequential version"
+    },
+    {
+      "start": 3757.7599999999998,
+      "end": 3759.2,
+      "text": "of the VAE as a sequential VAE."
+    },
+    {
+      "start": 3759.2,
+      "end": 3760.82,
+      "text": "This isn't standard practice"
+    },
+    {
+      "start": 3760.82,
+      "end": 3763.42,
+      "text": "for reinforcement learning benchmarks,"
+    },
+    {
+      "start": 3763.42,
+      "end": 3764.64,
+      "text": "but there's been a little bit of work there"
+    },
+    {
+      "start": 3764.64,
+      "end": 3765.48,
+      "text": "and we could try doing that."
+    },
+    {
+      "start": 3765.48,
+      "end": 3766.64,
+      "text": "Yeah. But isn't that what like, you know,"
+    },
+    {
+      "start": 3766.64,
+      "end": 3770.8399999999997,
+      "text": "it's basically like a sequential VAE."
+    },
+    {
+      "start": 3770.8399999999997,
+      "end": 3772.52,
+      "text": "So I'm like, I'm just curious,"
+    },
+    {
+      "start": 3772.52,
+      "end": 3774.3199999999997,
+      "text": "like what the contrasted learning part"
+    },
+    {
+      "start": 3774.3199999999997,
+      "end": 3777.02,
+      "text": "gives you that sequential VAE?"
+    },
+    {
+      "start": 3777.02,
+      "end": 3778.72,
+      "text": "I think there are two parts that it gives us."
+    },
+    {
+      "start": 3778.72,
+      "end": 3781.92,
+      "text": "One is that it aligns the model"
+    },
+    {
+      "start": 3781.92,
+      "end": 3783.62,
+      "text": "or the representation learning part"
+    },
+    {
+      "start": 3783.62,
+      "end": 3786.02,
+      "text": "with the downstream task."
+    },
+    {
+      "start": 3786.02,
+      "end": 3788.02,
+      "text": "So if we think about just fitting a model of the world,"
+    },
+    {
+      "start": 3788.02,
+      "end": 3789.5,
+      "text": "something that predicts the next image"
+    },
+    {
+      "start": 3789.5,
+      "end": 3791.5,
+      "text": "or the next representation of the image,"
+    },
+    {
+      "start": 3792.72,
+      "end": 3793.8199999999997,
+      "text": "based on reconstruction,"
+    },
+    {
+      "start": 3793.8199999999997,
+      "end": 3796.12,
+      "text": "there's no guarantees that the bits that were useful there"
+    },
+    {
+      "start": 3796.12,
+      "end": 3797.2999999999997,
+      "text": "are the same bits that are gonna be useful"
+    },
+    {
+      "start": 3797.2999999999997,
+      "end": 3798.5,
+      "text": "for selecting the actions."
+    },
+    {
+      "start": 3798.5,
+      "end": 3800.02,
+      "text": "Very likely the bits that are important,"
+    },
+    {
+      "start": 3800.02,
+      "end": 3802.46,
+      "text": "they're like, what are the colors of the object?"
+    },
+    {
+      "start": 3802.46,
+      "end": 3803.68,
+      "text": "But that might not matter"
+    },
+    {
+      "start": 3803.68,
+      "end": 3806.46,
+      "text": "for solving certain control problems."
+    },
+    {
+      "start": 3806.46,
+      "end": 3808.5,
+      "text": "Okay. So I think that actually kind of gets a bit"
+    },
+    {
+      "start": 3808.5,
+      "end": 3812.2,
+      "text": "to Jeff's distractor question too,"
+    },
+    {
+      "start": 3812.2,
+      "end": 3814.12,
+      "text": "because it sounds like the contrasting method"
+    },
+    {
+      "start": 3814.12,
+      "end": 3816.8399999999997,
+      "text": "might be more of us to distractors."
+    },
+    {
+      "start": 3819.04,
+      "end": 3821.24,
+      "text": "It will retain different bits of information."
+    },
+    {
+      "start": 3822.74,
+      "end": 3826.12,
+      "text": "One, so bits of information,"
+    },
+    {
+      "start": 3826.12,
+      "end": 3829.7799999999997,
+      "text": "it will ignore our bits that have nothing to do with,"
+    },
+    {
+      "start": 3829.7799999999997,
+      "end": 3830.94,
+      "text": "that are uncontrollable,"
+    },
+    {
+      "start": 3832.62,
+      "end": 3835.24,
+      "text": "but are persistent across episodes."
+    },
+    {
+      "start": 3835.24,
+      "end": 3839.5,
+      "text": "And so what's an example of this?"
+    },
+    {
+      "start": 3842.8399999999997,
+      "end": 3846.08,
+      "text": "If there's like,"
+    },
+    {
+      "start": 3846.08,
+      "end": 3849.18,
+      "text": "if the object just disappeared randomly across time,"
+    },
+    {
+      "start": 3849.18,
+      "end": 3850.4,
+      "text": "like there's like a noisy TV"
+    },
+    {
+      "start": 3850.4,
+      "end": 3851.88,
+      "text": "in the background or something,"
+    },
+    {
+      "start": 3851.88,
+      "end": 3853.96,
+      "text": "there's no temporal correlation,"
+    },
+    {
+      "start": 3853.96,
+      "end": 3855.5,
+      "text": "we would ignore that."
+    },
+    {
+      "start": 3855.5,
+      "end": 3856.68,
+      "text": "But it's not perfect."
+    },
+    {
+      "start": 3856.68,
+      "end": 3857.52,
+      "text": "And I don't wanna claim like,"
+    },
+    {
+      "start": 3857.52,
+      "end": 3860.26,
+      "text": "oh, this is the panacea that you all should be using,"
+    },
+    {
+      "start": 3860.26,
+      "end": 3862.02,
+      "text": "because this method will pay attention"
+    },
+    {
+      "start": 3862.02,
+      "end": 3865.08,
+      "text": "to things like the background color."
+    },
+    {
+      "start": 3866.34,
+      "end": 3869.36,
+      "text": "If every episode is a different background color,"
+    },
+    {
+      "start": 3870.2,
+      "end": 3871.82,
+      "text": "because the way these representations are learned"
+    },
+    {
+      "start": 3871.82,
+      "end": 3872.82,
+      "text": "are saying, okay,"
+    },
+    {
+      "start": 3872.82,
+      "end": 3876.86,
+      "text": "are these two images nearby in the same video?"
+    },
+    {
+      "start": 3876.86,
+      "end": 3878.7,
+      "text": "But one easy cue for that would be,"
+    },
+    {
+      "start": 3878.7,
+      "end": 3880.74,
+      "text": "well, if different videos have different colors,"
+    },
+    {
+      "start": 3880.74,
+      "end": 3883.38,
+      "text": "then you could sort of keep by picking up on that."
+    },
+    {
+      "start": 3883.38,
+      "end": 3885.26,
+      "text": "And so in theory, they still work in those sorts of settings,"
+    },
+    {
+      "start": 3885.26,
+      "end": 3886.1000000000004,
+      "text": "but in practice,"
+    },
+    {
+      "start": 3886.1000000000004,
+      "end": 3887.2000000000003,
+      "text": "I'm acting that you might need much more data"
+    },
+    {
+      "start": 3887.2000000000003,
+      "end": 3889.6400000000003,
+      "text": "to learn in those sorts of settings."
+    },
+    {
+      "start": 3889.6400000000003,
+      "end": 3890.48,
+      "text": "Thanks."
+    },
+    {
+      "start": 3891.6600000000003,
+      "end": 3893.6600000000003,
+      "text": "Any other questions from the audience?"
+    },
+    {
+      "start": 3895.5,
+      "end": 3898.1200000000003,
+      "text": "And I got a question from the Zoom audience."
+    },
+    {
+      "start": 3898.1200000000003,
+      "end": 3898.96,
+      "text": "Oh yeah, okay."
+    },
+    {
+      "start": 3898.96,
+      "end": 3900.0600000000004,
+      "text": "Well, I'll leave it there on Zoom,"
+    },
+    {
+      "start": 3900.0600000000004,
+      "end": 3902.2000000000003,
+      "text": "and then maybe just one more and then we'll..."
+    },
+    {
+      "start": 3905.2000000000003,
+      "end": 3906.0400000000004,
+      "text": "Yeah, go ahead."
+    },
+    {
+      "start": 3906.0400000000004,
+      "end": 3906.88,
+      "text": "Cool, sweet."
+    },
+    {
+      "start": 3906.88,
+      "end": 3907.7200000000003,
+      "text": "Oh, awesome."
+    },
+    {
+      "start": 3907.7200000000003,
+      "end": 3908.5600000000004,
+      "text": "Yeah, cool."
+    },
+    {
+      "start": 3908.5600000000004,
+      "end": 3910.0200000000004,
+      "text": "Okay, so great talk."
+    },
+    {
+      "start": 3910.0200000000004,
+      "end": 3912.7000000000003,
+      "text": "I have a question around like,"
+    },
+    {
+      "start": 3912.7000000000003,
+      "end": 3915.1800000000003,
+      "text": "what are your thoughts on like this,"
+    },
+    {
+      "start": 3915.26,
+      "end": 3918.6200000000003,
+      "text": "you know, there are history like this trade-off"
+    },
+    {
+      "start": 3918.6200000000003,
+      "end": 3923.6200000000003,
+      "text": "between having feature-rich representations on the one hand,"
+    },
+    {
+      "start": 3924.0600000000004,
+      "end": 3928.6000000000004,
+      "text": "and then like interpretability and sample efficiency, right?"
+    },
+    {
+      "start": 3928.6000000000004,
+      "end": 3930.5800000000004,
+      "text": "So it's almost like these..."
+    },
+    {
+      "start": 3930.5800000000004,
+      "end": 3932.2000000000003,
+      "text": "There's like some trade-off there."
+    },
+    {
+      "start": 3932.2000000000003,
+      "end": 3934.26,
+      "text": "So like you know, towards pushing,"
+    },
+    {
+      "start": 3934.26,
+      "end": 3935.6800000000003,
+      "text": "increasing sample efficiency,"
+    },
+    {
+      "start": 3935.6800000000003,
+      "end": 3939.96,
+      "text": "it seems like we might have"
+    },
+    {
+      "start": 3939.96,
+      "end": 3944.96,
+      "text": "to go for feature representations that aren't as interpretable,"
+    },
+    {
+      "start": 3945.26,
+      "end": 3954.26,
+      "text": "So, I mean, that's like a claim but like I just curious to get your thoughts on like those, those those three dimensions."
+    },
+    {
+      "start": 3954.26,
+      "end": 3958.26,
+      "text": "Yeah, I'll talk about the interpretability part first."
+    },
+    {
+      "start": 3958.26,
+      "end": 3968.26,
+      "text": "So I think the representations we learn, they give us a certain sort of interpretability, the interpretability they give us is the likelihood that you get from one state to another state."
+    },
+    {
+      "start": 3968.26,
+      "end": 3975.26,
+      "text": "I think that interpretability might be useful in a number of ways. Already we've shown how it's useful for driving the selection of actions."
+    },
+    {
+      "start": 3975.26,
+      "end": 3982.26,
+      "text": "So it's okay, these are the good actions to take. But you could imagine it would also be useful for understanding where methods are likely to fail."
+    },
+    {
+      "start": 3982.26,
+      "end": 3992.26,
+      "text": "For example, if you have a bunch of observations that you know are bad, you can use these representations to figure out the likelihood that you would ever visit those bad representations."
+    },
+    {
+      "start": 3992.26,
+      "end": 3998.26,
+      "text": "One thing that's kind of weird here is that very often when we think about interpretability, we think about the coordinates of the representations."
+    },
+    {
+      "start": 3998.26,
+      "end": 4008.26,
+      "text": "So you might look at the representations learned by some deep neural network and say, Oh, this coordinate corresponds to class representing dogs, and this coordinate corresponds to tree leaves."
+    },
+    {
+      "start": 4008.26,
+      "end": 4015.26,
+      "text": "But what the representations here are doing is it's the represent the coordinates individually might not be interpretable."
+    },
+    {
+      "start": 4015.26,
+      "end": 4027.26,
+      "text": "But the inner product between representations is the scale or quantity that might become interpretable, because that tells you the likelihood that you might visit, say, a state that has a tree leaf in it."
+    },
+    {
+      "start": 4027.26,
+      "end": 4028.26,
+      "text": "So I think there's a lot to learn here."
+    },
+    {
+      "start": 4028.26,
+      "end": 4032.26,
+      "text": "So let's do a straight off."
+    },
+    {
+      "start": 4032.26,
+      "end": 4035.26,
+      "text": "Oh, thanks."
+    },
+    {
+      "start": 4035.26,
+      "end": 4039.26,
+      "text": "So maybe we can quickly go over the second round."
+    },
+    {
+      "start": 4039.26,
+      "end": 4045.26,
+      "text": "Just let's see, do you have any more questions."
+    },
+    {
+      "start": 4045.26,
+      "end": 4047.26,
+      "text": "Leslie, I think you might be muted."
+    },
+    {
+      "start": 4047.26,
+      "end": 4049.26,
+      "text": "Yeah, a train was going by."
+    },
+    {
+      "start": 4049.26,
+      "end": 4051.26,
+      "text": "Okay."
+    },
+    {
+      "start": 4051.26,
+      "end": 4057.26,
+      "text": "I saw something tantalizing on slide 40 but I didn't get a chance to look at it something about generalization, which is one of my favorite things."
+    },
+    {
+      "start": 4057.26,
+      "end": 4059.26,
+      "text": "Yes."
+    },
+    {
+      "start": 4059.26,
+      "end": 4073.26,
+      "text": "Oh broader generalization right okay so okay I had just a tiny bit of a bad reaction to the idea that planning can only happen once you have a graph, because there's lots of work that happens planning that doesn't necessarily involve creating your graph."
+    },
+    {
+      "start": 4073.26,
+      "end": 4074.26,
+      "text": "Yeah."
+    },
+    {
+      "start": 4074.26,
+      "end": 4086.26,
+      "text": "But what I was really thinking about when I heard you talking about this which is super cool like I like the idea of kind of coming up with this structure and kind of understanding what you can do locally and then patching that together."
+    },
+    {
+      "start": 4086.26,
+      "end": 4101.26,
+      "text": "So I'm really concerned about generalization, and in particular like, how could we take learning to navigate in this one house and use it to help navigate in another house so what are your thoughts about about that."
+    },
+    {
+      "start": 4101.26,
+      "end": 4103.26,
+      "text": "We tried this."
+    },
+    {
+      "start": 4103.26,
+      "end": 4104.26,
+      "text": "Okay."
+    },
+    {
+      "start": 4104.26,
+      "end": 4114.26,
+      "text": "And there is a slide, we're talking about it. Okay, so we tried on setting, we said."
+    },
+    {
+      "start": 4114.26,
+      "end": 4115.26,
+      "text": "Okay."
+    },
+    {
+      "start": 4115.26,
+      "end": 4119.26,
+      "text": "So there's definitely no way that you would be able to navigate in different houses that's just unrealistic."
+    },
+    {
+      "start": 4119.26,
+      "end": 4132.26,
+      "text": "But what if we try to learn the same two components that those representations or that value function, and the policy, and not one many many houses."
+    },
+    {
+      "start": 4132.26,
+      "end": 4144.26,
+      "text": "But wait, can I ask a question first, like, it doesn't even make sense, I think, or maybe you're going to tell me it does if I take an image from your house and image from my house and ask about the dot product What is that, what is that about."
+    },
+    {
+      "start": 4144.26,
+      "end": 4159.26,
+      "text": "Yeah, so the way we did this was, we made one assumption that's perhaps non standard. So the assumption we said is that when you're in a new house, you're given a small number of images from that house, not videos but images and build this graph."
+    },
+    {
+      "start": 4159.26,
+      "end": 4172.26,
+      "text": "And then you use that value function, and the policy you've learned, and the training houses to build a graph on the small number of images from the new house and traverse between these images."
+    },
+    {
+      "start": 4172.26,
+      "end": 4173.26,
+      "text": "Interesting."
+    },
+    {
+      "start": 4173.26,
+      "end": 4186.26,
+      "text": "So do you have a sense of what has to be, I mean, this clearly kind of wouldn't work all the time but I can see how it works some of the time do you have a, do you have a kind of a concise way of describing when you think it would work and when it"
+    },
+    {
+      "start": 4186.26,
+      "end": 4188.26,
+      "text": "would."
+    },
+    {
+      "start": 4188.26,
+      "end": 4201.26,
+      "text": "Yes, my understanding is that the for it to work we need that the value function to give us reasonable estimates between states and for the policy to give us reasonable estimates for the best actions like given the current state and goal state."
+    },
+    {
+      "start": 4201.26,
+      "end": 4202.26,
+      "text": "And I think now we're looking at what looks to be."
+    },
+    {
+      "start": 4202.26,
+      "end": 4217.26,
+      "text": "much more standard machine learning problem where if we think about viewing what these as a center machine learning problems, then it's just a question of what are the testing houses in the distribution of training houses."
+    },
+    {
+      "start": 4217.26,
+      "end": 4230.26,
+      "text": "And as we make the data set of training houses and testing houses larger and larger and assume that the drawn ID from the same underlying distribution of houses, they think it might be reasonable to expect that sort of generalization."
+    },
+    {
+      "start": 4230.26,
+      "end": 4241.26,
+      "text": "Let me just test my understanding for one second right so imagine that in my house, it's like I don't know the kitchen is right next to the front door, and in your house it's a giant mansion and the kitchen is miles away from the front door."
+    },
+    {
+      "start": 4241.26,
+      "end": 4245.26,
+      "text": "Then the value function for kitchen to front door is going to be pretty different."
+    },
+    {
+      "start": 4245.26,
+      "end": 4255.26,
+      "text": "And the more houses we average that over the kind of less good it's going to be in specific, or am I missing a way to condition on the house is a really good point."
+    },
+    {
+      "start": 4255.26,
+      "end": 4259.26,
+      "text": "So, I think you're right that the performance is going to be a lot lower."
+    },
+    {
+      "start": 4259.26,
+      "end": 4260.26,
+      "text": "So, I think you're right that the performance is going to be a lot lower."
+    },
+    {
+      "start": 4260.26,
+      "end": 4267.26,
+      "text": "And we also found this in practice that the first the difficult tasks resolving half of them, not 100% of them."
+    },
+    {
+      "start": 4267.26,
+      "end": 4278.26,
+      "text": "And I think it's, there was likely bias and how this distribution of our houses was created. And so there was off kitchens are often maybe next to bathrooms and fridges were in kitchens."
+    },
+    {
+      "start": 4278.26,
+      "end": 4289.26,
+      "text": "I think that's to solve fully general problems we would actually want to incorporate exploration into this to think about well, given this graph, how do we visit every node on this graph also biasing us towards the high likelihood node."
+    },
+    {
+      "start": 4289.26,
+      "end": 4293.26,
+      "text": "I think it's got suggest point earlier."
+    },
+    {
+      "start": 4293.26,
+      "end": 4298.26,
+      "text": "Together with my collaborator drew for mentioned before we've explored this a little bit in the outdoor navigation setting."
+    },
+    {
+      "start": 4298.26,
+      "end": 4311.26,
+      "text": "But these still lots of open questions. Yeah, I mean I think probably you want a hierarchical model in the end right you wanted to revert to what you know about houses in general, until you've explored this one a little more and then somehow let that take over,"
+    },
+    {
+      "start": 4311.26,
+      "end": 4315.26,
+      "text": "but yeah."
+    },
+    {
+      "start": 4315.26,
+      "end": 4317.26,
+      "text": "Okay."
+    },
+    {
+      "start": 4317.26,
+      "end": 4318.26,
+      "text": "Good. Next."
+    },
+    {
+      "start": 4318.26,
+      "end": 4319.26,
+      "text": "Next."
+    },
+    {
+      "start": 4319.26,
+      "end": 4322.26,
+      "text": "Do you have any more questions."
+    },
+    {
+      "start": 4322.26,
+      "end": 4335.26,
+      "text": "Yeah, I actually wanted to push on some points that are maybe related to what Leslie brought up as I think that's something you're kind of sweeping under the rug with the sort of example and I think this to some degree is present the other task was especially visible"
+    },
+    {
+      "start": 4335.26,
+      "end": 4343.26,
+      "text": "here is that you're sort of shoehorning partially observed problems into a fully observed formulation."
+    },
+    {
+      "start": 4343.26,
+      "end": 4348.26,
+      "text": "And I wonder if you have any thoughts like if you were to actually approach this properly as a partially observed problem."
+    },
+    {
+      "start": 4348.26,
+      "end": 4357.26,
+      "text": "How do you think the methodology would need to change."
+    },
+    {
+      "start": 4357.26,
+      "end": 4364.26,
+      "text": "There's the trivial answer, which is well if you incorporate all the past history than the personal observe problems become fully observed."
+    },
+    {
+      "start": 4364.26,
+      "end": 4372.26,
+      "text": "But I think that's complicated by two things, practical things and are relating to architectures and stochasticity."
+    },
+    {
+      "start": 4372.26,
+      "end": 4376.26,
+      "text": "So, the first is actually taking into account the whole past history is going to be really hard."
+    },
+    {
+      "start": 4376.26,
+      "end": 4377.26,
+      "text": "In terms like how do we."
+    },
+    {
+      "start": 4377.26,
+      "end": 4385.26,
+      "text": "We could shove that into whatever newest transformer we have, but that might require very very long contexts."
+    },
+    {
+      "start": 4385.26,
+      "end": 4401.26,
+      "text": "So I think there might be certain ways of one we could imagine approaching this is by learning models that for varying lengths of context, and seeing at what context length to these methods actually start getting reasonable performance."
+    },
+    {
+      "start": 4401.26,
+      "end": 4406.26,
+      "text": "And hopefully we'd see that okay performance is low for small context but then increases and at around the context length of 10."
+    },
+    {
+      "start": 4406.26,
+      "end": 4416.26,
+      "text": "Then you're able to solve tasks reasonably well there's also this problem of stochasticity, which is a little bit subtle."
+    },
+    {
+      "start": 4416.26,
+      "end": 4423.26,
+      "text": "But I think that when we think about partially observed tasks and map them on to Mdps by including history."
+    },
+    {
+      "start": 4423.26,
+      "end": 4430.26,
+      "text": "They are going to likely be much more stochastic than the tasks we ordinarily think about solving."
+    },
+    {
+      "start": 4430.26,
+      "end": 4435.26,
+      "text": "And I think it's possible that probabilistic methods might work a lot better in those sorts of settings."
+    },
+    {
+      "start": 4435.26,
+      "end": 4445.26,
+      "text": "If we think about what because we need to exactly reason about, say, the likelihood or the probability of something happening in the future."
+    },
+    {
+      "start": 4445.26,
+      "end": 4448.26,
+      "text": "But integrating out all of the intermediate outcomes."
+    },
+    {
+      "start": 4448.26,
+      "end": 4461.26,
+      "text": "And we've seen exactly how ignoring that stochasticity can cause problems for other sorts of reinforcement learning methods, in particular ones based on conditional supervised learning."
+    },
+    {
+      "start": 4461.26,
+      "end": 4463.26,
+      "text": "Yeah, that makes sense for what it's worth."
+    },
+    {
+      "start": 4463.26,
+      "end": 4468.26,
+      "text": "I don't think it's going into a giant transformer and just using that that as your representation is that terrible."
+    },
+    {
+      "start": 4468.26,
+      "end": 4474.26,
+      "text": "But yeah, good good answer. I don't have any other questions."
+    },
+    {
+      "start": 4474.26,
+      "end": 4489.26,
+      "text": "I'm debating whether I have another question. I was just thinking about the new houses problem, and just trying to figure out whether when you go into a new house you need a fundamentally different strategy because you're not you're not really in the"
+    },
+    {
+      "start": 4489.26,
+      "end": 4492.26,
+      "text": "learning to navigate. You're just doing exploration."
+    },
+    {
+      "start": 4492.26,
+      "end": 4497.26,
+      "text": "I don't know about whatever and you're just running an exploration algorithm."
+    },
+    {
+      "start": 4497.26,
+      "end": 4503.26,
+      "text": "Maybe it's biased a little bit by where you usually see these things in other houses."
+    },
+    {
+      "start": 4503.26,
+      "end": 4521.26,
+      "text": "I'm just trying to understand whether I believe the answer is you're just running a completely different policy, and maybe you shouldn't be training a completely different policy, or whether the answer is when you go in a new house you actually run your policy as if it were in"
+    },
+    {
+      "start": 4521.26,
+      "end": 4522.26,
+      "text": "the training data."
+    },
+    {
+      "start": 4522.26,
+      "end": 4527.26,
+      "text": "You're adding the new data you collect as you go, and that works."
+    },
+    {
+      "start": 4527.26,
+      "end": 4535.26,
+      "text": "It converges. I think there's a question there, but i'm just still thinking what I was thinking while you were talking."
+    },
+    {
+      "start": 4535.26,
+      "end": 4547.26,
+      "text": "Yeah, that's really interesting. Exactly. I was going to mention seems related to Leslie's points about hierarchical designs being useful, because the low-level motor control problem is very likely going to be the same but the high level"
+    },
+    {
+      "start": 4547.26,
+      "end": 4551.26,
+      "text": "problem. It might not before I was talking about solving the shortest path problem on the scrap."
+    },
+    {
+      "start": 4551.26,
+      "end": 4564.26,
+      "text": "But now you want to solve some sort of traveling sales in progress, and sort of vehicle routing problem on the scrap"
+    },
+    {
+      "start": 4564.26,
+      "end": 4568.26,
+      "text": "Maybe just one more question from the audience."
+    },
+    {
+      "start": 4568.26,
+      "end": 4580.26,
+      "text": "Yeah, so"
+    },
+    {
+      "start": 4580.26,
+      "end": 4595.26,
+      "text": "maybe"
+    },
+    {
+      "start": 4595.26,
+      "end": 4603.26,
+      "text": "by discrete space of solutions. Are you thinking about the observation?"
+    },
+    {
+      "start": 4603.26,
+      "end": 4609.26,
+      "text": "Yeah, we've looked at discrete actions in a couple. I don't think I showed any results for here."
+    },
+    {
+      "start": 4609.26,
+      "end": 4611.26,
+      "text": "But the mathematical tools end up being the same."
+    },
+    {
+      "start": 4611.26,
+      "end": 4622.26,
+      "text": "The difference is that when you're extracting the skills"
+    },
+    {
+      "start": 4622.26,
+      "end": 4624.26,
+      "text": "You just consider a discrete number of skills."
+    },
+    {
+      "start": 4624.26,
+      "end": 4630.26,
+      "text": "So I think this slide makes a lot more sense in the streets in the setting with discrete actions."
+    },
+    {
+      "start": 4630.26,
+      "end": 4636.26,
+      "text": "So you can enumerate. So you have 4 actions. Look at the representations and choose the best one."
+    },
+    {
+      "start": 4636.26,
+      "end": 4649.26,
+      "text": "Continuous actions. We actually did a form of amortized optimization for learning the corresponding policy here."
+    },
+    {
+      "start": 4649.26,
+      "end": 4653.26,
+      "text": "Okay. So then maybe we should there are no more questions."
+    },
+    {
+      "start": 4653.26,
+      "end": 4661.26,
+      "text": "Thank you, Ben."
+    },
+    {
+      "start": 4661.26,
+      "end": 4663.26,
+      "text": "Everybody else, and everybody was doing as well."
+    },
+    {
+      "start": 4663.26,
+      "end": 4664.26,
+      "text": "So."
+    },
+    {
+      "start": 4664.26,
+      "end": 4665.26,
+      "text": "Okay."
+    },
+    {
+      "start": 4665.26,
+      "end": 4672.26,
+      "text": "So,"
+    },
+    {
+      "start": 4672.26,
+      "end": 4685.26,
+      "text": "ask people to you have a way of keeping people out of the right."
+    },
+    {
+      "start": 4685.26,
+      "end": 4687.26,
+      "text": "And i'm gonna stop the recording. Yeah, Yeah."
+    }
+  ],
+  "segment_count": 1002
+}
