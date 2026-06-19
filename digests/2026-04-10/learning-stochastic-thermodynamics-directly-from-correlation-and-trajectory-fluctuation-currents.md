@@ -1183,6 +1183,6 @@ $$
   - `Bernard Derrida | Large deviations of non-equilibrium diffusive systems`
     https://www.youtube.com/watch?v=1faKoBxBvQU
 - 对应笔记：
-  - [takahiro-sagawa-stochastic-thermodynamics.md](/Users/jinlin/Desktop/Project/Research_Collector/youtube/notes/takahiro-sagawa-stochastic-thermodynamics.md)
-  - [bernard-derrida-large-deviations-of-non-equilibrium-diffusive-systems.md](/Users/jinlin/Desktop/Project/Research_Collector/youtube/notes/bernard-derrida-large-deviations-of-non-equilibrium-diffusive-systems.md)
-  - [landauer-to-generative-models.md](/Users/jinlin/Desktop/Project/Research_Collector/youtube/notes/landauer-to-generative-models.md)
+  - [takahiro-sagawa-stochastic-thermodynamics.md](/Users/jinlin/Desktop/Project/Research_Collector/digests/video/physics-thermodynamics/takahiro-sagawa-stochastic-thermodynamics.md)
+  - [bernard-derrida-large-deviations-of-non-equilibrium-diffusive-systems.md](/Users/jinlin/Desktop/Project/Research_Collector/digests/video/physics-thermodynamics/bernard-derrida-large-deviations-of-non-equilibrium-diffusive-systems.md)
+  - [landauer-to-generative-models.md](/Users/jinlin/Desktop/Project/Research_Collector/digests/video/physics-thermodynamics/landauer-to-generative-models.md)

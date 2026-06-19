@@ -44,9 +44,9 @@ digests/2026-04-16/
 
 精读笔记（逐篇论文的阅读记录）放在 `digests/YYYY-MM-DD/` 根目录下。
 
-以下内容不是精读笔记，应移到更稳定的位置：
+以下内容不是日期型精读笔记，但仍属于 digest 体系，应放在 `digests/` 下的稳定专题目录：
 
-- YouTube 专题笔记 → `youtube/notes/`
+- 视频/讲座专题笔记 → `digests/video/<topic>/`
 - 跨论文的理论主题长期笔记 → `knowledge_map/`
 - 方法对比笔记 → `knowledge_map/`
 

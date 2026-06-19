@@ -1207,9 +1207,9 @@ $$
   - `Bernard Derrida | Large deviations of non-equilibrium diffusive systems`
     https://www.youtube.com/watch?v=1faKoBxBvQU
 - 对应笔记：
-  - [takahiro-sagawa-stochastic-thermodynamics.md](/Users/jinlin/Desktop/Project/Research_Collector/youtube/notes/takahiro-sagawa-stochastic-thermodynamics.md)
-  - [bernard-derrida-large-deviations-of-non-equilibrium-diffusive-systems.md](/Users/jinlin/Desktop/Project/Research_Collector/youtube/notes/bernard-derrida-large-deviations-of-non-equilibrium-diffusive-systems.md)
-  - [landauer-to-generative-models.md](/Users/jinlin/Desktop/Project/Research_Collector/youtube/notes/landauer-to-generative-models.md)
+  - [takahiro-sagawa-stochastic-thermodynamics.md](/Users/jinlin/Desktop/Project/Research_Collector/digests/video/physics-thermodynamics/takahiro-sagawa-stochastic-thermodynamics.md)
+  - [bernard-derrida-large-deviations-of-non-equilibrium-diffusive-systems.md](/Users/jinlin/Desktop/Project/Research_Collector/digests/video/physics-thermodynamics/bernard-derrida-large-deviations-of-non-equilibrium-diffusive-systems.md)
+  - [landauer-to-generative-models.md](/Users/jinlin/Desktop/Project/Research_Collector/digests/video/physics-thermodynamics/landauer-to-generative-models.md)
 
 ## Paper 2
 
@@ -1290,7 +1290,7 @@ $$
 - 卡住时先看：
   - 如果你卡在 `detailed balance / thermalization`，先回到 Sagawa 笔记里关于热分布和热力学代价的那部分，再回来读算法结构。
 - 对应笔记：
-  - [takahiro-sagawa-stochastic-thermodynamics.md](/Users/jinlin/Desktop/Project/Research_Collector/youtube/notes/takahiro-sagawa-stochastic-thermodynamics.md)
+  - [takahiro-sagawa-stochastic-thermodynamics.md](/Users/jinlin/Desktop/Project/Research_Collector/digests/video/physics-thermodynamics/takahiro-sagawa-stochastic-thermodynamics.md)
 
 ## Paper 3
 
@@ -1377,8 +1377,8 @@ $$
   - `Bernard Derrida | Large deviations of non-equilibrium diffusive systems`
     https://www.youtube.com/watch?v=1faKoBxBvQU
 - 对应笔记：
-  - [takahiro-sagawa-stochastic-thermodynamics.md](/Users/jinlin/Desktop/Project/Research_Collector/youtube/notes/takahiro-sagawa-stochastic-thermodynamics.md)
-  - [bernard-derrida-large-deviations-of-non-equilibrium-diffusive-systems.md](/Users/jinlin/Desktop/Project/Research_Collector/youtube/notes/bernard-derrida-large-deviations-of-non-equilibrium-diffusive-systems.md)
+  - [takahiro-sagawa-stochastic-thermodynamics.md](/Users/jinlin/Desktop/Project/Research_Collector/digests/video/physics-thermodynamics/takahiro-sagawa-stochastic-thermodynamics.md)
+  - [bernard-derrida-large-deviations-of-non-equilibrium-diffusive-systems.md](/Users/jinlin/Desktop/Project/Research_Collector/digests/video/physics-thermodynamics/bernard-derrida-large-deviations-of-non-equilibrium-diffusive-systems.md)
 
 ## Minimum Output
 

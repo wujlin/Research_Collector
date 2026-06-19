@@ -1,7 +1,7 @@
-# YouTube Notes Index
+# Video Digest Index
 
-This folder keeps reusable lecture and video notes. Use one topic layer only:
-`youtube/notes/<topic>/<note>.md`.
+This folder keeps reusable lecture and video digests. Use one topic layer only:
+`digests/video/<topic>/<note>.md`.
 
 Do not add date folders, platform folders, or raw-video folders here. Source
 materials should stay in `youtube/transcripts/`, `youtube/slides/`, and

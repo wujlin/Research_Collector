@@ -46,6 +46,6 @@ Sources:
 2. Sync completed `youtube/video/*/source.mp4` files back to local if needed.
 3. Extract slide/key frames from the HD sources.
 4. Write integrated Chinese notes under:
-   - `youtube/notes/world-models-representation/`
-   - `youtube/notes/math-foundations/`
-   - `youtube/notes/agents-rl-adaptation/`
+   - `digests/video/world-models-representation/`
+   - `digests/video/math-foundations/`
+   - `digests/video/agents-rl-adaptation/`

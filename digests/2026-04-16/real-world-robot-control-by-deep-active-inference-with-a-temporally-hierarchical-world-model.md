@@ -2263,7 +2263,7 @@ $$
 3. 状态需要 coarse-graining，不可能在原始像素或原始动作层直接规划。
 4. 真实系统里的不确定性，要求动作选择同时考虑 exploitation 和 exploration。
 
-所以它虽然不是统计物理论文，但它确实是你那份 [world-model-as-learned-nonequilibrium-dynamics.md](../../youtube/notes/world-model-as-learned-nonequilibrium-dynamics.md) 里比较接地的一个实例。
+所以它虽然不是统计物理论文，但它确实是你那份 [world-model-as-learned-nonequilibrium-dynamics.md](../video/world-models-representation/world-model-as-learned-nonequilibrium-dynamics.md) 里比较接地的一个实例。
 
 ## 7. What To Retain From This Paper
 

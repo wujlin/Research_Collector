@@ -326,7 +326,7 @@ YouTube talk 系列单独作为横向导航层进入这份 map。它的作用不
 
 ### 27. Ben Eysenbach: Self-Supervised Reinforcement Learning
 
-对应 note：`youtube/notes/agents-rl-adaptation/ben-eysenbach-self-supervised-rl-series.md`
+对应 note：`digests/video/agents-rl-adaptation/ben-eysenbach-self-supervised-rl-series.md`
 
 类型：多场 talk 的整合精读笔记，覆盖 DIAYN、C-Learning、contrastive RL、information geometry、goal-conditioned RL、planning 和 RL as generative modeling。  
 核心问题：如果没有人工 reward，agent 能否从自己的 trajectory 中学习有用行为结构。  
@@ -335,7 +335,7 @@ YouTube talk 系列单独作为横向导航层进入这份 map。它的作用不
 
 ### 28. Amy Zhang: Representation, Hierarchy, Context and Generative RL
 
-对应 notes：`youtube/notes/agents-rl-adaptation/amy-zhang-rl-abstraction-hierarchy.md`；`youtube/notes/agents-rl-adaptation/amy-zhang-representations-hierarchical-rl.md`
+对应 notes：`digests/video/agents-rl-adaptation/amy-zhang-rl-abstraction-hierarchy.md`；`digests/video/agents-rl-adaptation/amy-zhang-representations-hierarchical-rl.md`
 
 类型：一篇多 talk 总览笔记 + 一篇 hierarchy talk 单独精读笔记。  
 核心问题：什么样的 representation / context / hierarchy 能让 RL agent 不是记住训练环境，而是学到可迁移、可组合、可规划的行为结构。  
@@ -348,7 +348,7 @@ YouTube talk 系列单独作为横向导航层进入这份 map。它的作用不
 
 ### A. math-foundations：复数、Fourier 与 optimal transport 的工具底座
 
-对应 notes：`youtube/notes/math-foundations/welch-labs-imaginary-numbers-are-real-part-1-introduction.md`；`youtube/notes/math-foundations/welch-labs-imaginary-numbers-are-real-complex-numbers-for-fourier-and-physics.md`；`youtube/notes/math-foundations/optimal-transport-geometric-view-deep-learning.md`。
+对应 notes：`digests/video/math-foundations/welch-labs-imaginary-numbers-are-real-part-1-introduction.md`；`digests/video/math-foundations/welch-labs-imaginary-numbers-are-real-complex-numbers-for-fourier-and-physics.md`；`digests/video/math-foundations/optimal-transport-geometric-view-deep-learning.md`。
 
 这组 talk 的作用是补工具底座。复数 / Fourier 线帮你理解为什么 Laplacian、mode、phase、complex exponential 会不断出现在 diffusion、RG、PDE 和物理模型里。Optimal transport 线帮你理解 Wasserstein distance、geodesic、probability mass movement 和 Benamou-Brenier 这类语言为什么能进入 diffusion protocol 和 flow matching。
 
@@ -356,7 +356,7 @@ YouTube talk 系列单独作为横向导航层进入这份 map。它的作用不
 
 ### B. physics-thermodynamics：非平衡、large deviations、HNN 与 AI for Science
 
-对应 notes：`youtube/notes/physics-thermodynamics/takahiro-sagawa-stochastic-thermodynamics.md`；`youtube/notes/physics-thermodynamics/landauer-to-generative-models.md`；`youtube/notes/physics-thermodynamics/bernard-derrida-large-deviations-of-non-equilibrium-diffusive-systems.md`；`youtube/notes/physics-thermodynamics/brunton-hnn-notes.md`；`youtube/notes/physics-thermodynamics/max-welling-iclr2026-from-physics-to-ai-to-materials.md`。
+对应 notes：`digests/video/physics-thermodynamics/takahiro-sagawa-stochastic-thermodynamics.md`；`digests/video/physics-thermodynamics/landauer-to-generative-models.md`；`digests/video/physics-thermodynamics/bernard-derrida-large-deviations-of-non-equilibrium-diffusive-systems.md`；`digests/video/physics-thermodynamics/brunton-hnn-notes.md`；`digests/video/physics-thermodynamics/max-welling-iclr2026-from-physics-to-ai-to-materials.md`。
 
 这组 talk 的共同作用是把物理直觉从论文公式里解压出来。Sagawa / Landauer 线把 information、entropy、measurement 和 generative model 接起来；Derrida 线补 large deviations 和非平衡扩散系统的直觉；Brunton HNN 线提醒你结构化能量守恒模型和普通黑箱网络的差别；Max Welling 线把 symmetry、diffusion、free energy、materials 和 amortized simulation 串成 AI for Science 的大图。
 
@@ -364,7 +364,7 @@ YouTube talk 系列单独作为横向导航层进入这份 map。它的作用不
 
 ### C. world-models-representation：从表示学习到可预测、可规划的世界模型
 
-对应 notes：`youtube/notes/world-models-representation/david-ha-world-models-neurips-2018.md`；`youtube/notes/world-models-representation/xie-saining-world-model-interview.md`；`youtube/notes/world-models-representation/xie-saining-representation-learning-roadmap.md`；`youtube/notes/world-models-representation/world-model-as-learned-nonequilibrium-dynamics.md`；`youtube/notes/world-models-representation/yann-lecun-billion-dollar-bet-against-llms.md`；`youtube/notes/world-models-representation/bycloud-yann-lecun-jepa-explained.md`；`youtube/notes/world-models-representation/kaiming-he-learning-deep-representations.md`；`youtube/notes/world-models-representation/energy-based-transformers-scalable-learners-and-thinkers.md`；`youtube/notes/world-models-representation/iclr2026-latent-particle-world-models.md`；`youtube/notes/world-models-representation/iclr2026-locality-aware-parallel-decoding.md`；`youtube/notes/world-models-representation/iclr2026-sana-video-efficient-video-generation.md`。
+对应 notes：`digests/video/world-models-representation/david-ha-world-models-neurips-2018.md`；`digests/video/world-models-representation/xie-saining-world-model-interview.md`；`digests/video/world-models-representation/xie-saining-representation-learning-roadmap.md`；`digests/video/world-models-representation/world-model-as-learned-nonequilibrium-dynamics.md`；`digests/video/world-models-representation/yann-lecun-billion-dollar-bet-against-llms.md`；`digests/video/world-models-representation/bycloud-yann-lecun-jepa-explained.md`；`digests/video/world-models-representation/kaiming-he-learning-deep-representations.md`；`digests/video/world-models-representation/energy-based-transformers-scalable-learners-and-thinkers.md`；`digests/video/world-models-representation/iclr2026-latent-particle-world-models.md`；`digests/video/world-models-representation/iclr2026-locality-aware-parallel-decoding.md`；`digests/video/world-models-representation/iclr2026-sana-video-efficient-video-generation.md`。
 
 这组 talk 的主问题是：模型到底应该学习什么表示，才能从“拟合样本”走向“预测世界、规划行动和模拟未来”。David Ha 提供早期 world model 的 minimal loop；谢赛宁主线把 representation learning 和 world model 的研究品味串起来；LeCun / JEPA 强调 latent prediction 而不是像素生成；EBT 把 inference-time thinking 和能量函数接起来；ICLR 2026 这组视频把 object-centric world model、parallel decoding 和 video generation 的工程瓶颈放进同一层。
 
@@ -372,7 +372,7 @@ YouTube talk 系列单独作为横向导航层进入这份 map。它的作用不
 
 ### D. agents-rl-adaptation：从 imitation 数据时代走向 experience、skill、hierarchy 与 generative RL
 
-对应 notes：`youtube/notes/agents-rl-adaptation/richard-sutton-rl-experience-vs-llm-imitation.md`；`youtube/notes/agents-rl-adaptation/david-silver-era-of-experience.md`；`youtube/notes/agents-rl-adaptation/ben-eysenbach-self-supervised-rl-series.md`；`youtube/notes/agents-rl-adaptation/amy-zhang-rl-abstraction-hierarchy.md`；`youtube/notes/agents-rl-adaptation/amy-zhang-representations-hierarchical-rl.md`；`youtube/notes/agents-rl-adaptation/jim-fan-minedojo-open-ended-embodied-agents.md`；`youtube/notes/agents-rl-adaptation/jim-fan-robotics-end-game.md`；`youtube/notes/agents-rl-adaptation/percy-liang-self-training-unsupervised-domain-adaptation.md`；`youtube/notes/agents-rl-adaptation/iclr2026-gepa-reflective-prompt-evolution.md`；`youtube/notes/agents-rl-adaptation/yao-shunyu-anthropic-gemini-model-training-interview.md`。
+对应 notes：`digests/video/agents-rl-adaptation/richard-sutton-rl-experience-vs-llm-imitation.md`；`digests/video/agents-rl-adaptation/david-silver-era-of-experience.md`；`digests/video/agents-rl-adaptation/ben-eysenbach-self-supervised-rl-series.md`；`digests/video/agents-rl-adaptation/amy-zhang-rl-abstraction-hierarchy.md`；`digests/video/agents-rl-adaptation/amy-zhang-representations-hierarchical-rl.md`；`digests/video/agents-rl-adaptation/jim-fan-minedojo-open-ended-embodied-agents.md`；`digests/video/agents-rl-adaptation/jim-fan-robotics-end-game.md`；`digests/video/agents-rl-adaptation/percy-liang-self-training-unsupervised-domain-adaptation.md`；`digests/video/agents-rl-adaptation/iclr2026-gepa-reflective-prompt-evolution.md`；`digests/video/agents-rl-adaptation/yao-shunyu-anthropic-gemini-model-training-interview.md`。
 
 这组 talk 的共同问题是：如果 AI 要从静态数据预测走向能行动、能适应、能自我改进的 agent，缺的是什么。Sutton / Silver 强调 experience 而不是 imitation；Eysenbach 把 self-supervised RL 改写成 future-state likelihood；Amy Zhang 把 abstraction、context 和 hierarchy 写成泛化结构；Jim Fan 把 Minecraft、robotics 和 scaling law 放到 embodied agent 的工程路线里；Percy Liang / GEPA / 姚顺宇访谈则补上 domain adaptation、text-space optimization、模型训练组织和 RL 边界。
 
@@ -453,5 +453,5 @@ YouTube talk 系列单独作为横向导航层进入这份 map。它的作用不
 - Predicting human mobility flows in cities using deep learning on satellite imagery：Nature Communications DOI `https://doi.org/10.1038/s41467-025-65373-z`；本地 digest 位于 `digests/2026-05-01/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery.md`。
 - Inequality in infrastructure access and its association with health disparities：Nature Human Behaviour DOI `10.1038/s41562-025-02208-3`；本地 digest 位于 `digests/2026-05-01/inequality-in-infrastructure-access-and-its-association-with-health-disparities.md`。
 - A network framework of cultural history：Science DOI `10.1126/science.1240064`；本地 digest 位于 `digests/2026-05-01/a-network-framework-of-cultural-history.md`。
-- Ben Eysenbach self-supervised RL lecture notes：`youtube/notes/agents-rl-adaptation/ben-eysenbach-self-supervised-rl-series.md`；对应 slides 位于 `youtube/slides/ben-eysenbach-self-supervised-rl-series-curated`。
-- Amy Zhang RL abstraction / hierarchy lecture notes：`youtube/notes/agents-rl-adaptation/amy-zhang-rl-abstraction-hierarchy.md`；`youtube/notes/agents-rl-adaptation/amy-zhang-representations-hierarchical-rl.md`。
+- Ben Eysenbach self-supervised RL lecture notes：`digests/video/agents-rl-adaptation/ben-eysenbach-self-supervised-rl-series.md`；对应 slides 位于 `youtube/slides/ben-eysenbach-self-supervised-rl-series-curated`。
+- Amy Zhang RL abstraction / hierarchy lecture notes：`digests/video/agents-rl-adaptation/amy-zhang-rl-abstraction-hierarchy.md`；`digests/video/agents-rl-adaptation/amy-zhang-representations-hierarchical-rl.md`。

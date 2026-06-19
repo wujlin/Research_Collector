@@ -62,7 +62,7 @@ def ensure_data_dirs() -> None:
         "pdfs",
         "youtube",
         "youtube/playlists",
-        "youtube/notes",
+        "digests/video",
         "youtube/slides",
         "youtube/transcripts",
         "knowledge_map",
