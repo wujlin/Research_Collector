@@ -38,7 +38,7 @@ date: "2026-04-08"
   - `Steve Brunton | Hamiltonian Neural Networks (HNN)`
     https://www.youtube.com/watch?v=AEOcss20nDA
 - 专题笔记：
-  - [brunton-hnn-notes.md](/Users/jinlin/Desktop/Project/Research_Collector/digests/video/physics-thermodynamics/brunton-hnn-notes.md)
+  - [brunton-hnn-notes.md](/Users/jinlin/Desktop/Project/Research_Collector/digests/2026-04-12/brunton-hnn-notes.md)
 
 ## Paper 2
 
@@ -60,7 +60,7 @@ date: "2026-04-08"
   - `Bernard Derrida | Large deviations of non-equilibrium diffusive systems`
     https://www.youtube.com/watch?v=1faKoBxBvQU
 - 专题笔记：
-  - [landauer-to-generative-models.md](/Users/jinlin/Desktop/Project/Research_Collector/digests/video/physics-thermodynamics/landauer-to-generative-models.md)
+  - [landauer-to-generative-models.md](/Users/jinlin/Desktop/Project/Research_Collector/digests/2026-04-12/landauer-to-generative-models.md)
 - 延伸阅读：
   - 如果你后面还想补离散状态和稳态可恢复性的背景，再回头读 `Ergodicity and regime recoverability in finite Markov-modulated random walks`，把它当背景骨架，不当主阅读位。
 

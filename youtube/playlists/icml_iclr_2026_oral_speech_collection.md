@@ -25,10 +25,10 @@ WSA collection log for this batch:
 
 Local curated slides and notes:
 
-- `digests/video/world-models-representation/iclr2026-latent-particle-world-models.md`
-- `digests/video/world-models-representation/iclr2026-sana-video-efficient-video-generation.md`
-- `digests/video/agents-rl-adaptation/iclr2026-gepa-reflective-prompt-evolution.md`
-- `digests/video/world-models-representation/iclr2026-locality-aware-parallel-decoding.md`
+- `digests/2026-06-18/iclr2026-latent-particle-world-models.md`
+- `digests/2026-06-18/iclr2026-sana-video-efficient-video-generation.md`
+- `digests/2026-06-18/iclr2026-gepa-reflective-prompt-evolution.md`
+- `digests/2026-06-18/iclr2026-locality-aware-parallel-decoding.md`
 
 ## Already Collected
 
@@ -57,4 +57,4 @@ For each queued video, the minimum study-pack standard is:
 - raw slide frames under `youtube/slides/<video-id>-*/`
 - transcript under `youtube/transcripts/<video-id>-<slug>/`
 
-Only after these artifacts exist should the note be written under `digests/video/`, because the note needs both the spoken argument and the visual/PPT structure.
+Only after these artifacts exist should the note be written under the relevant `digests/YYYY-MM-DD/` folder, because the note needs both the spoken argument and the visual/PPT structure.
