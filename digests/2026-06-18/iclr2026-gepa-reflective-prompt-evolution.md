@@ -9,11 +9,7 @@
 
 GEPA 的问题很直接：面对一个新任务，我们怎样让 AI 系统变得更好？
 
-![Teach AI new tasks](../../youtube/slides/HbGah-uP1fI-gepa-reflective-prompt-evolution-can-outperform-reinforcement-learning/curated/01-teach-ai-new-tasks.jpg)
-
 标准路径是更新模型权重。预训练需要海量 token，SFT 需要大量标注样本，RL 需要大量 rollout。这个路线有效，但 sample efficiency 很差。对于真实任务，这个问题会被放大，因为很多领域没有足够的 domain-specific training data。
-
-![Sample efficiency challenge](../../youtube/slides/HbGah-uP1fI-gepa-reflective-prompt-evolution-can-outperform-reinforcement-learning/curated/02-sample-data-efficiency-challenge.jpg)
 
 第二个瓶颈是 rollout 本身很贵。agent 工作流可能要调用工具、访问数据库、等待真实环境反馈或运行长时间 verifier。即使 GPU 更便宜，环境交互和验证过程也可能成为瓶颈。
 
@@ -67,8 +63,6 @@ GEPA 生成的 prompt 往往不是几个零散提示词，而是完整系统说�
 
 GEPA 接收一个训练集、一个由 prompts 参数化的 agent，以及一个 evaluation metric。然后把训练集分成 dev 和 val。
 
-![GEPA algorithm](../../youtube/slides/HbGah-uP1fI-gepa-reflective-prompt-evolution-can-outperform-reinforcement-learning/curated/09-gepa-algorithm.jpg)
-
 流程可以顺着读：
 
 1. 初始化候选 prompt pool。
@@ -118,5 +112,7 @@ GEPA 被展示在 agent architecture discovery、OCR、复杂信息抽取等任�
 ![Complex information extraction](../../youtube/slides/HbGah-uP1fI-gepa-reflective-prompt-evolution-can-outperform-reinforcement-learning/curated/16-complex-information-extraction.jpg)
 
 但它也有明确边界。GEPA 不是无条件自动学习器。它需要 evaluator，需要可读反馈，需要可被文本参数化的搜索对象。如果一个任务没有可靠评分机制，或者反馈完全不可解释，GEPA 的优势就会下降。
+
+![GEPA can optimize anything representable in text](../../youtube/slides/HbGah-uP1fI-gepa-reflective-prompt-evolution-can-outperform-reinforcement-learning/curated/17-gepa-optimize-anything-summary.jpg)
 
 对我们的研究框架来说，GEPA 值得注意的是它把“优化”从连续参数空间部分转移到 text-structured design space。它和 self-training、VI、HJB 的共同点不是数学形式相同，而是都在寻找一种更有效的监督信号重写方式：把原本稀疏、昂贵或难微分的反馈，改写成更可用的训练目标。

@@ -13,8 +13,6 @@
 
 如果图像也能被编码成 token sequence，那么视觉和语言就能进入同一个自回归框架。问题在于，普通 AR image generation 太慢。高分辨率图像有大量 token，逐 token 生成会让 latency 随 token 数增长。
 
-![Title](../../youtube/slides/cPeGBXXHxZM-locality-aware-parallel-decoding-for-efficient-autoregressive-image-generation/curated/01-title-locality-aware-decoding.jpg)
-
 ## 2. 两种已有范式各有问题
 
 talk 把已有 AR image generation 分成两类。第一类是 flat token representation：把图像离散成 raster order token sequence，然后逐 token 做 next image token prediction。它和语言模型兼容，但速度慢。

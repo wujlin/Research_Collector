@@ -22,7 +22,7 @@ talk 很快给出路线图：先讲 action chunking，再讲 generative control�
 
 ## 2. 05:17-13:06：robotic BC 的问题是 test-time error
 
-![BC challenge](../../youtube/slides/UX1YXcRnFbs-ri-seminar-max-simchowitz-generative-control-action-chunking-and-moravec-paradox/curated/00-05-17_why_robotic_bc_challenging.jpg)
+![Formalizing BC in control systems](../../youtube/slides/UX1YXcRnFbs-ri-seminar-max-simchowitz-generative-control-action-chunking-and-moravec-paradox/curated/00-09-57_formalizing_bc_control_systems.jpg)
 
 机器人 BC 的表面目标是拟合 expert actions。但真正关心的是 test-time system performance：policy 部署后，机器人是否完成任务。监督学习 loss 在 expert distribution 上低，不代表部署轨迹上错误也低。
 

@@ -10,13 +10,19 @@
 
 ## 1. 00:00-05:28：Harpy 说明人工知识能赢一阵，但难以扩展
 
+![Harpy knowledge graph](../../youtube/slides/2hcsmtkSzIw-can-humans-make-ai-any-better/semantic_curated/02_00-00-28_harpy-knowledge-graph.jpg)
+
 视频从 1970 年代 ARPA speech recognition 项目讲起。Carnegie Mellon 的 Harpy 达到了识别千词词汇表的目标，它的核心是一个庞大的 knowledge graph。节点表示 phone，边表示这些 phone 如何组成合法句子；专家还要写 grammar、pronunciation graph 和 juncture rules，处理词与词之间发音变化。
 
 Harpy 的成功说明人工知识非常有用。问题是，它的扩展代价太高。随着词汇表、语境和说话方式变复杂，手工 grammar 和规则越来越难维护。
 
+![Hidden Markov models replace hand-built graph](../../youtube/slides/2hcsmtkSzIw-can-humans-make-ai-any-better/semantic_curated/05_00-04-25_hidden-markov-models-replace-hand-built-graph.jpg)
+
 之后 hidden Markov models 取代了 Harpy 式系统。HMM 仍然可以看成图，但图上的转移概率由数据学习，而不是由语言专家逐条指定。这条转变后来成为 Sutton bitter lesson 的典型例子：手工知识可以让系统早期表现更好，但最终会被更通用、能利用计算和数据的方法取代。
 
 ## 2. 05:25-08:54：Sutton 认为 LLM 也可能是“负面的 bitter lesson 案例”
+
+![Sutton on whether LLMs fit the bitter lesson](../../youtube/slides/2hcsmtkSzIw-can-humans-make-ai-any-better/semantic_curated/07_00-06-29_sutton-on-whether-llms-fit-the-bitter-lesson.jpg)
 
 GPT-2 发布后，很多人觉得 transformer 加 next-token prediction 加 massive compute 正是 bitter lesson 的胜利：一个通用架构、一个简单目标、大规模计算，就能产生强语言能力。
 
@@ -26,7 +32,11 @@ GPT-2 发布后，很多人觉得 transformer 加 next-token prediction 加 mass
 
 ## 3. 09:21-14:39：next-token prediction 是监督模仿，AlphaGo 展示了从经验中超越模仿
 
+![LLM next-token imitation setup](../../youtube/slides/2hcsmtkSzIw-can-humans-make-ai-any-better/semantic_curated/09_00-09-27_llm-next-token-imitation-setup.jpg)
+
 视频接着把 LLM 预训练和 AlphaGo 的第一阶段作类比。LLM 给定前文预测下一个 token；AlphaGo 的 policy network 给定棋盘位置预测专家棋手下一步。两者都是 supervised learning，都在学习人类行为分布。
+
+![Policy gradient self play](../../youtube/slides/2hcsmtkSzIw-can-humans-make-ai-any-better/semantic_curated/12_00-14-25_policy-gradient-self-play.jpg)
 
 AlphaGo 的关键突破不是只模仿人类棋谱，而是进入 self-play reinforcement learning。模型和自己对弈，胜者路径成为正信号，败者路径成为负信号。训练信号从“专家会怎么下”变成“这一步最后是否带来胜利”。
 
@@ -34,7 +44,11 @@ AlphaGo 的关键突破不是只模仿人类棋谱，而是进入 self-play rein
 
 ## 4. 14:35-17:35：value function 和 tree search 让 agent 不只会下一步模仿
 
+![Value network estimates winning probability](../../youtube/slides/2hcsmtkSzIw-can-humans-make-ai-any-better/semantic_curated/13_00-15-40_value-network-estimates-winning-probability.jpg)
+
 视频强调 reinforcement learning 里另一个核心对象：value function。policy 回答“下一步做什么”，value function 回答“当前状态未来有多好”。AlphaGo 的 value network 估计从某个棋盘位置开始最终获胜的概率。
+
+![Policy plus value plus tree search](../../youtube/slides/2hcsmtkSzIw-can-humans-make-ai-any-better/semantic_curated/14_00-16-52_policy-plus-value-plus-tree-search.jpg)
 
 把 policy network、value network 和 Monte Carlo tree search 合在一起，AlphaGo 就不仅是在模仿下一步，而是在搜索未来分支、评估局面价值、选择长期更好的路径。AlphaGo Zero 更进一步，不用任何人类棋谱，只通过自我对弈学出更强棋力。
 
@@ -42,7 +56,11 @@ AlphaGo 的关键突破不是只模仿人类棋谱，而是进入 self-play rein
 
 ## 5. 17:33-20:37：LLM 已经开始用 RL，但经验时代还没有真正到来
 
+![RLHF and RLVR in modern LLMs](../../youtube/slides/2hcsmtkSzIw-can-humans-make-ai-any-better/semantic_curated/16_00-18-42_rlhf-and-rlvr-in-modern-llms.jpg)
+
 视频也没有把 LLM 和 RL 对立起来。现代 LLM 已经在后训练阶段使用 RLHF，把模型行为对齐到人类偏好；推理模型还用 RLVR，在数学和代码等可验证任务上通过 reward signal 发现更好的解题路径。
+
+![Era of Experience argument](../../youtube/slides/2hcsmtkSzIw-can-humans-make-ai-any-better/semantic_curated/17_00-19-32_era-of-experience-argument.jpg)
 
 Silver 和 Sutton 的 “Era of Experience” 把这个方向推得更远：未来 agent 应该从真实世界 reward 中学习，例如成本、健康指标、气候指标、利润、能源消耗，而不是主要从人类已有文本中吸收知识。只有和现实交互，系统才可能推翻旧的人类思维范式，而不只是复述它。
 
