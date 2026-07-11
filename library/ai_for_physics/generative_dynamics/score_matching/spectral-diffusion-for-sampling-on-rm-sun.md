@@ -1,5 +1,5 @@
 ---
-title: "Spectral Diffusion for Sampling on ${\rm SU}(N)$"
+title: "Spectral Diffusion for Sampling on ${\\rm SU}(N)$"
 authors: ["Octavio Vega", "Gurtej Kanwar"]
 year: 2026
 journal: ""
@@ -33,4 +33,3 @@ Although ensemble generation remains a central challenge in lattice field theory
 - [[generative_dynamics]]
 
 ## Notes
-

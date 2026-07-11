@@ -8,9 +8,9 @@ arxiv: ""
 url: "https://openalex.org/W4416346064"
 pdf_url: ""
 topics: []
-tier: 0
+tier: 2
 citations: 0
-relevance_score: 32.0
+relevance_score: 46.0
 collected: "2026-04-16"
 status: "unread"
 source: "openalex"
@@ -29,4 +29,3 @@ Quantum computing holds the promise of solving computational mechanics problems 
 (待添加)
 
 ## Notes
-

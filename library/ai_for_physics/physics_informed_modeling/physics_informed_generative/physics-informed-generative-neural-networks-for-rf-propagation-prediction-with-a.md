@@ -31,4 +31,3 @@ Electromagnetic (EM) body models designed to predict Radio-Frequency (RF) propag
 - [[physics_informed_modeling]]
 
 ## Notes
-

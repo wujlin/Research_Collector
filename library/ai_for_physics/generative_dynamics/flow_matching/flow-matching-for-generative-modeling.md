@@ -8,9 +8,9 @@ arxiv: ""
 url: "https://arxiv.org/abs/2210.02747"
 pdf_url: ""
 topics: ["ai_for_physics", "ai_for_physics/generative_dynamics/flow_matching", "bridges", "bridges/transport_and_spatial_generation/optimal_transport_urban", "ai_for_physics/generative_dynamics", "bridges/transport_and_spatial_generation"]
-tier: 0
+tier: 2
 citations: 0
-relevance_score: 0
+relevance_score: 60.0
 collected: "2026-04-07"
 status: "unread"
 source: ""
@@ -36,3 +36,4 @@ is_seminal: true
 
 ## Notes
 
+Flow matching 主线论文。

@@ -2,7 +2,7 @@
 title: "相变与临界现象"
 description: ""
 paper_count: 43
-last_updated: "2026-05-18"
+last_updated: "2026-07-11"
 ---
 
 # 相变与临界现象
@@ -16,7 +16,7 @@ last_updated: "2026-05-18"
 
 - [Crossover dynamics and non-Gaussian fluctuations in inertial active chains](crossover-dynamics-and-non-gaussian-fluctuations-in-inertial-active-chains.md) (2026, The Journal of Chemical Physics, 0 citations)
 
-- [Mean-field limit from general mixtures of experts to quantum neural networks](mean-field-limit-from-general-mixtures-of-experts-to-quantum-neural-networks.md) (2026, Letters in Mathematical Physics, 0 citations)
+- [Mean-field limit from general mixtures of experts to quantum neural networks](../../../stochastic_analysis/stochastic_dynamics/sde_theory/mean-field-limit-from-general-mixtures-of-experts-to-quantum-neural-networks.md) (2026, Letters in Mathematical Physics, 0 citations)
 
 - [Mean-field stochastic Volterra equations](mean-field-stochastic-volterra-equations.md) (2026, Journal of Applied Probability, 0 citations)
 
@@ -24,35 +24,35 @@ last_updated: "2026-05-18"
 
 - [Hydrodynamic Limit and Large Deviations for Run-And-Tumble Particles with Mean-Field Switching Rates](hydrodynamic-limit-and-large-deviations-for-run-and-tumble-particles-with-mean-f.md) (2026, Journal of Statistical Physics, 0 citations)
 
-- [A free boundary problem for the mean-field limit of diffusing particles with nonlinear boundary reactivity](a-free-boundary-problem-for-the-mean-field-limit-of-diffusing-particles-with-non.md) (2026, ArXiv.org, 0 citations)
+- [A free boundary problem for the mean-field limit of diffusing particles with nonlinear boundary reactivity](../../../stochastic_analysis/stochastic_dynamics/sde_theory/a-free-boundary-problem-for-the-mean-field-limit-of-diffusing-particles-with-non.md) (2026, ArXiv.org, 0 citations)
 
-- [Continuous-time Online Learning via Mean-Field Neural Networks: Regret Analysis in Diffusion Environments](continuous-time-online-learning-via-mean-field-neural-networks-regret-analysis-i.md) (2026, ArXiv.org, 0 citations)
+- [Continuous-time Online Learning via Mean-Field Neural Networks: Regret Analysis in Diffusion Environments](../../../stochastic_analysis/path_foundations/brownian_motion/continuous-time-online-learning-via-mean-field-neural-networks-regret-analysis-i.md) (2026, ArXiv.org, 0 citations)
 
 - [Stretching and Lyapunov Exponents of Polymers in Ultra-Dilute Turbulent Solutions](stretching-and-lyapunov-exponents-of-polymers-in-ultra-dilute-turbulent-solution.md) (2026, ArXiv.org, 0 citations)
 
-- [Asymptotic-preserving deterministic particle methods for collisional plasma models](asymptotic-preserving-deterministic-particle-methods-for-collisional-plasma-mode.md) (2026, ArXiv.org, 0 citations)
+- [Asymptotic-preserving deterministic particle methods for collisional plasma models](../../../bridges/translation_layers/fokker_planck_master/asymptotic-preserving-deterministic-particle-methods-for-collisional-plasma-mode.md) (2026, ArXiv.org, 0 citations)
 
-- [Dephasing-induced relaxation in tight-binding chains with linear and nonlinear defects](dephasing-induced-relaxation-in-tight-binding-chains-with-linear-and-nonlinear-d.md) (2026, ArXiv.org, 0 citations)
+- [Dephasing-induced relaxation in tight-binding chains with linear and nonlinear defects](../../../stochastic_analysis/asymptotics_and_variation/large_deviations/dephasing-induced-relaxation-in-tight-binding-chains-with-linear-and-nonlinear-d.md) (2026, ArXiv.org, 0 citations)
 
-- [Resolving the Blow-Up: A Time-Dilated Numerical Framework for Multiple Firing Events in Mean-Field Neuronal Networks](resolving-the-blow-up-a-time-dilated-numerical-framework-for-multiple-firing-eve.md) (2026, ArXiv.org, 0 citations)
+- [Resolving the Blow-Up: A Time-Dilated Numerical Framework for Multiple Firing Events in Mean-Field Neuronal Networks](../../../bridges/translation_layers/fokker_planck_master/resolving-the-blow-up-a-time-dilated-numerical-framework-for-multiple-firing-eve.md) (2026, ArXiv.org, 0 citations)
 
-- [Mean field control with stopping](mean-field-control-with-stopping.md) (2026, arXiv (Cornell University), 0 citations)
+- [Mean field control with stopping](../../../bridges/translation_layers/fokker_planck_master/mean-field-control-with-stopping.md) (2026, arXiv (Cornell University), 0 citations)
 
-- [Distributed Equilibria for $N$-Player Differential Games with Interaction through Controls: Existence, Uniqueness and Large $N$ Limit](distributed-equilibria-for-n-player-differential-games-with-interaction-through.md) (2026, arXiv (Cornell University), 0 citations)
+- [Distributed Equilibria for $N$-Player Differential Games with Interaction through Controls: Existence, Uniqueness and Large $N$ Limit](../../../stochastic_analysis/stochastic_dynamics/sde_theory/distributed-equilibria-for-n-player-differential-games-with-interaction-through.md) (2026, arXiv (Cornell University), 0 citations)
 
-- [Viral Quasispecies Evolution as a Branching Random Walk on the Hypercube](viral-quasispecies-evolution-as-a-branching-random-walk-on-the-hypercube.md) (2026, arXiv (Cornell University), 0 citations)
+- [Viral Quasispecies Evolution as a Branching Random Walk on the Hypercube](../../../stochastic_analysis/path_foundations/brownian_motion/viral-quasispecies-evolution-as-a-branching-random-walk-on-the-hypercube.md) (2026, arXiv (Cornell University), 0 citations)
 
-- [SMC-AI: Scaling Monte Carlo Simulation to Four Trillion Atoms with AI Accelerators](smc-ai-scaling-monte-carlo-simulation-to-four-trillion-atoms-with-ai-accelerator.md) (2026, arXiv (Cornell University), 0 citations)
+- [SMC-AI: Scaling Monte Carlo Simulation to Four Trillion Atoms with AI Accelerators](../../../stochastic_analysis/stochastic_dynamics/sde_numerics/smc-ai-scaling-monte-carlo-simulation-to-four-trillion-atoms-with-ai-accelerator.md) (2026, arXiv (Cornell University), 0 citations)
 
 - [Predictor-Driven Diffusion for Spatiotemporal Generation](predictor-driven-diffusion-for-spatiotemporal-generation.md) (2026, ArXiv.org, 0 citations)
 
 - [Entropy Production Rate in Stochastically Time-evolving Asymmetric Networks](entropy-production-rate-in-stochastically-time-evolving-asymmetric-networks.md) (2026, arXiv (Cornell University), 0 citations)
 
-- [Implicit Regularization of Large Neural Networks via Mean-Field Formulation](implicit-regularization-of-large-neural-networks-via-mean-field-formulation.md) (2026, arXiv (Cornell University), 0 citations)
+- [Implicit Regularization of Large Neural Networks via Mean-Field Formulation](../../../stochastic_analysis/stochastic_dynamics/sde_theory/implicit-regularization-of-large-neural-networks-via-mean-field-formulation.md) (2026, arXiv (Cornell University), 0 citations)
 
 - [Quantitative Large Population Limit for Non Exchangeable Diffusions in Fisher Information](quantitative-large-population-limit-for-non-exchangeable-diffusions-in-fisher-in.md) (2026, ArXiv.org, 0 citations)
 
-- [Gaussian Invariant Markov Chain Monte Carlo](gaussian-invariant-markov-chain-monte-carlo.md) (2025, ArXiv, 0 citations)
+- [Gaussian Invariant Markov Chain Monte Carlo](../../../stochastic_analysis/path_foundations/brownian_motion/gaussian-invariant-markov-chain-monte-carlo.md) (2025, ArXiv, 0 citations)
 
 - [Self-Adversarial One Step Generation via Condition Shifting](self-adversarial-one-step-generation-via-condition-shifting.md) (2026, ArXiv.org, 0 citations)
 
@@ -68,13 +68,13 @@ last_updated: "2026-05-18"
 
 - [Quantitative propagation of chaos and universality for asymmetric Langevin spin glass dynamics](quantitative-propagation-of-chaos-and-universality-for-asymmetric-langevin-spin.md) (2026, ArXiv.org, 0 citations)
 
-- [A theory of first order mean field type control problems and their equations](a-theory-of-first-order-mean-field-type-control-problems-and-their-equations.md) (2026, Journal of the European Mathematical Society, 0 citations)
+- [A theory of first order mean field type control problems and their equations](../../../stochastic_analysis/stochastic_dynamics/sde_theory/a-theory-of-first-order-mean-field-type-control-problems-and-their-equations.md) (2026, Journal of the European Mathematical Society, 0 citations)
 
 - [Evolution of a trait distributed over a large fragmented population: propagation of chaos meets adaptive dynamics](evolution-of-a-trait-distributed-over-a-large-fragmented-population-propagation.md) (2026, Journal of Mathematical Biology, 0 citations)
 
-- [Deterministic, stochastic, and mean-field PDE models in neuroscience](deterministic-stochastic-and-mean-field-pde-models-in-neuroscience.md) (2026, Frontiers in Computational Neuroscience, 0 citations)
+- [Deterministic, stochastic, and mean-field PDE models in neuroscience](../../../bridges/translation_layers/fokker_planck_master/deterministic-stochastic-and-mean-field-pde-models-in-neuroscience.md) (2026, Frontiers in Computational Neuroscience, 0 citations)
 
-- [Homogenized Transformers](homogenized-transformers.md) (2026, SPIRE - Sciences Po Institutional REpository, 0 citations)
+- [Homogenized Transformers](../../../bridges/translation_layers/fokker_planck_master/homogenized-transformers.md) (2026, SPIRE - Sciences Po Institutional REpository, 0 citations)
 
 - [Moonshine.jl: a Julia package for genome-scale model-based ancestral recombination graph inference](moonshinejl-a-julia-package-for-genome-scale-model-based-ancestral-recombination.md) (2026, Frontiers in Genetics, 0 citations)
 
@@ -96,4 +96,4 @@ last_updated: "2026-05-18"
 
 - [Duplication-divergence growing graph models](duplication-divergence-growing-graph-models.md) (2025, ArXiv.org, 0 citations)
 
-- [A Semi-Markov Algorithm for Continuous Time Random Walk Limit Distributions](a-semi-markov-algorithm-for-continuous-time-random-walk-limit-distributions.md) (2016, arXiv: Statistical Mechanics, 4 citations)
+- [A Semi-Markov Algorithm for Continuous Time Random Walk Limit Distributions](../../../stochastic_analysis/path_foundations/brownian_motion/a-semi-markov-algorithm-for-continuous-time-random-walk-limit-distributions.md) (2016, arXiv: Statistical Mechanics, 4 citations)

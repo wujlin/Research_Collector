@@ -11,7 +11,7 @@ topics: ["statistical_physics", "statistical_physics/collective_structure/phase_
 tier: 0
 citations: 0
 relevance_score: 50.97
-collected: "2026-04-23"
+collected: "2026-04-13"
 status: "unread"
 source: "openalex"
 ---
@@ -33,4 +33,3 @@ We obtain quantitative estimates on quenched propagation of chaos for Langevin s
 - [[collective_structure]]
 
 ## Notes
-

@@ -11,7 +11,7 @@ topics: []
 tier: 0
 citations: 0
 relevance_score: 36.0
-collected: "2026-04-16"
+collected: "2026-04-15"
 status: "unread"
 source: "openalex"
 ---
@@ -29,4 +29,3 @@ We analyze the score field of a diffusion generative model through a Burgers-typ
 (待添加)
 
 ## Notes
-

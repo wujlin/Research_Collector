@@ -29,4 +29,3 @@ Silymarin (Silybum marianum (L.) Gaertn. extract) is a widely used botanical for
 (待添加)
 
 ## Notes
-

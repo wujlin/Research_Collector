@@ -7,7 +7,7 @@ doi: "10.5281/zenodo.19540920"
 arxiv: ""
 url: "https://openalex.org/W7153810106"
 pdf_url: ""
-topics: ["ai_for_physics/physics_informed_modeling", "ai_for_physics", "ai_for_physics/physics_informed_modeling/scientific_ml_applications"]
+topics: ["ai_for_physics", "ai_for_physics/physics_informed_modeling", "ai_for_physics/physics_informed_modeling/scientific_ml_applications"]
 tier: 0
 citations: 0
 relevance_score: 42.87
@@ -26,9 +26,8 @@ This book introduces geoscientific machine learning with Julia, combining practi
 
 ## Connections
 
-- [[physics_informed_modeling]]
 - [[ai_for_physics]]
+- [[physics_informed_modeling]]
 - [[scientific_ml_applications]]
 
 ## Notes
-

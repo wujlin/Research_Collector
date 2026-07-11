@@ -31,4 +31,3 @@ Bacterial swarms provide a tractable natural model of active matter, where their
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

@@ -34,4 +34,3 @@ The score function for the diffusion process, also known as the gradient of the 
 - [[translation_layers]]
 
 ## Notes
-

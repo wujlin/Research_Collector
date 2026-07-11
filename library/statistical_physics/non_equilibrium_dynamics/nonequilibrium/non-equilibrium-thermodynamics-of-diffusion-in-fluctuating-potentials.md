@@ -31,4 +31,3 @@ A positive rate of entropy production at steady-state is a distinctive feature o
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

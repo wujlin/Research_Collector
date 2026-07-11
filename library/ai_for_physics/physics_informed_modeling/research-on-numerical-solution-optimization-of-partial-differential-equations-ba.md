@@ -7,7 +7,7 @@ doi: "10.62051/srdzvs07"
 arxiv: ""
 url: "https://openalex.org/W7153128415"
 pdf_url: "https://tcsisr.com/index.php/ojs/article/download/28/25"
-topics: ["ai_for_physics/physics_informed_modeling", "ai_for_physics"]
+topics: ["ai_for_physics", "ai_for_physics/physics_informed_modeling"]
 tier: 0
 citations: 0
 relevance_score: 42.0
@@ -26,8 +26,7 @@ Partial differential equations (PDEs) are core tools for characterizing physical
 
 ## Connections
 
-- [[physics_informed_modeling]]
 - [[ai_for_physics]]
+- [[physics_informed_modeling]]
 
 ## Notes
-

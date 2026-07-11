@@ -11,7 +11,7 @@ topics: ["bridges/translation_layers/fokker_planck_master", "statistical_physics
 tier: 0
 citations: 0
 relevance_score: 54.0
-collected: "2026-04-16"
+collected: "2026-04-13"
 status: "unread"
 source: "openalex"
 ---
@@ -34,4 +34,3 @@ We study the non-equilibrium dynamics, thermalisation and attractor behaviour of
 - [[translation_layers]]
 
 ## Notes
-

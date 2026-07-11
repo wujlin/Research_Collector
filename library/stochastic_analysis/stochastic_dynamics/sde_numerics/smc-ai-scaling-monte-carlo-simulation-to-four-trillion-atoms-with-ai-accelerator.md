@@ -7,7 +7,7 @@ doi: ""
 arxiv: ""
 url: "https://openalex.org/W7153671856"
 pdf_url: "https://arxiv.org/pdf/2604.08250"
-topics: ["stochastic_analysis/stochastic_dynamics/sde_numerics", "stochastic_analysis/stochastic_dynamics", "stochastic_analysis", "statistical_physics/collective_structure/phase_transitions", "statistical_physics/collective_structure", "statistical_physics"]
+topics: ["stochastic_analysis", "stochastic_analysis/stochastic_dynamics/sde_numerics", "statistical_physics", "statistical_physics/collective_structure/phase_transitions", "stochastic_analysis/stochastic_dynamics", "statistical_physics/collective_structure"]
 tier: 0
 citations: 0
 relevance_score: 54.0
@@ -26,12 +26,11 @@ The rapid advancement of deep learning is reshaping the hardware design landscap
 
 ## Connections
 
-- [[sde_numerics]]
-- [[stochastic_dynamics]]
 - [[stochastic_analysis]]
-- [[phase_transitions]]
-- [[collective_structure]]
+- [[sde_numerics]]
 - [[statistical_physics]]
+- [[phase_transitions]]
+- [[stochastic_dynamics]]
+- [[collective_structure]]
 
 ## Notes
-

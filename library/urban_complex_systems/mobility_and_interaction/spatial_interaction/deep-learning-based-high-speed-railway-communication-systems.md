@@ -7,7 +7,7 @@ doi: "10.1038/s41598-026-46758-6"
 arxiv: ""
 url: "https://openalex.org/W7152406137"
 pdf_url: "https://www.nature.com/articles/s41598-026-46758-6_reference.pdf"
-topics: ["urban_complex_systems/mobility_and_interaction", "urban_complex_systems", "urban_complex_systems/mobility_and_interaction/spatial_interaction"]
+topics: ["urban_complex_systems", "urban_complex_systems/mobility_and_interaction/spatial_interaction", "urban_complex_systems/mobility_and_interaction"]
 tier: 0
 citations: 0
 relevance_score: 47.0
@@ -26,9 +26,8 @@ High-speed railway wireless communication systems are characterized by severe Do
 
 ## Connections
 
-- [[mobility_and_interaction]]
 - [[urban_complex_systems]]
 - [[spatial_interaction]]
+- [[mobility_and_interaction]]
 
 ## Notes
-

@@ -8,10 +8,10 @@ arxiv: ""
 url: "https://openalex.org/W7140141659"
 pdf_url: "https://link.springer.com/content/pdf/10.1140/epjs/s11734-026-02222-0.pdf"
 topics: ["statistical_physics", "statistical_physics/collective_structure/phase_transitions", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics/collective_structure"]
-tier: 3
+tier: 0
 citations: 0
-relevance_score: 58.0
-collected: "2026-04-16"
+relevance_score: 50.0
+collected: "2026-04-08"
 status: "unread"
 source: "openalex"
 ---
@@ -33,4 +33,3 @@ Abstract Parrondo’s paradox (PP) is a fundamental principle in nonlinear scien
 - [[collective_structure]]
 
 ## Notes
-

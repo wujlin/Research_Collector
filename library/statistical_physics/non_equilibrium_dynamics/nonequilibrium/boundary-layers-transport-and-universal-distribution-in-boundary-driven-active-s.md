@@ -11,10 +11,10 @@ topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/no
 tier: 2
 citations: 0
 relevance_score: 62.0
-collected: "2026-04-16"
+collected: "2026-04-08"
 status: "excluded_current_queue"
-exclude_reason: "Boundary-driven active-matter/material-transport paper; useful as a nonequilibrium transport side branch, but not directly aligned with current Synthetic_City, urban migration, spatial expansion, or generative inverse-problem priorities."
 source: "openalex"
+exclude_reason: "Boundary-driven active-matter/material-transport paper; useful as a nonequilibrium transport side branch, but not directly aligned with current Synthetic_City, urban migration, spatial expansion, or generative inverse-problem priorities."
 ---
 
 ## Abstract

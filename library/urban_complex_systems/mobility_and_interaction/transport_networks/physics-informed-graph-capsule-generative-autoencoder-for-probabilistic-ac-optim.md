@@ -33,4 +33,3 @@ Due to the increasing demand for electricity and the inherent uncertainty in pow
 - [[mobility_and_interaction]]
 
 ## Notes
-

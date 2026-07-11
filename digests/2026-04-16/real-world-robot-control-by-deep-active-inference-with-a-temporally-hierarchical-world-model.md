@@ -905,7 +905,7 @@ $$
 
 #### Fig. 1 Gives The Whole Method In One Pass
 
-![Framework overview](../../pdfs/2026-04-15/real-world-robot-control-by-deep-active-inference-with-a-temporally-hierarchical-world-model.mineru/hybrid_auto/images/page-02-figure-01.jpg)
+![Framework overview](figures/real-world-robot-control-by-deep-active-inference-with-a-temporally-hierarchical-world-model/page-02-figure-01.jpg)
 
 如果只看 `Fig. 1`，整篇文章的方法其实已经可以压成一条非常清楚的线：
 
@@ -998,7 +998,7 @@ $$
 
 #### Fig. 2 Explains Why The World Model Is Not A Single Latent State
 
-![World model with temporal hierarchy](../../pdfs/2026-04-15/real-world-robot-control-by-deep-active-inference-with-a-temporally-hierarchical-world-model.mineru/hybrid_auto/images/page-02-figure-03.jpg)
+![World model with temporal hierarchy](figures/real-world-robot-control-by-deep-active-inference-with-a-temporally-hierarchical-world-model/page-02-figure-03.jpg)
 
 如果说 `Fig. 1` 告诉你整个框架怎么分工，那么 `Fig. 2` 真正补上的，是左侧 `world model` 为什么必须做成分层时间结构。
 
@@ -2026,7 +2026,7 @@ $$
 
 ### 2.19 How Fig. 3 Maps To The Online Action-Selection Loop
 
-![Fig. 3. Action selection based on the minimization of EFE.](../../pdfs/2026-04-15/real-world-robot-control-by-deep-active-inference-with-a-temporally-hierarchical-world-model.mineru/hybrid_auto/images/page-04-figure-01.jpg)
+![Fig. 3. Action selection based on the minimization of EFE.](figures/real-world-robot-control-by-deep-active-inference-with-a-temporally-hierarchical-world-model/page-04-figure-01.jpg)
 
 *Fig. 3. Action selection based on the minimization of EFE.*
 
@@ -2048,7 +2048,7 @@ $$
 
 ### 3.1 Environment Setup
 
-![Fig. 4. Experimental environment and policy patterns.](../../pdfs/2026-04-15/real-world-robot-control-by-deep-active-inference-with-a-temporally-hierarchical-world-model.mineru/hybrid_auto/images/page-04-figure-02.jpg)
+![Fig. 4. Experimental environment and policy patterns.](figures/real-world-robot-control-by-deep-active-inference-with-a-temporally-hierarchical-world-model/page-04-figure-02.jpg)
 
 *Fig. 4. Experimental environment (left) and policy patterns included in the collected dataset (right).*
 
@@ -2166,9 +2166,9 @@ $$
 
 ### 4.2 Goal Achievement Is Better Than The Baseline
 
-![Predicted observations and actual execution](../../pdfs/2026-04-15/real-world-robot-control-by-deep-active-inference-with-a-temporally-hierarchical-world-model.mineru/hybrid_auto/images/page-05-figure-01.jpg)
+![Predicted observations and actual execution](figures/real-world-robot-control-by-deep-active-inference-with-a-temporally-hierarchical-world-model/page-05-figure-01.jpg)
 
-![EFE over abstract actions](../../pdfs/2026-04-15/real-world-robot-control-by-deep-active-inference-with-a-temporally-hierarchical-world-model.mineru/hybrid_auto/images/page-05-figure-03.jpg)
+![EFE over abstract actions](figures/real-world-robot-control-by-deep-active-inference-with-a-temporally-hierarchical-world-model/page-05-figure-03.jpg)
 
 在真实机器人抓取与开合盖子的任务里，文章给出的总成功率是：
 

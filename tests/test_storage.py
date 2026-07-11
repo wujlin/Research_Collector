@@ -61,6 +61,36 @@ def test_database_backfills_author_affiliation_on_merge(tmp_path):
     assert merged.authors[0].openalex_id == "A123"
 
 
+def test_database_preserves_author_input_order(tmp_path):
+    database = Database(str(tmp_path / "test.db"))
+    paper = database.add_paper(
+        {
+            "title": "Author order test",
+            "authors": ["Second Alphabetically", "First Alphabetically"],
+            "topic_keys": [],
+        }
+    )
+
+    reloaded = database.get_paper(paper.id)
+
+    assert reloaded is not None
+    assert [author.name for author in reloaded.authors] == [
+        "Second Alphabetically",
+        "First Alphabetically",
+    ]
+
+
+def test_database_stats_include_custom_statuses(tmp_path):
+    database = Database(str(tmp_path / "test.db"))
+    paper = database.add_paper({"title": "Status test", "authors": [], "topic_keys": []})
+    database.update_paper_metadata(paper.id, status="covered_elsewhere")
+
+    stats = database.get_stats()
+
+    assert stats["by_status"]["covered_elsewhere"] == 1
+    assert stats["by_status"]["unread"] == 0
+
+
 def test_upsert_paper_reports_created_updated_and_unchanged(tmp_path):
     database = Database(str(tmp_path / "test.db"))
 

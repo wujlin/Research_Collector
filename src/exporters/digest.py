@@ -76,10 +76,11 @@ class DigestExporter:
 
         output_path.parent.mkdir(parents=True, exist_ok=True)
         output_path.write_text("\n".join(lines), encoding="utf-8")
-        self._write_digest_index()
+        self.write_index()
         return output_path
 
-    def _write_digest_index(self) -> None:
+    def write_index(self) -> None:
+        """Refresh the web digest manifest without creating a periodic digest."""
         payload = []
         title_re = re.compile(r'^title:\s*"(?P<title>.+)"$')
         authors_re = re.compile(r'^authors:\s*"(?P<authors>.+)"$')

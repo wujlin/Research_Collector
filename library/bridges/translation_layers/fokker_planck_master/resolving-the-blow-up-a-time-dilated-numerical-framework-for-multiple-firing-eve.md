@@ -34,4 +34,3 @@ In large-scale excitatory neuronal networks, rapid synchronization manifests as 
 - [[translation_layers]]
 
 ## Notes
-

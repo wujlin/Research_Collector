@@ -11,7 +11,7 @@ topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/no
 tier: 0
 citations: 0
 relevance_score: 43.0
-collected: "2026-04-23"
+collected: "2026-04-16"
 status: "unread"
 source: "arxiv"
 ---
@@ -31,4 +31,3 @@ We introduce a framework designed to analyze the thermodynamics of an abstractly
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

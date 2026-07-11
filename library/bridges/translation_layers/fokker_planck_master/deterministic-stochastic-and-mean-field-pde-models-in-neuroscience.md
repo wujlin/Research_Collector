@@ -36,4 +36,3 @@ Large neuronal networks demonstrate complex dynamics across multiple scales, ran
 - [[translation_layers]]
 
 ## Notes
-

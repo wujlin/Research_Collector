@@ -60,7 +60,7 @@ association with HALE and DALYs
 
 ## 2. Figure 1：概念框架和研究设计
 
-![Fig. 1 conceptual framework](../../pdfs/2026-05-01/inequality-in-infrastructure-access-and-its-association-with-health-disparities/inequality-in-infrastructure-access-and-its-association-with-health-disparities.mineru/inequality-in-infrastructure-access-and-its-association-with-health-disparities/auto/images/page-02-figure-01.jpg)
+![Fig. 1 conceptual framework](figures/inequality-in-infrastructure-access-and-its-association-with-health-disparities/page-02-figure-01.jpg)
 
 Fig. 1a 定义三类基础设施。
 
@@ -215,23 +215,23 @@ infrastructure access
 
 ## 6. Figure 2 和 Table 1：全球 access 格局
 
-![Fig. 2a economic access map](../../pdfs/2026-05-01/inequality-in-infrastructure-access-and-its-association-with-health-disparities/inequality-in-infrastructure-access-and-its-association-with-health-disparities.mineru/inequality-in-infrastructure-access-and-its-association-with-health-disparities/auto/images/page-03-figure-01.jpg)
+![Fig. 2a economic access map](figures/inequality-in-infrastructure-access-and-its-association-with-health-disparities/page-03-figure-01.jpg)
 
 Fig. 2a 显示 country-level economic infrastructure access。欧洲、亚洲、北美、南美总体较高；非洲较低。
 
-![Fig. 2b social access map](../../pdfs/2026-05-01/inequality-in-infrastructure-access-and-its-association-with-health-disparities/inequality-in-infrastructure-access-and-its-association-with-health-disparities.mineru/inequality-in-infrastructure-access-and-its-association-with-health-disparities/auto/images/page-03-figure-02.jpg)
+![Fig. 2b social access map](figures/inequality-in-infrastructure-access-and-its-association-with-health-disparities/page-03-figure-02.jpg)
 
 Fig. 2b 显示 social infrastructure access。社会基础设施的全球差距更明显，非洲最低，Global North 显著高于 Global South。
 
-![Fig. 2c environmental access map](../../pdfs/2026-05-01/inequality-in-infrastructure-access-and-its-association-with-health-disparities/inequality-in-infrastructure-access-and-its-association-with-health-disparities.mineru/inequality-in-infrastructure-access-and-its-association-with-health-disparities/auto/images/page-03-figure-05.jpg)
+![Fig. 2c environmental access map](figures/inequality-in-infrastructure-access-and-its-association-with-health-disparities/page-03-figure-05.jpg)
 
 Fig. 2c 显示 environmental infrastructure access。它和 economic/social 不完全一致，因为它受绿地、污染和热暴露影响。Oceania、South America 和 Europe 较高；Asia 的 environmental access 最低。
 
-![Fig. 2d economic access boxplot](../../pdfs/2026-05-01/inequality-in-infrastructure-access-and-its-association-with-health-disparities/inequality-in-infrastructure-access-and-its-association-with-health-disparities.mineru/inequality-in-infrastructure-access-and-its-association-with-health-disparities/auto/images/page-03-chart-01.jpg)
+![Fig. 2d economic access boxplot](figures/inequality-in-infrastructure-access-and-its-association-with-health-disparities/page-03-chart-01.jpg)
 
-![Fig. 2e social access boxplot](../../pdfs/2026-05-01/inequality-in-infrastructure-access-and-its-association-with-health-disparities/inequality-in-infrastructure-access-and-its-association-with-health-disparities.mineru/inequality-in-infrastructure-access-and-its-association-with-health-disparities/auto/images/page-03-chart-02.jpg)
+![Fig. 2e social access boxplot](figures/inequality-in-infrastructure-access-and-its-association-with-health-disparities/page-03-chart-02.jpg)
 
-![Fig. 2f environmental access boxplot](../../pdfs/2026-05-01/inequality-in-infrastructure-access-and-its-association-with-health-disparities/inequality-in-infrastructure-access-and-its-association-with-health-disparities.mineru/inequality-in-infrastructure-access-and-its-association-with-health-disparities/auto/images/page-03-chart-03.jpg)
+![Fig. 2f environmental access boxplot](figures/inequality-in-infrastructure-access-and-its-association-with-health-disparities/page-03-chart-03.jpg)
 
 Fig. 2d-f 用 boxplots 比较 Global North 和 Global South。主文结果是：Global North 的 economic、social、environmental infrastructure access 分别是 Global South 的 1.25、2.00 和 1.43 倍。county level 上差异仍然存在，三类 access 分别是 1.41、2.63 和 1.22 倍。
 
@@ -262,15 +262,15 @@ Class III:
     generally low or medium-low access
 ```
 
-![Fig. 3 composite access map](../../pdfs/2026-05-01/inequality-in-infrastructure-access-and-its-association-with-health-disparities/inequality-in-infrastructure-access-and-its-association-with-health-disparities.mineru/inequality-in-infrastructure-access-and-its-association-with-health-disparities/auto/images/page-05-figure-01.jpg)
+![Fig. 3 composite access map](figures/inequality-in-infrastructure-access-and-its-association-with-health-disparities/page-05-figure-01.jpg)
 
 Fig. 3a 是 country-level composite map。最常见类别是 M-M-M、H-M-M 和 H-H-M。H-H-H 只有少数国家，包括 Australia、Canada、Chile、Peru 和 Portugal。L-L-L 则包括 Burkina Faso、Central African Republic、Chad、Djibouti、Guinea、Mauritania、Niger、South Sudan 和 Sierra Leone。
 
-![Fig. 3 country/county bars](../../pdfs/2026-05-01/inequality-in-infrastructure-access-and-its-association-with-health-disparities/inequality-in-infrastructure-access-and-its-association-with-health-disparities.mineru/inequality-in-infrastructure-access-and-its-association-with-health-disparities/auto/images/page-05-chart-01.jpg)
+![Fig. 3 country/county bars](figures/inequality-in-infrastructure-access-and-its-association-with-health-disparities/page-05-chart-01.jpg)
 
 Fig. 3 的 bar charts 显示 Global North 大多数国家属于 Class I，Global South 则分布更分散。主文给出：Global North 中 45/54 属于 Class I；Global South 中 38 个国家属于 Class I，约 26% 属于 Class II，约 40% 属于 Class III。
 
-![Fig. 3 zoomed county maps](../../pdfs/2026-05-01/inequality-in-infrastructure-access-and-its-association-with-health-disparities/inequality-in-infrastructure-access-and-its-association-with-health-disparities.mineru/inequality-in-infrastructure-access-and-its-association-with-health-disparities/auto/images/page-05-figure-05.jpg)
+![Fig. 3 zoomed county maps](figures/inequality-in-infrastructure-access-and-its-association-with-health-disparities/page-05-figure-05.jpg)
 
 Fig. 3c-e 的 zoomed maps 说明一个重要问题：国家级分类会掩盖内部差异。即使 Canada 和 United States 这类 Class I countries 内部，也有不少 counties 属于 Class II 或 III。反过来，非洲或亚洲某些整体较弱的国家内部，也存在 Class I regions。
 
@@ -371,7 +371,7 @@ $$
 
 ## 9. Figure 4 和 Table 1：基础设施不平等的全球格局
 
-![Fig. 4 access inequality](../../pdfs/2026-05-01/inequality-in-infrastructure-access-and-its-association-with-health-disparities/inequality-in-infrastructure-access-and-its-association-with-health-disparities.mineru/inequality-in-infrastructure-access-and-its-association-with-health-disparities/auto/images/page-06-figure-01.jpg)
+![Fig. 4 access inequality](figures/inequality-in-infrastructure-access-and-its-association-with-health-disparities/page-06-figure-01.jpg)
 
 Fig. 4a-c 是 economic、social、environmental infrastructure access inequality 的地图，Fig. 4d-f 是 Global North/Global South 的 boxplots。
 
@@ -401,27 +401,27 @@ Economic infrastructure inequality:
 
 作者使用 HALE，即 health-adjusted life expectancy，作为健康水平指标。HALE 比普通 life expectancy 更严格，因为它考虑健康状态下的预期寿命。
 
-![Fig. 5a economic access vs HALE](../../pdfs/2026-05-01/inequality-in-infrastructure-access-and-its-association-with-health-disparities/inequality-in-infrastructure-access-and-its-association-with-health-disparities.mineru/inequality-in-infrastructure-access-and-its-association-with-health-disparities/auto/images/page-07-chart-01.jpg)
+![Fig. 5a economic access vs HALE](figures/inequality-in-infrastructure-access-and-its-association-with-health-disparities/page-07-chart-01.jpg)
 
 Fig. 5a 显示 economic access 与 HALE 正相关。Global South 的斜率更陡，说明在 access 较低的发展中地区，经济基础设施改善与 HALE 提升的关联更强。
 
-![Fig. 5b social access vs HALE](../../pdfs/2026-05-01/inequality-in-infrastructure-access-and-its-association-with-health-disparities/inequality-in-infrastructure-access-and-its-association-with-health-disparities.mineru/inequality-in-infrastructure-access-and-its-association-with-health-disparities/auto/images/page-07-chart-02.jpg)
+![Fig. 5b social access vs HALE](figures/inequality-in-infrastructure-access-and-its-association-with-health-disparities/page-07-chart-02.jpg)
 
 Fig. 5b 显示 social access 与 HALE 也为正相关。教育和医疗设施的可及性越高，健康调整寿命越高。
 
-![Fig. 5c environmental access vs HALE](../../pdfs/2026-05-01/inequality-in-infrastructure-access-and-its-association-with-health-disparities/inequality-in-infrastructure-access-and-its-association-with-health-disparities.mineru/inequality-in-infrastructure-access-and-its-association-with-health-disparities/auto/images/page-07-chart-03.jpg)
+![Fig. 5c environmental access vs HALE](figures/inequality-in-infrastructure-access-and-its-association-with-health-disparities/page-07-chart-03.jpg)
 
 Fig. 5c 中 environmental access 与 HALE 没有显著关系。这不意味着环境基础设施不重要，而可能说明这个 composite environmental index 与 national-level HALE 的关系更复杂，或者被 income、health system、climate zone 等因素混合。
 
-![Fig. 5d economic inequality vs HALE](../../pdfs/2026-05-01/inequality-in-infrastructure-access-and-its-association-with-health-disparities/inequality-in-infrastructure-access-and-its-association-with-health-disparities.mineru/inequality-in-infrastructure-access-and-its-association-with-health-disparities/auto/images/page-07-chart-04.jpg)
+![Fig. 5d economic inequality vs HALE](figures/inequality-in-infrastructure-access-and-its-association-with-health-disparities/page-07-chart-04.jpg)
 
 Fig. 5d 是最关键的相关图。economic access inequality 越高，HALE 越低。Global North 和 Global South 都呈负相关。
 
-![Fig. 5e social inequality vs HALE](../../pdfs/2026-05-01/inequality-in-infrastructure-access-and-its-association-with-health-disparities/inequality-in-infrastructure-access-and-its-association-with-health-disparities.mineru/inequality-in-infrastructure-access-and-its-association-with-health-disparities/auto/images/page-07-chart-05.jpg)
+![Fig. 5e social inequality vs HALE](figures/inequality-in-infrastructure-access-and-its-association-with-health-disparities/page-07-chart-05.jpg)
 
 Fig. 5e 显示 social inequality 与 HALE 也有负相关趋势，但后面的 mixed-effects model 中 social variables 不如 economic variables 稳定显著。
 
-![Fig. 5f environmental inequality vs HALE](../../pdfs/2026-05-01/inequality-in-infrastructure-access-and-its-association-with-health-disparities/inequality-in-infrastructure-access-and-its-association-with-health-disparities.mineru/inequality-in-infrastructure-access-and-its-association-with-health-disparities/auto/images/page-07-chart-06.jpg)
+![Fig. 5f environmental inequality vs HALE](figures/inequality-in-infrastructure-access-and-its-association-with-health-disparities/page-07-chart-06.jpg)
 
 Fig. 5f 的 environmental inequality 呈现 Global North 与 Global South 的对比关系。Global North 中 inequality 上升对应 HALE 下降；Global South 中关系不同。这提示 environmental infrastructure 与 health 的关系可能受到气候、污染、城市化阶段和基础健康系统的调节。
 

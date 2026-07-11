@@ -31,4 +31,3 @@ With the rapid development of Intelligent Transportation Systems (ITSs), traffic
 - [[mobility_and_interaction]]
 
 ## Notes
-

@@ -33,4 +33,3 @@ Recent advances in scientific machine learning have shed light on the modeling o
 - [[physics_informed_modeling]]
 
 ## Notes
-

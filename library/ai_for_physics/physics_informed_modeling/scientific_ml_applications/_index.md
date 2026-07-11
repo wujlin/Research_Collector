@@ -2,7 +2,7 @@
 title: "Scientific ML Applications"
 description: ""
 paper_count: 21
-last_updated: "2026-05-18"
+last_updated: "2026-07-11"
 ---
 
 # Scientific ML Applications
@@ -12,15 +12,15 @@ last_updated: "2026-05-18"
 ## Papers (21)
 
 
-- [Hydrodynamic noise in one dimension: Projected Kubo formula and how it vanishes in integrable models](hydrodynamic-noise-in-one-dimension-projected-kubo-formula-and-how-it-vanishes-i.md) (2026, SciPost Physics, 1 citations)
+- [Hydrodynamic noise in one dimension: Projected Kubo formula and how it vanishes in integrable models](../../../statistical_physics/collective_structure/phase_transitions/hydrodynamic-noise-in-one-dimension-projected-kubo-formula-and-how-it-vanishes-i.md) (2026, SciPost Physics, 1 citations)
 
 - [Attaining physics-driven convolutional operators by architecture design](attaining-physics-driven-convolutional-operators-by-architecture-design.md) (2026, Communications Physics, 0 citations)
 
 - [A domain-decomposed VAE method for Bayesian inverse problems](a-domain-decomposed-vae-method-for-bayesian-inverse-problems.md) (2023, ArXiv, 10 citations)
 
-- [MVNN: A Measure-Valued Neural Network for Learning McKean-Vlasov Dynamics from Particle Data](mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-pa.md) (2026, ArXiv.org, 0 citations)
+- [MVNN: A Measure-Valued Neural Network for Learning McKean-Vlasov Dynamics from Particle Data](../../../stochastic_analysis/stochastic_dynamics/sde_theory/mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-pa.md) (2026, ArXiv.org, 0 citations)
 
-- [Multimodal Iterative Reasoning for Molecular Generation with Contribution-Aware Dynamic Modality Balancing](multimodal-iterative-reasoning-for-molecular-generation-with-contribution-aware.md) (2026, ChemRxiv, 0 citations)
+- [Multimodal Iterative Reasoning for Molecular Generation with Contribution-Aware Dynamic Modality Balancing](../../generative_dynamics/ddpm/multimodal-iterative-reasoning-for-molecular-generation-with-contribution-aware.md) (2026, ChemRxiv, 0 citations)
 
 - [Bayesian BiLO: Bilevel Local Operator Learning for Efficient Uncertainty Quantification of Bayesian PDE Inverse Problems with Low-Rank Adaptation](bayesian-bilo-bilevel-local-operator-learning-for-efficient-uncertainty-quantifi.md) (2025, bioRxiv, 1 citations)
 
@@ -32,15 +32,15 @@ last_updated: "2026-05-18"
 
 - [Disentangled Deep Priors for Bayesian Inverse Problems](disentangled-deep-priors-for-bayesian-inverse-problems.md) (2026, ArXiv.org, 0 citations)
 
-- [Stochastic and Learning-Based Control Strategies for Electric Autonomous Mobility Systems](stochastic-and-learning-based-control-strategies-for-electric-autonomous-mobilit.md) (2026, preprint, 0 citations)
+- [Stochastic and Learning-Based Control Strategies for Electric Autonomous Mobility Systems](../../../urban_complex_systems/mobility_and_interaction/spatial_interaction/stochastic-and-learning-based-control-strategies-for-electric-autonomous-mobilit.md) (2026, preprint, 0 citations)
 
-- [Steering generative models for protein design: Aligning and conditioning strategies](steering-generative-models-for-protein-design-aligning-and-conditioning-strategi.md) (2026, Current Opinion in Structural Biology, 0 citations)
+- [Steering generative models for protein design: Aligning and conditioning strategies](../../generative_dynamics/conditional_generation/steering-generative-models-for-protein-design-aligning-and-conditioning-strategi.md) (2026, Current Opinion in Structural Biology, 0 citations)
 
-- [Moonshine.jl: a Julia package for genome-scale model-based ancestral recombination graph inference](moonshinejl-a-julia-package-for-genome-scale-model-based-ancestral-recombination.md) (2026, Frontiers in Genetics, 0 citations)
+- [Moonshine.jl: a Julia package for genome-scale model-based ancestral recombination graph inference](../../../statistical_physics/collective_structure/phase_transitions/moonshinejl-a-julia-package-for-genome-scale-model-based-ancestral-recombination.md) (2026, Frontiers in Genetics, 0 citations)
 
-- [Accurate remaining useful life prediction and uncertainty quantification for wind turbines using temporal convolutional variational deep Gaussian processes](accurate-remaining-useful-life-prediction-and-uncertainty-quantification-for-win.md) (2026, Scientific Reports, 0 citations)
+- [Accurate remaining useful life prediction and uncertainty quantification for wind turbines using temporal convolutional variational deep Gaussian processes](../physics_informed_generative/accurate-remaining-useful-life-prediction-and-uncertainty-quantification-for-win.md) (2026, Scientific Reports, 0 citations)
 
-- [On the Ergodicity of Certain Markov Chains in Random Environments](on-the-ergodicity-of-certain-markov-chains-in-random-environments.md) (2018, Journal of Theoretical Probability, 10 citations)
+- [On the Ergodicity of Certain Markov Chains in Random Environments](../../../statistical_physics/non_equilibrium_dynamics/nonequilibrium/on-the-ergodicity-of-certain-markov-chains-in-random-environments.md) (2018, Journal of Theoretical Probability, 10 citations)
 
 - [Surrogate-Based EM Design of RF and Microwave Components: A Systematic Review of Workflow Roles, Inverse Design, Multifidelity, and Active Learning](surrogate-based-em-design-of-rf-and-microwave-components-a-systematic-review-of.md) (2026, Sensors, 0 citations)
 

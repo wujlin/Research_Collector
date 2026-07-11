@@ -11,7 +11,7 @@ topics: ["statistical_physics", "urban_complex_systems", "urban_complex_systems/
 tier: 0
 citations: 0
 relevance_score: 50.0
-collected: "2026-04-23"
+collected: "2026-04-15"
 status: "unread"
 source: "openalex"
 ---
@@ -33,4 +33,3 @@ Epidemic forecasting requires not only predictions of expected case counts, but 
 - [[scaling_and_evolution]]
 
 ## Notes
-

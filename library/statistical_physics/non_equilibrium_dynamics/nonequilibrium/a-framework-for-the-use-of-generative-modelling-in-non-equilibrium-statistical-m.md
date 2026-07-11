@@ -10,9 +10,9 @@ pdf_url: ""
 topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "ai_for_physics", "ai_for_physics/physics_informed_modeling/physics_informed_generative", "bridges", "bridges/thermodynamic_inference/info_geometry", "statistical_physics/non_equilibrium_dynamics", "ai_for_physics/physics_informed_modeling", "bridges/thermodynamic_inference", "bridges/thermodynamic_inference/variational_free_energy"]
 tier: 0
 citations: 0
-relevance_score: 0
+relevance_score: 52.0
 collected: "2026-04-07"
-status: "unread"
+status: "read"
 source: ""
 is_seminal: true
 ---
@@ -40,3 +40,4 @@ is_seminal: true
 
 ## Notes
 
+非平衡统计物理 + 生成模型 + free energy principle 的桥接论文。

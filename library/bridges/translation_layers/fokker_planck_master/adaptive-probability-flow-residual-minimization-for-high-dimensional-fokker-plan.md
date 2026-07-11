@@ -34,4 +34,3 @@ Solving high-dimensional Fokker-Planck (FP) equations is a challenge in computat
 - [[translation_layers]]
 
 ## Notes
-

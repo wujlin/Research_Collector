@@ -7,7 +7,7 @@ doi: "10.1088/1361-6633/ace45e"
 arxiv: "2307.05269"
 url: "http://arxiv.org/abs/2307.05269v1"
 pdf_url: "https://arxiv.org/pdf/2307.05269v1"
-topics: ["urban_complex_systems/scaling_and_evolution/urban_scaling", "urban_complex_systems/scaling_and_evolution", "urban_complex_systems"]
+topics: ["urban_complex_systems", "urban_complex_systems/scaling_and_evolution/urban_scaling", "urban_complex_systems/scaling_and_evolution"]
 tier: 0
 citations: 0
 relevance_score: 45.0
@@ -26,9 +26,8 @@ Stochastic equations constitute a major ingredient in many branches of science, 
 
 ## Connections
 
+- [[urban_complex_systems]]
 - [[urban_scaling]]
 - [[scaling_and_evolution]]
-- [[urban_complex_systems]]
 
 ## Notes
-

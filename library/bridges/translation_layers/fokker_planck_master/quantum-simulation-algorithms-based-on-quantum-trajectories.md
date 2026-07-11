@@ -11,7 +11,7 @@ topics: ["bridges/translation_layers/fokker_planck_master", "bridges", "bridges/
 tier: 2
 citations: 0
 relevance_score: 61.0
-collected: "2026-04-23"
+collected: "2026-04-16"
 status: "unread"
 source: "openalex"
 ---
@@ -31,4 +31,3 @@ Quantum simulation has emerged as a key application of quantum computing, with s
 - [[translation_layers]]
 
 ## Notes
-

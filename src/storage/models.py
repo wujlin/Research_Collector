@@ -81,7 +81,7 @@ class Paper(Base):
     relevance_score = Column(Float, default=0.0)
     tier = Column(Integer, default=0)
 
-    status = Column(String(20), default="unread")
+    status = Column(String(50), default="unread")
     is_seminal = Column(Boolean, default=False)
 
     source = Column(String(50), default="")
@@ -90,7 +90,12 @@ class Paper(Base):
     markdown_path = Column(String(300), default="")
     notes = Column(Text, default="")
 
-    authors = relationship("Author", secondary=paper_authors, back_populates="papers")
+    authors = relationship(
+        "Author",
+        secondary=paper_authors,
+        back_populates="papers",
+        order_by=paper_authors.c.position,
+    )
     topics = relationship("Topic", secondary=paper_topics, back_populates="papers")
     venue_ref = relationship("Venue", back_populates="papers")
     references = relationship(

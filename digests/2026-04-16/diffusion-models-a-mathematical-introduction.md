@@ -45,7 +45,7 @@ $$
 
 ### 2.1 各向同性高斯密度
 
-![各向同性高斯密度公式](../../pdfs/2026-04-16/diffusion-models-a-mathematical-introduction.mineru/hybrid_auto/images/page-06-equation-04.jpg)
+![各向同性高斯密度公式](figures/diffusion-models-a-mathematical-introduction/page-06-equation-04.jpg)
 
 $$
 p(\mathbf{x}) = \frac{1}{(2\pi\sigma^2)^{d/2}} \exp\left(-\frac{1}{2\sigma^2}\|\mathbf{x} - \boldsymbol{\mu}\|_2^2\right)
@@ -89,7 +89,7 @@ $$
 
 **Proposition 2.13**：
 
-![KL散度闭式表达](../../pdfs/2026-04-16/diffusion-models-a-mathematical-introduction.mineru/hybrid_auto/images/page-12-equation-01.jpg)
+![KL散度闭式表达](figures/diffusion-models-a-mathematical-introduction/page-12-equation-01.jpg)
 
 $$
 \mathrm{KL}(P \| Q) = \frac{1}{2}\left[\mathrm{tr}(\boldsymbol{\Sigma}_Q^{-1}\boldsymbol{\Sigma}_P) + (\boldsymbol{\mu}_Q - \boldsymbol{\mu}_P)^\top\boldsymbol{\Sigma}_Q^{-1}(\boldsymbol{\mu}_Q - \boldsymbol{\mu}_P) - d + \log\frac{\det(\boldsymbol{\Sigma}_Q)}{\det(\boldsymbol{\Sigma}_P)}\right]
@@ -129,7 +129,7 @@ $$
 
 两个独立高斯的和仍为高斯，方差相加：$\alpha_t(1-\alpha_{t-1}) + (1-\alpha_t) = 1 - \alpha_t\alpha_{t-1}$。
 
-![前向过程归纳法](../../pdfs/2026-04-16/diffusion-models-a-mathematical-introduction.mineru/hybrid_auto/images/page-15-equation-02.jpg)
+![前向过程归纳法](figures/diffusion-models-a-mathematical-introduction/page-15-equation-02.jpg)
 
 由归纳法得到闭式结果：
 
@@ -153,7 +153,7 @@ $$
 
 三个因子都是已知的高斯。将其写成指数形式，关键步骤是**收集关于 $\mathbf{x}_{t-1}$ 的二次项和线性项**：
 
-![后验推导——配方](../../pdfs/2026-04-16/diffusion-models-a-mathematical-introduction.mineru/hybrid_auto/images/page-17-equation-05.jpg)
+![后验推导——配方](figures/diffusion-models-a-mathematical-introduction/page-17-equation-05.jpg)
 
 定义精度 $A := \frac{\alpha_t}{\beta_t} + \frac{1}{1-\bar{\alpha}_{t-1}}$ 和线性项 $\mathbf{b} := \frac{\sqrt{\alpha_t}}{\beta_t}\mathbf{x}_t + \frac{\sqrt{\bar{\alpha}_{t-1}}}{1-\bar{\alpha}_{t-1}}\mathbf{x}_0$，完成配方后得到：
 
@@ -398,7 +398,7 @@ $$
 
 实践中 CFM 更具吸引力——$\dot{\psi}_t$ 可以直接从采样的端点计算，而不需要处理边缘速度中难以处理的后验 $\pi(\mathbf{x}_0, \mathbf{x}_T \mid \mathbf{X}_t = \mathbf{x})$。
 
-![CFM vs MFM 示意](../../pdfs/2026-04-16/diffusion-models-a-mathematical-introduction.mineru/hybrid_auto/images/page-37-figure-01.jpg)
+![CFM vs MFM 示意](figures/diffusion-models-a-mathematical-introduction/page-37-figure-01.jpg)
 
 ### 8.4 直线插值与整流流
 
@@ -490,7 +490,7 @@ $$
 
 ### 9.3 时变引导调度
 
-![引导调度公式](../../pdfs/2026-04-16/diffusion-models-a-mathematical-introduction.mineru/hybrid_auto/images/page-49-equation-01.jpg)
+![引导调度公式](figures/diffusion-models-a-mathematical-introduction/page-49-equation-01.jpg)
 
 常数 $\lambda$ 在不同噪声水平下可能过强或过弱。一种实用的参数化方案：
 

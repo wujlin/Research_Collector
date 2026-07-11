@@ -30,4 +30,3 @@ Resistive Random-Access Memory (ReRAM) offers promising capabilities for data-in
 - [[physics_informed_modeling]]
 
 ## Notes
-

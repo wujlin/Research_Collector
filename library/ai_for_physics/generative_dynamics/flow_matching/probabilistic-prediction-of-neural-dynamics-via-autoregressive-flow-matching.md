@@ -31,4 +31,3 @@ Forecasting neural activity in response to naturalistic stimuli remains a key ch
 - [[generative_dynamics]]
 
 ## Notes
-

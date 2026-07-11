@@ -82,6 +82,30 @@ def test_classifier_detects_sde_and_diffusion_topics():
     assert "ai_for_physics" in record["topic_keys"]
 
 
+def test_classifier_detects_energy_based_dynamical_models():
+    classifier = TopicClassifier()
+    record = classifier.classify_record(
+        {
+            "title": "Energy-Based Dynamical Models for Neurocomputation",
+            "abstract": "The tutorial studies gradient flows, Hopfield networks, and Boltzmann machines.",
+        }
+    )
+
+    assert "ai_for_physics/generative_dynamics/energy_based_models" in record["topic_keys"]
+
+
+def test_classifier_does_not_treat_generic_curvature_as_riemannian_generation():
+    classifier = TopicClassifier()
+    record = classifier.classify_record(
+        {
+            "title": "Technological concentration across cities",
+            "abstract": "A nonlinear association changes strength and curvature across regions.",
+        }
+    )
+
+    assert "ai_for_physics/geometric_equivariant_learning/riemannian_generative_models" not in record["topic_keys"]
+
+
 def test_classifier_rejects_negative_keywords():
     classifier = TopicClassifier()
     record = classifier.classify_record(

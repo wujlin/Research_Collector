@@ -36,4 +36,3 @@ We propose a mathematical framework to explain implicit regularization from earl
 - [[transport_and_spatial_generation]]
 
 ## Notes
-

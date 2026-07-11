@@ -33,4 +33,3 @@ The Free Energy Principle (FEP) is typically applied to artificial systems as a 
 - [[thermodynamic_inference]]
 
 ## Notes
-

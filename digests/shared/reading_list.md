@@ -1,6 +1,6 @@
 ---
 title: "Reading List"
-generated_at: "2026-05-18T01:04:39.787723"
+generated_at: "2026-07-11T05:55:35.019039"
 paper_count: 20
 ---
 
@@ -131,8 +131,8 @@ paper_count: 20
 ## 11. Speed-accuracy trade-off for the diffusion models: Wisdom from nonequilibrium thermodynamics and optimal transport
 
 - Authors: Kotaro Ikeda, Tomoya Uda, Daisuke Okanohara, Sosuke Ito
-- Year: 2024
-- Journal/Venue: Physical Review X
+- Year: 2025
+- Journal/Venue: Physical Review X 15, 031031
 - Venue Quality: high_quality
 - Importance: 109.27 (keep)
 - Relevance: 68.43

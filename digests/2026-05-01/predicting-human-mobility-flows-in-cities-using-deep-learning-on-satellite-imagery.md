@@ -105,15 +105,15 @@ output:
 
 ## 3. Figure 1：文章整体架构
 
-![Fig. 1a MSA map](../../pdfs/2026-05-01/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery.mineru/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/auto/images/page-03-figure-01.jpg)
+![Fig. 1a MSA map](figures/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/page-03-figure-01.jpg)
 
 Fig. 1a 给出实验城市范围。M1 到 M10 分别是 New York、Los Angeles、Chicago、Dallas、Houston、Washington DC、Philadelphia、Miami、Atlanta 和 Phoenix 对应的 MSA。这个 panel 的作用不是展示模型，而是说明实验不是单城案例，而是跨美国十个最大 metropolitan regions 的比较。
 
-![Fig. 1b job-rank distribution](../../pdfs/2026-05-01/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery.mineru/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/auto/images/page-03-chart-01.jpg)
+![Fig. 1b job-rank distribution](figures/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/page-03-chart-01.jpg)
 
 Fig. 1b 展示每个 MSA 的 job count rank distribution，并指出它们近似遵循 Zipf's law。这个 panel 为后文 urban centrality 分析埋伏笔：工作机会在空间上的集中或分散，会影响 commuting distance distribution，也会影响模型在不同城市之间的迁移。
 
-![Fig. 1c architecture](../../pdfs/2026-05-01/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery.mineru/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/auto/images/page-03-figure-02.jpg)
+![Fig. 1c architecture](figures/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/page-03-figure-02.jpg)
 
 Fig. 1c 是全篇最重要的架构图。它有上下两条线。
 
@@ -488,19 +488,19 @@ Table 1 的结论按层次读更清楚。
 
 ## 8. Figure 2：New York 中模型表现怎样被拆开看
 
-![Fig. 2a real flows](../../pdfs/2026-05-01/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery.mineru/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/auto/images/page-06-figure-01.jpg)
+![Fig. 2a real flows](figures/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/page-06-figure-01.jpg)
 
 Fig. 2a 是 New York MSA 的真实 commuting flows。这个 panel 给出 observed OD structure：大量 flows 集中在城市核心和主要通勤方向上，同时也存在跨区域长距离联系。
 
-![Fig. 2b predicted 10m](../../pdfs/2026-05-01/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery.mineru/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/auto/images/page-06-figure-02.jpg)
+![Fig. 2b predicted 10m](figures/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/page-06-figure-02.jpg)
 
 Fig. 2b 是 Imagery2Flow-LGBM 使用 10m Sentinel-2 imagery 的预测。它的作用是让读者直接比较 predicted flows 与真实 flows 的空间形态，而不是只看 RMSE/MAE/CPC。
 
-![Fig. 2c predicted 30m](../../pdfs/2026-05-01/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery.mineru/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/auto/images/page-06-figure-03.jpg)
+![Fig. 2c predicted 30m](figures/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/page-06-figure-03.jpg)
 
 Fig. 2c 是 30m Landsat-8 imagery 的预测。它和 Fig. 2b 对比的是分辨率问题：10m 能看到更细粒度的地表纹理，但 30m 仍然保留了较多城市形态信息。
 
-![Fig. 2d CPC by population decile](../../pdfs/2026-05-01/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery.mineru/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/auto/images/page-06-chart-01.jpg)
+![Fig. 2d CPC by population decile](figures/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/page-06-chart-01.jpg)
 
 Fig. 2d 把 origins 按 population 分成十个 deciles。这里的分组单位不是 OD pair，而是 origin census tract。作者先按每个 origin tract 的人口从高到低排序，再切成十个数量相同的组。decile 1 是人口最多的 10% origin areas，decile 10 是人口最少的 10% origin areas。
 
@@ -542,11 +542,11 @@ prediction performance is less sensitive to origin population decile
 
 这一步也和文章的 data-poor region 叙事相连。作者想证明 Imagery2Flow 不只是适合 Manhattan 这类数据丰富区域，也能在 population density 较低、POI/social-media 数据可能不足的区域保持可用性。Fig. 2d 正是在 origin population 维度上验证这种稳定性。
 
-![Fig. 2e CPC by distance](../../pdfs/2026-05-01/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery.mineru/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/auto/images/page-06-chart-02.jpg)
+![Fig. 2e CPC by distance](figures/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/page-06-chart-02.jpg)
 
 Fig. 2e 按 OD distance 分组。模型在短距离和长距离 flows 上都保持较好 CPC。这个结果重要，因为很多 mobility models 最容易学到的是 distance decay；如果长距离 flows 完全预测不好，说明模型只学了短程通勤的惯性。
 
-![Fig. 2f CPC by flow intensity](../../pdfs/2026-05-01/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery.mineru/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/auto/images/page-06-chart-03.jpg)
+![Fig. 2f CPC by flow intensity](figures/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/page-06-chart-03.jpg)
 
 Fig. 2f 按 flow intensity 分组。随着流量变大，误差更明显，尤其是 bilinear Imagery2Flow 下降更快。Imagery2Flow-LGBM 在 high-intensity flows 上更稳，仍能保持约 0.6 的 CPC。这个 panel 直接对应前面的 data imbalance 问题：大流量 OD pairs 很少，但对整体通勤结构非常重要。
 
@@ -577,25 +577,25 @@ $$
 
 这里 $d$ 是 commuting distance，$\lambda$ 是 distance decay exponent。$\lambda$ 越大，长距离通勤下降越快；$\lambda$ 越小，长距离通勤比例越高。
 
-![Fig. 3a M1](../../pdfs/2026-05-01/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery.mineru/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/auto/images/page-07-chart-01.jpg)
+![Fig. 3a M1](figures/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/page-07-chart-01.jpg)
 
-![Fig. 3b M2](../../pdfs/2026-05-01/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery.mineru/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/auto/images/page-07-chart-02.jpg)
+![Fig. 3b M2](figures/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/page-07-chart-02.jpg)
 
-![Fig. 3c M3](../../pdfs/2026-05-01/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery.mineru/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/auto/images/page-07-chart-03.jpg)
+![Fig. 3c M3](figures/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/page-07-chart-03.jpg)
 
-![Fig. 3d M4](../../pdfs/2026-05-01/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery.mineru/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/auto/images/page-07-chart-04.jpg)
+![Fig. 3d M4](figures/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/page-07-chart-04.jpg)
 
-![Fig. 3e M5](../../pdfs/2026-05-01/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery.mineru/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/auto/images/page-07-chart-05.jpg)
+![Fig. 3e M5](figures/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/page-07-chart-05.jpg)
 
-![Fig. 3f M6](../../pdfs/2026-05-01/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery.mineru/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/auto/images/page-07-chart-06.jpg)
+![Fig. 3f M6](figures/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/page-07-chart-06.jpg)
 
-![Fig. 3g M7](../../pdfs/2026-05-01/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery.mineru/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/auto/images/page-07-chart-07.jpg)
+![Fig. 3g M7](figures/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/page-07-chart-07.jpg)
 
-![Fig. 3h M8](../../pdfs/2026-05-01/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery.mineru/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/auto/images/page-07-chart-08.jpg)
+![Fig. 3h M8](figures/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/page-07-chart-08.jpg)
 
-![Fig. 3i M9](../../pdfs/2026-05-01/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery.mineru/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/auto/images/page-07-chart-09.jpg)
+![Fig. 3i M9](figures/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/page-07-chart-09.jpg)
 
-![Fig. 3j M10](../../pdfs/2026-05-01/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery.mineru/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/auto/images/page-07-chart-10.jpg)
+![Fig. 3j M10](figures/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/page-07-chart-10.jpg)
 
 Fig. 3 的十个 panels 对应十个 MSA。每个 panel 都比较 observed distance distribution 与 Imagery2Flow-LGBM predicted distribution。红线是 empirical observations 的 exponential fit。作者的核心判断是：预测 flows 的 distance distribution 与真实 flows 很接近，补充表中 KL 和 JS divergence 很小。
 
@@ -665,19 +665,19 @@ Table 1 和 Fig. 2 给的是整体表现，但平均指标会掩盖空间差异�
 
 主文以 New York 为例，其他九个 MSA 放在 Supplementary Figs. 2-10 和 11-19。作者观察到一个总体规律：模型在 suburban areas 往往更准，在 urban center 附近误差更大。这被解释为 saturation effect。高人口、高流量、高活动强度区域更容易出现较大误差；遥感估计人口、植被指数、碳排放等任务中也常见类似现象。
 
-![Fig. 4a Sentinel-2 errors](../../pdfs/2026-05-01/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery.mineru/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/auto/images/page-09-figure-01.jpg)
+![Fig. 4a Sentinel-2 errors](figures/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/page-09-figure-01.jpg)
 
 Fig. 4a 显示 New York 中使用 10m Sentinel-2 imagery 的 origin-level prediction errors。地图上的 A、B、C 标注不是类别预测结果，而是作者用于解释误差来源的空间案例。
 
-![Fig. 4b Landsat-8 errors](../../pdfs/2026-05-01/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery.mineru/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/auto/images/page-09-figure-02.jpg)
+![Fig. 4b Landsat-8 errors](figures/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/page-09-figure-02.jpg)
 
 Fig. 4b 是 30m Landsat-8 版本。它和 Fig. 4a 的空间误差结构相似，说明一部分误差来自城市功能和社会空间结构，而不只是遥感分辨率。
 
-![Fig. 4c land use CPC](../../pdfs/2026-05-01/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery.mineru/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/auto/images/page-09-chart-01.jpg)
+![Fig. 4c land use CPC](figures/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/page-09-chart-01.jpg)
 
 Fig. 4c 按 origin tract 的 dominant land use 分组，比较 CPC。commercial、industrial、recreational、residential 等类别对应不同城市功能。模型在 recreational 等类别上更容易出错，说明地表外观和实际出行功能之间可能存在 mismatch。
 
-![Fig. 4d land cover CPC](../../pdfs/2026-05-01/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery.mineru/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/auto/images/page-09-chart-02.jpg)
+![Fig. 4d land cover CPC](figures/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/page-09-chart-02.jpg)
 
 Fig. 4d 按 land cover 分组。vegetation-dominated areas 可能包含 greenbelts、wildlife management areas、regional parks、wetlands 等。这些区域在遥感图像上视觉复杂，但通勤生成机制不一定由植被外观直接决定，因此模型性能较弱。
 
@@ -710,7 +710,7 @@ target city OD flow prediction
 
 如果这个过程成功，说明模型学到的不是某个城市内部的记忆，而是某种可以跨城市迁移的 built-environment-to-mobility mapping。
 
-![Fig. 5a/c transfer heatmaps](../../pdfs/2026-05-01/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery.mineru/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/auto/images/page-10-chart-01.jpg)
+![Fig. 5a/c transfer heatmaps](figures/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/page-10-chart-01.jpg)
 
 Fig. 5 的每个 panel 都是一个 transfer matrix。横轴是 training MSA，也就是模型参数来自哪个城市；纵轴是 target MSA，也就是模型被应用到哪个城市。每个格子的数字是 target city 上的 CPC，颜色越绿表示预测流量和真实通勤流越一致，颜色越紫表示 transfer performance 越差。对角线是 within-city setting：在同一个 MSA 内训练和测试。非对角线才是真正的 cross-city transfer。
 
@@ -720,7 +720,7 @@ Fig. 5a 是 Sentinel-2 10m imagery + bilinear decoder。这个 panel 先给出�
 
 这说明 bilinear Imagery2Flow 的跨城市迁移不是稳定同质的。模型 architecture 可以被重复使用，但学到的参数会强烈依赖 source city 的空间结构。换句话说，satellite imagery 中确实有 mobility-relevant information，但不同城市的地表形态、道路结构、住房-就业分布和通勤制度不同，同一套参数不一定能直接解释另一个城市。
 
-![Fig. 5b/d transfer heatmaps](../../pdfs/2026-05-01/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery.mineru/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/auto/images/page-10-chart-02.jpg)
+![Fig. 5b/d transfer heatmaps](figures/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/page-10-chart-02.jpg)
 
 Fig. 5b 是 Landsat-8 30m imagery + bilinear decoder。它和 Fig. 5a 的区别主要是 image resolution：从 10m Sentinel-2 换成 30m Landsat-8。读这个 panel 的目的，是检查 transfer failure 是否主要来自遥感分辨率不足。
 
@@ -744,7 +744,7 @@ Fig. 5 的阅读重点不是“哪个格子最大”，而是三个规律。
 
 作者用 land cover similarity 和 urban sprawl typology 来解释这些差异。
 
-![Fig. 6 land cover distribution](../../pdfs/2026-05-01/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery.mineru/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/auto/images/page-11-chart-01.jpg)
+![Fig. 6 land cover distribution](figures/predicting-human-mobility-flows-in-cities-using-deep-learning-on-satellite-imagery/page-11-chart-01.jpg)
 
 Fig. 6 展示十个 MSA 的 land cover type distribution。Washington DC 和 Philadelphia 的 geographic contexts 较相似，这帮助解释它们之间 transfer 较好。某些 transfer pair 失败，则可能因为主要 land cover types 差异较大。
 

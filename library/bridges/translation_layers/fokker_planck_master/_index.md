@@ -2,7 +2,7 @@
 title: "Fokker-Planck / Master 方程"
 description: ""
 paper_count: 35
-last_updated: "2026-05-18"
+last_updated: "2026-07-11"
 ---
 
 # Fokker-Planck / Master 方程
@@ -26,7 +26,7 @@ last_updated: "2026-05-18"
 
 - [A master equation for power laws](a-master-equation-for-power-laws.md) (2022, Royal Society Open Science, 22 citations)
 
-- [The covariant Langevin equation of diffusion on Riemannian manifolds](the-covariant-langevin-equation-of-diffusion-on-riemannian-manifolds.md) (2023, Rep.Math.Phys. 94, 143 (2024), 0 citations)
+- [The covariant Langevin equation of diffusion on Riemannian manifolds](../../../stochastic_analysis/stochastic_dynamics/sde_theory/the-covariant-langevin-equation-of-diffusion-on-riemannian-manifolds.md) (2023, Rep.Math.Phys. 94, 143 (2024), 0 citations)
 
 - [Lévy Score Function and Score-Based Particle Algorithm for Nonlinear Lévy-Fokker-Planck Equations](lévy-score-function-and-score-based-particle-algorithm-for-nonlinear-lévy-fokker.md) (2024, ArXiv, 2 citations)
 
@@ -72,7 +72,7 @@ last_updated: "2026-05-18"
 
 - [Score-fPINN: Fractional Score-Based Physics-Informed Neural Networks for High-Dimensional Fokker-Planck-Lévy Equations](score-fpinn-fractional-score-based-physics-informed-neural-networks-for-high-dim.md) (2026, Communications in Computational Physics, 0 citations)
 
-- [PINNs for Stochastic Dynamics: Modeling Brownian Motion via Verlet Integration](pinns-for-stochastic-dynamics-modeling-brownian-motion-via-verlet-integration.md) (2026, International Journal of Information Technology and Computer Science, 0 citations)
+- [PINNs for Stochastic Dynamics: Modeling Brownian Motion via Verlet Integration](../../../stochastic_analysis/path_foundations/brownian_motion/pinns-for-stochastic-dynamics-modeling-brownian-motion-via-verlet-integration.md) (2026, International Journal of Information Technology and Computer Science, 0 citations)
 
 - [Effective entropy production and thermodynamic uncertainty relation of active Brownian particles](effective-entropy-production-and-thermodynamic-uncertainty-relation-of-active-br.md) (2019, Physics of Fluids, 16 citations)
 

@@ -34,4 +34,3 @@ Understanding stochastic thermodynamics of the active Brownian particles system 
 - [[translation_layers]]
 
 ## Notes
-

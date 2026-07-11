@@ -32,4 +32,3 @@ The notion of Shannon entropy is crucial for the theory of classical information
 - [[collective_structure]]
 
 ## Notes
-

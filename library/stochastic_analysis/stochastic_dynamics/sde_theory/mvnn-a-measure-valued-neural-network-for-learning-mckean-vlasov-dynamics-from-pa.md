@@ -11,7 +11,7 @@ topics: ["stochastic_analysis", "stochastic_analysis/stochastic_dynamics/sde_the
 tier: 0
 citations: 0
 relevance_score: 54.0
-collected: "2026-04-23"
+collected: "2026-04-08"
 status: "read"
 source: "openalex"
 ---
@@ -37,4 +37,3 @@ Collective behaviors that emerge from interactions are fundamental to numerous b
 - [[scientific_ml_applications]]
 
 ## Notes
-

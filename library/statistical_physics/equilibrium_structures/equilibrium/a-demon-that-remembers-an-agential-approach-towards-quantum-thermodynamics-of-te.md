@@ -33,4 +33,3 @@ This thesis develops a decision-theoretic framework for extracting thermodynamic
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

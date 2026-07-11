@@ -34,4 +34,3 @@ Many complex systems are described by Langevin-type equations in which the noise
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

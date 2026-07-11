@@ -31,4 +31,3 @@ In this perspective article, we discuss bacterial populations as a model system 
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

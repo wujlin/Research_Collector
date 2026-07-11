@@ -31,4 +31,3 @@ Synthetic protocells are self-assembled compartments designed to reproduce minim
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

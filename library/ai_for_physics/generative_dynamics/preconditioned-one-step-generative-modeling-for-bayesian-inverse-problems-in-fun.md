@@ -30,4 +30,3 @@ We propose a machine-learning algorithm for Bayesian inverse problems in the fun
 - [[generative_dynamics]]
 
 ## Notes
-

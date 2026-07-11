@@ -10,9 +10,9 @@ pdf_url: ""
 topics: ["ai_for_physics", "ai_for_physics/physics_informed_modeling/physics_informed_generative", "bridges", "bridges/thermodynamic_inference/info_geometry", "ai_for_physics/physics_informed_modeling", "bridges/thermodynamic_inference", "bridges/thermodynamic_inference/variational_free_energy"]
 tier: 0
 citations: 0
-relevance_score: 0
+relevance_score: 52.0
 collected: "2026-04-07"
-status: "unread"
+status: "read"
 source: ""
 is_seminal: true
 ---
@@ -37,3 +37,4 @@ is_seminal: true
 
 ## Notes
 
+physics-informed generative modelling 与 variational free energy / ELBO 之间的连接。

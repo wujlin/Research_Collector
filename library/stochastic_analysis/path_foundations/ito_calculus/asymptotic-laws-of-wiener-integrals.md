@@ -10,7 +10,7 @@ pdf_url: ""
 topics: ["stochastic_analysis", "stochastic_analysis/path_foundations/ito_calculus", "stochastic_analysis/path_foundations"]
 tier: 0
 citations: 0
-relevance_score: 0
+relevance_score: 25.0
 collected: "2026-04-07"
 status: "unread"
 source: ""
@@ -33,3 +33,4 @@ is_seminal: true
 
 ## Notes
 
+Ito calculus 的历史源头之一。

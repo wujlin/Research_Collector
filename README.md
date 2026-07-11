@@ -72,6 +72,23 @@ python scripts/setup_scheduler.py
 cd web && npm install && npm run dev
 ```
 
+### 7. 刷新派生索引并检查一致性
+
+手工添加或修改 digest 后，刷新 library 索引与 Web JSON，但不额外生成一份日期周报：
+
+```bash
+python scripts/refresh_derived_artifacts.py
+python scripts/audit_repository.py
+```
+
+`data/papers.db` 是机器元数据的真源；`library/` 是可浏览的 Markdown 投影。刷新时会更新
+bibliographic metadata，但保留 `digest`、`coverage_note` 等扩展 frontmatter，以及人工填写的
+`Key Contributions`、`Notes` 和其他二级章节。PDF/MinerU 图片若要在 GitHub 上显示，应先运行：
+
+```bash
+python scripts/vendor_digest_images.py --apply
+```
+
 ## 知识地图
 
 更准确的写法不是“Fokker-Planck 方程是四个方向的公共枢纽”，而是：
@@ -122,7 +139,7 @@ cd web && npm install && npm run dev
 前端提供三种交互式网络视图（基于 Reagraph + WebGL）：
 
 - **Knowledge Graph**：topic → paper → author → venue 四层关系图
-- **Author Network**：作者合作网络（945 作者，6604 合作边）
+- **Author Network**：从当前数据库完整导出的作者合作网络
 - **Venue Network**：期刊共享作者网络
 
 数据由 `KnowledgeGraphExporter` 导出为 JSON，前端通过 `/graph` 页面渲染。

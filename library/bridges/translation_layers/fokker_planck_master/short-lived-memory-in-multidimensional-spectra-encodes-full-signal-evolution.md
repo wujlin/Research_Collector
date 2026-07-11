@@ -11,7 +11,7 @@ topics: ["bridges/translation_layers/fokker_planck_master", "bridges", "bridges/
 tier: 0
 citations: 0
 relevance_score: 51.0
-collected: "2026-04-23"
+collected: "2026-04-16"
 status: "unread"
 source: "openalex"
 ---
@@ -31,4 +31,3 @@ Ultrafast multidimensional spectroscopies are powerful tools that can access cha
 - [[translation_layers]]
 
 ## Notes
-

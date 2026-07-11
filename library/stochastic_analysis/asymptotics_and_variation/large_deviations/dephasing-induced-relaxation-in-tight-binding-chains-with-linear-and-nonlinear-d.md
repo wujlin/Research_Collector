@@ -7,7 +7,7 @@ doi: ""
 arxiv: ""
 url: "https://openalex.org/W7131910138"
 pdf_url: "https://arxiv.org/pdf/2602.22878"
-topics: ["stochastic_analysis/asymptotics_and_variation", "stochastic_analysis", "stochastic_analysis/asymptotics_and_variation/large_deviations", "statistical_physics/collective_structure/phase_transitions", "statistical_physics/collective_structure", "statistical_physics"]
+topics: ["stochastic_analysis", "stochastic_analysis/asymptotics_and_variation/large_deviations", "statistical_physics", "statistical_physics/collective_structure/phase_transitions", "stochastic_analysis/asymptotics_and_variation", "statistical_physics/collective_structure"]
 tier: 0
 citations: 0
 relevance_score: 54.0
@@ -26,12 +26,11 @@ We investigate thermalization in a tight-binding chain with an on-site defect su
 
 ## Connections
 
-- [[asymptotics_and_variation]]
 - [[stochastic_analysis]]
 - [[large_deviations]]
-- [[phase_transitions]]
-- [[collective_structure]]
 - [[statistical_physics]]
+- [[phase_transitions]]
+- [[asymptotics_and_variation]]
+- [[collective_structure]]
 
 ## Notes
-

@@ -31,4 +31,3 @@ Uncertainty quantification in PDE inverse problems is essential in many applicat
 - [[scientific_ml_applications]]
 
 ## Notes
-

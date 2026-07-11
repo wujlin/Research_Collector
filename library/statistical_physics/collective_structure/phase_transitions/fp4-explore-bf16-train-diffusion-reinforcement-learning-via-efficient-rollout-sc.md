@@ -31,4 +31,3 @@ Reinforcement-Learning-based post-training has recently emerged as a promising p
 - [[collective_structure]]
 
 ## Notes
-

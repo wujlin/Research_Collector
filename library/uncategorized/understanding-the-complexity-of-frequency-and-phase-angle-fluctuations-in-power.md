@@ -11,7 +11,7 @@ topics: []
 tier: 0
 citations: 0
 relevance_score: 36.0
-collected: "2026-04-16"
+collected: "2026-04-13"
 status: "unread"
 source: "openalex"
 ---
@@ -29,4 +29,3 @@ Power grids must modernize to meet climate goals while maintaining reliable and 
 (待添加)
 
 ## Notes
-

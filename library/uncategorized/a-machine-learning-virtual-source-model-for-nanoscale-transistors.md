@@ -29,4 +29,3 @@ Neural networks (NNs) are powerful tools for modeling transistor characteristics
 (待添加)
 
 ## Notes
-

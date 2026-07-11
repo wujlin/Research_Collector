@@ -34,4 +34,3 @@ We theoretically investigate the statistical properties of photon emission of a 
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

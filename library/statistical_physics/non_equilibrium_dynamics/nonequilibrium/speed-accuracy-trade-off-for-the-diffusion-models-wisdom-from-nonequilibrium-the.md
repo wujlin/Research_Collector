@@ -13,8 +13,8 @@ citations: 3
 relevance_score: 68.43
 collected: "2026-04-23"
 status: "read"
-digest: "digests/2026-04-28/speed-accuracy-relations-for-diffusion-models.md"
 source: "semantic_scholar"
+digest: "digests/2026-04-28/speed-accuracy-relations-for-diffusion-models.md"
 ---
 
 ## Abstract

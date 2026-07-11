@@ -11,7 +11,7 @@ topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/no
 tier: 3
 citations: 0
 relevance_score: 58.0
-collected: "2026-04-23"
+collected: "2026-04-08"
 status: "unread"
 source: "openalex"
 ---
@@ -32,4 +32,3 @@ Living systems are open nonequilibrium systems that continuously exchange energy
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

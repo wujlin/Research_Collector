@@ -33,4 +33,3 @@ This paper employs Physics-Informed Neural Networks (PINNs) for the reconstructi
 - [[physics_informed_modeling]]
 
 ## Notes
-

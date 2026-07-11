@@ -11,7 +11,7 @@ topics: ["stochastic_analysis", "stochastic_analysis/path_foundations/brownian_m
 tier: 0
 citations: 0
 relevance_score: 54.0
-collected: "2026-04-23"
+collected: "2026-04-16"
 status: "unread"
 source: "openalex"
 ---
@@ -34,4 +34,3 @@ We study a continuous-time nearest-neighbor branching random walk on the $d$-dim
 - [[collective_structure]]
 
 ## Notes
-

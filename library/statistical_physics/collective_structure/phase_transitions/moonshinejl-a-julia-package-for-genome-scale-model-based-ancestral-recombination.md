@@ -11,7 +11,7 @@ topics: ["statistical_physics", "statistical_physics/collective_structure/phase_
 tier: 0
 citations: 0
 relevance_score: 50.0
-collected: "2026-04-16"
+collected: "2026-04-15"
 status: "unread"
 source: "openalex"
 ---
@@ -34,4 +34,3 @@ The ancestral recombination graph (ARG) is the model of choice in statistical ge
 - [[scientific_ml_applications]]
 
 ## Notes
-

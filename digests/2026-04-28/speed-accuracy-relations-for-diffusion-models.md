@@ -196,7 +196,7 @@ $$
 
 这也解释了作者为什么最后转向 optimal transport。若 fixed endpoints 和 fixed duration 已经给定，那么降低 $\int_0^\tau dt\, [v_2(t)]^2$ 的自然方式，就是让 distribution 在 $2$-Wasserstein space 中沿 geodesic 以 constant speed 运动。
 
-![Fig. 1 paper organization](../../pdfs/2026-04-28/speed-accuracy-trade-off-for-diffusion-models/speed-accuracy-trade-off-for-diffusion-models.mineru/hybrid_auto/images/page-02-figure-02.jpg)
+![Fig. 1 paper organization](figures/speed-accuracy-relations-for-diffusion-models/page-02-figure-02.jpg)
 
 Fig. 1 要按“先右、再左、最后看下方”的顺序读。
 
@@ -285,7 +285,7 @@ $$
 
 经过时间 $t\in[0,\tau]$ 后，逐渐变成一个简单噪声分布 $\mathcal{P}_\tau(\boldsymbol{x})$。如果 $\tau$ 足够大，$\mathcal{P}_\tau$ 中原始数据结构已经被噪声破坏。
 
-![Fig. 2 forward, reverse and estimated reverse processes](../../pdfs/2026-04-28/speed-accuracy-trade-off-for-diffusion-models/speed-accuracy-trade-off-for-diffusion-models.mineru/hybrid_auto/images/page-03-figure-01.jpg)
+![Fig. 2 forward, reverse and estimated reverse processes](figures/speed-accuracy-relations-for-diffusion-models/page-03-figure-01.jpg)
 
 Fig. 2 规定了本文所有误差的对象。蓝色线是 forward process：$q(\boldsymbol{x})=\mathcal{P}_0$ 被加噪成 $\mathcal{P}_\tau$。浅蓝色线是真正的 reverse process：如果完全知道 forward dynamics，就可以从 $\mathcal{P}_0^\dagger=\mathcal{P}_\tau$ 反推回 $\mathcal{P}_\tau^\dagger=\mathcal{P}_0=q$。粉色线是实际模型能做的 estimated reverse process：它从 $\tilde{\mathcal{P}}_0^\dagger$ 出发，用学到的 reverse dynamics 生成 $\tilde{\mathcal{P}}_\tau^\dagger=p$。因此，最终 estimation error 是 $p$ 和 $q$ 的差异；而本文特别关心的是，reverse 起点的微小 mismatch 如何沿 estimated reverse process 被放大。
 
@@ -1267,7 +1267,7 @@ $$
 
 这就是 speed-accuracy relation 中 accuracy 的真正含义：它不是普通 sample quality，也不是 FID，而是 generation 对 initial noise mismatch 的 sensitivity。
 
-![Fig. 3 speed-accuracy relation](../../pdfs/2026-04-28/speed-accuracy-trade-off-for-diffusion-models/speed-accuracy-trade-off-for-diffusion-models.mineru/hybrid_auto/images/page-12-figure-01.jpg)
+![Fig. 3 speed-accuracy relation](figures/speed-accuracy-relations-for-diffusion-models/page-12-figure-01.jpg)
 
 Fig. 3 把这个定义画成几何图。蓝色轨迹是真实 forward / reverse path，粉色轨迹是 estimated reverse path。右上角两条 reverse 起点之间的差异用 $D_0$ 度量，左下角最终生成分布 $p$ 和真实数据分布 $q$ 的差异用 $\Delta\mathcal{W}_1$ 度量。绿色箭头标出 forward process 的 diffusion speed cost $\int_0^\tau dt\,[v_2(t)]^2$。主不等式说的是：如果 forward path 本身走得太急、太绕或太耗散，那么 estimated reverse process 可以把很小的 initial mismatch 放大成更大的 generation error。
 
@@ -4458,7 +4458,7 @@ $$
 
 这就是作者说“optimal learning protocol is introduced by the geodesic of the space of the $2$-Wasserstein distance”的准确含义。
 
-![Fig. 5 cosine, cond-OT and OT paths on Swiss-roll](../../pdfs/2026-04-28/speed-accuracy-trade-off-for-diffusion-models/speed-accuracy-trade-off-for-diffusion-models.mineru/hybrid_auto/images/page-14-figure-01.jpg)
+![Fig. 5 cosine, cond-OT and OT paths on Swiss-roll](figures/speed-accuracy-relations-for-diffusion-models/page-14-figure-01.jpg)
 
 Fig. 5 用 Swiss-roll 把这个几何结论可视化。cosine schedule 和 cond-OT schedule 都能把数据逐渐推向噪声，也都能反向生成样本，但它们在中间时刻会更快破坏结构或更早把样本扩散开。OT path 的区别是：它不是只让 $(m_t,\sigma_t)$ 这个参数对走得好看，而是让整个 sample distribution 更接近 Wasserstein geodesic。图中 OT 的 estimated reverse process 在中间阶段更早恢复 spiral structure，说明它的 path 更少绕路，reverse generation 对起点扰动更稳。
 

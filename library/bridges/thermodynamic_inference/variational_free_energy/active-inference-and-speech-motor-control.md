@@ -31,4 +31,3 @@ Active inference is a domain-general theory of brain functioning which reconcept
 - [[variational_free_energy]]
 
 ## Notes
-

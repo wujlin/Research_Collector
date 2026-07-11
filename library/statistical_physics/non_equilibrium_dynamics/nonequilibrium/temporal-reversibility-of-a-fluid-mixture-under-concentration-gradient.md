@@ -7,7 +7,7 @@ doi: ""
 arxiv: ""
 url: "https://openalex.org/W7148176630"
 pdf_url: "https://arxiv.org/pdf/2603.29027"
-topics: ["statistical_physics/non_equilibrium_dynamics", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium"]
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics"]
 tier: 0
 citations: 0
 relevance_score: 48.56
@@ -26,9 +26,8 @@ A binary fluid mixture in contact with lateral particle reservoirs is considered
 
 ## Connections
 
-- [[non_equilibrium_dynamics]]
 - [[statistical_physics]]
 - [[nonequilibrium]]
+- [[non_equilibrium_dynamics]]
 
 ## Notes
-

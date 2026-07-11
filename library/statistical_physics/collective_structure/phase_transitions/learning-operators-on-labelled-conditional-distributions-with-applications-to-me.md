@@ -31,4 +31,3 @@ We study the approximation of operators acting on probability measures on a prod
 - [[collective_structure]]
 
 ## Notes
-

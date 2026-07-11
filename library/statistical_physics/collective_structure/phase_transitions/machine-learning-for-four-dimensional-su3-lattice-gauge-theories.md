@@ -11,7 +11,7 @@ topics: ["statistical_physics", "statistical_physics/collective_structure/phase_
 tier: 0
 citations: 0
 relevance_score: 47.0
-collected: "2026-04-16"
+collected: "2026-04-15"
 status: "unread"
 source: "openalex"
 ---
@@ -31,4 +31,3 @@ In this review I summarize how machine learning can be used in lattice gauge the
 - [[collective_structure]]
 
 ## Notes
-

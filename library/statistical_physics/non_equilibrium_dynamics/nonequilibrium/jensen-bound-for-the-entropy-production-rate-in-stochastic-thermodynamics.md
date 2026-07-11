@@ -32,4 +32,3 @@ Bounding and estimating entropy production has long been an important goal of no
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

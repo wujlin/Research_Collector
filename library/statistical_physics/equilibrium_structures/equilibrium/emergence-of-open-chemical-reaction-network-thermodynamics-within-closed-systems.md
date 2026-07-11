@@ -33,4 +33,3 @@ We address a fundamental question: under which conditions do the dynamics and th
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

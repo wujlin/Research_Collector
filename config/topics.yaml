@@ -229,6 +229,10 @@ ai_for_physics:
             - "energy-based models"
             - "energy based model"
             - "energy based models"
+            - "energy-based dynamical model"
+            - "energy-based dynamical models"
+            - "energy based dynamical model"
+            - "energy based dynamical models"
             - "energy-based transformer"
             - "energy-based transformers"
             - "energy based transformer"
@@ -239,6 +243,8 @@ ai_for_physics:
             - "learned verifier"
             - "inference-time optimization"
             - "system 2 thinking"
+            - "boltzmann machine"
+            - "hopfield network"
         conditional_generation:
           display_name: "条件生成"
           keywords:
@@ -320,7 +326,8 @@ ai_for_physics:
             - "manifold generative"
             - "material and protein design"
             - "geodesic"
-            - "curvature"
+            - "riemannian curvature"
+            - "manifold curvature"
 
 urban_complex_systems:
   display_name: "城市复杂系统"

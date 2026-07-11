@@ -11,7 +11,7 @@ topics: ["statistical_physics", "ai_for_physics", "ai_for_physics/generative_dyn
 tier: 0
 citations: 0
 relevance_score: 54.0
-collected: "2026-04-23"
+collected: "2026-04-15"
 status: "read"
 source: "openalex"
 ---
@@ -35,4 +35,3 @@ Controlling the evolution of a many-body stochastic system from a disordered ref
 - [[transport_and_spatial_generation]]
 
 ## Notes
-

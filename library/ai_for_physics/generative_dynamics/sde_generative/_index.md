@@ -2,7 +2,7 @@
 title: "SDE生成模型"
 description: ""
 paper_count: 6
-last_updated: "2026-05-18"
+last_updated: "2026-07-11"
 ---
 
 # SDE生成模型
@@ -12,11 +12,11 @@ last_updated: "2026-05-18"
 ## Papers (6)
 
 
-- [Score-Based Generative Modeling through Stochastic Differential Equations](score-based-generative-modeling-through-stochastic-differential-equations.md) (2021, ICLR, 0 citations)
+- [Score-Based Generative Modeling through Stochastic Differential Equations](../../../bridges/translation_layers/fokker_planck_master/score-based-generative-modeling-through-stochastic-differential-equations.md) (2021, ICLR, 0 citations)
 
 - [HJ-sampler: A Bayesian sampler for inverse problems of a stochastic process by leveraging Hamilton-Jacobi PDEs and score-based generative models](hj-sampler-a-bayesian-sampler-for-inverse-problems-of-a-stochastic-process-by-le.md) (2024, arXiv, 0 citations)
 
-- [Learning Stochastic Thermodynamics Directly from Correlation and Trajectory-Fluctuation Currents](learning-stochastic-thermodynamics-directly-from-correlation-and-trajectory-fluc.md) (2025, arXiv, 0 citations)
+- [Learning Stochastic Thermodynamics Directly from Correlation and Trajectory-Fluctuation Currents](../../../bridges/translation_layers/fokker_planck_master/learning-stochastic-thermodynamics-directly-from-correlation-and-trajectory-fluc.md) (2025, arXiv, 0 citations)
 
 - [Multi-Granularity Score-Based Generative Framework Enables Efficient Inverse Design of Complex Organics](multi-granularity-score-based-generative-framework-enables-efficient-inverse-des.md) (2026, preprint, 1 citations)
 

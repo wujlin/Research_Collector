@@ -11,7 +11,7 @@ topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/no
 tier: 0
 citations: 0
 relevance_score: 45.0
-collected: "2026-04-16"
+collected: "2026-04-15"
 status: "unread"
 source: "openalex"
 ---
@@ -31,4 +31,3 @@ Quantifier l'efficacité d'exploration de l'espace par un marcheur aléatoire es
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

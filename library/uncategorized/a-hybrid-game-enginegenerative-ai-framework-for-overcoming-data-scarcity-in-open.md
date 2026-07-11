@@ -29,4 +29,3 @@ Open-pit mining operations rely heavily on visual inspection to identify indicat
 (待添加)
 
 ## Notes
-

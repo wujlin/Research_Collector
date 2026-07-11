@@ -34,4 +34,3 @@ Hydrodynamic noise is the Gaussian process that emerges at larges scales of spac
 - [[scientific_ml_applications]]
 
 ## Notes
-

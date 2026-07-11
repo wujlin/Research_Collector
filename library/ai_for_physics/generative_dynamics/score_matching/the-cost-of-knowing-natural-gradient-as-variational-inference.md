@@ -10,7 +10,7 @@ pdf_url: ""
 topics: ["ai_for_physics", "ai_for_physics/generative_dynamics/score_matching", "bridges", "bridges/thermodynamic_inference/info_geometry", "ai_for_physics/generative_dynamics", "bridges/thermodynamic_inference"]
 tier: 0
 citations: 0
-relevance_score: 0
+relevance_score: 44.0
 collected: "2026-04-07"
 status: "unread"
 source: ""
@@ -36,3 +36,4 @@ is_seminal: true
 
 ## Notes
 
+信息几何 / 变分推断桥接。

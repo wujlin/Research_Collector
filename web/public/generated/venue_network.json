@@ -43,6 +43,13 @@
       "paper_count": 1
     },
     {
+      "id": "venue:22",
+      "label": "Physical Review X",
+      "tier": 2,
+      "reputation": "trusted",
+      "paper_count": 1
+    },
+    {
       "id": "venue:25",
       "label": "Physical Review E",
       "tier": 2,
@@ -54,14 +61,14 @@
       "label": "Physical Review E",
       "tier": 2,
       "reputation": "trusted",
-      "paper_count": 2
+      "paper_count": 4
     },
     {
       "id": "venue:40",
       "label": "Journal of Statistical Physics",
       "tier": 2,
       "reputation": "trusted",
-      "paper_count": 1
+      "paper_count": 2
     },
     {
       "id": "venue:43",
@@ -72,6 +79,13 @@
     },
     {
       "id": "venue:45",
+      "label": "ICML",
+      "tier": 2,
+      "reputation": "trusted",
+      "paper_count": 1
+    },
+    {
+      "id": "venue:46",
       "label": "ICML",
       "tier": 2,
       "reputation": "trusted",
@@ -96,7 +110,7 @@
       "label": "SciPost Physics",
       "tier": 2,
       "reputation": "trusted",
-      "paper_count": 1
+      "paper_count": 2
     },
     {
       "id": "venue:62",
@@ -110,14 +124,14 @@
       "label": "The Journal of Chemical Physics",
       "tier": 2,
       "reputation": "trusted",
-      "paper_count": 1
+      "paper_count": 2
     },
     {
       "id": "venue:69",
       "label": "Communications Physics",
       "tier": 2,
       "reputation": "trusted",
-      "paper_count": 1
+      "paper_count": 2
     },
     {
       "id": "venue:70",
@@ -131,14 +145,14 @@
       "label": "SIAM Journal on Scientific Computing",
       "tier": 2,
       "reputation": "trusted",
-      "paper_count": 2
+      "paper_count": 3
     },
     {
       "id": "venue:75",
       "label": "Journal of Applied Probability",
       "tier": 2,
       "reputation": "trusted",
-      "paper_count": 1
+      "paper_count": 2
     },
     {
       "id": "venue:81",
@@ -190,6 +204,13 @@
       "paper_count": 1
     },
     {
+      "id": "venue:115",
+      "label": "Entropy",
+      "tier": 3,
+      "reputation": "cautious",
+      "paper_count": 1
+    },
+    {
       "id": "venue:116",
       "label": "Atmospheric Measurement Techniques",
       "tier": 3,
@@ -208,58 +229,90 @@
       "label": "arXiv",
       "tier": 0,
       "reputation": "unreviewed",
-      "paper_count": 40
+      "paper_count": 52
     },
     {
       "id": "venue:126",
       "label": "arXiv",
       "tier": 0,
       "reputation": "unreviewed",
-      "paper_count": 24
+      "paper_count": 56
     },
     {
       "id": "venue:127",
       "label": "arXiv",
       "tier": 0,
       "reputation": "unreviewed",
-      "paper_count": 36
+      "paper_count": 48
+    },
+    {
+      "id": "venue:128",
+      "label": "bioRxiv",
+      "tier": 0,
+      "reputation": "unreviewed",
+      "paper_count": 1
     },
     {
       "id": "venue:129",
       "label": "bioRxiv",
       "tier": 0,
       "reputation": "unreviewed",
-      "paper_count": 3
+      "paper_count": 6
     },
     {
       "id": "venue:130",
       "label": "ChemRxiv",
       "tier": 0,
       "reputation": "unreviewed",
-      "paper_count": 1
+      "paper_count": 2
     },
     {
       "id": "venue:132",
       "label": "Preprints.org",
       "tier": 0,
       "reputation": "unreviewed",
-      "paper_count": 6
+      "paper_count": 7
     }
   ],
   "edges": [
+    {
+      "source": "venue:28",
+      "target": "venue:125",
+      "weight": 2
+    },
     {
       "source": "venue:45",
       "target": "venue:47",
       "weight": 1
     },
     {
+      "source": "venue:46",
+      "target": "venue:47",
+      "weight": 1
+    },
+    {
+      "source": "venue:46",
+      "target": "venue:125",
+      "weight": 6
+    },
+    {
+      "source": "venue:47",
+      "target": "venue:125",
+      "weight": 1
+    },
+    {
       "source": "venue:82",
       "target": "venue:125",
+      "weight": 1
+    },
+    {
+      "source": "venue:125",
+      "target": "venue:126",
       "weight": 1
     }
   ],
   "stats": {
-    "venues": 35,
-    "venue_edges": 2
+    "venues": 39,
+    "venue_edges": 7
   }
 }

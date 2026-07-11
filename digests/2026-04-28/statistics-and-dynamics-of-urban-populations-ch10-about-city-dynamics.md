@@ -277,7 +277,7 @@ $$
 
 Fig. 10.1 用 numerical simulation 支撑这个简化。
 
-![Fig. 10.1](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/10-about-city-dynamics.mineru/hybrid_auto/images/page-03-figure-01.jpg)
+![Fig. 10.1](figures/statistics-and-dynamics-of-urban-populations-ch10-about-city-dynamics/page-03-figure-01.jpg)
 
 图中灰线是保留 Gaussian noise $\eta\sim\mathrm{Normal}(r,\sigma^2)$ 的模拟结果，黑线是把 $\eta$ 固定为 $r$ 的模拟结果。两条 population density 曲线几乎重合，说明对于 population distribution 来说，保留 $\eta$ 的 Gaussian fluctuation 和只保留平均 drift 差异不大。
 
@@ -1773,7 +1773,7 @@ $$
 
 Fig. 10.2 用法国 1876-2015 年 500 个最大城市的数据验证这个关系。
 
-![Fig. 10.2](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/10-about-city-dynamics.mineru/hybrid_auto/images/page-10-figure-01.jpg)
+![Fig. 10.2](figures/statistics-and-dynamics-of-urban-populations-ch10-about-city-dynamics/page-10-figure-01.jpg)
 
 图中不同颜色代表不同年份。它们在 $S/\overline{S(t)}$ 标准化后大体 collapse，说明虽然完整 distribution 随时间移动，但形状在相对尺度上具有稳定 scaling。
 
@@ -1823,7 +1823,7 @@ $$
 
 Fig. 10.3 展示 apparent exponent $\alpha(S_{\min})$ 随 minimal threshold $S_{\min}$ 变化。
 
-![Fig. 10.3](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/10-about-city-dynamics.mineru/hybrid_auto/images/page-11-figure-01.jpg)
+![Fig. 10.3](figures/statistics-and-dynamics-of-urban-populations-ch10-about-city-dynamics/page-11-figure-01.jpg)
 
 图中灰色水平线是 true $\alpha=1.3$，黑色点划线是用 $S>S_{\min}$ 拟合得到的 apparent exponent，虚线表示拟合质量 $R^2$。
 
@@ -1893,11 +1893,11 @@ $$
 
 Fig. 10.4 有三个 panels。
 
-![Fig. 10.4 real France rank clock](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/10-about-city-dynamics.mineru/hybrid_auto/images/page-12-figure-01.jpg)
+![Fig. 10.4 real France rank clock](figures/statistics-and-dynamics-of-urban-populations-ch10-about-city-dynamics/page-12-figure-01.jpg)
 
-![Fig. 10.4 Gabaix rank clock](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/10-about-city-dynamics.mineru/hybrid_auto/images/page-12-figure-02.jpg)
+![Fig. 10.4 Gabaix rank clock](figures/statistics-and-dynamics-of-urban-populations-ch10-about-city-dynamics/page-12-figure-02.jpg)
 
-![Fig. 10.4 Levy rank clock](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/10-about-city-dynamics.mineru/hybrid_auto/images/page-12-figure-03.jpg)
+![Fig. 10.4 Levy rank clock](figures/statistics-and-dynamics-of-urban-populations-ch10-about-city-dynamics/page-12-figure-03.jpg)
 
 rank clock 的读法是：半径表示 rank，角度表示时间。中心是最大城市，外圈是较小城市。每条线表示一个城市的 rank 随时间如何变化。
 
@@ -2016,7 +2016,7 @@ $$
 
 作者最后用另一个角度比较模型：给定最大 rank variation $\Delta r$，平均要等多少年才能观察到这样的 jump？
 
-![Fig. 10.5](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/10-about-city-dynamics.mineru/hybrid_auto/images/page-13-figure-01.jpg)
+![Fig. 10.5](figures/statistics-and-dynamics-of-urban-populations-ch10-about-city-dynamics/page-13-figure-01.jpg)
 
 黑线是真实法国数据，虚线是 Levy model，点划线是 Gabaix model。灰色区间表示 dispersion。
 

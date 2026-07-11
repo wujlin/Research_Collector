@@ -36,4 +36,3 @@ We develop sampling methods, which consist of Gaussian invariant versions of ran
 - [[collective_structure]]
 
 ## Notes
-

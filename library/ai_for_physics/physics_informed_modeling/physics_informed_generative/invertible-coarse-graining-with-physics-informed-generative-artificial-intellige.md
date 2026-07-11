@@ -33,4 +33,3 @@ Multiscale molecular modeling is widely applied in scientific research of molecu
 - [[physics_informed_modeling]]
 
 ## Notes
-

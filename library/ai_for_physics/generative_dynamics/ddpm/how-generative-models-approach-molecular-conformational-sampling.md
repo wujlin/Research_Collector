@@ -7,7 +7,7 @@ doi: "10.64898/2026.04.10.717851"
 arxiv: ""
 url: "https://openalex.org/W7154301265"
 pdf_url: "https://www.biorxiv.org/content/biorxiv/early/2026/04/14/2026.04.10.717851.full.pdf"
-topics: ["ai_for_physics/generative_dynamics/ddpm", "ai_for_physics/generative_dynamics", "ai_for_physics", "ai_for_physics/generative_dynamics/flow_matching"]
+topics: ["ai_for_physics", "ai_for_physics/generative_dynamics/ddpm", "ai_for_physics/generative_dynamics/flow_matching", "ai_for_physics/generative_dynamics"]
 tier: 0
 citations: 0
 relevance_score: 54.0
@@ -26,10 +26,9 @@ Characterising equilibrium conformational ensembles with deep generative models 
 
 ## Connections
 
-- [[ddpm]]
-- [[generative_dynamics]]
 - [[ai_for_physics]]
+- [[ddpm]]
 - [[flow_matching]]
+- [[generative_dynamics]]
 
 ## Notes
-

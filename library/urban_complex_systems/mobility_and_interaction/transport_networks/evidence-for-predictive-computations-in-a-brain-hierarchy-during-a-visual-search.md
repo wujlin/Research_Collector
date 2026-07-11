@@ -10,8 +10,8 @@ pdf_url: "https://www.biorxiv.org/content/biorxiv/early/2026/04/09/2026.04.09.71
 topics: ["urban_complex_systems", "urban_complex_systems/mobility_and_interaction/transport_networks", "urban_complex_systems/mobility_and_interaction"]
 tier: 0
 citations: 0
-relevance_score: 47.0
-collected: "2026-04-16"
+relevance_score: 51.0
+collected: "2026-04-13"
 status: "unread"
 source: "openalex"
 ---
@@ -31,4 +31,3 @@ Abstract Many lines of evidence suggest that the cortex functions fundamentally 
 - [[mobility_and_interaction]]
 
 ## Notes
-

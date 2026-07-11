@@ -72,9 +72,9 @@ $$
 
 ## 二、Figure 1：全文逻辑的图形压缩
 
-![Figure 1 left](../../pdfs/2026-05-18/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model.mineru/hybrid_auto/images/page-02-figure-01.jpg)
+![Figure 1 left](figures/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model/page-02-figure-01.jpg)
 
-![Figure 1 right](../../pdfs/2026-05-18/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model.mineru/hybrid_auto/images/page-02-figure-02.jpg)
+![Figure 1 right](figures/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model/page-02-figure-02.jpg)
 
 Figure 1 左侧说明 teacher function 的层级结构。输入 $\boldsymbol{x}\in\mathbb{R}^d$ 先被送进 degree-$q$ Hermite feature space，再投影到若干 latent directions，得到第一层 hidden features $h^{(1)}$。这些 hidden features 再经过二次非线性 $\mathrm{He}_2$，并按 power-law weights $\lambda_i$ 组合成一个 scalar latent feature $h^{(2)}$。最后输出 $y=g(h^{(2)})$。
 
@@ -576,11 +576,11 @@ Eq. (2.15) 的意义是：smooth power-law learning curve 可以来自一串 dis
 
 ## 九、Figure 2：整体 transition 的经验图
 
-![Figure 2 left](../../pdfs/2026-05-18/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model.mineru/hybrid_auto/images/page-04-figure-01.jpg)
+![Figure 2 left](figures/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model/page-04-figure-01.jpg)
 
-![Figure 2 center](../../pdfs/2026-05-18/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model.mineru/hybrid_auto/images/page-04-figure-02.jpg)
+![Figure 2 center](figures/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model/page-04-figure-02.jpg)
 
-![Figure 2 right](../../pdfs/2026-05-18/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model.mineru/hybrid_auto/images/page-04-figure-03.jpg)
+![Figure 2 right](figures/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model/page-04-figure-03.jpg)
 
 Figure 2 用 $q=2,\varepsilon=0.5,\gamma=0.4,g^\star=\mathrm{id}$ 展示整体 transition。
 
@@ -765,11 +765,11 @@ $$
 
 ## 十一、Figure 4：direction-wise recovery 不是事后解释，而是 theorem 的直接检验
 
-![Figure 4 left](../../pdfs/2026-05-18/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model.mineru/hybrid_auto/images/page-09-figure-01.jpg)
+![Figure 4 left](figures/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model/page-09-figure-01.jpg)
 
-![Figure 4 center](../../pdfs/2026-05-18/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model.mineru/hybrid_auto/images/page-09-figure-02.jpg)
+![Figure 4 center](figures/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model/page-09-figure-02.jpg)
 
-![Figure 4 right](../../pdfs/2026-05-18/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model.mineru/hybrid_auto/images/page-09-figure-03.jpg)
+![Figure 4 right](figures/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model/page-09-figure-03.jpg)
 
 Figure 4 不再只看整体 MSE，而是直接追踪每个 teacher direction 是否被恢复。
 
@@ -1238,9 +1238,9 @@ $$
 
 ## 十六、Figure 3、Figure 5：$\gamma$ 和 nonlinear readout 的作用
 
-![Figure 3 left](../../pdfs/2026-05-18/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model.mineru/hybrid_auto/images/page-07-figure-01.jpg)
+![Figure 3 left](figures/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model/page-07-figure-01.jpg)
 
-![Figure 3 right](../../pdfs/2026-05-18/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model.mineru/hybrid_auto/images/page-07-figure-02.jpg)
+![Figure 3 right](figures/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model/page-07-figure-02.jpg)
 
 Figure 3 改变 power-law exponent $\gamma$。由 Eq. (2.10)：
 
@@ -1252,9 +1252,9 @@ $$
 
 当 $\gamma$ 变大时，强 feature 更强、弱 feature 更弱。结果是：最强的 directions 更早被恢复，但弱 tail 被推到更大的 sample size。整体 recovery window 被拉宽，MSE decay 更像跨多个阶段逐步发生。
 
-![Figure 5 left](../../pdfs/2026-05-18/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model.mineru/hybrid_auto/images/page-10-figure-01.jpg)
+![Figure 5 left](figures/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model/page-10-figure-01.jpg)
 
-![Figure 5 right](../../pdfs/2026-05-18/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model.mineru/hybrid_auto/images/page-10-figure-02.jpg)
+![Figure 5 right](figures/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model/page-10-figure-02.jpg)
 
 Figure 5 把 readout 换成 $g^\star=\tanh$。现象仍然是：first-layer overlap 上升时，MSE 同时下降。这说明主要瓶颈仍然是 first-layer representation recovery，而不是最后一维 readout。非线性 readout 增加了 finite-size effect，但没有改变核心机制。
 

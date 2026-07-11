@@ -29,4 +29,3 @@ Electroencephalography (EEG) is a non-invasive, high-temporal-resolution method 
 (待添加)
 
 ## Notes
-

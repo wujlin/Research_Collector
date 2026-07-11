@@ -11,7 +11,7 @@ topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/no
 tier: 0
 citations: 0
 relevance_score: 51.0
-collected: "2026-04-23"
+collected: "2026-04-16"
 status: "unread"
 source: "openalex"
 ---
@@ -31,4 +31,3 @@ The visit probability, quantifying whether a particle has reached a given point 
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

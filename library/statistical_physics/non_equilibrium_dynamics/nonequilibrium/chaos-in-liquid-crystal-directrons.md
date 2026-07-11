@@ -31,4 +31,3 @@ Biological systems often operate at the boundary between order and chaos, transi
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

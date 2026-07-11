@@ -670,7 +670,7 @@ Figure 1 按图里的箭头顺序来读。
 
 所以这张图说明的是：**训练和生成之所以能接起来，不是因为作者直接学到了 backward drift，而是因为他先在可采样的 forward 方向学到了 $W$，再通过时间反转把这个结果带回生成方向。**
 
-![方法总览示意图](../../pdfs/2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.mineru/hybrid_auto/images/page-03-figure-01.jpg)
+![方法总览示意图](figures/generative-optimal-transport-via-forward-backward-hjb-matching/page-03-figure-01.jpg)
 
 Figure 1 画出的是一个闭环：
 
@@ -1372,11 +1372,11 @@ $$
 这一组实验先回答最基础的问题：  
 **只靠正向 OU 轨迹上的 Feynman-Kac 监督，能不能把一个有几何结构的 HJB 势函数学出来。**
 
-![4 Gaussians 值函数与生成过程](../../pdfs/2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.mineru/hybrid_auto/images/page-07-figure-01.jpg)
+![4 Gaussians 值函数与生成过程](figures/generative-optimal-transport-via-forward-backward-hjb-matching/page-07-figure-01.jpg)
 
-![2 Moons 值函数与生成过程](../../pdfs/2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.mineru/hybrid_auto/images/page-07-figure-02.jpg)
+![2 Moons 值函数与生成过程](figures/generative-optimal-transport-via-forward-backward-hjb-matching/page-07-figure-02.jpg)
 
-![Swiss Roll 值函数与生成过程](../../pdfs/2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.mineru/hybrid_auto/images/page-07-figure-03.jpg)
+![Swiss Roll 值函数与生成过程](figures/generative-optimal-transport-via-forward-backward-hjb-matching/page-07-figure-03.jpg)
 
 Figure 2 的上半部分给出的就是这个问题的正面证据。  
 随着训练推进，$W(t,\mathbf{x})$ 逐渐长出和目标数据几何相匹配的 basin 结构：
@@ -1388,11 +1388,11 @@ Figure 2 的上半部分给出的就是这个问题的正面证据。
 所以这里最重要的观察不是“图像好看”，而是：
 **这些几何结构并不是从逆向 SDE 或 score network 里直接喂出来的，而是纯粹从正向轨迹监督中涌现出来的。**
 
-![4 Gaussians 损失曲线](../../pdfs/2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.mineru/hybrid_auto/images/page-07-figure-04.jpg)
+![4 Gaussians 损失曲线](figures/generative-optimal-transport-via-forward-backward-hjb-matching/page-07-figure-04.jpg)
 
-![2 Moons 损失曲线](../../pdfs/2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.mineru/hybrid_auto/images/page-07-figure-05.jpg)
+![2 Moons 损失曲线](figures/generative-optimal-transport-via-forward-backward-hjb-matching/page-07-figure-05.jpg)
 
-![Swiss Roll 损失曲线](../../pdfs/2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.mineru/hybrid_auto/images/page-07-figure-06.jpg)
+![Swiss Roll 损失曲线](figures/generative-optimal-transport-via-forward-backward-hjb-matching/page-07-figure-06.jpg)
 
 Figure 2 的下半部分再补上训练稳定性这一层：  
 三个数据集上的 $\mathcal{L}_{\mathrm{total}}$ 都单调下降，说明这套 trajectory supervision 不只是概念上成立，而且在不同拓扑几何下都能稳定训练。
@@ -1448,7 +1448,7 @@ Figure 3 继续往前追问一个更具体的问题：
 
 这样一来，后面看到的路径弯折、聚焦或绕开，就不能再归因于数据几何本身，而只能归因于 $\nu(\mathbf{x})$ 对最优代价地形的改变。
 
-![非受控扩散（无学习控制）](../../pdfs/2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.mineru/hybrid_auto/images/page-08-figure-01.jpg)
+![非受控扩散（无学习控制）](figures/generative-optimal-transport-via-forward-backward-hjb-matching/page-08-figure-01.jpg)
 
 Figure 3(a) 先给出最外层的对照基线：  
 如果根本没有学到的控制，粒子只按非受控扩散自然弥散。它们会向四周散开，但不会自发形成一条有方向的集中通道，更不会稳定地从左侧源团输运到右侧目标团。
@@ -1456,7 +1456,7 @@ Figure 3(a) 先给出最外层的对照基线：
 这一张图先钉死了一件事：  
 后面 Figure 3(b)(c)(d) 里看到的“路径像光线那样被引导”，不是扩散噪声自己长出来的，而必须来自学到的控制与空间代价的共同作用。
 
-![平坦代价场的受控传输](../../pdfs/2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.mineru/hybrid_auto/images/page-08-figure-02.jpg)
+![平坦代价场的受控传输](figures/generative-optimal-transport-via-forward-backward-hjb-matching/page-08-figure-02.jpg)
 
 Figure 3(b) 再给出受控情形下的基线：  
 现在控制已经学出来了，但把空间代价场设成平坦常数，也就是任意位置经过的代价都差不多。
@@ -1468,7 +1468,7 @@ Figure 3(b) 再给出受控情形下的基线：
 
 所以 Figure 3(b) 可以理解成“均匀介质”下的基线传播图像。后面所有弯折，都是相对于这张平坦基线发生的。
 
-![凹面代价：会聚透镜效应](../../pdfs/2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.mineru/hybrid_auto/images/page-08-figure-04.jpg)
+![凹面代价：会聚透镜效应](figures/generative-optimal-transport-via-forward-backward-hjb-matching/page-08-figure-04.jpg)
 
 Figure 3(c) 开始只改 $\nu(\mathbf{x})$。  
 这里把中间区域变成一个低代价凹槽，也就是说：和周围相比，穿过中心附近更“便宜”。
@@ -1481,7 +1481,7 @@ Figure 3(c) 开始只改 $\nu(\mathbf{x})$。
 宏观上看，就会出现一种会聚透镜效应：  
 原本在平坦代价场里大致直线前进的路径，现在被进一步吸向中心，形成更窄、更集中的输运束。
 
-![凸面代价：发散透镜效应](../../pdfs/2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.mineru/hybrid_auto/images/page-08-figure-05.jpg)
+![凸面代价：发散透镜效应](figures/generative-optimal-transport-via-forward-backward-hjb-matching/page-08-figure-05.jpg)
 
 Figure 3(d) 则把中间区域改成高代价凸峰，也就是：中心附近反而更“贵”。
 
@@ -1499,7 +1499,7 @@ Figure 3(d) 则把中间区域改成高代价凸峰，也就是：中心附近�
 - 中间区域更便宜时，路径会向中心会聚；
 - 中间区域更昂贵时，路径会绕开中心发散。
 
-![三种代价场的损失曲线对比](../../pdfs/2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.mineru/hybrid_auto/images/page-08-figure-03.jpg)
+![三种代价场的损失曲线对比](figures/generative-optimal-transport-via-forward-backward-hjb-matching/page-08-figure-03.jpg)
 
 Figure 3(e) 最后给出三种配置下的训练损失曲线。  
 它补的是稳定性这一层：前面看到的聚焦和发散，不是少数随机轨迹的偶然偏折，而是在不同空间代价场下都能稳定学出来的整体几何行为。
@@ -1542,12 +1542,12 @@ Figure 3(e) 最后给出三种配置下的训练损失曲线。
 
 **在高维图像空间里，沿着 forward OU 扰动轨迹去学习 $W_\theta(t,\mathbf{x})$，这个势函数还会不会长出和 2D 情形相同的“沿生成方向传播的 cost-to-go 结构”。**
 
-![MNIST 初始化势函数](../../pdfs/2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.mineru/hybrid_auto/images/page-15-figure-01.jpg)
+![MNIST 初始化势函数](figures/generative-optimal-transport-via-forward-backward-hjb-matching/page-15-figure-01.jpg)
 
 Figure 4(a) 先看初始化阶段。  
 这时把尚未训练好的势函数 $W(t,\mathbf{x}(s))$ 画在一组测试轨迹上，几乎看不到任何有组织的结构。换句话说，在训练开始时，网络还没有学会把“当前状态在输运过程中处于什么位置”编码成一个连贯的剩余代价值。
 
-![MNIST 训练后势函数](../../pdfs/2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.mineru/hybrid_auto/images/page-15-figure-02.jpg)
+![MNIST 训练后势函数](figures/generative-optimal-transport-via-forward-backward-hjb-matching/page-15-figure-02.jpg)
 
 Figure 4(b) 再看训练 $200$ 个 epochs 之后。  
 这时沿着 held-out 测试轨迹，会出现一个很明显的传播脉冲：随着轨迹向生成方向推进，$W$ 沿轨迹呈现出有组织的移动峰值。
@@ -1559,7 +1559,7 @@ Figure 4(b) 再看训练 $200$ 个 epochs 之后。
 也就是说，附录 D 想保住的不是“高维生成质量已经很好”，而是更基础的一点：  
 **即使到了 784 维，Feynman-Kac 框架学到的仍然是一个沿输运方向有组织传播的值函数。**
 
-![MNIST 损失曲线](../../pdfs/2026-04-16/generative-optimal-transport-via-forward-backward-hjb-matching.mineru/hybrid_auto/images/page-15-figure-03.jpg)
+![MNIST 损失曲线](figures/generative-optimal-transport-via-forward-backward-hjb-matching/page-15-figure-03.jpg)
 
 Figure 4(c) 最后给出训练损失的收敛曲线。  
 它补的是优化稳定性这一层：前面看到的传播脉冲不是偶然出现的视觉 artifact，而是伴随着整体训练目标的稳定下降一起长出来的。

@@ -31,4 +31,3 @@ Brain organoid interfaces that seek neuromodulator readout benefit from chemical
 - [[stochastic_dynamics]]
 
 ## Notes
-

@@ -2,7 +2,7 @@
 title: "SDE数值方法"
 description: ""
 paper_count: 3
-last_updated: "2026-05-18"
+last_updated: "2026-07-11"
 ---
 
 # SDE数值方法
@@ -16,4 +16,4 @@ last_updated: "2026-05-18"
 
 - [A Control-Referenced Tri-Channel OECT Receiver for Hybrid Molecular Communication Toward Brain Organoid Interfaces](a-control-referenced-tri-channel-oect-receiver-for-hybrid-molecular-communicatio.md) (2026, arXiv (Cornell University), 0 citations)
 
-- [The Euler-Maruyama method for invariant measures of McKean-Vlasov stochastic differential equations](the-euler-maruyama-method-for-invariant-measures-of-mckean-vlasov-stochastic-dif.md) (2026, ArXiv.org, 0 citations)
+- [The Euler-Maruyama method for invariant measures of McKean-Vlasov stochastic differential equations](../sde_theory/the-euler-maruyama-method-for-invariant-measures-of-mckean-vlasov-stochastic-dif.md) (2026, ArXiv.org, 0 citations)

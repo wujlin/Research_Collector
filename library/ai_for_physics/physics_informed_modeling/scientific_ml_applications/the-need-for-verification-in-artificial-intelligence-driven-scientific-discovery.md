@@ -11,7 +11,7 @@ topics: ["ai_for_physics", "ai_for_physics/physics_informed_modeling", "ai_for_p
 tier: 0
 citations: 0
 relevance_score: 47.0
-collected: "2026-04-16"
+collected: "2026-04-13"
 status: "unread"
 source: "openalex"
 ---
@@ -31,4 +31,3 @@ Artificial intelligence (AI) is transforming the practice of science. Machine le
 - [[scientific_ml_applications]]
 
 ## Notes
-

@@ -11,7 +11,7 @@ topics: ["bridges/translation_layers/fokker_planck_master", "statistical_physics
 tier: 0
 citations: 0
 relevance_score: 50.0
-collected: "2026-04-23"
+collected: "2026-04-16"
 status: "unread"
 source: "openalex"
 ---
@@ -34,4 +34,3 @@ We study a random model of deep multi-head self-attention in which the weights a
 - [[translation_layers]]
 
 ## Notes
-

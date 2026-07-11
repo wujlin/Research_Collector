@@ -11,7 +11,7 @@ topics: ["statistical_physics", "statistical_physics/collective_structure/phase_
 tier: 0
 citations: 0
 relevance_score: 46.56
-collected: "2026-04-16"
+collected: "2026-04-13"
 status: "unread"
 source: "openalex"
 ---
@@ -31,4 +31,3 @@ In recent decades, it has been emphasized that the evolving structure of network
 - [[collective_structure]]
 
 ## Notes
-

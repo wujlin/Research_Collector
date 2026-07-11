@@ -11,7 +11,7 @@ topics: ["stochastic_analysis", "stochastic_analysis/asymptotics_and_variation/l
 tier: 0
 citations: 0
 relevance_score: 51.0
-collected: "2026-04-16"
+collected: "2026-04-15"
 status: "unread"
 source: "openalex"
 ---
@@ -31,4 +31,3 @@ Quantum computing is becoming strategically relevant to finance because several 
 - [[asymptotics_and_variation]]
 
 ## Notes
-

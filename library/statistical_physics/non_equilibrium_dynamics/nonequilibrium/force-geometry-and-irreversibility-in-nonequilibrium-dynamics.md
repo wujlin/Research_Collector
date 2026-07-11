@@ -31,4 +31,3 @@ Recent experiments have revealed heterogeneous dissipation in optically trapped 
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

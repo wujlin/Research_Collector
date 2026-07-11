@@ -31,4 +31,3 @@ Abstract In this paper, we study run-and-tumble particles moving on two copies o
 - [[collective_structure]]
 
 ## Notes
-

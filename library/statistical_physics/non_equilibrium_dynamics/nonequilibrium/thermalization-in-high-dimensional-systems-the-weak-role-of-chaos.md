@@ -31,4 +31,3 @@ In their seminal work, Fermi, Pasta, Ulam and Tsingou explored the connection be
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

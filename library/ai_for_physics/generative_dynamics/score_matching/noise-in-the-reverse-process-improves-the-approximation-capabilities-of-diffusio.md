@@ -11,7 +11,7 @@ topics: ["ai_for_physics", "ai_for_physics/generative_dynamics/score_matching", 
 tier: 0
 citations: 0
 relevance_score: 48.0
-collected: "2026-04-23"
+collected: "2026-04-16"
 status: "unread"
 source: "arxiv"
 ---
@@ -32,4 +32,3 @@ In Score based Generative Modeling (SGMs), the state-of-the-art in generative mo
 - [[generative_dynamics]]
 
 ## Notes
-

@@ -33,4 +33,3 @@ Diffusion-based models on continuous spaces have seen substantial recent progres
 - [[thermodynamic_inference]]
 
 ## Notes
-

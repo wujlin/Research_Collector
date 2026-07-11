@@ -11,7 +11,7 @@ topics: ["stochastic_analysis", "stochastic_analysis/path_foundations/brownian_m
 tier: 0
 citations: 0
 relevance_score: 50.0
-collected: "2026-04-23"
+collected: "2026-04-08"
 status: "unread"
 source: "openalex,semantic_scholar,semantic_scholar,semantic_scholar"
 ---
@@ -36,4 +36,3 @@ We study a finite Markov-modulated random walk (MMRW) on a one-dimensional latti
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

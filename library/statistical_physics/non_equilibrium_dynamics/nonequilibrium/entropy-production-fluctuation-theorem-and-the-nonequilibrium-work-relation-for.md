@@ -8,9 +8,9 @@ arxiv: ""
 url: "https://journals.aps.org/pre/abstract/10.1103/PhysRevE.60.2721"
 pdf_url: ""
 topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems", "statistical_physics/non_equilibrium_dynamics"]
-tier: 0
+tier: 2
 citations: 0
-relevance_score: 0
+relevance_score: 42.0
 collected: "2026-04-07"
 status: "unread"
 source: ""
@@ -34,3 +34,4 @@ is_seminal: true
 
 ## Notes
 
+Crooks fluctuation theorem。

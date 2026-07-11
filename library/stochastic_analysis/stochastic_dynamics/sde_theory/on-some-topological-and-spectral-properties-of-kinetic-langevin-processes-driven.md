@@ -31,4 +31,3 @@ We investigate several fundamental properties of kinetic Langevin processes in $
 - [[stochastic_dynamics]]
 
 ## Notes
-

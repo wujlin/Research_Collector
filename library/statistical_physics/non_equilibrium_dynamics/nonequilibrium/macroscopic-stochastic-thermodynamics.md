@@ -11,7 +11,7 @@ topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/no
 tier: 1
 citations: 0
 relevance_score: 64.0
-collected: "2026-04-23"
+collected: "2026-04-16"
 status: "unread"
 source: "arxiv"
 ---
@@ -32,4 +32,3 @@ Starting at the mesoscopic level with a general formulation of stochastic thermo
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

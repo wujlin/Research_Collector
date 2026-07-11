@@ -7,10 +7,10 @@ doi: "10.1038/s42005-026-02613-8"
 arxiv: ""
 url: "https://openalex.org/W7154321551"
 pdf_url: "https://www.nature.com/articles/s42005-026-02613-8_reference.pdf"
-topics: ["ai_for_physics/physics_informed_modeling/scientific_ml_applications", "ai_for_physics/physics_informed_modeling", "ai_for_physics"]
-tier: 0
+topics: ["ai_for_physics", "ai_for_physics/physics_informed_modeling", "ai_for_physics/physics_informed_modeling/scientific_ml_applications"]
+tier: 2
 citations: 0
-relevance_score: 47.0
+relevance_score: 61.0
 collected: "2026-04-16"
 status: "unread"
 source: "openalex"
@@ -26,9 +26,8 @@ Operator learning is key to leveraging artificial intelligence for scientific di
 
 ## Connections
 
-- [[scientific_ml_applications]]
-- [[physics_informed_modeling]]
 - [[ai_for_physics]]
+- [[physics_informed_modeling]]
+- [[scientific_ml_applications]]
 
 ## Notes
-

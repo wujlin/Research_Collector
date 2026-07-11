@@ -142,6 +142,8 @@ filtering:
       - "flow matching"
       - "energy-based model"
       - "energy-based models"
+      - "energy-based dynamical model"
+      - "energy-based dynamical models"
       - "energy-based transformer"
       - "energy-based transformers"
       - "energy minimization"

@@ -34,4 +34,3 @@ We study the ergodic behaviour of a discrete-time process X which is a Markov ch
 - [[scientific_ml_applications]]
 
 ## Notes
-

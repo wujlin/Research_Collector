@@ -31,4 +31,3 @@ source: "openalex"
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

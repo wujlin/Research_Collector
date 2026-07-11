@@ -284,7 +284,7 @@ Reia et al. (2022) 对 US migration flows 的研究显示，迁移流不仅连�
 
 Fig. 11.1 总结了这种空间结构。
 
-![Fig. 11.1 Schematic representation of interurban migration flows in the US](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/11-outlook-beyond-zipfs-law.mineru/hybrid_auto/images/page-02-figure-01.jpg)
+![Fig. 11.1 Schematic representation of interurban migration flows in the US](figures/statistics-and-dynamics-of-urban-populations-ch11-outlook-beyond-zipfs-law/page-02-figure-01.jpg)
 
 这张图可以按三类流来读。
 
@@ -422,7 +422,7 @@ $$
 
 Fig. 11.2 展示 London 从 1800 到 1978 的 built area expansion。
 
-![Fig. 11.2 Expansion of London from 1800 to 1978](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/11-outlook-beyond-zipfs-law.mineru/hybrid_auto/images/page-03-figure-01.jpg)
+![Fig. 11.2 Expansion of London from 1800 to 1978](figures/statistics-and-dynamics-of-urban-populations-ch11-outlook-beyond-zipfs-law/page-03-figure-01.jpg)
 
 这张图按时间分成三个 built-up layers。
 

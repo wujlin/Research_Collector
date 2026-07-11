@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "refresh:data": "python3 ../scripts/refresh_derived_artifacts.py --skip-library-sync",
     "prepare:public": "node scripts/prepare-public.mjs copy",
     "build": "npm run prepare:public && next build",
     "start": "next start",

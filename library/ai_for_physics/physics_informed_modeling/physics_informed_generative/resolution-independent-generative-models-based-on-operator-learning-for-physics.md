@@ -31,4 +31,3 @@ The Bayesian inference approach is widely used to tackle inverse problems due to
 - [[physics_informed_modeling]]
 
 ## Notes
-

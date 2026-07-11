@@ -30,4 +30,3 @@ A physics-informed neural network (PINN) framework is developed to model the lar
 - [[physics_informed_modeling]]
 
 ## Notes
-

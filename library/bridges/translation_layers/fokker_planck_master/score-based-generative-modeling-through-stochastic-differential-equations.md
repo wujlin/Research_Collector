@@ -8,9 +8,9 @@ arxiv: ""
 url: "https://arxiv.org/abs/2011.13456"
 pdf_url: ""
 topics: ["stochastic_analysis", "bridges/translation_layers/fokker_planck_master", "stochastic_analysis/stochastic_dynamics/sde_theory", "ai_for_physics", "ai_for_physics/generative_dynamics/score_matching", "ai_for_physics/generative_dynamics/sde_generative", "bridges", "stochastic_analysis/stochastic_dynamics", "ai_for_physics/generative_dynamics", "bridges/translation_layers"]
-tier: 0
+tier: 2
 citations: 0
-relevance_score: 0
+relevance_score: 56.0
 collected: "2026-04-07"
 status: "unread"
 source: ""
@@ -40,3 +40,4 @@ is_seminal: true
 
 ## Notes
 
+前向/逆向 SDE 统一了 score-based generative modeling。

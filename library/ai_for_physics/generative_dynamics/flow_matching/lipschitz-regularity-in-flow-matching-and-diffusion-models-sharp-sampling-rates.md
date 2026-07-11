@@ -33,4 +33,3 @@ Under general assumptions on the target distribution $p^\star$, we establish a s
 - [[transport_and_spatial_generation]]
 
 ## Notes
-

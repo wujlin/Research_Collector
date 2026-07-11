@@ -48,7 +48,7 @@ def main() -> None:
         updated += 1
 
     pipeline._refresh_library_indices()
-    pipeline.export_all()
+    pipeline.export_all(generate_periodic_digest=False)
     print({"reclassified_papers": updated, "collected_after": args.collected_after or None})
 
 

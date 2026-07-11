@@ -22,7 +22,7 @@ topics: ["非平衡动力学", "涨落定理", "扩散生成模型", "熵产生"
 2. 将去噪过程映射为统计推断问题，推导广义自由能，统一此前不同方法得到的分化转变（speciation transition）结果，并揭示新的对称性相图；
 3. 用 Franz-Parisi 势从几何角度刻画反向过程中的坍缩转变（collapse transition），不依赖经验分布假设。
 
-![图1：二维高斯混合数据的扩散过程示意图](../../pdfs/2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.mineru/hybrid_auto/images/page-02-figure-01.jpg)
+![图1：二维高斯混合数据的扩散过程示意图](figures/nonequilibrium-physics-of-generative-diffusion-models/page-02-figure-01.jpg)
 
 **图 1 的角色**：展示二维高斯混合数据从 $t=0$ 到 $t=3$ 的正向扩散过程（蓝色轨迹，数据→噪声）和从 $t=3$ 返回 $t=0$ 的反向生成过程（绿色轨迹，噪声→数据），为全文搭建直觉。正向过程中两个分离的数据簇逐渐混合为单一高斯分布，反向过程则从无结构的噪声中重新"分化"出两个数据簇。
 
@@ -609,19 +609,19 @@ $$
 
 这就是随机热力学第二定律。它的意思不是“每条轨迹的熵都一定增加”，而是：虽然个别轨迹可以出现负的总熵变，但所有轨迹按路径概率平均之后，总熵变不能为负。
 
-![图2：正向OU过程的积分涨落定理数值验证](../../pdfs/2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.mineru/hybrid_auto/images/page-05-figure-01.jpg)
+![图2：正向OU过程的积分涨落定理数值验证](figures/nonequilibrium-physics-of-generative-diffusion-models/page-05-figure-01.jpg)
 
 **图 2 的角色**：用一维 OU 过程的数值模拟验证积分涨落定理。随着用于计算系综平均的轨迹数增加，$\langle e^{-\Delta S_{\text{tot}}} \rangle$ 收敛至理论预测值 1，确认正向扩散过程严格满足涨落定理。
 
 ### 2.4 正向过程的熵分布统计
 
-![图3(a)：正向过程系统熵变直方图](../../pdfs/2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.mineru/hybrid_auto/images/page-06-figure-01.jpg)
+![图3(a)：正向过程系统熵变直方图](figures/nonequilibrium-physics-of-generative-diffusion-models/page-06-figure-01.jpg)
 
-![图3(b)：正向过程环境熵变直方图](../../pdfs/2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.mineru/hybrid_auto/images/page-06-figure-02.jpg)
+![图3(b)：正向过程环境熵变直方图](figures/nonequilibrium-physics-of-generative-diffusion-models/page-06-figure-02.jpg)
 
-![图3(c)：正向过程总熵变直方图](../../pdfs/2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.mineru/hybrid_auto/images/page-06-figure-03.jpg)
+![图3(c)：正向过程总熵变直方图](figures/nonequilibrium-physics-of-generative-diffusion-models/page-06-figure-03.jpg)
 
-![图3(d)：正向过程 exp(-ΔS_tot) 直方图](../../pdfs/2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.mineru/hybrid_auto/images/page-06-figure-04.jpg)
+![图3(d)：正向过程 exp(-ΔS_tot) 直方图](figures/nonequilibrium-physics-of-generative-diffusion-models/page-06-figure-04.jpg)
 
 **图 3 的角色**：从 10 000 条正向轨迹统计系统熵变 $\Delta S$、环境熵变 $\Delta S_E$、总熵变 $\Delta S_{\text{tot}}$ 及 $e^{-\Delta S_{\text{tot}}}$ 的分布。系统熵变以零为中心近似对称分布；环境熵变偏正值；总熵变以正值为主但存在负值涨落（个别轨迹熵减少）；$e^{-\Delta S_{\text{tot}}}$ 的分布在 1 附近聚集，与积分涨落定理一致。负熵轨迹的存在是涨落定理的本质体现——热力学第二定律是统计律而非绝对律。
 
@@ -1538,11 +1538,11 @@ $$
 
 ### 3.3 从单阱到双阱：分化转变与相图
 
-![图4：势能随时间的演化（μ=1，一维）](../../pdfs/2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.mineru/hybrid_auto/images/page-10-figure-01.jpg)
+![图4：势能随时间的演化（μ=1，一维）](figures/nonequilibrium-physics-of-generative-diffusion-models/page-10-figure-01.jpg)
 
-![图4续：t=0.35 时势能接近临界](../../pdfs/2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.mineru/hybrid_auto/images/page-10-figure-02.jpg)
+![图4续：t=0.35 时势能接近临界](figures/nonequilibrium-physics-of-generative-diffusion-models/page-10-figure-02.jpg)
 
-![图4续：t=0.1 时势能呈双阱](../../pdfs/2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.mineru/hybrid_auto/images/page-10-figure-03.jpg)
+![图4续：t=0.1 时势能呈双阱](figures/nonequilibrium-physics-of-generative-diffusion-models/page-10-figure-03.jpg)
 
 有了势能 $U(\mathbf{X}_t,t)$ 之后，下一件事就是看这个景观怎样随时间改变。图 4 给出的正是一维例子：
 
@@ -1613,7 +1613,7 @@ t_S
 \right).
 $$
 
-![图5：一维情形的对称性破缺相图](../../pdfs/2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.mineru/hybrid_auto/images/page-10-figure-04.jpg)
+![图5：一维情形的对称性破缺相图](figures/nonequilibrium-physics-of-generative-diffusion-models/page-10-figure-04.jpg)
 
 Figure 5 不是数值模拟扫出来的经验图，而是把前面得到的两个解析判据放到 $(\mu,\sigma)$ 平面里之后得到的相图。顺序要按这两条判据来读。
 
@@ -1667,11 +1667,11 @@ $$
 1. 原点必须先失稳，才能发生簇级分化；
 2. 双阱在大振幅处还必须保持稳定，生成轨迹才不会逃逸。
 
-![图6(a)：稳定对称性破缺（μ=1, σ=0.8）](../../pdfs/2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.mineru/hybrid_auto/images/page-11-figure-01.jpg)
+![图6(a)：稳定对称性破缺（μ=1, σ=0.8）](figures/nonequilibrium-physics-of-generative-diffusion-models/page-11-figure-01.jpg)
 
-![图6(b)：对称性未破缺（μ=0.4, σ=1）](../../pdfs/2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.mineru/hybrid_auto/images/page-11-figure-04.jpg)
+![图6(b)：对称性未破缺（μ=0.4, σ=1）](figures/nonequilibrium-physics-of-generative-diffusion-models/page-11-figure-04.jpg)
 
-![图6(c)：不稳定对称性破缺（μ=4, σ=1.5）](../../pdfs/2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.mineru/hybrid_auto/images/page-11-figure-07.jpg)
+![图6(c)：不稳定对称性破缺（μ=4, σ=1.5）](figures/nonequilibrium-physics-of-generative-diffusion-models/page-11-figure-07.jpg)
 
 图 6 就是在给 Figure 5 的三块区域各挑一个代表点：
 
@@ -1912,15 +1912,15 @@ $$
 \tag{64}
 $$
 
-![图7：反向生成过程的积分涨落定理数值验证](../../pdfs/2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.mineru/hybrid_auto/images/page-14-figure-01.jpg)
+![图7：反向生成过程的积分涨落定理数值验证](figures/nonequilibrium-physics-of-generative-diffusion-models/page-14-figure-01.jpg)
 
 因此，反向生成动力学虽然已经是强非线性的去噪过程，但它在路径级上仍然满足和正向扩散同样的积分涨落定理。图 7 的数值结果就是在验证这一点：对越来越多条反向生成轨迹做平均时，$\langle e^{-\Delta S_{\mathrm{tot}}}\rangle$ 收敛到理论值 1。
 
 ### 3.5 反向过程的熵分布与熵产生率
 
-![图8(a)：反向过程系统熵变直方图](../../pdfs/2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.mineru/hybrid_auto/images/page-15-figure-01.jpg)
+![图8(a)：反向过程系统熵变直方图](figures/nonequilibrium-physics-of-generative-diffusion-models/page-15-figure-01.jpg)
 
-![图8(d)：反向过程 exp(-ΔS_tot) 直方图](../../pdfs/2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.mineru/hybrid_auto/images/page-15-figure-04.jpg)
+![图8(d)：反向过程 exp(-ΔS_tot) 直方图](figures/nonequilibrium-physics-of-generative-diffusion-models/page-15-figure-04.jpg)
 
 图 8 表明，反向过程里的系统熵变和总熵变都更偏向正值。直观地说，轨迹正在从“高噪声、低结构”的状态走向“低噪声、有结构”的状态，因此系统内部的有序性在上升；但环境熵增加得更多，所以总熵仍然满足第二定律。
 
@@ -1940,9 +1940,9 @@ $$
 
 但熵通量不同，因为两者的漂移场不同。
 
-![图9：正向OU过程的熵产生率和熵通量](../../pdfs/2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.mineru/hybrid_auto/images/page-16-figure-01.jpg)
+![图9：正向OU过程的熵产生率和熵通量](figures/nonequilibrium-physics-of-generative-diffusion-models/page-16-figure-01.jpg)
 
-![图10：反向生成过程的熵产生率和熵通量](../../pdfs/2026-04-16/nonequilibrium-physics-of-generative-diffusion-models.mineru/hybrid_auto/images/page-16-figure-02.jpg)
+![图10：反向生成过程的熵产生率和熵通量](figures/nonequilibrium-physics-of-generative-diffusion-models/page-16-figure-02.jpg)
 
 这两张图最好按“先看前向基线，再看反向生成”来读。
 

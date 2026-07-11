@@ -11,7 +11,7 @@ topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/no
 tier: 2
 citations: 0
 relevance_score: 50.0
-collected: "2026-04-23"
+collected: "2026-04-16"
 status: "unread"
 source: "arxiv"
 ---
@@ -32,4 +32,3 @@ Stochastic entropy production, which quantifies the difference between the proba
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

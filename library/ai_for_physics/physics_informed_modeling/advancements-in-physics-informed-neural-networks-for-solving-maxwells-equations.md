@@ -7,10 +7,10 @@ doi: "10.20944/preprints202604.0679.v1"
 arxiv: ""
 url: "https://openalex.org/W7153293417"
 pdf_url: "https://www.preprints.org/frontend/manuscript/4bf226c3095ce341383861102a55daf1/download_pub"
-topics: ["ai_for_physics/physics_informed_modeling", "ai_for_physics"]
-tier: 2
+topics: ["ai_for_physics", "ai_for_physics/physics_informed_modeling"]
+tier: 0
 citations: 0
-relevance_score: 56.0
+relevance_score: 46.0
 collected: "2026-04-13"
 status: "unread"
 source: "openalex"
@@ -26,8 +26,7 @@ This systematic literature review (SLR) investigates the use of physics-informed
 
 ## Connections
 
-- [[physics_informed_modeling]]
 - [[ai_for_physics]]
+- [[physics_informed_modeling]]
 
 ## Notes
-

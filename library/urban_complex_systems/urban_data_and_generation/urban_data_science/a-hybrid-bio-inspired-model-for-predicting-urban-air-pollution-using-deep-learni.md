@@ -8,9 +8,9 @@ arxiv: ""
 url: "https://openalex.org/W7147237838"
 pdf_url: "https://www.nature.com/articles/s41598-026-40726-w_reference.pdf"
 topics: ["ai_for_physics", "urban_complex_systems", "urban_complex_systems/urban_data_and_generation/urban_data_science", "ai_for_physics/physics_informed_modeling", "urban_complex_systems/urban_data_and_generation"]
-tier: 3
+tier: 0
 citations: 0
-relevance_score: 58.0
+relevance_score: 50.0
 collected: "2026-04-08"
 status: "unread"
 source: "openalex"
@@ -33,4 +33,3 @@ Accurate prediction of urban air quality is vital for protecting public health a
 - [[urban_data_and_generation]]
 
 ## Notes
-

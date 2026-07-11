@@ -31,4 +31,3 @@ We unite two of the most widely used approaches for strongly damped, non-Markovi
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

@@ -32,4 +32,3 @@ Diffusion models are often introduced from multiple perspectives, such as VAEs, 
 - [[generative_dynamics]]
 
 ## Notes
-

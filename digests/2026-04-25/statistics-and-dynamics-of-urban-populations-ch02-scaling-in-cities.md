@@ -205,7 +205,7 @@ $$
 
 ### 8.2 Fig. 2.4：为什么高 $R^2$ 不能证明非线性
 
-![Fig. 2.4 — US GDP 的线性拟合和幂律拟合都很好](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/02-why-does-population-matter.mineru/hybrid_auto/images/page-06-figure-01.jpg)
+![Fig. 2.4 — US GDP 的线性拟合和幂律拟合都很好](figures/statistics-and-dynamics-of-urban-populations-ch02-scaling-in-cities/page-06-figure-01.jpg)
 
 Fig. 2.4 是这一节的第一个反例。图中横轴是人口 $S$，纵轴是 GDP，都是 log scale。黑点是美国 MSA 数据，红线是 power-law fit，绿线是 linear fit。
 
@@ -469,7 +469,7 @@ $$
 
 ### 11.1 Fig. 2.4：拟合看起来很好，但结论仍然不稳
 
-![Fig. 2.4 — GDP 的线性拟合和幂律拟合几乎都能解释数据](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/02-why-does-population-matter.mineru/hybrid_auto/images/page-06-figure-01.jpg)
+![Fig. 2.4 — GDP 的线性拟合和幂律拟合几乎都能解释数据](figures/statistics-and-dynamics-of-urban-populations-ch02-scaling-in-cities/page-06-figure-01.jpg)
 
 Fig. 2.4 是 fitting problem 的视觉版本。红线是 $\beta=1.13$ 的幂律拟合，绿线是线性拟合。两条线都穿过数据云，$R^2$ 都很高。
 
@@ -477,9 +477,9 @@ Fig. 2.4 是 fitting problem 的视觉版本。红线是 $\beta=1.13$ 的幂律�
 
 ### 11.2 Fig. 2.5：先给出两个清楚的 global-fit 案例
 
-![Fig. 2.5a — US GDP 的 superlinear fit](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/02-why-does-population-matter.mineru/hybrid_auto/images/page-13-figure-01.jpg)
+![Fig. 2.5a — US GDP 的 superlinear fit](figures/statistics-and-dynamics-of-urban-populations-ch02-scaling-in-cities/page-13-figure-01.jpg)
 
-![Fig. 2.5b — US road miles 的 sublinear fit](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/02-why-does-population-matter.mineru/hybrid_auto/images/page-13-figure-02.jpg)
+![Fig. 2.5b — US road miles 的 sublinear fit](figures/statistics-and-dynamics-of-urban-populations-ch02-scaling-in-cities/page-13-figure-02.jpg)
 
 Fig. 2.5 进入 practical test 的案例部分。左图是美国城市 GDP，拟合得到 $\hat{\beta}=1.11$；右图是道路总里程，拟合得到 $\hat{\beta}=0.85$。
 
@@ -487,9 +487,9 @@ Fig. 2.5 进入 practical test 的案例部分。左图是美国城市 GDP，拟
 
 ### 11.3 Fig. 2.6：tomography plot 验证清楚案例
 
-![Fig. 2.6a — US GDP 的 local exponent 收敛到 superlinear 值](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/02-why-does-population-matter.mineru/hybrid_auto/images/page-13-figure-03.jpg)
+![Fig. 2.6a — US GDP 的 local exponent 收敛到 superlinear 值](figures/statistics-and-dynamics-of-urban-populations-ch02-scaling-in-cities/page-13-figure-03.jpg)
 
-![Fig. 2.6b — US road miles 的 local exponent 收敛到 sublinear 值](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/02-why-does-population-matter.mineru/hybrid_auto/images/page-13-figure-04.jpg)
+![Fig. 2.6b — US road miles 的 local exponent 收敛到 sublinear 值](figures/statistics-and-dynamics-of-urban-populations-ch02-scaling-in-cities/page-13-figure-04.jpg)
 
 Fig. 2.6 是 Eq. 2.10 到 Eq. 2.14 的图像化。灰点是所有城市对的 $\beta_{\mathrm{loc}}$，蓝线是分箱平均，红线是线性基准 $\beta=1$，绿线是全局幂律拟合值。
 
@@ -501,7 +501,7 @@ GDP 图中，蓝线稳定在 1 以上，并接近 $\hat{\beta}=1.11$。这说明
 
 ### 11.4 Fig. 2.7：人均 GDP 仍然保留非线性信号
 
-![Fig. 2.7 — GDP per capita 的 local exponent 收敛到正值](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/02-why-does-population-matter.mineru/hybrid_auto/images/page-14-figure-01.jpg)
+![Fig. 2.7 — GDP per capita 的 local exponent 收敛到正值](figures/statistics-and-dynamics-of-urban-populations-ch02-scaling-in-cities/page-14-figure-01.jpg)
 
 Fig. 2.7 回应 Shalizi 的批评：如果 GDP superlinearity 只是因为使用了 extensive quantity，那么改成人均 GDP 后非线性应当消失。
 
@@ -511,9 +511,9 @@ Fig. 2.7 回应 Shalizi 的批评：如果 GDP superlinearity 只是因为使用
 
 ### 11.5 Fig. 2.8：UK rail stations 暴露 threshold effect
 
-![Fig. 2.8a — UK rail stations 的线性、阈值和幂律拟合](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/02-why-does-population-matter.mineru/hybrid_auto/images/page-15-figure-01.jpg)
+![Fig. 2.8a — UK rail stations 的线性、阈值和幂律拟合](figures/statistics-and-dynamics-of-urban-populations-ch02-scaling-in-cities/page-15-figure-01.jpg)
 
-![Fig. 2.8b — UK rail stations 的 local exponent 不支持简单线性](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/02-why-does-population-matter.mineru/hybrid_auto/images/page-15-figure-02.jpg)
+![Fig. 2.8b — UK rail stations 的 local exponent 不支持简单线性](figures/statistics-and-dynamics-of-urban-populations-ch02-scaling-in-cities/page-15-figure-02.jpg)
 
 Fig. 2.8 是第一个“拟合结论被拆开”的案例。左图里很多城市的 station count 等于 1 或接近 0，这说明数据不是普通连续幂律云，而带有明显离散和阈值结构。
 
@@ -523,9 +523,9 @@ Fig. 2.8 是第一个“拟合结论被拆开”的案例。左图里很多城�
 
 ### 11.6 Fig. 2.9：Brazil AIDS cases 也可能不是简单 sublinear
 
-![Fig. 2.9a — Brazil AIDS cases 的幂律拟合和阈值型拟合](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/02-why-does-population-matter.mineru/hybrid_auto/images/page-16-figure-01.jpg)
+![Fig. 2.9a — Brazil AIDS cases 的幂律拟合和阈值型拟合](figures/statistics-and-dynamics-of-urban-populations-ch02-scaling-in-cities/page-16-figure-01.jpg)
 
-![Fig. 2.9b — Brazil AIDS cases 的 local exponent 不清楚收敛](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/02-why-does-population-matter.mineru/hybrid_auto/images/page-16-figure-02.jpg)
+![Fig. 2.9b — Brazil AIDS cases 的 local exponent 不清楚收敛](figures/statistics-and-dynamics-of-urban-populations-ch02-scaling-in-cities/page-16-figure-02.jpg)
 
 Fig. 2.9 延续 Fig. 2.8 的逻辑。左图中 power-law fit 给出 $\hat{\beta}=0.74$，看似 sublinear；但带阈值的形式也能解释数据。
 
@@ -535,9 +535,9 @@ Fig. 2.9 延续 Fig. 2.8 的逻辑。左图中 power-law fit 给出 $\hat{\beta}
 
 ### 11.7 Fig. 2.10：cinema capacity 支持线性 scaling
 
-![Fig. 2.10a — cinema capacity 的 local exponent 收敛到 1](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/02-why-does-population-matter.mineru/hybrid_auto/images/page-17-figure-01.jpg)
+![Fig. 2.10a — cinema capacity 的 local exponent 收敛到 1](figures/statistics-and-dynamics-of-urban-populations-ch02-scaling-in-cities/page-17-figure-01.jpg)
 
-![Fig. 2.10b — cinema capacity 的 prediction ratio，多数城市落在灰区](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/02-why-does-population-matter.mineru/hybrid_auto/images/page-17-figure-02.jpg)
+![Fig. 2.10b — cinema capacity 的 prediction ratio，多数城市落在灰区](figures/statistics-and-dynamics-of-urban-populations-ch02-scaling-in-cities/page-17-figure-02.jpg)
 
 Fig. 2.10 展示 local exponent 和 prediction ratio 如何一起使用。左图中 $\beta_{\mathrm{loc}}$ 收敛到 1，支持 cinema capacity 与人口近似线性。
 
@@ -547,9 +547,9 @@ Fig. 2.10 展示 local exponent 和 prediction ratio 如何一起使用。左图
 
 ### 11.8 Fig. 2.11：cinema usage 有 superlinear 倾向，但预测很差
 
-![Fig. 2.11a — cinema usage 的 local exponent 大多高于 1](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/02-why-does-population-matter.mineru/hybrid_auto/images/page-17-figure-03.jpg)
+![Fig. 2.11a — cinema usage 的 local exponent 大多高于 1](figures/statistics-and-dynamics-of-urban-populations-ch02-scaling-in-cities/page-17-figure-03.jpg)
 
-![Fig. 2.11b — cinema usage 的 prediction ratio 波动很大](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/02-why-does-population-matter.mineru/hybrid_auto/images/page-17-figure-04.jpg)
+![Fig. 2.11b — cinema usage 的 prediction ratio 波动很大](figures/statistics-and-dynamics-of-urban-populations-ch02-scaling-in-cities/page-17-figure-04.jpg)
 
 Fig. 2.11 是一个重要灰区。左图中 local exponent 多数大于 1，说明 cinema usage 有 superlinear 倾向。全局拟合甚至给出 $\hat{\beta}=1.46$，effective exponent 约为 1.17。
 
@@ -559,9 +559,9 @@ Fig. 2.11 是一个重要灰区。左图中 local exponent 多数大于 1，说�
 
 ### 11.9 Fig. 2.12：theaters 同时呈现 slight sublinearity 和 threshold 可能
 
-![Fig. 2.12a — theaters 的幂律和阈值型拟合都可行](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/02-why-does-population-matter.mineru/hybrid_auto/images/page-18-figure-01.jpg)
+![Fig. 2.12a — theaters 的幂律和阈值型拟合都可行](figures/statistics-and-dynamics-of-urban-populations-ch02-scaling-in-cities/page-18-figure-01.jpg)
 
-![Fig. 2.12b — theaters 的 local exponent 没有清楚收敛到拟合值](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/02-why-does-population-matter.mineru/hybrid_auto/images/page-18-figure-02.jpg)
+![Fig. 2.12b — theaters 的 local exponent 没有清楚收敛到拟合值](figures/statistics-and-dynamics-of-urban-populations-ch02-scaling-in-cities/page-18-figure-02.jpg)
 
 Fig. 2.12 处理 European theaters。左图中 power-law fit 给出 $\hat{\beta}=0.91$，看起来 slightly sublinear；但 $a+bS$ 形式也能解释数据，并暗示城市人口超过某个阈值后才更可能出现 theater。
 
@@ -571,9 +571,9 @@ Fig. 2.12 处理 European theaters。左图中 power-law fit 给出 $\hat{\beta}
 
 ### 11.10 Fig. 2.13：external deaths 最终支持线性 scaling
 
-![Fig. 2.13a — external deaths 的多个拟合形式](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/02-why-does-population-matter.mineru/hybrid_auto/images/page-19-figure-01.jpg)
+![Fig. 2.13a — external deaths 的多个拟合形式](figures/statistics-and-dynamics-of-urban-populations-ch02-scaling-in-cities/page-19-figure-01.jpg)
 
-![Fig. 2.13b — external deaths 的 local exponent 收敛到 1](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/02-why-does-population-matter.mineru/hybrid_auto/images/page-19-figure-02.jpg)
+![Fig. 2.13b — external deaths 的 local exponent 收敛到 1](figures/statistics-and-dynamics-of-urban-populations-ch02-scaling-in-cities/page-19-figure-02.jpg)
 
 Fig. 2.13 是另一个线性正例。左图里 power-law、$a+bS$ 和其他形式都可以给出看似合理的拟合，因此仅靠拟合图很难判断。
 

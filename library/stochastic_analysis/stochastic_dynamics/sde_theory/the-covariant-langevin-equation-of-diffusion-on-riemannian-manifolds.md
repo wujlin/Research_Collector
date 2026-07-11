@@ -7,10 +7,10 @@ doi: ""
 arxiv: "2310.17314"
 url: "http://arxiv.org/abs/2310.17314v2"
 pdf_url: "https://arxiv.org/pdf/2310.17314v2"
-topics: ["stochastic_analysis/stochastic_dynamics", "stochastic_analysis", "stochastic_analysis/stochastic_dynamics/sde_theory", "bridges/translation_layers/fokker_planck_master", "bridges/translation_layers", "bridges"]
-tier: 0
+topics: ["stochastic_analysis", "bridges/translation_layers/fokker_planck_master", "stochastic_analysis/stochastic_dynamics/sde_theory", "bridges", "stochastic_analysis/stochastic_dynamics", "bridges/translation_layers"]
+tier: 2
 citations: 0
-relevance_score: 44.9
+relevance_score: 54.9
 collected: "2026-04-16"
 status: "unread"
 source: "arxiv"
@@ -26,12 +26,11 @@ The covariant form of the multivariable diffusion-drift process is described by 
 
 ## Connections
 
-- [[stochastic_dynamics]]
 - [[stochastic_analysis]]
-- [[sde_theory]]
 - [[fokker_planck_master]]
-- [[translation_layers]]
+- [[sde_theory]]
 - [[bridges]]
+- [[stochastic_dynamics]]
+- [[translation_layers]]
 
 ## Notes
-

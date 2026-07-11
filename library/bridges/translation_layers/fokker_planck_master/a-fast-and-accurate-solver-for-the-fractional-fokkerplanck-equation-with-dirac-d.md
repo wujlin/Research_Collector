@@ -31,4 +31,3 @@ The classical Fokker-Planck equation (FPE) is a key tool in physics for describi
 - [[translation_layers]]
 
 ## Notes
-

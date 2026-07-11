@@ -2,7 +2,7 @@
 title: "空间交互模型"
 description: ""
 paper_count: 4
-last_updated: "2026-05-18"
+last_updated: "2026-07-11"
 ---
 
 # 空间交互模型

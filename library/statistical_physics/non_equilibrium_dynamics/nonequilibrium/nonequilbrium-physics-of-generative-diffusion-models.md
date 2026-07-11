@@ -11,7 +11,7 @@ topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/no
 tier: 2
 citations: 0
 relevance_score: 63.94
-collected: "2026-04-23"
+collected: "2026-04-16"
 status: "read"
 source: "arxiv"
 ---
@@ -32,4 +32,3 @@ Generative diffusion models apply the concept of Langevin dynamics in physics to
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

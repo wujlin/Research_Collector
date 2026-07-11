@@ -34,4 +34,3 @@ A switching diffusion process (SDP) is a widely used stochastic model in physics
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

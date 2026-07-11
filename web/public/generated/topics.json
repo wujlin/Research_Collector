@@ -4,7 +4,7 @@
     "display_name": "AI for Physics",
     "parent_key": null,
     "description": "计算层：把动力学、热力学与物理先验转成可训练的生成和建模机制。",
-    "paper_count": 87,
+    "paper_count": 88,
     "depth": 0,
     "is_leaf": false,
     "lineage": [
@@ -16,7 +16,7 @@
     "display_name": "生成动力学",
     "parent_key": "ai_for_physics",
     "description": "用 score、diffusion、reverse-time SDE 与 flow 描写生成过程。",
-    "paper_count": 44,
+    "paper_count": 45,
     "depth": 1,
     "is_leaf": false,
     "lineage": [
@@ -57,7 +57,7 @@
     "display_name": "Energy-Based Models",
     "parent_key": "ai_for_physics/generative_dynamics",
     "description": "",
-    "paper_count": 0,
+    "paper_count": 1,
     "depth": 2,
     "is_leaf": true,
     "lineage": [

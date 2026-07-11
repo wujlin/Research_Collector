@@ -31,4 +31,3 @@ Understanding surface thermal conditions is essential for studying ecosystem res
 - [[urban_data_and_generation]]
 
 ## Notes
-

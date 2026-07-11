@@ -31,4 +31,3 @@ We propose a structured prior for high-dimensional Bayesian inverse problems bas
 - [[scientific_ml_applications]]
 
 ## Notes
-

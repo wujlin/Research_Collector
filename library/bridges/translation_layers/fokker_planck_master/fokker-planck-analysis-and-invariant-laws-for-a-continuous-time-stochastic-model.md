@@ -34,4 +34,3 @@ We develop a continuous-time model for the long-term dynamics of adaptive stocha
 - [[translation_layers]]
 
 ## Notes
-

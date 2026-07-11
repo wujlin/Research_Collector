@@ -31,4 +31,3 @@ Bayesian inverse problems are often computationally challenging when the forward
 - [[scientific_ml_applications]]
 
 ## Notes
-

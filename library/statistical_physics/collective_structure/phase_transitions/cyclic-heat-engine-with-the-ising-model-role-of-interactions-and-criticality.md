@@ -31,4 +31,3 @@ Heat engines that convert thermal energy into work are a cornerstone of classica
 - [[collective_structure]]
 
 ## Notes
-

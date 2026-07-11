@@ -32,4 +32,3 @@ The Euler ensemble was recently supported by large-scale ($4096^3$) direct numer
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

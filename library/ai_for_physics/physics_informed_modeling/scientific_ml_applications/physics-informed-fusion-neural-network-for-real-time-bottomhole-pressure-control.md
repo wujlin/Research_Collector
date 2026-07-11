@@ -7,7 +7,7 @@ doi: "10.3390/pr14081240"
 arxiv: ""
 url: "https://openalex.org/W7154083293"
 pdf_url: "https://www.mdpi.com/2227-9717/14/8/1240/pdf?version=1776078889"
-topics: ["ai_for_physics/physics_informed_modeling", "ai_for_physics", "ai_for_physics/physics_informed_modeling/scientific_ml_applications"]
+topics: ["ai_for_physics", "ai_for_physics/physics_informed_modeling", "ai_for_physics/physics_informed_modeling/scientific_ml_applications"]
 tier: 0
 citations: 0
 relevance_score: 47.0
@@ -26,9 +26,8 @@ Managed pressure drilling (MPD) is the core technology for developing formations
 
 ## Connections
 
-- [[physics_informed_modeling]]
 - [[ai_for_physics]]
+- [[physics_informed_modeling]]
 - [[scientific_ml_applications]]
 
 ## Notes
-

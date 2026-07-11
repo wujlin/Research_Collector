@@ -10,7 +10,7 @@ pdf_url: "https://arxiv.org/pdf/2603.27828"
 topics: ["bridges/translation_layers/fokker_planck_master", "bridges", "bridges/translation_layers"]
 tier: 0
 citations: 0
-relevance_score: 36.0
+relevance_score: 51.0
 collected: "2026-04-08"
 status: "unread"
 source: "openalex"
@@ -31,4 +31,3 @@ We present a data-driven approach for constructing generalized collisional kinet
 - [[translation_layers]]
 
 ## Notes
-

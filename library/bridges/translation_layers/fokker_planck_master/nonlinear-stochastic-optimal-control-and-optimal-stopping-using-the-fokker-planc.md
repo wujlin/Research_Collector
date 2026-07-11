@@ -31,4 +31,3 @@ In this paper, we develop a theoretical framework for nonlinear stochastic optim
 - [[translation_layers]]
 
 ## Notes
-

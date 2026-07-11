@@ -106,17 +106,17 @@ general human migration network
 
 ## 3. Figure 1：从数据密度到 birth-death network
 
-![Fig. 1A data density](../../pdfs/2026-05-01/a-network-framework-of-cultural-history/a-network-framework-of-cultural-history.mineru/a-network-framework-of-cultural-history/auto/images/page-03-chart-01.jpg)
+![Fig. 1A data density](figures/a-network-framework-of-cultural-history/page-03-chart-01.jpg)
 
 Fig. 1A 先证明数据密度足够。它画出在某一年 alive、且有 birth/death locations 的 notable individuals 数量，并与估计世界人口走势比较。随着时间推进，FB、AKL、ULAN 中的数据量跨越多个数量级，波动变得更平滑。
 
 这一步的作用是建立“可以做宏观统计”的前提。如果每个世纪只有零散几个人，后面的 power law、network centrality、death-share trajectories 都没有意义。作者先说明：虽然数据有偏，但密度足以支持长期量化分析。
 
-![Fig. 1B demographic life table](../../pdfs/2026-05-01/a-network-framework-of-cultural-history/a-network-framework-of-cultural-history.mineru/a-network-framework-of-cultural-history/auto/images/page-03-chart-02.jpg)
+![Fig. 1B demographic life table](figures/a-network-framework-of-cultural-history/page-03-chart-02.jpg)
 
 Fig. 1B 把 FB 数据做成 demographic life table，显示 1500 到 2012 年间不同 death age 的频率。它的功能不是主线结论，而是展示 birth/death time data 可以恢复历史冲击，例如战争、寿命变化或异常死亡模式。
 
-![Fig. 1C birth-death scatter](../../pdfs/2026-05-01/a-network-framework-of-cultural-history/a-network-framework-of-cultural-history.mineru/a-network-framework-of-cultural-history/auto/images/page-03-figure-01.jpg)
+![Fig. 1C birth-death scatter](figures/a-network-framework-of-cultural-history/page-03-figure-01.jpg)
 
 Fig. 1C 把每个 location 的 births 数量和 deaths 数量放到同一张 scatter plot 上。对角线表示 birth count 与 death count 平衡。偏离对角线的点就有解释意义。
 
@@ -131,11 +131,11 @@ birth-death imbalance
 
 需要注意，这个 imbalance 不是“城市好坏”的指标。它只是说明 notable individuals 的 life endpoint 更集中于哪里。Hollywood 是一个典型例子：它的 notable deaths 远多于 births，所以在这个网络中是 strong attractor。
 
-![Fig. 1D antiquarian flows](../../pdfs/2026-05-01/a-network-framework-of-cultural-history/a-network-framework-of-cultural-history.mineru/a-network-framework-of-cultural-history/auto/images/page-03-figure-01.jpg)
+![Fig. 1D antiquarian flows](figures/a-network-framework-of-cultural-history/page-03-figure-01.jpg)
 
 Fig. 1D 用 18 世纪 antiquarians 的例子展示个体 birth-death paths 如何形成可视化 flow。许多 antiquarians 出生在欧洲各地，最终死亡在 Rome、Paris、Dresden 等 cultural centers。这个 panel 的作用是让读者看到：不是每个人都完整记录多次迁移，但 birth-to-death links 已经足以显示文化中心的吸引结构。
 
-![Fig. 1E European migration network](../../pdfs/2026-05-01/a-network-framework-of-cultural-history/a-network-framework-of-cultural-history.mineru/a-network-framework-of-cultural-history/auto/images/page-03-figure-02.jpg)
+![Fig. 1E European migration network](figures/a-network-framework-of-cultural-history/page-03-figure-02.jpg)
 
 Fig. 1E 是文章的核心 network visualization。节点是 locations，边来自 individual birth-to-death links。节点颜色对应 birth-death imbalance：偏蓝表示 source，偏红表示 attractor。节点大小由 PageRank 决定。
 
@@ -169,7 +169,7 @@ $$
 
 直观地说，文化网络不是每多一个 notable individual 就带来一个全新地点。随着历史展开，更多 notable individuals 会集中到已有 cultural centers，而不是不断均匀地产生新 centers。
 
-![Fig. 2A Heaps law](../../pdfs/2026-05-01/a-network-framework-of-cultural-history/a-network-framework-of-cultural-history.mineru/a-network-framework-of-cultural-history/auto/images/page-04-chart-01.jpg)
+![Fig. 2A Heaps law](figures/a-network-framework-of-cultural-history/page-04-chart-01.jpg)
 
 Fig. 2A 就是在 log-log 坐标中展示 $N(t)$ 和 $S(t)$ 的关系。斜率约为 0.9。这个值接近 1，说明 location diversity 仍在增长；但小于 1，说明既有中心的累积吸引逐渐占优。
 
@@ -187,7 +187,7 @@ $$
 
 其中 $r$ 是 rank，$f(r)$ 是 rank 为 $r$ 的 location frequency，$\zeta$ 是 slope。rank 越高，频率越低。
 
-![Fig. 2B Zipf slopes](../../pdfs/2026-05-01/a-network-framework-of-cultural-history/a-network-framework-of-cultural-history.mineru/a-network-framework-of-cultural-history/auto/images/page-04-chart-02.jpg)
+![Fig. 2B Zipf slopes](figures/a-network-framework-of-cultural-history/page-04-chart-02.jpg)
 
 Fig. 2B 展示 birth 和 death frequency slope 随时间变化。作者的关键发现是：birth 和 death 的 slope 长期稳定，但从 19 世纪开始，二者差异显著扩大；在 artists 的 AKL 数据中，这个分化更早出现。
 
@@ -199,7 +199,7 @@ Fig. 2B 展示 birth 和 death frequency slope 随时间变化。作者的关键
 
 第三个全局规律是 birth-to-death distance distribution。设 $\Delta r$ 是某个人出生地与死亡地之间的距离，作者考察 $P(\Delta r)$ 随世纪变化。
 
-![Fig. 2C distance distribution](../../pdfs/2026-05-01/a-network-framework-of-cultural-history/a-network-framework-of-cultural-history.mineru/a-network-framework-of-cultural-history/auto/images/page-04-chart-03.jpg)
+![Fig. 2C distance distribution](figures/a-network-framework-of-cultural-history/page-04-chart-03.jpg)
 
 Fig. 2C 显示，birth-to-death distances 的 fat-tailed distribution 在八个多世纪中变化很小。14 世纪 median distance 约 214 km，21 世纪约 382 km，中间在 17 世纪甚至降到约 135 km。
 
@@ -211,7 +211,7 @@ Fig. 2C 显示，birth-to-death distances 的 fat-tailed distribution 在八个�
 
 有了 Heaps、Zipf、distance distribution 之后，作者转向地方层面。全局规律很稳定，但单个 location 的地位并不稳定。
 
-![Fig. 2D death share](../../pdfs/2026-05-01/a-network-framework-of-cultural-history/a-network-framework-of-cultural-history.mineru/a-network-framework-of-cultural-history/auto/images/page-04-chart-04.jpg)
+![Fig. 2D death share](figures/a-network-framework-of-cultural-history/page-04-chart-04.jpg)
 
 Fig. 2D 看 major locations 的 death share，也就是某个 location 占全部 notable deaths 的相对份额。这个比例随世纪大幅波动，导致城市 rank 也发生变化。
 
@@ -297,7 +297,7 @@ Germany: multicentric fit-gets-richer
 
 最后作者从宏观网络转向单个 cultural center 的 temporal trajectory，以 Paris 为例。
 
-![Fig. 4A-D Paris trajectories](../../pdfs/2026-05-01/a-network-framework-of-cultural-history/a-network-framework-of-cultural-history.mineru/a-network-framework-of-cultural-history/auto/images/page-05-chart-03.jpg)
+![Fig. 4A-D Paris trajectories](figures/a-network-framework-of-cultural-history/page-05-chart-03.jpg)
 
 Fig. 4A 使用 Google Ngram 中的 “Paris in {year}” 模式。通常 Google Ngram 是看某个词在书籍中随出版年份出现的频率；这里作者换了读法：他们搜索 location-year pattern，把 “Paris in 1763” 这类表达看成文化中心在文本中的事件性显现。
 

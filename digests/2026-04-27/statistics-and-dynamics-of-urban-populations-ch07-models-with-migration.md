@@ -707,7 +707,7 @@ $$
 
 Fig. 7.1 正是在画这个结构。
 
-![Fig. 7.1](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/07-models-with-migration.mineru/hybrid_auto/images/page-03-figure-01.jpg)
+![Fig. 7.1](figures/statistics-and-dynamics-of-urban-populations-ch07-models-with-migration/page-03-figure-01.jpg)
 
 图中间是 internal growth $\eta_iS_i$，左边是 incoming migration $J_{ji}$，右边是 outgoing migration $J_{ij}$。它提醒我们：migration model 不是只在 Gibrat noise 外面加一个小修正，而是把城市增长改成了 flow-balance problem。
 

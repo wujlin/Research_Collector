@@ -33,4 +33,3 @@ source: "semantic_scholar"
 - [[translation_layers]]
 
 ## Notes
-

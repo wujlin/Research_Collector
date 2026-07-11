@@ -50,7 +50,7 @@ $$
 
 这一对区分非常关键，因为后面整篇文章讨论的 `exact empirical score`，说的就是模型学到的是经验分布加噪后的精确 score，而不是 population distribution 的平滑 score。这正是后来会出现 sample-level collapse 和 memorization 倾向的根源。
 
-![Fig. 1 three dynamical regimes](../../pdfs/2026-04-11/dynamical-regimes-of-diffusion-models.mineru/hybrid_auto/images/page-01-figure-01.jpg)
+![Fig. 1 three dynamical regimes](figures/dynamical-regimes-of-diffusion-models/page-01-figure-01.jpg)
 
 `Figure 1` 先给出这篇文章最应该记住的几何图像。最开始是 regime I，轨迹还基本像从一团噪声里往回走，没有真正分出类别。接着进入 regime II，也就是 `speciation`，轨迹开始按类别分成不同 bundle。最后进入 regime III，也就是 `collapse`，这些 class-level bundles 进一步碎裂成围绕具体训练样本的团块。于是，这篇文章最核心的区分就是：
 
@@ -61,7 +61,7 @@ $$
 
 ## 2. Speciation: When Class Structure Becomes Dynamically Visible
 
-![Equation 4](../../pdfs/2026-04-11/dynamical-regimes-of-diffusion-models.mineru/hybrid_auto/images/page-01-equation-04.jpg)
+![Equation 4](figures/dynamical-regimes-of-diffusion-models/page-01-equation-04.jpg)
 
 speciation 的控制时间由 `Eq. (4)` 给出：
 
@@ -91,7 +91,7 @@ $$
 
 随着维度升高，transition 发生的位置被推向更大的 $t$，但发生分化的窗口本身仍是 $O(1)$，于是相对宽度越来越小，看起来就越来越像 phase transition。
 
-![Fig. 4 speciation in realistic datasets](../../pdfs/2026-04-11/dynamical-regimes-of-diffusion-models.mineru/hybrid_auto/images/page-05-figure-01.jpg)
+![Fig. 4 speciation in realistic datasets](figures/dynamical-regimes-of-diffusion-models/page-05-figure-01.jpg)
 
 `Figure 4` 正好支持这一点。把不同真实数据集上的时间轴都 rescale 成 $t/t_S$ 之后，speciation 的转折都收敛到 $t/t_S\approx 1$ 附近。右侧蓝区是“对称尚未破裂”，左侧红区是“类别已经被选定”。这说明 `Eq. (4)` 确实抓住了 speciation 的共同控制变量。
 
@@ -123,7 +123,7 @@ $$
 
 ## 4. Why The Cloning Probability Has The Form Of Equation (6)
 
-![Equation 6](../../pdfs/2026-04-11/dynamical-regimes-of-diffusion-models.mineru/hybrid_auto/images/page-03-equation-01.jpg)
+![Equation 6](figures/dynamical-regimes-of-diffusion-models/page-03-equation-01.jpg)
 
 在两类 Gaussian mixture toy model 里，`Eq. (6)` 把上面的 cloning 定义写成了一个显式公式：
 
@@ -145,9 +145,9 @@ $$
 
 ## 5. The Dynamical Mechanism Behind Speciation
 
-![Equation 7](../../pdfs/2026-04-11/dynamical-regimes-of-diffusion-models.mineru/hybrid_auto/images/page-03-equation-02.jpg)
+![Equation 7](figures/dynamical-regimes-of-diffusion-models/page-03-equation-02.jpg)
 
-![Equation 8](../../pdfs/2026-04-11/dynamical-regimes-of-diffusion-models.mineru/hybrid_auto/images/page-03-equation-03.jpg)
+![Equation 8](figures/dynamical-regimes-of-diffusion-models/page-03-equation-03.jpg)
 
 cloning 只是统计诊断。作者还进一步给出了 speciation 的动力学机制。他们不再直接追踪整个高维向量 $\mathbf x(t)$，而是只看与类中心的 overlap
 
@@ -215,7 +215,7 @@ $$
 
 ## 6. Collapse: When Generalization Turns Into Memorization
 
-![Equation 5](../../pdfs/2026-04-11/dynamical-regimes-of-diffusion-models.mineru/hybrid_auto/images/page-02-equation-01.jpg)
+![Equation 5](figures/dynamical-regimes-of-diffusion-models/page-02-equation-01.jpg)
 
 如果说 `Eq. (4)` 解决的是“什么时候开始按类分化”，那么 `Eq. (5)` 解决的就是更细的一层问题：轨迹什么时候不再只是属于某一类，而是开始被某一个具体训练样本吸住。作者把这个从 regime II 到 regime III 的切换叫做 `collapse`，并定义 collapse time 为
 
@@ -257,9 +257,9 @@ $$
 - $f(t)=0$ 是 collapse 临界点
 - $f(t)<0$ 表示 sample-level memorization 开始接管
 
-![Fig. 3 collapse in Gaussian mixtures](../../pdfs/2026-04-11/dynamical-regimes-of-diffusion-models.mineru/hybrid_auto/images/page-04-figure-01.jpg)
+![Fig. 3 collapse in Gaussian mixtures](figures/dynamical-regimes-of-diffusion-models/page-04-figure-01.jpg)
 
-![Fig. 5 collapse in realistic datasets](../../pdfs/2026-04-11/dynamical-regimes-of-diffusion-models.mineru/hybrid_auto/images/page-06-figure-01.jpg)
+![Fig. 5 collapse in realistic datasets](figures/dynamical-regimes-of-diffusion-models/page-06-figure-01.jpg)
 
 `Figure 3` 和 `Figure 5` 分别在 Gaussian mixture 与真实数据集上展示了这一点。经验版本
 

@@ -8,10 +8,10 @@ arxiv: ""
 url: "https://openalex.org/W7153784992"
 pdf_url: "https://www.preprints.org/frontend/manuscript/8a71324465f02633a51d7cbe77d7bc59/download_pub"
 topics: []
-tier: 2
+tier: 0
 citations: 0
-relevance_score: 46.0
-collected: "2026-04-16"
+relevance_score: 36.0
+collected: "2026-04-15"
 status: "unread"
 source: "openalex"
 ---
@@ -29,4 +29,3 @@ The convergence of Neuro-Symbolic AI, Edge Computing, and Reinforcement Learning
 (待添加)
 
 ## Notes
-

@@ -11,7 +11,7 @@ topics: ["stochastic_analysis", "bridges/translation_layers/fokker_planck_master
 tier: 0
 citations: 0
 relevance_score: 50.0
-collected: "2026-04-23"
+collected: "2026-04-16"
 status: "unread"
 source: "openalex"
 ---
@@ -34,4 +34,3 @@ This paper develops a statistical mechanics approach for studying turbulence in 
 - [[translation_layers]]
 
 ## Notes
-

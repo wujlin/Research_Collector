@@ -33,4 +33,3 @@ Data-driven methods for the solution of inverse problems have become widely popu
 - [[transport_and_spatial_generation]]
 
 ## Notes
-

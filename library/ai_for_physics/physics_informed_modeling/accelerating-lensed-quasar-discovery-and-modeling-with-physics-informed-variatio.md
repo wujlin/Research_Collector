@@ -30,4 +30,3 @@ Strongly lensed quasars provide valuable insights into the rate of cosmic expans
 - [[physics_informed_modeling]]
 
 ## Notes
-

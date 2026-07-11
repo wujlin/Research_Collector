@@ -32,4 +32,3 @@ Imaging Photoplethysmography (iPPG), an optical procedure which recovers a human
 - [[stochastic_dynamics]]
 
 ## Notes
-

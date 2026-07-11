@@ -31,4 +31,3 @@ In quantum systems with a classical limit, advanced semiclassical methods provid
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

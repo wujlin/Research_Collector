@@ -11,7 +11,7 @@ topics: []
 tier: 0
 citations: 0
 relevance_score: 32.0
-collected: "2026-04-16"
+collected: "2026-04-15"
 status: "unread"
 source: "openalex"
 ---
@@ -29,4 +29,3 @@ The active role of green hydrogen in shifting to a sustainable energy regime wor
 (待添加)
 
 ## Notes
-

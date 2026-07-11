@@ -8,9 +8,9 @@ arxiv: ""
 url: "https://openalex.org/W7150794511"
 pdf_url: "https://www.nature.com/articles/s41598-026-43497-6_reference.pdf"
 topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics"]
-tier: 3
+tier: 0
 citations: 0
-relevance_score: 55.0
+relevance_score: 47.0
 collected: "2026-04-08"
 status: "unread"
 source: "openalex"
@@ -31,4 +31,3 @@ Active thermal control of automotive engines is vital for improving performance,
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

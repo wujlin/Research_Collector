@@ -31,4 +31,3 @@ A criterion for proving a strong form of propagation of chaos on the path space,
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

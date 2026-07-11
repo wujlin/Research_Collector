@@ -11,7 +11,7 @@ topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/no
 tier: 0
 citations: 0
 relevance_score: 51.0
-collected: "2026-04-23"
+collected: "2026-04-15"
 status: "read"
 source: "openalex"
 ---
@@ -31,4 +31,3 @@ Autoregressive generative models -- including Transformers, recurrent neural net
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

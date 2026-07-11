@@ -31,4 +31,3 @@ Abstract Video-based Cognitive radio networks (CRNs) are a sub-type in which som
 - [[collective_structure]]
 
 ## Notes
-

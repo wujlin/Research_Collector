@@ -31,4 +31,3 @@ In this article, we establish exponential turnpike theorems for a class of nonli
 - [[transport_and_spatial_generation]]
 
 ## Notes
-

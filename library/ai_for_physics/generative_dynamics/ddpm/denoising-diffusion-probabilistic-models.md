@@ -8,9 +8,9 @@ arxiv: ""
 url: "https://arxiv.org/abs/2006.11239"
 pdf_url: ""
 topics: ["ai_for_physics", "ai_for_physics/generative_dynamics/ddpm", "ai_for_physics/generative_dynamics"]
-tier: 0
+tier: 2
 citations: 0
-relevance_score: 0
+relevance_score: 51.0
 collected: "2026-04-07"
 status: "unread"
 source: ""
@@ -33,3 +33,4 @@ is_seminal: true
 
 ## Notes
 
+DDPM 代表作。

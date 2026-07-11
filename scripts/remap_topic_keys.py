@@ -30,6 +30,8 @@ def build_parser() -> argparse.ArgumentParser:
 def remove_stale_library_files(library_dir: Path, valid_markdown_paths: set[str]) -> None:
     for markdown_file in library_dir.rglob("*.md"):
         relative_path = markdown_file.relative_to(library_dir).as_posix()
+        if relative_path.startswith("archive/"):
+            continue
         if markdown_file.name in {"index.md", "_index.md"}:
             continue
         if relative_path not in valid_markdown_paths:
@@ -70,7 +72,7 @@ def main() -> None:
     write_knowledge_map()
     write_youtube_bootstrap()
     pipeline._refresh_library_indices()
-    pipeline.export_all()
+    pipeline.export_all(generate_periodic_digest=False)
 
     print(
         {

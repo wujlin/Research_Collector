@@ -383,9 +383,9 @@
       "Daisuke Okanohara",
       "Sosuke Ito"
     ],
-    "year": 2024,
+    "year": 2025,
     "publication_date": "2024-07-05",
-    "journal": "Physical Review X",
+    "journal": "Physical Review X 15, 031031",
     "venue": "Physical Review X",
     "doi": "10.1103/x5vj-8jq9",
     "arxiv_id": "2407.04495",
@@ -395,7 +395,7 @@
     "influential_citation_count": 1,
     "relevance_score": 68.43,
     "tier": 2,
-    "status": "unread",
+    "status": "read",
     "is_seminal": false,
     "source": "semantic_scholar",
     "topics": [
@@ -810,7 +810,7 @@
       "stochastic_analysis/stochastic_dynamics",
       "bridges/translation_layers"
     ],
-    "markdown_path": "bridges/translation_layers/fokker_planck_master/the-covariant-langevin-equation-of-diffusion-on-riemannian-manifolds.md",
+    "markdown_path": "stochastic_analysis/stochastic_dynamics/sde_theory/the-covariant-langevin-equation-of-diffusion-on-riemannian-manifolds.md",
     "importance_score": 90.94,
     "importance_bucket": "keep",
     "venue_quality": "high_quality"
@@ -3046,7 +3046,7 @@
       "stochastic_analysis/stochastic_dynamics",
       "bridges/transport_and_spatial_generation"
     ],
-    "markdown_path": "bridges/transport_and_spatial_generation/optimal_transport_urban/sampleability-transport-nonlinear-regularization-and-the-porous-medium-flow.md",
+    "markdown_path": "stochastic_analysis/stochastic_dynamics/sde_theory/sampleability-transport-nonlinear-regularization-and-the-porous-medium-flow.md",
     "importance_score": 61.4,
     "importance_bucket": "keep",
     "venue_quality": "preprint"
@@ -3083,7 +3083,7 @@
       "statistical_physics/equilibrium_structures",
       "ai_for_physics/generative_dynamics"
     ],
-    "markdown_path": "ai_for_physics/generative_dynamics/flow_matching/truncated-rectified-flow-policy-for-reinforcement-learning-with-one-step-samplin.md",
+    "markdown_path": "statistical_physics/equilibrium_structures/equilibrium/truncated-rectified-flow-policy-for-reinforcement-learning-with-one-step-samplin.md",
     "importance_score": 61.4,
     "importance_bucket": "keep",
     "venue_quality": "preprint"
@@ -3119,7 +3119,7 @@
       "ai_for_physics/physics_informed_modeling",
       "ai_for_physics/physics_informed_modeling/scientific_ml_applications"
     ],
-    "markdown_path": "ai_for_physics/physics_informed_modeling/scientific_ml_applications/steering-generative-models-for-protein-design-aligning-and-conditioning-strategi.md",
+    "markdown_path": "ai_for_physics/generative_dynamics/conditional_generation/steering-generative-models-for-protein-design-aligning-and-conditioning-strategi.md",
     "importance_score": 61.0,
     "importance_bucket": "keep",
     "venue_quality": "unranked"
@@ -4104,7 +4104,7 @@
     "influential_citation_count": 0,
     "relevance_score": 62.0,
     "tier": 2,
-    "status": "read",
+    "status": "excluded_current_queue",
     "is_seminal": false,
     "source": "openalex",
     "topics": [
@@ -4833,8 +4833,8 @@
     "title": "The growth equation of cities",
     "abstract": "The science of cities seeks to understand and explain regularities observed in the world's major urban systems. Modelling the population evolution of cities is at the core of this science and of all urban studies. Quantitatively, the most fundamental problem is to understand the hierarchical organization of cities and the statistical occurrence of megacities, first thought to be described by a universal law due to Zipf, but whose validity has been challenged by recent empirical studies. A theoretical model must also be able to explain the relatively frequent rises and falls of cities and civilizations, and despite many attempts these fundamental questions have not been satisfactorily answered yet. Here we fill this gap by introducing a new kind of stochastic equation for modelling population growth in cities, which we construct from an empirical analysis of recent datasets (for Canada, France, UK and USA) that reveals how rare but large interurban migratory shocks dominate city growth. This equation predicts a complex shape for the city distribution and shows that Zipf's law does not hold in general due to finite-time effects, implying a more complex organization of cities. It also",
     "authors": [
-      "Marc Barthelemy",
-      "Vincent Verbavatz"
+      "Vincent Verbavatz",
+      "Marc Barthelemy"
     ],
     "year": 2020,
     "publication_date": "2020-11-18",
@@ -4848,9 +4848,9 @@
     "influential_citation_count": 0,
     "relevance_score": 39.0,
     "tier": 1,
-    "status": "unread",
+    "status": "covered_by_book_chapters",
     "is_seminal": false,
-    "source": "arxiv",
+    "source": "arxiv + Nature DOI",
     "topics": [
       "urban_complex_systems",
       "urban_complex_systems/scaling_and_evolution/urban_scaling",
@@ -6351,14 +6351,14 @@
     "journal": "ArXiv.org",
     "venue": "ArXiv.org",
     "doi": null,
-    "arxiv_id": null,
+    "arxiv_id": "2604.00327",
     "url": "https://openalex.org/W7149210441",
     "pdf_url": "https://arxiv.org/pdf/2604.00327",
     "citation_count": 0,
     "influential_citation_count": 0,
     "relevance_score": 54.0,
     "tier": 0,
-    "status": "unread",
+    "status": "read",
     "is_seminal": false,
     "source": "openalex",
     "topics": [
@@ -7143,7 +7143,7 @@
       "statistical_physics/non_equilibrium_dynamics",
       "statistical_physics/collective_structure"
     ],
-    "markdown_path": "statistical_physics/non_equilibrium_dynamics/nonequilibrium/entropy-production-rate-in-stochastically-time-evolving-asymmetric-networks.md",
+    "markdown_path": "statistical_physics/collective_structure/phase_transitions/entropy-production-rate-in-stochastically-time-evolving-asymmetric-networks.md",
     "importance_score": 35.2,
     "importance_bucket": "review",
     "venue_quality": "preprint"
@@ -8651,8 +8651,8 @@
     "title": "Report on 2412.20287v2",
     "abstract": "We discuss analytical results for a run-and-tumble particle (RTP) in one dimension in presence of boundary reservoirs.It exhibits 'kinetic boundary layers', nonmonotonous distribution, violation of Fourier's law, diffusion facilitated current reversal and optimisation on tuning dynamical parameters, and a Seebeck-like effect in the steady state.The spatial and internal degrees of freedom together possess a symmetry, using which we find the eigenspectrum for large systems.The eigenvalues are arranged in two bands which can mix in certain conditions resulting in a crossover in the relaxation.The late time distribution for large systems is obtained analytically; it retains a strong and often dominant 'active' contribution in the bulk rendering an effective passive-like description inadequate.A nontrivial 'Milne length' also emerges in the dynamics.Finally, a novel universality is proposed in the absorbing boundary problem for dynamics with short-ranged colored noise.Active particles driven by active reservoirs may thus provide a common physical ground for diverse and new nonequilibrium phenomena.",
     "authors": [
-      "Pritha Dolai",
-      "Arghya Das"
+      "Arghya Das",
+      "Pritha Dolai"
     ],
     "year": 2025,
     "publication_date": "2025-04-29",
@@ -10178,6 +10178,41 @@
     "venue_quality": "unranked"
   },
   {
+    "id": 106,
+    "title": "Energy-Based Dynamical Models for Neurocomputation, Learning, and Optimization",
+    "abstract": "Recent advances at the intersection of control theory, neuroscience, and machine learning have revealed novel mechanisms by which dynamical systems perform computation. These advances encompass a wide range of conceptual, mathematical, and computational ideas, with applications for model learning and training, memory retrieval, data-driven control, and optimization. This tutorial focuses on neuro-inspired approaches to computation that aim to improve scalability, robustness, and energy efficiency across such tasks, bridging the gap between artificial and biological systems. Particular emphasis is placed on energy-based dynamical models that encode information through gradient flows and energy landscapes. We begin by reviewing classical formulations, such as continuous-time Hopfield networks and Boltzmann machines, and then extend the framework to modern developments. These include dense associative memory models for high-capacity storage, oscillator-based networks for large-scale optimization, and proximal-descent dynamics for composite and constrained reconstruction. The tutorial demonstrates how control-theoretic principles can guide the design of next-generation neurocomputing s",
+    "authors": [
+      "Arthur N. Montanari",
+      "Francesco Bullo",
+      "Dmitry Krotov",
+      "Adilson E. Motter"
+    ],
+    "year": 2026,
+    "publication_date": "2026-04-06",
+    "journal": "arXiv (Cornell University)",
+    "venue": "arXiv (Cornell University)",
+    "doi": null,
+    "arxiv_id": null,
+    "url": "https://openalex.org/W7152933847",
+    "pdf_url": "https://arxiv.org/pdf/2604.05042",
+    "citation_count": 0,
+    "influential_citation_count": 0,
+    "relevance_score": 36.0,
+    "tier": 0,
+    "status": "unread",
+    "is_seminal": false,
+    "source": "openalex",
+    "topics": [
+      "ai_for_physics",
+      "ai_for_physics/generative_dynamics",
+      "ai_for_physics/generative_dynamics/energy_based_models"
+    ],
+    "markdown_path": "ai_for_physics/generative_dynamics/energy_based_models/energy-based-dynamical-models-for-neurocomputation-learning-and-optimization.md",
+    "importance_score": 16.6,
+    "importance_bucket": "archive",
+    "venue_quality": "preprint"
+  },
+  {
     "id": 130,
     "title": "Research on Numerical Solution Optimization of Partial Differential Equations Based on Physics-Informed Neural Network (PINN)",
     "abstract": "Partial differential equations (PDEs) are core tools for characterizing physical laws and are widely used in fluid mechanics, power systems, additive manufacturing, and other fields. However, traditional numerical methods are limited by mesh partitioning, leading to a trade-off between accuracy and efficiency in complex geometric domains and high-dimensional problems. While Physically Informed Neural Networks (PINNs) achieve meshless PDE solutions by embedding prior physical knowledge, they still face challenges such as insufficient accuracy, low training efficiency, and poor stability. This study aims to address the core bottlenecks of PINN in solving PDEs by proposing a systematic optimization strategy to improve its numerical solution accuracy, efficiency, and stability. Methodologically, firstly, a composite loss function containing PDE residuals and boundary initial condition constraints is constructed based on automatic differentiation techniques to ensure that the network satisfies physical laws. Secondly, the PINN training system is optimized, including using Neural Architecture Search (NAS-PINN) to automatically match the optimal network structure, designing an adaptive da",
@@ -10521,37 +10556,6 @@
     "source": "openalex",
     "topics": [],
     "markdown_path": "uncategorized/protenix-v2-broadening-the-reach-of-structure-prediction-and-biomolecular-design.md",
-    "importance_score": 0.0,
-    "importance_bucket": "archive",
-    "venue_quality": "preprint"
-  },
-  {
-    "id": 106,
-    "title": "Energy-Based Dynamical Models for Neurocomputation, Learning, and Optimization",
-    "abstract": "Recent advances at the intersection of control theory, neuroscience, and machine learning have revealed novel mechanisms by which dynamical systems perform computation. These advances encompass a wide range of conceptual, mathematical, and computational ideas, with applications for model learning and training, memory retrieval, data-driven control, and optimization. This tutorial focuses on neuro-inspired approaches to computation that aim to improve scalability, robustness, and energy efficiency across such tasks, bridging the gap between artificial and biological systems. Particular emphasis is placed on energy-based dynamical models that encode information through gradient flows and energy landscapes. We begin by reviewing classical formulations, such as continuous-time Hopfield networks and Boltzmann machines, and then extend the framework to modern developments. These include dense associative memory models for high-capacity storage, oscillator-based networks for large-scale optimization, and proximal-descent dynamics for composite and constrained reconstruction. The tutorial demonstrates how control-theoretic principles can guide the design of next-generation neurocomputing s",
-    "authors": [
-      "Arthur N. Montanari",
-      "Francesco Bullo",
-      "Dmitry Krotov",
-      "Adilson E. Motter"
-    ],
-    "year": 2026,
-    "publication_date": "2026-04-06",
-    "journal": "arXiv (Cornell University)",
-    "venue": "arXiv (Cornell University)",
-    "doi": null,
-    "arxiv_id": null,
-    "url": "https://openalex.org/W7152933847",
-    "pdf_url": "https://arxiv.org/pdf/2604.05042",
-    "citation_count": 0,
-    "influential_citation_count": 0,
-    "relevance_score": 36.0,
-    "tier": 0,
-    "status": "unread",
-    "is_seminal": false,
-    "source": "openalex",
-    "topics": [],
-    "markdown_path": "uncategorized/energy-based-dynamical-models-for-neurocomputation-learning-and-optimization.md",
     "importance_score": 0.0,
     "importance_bucket": "archive",
     "venue_quality": "preprint"
@@ -11596,7 +11600,6 @@
     "title": "Guiding Generative Recommender Systems with Structured Human Priors via Multi-head Decoding",
     "abstract": "Optimizing recommender systems for objectives beyond accuracy, such as diversity, novelty, and personalization, is crucial for long-term user satisfaction. To this end, industrial practitioners have accumulated vast amounts of structured domain knowledge, which we term human priors (e.g., item taxonomies, temporal patterns). This knowledge is typically applied through post-hoc adjustments during ranking or post-ranking. However, this approach remains decoupled from the core model learning, which is particularly undesirable as the industry shifts to end-to-end generative recommendation foundation models. On the other hand, many methods targeting these beyond-accuracy objectives often require architecture-specific modifications and discard these valuable human priors by learning user intent in a fully unsupervised manner. Instead of discarding the human priors accumulated over years of practice, we introduce a backbone-agnostic framework that seamlessly integrates these human priors directly into the end-to-end training of generative recommenders. With lightweight, prior-conditioned adapter heads inspired by efficient LLM decoding strategies, our approach guides the model to disentan",
     "authors": [
-      "Abhishek Kumar",
       "Yunkai Zhang",
       "Qiang Zhang",
       "Lin Feng",
@@ -11609,7 +11612,8 @@
       "Diji Yang",
       "Lizhu Zhang",
       "Xiangjun Fan",
-      "Zhibin Yu"
+      "Zhibin Yu",
+      "Abhishek Kumar"
     ],
     "year": 2026,
     "publication_date": "2026-04-09",

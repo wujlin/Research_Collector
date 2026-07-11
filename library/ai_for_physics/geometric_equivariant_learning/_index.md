@@ -2,7 +2,7 @@
 title: "几何与等变学习"
 description: "把物理中的对称性、几何结构和流形约束转成模型架构与生成机制。"
 paper_count: 0
-last_updated: "2026-05-18"
+last_updated: "2026-07-11"
 ---
 
 # 几何与等变学习

@@ -34,4 +34,3 @@ We propose a new mechanism for generating power laws. Starting from a random wal
 - [[translation_layers]]
 
 ## Notes
-

@@ -34,4 +34,3 @@ This paper investigates the approximation of invariant measures for McKean-Vlaso
 - [[transport_and_spatial_generation]]
 
 ## Notes
-

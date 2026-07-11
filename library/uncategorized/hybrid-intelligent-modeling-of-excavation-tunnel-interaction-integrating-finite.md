@@ -11,7 +11,7 @@ topics: []
 tier: 0
 citations: 0
 relevance_score: 32.0
-collected: "2026-04-16"
+collected: "2026-04-13"
 status: "unread"
 source: "openalex"
 ---
@@ -29,4 +29,3 @@ Introduction Foundation pit excavation can induce deformation in adjacent existi
 (待添加)
 
 ## Notes
-

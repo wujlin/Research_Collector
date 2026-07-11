@@ -33,4 +33,3 @@ Many biological processes involve numerous coupled degrees of freedom, yet free-
 - [[thermodynamic_inference]]
 
 ## Notes
-

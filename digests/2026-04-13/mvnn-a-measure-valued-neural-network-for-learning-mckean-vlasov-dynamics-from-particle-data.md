@@ -1075,19 +1075,19 @@ Figure 1 是这一小节最直接的证据。由于 PDF 抽取把这一张图拆
 
 **Figure 1, row 1**
 
-![Figure 1 row 1](../../pdfs/2026-04-13/mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-pa.mineru/hybrid_auto/images/page-08-figure-01.jpg)
+![Figure 1 row 1](figures/mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-particle-data/page-08-figure-01.jpg)
 
 第一行展示的是一个双峰初值逐步向更尖锐双峰结构收缩的过程。到 $t=1$ 时，左侧主峰已经明显增高，右侧次峰仍然保留；到 $t=2$ 时，两处峰的位置和高度仍与 reference 基本重合。这里最重要的信息不是“有没有完全收敛成单峰”，而是 MVNN 是否保住了正确的峰位置、相对强度和 sharpening 过程。最右侧误差曲线虽然单调上升，但到终点仍只在大约 $0.06$ 左右，说明长时间 rollout 会累积误差，但没有破坏主要的聚团结构。
 
 **Figure 1, row 2**
 
-![Figure 1 row 2](../../pdfs/2026-04-13/mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-pa.mineru/hybrid_auto/images/page-08-figure-02.jpg)
+![Figure 1 row 2](figures/mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-particle-data/page-08-figure-02.jpg)
 
 第二行是三组里最难的一组。初始分布更接近“单个主峰加右侧弱尾部”，随后主峰快速变尖，尾部逐渐收缩成一个较小的次峰。MVNN 在 $t=1$ 时仍与 reference 几乎重合；到 $t=2$ 时，主峰的位置和高度依然很准，主要偏差出现在右侧小次峰的幅值和形状上。对应地，这一行的 $L^2$ 误差在后段上升更快，终点接近 $0.1$。这说明模型的主要误差来自晚时间对细小次结构的近似，而不是主导 cluster 的整体运动被学错了。
 
 **Figure 1, row 3**
 
-![Figure 1 row 3](../../pdfs/2026-04-13/mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-pa.mineru/hybrid_auto/images/page-08-figure-03.jpg)
+![Figure 1 row 3](figures/mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-particle-data/page-08-figure-03.jpg)
 
 第三行说明 MVNN 处理的不是只有“单峰向单峰收缩”这一类简单情形。这个初值在 $t=0$ 已经带有不对称的双峰或肩部结构，随后质量重新分配，到 $t=2$ 形成一个更尖锐的主峰和一个较小的副峰。MVNN 基本重现了两处峰的位置、相对高度和压缩过程，终点误差同样保持在大约 $0.06$。这里真正说明问题的是：网络学到的不只是某个固定峰形，而是峰的 transport、压缩和相对质量分配。
 
@@ -1099,30 +1099,30 @@ Figure 1 证明的是：只看 reference simulation 和 learned MVNN dynamics �
 
 **Figure 2, row 1**
 
-![Figure 2 row 1](../../pdfs/2026-04-13/mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-pa.mineru/hybrid_auto/images/page-09-figure-01.jpg)
+![Figure 2 row 1](figures/mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-particle-data/page-09-figure-01.jpg)
 
 第一行最清楚地展示了两种模型的分歧是怎样随着时间放大的。到 $t=0.5$ 时，GP 已经把左侧峰推得过高、过尖，同时把右侧峰压得过低；到 $t=1.0$ 时，这种偏差继续放大，GP 基本把质量错误地集中到了左侧窄峰上，而 MVNN 仍然和 reference 保持接近，能够同时保住左侧主峰和右侧次峰的相对位置与高度。
 
 **Figure 2, row 2**
 
-![Figure 2 row 2](../../pdfs/2026-04-13/mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-pa.mineru/hybrid_auto/images/page-09-figure-02.jpg)
+![Figure 2 row 2](figures/mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-particle-data/page-09-figure-02.jpg)
 
 第二行对应的是 Figure 1 里误差增长最快的那组测试初值。这里 GP 的问题更明显：到 $t=0.5$ 时，它已经把主峰压缩得过尖；到 $t=1.0$ 时，蓝线出现了远高于 reference 的尖峰，说明它把归一化作用下的聚团过程学成了过度集中的塌缩。相比之下，MVNN 虽然也会有小偏差，但主峰位置、峰宽和右侧弱尾部都仍与 reference 更接近。
 
 **Figure 2, row 3**
 
-![Figure 2 row 3](../../pdfs/2026-04-13/mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-pa.mineru/hybrid_auto/images/page-09-figure-03.jpg)
+![Figure 2 row 3](figures/mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-particle-data/page-09-figure-03.jpg)
 
 第三行重复了同样的模式。初始时三条曲线重合；到 $t=0.5$ 时，GP 已经出现向左侧尖峰过度集中的趋势；到 $t=1.0$ 时，GP 的主峰明显偏高且偏窄，而 MVNN 依旧更贴近 reference 的双峰结构。把 Figure 2 三行合起来看，GP 的误差不是随机噪声，而是有方向性的系统偏差：它倾向于把密度推向过尖、过窄的峰，从而破坏正确的 cluster balance；MVNN 则更能保持 reference simulation 中的峰结构和质量分配。
 
 Figure 3 把 Figure 2 里的视觉印象压缩成定量误差比较。左、中、右三个面板仍然对应同样的三个 unseen initial conditions；蓝线是 GP，橙线是和 GP 使用同一小数据设定训练的 MVNN，绿线是使用 $16000$ 个粒子、$100$ 条轨迹和 $200$ 个时间步训练的 MVNN。
 
-![Figure 3](../../pdfs/2026-04-13/mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-pa.mineru/hybrid_auto/images/page-10-figure-01.jpg)
+![Figure 3](figures/mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-particle-data/page-10-figure-01.jpg)
 
 这张图要按“谁的误差增长最快，谁的误差最低”来读。三个测试例子里，蓝线始终增长最快，说明 GP 的 rollout 误差在整个区间里都最大。橙线明显低于蓝线，说明即使在和 GP 相同的小数据设定下，MVNN 已经能给出更低的密度误差。绿线几乎贴着横轴，说明当训练规模扩大之后，MVNN 的误差还能进一步压低。于是 Figure 3 给出的结论是分两层的：第一，同样的小数据条件下，MVNN 已经优于 GP；第二，MVNN 能继续利用更大的粒子数和更长的轨迹，把这种优势进一步放大。
 
 Figure 4 最后单独回答扩展性问题。横轴是粒子数 $N$；蓝线对应 MVNN 的仿真时间，读左轴；红线对应 GP 的仿真时间，读右轴。
 
-![Figure 4](../../pdfs/2026-04-13/mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-pa.mineru/hybrid_auto/images/page-10-figure-02.jpg)
+![Figure 4](figures/mvnn-a-measure-valued-neural-network-for-learning-mckean-vlasov-dynamics-from-particle-data/page-10-figure-02.jpg)
 
 这张图的读法非常直接。随着 $N$ 增大，MVNN 的仿真时间基本保持平稳，而 GP 的时间代价快速上升，到较大粒子数时已经远高于 MVNN。也就是说，Figure 4 讨论的不是谁更准，而是谁能把 learned dynamics 真正用于大粒子数的 mean-field 系统。把 Figure 1 到 Figure 4 连起来，`1D Motsch-Tadmor dynamics` 这一节形成了一条完整的线性证据链：Figure 1 先证明 MVNN 能恢复 reference density evolution，Figure 2 再说明它比 GP 更接近真实轨迹，Figure 3 把这种差异定量化，Figure 4 最后说明这种优势还能在大规模粒子系统里保持可用。

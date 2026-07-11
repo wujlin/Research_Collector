@@ -31,4 +31,3 @@ Recent investigations of turbulent circulation fluctuations have uncovered subst
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

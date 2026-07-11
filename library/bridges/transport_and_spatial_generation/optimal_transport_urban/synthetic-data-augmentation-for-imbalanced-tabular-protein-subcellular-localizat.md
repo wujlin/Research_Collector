@@ -7,7 +7,7 @@ doi: "10.3390/app16083694"
 arxiv: ""
 url: "https://openalex.org/W7153343022"
 pdf_url: "https://www.mdpi.com/2076-3417/16/8/3694/pdf?version=1775744394"
-topics: ["bridges/transport_and_spatial_generation", "bridges", "bridges/transport_and_spatial_generation/optimal_transport_urban"]
+topics: ["bridges", "bridges/transport_and_spatial_generation/optimal_transport_urban", "bridges/transport_and_spatial_generation"]
 tier: 0
 citations: 0
 relevance_score: 47.0
@@ -26,9 +26,8 @@ Class imbalance is a persistent challenge in supervised machine learning, partic
 
 ## Connections
 
-- [[transport_and_spatial_generation]]
 - [[bridges]]
 - [[optimal_transport_urban]]
+- [[transport_and_spatial_generation]]
 
 ## Notes
-

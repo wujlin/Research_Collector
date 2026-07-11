@@ -2,7 +2,7 @@
 title: "交通网络"
 description: ""
 paper_count: 6
-last_updated: "2026-05-18"
+last_updated: "2026-07-11"
 ---
 
 # 交通网络
@@ -12,7 +12,7 @@ last_updated: "2026-05-18"
 ## Papers (6)
 
 
-- [Free chiral self-propelled robots compared to active Brownian circle swimmers](free-chiral-self-propelled-robots-compared-to-active-brownian-circle-swimmers.md) (2026, Physical review. E, 0 citations)
+- [Free chiral self-propelled robots compared to active Brownian circle swimmers](../../../statistical_physics/non_equilibrium_dynamics/nonequilibrium/free-chiral-self-propelled-robots-compared-to-active-brownian-circle-swimmers.md) (2026, Physical review. E, 0 citations)
 
 - [Physics-Informed Graph Capsule Generative Autoencoder for Probabilistic AC Optimal Power Flow](physics-informed-graph-capsule-generative-autoencoder-for-probabilistic-ac-optim.md) (2024, IEEE Transactions on Emerging Topics in Computational Intelligence, 11 citations)
 

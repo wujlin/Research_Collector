@@ -11,7 +11,7 @@ topics: ["statistical_physics", "statistical_physics/collective_structure/phase_
 tier: 0
 citations: 0
 relevance_score: 50.0
-collected: "2026-04-16"
+collected: "2026-04-13"
 status: "unread"
 source: "openalex"
 ---
@@ -33,4 +33,3 @@ A bstract We develop a methodology based on out-of-equilibrium simulations to mi
 - [[collective_structure]]
 
 ## Notes
-

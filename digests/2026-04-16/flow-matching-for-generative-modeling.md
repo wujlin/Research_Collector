@@ -274,18 +274,18 @@ $$p_t = [(1-t)\text{id} + t\psi]_* p_0$$
 
 ### 7.3 OT 路径 vs. 扩散路径：几何直觉
 
-![](../../pdfs/2026-04-16/flow-matching-for-generative-modeling.mineru/hybrid_auto/images/page-05-figure-10.jpg)
-![](../../pdfs/2026-04-16/flow-matching-for-generative-modeling.mineru/hybrid_auto/images/page-05-figure-11.jpg)
+![](figures/flow-matching-for-generative-modeling/page-05-figure-10.jpg)
+![](figures/flow-matching-for-generative-modeling/page-05-figure-11.jpg)
 
 **Figure 3**（扩散 vs. OT 轨迹）：左图为扩散路径的采样轨迹，右图为 OT 路径。扩散路径的粒子轨迹弯曲且可能"过冲（overshoot）"——先走过数据点再折返；OT 路径保证粒子沿**直线**运动且**匀速**前进。这种几何差异直接影响 ODE 求解器的效率：直线轨迹所需的函数评估次数（NFE）更少。
 
 ### 7.4 条件向量场的方向恒定性
 
-![](../../pdfs/2026-04-16/flow-matching-for-generative-modeling.mineru/hybrid_auto/images/page-05-figure-05.jpg)
+![](figures/flow-matching-for-generative-modeling/page-05-figure-05.jpg)
 
 **Figure 2 上半部分**（扩散条件 Score Function）：扩散路径的条件得分函数 $\nabla \log p_t(x|x_1)$ 随时间 $t$ 变化剧烈——$t=0$ 时在全空间均匀指向 $x_1$（幅度大），$t=1$ 时退化为集中在 $x_1$ 附近的尖锐梯度。蓝色表示大幅值，红色表示小幅值。
 
-![](../../pdfs/2026-04-16/flow-matching-for-generative-modeling.mineru/hybrid_auto/images/page-05-figure-09.jpg)
+![](figures/flow-matching-for-generative-modeling/page-05-figure-09.jpg)
 
 **Figure 2 下半部分**（OT 条件向量场）：OT 条件向量场 $u_t(x|x_1)$ 的**方向在时间上恒定**，仅幅值变化。数学上，向量场可分解为 $u_t(x|x_1) = g(t) h(x|x_1)$，时间和空间因子分离。这使得神经网络的回归任务更简单——网络不需要学习复杂的时间依赖的方向变化。
 
@@ -299,13 +299,13 @@ $$p_t = [(1-t)\text{id} + t\psi]_* p_0$$
 
 ### 8.1 2D 直觉实验
 
-![](../../pdfs/2026-04-16/flow-matching-for-generative-modeling.mineru/hybrid_auto/images/page-06-figure-01.jpg)
+![](figures/flow-matching-for-generative-modeling/page-06-figure-01.jpg)
 
 **Figure 4**（2D 棋盘格实验）：(左) 不同目标训练的 CNF 的粒子轨迹。OT 路径在更早的时间点就出现了棋盘格模式，而 FM 比 Score Matching 训练更稳定。(右) FM-OT 的低成本采样效率更高——用 midpoint 方案只需很少的步数即可生成高质量样本。
 
 ### 8.2 ImageNet 密度建模与样本质量
 
-![](../../pdfs/2026-04-16/flow-matching-for-generative-modeling.mineru/hybrid_auto/images/page-07-table-01.jpg)
+![](figures/flow-matching-for-generative-modeling/page-07-table-01.jpg)
 
 **Table 1**（定量比较）：使用相同的 U-Net 架构（来自 Dhariwal & Nichol, 2021）和相同超参数，在 CIFAR-10 和 ImageNet 32/64/128 上比较不同训练方法。FM-OT 在所有数据集上的 NLL（似然）、FID（样本质量）和 NFE（采样效率）三项指标上一致优于 DDPM、Score Matching 和 ScoreFlow。
 
@@ -322,39 +322,39 @@ FM-OT 的 NFE（138）仅为 DDPM（264）的 52%，且 FID 降低了 17%。
 
 ### 8.3 采样路径可视化
 
-![](../../pdfs/2026-04-16/flow-matching-for-generative-modeling.mineru/hybrid_auto/images/page-07-figure-01.jpg)
-![](../../pdfs/2026-04-16/flow-matching-for-generative-modeling.mineru/hybrid_auto/images/page-07-figure-02.jpg)
-![](../../pdfs/2026-04-16/flow-matching-for-generative-modeling.mineru/hybrid_auto/images/page-07-figure-03.jpg)
+![](figures/flow-matching-for-generative-modeling/page-07-figure-01.jpg)
+![](figures/flow-matching-for-generative-modeling/page-07-figure-02.jpg)
+![](figures/flow-matching-for-generative-modeling/page-07-figure-03.jpg)
 
 **Figure 6**（ImageNet 64×64 采样路径）：从相同的初始噪声出发，三种模型的采样路径对比。上：Score Matching w/ Diffusion；中：Flow Matching w/ Diffusion；下：Flow Matching w/ OT。OT 路径的噪声大致线性消除——图像结构在中间时间点就清晰可见；扩散路径则到最后阶段才显现图像。
 
 ### 8.4 训练速度
 
-![](../../pdfs/2026-04-16/flow-matching-for-generative-modeling.mineru/hybrid_auto/images/page-07-figure-04.jpg)
+![](figures/flow-matching-for-generative-modeling/page-07-figure-04.jpg)
 
 **Figure 5**（训练过程中的 FID 曲线，ImageNet 64×64）：FM-OT 的 FID 下降最快且最终值最低。对比训练总量：Dhariwal & Nichol (2021) 在 ImageNet-128 上用 4.36M 迭代（batch size 256），FM 仅用 500K 迭代（batch size 1.5K），图像吞吐量减少 33%。
 
 ### 8.5 采样效率
 
-![](../../pdfs/2026-04-16/flow-matching-for-generative-modeling.mineru/hybrid_auto/images/page-08-figure-01.jpg)
+![](figures/flow-matching-for-generative-modeling/page-08-figure-01.jpg)
 
 **Figure 7 左**（ODE 数值误差 vs. NFE，ImageNet 32×32）：使用固定步长求解器，FM-OT 只需约 60% 的函数评估次数就能达到与扩散模型相同的数值精度。
 
-![](../../pdfs/2026-04-16/flow-matching-for-generative-modeling.mineru/hybrid_auto/images/page-08-figure-02.jpg)
-![](../../pdfs/2026-04-16/flow-matching-for-generative-modeling.mineru/hybrid_auto/images/page-08-figure-03.jpg)
-![](../../pdfs/2026-04-16/flow-matching-for-generative-modeling.mineru/hybrid_auto/images/page-08-figure-04.jpg)
+![](figures/flow-matching-for-generative-modeling/page-08-figure-02.jpg)
+![](figures/flow-matching-for-generative-modeling/page-08-figure-03.jpg)
+![](figures/flow-matching-for-generative-modeling/page-08-figure-04.jpg)
 
 **Figure 7 右**（FID vs. NFE）：FM-OT 在极低 NFE 下仍能保持可接受的 FID，在样本质量与计算成本之间提供了最优的权衡。
 
 ### 8.6 条件图像生成
 
-![](../../pdfs/2026-04-16/flow-matching-for-generative-modeling.mineru/hybrid_auto/images/page-08-table-01.jpg)
+![](figures/flow-matching-for-generative-modeling/page-08-table-01.jpg)
 
 **Table 2**（图像超分辨率，64×64→256×256）：FM-OT 在 FID（3.4）和 IS（200.8）上大幅优于 SR3（5.2 / 180.1），PSNR 和 SSIM 略低但 FID/IS 是更好的生成质量指标。
 
 ### 8.7 ImageNet 生成样本
 
-![](../../pdfs/2026-04-16/flow-matching-for-generative-modeling.mineru/hybrid_auto/images/c428b8f1466a4a1d46bd2c295be04dad93e8e9f74296f6afe88ec8ed17827c91.jpg)
+![](figures/flow-matching-for-generative-modeling/c428b8f1466a4a1d46bd2c295be04dad93e8e9f74296f6afe88ec8ed17827c91.jpg)
 
 **Figure 1**（非条件 ImageNet-128 样本）：FM-OT 训练的 CNF 生成的无条件 ImageNet 128×128 样本。图像多样性高，纹理和结构细节清晰，展示了 FM 框架在大规模图像生成任务上的能力。
 

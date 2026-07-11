@@ -31,4 +31,3 @@ Graph-structured data jointly contain discrete topology and continuous geometry,
 - [[generative_dynamics]]
 
 ## Notes
-

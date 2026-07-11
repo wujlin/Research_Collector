@@ -205,9 +205,9 @@ $$
 
 经验上，这个 growth rate 近似服从 normal law。
 
-![Fig. 9.1 France out-of-system growth](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/09-from-first-principles-to-the-growth-equation.mineru/hybrid_auto/images/page-03-figure-01.jpg)
+![Fig. 9.1 France out-of-system growth](figures/statistics-and-dynamics-of-urban-populations-ch09-from-first-principles-to-the-growth-equation/page-03-figure-01.jpg)
 
-![Fig. 9.1 US out-of-system growth](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/09-from-first-principles-to-the-growth-equation.mineru/hybrid_auto/images/page-03-figure-02.jpg)
+![Fig. 9.1 US out-of-system growth](figures/statistics-and-dynamics-of-urban-populations-ch09-from-first-principles-to-the-growth-equation/page-03-figure-02.jpg)
 
 Fig. 9.1 的作用是支撑这个建模选择。France 和 US 的 out-of-system growth histogram 都围绕 0 附近集中，并用 normal law 做近似。US panel 的分布更宽，France panel 更尖，但作者的建模结论是相同的：这一项可以用 Gaussian Langevin noise 表示。
 
@@ -335,9 +335,9 @@ $$
 
 Fig. 9.2 展示 $\mathcal{N}_{in}(i)$ 和 $\mathcal{N}_{out}(i)$ 的关系。
 
-![Fig. 9.2 France in-neighbors vs out-neighbors](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/09-from-first-principles-to-the-growth-equation.mineru/hybrid_auto/images/page-05-figure-01.jpg)
+![Fig. 9.2 France in-neighbors vs out-neighbors](figures/statistics-and-dynamics-of-urban-populations-ch09-from-first-principles-to-the-growth-equation/page-05-figure-01.jpg)
 
-![Fig. 9.2 US in-neighbors vs out-neighbors](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/09-from-first-principles-to-the-growth-equation.mineru/hybrid_auto/images/page-05-figure-02.jpg)
+![Fig. 9.2 US in-neighbors vs out-neighbors](figures/statistics-and-dynamics-of-urban-populations-ch09-from-first-principles-to-the-growth-equation/page-05-figure-02.jpg)
 
 图中的虚线是 $y=x$。France 和 US 的点云大体围绕这条线，说明一个城市有多少 out-neighbors，通常也有相近数量的 in-neighbors。这个结果并不是说每条边上的流量相等，而是说城市的迁移联系数在入向和出向上大致平衡。
 
@@ -386,9 +386,9 @@ $$
 
 Fig. 9.3 给出 France 和 US 的拟合。
 
-![Fig. 9.3 France neighbor scaling](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/09-from-first-principles-to-the-growth-equation.mineru/hybrid_auto/images/page-05-figure-03.jpg)
+![Fig. 9.3 France neighbor scaling](figures/statistics-and-dynamics-of-urban-populations-ch09-from-first-principles-to-the-growth-equation/page-05-figure-03.jpg)
 
-![Fig. 9.3 US neighbor scaling](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/09-from-first-principles-to-the-growth-equation.mineru/hybrid_auto/images/page-05-figure-04.jpg)
+![Fig. 9.3 US neighbor scaling](figures/statistics-and-dynamics-of-urban-populations-ch09-from-first-principles-to-the-growth-equation/page-05-figure-04.jpg)
 
 France 的估计是：
 
@@ -760,9 +760,9 @@ $$
 
 近似是 exponent 1 的 power law。
 
-![Fig. 9.4 France rate ratio](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/09-from-first-principles-to-the-growth-equation.mineru/hybrid_auto/images/page-08-figure-01.jpg)
+![Fig. 9.4 France rate ratio](figures/statistics-and-dynamics-of-urban-populations-ch09-from-first-principles-to-the-growth-equation/page-08-figure-01.jpg)
 
-![Fig. 9.4 US rate ratio](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/09-from-first-principles-to-the-growth-equation.mineru/hybrid_auto/images/page-08-figure-03.jpg)
+![Fig. 9.4 US rate ratio](figures/statistics-and-dynamics-of-urban-populations-ch09-from-first-principles-to-the-growth-equation/page-08-figure-03.jpg)
 
 经验上：
 
@@ -1019,7 +1019,7 @@ X^{-1-\alpha},
 \alpha<2.
 $$
 
-![Fig. 9.5 France right-tail density of positive net migration shocks](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/09-from-first-principles-to-the-growth-equation.mineru/hybrid_auto/images/page-09-figure-01.jpg)
+![Fig. 9.5 France right-tail density of positive net migration shocks](figures/statistics-and-dynamics-of-urban-populations-ch09-from-first-principles-to-the-growth-equation/page-09-figure-01.jpg)
 
 这张图的作用不是只说“尾部厚”，而是为 Chapter 8 的 generalized CLT 提供触发条件。只要：
 
@@ -1177,9 +1177,9 @@ $$
 
 Fig. 9.4 右侧 panels 对比了 renormalized migration flows $\zeta_i$ 的 empirical cumulative tail、Levy stable law 和 normal law。
 
-![Fig. 9.4 France renormalized migration shock tail](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/09-from-first-principles-to-the-growth-equation.mineru/hybrid_auto/images/page-08-figure-02.jpg)
+![Fig. 9.4 France renormalized migration shock tail](figures/statistics-and-dynamics-of-urban-populations-ch09-from-first-principles-to-the-growth-equation/page-08-figure-02.jpg)
 
-![Fig. 9.4 US renormalized migration shock tail](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/09-from-first-principles-to-the-growth-equation.mineru/hybrid_auto/images/page-08-figure-04.jpg)
+![Fig. 9.4 US renormalized migration shock tail](figures/statistics-and-dynamics-of-urban-populations-ch09-from-first-principles-to-the-growth-equation/page-08-figure-04.jpg)
 
 图中 normal law 的 tail 下降得太快，无法描述 empirical tail；Levy stable law 更接近经验曲线。这个证据支撑了本章的核心建模选择：
 

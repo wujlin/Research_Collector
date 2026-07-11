@@ -11,7 +11,7 @@ topics: ["stochastic_analysis", "stochastic_analysis/path_foundations/brownian_m
 tier: 0
 citations: 0
 relevance_score: 53.24
-collected: "2026-04-23"
+collected: "2026-04-16"
 status: "unread"
 source: "arxiv"
 ---
@@ -34,4 +34,3 @@ We study stochastic thermodynamics of over-damped Brownian motion in a flowing f
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

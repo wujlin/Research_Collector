@@ -30,4 +30,3 @@ Classical methods for inverse problems are mainly based on regularization theory
 - [[physics_informed_modeling]]
 
 ## Notes
-

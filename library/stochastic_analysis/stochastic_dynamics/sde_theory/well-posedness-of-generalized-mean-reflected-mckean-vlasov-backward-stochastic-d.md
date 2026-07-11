@@ -31,4 +31,3 @@ This paper investigates a class of generalized mean-reflected McKean-Vlasov type
 - [[stochastic_dynamics]]
 
 ## Notes
-

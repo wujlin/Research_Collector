@@ -31,4 +31,3 @@ We prove the quantitative propagation of chaos for stochastic particle systems w
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

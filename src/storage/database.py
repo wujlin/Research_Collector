@@ -14,7 +14,17 @@ from sqlalchemy.orm import Session, sessionmaker
 
 from src.utils.helpers import flatten_topics, normalize_title, normalize_whitespace, parse_date, utc_now
 
-from .models import Author, Base, CollectionLog, Paper, Topic, Venue, YouTubeResource, author_coauthors
+from .models import (
+    Author,
+    Base,
+    CollectionLog,
+    Paper,
+    Topic,
+    Venue,
+    YouTubeResource,
+    author_coauthors,
+    paper_authors,
+)
 
 
 @dataclass(frozen=True)
@@ -371,6 +381,7 @@ class Database:
 
     def _attach_authors(self, session: Session, paper: Paper, author_names: list[Any]) -> None:
         existing = {author.name: author for author in paper.authors}
+        desired_order: list[Author] = []
         for author_name in author_names:
             payload = self._normalize_author_payload(author_name)
             if not payload["name"]:
@@ -383,12 +394,26 @@ class Database:
                     author.openalex_id = payload["openalex_id"]
                 if payload["semantic_scholar_id"] and not author.semantic_scholar_id:
                     author.semantic_scholar_id = payload["semantic_scholar_id"]
+                desired_order.append(author)
                 continue
             author = self._get_or_create_author(session, payload)
             if author is None:
                 continue
             paper.authors.append(author)
             existing[payload["name"]] = author
+            desired_order.append(author)
+
+        if desired_order:
+            session.flush()
+            for position, author in enumerate(desired_order):
+                session.execute(
+                    paper_authors.update()
+                    .where(
+                        paper_authors.c.paper_id == paper.id,
+                        paper_authors.c.author_id == author.id,
+                    )
+                    .values(position=position)
+                )
 
     def _attach_topics(self, session: Session, paper: Paper, topic_keys: list[str]) -> None:
         existing = {topic.key for topic in paper.topics}
@@ -460,17 +485,33 @@ class Database:
             paper.topics.clear()
             self._attach_topics(session, paper, topic_keys)
 
-    def get_papers_by_topic(self, topic_key: str, limit: int = 50) -> list[Paper]:
+    def get_papers_by_topic(self, topic_key: str, limit: int | None = 50) -> list[Paper]:
         with self.session() as session:
-            papers = session.execute(
+            stmt = (
                 select(Paper)
                 .join(Paper.topics)
                 .where(Topic.key == topic_key)
                 .order_by(Paper.relevance_score.desc(), Paper.citation_count.desc())
-                .limit(limit)
-            ).scalars().all()
+            )
+            if limit is not None:
+                stmt = stmt.limit(limit)
+            papers = session.execute(stmt).scalars().all()
             for p in papers:
                 _ = p.authors, p.topics
+            return papers
+
+    def get_uncategorized_papers(self, limit: int | None = None) -> list[Paper]:
+        with self.session() as session:
+            stmt = (
+                select(Paper)
+                .where(~Paper.topics.any())
+                .order_by(Paper.relevance_score.desc(), Paper.citation_count.desc())
+            )
+            if limit is not None:
+                stmt = stmt.limit(limit)
+            papers = session.execute(stmt).scalars().all()
+            for paper in papers:
+                _ = paper.authors, paper.topics
             return papers
 
     def get_recent_papers(self, days: int = 7, limit: int = 50) -> list[Paper]:
@@ -543,6 +584,42 @@ class Database:
             paper = session.get(Paper, paper_id)
             if paper:
                 paper.markdown_path = markdown_path
+
+    def update_paper_metadata(self, paper_id: int, **fields: Any) -> None:
+        allowed_fields = {
+            "title", "year", "journal", "doi", "arxiv_id", "url", "pdf_url",
+            "status", "source", "tier", "relevance_score",
+        }
+        invalid_fields = set(fields) - allowed_fields
+        if invalid_fields:
+            raise ValueError(f"Unsupported paper metadata fields: {sorted(invalid_fields)}")
+
+        with self.session() as session:
+            paper = session.get(Paper, paper_id)
+            if paper is None:
+                return
+            for field, value in fields.items():
+                setattr(paper, field, value)
+            paper.updated_at = utc_now()
+
+    def set_paper_author_order(self, paper_id: int, author_names: list[str]) -> None:
+        with self.session() as session:
+            paper = session.get(Paper, paper_id)
+            if paper is None:
+                return
+            authors_by_name = {author.name: author for author in paper.authors}
+            if set(author_names) != set(authors_by_name):
+                raise ValueError(f"Author set differs for paper {paper_id}")
+            for position, name in enumerate(author_names):
+                author = authors_by_name[name]
+                session.execute(
+                    paper_authors.update()
+                    .where(
+                        paper_authors.c.paper_id == paper_id,
+                        paper_authors.c.author_id == author.id,
+                    )
+                    .values(position=position)
+                )
 
     def delete_papers_by_ids(self, paper_ids: list[int]) -> int:
         """删除指定论文，并清理失去关联的作者。"""
@@ -650,12 +727,14 @@ class Database:
     def get_stats(self) -> dict[str, Any]:
         with self.session() as session:
             total = session.execute(select(func.count(Paper.id))).scalar()
-            by_status = {}
+            status_counts = session.execute(
+                select(Paper.status, func.count(Paper.id))
+                .group_by(Paper.status)
+                .order_by(Paper.status)
+            ).all()
+            by_status = {status or "unknown": count for status, count in status_counts}
             for status in ["unread", "reading", "read", "noted"]:
-                count = session.execute(
-                    select(func.count(Paper.id)).where(Paper.status == status)
-                ).scalar()
-                by_status[status] = count
+                by_status.setdefault(status, 0)
             topic_counts = session.execute(
                 select(Topic.key, func.count(Paper.id))
                 .join(Paper.topics)

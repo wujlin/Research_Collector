@@ -683,7 +683,7 @@ $$
 
 ### 3.4 Figure 1：二维坐标轴
 
-![Figure 1 — framework schematic](../../pdfs/2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.mineru/hybrid_auto/images/page-02-figure-01.jpg)
+![Figure 1 — framework schematic](figures/predictor-driven-diffusion-for-spatiotemporal-generation/page-02-figure-01.jpg)
 
 Figure 1 把全文压成一个二维坐标系。读这张图时，不要先看模型模块，而要先看两个轴。
 
@@ -1843,7 +1843,7 @@ DDPM baseline 用同样 U-Net，但 simulation 和 generation 分别训练模型
 
 ### 6.2 Figure 2：Lorenz-96 simulation
 
-![Figure 2 — Lorenz-96 simulation](../../pdfs/2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.mineru/hybrid_auto/images/page-05-figure-01.jpg)
+![Figure 2 — Lorenz-96 simulation](figures/predictor-driven-diffusion-for-spatiotemporal-generation/page-05-figure-01.jpg)
 
 Figure 2 展示 Lorenz-96 的 simulation。上排是 fine resolution $\lambda=0$，下排是 coarse resolution $\lambda=0.2$。左边是 slow variable $X$，右边是 fast variable $Y$。每个 panel 又包含 spatiotemporal evolution 和 time-averaged spatial PSD。
 
@@ -1875,7 +1875,7 @@ $Y$ 在 $\lambda=0.2$ 下也被强烈平滑，原本的快速细碎结构变成�
 
 ### 6.3 Figure 3：Kolmogorov flow simulation
 
-![Figure 3 — Kolmogorov flow simulation](../../pdfs/2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.mineru/hybrid_auto/images/page-05-figure-02.jpg)
+![Figure 3 — Kolmogorov flow simulation](figures/predictor-driven-diffusion-for-spatiotemporal-generation/page-05-figure-02.jpg)
 
 Figure 3 对 Kolmogorov flow 做同样验证。左侧展示第 6 个 time step 的 vorticity field，右侧展示 time-averaged PSD。
 
@@ -1951,7 +1951,7 @@ L96 上 DDPM 更好，KF 上本文更好。作者的重点不是声称新方法�
 
 ### 6.6 Table 3 和 Figure 4：super-resolution
 
-![Figure 4 — super-resolution](../../pdfs/2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.mineru/hybrid_auto/images/page-06-figure-01.jpg)
+![Figure 4 — super-resolution](figures/predictor-driven-diffusion-for-spatiotemporal-generation/page-06-figure-01.jpg)
 
 Table 3 对比 super-resolved output 和 low-resolution input：
 
@@ -3444,9 +3444,9 @@ generation 和 super-resolution 贵，因为每个 reverse-$\lambda$ step 都要
 
 Figure 5 在 $\lambda=0$ 比较 Lorenz-96 的 physics simulation、surrogate prediction 和 DDPM baseline。
 
-![Figure 5 — Lorenz-96 simulation at lambda 0](../../pdfs/2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.mineru/hybrid_auto/images/page-26-figure-01.jpg)
+![Figure 5 — Lorenz-96 simulation at lambda 0](figures/predictor-driven-diffusion-for-spatiotemporal-generation/page-26-figure-01.jpg)
 
-![Figure 5 — Lorenz-96 PSD at lambda 0](../../pdfs/2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.mineru/hybrid_auto/images/page-26-figure-02.jpg)
+![Figure 5 — Lorenz-96 PSD at lambda 0](figures/predictor-driven-diffusion-for-spatiotemporal-generation/page-26-figure-02.jpg)
 
 它的作用是支撑 Table 1：在 fine resolution 下，本文 surrogate 和 DDPM baseline 都能接近 physics-based simulation。
 
@@ -3460,9 +3460,9 @@ Figure 7 才是对本文更重要的图：它画出 evaluation metrics 随 $\lam
 
 Figure 8 展示 Lorenz-96 的 unconditional generation，Figure 9 展示 Kolmogorov flow 的 unconditional generation。
 
-![Figure 8 — Lorenz-96 unconditional generation](../../pdfs/2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.mineru/hybrid_auto/images/page-28-figure-01.jpg)
+![Figure 8 — Lorenz-96 unconditional generation](figures/predictor-driven-diffusion-for-spatiotemporal-generation/page-28-figure-01.jpg)
 
-![Figure 9 — Kolmogorov flow unconditional generation](../../pdfs/2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.mineru/hybrid_auto/images/page-28-figure-04.jpg)
+![Figure 9 — Kolmogorov flow unconditional generation](figures/predictor-driven-diffusion-for-spatiotemporal-generation/page-28-figure-04.jpg)
 
 这两组图的功能不是展示单个样本完全等于某个 reference，而是看 generated samples 是否拥有类似的 spatiotemporal patterns 和 PSD。它们支撑 Table 2：predictor-defined path score 可以用于生成。
 

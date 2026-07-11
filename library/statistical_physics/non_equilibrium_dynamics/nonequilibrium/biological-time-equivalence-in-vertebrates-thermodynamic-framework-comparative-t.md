@@ -7,10 +7,10 @@ doi: "10.64898/2026.03.27.714731"
 arxiv: ""
 url: "https://openalex.org/W7143499893"
 pdf_url: "https://www.biorxiv.org/content/biorxiv/early/2026/03/30/2026.03.27.714731.full.pdf"
-topics: ["statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics"]
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics"]
 tier: 0
 citations: 0
-relevance_score: 47.0
+relevance_score: 51.0
 collected: "2026-04-16"
 status: "unread"
 source: "openalex"
@@ -26,9 +26,8 @@ Abstract Across adult warm-blooded vertebrates, the product of resting heart rat
 
 ## Connections
 
+- [[statistical_physics]]
 - [[nonequilibrium]]
 - [[non_equilibrium_dynamics]]
-- [[statistical_physics]]
 
 ## Notes
-

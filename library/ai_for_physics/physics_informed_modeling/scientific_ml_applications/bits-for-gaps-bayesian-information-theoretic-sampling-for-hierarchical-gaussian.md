@@ -31,4 +31,3 @@ We introduce Bayesian Information-Theoretic Sampling for hierarchical GAussian P
 - [[scientific_ml_applications]]
 
 ## Notes
-

@@ -31,4 +31,3 @@ Diffusion models have recently emerged as expressive policy representations for 
 - [[equilibrium_structures]]
 
 ## Notes
-

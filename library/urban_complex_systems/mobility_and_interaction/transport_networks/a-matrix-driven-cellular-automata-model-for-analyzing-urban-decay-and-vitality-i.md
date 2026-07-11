@@ -33,4 +33,3 @@ Urban decay and urban vitality are widely used concepts in architecture and urba
 - [[scaling_and_evolution]]
 
 ## Notes
-

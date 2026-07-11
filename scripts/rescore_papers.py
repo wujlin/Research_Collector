@@ -60,8 +60,8 @@ def main() -> None:
             paper.is_seminal = paper.is_seminal or bool(record.get("seminal_candidate"))
             updated += 1
 
-    pipeline._refresh_library_indices()
-    pipeline.export_all()
+    pipeline.sync_library_markdown()
+    pipeline.export_all(generate_periodic_digest=False)
     print({"rescored_papers": updated, "collected_after": args.collected_after or None})
 
 

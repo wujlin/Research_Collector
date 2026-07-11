@@ -11,7 +11,7 @@ topics: ["bridges", "bridges/transport_and_spatial_generation/optimal_transport_
 tier: 0
 citations: 0
 relevance_score: 47.0
-collected: "2026-04-16"
+collected: "2026-04-15"
 status: "unread"
 source: "openalex"
 ---
@@ -31,4 +31,3 @@ This paper proposes a tri-component loss function framework integrated within Ge
 - [[transport_and_spatial_generation]]
 
 ## Notes
-

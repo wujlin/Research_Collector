@@ -31,4 +31,3 @@ The push for efficient text to image synthesis has moved the field toward one st
 - [[collective_structure]]
 
 ## Notes
-

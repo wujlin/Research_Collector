@@ -31,4 +31,3 @@ Collective spin systems -- spin ensembles coupled to a common reservoir and effe
 - [[collective_structure]]
 
 ## Notes
-

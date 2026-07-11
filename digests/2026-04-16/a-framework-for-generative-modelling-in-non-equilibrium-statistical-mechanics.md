@@ -213,27 +213,27 @@ FEP 反转了通常的因果推理方向：
 
 **结果**：
 
-![Figure 1a: 目标胞外信号梯度场](../../pdfs/2026-04-16/a-framework-for-the-use-of-generative-modelling-in-non-equilibrium-statistical-mechanics.mineru/hybrid_auto/images/page-13-figure-01.jpg)
+![Figure 1a: 目标胞外信号梯度场](figures/a-framework-for-generative-modelling-in-non-equilibrium-statistical-mechanics/page-13-figure-01.jpg)
 
 *Figure 1a — 目标胞外梯度场。不同颜色表示不同信号表达，星号标记细胞最终位置。该场编码了目标形态（头、身、尾）的空间信号分布。*
 
-![Figure 1b: 目标信号的二进制编码](../../pdfs/2026-04-16/a-framework-for-the-use-of-generative-modelling-in-non-equilibrium-statistical-mechanics.mineru/hybrid_auto/images/page-13-figure-02.jpg)
+![Figure 1b: 目标信号的二进制编码](figures/a-framework-for-generative-modelling-in-non-equilibrium-statistical-mechanics/page-13-figure-02.jpg)
 
 *Figure 1b — 目标信号在细胞中的二进制编码。可理解为遗传编码（genetic encoding）的类比，表位遗传动力学则被视为主动推断（active inference）。*
 
-![Figure 1c: Softmax 身份推断矩阵](../../pdfs/2026-04-16/a-framework-for-the-use-of-generative-modelling-in-non-equilibrium-statistical-mechanics.mineru/hybrid_auto/images/page-13-figure-03.jpg)
+![Figure 1c: Softmax 身份推断矩阵](figures/a-framework-for-generative-modelling-in-non-equilibrium-statistical-mechanics/page-13-figure-03.jpg)
 
 *Figure 1c — Softmax 函数返回的后验信念矩阵。每列代表一个细胞，每行代表集合中的一个位置。对角线附近的高亮表示每个细胞对自身身份有较强的信念。*
 
-![Figure 2a: 细胞迁移轨迹](../../pdfs/2026-04-16/a-framework-for-the-use-of-generative-modelling-in-non-equilibrium-statistical-mechanics.mineru/hybrid_auto/images/page-14-figure-01.jpg)
+![Figure 2a: 细胞迁移轨迹](figures/a-framework-for-generative-modelling-in-non-equilibrium-statistical-mechanics/page-14-figure-01.jpg)
 
 *Figure 2a — 细胞位置随时间的演化。颜色（红/黄/绿/蓝）标记细胞分化后的类型，梯度表示信号表达强度。细胞从初始位置（共位）逐渐迁移到目标形态对应的位置。*
 
-![Figure 2b: 自由能随时间下降](../../pdfs/2026-04-16/a-framework-for-the-use-of-generative-modelling-in-non-equilibrium-statistical-mechanics.mineru/hybrid_auto/images/page-14-figure-02.jpg)
+![Figure 2b: 自由能随时间下降](figures/a-framework-for-generative-modelling-in-non-equilibrium-statistical-mechanics/page-14-figure-02.jpg)
 
 *Figure 2b — 自由能随时间单调下降。这直接验证了 FEP 的核心预测：细胞在迁移和分化过程中持续最小化变分自由能。*
 
-![Figure 3: 细胞最终空间分布](../../pdfs/2026-04-16/a-framework-for-the-use-of-generative-modelling-in-non-equilibrium-statistical-mechanics.mineru/hybrid_auto/images/page-15-figure-01.jpg)
+![Figure 3: 细胞最终空间分布](figures/a-framework-for-generative-modelling-in-non-equilibrium-statistical-mechanics/page-15-figure-01.jpg)
 
 *Figure 3 — 各细胞的完整运动轨迹及最终位置（星号）。最终形态呈现清晰的"头-身-尾"结构，每个细胞通过推断自身身份并按预期行动，"知道自己在更大系统中的位置"。*
 
@@ -251,19 +251,19 @@ FEP 反转了通常的因果推理方向：
 
 **关键对比**：论文同时模拟了两种动力学——基于 surprisal 梯度的流（flow on $\mathcal{L}$）和基于自由能梯度的流（flow on $F$）——并进行了直接比较。
 
-![Figure 4: 内部状态相位演化](../../pdfs/2026-04-16/a-framework-for-the-use-of-generative-modelling-in-non-equilibrium-statistical-mechanics.mineru/hybrid_auto/images/page-19-figure-01.jpg)
+![Figure 4: 内部状态相位演化](figures/a-framework-for-generative-modelling-in-non-equilibrium-statistical-mechanics/page-19-figure-01.jpg)
 
 *Figure 4 — 极坐标螺旋图上的内部状态 $\mu_t$ 演化。蓝色：surprisal 梯度流 $\mathcal{L}$；红色：自由能梯度流 $F$。两者在所有时间尺度上显示出优异的一致性，验证了自由能梯度流对原始动力学的忠实近似。*
 
-![Figure 5: 主动状态演化](../../pdfs/2026-04-16/a-framework-for-the-use-of-generative-modelling-in-non-equilibrium-statistical-mechanics.mineru/hybrid_auto/images/page-20-figure-01.jpg)
+![Figure 5: 主动状态演化](figures/a-framework-for-generative-modelling-in-non-equilibrium-statistical-mechanics/page-20-figure-01.jpg)
 
 *Figure 5 — 主动状态 $a_t$ 在两种流制下的演化对比。同样呈现高度一致性。*
 
-![Figure 6: KL 散度随时间趋向零](../../pdfs/2026-04-16/a-framework-for-the-use-of-generative-modelling-in-non-equilibrium-statistical-mechanics.mineru/hybrid_auto/images/page-20-figure-02.jpg)
+![Figure 6: KL 散度随时间趋向零](figures/a-framework-for-generative-modelling-in-non-equilibrium-statistical-mechanics/page-20-figure-02.jpg)
 
 *Figure 6 — 自由能流 $F$ 下 KL 散度 $D_{\mathrm{KL}}(q(\eta;\mu) \| p(\eta \mid s,a))$ 的样本均值（N=200）随时间迅速下降并趋向零。这意味着变分密度 $q$ 在推断过程中逐渐逼近真实后验——推断间隙（inference gap）被消除。*
 
-![Figure 7: 两种流制下自由能的比较](../../pdfs/2026-04-16/a-framework-for-the-use-of-generative-modelling-in-non-equilibrium-statistical-mechanics.mineru/hybrid_auto/images/page-21-figure-01.jpg)
+![Figure 7: 两种流制下自由能的比较](figures/a-framework-for-generative-modelling-in-non-equilibrium-statistical-mechanics/page-21-figure-01.jpg)
 
 *Figure 7 — 自由能的样本均值比较（N=200）。红色（$F$ 流）比蓝色（$\mathcal{L}$ 流）下降更快、达到更低的最小值。这表明：通过加入精度加权预测误差（precision-weighted prediction error）驱动的 KL 项，自由能梯度流在收敛速度和最终精度上优于原始 surprisal 梯度流。*
 

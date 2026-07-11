@@ -31,4 +31,3 @@ We investigate a continuum Lagrangian $p$-alignment system given by a nonlocal m
 - [[collective_structure]]
 
 ## Notes
-

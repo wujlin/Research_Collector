@@ -33,4 +33,3 @@ We consider a metapopulation made up of K demes, each containing N individuals b
 - [[collective_structure]]
 
 ## Notes
-

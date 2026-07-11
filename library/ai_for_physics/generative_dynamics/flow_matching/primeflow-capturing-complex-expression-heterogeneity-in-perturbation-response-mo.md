@@ -31,4 +31,3 @@ Predicting the effects of perturbations in-silico on cell state can identify dri
 - [[generative_dynamics]]
 
 ## Notes
-

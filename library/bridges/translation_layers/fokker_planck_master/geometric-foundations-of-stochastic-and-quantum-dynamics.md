@@ -34,4 +34,3 @@ We develop a geometric formulation of stochastic dynamics in which noise, diffus
 - [[translation_layers]]
 
 ## Notes
-

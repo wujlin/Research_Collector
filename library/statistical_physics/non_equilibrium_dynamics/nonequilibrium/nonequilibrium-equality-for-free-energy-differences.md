@@ -8,9 +8,9 @@ arxiv: ""
 url: "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.78.2690"
 pdf_url: ""
 topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems", "statistical_physics/non_equilibrium_dynamics"]
-tier: 0
+tier: 1
 citations: 0
-relevance_score: 0
+relevance_score: 48.0
 collected: "2026-04-07"
 status: "unread"
 source: ""
@@ -34,3 +34,4 @@ is_seminal: true
 
 ## Notes
 
+非平衡自由能关系的核心论文。

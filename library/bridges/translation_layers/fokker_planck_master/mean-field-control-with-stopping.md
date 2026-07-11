@@ -34,4 +34,3 @@ We study a high-dimensional stochastic optimization problem which features both 
 - [[translation_layers]]
 
 ## Notes
-

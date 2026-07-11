@@ -10,7 +10,7 @@ pdf_url: "https://chemrxiv.org/doi/pdf/10.26434/chemrxiv.15001585/v1"
 topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/equilibrium_structures", "statistical_physics/non_equilibrium_dynamics"]
 tier: 0
 citations: 0
-relevance_score: 50.0
+relevance_score: 54.0
 collected: "2026-04-08"
 status: "unread"
 source: "openalex"
@@ -32,4 +32,3 @@ Accurate and efficient prediction of protein–ligand binding free energies rema
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

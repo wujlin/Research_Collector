@@ -31,4 +31,3 @@ We propose a simple mechanism by which scaling laws emerge from feature learning
 - [[collective_structure]]
 
 ## Notes
-

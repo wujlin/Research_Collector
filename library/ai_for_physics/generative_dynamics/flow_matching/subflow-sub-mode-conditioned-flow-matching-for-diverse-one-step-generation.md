@@ -31,4 +31,3 @@ Flow matching has emerged as a powerful generative framework, with recent few-st
 - [[generative_dynamics]]
 
 ## Notes
-

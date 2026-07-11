@@ -8,9 +8,9 @@ arxiv: ""
 url: "https://onlinelibrary.wiley.com/doi/10.1002/andp.19053220806"
 pdf_url: ""
 topics: ["stochastic_analysis", "stochastic_analysis/path_foundations/brownian_motion", "stochastic_analysis/path_foundations"]
-tier: 0
+tier: 2
 citations: 0
-relevance_score: 0
+relevance_score: 39.0
 collected: "2026-04-07"
 status: "unread"
 source: ""
@@ -33,3 +33,4 @@ is_seminal: true
 
 ## Notes
 
+布朗运动理论起点。

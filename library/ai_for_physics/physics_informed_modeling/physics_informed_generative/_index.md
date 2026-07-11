@@ -2,7 +2,7 @@
 title: "Physics-Informed Generative Modelling"
 description: ""
 paper_count: 9
-last_updated: "2026-05-18"
+last_updated: "2026-07-11"
 ---
 
 # Physics-Informed Generative Modelling
@@ -18,7 +18,7 @@ last_updated: "2026-05-18"
 
 - [Diffusion models with physics-guided inference for solving partial differential equations](diffusion-models-with-physics-guided-inference-for-solving-partial-differential.md) (2026, ArXiv.org, 0 citations)
 
-- [A framework for the use of generative modelling in non-equilibrium statistical mechanics](a-framework-for-the-use-of-generative-modelling-in-non-equilibrium-statistical-m.md) (2024, arXiv, 0 citations)
+- [A framework for the use of generative modelling in non-equilibrium statistical mechanics](../../../statistical_physics/non_equilibrium_dynamics/nonequilibrium/a-framework-for-the-use-of-generative-modelling-in-non-equilibrium-statistical-m.md) (2024, arXiv, 0 citations)
 
 - [A Primer on Variational Inference for Physics-Informed Deep Generative Modelling](a-primer-on-variational-inference-for-physics-informed-deep-generative-modelling.md) (2024, arXiv, 0 citations)
 

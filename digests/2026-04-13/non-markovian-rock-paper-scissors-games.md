@@ -82,13 +82,13 @@ $$
 
 ## 5. A. Basic Model: The Markovian Benchmark They Will Later Deform
 
-![Figure 1a: Markovian zRPS dynamics in the ternary simplex](../../pdfs/2026-04-13/non-markovian-rock-paper-scissors-games.mineru/hybrid_auto/images/page-01-figure-01.jpg)
+![Figure 1a: Markovian zRPS dynamics in the ternary simplex](figures/non-markovian-rock-paper-scissors-games/page-01-figure-01.jpg)
 
-![Figure 1b: power-law waiting time on the A+B reaction](../../pdfs/2026-04-13/non-markovian-rock-paper-scissors-games.mineru/hybrid_auto/images/page-01-figure-02.jpg)
+![Figure 1b: power-law waiting time on the A+B reaction](figures/non-markovian-rock-paper-scissors-games/page-01-figure-02.jpg)
 
-![Figure 1c: gamma waiting time on the A+B reaction](../../pdfs/2026-04-13/non-markovian-rock-paper-scissors-games.mineru/hybrid_auto/images/page-01-figure-03.jpg)
+![Figure 1c: gamma waiting time on the A+B reaction](figures/non-markovian-rock-paper-scissors-games/page-01-figure-03.jpg)
 
-![Figure 1d: RGB fixation-color legend](../../pdfs/2026-04-13/non-markovian-rock-paper-scissors-games.mineru/hybrid_auto/images/page-01-figure-04.jpg)
+![Figure 1d: RGB fixation-color legend](figures/non-markovian-rock-paper-scissors-games/page-01-figure-04.jpg)
 
 这一小节的任务不是直接给 non-Markovian 结果，而是先把后面所有比较都要依赖的 `Markovian benchmark` 固定下来。换句话说，作者先要回答：经典 zRPS 在最标准、最干净的设定下，状态空间长什么样，动力学怎样演化，fixation 问题到底是怎样出现的。
 
@@ -372,7 +372,7 @@ $$
 
 ## 9. II.A. RPS Survival Behavior With Power-Law WTD
 
-![Figure 2: same mean, very different typical waiting times](../../pdfs/2026-04-13/non-markovian-rock-paper-scissors-games.mineru/hybrid_auto/images/page-03-figure-01.jpg)
+![Figure 2: same mean, very different typical waiting times](figures/non-markovian-rock-paper-scissors-games/page-03-figure-01.jpg)
 
 这一小节真正要做的，不是马上给出最终相图，而是先把后面 power-law 结果的比较基准立起来。作者要先说明：如果只把第一条反应的时钟改成 heavy-tailed waiting-time law，那么应该怎样和经典指数时钟做公平比较，以及为什么单看平均 waiting time 已经不够了。
 
@@ -524,9 +524,9 @@ species $A$ 也不一定仍然是最可能存活的 species。换句话说，LOW
 
 ## 10. II.B. Generalized Rate Equations Under Power-Law WTD
 
-![Figure 3a: coexistence point versus inverse shape parameter under power-law WTD](../../pdfs/2026-04-13/non-markovian-rock-paper-scissors-games.mineru/hybrid_auto/images/page-04-figure-01.jpg)
+![Figure 3a: coexistence point versus inverse shape parameter under power-law WTD](figures/non-markovian-rock-paper-scissors-games/page-04-figure-01.jpg)
 
-![Figure 3b: coexistence point versus $k_A$ under power-law WTD](../../pdfs/2026-04-13/non-markovian-rock-paper-scissors-games.mineru/hybrid_auto/images/page-04-figure-02.jpg)
+![Figure 3b: coexistence point versus $k_A$ under power-law WTD](figures/non-markovian-rock-paper-scissors-games/page-04-figure-02.jpg)
 
 这一小节真正的任务，是把前一节的直觉判断变成动力学方程。前面作者已经说明：一旦 waiting time 不是指数分布，LOW 不能再只靠平均 waiting time 来判断。现在他们要进一步回答：`这种 non-Markovian waiting time 到底怎样进入 mean-field dynamics？`
 
@@ -885,11 +885,11 @@ $$
 
 ## 11. II.E. Fixation Heatmaps For The Power-Law WTD
 
-![Figure 4a: fixation heatmap when only the first reaction has a power-law WTD](../../pdfs/2026-04-13/non-markovian-rock-paper-scissors-games.mineru/hybrid_auto/images/page-05-figure-01.jpg)
+![Figure 4a: fixation heatmap when only the first reaction has a power-law WTD](figures/non-markovian-rock-paper-scissors-games/page-05-figure-01.jpg)
 
-![Figure 4b: fixation heatmap when all reactions have power-law WTDs, with $\alpha_B=\alpha_C=10$](../../pdfs/2026-04-13/non-markovian-rock-paper-scissors-games.mineru/hybrid_auto/images/page-05-figure-02.jpg)
+![Figure 4b: fixation heatmap when all reactions have power-law WTDs, with $\alpha_B=\alpha_C=10$](figures/non-markovian-rock-paper-scissors-games/page-05-figure-02.jpg)
 
-![Figure 4c: fixation heatmap when all reactions have power-law WTDs, with $\alpha_B=\alpha_C=1.5$](../../pdfs/2026-04-13/non-markovian-rock-paper-scissors-games.mineru/hybrid_auto/images/page-05-figure-03.jpg)
+![Figure 4c: fixation heatmap when all reactions have power-law WTDs, with $\alpha_B=\alpha_C=1.5$](figures/non-markovian-rock-paper-scissors-games/page-05-figure-03.jpg)
 
 这一小节的任务，是把前面关于 `threshold shift` 和 `equilibrium shift` 的分析，真正变成整个参数空间上的 survival phase diagram。前面几节已经说明：power-law waiting time 会移动共存点，也会把 LOW 的分界线从 $k=1$ 推到 $k=k^*(\alpha_A)$。heatmap 这一节要回答的是：`这些偏移在整个 $\alpha_A$-$k_A$ 平面上到底长什么样，最后谁真正赢？`
 

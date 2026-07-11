@@ -31,4 +31,3 @@ Deep linear networks (DLNs) are used as an analytically tractable model of the t
 - [[equilibrium_structures]]
 
 ## Notes
-

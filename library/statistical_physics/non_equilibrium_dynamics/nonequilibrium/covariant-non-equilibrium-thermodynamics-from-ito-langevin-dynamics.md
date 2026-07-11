@@ -11,7 +11,7 @@ topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/no
 tier: 0
 citations: 0
 relevance_score: 44.0
-collected: "2026-04-23"
+collected: "2026-04-16"
 status: "unread"
 source: "arxiv"
 ---
@@ -32,4 +32,3 @@ Using the recently developed covariant Ito-Langevin dynamics, we develop a non-e
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

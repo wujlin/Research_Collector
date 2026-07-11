@@ -8,9 +8,9 @@ arxiv: ""
 url: "https://iopscience.iop.org/article/10.1088/0034-4885/75/12/126001"
 pdf_url: ""
 topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics/fluctuation_theorems", "statistical_physics/non_equilibrium_dynamics"]
-tier: 0
+tier: 2
 citations: 0
-relevance_score: 0
+relevance_score: 42.0
 collected: "2026-04-07"
 status: "unread"
 source: ""
@@ -34,3 +34,4 @@ is_seminal: true
 
 ## Notes
 
+随机热力学综述。

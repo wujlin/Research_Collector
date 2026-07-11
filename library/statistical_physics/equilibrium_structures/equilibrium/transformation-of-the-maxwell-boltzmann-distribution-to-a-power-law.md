@@ -34,4 +34,3 @@ Power-law (PL) distribution functions (DF) are prevalent in highly diverse syste
 - [[scaling_and_evolution]]
 
 ## Notes
-

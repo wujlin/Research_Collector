@@ -7,7 +7,7 @@ doi: "10.64898/2026.04.10.717643"
 arxiv: ""
 url: "https://openalex.org/W7154352341"
 pdf_url: "https://www.biorxiv.org/content/biorxiv/early/2026/04/14/2026.04.10.717643.full.pdf"
-topics: ["statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics", "statistical_physics"]
+topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "statistical_physics/non_equilibrium_dynamics"]
 tier: 0
 citations: 0
 relevance_score: 51.0
@@ -26,9 +26,8 @@ Neural population models are widely used to interpret electroencephalography (EE
 
 ## Connections
 
+- [[statistical_physics]]
 - [[nonequilibrium]]
 - [[non_equilibrium_dynamics]]
-- [[statistical_physics]]
 
 ## Notes
-

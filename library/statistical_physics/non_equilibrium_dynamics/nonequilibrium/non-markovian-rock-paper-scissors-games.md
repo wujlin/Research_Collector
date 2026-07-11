@@ -11,7 +11,7 @@ topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/no
 tier: 2
 citations: 0
 relevance_score: 59.0
-collected: "2026-04-16"
+collected: "2026-04-13"
 status: "read"
 source: "openalex"
 ---
@@ -32,3 +32,4 @@ Evidence is mounting that species interactions often involve long-term memory, w
 
 ## Notes
 
+2026-04-15: User confirmed this paper has been read through and should be removed from the active must-read backlog.

@@ -2,7 +2,7 @@
 title: "城市数据科学"
 description: ""
 paper_count: 6
-last_updated: "2026-05-18"
+last_updated: "2026-07-11"
 ---
 
 # 城市数据科学
@@ -12,7 +12,7 @@ last_updated: "2026-05-18"
 ## Papers (6)
 
 
-- [A Physics-Constrained Deep-Learning Framework based on Long-Term Remote-Sensing Data for Retrieving Vertical Distribution of PM <sub>2.5</sub> Chemical Components](a-physics-constrained-deep-learning-framework-based-on-long-term-remote-sensing.md) (2026, Atmospheric measurement techniques, 0 citations)
+- [A Physics-Constrained Deep-Learning Framework based on Long-Term Remote-Sensing Data for Retrieving Vertical Distribution of PM <sub>2.5</sub> Chemical Components](../../../ai_for_physics/physics_informed_modeling/physics_informed_generative/a-physics-constrained-deep-learning-framework-based-on-long-term-remote-sensing.md) (2026, Atmospheric measurement techniques, 0 citations)
 
 - [Variational Quantum Physics-Informed Neural Networks for Hydrological PDE-Constrained Learning with Inherent Uncertainty Quantification](variational-quantum-physics-informed-neural-networks-for-hydrological-pde-constr.md) (2026, arXiv (Cornell University), 0 citations)
 

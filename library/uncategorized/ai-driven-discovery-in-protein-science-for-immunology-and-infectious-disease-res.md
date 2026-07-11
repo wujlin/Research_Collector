@@ -11,7 +11,7 @@ topics: []
 tier: 0
 citations: 0
 relevance_score: 32.0
-collected: "2026-04-16"
+collected: "2026-04-15"
 status: "unread"
 source: "openalex"
 ---
@@ -29,4 +29,3 @@ Artificial Intelligence (AI) is impacting several aspects of modern life with it
 (待添加)
 
 ## Notes
-

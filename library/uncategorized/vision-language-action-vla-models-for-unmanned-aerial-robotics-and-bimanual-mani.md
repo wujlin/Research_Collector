@@ -8,9 +8,9 @@ arxiv: ""
 url: "https://openalex.org/W7152979392"
 pdf_url: "https://www.preprints.org/frontend/manuscript/98c9348cbfea97adab7315fa37d3b9ca/download_pub"
 topics: []
-tier: 2
+tier: 0
 citations: 0
-relevance_score: 46.0
+relevance_score: 36.0
 collected: "2026-04-13"
 status: "unread"
 source: "openalex"
@@ -29,4 +29,3 @@ Vision-Language-Action (VLA) models unify visual perception, natural-language un
 (待添加)
 
 ## Notes
-

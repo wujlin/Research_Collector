@@ -31,4 +31,3 @@ We formulate a stochastic description of entropy production in scattering theory
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

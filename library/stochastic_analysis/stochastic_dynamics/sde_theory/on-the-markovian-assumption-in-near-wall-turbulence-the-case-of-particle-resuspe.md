@@ -34,4 +34,3 @@ Stochastic models of near-wall turbulence commonly rely on the Markovian assumpt
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

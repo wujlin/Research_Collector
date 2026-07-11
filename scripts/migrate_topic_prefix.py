@@ -50,6 +50,8 @@ def main() -> None:
 
     for markdown_file in (ROOT / "library").rglob("*.md"):
         relative_path = markdown_file.relative_to(ROOT / "library").as_posix()
+        if relative_path.startswith("archive/"):
+            continue
         if markdown_file.name in {"index.md", "_index.md"}:
             continue
         if relative_path not in valid_markdown_paths:
@@ -60,7 +62,7 @@ def main() -> None:
     write_knowledge_map()
     write_youtube_bootstrap()
     pipeline._refresh_library_indices()
-    pipeline.export_all()
+    pipeline.export_all(generate_periodic_digest=False)
     WebSnapshotExporter().export_all(pipeline.database)
     print(
         {

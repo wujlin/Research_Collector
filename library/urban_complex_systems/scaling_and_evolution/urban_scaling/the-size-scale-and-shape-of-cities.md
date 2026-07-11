@@ -8,9 +8,9 @@ arxiv: ""
 url: "https://www.science.org/doi/10.1126/science.1151419"
 pdf_url: ""
 topics: ["urban_complex_systems", "urban_complex_systems/scaling_and_evolution/urban_scaling", "urban_complex_systems/scaling_and_evolution/urban_dynamics", "urban_complex_systems/scaling_and_evolution"]
-tier: 0
+tier: 1
 citations: 0
-relevance_score: 0
+relevance_score: 48.0
 collected: "2026-04-07"
 status: "unread"
 source: ""
@@ -34,3 +34,4 @@ is_seminal: true
 
 ## Notes
 
+城市复杂系统与尺度问题的经典综述。

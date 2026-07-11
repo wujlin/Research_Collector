@@ -32,9 +32,9 @@ date: "2026-04-11"
 
 ## 2. The Minimal Building Blocks: Markovian Events And Snippets
 
-![Fig. 1 energy landscape and localized snippets](../../pdfs/2026-04-11/fluctuating-entropy-production-on-the-coarse-grained-level-inference-and-localization-of-irreversibility.mineru/hybrid_auto/images/209f576534bf5edb8700493cb54e8b947f893989425f53de9e377b3ede9971ae.jpg)
+![Fig. 1 energy landscape and localized snippets](figures/fluctuating-entropy-production-on-the-coarse-grained-level/209f576534bf5edb8700493cb54e8b947f893989425f53de9e377b3ede9971ae.jpg)
 
-![Fig. 1 localized snippet in the time series](../../pdfs/2026-04-11/fluctuating-entropy-production-on-the-coarse-grained-level-inference-and-localization-of-irreversibility.mineru/hybrid_auto/images/2e61fb0331b7f1716bc25961d5a5d641b6011d09a1292de4c63b45112a5fe80d.jpg)
+![Fig. 1 localized snippet in the time series](figures/fluctuating-entropy-production-on-the-coarse-grained-level/2e61fb0331b7f1716bc25961d5a5d641b6011d09a1292de4c63b45112a5fe80d.jpg)
 
 作者的关键想法不是继续把 coarse-grained state 当成基本对象，而是换一个更稳的基本单元：`Markovian event`。它的定义是，一旦观测到这个事件，未来演化和更早的过去条件独立。换句话说，它在粗粒化后重新提供了一个“记忆被切断”的时间点。
 
@@ -70,11 +70,11 @@ $$
 
 一个粗粒化状态才可以近似视为马尔可夫状态。如果这种分离不清楚，那么系统离开某个可见状态时仍会保留进入该状态的历史信息，整体 coarse-grained dynamics 就会带记忆。作者正是因此放弃“状态必须是 Markov state”的要求，转而去找那些一旦发生就能切断记忆的 `Markovian events`。
 
-![Fig. 2 transition-based coarse graining and snippet structure](../../pdfs/2026-04-11/fluctuating-entropy-production-on-the-coarse-grained-level-inference-and-localization-of-irreversibility.mineru/hybrid_auto/images/eeff80d2060960772bbc51835b4fd85b9ea4d2c51903a46574d470f1f3c6713f.jpg)
+![Fig. 2 transition-based coarse graining and snippet structure](figures/fluctuating-entropy-production-on-the-coarse-grained-level/eeff80d2060960772bbc51835b4fd85b9ea4d2c51903a46574d470f1f3c6713f.jpg)
 
-![Fig. 2(a,b) coarse-grained event structure](../../pdfs/2026-04-11/fluctuating-entropy-production-on-the-coarse-grained-level-inference-and-localization-of-irreversibility.mineru/hybrid_auto/images/fff04169c2caaea52dfba35c3f4afe0382495444869420729a8395f3091719db.jpg)
+![Fig. 2(a,b) coarse-grained event structure](figures/fluctuating-entropy-production-on-the-coarse-grained-level/fff04169c2caaea52dfba35c3f4afe0382495444869420729a8395f3091719db.jpg)
 
-![Fig. 2(c) event pair used for localization](../../pdfs/2026-04-11/fluctuating-entropy-production-on-the-coarse-grained-level-inference-and-localization-of-irreversibility.mineru/hybrid_auto/images/a3c02a452e54f95754152d71ef26d35f44a69a6835d83b5661f837fd6008287a.jpg)
+![Fig. 2(c) event pair used for localization](figures/fluctuating-entropy-production-on-the-coarse-grained-level/a3c02a452e54f95754152d71ef26d35f44a69a6835d83b5661f837fd6008287a.jpg)
 
 这一步还要求你区分几组对象。第一组是 `state-based` 和 `transition-based` 描述：前者记录“当前在哪个状态”，后者记录“刚刚发生了哪次跃迁”。第二组是时间反演下的 `even observables` 和 `odd observables`：前者在时间反演下不变，后者会翻方向或变号。作者的方法之所以干净，在于它能在这些不同 coarse-grained 描述下都给出统一的 snippet-level 结构。
 
@@ -119,11 +119,11 @@ $$
 
 ## 4. Why Coarse-Grained Entropy Production Still Fluctuates
 
-![Fig. 3 fluctuating entropy production at microscopic and coarse-grained levels](../../pdfs/2026-04-11/fluctuating-entropy-production-on-the-coarse-grained-level-inference-and-localization-of-irreversibility.mineru/hybrid_auto/images/90807edf729c8ea50da2e3e79b4384b1eb8fded921e0171e7325fb645772698a.jpg)
+![Fig. 3 fluctuating entropy production at microscopic and coarse-grained levels](figures/fluctuating-entropy-production-on-the-coarse-grained-level/90807edf729c8ea50da2e3e79b4384b1eb8fded921e0171e7325fb645772698a.jpg)
 
-![Fig. 3 local snippet entropy production rates](../../pdfs/2026-04-11/fluctuating-entropy-production-on-the-coarse-grained-level-inference-and-localization-of-irreversibility.mineru/hybrid_auto/images/becf653a0ad7c830a0d39ab9a9668a9fc1cc0441f0e0cc263be0f1fbf4a05ee4.jpg)
+![Fig. 3 local snippet entropy production rates](figures/fluctuating-entropy-production-on-the-coarse-grained-level/becf653a0ad7c830a0d39ab9a9668a9fc1cc0441f0e0cc263be0f1fbf4a05ee4.jpg)
 
-![Fig. 3 convergence of local rates](../../pdfs/2026-04-11/fluctuating-entropy-production-on-the-coarse-grained-level-inference-and-localization-of-irreversibility.mineru/hybrid_auto/images/ae71ae3c08f75d1253175de0cc3a685ac7f02079254f87da076412301e278473.jpg)
+![Fig. 3 convergence of local rates](figures/fluctuating-entropy-production-on-the-coarse-grained-level/ae71ae3c08f75d1253175de0cc3a685ac7f02079254f87da076412301e278473.jpg)
 
 这一篇最重要的推进，是作者证明 coarse-grained entropy production 不是“只有平均后才有意义”的量。它在整条轨迹上会波动，在固定 snippet 类型上也会波动。`Figure 3(a)(b)` 先说明累计 entropy production 和 entropy-production rate 都会沿单条轨迹随机起伏，只是 coarse-graining 会把整体可见的 irreversibility 压低。
 
@@ -159,15 +159,15 @@ $$
 
 也就是说，只要 $\Delta a_{I\to J}>0$，就能肯定 hidden part 里至少存在一个非零 affinity 的循环，而且这个振幅给出了它的下界。
 
-![Fig. 4(c) hidden-driving detection through time-dependent a(t)](../../pdfs/2026-04-11/fluctuating-entropy-production-on-the-coarse-grained-level-inference-and-localization-of-irreversibility.mineru/hybrid_auto/images/d0d90016a49d27cdd658d9629c21265da60c6eb5048a9f1c0f643fd8c83d0312.jpg)
+![Fig. 4(c) hidden-driving detection through time-dependent a(t)](figures/fluctuating-entropy-production-on-the-coarse-grained-level/d0d90016a49d27cdd658d9629c21265da60c6eb5048a9f1c0f643fd8c83d0312.jpg)
 
 `Figure 4(c)` 给的是最基础的 hidden-driving detection 图像。若同一个可见事件对的 $a(t)$ 会随 $t$ 明显变化，那么这份时间依赖本身就已经说明 hidden part 中有被驱动的循环，且其驱动力至少达到 $\Delta a$ 这个量级。
 
 作者还进一步说明，你并不一定只能用 $I$、$J$ 和总等待时间 $t$。如果有额外 observable，而且它在时间反演结构下是自洽的，就可以进一步增强 localization。但这里有严格约束：证明 hidden-driving bound 时需要构造一个与真实时间反演在 coarse-grained 层上不可区分的部分反演操作，因此附加 observable 必须是 time-reversal even。也正因为此，snippet 内部更细的 waiting times 一般不能直接加入；总时长 $t$ 可以用，是因为它在时间反演下保持不变。
 
-![Fig. 5(a,c) localization and failure geometry](../../pdfs/2026-04-11/fluctuating-entropy-production-on-the-coarse-grained-level-inference-and-localization-of-irreversibility.mineru/hybrid_auto/images/bf4917a98591a581db8882f77fe5c8cfe9afd64091492951bc8901d6789692d9.jpg)
+![Fig. 5(a,c) localization and failure geometry](figures/fluctuating-entropy-production-on-the-coarse-grained-level/bf4917a98591a581db8882f77fe5c8cfe9afd64091492951bc8901d6789692d9.jpg)
 
-![Fig. 5(b) localization enhanced by the observable H](../../pdfs/2026-04-11/fluctuating-entropy-production-on-the-coarse-grained-level-inference-and-localization-of-irreversibility.mineru/hybrid_auto/images/8e8d9e43db96d0aaeac93d562a7a131938de5a9a03a0502538c7097ed0cf833f.jpg)
+![Fig. 5(b) localization enhanced by the observable H](figures/fluctuating-entropy-production-on-the-coarse-grained-level/8e8d9e43db96d0aaeac93d562a7a131938de5a9a03a0502538c7097ed0cf833f.jpg)
 
 `Figure 5` 展示的就是这种增强版 localization。对于 `1\to4` 的 trajectories，如果再区分“是否经过 $H$”，那么 hidden driving 的位置就能被明显剥离出来：不经过 $H$ 的轨迹几乎不呈现时间依赖；经过 $H$ 的轨迹则给出显著更大的 $\Delta a$；如果把这两类混在一起，信号会被平均稀释。这里真正被展示的不是“多一个 observable 更好”这么抽象的结论，而是：合适的、时间反演下自洽的附加信息，确实能把隐藏不可逆性从混合背景里局域出来。
 

@@ -32,4 +32,3 @@ Flow Matching (FM) policies have emerged as an efficient backbone for robotic co
 - [[generative_dynamics]]
 
 ## Notes
-

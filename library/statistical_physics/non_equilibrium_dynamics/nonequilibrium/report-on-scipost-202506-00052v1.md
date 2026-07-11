@@ -11,7 +11,7 @@ topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/no
 tier: 0
 citations: 0
 relevance_score: 48.0
-collected: "2026-04-16"
+collected: "2026-04-13"
 status: "unread"
 source: "openalex"
 ---
@@ -32,4 +32,3 @@ We discuss analytical results for a run-and-tumble particle (RTP) in one dimensi
 - [[collective_structure]]
 
 ## Notes
-

@@ -11,7 +11,7 @@ topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/no
 tier: 1
 citations: 4
 relevance_score: 71.17
-collected: "2026-04-16"
+collected: "2026-04-08"
 status: "unread"
 source: "openalex"
 ---
@@ -32,3 +32,4 @@ Quantum computers promise to tackle quantum simulation problems that are classic
 
 ## Notes
 
+2026-04-15: Promote as a future single-day mainline read. User expects to spend roughly half a day first reviewing the needed quantum-mechanics background.

@@ -29,4 +29,3 @@ This study examines how socio-economic and demographic factors influence electri
 (待添加)
 
 ## Notes
-

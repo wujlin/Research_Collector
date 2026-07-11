@@ -56,7 +56,7 @@ $$q(\mathbf{x}_t \mid \mathbf{x}_{t-1}) := \mathcal{N}\left(\mathbf{x}_t;\, \sqr
 
 其中 $\beta_1, \ldots, \beta_T$ 是**噪声调度**（variance schedule），控制每一步添加多少噪声。注意均值中的 $\sqrt{1 - \beta_t}$ 缩放因子——它确保每一步在添加噪声的同时缩小信号，使得总方差不会无限增长。
 
-![Figure 2: 有向图模型](../../pdfs/2026-04-16/denoising-diffusion-probabilistic-models.mineru/hybrid_auto/images/page-01-figure-01.jpg)
+![Figure 2: 有向图模型](figures/denoising-diffusion-probabilistic-models/page-01-figure-01.jpg)
 
 *Figure 2 — DDPM 的有向图模型。上方实线箭头（从右到左）：反向去噪过程 $p_\theta(\mathbf{x}_{t-1} \mid \mathbf{x}_t)$，由神经网络参数化。下方虚线箭头（从右到左）：前向扩散过程 $q(\mathbf{x}_t \mid \mathbf{x}_{t-1})$，是固定的高斯噪声注入。最左侧灰色节点 $\mathbf{x}_T$ 接近纯噪声，最右侧 $\mathbf{x}_0$ 是干净数据。*
 
@@ -258,7 +258,7 @@ $$\mathbf{x}_{t-1} = \frac{1}{\sqrt{\alpha_t}}\left(\mathbf{x}_t - \frac{\beta_t
 
 从 $\mathbf{x}_T \sim \mathcal{N}(\mathbf{0}, \mathbf{I})$ 出发，迭代 $T$ 步即可得到样本 $\mathbf{x}_0$。
 
-![Algorithm 1 & 2: 训练与采样算法](../../pdfs/2026-04-16/denoising-diffusion-probabilistic-models.mineru/hybrid_auto/images/page-03-table-01.jpg)
+![Algorithm 1 & 2: 训练与采样算法](figures/denoising-diffusion-probabilistic-models/page-03-table-01.jpg)
 
 *Algorithm 1 (Training) 与 Algorithm 2 (Sampling) — 训练过程极为简洁：随机采样 $\mathbf{x}_0$、时间步 $t$、噪声 $\boldsymbol{\epsilon}$，然后对 $\|\boldsymbol{\epsilon} - \boldsymbol{\epsilon}_\theta(\sqrt{\bar{\alpha}_t}\, \mathbf{x}_0 + \sqrt{1 - \bar{\alpha}_t}\, \boldsymbol{\epsilon},\, t)\|^2$ 做梯度下降。采样过程从纯噪声出发，逐步用网络预测的噪声去噪。*
 
@@ -354,7 +354,7 @@ $$\mathbf{x}_{t-1} = \mathbf{x}_t + \frac{\beta_t}{2} \nabla_{\mathbf{x}_t} \log
 
 ### 10.1 CIFAR10 样本质量
 
-![Table 1 & Table 2: CIFAR10 结果与消融](../../pdfs/2026-04-16/denoising-diffusion-probabilistic-models.mineru/hybrid_auto/images/page-04-table-01.jpg)
+![Table 1 & Table 2: CIFAR10 结果与消融](figures/denoising-diffusion-probabilistic-models/page-04-table-01.jpg)
 
 *Table 1 (左) — CIFAR10 定量结果。DDPM 使用 $L_{\text{simple}}$ 取得 IS=9.46, FID=3.17，是当时无条件生成的 SOTA。注意 FID 优于大部分条件生成模型（如 BigGAN 的 14.73）。Table 2 (右) — 消融实验：ε-prediction + $L_{\text{simple}}$ 的组合效果最佳。$\tilde{\mu}$-prediction 在简化目标下无法稳定训练，学习方差导致训练不稳定。*
 
@@ -366,15 +366,15 @@ $$\mathbf{x}_{t-1} = \mathbf{x}_t + \frac{\beta_t}{2} \nabla_{\mathbf{x}_t} \log
 
 ### 10.2 LSUN 256×256 样本
 
-![Figure 3: LSUN Church 样本](../../pdfs/2026-04-16/denoising-diffusion-probabilistic-models.mineru/hybrid_auto/images/page-05-figure-01.jpg)
+![Figure 3: LSUN Church 样本](figures/denoising-diffusion-probabilistic-models/page-05-figure-01.jpg)
 
 *Figure 3 — LSUN Church 256×256 无条件生成样本。FID=7.89。样本展示了多样的建筑风格和光照条件。*
 
-![Figure 4: LSUN Bedroom 样本](../../pdfs/2026-04-16/denoising-diffusion-probabilistic-models.mineru/hybrid_auto/images/page-05-figure-02.jpg)
+![Figure 4: LSUN Bedroom 样本](figures/denoising-diffusion-probabilistic-models/page-05-figure-02.jpg)
 
 *Figure 4 — LSUN Bedroom 256×256 无条件生成样本（大模型）。FID=4.90。样本质量接近 ProgressiveGAN（FID 8.34），细节纹理丰富、空间布局合理。*
 
-![Table 3: LSUN FID 对比](../../pdfs/2026-04-16/denoising-diffusion-probabilistic-models.mineru/hybrid_auto/images/page-12-table-01.jpg)
+![Table 3: LSUN FID 对比](figures/denoising-diffusion-probabilistic-models/page-12-table-01.jpg)
 
 *Table 3 — LSUN 256×256 FID 对比。DDPM 在 Bedroom 上接近 ProgressiveGAN，但与 StyleGAN/StyleGAN2 仍有差距。*
 
@@ -382,19 +382,19 @@ $$\mathbf{x}_{t-1} = \mathbf{x}_t + \frac{\beta_t}{2} \nabla_{\mathbf{x}_t} \log
 
 #### 率失真曲线
 
-![Figure 5: 率失真曲线](../../pdfs/2026-04-16/denoising-diffusion-probabilistic-models.mineru/hybrid_auto/images/page-06-figure-01.jpg)
+![Figure 5: 率失真曲线](figures/denoising-diffusion-probabilistic-models/page-06-figure-01.jpg)
 
 *Figure 5 — CIFAR10 测试集上的率失真曲线。横轴为反向过程步数（$T - t$），纵轴为 RMSE 失真。失真在低码率区域陡峭下降——大部分码率被分配给了不可察觉的细节。率 1.78 bits/dim + 失真 1.97 bits/dim = 无损码率 3.75 bits/dim，其中超过一半用于编码人眼不可察觉的失真（RMSE ≈ 0.95/255）。*
 
 #### 渐进式生成过程
 
-![Figure 6: CIFAR10 渐进生成](../../pdfs/2026-04-16/denoising-diffusion-probabilistic-models.mineru/hybrid_auto/images/page-06-figure-04.jpg)
+![Figure 6: CIFAR10 渐进生成](figures/denoising-diffusion-probabilistic-models/page-06-figure-04.jpg)
 
 *Figure 6 — CIFAR10 渐进式生成（$\hat{\mathbf{x}}_0$ 随时间变化，从左到右）。大尺度特征（形状、颜色）首先出现，细节纹理最后添加——这与人类视觉的"从粗到细"处理方式一致。*
 
 #### 条件于同一隐变量的随机采样
 
-![Figure 7: 共享隐变量的条件采样](../../pdfs/2026-04-16/denoising-diffusion-probabilistic-models.mineru/hybrid_auto/images/page-06-figure-05.jpg)
+![Figure 7: 共享隐变量的条件采样](figures/denoising-diffusion-probabilistic-models/page-06-figure-05.jpg)
 
 *Figure 7 — 条件于同一中间隐变量 $\mathbf{x}_t$ 的 CelebA-HQ 256×256 样本。从 $\mathbf{x}_{1000}$（纯噪声）分裂采样，各样本差异很大。但从 $\mathbf{x}_{250}$ 分裂，所有样本共享姿态、肤色、发型、表情等高级属性——说明隐变量 $\mathbf{x}_t$ 以层次化方式编码了语义信息。*
 
@@ -418,7 +418,7 @@ Table 2 (右侧) 的消融揭示了关键设计选择：
 
 ### 10.5 插值
 
-![Figure 8: CelebA-HQ 隐空间插值](../../pdfs/2026-04-16/denoising-diffusion-probabilistic-models.mineru/hybrid_auto/images/page-07-figure-02.jpg)
+![Figure 8: CelebA-HQ 隐空间插值](figures/denoising-diffusion-probabilistic-models/page-07-figure-02.jpg)
 
 *Figure 8 — CelebA-HQ 256×256 隐空间插值（$t = 500$）。源图像经前向过程扩散到 $\mathbf{x}_t$，在隐空间线性插值后用反向过程重建。插值平滑地变化了姿态、肤色、发型和表情等属性，生成质量高、过渡自然。*
 

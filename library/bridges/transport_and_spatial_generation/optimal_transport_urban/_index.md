@@ -2,7 +2,7 @@
 title: "最优传输与城市"
 description: ""
 paper_count: 7
-last_updated: "2026-05-18"
+last_updated: "2026-07-11"
 ---
 
 # 最优传输与城市
@@ -12,11 +12,11 @@ last_updated: "2026-05-18"
 ## Papers (7)
 
 
-- [Flow Matching for Generative Modeling](flow-matching-for-generative-modeling.md) (2023, ICLR, 0 citations)
+- [Flow Matching for Generative Modeling](../../../ai_for_physics/generative_dynamics/flow_matching/flow-matching-for-generative-modeling.md) (2023, ICLR, 0 citations)
 
 - [Error Analysis of Bayesian Inverse Problems with Generative Priors](error-analysis-of-bayesian-inverse-problems-with-generative-priors.md) (2026, ArXiv, 1 citations)
 
-- [Sampleability transport, nonlinear regularization, and the porous medium flow](sampleability-transport-nonlinear-regularization-and-the-porous-medium-flow.md) (2026, ArXiv.org, 0 citations)
+- [Sampleability transport, nonlinear regularization, and the porous medium flow](../../../stochastic_analysis/stochastic_dynamics/sde_theory/sampleability-transport-nonlinear-regularization-and-the-porous-medium-flow.md) (2026, ArXiv.org, 0 citations)
 
 - [Exponential Turnpike Theorems for Nonlinear Deterministic Meanfield Optimal Control Problems](exponential-turnpike-theorems-for-nonlinear-deterministic-meanfield-optimal-cont.md) (2026, ArXiv.org, 0 citations)
 

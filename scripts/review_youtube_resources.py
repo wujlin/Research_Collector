@@ -79,7 +79,7 @@ def main() -> None:
     removed = 0
     if args.apply_delete:
         removed = pipeline.database.delete_youtube_resources_by_ids(archive_ids)
-        pipeline.export_all()
+        pipeline.export_all(generate_periodic_digest=False)
 
     print(
         {

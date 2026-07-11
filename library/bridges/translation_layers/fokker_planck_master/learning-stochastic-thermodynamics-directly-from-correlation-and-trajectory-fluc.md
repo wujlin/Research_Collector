@@ -10,9 +10,9 @@ pdf_url: ""
 topics: ["bridges/translation_layers/fokker_planck_master", "statistical_physics", "statistical_physics/non_equilibrium_dynamics/nonequilibrium", "ai_for_physics", "ai_for_physics/generative_dynamics/sde_generative", "bridges", "bridges/thermodynamic_inference/info_geometry", "statistical_physics/non_equilibrium_dynamics", "ai_for_physics/generative_dynamics", "bridges/translation_layers", "bridges/thermodynamic_inference", "bridges/thermodynamic_inference/variational_free_energy"]
 tier: 0
 citations: 0
-relevance_score: 0
+relevance_score: 54.0
 collected: "2026-04-07"
-status: "unread"
+status: "read"
 source: ""
 is_seminal: true
 ---

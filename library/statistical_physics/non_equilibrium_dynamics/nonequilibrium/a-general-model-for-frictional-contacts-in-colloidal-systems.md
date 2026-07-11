@@ -32,4 +32,3 @@ Abstract In simulations of colloidal matter, frictional contacts between particl
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

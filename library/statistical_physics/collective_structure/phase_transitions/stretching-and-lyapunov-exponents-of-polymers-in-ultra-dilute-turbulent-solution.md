@@ -34,4 +34,3 @@ We analyze a system of bead--spring polymers interacting with Navier--Stokes tur
 - [[scaling_and_evolution]]
 
 ## Notes
-

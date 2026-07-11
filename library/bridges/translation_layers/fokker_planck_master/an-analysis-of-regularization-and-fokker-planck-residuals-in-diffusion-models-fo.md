@@ -34,4 +34,3 @@ Recent work has shown that diffusion models trained with the denoising score mat
 - [[translation_layers]]
 
 ## Notes
-

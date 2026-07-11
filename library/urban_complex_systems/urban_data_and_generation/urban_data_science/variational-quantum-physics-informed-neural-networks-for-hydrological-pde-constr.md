@@ -7,7 +7,7 @@ doi: ""
 arxiv: ""
 url: "https://openalex.org/W7154427264"
 pdf_url: "https://arxiv.org/pdf/2604.09374"
-topics: ["ai_for_physics/physics_informed_modeling", "ai_for_physics", "urban_complex_systems/urban_data_and_generation", "urban_complex_systems", "urban_complex_systems/urban_data_and_generation/urban_data_science"]
+topics: ["ai_for_physics", "urban_complex_systems", "urban_complex_systems/urban_data_and_generation/urban_data_science", "ai_for_physics/physics_informed_modeling", "urban_complex_systems/urban_data_and_generation"]
 tier: 0
 citations: 0
 relevance_score: 54.0
@@ -26,11 +26,10 @@ We propose a Hybrid Quantum-Classical Physics-Informed Neural Network (HQC-PINN)
 
 ## Connections
 
-- [[physics_informed_modeling]]
 - [[ai_for_physics]]
-- [[urban_data_and_generation]]
 - [[urban_complex_systems]]
 - [[urban_data_science]]
+- [[physics_informed_modeling]]
+- [[urban_data_and_generation]]
 
 ## Notes
-

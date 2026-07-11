@@ -34,4 +34,3 @@ Abstract We propose a novel approach to numerically approximate McKean–Vlasov 
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

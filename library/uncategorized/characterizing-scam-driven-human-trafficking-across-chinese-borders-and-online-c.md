@@ -11,7 +11,7 @@ topics: []
 tier: 0
 citations: 1
 relevance_score: 35.01
-collected: "2026-04-16"
+collected: "2026-04-15"
 status: "unread"
 source: "openalex"
 ---
@@ -29,4 +29,3 @@ A new form of human trafficking has emerged across Chinese borders, where indivi
 (待添加)
 
 ## Notes
-

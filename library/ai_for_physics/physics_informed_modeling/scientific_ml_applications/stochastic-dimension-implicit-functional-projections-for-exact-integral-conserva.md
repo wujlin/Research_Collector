@@ -10,7 +10,7 @@ pdf_url: "https://arxiv.org/pdf/2603.29237"
 topics: ["ai_for_physics", "ai_for_physics/physics_informed_modeling", "ai_for_physics/physics_informed_modeling/scientific_ml_applications"]
 tier: 0
 citations: 0
-relevance_score: 36.0
+relevance_score: 51.0
 collected: "2026-04-08"
 status: "unread"
 source: "openalex"
@@ -31,4 +31,3 @@ Enforcing exact macroscopic conservation laws, such as mass and energy, in neura
 - [[scientific_ml_applications]]
 
 ## Notes
-

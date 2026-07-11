@@ -161,7 +161,7 @@ $$
 4. 因而可以把贝叶斯后验采样改写成“先解 HJ PDE，再做受控采样”的两步算法；
 5. 这就是 `HJ-sampler` 的出发点。
 
-![论文 Roadmap：黑色部分为已知结果，红色部分为本文贡献](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-02-figure-01.jpg)
+![论文 Roadmap：黑色部分为已知结果，红色部分为本文贡献](figures/hj-sampler/page-02-figure-01.jpg)
 
 ---
 
@@ -634,7 +634,7 @@ $$
 
 图注里还专门提醒了时间方向。这里采用的时间取向，不是纯概率论里最顺手的画法，而是故意对齐随机最优控制和随机最优输运里的时间约定。这样做的结果是：右图里的粘性 HJ 方程会带着一个和某些教材写法不同的时间方向约定。作者之所以坚持这样画，是因为后面一旦进入控制、输运和桥接问题，这个时间方向会更自然。
 
-![Log 变换在生成元情形下的结构示意，左侧为一般过程，右侧为布朗运动特例](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-03-figure-01.jpg)
+![Log 变换在生成元情形下的结构示意，左侧为一般过程，右侧为布朗运动特例](figures/hj-sampler/page-03-figure-01.jpg)
 
 所以 Figure 2 真正完成的是两件事。第一，它把 “生成元 $\to$ 线性 Kolmogorov 系统 $\to$ 非线性控制/输运系统” 这条已知路线压成了一张图。第二，它把一般过程和 Brownian 特例并排放在一起，告诉你：这不是只对热方程成立的巧合，而是一条更一般的结构。这样后面作者再把算子改成生成元的伴随时，读者才会清楚地看到：新意不在 Figure 2 这条已知桥，而在下一步怎样把这条桥转向贝叶斯后验。
 
@@ -874,7 +874,7 @@ Figure 3 把这件事画得很清楚。它不是一张普通示意图，而是�
 
 **后验不是单独被写出来的，而是由“先验传播”和“似然传播”这两条线通过 log 变换重新组合出来的。**
 
-![贝叶斯推断视角下的 log 变换：μ 从先验演化到数据分布，ρ 从 Dirac 质量演化到后验分布](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-06-figure-01.jpg)
+![贝叶斯推断视角下的 log 变换：μ 从先验演化到数据分布，ρ 从 Dirac 质量演化到后验分布](figures/hj-sampler/page-06-figure-01.jpg)
 
 原文紧接着加了一个很重要的 `Remark 2.3`：上面的推导并不要求你在终端时刻观测到整个 $Y_T$。如果你只观测到了它的一部分，线性传播和 log 变换这套结构仍然成立，只是边界条件要改写成“只在被观测分量上钉死，在未观测分量上保留自由度”。
 
@@ -1027,9 +1027,9 @@ $$
 
 所以这篇方法真正可复用的不是某一条后验轨迹，而是整个“先验 $\to$ 势函数”这一层离线结构。
 
-![SGM-HJ-sampler 算法示意：上方为训练阶段（Step 1），下方为推断阶段（Step 2）](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-08-figure-01.jpg)
+![SGM-HJ-sampler 算法示意：上方为训练阶段（Step 1），下方为推断阶段（Step 2）](figures/hj-sampler/page-08-figure-01.jpg)
 
-![推断阶段：从观测点出发的受控轨迹演化到后验分布](../../pdfs/2026-04-16/hj-sampler-a-bayesian-sampler-for-inverse-problems-by-leveraging-hamilton-jacobi-pdes-and-score-based-generative-models.mineru/hybrid_auto/images/page-08-figure-02.jpg)
+![推断阶段：从观测点出发的受控轨迹演化到后验分布](figures/hj-sampler/page-08-figure-02.jpg)
 
 Figure 4 可以顺着上面这两步来读。上半部分对应 Step 1：从先验出发，先学习或求解和 $\mu_t$ 相联系的势函数信息。下半部分对应 Step 2：一旦控制已经确定，轨迹就从观测点 $y_{\mathrm{obs}}$ 出发，沿受控动力学往后验分布展开。图本身画的是 SGM 版本，但它首先是在可视化这一条更一般的两步结构。
 

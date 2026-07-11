@@ -11,7 +11,7 @@ topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/no
 tier: 1
 citations: 0
 relevance_score: 62.4
-collected: "2026-04-23"
+collected: "2026-04-16"
 status: "unread"
 source: "arxiv"
 ---
@@ -32,4 +32,3 @@ In nano-scale systems coupled to finite-size reservoirs, the reservoir temperatu
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

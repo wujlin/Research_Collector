@@ -33,4 +33,3 @@ Abstract In this work, we present a geometrical formulation of quantum thermodyn
 - [[transport_and_spatial_generation]]
 
 ## Notes
-

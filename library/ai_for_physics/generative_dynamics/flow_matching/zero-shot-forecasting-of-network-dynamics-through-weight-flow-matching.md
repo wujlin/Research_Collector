@@ -31,4 +31,3 @@ Forecasting state evolution of network systems, such as the spread of informatio
 - [[generative_dynamics]]
 
 ## Notes
-

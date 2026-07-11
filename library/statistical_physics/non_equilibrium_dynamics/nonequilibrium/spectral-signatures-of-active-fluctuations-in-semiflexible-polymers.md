@@ -31,4 +31,3 @@ We study how an active bath is transduced into the internal fluctuation spectrum
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

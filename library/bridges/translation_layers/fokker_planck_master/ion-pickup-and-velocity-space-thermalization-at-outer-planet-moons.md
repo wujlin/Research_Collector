@@ -34,4 +34,3 @@ Ion pickup at the outer planets' active moons is a fundamental plasma process in
 - [[translation_layers]]
 
 ## Notes
-

@@ -44,11 +44,11 @@ topics: ["物理约束", "卷积算子", "Scientific ML", "架构设计"]
 
 ### 2.1 整体框架
 
-![Fig. 1a — PDCO 训练流程](../../pdfs/2026-04-16/attaining-physics-driven-convolutional-operators-by-architecture-design.mineru/hybrid_auto/images/page-23-figure-01.jpg)
+![Fig. 1a — PDCO 训练流程](figures/attaining-physics-driven-convolutional-operators-by-architecture-design/page-23-figure-01.jpg)
 
 PDCO 的训练回路如上图所示：随机采样的微观结构或初始状态作为输入 → PDCO 网络前向推理 → 输出场通过**固定 FDM 卷积核**计算空间/时间导数 → 代入 PDE 残差构造物理损失 → 反向传播更新网络参数。整个过程**不需要任何标注数据**。
 
-![Fig. 1b — PDCO 推理能力：物理预测与物理推断](../../pdfs/2026-04-16/attaining-physics-driven-convolutional-operators-by-architecture-design.mineru/hybrid_auto/images/page-23-figure-02.jpg)
+![Fig. 1b — PDCO 推理能力：物理预测与物理推断](figures/attaining-physics-driven-convolutional-operators-by-architecture-design/page-23-figure-02.jpg)
 
 训练完成后，PDCO 可作为代理模型进行两类推理：
 - **Physics-based prediction**（浅橙色区域）：对训练分布内的新初始条件做预测
@@ -137,13 +137,13 @@ $$[C_{ijkl}(\mathbf{x})(u_{k,l}(\mathbf{x}) - \epsilon_{kl}^*(\mathbf{x}))]_{,j}
 
 **定量验证**：
 
-![Fig. 2 — 圆形夹杂体应力场对比](../../pdfs/2026-04-16/attaining-physics-driven-convolutional-operators-by-architecture-design.mineru/hybrid_auto/images/page-24-figure-01.jpg)
+![Fig. 2 — 圆形夹杂体应力场对比](figures/attaining-physics-driven-convolutional-operators-by-architecture-design/page-24-figure-01.jpg)
 
 在标准圆形夹杂体基准上，PDCO 预测的应力场 \(\sigma_{xx}, \sigma_{yy}, \sigma_{xy}\) 与 MLP 参考解的全场相对误差仅为 **0.02%**。最大偏差集中在夹杂体/基体界面附近——这与高对比度界面处导数表征的复杂性直接相关。
 
 **分布外泛化**：
 
-![Fig. 3 — 多夹杂体外推预测](../../pdfs/2026-04-16/attaining-physics-driven-convolutional-operators-by-architecture-design.mineru/hybrid_auto/images/page-25-figure-01.jpg)
+![Fig. 3 — 多夹杂体外推预测](figures/attaining-physics-driven-convolutional-operators-by-architecture-design/page-25-figure-01.jpg)
 
 PDCO 成功泛化至训练集之外的构型：
 - 4 个夹杂体（训练集最多 3 个）：MSE = \(3.2 \times 10^{-4}\)
@@ -165,7 +165,7 @@ PDCO 成功泛化至训练集之外的构型：
 
 **定量结果**：
 
-![Fig. 4 — 弹性波传播位移场对比](../../pdfs/2026-04-16/attaining-physics-driven-convolutional-operators-by-architecture-design.mineru/hybrid_auto/images/page-26-figure-01.jpg)
+![Fig. 4 — 弹性波传播位移场对比](figures/attaining-physics-driven-convolutional-operators-by-architecture-design/page-26-figure-01.jpg)
 
 PDCO 预测的 \(u_x, u_y\) 位移分量 MSE 为 \(1.05 \times 10^{-4}\)，与有限差分法 (FDM) 参考解的 \(6.65 \times 10^{-3}\) 形成显著对比。波的传播过程、界面反射与散射现象均被准确捕获。
 
@@ -191,9 +191,9 @@ $$\partial \eta / \partial t - c_1^2 \Delta \eta + c_2(\eta^3 - \eta) = 0$$
 
 ### 3.4 热力学与物理一致性验证
 
-![Fig. 8a — 弹性波系统 Lagrangian 演化](../../pdfs/2026-04-16/attaining-physics-driven-convolutional-operators-by-architecture-design.mineru/hybrid_auto/images/page-30-figure-01.jpg)
+![Fig. 8a — 弹性波系统 Lagrangian 演化](figures/attaining-physics-driven-convolutional-operators-by-architecture-design/page-30-figure-01.jpg)
 
-![Fig. 8b — Allen-Cahn 系统自由能演化](../../pdfs/2026-04-16/attaining-physics-driven-convolutional-operators-by-architecture-design.mineru/hybrid_auto/images/page-30-figure-02.jpg)
+![Fig. 8b — Allen-Cahn 系统自由能演化](figures/attaining-physics-driven-convolutional-operators-by-architecture-design/page-30-figure-02.jpg)
 
 超越空间精度的验证——两个时间相关系统的基本动力学描述符：
 
@@ -204,7 +204,7 @@ $$\partial \eta / \partial t - c_1^2 \Delta \eta + c_2(\eta^3 - \eta) = 0$$
 
 ### 3.5 计算效率对比
 
-![Table 1 — 模型定量对比](../../pdfs/2026-04-16/attaining-physics-driven-convolutional-operators-by-architecture-design.mineru/hybrid_auto/images/page-22-table-01.jpg)
+![Table 1 — 模型定量对比](figures/attaining-physics-driven-convolutional-operators-by-architecture-design/page-22-table-01.jpg)
 
 | 模型 | 参数量 | 内存占用 | 训练时间 | MSE |
 |------|-------|---------|---------|-----|
@@ -215,9 +215,9 @@ $$\partial \eta / \partial t - c_1^2 \Delta \eta + c_2(\eta^3 - \eta) = 0$$
 
 PDCO 以**比 MLP 少近 4 个数量级的参数**（0.03M vs 117.46M）达到了比 MLP 高 **3 个数量级**的精度（10⁻¹⁰ vs 10⁻⁷），训练时间缩短约 3 倍。
 
-![Fig. 9a — 训练效率对比](../../pdfs/2026-04-16/attaining-physics-driven-convolutional-operators-by-architecture-design.mineru/hybrid_auto/images/page-31-figure-01.jpg)
+![Fig. 9a — 训练效率对比](figures/attaining-physics-driven-convolutional-operators-by-architecture-design/page-31-figure-01.jpg)
 
-![Fig. 9b — 单次预测推理时间对比](../../pdfs/2026-04-16/attaining-physics-driven-convolutional-operators-by-architecture-design.mineru/hybrid_auto/images/page-31-figure-02.jpg)
+![Fig. 9b — 单次预测推理时间对比](figures/attaining-physics-driven-convolutional-operators-by-architecture-design/page-31-figure-02.jpg)
 
 物理驱动的 PDCO 跳过了昂贵的数据生成阶段，实现了显著更低的总训练开销。单次推理速度方面，PDCO 相较 MLP 快约 **4-5 个数量级**。
 

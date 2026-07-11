@@ -33,4 +33,3 @@ Abstract We study the Tracy-Widom (TW) distribution $$f_\beta (a)$$ <mml:math xm
 - [[equilibrium_structures]]
 
 ## Notes
-

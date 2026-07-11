@@ -1,4 +1,5 @@
 mapping:
+  urban_scaling: urban_complex_systems/scaling_and_evolution/urban_scaling
   stochastic_analysis/brownian_motion: stochastic_analysis/path_foundations/brownian_motion
   stochastic_analysis/ito_calculus: stochastic_analysis/path_foundations/ito_calculus
   stochastic_analysis/fokker_planck: bridges/translation_layers/fokker_planck_master

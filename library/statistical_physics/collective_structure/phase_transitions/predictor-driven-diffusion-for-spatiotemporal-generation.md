@@ -11,10 +11,10 @@ topics: ["statistical_physics", "statistical_physics/collective_structure/phase_
 tier: 0
 citations: 0
 relevance_score: 54.0
-collected: "2026-04-16"
+collected: "2026-04-08"
 status: "read"
-digest: "digests/2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.md"
 source: "openalex"
+digest: "digests/2026-04-16/predictor-driven-diffusion-for-spatiotemporal-generation.md"
 ---
 
 ## Abstract

@@ -32,4 +32,3 @@ Fluctuation theorems show how coarse graining transforms microscopic symmetry in
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

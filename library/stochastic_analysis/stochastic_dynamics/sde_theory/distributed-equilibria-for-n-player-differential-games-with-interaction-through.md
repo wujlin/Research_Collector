@@ -34,4 +34,3 @@ We establish the existence and uniqueness of distributed equilibria to possibly 
 - [[collective_structure]]
 
 ## Notes
-

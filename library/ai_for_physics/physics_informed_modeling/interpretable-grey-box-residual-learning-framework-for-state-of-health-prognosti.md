@@ -7,7 +7,7 @@ doi: "10.3390/wevj17040201"
 arxiv: ""
 url: "https://openalex.org/W7154095877"
 pdf_url: "https://www.mdpi.com/2032-6653/17/4/201/pdf?version=1775898500"
-topics: ["ai_for_physics/physics_informed_modeling", "ai_for_physics"]
+topics: ["ai_for_physics", "ai_for_physics/physics_informed_modeling"]
 tier: 0
 citations: 0
 relevance_score: 42.0
@@ -26,8 +26,7 @@ Conventional black-box models for electric vehicle (EV) battery State-of-Health 
 
 ## Connections
 
-- [[physics_informed_modeling]]
 - [[ai_for_physics]]
+- [[physics_informed_modeling]]
 
 ## Notes
-

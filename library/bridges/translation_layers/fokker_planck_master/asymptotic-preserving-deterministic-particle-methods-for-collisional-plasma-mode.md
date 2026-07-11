@@ -7,7 +7,7 @@ doi: ""
 arxiv: ""
 url: "https://openalex.org/W7154427746"
 pdf_url: "https://arxiv.org/pdf/2604.09484"
-topics: ["bridges/translation_layers/fokker_planck_master", "bridges/translation_layers", "bridges", "statistical_physics/collective_structure/phase_transitions", "statistical_physics/collective_structure", "statistical_physics", "ai_for_physics/generative_dynamics", "ai_for_physics"]
+topics: ["bridges/translation_layers/fokker_planck_master", "statistical_physics", "statistical_physics/collective_structure/phase_transitions", "ai_for_physics", "bridges", "statistical_physics/collective_structure", "ai_for_physics/generative_dynamics", "bridges/translation_layers"]
 tier: 0
 citations: 0
 relevance_score: 54.0
@@ -27,13 +27,12 @@ We develop novel asymptotic-preserving (AP) deterministic particle methods for c
 ## Connections
 
 - [[fokker_planck_master]]
-- [[translation_layers]]
-- [[bridges]]
-- [[phase_transitions]]
-- [[collective_structure]]
 - [[statistical_physics]]
-- [[generative_dynamics]]
+- [[phase_transitions]]
 - [[ai_for_physics]]
+- [[bridges]]
+- [[collective_structure]]
+- [[generative_dynamics]]
+- [[translation_layers]]
 
 ## Notes
-

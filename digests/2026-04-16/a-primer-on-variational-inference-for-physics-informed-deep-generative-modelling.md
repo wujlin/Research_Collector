@@ -90,7 +90,7 @@ VI 在这里的好处，就体现在它允许你把这层结构显式写进推�
 
 ### 2.1 三空间框架：参数 → 解 → 观测
 
-![三空间框架图](../../pdfs/2026-04-16/a-primer-on-variational-inference-for-physics-informed-deep-generative-modelling.mineru/hybrid_auto/images/page-02-figure-01.jpg)
+![三空间框架图](figures/a-primer-on-variational-inference-for-physics-informed-deep-generative-modelling/page-02-figure-01.jpg)
 
 作者先给出 Figure 1，不是为了补一张概念图，而是为了先把后面所有方法都要落回去的三类对象分清楚。论文把物理推断中的核心量压成三个空间：
 

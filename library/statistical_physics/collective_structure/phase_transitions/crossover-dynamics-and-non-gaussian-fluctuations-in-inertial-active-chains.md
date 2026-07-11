@@ -11,7 +11,7 @@ topics: ["statistical_physics", "statistical_physics/collective_structure/phase_
 tier: 2
 citations: 0
 relevance_score: 64.0
-collected: "2026-04-23"
+collected: "2026-04-16"
 status: "unread"
 source: "openalex"
 ---
@@ -33,4 +33,3 @@ Inertial effects in active matter, although often neglected in overdamped descri
 - [[collective_structure]]
 
 ## Notes
-

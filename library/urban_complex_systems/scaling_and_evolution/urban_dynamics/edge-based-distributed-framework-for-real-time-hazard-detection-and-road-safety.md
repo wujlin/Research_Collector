@@ -7,7 +7,7 @@ doi: "10.1038/s41598-026-42899-w"
 arxiv: ""
 url: "https://openalex.org/W7154005956"
 pdf_url: "https://www.nature.com/articles/s41598-026-42899-w.pdf"
-topics: ["statistical_physics/equilibrium_structures", "statistical_physics", "urban_complex_systems/scaling_and_evolution/urban_dynamics", "urban_complex_systems/scaling_and_evolution", "urban_complex_systems"]
+topics: ["statistical_physics", "urban_complex_systems", "urban_complex_systems/scaling_and_evolution/urban_dynamics", "statistical_physics/equilibrium_structures", "urban_complex_systems/scaling_and_evolution"]
 tier: 0
 citations: 0
 relevance_score: 50.0
@@ -26,11 +26,10 @@ The main drawbacks of centralized smart-transportation pipelines are latency, ba
 
 ## Connections
 
-- [[equilibrium_structures]]
 - [[statistical_physics]]
-- [[urban_dynamics]]
-- [[scaling_and_evolution]]
 - [[urban_complex_systems]]
+- [[urban_dynamics]]
+- [[equilibrium_structures]]
+- [[scaling_and_evolution]]
 
 ## Notes
-

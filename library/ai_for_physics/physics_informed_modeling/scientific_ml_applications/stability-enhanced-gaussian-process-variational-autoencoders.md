@@ -7,7 +7,7 @@ doi: ""
 arxiv: ""
 url: "https://openalex.org/W7154427165"
 pdf_url: "https://arxiv.org/pdf/2604.09331"
-topics: ["ai_for_physics/physics_informed_modeling/scientific_ml_applications", "ai_for_physics/physics_informed_modeling", "ai_for_physics"]
+topics: ["ai_for_physics", "ai_for_physics/physics_informed_modeling", "ai_for_physics/physics_informed_modeling/scientific_ml_applications"]
 tier: 0
 citations: 0
 relevance_score: 51.0
@@ -26,9 +26,8 @@ A novel stability-enhanced Gaussian process variational autoencoder (SEGP-VAE) i
 
 ## Connections
 
-- [[scientific_ml_applications]]
-- [[physics_informed_modeling]]
 - [[ai_for_physics]]
+- [[physics_informed_modeling]]
+- [[scientific_ml_applications]]
 
 ## Notes
-

@@ -31,4 +31,3 @@ source: "openalex"
 - [[mobility_and_interaction]]
 
 ## Notes
-

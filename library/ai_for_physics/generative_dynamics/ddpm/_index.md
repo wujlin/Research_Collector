@@ -2,7 +2,7 @@
 title: "扩散概率模型"
 description: ""
 paper_count: 9
-last_updated: "2026-05-18"
+last_updated: "2026-07-11"
 ---
 
 # 扩散概率模型
@@ -12,9 +12,9 @@ last_updated: "2026-05-18"
 ## Papers (9)
 
 
-- [Score Matching Diffusion Based Feedback Control and Planning of Nonlinear Systems](score-matching-diffusion-based-feedback-control-and-planning-of-nonlinear-system.md) (2025, ArXiv, 2 citations)
+- [Score Matching Diffusion Based Feedback Control and Planning of Nonlinear Systems](../../../stochastic_analysis/path_foundations/brownian_motion/score-matching-diffusion-based-feedback-control-and-planning-of-nonlinear-system.md) (2025, ArXiv, 2 citations)
 
-- [Diffusion Models: A Mathematical Introduction](diffusion-models-a-mathematical-introduction.md) (2025, arXiv, 0 citations)
+- [Diffusion Models: A Mathematical Introduction](../../../bridges/translation_layers/fokker_planck_master/diffusion-models-a-mathematical-introduction.md) (2025, arXiv, 0 citations)
 
 - [LangFlow: Continuous Diffusion Rivals Discrete in Language Modeling](langflow-continuous-diffusion-rivals-discrete-in-language-modeling.md) (2026, ArXiv.org, 0 citations)
 
@@ -26,6 +26,6 @@ last_updated: "2026-05-18"
 
 - [Gdiffuse: Diffusion-Based Speech Enhancement with Noise Model Guidance](gdiffuse-diffusion-based-speech-enhancement-with-noise-model-guidance.md) (2026, preprint, 0 citations)
 
-- [Noise in the reverse process improves the approximation capabilities of diffusion models](noise-in-the-reverse-process-improves-the-approximation-capabilities-of-diffusio.md) (2023, arXiv, 0 citations)
+- [Noise in the reverse process improves the approximation capabilities of diffusion models](../score_matching/noise-in-the-reverse-process-improves-the-approximation-capabilities-of-diffusio.md) (2023, arXiv, 0 citations)
 
-- [Deep Unsupervised Learning using Nonequilibrium Thermodynamics](deep-unsupervised-learning-using-nonequilibrium-thermodynamics.md) (2015, ICML, 0 citations)
+- [Deep Unsupervised Learning using Nonequilibrium Thermodynamics](../../../statistical_physics/non_equilibrium_dynamics/nonequilibrium/deep-unsupervised-learning-using-nonequilibrium-thermodynamics.md) (2015, ICML, 0 citations)

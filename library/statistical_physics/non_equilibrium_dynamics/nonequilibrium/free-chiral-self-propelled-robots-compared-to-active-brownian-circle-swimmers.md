@@ -11,7 +11,7 @@ topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/no
 tier: 2
 citations: 0
 relevance_score: 64.0
-collected: "2026-04-23"
+collected: "2026-04-16"
 status: "unread"
 source: "openalex"
 ---
@@ -34,4 +34,3 @@ Macroscopic active matter systems, such as bristle bots, provide a compelling pl
 - [[mobility_and_interaction]]
 
 ## Notes
-

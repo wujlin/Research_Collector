@@ -33,4 +33,3 @@ Score-based generative models (SGMs) learn a family of noise-conditional score f
 - [[translation_layers]]
 
 ## Notes
-

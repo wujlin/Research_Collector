@@ -11,7 +11,7 @@ topics: ["statistical_physics", "urban_complex_systems", "urban_complex_systems/
 tier: 0
 citations: 0
 relevance_score: 50.0
-collected: "2026-04-16"
+collected: "2026-04-15"
 status: "unread"
 source: "openalex"
 ---
@@ -33,4 +33,3 @@ The accelerating retreat of glaciers and expansion of glacial lakes in the Trans
 - [[urban_data_and_generation]]
 
 ## Notes
-

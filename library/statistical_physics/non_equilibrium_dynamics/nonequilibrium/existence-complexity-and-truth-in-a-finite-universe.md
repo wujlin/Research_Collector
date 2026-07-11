@@ -11,7 +11,7 @@ topics: ["statistical_physics", "statistical_physics/non_equilibrium_dynamics/no
 tier: 0
 citations: 0
 relevance_score: 54.0
-collected: "2026-04-23"
+collected: "2026-04-16"
 status: "unread"
 source: "openalex"
 ---
@@ -34,4 +34,3 @@ The article explores an epistemological framework for understanding existence, s
 - [[scaling_and_evolution]]
 
 ## Notes
-

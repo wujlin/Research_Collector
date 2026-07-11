@@ -32,4 +32,3 @@ Continuous diffusion has been the foundation of high-fidelity, controllable, and
 - [[generative_dynamics]]
 
 ## Notes
-

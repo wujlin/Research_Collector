@@ -11,7 +11,7 @@ topics: ["statistical_physics", "statistical_physics/collective_structure/phase_
 tier: 0
 citations: 0
 relevance_score: 47.0
-collected: "2026-04-23"
+collected: "2026-04-16"
 status: "unread"
 source: "openalex"
 ---
@@ -31,4 +31,3 @@ We investigate how coupling to fluid flow influences defect-mediated transitions
 - [[collective_structure]]
 
 ## Notes
-

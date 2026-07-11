@@ -31,4 +31,3 @@ source: "semantic_scholar"
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

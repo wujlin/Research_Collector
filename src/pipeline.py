@@ -172,22 +172,38 @@ class CollectionPipeline:
         summary["stats"] = self.database.get_stats()
         return summary
 
-    def export_all(self, digest_period: str = "weekly") -> None:
+    def export_all(
+        self,
+        digest_period: str = "weekly",
+        generate_periodic_digest: bool = True,
+    ) -> None:
         export_cfg = self.settings["export"]
         self.reading_list_exporter.export(
             self.database,
             limit=export_cfg["reading_list_size"],
         )
-        days = 30 if digest_period == "monthly" else 7
-        self.digest_exporter.export(
-            self.database,
-            period=digest_period,
-            days=days,
-            paper_limit=export_cfg["digest_paper_count"],
-        )
+        if generate_periodic_digest:
+            days = 30 if digest_period == "monthly" else 7
+            self.digest_exporter.export(
+                self.database,
+                period=digest_period,
+                days=days,
+                paper_limit=export_cfg["digest_paper_count"],
+            )
+        else:
+            self.digest_exporter.write_index()
         self.knowledge_graph_exporter.export(self.database)
+        self.knowledge_graph_exporter.export_author_network(self.database)
+        self.knowledge_graph_exporter.export_venue_network(self.database)
         self.web_snapshot_exporter.export_all(self.database)
         self.concepts_exporter.export()
+
+    def sync_library_markdown(self) -> None:
+        """Rewrite managed paper files from the DB while preserving human-authored sections."""
+        for paper in self.database.list_papers():
+            markdown_path = self.markdown_store.save_paper(paper)
+            self.database.update_paper_markdown_path(paper.id, markdown_path)
+        self._refresh_library_indices()
 
     def _collect_papers(
         self,
@@ -337,6 +353,12 @@ class CollectionPipeline:
                 topic_key=entry["key"],
                 display_name=entry["display_name"],
                 description=entry.get("description", ""),
-                papers=self.database.get_papers_by_topic(entry["key"], limit=200),
+                papers=self.database.get_papers_by_topic(entry["key"], limit=None),
             )
+        self.markdown_store.write_topic_index(
+            topic_key="uncategorized",
+            display_name="Uncategorized",
+            description="Legacy or newly collected records that do not yet match a taxonomy leaf.",
+            papers=self.database.get_uncategorized_papers(limit=None),
+        )
         self.markdown_store.write_master_index(self.taxonomy)

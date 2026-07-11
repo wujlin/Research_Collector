@@ -34,4 +34,3 @@ The Semi-Markov property of Continuous Time Random Walks (CTRWs) and their limit
 - [[collective_structure]]
 
 ## Notes
-

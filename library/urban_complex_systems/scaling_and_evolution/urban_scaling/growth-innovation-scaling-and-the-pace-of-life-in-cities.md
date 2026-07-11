@@ -8,9 +8,9 @@ arxiv: ""
 url: "https://www.pnas.org/doi/10.1073/pnas.0610172104"
 pdf_url: ""
 topics: ["urban_complex_systems", "urban_complex_systems/scaling_and_evolution/urban_scaling", "urban_complex_systems/scaling_and_evolution"]
-tier: 0
+tier: 1
 citations: 0
-relevance_score: 0
+relevance_score: 45.0
 collected: "2026-04-07"
 status: "unread"
 source: ""
@@ -33,3 +33,4 @@ is_seminal: true
 
 ## Notes
 
+城市标度律代表论文。

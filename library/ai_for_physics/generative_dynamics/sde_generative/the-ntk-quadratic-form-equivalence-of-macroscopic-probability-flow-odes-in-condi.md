@@ -32,4 +32,3 @@ We establish a formal equivalence between the macroscopic probability flow ODE g
 - [[generative_dynamics]]
 
 ## Notes
-

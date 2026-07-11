@@ -7,7 +7,7 @@ doi: "10.3390/foods15081352"
 arxiv: ""
 url: "https://openalex.org/W7154066995"
 pdf_url: "https://www.mdpi.com/2304-8158/15/8/1352/pdf?version=1776076670"
-topics: ["urban_complex_systems/mobility_and_interaction", "urban_complex_systems", "urban_complex_systems/mobility_and_interaction/spatial_interaction"]
+topics: ["urban_complex_systems", "urban_complex_systems/mobility_and_interaction/spatial_interaction", "urban_complex_systems/mobility_and_interaction"]
 tier: 0
 citations: 0
 relevance_score: 47.0
@@ -26,9 +26,8 @@ Thamnaconus modestus (black scraper) is an economically important fish species i
 
 ## Connections
 
-- [[mobility_and_interaction]]
 - [[urban_complex_systems]]
 - [[spatial_interaction]]
+- [[mobility_and_interaction]]
 
 ## Notes
-

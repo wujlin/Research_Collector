@@ -32,4 +32,3 @@ Response theory describes the reaction of observales to perturbations in externa
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

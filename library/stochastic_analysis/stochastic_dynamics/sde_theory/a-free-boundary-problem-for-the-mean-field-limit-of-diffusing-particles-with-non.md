@@ -34,4 +34,3 @@ Consider a finite system of diffusing particles coupled through a reactive bound
 - [[collective_structure]]
 
 ## Notes
-

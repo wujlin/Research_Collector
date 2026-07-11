@@ -31,4 +31,3 @@ Directly accessing energy fluctuations in interacting quantum many-body systems 
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

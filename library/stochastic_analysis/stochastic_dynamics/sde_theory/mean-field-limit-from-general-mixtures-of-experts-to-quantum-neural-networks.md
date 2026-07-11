@@ -36,4 +36,3 @@ Abstract In this work, we study the asymptotic behavior of mixture of experts (M
 - [[collective_structure]]
 
 ## Notes
-

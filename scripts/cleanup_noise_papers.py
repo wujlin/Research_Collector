@@ -47,7 +47,7 @@ def main() -> None:
 
     remove_empty_directories(ROOT / "library")
     pipeline._refresh_library_indices()
-    pipeline.export_all()
+    pipeline.export_all(generate_periodic_digest=False)
 
     print(
         {

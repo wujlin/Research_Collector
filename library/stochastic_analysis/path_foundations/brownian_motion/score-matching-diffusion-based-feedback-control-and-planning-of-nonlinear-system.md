@@ -35,4 +35,3 @@ In this paper, we propose a deterministic diffusion-based framework for controll
 - [[generative_dynamics]]
 
 ## Notes
-

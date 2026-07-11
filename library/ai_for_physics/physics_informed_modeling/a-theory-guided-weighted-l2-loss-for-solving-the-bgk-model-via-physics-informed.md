@@ -11,7 +11,7 @@ topics: ["ai_for_physics", "ai_for_physics/physics_informed_modeling"]
 tier: 0
 citations: 0
 relevance_score: 45.82
-collected: "2026-04-16"
+collected: "2026-04-13"
 status: "unread"
 source: "openalex"
 ---
@@ -30,4 +30,3 @@ While Physics-Informed Neural Networks offer a promising framework for solving p
 - [[physics_informed_modeling]]
 
 ## Notes
-

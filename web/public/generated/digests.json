@@ -7,7 +7,7 @@
     "authors": "",
     "venue": "",
     "topics": [],
-    "word_count": 1063
+    "word_count": 1065
   },
   {
     "title": "Confirmed Deep-Read Knowledge Map",
@@ -20,6 +20,346 @@
     "word_count": 3390
   },
   {
+    "title": "Quanta Partner Browse Guide",
+    "path": "2026-06-24/workflow/quanta-partner-browse-guide.md",
+    "created_at": "2026-06-24",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 463
+  },
+  {
+    "title": "yao-shunyu-anthropic-gemini-model-training-interview",
+    "path": "2026-06-18/yao-shunyu-anthropic-gemini-model-training-interview.md",
+    "created_at": "2026-06-18",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 448
+  },
+  {
+    "title": "yann-lecun-world-models-enabling-next-ai-revolution",
+    "path": "2026-06-18/yann-lecun-world-models-enabling-next-ai-revolution.md",
+    "created_at": "2026-06-18",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 257
+  },
+  {
+    "title": "welch-labs-yann-lecun-can-reshape-ai-again",
+    "path": "2026-06-18/welch-labs-yann-lecun-can-reshape-ai-again.md",
+    "created_at": "2026-06-18",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 422
+  },
+  {
+    "title": "welch-labs-inside-worlds-smartest-robot-brain-vla",
+    "path": "2026-06-18/welch-labs-inside-worlds-smartest-robot-brain-vla.md",
+    "created_at": "2026-06-18",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 473
+  },
+  {
+    "title": "welch-labs-how-models-learn-part3-why-deep-learning-works",
+    "path": "2026-06-18/welch-labs-how-models-learn-part3-why-deep-learning-works.md",
+    "created_at": "2026-06-18",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 219
+  },
+  {
+    "title": "welch-labs-how-models-learn-part2-backpropagation",
+    "path": "2026-06-18/welch-labs-how-models-learn-part2-backpropagation.md",
+    "created_at": "2026-06-18",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 301
+  },
+  {
+    "title": "welch-labs-how-models-learn-part1-loss-landscape",
+    "path": "2026-06-18/welch-labs-how-models-learn-part1-loss-landscape.md",
+    "created_at": "2026-06-18",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 232
+  },
+  {
+    "title": "welch-labs-can-humans-make-ai-any-better",
+    "path": "2026-06-18/welch-labs-can-humans-make-ai-any-better.md",
+    "created_at": "2026-06-18",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 319
+  },
+  {
+    "title": "welch-labs-ai-images-videos-diffusion",
+    "path": "2026-06-18/welch-labs-ai-images-videos-diffusion.md",
+    "created_at": "2026-06-18",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 376
+  },
+  {
+    "title": "richard-sutton-rl-experience-vs-llm-imitation",
+    "path": "2026-06-18/richard-sutton-rl-experience-vs-llm-imitation.md",
+    "created_at": "2026-06-18",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 654
+  },
+  {
+    "title": "max-simchowitz-pitfalls-imitation-learning-continuous-actions",
+    "path": "2026-06-18/max-simchowitz-pitfalls-imitation-learning-continuous-actions.md",
+    "created_at": "2026-06-18",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 296
+  },
+  {
+    "title": "max-simchowitz-generative-control-action-chunking-moravec",
+    "path": "2026-06-18/max-simchowitz-generative-control-action-chunking-moravec.md",
+    "created_at": "2026-06-18",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 276
+  },
+  {
+    "title": "iclr2026-sana-video-efficient-video-generation",
+    "path": "2026-06-18/iclr2026-sana-video-efficient-video-generation.md",
+    "created_at": "2026-06-18",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 409
+  },
+  {
+    "title": "iclr2026-locality-aware-parallel-decoding",
+    "path": "2026-06-18/iclr2026-locality-aware-parallel-decoding.md",
+    "created_at": "2026-06-18",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 447
+  },
+  {
+    "title": "iclr2026-latent-particle-world-models",
+    "path": "2026-06-18/iclr2026-latent-particle-world-models.md",
+    "created_at": "2026-06-18",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 400
+  },
+  {
+    "title": "iclr2026-gepa-reflective-prompt-evolution",
+    "path": "2026-06-18/iclr2026-gepa-reflective-prompt-evolution.md",
+    "created_at": "2026-06-18",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 409
+  },
+  {
+    "title": "ben-eysenbach-self-supervised-rl-series",
+    "path": "2026-06-18/ben-eysenbach-self-supervised-rl-series.md",
+    "created_at": "2026-06-18",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 2407
+  },
+  {
+    "title": "ben-eysenbach-designing-simpler-principled-rl-algorithms",
+    "path": "2026-06-18/ben-eysenbach-designing-simpler-principled-rl-algorithms.md",
+    "created_at": "2026-06-18",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 600
+  },
+  {
+    "title": "amy-zhang-rl-abstraction-hierarchy",
+    "path": "2026-06-18/amy-zhang-rl-abstraction-hierarchy.md",
+    "created_at": "2026-06-18",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 1727
+  },
+  {
+    "title": "amy-zhang-representations-hierarchical-rl",
+    "path": "2026-06-18/amy-zhang-representations-hierarchical-rl.md",
+    "created_at": "2026-06-18",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 2298
+  },
+  {
+    "title": "3blue1brown-reinventing-entropy-compression-is-intelligence",
+    "path": "2026-06-18/3blue1brown-reinventing-entropy-compression-is-intelligence.md",
+    "created_at": "2026-06-18",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 437
+  },
+  {
+    "title": "Quanta Magazine Full-Site Metadata Collection",
+    "path": "2026-06-16/workflow/quanta-resource-index.md",
+    "created_at": "2026-06-16",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 362
+  },
+  {
+    "title": "youtube-collection-status",
+    "path": "2026-06-13/youtube-collection-status.md",
+    "created_at": "2026-06-13",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 231
+  },
+  {
+    "title": "Networks Hold the Key to a Decades-Old Problem About Waves",
+    "path": "2026-06-05/quanta-networks-hold-the-key-to-a-decades-old-problem-about-waves.md",
+    "created_at": "2026-06-05",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 268
+  },
+  {
+    "title": "A Unified Theory of Randomness",
+    "path": "2026-06-05/quanta-a-unified-theory-of-randomness.md",
+    "created_at": "2026-06-05",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 201
+  },
+  {
+    "title": "A Functional Taxonomy of World Models",
+    "path": "2026-06-05/fei-fei-li-a-functional-taxonomy-of-world-models.md",
+    "created_at": "2026-06-05",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 269
+  },
+  {
+    "title": "Resource Queue",
+    "path": "2026-06-04/workflow/resource-queue.md",
+    "created_at": "2026-06-04",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 399
+  },
+  {
+    "title": "Resource Queue",
+    "path": "2026-05-24/workflow/resource-queue.md",
+    "created_at": "2026-05-24",
+    "type": "workflow",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 367
+  },
+  {
+    "title": "The Hidden Mathematical Dance Inside Plant Cells",
+    "path": "2026-05-24/quanta-the-hidden-mathematical-dance-inside-plant-cells.md",
+    "created_at": "2026-05-24",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 352
+  },
+  {
+    "title": "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework",
+    "path": "2026-05-24/metagpt-meta-programming-for-a-multi-agent-collaborative-framework.md",
+    "created_at": "2026-05-24",
+    "type": "reading_note",
+    "authors": "Sirui Hong; Mingchen Zhuge; Jiaqi Chen; Xiawu Zheng; Yuheng Cheng; Ceyao Zhang; Jinlin Wang; Zili Wang; Steven Ka Shing Yau; Zijuan Lin; Liyang Zhou; Chenyu Ran; Lingfeng Xiao; Chenglin Wu; Jürgen Schmidhuber",
+    "venue": "arXiv",
+    "topics": [],
+    "word_count": 157
+  },
+  {
+    "title": "Language Agents as Optimizable Graphs",
+    "path": "2026-05-24/language-agents-as-optimizable-graphs-gptswarm.md",
+    "created_at": "2026-05-24",
+    "type": "reading_note",
+    "authors": "Mingchen Zhuge; Wenyi Wang; Louis Kirsch; Francesco Faccio; Dmitrii Khizbullin; Jürgen Schmidhuber",
+    "venue": "ICML 2024",
+    "topics": [],
+    "word_count": 194
+  },
+  {
+    "title": "Claude's New Dreaming Feature Builds Self-Improving AI Agents",
+    "path": "2026-05-24/forbes-claudes-new-dreaming-feature-builds-self-improving-ai-agents.md",
+    "created_at": "2026-05-24",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 188
+  },
+  {
+    "title": "Agent-as-a-Judge: Evaluate Agents with Agents",
+    "path": "2026-05-24/agent-as-a-judge-evaluate-agents-with-agents.md",
+    "created_at": "2026-05-24",
+    "type": "reading_note",
+    "authors": "Mingchen Zhuge; Changsheng Zhao; Dylan Ashley; Wenyi Wang; Dmitrii Khizbullin; Yunyang Xiong; Zechun Liu; Ernie Chang; Raghuraman Krishnamoorthi; Yuandong Tian; Yangyang Shi; Vikas Chandra; Jürgen Schmidhuber",
+    "venue": "arXiv",
+    "topics": [],
+    "word_count": 190
+  },
+  {
     "title": "Weekly Digest",
     "path": "2026-05-18/workflow/weekly.md",
     "created_at": "2026-05-18",
@@ -28,6 +368,33 @@
     "venue": "",
     "topics": [],
     "word_count": 153
+  },
+  {
+    "title": "Scaling Laws from Sequential Feature Recovery: A Solvable Hierarchical Model",
+    "path": "2026-05-18/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model.md",
+    "created_at": "2026-05-18",
+    "type": "reading_note",
+    "authors": "Arie Wortsman-Zurich, Hugo Tabanelli, Yatin Dandi, Florent Krzakala, Bruno Loureiro",
+    "venue": "",
+    "topics": [
+      "scaling laws",
+      "feature learning",
+      "hierarchical models",
+      "spectral methods",
+      "random matrix theory",
+      "deep learning theory"
+    ],
+    "word_count": 3039
+  },
+  {
+    "title": "Equation Map for Scaling Laws from Sequential Feature Recovery",
+    "path": "2026-05-18/scaling-laws-from-sequential-feature-recovery-a-solvable-hierarchical-model-equation-map.md",
+    "created_at": "2026-05-18",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 763
   },
   {
     "title": "Resource Queue",
@@ -68,6 +435,136 @@
     "venue": "",
     "topics": [],
     "word_count": 279
+  },
+  {
+    "title": "percy-liang-self-training-unsupervised-domain-adaptation",
+    "path": "2026-05-10/percy-liang-self-training-unsupervised-domain-adaptation.md",
+    "created_at": "2026-05-10",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 1030
+  },
+  {
+    "title": "optimal-transport-geometric-view-deep-learning",
+    "path": "2026-05-10/optimal-transport-geometric-view-deep-learning.md",
+    "created_at": "2026-05-10",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 307
+  },
+  {
+    "title": "kaiming-he-learning-deep-representations",
+    "path": "2026-05-10/kaiming-he-learning-deep-representations.md",
+    "created_at": "2026-05-10",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 1358
+  },
+  {
+    "title": "jim-fan-robotics-end-game",
+    "path": "2026-05-10/jim-fan-robotics-end-game.md",
+    "created_at": "2026-05-10",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 324
+  },
+  {
+    "title": "jim-fan-minedojo-open-ended-embodied-agents",
+    "path": "2026-05-10/jim-fan-minedojo-open-ended-embodied-agents.md",
+    "created_at": "2026-05-10",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 797
+  },
+  {
+    "title": "david-silver-era-of-experience",
+    "path": "2026-05-10/david-silver-era-of-experience.md",
+    "created_at": "2026-05-10",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 479
+  },
+  {
+    "title": "bycloud-yann-lecun-jepa-explained",
+    "path": "2026-05-10/bycloud-yann-lecun-jepa-explained.md",
+    "created_at": "2026-05-10",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 465
+  },
+  {
+    "title": "welch-labs-imaginary-numbers-are-real-part-1-introduction",
+    "path": "2026-05-08/welch-labs-imaginary-numbers-are-real-part-1-introduction.md",
+    "created_at": "2026-05-08",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 181
+  },
+  {
+    "title": "welch-labs-imaginary-numbers-are-real-complex-numbers-for-fourier-and-physics",
+    "path": "2026-05-08/welch-labs-imaginary-numbers-are-real-complex-numbers-for-fourier-and-physics.md",
+    "created_at": "2026-05-08",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 793
+  },
+  {
+    "title": "max-welling-iclr2026-from-physics-to-ai-to-materials",
+    "path": "2026-05-08/max-welling-iclr2026-from-physics-to-ai-to-materials.md",
+    "created_at": "2026-05-08",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 886
+  },
+  {
+    "title": "david-ha-world-models-neurips-2018",
+    "path": "2026-05-08/david-ha-world-models-neurips-2018.md",
+    "created_at": "2026-05-08",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 818
+  },
+  {
+    "title": "yann-lecun-billion-dollar-bet-against-llms",
+    "path": "2026-05-06/yann-lecun-billion-dollar-bet-against-llms.md",
+    "created_at": "2026-05-06",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 613
+  },
+  {
+    "title": "energy-based-transformers-scalable-learners-and-thinkers",
+    "path": "2026-05-06/energy-based-transformers-scalable-learners-and-thinkers.md",
+    "created_at": "2026-05-06",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 1216
   },
   {
     "title": "Leibo-Baronchelli Paper Queue",
@@ -327,6 +824,26 @@
     "word_count": 3473
   },
   {
+    "title": "xie-saining-representation-learning-roadmap",
+    "path": "2026-04-16/xie-saining-representation-learning-roadmap.md",
+    "created_at": "2026-04-16",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 559
+  },
+  {
+    "title": "world-model-as-learned-nonequilibrium-dynamics",
+    "path": "2026-04-16/world-model-as-learned-nonequilibrium-dynamics.md",
+    "created_at": "2026-04-16",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 525
+  },
+  {
     "title": "Weekly Digest",
     "path": "2026-04-16/workflow/weekly.md",
     "created_at": "2026-04-16",
@@ -558,6 +1075,16 @@
     "word_count": 1327
   },
   {
+    "title": "xie-saining-world-model-interview",
+    "path": "2026-04-15/xie-saining-world-model-interview.md",
+    "created_at": "2026-04-15",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 374
+  },
+  {
     "title": "Weekly Digest",
     "path": "2026-04-13/workflow/weekly.md",
     "created_at": "2026-04-13",
@@ -616,6 +1143,46 @@
     "venue": "",
     "topics": [],
     "word_count": 2734
+  },
+  {
+    "title": "takahiro-sagawa-stochastic-thermodynamics",
+    "path": "2026-04-12/takahiro-sagawa-stochastic-thermodynamics.md",
+    "created_at": "2026-04-12",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 472
+  },
+  {
+    "title": "landauer-to-generative-models",
+    "path": "2026-04-12/landauer-to-generative-models.md",
+    "created_at": "2026-04-12",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 550
+  },
+  {
+    "title": "brunton-hnn-notes",
+    "path": "2026-04-12/brunton-hnn-notes.md",
+    "created_at": "2026-04-12",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 357
+  },
+  {
+    "title": "bernard-derrida-large-deviations-of-non-equilibrium-diffusive-systems",
+    "path": "2026-04-12/bernard-derrida-large-deviations-of-non-equilibrium-diffusive-systems.md",
+    "created_at": "2026-04-12",
+    "type": "reading_note",
+    "authors": "",
+    "venue": "",
+    "topics": [],
+    "word_count": 905
   },
   {
     "title": "Study Guide",

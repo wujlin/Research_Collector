@@ -11,7 +11,7 @@ topics: ["ai_for_physics", "ai_for_physics/physics_informed_modeling/physics_inf
 tier: 0
 citations: 0
 relevance_score: 50.0
-collected: "2026-04-16"
+collected: "2026-04-13"
 status: "unread"
 source: "openalex"
 ---
@@ -32,4 +32,3 @@ It remains highly challenging to extract features from monitoring signals of win
 - [[scientific_ml_applications]]
 
 ## Notes
-

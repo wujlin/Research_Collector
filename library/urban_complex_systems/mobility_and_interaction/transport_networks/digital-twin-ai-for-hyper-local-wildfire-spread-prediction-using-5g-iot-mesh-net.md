@@ -7,10 +7,10 @@ doi: "10.20944/preprints202604.0752.v1"
 arxiv: ""
 url: "https://openalex.org/W7153847332"
 pdf_url: "https://www.preprints.org/frontend/manuscript/f5aa8e1befd1f6bbb7ab91bd286516c5/download_pub"
-topics: ["ai_for_physics/physics_informed_modeling", "ai_for_physics", "urban_complex_systems/mobility_and_interaction/transport_networks", "urban_complex_systems/mobility_and_interaction", "urban_complex_systems", "urban_complex_systems/scaling_and_evolution/urban_dynamics", "urban_complex_systems/scaling_and_evolution"]
-tier: 2
+topics: ["ai_for_physics", "urban_complex_systems", "urban_complex_systems/mobility_and_interaction/transport_networks", "urban_complex_systems/scaling_and_evolution/urban_dynamics", "ai_for_physics/physics_informed_modeling", "urban_complex_systems/mobility_and_interaction", "urban_complex_systems/scaling_and_evolution"]
+tier: 0
 citations: 0
-relevance_score: 64.0
+relevance_score: 54.0
 collected: "2026-04-16"
 status: "unread"
 source: "openalex"
@@ -26,13 +26,12 @@ Wildfire spread prediction demands hyper-local accuracy at scales unattainable b
 
 ## Connections
 
-- [[physics_informed_modeling]]
 - [[ai_for_physics]]
-- [[transport_networks]]
-- [[mobility_and_interaction]]
 - [[urban_complex_systems]]
+- [[transport_networks]]
 - [[urban_dynamics]]
+- [[physics_informed_modeling]]
+- [[mobility_and_interaction]]
 - [[scaling_and_evolution]]
 
 ## Notes
-

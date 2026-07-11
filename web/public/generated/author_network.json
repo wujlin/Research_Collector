@@ -110,7 +110,7 @@
       "label": "Stefano Ermon",
       "affiliation": "",
       "h_index": 0,
-      "paper_count": 1
+      "paper_count": 4
     },
     {
       "id": "author:17",
@@ -3223,9 +3223,9 @@
     {
       "id": "author:655",
       "label": "Yonghong Tian",
-      "affiliation": "",
+      "affiliation": "Peking University",
       "h_index": 0,
-      "paper_count": 1
+      "paper_count": 2
     },
     {
       "id": "author:656",
@@ -5304,14 +5304,14 @@
       "label": "Yuanfei Huang",
       "affiliation": "",
       "h_index": 0,
-      "paper_count": 1
+      "paper_count": 2
     },
     {
       "id": "author:953",
       "label": "Chengyu Liu",
       "affiliation": "",
       "h_index": 0,
-      "paper_count": 1
+      "paper_count": 2
     },
     {
       "id": "author:954",
@@ -5479,7 +5479,7 @@
       "label": "Massimiliano Esposito",
       "affiliation": "",
       "h_index": 0,
-      "paper_count": 2
+      "paper_count": 4
     },
     {
       "id": "author:978",
@@ -5668,7 +5668,7 @@
       "label": "Hao Ge",
       "affiliation": "",
       "h_index": 0,
-      "paper_count": 1
+      "paper_count": 2
     },
     {
       "id": "author:1005",
@@ -5731,7 +5731,7 @@
       "label": "Karthik Elamvazhuthi",
       "affiliation": "",
       "h_index": 0,
-      "paper_count": 1
+      "paper_count": 2
     },
     {
       "id": "author:1014",
@@ -5745,7 +5745,7 @@
       "label": "Fabio Pasqualetti",
       "affiliation": "",
       "h_index": 0,
-      "paper_count": 1
+      "paper_count": 2
     },
     {
       "id": "author:1016",
@@ -5871,7 +5871,7 @@
       "label": "Anonymous",
       "affiliation": "",
       "h_index": 0,
-      "paper_count": 1
+      "paper_count": 2
     },
     {
       "id": "author:1034",
@@ -6614,6 +6614,2386 @@
       "affiliation": "Anqing Normal University",
       "h_index": 0,
       "paper_count": 1
+    },
+    {
+      "id": "author:1140",
+      "label": "Yosef Akhtman",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1141",
+      "label": "Alberto Dinelli",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1142",
+      "label": "Pietro Luigi Muzzeddu",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1143",
+      "label": "Caesar Edward",
+      "affiliation": "University of Juba",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1144",
+      "label": "Ljupco Todorovski",
+      "affiliation": "Institute of Mathematics, Physics, and Mechanics",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1145",
+      "label": "Nina Omejc",
+      "affiliation": "Jožef Stefan Institute",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1146",
+      "label": "Sabin Roman",
+      "affiliation": "Jožef Stefan Institute",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1147",
+      "label": "Sašo Džeroski",
+      "affiliation": "Jožef Stefan Institute",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1148",
+      "label": "Nagesh B E",
+      "affiliation": "Tata Institute of Fundamental Research",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1149",
+      "label": "Jagannath Mondal",
+      "affiliation": "Tata Institute of Fundamental Research",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1150",
+      "label": "Xubin Zhou",
+      "affiliation": "Harbin Institute of Technology",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1151",
+      "label": "Yipeng Yang",
+      "affiliation": "Harbin Institute of Technology",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1152",
+      "label": "Zhan Li",
+      "affiliation": "Harbin Institute of Technology",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1153",
+      "label": "Hy P. G. Lam",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1154",
+      "label": "Prasad Nimantha Madusanka Ukwatta Hewage",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1155",
+      "label": "Midhun Chakkravarthy",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1156",
+      "label": "Ruvan Kumara Abeysekara",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1157",
+      "label": "Yan Huang",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1158",
+      "label": "Li Wang",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1159",
+      "label": "Carl R. Richardson",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1160",
+      "label": "Jichen Zhang",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1161",
+      "label": "Ethan King",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1162",
+      "label": "Jan Drgona",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1163",
+      "label": "Jayeeta Chattopadhyay",
+      "affiliation": "University of Copenhagen",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1164",
+      "label": "Simon Guldager Andersen",
+      "affiliation": "University of Copenhagen",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1165",
+      "label": "Kristian Thijssen",
+      "affiliation": "University of Copenhagen",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1166",
+      "label": "Amin Doostmohammadi",
+      "affiliation": "University of Copenhagen",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1167",
+      "label": "Zihan Zhang",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1168",
+      "label": "Marco Donato",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1169",
+      "label": "I. Andika",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1170",
+      "label": "S. Schuldt",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1171",
+      "label": "S. Suyu",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1172",
+      "label": "S. Bag",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1173",
+      "label": "Raoul Cañameras",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1174",
+      "label": "Alejandra Melo",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1175",
+      "label": "C. Grillo",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1176",
+      "label": "J. Chan",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1177",
+      "label": "M. Askari-Sedeh",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1178",
+      "label": "M. Faraji",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1179",
+      "label": "Mohammadamin Baniardalan",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1180",
+      "label": "Eu-Jeong Choi",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1181",
+      "label": "A. Ostadrahimi",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1182",
+      "label": "M. Baghani",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1183",
+      "label": "M. Saffari",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1184",
+      "label": "Mahdi Khodayar",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1185",
+      "label": "M. Khodayar",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1186",
+      "label": "Daniel Nagel",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1187",
+      "label": "Tristan Bereau",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1188",
+      "label": "Federica Fieramosca",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1189",
+      "label": "V. Rampa",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1190",
+      "label": "M. d'Amico",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1191",
+      "label": "S. Savazzi",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1192",
+      "label": "Jun Zhang",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1193",
+      "label": "Xiaohan Lin",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1194",
+      "label": "E. Weinan",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1195",
+      "label": "Y. Gao",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1196",
+      "label": "Wei Li",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1197",
+      "label": "M. Bazant",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1198",
+      "label": "Juner Zhu",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1199",
+      "label": "Kotaro Ikeda",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1200",
+      "label": "Tomoya Uda",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1201",
+      "label": "Daisuke Okanohara",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1202",
+      "label": "Sosuke Ito",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1203",
+      "label": "Shigeki Yang",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1204",
+      "label": "Henry Alston",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1205",
+      "label": "Luca Cocconi",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1206",
+      "label": "T. Bertrand",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1207",
+      "label": "Zhiyu Cao",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1208",
+      "label": "Jie Su",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1209",
+      "label": "Huijun Jiang",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1210",
+      "label": "Z. Hou",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1211",
+      "label": "Si-Le Lin",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1212",
+      "label": "Si-Yang Hao",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1213",
+      "label": "Wei-Man Chen",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1214",
+      "label": "Matthew P. Leighton",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1215",
+      "label": "David A. Sivak",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1216",
+      "label": "Z. Cheng",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1217",
+      "label": "Li-Lian Wang",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1218",
+      "label": "Zhongjian Wang",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1219",
+      "label": "Bamdad Hosseini",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1220",
+      "label": "Ziqi Huang",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1221",
+      "label": "Xinchao Jiang",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1222",
+      "label": "Xin Wang",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1223",
+      "label": "Ziming Wen",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1224",
+      "label": "Hu Wang",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1225",
+      "label": "Zhihang Xu",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1226",
+      "label": "Yingzhi Xia",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1227",
+      "label": "Qifeng Liao",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1228",
+      "label": "Ray Zirui Zhang",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1229",
+      "label": "Christopher E Miles",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1230",
+      "label": "Xiaohui Xie",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1231",
+      "label": "John S. Lowengrub",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1232",
+      "label": "Haoyu Yang",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1233",
+      "label": "K. Azizzadenesheli",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1234",
+      "label": "Haoxing Ren",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1235",
+      "label": "Yizhe Liu",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1236",
+      "label": "Xiaoyan Li",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1237",
+      "label": "Yuli Chen",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1238",
+      "label": "Bin Ding",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1239",
+      "label": "A. Mohammad-Djafari",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1240",
+      "label": "Chieh-Hsin Lai",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 3
+    },
+    {
+      "id": "author:1241",
+      "label": "Yuhta Takida",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 3
+    },
+    {
+      "id": "author:1242",
+      "label": "N. Murata",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 3
+    },
+    {
+      "id": "author:1243",
+      "label": "Toshimitsu Uesaka",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 3
+    },
+    {
+      "id": "author:1244",
+      "label": "Yuki Mitsufuji",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 3
+    },
+    {
+      "id": "author:1245",
+      "label": "Onno Niemann",
+      "affiliation": "Universidad Autónoma de Madrid",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1246",
+      "label": "Gonzalo Mart'inez Munoz",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1247",
+      "label": "Alberto A. González",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1248",
+      "label": "Akan Selim",
+      "affiliation": "Georgia Institute of Technology; University of Alabama",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1249",
+      "label": "Siddhartha Ganguly",
+      "affiliation": "Georgia Institute of Technology; University of Alabama",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1250",
+      "label": "A. Pakniyat",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1251",
+      "label": "Panagiotis Tsiotras",
+      "affiliation": "Georgia Institute of Technology; University of Alabama",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1252",
+      "label": "Xiaolong Wu",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1253",
+      "label": "Qi Liao",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1254",
+      "label": "X. Zhou",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1255",
+      "label": "D. Gadginmath",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1256",
+      "label": "A. Saudagar",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1257",
+      "label": "O. Igoshin",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1258",
+      "label": "A. Kolomeisky",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1259",
+      "label": "Dmitrii E. Makarov",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1260",
+      "label": "Y. Chabanyuk",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1261",
+      "label": "S. Semenyuk",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1262",
+      "label": "U. Khimka",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1263",
+      "label": "R. A. Chypurko",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1264",
+      "label": "S. Roman",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1265",
+      "label": "Francesco Bertolotti",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1266",
+      "label": "Michalis K. Titsias",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1267",
+      "label": "Angelos N. Alexopoulos",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1268",
+      "label": "Siran Liu",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1269",
+      "label": "P. Dellaportas",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1270",
+      "label": "Pierre Monmarch'e",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1271",
+      "label": "Édouard Strickler",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1272",
+      "label": "B. Gerencsér",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1273",
+      "label": "M. Rásonyi",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1274",
+      "label": "Gurtek Gill",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1275",
+      "label": "P. Straka",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1276",
+      "label": "Jian Gao",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1277",
+      "label": "Lufeng Zhang",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1278",
+      "label": "Ping Fang",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1279",
+      "label": "柯谱",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1280",
+      "label": "Jin Wu",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1281",
+      "label": "Yue Liu",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1282",
+      "label": "HaiJun ZHOU",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1283",
+      "label": "Demosthenes Kivotides",
+      "affiliation": "University of Strathclyde",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1284",
+      "label": "Benedikt Remlein",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1285",
+      "label": "Francesco Avanzini",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1286",
+      "label": "Henrique S. Lima",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1287",
+      "label": "R. M. Pereira",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1288",
+      "label": "L. Moriconi",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1289",
+      "label": "Katepalli R. Sreenivasan",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1290",
+      "label": "Constantino Tsallis",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1291",
+      "label": "Stefan Floerchinger",
+      "affiliation": "Helmholtz Institute Jena",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1292",
+      "label": "Arul Lakshminarayan",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1293",
+      "label": "Karol Życzkowski",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1294",
+      "label": "Benjamin Doyon",
+      "affiliation": "King's College London",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1295",
+      "label": "Pik-Yin Lai",
+      "affiliation": "National Central University; National Center for Theoretical Sciences",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1296",
+      "label": "Ludovico Tesser",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1297",
+      "label": "Henning Kirchberg",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1298",
+      "label": "Matteo Acciai",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1299",
+      "label": "Janine Splettstoesser",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1300",
+      "label": "K.R. Hofmann",
+      "affiliation": "Johannes Gutenberg University Mainz",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1301",
+      "label": "Kay-Robert Dormann",
+      "affiliation": "Technische Universität Darmstadt",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1302",
+      "label": "Benno Liebchen",
+      "affiliation": "Technische Universität Darmstadt",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1303",
+      "label": "Friederike Schmid",
+      "affiliation": "Johannes Gutenberg University Mainz",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1304",
+      "label": "Q. Ye",
+      "affiliation": "University of California San Diego",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1305",
+      "label": "Xiaochuan Tian",
+      "affiliation": "University of California San Diego",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1306",
+      "label": "Dong Wang",
+      "affiliation": "Chinese University of Hong Kong, Shenzhen",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1307",
+      "label": "Jason Varland",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1308",
+      "label": "Mingyan Wu",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1309",
+      "label": "Zhen Wang",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1310",
+      "label": "Gonzalo Martínez Muñoz",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1311",
+      "label": "Alberto Suárez Gonzalez",
+      "affiliation": "Universidad Autónoma de Madrid",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1312",
+      "label": "Krzysztof Ptaszyński",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1313",
+      "label": "Maciej Chudak",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1314",
+      "label": "Ali Pakniyat",
+      "affiliation": "Georgia Institute of Technology; Solomon R. Guggenheim Museum",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1315",
+      "label": "Andrey R. Kolovsky",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1316",
+      "label": "Dario Rancati",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1317",
+      "label": "Jan Maas",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1318",
+      "label": "Francesco Locatello",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1319",
+      "label": "David Ben-Shlomo",
+      "affiliation": "Israel Institute for Biological Research; Ben-Gurion University of the Negev",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1320",
+      "label": "Ronen Berkovich",
+      "affiliation": "Ben-Gurion University of the Negev",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1321",
+      "label": "Eyal Fattal",
+      "affiliation": "Israel Institute for Biological Research",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1322",
+      "label": "Ning Jiang",
+      "affiliation": "Wuhan University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1323",
+      "label": "Rongli Mo",
+      "affiliation": "Wuhan University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1324",
+      "label": "Bingyan Han",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1325",
+      "label": "Erhan Bayraktar",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1326",
+      "label": "Ziqing Zhang",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1327",
+      "label": "David Santiago Quevedo",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1328",
+      "label": "Felipe Segundo Abril-Bermúdez",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1329",
+      "label": "Cristinae Morais Smith",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1330",
+      "label": "Candi Zheng",
+      "affiliation": "Hong Kong University of Science and Technology; University of Hong Kong",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1331",
+      "label": "Yuan Lan",
+      "affiliation": "Hong Kong University of Science and Technology; University of Hong Kong",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1332",
+      "label": "Xiangji Cai",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1333",
+      "label": "Yonggang Peng",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1334",
+      "label": "Yujun Zheng",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1335",
+      "label": "Coşkun Çetin",
+      "affiliation": "California State University System",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1336",
+      "label": "Jose Roberto Castilho Piqueira",
+      "affiliation": "Universidade de São Paulo",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1337",
+      "label": "Burhaneddin İzgi̇",
+      "affiliation": "Istanbul Technical University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1338",
+      "label": "Ayşe Peker-Dobie",
+      "affiliation": "Istanbul Technical University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1339",
+      "label": "Semra Ahmetolan",
+      "affiliation": "Istanbul Technical University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1340",
+      "label": "Murat Özkaya",
+      "affiliation": "Çanakkale Onsekiz Mart Üniversitesi",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1341",
+      "label": "Amaury Lambert",
+      "affiliation": "Centre National de la Recherche Scientifique; Inserm",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1342",
+      "label": "Hélène Leman",
+      "affiliation": "Université Claude Bernard Lyon 1; École Normale Supérieure de Lyon",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1343",
+      "label": "Hélène Morlon",
+      "affiliation": "Centre National de la Recherche Scientifique; Inserm",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1344",
+      "label": "Josué Tchouanti",
+      "affiliation": "Centre National de la Recherche Scientifique; Université Fédérale de Toulouse Midi-Pyrénées",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1345",
+      "label": "Alain Bensoussan",
+      "affiliation": "University of Texas at Dallas, USA",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1346",
+      "label": "Tak Kwong Wong",
+      "affiliation": "Shenzhen University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1347",
+      "label": "Sheung Phillip Yam",
+      "affiliation": "Chinese University of Hong Kong",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1348",
+      "label": "Hongwei Yuan",
+      "affiliation": "University of Macau",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1349",
+      "label": "Ruisen Qian",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1350",
+      "label": "Luigi Borasi",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1351",
+      "label": "Francesco C. De Vecchi",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1352",
+      "label": "Stefania Ugolini",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1353",
+      "label": "Eliana Fausti",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1354",
+      "label": "Andreas Søjmark",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1355",
+      "label": "Jules Grass",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1356",
+      "label": "Xin An",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1357",
+      "label": "Miranda Chang",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1358",
+      "label": "Hao Cao",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1359",
+      "label": "Vassilis Angelopoulos",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1360",
+      "label": "Anton Artemyev",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1361",
+      "label": "José A. Carrillo",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1362",
+      "label": "Young-Pil Choi",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1363",
+      "label": "Eitan Tadmor",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1364",
+      "label": "Lyu, Liyao",
+      "affiliation": "University of California, Los Angeles",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1365",
+      "label": "Efrayim Yanir",
+      "affiliation": "Tel Aviv University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1366",
+      "label": "David Burshtein",
+      "affiliation": "Tel Aviv University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1367",
+      "label": "Sharon Gannot",
+      "affiliation": "Bar-Ilan University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1368",
+      "label": "Sagnik Bhadury",
+      "affiliation": "University of Michigan",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1369",
+      "label": "A Rao",
+      "affiliation": "University of Michigan",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1370",
+      "label": "Zijun Chen",
+      "affiliation": "Peking University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1371",
+      "label": "Yu-Hsing Wang",
+      "affiliation": "Peking University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1372",
+      "label": "Liuzhenghao Lv",
+      "affiliation": "Peking University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1373",
+      "label": "Hao Li",
+      "affiliation": "Peking University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1374",
+      "label": "Zongying Lin",
+      "affiliation": "Peking University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1375",
+      "label": "Yuan Li",
+      "affiliation": "Peking University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1376",
+      "label": "Pejman Goudarzi",
+      "affiliation": "ICT Research Institute",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1377",
+      "label": "Jaime Lloret",
+      "affiliation": "Universitat Politècnica de València",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1378",
+      "label": "Liting Gao",
+      "affiliation": "University of Surrey",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1379",
+      "label": "Yi Yuan",
+      "affiliation": "University of Surrey",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1380",
+      "label": "Yaru Chen",
+      "affiliation": "University of Surrey",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1381",
+      "label": "Yuelan Cheng",
+      "affiliation": "University of Surrey",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1382",
+      "label": "Zhenbo Li",
+      "affiliation": "China Agricultural University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1383",
+      "label": "Juan Wen",
+      "affiliation": "China Agricultural University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1384",
+      "label": "Shubin Zhang",
+      "affiliation": "Shanghai Ocean University; Ocean University of China",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1385",
+      "label": "Wenwu Wang",
+      "affiliation": "University of Surrey",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1386",
+      "label": "Woojae Choi",
+      "affiliation": "Yonsei University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1387",
+      "label": "Sangmin Lee",
+      "affiliation": "Yonsei University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1388",
+      "label": "Hyungseob Lim",
+      "affiliation": "Yonsei University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1389",
+      "label": "Hong-Goo Kang",
+      "affiliation": "Yonsei University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1390",
+      "label": "Ruizhe Jiang",
+      "affiliation": "Zhongnan University of Economics and Law",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1391",
+      "label": "Xinyi Fan Zhongnan",
+      "affiliation": "Zhongnan University of Economics and Law",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1392",
+      "label": "Xiaoyi Dong",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1393",
+      "label": "Xi Sheryl Zhang",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1394",
+      "label": "Jian Cheng",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1395",
+      "label": "Zichao Yan",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1396",
+      "label": "Yan Wu",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1397",
+      "label": "Mica Xu Ji",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1398",
+      "label": "Chaitra Agrahar",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1399",
+      "label": "Esther Wershof",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1400",
+      "label": "Marcel Nassar",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1401",
+      "label": "Mehrshad Sadria",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1402",
+      "label": "Ridvan Eksi",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1403",
+      "label": "Vladimir Trifonov",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1404",
+      "label": "Ignacio Ibarra",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1405",
+      "label": "Telmo Felgueira",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1406",
+      "label": "Błażej Osiński",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1407",
+      "label": "Rory Stark",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1408",
+      "label": "Yexiong Lin",
+      "affiliation": "The University of Sydney",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1409",
+      "label": "Jia Shi",
+      "affiliation": "Xidian University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1410",
+      "label": "Shanshan Ye",
+      "affiliation": "University of Technology Sydney",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1411",
+      "label": "Wanyu Wang",
+      "affiliation": "City University of Hong Kong",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1412",
+      "label": "Yu Yao",
+      "affiliation": "The University of Sydney",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1413",
+      "label": "Tongliang Liu",
+      "affiliation": "The University of Sydney",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1414",
+      "label": "Alexander Migdal",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1415",
+      "label": "Deyuan Liu",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1416",
+      "label": "Peng Sun",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1417",
+      "label": "Yansen Han",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1418",
+      "label": "Zhenglin Cheng",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1419",
+      "label": "Chuyan Chen",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1420",
+      "label": "Tao Lin",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1421",
+      "label": "Juan-Diego Urbina",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1422",
+      "label": "Klaus Richter",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1423",
+      "label": "Yuxin Chen",
+      "affiliation": "Upper Iowa University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1424",
+      "label": "Chumeng Liang",
+      "affiliation": "Upper Iowa University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1425",
+      "label": "Hangke Sui",
+      "affiliation": "Upper Iowa University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1426",
+      "label": "Ruihan Guo",
+      "affiliation": "Upper Iowa University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1427",
+      "label": "Chaoran Cheng",
+      "affiliation": "Upper Iowa University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1428",
+      "label": "Jiaxuan You",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1429",
+      "label": "Ge Liu",
+      "affiliation": "Upper Iowa University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1430",
+      "label": "Xiaotian Qiu",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1431",
+      "label": "Lukai Chen",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1432",
+      "label": "Jinhao Li",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1433",
+      "label": "Qi Sun",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1434",
+      "label": "Cheng Zhuo",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1435",
+      "label": "Guohao Dai",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1436",
+      "label": "Nicole Rogalla",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1437",
+      "label": "Yuzhen Qin",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1438",
+      "label": "Mario Senden",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1439",
+      "label": "Ahmed El-Gazzar",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1440",
+      "label": "Marcel van Gerven",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1441",
+      "label": "H. Ni",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1442",
+      "label": "Ozgur B. Akan",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1443",
+      "label": "Vineet Shenoy",
+      "affiliation": "Johns Hopkins University; Johns Hopkins Medicine",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1444",
+      "label": "Cheng Peng",
+      "affiliation": "Johns Hopkins University; Johns Hopkins Medicine",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1445",
+      "label": "Rama Chellappa",
+      "affiliation": "Johns Hopkins University; Johns Hopkins Medicine",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1446",
+      "label": "Yu Sun",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1447",
+      "label": "Abigail Bradshaw",
+      "affiliation": "MRC Cognition and Brain Sciences Unit; University of Cambridge",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1448",
+      "label": "Clare Press",
+      "affiliation": "Queen Mary University of London; University College London",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1449",
+      "label": "Matthew H. Davis",
+      "affiliation": "MRC Cognition and Brain Sciences Unit",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1450",
+      "label": "Maria Prousali",
+      "affiliation": "International Hellenic University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1451",
+      "label": "Stelios Tsitsos",
+      "affiliation": "International Hellenic University",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1452",
+      "label": "Jinming Liu",
+      "affiliation": "Southern University of Science and Technology; Shanghai Civil Aviation College",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1453",
+      "label": "Haitao Zhang",
+      "affiliation": "Southern University of Science and Technology",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1454",
+      "label": "Jianlong Huang",
+      "affiliation": "Intelligent Health (United Kingdom)",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1455",
+      "label": "Hanbin Wen",
+      "affiliation": "Guangdong University of Technology",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1456",
+      "label": "Qinpei Chen",
+      "affiliation": "Guangdong University of Technology",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1457",
+      "label": "Jiayi Liu",
+      "affiliation": "Southern University of Science and Technology; Shanghai Civil Aviation College",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1458",
+      "label": "Chaowen Wen",
+      "affiliation": "Shanghai Civil Aviation College",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1459",
+      "label": "Huiling Tang",
+      "affiliation": "Guangdong University of Technology",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1460",
+      "label": "Zhaohua Sun",
+      "affiliation": "Southern University of Science and Technology",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1461",
+      "label": "Marwa Alfouly",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1462",
+      "label": "Smajil Halilovic",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1463",
+      "label": "Niklas Boers",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1464",
+      "label": "Thomas Hamacher",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1465",
+      "label": "Elena Pulvirenti",
+      "affiliation": "Delft University of Technology",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1466",
+      "label": "Frank Redig",
+      "affiliation": "Delft University of Technology",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1467",
+      "label": "Hidde van Wiechen",
+      "affiliation": "Delft University of Technology",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1468",
+      "label": "Kazumasa A. Takeuchi",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1469",
+      "label": "Daiki Nishiguchi",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1470",
+      "label": "Love Grover",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1471",
+      "label": "Anil Kumar Dasanna",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1472",
+      "label": "Abhishek Chaudhuri",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1473",
+      "label": "Marc Barthelemy",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 2
+    },
+    {
+      "id": "author:1474",
+      "label": "Vincent Verbavatz",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1475",
+      "label": "Arie Wortsman-Zurich",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1476",
+      "label": "Hugo Tabanelli",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1477",
+      "label": "Yatin Dandi",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1478",
+      "label": "Florent Krzakala",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
+    },
+    {
+      "id": "author:1479",
+      "label": "Bruno Loureiro",
+      "affiliation": "",
+      "h_index": 0,
+      "paper_count": 1
     }
   ],
   "edges": [
@@ -6950,17 +9330,17 @@
     {
       "source": "author:45",
       "target": "author:46",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:45",
       "target": "author:47",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:46",
       "target": "author:47",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:55",
@@ -7070,17 +9450,17 @@
     {
       "source": "author:114",
       "target": "author:115",
-      "weight": 1
+      "weight": 4
     },
     {
       "source": "author:114",
       "target": "author:116",
-      "weight": 1
+      "weight": 4
     },
     {
       "source": "author:115",
       "target": "author:116",
-      "weight": 1
+      "weight": 4
     },
     {
       "source": "author:146",
@@ -7200,22 +9580,22 @@
     {
       "source": "author:217",
       "target": "author:218",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:227",
       "target": "author:228",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:227",
       "target": "author:229",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:228",
       "target": "author:229",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:230",
@@ -7405,52 +9785,52 @@
     {
       "source": "author:300",
       "target": "author:301",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:300",
       "target": "author:302",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:300",
       "target": "author:303",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:300",
       "target": "author:660",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:301",
       "target": "author:302",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:301",
       "target": "author:303",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:301",
       "target": "author:660",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:302",
       "target": "author:303",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:302",
       "target": "author:660",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:303",
       "target": "author:660",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:304",
@@ -32145,292 +34525,292 @@
     {
       "source": "author:457",
       "target": "author:458",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:457",
       "target": "author:459",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:457",
       "target": "author:460",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:458",
       "target": "author:459",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:458",
       "target": "author:460",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:459",
       "target": "author:460",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:461",
       "target": "author:462",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:461",
       "target": "author:463",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:461",
       "target": "author:464",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:461",
       "target": "author:465",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:461",
       "target": "author:466",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:461",
       "target": "author:467",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:462",
       "target": "author:463",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:462",
       "target": "author:464",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:462",
       "target": "author:465",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:462",
       "target": "author:466",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:462",
       "target": "author:467",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:463",
       "target": "author:464",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:463",
       "target": "author:465",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:463",
       "target": "author:466",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:463",
       "target": "author:467",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:464",
       "target": "author:465",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:464",
       "target": "author:466",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:464",
       "target": "author:467",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:465",
       "target": "author:466",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:465",
       "target": "author:467",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:466",
       "target": "author:467",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:468",
       "target": "author:469",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:468",
       "target": "author:470",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:468",
       "target": "author:471",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:468",
       "target": "author:472",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:469",
       "target": "author:470",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:469",
       "target": "author:471",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:469",
       "target": "author:472",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:470",
       "target": "author:471",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:470",
       "target": "author:472",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:471",
       "target": "author:472",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:473",
       "target": "author:474",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:473",
       "target": "author:475",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:473",
       "target": "author:476",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:474",
       "target": "author:475",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:474",
       "target": "author:476",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:475",
       "target": "author:476",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:477",
       "target": "author:478",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:477",
       "target": "author:479",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:477",
       "target": "author:480",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:477",
       "target": "author:481",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:477",
       "target": "author:482",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:478",
       "target": "author:479",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:478",
       "target": "author:480",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:478",
       "target": "author:481",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:478",
       "target": "author:482",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:479",
       "target": "author:480",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:479",
       "target": "author:481",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:479",
       "target": "author:482",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:480",
       "target": "author:481",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:480",
       "target": "author:482",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:481",
       "target": "author:482",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:483",
@@ -32500,7 +34880,7 @@
     {
       "source": "author:493",
       "target": "author:494",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:495",
@@ -34955,77 +37335,77 @@
     {
       "source": "author:662",
       "target": "author:663",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:662",
       "target": "author:664",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:662",
       "target": "author:665",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:662",
       "target": "author:666",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:662",
       "target": "author:667",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:663",
       "target": "author:664",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:663",
       "target": "author:665",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:663",
       "target": "author:666",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:663",
       "target": "author:667",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:664",
       "target": "author:665",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:664",
       "target": "author:666",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:664",
       "target": "author:667",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:665",
       "target": "author:666",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:665",
       "target": "author:667",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:666",
       "target": "author:667",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:668",
@@ -35060,32 +37440,32 @@
     {
       "source": "author:672",
       "target": "author:673",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:672",
       "target": "author:674",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:672",
       "target": "author:675",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:673",
       "target": "author:674",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:673",
       "target": "author:675",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:674",
       "target": "author:675",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:676",
@@ -35685,37 +38065,37 @@
     {
       "source": "author:715",
       "target": "author:716",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:717",
       "target": "author:718",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:717",
       "target": "author:719",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:717",
       "target": "author:720",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:718",
       "target": "author:719",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:718",
       "target": "author:720",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:719",
       "target": "author:720",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:723",
@@ -37600,612 +39980,612 @@
     {
       "source": "author:869",
       "target": "author:870",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:869",
       "target": "author:871",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:870",
       "target": "author:871",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:872",
       "target": "author:873",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:874",
       "target": "author:875",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:874",
       "target": "author:876",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:874",
       "target": "author:877",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:875",
       "target": "author:876",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:875",
       "target": "author:877",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:876",
       "target": "author:877",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:878",
       "target": "author:879",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:878",
       "target": "author:880",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:879",
       "target": "author:880",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:881",
       "target": "author:882",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:883",
       "target": "author:884",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:883",
       "target": "author:885",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:883",
       "target": "author:886",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:884",
       "target": "author:885",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:884",
       "target": "author:886",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:885",
       "target": "author:886",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:888",
       "target": "author:889",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:888",
       "target": "author:890",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:888",
       "target": "author:891",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:889",
       "target": "author:890",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:889",
       "target": "author:891",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:890",
       "target": "author:891",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:892",
       "target": "author:893",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:894",
       "target": "author:895",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:894",
       "target": "author:896",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:894",
       "target": "author:897",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:895",
       "target": "author:896",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:895",
       "target": "author:897",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:896",
       "target": "author:897",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:898",
       "target": "author:899",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:898",
       "target": "author:900",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:898",
       "target": "author:901",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:898",
       "target": "author:902",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:898",
       "target": "author:903",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:898",
       "target": "author:904",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:898",
       "target": "author:905",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:898",
       "target": "author:906",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:898",
       "target": "author:907",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:898",
       "target": "author:908",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:898",
       "target": "author:909",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:899",
       "target": "author:900",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:899",
       "target": "author:901",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:899",
       "target": "author:902",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:899",
       "target": "author:903",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:899",
       "target": "author:904",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:899",
       "target": "author:905",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:899",
       "target": "author:906",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:899",
       "target": "author:907",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:899",
       "target": "author:908",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:899",
       "target": "author:909",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:900",
       "target": "author:901",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:900",
       "target": "author:902",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:900",
       "target": "author:903",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:900",
       "target": "author:904",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:900",
       "target": "author:905",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:900",
       "target": "author:906",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:900",
       "target": "author:907",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:900",
       "target": "author:908",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:900",
       "target": "author:909",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:901",
       "target": "author:902",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:901",
       "target": "author:903",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:901",
       "target": "author:904",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:901",
       "target": "author:905",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:901",
       "target": "author:906",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:901",
       "target": "author:907",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:901",
       "target": "author:908",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:901",
       "target": "author:909",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:902",
       "target": "author:903",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:902",
       "target": "author:904",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:902",
       "target": "author:905",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:902",
       "target": "author:906",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:902",
       "target": "author:907",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:902",
       "target": "author:908",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:902",
       "target": "author:909",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:903",
       "target": "author:904",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:903",
       "target": "author:905",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:903",
       "target": "author:906",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:903",
       "target": "author:907",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:903",
       "target": "author:908",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:903",
       "target": "author:909",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:904",
       "target": "author:905",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:904",
       "target": "author:906",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:904",
       "target": "author:907",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:904",
       "target": "author:908",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:904",
       "target": "author:909",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:905",
       "target": "author:906",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:905",
       "target": "author:907",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:905",
       "target": "author:908",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:905",
       "target": "author:909",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:906",
       "target": "author:907",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:906",
       "target": "author:908",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:906",
       "target": "author:909",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:907",
       "target": "author:908",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:907",
       "target": "author:909",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:908",
       "target": "author:909",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:910",
       "target": "author:911",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:910",
       "target": "author:912",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:910",
       "target": "author:913",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:911",
       "target": "author:912",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:911",
       "target": "author:913",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:912",
       "target": "author:913",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:914",
       "target": "author:915",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:916",
       "target": "author:917",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:916",
       "target": "author:918",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:917",
       "target": "author:918",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:919",
       "target": "author:920",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:921",
       "target": "author:922",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:921",
       "target": "author:923",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:921",
       "target": "author:924",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:922",
       "target": "author:923",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:922",
       "target": "author:924",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:923",
       "target": "author:924",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:925",
       "target": "author:926",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:925",
       "target": "author:927",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:925",
       "target": "author:928",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:926",
       "target": "author:927",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:926",
       "target": "author:928",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:927",
       "target": "author:928",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:929",
@@ -38240,507 +40620,507 @@
     {
       "source": "author:933",
       "target": "author:934",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:933",
       "target": "author:935",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:934",
       "target": "author:935",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:936",
       "target": "author:937",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:936",
       "target": "author:938",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:936",
       "target": "author:939",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:937",
       "target": "author:938",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:937",
       "target": "author:939",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:938",
       "target": "author:939",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:940",
       "target": "author:941",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:942",
       "target": "author:943",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:945",
       "target": "author:946",
-      "weight": 1
+      "weight": 7
     },
     {
       "source": "author:945",
       "target": "author:947",
-      "weight": 1
+      "weight": 7
     },
     {
       "source": "author:945",
       "target": "author:948",
-      "weight": 1
+      "weight": 7
     },
     {
       "source": "author:946",
       "target": "author:947",
-      "weight": 1
+      "weight": 7
     },
     {
       "source": "author:946",
       "target": "author:948",
-      "weight": 1
+      "weight": 7
     },
     {
       "source": "author:947",
       "target": "author:948",
-      "weight": 1
+      "weight": 7
     },
     {
       "source": "author:949",
       "target": "author:950",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:949",
       "target": "author:951",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:950",
       "target": "author:951",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:952",
       "target": "author:953",
-      "weight": 1
+      "weight": 6
     },
     {
       "source": "author:952",
       "target": "author:954",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:952",
       "target": "author:955",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:953",
       "target": "author:954",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:953",
       "target": "author:955",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:954",
       "target": "author:955",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:956",
       "target": "author:957",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:958",
       "target": "author:959",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:958",
       "target": "author:960",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:959",
       "target": "author:960",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:961",
       "target": "author:962",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:963",
       "target": "author:964",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:965",
       "target": "author:966",
-      "weight": 3
+      "weight": 9
     },
     {
       "source": "author:965",
       "target": "author:967",
-      "weight": 3
+      "weight": 9
     },
     {
       "source": "author:966",
       "target": "author:967",
-      "weight": 4
+      "weight": 12
     },
     {
       "source": "author:968",
       "target": "author:969",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:968",
       "target": "author:970",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:968",
       "target": "author:971",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:968",
       "target": "author:972",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:969",
       "target": "author:970",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:969",
       "target": "author:971",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:969",
       "target": "author:972",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:970",
       "target": "author:971",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:970",
       "target": "author:972",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:971",
       "target": "author:972",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:973",
       "target": "author:974",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:973",
       "target": "author:975",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:974",
       "target": "author:975",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:976",
       "target": "author:977",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:978",
       "target": "author:979",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:978",
       "target": "author:980",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:979",
       "target": "author:980",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:981",
       "target": "author:982",
-      "weight": 2
+      "weight": 6
     },
     {
       "source": "author:983",
       "target": "author:984",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:5",
       "target": "author:985",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:5",
       "target": "author:986",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:985",
       "target": "author:986",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:987",
       "target": "author:988",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:977",
       "target": "author:989",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:977",
       "target": "author:990",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:989",
       "target": "author:990",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:993",
       "target": "author:994",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:995",
       "target": "author:996",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:997",
       "target": "author:998",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:997",
       "target": "author:999",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:997",
       "target": "author:1000",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:997",
       "target": "author:1001",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:997",
       "target": "author:1002",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:997",
       "target": "author:1003",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:998",
       "target": "author:999",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:998",
       "target": "author:1000",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:998",
       "target": "author:1001",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:998",
       "target": "author:1002",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:998",
       "target": "author:1003",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:999",
       "target": "author:1000",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:999",
       "target": "author:1001",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:999",
       "target": "author:1002",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:999",
       "target": "author:1003",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:1000",
       "target": "author:1001",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:1000",
       "target": "author:1002",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:1000",
       "target": "author:1003",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:1001",
       "target": "author:1002",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:1001",
       "target": "author:1003",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:1002",
       "target": "author:1003",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:1004",
       "target": "author:1005",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:1004",
       "target": "author:1006",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:1005",
       "target": "author:1006",
-      "weight": 1
+      "weight": 3
     },
     {
       "source": "author:1009",
       "target": "author:1010",
-      "weight": 1
+      "weight": 4
     },
     {
       "source": "author:1009",
       "target": "author:1011",
-      "weight": 1
+      "weight": 4
     },
     {
       "source": "author:1009",
       "target": "author:1012",
-      "weight": 1
+      "weight": 4
     },
     {
       "source": "author:1010",
       "target": "author:1011",
-      "weight": 1
+      "weight": 4
     },
     {
       "source": "author:1010",
       "target": "author:1012",
-      "weight": 1
+      "weight": 4
     },
     {
       "source": "author:1011",
       "target": "author:1012",
-      "weight": 1
+      "weight": 4
     },
     {
       "source": "author:1013",
       "target": "author:1014",
-      "weight": 1
+      "weight": 4
     },
     {
       "source": "author:1013",
       "target": "author:1015",
-      "weight": 1
+      "weight": 7
     },
     {
       "source": "author:1014",
       "target": "author:1015",
-      "weight": 1
+      "weight": 4
     },
     {
       "source": "author:1016",
       "target": "author:1017",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1018",
       "target": "author:1019",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1018",
       "target": "author:1020",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1019",
       "target": "author:1020",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1022",
       "target": "author:1023",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1026",
@@ -38780,592 +41160,592 @@
     {
       "source": "author:1037",
       "target": "author:1038",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1039",
       "target": "author:1040",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1039",
       "target": "author:1041",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1039",
       "target": "author:1042",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1039",
       "target": "author:1043",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1040",
       "target": "author:1041",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1040",
       "target": "author:1042",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1040",
       "target": "author:1043",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1041",
       "target": "author:1042",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1041",
       "target": "author:1043",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1042",
       "target": "author:1043",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1045",
       "target": "author:1046",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1045",
       "target": "author:1047",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1045",
       "target": "author:1048",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1046",
       "target": "author:1047",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1046",
       "target": "author:1048",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1047",
       "target": "author:1048",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1049",
       "target": "author:1050",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1052",
       "target": "author:1053",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1052",
       "target": "author:1054",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1053",
       "target": "author:1054",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1055",
       "target": "author:1056",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1055",
       "target": "author:1057",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1055",
       "target": "author:1058",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1056",
       "target": "author:1057",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1056",
       "target": "author:1058",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1057",
       "target": "author:1058",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1059",
       "target": "author:1060",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1059",
       "target": "author:1061",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1060",
       "target": "author:1061",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1062",
       "target": "author:1063",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1062",
       "target": "author:1064",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1062",
       "target": "author:1065",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1063",
       "target": "author:1064",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1063",
       "target": "author:1065",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1064",
       "target": "author:1065",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1066",
       "target": "author:1067",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1066",
       "target": "author:1068",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1067",
       "target": "author:1068",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1069",
       "target": "author:1070",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1071",
       "target": "author:1072",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1071",
       "target": "author:1073",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1071",
       "target": "author:1074",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1072",
       "target": "author:1073",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1072",
       "target": "author:1074",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1073",
       "target": "author:1074",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1075",
       "target": "author:1076",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1075",
       "target": "author:1077",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1075",
       "target": "author:1078",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1076",
       "target": "author:1077",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1076",
       "target": "author:1078",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1077",
       "target": "author:1078",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1079",
       "target": "author:1080",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1079",
       "target": "author:1081",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1079",
       "target": "author:1082",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1079",
       "target": "author:1083",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1080",
       "target": "author:1081",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1080",
       "target": "author:1082",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1080",
       "target": "author:1083",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1081",
       "target": "author:1082",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1081",
       "target": "author:1083",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1082",
       "target": "author:1083",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1085",
       "target": "author:1086",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1085",
       "target": "author:1087",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1085",
       "target": "author:1088",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1085",
       "target": "author:1089",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1085",
       "target": "author:1090",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1085",
       "target": "author:1091",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1085",
       "target": "author:1092",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1085",
       "target": "author:1093",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1085",
       "target": "author:1094",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1085",
       "target": "author:1095",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1086",
       "target": "author:1087",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1086",
       "target": "author:1088",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1086",
       "target": "author:1089",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1086",
       "target": "author:1090",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1086",
       "target": "author:1091",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1086",
       "target": "author:1092",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1086",
       "target": "author:1093",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1086",
       "target": "author:1094",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1086",
       "target": "author:1095",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1087",
       "target": "author:1088",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1087",
       "target": "author:1089",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1087",
       "target": "author:1090",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1087",
       "target": "author:1091",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1087",
       "target": "author:1092",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1087",
       "target": "author:1093",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1087",
       "target": "author:1094",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1087",
       "target": "author:1095",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1088",
       "target": "author:1089",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1088",
       "target": "author:1090",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1088",
       "target": "author:1091",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1088",
       "target": "author:1092",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1088",
       "target": "author:1093",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1088",
       "target": "author:1094",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1088",
       "target": "author:1095",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1089",
       "target": "author:1090",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1089",
       "target": "author:1091",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1089",
       "target": "author:1092",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1089",
       "target": "author:1093",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1089",
       "target": "author:1094",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1089",
       "target": "author:1095",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1090",
       "target": "author:1091",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1090",
       "target": "author:1092",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1090",
       "target": "author:1093",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1090",
       "target": "author:1094",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1090",
       "target": "author:1095",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1091",
       "target": "author:1092",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1091",
       "target": "author:1093",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1091",
       "target": "author:1094",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1091",
       "target": "author:1095",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1092",
       "target": "author:1093",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1092",
       "target": "author:1094",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1092",
       "target": "author:1095",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1093",
       "target": "author:1094",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1093",
       "target": "author:1095",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1094",
       "target": "author:1095",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1097",
       "target": "author:1098",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1099",
@@ -39390,192 +41770,192 @@
     {
       "source": "author:1105",
       "target": "author:1106",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1105",
       "target": "author:1107",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1105",
       "target": "author:1108",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1106",
       "target": "author:1107",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1106",
       "target": "author:1108",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1107",
       "target": "author:1108",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1109",
       "target": "author:1110",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1111",
       "target": "author:1112",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1111",
       "target": "author:1113",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1111",
       "target": "author:1114",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1112",
       "target": "author:1113",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1112",
       "target": "author:1114",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1113",
       "target": "author:1114",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1115",
       "target": "author:1116",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1117",
       "target": "author:1118",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1117",
       "target": "author:1119",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1117",
       "target": "author:1120",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1117",
       "target": "author:1121",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1118",
       "target": "author:1119",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1118",
       "target": "author:1120",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1118",
       "target": "author:1121",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1119",
       "target": "author:1120",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1119",
       "target": "author:1121",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1120",
       "target": "author:1121",
-      "weight": 1
+      "weight": 5
     },
     {
       "source": "author:1122",
       "target": "author:1123",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1122",
       "target": "author:1124",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1122",
       "target": "author:1125",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1122",
       "target": "author:1126",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1123",
       "target": "author:1124",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1123",
       "target": "author:1125",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1123",
       "target": "author:1126",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1124",
       "target": "author:1125",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1124",
       "target": "author:1126",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1125",
       "target": "author:1126",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1127",
       "target": "author:1128",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1129",
       "target": "author:1130",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1129",
       "target": "author:1131",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1130",
       "target": "author:1131",
-      "weight": 1
+      "weight": 2
     },
     {
       "source": "author:1132",
@@ -39636,10 +42016,3070 @@
       "source": "author:1138",
       "target": "author:1139",
       "weight": 1
+    },
+    {
+      "source": "author:1141",
+      "target": "author:1142",
+      "weight": 4
+    },
+    {
+      "source": "author:1144",
+      "target": "author:1145",
+      "weight": 1
+    },
+    {
+      "source": "author:1144",
+      "target": "author:1146",
+      "weight": 1
+    },
+    {
+      "source": "author:1144",
+      "target": "author:1147",
+      "weight": 1
+    },
+    {
+      "source": "author:1145",
+      "target": "author:1146",
+      "weight": 1
+    },
+    {
+      "source": "author:1145",
+      "target": "author:1147",
+      "weight": 1
+    },
+    {
+      "source": "author:1146",
+      "target": "author:1147",
+      "weight": 1
+    },
+    {
+      "source": "author:1148",
+      "target": "author:1149",
+      "weight": 1
+    },
+    {
+      "source": "author:1150",
+      "target": "author:1151",
+      "weight": 1
+    },
+    {
+      "source": "author:1150",
+      "target": "author:1152",
+      "weight": 1
+    },
+    {
+      "source": "author:1151",
+      "target": "author:1152",
+      "weight": 1
+    },
+    {
+      "source": "author:1154",
+      "target": "author:1155",
+      "weight": 1
+    },
+    {
+      "source": "author:1154",
+      "target": "author:1156",
+      "weight": 1
+    },
+    {
+      "source": "author:1155",
+      "target": "author:1156",
+      "weight": 1
+    },
+    {
+      "source": "author:1157",
+      "target": "author:1158",
+      "weight": 1
+    },
+    {
+      "source": "author:1159",
+      "target": "author:1160",
+      "weight": 1
+    },
+    {
+      "source": "author:1159",
+      "target": "author:1161",
+      "weight": 1
+    },
+    {
+      "source": "author:1159",
+      "target": "author:1162",
+      "weight": 1
+    },
+    {
+      "source": "author:1160",
+      "target": "author:1161",
+      "weight": 1
+    },
+    {
+      "source": "author:1160",
+      "target": "author:1162",
+      "weight": 1
+    },
+    {
+      "source": "author:1161",
+      "target": "author:1162",
+      "weight": 1
+    },
+    {
+      "source": "author:1163",
+      "target": "author:1164",
+      "weight": 4
+    },
+    {
+      "source": "author:1163",
+      "target": "author:1165",
+      "weight": 4
+    },
+    {
+      "source": "author:1163",
+      "target": "author:1166",
+      "weight": 4
+    },
+    {
+      "source": "author:1164",
+      "target": "author:1165",
+      "weight": 4
+    },
+    {
+      "source": "author:1164",
+      "target": "author:1166",
+      "weight": 4
+    },
+    {
+      "source": "author:1165",
+      "target": "author:1166",
+      "weight": 4
+    },
+    {
+      "source": "author:1167",
+      "target": "author:1168",
+      "weight": 3
+    },
+    {
+      "source": "author:1169",
+      "target": "author:1170",
+      "weight": 3
+    },
+    {
+      "source": "author:1169",
+      "target": "author:1171",
+      "weight": 3
+    },
+    {
+      "source": "author:1169",
+      "target": "author:1172",
+      "weight": 3
+    },
+    {
+      "source": "author:1169",
+      "target": "author:1173",
+      "weight": 3
+    },
+    {
+      "source": "author:1169",
+      "target": "author:1174",
+      "weight": 3
+    },
+    {
+      "source": "author:1169",
+      "target": "author:1175",
+      "weight": 3
+    },
+    {
+      "source": "author:1169",
+      "target": "author:1176",
+      "weight": 3
+    },
+    {
+      "source": "author:1170",
+      "target": "author:1171",
+      "weight": 3
+    },
+    {
+      "source": "author:1170",
+      "target": "author:1172",
+      "weight": 3
+    },
+    {
+      "source": "author:1170",
+      "target": "author:1173",
+      "weight": 3
+    },
+    {
+      "source": "author:1170",
+      "target": "author:1174",
+      "weight": 3
+    },
+    {
+      "source": "author:1170",
+      "target": "author:1175",
+      "weight": 3
+    },
+    {
+      "source": "author:1170",
+      "target": "author:1176",
+      "weight": 3
+    },
+    {
+      "source": "author:1171",
+      "target": "author:1172",
+      "weight": 3
+    },
+    {
+      "source": "author:1171",
+      "target": "author:1173",
+      "weight": 3
+    },
+    {
+      "source": "author:1171",
+      "target": "author:1174",
+      "weight": 3
+    },
+    {
+      "source": "author:1171",
+      "target": "author:1175",
+      "weight": 3
+    },
+    {
+      "source": "author:1171",
+      "target": "author:1176",
+      "weight": 3
+    },
+    {
+      "source": "author:1172",
+      "target": "author:1173",
+      "weight": 3
+    },
+    {
+      "source": "author:1172",
+      "target": "author:1174",
+      "weight": 3
+    },
+    {
+      "source": "author:1172",
+      "target": "author:1175",
+      "weight": 3
+    },
+    {
+      "source": "author:1172",
+      "target": "author:1176",
+      "weight": 3
+    },
+    {
+      "source": "author:1173",
+      "target": "author:1174",
+      "weight": 3
+    },
+    {
+      "source": "author:1173",
+      "target": "author:1175",
+      "weight": 3
+    },
+    {
+      "source": "author:1173",
+      "target": "author:1176",
+      "weight": 3
+    },
+    {
+      "source": "author:1174",
+      "target": "author:1175",
+      "weight": 3
+    },
+    {
+      "source": "author:1174",
+      "target": "author:1176",
+      "weight": 3
+    },
+    {
+      "source": "author:1175",
+      "target": "author:1176",
+      "weight": 3
+    },
+    {
+      "source": "author:1177",
+      "target": "author:1178",
+      "weight": 3
+    },
+    {
+      "source": "author:1177",
+      "target": "author:1179",
+      "weight": 3
+    },
+    {
+      "source": "author:1177",
+      "target": "author:1180",
+      "weight": 3
+    },
+    {
+      "source": "author:1177",
+      "target": "author:1181",
+      "weight": 3
+    },
+    {
+      "source": "author:1177",
+      "target": "author:1182",
+      "weight": 3
+    },
+    {
+      "source": "author:1178",
+      "target": "author:1179",
+      "weight": 3
+    },
+    {
+      "source": "author:1178",
+      "target": "author:1180",
+      "weight": 3
+    },
+    {
+      "source": "author:1178",
+      "target": "author:1181",
+      "weight": 3
+    },
+    {
+      "source": "author:1178",
+      "target": "author:1182",
+      "weight": 3
+    },
+    {
+      "source": "author:1179",
+      "target": "author:1180",
+      "weight": 3
+    },
+    {
+      "source": "author:1179",
+      "target": "author:1181",
+      "weight": 3
+    },
+    {
+      "source": "author:1179",
+      "target": "author:1182",
+      "weight": 3
+    },
+    {
+      "source": "author:1180",
+      "target": "author:1181",
+      "weight": 3
+    },
+    {
+      "source": "author:1180",
+      "target": "author:1182",
+      "weight": 3
+    },
+    {
+      "source": "author:1181",
+      "target": "author:1182",
+      "weight": 3
+    },
+    {
+      "source": "author:1183",
+      "target": "author:1184",
+      "weight": 3
+    },
+    {
+      "source": "author:1183",
+      "target": "author:1185",
+      "weight": 3
+    },
+    {
+      "source": "author:1184",
+      "target": "author:1185",
+      "weight": 3
+    },
+    {
+      "source": "author:1186",
+      "target": "author:1187",
+      "weight": 3
+    },
+    {
+      "source": "author:1188",
+      "target": "author:1189",
+      "weight": 3
+    },
+    {
+      "source": "author:1188",
+      "target": "author:1190",
+      "weight": 3
+    },
+    {
+      "source": "author:1188",
+      "target": "author:1191",
+      "weight": 3
+    },
+    {
+      "source": "author:1189",
+      "target": "author:1190",
+      "weight": 3
+    },
+    {
+      "source": "author:1189",
+      "target": "author:1191",
+      "weight": 3
+    },
+    {
+      "source": "author:1190",
+      "target": "author:1191",
+      "weight": 3
+    },
+    {
+      "source": "author:1192",
+      "target": "author:1193",
+      "weight": 3
+    },
+    {
+      "source": "author:1192",
+      "target": "author:1194",
+      "weight": 3
+    },
+    {
+      "source": "author:1192",
+      "target": "author:1195",
+      "weight": 3
+    },
+    {
+      "source": "author:1193",
+      "target": "author:1194",
+      "weight": 3
+    },
+    {
+      "source": "author:1193",
+      "target": "author:1195",
+      "weight": 3
+    },
+    {
+      "source": "author:1194",
+      "target": "author:1195",
+      "weight": 3
+    },
+    {
+      "source": "author:1196",
+      "target": "author:1197",
+      "weight": 3
+    },
+    {
+      "source": "author:1196",
+      "target": "author:1198",
+      "weight": 3
+    },
+    {
+      "source": "author:1197",
+      "target": "author:1198",
+      "weight": 3
+    },
+    {
+      "source": "author:1199",
+      "target": "author:1200",
+      "weight": 3
+    },
+    {
+      "source": "author:1199",
+      "target": "author:1201",
+      "weight": 3
+    },
+    {
+      "source": "author:1199",
+      "target": "author:1202",
+      "weight": 3
+    },
+    {
+      "source": "author:1200",
+      "target": "author:1201",
+      "weight": 3
+    },
+    {
+      "source": "author:1200",
+      "target": "author:1202",
+      "weight": 3
+    },
+    {
+      "source": "author:1201",
+      "target": "author:1202",
+      "weight": 3
+    },
+    {
+      "source": "author:1004",
+      "target": "author:1203",
+      "weight": 3
+    },
+    {
+      "source": "author:1204",
+      "target": "author:1205",
+      "weight": 3
+    },
+    {
+      "source": "author:1204",
+      "target": "author:1206",
+      "weight": 3
+    },
+    {
+      "source": "author:1205",
+      "target": "author:1206",
+      "weight": 3
+    },
+    {
+      "source": "author:1207",
+      "target": "author:1208",
+      "weight": 3
+    },
+    {
+      "source": "author:1207",
+      "target": "author:1209",
+      "weight": 3
+    },
+    {
+      "source": "author:1207",
+      "target": "author:1210",
+      "weight": 3
+    },
+    {
+      "source": "author:1208",
+      "target": "author:1209",
+      "weight": 3
+    },
+    {
+      "source": "author:1208",
+      "target": "author:1210",
+      "weight": 3
+    },
+    {
+      "source": "author:1209",
+      "target": "author:1210",
+      "weight": 3
+    },
+    {
+      "source": "author:1211",
+      "target": "author:1212",
+      "weight": 3
+    },
+    {
+      "source": "author:1211",
+      "target": "author:1213",
+      "weight": 3
+    },
+    {
+      "source": "author:1212",
+      "target": "author:1213",
+      "weight": 3
+    },
+    {
+      "source": "author:1214",
+      "target": "author:1215",
+      "weight": 3
+    },
+    {
+      "source": "author:1216",
+      "target": "author:1217",
+      "weight": 3
+    },
+    {
+      "source": "author:1216",
+      "target": "author:1218",
+      "weight": 3
+    },
+    {
+      "source": "author:1217",
+      "target": "author:1218",
+      "weight": 3
+    },
+    {
+      "source": "author:1219",
+      "target": "author:1220",
+      "weight": 3
+    },
+    {
+      "source": "author:1221",
+      "target": "author:1222",
+      "weight": 3
+    },
+    {
+      "source": "author:1221",
+      "target": "author:1223",
+      "weight": 3
+    },
+    {
+      "source": "author:1221",
+      "target": "author:1224",
+      "weight": 3
+    },
+    {
+      "source": "author:1222",
+      "target": "author:1223",
+      "weight": 3
+    },
+    {
+      "source": "author:1222",
+      "target": "author:1224",
+      "weight": 3
+    },
+    {
+      "source": "author:1223",
+      "target": "author:1224",
+      "weight": 3
+    },
+    {
+      "source": "author:1225",
+      "target": "author:1226",
+      "weight": 3
+    },
+    {
+      "source": "author:1225",
+      "target": "author:1227",
+      "weight": 3
+    },
+    {
+      "source": "author:1226",
+      "target": "author:1227",
+      "weight": 3
+    },
+    {
+      "source": "author:1228",
+      "target": "author:1229",
+      "weight": 3
+    },
+    {
+      "source": "author:1228",
+      "target": "author:1230",
+      "weight": 3
+    },
+    {
+      "source": "author:1228",
+      "target": "author:1231",
+      "weight": 3
+    },
+    {
+      "source": "author:1229",
+      "target": "author:1230",
+      "weight": 3
+    },
+    {
+      "source": "author:1229",
+      "target": "author:1231",
+      "weight": 3
+    },
+    {
+      "source": "author:1230",
+      "target": "author:1231",
+      "weight": 3
+    },
+    {
+      "source": "author:1232",
+      "target": "author:1233",
+      "weight": 3
+    },
+    {
+      "source": "author:1232",
+      "target": "author:1234",
+      "weight": 3
+    },
+    {
+      "source": "author:1233",
+      "target": "author:1234",
+      "weight": 3
+    },
+    {
+      "source": "author:1235",
+      "target": "author:1236",
+      "weight": 3
+    },
+    {
+      "source": "author:1235",
+      "target": "author:1237",
+      "weight": 3
+    },
+    {
+      "source": "author:1235",
+      "target": "author:1238",
+      "weight": 3
+    },
+    {
+      "source": "author:1236",
+      "target": "author:1237",
+      "weight": 3
+    },
+    {
+      "source": "author:1236",
+      "target": "author:1238",
+      "weight": 3
+    },
+    {
+      "source": "author:1237",
+      "target": "author:1238",
+      "weight": 3
+    },
+    {
+      "source": "author:16",
+      "target": "author:1240",
+      "weight": 9
+    },
+    {
+      "source": "author:16",
+      "target": "author:1241",
+      "weight": 9
+    },
+    {
+      "source": "author:16",
+      "target": "author:1242",
+      "weight": 9
+    },
+    {
+      "source": "author:16",
+      "target": "author:1243",
+      "weight": 9
+    },
+    {
+      "source": "author:16",
+      "target": "author:1244",
+      "weight": 9
+    },
+    {
+      "source": "author:1240",
+      "target": "author:1241",
+      "weight": 9
+    },
+    {
+      "source": "author:1240",
+      "target": "author:1242",
+      "weight": 9
+    },
+    {
+      "source": "author:1240",
+      "target": "author:1243",
+      "weight": 9
+    },
+    {
+      "source": "author:1240",
+      "target": "author:1244",
+      "weight": 9
+    },
+    {
+      "source": "author:1241",
+      "target": "author:1242",
+      "weight": 9
+    },
+    {
+      "source": "author:1241",
+      "target": "author:1243",
+      "weight": 9
+    },
+    {
+      "source": "author:1241",
+      "target": "author:1244",
+      "weight": 9
+    },
+    {
+      "source": "author:1242",
+      "target": "author:1243",
+      "weight": 9
+    },
+    {
+      "source": "author:1242",
+      "target": "author:1244",
+      "weight": 9
+    },
+    {
+      "source": "author:1243",
+      "target": "author:1244",
+      "weight": 9
+    },
+    {
+      "source": "author:1245",
+      "target": "author:1246",
+      "weight": 6
+    },
+    {
+      "source": "author:1245",
+      "target": "author:1247",
+      "weight": 6
+    },
+    {
+      "source": "author:1246",
+      "target": "author:1247",
+      "weight": 6
+    },
+    {
+      "source": "author:1248",
+      "target": "author:1249",
+      "weight": 6
+    },
+    {
+      "source": "author:1248",
+      "target": "author:1250",
+      "weight": 6
+    },
+    {
+      "source": "author:1248",
+      "target": "author:1251",
+      "weight": 6
+    },
+    {
+      "source": "author:1249",
+      "target": "author:1250",
+      "weight": 6
+    },
+    {
+      "source": "author:1249",
+      "target": "author:1251",
+      "weight": 6
+    },
+    {
+      "source": "author:1250",
+      "target": "author:1251",
+      "weight": 6
+    },
+    {
+      "source": "author:1252",
+      "target": "author:1253",
+      "weight": 3
+    },
+    {
+      "source": "author:952",
+      "target": "author:1254",
+      "weight": 3
+    },
+    {
+      "source": "author:953",
+      "target": "author:1254",
+      "weight": 3
+    },
+    {
+      "source": "author:1013",
+      "target": "author:1255",
+      "weight": 3
+    },
+    {
+      "source": "author:1015",
+      "target": "author:1255",
+      "weight": 3
+    },
+    {
+      "source": "author:114",
+      "target": "author:1256",
+      "weight": 3
+    },
+    {
+      "source": "author:115",
+      "target": "author:1256",
+      "weight": 3
+    },
+    {
+      "source": "author:116",
+      "target": "author:1256",
+      "weight": 3
+    },
+    {
+      "source": "author:1257",
+      "target": "author:1258",
+      "weight": 3
+    },
+    {
+      "source": "author:1257",
+      "target": "author:1259",
+      "weight": 3
+    },
+    {
+      "source": "author:1258",
+      "target": "author:1259",
+      "weight": 3
+    },
+    {
+      "source": "author:1260",
+      "target": "author:1261",
+      "weight": 3
+    },
+    {
+      "source": "author:1260",
+      "target": "author:1262",
+      "weight": 3
+    },
+    {
+      "source": "author:1260",
+      "target": "author:1263",
+      "weight": 3
+    },
+    {
+      "source": "author:1261",
+      "target": "author:1262",
+      "weight": 3
+    },
+    {
+      "source": "author:1261",
+      "target": "author:1263",
+      "weight": 3
+    },
+    {
+      "source": "author:1262",
+      "target": "author:1263",
+      "weight": 3
+    },
+    {
+      "source": "author:1264",
+      "target": "author:1265",
+      "weight": 3
+    },
+    {
+      "source": "author:1266",
+      "target": "author:1267",
+      "weight": 3
+    },
+    {
+      "source": "author:1266",
+      "target": "author:1268",
+      "weight": 3
+    },
+    {
+      "source": "author:1266",
+      "target": "author:1269",
+      "weight": 3
+    },
+    {
+      "source": "author:1267",
+      "target": "author:1268",
+      "weight": 3
+    },
+    {
+      "source": "author:1267",
+      "target": "author:1269",
+      "weight": 3
+    },
+    {
+      "source": "author:1268",
+      "target": "author:1269",
+      "weight": 3
+    },
+    {
+      "source": "author:1270",
+      "target": "author:1271",
+      "weight": 3
+    },
+    {
+      "source": "author:1272",
+      "target": "author:1273",
+      "weight": 3
+    },
+    {
+      "source": "author:1274",
+      "target": "author:1275",
+      "weight": 3
+    },
+    {
+      "source": "author:1276",
+      "target": "author:1277",
+      "weight": 3
+    },
+    {
+      "source": "author:1276",
+      "target": "author:1278",
+      "weight": 3
+    },
+    {
+      "source": "author:1276",
+      "target": "author:1279",
+      "weight": 3
+    },
+    {
+      "source": "author:1276",
+      "target": "author:1280",
+      "weight": 3
+    },
+    {
+      "source": "author:1276",
+      "target": "author:1281",
+      "weight": 3
+    },
+    {
+      "source": "author:1276",
+      "target": "author:1282",
+      "weight": 3
+    },
+    {
+      "source": "author:1277",
+      "target": "author:1278",
+      "weight": 3
+    },
+    {
+      "source": "author:1277",
+      "target": "author:1279",
+      "weight": 3
+    },
+    {
+      "source": "author:1277",
+      "target": "author:1280",
+      "weight": 3
+    },
+    {
+      "source": "author:1277",
+      "target": "author:1281",
+      "weight": 3
+    },
+    {
+      "source": "author:1277",
+      "target": "author:1282",
+      "weight": 3
+    },
+    {
+      "source": "author:1278",
+      "target": "author:1279",
+      "weight": 3
+    },
+    {
+      "source": "author:1278",
+      "target": "author:1280",
+      "weight": 3
+    },
+    {
+      "source": "author:1278",
+      "target": "author:1281",
+      "weight": 3
+    },
+    {
+      "source": "author:1278",
+      "target": "author:1282",
+      "weight": 3
+    },
+    {
+      "source": "author:1279",
+      "target": "author:1280",
+      "weight": 3
+    },
+    {
+      "source": "author:1279",
+      "target": "author:1281",
+      "weight": 3
+    },
+    {
+      "source": "author:1279",
+      "target": "author:1282",
+      "weight": 3
+    },
+    {
+      "source": "author:1280",
+      "target": "author:1281",
+      "weight": 3
+    },
+    {
+      "source": "author:1280",
+      "target": "author:1282",
+      "weight": 3
+    },
+    {
+      "source": "author:1281",
+      "target": "author:1282",
+      "weight": 3
+    },
+    {
+      "source": "author:977",
+      "target": "author:1284",
+      "weight": 3
+    },
+    {
+      "source": "author:977",
+      "target": "author:1285",
+      "weight": 3
+    },
+    {
+      "source": "author:1284",
+      "target": "author:1285",
+      "weight": 3
+    },
+    {
+      "source": "author:1286",
+      "target": "author:1287",
+      "weight": 3
+    },
+    {
+      "source": "author:1286",
+      "target": "author:1288",
+      "weight": 3
+    },
+    {
+      "source": "author:1286",
+      "target": "author:1289",
+      "weight": 3
+    },
+    {
+      "source": "author:1286",
+      "target": "author:1290",
+      "weight": 3
+    },
+    {
+      "source": "author:1287",
+      "target": "author:1288",
+      "weight": 3
+    },
+    {
+      "source": "author:1287",
+      "target": "author:1289",
+      "weight": 3
+    },
+    {
+      "source": "author:1287",
+      "target": "author:1290",
+      "weight": 3
+    },
+    {
+      "source": "author:1288",
+      "target": "author:1289",
+      "weight": 3
+    },
+    {
+      "source": "author:1288",
+      "target": "author:1290",
+      "weight": 3
+    },
+    {
+      "source": "author:1289",
+      "target": "author:1290",
+      "weight": 3
+    },
+    {
+      "source": "author:1292",
+      "target": "author:1293",
+      "weight": 3
+    },
+    {
+      "source": "author:1296",
+      "target": "author:1297",
+      "weight": 3
+    },
+    {
+      "source": "author:1296",
+      "target": "author:1298",
+      "weight": 3
+    },
+    {
+      "source": "author:1296",
+      "target": "author:1299",
+      "weight": 3
+    },
+    {
+      "source": "author:1297",
+      "target": "author:1298",
+      "weight": 3
+    },
+    {
+      "source": "author:1297",
+      "target": "author:1299",
+      "weight": 3
+    },
+    {
+      "source": "author:1298",
+      "target": "author:1299",
+      "weight": 3
+    },
+    {
+      "source": "author:945",
+      "target": "author:1033",
+      "weight": 4
+    },
+    {
+      "source": "author:946",
+      "target": "author:1033",
+      "weight": 4
+    },
+    {
+      "source": "author:947",
+      "target": "author:1033",
+      "weight": 4
+    },
+    {
+      "source": "author:948",
+      "target": "author:1033",
+      "weight": 4
+    },
+    {
+      "source": "author:1300",
+      "target": "author:1301",
+      "weight": 3
+    },
+    {
+      "source": "author:1300",
+      "target": "author:1302",
+      "weight": 3
+    },
+    {
+      "source": "author:1300",
+      "target": "author:1303",
+      "weight": 3
+    },
+    {
+      "source": "author:1301",
+      "target": "author:1302",
+      "weight": 3
+    },
+    {
+      "source": "author:1301",
+      "target": "author:1303",
+      "weight": 3
+    },
+    {
+      "source": "author:1302",
+      "target": "author:1303",
+      "weight": 3
+    },
+    {
+      "source": "author:1304",
+      "target": "author:1305",
+      "weight": 3
+    },
+    {
+      "source": "author:1304",
+      "target": "author:1306",
+      "weight": 3
+    },
+    {
+      "source": "author:1305",
+      "target": "author:1306",
+      "weight": 3
+    },
+    {
+      "source": "author:1308",
+      "target": "author:1309",
+      "weight": 3
+    },
+    {
+      "source": "author:1245",
+      "target": "author:1310",
+      "weight": 5
+    },
+    {
+      "source": "author:1245",
+      "target": "author:1311",
+      "weight": 5
+    },
+    {
+      "source": "author:1246",
+      "target": "author:1310",
+      "weight": 5
+    },
+    {
+      "source": "author:1246",
+      "target": "author:1311",
+      "weight": 5
+    },
+    {
+      "source": "author:1247",
+      "target": "author:1310",
+      "weight": 5
+    },
+    {
+      "source": "author:1247",
+      "target": "author:1311",
+      "weight": 5
+    },
+    {
+      "source": "author:1310",
+      "target": "author:1311",
+      "weight": 5
+    },
+    {
+      "source": "author:977",
+      "target": "author:1312",
+      "weight": 3
+    },
+    {
+      "source": "author:977",
+      "target": "author:1313",
+      "weight": 3
+    },
+    {
+      "source": "author:1312",
+      "target": "author:1313",
+      "weight": 3
+    },
+    {
+      "source": "author:1248",
+      "target": "author:1314",
+      "weight": 5
+    },
+    {
+      "source": "author:1249",
+      "target": "author:1314",
+      "weight": 5
+    },
+    {
+      "source": "author:1250",
+      "target": "author:1314",
+      "weight": 5
+    },
+    {
+      "source": "author:1251",
+      "target": "author:1314",
+      "weight": 5
+    },
+    {
+      "source": "author:1316",
+      "target": "author:1317",
+      "weight": 3
+    },
+    {
+      "source": "author:1316",
+      "target": "author:1318",
+      "weight": 3
+    },
+    {
+      "source": "author:1317",
+      "target": "author:1318",
+      "weight": 3
+    },
+    {
+      "source": "author:1319",
+      "target": "author:1320",
+      "weight": 3
+    },
+    {
+      "source": "author:1319",
+      "target": "author:1321",
+      "weight": 3
+    },
+    {
+      "source": "author:1320",
+      "target": "author:1321",
+      "weight": 3
+    },
+    {
+      "source": "author:1322",
+      "target": "author:1323",
+      "weight": 3
+    },
+    {
+      "source": "author:1324",
+      "target": "author:1325",
+      "weight": 3
+    },
+    {
+      "source": "author:1324",
+      "target": "author:1326",
+      "weight": 3
+    },
+    {
+      "source": "author:1325",
+      "target": "author:1326",
+      "weight": 3
+    },
+    {
+      "source": "author:1327",
+      "target": "author:1328",
+      "weight": 3
+    },
+    {
+      "source": "author:1327",
+      "target": "author:1329",
+      "weight": 3
+    },
+    {
+      "source": "author:1328",
+      "target": "author:1329",
+      "weight": 3
+    },
+    {
+      "source": "author:1330",
+      "target": "author:1331",
+      "weight": 3
+    },
+    {
+      "source": "author:1332",
+      "target": "author:1333",
+      "weight": 3
+    },
+    {
+      "source": "author:1332",
+      "target": "author:1334",
+      "weight": 3
+    },
+    {
+      "source": "author:1333",
+      "target": "author:1334",
+      "weight": 3
+    },
+    {
+      "source": "author:1335",
+      "target": "author:1336",
+      "weight": 3
+    },
+    {
+      "source": "author:1335",
+      "target": "author:1337",
+      "weight": 3
+    },
+    {
+      "source": "author:1335",
+      "target": "author:1338",
+      "weight": 3
+    },
+    {
+      "source": "author:1335",
+      "target": "author:1339",
+      "weight": 3
+    },
+    {
+      "source": "author:1335",
+      "target": "author:1340",
+      "weight": 3
+    },
+    {
+      "source": "author:1336",
+      "target": "author:1337",
+      "weight": 3
+    },
+    {
+      "source": "author:1336",
+      "target": "author:1338",
+      "weight": 3
+    },
+    {
+      "source": "author:1336",
+      "target": "author:1339",
+      "weight": 3
+    },
+    {
+      "source": "author:1336",
+      "target": "author:1340",
+      "weight": 3
+    },
+    {
+      "source": "author:1337",
+      "target": "author:1338",
+      "weight": 3
+    },
+    {
+      "source": "author:1337",
+      "target": "author:1339",
+      "weight": 3
+    },
+    {
+      "source": "author:1337",
+      "target": "author:1340",
+      "weight": 3
+    },
+    {
+      "source": "author:1338",
+      "target": "author:1339",
+      "weight": 3
+    },
+    {
+      "source": "author:1338",
+      "target": "author:1340",
+      "weight": 3
+    },
+    {
+      "source": "author:1339",
+      "target": "author:1340",
+      "weight": 3
+    },
+    {
+      "source": "author:1341",
+      "target": "author:1342",
+      "weight": 3
+    },
+    {
+      "source": "author:1341",
+      "target": "author:1343",
+      "weight": 3
+    },
+    {
+      "source": "author:1341",
+      "target": "author:1344",
+      "weight": 3
+    },
+    {
+      "source": "author:1342",
+      "target": "author:1343",
+      "weight": 3
+    },
+    {
+      "source": "author:1342",
+      "target": "author:1344",
+      "weight": 3
+    },
+    {
+      "source": "author:1343",
+      "target": "author:1344",
+      "weight": 3
+    },
+    {
+      "source": "author:1345",
+      "target": "author:1346",
+      "weight": 3
+    },
+    {
+      "source": "author:1345",
+      "target": "author:1347",
+      "weight": 3
+    },
+    {
+      "source": "author:1345",
+      "target": "author:1348",
+      "weight": 3
+    },
+    {
+      "source": "author:1346",
+      "target": "author:1347",
+      "weight": 3
+    },
+    {
+      "source": "author:1346",
+      "target": "author:1348",
+      "weight": 3
+    },
+    {
+      "source": "author:1347",
+      "target": "author:1348",
+      "weight": 3
+    },
+    {
+      "source": "author:1350",
+      "target": "author:1351",
+      "weight": 3
+    },
+    {
+      "source": "author:1350",
+      "target": "author:1352",
+      "weight": 3
+    },
+    {
+      "source": "author:1351",
+      "target": "author:1352",
+      "weight": 3
+    },
+    {
+      "source": "author:1353",
+      "target": "author:1354",
+      "weight": 3
+    },
+    {
+      "source": "author:1356",
+      "target": "author:1357",
+      "weight": 3
+    },
+    {
+      "source": "author:1356",
+      "target": "author:1358",
+      "weight": 3
+    },
+    {
+      "source": "author:1356",
+      "target": "author:1359",
+      "weight": 3
+    },
+    {
+      "source": "author:1356",
+      "target": "author:1360",
+      "weight": 3
+    },
+    {
+      "source": "author:1357",
+      "target": "author:1358",
+      "weight": 3
+    },
+    {
+      "source": "author:1357",
+      "target": "author:1359",
+      "weight": 3
+    },
+    {
+      "source": "author:1357",
+      "target": "author:1360",
+      "weight": 3
+    },
+    {
+      "source": "author:1358",
+      "target": "author:1359",
+      "weight": 3
+    },
+    {
+      "source": "author:1358",
+      "target": "author:1360",
+      "weight": 3
+    },
+    {
+      "source": "author:1359",
+      "target": "author:1360",
+      "weight": 3
+    },
+    {
+      "source": "author:1361",
+      "target": "author:1362",
+      "weight": 3
+    },
+    {
+      "source": "author:1361",
+      "target": "author:1363",
+      "weight": 3
+    },
+    {
+      "source": "author:1362",
+      "target": "author:1363",
+      "weight": 3
+    },
+    {
+      "source": "author:227",
+      "target": "author:1364",
+      "weight": 3
+    },
+    {
+      "source": "author:228",
+      "target": "author:1364",
+      "weight": 3
+    },
+    {
+      "source": "author:229",
+      "target": "author:1364",
+      "weight": 3
+    },
+    {
+      "source": "author:1365",
+      "target": "author:1366",
+      "weight": 3
+    },
+    {
+      "source": "author:1365",
+      "target": "author:1367",
+      "weight": 3
+    },
+    {
+      "source": "author:1366",
+      "target": "author:1367",
+      "weight": 3
+    },
+    {
+      "source": "author:1368",
+      "target": "author:1369",
+      "weight": 3
+    },
+    {
+      "source": "author:655",
+      "target": "author:1370",
+      "weight": 3
+    },
+    {
+      "source": "author:655",
+      "target": "author:1371",
+      "weight": 3
+    },
+    {
+      "source": "author:655",
+      "target": "author:1372",
+      "weight": 3
+    },
+    {
+      "source": "author:655",
+      "target": "author:1373",
+      "weight": 3
+    },
+    {
+      "source": "author:655",
+      "target": "author:1374",
+      "weight": 3
+    },
+    {
+      "source": "author:655",
+      "target": "author:1375",
+      "weight": 3
+    },
+    {
+      "source": "author:1370",
+      "target": "author:1371",
+      "weight": 3
+    },
+    {
+      "source": "author:1370",
+      "target": "author:1372",
+      "weight": 3
+    },
+    {
+      "source": "author:1370",
+      "target": "author:1373",
+      "weight": 3
+    },
+    {
+      "source": "author:1370",
+      "target": "author:1374",
+      "weight": 3
+    },
+    {
+      "source": "author:1370",
+      "target": "author:1375",
+      "weight": 3
+    },
+    {
+      "source": "author:1371",
+      "target": "author:1372",
+      "weight": 3
+    },
+    {
+      "source": "author:1371",
+      "target": "author:1373",
+      "weight": 3
+    },
+    {
+      "source": "author:1371",
+      "target": "author:1374",
+      "weight": 3
+    },
+    {
+      "source": "author:1371",
+      "target": "author:1375",
+      "weight": 3
+    },
+    {
+      "source": "author:1372",
+      "target": "author:1373",
+      "weight": 3
+    },
+    {
+      "source": "author:1372",
+      "target": "author:1374",
+      "weight": 3
+    },
+    {
+      "source": "author:1372",
+      "target": "author:1375",
+      "weight": 3
+    },
+    {
+      "source": "author:1373",
+      "target": "author:1374",
+      "weight": 3
+    },
+    {
+      "source": "author:1373",
+      "target": "author:1375",
+      "weight": 3
+    },
+    {
+      "source": "author:1374",
+      "target": "author:1375",
+      "weight": 3
+    },
+    {
+      "source": "author:1376",
+      "target": "author:1377",
+      "weight": 3
+    },
+    {
+      "source": "author:1378",
+      "target": "author:1379",
+      "weight": 3
+    },
+    {
+      "source": "author:1378",
+      "target": "author:1380",
+      "weight": 3
+    },
+    {
+      "source": "author:1378",
+      "target": "author:1381",
+      "weight": 3
+    },
+    {
+      "source": "author:1378",
+      "target": "author:1382",
+      "weight": 3
+    },
+    {
+      "source": "author:1378",
+      "target": "author:1383",
+      "weight": 3
+    },
+    {
+      "source": "author:1378",
+      "target": "author:1384",
+      "weight": 3
+    },
+    {
+      "source": "author:1378",
+      "target": "author:1385",
+      "weight": 3
+    },
+    {
+      "source": "author:1379",
+      "target": "author:1380",
+      "weight": 3
+    },
+    {
+      "source": "author:1379",
+      "target": "author:1381",
+      "weight": 3
+    },
+    {
+      "source": "author:1379",
+      "target": "author:1382",
+      "weight": 3
+    },
+    {
+      "source": "author:1379",
+      "target": "author:1383",
+      "weight": 3
+    },
+    {
+      "source": "author:1379",
+      "target": "author:1384",
+      "weight": 3
+    },
+    {
+      "source": "author:1379",
+      "target": "author:1385",
+      "weight": 3
+    },
+    {
+      "source": "author:1380",
+      "target": "author:1381",
+      "weight": 3
+    },
+    {
+      "source": "author:1380",
+      "target": "author:1382",
+      "weight": 3
+    },
+    {
+      "source": "author:1380",
+      "target": "author:1383",
+      "weight": 3
+    },
+    {
+      "source": "author:1380",
+      "target": "author:1384",
+      "weight": 3
+    },
+    {
+      "source": "author:1380",
+      "target": "author:1385",
+      "weight": 3
+    },
+    {
+      "source": "author:1381",
+      "target": "author:1382",
+      "weight": 3
+    },
+    {
+      "source": "author:1381",
+      "target": "author:1383",
+      "weight": 3
+    },
+    {
+      "source": "author:1381",
+      "target": "author:1384",
+      "weight": 3
+    },
+    {
+      "source": "author:1381",
+      "target": "author:1385",
+      "weight": 3
+    },
+    {
+      "source": "author:1382",
+      "target": "author:1383",
+      "weight": 3
+    },
+    {
+      "source": "author:1382",
+      "target": "author:1384",
+      "weight": 3
+    },
+    {
+      "source": "author:1382",
+      "target": "author:1385",
+      "weight": 3
+    },
+    {
+      "source": "author:1383",
+      "target": "author:1384",
+      "weight": 3
+    },
+    {
+      "source": "author:1383",
+      "target": "author:1385",
+      "weight": 3
+    },
+    {
+      "source": "author:1384",
+      "target": "author:1385",
+      "weight": 3
+    },
+    {
+      "source": "author:1386",
+      "target": "author:1387",
+      "weight": 3
+    },
+    {
+      "source": "author:1386",
+      "target": "author:1388",
+      "weight": 3
+    },
+    {
+      "source": "author:1386",
+      "target": "author:1389",
+      "weight": 3
+    },
+    {
+      "source": "author:1387",
+      "target": "author:1388",
+      "weight": 3
+    },
+    {
+      "source": "author:1387",
+      "target": "author:1389",
+      "weight": 3
+    },
+    {
+      "source": "author:1388",
+      "target": "author:1389",
+      "weight": 3
+    },
+    {
+      "source": "author:1390",
+      "target": "author:1391",
+      "weight": 3
+    },
+    {
+      "source": "author:1392",
+      "target": "author:1393",
+      "weight": 3
+    },
+    {
+      "source": "author:1392",
+      "target": "author:1394",
+      "weight": 3
+    },
+    {
+      "source": "author:1393",
+      "target": "author:1394",
+      "weight": 3
+    },
+    {
+      "source": "author:1395",
+      "target": "author:1396",
+      "weight": 3
+    },
+    {
+      "source": "author:1395",
+      "target": "author:1397",
+      "weight": 3
+    },
+    {
+      "source": "author:1395",
+      "target": "author:1398",
+      "weight": 3
+    },
+    {
+      "source": "author:1395",
+      "target": "author:1399",
+      "weight": 3
+    },
+    {
+      "source": "author:1395",
+      "target": "author:1400",
+      "weight": 3
+    },
+    {
+      "source": "author:1395",
+      "target": "author:1401",
+      "weight": 3
+    },
+    {
+      "source": "author:1395",
+      "target": "author:1402",
+      "weight": 3
+    },
+    {
+      "source": "author:1395",
+      "target": "author:1403",
+      "weight": 3
+    },
+    {
+      "source": "author:1395",
+      "target": "author:1404",
+      "weight": 3
+    },
+    {
+      "source": "author:1395",
+      "target": "author:1405",
+      "weight": 3
+    },
+    {
+      "source": "author:1395",
+      "target": "author:1406",
+      "weight": 3
+    },
+    {
+      "source": "author:1395",
+      "target": "author:1407",
+      "weight": 3
+    },
+    {
+      "source": "author:1396",
+      "target": "author:1397",
+      "weight": 3
+    },
+    {
+      "source": "author:1396",
+      "target": "author:1398",
+      "weight": 3
+    },
+    {
+      "source": "author:1396",
+      "target": "author:1399",
+      "weight": 3
+    },
+    {
+      "source": "author:1396",
+      "target": "author:1400",
+      "weight": 3
+    },
+    {
+      "source": "author:1396",
+      "target": "author:1401",
+      "weight": 3
+    },
+    {
+      "source": "author:1396",
+      "target": "author:1402",
+      "weight": 3
+    },
+    {
+      "source": "author:1396",
+      "target": "author:1403",
+      "weight": 3
+    },
+    {
+      "source": "author:1396",
+      "target": "author:1404",
+      "weight": 3
+    },
+    {
+      "source": "author:1396",
+      "target": "author:1405",
+      "weight": 3
+    },
+    {
+      "source": "author:1396",
+      "target": "author:1406",
+      "weight": 3
+    },
+    {
+      "source": "author:1396",
+      "target": "author:1407",
+      "weight": 3
+    },
+    {
+      "source": "author:1397",
+      "target": "author:1398",
+      "weight": 3
+    },
+    {
+      "source": "author:1397",
+      "target": "author:1399",
+      "weight": 3
+    },
+    {
+      "source": "author:1397",
+      "target": "author:1400",
+      "weight": 3
+    },
+    {
+      "source": "author:1397",
+      "target": "author:1401",
+      "weight": 3
+    },
+    {
+      "source": "author:1397",
+      "target": "author:1402",
+      "weight": 3
+    },
+    {
+      "source": "author:1397",
+      "target": "author:1403",
+      "weight": 3
+    },
+    {
+      "source": "author:1397",
+      "target": "author:1404",
+      "weight": 3
+    },
+    {
+      "source": "author:1397",
+      "target": "author:1405",
+      "weight": 3
+    },
+    {
+      "source": "author:1397",
+      "target": "author:1406",
+      "weight": 3
+    },
+    {
+      "source": "author:1397",
+      "target": "author:1407",
+      "weight": 3
+    },
+    {
+      "source": "author:1398",
+      "target": "author:1399",
+      "weight": 3
+    },
+    {
+      "source": "author:1398",
+      "target": "author:1400",
+      "weight": 3
+    },
+    {
+      "source": "author:1398",
+      "target": "author:1401",
+      "weight": 3
+    },
+    {
+      "source": "author:1398",
+      "target": "author:1402",
+      "weight": 3
+    },
+    {
+      "source": "author:1398",
+      "target": "author:1403",
+      "weight": 3
+    },
+    {
+      "source": "author:1398",
+      "target": "author:1404",
+      "weight": 3
+    },
+    {
+      "source": "author:1398",
+      "target": "author:1405",
+      "weight": 3
+    },
+    {
+      "source": "author:1398",
+      "target": "author:1406",
+      "weight": 3
+    },
+    {
+      "source": "author:1398",
+      "target": "author:1407",
+      "weight": 3
+    },
+    {
+      "source": "author:1399",
+      "target": "author:1400",
+      "weight": 3
+    },
+    {
+      "source": "author:1399",
+      "target": "author:1401",
+      "weight": 3
+    },
+    {
+      "source": "author:1399",
+      "target": "author:1402",
+      "weight": 3
+    },
+    {
+      "source": "author:1399",
+      "target": "author:1403",
+      "weight": 3
+    },
+    {
+      "source": "author:1399",
+      "target": "author:1404",
+      "weight": 3
+    },
+    {
+      "source": "author:1399",
+      "target": "author:1405",
+      "weight": 3
+    },
+    {
+      "source": "author:1399",
+      "target": "author:1406",
+      "weight": 3
+    },
+    {
+      "source": "author:1399",
+      "target": "author:1407",
+      "weight": 3
+    },
+    {
+      "source": "author:1400",
+      "target": "author:1401",
+      "weight": 3
+    },
+    {
+      "source": "author:1400",
+      "target": "author:1402",
+      "weight": 3
+    },
+    {
+      "source": "author:1400",
+      "target": "author:1403",
+      "weight": 3
+    },
+    {
+      "source": "author:1400",
+      "target": "author:1404",
+      "weight": 3
+    },
+    {
+      "source": "author:1400",
+      "target": "author:1405",
+      "weight": 3
+    },
+    {
+      "source": "author:1400",
+      "target": "author:1406",
+      "weight": 3
+    },
+    {
+      "source": "author:1400",
+      "target": "author:1407",
+      "weight": 3
+    },
+    {
+      "source": "author:1401",
+      "target": "author:1402",
+      "weight": 3
+    },
+    {
+      "source": "author:1401",
+      "target": "author:1403",
+      "weight": 3
+    },
+    {
+      "source": "author:1401",
+      "target": "author:1404",
+      "weight": 3
+    },
+    {
+      "source": "author:1401",
+      "target": "author:1405",
+      "weight": 3
+    },
+    {
+      "source": "author:1401",
+      "target": "author:1406",
+      "weight": 3
+    },
+    {
+      "source": "author:1401",
+      "target": "author:1407",
+      "weight": 3
+    },
+    {
+      "source": "author:1402",
+      "target": "author:1403",
+      "weight": 3
+    },
+    {
+      "source": "author:1402",
+      "target": "author:1404",
+      "weight": 3
+    },
+    {
+      "source": "author:1402",
+      "target": "author:1405",
+      "weight": 3
+    },
+    {
+      "source": "author:1402",
+      "target": "author:1406",
+      "weight": 3
+    },
+    {
+      "source": "author:1402",
+      "target": "author:1407",
+      "weight": 3
+    },
+    {
+      "source": "author:1403",
+      "target": "author:1404",
+      "weight": 3
+    },
+    {
+      "source": "author:1403",
+      "target": "author:1405",
+      "weight": 3
+    },
+    {
+      "source": "author:1403",
+      "target": "author:1406",
+      "weight": 3
+    },
+    {
+      "source": "author:1403",
+      "target": "author:1407",
+      "weight": 3
+    },
+    {
+      "source": "author:1404",
+      "target": "author:1405",
+      "weight": 3
+    },
+    {
+      "source": "author:1404",
+      "target": "author:1406",
+      "weight": 3
+    },
+    {
+      "source": "author:1404",
+      "target": "author:1407",
+      "weight": 3
+    },
+    {
+      "source": "author:1405",
+      "target": "author:1406",
+      "weight": 3
+    },
+    {
+      "source": "author:1405",
+      "target": "author:1407",
+      "weight": 3
+    },
+    {
+      "source": "author:1406",
+      "target": "author:1407",
+      "weight": 3
+    },
+    {
+      "source": "author:1408",
+      "target": "author:1409",
+      "weight": 3
+    },
+    {
+      "source": "author:1408",
+      "target": "author:1410",
+      "weight": 3
+    },
+    {
+      "source": "author:1408",
+      "target": "author:1411",
+      "weight": 3
+    },
+    {
+      "source": "author:1408",
+      "target": "author:1412",
+      "weight": 3
+    },
+    {
+      "source": "author:1408",
+      "target": "author:1413",
+      "weight": 3
+    },
+    {
+      "source": "author:1409",
+      "target": "author:1410",
+      "weight": 3
+    },
+    {
+      "source": "author:1409",
+      "target": "author:1411",
+      "weight": 3
+    },
+    {
+      "source": "author:1409",
+      "target": "author:1412",
+      "weight": 3
+    },
+    {
+      "source": "author:1409",
+      "target": "author:1413",
+      "weight": 3
+    },
+    {
+      "source": "author:1410",
+      "target": "author:1411",
+      "weight": 3
+    },
+    {
+      "source": "author:1410",
+      "target": "author:1412",
+      "weight": 3
+    },
+    {
+      "source": "author:1410",
+      "target": "author:1413",
+      "weight": 3
+    },
+    {
+      "source": "author:1411",
+      "target": "author:1412",
+      "weight": 3
+    },
+    {
+      "source": "author:1411",
+      "target": "author:1413",
+      "weight": 3
+    },
+    {
+      "source": "author:1412",
+      "target": "author:1413",
+      "weight": 3
+    },
+    {
+      "source": "author:1415",
+      "target": "author:1416",
+      "weight": 3
+    },
+    {
+      "source": "author:1415",
+      "target": "author:1417",
+      "weight": 3
+    },
+    {
+      "source": "author:1415",
+      "target": "author:1418",
+      "weight": 3
+    },
+    {
+      "source": "author:1415",
+      "target": "author:1419",
+      "weight": 3
+    },
+    {
+      "source": "author:1415",
+      "target": "author:1420",
+      "weight": 3
+    },
+    {
+      "source": "author:1416",
+      "target": "author:1417",
+      "weight": 3
+    },
+    {
+      "source": "author:1416",
+      "target": "author:1418",
+      "weight": 3
+    },
+    {
+      "source": "author:1416",
+      "target": "author:1419",
+      "weight": 3
+    },
+    {
+      "source": "author:1416",
+      "target": "author:1420",
+      "weight": 3
+    },
+    {
+      "source": "author:1417",
+      "target": "author:1418",
+      "weight": 3
+    },
+    {
+      "source": "author:1417",
+      "target": "author:1419",
+      "weight": 3
+    },
+    {
+      "source": "author:1417",
+      "target": "author:1420",
+      "weight": 3
+    },
+    {
+      "source": "author:1418",
+      "target": "author:1419",
+      "weight": 3
+    },
+    {
+      "source": "author:1418",
+      "target": "author:1420",
+      "weight": 3
+    },
+    {
+      "source": "author:1419",
+      "target": "author:1420",
+      "weight": 3
+    },
+    {
+      "source": "author:1421",
+      "target": "author:1422",
+      "weight": 3
+    },
+    {
+      "source": "author:1423",
+      "target": "author:1424",
+      "weight": 3
+    },
+    {
+      "source": "author:1423",
+      "target": "author:1425",
+      "weight": 3
+    },
+    {
+      "source": "author:1423",
+      "target": "author:1426",
+      "weight": 3
+    },
+    {
+      "source": "author:1423",
+      "target": "author:1427",
+      "weight": 3
+    },
+    {
+      "source": "author:1423",
+      "target": "author:1428",
+      "weight": 3
+    },
+    {
+      "source": "author:1423",
+      "target": "author:1429",
+      "weight": 3
+    },
+    {
+      "source": "author:1424",
+      "target": "author:1425",
+      "weight": 3
+    },
+    {
+      "source": "author:1424",
+      "target": "author:1426",
+      "weight": 3
+    },
+    {
+      "source": "author:1424",
+      "target": "author:1427",
+      "weight": 3
+    },
+    {
+      "source": "author:1424",
+      "target": "author:1428",
+      "weight": 3
+    },
+    {
+      "source": "author:1424",
+      "target": "author:1429",
+      "weight": 3
+    },
+    {
+      "source": "author:1425",
+      "target": "author:1426",
+      "weight": 3
+    },
+    {
+      "source": "author:1425",
+      "target": "author:1427",
+      "weight": 3
+    },
+    {
+      "source": "author:1425",
+      "target": "author:1428",
+      "weight": 3
+    },
+    {
+      "source": "author:1425",
+      "target": "author:1429",
+      "weight": 3
+    },
+    {
+      "source": "author:1426",
+      "target": "author:1427",
+      "weight": 3
+    },
+    {
+      "source": "author:1426",
+      "target": "author:1428",
+      "weight": 3
+    },
+    {
+      "source": "author:1426",
+      "target": "author:1429",
+      "weight": 3
+    },
+    {
+      "source": "author:1427",
+      "target": "author:1428",
+      "weight": 3
+    },
+    {
+      "source": "author:1427",
+      "target": "author:1429",
+      "weight": 3
+    },
+    {
+      "source": "author:1428",
+      "target": "author:1429",
+      "weight": 3
+    },
+    {
+      "source": "author:1430",
+      "target": "author:1431",
+      "weight": 3
+    },
+    {
+      "source": "author:1430",
+      "target": "author:1432",
+      "weight": 3
+    },
+    {
+      "source": "author:1430",
+      "target": "author:1433",
+      "weight": 3
+    },
+    {
+      "source": "author:1430",
+      "target": "author:1434",
+      "weight": 3
+    },
+    {
+      "source": "author:1430",
+      "target": "author:1435",
+      "weight": 3
+    },
+    {
+      "source": "author:1431",
+      "target": "author:1432",
+      "weight": 3
+    },
+    {
+      "source": "author:1431",
+      "target": "author:1433",
+      "weight": 3
+    },
+    {
+      "source": "author:1431",
+      "target": "author:1434",
+      "weight": 3
+    },
+    {
+      "source": "author:1431",
+      "target": "author:1435",
+      "weight": 3
+    },
+    {
+      "source": "author:1432",
+      "target": "author:1433",
+      "weight": 3
+    },
+    {
+      "source": "author:1432",
+      "target": "author:1434",
+      "weight": 3
+    },
+    {
+      "source": "author:1432",
+      "target": "author:1435",
+      "weight": 3
+    },
+    {
+      "source": "author:1433",
+      "target": "author:1434",
+      "weight": 3
+    },
+    {
+      "source": "author:1433",
+      "target": "author:1435",
+      "weight": 3
+    },
+    {
+      "source": "author:1434",
+      "target": "author:1435",
+      "weight": 3
+    },
+    {
+      "source": "author:1436",
+      "target": "author:1437",
+      "weight": 3
+    },
+    {
+      "source": "author:1436",
+      "target": "author:1438",
+      "weight": 3
+    },
+    {
+      "source": "author:1436",
+      "target": "author:1439",
+      "weight": 3
+    },
+    {
+      "source": "author:1436",
+      "target": "author:1440",
+      "weight": 3
+    },
+    {
+      "source": "author:1437",
+      "target": "author:1438",
+      "weight": 3
+    },
+    {
+      "source": "author:1437",
+      "target": "author:1439",
+      "weight": 3
+    },
+    {
+      "source": "author:1437",
+      "target": "author:1440",
+      "weight": 3
+    },
+    {
+      "source": "author:1438",
+      "target": "author:1439",
+      "weight": 3
+    },
+    {
+      "source": "author:1438",
+      "target": "author:1440",
+      "weight": 3
+    },
+    {
+      "source": "author:1439",
+      "target": "author:1440",
+      "weight": 3
+    },
+    {
+      "source": "author:1441",
+      "target": "author:1442",
+      "weight": 3
+    },
+    {
+      "source": "author:1443",
+      "target": "author:1444",
+      "weight": 3
+    },
+    {
+      "source": "author:1443",
+      "target": "author:1445",
+      "weight": 3
+    },
+    {
+      "source": "author:1443",
+      "target": "author:1446",
+      "weight": 3
+    },
+    {
+      "source": "author:1444",
+      "target": "author:1445",
+      "weight": 3
+    },
+    {
+      "source": "author:1444",
+      "target": "author:1446",
+      "weight": 3
+    },
+    {
+      "source": "author:1445",
+      "target": "author:1446",
+      "weight": 3
+    },
+    {
+      "source": "author:1447",
+      "target": "author:1448",
+      "weight": 3
+    },
+    {
+      "source": "author:1447",
+      "target": "author:1449",
+      "weight": 3
+    },
+    {
+      "source": "author:1448",
+      "target": "author:1449",
+      "weight": 3
+    },
+    {
+      "source": "author:1450",
+      "target": "author:1451",
+      "weight": 3
+    },
+    {
+      "source": "author:1452",
+      "target": "author:1453",
+      "weight": 3
+    },
+    {
+      "source": "author:1452",
+      "target": "author:1454",
+      "weight": 3
+    },
+    {
+      "source": "author:1452",
+      "target": "author:1455",
+      "weight": 3
+    },
+    {
+      "source": "author:1452",
+      "target": "author:1456",
+      "weight": 3
+    },
+    {
+      "source": "author:1452",
+      "target": "author:1457",
+      "weight": 3
+    },
+    {
+      "source": "author:1452",
+      "target": "author:1458",
+      "weight": 3
+    },
+    {
+      "source": "author:1452",
+      "target": "author:1459",
+      "weight": 3
+    },
+    {
+      "source": "author:1452",
+      "target": "author:1460",
+      "weight": 3
+    },
+    {
+      "source": "author:1453",
+      "target": "author:1454",
+      "weight": 3
+    },
+    {
+      "source": "author:1453",
+      "target": "author:1455",
+      "weight": 3
+    },
+    {
+      "source": "author:1453",
+      "target": "author:1456",
+      "weight": 3
+    },
+    {
+      "source": "author:1453",
+      "target": "author:1457",
+      "weight": 3
+    },
+    {
+      "source": "author:1453",
+      "target": "author:1458",
+      "weight": 3
+    },
+    {
+      "source": "author:1453",
+      "target": "author:1459",
+      "weight": 3
+    },
+    {
+      "source": "author:1453",
+      "target": "author:1460",
+      "weight": 3
+    },
+    {
+      "source": "author:1454",
+      "target": "author:1455",
+      "weight": 3
+    },
+    {
+      "source": "author:1454",
+      "target": "author:1456",
+      "weight": 3
+    },
+    {
+      "source": "author:1454",
+      "target": "author:1457",
+      "weight": 3
+    },
+    {
+      "source": "author:1454",
+      "target": "author:1458",
+      "weight": 3
+    },
+    {
+      "source": "author:1454",
+      "target": "author:1459",
+      "weight": 3
+    },
+    {
+      "source": "author:1454",
+      "target": "author:1460",
+      "weight": 3
+    },
+    {
+      "source": "author:1455",
+      "target": "author:1456",
+      "weight": 3
+    },
+    {
+      "source": "author:1455",
+      "target": "author:1457",
+      "weight": 3
+    },
+    {
+      "source": "author:1455",
+      "target": "author:1458",
+      "weight": 3
+    },
+    {
+      "source": "author:1455",
+      "target": "author:1459",
+      "weight": 3
+    },
+    {
+      "source": "author:1455",
+      "target": "author:1460",
+      "weight": 3
+    },
+    {
+      "source": "author:1456",
+      "target": "author:1457",
+      "weight": 3
+    },
+    {
+      "source": "author:1456",
+      "target": "author:1458",
+      "weight": 3
+    },
+    {
+      "source": "author:1456",
+      "target": "author:1459",
+      "weight": 3
+    },
+    {
+      "source": "author:1456",
+      "target": "author:1460",
+      "weight": 3
+    },
+    {
+      "source": "author:1457",
+      "target": "author:1458",
+      "weight": 3
+    },
+    {
+      "source": "author:1457",
+      "target": "author:1459",
+      "weight": 3
+    },
+    {
+      "source": "author:1457",
+      "target": "author:1460",
+      "weight": 3
+    },
+    {
+      "source": "author:1458",
+      "target": "author:1459",
+      "weight": 3
+    },
+    {
+      "source": "author:1458",
+      "target": "author:1460",
+      "weight": 3
+    },
+    {
+      "source": "author:1459",
+      "target": "author:1460",
+      "weight": 3
+    },
+    {
+      "source": "author:1461",
+      "target": "author:1462",
+      "weight": 3
+    },
+    {
+      "source": "author:1461",
+      "target": "author:1463",
+      "weight": 3
+    },
+    {
+      "source": "author:1461",
+      "target": "author:1464",
+      "weight": 3
+    },
+    {
+      "source": "author:1462",
+      "target": "author:1463",
+      "weight": 3
+    },
+    {
+      "source": "author:1462",
+      "target": "author:1464",
+      "weight": 3
+    },
+    {
+      "source": "author:1463",
+      "target": "author:1464",
+      "weight": 3
+    },
+    {
+      "source": "author:1465",
+      "target": "author:1466",
+      "weight": 3
+    },
+    {
+      "source": "author:1465",
+      "target": "author:1467",
+      "weight": 3
+    },
+    {
+      "source": "author:1466",
+      "target": "author:1467",
+      "weight": 3
+    },
+    {
+      "source": "author:1468",
+      "target": "author:1469",
+      "weight": 3
+    },
+    {
+      "source": "author:1470",
+      "target": "author:1471",
+      "weight": 3
+    },
+    {
+      "source": "author:1470",
+      "target": "author:1472",
+      "weight": 3
+    },
+    {
+      "source": "author:1471",
+      "target": "author:1472",
+      "weight": 3
+    },
+    {
+      "source": "author:1473",
+      "target": "author:1474",
+      "weight": 1
+    },
+    {
+      "source": "author:1475",
+      "target": "author:1476",
+      "weight": 1
+    },
+    {
+      "source": "author:1475",
+      "target": "author:1477",
+      "weight": 1
+    },
+    {
+      "source": "author:1475",
+      "target": "author:1478",
+      "weight": 1
+    },
+    {
+      "source": "author:1475",
+      "target": "author:1479",
+      "weight": 1
+    },
+    {
+      "source": "author:1476",
+      "target": "author:1477",
+      "weight": 1
+    },
+    {
+      "source": "author:1476",
+      "target": "author:1478",
+      "weight": 1
+    },
+    {
+      "source": "author:1476",
+      "target": "author:1479",
+      "weight": 1
+    },
+    {
+      "source": "author:1477",
+      "target": "author:1478",
+      "weight": 1
+    },
+    {
+      "source": "author:1477",
+      "target": "author:1479",
+      "weight": 1
+    },
+    {
+      "source": "author:1478",
+      "target": "author:1479",
+      "weight": 1
     }
   ],
   "stats": {
-    "authors": 945,
-    "coauthor_edges": 6604
+    "authors": 1285,
+    "coauthor_edges": 7216
   }
 }

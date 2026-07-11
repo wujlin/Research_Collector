@@ -603,7 +603,7 @@ $$
 
 ### 3.4 Fig. 6.1 的作用
 
-![Fig. 6.1](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/06-stochastic-models-of-growth.mineru/hybrid_auto/images/page-03-figure-01.jpg)
+![Fig. 6.1](figures/statistics-and-dynamics-of-urban-populations-ch06-stochastic-models-of-growth/page-03-figure-01.jpg)
 
 Fig. 6.1 把 Yule 模型的两个机制画出来：
 
@@ -1577,7 +1577,7 @@ $$
 
 ### 8.1 Fig. 6.2 的作用
 
-![Fig. 6.2](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/06-stochastic-models-of-growth.mineru/hybrid_auto/images/page-11-figure-01.jpg)
+![Fig. 6.2](figures/statistics-and-dynamics-of-urban-populations-ch06-stochastic-models-of-growth/page-11-figure-01.jpg)
 
 Fig. 6.2 展示 Simon process 的 convergence time 如何随新城市概率 $\alpha$ 改变。$\alpha$ 越接近 0，收敛越慢；当 $\alpha=0$ 时，不收敛到 power-law。
 
@@ -1986,7 +1986,7 @@ $$
 
 Fig. 6.3 给出法国城市 2014-2015 的例子：
 
-![Fig. 6.3](../../pdfs/2026-04-24/statistics-and-dynamics-of-urban-populations/06-stochastic-models-of-growth.mineru/hybrid_auto/images/page-13-figure-01.jpg)
+![Fig. 6.3](figures/statistics-and-dynamics-of-urban-populations-ch06-stochastic-models-of-growth/page-13-figure-01.jpg)
 
 经验上标准差满足
 

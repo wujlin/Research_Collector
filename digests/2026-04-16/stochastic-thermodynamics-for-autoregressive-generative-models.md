@@ -76,7 +76,7 @@ $$
 
 这也是这篇文章和“任意高阶历史模型”之间的边界。
 
-![Figure 1(a): 前向过程的因果结构——一般（非递归）情形](../../pdfs/2026-04-16/stochastic-thermodynamics-for-autoregressive-generative-models-a-non-markovian-perspective.mineru/hybrid_auto/images/page-03-figure-01.jpg)
+![Figure 1(a): 前向过程的因果结构——一般（非递归）情形](figures/stochastic-thermodynamics-for-autoregressive-generative-models/page-03-figure-01.jpg)
 
 图 1(a) 画出的就是这条因果结构。蓝色箭头对应确定性映射 $f_t^\rightarrow$，绿色箭头对应随机发射核 $p_t$。这里的非马尔可夫性不是额外加上的，而是直接来自这样一个事实：每个 $h_t$ 都在吸收全部过去 $y_{1:t}$ 的信息。
 
@@ -139,7 +139,7 @@ $$
 
 所以，递归 $\phi_t$ 说明的是**内部记忆的更新是 Markov 风格的**；而论文说 $y_t$ 是 non-Markov，指的是**只看外部输出序列时，下一步分布仍然依赖更长的历史，而不只依赖当前一步**。
 
-![Table 1: 各架构与通用框架的对应关系](../../pdfs/2026-04-16/stochastic-thermodynamics-for-autoregressive-generative-models-a-non-markovian-perspective.mineru/hybrid_auto/images/page-05-table-01.jpg)
+![Table 1: 各架构与通用框架的对应关系](figures/stochastic-thermodynamics-for-autoregressive-generative-models/page-05-table-01.jpg)
 
 表 1 的作用就是把五类模型都投影到这一个骨架上。真正需要抓的不是各个公式细节，而是它们都满足同一件事：
 
@@ -246,7 +246,7 @@ $$
 
 这就是论文所谓的 “run the same machinery in reverse”。
 
-![Figure 1(b): 后向过程的因果结构](../../pdfs/2026-04-16/stochastic-thermodynamics-for-autoregressive-generative-models-a-non-markovian-perspective.mineru/hybrid_auto/images/page-03-figure-02.jpg)
+![Figure 1(b): 后向过程的因果结构](figures/stochastic-thermodynamics-for-autoregressive-generative-models/page-03-figure-02.jpg)
 
 图 1(b) 画出的正是这个 backward process。这里一个容易误会的点是：即使某条后向样本恰好满足 $\tilde y_s = y_{T-s+1}$，一般也**不能**推出 $\tilde h_s = h_{T-s+1}$。原因很直接：同一个确定性映射作用在正向前缀和反向前缀上，得到的内部状态一般不同。
 
@@ -911,9 +911,9 @@ $$
 - 完整长度 $T$ 的 token reversal；
 - 截断长度 $T'$ 的 token reversal 参考分布。
 
-![Figure 3(a): Token 级熵产生分布](../../pdfs/2026-04-16/stochastic-thermodynamics-for-autoregressive-generative-models-a-non-markovian-perspective.mineru/hybrid_auto/images/page-15-figure-01.jpg)
+![Figure 3(a): Token 级熵产生分布](figures/stochastic-thermodynamics-for-autoregressive-generative-models/page-15-figure-01.jpg)
 
-![Figure 3(b): Block 级熵产生分布](../../pdfs/2026-04-16/stochastic-thermodynamics-for-autoregressive-generative-models-a-non-markovian-perspective.mineru/hybrid_auto/images/page-15-figure-02.jpg)
+![Figure 3(b): Block 级熵产生分布](figures/stochastic-thermodynamics-for-autoregressive-generative-models/page-15-figure-02.jpg)
 
 Figure 3 要按两步读。
 
@@ -1008,9 +1008,9 @@ Figure 3 只说明了 token 级和 block 级的数值规模很不一样，但还
   $$
   应该更大。
 
-![Figure 4(a): Token 级 — 因果 vs. 非因果](../../pdfs/2026-04-16/stochastic-thermodynamics-for-autoregressive-generative-models-a-non-markovian-perspective.mineru/hybrid_auto/images/page-16-figure-01.jpg)
+![Figure 4(a): Token 级 — 因果 vs. 非因果](figures/stochastic-thermodynamics-for-autoregressive-generative-models/page-16-figure-01.jpg)
 
-![Figure 4(b): Block 级 — 因果 vs. 非因果](../../pdfs/2026-04-16/stochastic-thermodynamics-for-autoregressive-generative-models-a-non-markovian-perspective.mineru/hybrid_auto/images/page-16-figure-02.jpg)
+![Figure 4(b): Block 级 — 因果 vs. 非因果](figures/stochastic-thermodynamics-for-autoregressive-generative-models/page-16-figure-02.jpg)
 
 Figure 4 也要分成两步读。
 
@@ -1678,9 +1678,9 @@ $$
 - 标量平稳高斯过程没有真正持续的不可逆流，所以有限熵产生主要来自边界效应；
 - 多变量过程可以有真正的旋转型或交叉耦合型不可逆结构，因此时间一拉长，熵产生会持续累积。
 
-![Figure 5(a): 标量 Kalman — 解析 vs. Monte Carlo](../../pdfs/2026-04-16/stochastic-thermodynamics-for-autoregressive-generative-models-a-non-markovian-perspective.mineru/hybrid_auto/images/page-23-figure-01.jpg)
+![Figure 5(a): 标量 Kalman — 解析 vs. Monte Carlo](figures/stochastic-thermodynamics-for-autoregressive-generative-models/page-23-figure-01.jpg)
 
-![Figure 5(b): 多变量 Kalman — 解析 vs. Monte Carlo](../../pdfs/2026-04-16/stochastic-thermodynamics-for-autoregressive-generative-models-a-non-markovian-perspective.mineru/hybrid_auto/images/page-23-figure-02.jpg)
+![Figure 5(b): 多变量 Kalman — 解析 vs. Monte Carlo](figures/stochastic-thermodynamics-for-autoregressive-generative-models/page-23-figure-02.jpg)
 
 Figure 5 的数值实验做的事情很直接：
 

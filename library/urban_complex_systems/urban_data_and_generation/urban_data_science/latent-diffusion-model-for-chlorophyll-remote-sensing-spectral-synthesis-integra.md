@@ -33,4 +33,3 @@ Global freshwater resources face severe water quality degradation, with chloroph
 - [[urban_data_and_generation]]
 
 ## Notes
-

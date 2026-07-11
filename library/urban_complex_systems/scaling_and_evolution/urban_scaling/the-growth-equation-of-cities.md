@@ -7,14 +7,14 @@ doi: "10.1038/s41586-020-2900-x"
 arxiv: "2011.09403"
 url: "https://www.nature.com/articles/s41586-020-2900-x"
 pdf_url: "https://arxiv.org/pdf/2011.09403v2"
-topics: ["urban_complex_systems/scaling_and_evolution/urban_scaling", "urban_complex_systems/scaling_and_evolution", "urban_complex_systems"]
+topics: ["urban_complex_systems", "urban_complex_systems/scaling_and_evolution/urban_scaling", "urban_complex_systems/scaling_and_evolution"]
 tier: 1
 citations: 0
 relevance_score: 39.0
 collected: "2026-04-24"
 status: "covered_by_book_chapters"
-coverage_note: "Core mechanism and equation chain have been covered through Statistics and Dynamics of Urban Populations Chapters 9-10; keep as primary-paper reference, but do not prioritize as a separate next deep read unless checking original empirical details or supplementary material."
 source: "arxiv + Nature DOI"
+coverage_note: "Core mechanism and equation chain have been covered through Statistics and Dynamics of Urban Populations Chapters 9-10; keep as primary-paper reference, but do not prioritize as a separate next deep read unless checking original empirical details or supplementary material."
 ---
 
 ## Abstract
@@ -27,9 +27,9 @@ The science of cities seeks to understand and explain regularities observed in t
 
 ## Connections
 
+- [[urban_complex_systems]]
 - [[urban_scaling]]
 - [[scaling_and_evolution]]
-- [[urban_complex_systems]]
 
 ## Notes
 

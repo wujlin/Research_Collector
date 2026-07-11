@@ -31,4 +31,3 @@ Surrogate models have been increasingly used to reduce the computational cost of
 - [[scientific_ml_applications]]
 
 ## Notes
-

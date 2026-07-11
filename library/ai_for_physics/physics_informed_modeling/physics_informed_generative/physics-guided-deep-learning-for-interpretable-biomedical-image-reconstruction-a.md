@@ -7,7 +7,7 @@ doi: "10.3390/bioengineering13040457"
 arxiv: ""
 url: "https://openalex.org/W7154176067"
 pdf_url: "https://www.mdpi.com/2306-5354/13/4/457/pdf?version=1776085591"
-topics: ["ai_for_physics/physics_informed_modeling/physics_informed_generative", "ai_for_physics/physics_informed_modeling", "ai_for_physics"]
+topics: ["ai_for_physics", "ai_for_physics/physics_informed_modeling/physics_informed_generative", "ai_for_physics/physics_informed_modeling"]
 tier: 0
 citations: 0
 relevance_score: 47.0
@@ -26,9 +26,8 @@ This study introduces a physics-guided deep learning architecture designed for t
 
 ## Connections
 
+- [[ai_for_physics]]
 - [[physics_informed_generative]]
 - [[physics_informed_modeling]]
-- [[ai_for_physics]]
 
 ## Notes
-

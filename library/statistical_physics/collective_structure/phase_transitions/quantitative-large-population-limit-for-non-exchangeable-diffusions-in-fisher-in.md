@@ -34,4 +34,3 @@ This paper builds upon the methods developed in [22] and [15] to investigate the
 - [[thermodynamic_inference]]
 
 ## Notes
-

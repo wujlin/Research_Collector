@@ -32,4 +32,3 @@ Microscopic heat engines operate in regimes where thermodynamic quantities fluct
 - [[non_equilibrium_dynamics]]
 
 ## Notes
-

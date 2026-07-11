@@ -151,7 +151,7 @@ def main() -> None:
         remove_empty_directories(ROOT / "library")
         removed_youtube = pipeline.database.delete_youtube_resources_by_ids(youtube_archive_ids)
         pipeline._refresh_library_indices()
-        pipeline.export_all()
+        pipeline.export_all(generate_periodic_digest=False)
 
     print(
         {

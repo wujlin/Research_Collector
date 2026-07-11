@@ -7,7 +7,7 @@ doi: "10.29121/shodhkosh.v7.i4s.2026.7482"
 arxiv: ""
 url: "https://openalex.org/W7153811421"
 pdf_url: "https://www.granthaalayahpublication.org/Arts-Journal/ShodhKosh/article/download/7482/7033"
-topics: ["statistical_physics/collective_structure/phase_transitions", "statistical_physics/collective_structure", "statistical_physics"]
+topics: ["statistical_physics", "statistical_physics/collective_structure/phase_transitions", "statistical_physics/collective_structure"]
 tier: 0
 citations: 0
 relevance_score: 47.0
@@ -26,9 +26,8 @@ Such projects as large-scale visual arts, such as installations in the city, mur
 
 ## Connections
 
+- [[statistical_physics]]
 - [[phase_transitions]]
 - [[collective_structure]]
-- [[statistical_physics]]
 
 ## Notes
-

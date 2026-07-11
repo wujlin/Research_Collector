@@ -33,4 +33,3 @@ The aim of this paper is to establish a certain equivalence between a Brownian m
 - [[stochastic_dynamics]]
 
 ## Notes
-
